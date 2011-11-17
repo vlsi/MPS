@@ -33,12 +33,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
-import jetbrains.mps.smodel.SModel;
 import java.util.ArrayList;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.internal.collections.runtime.IListSequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class NodeFileStatusMapping extends AbstractProjectComponent {
@@ -142,43 +137,33 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   }
 
   private class MyGlobalListener extends CurrentDifferenceAdapter {
-    private List<SModel> myAffectedModels = ListSequence.fromList(new ArrayList<SModel>());
+    private List<SNodePointer> myAffectedRoots = ListSequence.fromList(new ArrayList<SNodePointer>());
 
     private MyGlobalListener() {
     }
 
     @Override
     public void changeUpdateFinished() {
-      List<SNodePointer> nodePointers = ModelAccess.instance().runReadAction(new Computable<IListSequence<SNodePointer>>() {
-        public IListSequence<SNodePointer> compute() {
-          return ListSequence.fromList(myAffectedModels).translate(new ITranslator2<SModel, SNode>() {
-            public Iterable<SNode> translate(SModel m) {
-              return m.roots();
-            }
-          }).select(new ISelector<SNode, SNodePointer>() {
-            public SNodePointer select(SNode r) {
-              return new SNodePointer(r);
-            }
-          }).toListSequence();
-        }
-      });
-      ListSequence.fromList(myAffectedModels).clear();
-      // TODO change this stupid logic 
-      ListSequence.fromList(nodePointers).visitAll(new IVisitor<SNodePointer>() {
+      ListSequence.fromList(myAffectedRoots).visitAll(new IVisitor<SNodePointer>() {
         public void visit(SNodePointer np) {
           invalidateNodeStatus(np);
         }
       });
+      ListSequence.fromList(myAffectedRoots).clear();
+    }
+
+    private void addAffectedRoot(@NotNull ModelChange change) {
+      ListSequence.fromList(myAffectedRoots).addElement(new SNodePointer(change.getChangeSet().getNewModel().getSModelReference(), change.getRootId()));
     }
 
     @Override
     public void changeAdded(@NotNull ModelChange change) {
-      ListSequence.fromList(myAffectedModels).addElement(change.getChangeSet().getNewModel());
+      addAffectedRoot(change);
     }
 
     @Override
     public void changeRemoved(@NotNull ModelChange change) {
-      ListSequence.fromList(myAffectedModels).addElement(change.getChangeSet().getNewModel());
+      addAffectedRoot(change);
     }
   }
 }
