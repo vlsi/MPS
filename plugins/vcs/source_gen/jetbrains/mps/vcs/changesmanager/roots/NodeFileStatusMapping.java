@@ -14,8 +14,12 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -23,13 +27,11 @@ import jetbrains.mps.vcs.changesmanager.CurrentDifference;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
@@ -60,7 +62,21 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     myRegistry.getCommandQueue().runTask(new Runnable() {
       public void run() {
         calcStatus(nodePointer);
-        FileStatusManager.getInstance(myProject).fileStatusChanged(MPSNodesVirtualFileSystem.getInstance().getFileFor(nodePointer));
+        final FileStatusManager fsm = FileStatusManager.getInstance(myProject);
+        final MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
+        fsm.fileStatusChanged(nvfs.getFileFor(nodePointer));
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SNode currentNode = nodePointer.getNode();
+            for (EditorTabDescriptor d : ListSequence.fromList(myProject.getComponent(ProjectPluginManager.class).getTabDescriptors())) {
+              SNode baseNode = d.getBaseNode(currentNode);
+              if (baseNode != null && baseNode != currentNode) {
+                fsm.fileStatusChanged(nvfs.getFileFor(baseNode));
+                break;
+              }
+            }
+          }
+        });
       }
     });
   }
@@ -153,7 +169,9 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     }
 
     private void addAffectedRoot(@NotNull ModelChange change) {
-      ListSequence.fromList(myAffectedRoots).addElement(new SNodePointer(change.getChangeSet().getNewModel().getSModelReference(), change.getRootId()));
+      if (change.getRootId() != null) {
+        ListSequence.fromList(myAffectedRoots).addElement(new SNodePointer(change.getChangeSet().getNewModel().getSModelReference(), change.getRootId()));
+      }
     }
 
     @Override
