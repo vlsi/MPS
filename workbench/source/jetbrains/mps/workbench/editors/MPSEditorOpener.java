@@ -24,6 +24,7 @@ import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.ThreadUtils;
@@ -38,7 +39,6 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -139,7 +139,7 @@ public class MPSEditorOpener {
     if (!restorePrevSelectionInInspector(nodeEditor, nodeEditor.getOperationContext(), getInspector())) {
       //open inspector (if no cell is selected in editor, inspector won't be opened)
       DataContext dataContext = DataManager.getInstance().getDataContext(nodeEditor.getCurrentEditorComponent());
-      FileEditor fileEditor = MPSDataKeys.FILE_EDITOR.getData(dataContext);
+      FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
       getInspector().inspect(node, nodeEditor.getOperationContext(), fileEditor);
     }
 
@@ -264,7 +264,7 @@ public class MPSEditorOpener {
     if (nec == null || nec.getLastInspectedNode() == null) return false;
 
     DataContext dataContext = DataManager.getInstance().getDataContext(nodeEditor.getComponent());
-    FileEditor fileEditor = MPSDataKeys.FILE_EDITOR.getData(dataContext);
+    FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
     inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor);
     return true;
   }
