@@ -26,7 +26,6 @@ import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -185,7 +184,7 @@ public class MPSEditorOpener {
 
     Editor nodeEditor = fileNodeEditor.getNodeEditor();
 
-    if (nodeEditor instanceof TabbedEditor) {
+    if (nodeEditor != null && nodeEditor.isTabbed()) {
       nodeEditor.showNode(root, false);
     }
 
@@ -223,7 +222,7 @@ public class MPSEditorOpener {
       if (nodeEditor.getCurrentEditorComponent() != null) {
         toBeFocused = (Component) nodeEditor.getCurrentEditorComponent();
       } else {
-        toBeFocused = ((BaseNodeEditor)nodeEditor).getComponent();
+        toBeFocused = ((BaseNodeEditor) nodeEditor).getComponent();
       }
       getFocusManager().requestFocus(toBeFocused, false);
     } else {
@@ -262,7 +261,7 @@ public class MPSEditorOpener {
     NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
     if (nec == null || nec.getLastInspectedNode() == null) return false;
 
-    DataContext dataContext = DataManager.getInstance().getDataContext(((BaseNodeEditor)nodeEditor).getComponent());
+    DataContext dataContext = DataManager.getInstance().getDataContext(((BaseNodeEditor) nodeEditor).getComponent());
     FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
     inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor);
     return true;

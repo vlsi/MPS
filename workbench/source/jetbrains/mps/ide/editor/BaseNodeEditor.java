@@ -78,6 +78,11 @@ public abstract class BaseNodeEditor implements Editor {
     }
   }
 
+  @Override
+  public boolean isTabbed() {
+    return false;
+  }
+
   private class EditorPanel extends JPanel implements DataProvider {
     private EditorPanel() {
       setLayout(new BorderLayout());

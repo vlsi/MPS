@@ -130,6 +130,11 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   }
 
   @Override
+  public boolean isTabbed() {
+    return true;
+  }
+
+  @Override
   public List<Document> getAllEditedDocuments() {
     return myTabsComponent.getAllEditedDocuments();
   }

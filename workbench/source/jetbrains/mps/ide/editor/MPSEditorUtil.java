@@ -18,10 +18,9 @@ package jetbrains.mps.ide.editor;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
@@ -41,7 +40,7 @@ public class MPSEditorUtil {
     if (!(editor instanceof MPSFileNodeEditor)) return null;
 
     Editor nodeEditor = ((MPSFileNodeEditor) editor).getNodeEditor();
-    if (!(nodeEditor instanceof TabbedEditor)) return null;
+    if (nodeEditor == null || !nodeEditor.isTabbed()) return null;
 
     EditorComponent tabEditor = nodeEditor.getCurrentEditorComponent();
     if (!(tabEditor instanceof NodeEditorComponent)) return null;

@@ -30,6 +30,8 @@ public interface Editor {
 
   IOperationContext getOperationContext();
 
+  boolean isTabbed();
+
   void showNode(SNode node, boolean select);
 
   void dispose();
