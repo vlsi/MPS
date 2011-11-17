@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="2">
+<model modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="4">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
@@ -24,7 +24,8 @@
   <import index="62h0" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.execution.runners(MPS.Workbench/com.intellij.execution.runners@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="2" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
+  <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1203071663527">
       <property name="name" nameId="tpck.1169194664001" value="SingletabbedEditorTab" />
@@ -789,12 +790,12 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3339131993542057767" resolveInfo="BaseProjectOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6516056543316792926">
-      <property name="name" nameId="tpck.1169194664001" value="ConceptFunction_CreateBreakpoint" />
+      <property name="name" nameId="tpck.1169194664001" value="ConceptFunction_CreateBreakpoint_Deprecated" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.TraceInfo" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6516056543316793311">
-      <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_DebuggableNode" />
+      <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_DebuggableNode_Deprecated" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.TraceInfo" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
@@ -3058,7 +3059,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="createBreakpoint" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6516056543316792926" resolveInfo="ConceptFunction_CreateBreakpoint" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6516056543316792926" resolveInfo="ConceptFunction_CreateBreakpoint_Deprecated" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2387409699444984663">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -3310,7 +3311,7 @@
   <root id="6516056543316792926">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="6516056543316809596">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="6516056543316793311" resolveInfo="ConceptFunctionParameter_DebuggableNode" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="86gq.1307366785757145583" resolveInfo="ConceptFunctionParameter_DebuggableNode" />
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="6516056543316809597">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -3423,7 +3424,7 @@
   <root id="2387409699444984664">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="2387409699444984667">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="6516056543316793311" resolveInfo="ConceptFunctionParameter_DebuggableNode" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="6516056543316793311" resolveInfo="ConceptFunctionParameter_DebuggableNode_Deprecated" />
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="2387409699444984671">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />

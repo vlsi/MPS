@@ -29,7 +29,7 @@ public class typeof_ConceptFunctionParameter_DebuggableNode_InferenceRule extend
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode";
+    return "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode_Deprecated";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
