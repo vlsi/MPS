@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ConceptConstraints_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_BehaviorDescriptor" />
   <unitInfo fileName="ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunctionParameter_checkedNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_checkedNode_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunctionParameter_childConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childConcept_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunctionParameter_enclosingLink_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_enclosingLink_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunctionParameter_inEditor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_inEditor_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunctionParameter_linkTarget_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_linkTarget_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunctionParameter_link_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_link_BehaviorDescriptor" />

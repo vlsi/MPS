@@ -26,4 +26,6 @@ public interface ReferenceConstraintsContext {
   SNode getReferenceNode();
 
   SNode getLinkTarget();
+
+  SNode getEnclosingLink();
 }

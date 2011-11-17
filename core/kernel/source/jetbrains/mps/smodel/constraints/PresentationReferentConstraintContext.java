@@ -26,8 +26,8 @@ public class PresentationReferentConstraintContext extends ReferentConstraintCon
   private boolean myInEditor;
 
   public PresentationReferentConstraintContext(SModel model, SNode enclosingNode,
-                                               SNode referenceNode, SNode linkTarget, SNode parameterNode, boolean visible, boolean smartRef, boolean inEditor) {
-    super(model, enclosingNode, referenceNode, linkTarget);
+                                               SNode referenceNode, SNode linkTarget, SNode parameterNode, SNode enclosingLink, boolean visible, boolean smartRef, boolean inEditor) {
+    super(model, enclosingNode, referenceNode, linkTarget, enclosingLink);
     myParameterNode = parameterNode;
     myVisible = visible;
     mySmartReference = smartRef;

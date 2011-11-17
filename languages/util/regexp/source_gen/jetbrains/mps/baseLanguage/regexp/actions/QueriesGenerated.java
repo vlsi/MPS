@@ -689,7 +689,7 @@ public class QueriesGenerated {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp");
       Calculable calculable = new Calculable() {
         public Object calculate() {
-          SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, _context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), "match", operationContext);
+          SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, _context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), "match", SNodeOperations.getContainingLinkDeclaration(_context.getSourceNode()), operationContext);
           return (List<SNode>) status.getSearchScope().getNodes();
         }
       };

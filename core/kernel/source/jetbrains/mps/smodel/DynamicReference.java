@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
@@ -78,6 +79,7 @@ public class DynamicReference extends SReferenceBase {
       referenceNode,
       referenceNodeConcept,
       getRole(), // "genuine" role here
+      referenceNode.getRoleLink(),
       new ReferenceResolvingContext(getModule()));
     if (status.isError()) {
       if (!silently) {
