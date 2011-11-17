@@ -16,45 +16,35 @@
 package jetbrains.mps.fileTypes;
 
 import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.fileTypes.ex.FileTypeIdentifiableByVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
-public class MPSFileType implements FileType {
-  private final String myName;
-  private final String myDescription;
-  private final String myDefaultExt;
-  private final Icon myIcon;
-
-  public MPSFileType(String name, String description, String extension, Icon icon) {
-    myName = name;
-    myDescription = description;
-    myDefaultExt = extension;
-    myIcon = icon;
-  }
-
+public class MPSNodeFileType implements FileType, FileTypeIdentifiableByVirtualFile {
   @NotNull
   public String getName() {
-    return myName;
+    return "MPS Node File Type";
   }
 
   @NotNull
   public String getDescription() {
-    return myDescription;
+    return "MPS Node File Type";
   }
 
   @NotNull
   public String getDefaultExtension() {
-    return myDefaultExt;
+    return ".mps";
   }
 
   public Icon getIcon() {
-    return myIcon;
+    return null;
   }
 
   public boolean isBinary() {
-    return true;
+    return false;
   }
 
   public boolean isReadOnly() {
@@ -63,5 +53,9 @@ public class MPSFileType implements FileType {
 
   public String getCharset(@NotNull VirtualFile file, byte[] content) {
     return null;
+  }
+
+  public boolean isMyFileType(VirtualFile file) {
+    return file instanceof MPSNodeVirtualFile;
   }
 }
