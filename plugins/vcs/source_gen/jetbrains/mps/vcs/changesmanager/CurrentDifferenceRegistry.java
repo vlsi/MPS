@@ -42,6 +42,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final ReloadListener myReloadListener = new CurrentDifferenceRegistry.MyReloadListener();
   private final SModelRepositoryListener myModelRepositoryListener = new CurrentDifferenceRegistry.MySModelRepositoryListener();
   private final SimpleCommandQueue myCommandQueue = new SimpleCommandQueue("ChangesManager command queue");
+  private CurrentDifferenceBroadcaster myGlobalBroadcaster = new CurrentDifferenceBroadcaster(myCommandQueue);
 
   public CurrentDifferenceRegistry(@NotNull Project project) {
     super(project);
@@ -126,9 +127,21 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     }
   }
 
+  public void addGlobalDifferenceListener(@NotNull CurrentDifferenceListener listener) {
+    myGlobalBroadcaster.addDifferenceListener(listener);
+  }
+
+  public void removeGlobalDifferenceListener(@NotNull CurrentDifferenceListener listener) {
+    myGlobalBroadcaster.removeDifferenceListener(listener);
+  }
+
   @NotNull
   public SimpleCommandQueue getCommandQueue() {
     return myCommandQueue;
+  }
+
+  /*package*/ CurrentDifferenceBroadcaster getGlobalBroadcaster() {
+    return myGlobalBroadcaster;
   }
 
   public static CurrentDifferenceRegistry getInstance(Project project) {

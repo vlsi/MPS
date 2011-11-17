@@ -21,10 +21,12 @@ public class CurrentDifference {
   private boolean myEnabled = false;
 
   public CurrentDifference(@NotNull Project project, @NotNull EditableSModelDescriptor modelDescriptor) {
-    myCommandQueue = CurrentDifferenceRegistry.getInstance(project).getCommandQueue();
+    CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(project);
+    myCommandQueue = registry.getCommandQueue();
     myModelDescriptor = modelDescriptor;
     myTracking = new ChangesTracking(project, this);
     myBroadcaster = new CurrentDifferenceBroadcaster(myCommandQueue);
+    myBroadcaster.addDifferenceListener(registry.getGlobalBroadcaster());
   }
 
   public void dispose() {
@@ -36,7 +38,7 @@ public class CurrentDifference {
   }
 
   public void removeDifferenceListener(@NotNull CurrentDifferenceListener listener) {
-    myBroadcaster.addDifferenceListener(listener);
+    myBroadcaster.removeDifferenceListener(listener);
   }
 
   /*package*/ void removeChangeSet() {

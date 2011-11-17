@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 
-public class CurrentDifferenceBroadcaster implements CurrentDifferenceListener {
+/*package*/ class CurrentDifferenceBroadcaster implements CurrentDifferenceListener {
   protected static Log log = LogFactory.getLog(CurrentDifferenceBroadcaster.class);
 
   private List<CurrentDifferenceListener> myListeners = ListSequence.fromList(new ArrayList<CurrentDifferenceListener>());

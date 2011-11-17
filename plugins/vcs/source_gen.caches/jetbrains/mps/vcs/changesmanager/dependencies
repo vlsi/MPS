@@ -116,6 +116,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelListener" />
     <classNode dependClassName="jetbrains.mps.vcs.MPSVcsManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceBroadcaster" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
