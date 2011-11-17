@@ -36,10 +36,6 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", true, false) != null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_9101790344583086387(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.execution.configurations.deprecated.structure.ExecuteConfigBlock", true, false) != null;
-  }
-
   public static void nodeFactory_NodeSetup_ToolTab_485694842828664422(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNode disposeTabClosure = SLinkOperations.getTarget(_context.getNewNode(), "disposeTabClosure", true);
     if ((disposeTabClosure == null)) {
@@ -62,7 +58,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return ListSequence.fromListAndArray(new ArrayList<SNode>(), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a0c0a0b0e().createNode(), new QueriesGenerated.QuotationClass_x583g4_a2a0a0a0a0a0c0a0b0e().createNode(), new QueriesGenerated.QuotationClass_x583g4_a3a0a0a0a0a0c0a0b0e().createNode());
+            return ListSequence.fromListAndArray(new ArrayList<SNode>(), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a0c0a0b0d().createNode(), new QueriesGenerated.QuotationClass_x583g4_a2a0a0a0a0a0c0a0b0d().createNode(), new QueriesGenerated.QuotationClass_x583g4_a3a0a0a0a0a0c0a0b0d().createNode());
           }
         };
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
@@ -163,11 +159,6 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_9101790344583086386(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    return result;
-  }
-
   public static void removeActionsByCondition_1217414474266(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while (actions.hasNext()) {
@@ -188,8 +179,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a1a0a0a0a0a0c0a0b0e {
-    public QuotationClass_x583g4_a1a0a0a0a0a0c0a0b0e() {
+  public static class QuotationClass_x583g4_a1a0a0a0a0a0c0a0b0d {
+    public QuotationClass_x583g4_a1a0a0a0a0a0c0a0b0d() {
     }
 
     public SNode createNode() {
@@ -205,8 +196,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a2a0a0a0a0a0c0a0b0e {
-    public QuotationClass_x583g4_a2a0a0a0a0a0c0a0b0e() {
+  public static class QuotationClass_x583g4_a2a0a0a0a0a0c0a0b0d {
+    public QuotationClass_x583g4_a2a0a0a0a0a0c0a0b0d() {
     }
 
     public SNode createNode() {
@@ -222,8 +213,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a3a0a0a0a0a0c0a0b0e {
-    public QuotationClass_x583g4_a3a0a0a0a0a0c0a0b0e() {
+  public static class QuotationClass_x583g4_a3a0a0a0a0a0c0a0b0d {
+    public QuotationClass_x583g4_a3a0a0a0a0a0c0a0b0d() {
     }
 
     public SNode createNode() {
