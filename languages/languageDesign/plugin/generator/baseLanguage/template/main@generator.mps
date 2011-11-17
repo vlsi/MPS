@@ -17,7 +17,7 @@
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="4" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
@@ -368,10 +368,6 @@
       <property name="name" nameId="tpck.1169194664001" value="weave_ToolDeclaration_deprecatedInit" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.1203071677434" resolveInfo="ToolDeclaration" />
-    </node>
-    <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1921724414648286019">
-      <property name="name" nameId="tpck.1169194664001" value="TraceInfo" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.DebugInfo" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="3339131993542064572">
       <property name="name" nameId="tpck.1169194664001" value="reduce_GetToolOperation" />
@@ -12872,11 +12868,6 @@
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5508914264443136104">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1204474219320" resolveInfo="MyTool" />
       </node>
-    </node>
-  </root>
-  <root id="1921724414648286019">
-    <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="5607176255843345095">
-      <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="tp4k.5124230653299345208" resolveInfo="DebugInfoInitializer" />
     </node>
   </root>
   <root id="3339131993542064572">

@@ -56,12 +56,12 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
         SNode method = new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a7a4a0a0a1a0().createNode(p1, p2, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "getMainConceptBlock", true), "body", true));
         ListSequence.fromList(SNodeOperations.getDescendants(method, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", false, new String[]{})).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            SNodeOperations.replaceWithAnother(it, new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a1a0a0a0i0e0a0a0b0a().createNode(p1));
+            SNodeOperations.replaceWithAnother(it, new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0a0a0a8a4a0a0a1a0().createNode(p1));
           }
         });
         ListSequence.fromList(SNodeOperations.getDescendants(method, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", false, new String[]{})).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            SNodeOperations.replaceWithAnother(it, new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a1a0a0a0j0e0a0a0b0a().createNode(p2));
+            SNodeOperations.replaceWithAnother(it, new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0a0a0a9a4a0a0a1a0().createNode(p2));
           }
         });
         ListSequence.fromList(SLinkOperations.getTargets(helperClass, "staticMethod", true)).addElement(method);
@@ -77,7 +77,7 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
 
           // todo rewrite. this code is due to bad behavior of quotations in this case 
           SPropertyOperations.set(newTab, "commandOnCreate", "" + !(SPropertyOperations.getBoolean(tab, "outsideCommand")));
-          SLinkOperations.setTarget(newTab, "order", new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a2a4a81a4a0a0a1a0().createNode(order), true);
+          SLinkOperations.setTarget(newTab, "order", new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0e0s0e0a0a0b0a().createNode(order), true);
           ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(newTab, "baseNodeBlock", true), "body", true), "statement", true)).addElement(SNodeOperations.copyNode(callHelperStmt));
 
           if (SLinkOperations.getTarget(tab, "initBlock", true) != null) {
@@ -252,8 +252,8 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_w50lnh_a1a0a0a0i0e0a0a0b0a {
-    public QuotationClass_w50lnh_a1a0a0a0i0e0a0a0b0a() {
+  public static class QuotationClass_w50lnh_a0a0a0a0a8a4a0a0a1a0 {
+    public QuotationClass_w50lnh_a0a0a0a0a8a4a0a0a1a0() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -270,8 +270,8 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_w50lnh_a1a0a0a0j0e0a0a0b0a {
-    public QuotationClass_w50lnh_a1a0a0a0j0e0a0a0b0a() {
+  public static class QuotationClass_w50lnh_a0a0a0a0a9a4a0a0a1a0 {
+    public QuotationClass_w50lnh_a0a0a0a0a9a4a0a0a1a0() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -416,8 +416,8 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_w50lnh_a2a4a81a4a0a0a1a0 {
-    public QuotationClass_w50lnh_a2a4a81a4a0a0a1a0() {
+  public static class QuotationClass_w50lnh_a0a0e0s0e0a0a0b0a {
+    public QuotationClass_w50lnh_a0a0e0s0e0a0a0b0a() {
     }
 
     public SNode createNode(Object parameter_3) {
