@@ -73,7 +73,6 @@
             <compilerarg value="-Xlint:none"/>
             <src>
                 <path path="${base_dir}/core/baseLanguage/collections/runtime/source_gen"/>
-                <path path="${base_dir}/core/baseLanguage/closures/runtime/source"/>
                 <path path="${base_dir}/core/baseLanguage/closures/runtime/source_gen"/>
                 <path path="${base_dir}/core/baseLanguage/tuples/runtime/source_gen"/>
 
@@ -156,6 +155,10 @@
             <src>
                 <!-- idea-workbench -->
                 <path path="${base_dir}/workbench/mps-platform/source"/>
+                <path path="${base_dir}/workbench/mps-platform/source_gen"/>
+
+                <!-- temp: editor-api -->
+                <path path="${base_dir}/editor/editor-api/source"/>
             </src>
             <classpath>
                 <fileset dir="${artifacts}" includes="*.jar"/>
