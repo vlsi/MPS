@@ -13423,9 +13423,7 @@
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="3" />
     <scopeInfo nodeId="7889360268649440578" fileName="SetNodePackage_Action.java" startLine="44" startPosition="87" endLine="49" endPosition="7" />
     <scopeInfo nodeId="1680229125543348954" fileName="SetNodePackage_Action.java" startLine="105" startPosition="59" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="81" startPosition="26" endLine="87" endPosition="9">
-      <varInfo nodeId="7889360268649425705" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="81" startPosition="26" endLine="87" endPosition="9" />
     <scopeInfo nodeId="1680229125543349051" fileName="SetNodePackage_Action.java" startLine="119" startPosition="111" endLine="125" endPosition="13" />
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="43" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="7889360268649425705" varName="_params" />
