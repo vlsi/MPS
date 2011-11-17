@@ -10,6 +10,7 @@ import java.util.Set;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import com.intellij.openapi.project.Project;
 import javax.swing.tree.TreeSelectionModel;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -39,10 +40,16 @@ import jetbrains.mps.workbench.MPSDataKeys;
 
 public class DependencyPathTree extends MPSTree implements DataProvider {
   private List<Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>>>());
+  private Project myProject;
   private boolean myShowRuntime;
 
-  public DependencyPathTree() {
-    this.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+  public DependencyPathTree(Project project) {
+    myProject = project;
+    getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+  }
+
+  public Project getProject() {
+    return myProject;
   }
 
   public void setShowRuntime(boolean showRuntime) {
@@ -218,7 +225,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    DependencyTreeNode current = as_9bg0dz_a0a0a9(getCurrentNode(), DependencyTreeNode.class);
+    DependencyTreeNode current = as_9bg0dz_a0a0a01(getCurrentNode(), DependencyTreeNode.class);
     if (current == null) {
       return null;
     }
@@ -232,27 +239,27 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
       return null;
     }
     if (id.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
-      DependencyTreeNode node = as_9bg0dz_a0a0a5a9(current.getParent(), DependencyTreeNode.class);
-      return check_9bg0dz_a1a5a9(node);
+      DependencyTreeNode node = as_9bg0dz_a0a0a5a01(current.getParent(), DependencyTreeNode.class);
+      return check_9bg0dz_a1a5a01(node);
     }
     return null;
   }
 
-  private static IModule check_9bg0dz_a1a5a9(DependencyTreeNode checkedDotOperand) {
+  private static IModule check_9bg0dz_a1a5a01(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static <T> T as_9bg0dz_a0a0a9(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a01(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_9bg0dz_a0a0a5a9(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a5a01(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

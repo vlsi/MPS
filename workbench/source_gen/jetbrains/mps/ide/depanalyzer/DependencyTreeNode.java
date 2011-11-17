@@ -7,15 +7,9 @@ import jetbrains.mps.project.IModule;
 import java.awt.Color;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.project.Project;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Ilya.Lintsbakh
- * * Date: 10/19/11
- * * Time: 11:50 AM
- * * To change this template use File | Settings | File Templates.
- */
 public class DependencyTreeNode extends MPSTreeNode {
   private IModule myModule;
   private Color myColor;
@@ -39,6 +33,10 @@ public class DependencyTreeNode extends MPSTreeNode {
     return myModule;
   }
 
+  public void doubleClick() {
+    ProjectPane.getInstance(check_akkfj9_a0a0a1(((DependencyPathTree) getTree()), this)).selectModule(myModule, false);
+  }
+
   public void doUpdatePresentation() {
     super.doUpdatePresentation();
     if (myColor != null) {
@@ -48,5 +46,12 @@ public class DependencyTreeNode extends MPSTreeNode {
 
   public String getRole() {
     return myRole;
+  }
+
+  private static Project check_akkfj9_a0a0a1(DependencyPathTree checkedDotOperand, DependencyTreeNode checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getProject();
+    }
+    return null;
   }
 }

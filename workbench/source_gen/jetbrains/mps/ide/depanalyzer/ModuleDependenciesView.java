@@ -38,8 +38,8 @@ public class ModuleDependenciesView extends JPanel {
 
   public ModuleDependenciesView(BaseTool tool, Project project) {
     super(new BorderLayout());
-    myLeftTree = new DependencyTree(project, this);
-    myRightTree = new DependencyPathTree();
+    myLeftTree = new DependencyTree(project);
+    myRightTree = new DependencyPathTree(project);
 
 
     ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", Icons.DEPENDENCY_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
@@ -50,7 +50,7 @@ public class ModuleDependenciesView extends JPanel {
       public void invoke(Boolean b) {
         setShowUsedLanguages(b);
       }
-    }), new ModuleDependenciesView.MyToggleAction("Show cycles", Icons.CYCLE_ICON, true, new _FunctionTypes._void_P1_E0<Boolean>() {
+    }), new ModuleDependenciesView.MyToggleAction("Show cycles", Icons.CYCLE_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
         setShowCycles(b);
       }

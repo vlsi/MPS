@@ -6,14 +6,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Color;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Ilya.Lintsbakh
- * * Date: 10/19/11
- * * Time: 4:32 PM
- * * To change this template use File | Settings | File Templates.
- */
 public class DependencyTreeLeafNode extends DependencyTreeNode {
   public DependencyTreeLeafNode(IModule module, String role, IOperationContext operationContext) {
     super(module, role, operationContext);

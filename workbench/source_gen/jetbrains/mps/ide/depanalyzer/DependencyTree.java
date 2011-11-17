@@ -6,7 +6,6 @@ import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.project.Project;
 import java.util.List;
 import jetbrains.mps.project.IModule;
-import javax.swing.JComponent;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
@@ -23,7 +22,7 @@ public class DependencyTree extends MPSTree {
   private boolean myShowRuntime;
   private boolean myShowUsedLanguage = true;
 
-  public DependencyTree(Project project, JComponent viewer) {
+  public DependencyTree(Project project) {
     myProject = project;
   }
 
