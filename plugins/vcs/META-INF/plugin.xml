@@ -69,6 +69,10 @@
       <implementation-class>jetbrains.mps.vcs.changesmanager.editor.ChangesEditorHighlighterFactory</implementation-class>
       <skipForDefaultProject/>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMapping</implementation-class>
+      <skipForDefaultProject/>
+    </component>
     <!-- old changesmanager begin -->
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.OldChangesManager</implementation-class>
@@ -108,7 +112,7 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.OldChangesManagerFileStatusProvider"/>
+    <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusProvider"/>
     <checkoutListener implementation="jetbrains.mps.vcs.integration.ProjectCheckoutListener"/>
     <checkinHandlerFactory implementation="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory"/>
     <directoryIndexExcludePolicy implementation="jetbrains.mps.vcs.integration.GeneratedFilesExcludePolicy"/>
