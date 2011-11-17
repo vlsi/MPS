@@ -18,6 +18,7 @@ package jetbrains.mps.ide.actions;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.workbench.ActionPlace;
 
 import java.lang.annotation.ElementType;
@@ -38,6 +39,8 @@ public class MPSCommonDataKeys extends PlatformDataKeys {
 
   @Description(description = "active place")
   public static final DataKey<ActionPlace> PLACE = DataKey.create("MPS_Place");
+  @Description(description = "current editor")
+  public static final DataKey<Editor> MPS_EDITOR = DataKey.create("MPS_IEditor");
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(ElementType.FIELD)

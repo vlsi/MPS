@@ -15,15 +15,20 @@
  */
 package jetbrains.mps.ide.editor;
 
+import com.intellij.openapi.extensions.ExtensionPointName;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
-public interface MPSEditorOpenHandler {
-  //todo split into base node getter & TabbedEditorHandler
-  SNode getBaseNode(IOperationContext context, SNode node);
+public interface EditorOpenHandler {
+
+  public static final ExtensionPointName<EditorOpenHandler> EP_OPEN_HANDLERS =
+    ExtensionPointName.create("jetbrains.mps.editorOpenHandler");
 
   boolean canOpen(IOperationContext context, SNode node);
 
   Editor open(IOperationContext context, SNode node);
+
+  //todo split into base node getter & TabbedEditorHandler
+  SNode getBaseNode(IOperationContext context, SNode node);
 }

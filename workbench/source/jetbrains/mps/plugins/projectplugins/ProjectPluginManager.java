@@ -24,7 +24,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.ide.editor.MPSEditorOpenHandler;
+import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.NodeEditor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
@@ -63,7 +63,7 @@ import java.util.*;
 public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
   private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
 
-  private MPSEditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
+  private EditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
 
   private final Object myPluginsLock = new Object();
   private List<BaseProjectPlugin> mySortedPlugins = new ArrayList<BaseProjectPlugin>();
@@ -79,7 +79,6 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   public void projectOpened() {
-
   }
 
   public void projectClosed() {
@@ -186,7 +185,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     myLoaded = false;
   }
 
-  public MPSEditorOpenHandler getEditorOpenHandler() {
+  public EditorOpenHandler getEditorOpenHandler() {
     return myTabsHandler;
   }
 
@@ -274,7 +273,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     });
   }
 
-  private class TabsMPSEditorOpenHandler implements MPSEditorOpenHandler {
+  private class TabsMPSEditorOpenHandler implements EditorOpenHandler {
     public SNode getBaseNode(IOperationContext context, SNode node) {
       for (EditorTabDescriptor d : getTabDescriptors()) {
         SNode baseNode = d.getBaseNode(node);

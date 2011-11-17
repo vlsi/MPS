@@ -195,6 +195,9 @@
       <implementation-class>jetbrains.mps.workbench.make.GeneratedTextPreviewEditorProvider</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.plugins.projectplugins.EditorOpenHandlerImpl</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

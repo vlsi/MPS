@@ -17,7 +17,6 @@ package jetbrains.mps.ide.editor;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
@@ -28,12 +27,10 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
@@ -52,19 +49,14 @@ public class MPSEditorOpener {
   }
 
   public Editor createEditorFor(IOperationContext operationContext, SNode node) {
-    Editor nodeEditor = null;
-    MPSEditorOpenHandler handler = getOpenHandler(operationContext);
-    if (handler.canOpen(operationContext, node)) {
-      nodeEditor = handler.open(operationContext, node);
+    for (EditorOpenHandler handler : EditorOpenHandler.EP_OPEN_HANDLERS.getExtensions()) {
+      if (handler.canOpen(operationContext, node)) {
+        Editor nodeEditor = handler.open(operationContext, node);
+        if (nodeEditor != null) return nodeEditor;
+      }
     }
 
-    if (nodeEditor != null) return nodeEditor;
-
     return new NodeEditor(operationContext, node);
-  }
-
-  private MPSEditorOpenHandler getOpenHandler(IOperationContext operationContext) {
-    return operationContext.getProject().getComponent(ProjectPluginManager.class).getEditorOpenHandler();
   }
 
   @Deprecated
@@ -131,7 +123,7 @@ public class MPSEditorOpener {
         (node.getModel() != null ? ", modelDisposed: " + node.getModel().isDisposed() : "");
     }
     // [--] for http://youtrack.jetbrains.net/issue/MPS-7663
-    final Editor nodeEditor = openEditor(containingRoot, context, true, false);
+    final Editor nodeEditor = openEditor(containingRoot, context, false);
 
     //restore inspector state for opened editor (if exists)
     if (!restorePrevSelectionInInspector(nodeEditor, nodeEditor.getOperationContext(), getInspector())) {
@@ -155,11 +147,12 @@ public class MPSEditorOpener {
     return nodeEditor;
   }
 
-  private Editor openEditor(final SNode root, IOperationContext context, boolean openBaseNode, boolean focus) {
+  private Editor openEditor(final SNode root, IOperationContext context, boolean focus) {
     SNode baseNode = null;
 
-    if (openBaseNode && isUseTabs()) {
-      baseNode = getOpenHandler(context).getBaseNode(context, root);
+    for (EditorOpenHandler handler : EditorOpenHandler.EP_OPEN_HANDLERS.getExtensions()) {
+      baseNode = handler.getBaseNode(context, root);
+      if (baseNode != null) break;
     }
 
     if (baseNode == null) {
@@ -189,10 +182,6 @@ public class MPSEditorOpener {
     }
 
     return nodeEditor;
-  }
-
-  private boolean isUseTabs() {
-    return ApplicationManager.getApplication().getComponent(EditorSettings.class).getState().isShow();
   }
 
   //----------util

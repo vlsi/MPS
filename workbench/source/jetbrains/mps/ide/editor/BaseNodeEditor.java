@@ -17,12 +17,15 @@ package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.editor.Document;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.MementoPersistence;
+import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -94,7 +97,7 @@ public abstract class BaseNodeEditor implements Editor {
 
     @Nullable
     public Object getData(@NonNls String dataId) {
-      if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) return BaseNodeEditor.this;
+      if (dataId.equals(MPSCommonDataKeys.MPS_EDITOR.getName())) return BaseNodeEditor.this;
       if (BaseNodeEditor.this instanceof DataProvider) {
         Object data = ((DataProvider) BaseNodeEditor.this).getData(dataId);
         if (data != null) return data;
