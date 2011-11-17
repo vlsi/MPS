@@ -6,11 +6,14 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class PressingBackspaseInFirstPosition_Test extends BaseTransformationTest {
+  public PressingBackspaseInFirstPosition_Test() {
+  }
+
   @Test
   public void test_PressingBackspaseInFirstPosition() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
@@ -19,6 +22,9 @@ public class PressingBackspaseInFirstPosition_Test extends BaseTransformationTes
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
+    public TestBody() {
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1195975797953576231", "1195975797953580249");

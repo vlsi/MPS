@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.editors;
 
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 

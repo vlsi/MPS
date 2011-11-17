@@ -24,7 +24,7 @@ import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;

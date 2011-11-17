@@ -19,7 +19,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.compiler.IClassesData" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
     <classNode dependClassName="jetbrains.mps.ide.NodeEditor" />
     <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditorPanel" />
     <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.GenerationResult" />
@@ -41,6 +40,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
     <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.IEditor" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.reloading.CompositeClassPathItem" />
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />

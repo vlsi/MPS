@@ -215,7 +215,7 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointListener" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.LeftMarginMouseListener" />
-    <classNode extendsClassName="jetbrains.mps.workbench.highlighter.EditorComponentCreateListener" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsView" file="BreakpointsView.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataKey" />
@@ -278,7 +278,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.debug.api.DebugSessionListener" />
     <classNode extendsClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
-    <classNode extendsClassName="jetbrains.mps.workbench.highlighter.EditorComponentCreateListener" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.EditorCellPainter" file="EditorCellPainter.java">
     <classNode dependClassName="java.awt.Color" />

@@ -6,11 +6,14 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class BracesTest_Test extends BaseTransformationTest {
+  public BracesTest_Test() {
+  }
+
   @Test
   public void test_BracesTest() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
@@ -19,6 +22,9 @@ public class BracesTest_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
+    public TestBody() {
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("8497577741385040369", "3167392541572926816");

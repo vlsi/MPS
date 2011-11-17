@@ -6,11 +6,14 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class HomeWithLineSelection_fromFirstCell_Test extends BaseTransformationTest {
+  public HomeWithLineSelection_fromFirstCell_Test() {
+  }
+
   @Test
   public void test_HomeWithLineSelection_fromFirstCell() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
@@ -19,6 +22,9 @@ public class HomeWithLineSelection_fromFirstCell_Test extends BaseTransformation
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
+    public TestBody() {
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("9080919888312354540", "9080919888312354548");

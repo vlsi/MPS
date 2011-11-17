@@ -6,11 +6,14 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class SelectDownWithNodeRangeSelection_Test extends BaseTransformationTest {
+  public SelectDownWithNodeRangeSelection_Test() {
+  }
+
   @Test
   public void test_SelectDownWithNodeRangeSelection() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
@@ -19,6 +22,9 @@ public class SelectDownWithNodeRangeSelection_Test extends BaseTransformationTes
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
+    public TestBody() {
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("5476958923832863139", "5476958923832863153");

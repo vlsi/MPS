@@ -157,7 +157,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorSettingsListener" />
-    <classNode extendsClassName="jetbrains.mps.workbench.highlighter.EditorComponentCreateListener" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher" file="EditorComponentChangesHighligher.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

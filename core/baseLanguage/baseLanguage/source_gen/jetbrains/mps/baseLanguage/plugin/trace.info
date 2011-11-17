@@ -375,9 +375,7 @@
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="55" startPosition="57" endLine="59" endPosition="11" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="24" startPosition="0" endLine="29" endPosition="3" />
-    <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="54" startPosition="26" endLine="60" endPosition="9">
-      <varInfo nodeId="1205248417575" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="54" startPosition="26" endLine="60" endPosition="9" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="78" startPosition="96" endLine="84" endPosition="5" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="35" startPosition="89" endLine="44" endPosition="5" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="77" startPosition="0" endLine="86" endPosition="0">
@@ -2008,26 +2006,24 @@
   <root nodeId="3464091216493353562">
     <nodeInfo nodeId="3464091216493353564" fileName="NodeNavigationItem.java" startLine="10" startPosition="33" endLine="11" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="3464091216493353567" fileName="NodeNavigationItem.java" startLine="11" startPosition="23" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
-    <nodeInfo nodeId="3464091216493353570" fileName="NodeNavigationItem.java" startLine="12" startPosition="38" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="3464091216493353583" fileName="NodeNavigationItem.java" startLine="15" startPosition="85" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3464091216493353587" fileName="NodeNavigationItem.java" startLine="16" startPosition="18" endLine="17" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3464091216493353591" fileName="NodeNavigationItem.java" startLine="17" startPosition="24" endLine="18" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3464091216493353599" fileName="NodeNavigationItem.java" startLine="21" startPosition="26" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3464091216493353605" fileName="NodeNavigationItem.java" startLine="25" startPosition="26" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3464091216493353595" fileName="NodeNavigationItem.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3464091216493353601" fileName="NodeNavigationItem.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#()V" />
-    <nodeInfo nodeId="3464091216493353573" fileName="NodeNavigationItem.java" startLine="14" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeNavigationItem#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Lcom/intellij/openapi/project/Project;)V" />
-    <scopeInfo nodeId="3464091216493353598" fileName="NodeNavigationItem.java" startLine="21" startPosition="26" endLine="22" endPosition="18" />
-    <scopeInfo nodeId="3464091216493353604" fileName="NodeNavigationItem.java" startLine="25" startPosition="26" endLine="26" endPosition="75" />
-    <scopeInfo nodeId="3464091216493353582" fileName="NodeNavigationItem.java" startLine="15" startPosition="85" endLine="18" endPosition="24" />
-    <scopeInfo nodeId="3464091216493353595" fileName="NodeNavigationItem.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="3464091216493353601" fileName="NodeNavigationItem.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="3464091216493353573" fileName="NodeNavigationItem.java" startLine="14" startPosition="0" endLine="19" endPosition="3">
+    <nodeInfo nodeId="3464091216493353583" fileName="NodeNavigationItem.java" startLine="14" startPosition="85" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3464091216493353587" fileName="NodeNavigationItem.java" startLine="15" startPosition="18" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3464091216493353599" fileName="NodeNavigationItem.java" startLine="19" startPosition="26" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5660856942024692869" fileName="NodeNavigationItem.java" startLine="23" startPosition="26" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3464091216493353573" fileName="NodeNavigationItem.java" startLine="13" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeNavigationItem#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="3464091216493353595" fileName="NodeNavigationItem.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3464091216493353601" fileName="NodeNavigationItem.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#()V" />
+    <scopeInfo nodeId="3464091216493353598" fileName="NodeNavigationItem.java" startLine="19" startPosition="26" endLine="20" endPosition="18" />
+    <scopeInfo nodeId="3464091216493353604" fileName="NodeNavigationItem.java" startLine="23" startPosition="26" endLine="24" endPosition="76" />
+    <scopeInfo nodeId="3464091216493353582" fileName="NodeNavigationItem.java" startLine="14" startPosition="85" endLine="16" endPosition="24" />
+    <scopeInfo nodeId="3464091216493353573" fileName="NodeNavigationItem.java" startLine="13" startPosition="0" endLine="17" endPosition="3">
       <varInfo nodeId="3464091216493353578" varName="context" />
       <varInfo nodeId="3464091216493353576" varName="node" />
       <varInfo nodeId="3464091216493353580" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="3464091216493353562" fileName="NodeNavigationItem.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.NodeNavigationItem" />
+    <scopeInfo nodeId="3464091216493353595" fileName="NodeNavigationItem.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="3464091216493353601" fileName="NodeNavigationItem.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <unitInfo nodeId="3464091216493353562" fileName="NodeNavigationItem.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.NodeNavigationItem" />
   </root>
   <root nodeId="3836499504550259659">
     <nodeInfo nodeId="3836499504550260297" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="15" startPosition="126" endLine="16" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTooltip" />

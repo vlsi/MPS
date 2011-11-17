@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.runtime;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.impl.DataManagerImpl;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;

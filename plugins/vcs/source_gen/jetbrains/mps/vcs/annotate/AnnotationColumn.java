@@ -44,7 +44,7 @@ import com.intellij.openapi.vcs.actions.AnnotationColors;
 import jetbrains.mps.vcs.changesmanager.ChangesManager;
 import jetbrains.mps.vcs.changesmanager.ModelChangesManager;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
 import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
 import jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange;

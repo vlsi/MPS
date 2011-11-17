@@ -11,7 +11,7 @@ import java.util.HashMap;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.SessionChangeListener;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
-import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import com.intellij.util.messages.MessageBusConnection;
 import java.util.List;
 import java.util.ArrayList;

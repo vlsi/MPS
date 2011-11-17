@@ -6,7 +6,7 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.InspectorTool;
@@ -16,6 +16,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 @MPSLaunch
 public class DefaultCellInfoTest_Test extends BaseTransformationTest {
+  public DefaultCellInfoTest_Test() {
+  }
+
   @Test
   public void test_DefaultCellInfoTest() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
@@ -24,6 +27,9 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
+    public TestBody() {
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("5560058483159205760", "5560058483159208304");

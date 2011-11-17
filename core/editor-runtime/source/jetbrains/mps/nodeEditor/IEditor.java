@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide;
+package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
