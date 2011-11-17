@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.editors;
 
 import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import jetbrains.mps.ide.MPSEditorState;
+import jetbrains.mps.nodeEditor.MPSEditorState;
 import org.apache.commons.lang.ObjectUtils;
 
 class MPSEditorStateWrapper implements FileEditorState {

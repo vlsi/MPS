@@ -17,6 +17,7 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.MPSCore;
 
+// TODO get rid of
 public class IdeMain {
   private static TestMode ourTestMode = TestMode.NO_TEST;
 

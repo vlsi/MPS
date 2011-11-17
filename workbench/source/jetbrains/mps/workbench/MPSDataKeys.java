@@ -95,6 +95,4 @@ public class MPSDataKeys extends MPSCommonDataKeys {
   public static final DataKey<IScope> SCOPE = DataKey.create("MPS_IScope");
   @Description(description = "current editor component")
   public static final DataKey<EditorComponent> EDITOR_COMPONENT = DataKey.create("MPS_EditorComponent");
-  @Description(description = "active place")
-  public static final DataKey<ActionPlace> PLACE = DataKey.create("MPS_Place");
 }

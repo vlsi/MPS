@@ -15,12 +15,15 @@
  */
 package jetbrains.mps.workbench.action;
 
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.project.DumbAware;
 import gnu.trove.THashMap;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.ActionPlace;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
@@ -72,7 +75,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
   public final void update(final AnActionEvent e) {
     super.update(e);
 
-    ActionPlace place = e.getData(MPSDataKeys.PLACE);
+    ActionPlace place = e.getData(MPSCommonDataKeys.PLACE);
 
     if (e.getInputEvent() instanceof KeyEvent) {
       if (!getPlaces().contains(null)) {
@@ -161,5 +164,5 @@ public abstract class BaseAction extends AnAction implements DumbAware {
     return getClass().getName();
   }
 
-  protected abstract void doExecute(AnActionEvent e, Map<String, Object> params) ;
+  protected abstract void doExecute(AnActionEvent e, Map<String, Object> params);
 }

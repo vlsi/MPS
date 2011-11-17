@@ -18,6 +18,7 @@ package jetbrains.mps.ide.actions;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.workbench.ActionPlace;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -34,6 +35,9 @@ public class MPSCommonDataKeys extends PlatformDataKeys {
   public static final DataKey<Throwable> EXCEPTION = DataKey.create("MPS_Exception");
   @Description(description = "selected messages")
   public static final DataKey<List<IMessage>> MESSAGES = DataKey.create("MPS_IMessage_List");
+
+  @Description(description = "active place")
+  public static final DataKey<ActionPlace> PLACE = DataKey.create("MPS_Place");
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(ElementType.FIELD)

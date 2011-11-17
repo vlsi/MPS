@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;

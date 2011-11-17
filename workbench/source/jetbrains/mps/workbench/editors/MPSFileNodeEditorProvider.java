@@ -23,7 +23,7 @@ import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.MPSEditorState;
+import jetbrains.mps.nodeEditor.MPSEditorState;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jdom.Element;

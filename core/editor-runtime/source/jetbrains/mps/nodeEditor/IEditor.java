@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
