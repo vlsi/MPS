@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import java.util.Collections;
-import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.nodeEditor.InspectorTool;
 

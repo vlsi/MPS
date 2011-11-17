@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.editors;
+package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -43,8 +43,7 @@ public class MPSEditorUtil {
     IEditor nodeEditor = ((MPSFileNodeEditor) editor).getNodeEditor();
     if (!(nodeEditor instanceof TabbedEditor)) return null;
 
-    TabbedEditor tabbedEditor = (TabbedEditor) nodeEditor;
-    EditorComponent tabEditor = tabbedEditor.getCurrentEditorComponent();
+    EditorComponent tabEditor = nodeEditor.getCurrentEditorComponent();
     if (!(tabEditor instanceof NodeEditorComponent)) return null;
 
     return tabEditor.getEditedNode();

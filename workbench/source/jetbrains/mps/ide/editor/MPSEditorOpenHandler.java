@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.editors;
+package jetbrains.mps.ide.editor;
 
 import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.smodel.IOperationContext;

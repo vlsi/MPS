@@ -25,7 +25,7 @@ import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.NullLocation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.debug.api.SessionChangeAdapter;

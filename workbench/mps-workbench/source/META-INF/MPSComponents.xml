@@ -139,7 +139,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.editors.MPSFileNodeEditorProvider</implementation-class>
+      <implementation-class>jetbrains.mps.ide.editor.MPSFileNodeEditorProvider</implementation-class>
     </component>
 
     <component>
@@ -300,7 +300,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.editors.MPSEditorOpener</implementation-class>
+      <implementation-class>jetbrains.mps.ide.editor.MPSEditorOpener</implementation-class>
     </component>
 
     <component>
@@ -347,7 +347,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.editors.MPSEditorWarningsManager</implementation-class>
+      <implementation-class>jetbrains.mps.ide.editor.warningPanel.MPSEditorWarningsManager</implementation-class>
     </component>
 
     <component>

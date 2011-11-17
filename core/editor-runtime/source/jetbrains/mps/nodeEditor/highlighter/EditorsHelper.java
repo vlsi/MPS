@@ -17,9 +17,9 @@ package jetbrains.mps.nodeEditor.highlighter;
 
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
+import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 
 import java.util.ArrayList;
 import java.util.List;
