@@ -70,6 +70,7 @@ public class EditorOpenHandlerImpl implements EditorOpenHandler, ApplicationComp
 
   @Override
   public void initComponent() {
+    // TODO move to plugin.xml
     Extensions.getArea(null).getExtensionPoint(EditorOpenHandler.EP_OPEN_HANDLERS).registerExtension(this);
   }
 

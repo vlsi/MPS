@@ -35,7 +35,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.structureview.StructureViewBuilderFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -172,7 +171,16 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Nullable
   public StructureViewBuilder getStructureViewBuilder() {
-    return myProject.getComponent(StructureViewBuilderFactory.class).create(myFile.getSNodePointer());
+    return ModelAccess.instance().runReadAction(new Computable<StructureViewBuilder>() {
+      @Override
+      public StructureViewBuilder compute() {
+        for (NodeStructureViewProvider provider : NodeStructureViewProvider.EP_NODE_STRUCTURE_VIEW_PROVIDER.getExtensions()) {
+          StructureViewBuilder builder = provider.getStructureViewBuilder(myFile, myProject);
+          if (builder != null) return builder;
+        }
+        return null;
+      }
+    });
   }
 
   public void dispose() {

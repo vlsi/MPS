@@ -17,6 +17,7 @@ package jetbrains.mps.openapi.editor;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -25,6 +26,8 @@ import org.jetbrains.annotations.NotNull;
 public interface EditorComponent {
 
   SNode getEditedNode();
+
+  SNodePointer getEditedNodePointer();
 
   SNode getSelectedNode();
 
@@ -41,4 +44,8 @@ public interface EditorComponent {
   void changeSelection(EditorCell newSelectedCell);
 
   boolean isDisposed();
+
+  EditorContext getEditorContext();
+
+  void dispose();
 }

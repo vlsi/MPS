@@ -23,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
-public class MPSFileType implements FileType, FileTypeIdentifiableByVirtualFile {
+public class MPSNodeFileType implements FileType, FileTypeIdentifiableByVirtualFile {
   @NotNull
   public String getName() {
     return "MPS Node File Type";
