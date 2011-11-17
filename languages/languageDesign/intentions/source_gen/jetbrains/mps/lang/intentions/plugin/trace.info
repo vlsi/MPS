@@ -55,32 +55,54 @@
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="44" startPosition="53" endLine="45" endPosition="19" />
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="48" startPosition="62" endLine="49" endPosition="19" />
     <scopeInfo nodeId="3464435412756546050" fileName="GenerateIntentionAction_Action.java" startLine="59" startPosition="29" endLine="60" endPosition="189" />
-    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="64" startPosition="0" endLine="65" endPosition="95" />
+    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="64" startPosition="0" endLine="65" endPosition="95">
+      <varInfo nodeId="3464435412756546019" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="64" startPosition="27" endLine="65" endPosition="95" />
     <scopeInfo nodeId="3464435412756546080" fileName="GenerateIntentionAction_Action.java" startLine="81" startPosition="66" endLine="82" endPosition="14" />
     <scopeInfo nodeId="3464435412756546087" fileName="GenerateIntentionAction_Action.java" startLine="85" startPosition="49" endLine="86" endPosition="14" />
-    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="37" startPosition="0" endLine="39" endPosition="44" />
+    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="37" startPosition="0" endLine="39" endPosition="44">
+      <varInfo nodeId="3464435412756546019" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="37" startPosition="27" endLine="39" endPosition="44" />
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="73" startPosition="20" endLine="75" endPosition="20" />
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="75" startPosition="20" endLine="77" endPosition="20" />
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="46" startPosition="5" endLine="50" endPosition="5" />
     <scopeInfo nodeId="3464435412756546049" fileName="GenerateIntentionAction_Action.java" startLine="58" startPosition="71" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="3464435412756546019" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="3464435412756546019" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="26" startPosition="90" endLine="31" endPosition="40" />
     <scopeInfo nodeId="3464435412756546047" fileName="GenerateIntentionAction_Action.java" startLine="57" startPosition="191" endLine="62" endPosition="11" />
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="34" startPosition="89" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="25" startPosition="0" endLine="32" endPosition="3" />
+    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="25" startPosition="0" endLine="32" endPosition="3">
+      <varInfo nodeId="3464435412756546019" varName="intention_par" />
+      <varInfo nodeId="3464435412756546019" varName="node_par" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="43" startPosition="95" endLine="51" endPosition="16" />
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="55" startPosition="9" endLine="63" endPosition="7">
       <varInfo nodeId="3464435412756546042" varName="intentionContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="70" startPosition="31" endLine="78" endPosition="26" />
-    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="33" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="42" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="70" startPosition="31" endLine="78" endPosition="26">
+      <varInfo nodeId="3464435412756546019" varName="res" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="33" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="3464435412756546019" varName="_params" />
+      <varInfo nodeId="3464435412756546019" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="42" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="3464435412756546019" varName="_params" />
+      <varInfo nodeId="3464435412756546019" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="54" startPosition="96" endLine="66" endPosition="5" />
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="68" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="53" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="53" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="3464435412756546019" varName="_params" />
+      <varInfo nodeId="3464435412756546019" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="19" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.GenerateIntentionAction_Action" />
     <unitInfo nodeId="3464435412756546049" fileName="GenerateIntentionAction_Action.java" startLine="58" startPosition="59" endLine="62" endPosition="9" unitName="jetbrains.mps.lang.intentions.plugin.GenerateIntentionAction_Action$1" />
   </root>
@@ -125,22 +147,38 @@
     <nodeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="49" startPosition="45" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="48" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="43" startPosition="9" endLine="43" endPosition="9" />
-    <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="44" startPosition="0" endLine="45" endPosition="39" />
+    <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="44" startPosition="0" endLine="45" endPosition="39">
+      <varInfo nodeId="3464435412756546091" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="44" startPosition="27" endLine="45" endPosition="39" />
     <scopeInfo nodeId="3464435412756546157" fileName="GenerationIntentions_ActionGroup.java" startLine="62" startPosition="77" endLine="63" endPosition="122" />
     <scopeInfo nodeId="3464435412756546170" fileName="GenerationIntentions_ActionGroup.java" startLine="65" startPosition="56" endLine="66" endPosition="15" />
     <scopeInfo nodeId="3464435412756546182" fileName="GenerationIntentions_ActionGroup.java" startLine="70" startPosition="90" endLine="71" endPosition="106" />
     <scopeInfo nodeId="3464435412756546211" fileName="GenerationIntentions_ActionGroup.java" startLine="74" startPosition="59" endLine="75" endPosition="232" />
-    <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="78" startPosition="0" endLine="79" endPosition="39" />
+    <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="78" startPosition="0" endLine="79" endPosition="39">
+      <varInfo nodeId="3464435412756546091" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="78" startPosition="27" endLine="79" endPosition="39" />
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="81" startPosition="70" endLine="82" endPosition="39" />
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="86" startPosition="81" endLine="87" endPosition="109" />
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="90" startPosition="29" endLine="91" endPosition="17" />
-    <scopeInfo nodeId="3464435412756546154" fileName="GenerationIntentions_ActionGroup.java" startLine="61" startPosition="131" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="80" startPosition="5" endLine="83" endPosition="5" />
-    <scopeInfo nodeId="3464435412756546181" fileName="GenerationIntentions_ActionGroup.java" startLine="69" startPosition="92" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546210" fileName="GenerationIntentions_ActionGroup.java" startLine="73" startPosition="69" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546154" fileName="GenerationIntentions_ActionGroup.java" startLine="61" startPosition="131" endLine="64" endPosition="7">
+      <varInfo nodeId="3464435412756546154" varName="pair" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="80" startPosition="5" endLine="83" endPosition="5">
+      <varInfo nodeId="3464435412756546091" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546181" fileName="GenerationIntentions_ActionGroup.java" startLine="69" startPosition="92" endLine="73" endPosition="0">
+      <varInfo nodeId="3464435412756546181" varName="a" />
+      <varInfo nodeId="3464435412756546181" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546210" fileName="GenerationIntentions_ActionGroup.java" startLine="73" startPosition="69" endLine="77" endPosition="0">
+      <varInfo nodeId="3464435412756546210" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="3464435412756546091" varName="cond" />
+      <varInfo nodeId="3464435412756546091" varName="place" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="39" startPosition="45" endLine="46" endPosition="5" />
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="38" startPosition="0" endLine="47" endPosition="3" />
@@ -152,7 +190,9 @@
       <varInfo nodeId="3464435412756546101" varName="query" />
     </scopeInfo>
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="49" startPosition="45" endLine="83" endPosition="5" />
-    <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="48" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="48" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="3464435412756546091" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="33" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup" />
     <unitInfo nodeId="3464435412756546181" fileName="GenerationIntentions_ActionGroup.java" startLine="69" startPosition="49" endLine="73" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup$1" />
     <unitInfo nodeId="3464435412756546210" fileName="GenerationIntentions_ActionGroup.java" startLine="73" startPosition="28" endLine="77" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup$2" />
@@ -209,10 +249,16 @@
     <scopeInfo nodeId="3464435412756546248" fileName="ShowGenerationIntentions_Action.java" startLine="70" startPosition="53" endLine="71" endPosition="59" />
     <scopeInfo nodeId="3464435412756546291" fileName="ShowGenerationIntentions_Action.java" startLine="78" startPosition="53" endLine="79" endPosition="19" />
     <scopeInfo nodeId="3464435412756546313" fileName="ShowGenerationIntentions_Action.java" startLine="84" startPosition="32" endLine="85" endPosition="15" />
-    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="90" startPosition="0" endLine="91" endPosition="96" />
+    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="90" startPosition="0" endLine="91" endPosition="96">
+      <varInfo nodeId="3464435412756546224" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="90" startPosition="27" endLine="91" endPosition="96" />
-    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="44" startPosition="7" endLine="46" endPosition="63" />
-    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="48" startPosition="0" endLine="50" endPosition="44" />
+    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="44" startPosition="7" endLine="46" endPosition="63">
+      <varInfo nodeId="3464435412756546224" varName="enabled" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="48" startPosition="0" endLine="50" endPosition="44">
+      <varInfo nodeId="3464435412756546224" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="48" startPosition="27" endLine="50" endPosition="44" />
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="30" startPosition="44" endLine="33" endPosition="40" />
     <scopeInfo nodeId="6046064611587358937" fileName="ShowGenerationIntentions_Action.java" startLine="36" startPosition="87" endLine="39" endPosition="48">
@@ -221,15 +267,24 @@
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="7" />
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="57" startPosition="5" endLine="61" endPosition="5" />
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="3" />
-    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="35" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="3464435412756546224" varName="_params" />
+      <varInfo nodeId="3464435412756546224" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546280" fileName="ShowGenerationIntentions_Action.java" startLine="75" startPosition="27" endLine="81" endPosition="171">
       <varInfo nodeId="3464435412756546282" varName="group" />
     </scopeInfo>
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="54" startPosition="95" endLine="62" endPosition="16" />
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="42" startPosition="89" endLine="51" endPosition="5" />
     <scopeInfo nodeId="3464435412756546279" fileName="ShowGenerationIntentions_Action.java" startLine="74" startPosition="59" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="53" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="41" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="53" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="3464435412756546224" varName="_params" />
+      <varInfo nodeId="3464435412756546224" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="41" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="3464435412756546224" varName="_params" />
+      <varInfo nodeId="3464435412756546224" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="66" startPosition="9" endLine="89" endPosition="38">
       <varInfo nodeId="3464435412756546275" varName="popup" />
       <varInfo nodeId="3464435412756546320" varName="relativePoint" />
@@ -238,7 +293,10 @@
       <varInfo nodeId="3464435412756546242" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="65" startPosition="96" endLine="92" endPosition="5" />
-    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="64" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="64" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="3464435412756546224" varName="_params" />
+      <varInfo nodeId="3464435412756546224" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="26" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.ShowGenerationIntentions_Action" />
     <unitInfo nodeId="3464435412756546279" fileName="ShowGenerationIntentions_Action.java" startLine="74" startPosition="47" endLine="83" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.ShowGenerationIntentions_Action$1" />
   </root>
@@ -284,22 +342,38 @@
     <nodeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="49" startPosition="45" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="48" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="43" startPosition="9" endLine="43" endPosition="9" />
-    <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="44" startPosition="0" endLine="45" endPosition="39" />
+    <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="44" startPosition="0" endLine="45" endPosition="39">
+      <varInfo nodeId="3464435412756546339" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="44" startPosition="27" endLine="45" endPosition="39" />
     <scopeInfo nodeId="3464435412756546410" fileName="SurroundWithIntentions_ActionGroup.java" startLine="63" startPosition="77" endLine="64" endPosition="122" />
     <scopeInfo nodeId="3464435412756546423" fileName="SurroundWithIntentions_ActionGroup.java" startLine="66" startPosition="56" endLine="67" endPosition="15" />
     <scopeInfo nodeId="3464435412756546435" fileName="SurroundWithIntentions_ActionGroup.java" startLine="71" startPosition="90" endLine="72" endPosition="106" />
     <scopeInfo nodeId="3464435412756546464" fileName="SurroundWithIntentions_ActionGroup.java" startLine="75" startPosition="59" endLine="76" endPosition="242" />
-    <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="79" startPosition="0" endLine="80" endPosition="39" />
+    <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="79" startPosition="0" endLine="80" endPosition="39">
+      <varInfo nodeId="3464435412756546339" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="79" startPosition="27" endLine="80" endPosition="39" />
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="82" startPosition="70" endLine="83" endPosition="39" />
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="87" startPosition="81" endLine="88" endPosition="109" />
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="91" startPosition="29" endLine="92" endPosition="17" />
-    <scopeInfo nodeId="3464435412756546407" fileName="SurroundWithIntentions_ActionGroup.java" startLine="62" startPosition="131" endLine="65" endPosition="7" />
-    <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="81" startPosition="5" endLine="84" endPosition="5" />
-    <scopeInfo nodeId="3464435412756546434" fileName="SurroundWithIntentions_ActionGroup.java" startLine="70" startPosition="92" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546463" fileName="SurroundWithIntentions_ActionGroup.java" startLine="74" startPosition="69" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546407" fileName="SurroundWithIntentions_ActionGroup.java" startLine="62" startPosition="131" endLine="65" endPosition="7">
+      <varInfo nodeId="3464435412756546407" varName="pair" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="81" startPosition="5" endLine="84" endPosition="5">
+      <varInfo nodeId="3464435412756546339" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546434" fileName="SurroundWithIntentions_ActionGroup.java" startLine="70" startPosition="92" endLine="74" endPosition="0">
+      <varInfo nodeId="3464435412756546434" varName="a" />
+      <varInfo nodeId="3464435412756546434" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546463" fileName="SurroundWithIntentions_ActionGroup.java" startLine="74" startPosition="69" endLine="78" endPosition="0">
+      <varInfo nodeId="3464435412756546463" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="3464435412756546339" varName="cond" />
+      <varInfo nodeId="3464435412756546339" varName="place" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="39" startPosition="47" endLine="46" endPosition="5" />
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="38" startPosition="0" endLine="47" endPosition="3" />
@@ -311,7 +385,9 @@
       <varInfo nodeId="3464435412756546349" varName="query" />
     </scopeInfo>
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="49" startPosition="45" endLine="84" endPosition="5" />
-    <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="48" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="48" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="3464435412756546339" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="33" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.SurroundWithIntentions_ActionGroup" />
     <unitInfo nodeId="3464435412756546434" fileName="SurroundWithIntentions_ActionGroup.java" startLine="70" startPosition="49" endLine="74" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.SurroundWithIntentions_ActionGroup$1" />
     <unitInfo nodeId="3464435412756546463" fileName="SurroundWithIntentions_ActionGroup.java" startLine="74" startPosition="28" endLine="78" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.SurroundWithIntentions_ActionGroup$2" />
@@ -348,9 +424,9 @@
     <nodeInfo nodeId="3464435412756546602" fileName="ShowSurroundWithIntentions_Action.java" startLine="90" startPosition="0" endLine="91" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3464435412756546616" fileName="ShowSurroundWithIntentions_Action.java" startLine="91" startPosition="165" endLine="92" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="93" startPosition="27" endLine="94" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3464435412756546481" fileName="ShowSurroundWithIntentions_Action.java" startLine="98" startPosition="75" endLine="99" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3464435412756546481" fileName="ShowSurroundWithIntentions_Action.java" startLine="98" startPosition="106" endLine="99" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3464435412756546495" fileName="ShowSurroundWithIntentions_Action.java" startLine="100" startPosition="28" endLine="101" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3464435412756546500" fileName="ShowSurroundWithIntentions_Action.java" startLine="102" startPosition="5" endLine="103" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3464435412756546500" fileName="ShowSurroundWithIntentions_Action.java" startLine="102" startPosition="5" endLine="103" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3464435412756546509" fileName="ShowSurroundWithIntentions_Action.java" startLine="104" startPosition="60" endLine="105" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3464435412756546516" fileName="ShowSurroundWithIntentions_Action.java" startLine="106" startPosition="5" endLine="107" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6046064611587377827" fileName="ShowSurroundWithIntentions_Action.java" startLine="38" startPosition="87" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -359,7 +435,7 @@
     <nodeInfo nodeId="3464435412756546573" fileName="ShowSurroundWithIntentions_Action.java" startLine="80" startPosition="30" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3464435412756546595" fileName="ShowSurroundWithIntentions_Action.java" startLine="86" startPosition="9" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3464435412756546493" fileName="ShowSurroundWithIntentions_Action.java" startLine="99" startPosition="156" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3464435412756546507" fileName="ShowSurroundWithIntentions_Action.java" startLine="103" startPosition="66" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3464435412756546507" fileName="ShowSurroundWithIntentions_Action.java" startLine="103" startPosition="97" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="48" startPosition="9" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="31" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowSurroundWithIntentions_Action#()V" />
@@ -377,12 +453,18 @@
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="64" startPosition="68" endLine="65" endPosition="19" />
     <scopeInfo nodeId="3464435412756546574" fileName="ShowSurroundWithIntentions_Action.java" startLine="81" startPosition="53" endLine="82" endPosition="19" />
     <scopeInfo nodeId="3464435412756546596" fileName="ShowSurroundWithIntentions_Action.java" startLine="87" startPosition="32" endLine="88" endPosition="15" />
-    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="93" startPosition="0" endLine="94" endPosition="98" />
+    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="93" startPosition="0" endLine="94" endPosition="98">
+      <varInfo nodeId="3464435412756546477" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="93" startPosition="27" endLine="94" endPosition="98" />
     <scopeInfo nodeId="3464435412756546494" fileName="ShowSurroundWithIntentions_Action.java" startLine="100" startPosition="28" endLine="101" endPosition="18" />
     <scopeInfo nodeId="3464435412756546508" fileName="ShowSurroundWithIntentions_Action.java" startLine="104" startPosition="60" endLine="105" endPosition="58" />
-    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="49" startPosition="7" endLine="51" endPosition="63" />
-    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="53" startPosition="0" endLine="55" endPosition="44" />
+    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="49" startPosition="7" endLine="51" endPosition="63">
+      <varInfo nodeId="3464435412756546477" varName="enabled" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="53" startPosition="0" endLine="55" endPosition="44">
+      <varInfo nodeId="3464435412756546477" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="53" startPosition="27" endLine="55" endPosition="44" />
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="32" startPosition="46" endLine="35" endPosition="40" />
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="48" startPosition="9" endLine="52" endPosition="7" />
@@ -395,16 +477,27 @@
       <varInfo nodeId="3464435412756546565" varName="group" />
     </scopeInfo>
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="59" startPosition="95" endLine="67" endPosition="16" />
-    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="37" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="37" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="3464435412756546477" varName="_params" />
+      <varInfo nodeId="3464435412756546477" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="47" startPosition="89" endLine="56" endPosition="5" />
     <scopeInfo nodeId="3464435412756546562" fileName="ShowSurroundWithIntentions_Action.java" startLine="77" startPosition="59" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546480" fileName="ShowSurroundWithIntentions_Action.java" startLine="98" startPosition="75" endLine="107" endPosition="16">
+    <scopeInfo nodeId="3464435412756546480" fileName="ShowSurroundWithIntentions_Action.java" startLine="98" startPosition="106" endLine="107" endPosition="16">
       <varInfo nodeId="3464435412756546501" varName="selectedCells" />
       <varInfo nodeId="3464435412756546482" varName="selection" />
     </scopeInfo>
-    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="58" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="46" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546478" fileName="ShowSurroundWithIntentions_Action.java" startLine="97" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="58" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="3464435412756546477" varName="_params" />
+      <varInfo nodeId="3464435412756546477" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="46" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="3464435412756546477" varName="_params" />
+      <varInfo nodeId="3464435412756546477" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546478" fileName="ShowSurroundWithIntentions_Action.java" startLine="97" startPosition="0" endLine="109" endPosition="0">
+      <varInfo nodeId="3464435412756546478" varName="_params" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="71" startPosition="9" endLine="92" endPosition="38">
       <varInfo nodeId="3464435412756546558" varName="popup" />
       <varInfo nodeId="3464435412756546603" varName="relativePoint" />
@@ -413,7 +506,10 @@
       <varInfo nodeId="3464435412756546533" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="70" startPosition="96" endLine="95" endPosition="5" />
-    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="69" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="69" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="3464435412756546477" varName="_params" />
+      <varInfo nodeId="3464435412756546477" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="28" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.ShowSurroundWithIntentions_Action" />
     <unitInfo nodeId="3464435412756546562" fileName="ShowSurroundWithIntentions_Action.java" startLine="77" startPosition="47" endLine="86" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.ShowSurroundWithIntentions_Action$1" />
   </root>
@@ -466,26 +562,48 @@
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="42" startPosition="53" endLine="43" endPosition="19" />
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="46" startPosition="62" endLine="47" endPosition="19" />
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="53" startPosition="9" endLine="54" endPosition="165" />
-    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="55" startPosition="0" endLine="56" endPosition="95" />
+    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="55" startPosition="0" endLine="56" endPosition="95">
+      <varInfo nodeId="3464435412756546630" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="55" startPosition="27" endLine="56" endPosition="95" />
     <scopeInfo nodeId="3464435412756546668" fileName="SurroundIntentionAction_Action.java" startLine="72" startPosition="70" endLine="73" endPosition="14" />
     <scopeInfo nodeId="3464435412756546675" fileName="SurroundIntentionAction_Action.java" startLine="76" startPosition="49" endLine="77" endPosition="14" />
-    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="35" startPosition="0" endLine="37" endPosition="44" />
+    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="35" startPosition="0" endLine="37" endPosition="44">
+      <varInfo nodeId="3464435412756546630" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="35" startPosition="27" endLine="37" endPosition="44" />
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="64" startPosition="20" endLine="66" endPosition="20" />
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="66" startPosition="20" endLine="68" endPosition="20" />
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="44" startPosition="5" endLine="48" endPosition="5" />
-    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="3464435412756546630" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="3464435412756546630" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="24" startPosition="94" endLine="29" endPosition="41" />
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="52" startPosition="96" endLine="57" endPosition="5" />
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="32" startPosition="89" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="23" startPosition="0" endLine="30" endPosition="3" />
+    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="23" startPosition="0" endLine="30" endPosition="3">
+      <varInfo nodeId="3464435412756546630" varName="intention_par" />
+      <varInfo nodeId="3464435412756546630" varName="node_par" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="41" startPosition="95" endLine="49" endPosition="16" />
-    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="51" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="61" startPosition="31" endLine="69" endPosition="26" />
-    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="31" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="40" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="51" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="3464435412756546630" varName="_params" />
+      <varInfo nodeId="3464435412756546630" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="61" startPosition="31" endLine="69" endPosition="26">
+      <varInfo nodeId="3464435412756546630" varName="res" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="31" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="3464435412756546630" varName="_params" />
+      <varInfo nodeId="3464435412756546630" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="40" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="3464435412756546630" varName="_params" />
+      <varInfo nodeId="3464435412756546630" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="59" startPosition="0" endLine="71" endPosition="0" />
     <unitInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.SurroundIntentionAction_Action" />
   </root>
@@ -500,7 +618,9 @@
     <nodeInfo nodeId="3464435412756546682" fileName="SpecificIntentions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3464435412756546682" fileName="SpecificIntentions_ActionGroup.java" startLine="15" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3464435412756546682" fileName="SpecificIntentions_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SpecificIntentions_ActionGroup#()V" />
-    <scopeInfo nodeId="3464435412756546682" fileName="SpecificIntentions_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="3464435412756546682" fileName="SpecificIntentions_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
+      <varInfo nodeId="3464435412756546682" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412756546682" fileName="SpecificIntentions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
     <scopeInfo nodeId="3464435412756546682" fileName="SpecificIntentions_ActionGroup.java" startLine="16" startPosition="9" endLine="18" endPosition="126" />
     <scopeInfo nodeId="3464435412756546682" fileName="SpecificIntentions_ActionGroup.java" startLine="12" startPosition="43" endLine="21" endPosition="5" />
@@ -521,7 +641,9 @@
     <scopeInfo nodeId="3464435412759838718" fileName="Default_KeymapChanges.java" startLine="19" startPosition="29" endLine="20" endPosition="22" />
     <scopeInfo nodeId="3464435412759838718" fileName="Default_KeymapChanges.java" startLine="23" startPosition="53" endLine="24" endPosition="70" />
     <scopeInfo nodeId="3464435412759838718" fileName="Default_KeymapChanges.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="3464435412759838718" fileName="Default_KeymapChanges.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="3464435412759838718" fileName="Default_KeymapChanges.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="3464435412759838718" varName="stroke" />
+    </scopeInfo>
     <scopeInfo nodeId="3464435412759838718" fileName="Default_KeymapChanges.java" startLine="11" startPosition="34" endLine="16" endPosition="15" />
     <scopeInfo nodeId="3464435412759838718" fileName="Default_KeymapChanges.java" startLine="10" startPosition="62" endLine="17" endPosition="3" />
     <unitInfo nodeId="3464435412759838718" fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.Default_KeymapChanges" />
@@ -570,13 +692,26 @@
     <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="3911341278723469245" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="3911341278723469245" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="3911341278723469245" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="3911341278723469245" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="3911341278723469245" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="3911341278723469245" varName="concept" />
+      <varInfo nodeId="3911341278723469245" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
     <unitInfo nodeId="3911341278723469281" fileName="Intentions_Order.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.Intentions_Order" />
     <unitInfo nodeId="3911341278723469245" fileName="Intentions_TabDescriptor.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.Intentions_TabDescriptor" />
@@ -595,7 +730,9 @@
     <scopeInfo nodeId="6083592572519623466" fileName="Mac_KeymapChanges.java" startLine="22" startPosition="53" endLine="23" endPosition="70" />
     <scopeInfo nodeId="6083592572519623466" fileName="Mac_KeymapChanges.java" startLine="11" startPosition="30" endLine="15" endPosition="15" />
     <scopeInfo nodeId="6083592572519623466" fileName="Mac_KeymapChanges.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="6083592572519623466" fileName="Mac_KeymapChanges.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="6083592572519623466" fileName="Mac_KeymapChanges.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="6083592572519623466" varName="stroke" />
+    </scopeInfo>
     <scopeInfo nodeId="6083592572519623466" fileName="Mac_KeymapChanges.java" startLine="10" startPosition="58" endLine="16" endPosition="3" />
     <unitInfo nodeId="6083592572519623466" fileName="Mac_KeymapChanges.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.Mac_KeymapChanges" />
   </root>

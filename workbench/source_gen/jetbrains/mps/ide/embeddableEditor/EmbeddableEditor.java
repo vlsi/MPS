@@ -12,7 +12,7 @@ import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.nodeEditor.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editor.NodeEditor;
 import javax.swing.JComponent;
 import java.awt.Color;
@@ -90,7 +90,7 @@ public class EmbeddableEditor {
       myModel.getSModel().addRoot(node);
     }
     myFileNodeEditor = new MPSFileNodeEditor(myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode));
-    IEditor editor = myFileNodeEditor.getNodeEditor();
+    Editor editor = myFileNodeEditor.getNodeEditor();
     if (editor instanceof NodeEditor) {
       NodeEditor nodeEditor = (NodeEditor) editor;
       nodeEditor.getCurrentEditorComponent().setEditable(myIsEditable);
@@ -111,7 +111,7 @@ public class EmbeddableEditor {
   }
 
   public void setBackground(Color color) {
-    IEditor editor = myFileNodeEditor.getNodeEditor();
+    Editor editor = myFileNodeEditor.getNodeEditor();
     if (editor instanceof NodeEditor) {
       NodeEditor nodeEditor = (NodeEditor) editor;
       nodeEditor.getCurrentEditorComponent().setBackground(color);
@@ -119,7 +119,7 @@ public class EmbeddableEditor {
   }
 
   public void mark(List<EditorMessage> messages) {
-    IEditor editor = myFileNodeEditor.getNodeEditor();
+    Editor editor = myFileNodeEditor.getNodeEditor();
     if (editor instanceof NodeEditor) {
       NodeEditor nodeEditor = (NodeEditor) editor;
       nodeEditor.getCurrentEditorComponent().getHighlightManager().mark(messages);
@@ -130,7 +130,7 @@ public class EmbeddableEditor {
     myFileNodeEditor.getNodeEditor().showNode(node, true);
   }
 
-  public IEditor getEditor() {
+  public Editor getEditor() {
     return myFileNodeEditor.getNodeEditor();
   }
 

@@ -13,30 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.openapi.editor;
 
-import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JComponent;
-import java.util.List;
-
-public interface IEditor{
-  JComponent getComponent();
+public interface Editor {
 
   EditorComponent getCurrentEditorComponent();
 
   SNodePointer getCurrentlyEditedNode();
-
-  //  looks like getAllEditedDocuments() is sufficient
-  @Deprecated
-  List<SNodePointer> getAllEditedNodes();
-
-  List<Document> getAllEditedDocuments();
 
   EditorContext getEditorContext();
 
@@ -48,7 +36,7 @@ public interface IEditor{
 
   //---state
 
-  MPSEditorState saveState(@NotNull FileEditorStateLevel level);
+  EditorState saveState(boolean full);
 
-  void loadState(@NotNull MPSEditorState state);
+  void loadState(@NotNull EditorState state);
 }

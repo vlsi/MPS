@@ -3,9 +3,9 @@
   <root nodeId="1310272842909633660">
     <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="18" startPosition="47" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="19" startPosition="128" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="30" startPosition="100" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1310272842909656081" fileName="CreateX_Test.java" startLine="31" startPosition="75" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1310272842909656081" fileName="CreateX_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="13" startPosition="58" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateX_Test#()V" />
     <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
     <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_CreateX#()V" />
@@ -27,9 +27,9 @@
   <root nodeId="1310272842909656084">
     <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="18" startPosition="47" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="19" startPosition="128" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="30" startPosition="100" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1310272842909656104" fileName="CreateY_Test.java" startLine="31" startPosition="75" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1310272842909656104" fileName="CreateY_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="13" startPosition="58" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateY_Test#()V" />
     <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
     <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_CreateY#()V" />
@@ -51,9 +51,9 @@
   <root nodeId="4379396156287837027">
     <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="18" startPosition="46" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="19" startPosition="128" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="30" startPosition="100" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4379396156287837038" fileName="Create_Test.java" startLine="31" startPosition="75" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4379396156287837038" fileName="Create_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="13" startPosition="57" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Create_Test#()V" />
     <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
     <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Create#()V" />
@@ -75,9 +75,9 @@
   <root nodeId="8748948598094995664">
     <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="18" startPosition="47" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="19" startPosition="128" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="30" startPosition="100" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1315230867830196353" fileName="RemoveY_Test.java" startLine="31" startPosition="75" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1315230867830196353" fileName="RemoveY_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="13" startPosition="58" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveY_Test#()V" />
     <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
     <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemoveY#()V" />

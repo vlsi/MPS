@@ -17,21 +17,21 @@ package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import jetbrains.mps.nodeEditor.MPSEditorState;
+import jetbrains.mps.openapi.editor.EditorState;
 import org.apache.commons.lang.ObjectUtils;
 
 class MPSEditorStateWrapper implements FileEditorState {
-  private MPSEditorState myEditorState;
+  private EditorState myEditorState;
   private FileEditorStateLevel myLevel;
 
   MPSEditorStateWrapper() {
   }
 
-  MPSEditorState getEditorState() {
+  EditorState getEditorState() {
     return myEditorState;
   }
 
-  void setEditorState(MPSEditorState editorState) {
+  void setEditorState(EditorState editorState) {
     myEditorState = editorState;
   }
 

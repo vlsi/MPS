@@ -6,7 +6,7 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.nodeEditor.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
@@ -27,8 +27,8 @@ public class Post_StaticFieldToLocalStaticFieldReference_Test extends BaseTransf
 
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("8350369201053315003", "8350369201053334918");
-      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      final Editor editor = TestBody.this.initEditor("8350369201053315003", "8350369201053334918");
+      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");

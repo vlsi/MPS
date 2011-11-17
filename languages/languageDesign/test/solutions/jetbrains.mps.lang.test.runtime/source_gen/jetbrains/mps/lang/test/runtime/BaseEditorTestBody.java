@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.runtime;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.impl.DataManagerImpl;
-import jetbrains.mps.nodeEditor.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
@@ -18,6 +18,7 @@ import java.util.HashMap;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import java.util.ArrayList;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.intentions.IntentionsManager;
 import java.util.Collection;
 import com.intellij.openapi.util.Pair;
@@ -44,7 +45,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 public class BaseEditorTestBody extends BaseTestBody {
   private static DataManager DATA_MANAGER = new DataManagerImpl();
 
-  public IEditor myEditor;
+  public Editor myEditor;
   private SNode myBefore;
   private SNode myResult;
   protected CellReference myStart;
@@ -53,7 +54,7 @@ public class BaseEditorTestBody extends BaseTestBody {
   public BaseEditorTestBody() {
   }
 
-  public IEditor initEditor(final String before, final String after) throws Exception {
+  public Editor initEditor(final String before, final String after) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         try {
@@ -134,19 +135,19 @@ public class BaseEditorTestBody extends BaseTestBody {
   public void testMethodImpl() throws Exception {
   }
 
-  public static void invokeIntention(final String name, final IEditor editor, final SNode node) throws Exception {
+  public static void invokeIntention(final String name, final Editor editor, final SNode node) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            editor.getEditorContext().select(node);
+            ((EditorContext) editor.getEditorContext()).select(node);
             IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
             query.setInstantiate(true);
             query.setCurrentNodeOnly(true);
-            Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editor.getEditorContext());
+            Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, (EditorContext) editor.getEditorContext());
             for (Pair<Intention, SNode> intention : Sequence.fromIterable(intentions)) {
               if (intention.first.getClass().getCanonicalName().equals(name)) {
-                intention.first.execute(intention.second, editor.getEditorContext());
+                intention.first.execute(intention.second, (EditorContext) editor.getEditorContext());
               }
             }
           }
@@ -155,7 +156,7 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-  public static IEditor openEditor(Project project, SModelDescriptor model, SNode node) {
+  public static Editor openEditor(Project project, SModelDescriptor model, SNode node) {
     IOperationContext context = new ModuleContext(model.getModule(), project);
     MPSEditorOpener opener = new MPSEditorOpener(ProjectHelper.toIdeaProject(project));
     return opener.editNode(node, context);
@@ -166,8 +167,8 @@ public class BaseEditorTestBody extends BaseTestBody {
     editorManager.closeFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
   }
 
-  public static void typeString(IEditor editor, String text) throws InterruptedException, InvocationTargetException {
-    typeString(editor.getCurrentEditorComponent(), text);
+  public static void typeString(Editor editor, String text) throws InterruptedException, InvocationTargetException {
+    typeString((EditorComponent) editor.getCurrentEditorComponent(), text);
   }
 
   public static void typeString(final EditorComponent editorComponent, final String text) throws InterruptedException, InvocationTargetException {
@@ -180,8 +181,8 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-  public static void pressKeys(IEditor editor, List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
-    BaseEditorTestBody.pressKeys(editor.getCurrentEditorComponent(), keyStrokes);
+  public static void pressKeys(Editor editor, List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
+    BaseEditorTestBody.pressKeys((EditorComponent) editor.getCurrentEditorComponent(), keyStrokes);
   }
 
   public static void pressKeys(final EditorComponent editorComponent, final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
@@ -196,8 +197,8 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-  public static void invokeAction(IEditor editor, String actionId) throws InvocationTargetException, InterruptedException {
-    invokeAction(editor.getCurrentEditorComponent(), actionId);
+  public static void invokeAction(Editor editor, String actionId) throws InvocationTargetException, InterruptedException {
+    invokeAction((EditorComponent) editor.getCurrentEditorComponent(), actionId);
   }
 
   public static void invokeAction(final EditorComponent editorComponent, final String actionId) throws InvocationTargetException, InterruptedException {

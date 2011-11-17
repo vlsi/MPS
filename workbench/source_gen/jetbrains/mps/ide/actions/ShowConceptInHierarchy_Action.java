@@ -16,7 +16,7 @@ import jetbrains.mps.ide.hierarchy.HierarchyViewTool;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
@@ -106,10 +106,10 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
       return outerConcept;
     }
 
-    if (!(((IEditor) MapSequence.fromMap(_params).get("editor")) instanceof TabbedEditor)) {
+    if (!(((Editor) MapSequence.fromMap(_params).get("editor")) instanceof TabbedEditor)) {
       return null;
     }
-    TabbedEditor tabbedEditor = (TabbedEditor) ((IEditor) MapSequence.fromMap(_params).get("editor"));
+    TabbedEditor tabbedEditor = (TabbedEditor) ((Editor) MapSequence.fromMap(_params).get("editor"));
     SNode editedNode = tabbedEditor.getCurrentlyEditedNode().getNode();
     if (!(SNodeOperations.isInstanceOf(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       return null;

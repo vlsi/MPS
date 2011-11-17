@@ -79,7 +79,7 @@ import java.awt.Rectangle;
   }
 
   private void paintCellBackground(@NotNull Graphics g, @NotNull EditorComponent editorComponent) {
-    EditorCell bigCell = editorComponent.getBigValidCellForNode(getSNode());
+    jetbrains.mps.openapi.editor.EditorCell bigCell = editorComponent.getBigValidCellForNode(getSNode());
     if (bigCell != null && getCellBackgroundColor() != null) {
       g.setColor(getCellBackgroundColor());
       g.fillRect(bigCell.getX(), bigCell.getY(), bigCell.getWidth(), bigCell.getHeight());
@@ -87,7 +87,7 @@ import java.awt.Rectangle;
   }
 
   private void paintCellFrame(@NotNull Graphics g, @NotNull EditorComponent editorComponent) {
-    EditorCell bigCell = editorComponent.getBigValidCellForNode(getSNode());
+    jetbrains.mps.openapi.editor.EditorCell bigCell = editorComponent.getBigValidCellForNode(getSNode());
     if (bigCell != null && getFrameColor() != null) {
       g.setColor(getFrameColor());
       g.drawRect(bigCell.getX(), bigCell.getY(), bigCell.getWidth() - 1, bigCell.getHeight() - 1);

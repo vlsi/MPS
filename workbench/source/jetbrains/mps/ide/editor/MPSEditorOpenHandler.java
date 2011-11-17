@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.editor;
 
-import jetbrains.mps.nodeEditor.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
@@ -25,5 +25,5 @@ public interface MPSEditorOpenHandler {
 
   boolean canOpen(IOperationContext context, SNode node);
 
-  IEditor open(IOperationContext context, SNode node);
+  Editor open(IOperationContext context, SNode node);
 }

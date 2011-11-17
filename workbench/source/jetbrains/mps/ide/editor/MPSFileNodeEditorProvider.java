@@ -23,8 +23,8 @@ import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.nodeEditor.MPSEditorState;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -55,7 +55,7 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware 
 
     try {
       Class cls = Class.forName(className);
-      MPSEditorState instance = (MPSEditorState) cls.newInstance();
+      EditorState instance = (EditorState) cls.newInstance();
       instance.load(sourceElement);
       MPSEditorStateWrapper result = new MPSEditorStateWrapper();
       result.setEditorState(instance);
@@ -73,7 +73,7 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware 
     if (!(state instanceof MPSEditorStateWrapper)) return;
 
     MPSEditorStateWrapper wrapper = (MPSEditorStateWrapper) state;
-    MPSEditorState editorState = wrapper.getEditorState();
+    EditorState editorState = wrapper.getEditorState();
     targetElement.setAttribute(CLASS, editorState.getClass().getName());
     editorState.save(targetElement);
   }

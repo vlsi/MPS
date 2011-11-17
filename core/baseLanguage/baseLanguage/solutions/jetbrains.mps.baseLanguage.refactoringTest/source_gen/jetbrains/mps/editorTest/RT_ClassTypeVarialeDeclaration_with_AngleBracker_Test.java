@@ -6,7 +6,7 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.nodeEditor.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
@@ -27,8 +27,8 @@ public class RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test extends BaseT
 
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("1528454294471609027", "1528454294471625075");
-      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      final Editor editor = TestBody.this.initEditor("1528454294471609027", "1528454294471625075");
+      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "<");
     }
   }

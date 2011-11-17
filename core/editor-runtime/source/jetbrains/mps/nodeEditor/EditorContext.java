@@ -36,7 +36,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
-public class EditorContext {
+public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext {
   private EditorComponent myNodeEditorComponent;
   private SModelDescriptor myModelDescriptor;
   private IOperationContext myOperationContext;

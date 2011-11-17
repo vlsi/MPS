@@ -2162,9 +2162,9 @@
     <nodeInfo nodeId="6223531255410204774" fileName="ShowConceptInHierarchy_Action.java" startLine="103" startPosition="5" endLine="104" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6223531255410204886" fileName="ShowConceptInHierarchy_Action.java" startLine="105" startPosition="31" endLine="106" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6223531255410204792" fileName="ShowConceptInHierarchy_Action.java" startLine="107" startPosition="5" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2925366645633918965" fileName="ShowConceptInHierarchy_Action.java" startLine="109" startPosition="92" endLine="110" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633918967" fileName="ShowConceptInHierarchy_Action.java" startLine="111" startPosition="5" endLine="112" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2925366645633918975" fileName="ShowConceptInHierarchy_Action.java" startLine="112" startPosition="102" endLine="113" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2925366645633918965" fileName="ShowConceptInHierarchy_Action.java" startLine="109" startPosition="91" endLine="110" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633918967" fileName="ShowConceptInHierarchy_Action.java" startLine="111" startPosition="5" endLine="112" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2925366645633918975" fileName="ShowConceptInHierarchy_Action.java" startLine="112" startPosition="101" endLine="113" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2925366645633918989" fileName="ShowConceptInHierarchy_Action.java" startLine="114" startPosition="123" endLine="115" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2925366645633918994" fileName="ShowConceptInHierarchy_Action.java" startLine="116" startPosition="5" endLine="117" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216120033386" fileName="ShowConceptInHierarchy_Action.java" startLine="121" startPosition="9" endLine="122" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2216,7 +2216,7 @@
     <scopeInfo nodeId="6223531255410204745" fileName="ShowConceptInHierarchy_Action.java" startLine="95" startPosition="117" endLine="96" endPosition="112" />
     <scopeInfo nodeId="6223531255410204764" fileName="ShowConceptInHierarchy_Action.java" startLine="100" startPosition="28" endLine="101" endPosition="23" />
     <scopeInfo nodeId="6223531255410204859" fileName="ShowConceptInHierarchy_Action.java" startLine="105" startPosition="31" endLine="106" endPosition="26" />
-    <scopeInfo nodeId="2925366645633918964" fileName="ShowConceptInHierarchy_Action.java" startLine="109" startPosition="92" endLine="110" endPosition="18" />
+    <scopeInfo nodeId="2925366645633918964" fileName="ShowConceptInHierarchy_Action.java" startLine="109" startPosition="91" endLine="110" endPosition="18" />
     <scopeInfo nodeId="2925366645633918988" fileName="ShowConceptInHierarchy_Action.java" startLine="114" startPosition="123" endLine="115" endPosition="18" />
     <scopeInfo nodeId="1216120033386" fileName="ShowConceptInHierarchy_Action.java" startLine="121" startPosition="9" endLine="122" endPosition="132" />
     <scopeInfo nodeId="1216120033386" fileName="ShowConceptInHierarchy_Action.java" startLine="124" startPosition="32" endLine="125" endPosition="69" />
@@ -14821,6 +14821,8 @@
     </scopeInfo>
     <scopeInfo nodeId="9078697818357582146" fileName="SelectMembersDialog.java" startLine="46" startPosition="0" endLine="63" endPosition="0" />
     <unitInfo nodeId="9078697818357582253" fileName="SelectMembersDialog.java" startLine="101" startPosition="45" endLine="27" endPosition="0" />
+    <unitInfo nodeId="9078697818357582108" fileName="SelectMembersDialog.java" startLine="33" startPosition="31" endLine="37" endPosition="3" unitName="jetbrains.mps.ide.actions.SelectMembersDialog$1" />
+    <unitInfo nodeId="6708838774400334780" fileName="SelectMembersDialog.java" startLine="51" startPosition="30" endLine="57" endPosition="5" unitName="jetbrains.mps.ide.actions.SelectMembersDialog$2" />
   </root>
   <root nodeId="9164503229271455483">
     <nodeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="24" startPosition="72" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

@@ -23,9 +23,9 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editor.MPSEditorOpenHandler;
 import jetbrains.mps.ide.editor.NodeEditor;
-import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
@@ -295,7 +295,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       return false;
     }
 
-    public IEditor open(IOperationContext context, final SNode node) {
+    public Editor open(IOperationContext context, final SNode node) {
       Set<EditorTabDescriptor> tabs = new HashSet<EditorTabDescriptor>();
 
       for (EditorTabDescriptor d : getTabDescriptors()) {

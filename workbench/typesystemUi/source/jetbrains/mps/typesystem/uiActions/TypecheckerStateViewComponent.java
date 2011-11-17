@@ -18,6 +18,8 @@ package jetbrains.mps.typesystem.uiActions;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -25,8 +27,6 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
@@ -72,7 +72,7 @@ public class TypecheckerStateViewComponent extends JPanel {
     JButton debugCurrentRootButton = new JButton(new AbstractAction("Debug Current Root") {
       public void actionPerformed(ActionEvent e) {
         Project project = ProjectHelper.toIdeaProject(myOperationContext.getProject());
-        IEditor currentEditor = EditorsHelper.getSelectedEditors(FileEditorManager.getInstance(project)).get(0);
+        Editor currentEditor = EditorsHelper.getSelectedEditors(FileEditorManager.getInstance(project)).get(0);
         if (currentEditor != null) {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
           if (editorComponent != null) {

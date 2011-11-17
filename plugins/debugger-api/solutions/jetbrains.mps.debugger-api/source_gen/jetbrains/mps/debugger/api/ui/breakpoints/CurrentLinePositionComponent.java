@@ -144,7 +144,7 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   }
 
   private void attachPainterAndOpenEditor(@NotNull final CurrentLinePainter painter) {
-    EditorComponent currentEditorComponent = new MPSEditorOpener(myProject).openNode(painter.getItem(), new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
+    EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(painter.getItem(), new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
     currentEditorComponent = EditorUtil.scrollToNode(painter.getItem(), currentEditorComponent, myFileEditorManager);
     if (currentEditorComponent != null) {
       attach(painter, currentEditorComponent);

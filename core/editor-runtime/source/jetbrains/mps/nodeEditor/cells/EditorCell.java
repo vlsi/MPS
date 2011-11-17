@@ -32,19 +32,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public interface EditorCell extends Cloneable {
+public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.EditorCell {
   static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
 
-  int getX();
   void setX(int x);
 
-  int getY();
   void setY(int y);
 
-  int getWidth();
   void setWidth(int width);
 
-  int getHeight();
   void setHeight(int height);
 
   int getBaseline();

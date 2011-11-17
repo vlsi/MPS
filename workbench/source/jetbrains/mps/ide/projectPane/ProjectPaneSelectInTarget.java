@@ -21,7 +21,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
@@ -30,7 +30,7 @@ public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget
   private boolean mySelectRoot;
 
   public ProjectPaneSelectInTarget(Project p, boolean selectRoot) {
-    super(p, ProjectPane.ID, 0, selectRoot?"Logical View":"Project Tree");
+    super(p, ProjectPane.ID, 0, selectRoot ? "Logical View" : "Project Tree");
     myProject = p;
     mySelectRoot = selectRoot;
   }
@@ -56,7 +56,7 @@ public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget
       if (!(editor instanceof MPSFileNodeEditor)) return null;
       EditorComponent editorComponent = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent();
       if (editorComponent == null) return null;
-      return mySelectRoot?editorComponent.getEditedNode():editorComponent.getSelectedNode();
+      return mySelectRoot ? editorComponent.getEditedNode() : editorComponent.getSelectedNode();
     } else {
       return file.getNode();
     }

@@ -94,7 +94,7 @@ public class EditorUtil {
     }
     List<MPSFileNodeEditor> allEditors = EditorsHelper.getAllEditors(manager);
     for (MPSFileNodeEditor editor : allEditors) {
-      EditorComponent currentEditorComponent = editor.getNodeEditor().getCurrentEditorComponent();
+      EditorComponent currentEditorComponent = (EditorComponent) editor.getNodeEditor().getCurrentEditorComponent();
       if (currentEditorComponent != null) {
         result.add(currentEditorComponent);
       }

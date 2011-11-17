@@ -22,7 +22,7 @@ import java.util.Arrays;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorCell;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -219,7 +219,7 @@ public class NextPreviousTraverser {
   }
 
   private synchronized void goToY(int y) {
-    EditorCell editorCell = myLastEditor.findCellWeak(1, y + 1);
+    jetbrains.mps.nodeEditor.cells.EditorCell editorCell = myLastEditor.findCellWeak(1, y + 1);
     if (editorCell != null) {
       myLastEditor.changeSelection(editorCell);
     } else {

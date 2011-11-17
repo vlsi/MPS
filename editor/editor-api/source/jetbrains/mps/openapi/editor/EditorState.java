@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.openapi.editor;
 
 import org.jdom.Element;
 
-public interface MPSEditorState {
+public interface EditorState {
+
   void save(Element e);
 
   void load(Element e);

@@ -17,7 +17,7 @@ package jetbrains.mps.workbench;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DataKey;
-import jetbrains.mps.nodeEditor.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -88,7 +88,7 @@ public class MPSDataKeys extends MPSCommonDataKeys {
   @Description(description = "editor create actions")
   public static final DataKey<ActionGroup> EDITOR_CREATE_GROUP = DataKey.create("MPS_EditorCreateGroup");
   @Description(description = "current editor")
-  public static final DataKey<IEditor> MPS_EDITOR = DataKey.create("MPS_IEditor");
+  public static final DataKey<Editor> MPS_EDITOR = DataKey.create("MPS_IEditor");
   @Description(description = "main window's Frame")
   public static final DataKey<Frame> FRAME = DataKey.create("MPS_Frame");
   @Description(description = "scope")

@@ -11,6 +11,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS-platform" />
+    <orderEntry type="module" module-name="editor-api" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="generator-engine" />

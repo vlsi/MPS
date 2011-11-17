@@ -197,6 +197,9 @@
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
       <fileset dir="${mps_home}/editor/typesystemIntegration/classes" />
     </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
+      <fileset dir="${mps_home}/editor/editor-api/classes" />
+    </copy>
     <antcall target="MPS-languages.pack.typesystemIntegration" />
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules" />
