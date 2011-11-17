@@ -58,25 +58,29 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     myRegistry.removeGlobalDifferenceListener(myGlobalListener);
   }
 
-  private void invalidateNodeStatus(@NotNull final SNodePointer nodePointer) {
+  private void statusChanged(@NotNull final SNodePointer nodePointer) {
+    final FileStatusManager fsm = FileStatusManager.getInstance(myProject);
+    final MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
+    fsm.fileStatusChanged(nvfs.getFileFor(nodePointer));
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SNode currentNode = nodePointer.getNode();
+        for (EditorTabDescriptor d : ListSequence.fromList(myProject.getComponent(ProjectPluginManager.class).getTabDescriptors())) {
+          SNode baseNode = d.getBaseNode(currentNode);
+          if (baseNode != null && baseNode != currentNode) {
+            fsm.fileStatusChanged(nvfs.getFileFor(baseNode));
+            break;
+          }
+        }
+      }
+    });
+  }
+
+  private void updateNodeStatus(@NotNull final SNodePointer nodePointer) {
     myRegistry.getCommandQueue().runTask(new Runnable() {
       public void run() {
         calcStatus(nodePointer);
-        final FileStatusManager fsm = FileStatusManager.getInstance(myProject);
-        final MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
-        fsm.fileStatusChanged(nvfs.getFileFor(nodePointer));
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            SNode currentNode = nodePointer.getNode();
-            for (EditorTabDescriptor d : ListSequence.fromList(myProject.getComponent(ProjectPluginManager.class).getTabDescriptors())) {
-              SNode baseNode = d.getBaseNode(currentNode);
-              if (baseNode != null && baseNode != currentNode) {
-                fsm.fileStatusChanged(nvfs.getFileFor(baseNode));
-                break;
-              }
-            }
-          }
-        });
+        statusChanged(nodePointer);
       }
     });
   }
@@ -89,7 +93,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
         if (modelDescriptor instanceof EditableSModelDescriptor) {
           EditableSModelDescriptor emd = (EditableSModelDescriptor) modelDescriptor;
           CurrentDifference diff = myRegistry.getCurrentDifference(emd);
-          List<ModelChange> modelChanges = check_onkh7z_a0c0b0a1a3(diff.getChangeSet());
+          List<ModelChange> modelChanges = check_onkh7z_a0c0b0a1a4(diff.getChangeSet());
           final SNodeId rootId = root.getNodeId();
           List<ModelChange> rootChanges = ListSequence.fromList(modelChanges).where(new IWhereFilter<ModelChange>() {
             public boolean accept(ModelChange ch) {
@@ -145,7 +149,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     }
   }
 
-  private static List<ModelChange> check_onkh7z_a0c0b0a1a3(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_onkh7z_a0c0b0a1a4(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
@@ -162,7 +166,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     public void changeUpdateFinished() {
       ListSequence.fromList(myAffectedRoots).visitAll(new IVisitor<SNodePointer>() {
         public void visit(SNodePointer np) {
-          invalidateNodeStatus(np);
+          updateNodeStatus(np);
         }
       });
       ListSequence.fromList(myAffectedRoots).clear();
