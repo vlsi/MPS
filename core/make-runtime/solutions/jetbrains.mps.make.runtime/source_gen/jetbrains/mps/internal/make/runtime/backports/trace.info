@@ -1,68 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1007939372524169703">
-    <nodeInfo nodeId="1007939372524175484" fileName="JobProgressMonitorAdapter.java" startLine="8" startPosition="68" endLine="9" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WORK_AMOUNT" />
-    <nodeInfo nodeId="1007939372524169742" fileName="JobProgressMonitorAdapter.java" startLine="10" startPosition="0" endLine="11" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJobMonitor" />
-    <nodeInfo nodeId="1007939372524175445" fileName="JobProgressMonitorAdapter.java" startLine="11" startPosition="35" endLine="12" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1007939372524175449" fileName="JobProgressMonitorAdapter.java" startLine="12" startPosition="24" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStep" />
-    <nodeInfo nodeId="1007939372524169748" fileName="JobProgressMonitorAdapter.java" startLine="15" startPosition="57" endLine="16" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1007939372524175506" fileName="JobProgressMonitorAdapter.java" startLine="20" startPosition="25" endLine="21" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1007939372524175520" fileName="JobProgressMonitorAdapter.java" startLine="21" startPosition="94" endLine="22" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1007939372524175454" fileName="JobProgressMonitorAdapter.java" startLine="26" startPosition="47" endLine="27" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1007939372524175552" fileName="JobProgressMonitorAdapter.java" startLine="31" startPosition="26" endLine="32" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1007939372524175617" fileName="JobProgressMonitorAdapter.java" startLine="33" startPosition="5" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1007939372524175646" fileName="JobProgressMonitorAdapter.java" startLine="35" startPosition="60" endLine="36" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1007939372524175634" fileName="JobProgressMonitorAdapter.java" startLine="36" startPosition="56" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1007939372524175461" fileName="JobProgressMonitorAdapter.java" startLine="38" startPosition="5" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1007939372524175608" fileName="JobProgressMonitorAdapter.java" startLine="39" startPosition="18" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1007939372524175668" fileName="JobProgressMonitorAdapter.java" startLine="44" startPosition="22" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1007939372524175690" fileName="JobProgressMonitorAdapter.java" startLine="46" startPosition="25" endLine="47" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1007939372524175697" fileName="JobProgressMonitorAdapter.java" startLine="47" startPosition="56" endLine="48" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1007939372524175680" fileName="JobProgressMonitorAdapter.java" startLine="52" startPosition="31" endLine="53" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1007939372524169705" fileName="JobProgressMonitorAdapter.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JobProgressMonitorAdapter#(Ljetbrains/mps/make/script/IJobMonitor;)V" />
-    <nodeInfo nodeId="1007939372524175550" fileName="JobProgressMonitorAdapter.java" startLine="30" startPosition="48" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1007939372524175670" fileName="JobProgressMonitorAdapter.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cancel#()V" />
-    <nodeInfo nodeId="1007939372524175492" fileName="JobProgressMonitorAdapter.java" startLine="19" startPosition="38" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1007939372524169754" fileName="JobProgressMonitorAdapter.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStepInternal#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1007939372524175557" fileName="JobProgressMonitorAdapter.java" startLine="34" startPosition="0" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1007939372524175688" fileName="JobProgressMonitorAdapter.java" startLine="45" startPosition="17" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1007939372524175674" fileName="JobProgressMonitorAdapter.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCanceled#()Z" />
-    <nodeInfo nodeId="1007939372524169703" fileName="JobProgressMonitorAdapter.java" startLine="59" startPosition="64" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1007939372524169766" fileName="JobProgressMonitorAdapter.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(D)V" />
-    <nodeInfo nodeId="1007939372524169703" fileName="JobProgressMonitorAdapter.java" startLine="58" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_ud0snj_a0a2a2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1007939372524175663" fileName="JobProgressMonitorAdapter.java" startLine="42" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="done#()V" />
-    <nodeInfo nodeId="1007939372524169760" fileName="JobProgressMonitorAdapter.java" startLine="29" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTitleInternal#(Ljava/lang/String;)V" />
-    <scopeInfo nodeId="1007939372524175673" fileName="JobProgressMonitorAdapter.java" startLine="56" startPosition="24" endLine="56" endPosition="24" />
-    <scopeInfo nodeId="1007939372524169708" fileName="JobProgressMonitorAdapter.java" startLine="15" startPosition="57" endLine="16" endPosition="27" />
-    <scopeInfo nodeId="1007939372524169759" fileName="JobProgressMonitorAdapter.java" startLine="26" startPosition="47" endLine="27" endPosition="18" />
-    <scopeInfo nodeId="1007939372524175551" fileName="JobProgressMonitorAdapter.java" startLine="31" startPosition="26" endLine="32" endPosition="13" />
-    <scopeInfo nodeId="1007939372524175677" fileName="JobProgressMonitorAdapter.java" startLine="52" startPosition="31" endLine="53" endPosition="40" />
-    <scopeInfo nodeId="1007939372524175494" fileName="JobProgressMonitorAdapter.java" startLine="20" startPosition="25" endLine="22" endPosition="120">
+    <nodeInfo nodeId="1007939372524175484" fileName="JobProgressMonitorAdapter.java" startLine="9" startPosition="68" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WORK_AMOUNT" />
+    <nodeInfo nodeId="1007939372524169742" fileName="JobProgressMonitorAdapter.java" startLine="11" startPosition="0" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJobMonitor" />
+    <nodeInfo nodeId="1007939372524175445" fileName="JobProgressMonitorAdapter.java" startLine="12" startPosition="35" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="1007939372524175449" fileName="JobProgressMonitorAdapter.java" startLine="13" startPosition="24" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStep" />
+    <nodeInfo nodeId="1569225844690537548" fileName="JobProgressMonitorAdapter.java" startLine="14" startPosition="24" endLine="15" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCalledSetTitleInternal" />
+    <nodeInfo nodeId="1007939372524169748" fileName="JobProgressMonitorAdapter.java" startLine="17" startPosition="57" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1007939372524175506" fileName="JobProgressMonitorAdapter.java" startLine="22" startPosition="25" endLine="23" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1007939372524175520" fileName="JobProgressMonitorAdapter.java" startLine="23" startPosition="94" endLine="24" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1007939372524175454" fileName="JobProgressMonitorAdapter.java" startLine="28" startPosition="47" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1007939372524175552" fileName="JobProgressMonitorAdapter.java" startLine="33" startPosition="26" endLine="34" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1007939372524175461" fileName="JobProgressMonitorAdapter.java" startLine="35" startPosition="5" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1007939372524175608" fileName="JobProgressMonitorAdapter.java" startLine="39" startPosition="45" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1007939372524175646" fileName="JobProgressMonitorAdapter.java" startLine="43" startPosition="33" endLine="44" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7219266275016309306" fileName="JobProgressMonitorAdapter.java" startLine="48" startPosition="100" endLine="49" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1007939372524175668" fileName="JobProgressMonitorAdapter.java" startLine="53" startPosition="22" endLine="54" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1007939372524175697" fileName="JobProgressMonitorAdapter.java" startLine="54" startPosition="17" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1007939372524175680" fileName="JobProgressMonitorAdapter.java" startLine="58" startPosition="31" endLine="59" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6946682729051139590" fileName="JobProgressMonitorAdapter.java" startLine="66" startPosition="92" endLine="67" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6946682729051139596" fileName="JobProgressMonitorAdapter.java" startLine="71" startPosition="35" endLine="72" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6946682729051139603" fileName="JobProgressMonitorAdapter.java" startLine="76" startPosition="47" endLine="77" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1007939372524169705" fileName="JobProgressMonitorAdapter.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JobProgressMonitorAdapter#(Ljetbrains/mps/make/script/IJobMonitor;)V" />
+    <nodeInfo nodeId="1007939372524175550" fileName="JobProgressMonitorAdapter.java" startLine="32" startPosition="48" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1007939372524175670" fileName="JobProgressMonitorAdapter.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cancel#()V" />
+    <nodeInfo nodeId="6946682729051139424" fileName="JobProgressMonitorAdapter.java" startLine="65" startPosition="85" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubProgressMonitor#(Ljetbrains/mps/progress/ProgressMonitorBase;ILjetbrains/mps/progress/SubProgressKind;)V" />
+    <nodeInfo nodeId="1007939372524175492" fileName="JobProgressMonitorAdapter.java" startLine="21" startPosition="38" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1007939372524169754" fileName="JobProgressMonitorAdapter.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStepInternal#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4371703535765202972" fileName="JobProgressMonitorAdapter.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startInternal#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4371703535765202968" fileName="JobProgressMonitorAdapter.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneInternal#()V" />
+    <nodeInfo nodeId="1007939372524175674" fileName="JobProgressMonitorAdapter.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCanceled#()Z" />
+    <nodeInfo nodeId="6946682729051138764" fileName="JobProgressMonitorAdapter.java" startLine="46" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="subTaskInternal#(ILjetbrains/mps/progress/SubProgressKind;)Ljetbrains/mps/progress/ProgressMonitorBase/SubProgressMonitor;" />
+    <nodeInfo nodeId="6946682729051139500" fileName="JobProgressMonitorAdapter.java" startLine="69" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneInternal#()V" />
+    <nodeInfo nodeId="6946682729051139505" fileName="JobProgressMonitorAdapter.java" startLine="74" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startInternal#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1007939372524175663" fileName="JobProgressMonitorAdapter.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="done#()V" />
+    <nodeInfo nodeId="1007939372524169766" fileName="JobProgressMonitorAdapter.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(D)V" />
+    <nodeInfo nodeId="1007939372524169760" fileName="JobProgressMonitorAdapter.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTitleInternal#(Ljava/lang/String;)V" />
+    <scopeInfo nodeId="1007939372524175673" fileName="JobProgressMonitorAdapter.java" startLine="62" startPosition="24" endLine="62" endPosition="24" />
+    <scopeInfo nodeId="1007939372524169708" fileName="JobProgressMonitorAdapter.java" startLine="17" startPosition="57" endLine="18" endPosition="27" />
+    <scopeInfo nodeId="1007939372524169759" fileName="JobProgressMonitorAdapter.java" startLine="28" startPosition="47" endLine="29" endPosition="18" />
+    <scopeInfo nodeId="1007939372524175551" fileName="JobProgressMonitorAdapter.java" startLine="33" startPosition="26" endLine="34" endPosition="13" />
+    <scopeInfo nodeId="4371703535765202977" fileName="JobProgressMonitorAdapter.java" startLine="39" startPosition="45" endLine="40" endPosition="67" />
+    <scopeInfo nodeId="4371703535765202971" fileName="JobProgressMonitorAdapter.java" startLine="43" startPosition="33" endLine="44" endPosition="54" />
+    <scopeInfo nodeId="6946682729051138771" fileName="JobProgressMonitorAdapter.java" startLine="48" startPosition="100" endLine="49" endPosition="78" />
+    <scopeInfo nodeId="1007939372524175677" fileName="JobProgressMonitorAdapter.java" startLine="58" startPosition="31" endLine="59" endPosition="40" />
+    <scopeInfo nodeId="6946682729051139433" fileName="JobProgressMonitorAdapter.java" startLine="66" startPosition="92" endLine="67" endPosition="32" />
+    <scopeInfo nodeId="6946682729051139503" fileName="JobProgressMonitorAdapter.java" startLine="71" startPosition="35" endLine="72" endPosition="52" />
+    <scopeInfo nodeId="6946682729051139510" fileName="JobProgressMonitorAdapter.java" startLine="76" startPosition="47" endLine="77" endPosition="57" />
+    <scopeInfo nodeId="1007939372524175494" fileName="JobProgressMonitorAdapter.java" startLine="22" startPosition="25" endLine="24" endPosition="120">
       <varInfo nodeId="1007939372524175507" varName="currFrac" />
     </scopeInfo>
-    <scopeInfo nodeId="1007939372524175558" fileName="JobProgressMonitorAdapter.java" startLine="35" startPosition="60" endLine="37" endPosition="20" />
-    <scopeInfo nodeId="1007939372524175689" fileName="JobProgressMonitorAdapter.java" startLine="46" startPosition="25" endLine="48" endPosition="20" />
-    <scopeInfo nodeId="1007939372524169705" fileName="JobProgressMonitorAdapter.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+    <scopeInfo nodeId="1007939372524175666" fileName="JobProgressMonitorAdapter.java" startLine="53" startPosition="22" endLine="55" endPosition="18" />
+    <scopeInfo nodeId="1007939372524169705" fileName="JobProgressMonitorAdapter.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
       <varInfo nodeId="1007939372524169746" varName="monitor" />
     </scopeInfo>
-    <scopeInfo nodeId="1007939372524175670" fileName="JobProgressMonitorAdapter.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1007939372524169771" fileName="JobProgressMonitorAdapter.java" startLine="19" startPosition="38" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="1007939372524169754" fileName="JobProgressMonitorAdapter.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="1007939372524175670" fileName="JobProgressMonitorAdapter.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="6946682729051139424" fileName="JobProgressMonitorAdapter.java" startLine="65" startPosition="85" endLine="68" endPosition="5">
+      <varInfo nodeId="6946682729051139431" varName="kind" />
+      <varInfo nodeId="6946682729051139427" varName="parent" />
+      <varInfo nodeId="6946682729051139429" varName="work" />
+    </scopeInfo>
+    <scopeInfo nodeId="1007939372524169771" fileName="JobProgressMonitorAdapter.java" startLine="21" startPosition="38" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="1007939372524169754" fileName="JobProgressMonitorAdapter.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1007939372524169757" varName="step" />
     </scopeInfo>
-    <scopeInfo nodeId="1007939372524175674" fileName="JobProgressMonitorAdapter.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1007939372524169703" fileName="JobProgressMonitorAdapter.java" startLine="59" startPosition="64" endLine="63" endPosition="7" />
-    <scopeInfo nodeId="1007939372524175666" fileName="JobProgressMonitorAdapter.java" startLine="44" startPosition="22" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="1007939372524169766" fileName="JobProgressMonitorAdapter.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="1007939372524169765" fileName="JobProgressMonitorAdapter.java" startLine="32" startPosition="48" endLine="36" endPosition="18" />
+    <scopeInfo nodeId="4371703535765202972" fileName="JobProgressMonitorAdapter.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="4371703535765202975" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="4371703535765202968" fileName="JobProgressMonitorAdapter.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1007939372524175674" fileName="JobProgressMonitorAdapter.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="6946682729051138764" fileName="JobProgressMonitorAdapter.java" startLine="46" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="6946682729051138769" varName="kind" />
+      <varInfo nodeId="6946682729051138767" varName="work" />
+    </scopeInfo>
+    <scopeInfo nodeId="6946682729051139500" fileName="JobProgressMonitorAdapter.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="6946682729051139505" fileName="JobProgressMonitorAdapter.java" startLine="74" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="6946682729051139508" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="1007939372524175663" fileName="JobProgressMonitorAdapter.java" startLine="51" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1007939372524169766" fileName="JobProgressMonitorAdapter.java" startLine="20" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1007939372524169769" varName="frac" />
     </scopeInfo>
-    <scopeInfo nodeId="1007939372524169703" fileName="JobProgressMonitorAdapter.java" startLine="58" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1007939372524175663" fileName="JobProgressMonitorAdapter.java" startLine="42" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1007939372524169765" fileName="JobProgressMonitorAdapter.java" startLine="30" startPosition="48" endLine="40" endPosition="67" />
-    <scopeInfo nodeId="1007939372524169760" fileName="JobProgressMonitorAdapter.java" startLine="29" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="1007939372524169760" fileName="JobProgressMonitorAdapter.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1007939372524169763" varName="text" />
     </scopeInfo>
-    <unitInfo nodeId="1007939372524169703" fileName="JobProgressMonitorAdapter.java" startLine="8" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter" />
+    <unitInfo nodeId="1007939372524169703" fileName="JobProgressMonitorAdapter.java" startLine="9" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter" />
+    <unitInfo nodeId="6946682729051139412" fileName="JobProgressMonitorAdapter.java" startLine="65" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter$SubProgressMonitor" />
   </root>
   <root nodeId="5589305777382258419">
     <nodeInfo nodeId="3449801126986532461" fileName="ProgressMonitorProgressStrategy.java" startLine="9" startPosition="79" endLine="10" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOTAL" />

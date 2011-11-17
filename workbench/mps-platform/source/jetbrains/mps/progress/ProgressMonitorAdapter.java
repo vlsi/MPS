@@ -51,6 +51,16 @@ public class ProgressMonitorAdapter extends ProgressMonitorBase {
   }
 
   @Override
+  protected void startInternal(String name) {
+
+  }
+
+  @Override
+  protected void doneInternal() {
+
+  }
+
+  @Override
   public boolean isCanceled() {
     return myIndicator.isCanceled();
   }

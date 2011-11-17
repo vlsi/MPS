@@ -42,6 +42,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     myName = taskName;
     setTitleInternal(taskName);
     setStepInternal("");
+    startInternal(taskName);
     update();
   }
 
@@ -77,10 +78,15 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     check();
 
     myDone = myTotal;
+    doneInternal();
     update();
   }
 
   protected abstract void update(double fraction);
+
+  protected abstract void startInternal(String name);
+
+  protected abstract void doneInternal();
 
   protected abstract void setTitleInternal(String name);
 
@@ -118,7 +124,11 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
 
     work = Math.max(0, work);
     myAfterActiveChild = Math.min(myDone + work, myTotal);
-    return (myActiveChild = new SubProgressMonitor(this, work, kind));
+    return (myActiveChild = subTaskInternal(work, kind));
+  }
+
+  protected SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
+    return new SubProgressMonitor(this, work, kind);
   }
 
   protected static class SubProgressMonitor extends ProgressMonitorBase {
@@ -127,7 +137,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     private final int parentTotalWork;
     private final SubProgressKind kind;
 
-    private SubProgressMonitor(ProgressMonitorBase parent, int work, SubProgressKind kind) {
+    protected SubProgressMonitor(ProgressMonitorBase parent, int work, SubProgressKind kind) {
       this.parent = parent;
       this.parentTotalWork = work;
       this.kind = kind;
@@ -147,6 +157,16 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
       if (kind == SubProgressKind.DEFAULT) {
         parent.setStepInternal(comment);
       }
+    }
+
+    @Override
+    protected void doneInternal() {
+
+    }
+
+    @Override
+    protected void startInternal(String name) {
+
     }
 
     @Override

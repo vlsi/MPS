@@ -4,6 +4,7 @@ package jetbrains.mps.internal.make.runtime.backports;
 
 import jetbrains.mps.progress.ProgressMonitorBase;
 import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.progress.SubProgressKind;
 
 public class JobProgressMonitorAdapter extends ProgressMonitorBase {
   private static final int WORK_AMOUNT = 10000;
@@ -11,6 +12,7 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
   private IJobMonitor myJobMonitor;
   private String myName;
   private String myStep;
+  private boolean myCalledSetTitleInternal = false;
 
   public JobProgressMonitorAdapter(IJobMonitor monitor) {
     myJobMonitor = monitor;
@@ -31,22 +33,26 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
     if ("".equals(text)) {
       return;
     }
-
-    if (myName != null && neq_ud0snj_a0a2a2(myName, text)) {
-      myJobMonitor.currentProgress().finishWork(myName);
-      myName = null;
-    }
     myName = text;
+  }
+
+  protected void startInternal(String text) {
     myJobMonitor.currentProgress().beginWork(text, WORK_AMOUNT, 0);
+  }
+
+  protected void doneInternal() {
+    myJobMonitor.currentProgress().finishWork(myName);
+  }
+
+  @Override
+  protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
+    return new JobProgressMonitorAdapter.SubProgressMonitor(this, work, kind);
   }
 
   @Override
   public void done() {
     super.done();
-    if (myName != null) {
-      myJobMonitor.currentProgress().finishWork(myName);
-      myName = null;
-    }
+    myName = null;
   }
 
   public boolean isCanceled() {
@@ -56,10 +62,19 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
   public void cancel() {
   }
 
-  private static boolean neq_ud0snj_a0a2a2(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+  protected class SubProgressMonitor extends ProgressMonitorBase.SubProgressMonitor {
+    private SubProgressMonitor(ProgressMonitorBase parent, int work, SubProgressKind kind) {
+      super(parent, work, kind);
+    }
+
+    @Override
+    protected void doneInternal() {
+      JobProgressMonitorAdapter.this.doneInternal();
+    }
+
+    @Override
+    protected void startInternal(String name) {
+      JobProgressMonitorAdapter.this.startInternal(name);
+    }
   }
 }
