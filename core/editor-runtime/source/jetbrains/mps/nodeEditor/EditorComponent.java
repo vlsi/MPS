@@ -36,10 +36,10 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.actions.MPSActions;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
-import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -2538,7 +2538,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();
     if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) return getSelectedCell();
     if (dataId.equals(MPSDataKeys.EDITOR_COMPONENT.getName())) return this;
-    if (dataId.equals(MPSDataKeys.PLACE.getName())) return ActionPlace.EDITOR;
+    if (dataId.equals(MPSCommonDataKeys.PLACE.getName())) return ActionPlace.EDITOR;
 
     //PDK
     if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) return new MyCutProvider();

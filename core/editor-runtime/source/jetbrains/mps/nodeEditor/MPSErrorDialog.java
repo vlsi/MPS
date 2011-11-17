@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.ui;
+package jetbrains.mps.nodeEditor;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
