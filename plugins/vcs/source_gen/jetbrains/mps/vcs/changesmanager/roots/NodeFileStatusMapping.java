@@ -20,12 +20,17 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.changesmanager.CurrentDifference;
+import java.util.List;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
 import jetbrains.mps.smodel.SModel;
@@ -37,9 +42,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class NodeFileStatusMapping extends AbstractProjectComponent {
-  private CurrentDifferenceRegistry myRegistry;
-  private Map<SNodePointer, FileStatus> myFileStatusMap = MapSequence.fromMap(new HashMap<SNodePointer, FileStatus>());
-  private CurrentDifferenceListener myGlobalListener = new NodeFileStatusMapping.MyGlobalListener();
+  private final CurrentDifferenceRegistry myRegistry;
+  private final Map<SNodePointer, FileStatus> myFileStatusMap = MapSequence.fromMap(new HashMap<SNodePointer, FileStatus>());
+  private final CurrentDifferenceListener myGlobalListener = new NodeFileStatusMapping.MyGlobalListener();
 
   public NodeFileStatusMapping(Project project, CurrentDifferenceRegistry registry) {
     super(project);
@@ -71,10 +76,25 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       public void run() {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
         if (modelDescriptor instanceof EditableSModelDescriptor) {
-          CurrentDifference diff = myRegistry.getCurrentDifference((EditableSModelDescriptor) modelDescriptor);
-          // TODO change this stupid logic 
-          if (ListSequence.fromList(check_onkh7z_a0a2a1a0b0d(diff.getChangeSet())).count() != 0) {
-            status.value = FileStatus.MODIFIED;
+          EditableSModelDescriptor emd = (EditableSModelDescriptor) modelDescriptor;
+          CurrentDifference diff = myRegistry.getCurrentDifference(emd);
+          List<ModelChange> modelChanges = check_onkh7z_a0c0b0a1a3(diff.getChangeSet());
+          final SNodeId rootId = root.getNodeId();
+          List<ModelChange> rootChanges = ListSequence.fromList(modelChanges).where(new IWhereFilter<ModelChange>() {
+            public boolean accept(ModelChange ch) {
+              return rootId.equals(ch.getRootId());
+            }
+          }).toListSequence();
+          if (ListSequence.fromList(rootChanges).count() != 0) {
+            if (ListSequence.fromList(rootChanges).first() instanceof AddRootChange) {
+              status.value = FileStatus.ADDED;
+              VirtualFile vf = VirtualFileUtils.getVirtualFile(emd.getModelFile());
+              if (vf != null && FileStatusManager.getInstance(myProject).getStatus(vf) == FileStatus.UNKNOWN) {
+                status.value = FileStatus.UNKNOWN;
+              }
+            } else {
+              status.value = FileStatus.MODIFIED;
+            }
           } else {
             status.value = FileStatus.NOT_CHANGED;
           }
@@ -114,7 +134,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     }
   }
 
-  private static List<ModelChange> check_onkh7z_a0a2a1a0b0d(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_onkh7z_a0c0b0a1a3(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
