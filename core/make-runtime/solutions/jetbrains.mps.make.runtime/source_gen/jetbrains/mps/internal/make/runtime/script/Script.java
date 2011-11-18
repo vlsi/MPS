@@ -272,13 +272,15 @@ with_targets:
             if (trg.requiresInput()) {
               if (Sequence.fromIterable(input).isEmpty()) {
                 if (trg instanceof ITargetEx && ((ITargetEx) trg).isOptional()) {
-                  // skip optional target 
+                  LOG.info("No input. Skipping optional target.");
+                  results.addResult(trg.getName(), new IResult.SUCCESS(null));
                   continue with_targets;
+                } else {
+                  LOG.debug("No input. Stopping");
+                  monit.reportFeedback(new IFeedback.ERROR("Error executing target " + trg.getName() + " : no input. Stopping"));
+                  results.addResult(trg.getName(), new IResult.FAILURE(null));
+                  return;
                 }
-                LOG.debug("No input. Stopping");
-                monit.reportFeedback(new IFeedback.ERROR("Error executing target " + trg.getName() + " : no input. Stopping"));
-                results.addResult(trg.getName(), new IResult.FAILURE(null));
-                return;
               }
             }
 
