@@ -630,9 +630,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.Java_Configuration_RunProfileState" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.lib.JavaRunParameters_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.lib.Java_Command" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.MultiConceptNode_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.util.behavior.IMainClass_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -660,8 +660,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.Java_Configuration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MultiConceptChooser" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.lib.JavaRunParameters_Configuration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.MultiConceptNode_Configuration_Editor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>

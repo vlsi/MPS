@@ -8,7 +8,7 @@ import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.execution.configurations.lib.Node_Configuration;
+import jetbrains.mps.execution.lib.Node_Configuration;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;

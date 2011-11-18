@@ -4,7 +4,7 @@ package jetbrains.mps.execution.demo.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import javax.swing.JLabel;
-import jetbrains.mps.execution.configurations.lib.Node_Configuration_Editor;
+import jetbrains.mps.execution.lib.Node_Configuration_Editor;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
