@@ -33,7 +33,7 @@ import java.io.*;
 
 public class JDOMUtil {
   private static final Logger LOG = Logger.getLogger(JDOMUtil.class);
-  private static final String ENCODING = "UTF-8";
+  public static final String ENCODING = "UTF-8";
 
   private static SAXParserFactory factory = null;
 
