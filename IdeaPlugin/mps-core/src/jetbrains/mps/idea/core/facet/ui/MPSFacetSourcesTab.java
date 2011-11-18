@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.facet;
+package jetbrains.mps.idea.core.facet.ui;
 
 import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.Disposable;
@@ -41,6 +41,8 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.idea.core.MPSBundle;
+import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
+import jetbrains.mps.idea.core.facet.ModelRootContentEntryEditor;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 
 import javax.swing.*;

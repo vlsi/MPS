@@ -28,6 +28,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.xmlb.XmlSerializerUtil;
+import jetbrains.mps.idea.core.facet.ui.MPSFacetCommonTabUI;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import org.jdom.Element;

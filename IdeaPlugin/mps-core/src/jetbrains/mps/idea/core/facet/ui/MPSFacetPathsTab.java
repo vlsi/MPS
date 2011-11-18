@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.facet;
+package jetbrains.mps.idea.core.facet.ui;
 
 import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.ide.util.BrowseFilesListener;
@@ -28,6 +28,7 @@ import com.intellij.ui.FieldPanel;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.InsertPathAction;
 import jetbrains.mps.idea.core.MPSBundle;
+import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;

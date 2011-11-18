@@ -22,22 +22,20 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.idea.core.MPSBundle;
+import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * evgeny, 10/26/11
  */
 public class MPSFacet extends Facet<MPSFacetConfiguration> {
-
     private Solution mySolution;
 
     public MPSFacet(@NotNull FacetType facetType, @NotNull Module module, @NotNull String name, @NotNull MPSFacetConfiguration configuration, Facet underlyingFacet) {
@@ -54,14 +52,18 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
                     @Override
                     public void run() {
                         SolutionDescriptor solutionDescriptor = getConfiguration().getState().myDescriptor;
+                        mySolution = new SolutionIdea(getModule(), solutionDescriptor);
+                        com.intellij.openapi.project.Project project = getModule().getProject();
+                        Project mpsProject = ProjectHelper.toMPSProject(project);
 
-                        IFile imlFile = FileSystem.getInstance().getFileByPath(getModule().getModuleFilePath());
-                        IFile models = imlFile.getParent().getDescendant("models");
+                        MPSModuleRepository repository = MPSModuleRepository.getInstance();
+                        if (repository.existsModule(solutionDescriptor.getModuleReference())) {
+                            MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
+                            return;
+                        }
 
-                        Project project = ProjectHelper.toMPSProject(getModule().getProject());
-                        mySolution = Solution.newInstance(new ModulesMiner.ModuleHandle(imlFile, solutionDescriptor), project);
-
-                        MessagesViewTool.log(getModule().getProject(), MessageKind.INFORMATION, "module loaded: " + mySolution.getModuleFqName());
+                        repository.addModule(mySolution, mpsProject);
+                        MessagesViewTool.log(project, MessageKind.INFORMATION, MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleFqName()));
                     }
                 });
 
@@ -75,7 +77,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
         ModelAccess.instance().runWriteAction(new Runnable() {
             @Override
             public void run() {
-                MessagesViewTool.log(getModule().getProject(), MessageKind.INFORMATION, "module unloaded: " + mySolution.getModuleFqName());
+                MessagesViewTool.log(getModule().getProject(), MessageKind.INFORMATION, MPSBundle.message("facet.module.unloaded", mySolution.getModuleFqName()));
                 MPSModuleRepository.getInstance().removeModule(mySolution);
                 mySolution = null;
             }
