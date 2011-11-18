@@ -18,6 +18,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.dependency.DependenciesManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.project.Project;
 
 public class ModuleDependencyNode extends MPSTreeNode {
   private List<IModule> myModules;
@@ -110,5 +112,18 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
   public boolean isInitialized() {
     return myInitialized;
+  }
+
+  public void doubleClick() {
+    if ((int) ListSequence.fromList(myModules).count() == 1) {
+      ProjectPane.getInstance(check_lba8jw_a0a0a0a5(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
+    }
+  }
+
+  private static Project check_lba8jw_a0a0a0a5(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getProject();
+    }
+    return null;
   }
 }

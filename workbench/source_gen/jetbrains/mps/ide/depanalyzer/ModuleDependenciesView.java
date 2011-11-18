@@ -54,6 +54,10 @@ public class ModuleDependenciesView extends JPanel {
       public void invoke(Boolean b) {
         setShowCycles(b);
       }
+    }), new ModuleDependenciesView.MyToggleAction("Show all paths", jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
+      public void invoke(Boolean b) {
+        setShowAllPaths(b);
+      }
     }));
 
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
@@ -122,6 +126,11 @@ public class ModuleDependenciesView extends JPanel {
   }
 
   public void setShowCycles(boolean b) {
+  }
+
+  public void setShowAllPaths(boolean b) {
+    myRightTree.setShowAllPaths(b);
+    myRightTree.rebuildLater();
   }
 
   public void resetAll() {
