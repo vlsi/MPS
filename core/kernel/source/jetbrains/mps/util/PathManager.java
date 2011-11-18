@@ -74,6 +74,9 @@ public class PathManager {
     }
 
     ourHomePath = root.getAbsolutePath();
+    if(ourHomePath.equals("/")) {
+      throw new IllegalStateException("cannot detect MPS location");
+    }
     return ourHomePath;
   }
 

@@ -64,6 +64,14 @@
 
     <target name="compile">
         <mkdir dir="${artifacts}"/>
+        <mkdir dir="${artifacts}/mps-core"/>
+        <mkdir dir="${artifacts}/mps-core/lib"/>
+        <mkdir dir="${artifacts}/mps-core/languages"/>
+        <touch file="${artifacts}/mps-core/build.number"/>
+
+        <copy includeemptydirs="false" todir="${artifacts}/mps-core/languages">
+            <fileset dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
+        </copy>
 
         <!-- MPS Core -->
         <mkdir dir="${build_dir}/mpscore_jar"/>
@@ -115,7 +123,7 @@
                 <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen"/>
             </src>
         </javac>
-        <jar destfile="${artifacts}/mps-core.jar">
+        <jar destfile="${artifacts}/mps-core/lib/mps-core.jar">
             <fileset dir="${build_dir}/mpscore_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -124,7 +132,7 @@
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
-        <copy todir="${artifacts}" flatten="true">
+        <copy todir="${artifacts}/mps-core/lib" flatten="true">
             <resources>
                 <file file="${base_dir}/lib/asm.jar"/>
                 <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
@@ -143,15 +151,14 @@
                 <path path="${base_dir}/workbench/mps-platform/source_gen"/>
             </src>
             <classpath>
-                <fileset dir="${artifacts}" includes="*.jar"/>
+                <fileset dir="${artifacts}/mps-core/lib" includes="*.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench_jar">
-            <fileset dir="${base_dir}/workbench/mps-platform/source" includes="META-INF/*"/>
             <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
         </copy>
-        <jar destfile="${artifacts}/mps-workbench.jar">
+        <jar destfile="${artifacts}/mps-core/lib/mps-workbench.jar">
             <fileset dir="${build_dir}/mpsworkbench_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -178,27 +185,20 @@
                 <path path="${base_dir}/workbench/mps-editor/source"/>
             </src>
             <classpath>
-                <fileset dir="${artifacts}" includes="*.jar"/>
+                <fileset dir="${artifacts}/mps-core/lib" includes="*.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar">
             <fileset dir="${base_dir}/editor/editor-api/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/editor/editor-api/source" includes="META-INF/*"/>
             <fileset dir="${base_dir}/core/editor-runtime/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/editor-runtime/source" includes="META-INF/*"/>
             <fileset dir="${base_dir}/core/editor-runtime/source_gen" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/editor-runtime/source_gen" includes="META-INF/*"/>
             <fileset dir="${base_dir}/core/actions-runtime/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/actions-runtime/source" includes="META-INF/*"/>
             <fileset dir="${base_dir}/core/actions-runtime/source_gen" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/actions-runtime/source_gen" includes="META-INF/*"/>
             <fileset dir="${base_dir}/core/intentions-runtime/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/intentions-runtime/source" includes="META-INF/*"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/workbench/mps-editor/source" includes="META-INF/*"/>
         </copy>
-        <jar destfile="${artifacts}/mps-editor.jar">
+        <jar destfile="${artifacts}/mps-core/lib/mps-editor.jar">
             <fileset dir="${build_dir}/mpseditor_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -211,19 +211,33 @@
         <!-- MPS plugin -->
         <mkdir dir="${build_dir}/mpsplugin_jar"/>
         <javac2 destdir="${build_dir}/mpsplugin_jar" fork="true"
-               memorymaximumsize="1024m"
-               includeantruntime="false">
+                memorymaximumsize="1024m"
+                includeantruntime="false">
             <compilerarg value="-Xlint:none"/>
             <src>
                 <!-- editor-api -->
                 <path path="${base_dir}/IdeaPlugin/mps-core/src"/>
             </src>
             <classpath>
-                <fileset dir="${artifacts}" includes="*.jar"/>
+                <fileset dir="${artifacts}/mps-core/lib" includes="*.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac2>
-        <jar destfile="${artifacts}/mps-plugin.jar">
+        <copy includeemptydirs="false" todir="${build_dir}/mpsplugin_jar">
+            <fileset dir="${base_dir}/IdeaPlugin/mps-core/src" includes="**/*.png, **/*.properties"/>
+            <fileset dir="${base_dir}/IdeaPlugin/mps-core/resources" includes="**/*.png, **/*.properties"/>
+            <fileset dir="${base_dir}/workbench/mps-platform/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/workbench/mps-editor/source" includes="META-INF/*"/>
+        </copy>
+        <copy file="${base_dir}/IdeaPlugin/mps-core/META-INF/plugin.xml"
+              tofile="${build_dir}/mpsplugin_jar/META-INF/plugin.xml">
+            <filterchain>
+                <tokenfilter>
+                    <replaceregex pattern="../classes/META-INF/" replace="" flags="gi"/>
+                </tokenfilter>
+            </filterchain>
+        </copy>
+        <jar destfile="${artifacts}/mps-core/lib/mps-plugin.jar">
             <fileset dir="${build_dir}/mpsplugin_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -232,5 +246,17 @@
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
+    </target>
+
+    <target name="install-plugin" depends="compile">
+        <property name="pluginPath" value="${home.idea_ce.plugins}"/>
+        <copy includeemptydirs="false" todir="${pluginPath}/">
+            <fileset dir="${artifacts}" includes="mps-core/**"/>
+        </copy>
+    </target>
+
+    <target name="uninstall-plugin">
+        <property name="pluginPath" value="${home.idea_ce.plugins}"/>
+        <delete dir="${pluginPath}/mps-core"/>
     </target>
 </project>
