@@ -53,7 +53,6 @@ import java.util.Set;
 public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private TabsComponent myTabsComponent;
   private SModelListener myModelListener = new MyNameListener();
-  private TabColorProvider myColorProvider = null;
   private SNodePointer myBaseNode;
   private Set<EditorTabDescriptor> myPossibleTabs;
   private IOperationContext myContext;
@@ -65,7 +64,6 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myContext = context;
-    myColorProvider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
 
     myTabsComponent = TabComponentFactory.createTabsComponent(baseNode, possibleTabs, getComponent(), new NodeChangeCallback() {
         public void changeNode(SNode newNode) {
@@ -79,8 +77,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       public void enterCreateMode(JComponent replace) {
         showComponent(replace);
       }
-    }
-    );
+    }, context);
 
     showNode(baseNode.getNode(), false);
 
@@ -120,9 +117,6 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       }
     });
     myTabsComponent.dispose();
-    if (myColorProvider != null) {
-      myColorProvider.stop(this);
-    }
     super.dispose();
   }
 
@@ -155,10 +149,6 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     }
 
     if (rootChange) {
-      if (myColorProvider != null) {
-        myColorProvider.stop(this);
-      }
-
       SModelDescriptor model = getCurrentNodeModel();
       if (model != null) {
         model.removeModelListener(myModelListener);
@@ -173,10 +163,6 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       assert model != null;
 
       model.addModelListener(myModelListener);
-
-      if (myColorProvider != null) {
-        myColorProvider.start(this);
-      }
 
       updateProperties();
     }
