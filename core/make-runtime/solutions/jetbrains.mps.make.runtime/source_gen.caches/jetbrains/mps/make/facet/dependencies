@@ -34,5 +34,8 @@
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
     <classNode extendsClassName="jetbrains.mps.internal.make.runtime.util.DefaultHName" />
   </dependency>
+  <dependency className="jetbrains.mps.make.facet.ITargetEx" file="ITargetEx.java">
+    <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
+  </dependency>
 </dependenciesRoot>
 

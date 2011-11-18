@@ -22,6 +22,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.make.facet.ITargetEx;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.smodel.TimeOutRuntimeException;
@@ -238,6 +239,7 @@ __switch__:
         });
         monit.currentProgress().beginWork(scriptName, work, monit.currentProgress().workLeft());
 
+with_targets:
         for (final ITarget trg : Sequence.fromIterable(toExecute)) {
           LOG.debug("Executing " + trg.getName());
           try {
@@ -269,6 +271,10 @@ __switch__:
 
             if (trg.requiresInput()) {
               if (Sequence.fromIterable(input).isEmpty()) {
+                if (trg instanceof ITargetEx && ((ITargetEx) trg).isOptional()) {
+                  // skip optional target 
+                  continue with_targets;
+                }
                 LOG.debug("No input. Stopping");
                 monit.reportFeedback(new IFeedback.ERROR("Error executing target " + trg.getName() + " : no input. Stopping"));
                 results.addResult(trg.getName(), new IResult.FAILURE(null));

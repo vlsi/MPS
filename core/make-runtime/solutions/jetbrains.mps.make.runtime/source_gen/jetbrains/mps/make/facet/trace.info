@@ -171,5 +171,10 @@
     </scopeInfo>
     <unitInfo nodeId="6168415856807659069" fileName="FacetRegistry.java" startLine="13" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.make.facet.FacetRegistry" />
   </root>
+  <root nodeId="7219266275016638568">
+    <nodeInfo nodeId="7219266275016638571" fileName="ITargetEx.java" startLine="6" startPosition="44" endLine="7" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
+    <scopeInfo nodeId="7219266275016638571" fileName="ITargetEx.java" startLine="6" startPosition="44" endLine="7" endPosition="30" />
+    <unitInfo nodeId="7219266275016638568" fileName="ITargetEx.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.make.facet.ITargetEx" />
+  </root>
 </debugInfo>
 
