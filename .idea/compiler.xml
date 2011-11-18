@@ -28,8 +28,8 @@
       <directory url="file://$PROJECT_DIR$/core/debug/languages/customViewers/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/core/debug/languages/evaluation/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/core/debug/languages/privateMembers/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/core/debug/solutions/jetbrains.mps.debug.tests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/core/dependencies/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/ui/languages/ui/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/actions/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/behavior/languages/behavior/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/constraints/source_gen" includeSubdirectories="true" />
