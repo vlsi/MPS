@@ -124,6 +124,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="facets" />
       <property name="name" nameId="tpck.1169194664001" value="RetainedUtil" />
     </node>
+    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5734694512880444077">
+      <property name="name" nameId="tpck.1169194664001" value="Rename" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Rename" />
+    </node>
   </roots>
   <root id="1209308509191">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1209308509192">
@@ -1263,6 +1267,13 @@
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940138">
         <property name="modifiers" nameId="tp4k.1207318242773" value="alt+shift" />
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_M" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="5734694512880444089">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="5734694512880444077" resolveInfo="Rename" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="5734694512880444090">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="shift" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F6" />
       </node>
     </node>
   </root>
@@ -5320,6 +5331,19 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3110513929263083461" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3110513929263083462" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3110513929263083463" />
+    </node>
+  </root>
+  <root id="5734694512880444077">
+    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionParameterDeclaration" typeId="tp4k.1205679047295" id="5734694512880450833">
+      <property name="name" nameId="tpck.1169194664001" value="target" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5734694512880450834" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5734694512880450835">
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+      </node>
+      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="5734694512880450838" />
+    </node>
+    <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="5734694512880444078">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5734694512880444079" />
     </node>
   </root>
 </model>

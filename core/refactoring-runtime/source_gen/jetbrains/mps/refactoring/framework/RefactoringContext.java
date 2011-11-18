@@ -44,7 +44,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.lang.reflect.Constructor;
-import java.util.Arrays;
 import jetbrains.mps.project.ProjectOperationContext;
 
 public class RefactoringContext {
@@ -583,12 +582,9 @@ public class RefactoringContext {
       switch (myRefactoring.getRefactoringTarget().getTarget()) {
         case NODE:
           setSelectedNode((SNode) target);
-          // <node> 
-          // <node> 
           break;
         case MODEL:
           setSelectedModel(((SModel) target).getModelDescriptor());
-          // <node> 
           break;
         case MODULE:
           setSelectedModule((IModule) target);
@@ -657,18 +653,6 @@ public class RefactoringContext {
   }
 
   public static RefactoringContext createRefactoringContext(IRefactoring refactoring, List names, List parameters, Object target, Project project) {
-    IRefactoringTarget refTarget = refactoring.getRefactoringTarget();
-    boolean oneEntity = !(refTarget.allowMultipleTargets());
-    List targetList;
-    if (!(oneEntity)) {
-      targetList = ((List) target);
-    } else {
-      targetList = Arrays.asList(target);
-    }
-    boolean disabled = (RefactoringUtil.getApplicability(refactoring, targetList).lessThan(RefactoringUtil.Applicability.APPLICABLE));
-    if (disabled) {
-      return null;
-    }
 
     RefactoringContext result = new RefactoringContext(refactoring);
     result.setSelectedProject(project);

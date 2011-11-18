@@ -5,18 +5,17 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
 
 public class MakeFieldStatic_Action extends GeneratedAction {
@@ -29,9 +28,16 @@ public class MakeFieldStatic_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings" + "." + "MakeFieldStatic"), ((SNode) MapSequence.fromMap(_params).get("field")));
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "MakeFieldStatic", t);
       this.disable(event.getPresentation());
@@ -45,13 +51,14 @@ public class MakeFieldStatic_Action extends GeneratedAction {
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
-          node = null;
-        }
       }
       MapSequence.fromMap(_params).put("field", node);
     }
     if (MapSequence.fromMap(_params).get("field") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -59,15 +66,13 @@ public class MakeFieldStatic_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final RefactoringContext c = RefactoringContext.createRefactoringContext(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings" + "." + "MakeFieldStatic"), Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("field")), ProjectHelper.toMPSProject(event.getData(PlatformDataKeys.PROJECT)));
-      if (c != null) {
-        new Thread() {
-          public void run() {
-            new RefactoringFacade().execute(c);
-          }
-        }.start();
+      final RefactoringContext c = RefactoringContext.createRefactoringContext(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings" + "." + "MakeFieldStatic"), Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("field")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
+      new Thread() {
+        public void run() {
+          new RefactoringFacade().execute(c);
+        }
+      }.start();
 
-      }
 
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeFieldStatic", t);

@@ -5,13 +5,14 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.List;
@@ -19,7 +20,6 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignature
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import java.util.Arrays;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.project.Project;
@@ -38,9 +38,16 @@ public class ChangeMethodSignature_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings" + "." + "ChangeMethodSignature"), ((SNode) MapSequence.fromMap(_params).get("method")));
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "ChangeMethodSignature", t);
       this.disable(event.getPresentation());
@@ -92,9 +99,8 @@ public class ChangeMethodSignature_Action extends GeneratedAction {
               c.value = RefactoringContext.createRefactoringContext(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings" + "." + "ChangeMethodSignature"), Arrays.asList("myRefactorings"), Arrays.asList(myRefactorings), ((SNode) MapSequence.fromMap(_params).get("method")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
             }
           });
-          if (c.value != null) {
-            new RefactoringFacade().execute(c.value);
-          }
+          new RefactoringFacade().execute(c.value);
+
 
 
         }
