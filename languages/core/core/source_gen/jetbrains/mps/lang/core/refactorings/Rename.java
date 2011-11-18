@@ -11,7 +11,6 @@ import jetbrains.mps.lang.core.scripts.RenameUtil;
 import java.awt.Frame;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JOptionPane;
-import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -49,7 +48,7 @@ public class Rename extends BaseRefactoring {
       JOptionPane.showMessageDialog(frame, "Nodes with getter for the \"name\" property can't be renamed", "Node can't be renamed", JOptionPane.INFORMATION_MESSAGE);
       return false;
     }
-    return Rename.this.ask(refactoringContext, MPSChooserFactory.createStringChooser(refactoringContext, "newName", new Rename_newName_Settings(refactoringContext)));
+    return false;
   }
 
   public void refactor(final RefactoringContext refactoringContext) {

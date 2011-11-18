@@ -29,7 +29,6 @@
   <import index="13qx" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.refactoring.framework(MPS.Workbench/jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp1h" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" implicit="yes" />
@@ -809,10 +808,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp1h.1199455308722" type="tpc2.CellKeyMapKeystroke" typeId="tpc2.1136916976737" id="1200919343189">
-      <property name="modifiers" nameId="tpc2.1136923970223" value="alt" />
-      <property name="keycode" nameId="tpc2.1136923970224" value="VK_DELETE" />
     </node>
     <node role="affectedNodesClause" roleId="tp1h.1200932683928" type="tp1h.AffectedNodesClause" typeId="tp1h.1200932465350" id="1200933346055">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1200933346056">

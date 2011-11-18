@@ -59,7 +59,7 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
       return false;
     }
 
-    return MovePropertyUp.this.ask(refactoringContext, new MovePropertyUp_targetConcept_Chooser(refactoringContext));
+    return false;
   }
 
   public void refactor(final RefactoringContext refactoringContext) {

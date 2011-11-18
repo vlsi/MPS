@@ -6,7 +6,6 @@ import jetbrains.mps.refactoring.framework.BaseLoggableRefactoring;
 import jetbrains.mps.lang.core.refactorings.Rename;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -45,7 +44,7 @@ public class RenameConcept extends BaseLoggableRefactoring {
   public boolean init(final RefactoringContext refactoringContext) {
     // myNewName can be pre-set in context to skip chooser dialog - temporary solution 
     if (((String) refactoringContext.getParameter("myNewName")) == null) {
-      if (!(RenameConcept.this.ask(refactoringContext, MPSChooserFactory.createStringChooser(refactoringContext, "newName", new RenameConcept_newName_Settings(refactoringContext))))) {
+      if (!(false)) {
         return false;
       }
       refactoringContext.setParameter("myNewName", ((String) refactoringContext.getParameter("newName")));

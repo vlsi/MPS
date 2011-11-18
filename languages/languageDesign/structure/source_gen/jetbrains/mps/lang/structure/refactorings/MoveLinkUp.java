@@ -61,7 +61,7 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
       return false;
     }
 
-    if (!(MoveLinkUp.this.ask(refactoringContext, new MoveLinkUp_targetConcept_Chooser(refactoringContext)))) {
+    if (!(false)) {
       return false;
     }
     // check if merge possible 

@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Map;
@@ -91,7 +90,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     if (hasGenerator.value) {
       Messages.showWarningDialog("Generator fragments will not be moved.", "Move concepts");
     }
-    return MoveConcepts.this.ask(refactoringContext, MPSChooserFactory.createModelChooser(refactoringContext, "targetModel", new MoveConcepts_targetModel_Settings(refactoringContext)));
+    return false;
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
