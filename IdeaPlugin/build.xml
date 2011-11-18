@@ -131,21 +131,6 @@
             </resources>
         </copy>
 
-        <!-- MPS Core sources -->
-        <mkdir dir="${build_dir}/mpscore-src_jar"/>
-        <copy includeemptydirs="false" todir="${build_dir}/mpscore-src_jar">
-            <fileset dir="${base_dir}/core/kernel/source" includes="**/*.java"/>
-        </copy>
-        <jar destfile="${artifacts}/mps-core-src.jar">
-            <fileset dir="${build_dir}/mpscore-src_jar"/>
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
-                <attribute name="Implementation-Title" value="MPS Core modeling framework"/>
-                <attribute name="Implementation-Version" value="1.0"/>
-            </manifest>
-        </jar>
-
         <!-- IDEA workbench -->
         <mkdir dir="${build_dir}/mpsworkbench_jar"/>
         <javac destdir="${build_dir}/mpsworkbench_jar" fork="true"
@@ -156,9 +141,6 @@
                 <!-- idea-workbench -->
                 <path path="${base_dir}/workbench/mps-platform/source"/>
                 <path path="${base_dir}/workbench/mps-platform/source_gen"/>
-
-                <!-- temp: editor-api -->
-                <path path="${base_dir}/editor/editor-api/source"/>
             </src>
             <classpath>
                 <fileset dir="${artifacts}" includes="*.jar"/>
@@ -179,20 +161,76 @@
             </manifest>
         </jar>
 
-        <!-- IDEA workbench sources -->
-        <mkdir dir="${build_dir}/mpsworkbench-src_jar"/>
-        <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench-src_jar">
-            <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.java"/>
+        <!-- IDEA editor -->
+        <mkdir dir="${build_dir}/mpseditor_jar"/>
+        <javac destdir="${build_dir}/mpseditor_jar" fork="true"
+               memorymaximumsize="1024m"
+               includeantruntime="false">
+            <compilerarg value="-Xlint:none"/>
+            <src>
+                <!-- editor-api -->
+                <path path="${base_dir}/editor/editor-api/source"/>
+                <path path="${base_dir}/core/editor-runtime/source"/>
+                <path path="${base_dir}/core/editor-runtime/source_gen"/>
+                <path path="${base_dir}/core/actions-runtime/source"/>
+                <path path="${base_dir}/core/actions-runtime/source_gen"/>
+                <path path="${base_dir}/core/intentions-runtime/source"/>
+                <path path="${base_dir}/workbench/mps-editor/source"/>
+            </src>
+            <classpath>
+                <fileset dir="${artifacts}" includes="*.jar"/>
+                <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+            </classpath>
+        </javac>
+        <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar">
+            <fileset dir="${base_dir}/editor/editor-api/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/editor-api/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/core/editor-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/core/editor-runtime/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/core/editor-runtime/source_gen" includes="**/*.png"/>
+            <fileset dir="${base_dir}/core/editor-runtime/source_gen" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/core/actions-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/core/actions-runtime/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/core/actions-runtime/source_gen" includes="**/*.png"/>
+            <fileset dir="${base_dir}/core/actions-runtime/source_gen" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/core/intentions-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/core/intentions-runtime/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/workbench/mps-editor/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/workbench/mps-editor/source" includes="META-INF/*"/>
         </copy>
-        <jar destfile="${artifacts}/mps-workbench-src.jar">
-            <fileset dir="${build_dir}/mpsworkbench-src_jar"/>
+        <jar destfile="${artifacts}/mps-editor.jar">
+            <fileset dir="${build_dir}/mpseditor_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
-                <attribute name="Implementation-Title" value="IDEA Workbench integration package sources"/>
+                <attribute name="Implementation-Title" value="MPS Editor integration package"/>
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
 
+        <!-- MPS plugin -->
+        <mkdir dir="${build_dir}/mpsplugin_jar"/>
+        <javac2 destdir="${build_dir}/mpsplugin_jar" fork="true"
+               memorymaximumsize="1024m"
+               includeantruntime="false">
+            <compilerarg value="-Xlint:none"/>
+            <src>
+                <!-- editor-api -->
+                <path path="${base_dir}/IdeaPlugin/mps-core/src"/>
+            </src>
+            <classpath>
+                <fileset dir="${artifacts}" includes="*.jar"/>
+                <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+            </classpath>
+        </javac2>
+        <jar destfile="${artifacts}/mps-plugin.jar">
+            <fileset dir="${build_dir}/mpsplugin_jar"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Plug-in for IDEA"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
     </target>
 </project>

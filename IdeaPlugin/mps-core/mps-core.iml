@@ -35,9 +35,17 @@
       <sourceFolder url="file://$MODULE_DIR$/../../core/typesystemEngine/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/stubUtils/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/actions-runtime/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/actions-runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/editor-runtime/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/editor-runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/intentions-runtime/source" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../editor/editor-api">
       <sourceFolder url="file://$MODULE_DIR$/../../editor/editor-api/source" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../workbench/mps-editor">
+      <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-editor/source" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../workbench/mps-platform">
       <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-platform/source" isTestSource="false" />
