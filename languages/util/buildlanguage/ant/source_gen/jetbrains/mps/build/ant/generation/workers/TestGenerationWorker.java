@@ -264,6 +264,7 @@ public class TestGenerationWorker extends MpsWorker {
   public void work() {
     setupEnvironment();
     myReporter.init();
+    boolean doneSomething = false;
     //  for each project 
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
     for (File file : mpsProjects.keySet()) {
@@ -293,6 +294,7 @@ public class TestGenerationWorker extends MpsWorker {
       p.projectClosed();
       disposeProject(p);
       dispose();
+      doneSomething = true;
     }
 
     // the rest -- using dummy project 
@@ -304,7 +306,9 @@ public class TestGenerationWorker extends MpsWorker {
     if (go.hasAnythingToGenerate()) {
       Project project = createDummyProject();
       executeTask(project, go);
-    } else {
+      doneSomething = true;
+    }
+    if (!(doneSomething)) {
       error("Could not find anything to generate.");
       myTestFailed = true;
     }
