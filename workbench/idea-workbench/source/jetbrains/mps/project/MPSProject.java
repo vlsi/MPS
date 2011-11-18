@@ -20,11 +20,18 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleManager;
+import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.roots.ModifiableRootModel;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.ProjectRootManager;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
+import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -88,6 +95,7 @@ public class MPSProject extends Project implements ProjectComponent, PersistentS
 
   public void initComponent() {
     String url = myProject.getPresentableUrl();
+
     if (url != null) {
       final File projectFile = new File(url);
       ProjectDescriptor descriptor = new ProjectDescriptor();
