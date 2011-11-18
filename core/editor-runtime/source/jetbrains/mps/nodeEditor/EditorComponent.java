@@ -76,7 +76,6 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.ActionPlace;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;

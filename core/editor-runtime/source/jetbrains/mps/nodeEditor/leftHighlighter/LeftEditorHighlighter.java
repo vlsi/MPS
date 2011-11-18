@@ -34,7 +34,6 @@ import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NonNls;
