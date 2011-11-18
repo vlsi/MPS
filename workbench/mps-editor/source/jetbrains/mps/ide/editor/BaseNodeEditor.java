@@ -17,7 +17,6 @@ package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.editor.Document;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.MementoPersistence;
