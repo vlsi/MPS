@@ -41,10 +41,6 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
     setIcon(Icons.SOLUTION_ICON);
   }
 
-  public Object getUserObject() {
-    return mySolution;
-  }
-
   public IModule getModule() {
     return mySolution;
   }
