@@ -587,7 +587,7 @@
     <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="9" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="9" startPosition="0" endLine="9" endPosition="22" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="10" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="10" startPosition="0" endLine="10" endPosition="36" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="10" startPosition="0" endLine="10" endPosition="62" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="11" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="11" startPosition="0" endLine="11" endPosition="48" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="12" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
@@ -612,7 +612,7 @@
     <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="7" startPosition="26" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="8" startPosition="68" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="9" startPosition="22" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="10" startPosition="36" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="10" startPosition="62" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="11" startPosition="48" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="2555954362606370623" fileName="plugin.xml" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />

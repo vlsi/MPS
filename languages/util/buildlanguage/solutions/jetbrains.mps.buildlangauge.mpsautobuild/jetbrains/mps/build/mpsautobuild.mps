@@ -11,6 +11,7 @@
   <import index="lz2f" modelUID="r:72631c39-be3f-4f0e-bedf-97a99cf33059(jetbrains.mps.lang.smodel.customViewers.plugin)" version="-1" />
   <import index="7mk9" modelUID="r:abbc5771-5c58-496b-9439-f0f55a94c716(jetbrains.mps.baseLanguage.tuples.customViewers.plugin)" version="-1" />
   <import index="tpsr" modelUID="r:00000000-0000-4000-0000-011c895904c7(jetbrains.mps.build.execution.plugin)" version="-1" />
+  <import index="stp4" modelUID="r:9de23b94-426b-42c2-bb32-6e9e1b3d0990(jetbrains.mps.baseLanguage.unitTest.execution.plugin)" version="1" />
   <import index="tps4" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="8" implicit="yes" />
   <import index="tpsk" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -3096,6 +3097,11 @@
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="625155585696516557">
       <node role="pluginXml" roleId="tps4.989489456094387704" type="tps4.IdeaInitializerReference" typeId="tps4.989489456094387696" id="625155585696516559">
         <link role="ideaInitializer" roleId="tps4.989489456094387697" targetNodeId="tpsr.2555954362606370623" resolveInfo="Ant Execution" />
+      </node>
+    </node>
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="1885484277888552693">
+      <node role="pluginXml" roleId="tps4.989489456094387704" type="tps4.IdeaInitializerReference" typeId="tps4.989489456094387696" id="1885484277888552695">
+        <link role="ideaInitializer" roleId="tps4.989489456094387697" targetNodeId="stp4.1885484277888300375" resolveInfo="JUnit Execution" />
       </node>
     </node>
   </root>

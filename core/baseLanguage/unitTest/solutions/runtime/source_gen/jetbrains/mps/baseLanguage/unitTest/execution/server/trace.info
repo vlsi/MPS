@@ -90,7 +90,9 @@
     <scopeInfo nodeId="5881102044690168081" fileName="TestRunner.java" startLine="28" startPosition="33" endLine="31" endPosition="87">
       <varInfo nodeId="5881102044690168086" varName="className" />
     </scopeInfo>
-    <scopeInfo nodeId="5881102044690168321" fileName="TestRunner.java" startLine="80" startPosition="0" endLine="83" endPosition="5" />
+    <scopeInfo nodeId="5881102044690168321" fileName="TestRunner.java" startLine="80" startPosition="0" endLine="83" endPosition="5">
+      <varInfo nodeId="5881102044690168321" varName="request" />
+    </scopeInfo>
     <scopeInfo nodeId="5881102044690168255" fileName="TestRunner.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="5881102044690168258" varName="className" />
     </scopeInfo>

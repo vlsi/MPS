@@ -346,6 +346,7 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-languages/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-languages" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.execution" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.execution" />
     <mkdir dir="${deploy.dir}/MPS/plugins" />
     <copy todir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples">
       <fileset dir="${mps_home}/samples" />

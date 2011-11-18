@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dr8auchn6giadccz4xz3q5apkilmfox">
+<dependencies version="2" modelHash="-5ivlhjpoqh55acca1bfryqcxsgnsenx">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="auc6jui7deer5vkr9v1h1ws94bw74n1" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="90a2yqqwsbuerf4u3po1b2jxod6vyfj" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="8ktekg1dslhj74s7hg8toxh4cll4il7" />
@@ -26,7 +26,7 @@
   <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" hash="2b4jjjrnr7bceadck9wnsuiped27re6" />
   <dep model="r:e4eacb3c-606c-4e9e-bd5e-ca89808d18ab(jetbrains.mps.build.packaging.mps.generator.template.main@generator)" hash="-2nzntqw7int9053vrc906z2bd3b7l1t" />
   <dep model="r:ea5ebe15-8287-48fa-903b-179b2fdbe69c(jetbrains.mps.build.property.generator.template.main@generator)" hash="bvdhm2jo5t4eh10gbtqxm6t1d778xll" />
-  <common hash="-8bm0gp6367lz325tijwua762p06wzdt">
+  <common hash="4p6z53z2hrj250qbgh9hs2mazkeh5yh">
     <dep root="5428983789737854526" />
     <dep root="5428983789737854768" />
     <dep root="6700426045796013947" />
@@ -112,6 +112,6 @@
   <source id="2901107368280525965" name="redist" hash="-5y1micluv26ldpxuf61kxk1r7u4f6yx" />
   <source id="6700426045796013947" name="mps-platform.jar" hash="-x9dtjrxg79odo4luh00p017qw2dpy8" />
   <source id="938551967734106063" name="debugger" hash="-3v8ce5dldge300go3sjtij891y0b0tz" />
-  <source id="625155585696516556" name="execution" hash="5j23vjiz0hsg246ean7eg5clt9znv95" />
+  <source id="625155585696516556" name="execution" hash="-5y4s31e6411wnbrmczjqmp6vadfqn5d" />
 </dependencies>
 
