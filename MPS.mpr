@@ -224,10 +224,10 @@
       <modulePath path="${project}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.regexp.examples.msd" folder="baseLanguage.regexp" />
       <modulePath path="${project}/languages/util/regexp/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.regexp.sandbox.msd" folder="baseLanguage.regexp" />
       <modulePath path="${project}/languages/util/regexp/solutions/jetbrains.mps.regexp.unittest/jetbrains.mps.regexp.unittest.msd" folder="baseLanguage.regexp" />
-      <modulePath path="${project}/languages/util/runConfigurations/languages/commands/commands.mpl" folder="languages.execution" />
+      <modulePath path="${project}/plugins/execution-languages/commands/commands.mpl" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/languages/common/common.mpl" folder="languages.execution" />
-      <modulePath path="${project}/languages/util/runConfigurations/languages/configurations/configurations.mpl" folder="languages.execution" />
-      <modulePath path="${project}/languages/util/runConfigurations/languages/demo/demo.mpl" folder="languages.execution" />
+      <modulePath path="${project}/plugins/execution-languages/configurations/configurations.mpl" folder="languages.execution" />
+      <modulePath path="${project}/plugins/execution-languages/demo/demo.mpl" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/languages/settings/settings.mpl" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/languages/util/util.mpl" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" folder="languages.execution" />
