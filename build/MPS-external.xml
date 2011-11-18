@@ -333,8 +333,8 @@
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodel.customViewers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections.customViewers" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodel.customViewers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.customViewers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.evaluation" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.customViewers" />

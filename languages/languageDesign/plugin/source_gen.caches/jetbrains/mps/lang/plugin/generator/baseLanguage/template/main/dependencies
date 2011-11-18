@@ -32,6 +32,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.FileGeneratorDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GenerationListenerDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResource_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeymapChangesDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.OrderConstraints_Behavior" />
