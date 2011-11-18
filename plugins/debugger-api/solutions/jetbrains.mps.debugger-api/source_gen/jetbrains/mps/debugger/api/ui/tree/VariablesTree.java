@@ -34,7 +34,7 @@ import java.util.Comparator;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.tree.TreePath;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 public class VariablesTree extends MPSTree implements DataProvider {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "COMMAND_OPEN_NODE_IN_PROJECT";
@@ -173,7 +173,7 @@ public class VariablesTree extends MPSTree implements DataProvider {
   @Override
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSDataKeys.NODE.getName())) {
+    if (dataId.equals(MPSCommonDataKeys.NODE.getName())) {
       AbstractWatchableNode selectedNode = findSelectedNode();
       if (selectedNode != null) {
         return selectedNode.getNode();

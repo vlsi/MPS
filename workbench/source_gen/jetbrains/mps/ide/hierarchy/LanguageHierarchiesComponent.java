@@ -47,7 +47,7 @@ import java.awt.Graphics;
 import javax.swing.SwingConstants;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
@@ -341,14 +341,14 @@ outer:
 
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSDataKeys.NODE.getName())) {
+    if (dataId.equals(MPSCommonDataKeys.NODE.getName())) {
       return ModelAccess.instance().runReadAction(new Computable<Object>() {
         public Object compute() {
           return getSelectedConcept();
         }
       });
     }
-    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+    if (dataId.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
       return myOperationContext;
     }
     return null;

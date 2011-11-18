@@ -6,7 +6,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
@@ -23,7 +23,7 @@ public class EvaluationTreeActions {
     public void actionPerformed(AnActionEvent event) {
       AbstractEvaluationModel model = EvaluationUi.EVALUATION_MODEL.getData(event.getDataContext());
       // todo remove cast 
-      ((EvaluationProvider) model.getDebugSession().getEvaluationProvider()).showEditWatchDialog(MPSDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), model);
+      ((EvaluationProvider) model.getDebugSession().getEvaluationProvider()).showEditWatchDialog(MPSCommonDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), model);
     }
 
     @Override

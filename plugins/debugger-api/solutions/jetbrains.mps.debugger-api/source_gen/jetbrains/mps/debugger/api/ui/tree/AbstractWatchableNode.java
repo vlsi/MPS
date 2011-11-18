@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
@@ -24,9 +24,9 @@ import jetbrains.mps.ide.ui.MPSTree;
     @Override
     public void actionPerformed(AnActionEvent e) {
       //  todo this action should not be here 
-      final SNode node = MPSDataKeys.NODE.getData(e.getDataContext());
+      final SNode node = MPSCommonDataKeys.NODE.getData(e.getDataContext());
       final Project project = PlatformDataKeys.PROJECT.getData(e.getDataContext());
-      final IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
+      final IOperationContext context = MPSCommonDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
       if (node == null || context == null || project == null) {
         e.getPresentation().setEnabled(false);
       } else {

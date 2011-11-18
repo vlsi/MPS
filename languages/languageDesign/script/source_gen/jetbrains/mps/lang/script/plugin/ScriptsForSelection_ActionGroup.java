@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.action.BaseGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
@@ -39,7 +39,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
     try {
       ScriptsForSelection_ActionGroup.this.removeAll();
       event.getPresentation().setVisible(true);
-      IOperationContext context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+      IOperationContext context = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
       if (context == null || context.getProject() == null) {
         event.getPresentation().setEnabled(false);
         return;

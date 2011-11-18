@@ -97,7 +97,7 @@ public abstract class BaseNodeEditor implements Editor {
 
     @Nullable
     public Object getData(@NonNls String dataId) {
-      if (dataId.equals(MPSCommonDataKeys.MPS_EDITOR.getName())) return BaseNodeEditor.this;
+      if (dataId.equals(MPSEditorDataKeys.MPS_EDITOR.getName())) return BaseNodeEditor.this;
       if (BaseNodeEditor.this instanceof DataProvider) {
         Object data = ((DataProvider) BaseNodeEditor.this).getData(dataId);
         if (data != null) return data;

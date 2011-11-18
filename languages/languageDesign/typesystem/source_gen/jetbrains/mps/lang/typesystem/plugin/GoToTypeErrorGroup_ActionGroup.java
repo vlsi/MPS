@@ -13,8 +13,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.errors.IErrorReporter;
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
@@ -38,12 +39,12 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
 
   public void doUpdate(AnActionEvent event) {
     try {
-      SNode node = event.getData(MPSDataKeys.NODE);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node == null) {
         GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
         return;
       }
-      EditorComponent editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
       if (editorComponent == null) {
         GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
         return;

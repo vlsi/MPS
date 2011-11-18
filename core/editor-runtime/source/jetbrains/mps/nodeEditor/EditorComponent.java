@@ -37,6 +37,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
@@ -2513,12 +2514,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Nullable
   public Object getData(@NonNls String dataId) {
     //MPSDK
-    if (dataId.equals(MPSDataKeys.NODE.getName())) {
+    if (dataId.equals(MPSCommonDataKeys.NODE.getName())) {
       List<SNode> selectedNodes = getSelectedNodes();
       return selectedNodes.isEmpty() ? getRootCell().getSNode() : selectedNodes.iterator().next();
     }
-    if (dataId.equals(MPSDataKeys.NODES.getName())) return getSelectedNodes();
-    if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())) {
+    if (dataId.equals(MPSCommonDataKeys.NODES.getName())) return getSelectedNodes();
+    if (dataId.equals(MPSEditorDataKeys.CONTEXT_MODEL.getName())) {
       return ModelAccess.instance().runReadAction(new Computable() {
         public Object compute() {
           SNode node = getRootCell().getSNode();
@@ -2529,15 +2530,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       });
     }
-    if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
+    if (dataId.equals(MPSEditorDataKeys.CONTEXT_MODULE.getName())) {
       IOperationContext operationContext = getOperationContext();
       if (operationContext == null) return null;
       return operationContext.getModule();
     }
-    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return getOperationContext();
-    if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();
-    if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) return getSelectedCell();
-    if (dataId.equals(MPSDataKeys.EDITOR_COMPONENT.getName())) return this;
+    if (dataId.equals(MPSEditorDataKeys.OPERATION_CONTEXT.getName())) return getOperationContext();
+    if (dataId.equals(MPSEditorDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();
+    if (dataId.equals(MPSEditorDataKeys.EDITOR_CELL.getName())) return getSelectedCell();
+    if (dataId.equals(MPSEditorDataKeys.EDITOR_COMPONENT.getName())) return this;
     if (dataId.equals(MPSCommonDataKeys.PLACE.getName())) return ActionPlace.EDITOR;
 
     //PDK

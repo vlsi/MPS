@@ -18,9 +18,15 @@ package jetbrains.mps.ide.actions;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.ActionPlace;
 
+import java.awt.Frame;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -32,6 +38,26 @@ import java.util.List;
  */
 public class MPSCommonDataKeys extends PlatformDataKeys {
 
+  @Description(description = "operation context")
+  public static final DataKey<IOperationContext> OPERATION_CONTEXT = DataKey.create("MPS_IOperationContext");
+  @Description(description = "current MPS project")
+  public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");
+
+  @Description(description = "selected node")
+  public static final DataKey<SNode> NODE = DataKey.create("MPS_SNode");
+  @Description(description = "selected nodes")
+  public static final DataKey<List<SNode>> NODES = DataKey.create("MPS_SNode_List");
+
+  @Description(description = "context model")
+  public static final DataKey<SModelDescriptor> CONTEXT_MODEL = DataKey.create("MPS_Context_SModelDescriptor");
+  @Description(description = "context module")
+  public static final DataKey<IModule> CONTEXT_MODULE = DataKey.create("MPS_Context_IModule");
+
+  @Description(description = "selected model")
+  public static final DataKey<SModelDescriptor> MODEL = DataKey.create("MPS_SModelDescriptor");
+  @Description(description = "selected models")
+  public static final DataKey<List<SModelDescriptor>> MODELS = DataKey.create("MPS_SModelDescriptor_List");
+
   @Description(description = "throwable in select message")
   public static final DataKey<Throwable> EXCEPTION = DataKey.create("MPS_Exception");
   @Description(description = "selected messages")
@@ -39,8 +65,11 @@ public class MPSCommonDataKeys extends PlatformDataKeys {
 
   @Description(description = "active place")
   public static final DataKey<ActionPlace> PLACE = DataKey.create("MPS_Place");
-  @Description(description = "current editor")
-  public static final DataKey<Editor> MPS_EDITOR = DataKey.create("MPS_IEditor");
+
+  @Description(description = "main window's Frame")
+  public static final DataKey<Frame> FRAME = DataKey.create("MPS_Frame");
+  @Description(description = "scope")
+  public static final DataKey<IScope> SCOPE = DataKey.create("MPS_IScope");
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(ElementType.FIELD)

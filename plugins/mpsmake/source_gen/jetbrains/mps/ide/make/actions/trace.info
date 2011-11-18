@@ -14,7 +14,9 @@
     <nodeInfo nodeId="2017614408232613001" fileName="ProjectCompileActions_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2017614408232613001" fileName="ProjectCompileActions_ActionGroup.java" startLine="15" startPosition="25" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2017614408232613001" fileName="ProjectCompileActions_ActionGroup.java" startLine="11" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectCompileActions_ActionGroup#()V" />
-    <scopeInfo nodeId="2017614408232613001" fileName="ProjectCompileActions_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39" />
+    <scopeInfo nodeId="2017614408232613001" fileName="ProjectCompileActions_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39">
+      <varInfo nodeId="2017614408232613001" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="2017614408232613001" fileName="ProjectCompileActions_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" />
     <scopeInfo nodeId="2017614408232613001" fileName="ProjectCompileActions_ActionGroup.java" startLine="16" startPosition="9" endLine="19" endPosition="109" />
     <scopeInfo nodeId="2017614408232613001" fileName="ProjectCompileActions_ActionGroup.java" startLine="12" startPosition="46" endLine="22" endPosition="5" />
@@ -77,9 +79,13 @@
     </scopeInfo>
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="32" startPosition="32" endLine="35" endPosition="40" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="82" startPosition="0" endLine="85" endPosition="7" />
+    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="82" startPosition="0" endLine="85" endPosition="7">
+      <varInfo nodeId="2017614408232613007" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="82" startPosition="27" endLine="85" endPosition="7" />
-    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="41" startPosition="0" endLine="45" endPosition="44" />
+    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="41" startPosition="0" endLine="45" endPosition="44">
+      <varInfo nodeId="2017614408232613007" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="41" startPosition="27" endLine="45" endPosition="44" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="52" startPosition="5" endLine="56" endPosition="5" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="56" startPosition="5" endLine="60" endPosition="5" />
@@ -91,14 +97,23 @@
     <scopeInfo nodeId="2017614408232613052" fileName="CleanProject_Action.java" startLine="72" startPosition="135" endLine="81" endPosition="0">
       <varInfo nodeId="2017614408232613055" varName="indicator" />
     </scopeInfo>
-    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="37" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="37" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="2017614408232613007" varName="_params" />
+      <varInfo nodeId="2017614408232613007" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="69" startPosition="9" endLine="81" endPosition="9">
       <varInfo nodeId="2017614408232613011" varName="modulesToBuild" />
     </scopeInfo>
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="49" startPosition="95" endLine="65" endPosition="16" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="68" startPosition="96" endLine="86" endPosition="5" />
-    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="48" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="67" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="48" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="2017614408232613007" varName="_params" />
+      <varInfo nodeId="2017614408232613007" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="67" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="2017614408232613007" varName="_params" />
+      <varInfo nodeId="2017614408232613007" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="28" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CleanProject_Action" />
     <unitInfo nodeId="2017614408232613050" fileName="CleanProject_Action.java" startLine="72" startPosition="44" endLine="81" endPosition="7" unitName="jetbrains.mps.ide.make.actions.CleanProject_Action$1" />
     <unitInfo nodeId="2017614408232613060" fileName="CleanProject_Action.java" startLine="74" startPosition="51" endLine="79" endPosition="11" unitName="jetbrains.mps.ide.make.actions.CleanProject_Action$2" />
@@ -149,19 +164,32 @@
     <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="60" startPosition="9" endLine="63" endPosition="151">
       <varInfo nodeId="2017614408232613085" varName="modules" />
     </scopeInfo>
-    <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="64" startPosition="0" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="64" startPosition="0" endLine="67" endPosition="7">
+      <varInfo nodeId="2017614408232613081" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="44" />
+    <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="44">
+      <varInfo nodeId="2017614408232613081" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="36" startPosition="27" endLine="40" endPosition="44" />
     <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="47" startPosition="5" endLine="51" endPosition="5" />
     <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="51" startPosition="5" endLine="55" endPosition="5" />
     <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" />
     <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="33" startPosition="89" endLine="41" endPosition="5" />
     <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="59" startPosition="96" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="32" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="32" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="2017614408232613081" varName="_params" />
+      <varInfo nodeId="2017614408232613081" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="44" startPosition="95" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="43" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="58" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="2017614408232613081" varName="_params" />
+      <varInfo nodeId="2017614408232613081" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="43" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="2017614408232613081" varName="_params" />
+      <varInfo nodeId="2017614408232613081" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="23" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CompileProject_Action" />
   </root>
   <root nodeId="2017614408232613132">
@@ -210,19 +238,32 @@
     <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="60" startPosition="9" endLine="63" endPosition="150">
       <varInfo nodeId="2017614408232613136" varName="modules" />
     </scopeInfo>
-    <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="64" startPosition="0" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="64" startPosition="0" endLine="67" endPosition="7">
+      <varInfo nodeId="2017614408232613132" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="44" />
+    <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="44">
+      <varInfo nodeId="2017614408232613132" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="36" startPosition="27" endLine="40" endPosition="44" />
     <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="47" startPosition="5" endLine="51" endPosition="5" />
     <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="51" startPosition="5" endLine="55" endPosition="5" />
     <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" />
     <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="33" startPosition="89" endLine="41" endPosition="5" />
     <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="59" startPosition="96" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="32" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="32" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="2017614408232613132" varName="_params" />
+      <varInfo nodeId="2017614408232613132" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="44" startPosition="95" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="43" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="58" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="2017614408232613132" varName="_params" />
+      <varInfo nodeId="2017614408232613132" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="43" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="2017614408232613132" varName="_params" />
+      <varInfo nodeId="2017614408232613132" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="2017614408232613132" fileName="RecompileProject_Action.java" startLine="23" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RecompileProject_Action" />
   </root>
   <root nodeId="3366942412399971107">
@@ -257,22 +298,40 @@
     <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="34" startPosition="33" endLine="35" endPosition="82" />
     <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="42" startPosition="53" endLine="43" endPosition="19" />
     <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="51" startPosition="33" endLine="52" endPosition="81" />
-    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="29" startPosition="7" endLine="31" endPosition="63" />
+    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="29" startPosition="7" endLine="31" endPosition="63">
+      <varInfo nodeId="3366942412399971107" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="17" startPosition="27" endLine="20" endPosition="41" />
     <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="33" startPosition="27" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="50" startPosition="0" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="50" startPosition="0" endLine="53" endPosition="7">
+      <varInfo nodeId="3366942412399971107" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="50" startPosition="27" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="3366942412399971107" varName="_params" />
+      <varInfo nodeId="3366942412399971107" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="28" startPosition="9" endLine="32" endPosition="7" />
-    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="33" startPosition="0" endLine="37" endPosition="44" />
+    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="33" startPosition="0" endLine="37" endPosition="44">
+      <varInfo nodeId="3366942412399971107" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="33" startPosition="27" endLine="37" endPosition="44" />
     <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="41" startPosition="95" endLine="45" endPosition="16" />
     <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="16" startPosition="0" endLine="21" endPosition="3" />
     <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="48" startPosition="96" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="47" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="3366942412399971107" varName="_params" />
+      <varInfo nodeId="3366942412399971107" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="47" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="3366942412399971107" varName="_params" />
+      <varInfo nodeId="3366942412399971107" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="27" startPosition="89" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="26" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="26" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="3366942412399971107" varName="_params" />
+      <varInfo nodeId="3366942412399971107" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Options_Action" />
   </root>
   <root nodeId="3366942412399973391">
@@ -328,14 +387,23 @@
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="66" startPosition="61" endLine="67" endPosition="19" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="73" startPosition="9" endLine="74" endPosition="284" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="76" startPosition="33" endLine="77" endPosition="98" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="37" startPosition="7" endLine="39" endPosition="63" />
+    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="37" startPosition="7" endLine="39" endPosition="63">
+      <varInfo nodeId="3366942412399973391" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="25" startPosition="44" endLine="28" endPosition="41" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="75" startPosition="0" endLine="78" endPosition="7" />
+    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="75" startPosition="0" endLine="78" endPosition="7">
+      <varInfo nodeId="3366942412399973391" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="75" startPosition="27" endLine="78" endPosition="7" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="3366942412399973391" varName="_params" />
+      <varInfo nodeId="3366942412399973391" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="36" startPosition="9" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="41" startPosition="0" endLine="45" endPosition="44" />
+    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="41" startPosition="0" endLine="45" endPosition="44">
+      <varInfo nodeId="3366942412399973391" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="41" startPosition="27" endLine="45" endPosition="44" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="52" startPosition="5" endLine="56" endPosition="5" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="56" startPosition="5" endLine="60" endPosition="5" />
@@ -343,11 +411,20 @@
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="64" startPosition="5" endLine="68" endPosition="5" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="24" startPosition="0" endLine="29" endPosition="3" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="72" startPosition="96" endLine="79" endPosition="5" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="71" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="71" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="3366942412399973391" varName="_params" />
+      <varInfo nodeId="3366942412399973391" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="35" startPosition="89" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="34" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="34" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="3366942412399973391" varName="_params" />
+      <varInfo nodeId="3366942412399973391" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="49" startPosition="95" endLine="69" endPosition="16" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="48" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="48" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="3366942412399973391" varName="_params" />
+      <varInfo nodeId="3366942412399973391" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="21" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.make.actions.ShowMappingsPartitioning_Action" />
   </root>
   <root nodeId="4753172061859438776">
@@ -362,7 +439,9 @@
     <nodeInfo nodeId="4753172061859438776" fileName="JavaModuleActions_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4753172061859438776" fileName="JavaModuleActions_ActionGroup.java" startLine="15" startPosition="25" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4753172061859438776" fileName="JavaModuleActions_ActionGroup.java" startLine="11" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaModuleActions_ActionGroup#()V" />
-    <scopeInfo nodeId="4753172061859438776" fileName="JavaModuleActions_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39" />
+    <scopeInfo nodeId="4753172061859438776" fileName="JavaModuleActions_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39">
+      <varInfo nodeId="4753172061859438776" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438776" fileName="JavaModuleActions_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" />
     <scopeInfo nodeId="4753172061859438776" fileName="JavaModuleActions_ActionGroup.java" startLine="16" startPosition="9" endLine="19" endPosition="104" />
     <scopeInfo nodeId="4753172061859438776" fileName="JavaModuleActions_ActionGroup.java" startLine="12" startPosition="42" endLine="22" endPosition="5" />
@@ -420,21 +499,30 @@
     <scopeInfo nodeId="4753172061859438830" fileName="CleanModule_Action.java" startLine="35" startPosition="87" endLine="37" endPosition="43">
       <varInfo nodeId="4753172061859438832" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="42" startPosition="7" endLine="44" endPosition="63" />
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="42" startPosition="7" endLine="44" endPosition="63">
+      <varInfo nodeId="4753172061859438783" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438811" fileName="CleanModule_Action.java" startLine="75" startPosition="31" endLine="77" endPosition="88">
       <varInfo nodeId="4753172061859438813" varName="maker" />
     </scopeInfo>
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="29" startPosition="31" endLine="32" endPosition="40" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="82" startPosition="0" endLine="85" endPosition="7" />
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="82" startPosition="0" endLine="85" endPosition="7">
+      <varInfo nodeId="4753172061859438783" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="82" startPosition="27" endLine="85" endPosition="7" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="41" startPosition="9" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="46" startPosition="0" endLine="50" endPosition="44" />
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="46" startPosition="0" endLine="50" endPosition="44">
+      <varInfo nodeId="4753172061859438783" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="46" startPosition="27" endLine="50" endPosition="44" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="57" startPosition="5" endLine="61" endPosition="5" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="61" startPosition="5" endLine="65" endPosition="5" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="28" startPosition="0" endLine="33" endPosition="3" />
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="4753172061859438783" varName="_params" />
+      <varInfo nodeId="4753172061859438783" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438810" fileName="CleanModule_Action.java" startLine="74" startPosition="63" endLine="79" endPosition="0" />
     <scopeInfo nodeId="4753172061859438808" fileName="CleanModule_Action.java" startLine="73" startPosition="69" endLine="79" endPosition="13" />
     <scopeInfo nodeId="4753172061859438802" fileName="CleanModule_Action.java" startLine="72" startPosition="131" endLine="81" endPosition="0">
@@ -445,10 +533,19 @@
       <varInfo nodeId="4753172061859438787" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="54" startPosition="95" endLine="66" endPosition="16" />
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="39" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="53" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="39" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="4753172061859438783" varName="_params" />
+      <varInfo nodeId="4753172061859438783" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="53" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="4753172061859438783" varName="_params" />
+      <varInfo nodeId="4753172061859438783" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="69" startPosition="96" endLine="86" endPosition="5" />
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="68" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="68" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="4753172061859438783" varName="_params" />
+      <varInfo nodeId="4753172061859438783" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="25" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CleanModule_Action" />
     <unitInfo nodeId="4753172061859438800" fileName="CleanModule_Action.java" startLine="72" startPosition="44" endLine="81" endPosition="7" unitName="jetbrains.mps.ide.make.actions.CleanModule_Action$1" />
     <unitInfo nodeId="4753172061859438810" fileName="CleanModule_Action.java" startLine="74" startPosition="51" endLine="79" endPosition="11" unitName="jetbrains.mps.ide.make.actions.CleanModule_Action$2" />
@@ -496,27 +593,45 @@
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="53" startPosition="62" endLine="54" endPosition="19" />
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="57" startPosition="61" endLine="58" endPosition="19" />
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="68" startPosition="33" endLine="69" endPosition="87" />
-    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="36" startPosition="7" endLine="38" endPosition="63" />
+    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="36" startPosition="7" endLine="38" endPosition="63">
+      <varInfo nodeId="4753172061859438849" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="64" startPosition="9" endLine="66" endPosition="146">
       <varInfo nodeId="4753172061859438853" varName="modules" />
     </scopeInfo>
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="24" startPosition="33" endLine="27" endPosition="40" />
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="67" startPosition="0" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="67" startPosition="0" endLine="70" endPosition="7">
+      <varInfo nodeId="4753172061859438849" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="67" startPosition="27" endLine="70" endPosition="7" />
-    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="4753172061859438849" varName="_params" />
+      <varInfo nodeId="4753172061859438849" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="35" startPosition="9" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="44" />
+    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="44">
+      <varInfo nodeId="4753172061859438849" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="40" startPosition="27" endLine="44" endPosition="44" />
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="51" startPosition="5" endLine="55" endPosition="5" />
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="55" startPosition="5" endLine="59" endPosition="5" />
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="63" startPosition="96" endLine="71" endPosition="5" />
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="34" startPosition="89" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="62" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="62" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="4753172061859438849" varName="_params" />
+      <varInfo nodeId="4753172061859438849" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="48" startPosition="95" endLine="60" endPosition="16" />
-    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="33" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="47" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="33" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="4753172061859438849" varName="_params" />
+      <varInfo nodeId="4753172061859438849" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="47" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="4753172061859438849" varName="_params" />
+      <varInfo nodeId="4753172061859438849" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="20" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RebuildModule_Action" />
   </root>
   <root nodeId="4753172061859438882">
@@ -562,27 +677,45 @@
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="53" startPosition="62" endLine="54" endPosition="19" />
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="57" startPosition="61" endLine="58" endPosition="19" />
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="68" startPosition="33" endLine="69" endPosition="84" />
-    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="36" startPosition="7" endLine="38" endPosition="63" />
+    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="36" startPosition="7" endLine="38" endPosition="63">
+      <varInfo nodeId="4753172061859438882" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="64" startPosition="9" endLine="66" endPosition="147">
       <varInfo nodeId="4753172061859438886" varName="modules" />
     </scopeInfo>
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="24" startPosition="30" endLine="27" endPosition="40" />
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="67" startPosition="0" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="67" startPosition="0" endLine="70" endPosition="7">
+      <varInfo nodeId="4753172061859438882" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="67" startPosition="27" endLine="70" endPosition="7" />
-    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="4753172061859438882" varName="_params" />
+      <varInfo nodeId="4753172061859438882" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="35" startPosition="9" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="44" />
+    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="44">
+      <varInfo nodeId="4753172061859438882" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="40" startPosition="27" endLine="44" endPosition="44" />
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="51" startPosition="5" endLine="55" endPosition="5" />
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="55" startPosition="5" endLine="59" endPosition="5" />
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="63" startPosition="96" endLine="71" endPosition="5" />
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="34" startPosition="89" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="62" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="62" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="4753172061859438882" varName="_params" />
+      <varInfo nodeId="4753172061859438882" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="48" startPosition="95" endLine="60" endPosition="16" />
-    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="33" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="47" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="33" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="4753172061859438882" varName="_params" />
+      <varInfo nodeId="4753172061859438882" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="47" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="4753172061859438882" varName="_params" />
+      <varInfo nodeId="4753172061859438882" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="4753172061859438882" fileName="MakeModule_Action.java" startLine="20" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeModule_Action" />
   </root>
   <root nodeId="4753172061859438915">
@@ -679,21 +812,34 @@
     </scopeInfo>
     <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="20" startPosition="47" endLine="23" endPosition="41" />
     <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="36" startPosition="27" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="55" startPosition="0" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="55" startPosition="0" endLine="58" endPosition="7">
+      <varInfo nodeId="5332171957773708940" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="55" startPosition="27" endLine="58" endPosition="7" />
-    <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="44" />
+    <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="44">
+      <varInfo nodeId="5332171957773708940" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="36" startPosition="27" endLine="40" endPosition="44" />
     <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="44" startPosition="95" endLine="48" endPosition="16" />
     <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="19" startPosition="0" endLine="24" endPosition="3" />
     <scopeInfo nodeId="5332171957773708956" fileName="CheckModelsBeforeGeneration_Action.java" startLine="28" startPosition="7" endLine="34" endPosition="9">
       <varInfo nodeId="5332171957773708958" varName="optionEnabled" />
     </scopeInfo>
-    <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="43" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="5332171957773708940" varName="_params" />
+      <varInfo nodeId="5332171957773708940" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="27" startPosition="9" endLine="35" endPosition="7" />
     <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="51" startPosition="96" endLine="59" endPosition="5" />
-    <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="50" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="50" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="5332171957773708940" varName="_params" />
+      <varInfo nodeId="5332171957773708940" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="26" startPosition="89" endLine="41" endPosition="5" />
-    <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="25" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="25" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="5332171957773708940" varName="_params" />
+      <varInfo nodeId="5332171957773708940" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CheckModelsBeforeGeneration_Action" />
   </root>
   <root nodeId="5332171957773708985">
@@ -713,9 +859,14 @@
     <nodeInfo nodeId="5332171957773708987" fileName="GenerateOptions_ActionGroup.java" startLine="21" startPosition="98" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5332171957773708985" fileName="GenerateOptions_ActionGroup.java" startLine="19" startPosition="25" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5332171957773708985" fileName="GenerateOptions_ActionGroup.java" startLine="15" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerateOptions_ActionGroup#()V" />
-    <scopeInfo nodeId="5332171957773708985" fileName="GenerateOptions_ActionGroup.java" startLine="29" startPosition="0" endLine="30" endPosition="39" />
+    <scopeInfo nodeId="5332171957773708985" fileName="GenerateOptions_ActionGroup.java" startLine="29" startPosition="0" endLine="30" endPosition="39">
+      <varInfo nodeId="5332171957773708985" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="5332171957773708985" fileName="GenerateOptions_ActionGroup.java" startLine="29" startPosition="27" endLine="30" endPosition="39" />
-    <scopeInfo nodeId="5332171957773708987" fileName="GenerateOptions_ActionGroup.java" startLine="22" startPosition="7" endLine="26" endPosition="59" />
+    <scopeInfo nodeId="5332171957773708987" fileName="GenerateOptions_ActionGroup.java" startLine="22" startPosition="7" endLine="26" endPosition="59">
+      <varInfo nodeId="5332171957773708987" varName="action" />
+      <varInfo nodeId="5332171957773708987" varName="manager" />
+    </scopeInfo>
     <scopeInfo nodeId="5332171957773708985" fileName="GenerateOptions_ActionGroup.java" startLine="20" startPosition="9" endLine="28" endPosition="118" />
     <scopeInfo nodeId="5332171957773708985" fileName="GenerateOptions_ActionGroup.java" startLine="16" startPosition="40" endLine="31" endPosition="5" />
     <scopeInfo nodeId="5332171957773708985" fileName="GenerateOptions_ActionGroup.java" startLine="15" startPosition="0" endLine="32" endPosition="3" />
@@ -732,7 +883,9 @@
     <nodeInfo nodeId="5332171957773708990" fileName="SaveTransientModels_ActionGroup.java" startLine="16" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5332171957773708990" fileName="SaveTransientModels_ActionGroup.java" startLine="12" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SaveTransientModels_ActionGroup#()V" />
     <scopeInfo nodeId="5332171957773708990" fileName="SaveTransientModels_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="80" />
-    <scopeInfo nodeId="5332171957773708990" fileName="SaveTransientModels_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="5332171957773708990" fileName="SaveTransientModels_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
+      <varInfo nodeId="5332171957773708990" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="5332171957773708990" fileName="SaveTransientModels_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
     <scopeInfo nodeId="5332171957773708990" fileName="SaveTransientModels_ActionGroup.java" startLine="13" startPosition="44" endLine="21" endPosition="5" />
     <scopeInfo nodeId="5332171957773708990" fileName="SaveTransientModels_ActionGroup.java" startLine="12" startPosition="0" endLine="22" endPosition="3" />
@@ -875,13 +1028,19 @@
     <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="356" />
     <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="92" />
     <scopeInfo nodeId="8610665572788514668" fileName="MakeSelectedModels_Action.java" startLine="34" startPosition="23" endLine="36" endPosition="18" />
-    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="43" startPosition="7" endLine="45" endPosition="63" />
+    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="43" startPosition="7" endLine="45" endPosition="63">
+      <varInfo nodeId="8610665572788514618" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="23" startPosition="38" endLine="26" endPosition="40" />
     <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="71" startPosition="0" endLine="74" endPosition="7" />
+    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="71" startPosition="0" endLine="74" endPosition="7">
+      <varInfo nodeId="8610665572788514618" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="71" startPosition="27" endLine="74" endPosition="7" />
     <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="42" startPosition="9" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44" />
+    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44">
+      <varInfo nodeId="8610665572788514618" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="47" startPosition="27" endLine="51" endPosition="44" />
     <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" />
     <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="22" startPosition="0" endLine="27" endPosition="3" />
@@ -890,11 +1049,23 @@
       <varInfo nodeId="8610665572788514649" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="55" startPosition="95" endLine="65" endPosition="16" />
-    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="67" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="67" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="8610665572788514618" varName="_params" />
+      <varInfo nodeId="8610665572788514618" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="41" startPosition="89" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="28" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="54" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="40" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="28" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="8610665572788514618" varName="_params" />
+      <varInfo nodeId="8610665572788514618" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="54" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="8610665572788514618" varName="_params" />
+      <varInfo nodeId="8610665572788514618" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="40" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="8610665572788514618" varName="_params" />
+      <varInfo nodeId="8610665572788514618" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeSelectedModels_Action" />
   </root>
   <root nodeId="8610665572788514683">
@@ -1119,16 +1290,32 @@
     <scopeInfo nodeId="3396301219610984019" fileName="MakeActionParameters.java" startLine="190" startPosition="28" endLine="193" endPosition="34" />
     <scopeInfo nodeId="3396301219610984019" fileName="MakeActionParameters.java" startLine="197" startPosition="27" endLine="200" endPosition="28" />
     <scopeInfo nodeId="3396301219610984098" fileName="MakeActionParameters.java" startLine="221" startPosition="43" endLine="224" endPosition="27" />
-    <scopeInfo nodeId="3396301219610984106" fileName="MakeActionParameters.java" startLine="221" startPosition="43" endLine="224" endPosition="27" />
+    <scopeInfo nodeId="3396301219610984106" fileName="MakeActionParameters.java" startLine="221" startPosition="43" endLine="224" endPosition="27">
+      <varInfo nodeId="3396301219610984106" varName="mod" />
+    </scopeInfo>
     <scopeInfo nodeId="4290873071535753902" fileName="MakeActionParameters.java" startLine="256" startPosition="37" endLine="259" endPosition="7" />
-    <scopeInfo nodeId="4290873071535753930" fileName="MakeActionParameters.java" startLine="256" startPosition="37" endLine="259" endPosition="7" />
-    <scopeInfo nodeId="8610665572788514775" fileName="MakeActionParameters.java" startLine="62" startPosition="81" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="6500066435580162614" fileName="MakeActionParameters.java" startLine="81" startPosition="71" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="8610665572788514860" fileName="MakeActionParameters.java" startLine="85" startPosition="73" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="3396301219610984044" fileName="MakeActionParameters.java" startLine="129" startPosition="162" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="4290873071535753930" fileName="MakeActionParameters.java" startLine="256" startPosition="37" endLine="259" endPosition="7">
+      <varInfo nodeId="4290873071535753930" varName="gen" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788514775" fileName="MakeActionParameters.java" startLine="62" startPosition="81" endLine="66" endPosition="0">
+      <varInfo nodeId="8610665572788514775" varName="md" />
+    </scopeInfo>
+    <scopeInfo nodeId="6500066435580162614" fileName="MakeActionParameters.java" startLine="81" startPosition="71" endLine="85" endPosition="0">
+      <varInfo nodeId="6500066435580162614" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788514860" fileName="MakeActionParameters.java" startLine="85" startPosition="73" endLine="89" endPosition="0">
+      <varInfo nodeId="8610665572788514860" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="3396301219610984044" fileName="MakeActionParameters.java" startLine="129" startPosition="162" endLine="133" endPosition="0">
+      <varInfo nodeId="3396301219610984044" varName="md" />
+    </scopeInfo>
     <scopeInfo nodeId="3396301219610984070" fileName="MakeActionParameters.java" startLine="208" startPosition="75" endLine="212" endPosition="0" />
-    <scopeInfo nodeId="3396301219610984142" fileName="MakeActionParameters.java" startLine="242" startPosition="52" endLine="246" endPosition="0" />
-    <scopeInfo nodeId="4290873071535753885" fileName="MakeActionParameters.java" startLine="251" startPosition="170" endLine="255" endPosition="0" />
+    <scopeInfo nodeId="3396301219610984142" fileName="MakeActionParameters.java" startLine="242" startPosition="52" endLine="246" endPosition="0">
+      <varInfo nodeId="3396301219610984142" varName="md" />
+    </scopeInfo>
+    <scopeInfo nodeId="4290873071535753885" fileName="MakeActionParameters.java" startLine="251" startPosition="170" endLine="255" endPosition="0">
+      <varInfo nodeId="4290873071535753885" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="3396301219610984019" fileName="MakeActionParameters.java" startLine="128" startPosition="27" endLine="133" endPosition="37" />
     <scopeInfo nodeId="3396301219610984019" fileName="MakeActionParameters.java" startLine="207" startPosition="28" endLine="212" endPosition="25" />
     <scopeInfo nodeId="8610665572788514715" fileName="MakeActionParameters.java" startLine="53" startPosition="24" endLine="59" endPosition="0" />
@@ -1222,9 +1409,14 @@
     <nodeInfo nodeId="8610665572788515189" fileName="Make_ActionGroup.java" startLine="22" startPosition="131" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8610665572788515183" fileName="Make_ActionGroup.java" startLine="19" startPosition="25" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8610665572788515183" fileName="Make_ActionGroup.java" startLine="15" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Make_ActionGroup#()V" />
-    <scopeInfo nodeId="8610665572788515183" fileName="Make_ActionGroup.java" startLine="29" startPosition="0" endLine="30" endPosition="39" />
+    <scopeInfo nodeId="8610665572788515183" fileName="Make_ActionGroup.java" startLine="29" startPosition="0" endLine="30" endPosition="39">
+      <varInfo nodeId="8610665572788515183" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515183" fileName="Make_ActionGroup.java" startLine="29" startPosition="27" endLine="30" endPosition="39" />
-    <scopeInfo nodeId="8610665572788515189" fileName="Make_ActionGroup.java" startLine="23" startPosition="7" endLine="27" endPosition="48" />
+    <scopeInfo nodeId="8610665572788515189" fileName="Make_ActionGroup.java" startLine="23" startPosition="7" endLine="27" endPosition="48">
+      <varInfo nodeId="8610665572788515189" varName="action" />
+      <varInfo nodeId="8610665572788515189" varName="manager" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515183" fileName="Make_ActionGroup.java" startLine="20" startPosition="9" endLine="28" endPosition="7" />
     <scopeInfo nodeId="8610665572788515183" fileName="Make_ActionGroup.java" startLine="16" startPosition="29" endLine="31" endPosition="5" />
     <scopeInfo nodeId="8610665572788515183" fileName="Make_ActionGroup.java" startLine="15" startPosition="0" endLine="32" endPosition="3" />
@@ -1282,29 +1474,49 @@
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="68" startPosition="33" endLine="69" endPosition="85" />
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="75" startPosition="9" endLine="76" endPosition="112" />
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="78" startPosition="32" endLine="79" endPosition="58" />
-    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="37" startPosition="7" endLine="39" endPosition="63" />
+    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="37" startPosition="7" endLine="39" endPosition="63">
+      <varInfo nodeId="8610665572788515195" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="25" startPosition="31" endLine="28" endPosition="40" />
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="67" startPosition="0" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="67" startPosition="0" endLine="70" endPosition="7">
+      <varInfo nodeId="8610665572788515195" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="67" startPosition="27" endLine="70" endPosition="7" />
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="77" startPosition="29" endLine="80" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="8610665572788515195" varName="_params" />
+      <varInfo nodeId="8610665572788515195" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="36" startPosition="9" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="41" startPosition="0" endLine="45" endPosition="44" />
+    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="41" startPosition="0" endLine="45" endPosition="44">
+      <varInfo nodeId="8610665572788515195" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="41" startPosition="27" endLine="45" endPosition="44" />
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="52" startPosition="5" endLine="56" endPosition="5" />
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="56" startPosition="5" endLine="60" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="77" startPosition="0" endLine="81" endPosition="18" />
+    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="77" startPosition="0" endLine="81" endPosition="18">
+      <varInfo nodeId="8610665572788515195" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="77" startPosition="29" endLine="81" endPosition="18" />
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="24" startPosition="0" endLine="29" endPosition="3" />
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="64" startPosition="96" endLine="71" endPosition="5" />
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="74" startPosition="33" endLine="82" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="63" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="63" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="8610665572788515195" varName="_params" />
+      <varInfo nodeId="8610665572788515195" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="35" startPosition="89" endLine="46" endPosition="5" />
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="73" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="49" startPosition="95" endLine="61" endPosition="16" />
-    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="34" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="48" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="34" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="8610665572788515195" varName="_params" />
+      <varInfo nodeId="8610665572788515195" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="48" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="8610665572788515195" varName="_params" />
+      <varInfo nodeId="8610665572788515195" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="8610665572788515195" fileName="MakeProject_Action.java" startLine="21" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeProject_Action" />
   </root>
   <root nodeId="8610665572788515222">
@@ -1318,7 +1530,9 @@
     <nodeInfo nodeId="8610665572788515222" fileName="ProjectMake_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8610665572788515222" fileName="ProjectMake_ActionGroup.java" startLine="15" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8610665572788515222" fileName="ProjectMake_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectMake_ActionGroup#()V" />
-    <scopeInfo nodeId="8610665572788515222" fileName="ProjectMake_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="8610665572788515222" fileName="ProjectMake_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
+      <varInfo nodeId="8610665572788515222" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515222" fileName="ProjectMake_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
     <scopeInfo nodeId="8610665572788515222" fileName="ProjectMake_ActionGroup.java" startLine="16" startPosition="9" endLine="18" endPosition="101" />
     <scopeInfo nodeId="8610665572788515222" fileName="ProjectMake_ActionGroup.java" startLine="12" startPosition="36" endLine="21" endPosition="5" />
@@ -1344,7 +1558,9 @@
     <nodeInfo nodeId="8610665572788515227" fileName="GlobalMake_ActionGroup.java" startLine="27" startPosition="27" endLine="28" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8610665572788515227" fileName="GlobalMake_ActionGroup.java" startLine="15" startPosition="25" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8610665572788515227" fileName="GlobalMake_ActionGroup.java" startLine="11" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GlobalMake_ActionGroup#()V" />
-    <scopeInfo nodeId="8610665572788515227" fileName="GlobalMake_ActionGroup.java" startLine="27" startPosition="0" endLine="28" endPosition="39" />
+    <scopeInfo nodeId="8610665572788515227" fileName="GlobalMake_ActionGroup.java" startLine="27" startPosition="0" endLine="28" endPosition="39">
+      <varInfo nodeId="8610665572788515227" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515227" fileName="GlobalMake_ActionGroup.java" startLine="27" startPosition="27" endLine="28" endPosition="39" />
     <scopeInfo nodeId="8610665572788515227" fileName="GlobalMake_ActionGroup.java" startLine="16" startPosition="9" endLine="26" endPosition="49" />
     <scopeInfo nodeId="8610665572788515227" fileName="GlobalMake_ActionGroup.java" startLine="12" startPosition="35" endLine="29" endPosition="5" />
@@ -1389,7 +1605,9 @@
     <scopeInfo nodeId="3519555968774803974" fileName="MakeActionImpl.java" startLine="44" startPosition="16" endLine="46" endPosition="57" />
     <scopeInfo nodeId="8610665572788515328" fileName="MakeActionImpl.java" startLine="22" startPosition="100" endLine="25" endPosition="31" />
     <scopeInfo nodeId="1186936846703260829" fileName="MakeActionImpl.java" startLine="32" startPosition="67" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515313" fileName="MakeActionImpl.java" startLine="57" startPosition="102" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515313" fileName="MakeActionImpl.java" startLine="57" startPosition="102" endLine="61" endPosition="0">
+      <varInfo nodeId="8610665572788515313" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515325" fileName="MakeActionImpl.java" startLine="21" startPosition="0" endLine="26" endPosition="3">
       <varInfo nodeId="8610665572788515351" varName="cleanMake" />
       <varInfo nodeId="8610665572788515347" varName="context" />
@@ -1424,7 +1642,9 @@
     <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="15" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPreviewGroup_ActionGroup#()V" />
-    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
+      <varInfo nodeId="8610665572788515362" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
     <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="18" endPosition="116" />
     <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="12" startPosition="41" endLine="21" endPosition="5" />
@@ -1442,7 +1662,9 @@
     <nodeInfo nodeId="8610665572788515366" fileName="NamespaceMake_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8610665572788515366" fileName="NamespaceMake_ActionGroup.java" startLine="16" startPosition="25" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8610665572788515366" fileName="NamespaceMake_ActionGroup.java" startLine="12" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NamespaceMake_ActionGroup#()V" />
-    <scopeInfo nodeId="8610665572788515366" fileName="NamespaceMake_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39" />
+    <scopeInfo nodeId="8610665572788515366" fileName="NamespaceMake_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39">
+      <varInfo nodeId="8610665572788515366" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515366" fileName="NamespaceMake_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" />
     <scopeInfo nodeId="8610665572788515366" fileName="NamespaceMake_ActionGroup.java" startLine="17" startPosition="9" endLine="19" endPosition="140" />
     <scopeInfo nodeId="8610665572788515366" fileName="NamespaceMake_ActionGroup.java" startLine="13" startPosition="38" endLine="22" endPosition="5" />
@@ -1516,29 +1738,51 @@
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="75" startPosition="9" endLine="76" endPosition="494" />
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="78" startPosition="33" endLine="79" endPosition="87" />
     <scopeInfo nodeId="8610665572788515437" fileName="MakeSelection_Action.java" startLine="38" startPosition="23" endLine="40" endPosition="18" />
-    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="47" startPosition="7" endLine="49" endPosition="63" />
+    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="47" startPosition="7" endLine="49" endPosition="63">
+      <varInfo nodeId="8610665572788515373" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="88" startPosition="20" endLine="90" endPosition="20" />
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="77" startPosition="0" endLine="80" endPosition="7" />
+    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="77" startPosition="0" endLine="80" endPosition="7">
+      <varInfo nodeId="8610665572788515373" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="77" startPosition="27" endLine="80" endPosition="7" />
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="26" startPosition="54" endLine="30" endPosition="40" />
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="46" startPosition="9" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="51" startPosition="0" endLine="55" endPosition="44" />
+    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="51" startPosition="0" endLine="55" endPosition="44">
+      <varInfo nodeId="8610665572788515373" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="51" startPosition="27" endLine="55" endPosition="44" />
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="25" startPosition="0" endLine="31" endPosition="3" />
-    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="85" startPosition="31" endLine="91" endPosition="26" />
+    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="25" startPosition="0" endLine="31" endPosition="3">
+      <varInfo nodeId="8610665572788515373" varName="cleanMake_par" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="85" startPosition="31" endLine="91" endPosition="26">
+      <varInfo nodeId="8610665572788515373" varName="res" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="74" startPosition="96" endLine="81" endPosition="5" />
     <scopeInfo nodeId="8610665572788515410" fileName="MakeSelection_Action.java" startLine="33" startPosition="87" endLine="42" endPosition="17">
       <varInfo nodeId="8610665572788515412" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="73" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="73" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="8610665572788515373" varName="_params" />
+      <varInfo nodeId="8610665572788515373" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="83" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="45" startPosition="89" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="32" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="32" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="8610665572788515373" varName="_params" />
+      <varInfo nodeId="8610665572788515373" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="59" startPosition="95" endLine="71" endPosition="16" />
-    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="44" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="58" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="44" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="8610665572788515373" varName="_params" />
+      <varInfo nodeId="8610665572788515373" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="58" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="8610665572788515373" varName="_params" />
+      <varInfo nodeId="8610665572788515373" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="8610665572788515373" fileName="MakeSelection_Action.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeSelection_Action" />
   </root>
   <root nodeId="8610665572788515455">
@@ -1617,18 +1861,26 @@
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="91" startPosition="33" endLine="92" endPosition="87" />
     <scopeInfo nodeId="8610665572788515482" fileName="MakeNamespace_Action.java" startLine="110" startPosition="100" endLine="111" endPosition="27" />
     <scopeInfo nodeId="8610665572788515557" fileName="MakeNamespace_Action.java" startLine="46" startPosition="23" endLine="48" endPosition="18" />
-    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="55" startPosition="7" endLine="57" endPosition="63" />
+    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="55" startPosition="7" endLine="57" endPosition="63">
+      <varInfo nodeId="8610665572788515455" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="87" startPosition="9" endLine="89" endPosition="0" />
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="101" startPosition="20" endLine="103" endPosition="20" />
     <scopeInfo nodeId="8610665572788515523" fileName="MakeNamespace_Action.java" startLine="40" startPosition="98" endLine="43" endPosition="7" />
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="59" startPosition="27" endLine="62" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="90" startPosition="0" endLine="93" endPosition="7" />
+    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="90" startPosition="0" endLine="93" endPosition="7">
+      <varInfo nodeId="8610665572788515455" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="90" startPosition="27" endLine="93" endPosition="7" />
     <scopeInfo nodeId="8610665572788515473" fileName="MakeNamespace_Action.java" startLine="109" startPosition="115" endLine="112" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515474" fileName="MakeNamespace_Action.java" startLine="109" startPosition="115" endLine="112" endPosition="7" />
+    <scopeInfo nodeId="8610665572788515474" fileName="MakeNamespace_Action.java" startLine="109" startPosition="115" endLine="112" endPosition="7">
+      <varInfo nodeId="8610665572788515474" varName="module" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="29" startPosition="54" endLine="33" endPosition="40" />
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="54" startPosition="9" endLine="58" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="59" startPosition="0" endLine="63" endPosition="44" />
+    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="59" startPosition="0" endLine="63" endPosition="44">
+      <varInfo nodeId="8610665572788515455" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="59" startPosition="27" endLine="63" endPosition="44" />
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" />
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" />
@@ -1636,24 +1888,44 @@
     <scopeInfo nodeId="8610665572788515522" fileName="MakeNamespace_Action.java" startLine="39" startPosition="5" endLine="44" endPosition="5">
       <varInfo nodeId="8610665572788515535" varName="selectedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8610665572788515468" fileName="MakeNamespace_Action.java" startLine="108" startPosition="52" endLine="113" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="28" startPosition="0" endLine="34" endPosition="3" />
-    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="98" startPosition="31" endLine="104" endPosition="26" />
+    <scopeInfo nodeId="8610665572788515468" fileName="MakeNamespace_Action.java" startLine="108" startPosition="52" endLine="113" endPosition="5">
+      <varInfo nodeId="8610665572788515468" varName="ppNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="28" startPosition="0" endLine="34" endPosition="3">
+      <varInfo nodeId="8610665572788515455" varName="cleanMake_par" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="98" startPosition="31" endLine="104" endPosition="26">
+      <varInfo nodeId="8610665572788515455" varName="res" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515460" fileName="MakeNamespace_Action.java" startLine="107" startPosition="76" endLine="114" endPosition="18">
       <varInfo nodeId="8610665572788515462" varName="models" />
     </scopeInfo>
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="86" startPosition="96" endLine="94" endPosition="5" />
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="96" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515459" fileName="MakeNamespace_Action.java" startLine="106" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515459" fileName="MakeNamespace_Action.java" startLine="106" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="8610665572788515459" varName="_params" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="53" startPosition="89" endLine="64" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="85" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="85" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="8610665572788515455" varName="_params" />
+      <varInfo nodeId="8610665572788515455" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515521" fileName="MakeNamespace_Action.java" startLine="36" startPosition="87" endLine="50" endPosition="17">
       <varInfo nodeId="8610665572788515538" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="52" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="52" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="8610665572788515455" varName="_params" />
+      <varInfo nodeId="8610665572788515455" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="67" startPosition="95" endLine="83" endPosition="16" />
-    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="35" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="66" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="35" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="8610665572788515455" varName="_params" />
+      <varInfo nodeId="8610665572788515455" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="66" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="8610665572788515455" varName="_params" />
+      <varInfo nodeId="8610665572788515455" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="23" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeNamespace_Action" />
   </root>
   <root nodeId="8610665572788515572">
@@ -1707,13 +1979,19 @@
     <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="339" />
     <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="96" />
     <scopeInfo nodeId="8610665572788515622" fileName="RebuildSelectedModules_Action.java" startLine="34" startPosition="23" endLine="36" endPosition="18" />
-    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="43" startPosition="7" endLine="45" endPosition="63" />
+    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="43" startPosition="7" endLine="45" endPosition="63">
+      <varInfo nodeId="8610665572788515572" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="23" startPosition="42" endLine="26" endPosition="40" />
     <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="71" startPosition="0" endLine="74" endPosition="7" />
+    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="71" startPosition="0" endLine="74" endPosition="7">
+      <varInfo nodeId="8610665572788515572" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="71" startPosition="27" endLine="74" endPosition="7" />
     <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="42" startPosition="9" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44" />
+    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44">
+      <varInfo nodeId="8610665572788515572" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="47" startPosition="27" endLine="51" endPosition="44" />
     <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" />
     <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="22" startPosition="0" endLine="27" endPosition="3" />
@@ -1722,11 +2000,23 @@
       <varInfo nodeId="8610665572788515603" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="55" startPosition="95" endLine="65" endPosition="16" />
-    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="67" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="67" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="8610665572788515572" varName="_params" />
+      <varInfo nodeId="8610665572788515572" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="41" startPosition="89" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="28" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="54" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="40" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="28" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="8610665572788515572" varName="_params" />
+      <varInfo nodeId="8610665572788515572" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="54" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="8610665572788515572" varName="_params" />
+      <varInfo nodeId="8610665572788515572" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="40" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="8610665572788515572" varName="_params" />
+      <varInfo nodeId="8610665572788515572" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="8610665572788515572" fileName="RebuildSelectedModules_Action.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RebuildSelectedModules_Action" />
   </root>
   <root nodeId="8610665572788515637">
@@ -1780,13 +2070,19 @@
     <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="340" />
     <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="93" />
     <scopeInfo nodeId="8610665572788515687" fileName="MakeSelectedModules_Action.java" startLine="34" startPosition="23" endLine="36" endPosition="18" />
-    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="43" startPosition="7" endLine="45" endPosition="63" />
+    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="43" startPosition="7" endLine="45" endPosition="63">
+      <varInfo nodeId="8610665572788515637" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="23" startPosition="39" endLine="26" endPosition="40" />
     <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="71" startPosition="0" endLine="74" endPosition="7" />
+    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="71" startPosition="0" endLine="74" endPosition="7">
+      <varInfo nodeId="8610665572788515637" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="71" startPosition="27" endLine="74" endPosition="7" />
     <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="42" startPosition="9" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44" />
+    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44">
+      <varInfo nodeId="8610665572788515637" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="47" startPosition="27" endLine="51" endPosition="44" />
     <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" />
     <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="22" startPosition="0" endLine="27" endPosition="3" />
@@ -1795,11 +2091,23 @@
       <varInfo nodeId="8610665572788515668" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="55" startPosition="95" endLine="65" endPosition="16" />
-    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="67" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="67" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="8610665572788515637" varName="_params" />
+      <varInfo nodeId="8610665572788515637" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="41" startPosition="89" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="28" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="54" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="40" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="28" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="8610665572788515637" varName="_params" />
+      <varInfo nodeId="8610665572788515637" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="54" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="8610665572788515637" varName="_params" />
+      <varInfo nodeId="8610665572788515637" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="40" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="8610665572788515637" varName="_params" />
+      <varInfo nodeId="8610665572788515637" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="8610665572788515637" fileName="MakeSelectedModules_Action.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeSelectedModules_Action" />
   </root>
   <root nodeId="8610665572788515703">
@@ -1853,13 +2161,19 @@
     <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="355" />
     <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="95" />
     <scopeInfo nodeId="8610665572788515753" fileName="RebuildSelectedModels_Action.java" startLine="34" startPosition="23" endLine="36" endPosition="18" />
-    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="43" startPosition="7" endLine="45" endPosition="63" />
+    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="43" startPosition="7" endLine="45" endPosition="63">
+      <varInfo nodeId="8610665572788515703" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="23" startPosition="41" endLine="26" endPosition="40" />
     <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="71" startPosition="0" endLine="74" endPosition="7" />
+    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="71" startPosition="0" endLine="74" endPosition="7">
+      <varInfo nodeId="8610665572788515703" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="71" startPosition="27" endLine="74" endPosition="7" />
     <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="42" startPosition="9" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44" />
+    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44">
+      <varInfo nodeId="8610665572788515703" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="47" startPosition="27" endLine="51" endPosition="44" />
     <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" />
     <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="22" startPosition="0" endLine="27" endPosition="3" />
@@ -1868,11 +2182,23 @@
       <varInfo nodeId="8610665572788515734" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="55" startPosition="95" endLine="65" endPosition="16" />
-    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="67" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="67" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="8610665572788515703" varName="_params" />
+      <varInfo nodeId="8610665572788515703" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="41" startPosition="89" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="28" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="54" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="40" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="28" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="8610665572788515703" varName="_params" />
+      <varInfo nodeId="8610665572788515703" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="54" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="8610665572788515703" varName="_params" />
+      <varInfo nodeId="8610665572788515703" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="40" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="8610665572788515703" varName="_params" />
+      <varInfo nodeId="8610665572788515703" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="8610665572788515703" fileName="RebuildSelectedModels_Action.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RebuildSelectedModels_Action" />
   </root>
   <root nodeId="8610665572788515769">
@@ -1937,13 +2263,19 @@
     <scopeInfo nodeId="8610665572788515783" fileName="TextPreviewModel_Action.java" startLine="83" startPosition="82" endLine="84" endPosition="75" />
     <scopeInfo nodeId="8610665572788515798" fileName="TextPreviewModel_Action.java" startLine="85" startPosition="98" endLine="86" endPosition="88" />
     <scopeInfo nodeId="8610665572788515818" fileName="TextPreviewModel_Action.java" startLine="92" startPosition="46" endLine="93" endPosition="19" />
-    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="43" startPosition="7" endLine="45" endPosition="63" />
+    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="43" startPosition="7" endLine="45" endPosition="63">
+      <varInfo nodeId="8610665572788515769" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="27" startPosition="36" endLine="30" endPosition="40" />
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="74" startPosition="0" endLine="77" endPosition="7" />
+    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="74" startPosition="0" endLine="77" endPosition="7">
+      <varInfo nodeId="8610665572788515769" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" />
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="42" startPosition="9" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44" />
+    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44">
+      <varInfo nodeId="8610665572788515769" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="47" startPosition="27" endLine="51" endPosition="44" />
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" />
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="69" startPosition="9" endLine="73" endPosition="7">
@@ -1958,16 +2290,31 @@
       <varInfo nodeId="8610665572788515774" varName="md" />
     </scopeInfo>
     <scopeInfo nodeId="8610665572788515811" fileName="TextPreviewModel_Action.java" startLine="90" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="8610665572788515811" varName="_params" />
       <varInfo nodeId="8610665572788515834" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="32" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="32" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="8610665572788515769" varName="_params" />
+      <varInfo nodeId="8610665572788515769" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="55" startPosition="95" endLine="65" endPosition="16" />
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="68" startPosition="96" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515770" fileName="TextPreviewModel_Action.java" startLine="80" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515770" fileName="TextPreviewModel_Action.java" startLine="80" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="8610665572788515770" varName="_params" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="41" startPosition="89" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="54" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="67" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="40" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="54" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="8610665572788515769" varName="_params" />
+      <varInfo nodeId="8610665572788515769" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="67" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="8610665572788515769" varName="_params" />
+      <varInfo nodeId="8610665572788515769" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="40" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="8610665572788515769" varName="_params" />
+      <varInfo nodeId="8610665572788515769" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="23" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TextPreviewModel_Action" />
   </root>
   <root nodeId="8610665572788515994">
@@ -1981,7 +2328,9 @@
     <nodeInfo nodeId="8610665572788515994" fileName="ToolbarMake_ActionGroup.java" startLine="15" startPosition="25" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8610665572788515994" fileName="ToolbarMake_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ToolbarMake_ActionGroup#()V" />
     <scopeInfo nodeId="8610665572788515994" fileName="ToolbarMake_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="98" />
-    <scopeInfo nodeId="8610665572788515994" fileName="ToolbarMake_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39" />
+    <scopeInfo nodeId="8610665572788515994" fileName="ToolbarMake_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39">
+      <varInfo nodeId="8610665572788515994" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515994" fileName="ToolbarMake_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" />
     <scopeInfo nodeId="8610665572788515994" fileName="ToolbarMake_ActionGroup.java" startLine="12" startPosition="36" endLine="20" endPosition="5" />
     <scopeInfo nodeId="8610665572788515994" fileName="ToolbarMake_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
@@ -2030,24 +2379,42 @@
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="55" startPosition="65" endLine="56" endPosition="19" />
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="62" startPosition="9" endLine="63" endPosition="301" />
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="65" startPosition="33" endLine="66" endPosition="88" />
-    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="34" startPosition="7" endLine="36" endPosition="63" />
+    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="34" startPosition="7" endLine="36" endPosition="63">
+      <varInfo nodeId="8610665572788515998" varName="enabled" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="22" startPosition="34" endLine="25" endPosition="40" />
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="38" startPosition="27" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="64" startPosition="0" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="64" startPosition="0" endLine="67" endPosition="7">
+      <varInfo nodeId="8610665572788515998" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="8610665572788515998" varName="_params" />
+      <varInfo nodeId="8610665572788515998" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="33" startPosition="9" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="38" startPosition="0" endLine="42" endPosition="44" />
+    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="38" startPosition="0" endLine="42" endPosition="44">
+      <varInfo nodeId="8610665572788515998" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="38" startPosition="27" endLine="42" endPosition="44" />
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="49" startPosition="5" endLine="53" endPosition="5" />
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="53" startPosition="5" endLine="57" endPosition="5" />
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="21" startPosition="0" endLine="26" endPosition="3" />
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="61" startPosition="96" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="60" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="60" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="8610665572788515998" varName="_params" />
+      <varInfo nodeId="8610665572788515998" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="32" startPosition="89" endLine="43" endPosition="5" />
     <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="46" startPosition="95" endLine="58" endPosition="16" />
-    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="31" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="45" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="31" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="8610665572788515998" varName="_params" />
+      <varInfo nodeId="8610665572788515998" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="45" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="8610665572788515998" varName="_params" />
+      <varInfo nodeId="8610665572788515998" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="8610665572788515998" fileName="RebuildProject_Action.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RebuildProject_Action" />
   </root>
   <root nodeId="8610665572788521540">
@@ -2065,7 +2432,9 @@
     <scopeInfo nodeId="8610665572788521540" fileName="Default_KeymapChanges.java" startLine="20" startPosition="29" endLine="21" endPosition="22" />
     <scopeInfo nodeId="8610665572788521540" fileName="Default_KeymapChanges.java" startLine="24" startPosition="53" endLine="25" endPosition="70" />
     <scopeInfo nodeId="8610665572788521540" fileName="Default_KeymapChanges.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="8610665572788521540" fileName="Default_KeymapChanges.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8610665572788521540" fileName="Default_KeymapChanges.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="8610665572788521540" varName="stroke" />
+    </scopeInfo>
     <scopeInfo nodeId="8610665572788521540" fileName="Default_KeymapChanges.java" startLine="11" startPosition="34" endLine="17" endPosition="15" />
     <scopeInfo nodeId="8610665572788521540" fileName="Default_KeymapChanges.java" startLine="10" startPosition="62" endLine="18" endPosition="3" />
     <unitInfo nodeId="8610665572788521540" fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Default_KeymapChanges" />

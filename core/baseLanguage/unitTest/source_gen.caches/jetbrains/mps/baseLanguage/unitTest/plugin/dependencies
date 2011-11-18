@@ -65,6 +65,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ModelChooserComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ModuleChooserComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -76,7 +77,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.uiLanguage.runtime.JbRadioButton" />
     <classNode dependClassName="jetbrains.mps.uiLanguage.runtime.events.Events" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.jdesktop.beansbinding.AutoBinding" />
     <classNode extendsClassName="javax.swing.JComponent" />
   </dependency>

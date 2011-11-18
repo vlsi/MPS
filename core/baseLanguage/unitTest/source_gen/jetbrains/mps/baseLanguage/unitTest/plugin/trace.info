@@ -351,9 +351,7 @@
     <scopeInfo nodeId="1104580685292496805" fileName="JUnitConfigEditor.java" startLine="368" startPosition="0" endLine="372" endPosition="0" />
     <scopeInfo nodeId="1104580685292496805" fileName="JUnitConfigEditor.java" startLine="121" startPosition="0" endLine="126" endPosition="0" />
     <scopeInfo nodeId="1104580685292496805" fileName="JUnitConfigEditor.java" startLine="126" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="1104580685292496805" fileName="JUnitConfigEditor.java" startLine="135" startPosition="25" endLine="140" endPosition="5">
-      <varInfo nodeId="1104580685292496805" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="1104580685292496805" fileName="JUnitConfigEditor.java" startLine="135" startPosition="25" endLine="140" endPosition="5" />
     <scopeInfo nodeId="1104580685292496805" fileName="JUnitConfigEditor.java" startLine="255" startPosition="45" endLine="260" endPosition="21">
       <varInfo nodeId="1104580685292496805" varName="component" />
     </scopeInfo>
@@ -478,7 +476,7 @@
     <nodeInfo nodeId="7586277060655340550" fileName="JUnitConfigEditor.java" startLine="112" startPosition="79" endLine="113" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7586277060655340560" fileName="JUnitConfigEditor.java" startLine="113" startPosition="81" endLine="114" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7586277060655340570" fileName="JUnitConfigEditor.java" startLine="114" startPosition="78" endLine="115" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7730161283426944569" fileName="JUnitConfigEditor.java" startLine="421" startPosition="47" endLine="422" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7730161283426944569" fileName="JUnitConfigEditor.java" startLine="421" startPosition="47" endLine="422" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="718178759443699372" fileName="JUnitConfigEditor.java" startLine="427" startPosition="25" endLine="428" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="718178759443699333" fileName="JUnitConfigEditor.java" startLine="435" startPosition="25" endLine="436" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7615767134446792552" fileName="JUnitConfigEditor.java" startLine="441" startPosition="52" endLine="442" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -650,7 +648,7 @@
     <scopeInfo nodeId="3977784297772908974" fileName="JUnitConfigEditor.java" startLine="86" startPosition="50" endLine="87" endPosition="71" />
     <scopeInfo nodeId="3977784297772908986" fileName="JUnitConfigEditor.java" startLine="89" startPosition="46" endLine="90" endPosition="79" />
     <scopeInfo nodeId="3977784297772909000" fileName="JUnitConfigEditor.java" startLine="92" startPosition="48" endLine="93" endPosition="81" />
-    <scopeInfo nodeId="7730161283426918609" fileName="JUnitConfigEditor.java" startLine="421" startPosition="47" endLine="422" endPosition="87" />
+    <scopeInfo nodeId="7730161283426918609" fileName="JUnitConfigEditor.java" startLine="421" startPosition="47" endLine="422" endPosition="93" />
     <scopeInfo nodeId="1679097422730608433" fileName="JUnitConfigEditor.java" startLine="427" startPosition="25" endLine="428" endPosition="58" />
     <scopeInfo nodeId="1679097422730608479" fileName="JUnitConfigEditor.java" startLine="435" startPosition="25" endLine="436" endPosition="55" />
     <scopeInfo nodeId="8815584798786257035" fileName="JUnitConfigEditor.java" startLine="446" startPosition="31" endLine="447" endPosition="17" />
@@ -3298,9 +3296,7 @@
     <scopeInfo nodeId="145554711892089591" fileName="ModelChooserComponent.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="145554711892089591" fileName="ModelChooserComponent.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="145554711892089591" fileName="ModelChooserComponent.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="145554711892089591" fileName="ModelChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5">
-      <varInfo nodeId="145554711892089591" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="145554711892089591" fileName="ModelChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5" />
     <scopeInfo nodeId="145554711892089591" fileName="ModelChooserComponent.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="145554711892089591" varName="newValue" />
     </scopeInfo>
@@ -3412,7 +3408,9 @@
     <scopeInfo nodeId="145554711892090455" fileName="ModuleChooserComponent.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="145554711892090455" fileName="ModuleChooserComponent.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="145554711892090455" fileName="ModuleChooserComponent.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="145554711892090455" fileName="ModuleChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="145554711892090455" fileName="ModuleChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5">
+      <varInfo nodeId="145554711892090455" varName="binding" />
+    </scopeInfo>
     <scopeInfo nodeId="145554711892090455" fileName="ModuleChooserComponent.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="145554711892090455" varName="newValue" />
     </scopeInfo>
@@ -4082,7 +4080,9 @@
     <scopeInfo nodeId="3513231949721805534" fileName="ListPanel.java" startLine="22" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="3513231949721805534" fileName="ListPanel.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="3513231949721805534" fileName="ListPanel.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="3513231949721805534" fileName="ListPanel.java" startLine="46" startPosition="25" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="3513231949721805534" fileName="ListPanel.java" startLine="46" startPosition="25" endLine="51" endPosition="5">
+      <varInfo nodeId="3513231949721805534" varName="binding" />
+    </scopeInfo>
     <scopeInfo nodeId="3513231949721805534" fileName="ListPanel.java" startLine="45" startPosition="0" endLine="53" endPosition="0" />
     <unitInfo nodeId="3513231949721805534" fileName="ListPanel.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel" />
     <unitInfo nodeId="3513231949721805534" fileName="ListPanel.java" startLine="15" startPosition="32" endLine="21" endPosition="3" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$1" />
