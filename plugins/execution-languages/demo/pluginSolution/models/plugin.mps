@@ -328,7 +328,7 @@
       </node>
     </node>
     <node role="icon" roleId="uhxm.4763274727405873310" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4763274727405913092">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/languages/util/runConfigurations/languages/demo/resources/run.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/execution-languages/demo/resources/run.png" />
     </node>
   </root>
   <root id="7806358006983646762">
