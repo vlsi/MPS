@@ -76,7 +76,9 @@
     <scopeInfo nodeId="1237901321780" fileName="QueriesGenerated.java" startLine="190" startPosition="130" endLine="191" endPosition="61" />
     <scopeInfo nodeId="1238071255692" fileName="QueriesGenerated.java" startLine="194" startPosition="130" endLine="195" endPosition="61" />
     <scopeInfo nodeId="1237901351780" fileName="QueriesGenerated.java" startLine="214" startPosition="144" endLine="215" endPosition="78" />
-    <scopeInfo nodeId="4543034158214463325" fileName="QueriesGenerated.java" startLine="171" startPosition="154" endLine="175" endPosition="0" />
+    <scopeInfo nodeId="4543034158214463325" fileName="QueriesGenerated.java" startLine="171" startPosition="154" endLine="175" endPosition="0">
+      <varInfo nodeId="4543034158214463325" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1234780240998" fileName="QueriesGenerated.java" startLine="162" startPosition="145" endLine="167" endPosition="5" />
     <scopeInfo nodeId="1234780362599" fileName="QueriesGenerated.java" startLine="170" startPosition="145" endLine="175" endPosition="58" />
     <unitInfo nodeId="4543034158214463325" fileName="QueriesGenerated.java" startLine="171" startPosition="131" endLine="175" endPosition="5" unitName="jetbrains.mps.build.custommps.generator.template.main.QueriesGenerated$1" />
