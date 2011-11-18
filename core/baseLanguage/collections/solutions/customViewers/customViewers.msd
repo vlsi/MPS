@@ -9,6 +9,7 @@
     <dependency reexport="false">6862df80-d13f-4553-9827-397603773647(jetbrains.mps.debugger.java.languages)</dependency>
   </dependencies>
   <usedLanguages>
+    <usedLanguage>760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)</usedLanguage>
     <usedLanguage>fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77(jetbrains.mps.debugger.java.customViewers)</usedLanguage>
   </usedLanguages>
 </solution>
