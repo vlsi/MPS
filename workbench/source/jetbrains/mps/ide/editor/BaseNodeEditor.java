@@ -13,14 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide;
+package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import jetbrains.mps.nodeEditor.*;
+import com.intellij.openapi.editor.Document;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.MementoPersistence;
+import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -34,8 +39,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.util.List;
 
-public abstract class BaseNodeEditor implements IEditor {
+public abstract class BaseNodeEditor implements Editor {
   private EditorComponent myEditorComponent;
   private JComponent myComponent = new EditorPanel();
   private IOperationContext myContext;
@@ -45,6 +51,8 @@ public abstract class BaseNodeEditor implements IEditor {
     myContext = context;
     showEditor();
   }
+
+  public abstract List<Document> getAllEditedDocuments();
 
   public JComponent getComponent() {
     return myComponent;
@@ -73,6 +81,11 @@ public abstract class BaseNodeEditor implements IEditor {
     }
   }
 
+  @Override
+  public boolean isTabbed() {
+    return false;
+  }
+
   private class EditorPanel extends JPanel implements DataProvider {
     private EditorPanel() {
       setLayout(new BorderLayout());
@@ -84,7 +97,7 @@ public abstract class BaseNodeEditor implements IEditor {
 
     @Nullable
     public Object getData(@NonNls String dataId) {
-      if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) return BaseNodeEditor.this;
+      if (dataId.equals(MPSCommonDataKeys.MPS_EDITOR.getName())) return BaseNodeEditor.this;
       if (BaseNodeEditor.this instanceof DataProvider) {
         Object data = ((DataProvider) BaseNodeEditor.this).getData(dataId);
         if (data != null) return data;
@@ -123,11 +136,10 @@ public abstract class BaseNodeEditor implements IEditor {
   //---state---
 
   @Nullable
-  public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
+  public EditorState saveState(boolean full) {
     BaseEditorState result = new BaseEditorState();
     EditorContext editorContext = getEditorContext();
     if (editorContext != null) {
-      boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
       result.myMemento = editorContext.createMemento(full);
       EditorComponent editorComponent = getCurrentEditorComponent();
       if (editorComponent instanceof NodeEditorComponent) {
@@ -144,7 +156,7 @@ public abstract class BaseNodeEditor implements IEditor {
     return result;
   }
 
-  public void loadState(@NotNull MPSEditorState state) {
+  public void loadState(@NotNull EditorState state) {
     if (!(state instanceof BaseEditorState)) return;
 
     BaseEditorState s = (BaseEditorState) state;
@@ -159,7 +171,7 @@ public abstract class BaseNodeEditor implements IEditor {
     }
   }
 
-  public static class BaseEditorState implements MPSEditorState {
+  public static class BaseEditorState implements EditorState {
     private static final String MEMENTO = "memento";
     private static final String INSPECTOR_MEMENTO = "inspectorMemento";
 

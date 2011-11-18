@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import junit.framework.Assert;
@@ -61,8 +61,8 @@ public class AnonymousCellAnnotation_Behavior {
     }
   }
 
-  public static void call_assertEditor_6268941039745719581(SNode thisNode, IEditor editor, SNode node, Map<SNode, SNode> map, Map<SNode, SNode> nodeToCopy) {
-    EditorComponent component = editor.getCurrentEditorComponent();
+  public static void call_assertEditor_6268941039745719581(SNode thisNode, Editor editor, SNode node, Map<SNode, SNode> map, Map<SNode, SNode> nodeToCopy) {
+    EditorComponent component = (EditorComponent) editor.getCurrentEditorComponent();
     if (SPropertyOperations.getBoolean(thisNode, "isInInspector")) {
       component = ((NodeEditorComponent) component).getInspector();
     }

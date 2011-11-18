@@ -267,18 +267,42 @@
     <scopeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="235" startPosition="79" endLine="238" endPosition="27">
       <varInfo nodeId="2906110183022432415" varName="referenceName" />
     </scopeInfo>
-    <scopeInfo nodeId="2906110183022230106" fileName="SNodeGetReferencesOperation_Test.java" startLine="94" startPosition="636" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="2906110183022321809" fileName="SNodeGetReferencesOperation_Test.java" startLine="107" startPosition="623" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="2906110183022332693" fileName="SNodeGetReferencesOperation_Test.java" startLine="120" startPosition="416" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="2906110183022397787" fileName="SNodeGetReferencesOperation_Test.java" startLine="124" startPosition="52" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="2906110183022365946" fileName="SNodeGetReferencesOperation_Test.java" startLine="129" startPosition="251" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="2906110183022411217" fileName="SNodeGetReferencesOperation_Test.java" startLine="142" startPosition="742" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="6404411205049619220" fileName="SNodeGetReferencesOperation_Test.java" startLine="156" startPosition="222" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="2906110183022425090" fileName="SNodeGetReferencesOperation_Test.java" startLine="161" startPosition="229" endLine="165" endPosition="0" />
-    <scopeInfo nodeId="2906110183022425166" fileName="SNodeGetReferencesOperation_Test.java" startLine="165" startPosition="42" endLine="169" endPosition="0" />
-    <scopeInfo nodeId="2906110183022432372" fileName="SNodeGetReferencesOperation_Test.java" startLine="183" startPosition="268" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="2906110183022440101" fileName="SNodeGetReferencesOperation_Test.java" startLine="201" startPosition="241" endLine="205" endPosition="0" />
-    <scopeInfo nodeId="2906110183022440135" fileName="SNodeGetReferencesOperation_Test.java" startLine="208" startPosition="263" endLine="212" endPosition="0" />
+    <scopeInfo nodeId="2906110183022230106" fileName="SNodeGetReferencesOperation_Test.java" startLine="94" startPosition="636" endLine="98" endPosition="0">
+      <varInfo nodeId="2906110183022230106" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2906110183022321809" fileName="SNodeGetReferencesOperation_Test.java" startLine="107" startPosition="623" endLine="111" endPosition="0">
+      <varInfo nodeId="2906110183022321809" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2906110183022332693" fileName="SNodeGetReferencesOperation_Test.java" startLine="120" startPosition="416" endLine="124" endPosition="0">
+      <varInfo nodeId="2906110183022332693" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2906110183022397787" fileName="SNodeGetReferencesOperation_Test.java" startLine="124" startPosition="52" endLine="128" endPosition="0">
+      <varInfo nodeId="2906110183022397787" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2906110183022365946" fileName="SNodeGetReferencesOperation_Test.java" startLine="129" startPosition="251" endLine="133" endPosition="0">
+      <varInfo nodeId="2906110183022365946" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2906110183022411217" fileName="SNodeGetReferencesOperation_Test.java" startLine="142" startPosition="742" endLine="146" endPosition="0">
+      <varInfo nodeId="2906110183022411217" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="6404411205049619220" fileName="SNodeGetReferencesOperation_Test.java" startLine="156" startPosition="222" endLine="160" endPosition="0">
+      <varInfo nodeId="6404411205049619220" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2906110183022425090" fileName="SNodeGetReferencesOperation_Test.java" startLine="161" startPosition="229" endLine="165" endPosition="0">
+      <varInfo nodeId="2906110183022425090" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2906110183022425166" fileName="SNodeGetReferencesOperation_Test.java" startLine="165" startPosition="42" endLine="169" endPosition="0">
+      <varInfo nodeId="2906110183022425166" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2906110183022432372" fileName="SNodeGetReferencesOperation_Test.java" startLine="183" startPosition="268" endLine="187" endPosition="0">
+      <varInfo nodeId="2906110183022432372" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2906110183022440101" fileName="SNodeGetReferencesOperation_Test.java" startLine="201" startPosition="241" endLine="205" endPosition="0">
+      <varInfo nodeId="2906110183022440101" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2906110183022440135" fileName="SNodeGetReferencesOperation_Test.java" startLine="208" startPosition="263" endLine="212" endPosition="0">
+      <varInfo nodeId="2906110183022440135" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="21" startPosition="78" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="27" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
@@ -462,10 +486,16 @@
     <scopeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="159" startPosition="76" endLine="162" endPosition="34">
       <varInfo nodeId="2906110183022467701" varName="unspecifiedChildRole" />
     </scopeInfo>
-    <scopeInfo nodeId="2906110183022478464" fileName="SNodeGetChildrenOperation_Test.java" startLine="77" startPosition="475" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="2906110183022478464" fileName="SNodeGetChildrenOperation_Test.java" startLine="77" startPosition="475" endLine="81" endPosition="0">
+      <varInfo nodeId="2906110183022478464" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2854075155748900275" fileName="SNodeGetChildrenOperation_Test.java" startLine="84" startPosition="83" endLine="88" endPosition="295" />
-    <scopeInfo nodeId="2906110183022478533" fileName="SNodeGetChildrenOperation_Test.java" startLine="95" startPosition="555" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="9203425869796418406" fileName="SNodeGetChildrenOperation_Test.java" startLine="110" startPosition="240" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="2906110183022478533" fileName="SNodeGetChildrenOperation_Test.java" startLine="95" startPosition="555" endLine="99" endPosition="0">
+      <varInfo nodeId="2906110183022478533" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="9203425869796418406" fileName="SNodeGetChildrenOperation_Test.java" startLine="110" startPosition="240" endLine="114" endPosition="0">
+      <varInfo nodeId="9203425869796418406" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2600026384779198864" fileName="SNodeGetChildrenOperation_Test.java" startLine="141" startPosition="78" endLine="146" endPosition="441" />
     <scopeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="22" startPosition="76" endLine="28" endPosition="0" />
     <scopeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />

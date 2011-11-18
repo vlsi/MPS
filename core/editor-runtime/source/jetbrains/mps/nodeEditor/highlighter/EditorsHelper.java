@@ -17,9 +17,9 @@ package jetbrains.mps.nodeEditor.highlighter;
 
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
-import jetbrains.mps.nodeEditor.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ public class EditorsHelper {
     return filterMPSEditors(manager.getAllEditors());
   }
 
-  public static List<IEditor> getSelectedEditors(FileEditorManager manager) {
+  public static List<Editor> getSelectedEditors(FileEditorManager manager) {
     return toMPSEditors(filterMPSEditors(manager.getSelectedEditors()));
   }
 
@@ -40,7 +40,7 @@ public class EditorsHelper {
     for (FileEditor fileEditor : selectedEditors) {
       if (fileEditor instanceof MPSFileNodeEditor) {
         MPSFileNodeEditor mpsFileNodeEditor = (MPSFileNodeEditor) fileEditor;
-        IEditor nodeEditor = mpsFileNodeEditor.getNodeEditor();
+        Editor nodeEditor = mpsFileNodeEditor.getNodeEditor();
         if (nodeEditor != null) {
           editors.add(mpsFileNodeEditor);
         }
@@ -49,11 +49,11 @@ public class EditorsHelper {
     return editors;
   }
 
-  public static List<IEditor> toMPSEditors(List<MPSFileNodeEditor> nodeEditors) {
+  public static List<Editor> toMPSEditors(List<MPSFileNodeEditor> nodeEditors) {
     List<MPSFileNodeEditor> emptyEditors = new ArrayList<MPSFileNodeEditor>(0);
-    List<IEditor> result = new ArrayList<IEditor>();
+    List<Editor> result = new ArrayList<Editor>();
     for (MPSFileNodeEditor e : nodeEditors) {
-      IEditor editor = e.getNodeEditor();
+      Editor editor = e.getNodeEditor();
       if (editor != null) {
         result.add(editor);
       } else {

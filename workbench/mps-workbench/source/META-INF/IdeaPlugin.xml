@@ -15,6 +15,9 @@
     <extensionPoint name="mps.ModelValidator" interface="jetbrains.mps.ide.generator.ModelValidator"/>
     <extensionPoint name="mps.GenerationHandler"
                     interface="jetbrains.mps.ide.generator.GeneratorUIFacade$GenerationHandlerProvider"/>
+    <extensionPoint qualifiedName="jetbrains.mps.editorOpenHandler" interface="jetbrains.mps.ide.editor.EditorOpenHandler"/>
+    <extensionPoint qualifiedName="jetbrains.mps.nodeStructureViewProvider" interface="jetbrains.mps.ide.editor.NodeStructureViewProvider"/>
+
     <extensionPoint name="mps.TabColorProvider" interface="jetbrains.mps.ide.editorTabs.TabColorProvider"/>
     <extensionPoint name="mps.projectPrefsPanel" interface="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" area="IDEA_PROJECT"/>
   </extensionPoints>
@@ -115,7 +118,7 @@
     <syntaxHighlighter key="Devkit" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
     <syntaxHighlighter key="MPS Project" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
 
-    <editorTabTitleProvider implementation="jetbrains.mps.workbench.editors.EditorTabTitleProviderImpl"/>
+    <editorTabTitleProvider implementation="jetbrains.mps.ide.editor.tabs.EditorTabTitleProviderImpl"/>
 
     <fileIconProvider implementation="jetbrains.mps.workbench.editors.MPSIconProvider"/>
 

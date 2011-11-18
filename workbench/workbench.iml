@@ -41,6 +41,7 @@
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="module" module-name="editor-api" />
     <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />

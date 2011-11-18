@@ -13,17 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide;
+package jetbrains.mps.openapi.editor;
 
-import com.intellij.openapi.extensions.ExtensionPointName;
-import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.Set;
+/**
+ * evgeny, 11/17/11
+ */
+public interface EditorContext {
 
-public interface INodeChecker {
-  public static ExtensionPointName<INodeChecker> CHECKERS = ExtensionPointName.create("com.intellij.mps.SpecificCheckers");
-
-  public abstract Set<IErrorReporter> getErrors(SNode node, IOperationContext operationContext);
+  void selectWRTFocusPolicy(SNode node);
 }

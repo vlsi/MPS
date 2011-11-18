@@ -18,10 +18,14 @@ public class Testbench_StubDescriptor extends BaseLibStubDescriptor {
   }
 
   public void init(SolutionDescriptor solution) {
+    solution.getDependencies().add(new Dependency(new ModuleReference("JDK", "6354ebe7-c22a-4a0f-ac54-50b52ab9b065"), true));
     Dependency dep = new Dependency();
     dep.setModuleRef(new ModuleReference("jetbrains.mps.build.antsupport"));
     dep.setReexport(true);
     solution.getDependencies().add(dep);
+    solution.getDependencies().add(new Dependency(new ModuleReference("MPS.Core", "6ed54515-acc8-4d1e-a16c-9fd6cfe951ea"), true));
+    solution.getDependencies().add(new Dependency(new ModuleReference("MPS.Editor", "1ed103c3-3aa6-49b7-9c21-6765ee11f224"), true));
+
   }
 
   public List<String> getPaths() {

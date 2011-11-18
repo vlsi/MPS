@@ -13,17 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.editors;
+package jetbrains.mps.openapi.editor;
 
-import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
-public interface MPSEditorOpenHandler {
-  //todo split into base node getter & TabbedEditorHandler
-  SNode getBaseNode(IOperationContext context, SNode node);
+public interface Editor {
 
-  boolean canOpen(IOperationContext context, SNode node);
+  EditorComponent getCurrentEditorComponent();
 
-  IEditor open(IOperationContext context, SNode node);
+  SNodePointer getCurrentlyEditedNode();
+
+  EditorContext getEditorContext();
+
+  IOperationContext getOperationContext();
+
+  boolean isTabbed();
+
+  void showNode(SNode node, boolean select);
+
+  void dispose();
+
+  //---state
+
+  EditorState saveState(boolean full);
+
+  void loadState(@NotNull EditorState state);
 }

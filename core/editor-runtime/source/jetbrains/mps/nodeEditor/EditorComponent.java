@@ -54,7 +54,9 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.folding.*;
+import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.nodeEditor.selection.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -77,7 +79,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
@@ -99,7 +100,7 @@ import java.lang.reflect.Field;
 import java.util.*;
 import java.util.List;
 
-public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent {
+public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent, jetbrains.mps.openapi.editor.EditorComponent {
   private static final Logger LOG = Logger.getLogger(EditorComponent.class);
   private static final boolean TRACE_ENABLED = false;
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
@@ -1683,7 +1684,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         AnAction action = ActionManager.getInstance().getAction(MPSActions.EDITOR_GOTO_DECLARATION);
-        if(action != null) {
+        if (action != null) {
           AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, dataContext);
           ActionUtils.updateAndPerformAction(action, event);
         }
@@ -1821,8 +1822,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
-  public void changeSelection(EditorCell newSelectedCell) {
-    changeSelection(newSelectedCell, true);
+  @Override
+  public final void changeSelection(jetbrains.mps.openapi.editor.EditorCell newSelectedCell) {
+    changeSelection((EditorCell) newSelectedCell, true);
   }
 
   void changeSelection(@NotNull EditorCell newSelectedCell, boolean resetLastCaretX) {
@@ -1884,12 +1886,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     scrollToCell(getSelectedCell());
   }
 
-  public void scrollToCell(@NotNull EditorCell cell) {
+  public void scrollToCell(@NotNull jetbrains.mps.openapi.editor.EditorCell cell) {
     if (getVisibleRect().isEmpty()) {
       return;
     }
 
-    EditorCell largestVerticalBigCell = cell;
+    jetbrains.mps.openapi.editor.EditorCell largestVerticalBigCell = cell;
 
     int viewportWidth = getViewport().getWidth();
 

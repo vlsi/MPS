@@ -13,19 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.api.info;
+package jetbrains.mps.openapi.editor;
 
-import com.intellij.execution.impl.ConsoleViewImpl;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.ide.common.JavaConsoleCreator;
+/**
+ * evgeny, 11/17/11
+ */
+public interface EditorCell {
 
-@Deprecated
-@ToRemove(version = 2.0)
-public class StacktraceUtil {
-  // is used in generated code, so can't remove now
-  @Deprecated
-  public static ConsoleViewImpl createConsoleView(Project project) {
-    return JavaConsoleCreator.createConsoleView(project);
-  }
+  int getX();
+  int getY();
+
+  int getWidth();
+  int getHeight();
 }

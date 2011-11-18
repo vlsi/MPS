@@ -71,8 +71,10 @@ public class BookmarksUIComponent implements ProjectComponent {
     myBookmarkManager.addBookmarkListener(bookmarkListener);
     myMessageBusConnection = myProject.getMessageBus().connect();
     myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, editorListener);
-    for (EditorComponent editor : EditorUtil.getAllEditorComponents(myFileEditorManager, true)) {
-      editorComponentCreated(editor);
+    for (jetbrains.mps.openapi.editor.EditorComponent editor : EditorUtil.getAllEditorComponents(myFileEditorManager, true)) {
+      if (editor instanceof EditorComponent) {
+        editorComponentCreated((EditorComponent) editor);
+      }
     }
 
   }

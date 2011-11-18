@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.editors;
+package jetbrains.mps.ide.editor;
 
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.structureView.StructureViewBuilder;
@@ -26,8 +26,8 @@ import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.UserDataHolderBase;
-import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -35,7 +35,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.structureview.StructureViewBuilderFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -48,7 +47,7 @@ import java.util.List;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEditor {
 
-  private IEditor myNodeEditor;
+  private Editor myNodeEditor;
   private JPanel myComponent = new MPSFileNodeEditorComponent();
   private Project myProject;
   private MPSNodeVirtualFile myFile;
@@ -80,7 +79,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     return myFile;
   }
 
-  public IEditor getNodeEditor() {
+  public Editor getNodeEditor() {
     return myNodeEditor;
   }
 
@@ -91,7 +90,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Nullable
   public JComponent getPreferredFocusedComponent() {
-    return isDisposed() ? null : myNodeEditor.getCurrentEditorComponent();
+    return isDisposed() ? null : (JComponent) myNodeEditor.getCurrentEditorComponent();
   }
 
   @NonNls
@@ -110,7 +109,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     if (!isDisposed()) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          state.setEditorState(myNodeEditor.saveState(level));
+          state.setEditorState(myNodeEditor.saveState(level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL));
         }
       });
     }
@@ -172,7 +171,16 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Nullable
   public StructureViewBuilder getStructureViewBuilder() {
-    return myProject.getComponent(StructureViewBuilderFactory.class).create(myFile.getSNodePointer());
+    return ModelAccess.instance().runReadAction(new Computable<StructureViewBuilder>() {
+      @Override
+      public StructureViewBuilder compute() {
+        for (NodeStructureViewProvider provider : NodeStructureViewProvider.EP_NODE_STRUCTURE_VIEW_PROVIDER.getExtensions()) {
+          StructureViewBuilder builder = provider.getStructureViewBuilder(myFile, myProject);
+          if (builder != null) return builder;
+        }
+        return null;
+      }
+    });
   }
 
   public void dispose() {
@@ -196,7 +204,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     FileEditorState state = myNodeEditor != null ? getState(FileEditorStateLevel.FULL) : null;
 
     IOperationContext context = createOperationContext();
-    IEditor oldNodeEditor = myNodeEditor;
+    Editor oldNodeEditor = myNodeEditor;
     myNodeEditor = new MPSEditorOpener(myProject).createEditorFor(context, myFile.getNode());
     if (oldNodeEditor != null) {
       oldNodeEditor.dispose();
@@ -206,7 +214,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
       setState(state);
     }
 
-    myComponent.add(myNodeEditor.getComponent(), BorderLayout.CENTER);
+    myComponent.add(((BaseNodeEditor) myNodeEditor).getComponent(), BorderLayout.CENTER);
     myComponent.validate();
   }
 
@@ -227,7 +235,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   public Document[] getDocuments() {
     if (!isDisposed()) {
-      List<Document> result = myNodeEditor.getAllEditedDocuments();
+      List<Document> result = ((BaseNodeEditor) myNodeEditor).getAllEditedDocuments();
       return result.toArray(new Document[result.size()]);
     }
     return new Document[0];

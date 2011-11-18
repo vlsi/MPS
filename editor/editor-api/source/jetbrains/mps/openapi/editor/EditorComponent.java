@@ -13,32 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide;
+package jetbrains.mps.openapi.editor;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.fileTypes.ex.FileTypeManagerEx;
-import jetbrains.mps.nodeEditor.CaretBlinker;
-import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
-public class MPSAdapter implements ApplicationComponent {
-  private FileTypeManagerEx myFileTypeManager;
+/**
+ * evgeny, 11/17/11
+ */
+public interface EditorComponent {
 
-  public MPSAdapter(FileTypeManagerEx fileTypeManager) {
-    myFileTypeManager = fileTypeManager;
-  }
+  SNode getEditedNode();
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "MPS Adapter";
-  }
+  SNodePointer getEditedNodePointer();
 
-  public void initComponent() {
-    CaretBlinker.getInstance().launch();
-  }
+  SNode getSelectedNode();
 
-  public void disposeComponent() {
+  IOperationContext getOperationContext();
 
-  }
+  EditorCell getRootCell();
+
+  EditorCell findNodeCell(final SNode node);
+
+  void scrollToNode(SNode node);
+
+  void scrollToCell(@NotNull EditorCell cell);
+
+  void changeSelection(EditorCell newSelectedCell);
+
+  boolean isDisposed();
+
+  EditorContext getEditorContext();
+
+  void dispose();
 }

@@ -13,15 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.editors;
+package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.nodeEditor.IEditor;
-import jetbrains.mps.ide.editorTabs.TabbedEditor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
@@ -40,11 +39,10 @@ public class MPSEditorUtil {
     FileEditor editor = editors[0];
     if (!(editor instanceof MPSFileNodeEditor)) return null;
 
-    IEditor nodeEditor = ((MPSFileNodeEditor) editor).getNodeEditor();
-    if (!(nodeEditor instanceof TabbedEditor)) return null;
+    Editor nodeEditor = ((MPSFileNodeEditor) editor).getNodeEditor();
+    if (nodeEditor == null || !nodeEditor.isTabbed()) return null;
 
-    TabbedEditor tabbedEditor = (TabbedEditor) nodeEditor;
-    EditorComponent tabEditor = tabbedEditor.getCurrentEditorComponent();
+    EditorComponent tabEditor = nodeEditor.getCurrentEditorComponent();
     if (!(tabEditor instanceof NodeEditorComponent)) return null;
 
     return tabEditor.getEditedNode();
