@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import javax.swing.JLabel;
-import jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration_Editor;
+import jetbrains.mps.execution.lib.MultiConceptNode_Configuration_Editor;
 import jetbrains.mps.execution.lib.JavaRunParameters_Configuration_Editor;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;

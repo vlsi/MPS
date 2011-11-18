@@ -34,7 +34,7 @@ public class ConvertActionParameterCondition_MigrationScript extends BaseMigrati
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "condition", new ConvertActionParameterCondition_MigrationScript.QuotationClass_pi1x0q_a2a0a4a0a0a1a0().createNode(), true);
+        SLinkOperations.setTarget(node, "condition", new ConvertActionParameterCondition_MigrationScript.QuotationClass_pi1x0q_a0a0a4a0a0a1a0().createNode(), true);
       }
 
       public boolean isShowAsIntention() {
@@ -43,8 +43,8 @@ public class ConvertActionParameterCondition_MigrationScript extends BaseMigrati
     });
   }
 
-  public static class QuotationClass_pi1x0q_a2a0a4a0a0a1a0 {
-    public QuotationClass_pi1x0q_a2a0a4a0a0a1a0() {
+  public static class QuotationClass_pi1x0q_a0a0a4a0a0a1a0 {
+    public QuotationClass_pi1x0q_a0a0a4a0a0a1a0() {
     }
 
     public SNode createNode() {

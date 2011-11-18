@@ -72,7 +72,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tps4.1203598300291" resolveInfo="AbstractProjectComponent" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4159241239519649233">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ideaPlugin" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tps4.4159241239519649208" resolveInfo="Plugin" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1779718524640627537">

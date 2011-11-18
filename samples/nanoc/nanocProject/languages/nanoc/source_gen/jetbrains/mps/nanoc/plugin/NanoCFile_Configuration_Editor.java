@@ -4,7 +4,7 @@ package jetbrains.mps.nanoc.plugin;
 
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser;
-import jetbrains.mps.execution.configurations.lib.Node_Configuration_Editor;
+import jetbrains.mps.execution.lib.Node_Configuration_Editor;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;

@@ -33,11 +33,15 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class PluginReloader implements ApplicationComponent {
   private ReloadAdapter myReloadListener = new MyReloadAdapter();
   private IMakeNotificationListener myMakeListener = new MyMakeListener();
+
+  private final List<PluginReloadingListener> myListeners = new ArrayList<PluginReloadingListener>();
 
   private ClassLoaderManager myClassLoaderManager;
   private ProjectManager myProjectManager;
@@ -60,13 +64,17 @@ public class PluginReloader implements ApplicationComponent {
       p.getComponent(ProjectPluginManager.class).loadPlugins();
     }
 
-    loadConfigurations();
+    for (PluginReloadingListener l : getListeners()) {
+      l.afterPluginsLoaded();
+    }
   }
 
   private void disposePlugins() {
     if (isDisposed()) return;
 
-    disposeConfigurations();
+    for (PluginReloadingListener l : getListeners()) {
+      l.beforePluginsDisposed();
+    }
 
     for (Project p : myProjectManager.getOpenProjects()) {
       p.getComponent(ProjectPluginManager.class).disposePlugins();
@@ -74,22 +82,24 @@ public class PluginReloader implements ApplicationComponent {
     myPluginManager.disposePlugins();
   }
 
-  private void loadConfigurations() {
-    if (IdeMain.getTestMode() != IdeMain.TestMode.NO_TEST) {
-      return;
-    }
-    for (Project p : myProjectManager.getOpenProjects()) {
-      p.getComponent(jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager.class).initRunConfigurations();
+  public void addReloadingListener(@NotNull PluginReloadingListener listener) {
+    synchronized (myListeners) {
+      myListeners.add(listener);
     }
   }
 
-  private void disposeConfigurations() {
-    if (IdeMain.getTestMode() != IdeMain.TestMode.NO_TEST) {
-      return;
+  public void removeReloadingListener(PluginReloadingListener listener) {
+    synchronized (myListeners) {
+      myListeners.remove(listener);
     }
-    for (Project p : myProjectManager.getOpenProjects()) {
-      p.getComponent(RunConfigurationsStateManager.class).disposeRunConfigurations();
+  }
+
+  private List<PluginReloadingListener> getListeners() {
+    List<PluginReloadingListener> result = new ArrayList<PluginReloadingListener>();
+    synchronized (myListeners) {
+      result.addAll(myListeners);
     }
+    return result;
   }
 
   public void setMakeService(IMakeService makeService) {

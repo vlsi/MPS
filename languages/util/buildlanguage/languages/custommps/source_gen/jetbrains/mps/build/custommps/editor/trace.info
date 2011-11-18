@@ -230,67 +230,205 @@
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="102" startPosition="5" endLine="103" endPosition="82" />
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="103" startPosition="82" endLine="104" endPosition="81" />
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="173" startPosition="15" endLine="174" endPosition="65" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="62" startPosition="5" endLine="64" endPosition="51" />
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="62" startPosition="5" endLine="64" endPosition="51">
+      <varInfo nodeId="1233149986967" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="139" startPosition="97" endLine="141" endPosition="72" />
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="147" startPosition="109" endLine="149" endPosition="72" />
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="155" startPosition="101" endLine="157" endPosition="72" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="162" startPosition="91" endLine="164" endPosition="18" />
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="162" startPosition="91" endLine="164" endPosition="18">
+      <varInfo nodeId="1233149986967" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="191" startPosition="26" endLine="193" endPosition="73" />
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="208" startPosition="26" endLine="210" endPosition="73" />
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="226" startPosition="58" endLine="228" endPosition="81" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="48" startPosition="5" endLine="51" endPosition="51" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="85" startPosition="5" endLine="88" endPosition="51" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="98" startPosition="5" endLine="101" endPosition="51" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="108" startPosition="90" endLine="111" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="114" startPosition="90" endLine="117" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="120" startPosition="89" endLine="123" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="126" startPosition="91" endLine="129" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="132" startPosition="89" endLine="135" endPosition="22" />
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="48" startPosition="5" endLine="51" endPosition="51">
+      <varInfo nodeId="1233149986967" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="85" startPosition="5" endLine="88" endPosition="51">
+      <varInfo nodeId="1233149986967" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="98" startPosition="5" endLine="101" endPosition="51">
+      <varInfo nodeId="1233149986967" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="108" startPosition="90" endLine="111" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+      <varInfo nodeId="1233149986967" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="114" startPosition="90" endLine="117" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+      <varInfo nodeId="1233149986967" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="120" startPosition="89" endLine="123" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+      <varInfo nodeId="1233149986967" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="126" startPosition="91" endLine="129" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+      <varInfo nodeId="1233149986967" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="132" startPosition="89" endLine="135" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+      <varInfo nodeId="1233149986967" varName="provider" />
+    </scopeInfo>
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="172" startPosition="58" endLine="175" endPosition="5" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="179" startPosition="35" endLine="182" endPosition="105" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="196" startPosition="35" endLine="199" endPosition="105" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="213" startPosition="35" endLine="216" endPosition="105" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="232" startPosition="35" endLine="235" endPosition="105" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="27" startPosition="56" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="179" startPosition="35" endLine="182" endPosition="105">
+      <varInfo nodeId="1233149986967" varName="manager" />
+      <varInfo nodeId="1233149986967" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="196" startPosition="35" endLine="199" endPosition="105">
+      <varInfo nodeId="1233149986967" varName="manager" />
+      <varInfo nodeId="1233149986967" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="213" startPosition="35" endLine="216" endPosition="105">
+      <varInfo nodeId="1233149986967" varName="manager" />
+      <varInfo nodeId="1233149986967" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="232" startPosition="35" endLine="235" endPosition="105">
+      <varInfo nodeId="1233149986967" varName="manager" />
+      <varInfo nodeId="1233149986967" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="27" startPosition="56" endLine="31" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="225" startPosition="26" endLine="229" endPosition="73" />
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="60" startPosition="99" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="138" startPosition="89" endLine="143" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="146" startPosition="89" endLine="151" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="154" startPosition="89" endLine="159" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="161" startPosition="0" endLine="166" endPosition="0" />
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="138" startPosition="89" endLine="143" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="146" startPosition="89" endLine="151" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="154" startPosition="89" endLine="159" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="161" startPosition="0" endLine="166" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="171" startPosition="26" endLine="176" endPosition="73" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="36" startPosition="89" endLine="42" endPosition="22" />
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="36" startPosition="89" endLine="42" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="46" startPosition="99" endLine="52" endPosition="5" />
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="83" startPosition="99" endLine="89" endPosition="5" />
     <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="96" startPosition="99" endLine="102" endPosition="5" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="107" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="113" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="119" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="125" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="131" startPosition="0" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="72" startPosition="91" endLine="79" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="137" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="145" startPosition="0" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="153" startPosition="0" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="35" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="59" startPosition="90" endLine="69" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="71" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="82" startPosition="92" endLine="92" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="95" startPosition="92" endLine="105" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="45" startPosition="90" endLine="56" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="58" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="81" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="94" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="44" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="187" startPosition="88" endLine="201" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="204" startPosition="88" endLine="218" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="221" startPosition="96" endLine="237" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="167" startPosition="88" endLine="184" endPosition="22" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="186" startPosition="0" endLine="203" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="203" startPosition="0" endLine="220" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="220" startPosition="0" endLine="239" endPosition="0" />
-    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="166" startPosition="0" endLine="186" endPosition="0" />
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="107" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="113" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="119" startPosition="0" endLine="125" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="125" startPosition="0" endLine="131" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="131" startPosition="0" endLine="137" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="72" startPosition="91" endLine="79" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="137" startPosition="0" endLine="145" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="145" startPosition="0" endLine="153" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="153" startPosition="0" endLine="161" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="35" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="59" startPosition="90" endLine="69" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="71" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="82" startPosition="92" endLine="92" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="95" startPosition="92" endLine="105" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="45" startPosition="90" endLine="56" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="58" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="81" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="94" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="44" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="187" startPosition="88" endLine="201" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="attributeConcept" />
+      <varInfo nodeId="1233149986967" varName="attributeKind" />
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+      <varInfo nodeId="1233149986967" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="204" startPosition="88" endLine="218" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="attributeConcept" />
+      <varInfo nodeId="1233149986967" varName="attributeKind" />
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+      <varInfo nodeId="1233149986967" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="221" startPosition="96" endLine="237" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="attributeConcept" />
+      <varInfo nodeId="1233149986967" varName="attributeKind" />
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+      <varInfo nodeId="1233149986967" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="167" startPosition="88" endLine="184" endPosition="22">
+      <varInfo nodeId="1233149986967" varName="attributeConcept" />
+      <varInfo nodeId="1233149986967" varName="attributeKind" />
+      <varInfo nodeId="1233149986967" varName="editorCell" />
+      <varInfo nodeId="1233149986967" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="186" startPosition="0" endLine="203" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="203" startPosition="0" endLine="220" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="220" startPosition="0" endLine="239" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="166" startPosition="0" endLine="186" endPosition="0">
+      <varInfo nodeId="1233149986967" varName="editorContext" />
+      <varInfo nodeId="1233149986967" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="27" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.MPSBuild_Editor" />
   </root>
   <root nodeId="1233679325694">
@@ -469,49 +607,156 @@
     <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="61" startPosition="97" endLine="62" endPosition="50" />
     <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="62" startPosition="50" endLine="63" endPosition="82" />
     <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="63" startPosition="82" endLine="64" endPosition="84" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="45" startPosition="5" endLine="47" endPosition="51" />
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="45" startPosition="5" endLine="47" endPosition="51">
+      <varInfo nodeId="1233679325694" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="99" startPosition="95" endLine="101" endPosition="72" />
     <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="107" startPosition="90" endLine="109" endPosition="72" />
     <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="118" startPosition="26" endLine="120" endPosition="73" />
     <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="135" startPosition="26" endLine="137" endPosition="73" />
     <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="152" startPosition="26" endLine="154" endPosition="73" />
     <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="170" startPosition="58" endLine="172" endPosition="81" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="68" startPosition="90" endLine="71" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="74" startPosition="90" endLine="77" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="80" startPosition="89" endLine="83" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="86" startPosition="89" endLine="89" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="92" startPosition="91" endLine="95" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="123" startPosition="35" endLine="126" endPosition="105" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="140" startPosition="35" endLine="143" endPosition="105" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="157" startPosition="35" endLine="160" endPosition="105" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="176" startPosition="35" endLine="179" endPosition="105" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="25" startPosition="61" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="68" startPosition="90" endLine="71" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+      <varInfo nodeId="1233679325694" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="74" startPosition="90" endLine="77" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+      <varInfo nodeId="1233679325694" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="80" startPosition="89" endLine="83" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+      <varInfo nodeId="1233679325694" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="86" startPosition="89" endLine="89" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+      <varInfo nodeId="1233679325694" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="92" startPosition="91" endLine="95" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+      <varInfo nodeId="1233679325694" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="123" startPosition="35" endLine="126" endPosition="105">
+      <varInfo nodeId="1233679325694" varName="manager" />
+      <varInfo nodeId="1233679325694" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="140" startPosition="35" endLine="143" endPosition="105">
+      <varInfo nodeId="1233679325694" varName="manager" />
+      <varInfo nodeId="1233679325694" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="157" startPosition="35" endLine="160" endPosition="105">
+      <varInfo nodeId="1233679325694" varName="manager" />
+      <varInfo nodeId="1233679325694" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="176" startPosition="35" endLine="179" endPosition="105">
+      <varInfo nodeId="1233679325694" varName="manager" />
+      <varInfo nodeId="1233679325694" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="25" startPosition="61" endLine="29" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="169" startPosition="26" endLine="173" endPosition="73" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="34" startPosition="89" endLine="39" endPosition="22" />
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="34" startPosition="89" endLine="39" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="43" startPosition="99" endLine="48" endPosition="5" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="60" startPosition="91" endLine="65" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="98" startPosition="89" endLine="103" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="106" startPosition="89" endLine="111" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="67" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="73" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="79" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="85" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="91" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="33" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="59" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="97" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="105" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="114" startPosition="88" endLine="128" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="131" startPosition="88" endLine="145" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="148" startPosition="88" endLine="162" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="42" startPosition="90" endLine="57" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="165" startPosition="96" endLine="181" endPosition="22" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="113" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="130" startPosition="0" endLine="147" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="147" startPosition="0" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="41" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="164" startPosition="0" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="60" startPosition="91" endLine="65" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="98" startPosition="89" endLine="103" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="106" startPosition="89" endLine="111" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="67" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="73" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="79" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="85" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="91" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="33" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="59" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="97" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="105" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="114" startPosition="88" endLine="128" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="attributeConcept" />
+      <varInfo nodeId="1233679325694" varName="attributeKind" />
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+      <varInfo nodeId="1233679325694" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="131" startPosition="88" endLine="145" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="attributeConcept" />
+      <varInfo nodeId="1233679325694" varName="attributeKind" />
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+      <varInfo nodeId="1233679325694" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="148" startPosition="88" endLine="162" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="attributeConcept" />
+      <varInfo nodeId="1233679325694" varName="attributeKind" />
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+      <varInfo nodeId="1233679325694" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="42" startPosition="90" endLine="57" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="165" startPosition="96" endLine="181" endPosition="22">
+      <varInfo nodeId="1233679325694" varName="attributeConcept" />
+      <varInfo nodeId="1233679325694" varName="attributeKind" />
+      <varInfo nodeId="1233679325694" varName="editorCell" />
+      <varInfo nodeId="1233679325694" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="113" startPosition="0" endLine="130" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="130" startPosition="0" endLine="147" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="147" startPosition="0" endLine="164" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="41" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="164" startPosition="0" endLine="183" endPosition="0">
+      <varInfo nodeId="1233679325694" varName="editorContext" />
+      <varInfo nodeId="1233679325694" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="25" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.LibraryFolder_Editor" />
   </root>
   <root nodeId="1233937590204">
@@ -525,11 +770,20 @@
     <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="16" startPosition="63" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="41" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUndeclaredVaribale#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
     <scopeInfo nodeId="1233937956201" fileName="CustomMpsStyles_StyleSheet.java" startLine="31" startPosition="108" endLine="32" endPosition="16" />
-    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1233937590204" varName="editorContext" />
+      <varInfo nodeId="1233937590204" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="18" startPosition="49" endLine="25" endPosition="11" />
-    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="17" startPosition="78" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="14" startPosition="68" endLine="28" endPosition="17" />
-    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="41" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="17" startPosition="78" endLine="27" endPosition="0">
+      <varInfo nodeId="1233937590204" varName="cell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="14" startPosition="68" endLine="28" endPosition="17">
+      <varInfo nodeId="1233937590204" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="41" endLine="30" endPosition="0">
+      <varInfo nodeId="1233937590204" varName="cell" />
+    </scopeInfo>
     <unitInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.CustomMpsStyles_StyleSheet" />
     <unitInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="17" startPosition="46" endLine="27" endPosition="5" unitName="jetbrains.mps.build.custommps.editor.CustomMpsStyles_StyleSheet$1" />
   </root>
@@ -773,67 +1027,213 @@
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="147" startPosition="97" endLine="149" endPosition="72" />
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="155" startPosition="109" endLine="157" endPosition="72" />
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="163" startPosition="101" endLine="165" endPosition="72" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="170" startPosition="91" endLine="172" endPosition="18" />
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="170" startPosition="91" endLine="172" endPosition="18">
+      <varInfo nodeId="2235195415637073420" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="179" startPosition="26" endLine="181" endPosition="73" />
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="196" startPosition="26" endLine="198" endPosition="73" />
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="213" startPosition="26" endLine="215" endPosition="73" />
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="231" startPosition="58" endLine="233" endPosition="81" />
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="42" startPosition="83" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="53" startPosition="5" endLine="56" endPosition="51" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="67" startPosition="5" endLine="70" endPosition="51" />
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="53" startPosition="5" endLine="56" endPosition="51">
+      <varInfo nodeId="2235195415637073420" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="67" startPosition="5" endLine="70" endPosition="51">
+      <varInfo nodeId="2235195415637073420" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="80" startPosition="50" endLine="83" endPosition="5" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="93" startPosition="5" endLine="96" endPosition="51" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="106" startPosition="5" endLine="109" endPosition="51" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="116" startPosition="90" endLine="119" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="122" startPosition="90" endLine="125" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="128" startPosition="89" endLine="131" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="134" startPosition="91" endLine="137" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="140" startPosition="89" endLine="143" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="184" startPosition="35" endLine="187" endPosition="105" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="201" startPosition="35" endLine="204" endPosition="105" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="218" startPosition="35" endLine="221" endPosition="105" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="237" startPosition="35" endLine="240" endPosition="105" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="30" startPosition="63" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="93" startPosition="5" endLine="96" endPosition="51">
+      <varInfo nodeId="2235195415637073420" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="106" startPosition="5" endLine="109" endPosition="51">
+      <varInfo nodeId="2235195415637073420" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="116" startPosition="90" endLine="119" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+      <varInfo nodeId="2235195415637073420" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="122" startPosition="90" endLine="125" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+      <varInfo nodeId="2235195415637073420" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="128" startPosition="89" endLine="131" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+      <varInfo nodeId="2235195415637073420" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="134" startPosition="91" endLine="137" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+      <varInfo nodeId="2235195415637073420" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="140" startPosition="89" endLine="143" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+      <varInfo nodeId="2235195415637073420" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="184" startPosition="35" endLine="187" endPosition="105">
+      <varInfo nodeId="2235195415637073420" varName="manager" />
+      <varInfo nodeId="2235195415637073420" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="201" startPosition="35" endLine="204" endPosition="105">
+      <varInfo nodeId="2235195415637073420" varName="manager" />
+      <varInfo nodeId="2235195415637073420" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="218" startPosition="35" endLine="221" endPosition="105">
+      <varInfo nodeId="2235195415637073420" varName="manager" />
+      <varInfo nodeId="2235195415637073420" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="237" startPosition="35" endLine="240" endPosition="105">
+      <varInfo nodeId="2235195415637073420" varName="manager" />
+      <varInfo nodeId="2235195415637073420" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="30" startPosition="63" endLine="34" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="230" startPosition="26" endLine="234" endPosition="73" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="244" startPosition="0" endLine="248" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="248" startPosition="0" endLine="252" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="146" startPosition="89" endLine="151" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="154" startPosition="89" endLine="159" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="162" startPosition="89" endLine="167" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="169" startPosition="0" endLine="174" endPosition="0" />
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="244" startPosition="0" endLine="248" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+      <varInfo nodeId="2235195415637073420" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="248" startPosition="0" endLine="252" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+      <varInfo nodeId="2235195415637073420" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="146" startPosition="89" endLine="151" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="154" startPosition="89" endLine="159" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="162" startPosition="89" endLine="167" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="169" startPosition="0" endLine="174" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="51" startPosition="99" endLine="57" endPosition="5" />
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="65" startPosition="99" endLine="71" endPosition="5" />
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="91" startPosition="99" endLine="97" endPosition="5" />
     <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="104" startPosition="99" endLine="110" endPosition="5" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="115" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="121" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="127" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="133" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="139" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="39" startPosition="89" endLine="47" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="145" startPosition="0" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="153" startPosition="0" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="161" startPosition="0" endLine="169" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="78" startPosition="91" endLine="87" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="90" startPosition="92" endLine="100" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="103" startPosition="92" endLine="113" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="38" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="50" startPosition="90" endLine="61" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="64" startPosition="90" endLine="75" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="77" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="89" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="102" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="49" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="63" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="175" startPosition="88" endLine="189" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="192" startPosition="88" endLine="206" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="209" startPosition="88" endLine="223" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="226" startPosition="96" endLine="242" endPosition="22" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="174" startPosition="0" endLine="191" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="191" startPosition="0" endLine="208" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="208" startPosition="0" endLine="225" endPosition="0" />
-    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="225" startPosition="0" endLine="244" endPosition="0" />
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="115" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="121" startPosition="0" endLine="127" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="127" startPosition="0" endLine="133" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="133" startPosition="0" endLine="139" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="139" startPosition="0" endLine="145" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="39" startPosition="89" endLine="47" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="145" startPosition="0" endLine="153" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="153" startPosition="0" endLine="161" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="161" startPosition="0" endLine="169" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="78" startPosition="91" endLine="87" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="90" startPosition="92" endLine="100" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="103" startPosition="92" endLine="113" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="38" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="50" startPosition="90" endLine="61" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="64" startPosition="90" endLine="75" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="77" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="89" startPosition="0" endLine="102" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="102" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="49" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="63" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="175" startPosition="88" endLine="189" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="attributeConcept" />
+      <varInfo nodeId="2235195415637073420" varName="attributeKind" />
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+      <varInfo nodeId="2235195415637073420" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="192" startPosition="88" endLine="206" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="attributeConcept" />
+      <varInfo nodeId="2235195415637073420" varName="attributeKind" />
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+      <varInfo nodeId="2235195415637073420" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="209" startPosition="88" endLine="223" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="attributeConcept" />
+      <varInfo nodeId="2235195415637073420" varName="attributeKind" />
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+      <varInfo nodeId="2235195415637073420" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="226" startPosition="96" endLine="242" endPosition="22">
+      <varInfo nodeId="2235195415637073420" varName="attributeConcept" />
+      <varInfo nodeId="2235195415637073420" varName="attributeKind" />
+      <varInfo nodeId="2235195415637073420" varName="editorCell" />
+      <varInfo nodeId="2235195415637073420" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="174" startPosition="0" endLine="191" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="191" startPosition="0" endLine="208" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="208" startPosition="0" endLine="225" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="225" startPosition="0" endLine="244" endPosition="0">
+      <varInfo nodeId="2235195415637073420" varName="editorContext" />
+      <varInfo nodeId="2235195415637073420" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="30" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.MPSDistribution_Editor" />
   </root>
   <root nodeId="8431776905956790243">
@@ -909,22 +1309,65 @@
     <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="73" startPosition="58" endLine="74" endPosition="45" />
     <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="42" startPosition="94" endLine="44" endPosition="72" />
     <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="54" startPosition="58" endLine="56" endPosition="83" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="60" startPosition="35" endLine="63" endPosition="105" />
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="60" startPosition="35" endLine="63" endPosition="105">
+      <varInfo nodeId="8431776905956790243" varName="manager" />
+      <varInfo nodeId="8431776905956790243" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="72" startPosition="26" endLine="75" endPosition="73" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="78" startPosition="35" endLine="81" endPosition="105" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="17" startPosition="75" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="26" startPosition="89" endLine="30" endPosition="22" />
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="78" startPosition="35" endLine="81" endPosition="105">
+      <varInfo nodeId="8431776905956790243" varName="manager" />
+      <varInfo nodeId="8431776905956790243" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="17" startPosition="75" endLine="21" endPosition="0">
+      <varInfo nodeId="8431776905956790243" varName="editorContext" />
+      <varInfo nodeId="8431776905956790243" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="8431776905956790243" varName="editorContext" />
+      <varInfo nodeId="8431776905956790243" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="26" startPosition="89" endLine="30" endPosition="22">
+      <varInfo nodeId="8431776905956790243" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="53" startPosition="26" endLine="57" endPosition="73" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="33" startPosition="91" endLine="38" endPosition="22" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="41" startPosition="88" endLine="46" endPosition="22" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="32" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="40" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="68" startPosition="88" endLine="83" endPosition="22" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="49" startPosition="88" endLine="65" endPosition="22" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="67" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="48" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="33" startPosition="91" endLine="38" endPosition="22">
+      <varInfo nodeId="8431776905956790243" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="41" startPosition="88" endLine="46" endPosition="22">
+      <varInfo nodeId="8431776905956790243" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="8431776905956790243" varName="editorContext" />
+      <varInfo nodeId="8431776905956790243" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="32" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="8431776905956790243" varName="editorContext" />
+      <varInfo nodeId="8431776905956790243" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="8431776905956790243" varName="editorContext" />
+      <varInfo nodeId="8431776905956790243" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="68" startPosition="88" endLine="83" endPosition="22">
+      <varInfo nodeId="8431776905956790243" varName="attributeConcept" />
+      <varInfo nodeId="8431776905956790243" varName="attributeKind" />
+      <varInfo nodeId="8431776905956790243" varName="editorCell" />
+      <varInfo nodeId="8431776905956790243" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="49" startPosition="88" endLine="65" endPosition="22">
+      <varInfo nodeId="8431776905956790243" varName="attributeConcept" />
+      <varInfo nodeId="8431776905956790243" varName="attributeKind" />
+      <varInfo nodeId="8431776905956790243" varName="editorCell" />
+      <varInfo nodeId="8431776905956790243" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="67" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="8431776905956790243" varName="editorContext" />
+      <varInfo nodeId="8431776905956790243" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="48" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="8431776905956790243" varName="editorContext" />
+      <varInfo nodeId="8431776905956790243" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="8431776905956790243" fileName="UndeclaredVariableReference_Editor.java" startLine="17" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.UndeclaredVariableReference_Editor" />
   </root>
 </debugInfo>
