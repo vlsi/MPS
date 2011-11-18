@@ -141,6 +141,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/languageDesign/test/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
@@ -160,6 +161,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -586,6 +588,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -681,6 +684,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -781,6 +785,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -876,6 +881,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -930,6 +936,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -1026,6 +1033,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -1081,6 +1089,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -1177,6 +1186,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -1232,6 +1242,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -1327,6 +1338,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -1381,6 +1393,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -1477,6 +1490,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -1531,6 +1545,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -1628,6 +1643,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -1694,6 +1710,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -1790,6 +1807,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -1844,6 +1862,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -1940,6 +1959,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -1995,6 +2015,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -2090,6 +2111,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -2144,6 +2166,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -2239,6 +2262,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -2293,6 +2317,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -2389,6 +2414,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -2465,6 +2491,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -2561,6 +2588,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -2623,6 +2651,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -2718,6 +2747,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -2803,6 +2833,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -2899,6 +2930,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -2954,6 +2986,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -3049,6 +3082,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -3103,6 +3137,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -3199,6 +3234,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -3254,6 +3290,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -3353,6 +3390,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -3407,6 +3445,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -3503,6 +3542,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -3557,6 +3597,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -3657,6 +3698,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -3713,6 +3755,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -3808,6 +3851,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -3862,6 +3906,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -3957,6 +4002,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -4011,6 +4057,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -4108,6 +4155,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -4162,6 +4210,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -4258,6 +4307,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -4312,6 +4362,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -4407,6 +4458,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -4461,6 +4513,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -4557,6 +4610,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -4611,6 +4665,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -4706,6 +4761,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -4761,6 +4817,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -4856,6 +4913,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -4885,6 +4943,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/test/classes_gen" />
@@ -4907,6 +4966,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -4961,6 +5021,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -5056,6 +5117,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -5119,6 +5181,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -5214,6 +5277,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -5268,6 +5332,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -5364,6 +5429,7 @@
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/ideUiLanguage/classes_gen" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -5418,6 +5484,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -5514,6 +5581,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -5568,6 +5636,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -5664,6 +5733,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -5718,6 +5788,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -5814,6 +5885,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -5868,6 +5940,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -5963,6 +6036,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -6017,6 +6091,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -6113,6 +6188,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -6167,6 +6243,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -6262,6 +6339,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -6316,6 +6394,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -6413,6 +6492,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -6467,6 +6547,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -6563,6 +6644,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -6617,6 +6699,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -6712,6 +6795,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -6766,6 +6850,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -6862,6 +6947,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -6916,6 +7002,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -7011,6 +7098,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -7040,6 +7128,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/test/classes_gen" />
@@ -7061,6 +7150,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -7115,6 +7205,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -7211,6 +7302,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -7266,6 +7358,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -7364,6 +7457,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -7418,6 +7512,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -7517,6 +7612,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -7571,6 +7667,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -7667,6 +7764,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -7721,6 +7819,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -7821,6 +7920,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -7884,6 +7984,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -7987,6 +8088,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -8050,6 +8152,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -8145,6 +8248,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -8200,6 +8304,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -8295,6 +8400,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -8349,6 +8455,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -8444,6 +8551,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -8498,6 +8606,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -8595,6 +8704,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -8649,6 +8759,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -8744,6 +8855,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -8798,6 +8910,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -8894,6 +9007,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -8970,6 +9084,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -9066,6 +9181,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -9120,6 +9236,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -9216,6 +9333,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -9270,6 +9388,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
@@ -9367,6 +9486,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />

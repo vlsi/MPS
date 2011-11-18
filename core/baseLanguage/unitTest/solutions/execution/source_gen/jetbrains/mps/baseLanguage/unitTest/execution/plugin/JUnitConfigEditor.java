@@ -24,7 +24,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.TitledBorder;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -419,7 +419,7 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   private MPSProject findProjectFromContext() {
-    return MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
+    return MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
   }
 
   private void setModuleValue(final String moduleName) {
