@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
@@ -24,10 +25,14 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
+import org.apache.commons.lang.ObjectUtils.Null;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
-import java.awt.Component;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -105,9 +110,60 @@ class ButtonEditorTab {
     }
   }
 
+  private Icon getCompositeTabIcon() {
+    Font font = UIUtil.getLabelFont();
+    FontMetrics fontMetrics = myTabComponent.getComponent().getFontMetrics(font);
+    Icon icon = myDescriptor.getIcon();
+
+    Dimension size = new Dimension(ActionToolbar.DEFAULT_MINIMUM_BUTTON_SIZE);
+    size.width -= 4;
+    size.height -= 4;
+    if (icon != null && (icon.getIconWidth() > size.width && icon.getIconHeight() > size.height)) {
+      size.width = icon.getIconWidth();
+      size.height = icon.getIconHeight();
+    }
+
+    String text = myDescriptor.getTitle();
+    int textWidth = fontMetrics.stringWidth(text);
+    int textHeight = fontMetrics.getMaxAscent() + fontMetrics.getMaxDescent();
+
+    size.width += 2 + textWidth;
+    BufferedImage image = new BufferedImage(size.width, size.height, BufferedImage.TYPE_INT_ARGB);
+    Graphics g = image.getGraphics();
+
+    int textX = 0;
+    int textY = (size.height - textHeight) / 2 + fontMetrics.getMaxAscent();
+
+    if (icon != null) {
+      int x = (size.width - icon.getIconWidth() - textWidth) / 2;
+      int y = (size.height - icon.getIconHeight()) / 2;
+      icon.paintIcon(null, g, x, y);
+      textX = x + icon.getIconWidth() + 2;
+    }
+
+    UIUtil.applyRenderingHints(g);
+    g.setColor(UIUtil.getLabelForeground());
+    g.setFont(font);
+    g.drawString(text, textX, textY);
+
+    Character shortcutChar = myDescriptor.getShortcutChar();
+    if (shortcutChar != null) {
+      final int mnemonicIndex = text.indexOf(shortcutChar);
+      if (mnemonicIndex >= 0) {
+        final char[] chars = text.toCharArray();
+        final int startX = textX + fontMetrics.charsWidth(chars, 0, mnemonicIndex);
+        final int startY = textY + fontMetrics.getMaxDescent();
+        final int endX = startX + fontMetrics.charWidth(text.charAt(mnemonicIndex));
+        UIUtil.drawLine(g, startX, startY, endX, startY);
+      }
+    }
+
+    return new ImageIcon(image);
+  }
+
   private class SelectTabAction extends ToggleAction {
     public SelectTabAction() {
-      super(myDescriptor.getTitle(), "", myDescriptor.getIcon());
+      super("", "", getCompositeTabIcon());
     }
 
     public boolean displayTextInToolbar() {
