@@ -44,7 +44,7 @@ public class MPSFacetType extends FacetType<MPSFacet, MPSFacetConfiguration> {
     public static final FacetTypeId<MPSFacet> ID = new FacetTypeId<MPSFacet>("mps_module");
 
     public MPSFacetType() {
-        super(ID, "MPS", "MPS");
+        super(ID, "MPS", MPSBundle.message("facet.type.presentable.name"));
     }
 
     @Override

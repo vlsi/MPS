@@ -51,8 +51,8 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
                 ModelAccess.instance().runWriteAction(new Runnable() {
                     @Override
                     public void run() {
-                        SolutionDescriptor solutionDescriptor = getConfiguration().getState().myDescriptor;
-                        mySolution = new SolutionIdea(getModule(), solutionDescriptor);
+                        SolutionDescriptor solutionDescriptor = getConfiguration().getState().getSolutionDescriptor();
+                        Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
                         com.intellij.openapi.project.Project project = getModule().getProject();
                         Project mpsProject = ProjectHelper.toMPSProject(project);
 
@@ -62,7 +62,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
                             return;
                         }
 
-                        repository.addModule(mySolution, mpsProject);
+                        repository.addModule(mySolution = solution, mpsProject);
                         MessagesViewTool.log(project, MessageKind.INFORMATION, MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleFqName()));
                     }
                 });
@@ -70,7 +70,6 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
             }
         });
     }
-
 
     @Override
     public void disposeFacet() {
@@ -82,6 +81,21 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
                 mySolution = null;
             }
         });
+    }
+
+    private boolean wasInitialized() {
+        return mySolution != null;
+    }
+
+    public void setSolutionDescriptor(final SolutionDescriptor solutionDescriptor) {
+        if (wasInitialized()) {
+            ModelAccess.instance().runWriteInEDT(new Runnable() {
+                @Override
+                public void run() {
+                    mySolution.setSolutionDescriptor(solutionDescriptor, false);
+                }
+            });
+        }
     }
 
     public Solution getSolution() {

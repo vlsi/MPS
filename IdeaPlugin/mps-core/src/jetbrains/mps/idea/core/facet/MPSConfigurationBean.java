@@ -16,7 +16,9 @@
 
 package jetbrains.mps.idea.core.facet;
 
+import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import org.jetbrains.annotations.NonNls;
 
@@ -31,14 +33,18 @@ public class MPSConfigurationBean {
     @NonNls
     static final String SOLUTION_FILE_NAME = "solution";
 
-    //TODO: create accessor for this field
-    final SolutionDescriptor myDescriptor;
+    @Transient
+    private final SolutionDescriptor myDescriptor;
     private boolean myUseModuleSourceFolder = true;
-    private String[] myUsedLanguages;
 
     public MPSConfigurationBean() {
         myDescriptor = new SolutionDescriptor();
         myDescriptor.setUUID(UUID.randomUUID().toString());
+    }
+
+    @Transient
+    SolutionDescriptor getSolutionDescriptor() {
+        return myDescriptor;
     }
 
     public String getUUID() {
@@ -91,10 +97,19 @@ public class MPSConfigurationBean {
     }
 
     public String[] getUsedLanguages() {
-        return myUsedLanguages;
+        List<ModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
+        String[] usedLanguages = new String[usedLanguageReferences.size()];
+        for (int i = 0; i < usedLanguages.length; i++) {
+            usedLanguages[i] = usedLanguageReferences.get(i).toString();
+        }
+        return usedLanguages;
     }
 
-    public void setUsedLanguages(String[] myUsedLanguages) {
-        this.myUsedLanguages = myUsedLanguages;
+    public void setUsedLanguages(String[] usedLanguages) {
+        List<ModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
+        usedLanguageReferences.clear();
+        for (String usedLanguage : usedLanguages) {
+            usedLanguageReferences.add(ModuleReference.fromString(usedLanguage));
+        }
     }
 }

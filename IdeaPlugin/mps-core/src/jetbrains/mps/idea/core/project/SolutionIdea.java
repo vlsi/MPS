@@ -18,9 +18,12 @@ package jetbrains.mps.idea.core.project;
 
 import com.intellij.openapi.module.Module;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -47,6 +50,11 @@ public class SolutionIdea extends Solution {
     @Override
     protected SolutionDescriptor loadDescriptor() {
         return getModuleDescriptor();
+    }
+
+    @Override
+    public List<Dependency> getDependencies() {
+        return super.getDependencies();
     }
 
     @Override
