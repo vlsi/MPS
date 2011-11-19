@@ -27,10 +27,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JComponent;
-import javax.swing.KeyStroke;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -219,7 +216,20 @@ class ButtonEditorTab {
           ActionGroup group = getGotoGroup();
           assert group != null : "no nodes to go, but tab is visible";
           ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
-          popup.getComponent().show(component, 0, 0);
+          JPopupMenu popupMenu = popup.getComponent();
+          popupMenu.show(component, 0, 0);
+
+          if (myTabColorProvider != null && popupMenu.getComponents().length == nodes.size()) {
+            for (int i = 0; i < nodes.size(); i++) {
+              SNode node = nodes.get(i);
+              Component menuItem = popupMenu.getComponents()[i];
+              Color color = myTabColorProvider.getNodeColor(node);
+
+              if (color != null) {
+                menuItem.setForeground(color);
+              }
+            }
+          }
         }
       });
     }
