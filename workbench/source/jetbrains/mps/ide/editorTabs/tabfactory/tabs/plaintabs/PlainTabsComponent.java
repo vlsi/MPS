@@ -135,7 +135,10 @@ public class PlainTabsComponent extends BaseTabsComponent {
           myRealTabs.add(new PlainEditorTab(new SNodePointer(node), tab));
           myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
           if (getColorProvider() != null) {
-            myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, getColorProvider().getNodeColor(node));
+            Color color = getColorProvider().getNodeColor(node);
+            if (color != null) {
+              myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, color);
+            }
           }
         }
       } else if (myShowGrayed) {

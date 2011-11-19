@@ -78,7 +78,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
     myEditor = editor;
     myCallback = callback;
     myShowGrayed = showGrayed;
-    myColorProvider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
+    TabColorProvider[] extensions = Extensions.getExtensions(TabColorProvider.EP_NAME, ProjectHelper.toIdeaProject(operationContext.getProject()));
+    myColorProvider = extensions.length > 0 ? extensions[0] : null;
     myOperationContext = operationContext;
     myCreateModeCallback = createModeCallback;
 
@@ -205,20 +206,24 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected abstract void updateTabs();
 
   private class MyFileStatusListener implements FileStatusListener {
+    private void updateTabsLater() {
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
+        public void run() {
+          updateTabs();
+        }
+      });
+    }
+
     @Override
     public void fileStatusesChanged() {
-      updateTabs();
+      updateTabsLater();
     }
 
     @Override
     public void fileStatusChanged(@NotNull VirtualFile virtualFile) {
       if (virtualFile instanceof MPSNodeVirtualFile && myBaseNode.equals(((MPSNodeVirtualFile) virtualFile).getSNodePointer())) {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          @Override
-          public void run() {
-            updateTabs();
-          }
-        });
+        updateTabsLater();
       }
     }
   }
