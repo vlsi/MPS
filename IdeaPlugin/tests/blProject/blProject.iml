@@ -8,6 +8,7 @@
         <option name="modelRootPaths">
           <array>
             <option value="$MODULE_DIR$/models" />
+            <option value="$MODULE_DIR$/solution2/models" />
           </array>
         </option>
         <option name="namespace" value="blProject" />
