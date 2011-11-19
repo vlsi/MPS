@@ -12,9 +12,9 @@ import java.util.HashMap;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -59,12 +59,15 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   }
 
   private void statusChanged(@NotNull final SNodePointer nodePointer) {
-    final FileStatusManager fsm = FileStatusManager.getInstance(myProject);
-    final MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
-    fsm.fileStatusChanged(nvfs.getFileFor(nodePointer));
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        FileStatusManager fsm = FileStatusManager.getInstance(myProject);
+        MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
         SNode currentNode = nodePointer.getNode();
+        if (currentNode == null) {
+          return;
+        }
+        fsm.fileStatusChanged(nvfs.getFileFor(nodePointer));
         for (EditorTabDescriptor d : ListSequence.fromList(myProject.getComponent(ProjectPluginManager.class).getTabDescriptors())) {
           SNode baseNode = d.getBaseNode(currentNode);
           if (baseNode != null && baseNode != currentNode) {
