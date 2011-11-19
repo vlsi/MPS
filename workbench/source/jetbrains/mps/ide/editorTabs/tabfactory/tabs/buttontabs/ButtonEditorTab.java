@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
-import org.apache.commons.lang.ObjectUtils.Null;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -33,6 +33,7 @@ import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -110,6 +111,29 @@ class ButtonEditorTab {
     }
   }
 
+  @Nullable
+  private Color getButtonForegroundColor() {
+    if (myTabColorProvider != null) {
+      List<SNodePointer> nodePointers = ModelAccess.instance().runReadAction(new Computable<List<SNodePointer>>() {
+        @Override
+        public List<SNodePointer> compute() {
+          List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
+          List<SNodePointer> nodePointers = new ArrayList<SNodePointer>();
+          for (SNode n : nodes) {
+            nodePointers.add(new SNodePointer(n));
+          }
+          return nodePointers;
+        }
+      });
+
+      Color aspectColor = myTabColorProvider.getAspectColor(nodePointers);
+      if (aspectColor != null) {
+        return aspectColor;
+      }
+    }
+    return UIUtil.getLabelForeground();
+  }
+
   private Icon getCompositeTabIcon() {
     Font font = UIUtil.getLabelFont();
     FontMetrics fontMetrics = myTabComponent.getComponent().getFontMetrics(font);
@@ -142,7 +166,10 @@ class ButtonEditorTab {
     }
 
     UIUtil.applyRenderingHints(g);
-    g.setColor(UIUtil.getLabelForeground());
+    Color color = getButtonForegroundColor();
+    if (color != null) {
+      g.setColor(color);
+    }
     g.setFont(font);
     g.drawString(text, textX, textY);
 
