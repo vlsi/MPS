@@ -149,6 +149,13 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     }
   }
 
+  @Nullable
+  public FileStatus getStatus(@NotNull SNodePointer nodePointer) {
+    synchronized (myFileStatusMap) {
+      return MapSequence.fromMap(myFileStatusMap).get(nodePointer);
+    }
+  }
+
   private static List<ModelChange> check_onkh7z_a0c0b0a1a4(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
