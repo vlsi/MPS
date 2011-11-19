@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,8 +18,8 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
-public class SModelUtil {
-  private SModelUtil() {
+public class OldSModelUtil {
+  private OldSModelUtil() {
   }
 
   @NotNull
@@ -32,7 +33,7 @@ public class SModelUtil {
 
   public static boolean isChildInSingleRole(String childRole, SNode parent, SModelDescriptor modelDescriptor) {
     if (AttributesRolesUtil.isAttributeRole(childRole)) {
-      SNode annotationLinkDeclaration = jetbrains.mps.kernel.model.SModelUtil.findAnnotationLinkDeclaration(childRole, modelDescriptor.getModule().getScope());
+      SNode annotationLinkDeclaration = SModelUtil.findAnnotationLinkDeclaration(childRole, modelDescriptor.getModule().getScope());
       if ((annotationLinkDeclaration != null)) {
         return SPropertyOperations.hasValue(annotationLinkDeclaration, "sourceCardinality", "0..1", "0..1");
       }
@@ -46,7 +47,7 @@ public class SModelUtil {
   }
 
   public static boolean isChildInSingleRole(@NotNull SModelChildEvent e) {
-    return SModelUtil.isChildInSingleRole(e.getChildRole(), e.getParent(), e.getModelDescriptor());
+    return OldSModelUtil.isChildInSingleRole(e.getChildRole(), e.getParent(), e.getModelDescriptor());
   }
 
   @NotNull

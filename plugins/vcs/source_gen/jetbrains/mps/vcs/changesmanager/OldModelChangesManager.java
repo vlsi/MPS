@@ -390,7 +390,7 @@ public class OldModelChangesManager {
         }
       } else if (change instanceof MoveNodeChange) {
         SetSequence.fromSet(addedNodes).addElement(change.getAffectedNodeId());
-        SetSequence.fromSet(addedNodes).addSequence(ListSequence.fromList(SModelUtil.getNodeIds(SNodeOperations.getDescendants(((SNode) model.getNodeById(change.getAffectedNodeId())), null, false, new String[]{}))));
+        SetSequence.fromSet(addedNodes).addSequence(ListSequence.fromList(OldSModelUtil.getNodeIds(SNodeOperations.getDescendants(((SNode) model.getNodeById(change.getAffectedNodeId())), null, false, new String[]{}))));
         SNodeId parentId = change.getAffectedNodeId();
         SetSequence.fromSet(removedNodes).addElement(parentId);
         // TODO update hasRemovedParent 
@@ -766,8 +766,8 @@ __switch__:
     ListSequence.fromList(MapSequence.fromMap(myMultipleChildChanges).get(pair)).clear();
 
     // Step 2: find longest common subsequence of children 
-    List<SNodeId> currentChildrenIds = SModelUtil.getNodeIds(currentChildren);
-    List<SNodeId> baseChildrenIds = SModelUtil.getNodeIds(check_qfo1x2_a0a21a04(myBaseVersionModel.getNodeById(parentNode.getSNodeId()), role));
+    List<SNodeId> currentChildrenIds = OldSModelUtil.getNodeIds(currentChildren);
+    List<SNodeId> baseChildrenIds = OldSModelUtil.getNodeIds(check_qfo1x2_a0a21a04(myBaseVersionModel.getNodeById(parentNode.getSNodeId()), role));
     List<Tuples._2<Iterable<SNodeId>, Iterable<SNodeId>>> differentSubsequences = new LongestCommonSubsequenceFinder<SNodeId>(baseChildrenIds, currentChildrenIds).getDifferentSubsequences();
 
     // Step 3: add new changes 
@@ -860,7 +860,7 @@ __switch__:
         ListSequence.fromList(nodesToChangeId).addElement(maybeOverlappedNode);
       }
     }
-    for (SNode node : ListSequence.fromList(SModelUtil.getDominators(nodesToChangeId))) {
+    for (SNode node : ListSequence.fromList(OldSModelUtil.getDominators(nodesToChangeId))) {
       resetNodeId(node);
     }
     return copyOfBaseNode;
@@ -1271,7 +1271,7 @@ __switch__:
 
     @Override
     public void propertyChanged(final SModelPropertyEvent e) {
-      final List<SNode> pathToRoot = SModelUtil.getPathToRoot(e.getNode());
+      final List<SNode> pathToRoot = OldSModelUtil.getPathToRoot(e.getNode());
       myCommandQueue.runTask(new Runnable() {
         public void run() {
           if (!(checkLoaded())) {
@@ -1319,7 +1319,7 @@ __switch__:
 
     @Override
     public void referenceRemoved(final SModelReferenceEvent e) {
-      final List<SNode> pathToRoot = SModelUtil.getPathToRoot(e.getReference().getSourceNode());
+      final List<SNode> pathToRoot = OldSModelUtil.getPathToRoot(e.getReference().getSourceNode());
       myCommandQueue.runTask(new Runnable() {
         public void run() {
           if (!(checkLoaded())) {
@@ -1352,7 +1352,7 @@ __switch__:
 
     @Override
     public void referenceAdded(final SModelReferenceEvent e) {
-      final List<SNode> pathToRoot = SModelUtil.getPathToRoot(e.getReference().getSourceNode());
+      final List<SNode> pathToRoot = OldSModelUtil.getPathToRoot(e.getReference().getSourceNode());
       myCommandQueue.runTask(new Runnable() {
         public void run() {
           if (!(checkLoaded())) {
@@ -1446,7 +1446,7 @@ __switch__:
                   return ObjectUtils.equals(ch.getAffectedNodeId(), e.getRoot().getSNodeId());
                 }
               }) == 0) {
-                addChange(new DeleteNodeChange(e.getRoot().getSNodeId(), SModelUtil.getNodeIds(e.getRoot().getChildren())), e.getRoot());
+                addChange(new DeleteNodeChange(e.getRoot().getSNodeId(), OldSModelUtil.getNodeIds(e.getRoot().getChildren())), e.getRoot());
               }
             }
           });
@@ -1456,7 +1456,7 @@ __switch__:
     }
 
     private void processChildRemoved(final SModelChildEvent e, final boolean recursively) {
-      final List<SNode> pathToRoot = SModelUtil.getPathToRoot(e.getParent());
+      final List<SNode> pathToRoot = OldSModelUtil.getPathToRoot(e.getParent());
       final List<SNode> currentChildren = getCurrentChildren(e.getParent(), e.getChildRole());
       myCommandQueue.runTask(new Runnable() {
         public void run() {
@@ -1483,14 +1483,14 @@ __switch__:
               // This method is optimized to order of raising model events: before raising 
               // childRemoved() event for node it raises childRemoved() and similar events for all its children 
 
-              boolean isSingle = SModelUtil.isChildInSingleRole(e);
+              boolean isSingle = OldSModelUtil.isChildInSingleRole(e);
               if (removeChanges(NewNodeChange.class, new _FunctionTypes._return_P1_E0<Boolean, NewNodeChange>() {
                 public Boolean invoke(NewNodeChange ch) {
                   return ch.getAffectedNodeId().equals(e.getChild().getSNodeId());
                 }
               }) == 0) {
                 if (isSingle) {
-                  addChange(new DeleteNodeChange(e.getChild().getSNodeId(), SModelUtil.getNodeIds(e.getChild().getChildren()), check_qfo1x2_c0a0a0a0j0a3a0a0c0r0(e.getParent()), e.getChildRole(), -1), e.getAffectedRoot());
+                  addChange(new DeleteNodeChange(e.getChild().getSNodeId(), OldSModelUtil.getNodeIds(e.getChild().getChildren()), check_qfo1x2_c0a0a0a0j0a3a0a0c0r0(e.getParent()), e.getChildRole(), -1), e.getAffectedRoot());
                 } else {
                   refreshMultipleChildChanges(e.getParent(), e.getChildRole(), currentChildren, false);
                 }
@@ -1502,7 +1502,7 @@ __switch__:
                       public void run() {
                         SNode baseChild = baseParent.getChild(e.getChildRole());
                         if (baseChild != null) {
-                          addChange(new DeleteNodeChange(baseChild.getSNodeId(), SModelUtil.getNodeIds(baseChild.getChildren()), baseParent.getSNodeId(), e.getChildRole(), -1), e.getAffectedRoot());
+                          addChange(new DeleteNodeChange(baseChild.getSNodeId(), OldSModelUtil.getNodeIds(baseChild.getChildren()), baseParent.getSNodeId(), e.getChildRole(), -1), e.getAffectedRoot());
                         }
                       }
                     });
@@ -1524,7 +1524,7 @@ __switch__:
     }
 
     private void processChildAdded(final SModelChildEvent e, final boolean recursively) {
-      final List<SNode> pathToRoot = SModelUtil.getPathToRoot(e.getParent());
+      final List<SNode> pathToRoot = OldSModelUtil.getPathToRoot(e.getParent());
       final List<SNode> currentChildren = getCurrentChildren(e.getParent(), e.getChildRole());
       myCommandQueue.runTask(new Runnable() {
         public void run() {
@@ -1546,7 +1546,7 @@ __switch__:
                 prevRole = prevSibling.getRole_();
               }
 
-              boolean isSingle = SModelUtil.isChildInSingleRole(e);
+              boolean isSingle = OldSModelUtil.isChildInSingleRole(e);
               if (isSingle) {
                 if (removeChanges(DeleteNodeChange.class, new _FunctionTypes._return_P1_E0<Boolean, DeleteNodeChange>() {
                   public Boolean invoke(DeleteNodeChange ch) {

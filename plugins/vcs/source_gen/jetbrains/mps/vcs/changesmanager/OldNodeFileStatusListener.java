@@ -5,6 +5,6 @@ package jetbrains.mps.vcs.changesmanager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 
-public interface NodeFileStatusListener {
+public interface OldNodeFileStatusListener {
   public void fileStatusChanged(@NotNull SNode node);
 }

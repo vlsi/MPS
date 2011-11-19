@@ -28,7 +28,7 @@ public class OldRootNodeFileStatusManager extends AbstractProjectComponent {
   protected static Log log = LogFactory.getLog(OldRootNodeFileStatusManager.class);
 
   private OldChangesManager myChangesManager;
-  private final List<NodeFileStatusListener> myNodeFileStatusListeners = ListSequence.fromList(new ArrayList<NodeFileStatusListener>());
+  private final List<OldNodeFileStatusListener> myNodeFileStatusListeners = ListSequence.fromList(new ArrayList<OldNodeFileStatusListener>());
   private final Map<SNodePointer, FileStatus> myFileStatusMap = MapSequence.fromMap(new HashMap<SNodePointer, FileStatus>());
 
   public OldRootNodeFileStatusManager(@NotNull Project project, @NotNull OldChangesManager changesManager) {
@@ -44,13 +44,13 @@ public class OldRootNodeFileStatusManager extends AbstractProjectComponent {
     MapSequence.fromMap(myFileStatusMap).clear();
   }
 
-  public void addNodeFileStatusListener(@NotNull NodeFileStatusListener listener) {
+  public void addNodeFileStatusListener(@NotNull OldNodeFileStatusListener listener) {
     synchronized (myNodeFileStatusListeners) {
       ListSequence.fromList(myNodeFileStatusListeners).addElement(listener);
     }
   }
 
-  public void removeNodeFileStatusListener(@NotNull NodeFileStatusListener listener) {
+  public void removeNodeFileStatusListener(@NotNull OldNodeFileStatusListener listener) {
     synchronized (myNodeFileStatusListeners) {
       ListSequence.fromList(myNodeFileStatusListeners).removeElement(listener);
     }
@@ -68,7 +68,7 @@ public class OldRootNodeFileStatusManager extends AbstractProjectComponent {
         calcStatus(nodePointer.value);
         ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
-            for (NodeFileStatusListener listener : ListSequence.fromListWithValues(new ArrayList<NodeFileStatusListener>(), myNodeFileStatusListeners)) {
+            for (OldNodeFileStatusListener listener : ListSequence.fromListWithValues(new ArrayList<OldNodeFileStatusListener>(), myNodeFileStatusListeners)) {
               try {
                 listener.fileStatusChanged(node);
               } catch (Throwable t) {
