@@ -22,7 +22,10 @@
 
     <application-components>
         <component>
-          <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
+            <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
+        </component>
+        <component>
+            <implementation-class>jetbrains.mps.idea.core.make.NoMakeService</implementation-class>
         </component>
     </application-components>
 
@@ -30,9 +33,9 @@
     <xi:include href="../classes/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
 
     <project-components>
-      <component>
-        <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
-      </component>
+        <component>
+            <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
+        </component>
     </project-components>
 
     <extensions defaultExtensionNs="com.intellij">
