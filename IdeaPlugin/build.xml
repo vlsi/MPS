@@ -70,7 +70,7 @@
         <touch file="${artifacts}/mps-core/build.number"/>
 
         <copy includeemptydirs="false" todir="${artifacts}/mps-core/languages">
-            <fileset dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
+            <fileset dir="${base_dir}/IdeaPlugin/mps-core/languages" erroronmissingdir="false"/>
         </copy>
 
         <!-- MPS Core -->
@@ -246,6 +246,12 @@
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
+    </target>
+
+    <target name="zip" depends="compile">
+        <zip file="${artifacts}/mps-core-${plugin.version}.zip">
+            <fileset dir="${artifacts}" includes="mps-core/**"/>
+        </zip>
     </target>
 
     <target name="install-plugin" depends="compile">
