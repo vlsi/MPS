@@ -23,4 +23,15 @@ public class ReferenceFeature extends Feature {
   public Feature getParent() {
     return new ReferencesFeature(getNodePointer());
   }
+
+  @Override
+  public boolean equals(Object object) {
+    return super.equals(object) && this.myReferenceRole.equals(((ReferenceFeature) object).myReferenceRole);
+  }
+
+  @Override
+  @NotNull
+  public String toString() {
+    return "Node reference {" + nodePointerToString(myNodePointer) + "|" + myReferenceRole + "}";
+  }
 }

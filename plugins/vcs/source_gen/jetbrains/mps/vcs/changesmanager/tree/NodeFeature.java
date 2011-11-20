@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.changesmanager.tree;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 public class NodeFeature extends Feature {
   public NodeFeature(SNodePointer nodePointer) {
@@ -18,5 +19,11 @@ public class NodeFeature extends Feature {
       return null;
     }
     return new NodeFeature(new SNodePointer(parentNode));
+  }
+
+  @Override
+  @NotNull
+  public String toString() {
+    return "Node {" + nodePointerToString(myNodePointer) + "}";
   }
 }

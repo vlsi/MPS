@@ -23,4 +23,15 @@ public class PropertyFeature extends Feature {
   public Feature getParent() {
     return new PropertiesFeature(getNodePointer());
   }
+
+  @Override
+  public boolean equals(Object object) {
+    return super.equals(object) && this.myPropertyName.equals(((PropertyFeature) object).myPropertyName);
+  }
+
+  @Override
+  @NotNull
+  public String toString() {
+    return "Node property {" + nodePointerToString(myNodePointer) + "|" + myPropertyName + "}";
+  }
 }

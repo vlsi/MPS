@@ -12,7 +12,8 @@ import org.jetbrains.annotations.Nullable;
  * or node's reference list (see subclasses)
  */
 public abstract class Feature {
-  private SNodePointer myNodePointer;
+  protected final SNodePointer myNodePointer;
+  private int myHashCode;
 
   protected Feature(@NotNull SNodePointer nodePointer) {
     myNodePointer = nodePointer;
@@ -25,4 +26,36 @@ public abstract class Feature {
 
   @Nullable
   public abstract Feature getParent();
+
+  @Override
+  public int hashCode() {
+    if (myHashCode == 0) {
+      myHashCode = toString().hashCode();
+      if (myHashCode == 0) {
+        assert false : "Feature hash code cannot be 0";
+      }
+    }
+    return myHashCode;
+  }
+
+  @Override
+  public boolean equals(Object object) {
+    if (this.getClass() == object.getClass()) {
+      Feature that = ((Feature) object);
+      if (this.myHashCode == that.myHashCode) {
+        if (this.myNodePointer.equals(that.myNodePointer)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  @NotNull
+  public abstract String toString();
+
+  @NotNull
+  protected static String nodePointerToString(@NotNull SNodePointer nodePointer) {
+    return nodePointer.getModelReference().toString() + "|" + nodePointer.getNodeId();
+  }
 }
