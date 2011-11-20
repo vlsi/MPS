@@ -193,7 +193,7 @@
     <nodeInfo nodeId="3751911615136891940" fileName="FeatureForestMap.java" startLine="31" startPosition="63" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3751911615136891923" fileName="FeatureForestMap.java" startLine="33" startPosition="69" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3751911615136891968" fileName="FeatureForestMap.java" startLine="35" startPosition="5" endLine="36" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3751911615136892034" fileName="FeatureForestMap.java" startLine="38" startPosition="40" endLine="39" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3751911615136892034" fileName="FeatureForestMap.java" startLine="38" startPosition="39" endLine="39" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3751911615136892014" fileName="FeatureForestMap.java" startLine="41" startPosition="9" endLine="42" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3751911615136892043" fileName="FeatureForestMap.java" startLine="43" startPosition="5" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3751911615136891950" fileName="FeatureForestMap.java" startLine="44" startPosition="0" endLine="45" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -213,7 +213,7 @@
     <nodeInfo nodeId="3751911615136891849" fileName="FeatureForestMap.java" startLine="27" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FeatureForestMap#()V" />
     <nodeInfo nodeId="3751911615136891911" fileName="FeatureForestMap.java" startLine="32" startPosition="34" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3751911615136892069" fileName="FeatureForestMap.java" startLine="54" startPosition="51" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3751911615136892030" fileName="FeatureForestMap.java" startLine="37" startPosition="94" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/tree/Feature;)Z" />
+    <nodeInfo nodeId="3751911615136892030" fileName="FeatureForestMap.java" startLine="37" startPosition="93" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="3751911615136892057" fileName="FeatureForestMap.java" startLine="47" startPosition="91" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/changesmanager/tree/Feature;)V" />
     <nodeInfo nodeId="3751911615136892132" fileName="FeatureForestMap.java" startLine="63" startPosition="91" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/changesmanager/tree/Feature;)V" />
     <nodeInfo nodeId="3751911615136892290" fileName="FeatureForestMap.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAncestorOfAddedFeature#(Ljetbrains/mps/vcs/changesmanager/tree/Feature;)Z" />
@@ -228,7 +228,7 @@
     <nodeInfo nodeId="3751911615136891897" fileName="FeatureForestMap.java" startLine="30" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="put#(Ljetbrains/mps/vcs/changesmanager/tree/Feature;null)V" />
     <scopeInfo nodeId="3751911615136891852" fileName="FeatureForestMap.java" startLine="28" startPosition="29" endLine="28" endPosition="29" />
     <scopeInfo nodeId="3751911615136891912" fileName="FeatureForestMap.java" startLine="33" startPosition="69" endLine="34" endPosition="82" />
-    <scopeInfo nodeId="3751911615136892031" fileName="FeatureForestMap.java" startLine="38" startPosition="40" endLine="39" endPosition="68" />
+    <scopeInfo nodeId="3751911615136892031" fileName="FeatureForestMap.java" startLine="38" startPosition="39" endLine="39" endPosition="68" />
     <scopeInfo nodeId="3751911615136892003" fileName="FeatureForestMap.java" startLine="41" startPosition="9" endLine="42" endPosition="99" />
     <scopeInfo nodeId="3751911615136892058" fileName="FeatureForestMap.java" startLine="48" startPosition="36" endLine="49" endPosition="52" />
     <scopeInfo nodeId="3751911615136892070" fileName="FeatureForestMap.java" startLine="55" startPosition="72" endLine="56" endPosition="88" />
@@ -237,7 +237,7 @@
     <scopeInfo nodeId="3751911615136892293" fileName="FeatureForestMap.java" startLine="75" startPosition="69" endLine="76" endPosition="61" />
     <scopeInfo nodeId="3751911615136892400" fileName="FeatureForestMap.java" startLine="82" startPosition="39" endLine="83" endPosition="68" />
     <scopeInfo nodeId="3751911615136891849" fileName="FeatureForestMap.java" startLine="27" startPosition="0" endLine="29" endPosition="3" />
-    <scopeInfo nodeId="3751911615136892030" fileName="FeatureForestMap.java" startLine="37" startPosition="94" endLine="41" endPosition="0">
+    <scopeInfo nodeId="3751911615136892030" fileName="FeatureForestMap.java" startLine="37" startPosition="93" endLine="41" endPosition="0">
       <varInfo nodeId="3751911615136892030" varName="a" />
     </scopeInfo>
     <scopeInfo nodeId="3751911615136892057" fileName="FeatureForestMap.java" startLine="47" startPosition="91" endLine="51" endPosition="0">
@@ -277,6 +277,29 @@
     <unitInfo nodeId="3751911615136892057" fileName="FeatureForestMap.java" startLine="47" startPosition="70" endLine="51" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$2" />
     <unitInfo nodeId="3751911615136892132" fileName="FeatureForestMap.java" startLine="63" startPosition="70" endLine="67" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$3" />
     <unitInfo nodeId="3751911615136892399" fileName="FeatureForestMap.java" startLine="81" startPosition="85" endLine="85" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$4" />
+  </root>
+  <root nodeId="3751911615136928806">
+    <nodeInfo nodeId="3751911615136929287" fileName="DeletedChildFeature.java" startLine="9" startPosition="50" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
+    <nodeInfo nodeId="3751911615136929291" fileName="DeletedChildFeature.java" startLine="10" startPosition="24" endLine="11" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIndex" />
+    <nodeInfo nodeId="3751911615136929312" fileName="DeletedChildFeature.java" startLine="13" startPosition="89" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3751911615136929319" fileName="DeletedChildFeature.java" startLine="14" startPosition="23" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136929328" fileName="DeletedChildFeature.java" startLine="15" startPosition="18" endLine="16" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136929339" fileName="DeletedChildFeature.java" startLine="20" startPosition="28" endLine="21" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3751911615136929385" fileName="DeletedChildFeature.java" startLine="25" startPosition="30" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3751911615136929307" fileName="DeletedChildFeature.java" startLine="12" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeletedChildFeature#(Ljetbrains/mps/smodel/SNodePointer;Ljava/lang/String;I)V" />
+    <nodeInfo nodeId="3751911615136928823" fileName="DeletedChildFeature.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3751911615136929374" fileName="DeletedChildFeature.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParent#()Ljetbrains/mps/vcs/changesmanager/tree/Feature;" />
+    <scopeInfo nodeId="3751911615136928827" fileName="DeletedChildFeature.java" startLine="20" startPosition="28" endLine="21" endPosition="104" />
+    <scopeInfo nodeId="3751911615136929378" fileName="DeletedChildFeature.java" startLine="25" startPosition="30" endLine="26" endPosition="45" />
+    <scopeInfo nodeId="3751911615136929311" fileName="DeletedChildFeature.java" startLine="13" startPosition="89" endLine="16" endPosition="20" />
+    <scopeInfo nodeId="3751911615136929307" fileName="DeletedChildFeature.java" startLine="12" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="3751911615136929326" varName="index" />
+      <varInfo nodeId="3751911615136929313" varName="nodePointer" />
+      <varInfo nodeId="3751911615136929317" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="3751911615136928823" fileName="DeletedChildFeature.java" startLine="18" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="3751911615136929374" fileName="DeletedChildFeature.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
+    <unitInfo nodeId="3751911615136928806" fileName="DeletedChildFeature.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.DeletedChildFeature" />
   </root>
 </debugInfo>
 
