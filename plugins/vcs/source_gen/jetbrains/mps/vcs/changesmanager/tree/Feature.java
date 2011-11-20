@@ -5,6 +5,9 @@ package jetbrains.mps.vcs.changesmanager.tree;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 
 /**
@@ -53,6 +56,14 @@ public abstract class Feature {
 
   @NotNull
   public abstract String toString();
+
+  public Feature[] getAncestors() {
+    List<Feature> features = ListSequence.fromList(new ArrayList<Feature>());
+    for (Feature current = getParent(); current != null; current = current.getParent()) {
+      ListSequence.fromList(features).addElement(current);
+    }
+    return ListSequence.fromList(features).toGenericArray(Feature.class);
+  }
 
   @NotNull
   protected static String nodePointerToString(@NotNull SNodePointer nodePointer) {
