@@ -25,6 +25,7 @@
     <classNode dependClassName="jetbrains.mps.util.CounterMap" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.Feature" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.NodeAggregationFeature" file="NodeAggregationFeature.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />

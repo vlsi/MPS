@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.annotations.Nullable;
 
 
 /**
@@ -33,8 +34,8 @@ public class FeatureForestMap<V> {
       throw new IllegalArgumentException("Trying to put already present feature");
     }
     Feature[] ancestors = feature.getAncestors();
-    if (Sequence.fromIterable(Sequence.fromArray(ancestors)).any(new IWhereFilter<Object>() {
-      public boolean accept(Object a) {
+    if (Sequence.fromIterable(Sequence.fromArray(ancestors)).any(new IWhereFilter<Feature>() {
+      public boolean accept(Feature a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);
       }
     })) {
@@ -66,7 +67,21 @@ public class FeatureForestMap<V> {
     });
   }
 
+  @Nullable
   public V get(@NotNull Feature feature) {
     return MapSequence.fromMap(myFeatureToValue).get(feature);
+  }
+
+  public boolean isAncestorOfAddedFeature(@NotNull Feature feature) {
+    return !(myFeaturesIsAncestorCounterMap.isZero(feature));
+  }
+
+  public boolean isDescendantOfAddedFeature(@NotNull Feature feature) {
+    ModelAccess.assertLegalRead();
+    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).any(new IWhereFilter<Object>() {
+      public boolean accept(Object a) {
+        return MapSequence.fromMap(myFeatureToValue).containsKey(a);
+      }
+    });
   }
 }
