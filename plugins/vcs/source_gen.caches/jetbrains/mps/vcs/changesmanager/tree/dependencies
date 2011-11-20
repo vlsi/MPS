@@ -11,6 +11,21 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" file="FeatureForestMap.java">
+    <classNode dependClassName="java.lang.IllegalAccessError" />
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.util.CounterMap" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.Feature" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.NodeAggregationFeature" file="NodeAggregationFeature.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.NodeFeature" />
