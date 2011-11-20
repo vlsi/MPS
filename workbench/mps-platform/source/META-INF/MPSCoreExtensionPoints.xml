@@ -1,3 +1,0 @@
-<extensionPoints>
-  <extensionPoint qualifiedName="com.intellij.mps.LanguageLibrary" beanClass="jetbrains.mps.LanguageLibrary"/>
-</extensionPoints>

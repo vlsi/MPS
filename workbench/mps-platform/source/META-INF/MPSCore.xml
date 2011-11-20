@@ -39,6 +39,10 @@
     <component>
       <implementation-class>jetbrains.mps.ide.save.ModelsSaver</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.tooltips.MPSToolTipManager</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -47,4 +51,12 @@
       <skipForDummyProject/>
     </component>
   </project-components>
+
+  <extensionPoints>
+    <extensionPoint qualifiedName="com.intellij.mps.LanguageLibrary" beanClass="jetbrains.mps.LanguageLibrary"/>
+  </extensionPoints>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileTypeFactory implementation="jetbrains.mps.fileTypes.MPSFileTypeFactory"/>
+  </extensions>
 </components>

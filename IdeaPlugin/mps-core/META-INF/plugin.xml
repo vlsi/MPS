@@ -27,6 +27,7 @@
     </application-components>
 
     <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
+    <xi:include href="../classes/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
 
     <project-components>
       <component>
@@ -34,12 +35,7 @@
       </component>
     </project-components>
 
-    <extensionPoints>
-        <xi:include href="../classes/META-INF/MPSCoreExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
-    </extensionPoints>
-
     <extensions defaultExtensionNs="com.intellij">
-        <xi:include href="../classes/META-INF/MPSCorePlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
         <facetType implementation="jetbrains.mps.idea.core.facet.MPSFacetType"/>
         <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFacetTypeFrameworkSupportProvider"/>
         <mps.LanguageLibrary dir="/languages"/>
