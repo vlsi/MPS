@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -41,8 +40,6 @@ public class PluginLibrary_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hue21u_a0");
     editorCell.addEditorCell(this.createProperty_hue21u_a0a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_hue21u_b0a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_hue21u_c0a(editorContext, node));
     return editorCell;
   }
 
@@ -55,13 +52,6 @@ public class PluginLibrary_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createIndentCell_hue21u_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_hue21u_b1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_hue21u_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
-    editorCell.setCellId("Constant_hue21u_b0a");
-    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -79,24 +69,6 @@ public class PluginLibrary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createProperty_hue21u_a0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_name");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_hue21u_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("path");
     provider.setNoTargetText("<no path>");

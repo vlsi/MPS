@@ -301,6 +301,7 @@
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
+      <property name="loadModule" nameId="tp4k.8526493425665215329" value="true" />
     </node>
     <node type="rzqf.CommandDeclaration" typeId="rzqf.856705193941281768" id="1885484277888307885">
       <property name="name" nameId="tpck.1169194664001" value="junit" />

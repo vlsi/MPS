@@ -290,7 +290,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 136:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.PluginDependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 137:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.PluginLibrary", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"path"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.PluginLibrary", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"path"}, new String[]{});
       case 138:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.PopupCreator", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
       case 139:
