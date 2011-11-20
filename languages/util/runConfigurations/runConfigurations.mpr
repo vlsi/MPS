@@ -72,6 +72,20 @@
   <component name="MigrationState">
     <option name="myState" value="DONE" />
   </component>
+  <component name="ProjectLibraryManager">
+    <option name="libraries">
+      <map>
+        <entry key="mps.plugins">
+          <value>
+            <Library>
+              <option name="name" value="mps.plugins" />
+              <option name="path" value="${mps_home}/plugins" />
+            </Library>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="ProjectModuleManager">
     <modules />
   </component>

@@ -8,6 +8,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior;
+import java.util.Map;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_Behavior;
 
 public class IdeaInitializerReference_Behavior {
   public static void init(SNode thisNode) {
@@ -23,5 +35,25 @@ public class IdeaInitializerReference_Behavior {
 
   public static String call_getGeneratedFileName_4015626213814034867(SNode thisNode) {
     return IdeaInitializerDescriptor_Behavior.call_getGeneratedFileName_4015626213814045644(SLinkOperations.getTarget(thisNode, "ideaInitializer", false));
+  }
+
+  public static Map<String, Tuples._2<String, List<IModule>>> call_getLibraries_1535440318713424931(SNode thisNode) {
+    final Map<String, Tuples._2<String, List<IModule>>> libraries = MapSequence.fromMap(new HashMap<String, Tuples._2<String, List<IModule>>>());
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ideaInitializer", false), "library", true)).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode lib) {
+        List<IModule> modules = ListSequence.fromList(new ArrayList<IModule>());
+        MapSequence.fromMap(libraries).put(SPropertyOperations.getString(lib, "name"), MultiTuple.<String,List<IModule>>from(SPropertyOperations.getString(lib, "path"), modules));
+        ListSequence.fromList(modules).addSequence(ListSequence.fromList(SLinkOperations.getTargets(lib, "module", true)).select(new ISelector<SNode, IModule>() {
+          public IModule select(SNode m) {
+            return ModuleReferenceExpression_Behavior.call_getModule_4040588429969043137(m);
+          }
+        }));
+      }
+    });
+    return libraries;
+  }
+
+  public static boolean call_loadModule_1535440318713505405(SNode thisNode) {
+    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(thisNode, "ideaInitializer", false), "loadModule");
   }
 }

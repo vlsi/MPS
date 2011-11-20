@@ -10,6 +10,7 @@
     <dependency reexport="false">15979c6a-944c-47d7-971f-e73259dce95e(jetbrains.mps.baseLanguage.tuples.customViewers)</dependency>
     <dependency reexport="false">1c728d45-3e68-410d-9169-54b2650e2d23(jetbrains.mps.build.execution)</dependency>
     <dependency reexport="false">e04d3a11-f04d-45f8-b901-888de58d97e9(jetbrains.mps.baseLanguage.unitTest.execution)</dependency>
+    <dependency reexport="false">6862df80-d13f-4553-9827-397603773647(jetbrains.mps.debugger.java.languages)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)</usedLanguage>

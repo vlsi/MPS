@@ -5,16 +5,18 @@
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <import index="olyr" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.ide.plugins(MPS.Workbench/com.intellij.ide.plugins@java_stub)" version="-1" />
   <import index="9it7" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.extensions(MPS.Workbench/com.intellij.openapi.extensions@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="y090" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.library(MPS.Workbench/jetbrains.mps.library@java_stub)" version="-1" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="2" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
+  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="203415309825224444">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.debugger.java.languages" />
@@ -29,7 +31,21 @@
       <property name="name" nameId="tpck.1169194664001" value="JavaDebuggerLibraries" />
     </node>
   </roots>
-  <root id="203415309825224444" />
+  <root id="203415309825224444">
+    <node role="library" roleId="tp4k.1535440318713307873" type="tp4k.PluginLibrary" typeId="tp4k.1535440318713277025" id="1535440318713422000">
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.java.languages" />
+      <property name="path" nameId="tp4k.1535440318713277028" value="languages" />
+      <node role="module" roleId="tp4k.1535440318713277027" type="tp25.ModuleReferenceExpression" typeId="tp25.4040588429969021681" id="1535440318713422007">
+        <property name="moduleId" nameId="tp25.4040588429969021683" value="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" />
+      </node>
+      <node role="module" roleId="tp4k.1535440318713277027" type="tp25.ModuleReferenceExpression" typeId="tp25.4040588429969021681" id="1535440318713422009">
+        <property name="moduleId" nameId="tp25.4040588429969021683" value="80208897-4572-437d-b50e-8f050cba9566" />
+      </node>
+      <node role="module" roleId="tp4k.1535440318713277027" type="tp25.ModuleReferenceExpression" typeId="tp25.4040588429969021681" id="1535440318713422010">
+        <property name="moduleId" nameId="tp25.4040588429969021683" value="7da4580f-9d75-4603-8162-51a896d78375" />
+      </node>
+    </node>
+  </root>
   <root id="203415309825224446">
     <node role="fieldDeclaration" roleId="tp4k.1215279937191" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="1792580614809106844">
       <property name="name" nameId="tpck.1169194664001" value="myAddedLibrary" />
