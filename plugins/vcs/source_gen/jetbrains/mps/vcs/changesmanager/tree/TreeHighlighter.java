@@ -33,7 +33,7 @@ public class TreeHighlighter implements TreeMessageOwner {
   private boolean myInitialized;
   private TreeHighlighter.MyTreeNodeListener myTreeNodeListener = new TreeHighlighter.MyTreeNodeListener();
   private TreeHighlighter.MyFeatureForestMapListener myFeatureListener = new TreeHighlighter.MyFeatureForestMapListener();
-  private MultiMap<Feature, MPSTreeNode> myFeatureToNodes = new MultiMap<Feature, MPSTreeNode>();
+  private final MultiMap<Feature, MPSTreeNode> myFeatureToNodes = new MultiMap<Feature, MPSTreeNode>();
 
   public TreeHighlighter(@NotNull CurrentDifferenceRegistry registry, @NotNull FeatureForestMapSupport featureForestMapSupport, @NotNull MPSTree tree, @NotNull TreeNodeFeatureExtractor featureExtractor) {
     myRegistry = registry;
@@ -76,12 +76,19 @@ public class TreeHighlighter implements TreeMessageOwner {
   private void registerNode(@NotNull final MPSTreeNode node) {
     final Feature feature = myFeatureExtractor.getFeature(node);
     if (feature != null) {
-      myFeatureToNodes.putValue(feature, node);
+      synchronized (myFeatureToNodes) {
+        myFeatureToNodes.putValue(feature, node);
+      }
       myCommandQueue.runTask(new Runnable() {
         public void run() {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              rehighlightNode(node, feature);
+              synchronized (myFeatureToNodes) {
+                // check if node isn't already removed from tree 
+                if (myFeatureToNodes.get(feature).contains(node)) {
+                  rehighlightNode(node, feature);
+                }
+              }
             }
           });
         }
@@ -92,7 +99,9 @@ public class TreeHighlighter implements TreeMessageOwner {
   private void unregisterNode(@NotNull MPSTreeNode node) {
     Feature feature = myFeatureExtractor.getFeature(node);
     if (feature != null) {
-      myFeatureToNodes.removeValue(feature, node);
+      synchronized (myFeatureToNodes) {
+        myFeatureToNodes.removeValue(feature, node);
+      }
       unhighlightNode(node);
     }
   }
