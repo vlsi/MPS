@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
-class ConceptTreeNode extends MPSTreeNodeEx {
+public class ConceptTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
   private boolean myInitialized;
 
