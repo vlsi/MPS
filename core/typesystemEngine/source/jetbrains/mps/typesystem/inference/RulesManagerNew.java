@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.*;
@@ -57,6 +58,10 @@ public class RulesManagerNew {
 
   public List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(SNode node) {
     return getModelRules(node).getNonTypesystemRules(node);
+  }
+
+  public List<Pair<InferenceRule_Runtime, IsApplicableStatus>> getInferenceRules(SNode node) {
+    return getModelRules(node).getInferenceRules(node);
   }
 
 }

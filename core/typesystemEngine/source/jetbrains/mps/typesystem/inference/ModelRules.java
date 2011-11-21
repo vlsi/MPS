@@ -126,9 +126,7 @@ public class ModelRules {
   public List<Pair<InferenceRule_Runtime, IsApplicableStatus>> getInferenceRules(final SNode node) {
     List<Pair<InferenceRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
     Set<InferenceRule_Runtime> ruleSet;
-    //synchronized (RULES_LOCK) {
-      ruleSet = myInferenceRules.getRules(node);
-    //}
+    ruleSet = myInferenceRules.getRules(node);
     for (InferenceRule_Runtime rule : ruleSet) {
       IsApplicableStatus status = rule.isApplicableAndPattern(node);
       if (status.isApplicable()) {

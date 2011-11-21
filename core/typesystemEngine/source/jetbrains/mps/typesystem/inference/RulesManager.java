@@ -143,7 +143,7 @@ public class RulesManager {
   }
 
   public List<Pair<InferenceRule_Runtime, IsApplicableStatus>> getInferenceRules(final SNode node) {
-    List<Pair<InferenceRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
+    /*List<Pair<InferenceRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
     Set<InferenceRule_Runtime> ruleSet;
     //synchronized (RULES_LOCK) {
       ruleSet = myInferenceRules.getRules(node);
@@ -153,24 +153,12 @@ public class RulesManager {
       if (status.isApplicable()) {
         result.add(new Pair<InferenceRule_Runtime, IsApplicableStatus>(rule, status));
       }
-    }
-    return result;
+    }   */
+    return myRulesManagerNew.getInferenceRules(node);
   }
 
 
   public List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(final SNode node) {
-   /* List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result =
-      new LinkedList<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
-    Set<NonTypesystemRule_Runtime> ruleSet;
-    //synchronized (RULES_LOCK) {
-      ruleSet = myNonTypesystemRules.getRules(node);
-    //}
-    for (NonTypesystemRule_Runtime rule : ruleSet) {
-      IsApplicableStatus status = rule.isApplicableAndPattern(node);
-      if (status.isApplicable()) {
-        result.add(new Pair<NonTypesystemRule_Runtime, IsApplicableStatus>(rule, status));
-      }
-    }        */
     return myRulesManagerNew.getNonTypesystemRules(node);
   }
 
