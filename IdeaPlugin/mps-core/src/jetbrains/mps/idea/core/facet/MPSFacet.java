@@ -83,7 +83,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
         });
     }
 
-    private boolean wasInitialized() {
+    public boolean wasInitialized() {
         return mySolution != null;
     }
 

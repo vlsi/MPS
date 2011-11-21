@@ -16,13 +16,26 @@
 
 package jetbrains.mps.idea.core.project;
 
+import com.intellij.ProjectTopics;
+import com.intellij.facet.Facet;
+import com.intellij.facet.FacetManager;
+import com.intellij.facet.FacetManagerAdapter;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.roots.ModuleRootEvent;
+import com.intellij.openapi.roots.ModuleRootListener;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.idea.core.facet.MPSFacet;
+import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,17 +47,51 @@ import java.util.List;
  */
 public class SolutionIdea extends Solution {
 
+    @NotNull
     private Module myModule;
+    private List<Dependency> myDependencies;
+    private MessageBusConnection myConnection;
 
-    public SolutionIdea(Module module, SolutionDescriptor descriptor) {
+    public SolutionIdea(@NotNull Module module, SolutionDescriptor descriptor) {
         myModule = module;
         // TODO: simply set solution descriptor local variable?
         setSolutionDescriptor(descriptor, false);
+        myConnection = myModule.getProject().getMessageBus().connect();
+        myConnection.subscribe(ProjectTopics.PROJECT_ROOTS, new ModuleRootListener() {
+            @Override
+            public void beforeRootsChange(ModuleRootEvent event) {
+            }
+
+            @Override
+            public void rootsChanged(ModuleRootEvent event) {
+                // TODO: optimize?
+                setModuleDescriptor(getModuleDescriptor(), false);
+            }
+        });
+        myConnection.subscribe(FacetManager.FACETS_TOPIC, new FacetManagerAdapter() {
+            @Override
+            public void facetAdded(@NotNull Facet facet) {
+                // TODO: optimize?
+                setModuleDescriptor(getModuleDescriptor(), false);
+            }
+
+            @Override
+            public void facetRemoved(@NotNull Facet facet) {
+                // TODO: optimize?
+                setModuleDescriptor(getModuleDescriptor(), false);
+            }
+        });
     }
 
     @Override
     public boolean needReloading() {
         return false;
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        myConnection.disconnect();
     }
 
     @Override
@@ -54,7 +101,31 @@ public class SolutionIdea extends Solution {
 
     @Override
     public List<Dependency> getDependencies() {
-        return super.getDependencies();
+        if (myDependencies == null) {
+            // TODO: move to Solution descriptor & try to use common Solution implementation here?
+            myDependencies = new ArrayList<Dependency>();
+            Module[] usedModules = ModuleRootManager.getInstance(myModule).getDependencies();
+            for (Module usedModule : usedModules) {
+                MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
+                if (usedModuleMPSFacet != null && usedModuleMPSFacet.wasInitialized()) {
+                    Dependency dep = new Dependency();
+                    dep.setModuleRef(usedModuleMPSFacet.getSolution().getModuleReference());
+                    dep.setReexport(false);
+                }
+            }
+        }
+        return myDependencies;
+    }
+
+    @Override
+    public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
+        throw new UnsupportedOperationException("addDependency method is not supported by SolutionIdea implementation");
+    }
+
+    @Override
+    protected void invalidateDependencies() {
+        super.invalidateDependencies();
+        myDependencies = null;
     }
 
     @Override
