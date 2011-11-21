@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IdeaInitializerReference_Behavior {
   public static void init(SNode thisNode) {
@@ -24,9 +23,5 @@ public class IdeaInitializerReference_Behavior {
 
   public static String call_getGeneratedFileName_4015626213814034867(SNode thisNode) {
     return IdeaInitializerDescriptor_Behavior.call_getGeneratedFileName_4015626213814045644(SLinkOperations.getTarget(thisNode, "ideaInitializer", false));
-  }
-
-  public static boolean call_loadModule_1535440318713505405(SNode thisNode) {
-    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(thisNode, "ideaInitializer", false), "loadModule");
   }
 }

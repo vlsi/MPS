@@ -2393,36 +2393,30 @@
     <unitInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="70" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.PluginModule_Behavior$QuotationClass_yq0j9l_a3a2a5" />
   </root>
   <root nodeId="989489456094443587">
-    <nodeInfo nodeId="989489456094443595" fileName="IdeaInitializerReference_Behavior.java" startLine="17" startPosition="84" endLine="18" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4015626213813769732" fileName="IdeaInitializerReference_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4015626213814100399" fileName="IdeaInitializerReference_Behavior.java" startLine="25" startPosition="86" endLine="26" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1535440318713505412" fileName="IdeaInitializerReference_Behavior.java" startLine="29" startPosition="77" endLine="30" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="13" startPosition="48" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getContainigModule_989489456094443590#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getContainigModel_4015626213813769728#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SModel;" />
-    <nodeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedFileName_4015626213814034867#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_loadModule_1535440318713505405#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="989489456094443589" fileName="IdeaInitializerReference_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="989489456094443593" fileName="IdeaInitializerReference_Behavior.java" startLine="17" startPosition="84" endLine="18" endPosition="132" />
-    <scopeInfo nodeId="4015626213813769731" fileName="IdeaInitializerReference_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="99" />
-    <scopeInfo nodeId="4015626213814034870" fileName="IdeaInitializerReference_Behavior.java" startLine="25" startPosition="86" endLine="26" endPosition="155" />
-    <scopeInfo nodeId="1535440318713505408" fileName="IdeaInitializerReference_Behavior.java" startLine="29" startPosition="77" endLine="30" endPosition="119" />
-    <scopeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="13" startPosition="48" endLine="16" endPosition="0">
+    <nodeInfo nodeId="989489456094443595" fileName="IdeaInitializerReference_Behavior.java" startLine="16" startPosition="84" endLine="17" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4015626213813769732" fileName="IdeaInitializerReference_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4015626213814100399" fileName="IdeaInitializerReference_Behavior.java" startLine="24" startPosition="86" endLine="25" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="12" startPosition="48" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getContainigModule_989489456094443590#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getContainigModel_4015626213813769728#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedFileName_4015626213814034867#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="989489456094443589" fileName="IdeaInitializerReference_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="989489456094443593" fileName="IdeaInitializerReference_Behavior.java" startLine="16" startPosition="84" endLine="17" endPosition="132" />
+    <scopeInfo nodeId="4015626213813769731" fileName="IdeaInitializerReference_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="99" />
+    <scopeInfo nodeId="4015626213814034870" fileName="IdeaInitializerReference_Behavior.java" startLine="24" startPosition="86" endLine="25" endPosition="155" />
+    <scopeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="12" startPosition="48" endLine="15" endPosition="0">
       <varInfo nodeId="989489456094443587" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="989489456094443587" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="989489456094443587" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="989489456094443587" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="989489456094443587" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.IdeaInitializerReference_Behavior" />
+    <unitInfo nodeId="989489456094443587" fileName="IdeaInitializerReference_Behavior.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.IdeaInitializerReference_Behavior" />
   </root>
 </debugInfo>
 
