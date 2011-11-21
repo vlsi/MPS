@@ -114,5 +114,9 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.NodeAggregationFeature" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" file="TreeNodeFeatureExtractor.java">
+    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.Feature" />
+  </dependency>
 </dependenciesRoot>
 

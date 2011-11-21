@@ -400,5 +400,12 @@
     <scopeInfo nodeId="3751911615136929374" fileName="DeletedChildFeature.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="3751911615136928806" fileName="DeletedChildFeature.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.DeletedChildFeature" />
   </root>
+  <root nodeId="6940763585259488666">
+    <nodeInfo nodeId="5060092229902815332" fileName="TreeNodeFeatureExtractor.java" startLine="7" startPosition="43" endLine="8" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeature#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/Feature;" />
+    <scopeInfo nodeId="5060092229902815332" fileName="TreeNodeFeatureExtractor.java" startLine="7" startPosition="43" endLine="8" endPosition="46">
+      <varInfo nodeId="5060092229902815336" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="6940763585259488666" fileName="TreeNodeFeatureExtractor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" />
+  </root>
 </debugInfo>
 
