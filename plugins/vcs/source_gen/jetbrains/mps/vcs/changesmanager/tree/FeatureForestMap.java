@@ -78,8 +78,8 @@ public class FeatureForestMap<V> {
 
   public boolean isDescendantOfAddedFeature(@NotNull Feature feature) {
     ModelAccess.assertLegalRead();
-    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).any(new IWhereFilter<Feature>() {
-      public boolean accept(Feature a) {
+    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).any(new IWhereFilter<Object>() {
+      public boolean accept(Object a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);
       }
     });
