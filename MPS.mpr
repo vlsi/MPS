@@ -86,8 +86,7 @@
       <modulePath path="${project}/core/baseLanguage/logging/logging.mpl" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/overloadedOperators/languages/overloadedOperators/overloadedOperators.mpl" folder="baseLanguage.overloadedOperators" />
       <modulePath path="${project}/core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.msd" folder="baseLanguage.overloadedOperators" />
-      <modulePath path="${project}/core/baseLanguage/runConfigurations/runConfigurations.mpl" folder="baseLanguage.runConfigurations" />
-      <modulePath path="${project}/core/baseLanguage/runConfigurations/runtime/runtime.msd" folder="baseLanguage.runConfigurations" />
+      <modulePath path="${project}/core/baseLanguage/runConfigurations/runtime/runtime.msd" folder="languages.execution.deprecated" />
       <modulePath path="${project}/core/baseLanguage/tuples/languages/tuples/tuples.mpl" folder="baseLanguage.tuples" />
       <modulePath path="${project}/core/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" folder="baseLanguage.tuples" />
       <modulePath path="${project}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.customViewers/customViewers.msd" folder="debugger.java.languages.usages" />
@@ -280,6 +279,7 @@
       <modulePath path="${project}/plugins/execution-languages/commands/commands.mpl" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/configurations/configurations.mpl" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/demo/demo.mpl" folder="languages.execution" />
+      <modulePath path="${project}/plugins/execution-languages/deprecated/runConfigurations.mpl" folder="languages.execution.deprecated" />
       <modulePath path="${project}/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="workbench" />
       <modulePath path="${project}/plugins/migration/solution/jetbrains.mps.ide.migration.msd" folder="plugins" />
       <modulePath path="${project}/plugins/migration21/solution/migration21.msd" folder="plugins" />

@@ -17,7 +17,7 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="usages.java" />
-      <modulePath path="${mps_home}/core/baseLanguage/runConfigurations/runConfigurations.mpl" folder="deprecated" />
+      <modulePath path="${mps_home}/plugins/execution-languages/deprecated/runConfigurations.mpl" folder="deprecated" />
       <modulePath path="${mps_home}/core/baseLanguage/runConfigurations/runtime/runtime.msd" folder="deprecated" />
       <modulePath path="${mps_home}/core/baseLanguage/unitTest/solutions/execution/execution.msd" folder="usages.junit" />
       <modulePath path="${mps_home}/core/baseLanguage/unitTest/solutions/runtime/jetbrains.mps.baseLanguage.unitTest.runtime.msd" folder="usages.junit" />
