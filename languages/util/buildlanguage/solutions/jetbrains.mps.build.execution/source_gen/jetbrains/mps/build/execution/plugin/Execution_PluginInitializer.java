@@ -77,7 +77,7 @@ public class Execution_PluginInitializer implements ApplicationComponent {
         return SetSequence.fromSet(new HashSet<String>());
       }
       Set<String> libraries = SetSequence.fromSet(new HashSet<String>());
-      SetSequence.fromSet(libraries).addElement(pluginPath.getAbsolutePath());
+      SetSequence.fromSet(libraries).addElement(pluginPath.getAbsolutePath() + File.separator + "lib");
       return libraries;
     }
   }
