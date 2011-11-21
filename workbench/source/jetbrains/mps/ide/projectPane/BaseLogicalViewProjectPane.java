@@ -29,6 +29,7 @@ import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
@@ -56,7 +57,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JTree;
@@ -352,13 +352,11 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   public void editNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
-    ModelAccess.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        MPSEditorOpener opener = getProject().getComponent(MPSEditorOpener.class);
-        assert opener != null;
-        opener.openNode(node, context, focus, select);
+        NavigationSupport.getInstance().openNode(context, node, focus, select);
       }
-    }, context != null ? context.getProject() : null);
+    });
   }
 
   public <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {

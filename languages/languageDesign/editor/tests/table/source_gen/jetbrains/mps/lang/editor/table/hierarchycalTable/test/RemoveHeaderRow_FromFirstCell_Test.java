@@ -6,13 +6,16 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
 public class RemoveHeaderRow_FromFirstCell_Test extends BaseTransformationTest {
+  public RemoveHeaderRow_FromFirstCell_Test() {
+  }
+
   @Test
   public void test_RemoveHeaderRow_FromFirstCell() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
@@ -21,10 +24,13 @@ public class RemoveHeaderRow_FromFirstCell_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
+    public TestBody() {
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("8143909488490605461", "8143909488490605486");
-      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      final Editor editor = TestBody.this.initEditor("8143909488490605461", "8143909488490605486");
+      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
     }
   }

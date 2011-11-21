@@ -98,6 +98,7 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.File_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Folder_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Help_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IdeaInitializerReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Jar_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Layout_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.MPSLayoutConfigurationReferencePropertyValueExpression_BehaviorDescriptor" />
@@ -115,6 +116,7 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.PathComponent_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.PathHolder_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Path_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.PluginModule_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Plugin_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.PropertyFileImport_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.PropertyNodeImport_BehaviorDescriptor" />
@@ -477,6 +479,21 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.build.packaging.behavior.IdeaInitializerReference_Behavior" file="IdeaInitializerReference_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.packaging.behavior.IdeaInitializerReference_BehaviorDescriptor" file="IdeaInitializerReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.Jar_Behavior" file="Jar_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
@@ -793,6 +810,31 @@
     <classNode dependClassName="jetbrains.mps.buildlanguage.behavior.PropertyValueExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.packaging.behavior.PluginModule_Behavior" file="PluginModule_Behavior.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IdeaInitializerReference_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.PathHolder_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Util" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.packaging.behavior.PluginModule_BehaviorDescriptor" file="PluginModule_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.Plugin_BehaviorDescriptor" file="Plugin_BehaviorDescriptor.java">

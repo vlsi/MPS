@@ -15,7 +15,7 @@
     <classNode dependClassName="jetbrains.mps.checkers.TargetConceptChecker" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />
-    <classNode dependClassName="jetbrains.mps.ide.resolve.AutoResolver" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.AutoResolver" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

@@ -9,9 +9,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import javax.swing.JOptionPane;
 import java.awt.Component;
@@ -40,7 +41,7 @@ public class ShowMetaLevel_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.NODE);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.BaseConcept"))) {
           node = null;

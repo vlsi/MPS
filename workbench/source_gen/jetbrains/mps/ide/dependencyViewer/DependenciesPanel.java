@@ -10,7 +10,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.workbench.tools.BaseTool;
+import jetbrains.mps.ide.tools.BaseTool;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.openapi.ui.Splitter;

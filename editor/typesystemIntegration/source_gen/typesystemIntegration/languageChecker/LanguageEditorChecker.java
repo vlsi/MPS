@@ -27,7 +27,7 @@ import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
-import jetbrains.mps.ide.resolve.AutoResolver;
+import jetbrains.mps.ide.editor.AutoResolver;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorMessage;

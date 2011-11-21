@@ -35,6 +35,7 @@ public class ActionDataParameterDeclaration_Behavior {
     ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new ActionDataParameterDeclaration_Behavior.QuotationClass_6xp2og_a0a0a0a0b0d().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
     ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new ActionDataParameterDeclaration_Behavior.QuotationClass_6xp2og_a0a0a0a0c0d().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
     ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new ActionDataParameterDeclaration_Behavior.QuotationClass_6xp2og_a0a0a0a0d0d().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+    ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new ActionDataParameterDeclaration_Behavior.QuotationClass_6xp2og_a0a0a0a0e0d().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
     return dataKeys;
   }
 
@@ -96,6 +97,24 @@ public class ActionDataParameterDeclaration_Behavior {
 
   public static class QuotationClass_6xp2og_a0a0a0a0d0d {
     public QuotationClass_6xp2og_a0a0a0a0d0d() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.editor(MPS.Workbench/jetbrains.mps.ide.editor@java_stub)"), SNodeId.fromString("~MPSEditorDataKeys")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_6xp2og_a0a0a0a0e0d {
+    public QuotationClass_6xp2og_a0a0a0a0e0d() {
     }
 
     public SNode createNode() {

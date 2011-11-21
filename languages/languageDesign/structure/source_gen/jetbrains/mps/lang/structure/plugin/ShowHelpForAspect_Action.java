@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 public class ShowHelpForAspect_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -53,7 +54,7 @@ public class ShowHelpForAspect_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.NODE);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
       }
       MapSequence.fromMap(_params).put("node", node);

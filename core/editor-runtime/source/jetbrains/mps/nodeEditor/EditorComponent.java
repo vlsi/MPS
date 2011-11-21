@@ -36,10 +36,11 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.actions.MPSActions;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
-import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -54,7 +55,9 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.folding.*;
+import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.nodeEditor.selection.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -73,11 +76,9 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.ActionPlace;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
@@ -99,7 +100,7 @@ import java.lang.reflect.Field;
 import java.util.*;
 import java.util.List;
 
-public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent {
+public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent, jetbrains.mps.openapi.editor.EditorComponent {
   private static final Logger LOG = Logger.getLogger(EditorComponent.class);
   private static final boolean TRACE_ENABLED = false;
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
@@ -1683,7 +1684,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         AnAction action = ActionManager.getInstance().getAction(MPSActions.EDITOR_GOTO_DECLARATION);
-        if(action != null) {
+        if (action != null) {
           AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, dataContext);
           ActionUtils.updateAndPerformAction(action, event);
         }
@@ -1821,8 +1822,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
-  public void changeSelection(EditorCell newSelectedCell) {
-    changeSelection(newSelectedCell, true);
+  @Override
+  public final void changeSelection(jetbrains.mps.openapi.editor.EditorCell newSelectedCell) {
+    changeSelection((EditorCell) newSelectedCell, true);
   }
 
   void changeSelection(@NotNull EditorCell newSelectedCell, boolean resetLastCaretX) {
@@ -1884,12 +1886,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     scrollToCell(getSelectedCell());
   }
 
-  public void scrollToCell(@NotNull EditorCell cell) {
+  public void scrollToCell(@NotNull jetbrains.mps.openapi.editor.EditorCell cell) {
     if (getVisibleRect().isEmpty()) {
       return;
     }
 
-    EditorCell largestVerticalBigCell = cell;
+    jetbrains.mps.openapi.editor.EditorCell largestVerticalBigCell = cell;
 
     int viewportWidth = getViewport().getWidth();
 
@@ -2511,12 +2513,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Nullable
   public Object getData(@NonNls String dataId) {
     //MPSDK
-    if (dataId.equals(MPSDataKeys.NODE.getName())) {
+    if (dataId.equals(MPSCommonDataKeys.NODE.getName())) {
       List<SNode> selectedNodes = getSelectedNodes();
       return selectedNodes.isEmpty() ? getRootCell().getSNode() : selectedNodes.iterator().next();
     }
-    if (dataId.equals(MPSDataKeys.NODES.getName())) return getSelectedNodes();
-    if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())) {
+    if (dataId.equals(MPSCommonDataKeys.NODES.getName())) return getSelectedNodes();
+    if (dataId.equals(MPSEditorDataKeys.CONTEXT_MODEL.getName())) {
       return ModelAccess.instance().runReadAction(new Computable() {
         public Object compute() {
           SNode node = getRootCell().getSNode();
@@ -2527,16 +2529,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       });
     }
-    if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
+    if (dataId.equals(MPSEditorDataKeys.CONTEXT_MODULE.getName())) {
       IOperationContext operationContext = getOperationContext();
       if (operationContext == null) return null;
       return operationContext.getModule();
     }
-    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return getOperationContext();
-    if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();
-    if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) return getSelectedCell();
-    if (dataId.equals(MPSDataKeys.EDITOR_COMPONENT.getName())) return this;
-    if (dataId.equals(MPSDataKeys.PLACE.getName())) return ActionPlace.EDITOR;
+    if (dataId.equals(MPSEditorDataKeys.OPERATION_CONTEXT.getName())) return getOperationContext();
+    if (dataId.equals(MPSEditorDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();
+    if (dataId.equals(MPSEditorDataKeys.EDITOR_CELL.getName())) return getSelectedCell();
+    if (dataId.equals(MPSEditorDataKeys.EDITOR_COMPONENT.getName())) return this;
+    if (dataId.equals(MPSCommonDataKeys.PLACE.getName())) return ActionPlace.EDITOR;
 
     //PDK
     if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) return new MyCutProvider();
@@ -2952,56 +2954,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     super.repaint();
     if (myLeftHighlighter != null) {
       myLeftHighlighter.repaint();
-    }
-  }
-
-  private class MPSActionProxy extends AbstractAction {
-    private List<BaseAction> myActions = new ArrayList<BaseAction>();
-    private String myPlace = ActionPlaces.UNKNOWN;
-
-    public void add(String place, BaseAction a) {
-      myPlace = place;
-      myActions.add(a);
-    }
-
-    public List<String> getActionNames() {
-      List<String> result = new ArrayList<String>();
-      for (BaseAction baseAction : myActions) {
-        result.add(baseAction.getClass().getSimpleName());
-      }
-      return result;
-    }
-
-    public List<BaseAction> getActiveActions() {
-      List<BaseAction> result = new ArrayList<BaseAction>();
-      for (final BaseAction action : myActions) {
-        if (isActionActive(action)) {
-          result.add(action);
-        }
-      }
-      return result;
-    }
-
-    public boolean isActionActive(BaseAction action) {
-      EditorCell selectedCell = getSelectedCell();
-      if (selectedCell == null || selectedCell.getSNode() == null) {
-        return false;
-      }
-      DataContext context = DataManager.getInstance().getDataContext(EditorComponent.this);
-      AnActionEvent event = ActionUtils.createEvent(myPlace, context);
-
-      action.update(event);
-      return event.getPresentation().isEnabled();
-    }
-
-    public void actionPerformed(ActionEvent e) {
-      for (final BaseAction action : myActions) {
-        if (isActionActive(action)) {
-          DataContext context = DataManager.getInstance().getDataContext(EditorComponent.this);
-          AnActionEvent event = ActionUtils.createEvent(myPlace, context);
-          action.actionPerformed(event);
-        }
-      }
     }
   }
 

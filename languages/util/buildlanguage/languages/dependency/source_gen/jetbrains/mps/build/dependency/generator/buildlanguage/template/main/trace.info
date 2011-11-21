@@ -109,7 +109,9 @@
     <scopeInfo nodeId="4102882025198635390" fileName="QueriesGenerated.java" startLine="116" startPosition="136" endLine="118" endPosition="173">
       <varInfo nodeId="4102882025198635416" varName="outer" />
     </scopeInfo>
-    <scopeInfo nodeId="7857794759872176566" fileName="QueriesGenerated.java" startLine="166" startPosition="214" endLine="170" endPosition="0" />
+    <scopeInfo nodeId="7857794759872176566" fileName="QueriesGenerated.java" startLine="166" startPosition="214" endLine="170" endPosition="0">
+      <varInfo nodeId="7857794759872176566" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="4102882025198635370" fileName="QueriesGenerated.java" startLine="40" startPosition="154" endLine="45" endPosition="6">
       <varInfo nodeId="4102882025198635437" varName="value" />
     </scopeInfo>

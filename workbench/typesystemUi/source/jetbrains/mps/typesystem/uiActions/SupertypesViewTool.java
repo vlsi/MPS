@@ -47,7 +47,7 @@ public class SupertypesViewTool extends AbstractHierarchyView {
       }
     };
 
-    return ActionUtils.groupFromActions(action,createCloseAction());
+    return ActionUtils.groupFromActions(action, createCloseAction());
   }
 
   protected boolean isTreeInfinite() {

@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -37,12 +37,12 @@ public class CellReference {
     return result.value;
   }
 
-  public void setupSelection(IEditor editor) {
+  public void setupSelection(Editor editor) {
     NodeEditorComponent editorComponent = ((NodeEditorComponent) editor.getCurrentEditorComponent());
     BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(this.myAnnotation, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), "call_setupSelection_6268941039745707957", new Class[]{SNode.class, NodeEditorComponent.class, SNode.class, Map.class}, editorComponent, this.myNode, this.myMap);
   }
 
-  public void assertEditor(IEditor editorComponent, Map<SNode, SNode> map) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(this.myAnnotation, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), "call_assertEditor_6268941039745719581", new Class[]{SNode.class, IEditor.class, SNode.class, Map.class, Map.class}, editorComponent, this.getNode(), map, this.myMap);
+  public void assertEditor(Editor editorComponent, Map<SNode, SNode> map) {
+    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(this.myAnnotation, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), "call_assertEditor_6268941039745719581", new Class[]{SNode.class, Editor.class, SNode.class, Map.class, Map.class}, editorComponent, this.getNode(), map, this.myMap);
   }
 }

@@ -101,7 +101,9 @@
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="209" startPosition="31" endLine="209" endPosition="31" />
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="212" startPosition="84" endLine="212" endPosition="84" />
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="216" startPosition="11" endLine="216" endPosition="11" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="217" startPosition="0" endLine="217" endPosition="37" />
+    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="217" startPosition="0" endLine="217" endPosition="37">
+      <varInfo nodeId="6648795410103988025" varName="re" />
+    </scopeInfo>
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="217" startPosition="37" endLine="217" endPosition="37" />
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="52" startPosition="27" endLine="53" endPosition="88" />
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="56" startPosition="38" endLine="57" endPosition="19" />
@@ -128,10 +130,15 @@
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="198" startPosition="49" endLine="199" endPosition="18" />
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="85" startPosition="0" endLine="87" endPosition="5" />
     <scopeInfo nodeId="3736430118459654074" fileName="Binaries_Facet.java" startLine="103" startPosition="43" endLine="105" endPosition="36" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="202" startPosition="61" endLine="204" endPosition="15" />
+    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="202" startPosition="61" endLine="204" endPosition="15">
+      <varInfo nodeId="6648795410103988026" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="208" startPosition="74" endLine="210" endPosition="5" />
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="51" startPosition="0" endLine="54" endPosition="3" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="211" startPosition="0" endLine="214" endPosition="0" />
+    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="211" startPosition="0" endLine="214" endPosition="0">
+      <varInfo nodeId="6648795410103988025" varName="properties" />
+      <varInfo nodeId="6648795410103988025" varName="store" />
+    </scopeInfo>
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="215" startPosition="83" endLine="218" endPosition="7" />
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
@@ -139,14 +146,22 @@
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="3736430118459671047" fileName="Binaries_Facet.java" startLine="111" startPosition="168" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="3736430118459671058" fileName="Binaries_Facet.java" startLine="115" startPosition="66" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="3736430118459671071" fileName="Binaries_Facet.java" startLine="119" startPosition="61" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="3736430118459671047" fileName="Binaries_Facet.java" startLine="111" startPosition="168" endLine="115" endPosition="0">
+      <varInfo nodeId="3736430118459671047" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3736430118459671058" fileName="Binaries_Facet.java" startLine="115" startPosition="66" endLine="119" endPosition="0">
+      <varInfo nodeId="3736430118459671058" varName="bin" />
+    </scopeInfo>
+    <scopeInfo nodeId="3736430118459671071" fileName="Binaries_Facet.java" startLine="119" startPosition="61" endLine="123" endPosition="0">
+      <varInfo nodeId="3736430118459671071" varName="p" />
+    </scopeInfo>
     <scopeInfo nodeId="3736430118459671081" fileName="Binaries_Facet.java" startLine="124" startPosition="75" endLine="128" endPosition="82">
       <varInfo nodeId="3736430118459671083" varName="fromFile" />
       <varInfo nodeId="3736430118459671090" varName="toFile" />
     </scopeInfo>
-    <scopeInfo nodeId="6648795410103988215" fileName="Binaries_Facet.java" startLine="142" startPosition="124" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="6648795410103988215" fileName="Binaries_Facet.java" startLine="142" startPosition="124" endLine="146" endPosition="0">
+      <varInfo nodeId="6648795410103988215" varName="ftc" />
+    </scopeInfo>
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="157" startPosition="0" endLine="161" endPosition="0" />
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="161" startPosition="0" endLine="165" endPosition="0" />
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="165" startPosition="0" endLine="169" endPosition="0" />
@@ -157,11 +172,21 @@
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="185" startPosition="0" endLine="189" endPosition="0" />
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="189" startPosition="0" endLine="193" endPosition="0" />
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="193" startPosition="0" endLine="197" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="197" startPosition="0" endLine="201" endPosition="0" />
+    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="197" startPosition="0" endLine="201" endPosition="0">
+      <varInfo nodeId="6648795410103988026" varName="cls" />
+    </scopeInfo>
     <scopeInfo nodeId="3736430118459669530" fileName="Binaries_Facet.java" startLine="141" startPosition="39" endLine="146" endPosition="25" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="201" startPosition="0" endLine="206" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="214" startPosition="0" endLine="220" endPosition="0" />
-    <scopeInfo nodeId="3736430118459671080" fileName="Binaries_Facet.java" startLine="123" startPosition="84" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="201" startPosition="0" endLine="206" endPosition="0">
+      <varInfo nodeId="6648795410103988026" varName="cls" />
+      <varInfo nodeId="6648795410103988026" varName="copyFrom" />
+    </scopeInfo>
+    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="214" startPosition="0" endLine="220" endPosition="0">
+      <varInfo nodeId="6648795410103988025" varName="properties" />
+      <varInfo nodeId="6648795410103988025" varName="store" />
+    </scopeInfo>
+    <scopeInfo nodeId="3736430118459671080" fileName="Binaries_Facet.java" startLine="123" startPosition="84" endLine="130" endPosition="0">
+      <varInfo nodeId="3736430118459671080" varName="p" />
+    </scopeInfo>
     <scopeInfo nodeId="3736430118459669527" fileName="Binaries_Facet.java" startLine="140" startPosition="70" endLine="148" endPosition="0" />
     <scopeInfo nodeId="1986840443401665514" fileName="Binaries_Facet.java" startLine="139" startPosition="35" endLine="148" endPosition="21" />
     <scopeInfo nodeId="1986840443401665513" fileName="Binaries_Facet.java" startLine="138" startPosition="63" endLine="150" endPosition="0" />
@@ -174,17 +199,27 @@
       <varInfo nodeId="6648795410103988073" varName="model" />
       <varInfo nodeId="6648795410103988079" varName="output" />
     </scopeInfo>
-    <scopeInfo nodeId="6648795410103988070" fileName="Binaries_Facet.java" startLine="99" startPosition="148" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="6648795410103988070" fileName="Binaries_Facet.java" startLine="99" startPosition="148" endLine="133" endPosition="0">
+      <varInfo nodeId="6648795410103988070" varName="smd" />
+    </scopeInfo>
     <scopeInfo nodeId="6648795410103988051" fileName="Binaries_Facet.java" startLine="97" startPosition="83" endLine="133" endPosition="21">
       <varInfo nodeId="6648795410103988053" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="6648795410103988050" fileName="Binaries_Facet.java" startLine="96" startPosition="163" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="6648795410103988050" fileName="Binaries_Facet.java" startLine="96" startPosition="163" endLine="135" endPosition="0">
+      <varInfo nodeId="6648795410103988050" varName="res" />
+    </scopeInfo>
     <scopeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="94" startPosition="19" endLine="150" endPosition="17">
       <varInfo nodeId="6648795410103988035" varName="deltaList" />
       <varInfo nodeId="6648795410103988042" varName="filesToCopy" />
     </scopeInfo>
-    <scopeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="91" startPosition="122" endLine="153" endPosition="11" />
-    <scopeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="90" startPosition="30" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="91" startPosition="122" endLine="153" endPosition="11">
+      <varInfo nodeId="6648795410103988032" varName="_output_8acy7z_a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="90" startPosition="30" endLine="155" endPosition="0">
+      <varInfo nodeId="6648795410103988032" varName="input" />
+      <varInfo nodeId="6648795410103988032" varName="monitor" />
+      <varInfo nodeId="6648795410103988032" varName="pa" />
+    </scopeInfo>
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="89" startPosition="29" endLine="155" endPosition="8" />
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="88" startPosition="0" endLine="157" endPosition="0" />
     <unitInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="48" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.Binaries_Facet" />

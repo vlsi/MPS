@@ -10,18 +10,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.QueueSequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables" file="CollectionsWatchables.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.plugin.Collections_ApplicationPlugin" file="Collections_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.Collections_CustomApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.CustomViewersInitializer_CustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.SampleCustomContainers_CustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
@@ -53,77 +46,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.CustomViewersInitializer_CustomApplicationPlugin" file="CustomViewersInitializer_CustomApplicationPlugin.java">
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_WrapperFactory" />
-    <classNode dependClassName="jetbrains.mps.debug.customViewers.CustomViewersManager" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory" file="ListViewer_WrapperFactory.java">
-    <classNode dependClassName="com.sun.jdi.Value" />
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory" file="MapEntryViewer_WrapperFactory.java">
-    <classNode dependClassName="com.sun.jdi.Value" />
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.ProxyEqualsUtil" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory" file="MapViewer_WrapperFactory.java">
-    <classNode dependClassName="com.sun.jdi.Value" />
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.plugin.SampleCustomContainers_CustomApplicationPlugin" file="SampleCustomContainers_CustomApplicationPlugin.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -137,25 +59,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_WrapperFactory" file="SetViewer_WrapperFactory.java">
-    <classNode dependClassName="com.sun.jdi.Value" />
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory" />
   </dependency>
 </dependenciesRoot>
 

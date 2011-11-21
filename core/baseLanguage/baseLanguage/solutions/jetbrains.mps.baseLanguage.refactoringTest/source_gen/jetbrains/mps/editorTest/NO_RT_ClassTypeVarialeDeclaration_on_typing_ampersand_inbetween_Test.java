@@ -6,11 +6,14 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test extends BaseTransformationTest {
+  public NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test() {
+  }
+
   @Test
   public void test_NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
@@ -19,10 +22,13 @@ public class NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Tes
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
+    public TestBody() {
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("1528454294471625117", "1528454294471625127");
-      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      final Editor editor = TestBody.this.initEditor("1528454294471625117", "1528454294471625127");
+      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "&");
     }
   }

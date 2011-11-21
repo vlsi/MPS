@@ -12,8 +12,9 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.editor.runtime.ExtractComponentUtil;
 import jetbrains.mps.nodeEditor.EditorContext;
 
@@ -50,7 +51,7 @@ public class ExtractComponent_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.NODE);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
           node = null;

@@ -6,6 +6,9 @@ import com.intellij.openapi.components.ProjectComponent;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.plugins.PluginReloader;
+import jetbrains.mps.plugins.PluginReloadingListener;
+import jetbrains.mps.ide.IdeMain;
 import org.jdom.Element;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.util.InvalidDataException;
@@ -35,12 +38,29 @@ import javax.xml.transform.TransformerException;
 public class RunConfigurationsStateManager implements ProjectComponent {
   protected static Log log = LogFactory.getLog(RunConfigurationsStateManager.class);
 
-  private Project myProject;
+  private final Project myProject;
+  private final PluginReloader myPluginReloader;
+  private final PluginReloadingListener myPluginReloadingListener = new PluginReloadingListener() {
+    public void afterPluginsLoaded() {
+      if (IdeMain.getTestMode() != IdeMain.TestMode.NO_TEST) {
+        return;
+      }
+      initRunConfigurations();
+    }
+
+    public void beforePluginsDisposed() {
+      if (IdeMain.getTestMode() != IdeMain.TestMode.NO_TEST) {
+        return;
+      }
+      disposeRunConfigurations();
+    }
+  };
   private Element myState = null;
   private Element mySharedState = null;
 
-  public RunConfigurationsStateManager(Project project) {
+  public RunConfigurationsStateManager(Project project, PluginReloader pluginReloader) {
     myProject = project;
+    myPluginReloader = pluginReloader;
   }
 
   public void projectOpened() {
@@ -154,9 +174,11 @@ public class RunConfigurationsStateManager implements ProjectComponent {
   }
 
   public void initComponent() {
+    myPluginReloader.addReloadingListener(myPluginReloadingListener);
   }
 
   public void disposeComponent() {
+    myPluginReloader.removeReloadingListener(myPluginReloadingListener);
   }
 
   public static ConfigurationType[] getConfigurationTypes() {

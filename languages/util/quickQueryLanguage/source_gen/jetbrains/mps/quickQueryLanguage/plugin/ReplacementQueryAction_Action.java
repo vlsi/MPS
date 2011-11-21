@@ -11,6 +11,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
@@ -48,7 +49,7 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.NODE);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
           node = null;

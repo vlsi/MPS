@@ -20,8 +20,9 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -56,8 +57,8 @@ public class SurroundWithIntentions_ActionGroup extends GeneratedActionGroup {
       query.setCurrentNodeOnly(true);
 
       List<Tuples._2<Intention, SNode>> groupItems = ListSequence.fromList(new ArrayList<Tuples._2<Intention, SNode>>());
-      SNode node = event.getData(MPSDataKeys.NODE);
-      final EditorContext context = event.getData(MPSDataKeys.EDITOR_CONTEXT);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
+      final EditorContext context = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
 
       Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, context);
       for (Pair<Intention, SNode> pair : Sequence.fromIterable(intentions)) {

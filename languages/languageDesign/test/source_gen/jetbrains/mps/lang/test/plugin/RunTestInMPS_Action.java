@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -56,7 +57,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
       return false;
     }
     {
-      SModelDescriptor modelDescriptor = event.getData(MPSDataKeys.CONTEXT_MODEL);
+      SModelDescriptor modelDescriptor = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
       if (modelDescriptor == null) {
         return false;
       }
@@ -66,7 +67,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.NODE);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
       }
       MapSequence.fromMap(_params).put("node", node);

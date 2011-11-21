@@ -26,7 +26,7 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.ide.resolve.Resolver;
+import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.*;
 

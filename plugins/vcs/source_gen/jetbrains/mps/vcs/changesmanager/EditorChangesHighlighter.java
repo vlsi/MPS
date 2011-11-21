@@ -12,7 +12,7 @@ import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.nodeEditor.EditorSettingsListener;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;

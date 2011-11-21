@@ -22,6 +22,8 @@ import com.intellij.util.ui.UIUtil;
 import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TIntObjectProcedure;
 import jetbrains.mps.ide.actions.MPSActions;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -32,7 +34,6 @@ import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NonNls;
@@ -795,10 +796,10 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
     @Override
     public Object getData(@NonNls String dataId) {
-      if (MPSDataKeys.NODE.getName().equals(dataId)) {
+      if (MPSCommonDataKeys.NODE.getName().equals(dataId)) {
         return mySelectedNode;
       }
-      if (MPSDataKeys.EDITOR_CELL.getName().equals(dataId)) {
+      if (MPSEditorDataKeys.EDITOR_CELL.getName().equals(dataId)) {
         return myNodeCell;
       }
       return myEditorDataContext.getData(dataId);

@@ -38,7 +38,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.ide.DataManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 public class ModelPropertiesDialog extends BasePropertiesDialog {
   public ModelProperties myPresenter;
@@ -164,10 +164,10 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
 
     @Nullable
     public Object getData(@NonNls String dataId) {
-      if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+      if (dataId.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
         return ModelPropertiesDialog.this.getOperationContext();
       }
-      if (dataId.equals(MPSDataKeys.MODEL.getName())) {
+      if (dataId.equals(MPSCommonDataKeys.MODEL.getName())) {
         return myPresenter.getModelDescriptor();
       } else
       return myRealContext.getData(dataId);

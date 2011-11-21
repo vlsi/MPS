@@ -20,6 +20,7 @@ import com.intellij.ui.components.JBList;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.PatternUtil;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -209,7 +210,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
   }
 
   protected Pattern getItemPattern(String text, boolean useDots) {
-    StringBuilder b = getExactItemPatternBuilder(text, useDots);
+    StringBuilder b = PatternUtil.getExactItemPatternBuilder(text, useDots);
     b.append(".*");
     Pattern p = Pattern.compile(b.toString());
     return p;
@@ -260,97 +261,4 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
     myList.setSelectedValue(oldSelection, true);
   }
 
-  public static StringBuilder getExactItemPatternBuilder(String text, boolean useDots) {
-    StringBuilder b = new StringBuilder();
-    int state = 0;
-    for (int i = 0; i < text.length(); i++) {
-      char c = text.charAt(i);
-
-      switch (state) {
-        case 0: // no quoting
-          if (c == '*') {
-            b.append(".*");
-          } else if (c == '?') {
-            b.append(".");
-          } else if (c == '.') {
-            if (useDots) {
-              b.append("[^\\.]*\\.");
-            } else {
-              b.append("\\.");
-            }
-          } else if (c == '@') {
-            b.append("[^\\@\\.]*\\@");
-          } else if (Character.isLetterOrDigit(c) || c == '_') {
-            b.append(c);
-            state = 2;
-          } else {
-            b.append("\\Q");
-            b.append(c);
-            state = 1;
-          }
-          break;
-        case 1: // quoting
-          if (c == '*') {
-            b.append("\\E");
-            b.append(".*");
-            state = 0;
-          } else if (c == '?') {
-            b.append("\\E");
-            b.append(".");
-            state = 0;
-          } else if (c == '.') {
-            if (useDots) {
-              b.append("\\E");
-              b.append("[^\\.]*\\.");
-            } else {
-              b.append("\\.");
-            }
-            state = 0;
-          } else if (c == '@') {
-            b.append("\\E");
-            b.append("[^\\@\\.]*\\@");
-            state = 0;
-          } else if (Character.isLetterOrDigit(c) || c == '_') {
-            b.append("\\E");
-            b.append(c);
-            state = 2;
-          } else {
-            b.append(c);
-          }
-          break;
-        case 2: // Sequence of letters, digits and underscores
-          if (c == '*') {
-            b.append(".*");
-            state = 0;
-          } else if (c == '?') {
-            b.append(".");
-            state = 0;
-          } else if (c == '.') {
-            if (useDots) {
-              b.append("[^\\.]*\\.");
-            } else {
-              b.append("\\.");
-            }
-            state = 0;
-          } else if (c == '@') {
-            b.append("[^\\@\\.]*\\@");
-            state = 0;
-          } else if (Character.isUpperCase(c)) {
-            b.append("[a-z0-9_]*");
-            b.append(c);
-          } else if (Character.isLetterOrDigit(c) || c == '_') {
-            b.append(c);
-          } else {
-            b.append("\\Q");
-            b.append(c);
-            state = 1;
-          }
-          break;
-      }
-    }
-    if (state == 1) {
-      b.append("\\E");
-    }
-    return b;
-  }
 }

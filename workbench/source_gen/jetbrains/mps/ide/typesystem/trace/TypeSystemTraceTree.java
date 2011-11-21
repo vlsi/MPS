@@ -33,6 +33,7 @@ import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JPopupMenu;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -250,7 +251,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     }
     final Pair<String, String> rule = operation.getRule();
     final SNode source = operation.getSource();
-    if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+    if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
       return myOperationContext;
     }
     if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {

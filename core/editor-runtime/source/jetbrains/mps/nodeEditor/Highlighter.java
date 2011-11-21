@@ -25,13 +25,15 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -44,8 +46,6 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
-import jetbrains.mps.workbench.highlighter.EditorsHelper;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -80,7 +80,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private volatile long myLastCommandTime = 0;
 
   private MessageBusConnection myMessageBusConnection;
-  private List<IEditor> myAdditionalEditors = new ArrayList<IEditor>();
+  private List<Editor> myAdditionalEditors = new ArrayList<Editor>();
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
     public void unload() {
@@ -230,13 +230,13 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  public void addAdditionalEditor(IEditor additionalEditor) {
+  public void addAdditionalEditor(Editor additionalEditor) {
     synchronized (ADD_EDITORS_LOCK) {
       myAdditionalEditors.add(additionalEditor);
     }
   }
 
-  public void removeAdditionalEditor(IEditor additionalEditor) {
+  public void removeAdditionalEditor(Editor additionalEditor) {
     synchronized (ADD_EDITORS_LOCK) {
       myAdditionalEditors.remove(additionalEditor);
     }
@@ -359,7 +359,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   private List<EditorComponent> getAllEditorComponents() {
-    final List<IEditor> list;
+    final List<Editor> list;
     synchronized (ADD_EDITORS_LOCK) {
       list = EditorsHelper.getSelectedEditors(myFileEditorManager);
       if (!myAdditionalEditors.isEmpty()) {
@@ -370,8 +370,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
-          for (IEditor editor : list) {
-            EditorComponent editorComponent = editor.getCurrentEditorComponent();
+          for (Editor editor : list) {
+            EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
             if (editorComponent != null) {
               editorComponents.add(editorComponent);
             }

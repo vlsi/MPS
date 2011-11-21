@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.plugin.EditorLangPlugin_CustomProjectPlugin" file="EditorLangPlugin_CustomProjectPlugin.java">
-    <classNode dependClassName="jetbrains.mps.ide.resolve.AutoResolver" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.AutoResolver" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />

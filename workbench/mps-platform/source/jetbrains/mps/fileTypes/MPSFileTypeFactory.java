@@ -29,12 +29,14 @@ public class MPSFileTypeFactory extends FileTypeFactory {
   public static final FileType LANGUAGE_FILE_TYPE = new XMLFileType("Language", "MPS Language File Type", MPSExtentions.LANGUAGE, FileIcons.PROJECT_LANGUAGE_ICON);
   public static final FileType DEVKIT_FILE_TYPE = new XMLFileType("Devkit", "MPS Devkit File Type", MPSExtentions.DEVKIT, FileIcons.DEVKIT_ICON);
 
+  public static final FileType MPS_NODE_FILE_TYPE = new MPSNodeFileType();
+
   public static final FileType[] MPS_FILE_TYPES = {PROJECT_FILE_TYPE, MODEL_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE};
 
   public void createFileTypes(@NotNull FileTypeConsumer consumer) {
     for (FileType f : MPS_FILE_TYPES) {
       consumer.consume(f, f.getDefaultExtension());
     }
-    consumer.consume(new MPSFileType());
+    consumer.consume(MPS_NODE_FILE_TYPE);
   }
 }

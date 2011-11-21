@@ -39,7 +39,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.ide.tools.BaseProjectTool;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;

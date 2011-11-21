@@ -15,6 +15,7 @@ import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -84,15 +85,15 @@ public class GenericRefactoringAction_Action extends GeneratedAction {
       });
       boolean isOneTarget = !(GenericRefactoringAction_Action.this.refactoring.getRefactoringTarget().allowMultipleTargets());
       final RefactoringContext context = new RefactoringContext(GenericRefactoringAction_Action.this.refactoring);
-      context.setCurrentOperationContext(event.getData(MPSDataKeys.OPERATION_CONTEXT));
-      context.setSelectedNode(event.getData(MPSDataKeys.NODE));
+      context.setCurrentOperationContext(event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
+      context.setSelectedNode(event.getData(MPSCommonDataKeys.NODE));
       context.setSelectedNodes(GenericRefactoringHelper.getNodes(event, isOneTarget));
-      context.setSelectedModel(event.getData(MPSDataKeys.CONTEXT_MODEL));
+      context.setSelectedModel(event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
       context.setSelectedModels(GenericRefactoringHelper.getModels(event, isOneTarget));
       context.setSelectedModule(event.getData(MPSDataKeys.MODULE));
       context.setSelectedModules(GenericRefactoringHelper.getModules(event, isOneTarget));
       context.setSelectedProject(ProjectHelper.toMPSProject(event.getData(PlatformDataKeys.PROJECT)));
-      context.setCurrentScope(event.getData(MPSDataKeys.SCOPE));
+      context.setCurrentScope(event.getData(MPSCommonDataKeys.SCOPE));
       new Thread() {
         public void run() {
           new RefactoringFacade().execute(GenericRefactoringAction_Action.this.refactoring, context);

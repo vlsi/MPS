@@ -122,7 +122,9 @@
     <scopeInfo nodeId="141205291420452762" fileName="CollectTests_Action.java" startLine="91" startPosition="15" endLine="92" endPosition="77" />
     <scopeInfo nodeId="141205291420452764" fileName="CollectTests_Action.java" startLine="93" startPosition="21" endLine="94" endPosition="30" />
     <scopeInfo nodeId="141205291420042209" fileName="CollectTests_Action.java" startLine="98" startPosition="26" endLine="99" endPosition="88" />
-    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="101" startPosition="0" endLine="102" endPosition="84" />
+    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="101" startPosition="0" endLine="102" endPosition="84">
+      <varInfo nodeId="141205291419997364" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="101" startPosition="27" endLine="102" endPosition="84" />
     <scopeInfo nodeId="141205291420042140" fileName="CollectTests_Action.java" startLine="121" startPosition="32" endLine="122" endPosition="21" />
     <scopeInfo nodeId="2453495861228729826" fileName="CollectTests_Action.java" startLine="129" startPosition="89" endLine="130" endPosition="21" />
@@ -138,24 +140,36 @@
     <scopeInfo nodeId="141205291420035988" fileName="CollectTests_Action.java" startLine="192" startPosition="49" endLine="193" endPosition="38" />
     <scopeInfo nodeId="141205291420042170" fileName="CollectTests_Action.java" startLine="200" startPosition="24" endLine="201" endPosition="41" />
     <scopeInfo nodeId="8821035829284834642" fileName="CollectTests_Action.java" startLine="207" startPosition="47" endLine="208" endPosition="126" />
-    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="58" startPosition="7" endLine="60" endPosition="63" />
-    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="62" startPosition="0" endLine="64" endPosition="44" />
+    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="58" startPosition="7" endLine="60" endPosition="63">
+      <varInfo nodeId="141205291419997364" varName="enabled" />
+    </scopeInfo>
+    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="62" startPosition="0" endLine="64" endPosition="44">
+      <varInfo nodeId="141205291419997364" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="62" startPosition="27" endLine="64" endPosition="44" />
     <scopeInfo nodeId="141205291420452779" fileName="CollectTests_Action.java" startLine="112" startPosition="25" endLine="114" endPosition="84" />
     <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="46" startPosition="32" endLine="49" endPosition="40" />
-    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="141205291419997364" varName="_params" />
+      <varInfo nodeId="141205291419997364" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="57" startPosition="9" endLine="61" endPosition="7" />
     <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" />
     <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" />
     <scopeInfo nodeId="141205291420035938" fileName="CollectTests_Action.java" startLine="178" startPosition="95" endLine="182" endPosition="99" />
     <scopeInfo nodeId="1178539434126627001" fileName="CollectTests_Action.java" startLine="184" startPosition="0" endLine="188" endPosition="0">
+      <varInfo nodeId="1178539434126627001" varName="_params" />
       <varInfo nodeId="1178539434126629741" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="141205291420035987" fileName="CollectTests_Action.java" startLine="191" startPosition="98" endLine="195" endPosition="0" />
+    <scopeInfo nodeId="141205291420035987" fileName="CollectTests_Action.java" startLine="191" startPosition="98" endLine="195" endPosition="0">
+      <varInfo nodeId="141205291420035987" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="141205291420042157" fileName="CollectTests_Action.java" startLine="198" startPosition="76" endLine="202" endPosition="5">
       <varInfo nodeId="141205291420042161" varName="frame" />
     </scopeInfo>
-    <scopeInfo nodeId="8821035829284834641" fileName="CollectTests_Action.java" startLine="206" startPosition="170" endLine="210" endPosition="0" />
+    <scopeInfo nodeId="8821035829284834641" fileName="CollectTests_Action.java" startLine="206" startPosition="170" endLine="210" endPosition="0">
+      <varInfo nodeId="8821035829284834641" varName="ms" />
+    </scopeInfo>
     <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="45" startPosition="0" endLine="50" endPosition="3" />
     <scopeInfo nodeId="141205291420452778" fileName="CollectTests_Action.java" startLine="111" startPosition="57" endLine="116" endPosition="0" />
     <scopeInfo nodeId="1353856996306210059" fileName="CollectTests_Action.java" startLine="135" startPosition="31" endLine="140" endPosition="15" />
@@ -171,32 +185,48 @@
       <varInfo nodeId="141205291420452746" varName="proInd" />
     </scopeInfo>
     <scopeInfo nodeId="141205291420035936" fileName="CollectTests_Action.java" startLine="177" startPosition="0" endLine="184" endPosition="0">
+      <varInfo nodeId="141205291420035936" varName="_params" />
       <varInfo nodeId="141205291420035959" varName="md" />
     </scopeInfo>
     <scopeInfo nodeId="141205291420042155" fileName="CollectTests_Action.java" startLine="197" startPosition="0" endLine="204" endPosition="0">
+      <varInfo nodeId="141205291420042155" varName="_params" />
       <varInfo nodeId="141205291420042185" varName="info" />
     </scopeInfo>
     <scopeInfo nodeId="1353856996306210058" fileName="CollectTests_Action.java" startLine="134" startPosition="63" endLine="142" endPosition="0" />
     <scopeInfo nodeId="8821035829284834628" fileName="CollectTests_Action.java" startLine="204" startPosition="0" endLine="212" endPosition="0">
+      <varInfo nodeId="8821035829284834628" varName="_params" />
       <varInfo nodeId="8821035829284834627" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="56" startPosition="89" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="141205291420035971" fileName="CollectTests_Action.java" startLine="188" startPosition="0" endLine="197" endPosition="0" />
+    <scopeInfo nodeId="141205291420035971" fileName="CollectTests_Action.java" startLine="188" startPosition="0" endLine="197" endPosition="0">
+      <varInfo nodeId="141205291420035971" varName="_params" />
+    </scopeInfo>
     <scopeInfo nodeId="141205291420452721" fileName="CollectTests_Action.java" startLine="87" startPosition="88" endLine="97" endPosition="0" />
     <scopeInfo nodeId="141205291420336123" fileName="CollectTests_Action.java" startLine="152" startPosition="39" endLine="162" endPosition="151" />
-    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="55" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="55" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="141205291419997364" varName="_params" />
+      <varInfo nodeId="141205291419997364" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="68" startPosition="95" endLine="80" endPosition="16" />
     <scopeInfo nodeId="141205291420336122" fileName="CollectTests_Action.java" startLine="151" startPosition="72" endLine="164" endPosition="0" />
     <scopeInfo nodeId="1353856996306085558" fileName="CollectTests_Action.java" startLine="150" startPosition="35" endLine="164" endPosition="109" />
-    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="67" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="67" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="141205291419997364" varName="_params" />
+      <varInfo nodeId="141205291419997364" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="84" startPosition="9" endLine="100" endPosition="7">
       <varInfo nodeId="141205291420042200" varName="done" />
     </scopeInfo>
     <scopeInfo nodeId="1353856996306085557" fileName="CollectTests_Action.java" startLine="149" startPosition="63" endLine="166" endPosition="0" />
     <scopeInfo nodeId="141205291420040175" fileName="CollectTests_Action.java" startLine="148" startPosition="90" endLine="166" endPosition="17" />
     <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="83" startPosition="96" endLine="103" endPosition="5" />
-    <scopeInfo nodeId="141205291420040172" fileName="CollectTests_Action.java" startLine="147" startPosition="142" endLine="168" endPosition="0" />
-    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="82" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="141205291420040172" fileName="CollectTests_Action.java" startLine="147" startPosition="142" endLine="168" endPosition="0">
+      <varInfo nodeId="141205291420040172" varName="tref" />
+    </scopeInfo>
+    <scopeInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="82" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="141205291419997364" varName="_params" />
+      <varInfo nodeId="141205291419997364" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="141205291420040150" fileName="CollectTests_Action.java" startLine="128" startPosition="76" endLine="170" endPosition="11">
       <varInfo nodeId="1353856996306210047" varName="smodel" />
     </scopeInfo>
@@ -220,6 +250,7 @@
       <varInfo nodeId="141205291420074279" varName="solutions" />
     </scopeInfo>
     <scopeInfo nodeId="141205291420040117" fileName="CollectTests_Action.java" startLine="105" startPosition="0" endLine="177" endPosition="0">
+      <varInfo nodeId="141205291420040117" varName="_params" />
       <varInfo nodeId="141205291420040265" varName="proInd" />
     </scopeInfo>
     <unitInfo nodeId="141205291419997364" fileName="CollectTests_Action.java" startLine="42" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.testbench.suite.plugin.CollectTests_Action" />
@@ -243,7 +274,9 @@
     <nodeInfo nodeId="141205291420043172" fileName="CollectTestsGroup_ActionGroup.java" startLine="15" startPosition="25" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="141205291420043172" fileName="CollectTestsGroup_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CollectTestsGroup_ActionGroup#()V" />
     <scopeInfo nodeId="141205291420043172" fileName="CollectTestsGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="111" />
-    <scopeInfo nodeId="141205291420043172" fileName="CollectTestsGroup_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39" />
+    <scopeInfo nodeId="141205291420043172" fileName="CollectTestsGroup_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39">
+      <varInfo nodeId="141205291420043172" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="141205291420043172" fileName="CollectTestsGroup_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" />
     <scopeInfo nodeId="141205291420043172" fileName="CollectTestsGroup_ActionGroup.java" startLine="12" startPosition="42" endLine="20" endPosition="5" />
     <scopeInfo nodeId="141205291420043172" fileName="CollectTestsGroup_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
@@ -420,16 +453,36 @@
     <scopeInfo nodeId="2453495861228712221" fileName="TestCollector.java" startLine="208" startPosition="35" endLine="211" endPosition="26">
       <varInfo nodeId="2453495861228712223" varName="tref" />
     </scopeInfo>
-    <scopeInfo nodeId="1178539434126771721" fileName="TestCollector.java" startLine="55" startPosition="334" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="2453495861228711976" fileName="TestCollector.java" startLine="87" startPosition="9" endLine="91" endPosition="33" />
-    <scopeInfo nodeId="1178539434126758185" fileName="TestCollector.java" startLine="113" startPosition="188" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="5681831016268982080" fileName="TestCollector.java" startLine="117" startPosition="136" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="5681831016268982089" fileName="TestCollector.java" startLine="121" startPosition="48" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="2453495861228712046" fileName="TestCollector.java" startLine="153" startPosition="9" endLine="157" endPosition="33" />
-    <scopeInfo nodeId="2453495861228712046" fileName="TestCollector.java" startLine="171" startPosition="9" endLine="175" endPosition="33" />
-    <scopeInfo nodeId="1178539434126766546" fileName="TestCollector.java" startLine="196" startPosition="287" endLine="200" endPosition="0" />
-    <scopeInfo nodeId="2453495861228712158" fileName="TestCollector.java" startLine="228" startPosition="9" endLine="232" endPosition="33" />
-    <scopeInfo nodeId="2453495861228712158" fileName="TestCollector.java" startLine="246" startPosition="9" endLine="250" endPosition="33" />
+    <scopeInfo nodeId="1178539434126771721" fileName="TestCollector.java" startLine="55" startPosition="334" endLine="59" endPosition="0">
+      <varInfo nodeId="1178539434126771721" varName="cann" />
+    </scopeInfo>
+    <scopeInfo nodeId="2453495861228711976" fileName="TestCollector.java" startLine="87" startPosition="9" endLine="91" endPosition="33">
+      <varInfo nodeId="2453495861228711976" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178539434126758185" fileName="TestCollector.java" startLine="113" startPosition="188" endLine="117" endPosition="0">
+      <varInfo nodeId="1178539434126758185" varName="cann" />
+    </scopeInfo>
+    <scopeInfo nodeId="5681831016268982080" fileName="TestCollector.java" startLine="117" startPosition="136" endLine="121" endPosition="0">
+      <varInfo nodeId="5681831016268982080" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="5681831016268982089" fileName="TestCollector.java" startLine="121" startPosition="48" endLine="125" endPosition="0">
+      <varInfo nodeId="5681831016268982089" varName="ani" />
+    </scopeInfo>
+    <scopeInfo nodeId="2453495861228712046" fileName="TestCollector.java" startLine="153" startPosition="9" endLine="157" endPosition="33">
+      <varInfo nodeId="2453495861228712046" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="2453495861228712046" fileName="TestCollector.java" startLine="171" startPosition="9" endLine="175" endPosition="33">
+      <varInfo nodeId="2453495861228712046" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178539434126766546" fileName="TestCollector.java" startLine="196" startPosition="287" endLine="200" endPosition="0">
+      <varInfo nodeId="1178539434126766546" varName="cann" />
+    </scopeInfo>
+    <scopeInfo nodeId="2453495861228712158" fileName="TestCollector.java" startLine="228" startPosition="9" endLine="232" endPosition="33">
+      <varInfo nodeId="2453495861228712158" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="2453495861228712158" fileName="TestCollector.java" startLine="246" startPosition="9" endLine="250" endPosition="33">
+      <varInfo nodeId="2453495861228712158" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="2453495861228712257" fileName="TestCollector.java" startLine="33" startPosition="133" endLine="38" endPosition="15">
       <varInfo nodeId="2453495861228712259" varName="any" />
     </scopeInfo>
@@ -447,25 +500,55 @@
       <varInfo nodeId="2453495861228712251" varName="into" />
       <varInfo nodeId="2453495861228712247" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="1178539434126771664" fileName="TestCollector.java" startLine="53" startPosition="179" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1178539434126771664" fileName="TestCollector.java" startLine="53" startPosition="179" endLine="61" endPosition="0">
+      <varInfo nodeId="1178539434126771664" varName="itc" />
+    </scopeInfo>
     <scopeInfo nodeId="2453495861228712016" fileName="TestCollector.java" startLine="65" startPosition="44" endLine="73" endPosition="27" />
     <scopeInfo nodeId="2453495861228712128" fileName="TestCollector.java" startLine="131" startPosition="43" endLine="139" endPosition="27" />
-    <scopeInfo nodeId="5681831016268982126" fileName="TestCollector.java" startLine="194" startPosition="173" endLine="202" endPosition="0" />
+    <scopeInfo nodeId="5681831016268982126" fileName="TestCollector.java" startLine="194" startPosition="173" endLine="202" endPosition="0">
+      <varInfo nodeId="5681831016268982126" varName="cls" />
+    </scopeInfo>
     <scopeInfo nodeId="2453495861228712216" fileName="TestCollector.java" startLine="206" startPosition="43" endLine="214" endPosition="27" />
-    <scopeInfo nodeId="2453495861228711976" fileName="TestCollector.java" startLine="83" startPosition="33" endLine="93" endPosition="22" />
-    <scopeInfo nodeId="2453495861228712046" fileName="TestCollector.java" startLine="149" startPosition="33" endLine="159" endPosition="22" />
-    <scopeInfo nodeId="2453495861228712046" fileName="TestCollector.java" startLine="167" startPosition="33" endLine="177" endPosition="22" />
-    <scopeInfo nodeId="2453495861228712158" fileName="TestCollector.java" startLine="224" startPosition="33" endLine="234" endPosition="22" />
-    <scopeInfo nodeId="2453495861228712158" fileName="TestCollector.java" startLine="242" startPosition="33" endLine="252" endPosition="22" />
+    <scopeInfo nodeId="2453495861228711976" fileName="TestCollector.java" startLine="83" startPosition="33" endLine="93" endPosition="22">
+      <varInfo nodeId="2453495861228711976" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2453495861228711976" varName="quotedNode_1" />
+      <varInfo nodeId="2453495861228711976" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2453495861228712046" fileName="TestCollector.java" startLine="149" startPosition="33" endLine="159" endPosition="22">
+      <varInfo nodeId="2453495861228712046" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2453495861228712046" varName="quotedNode_1" />
+      <varInfo nodeId="2453495861228712046" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2453495861228712046" fileName="TestCollector.java" startLine="167" startPosition="33" endLine="177" endPosition="22">
+      <varInfo nodeId="2453495861228712046" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2453495861228712046" varName="quotedNode_1" />
+      <varInfo nodeId="2453495861228712046" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2453495861228712158" fileName="TestCollector.java" startLine="224" startPosition="33" endLine="234" endPosition="22">
+      <varInfo nodeId="2453495861228712158" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2453495861228712158" varName="quotedNode_1" />
+      <varInfo nodeId="2453495861228712158" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2453495861228712158" fileName="TestCollector.java" startLine="242" startPosition="33" endLine="252" endPosition="22">
+      <varInfo nodeId="2453495861228712158" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2453495861228712158" varName="quotedNode_1" />
+      <varInfo nodeId="2453495861228712158" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="2453495861228712005" fileName="TestCollector.java" startLine="50" startPosition="37" endLine="61" endPosition="30">
       <varInfo nodeId="1178539434126771727" varName="ignoreAnn" />
     </scopeInfo>
-    <scopeInfo nodeId="2453495861228712015" fileName="TestCollector.java" startLine="64" startPosition="73" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="2453495861228712127" fileName="TestCollector.java" startLine="130" startPosition="73" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="2453495861228712015" fileName="TestCollector.java" startLine="64" startPosition="73" endLine="75" endPosition="0">
+      <varInfo nodeId="2453495861228712015" varName="itc" />
+    </scopeInfo>
+    <scopeInfo nodeId="2453495861228712127" fileName="TestCollector.java" startLine="130" startPosition="73" endLine="141" endPosition="0">
+      <varInfo nodeId="2453495861228712127" varName="tc" />
+    </scopeInfo>
     <scopeInfo nodeId="2453495861228712187" fileName="TestCollector.java" startLine="191" startPosition="37" endLine="202" endPosition="30">
       <varInfo nodeId="1178539434126766530" varName="ignoreAnn" />
     </scopeInfo>
-    <scopeInfo nodeId="2453495861228712215" fileName="TestCollector.java" startLine="205" startPosition="73" endLine="216" endPosition="0" />
+    <scopeInfo nodeId="2453495861228712215" fileName="TestCollector.java" startLine="205" startPosition="73" endLine="216" endPosition="0">
+      <varInfo nodeId="2453495861228712215" varName="tc" />
+    </scopeInfo>
     <scopeInfo nodeId="2453495861228711976" fileName="TestCollector.java" startLine="82" startPosition="0" endLine="95" endPosition="0" />
     <scopeInfo nodeId="5681831016268982060" fileName="TestCollector.java" startLine="112" startPosition="46" endLine="125" endPosition="17" />
     <scopeInfo nodeId="2453495861228712046" fileName="TestCollector.java" startLine="148" startPosition="0" endLine="161" endPosition="0" />
@@ -474,7 +557,9 @@
     <scopeInfo nodeId="2453495861228712158" fileName="TestCollector.java" startLine="241" startPosition="0" endLine="254" endPosition="0" />
     <scopeInfo nodeId="2453495861228712004" fileName="TestCollector.java" startLine="49" startPosition="140" endLine="63" endPosition="0" />
     <scopeInfo nodeId="2453495861228712186" fileName="TestCollector.java" startLine="190" startPosition="140" endLine="204" endPosition="0" />
-    <scopeInfo nodeId="5681831016268982059" fileName="TestCollector.java" startLine="111" startPosition="173" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="5681831016268982059" fileName="TestCollector.java" startLine="111" startPosition="173" endLine="127" endPosition="0">
+      <varInfo nodeId="5681831016268982059" varName="cls" />
+    </scopeInfo>
     <scopeInfo nodeId="2453495861228712075" fileName="TestCollector.java" startLine="107" startPosition="37" endLine="127" endPosition="30">
       <varInfo nodeId="1178539434126758163" varName="ignoreAnn" />
       <varInfo nodeId="2453495861228712077" varName="testAnn" />

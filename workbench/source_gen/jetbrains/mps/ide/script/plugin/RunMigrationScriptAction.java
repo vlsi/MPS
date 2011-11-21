@@ -12,8 +12,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.IScope;
 import java.util.ArrayList;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 public class RunMigrationScriptAction extends BaseAction {
   private SNode myScript;
@@ -42,7 +43,7 @@ public class RunMigrationScriptAction extends BaseAction {
     if (!(super.collectActionData(e, _params))) {
       return false;
     }
-    myContext = e.getData(MPSDataKeys.OPERATION_CONTEXT);
+    myContext = e.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
     if (myContext == null) {
       return false;
     }
@@ -50,7 +51,7 @@ public class RunMigrationScriptAction extends BaseAction {
     if (project == null) {
       return false;
     }
-    myModels = e.getData(MPSDataKeys.MODELS);
+    myModels = e.getData(MPSCommonDataKeys.MODELS);
     if (myModels == null) {
       myModels = new ArrayList<SModelDescriptor>();
     }

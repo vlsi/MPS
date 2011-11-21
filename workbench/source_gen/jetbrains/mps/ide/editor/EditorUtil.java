@@ -13,8 +13,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import java.util.Collections;
-import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
-import jetbrains.mps.workbench.highlighter.EditorsHelper;
+import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.nodeEditor.InspectorTool;
 
 public class EditorUtil {
@@ -95,7 +94,7 @@ public class EditorUtil {
     }
     List<MPSFileNodeEditor> allEditors = EditorsHelper.getAllEditors(manager);
     for (MPSFileNodeEditor editor : allEditors) {
-      EditorComponent currentEditorComponent = editor.getNodeEditor().getCurrentEditorComponent();
+      EditorComponent currentEditorComponent = (EditorComponent) editor.getNodeEditor().getCurrentEditorComponent();
       if (currentEditorComponent != null) {
         result.add(currentEditorComponent);
       }

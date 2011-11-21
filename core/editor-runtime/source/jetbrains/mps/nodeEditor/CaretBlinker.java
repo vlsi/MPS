@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.fileTypes.ex.FileTypeManagerEx;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.nodeEditor.CaretBlinker.MyState;
@@ -23,6 +25,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import org.jetbrains.annotations.NotNull;
 
 
 @State(
@@ -33,7 +36,7 @@ import com.intellij.openapi.components.Storage;
       file = "$APP_CONFIG$/mpsEditor.xml"
     )}
 )
-public class CaretBlinker implements PersistentStateComponent<MyState> {
+public class CaretBlinker implements PersistentStateComponent<MyState>, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(CaretBlinker.class);
 
   public static CaretBlinker getInstance() {
@@ -52,7 +55,7 @@ public class CaretBlinker implements PersistentStateComponent<MyState> {
   private WeakSet<EditorComponent> myEditors = new WeakSet<EditorComponent>();
 
 
-  public CaretBlinker() {
+  public CaretBlinker(FileTypeManagerEx fileTypeManager) {
   }
 
   public void launch() {
@@ -90,6 +93,21 @@ public class CaretBlinker implements PersistentStateComponent<MyState> {
 
   public void loadState(MyState state) {
     myState = state;
+  }
+
+  @Override
+  public void initComponent() {
+    launch();
+  }
+
+  @Override
+  public void disposeComponent() {
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "Caret blinker";
   }
 
   private class MyRunnable implements Runnable {

@@ -1,0 +1,57 @@
+<components>
+
+  <extensionPoints>
+    <extensionPoint qualifiedName="jetbrains.mps.editorOpenHandler"
+                    interface="jetbrains.mps.ide.editor.EditorOpenHandler"/>
+    <extensionPoint qualifiedName="jetbrains.mps.nodeStructureViewProvider"
+                    interface="jetbrains.mps.ide.editor.NodeStructureViewProvider"/>
+  </extensionPoints>
+
+  <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.CaretBlinker</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.EditorSettings</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.editor.MPSFileNodeEditorProvider</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.editor.runtime.impl.EditorsFinderManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.intentions.IntentionsManager</implementation-class>
+    </component>
+  </application-components>
+
+  <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.Highlighter</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.EditorManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.SearchHistoryComponent</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.InspectorTool</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.editor.MPSEditorOpener</implementation-class>
+    </component>
+  </project-components>
+</components>

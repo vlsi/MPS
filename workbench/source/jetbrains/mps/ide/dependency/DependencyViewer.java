@@ -28,12 +28,11 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.ide.tools.BaseProjectTool;
 import org.jetbrains.annotations.NonNls;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.LayoutManager;
 import java.util.List;
 import java.util.Set;

@@ -66,17 +66,40 @@
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="2068944020170372972" fileName="AddClassifierDocComment_Intention.java" startLine="41" startPosition="85" endLine="45" endPosition="6" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="48" startPosition="84" endLine="52" endPosition="16" />
-    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="2068944020170372970" varName="childNode" />
+      <varInfo nodeId="2068944020170372970" varName="editorContext" />
+      <varInfo nodeId="2068944020170372970" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="87" startPosition="7" endLine="91" endPosition="31" />
-    <scopeInfo nodeId="2068944020170434437" fileName="AddClassifierDocComment_Intention.java" startLine="67" startPosition="23" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="87" startPosition="7" endLine="91" endPosition="31">
+      <varInfo nodeId="2068944020170372970" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="2068944020170434437" fileName="AddClassifierDocComment_Intention.java" startLine="67" startPosition="23" endLine="72" endPosition="5">
+      <varInfo nodeId="2068944020170434437" varName="typeVariableDeclaration" />
+    </scopeInfo>
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="86" startPosition="32" endLine="92" endPosition="7" />
-    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="47" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="83" startPosition="49" endLine="93" endPosition="20" />
+    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="2068944020170372970" varName="editorContext" />
+      <varInfo nodeId="2068944020170372970" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="2068944020170372970" varName="editorContext" />
+      <varInfo nodeId="2068944020170372970" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="83" startPosition="49" endLine="93" endPosition="20">
+      <varInfo nodeId="2068944020170372970" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2068944020170372970" varName="quotedNode_1" />
+      <varInfo nodeId="2068944020170372970" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="2068944020170372974" fileName="AddClassifierDocComment_Intention.java" startLine="59" startPosition="76" endLine="72" endPosition="5" />
-    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="82" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="58" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="82" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="2068944020170372970" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="58" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="2068944020170372970" varName="editorContext" />
+      <varInfo nodeId="2068944020170372970" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention" />
     <unitInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="79" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention$QuotationClass_nmk0m3_a2a1a5a7" />
   </root>
@@ -117,12 +140,24 @@
     <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="2217234381367409810" varName="editorContext" />
+      <varInfo nodeId="2217234381367409810" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="37" startPosition="84" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="2217234381367409810" varName="editorContext" />
+      <varInfo nodeId="2217234381367409810" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="2217234381367409810" varName="editorContext" />
+      <varInfo nodeId="2217234381367409810" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="2217234381367409810" varName="editorContext" />
+      <varInfo nodeId="2217234381367409810" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddSeeBlockTag_Intention" />
   </root>
   <root nodeId="3196018662491292781">
@@ -218,20 +253,48 @@
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="3196018662491292783" fileName="AddMethodDocComment_Intention.java" startLine="41" startPosition="85" endLine="45" endPosition="6" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="94" startPosition="7" endLine="98" endPosition="31" />
-    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="112" startPosition="7" endLine="116" endPosition="31" />
-    <scopeInfo nodeId="8465538089690919857" fileName="AddMethodDocComment_Intention.java" startLine="55" startPosition="26" endLine="60" endPosition="5" />
-    <scopeInfo nodeId="2068944020170311118" fileName="AddMethodDocComment_Intention.java" startLine="62" startPosition="23" endLine="67" endPosition="5" />
-    <scopeInfo nodeId="5858074156537576506" fileName="AddMethodDocComment_Intention.java" startLine="69" startPosition="26" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="94" startPosition="7" endLine="98" endPosition="31">
+      <varInfo nodeId="3196018662491292781" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="112" startPosition="7" endLine="116" endPosition="31">
+      <varInfo nodeId="3196018662491292781" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="8465538089690919857" fileName="AddMethodDocComment_Intention.java" startLine="55" startPosition="26" endLine="60" endPosition="5">
+      <varInfo nodeId="8465538089690919857" varName="parameterDeclaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="2068944020170311118" fileName="AddMethodDocComment_Intention.java" startLine="62" startPosition="23" endLine="67" endPosition="5">
+      <varInfo nodeId="2068944020170311118" varName="typeVariableDeclaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="5858074156537576506" fileName="AddMethodDocComment_Intention.java" startLine="69" startPosition="26" endLine="74" endPosition="5">
+      <varInfo nodeId="5858074156537576506" varName="throwsItem" />
+    </scopeInfo>
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="93" startPosition="32" endLine="99" endPosition="7" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="111" startPosition="32" endLine="117" endPosition="7" />
-    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="90" startPosition="49" endLine="100" endPosition="20" />
-    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="108" startPosition="49" endLine="118" endPosition="20" />
-    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="89" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="107" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="3196018662491292781" varName="editorContext" />
+      <varInfo nodeId="3196018662491292781" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="90" startPosition="49" endLine="100" endPosition="20">
+      <varInfo nodeId="3196018662491292781" varName="_parameterValues_129834374" />
+      <varInfo nodeId="3196018662491292781" varName="quotedNode_1" />
+      <varInfo nodeId="3196018662491292781" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="108" startPosition="49" endLine="118" endPosition="20">
+      <varInfo nodeId="3196018662491292781" varName="_parameterValues_129834374" />
+      <varInfo nodeId="3196018662491292781" varName="quotedNode_1" />
+      <varInfo nodeId="3196018662491292781" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="89" startPosition="0" endLine="102" endPosition="0">
+      <varInfo nodeId="3196018662491292781" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="107" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="3196018662491292781" varName="parameter_3" />
+    </scopeInfo>
     <scopeInfo nodeId="3196018662491292785" fileName="AddMethodDocComment_Intention.java" startLine="48" startPosition="76" endLine="79" endPosition="5" />
-    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="47" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="47" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="3196018662491292781" varName="editorContext" />
+      <varInfo nodeId="3196018662491292781" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="21" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention" />
     <unitInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="86" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention$QuotationClass_en9z97_a2a1a4a5" />
     <unitInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="104" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention$QuotationClass_en9z97_a2a1a7a5" />
@@ -271,8 +334,14 @@
     <scopeInfo nodeId="4021391592916341755" fileName="AddStaticFieldDocComment_Intention.java" startLine="34" startPosition="85" endLine="38" endPosition="6" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="4021391592916341757" fileName="AddStaticFieldDocComment_Intention.java" startLine="41" startPosition="76" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="33" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="40" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="33" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4021391592916341753" varName="editorContext" />
+      <varInfo nodeId="4021391592916341753" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="4021391592916341753" varName="editorContext" />
+      <varInfo nodeId="4021391592916341753" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention" />
   </root>
   <root nodeId="5858074156537083239">
@@ -312,12 +381,24 @@
     <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="5858074156537083239" varName="editorContext" />
+      <varInfo nodeId="5858074156537083239" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="37" startPosition="84" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="5858074156537083239" varName="editorContext" />
+      <varInfo nodeId="5858074156537083239" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="5858074156537083239" varName="editorContext" />
+      <varInfo nodeId="5858074156537083239" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="5858074156537083239" varName="editorContext" />
+      <varInfo nodeId="5858074156537083239" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddParameterBlockDocTag_Intention" />
   </root>
   <root nodeId="6612597108004799966">
@@ -358,8 +439,14 @@
     <scopeInfo nodeId="6612597108004799968" fileName="FoldHTMLElement_Intention.java" startLine="36" startPosition="85" endLine="44" endPosition="6">
       <varInfo nodeId="6612597108004888989" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="6612597108004799966" fileName="FoldHTMLElement_Intention.java" startLine="46" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="6612597108004799966" fileName="FoldHTMLElement_Intention.java" startLine="35" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="6612597108004799966" fileName="FoldHTMLElement_Intention.java" startLine="46" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="6612597108004799966" varName="editorContext" />
+      <varInfo nodeId="6612597108004799966" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6612597108004799966" fileName="FoldHTMLElement_Intention.java" startLine="35" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="6612597108004799966" varName="editorContext" />
+      <varInfo nodeId="6612597108004799966" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="6612597108004799966" fileName="FoldHTMLElement_Intention.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.FoldHTMLElement_Intention" />
   </root>
   <root nodeId="6612597108006318457">
@@ -399,12 +486,24 @@
     <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="6612597108006318457" varName="editorContext" />
+      <varInfo nodeId="6612597108006318457" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="37" startPosition="84" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="6612597108006318457" varName="editorContext" />
+      <varInfo nodeId="6612597108006318457" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="6612597108006318457" varName="editorContext" />
+      <varInfo nodeId="6612597108006318457" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="6612597108006318457" varName="editorContext" />
+      <varInfo nodeId="6612597108006318457" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddThrowBlockDocTag_Intention" />
   </root>
   <root nodeId="6832197706140861451">
@@ -447,12 +546,24 @@
     <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="6832197706140861451" varName="editorContext" />
+      <varInfo nodeId="6832197706140861451" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="37" startPosition="84" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="6832197706140861451" varName="editorContext" />
+      <varInfo nodeId="6832197706140861451" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="43" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="43" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="6832197706140861451" varName="editorContext" />
+      <varInfo nodeId="6832197706140861451" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="6832197706140861451" varName="editorContext" />
+      <varInfo nodeId="6832197706140861451" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddReturnBlockTag_Intention" />
   </root>
   <root nodeId="6832197706140958200">
@@ -490,8 +601,14 @@
     <scopeInfo nodeId="6832197706140958202" fileName="AddFieldDocComment_Intention.java" startLine="34" startPosition="85" endLine="38" endPosition="6" />
     <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="6832197706140958204" fileName="AddFieldDocComment_Intention.java" startLine="41" startPosition="76" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="33" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="40" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="33" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="6832197706140958200" varName="editorContext" />
+      <varInfo nodeId="6832197706140958200" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="6832197706140958200" varName="editorContext" />
+      <varInfo nodeId="6832197706140958200" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention" />
   </root>
   <root nodeId="8465538089690783660">
@@ -542,22 +659,36 @@
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="8465538089690783660" varName="editorContext" />
+      <varInfo nodeId="8465538089690783660" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="40" startPosition="84" endLine="44" endPosition="16" />
-    <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="8465538089690783660" varName="editorContext" />
+      <varInfo nodeId="8465538089690783660" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="4298862722976216190" fileName="AddAuthorBlockDocTag_Intention.java" startLine="58" startPosition="100" endLine="63" endPosition="9">
       <varInfo nodeId="4298862722976218905" varName="cellId" />
     </scopeInfo>
-    <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="39" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="8465538089690783660" varName="editorContext" />
+      <varInfo nodeId="8465538089690783660" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4298862722976216179" fileName="AddAuthorBlockDocTag_Intention.java" startLine="57" startPosition="60" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="4298862722976216187" fileName="AddAuthorBlockDocTag_Intention.java" startLine="57" startPosition="60" endLine="64" endPosition="7" />
+    <scopeInfo nodeId="4298862722976216187" fileName="AddAuthorBlockDocTag_Intention.java" startLine="57" startPosition="60" endLine="64" endPosition="7">
+      <varInfo nodeId="4298862722976216187" varName="childCell" />
+    </scopeInfo>
     <scopeInfo nodeId="8465538089690783664" fileName="AddAuthorBlockDocTag_Intention.java" startLine="51" startPosition="76" endLine="69" endPosition="7">
       <varInfo nodeId="4298862722976216169" varName="authorEditorCell" />
       <varInfo nodeId="8970989240998824264" varName="authorTag" />
       <varInfo nodeId="4298862722976219605" varName="cellToSelect" />
     </scopeInfo>
-    <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="50" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="50" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="8465538089690783660" varName="editorContext" />
+      <varInfo nodeId="8465538089690783660" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddAuthorBlockDocTag_Intention" />
   </root>
   <root nodeId="8465538089690815842">
@@ -597,12 +728,24 @@
     <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="8465538089690815842" varName="editorContext" />
+      <varInfo nodeId="8465538089690815842" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="37" startPosition="84" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="8465538089690815842" varName="editorContext" />
+      <varInfo nodeId="8465538089690815842" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="8465538089690815842" varName="editorContext" />
+      <varInfo nodeId="8465538089690815842" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="8465538089690815842" varName="editorContext" />
+      <varInfo nodeId="8465538089690815842" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddSinceBlockDocTag_Intention" />
   </root>
   <root nodeId="8465538089690851630">
@@ -642,12 +785,24 @@
     <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="8465538089690851630" varName="editorContext" />
+      <varInfo nodeId="8465538089690851630" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="37" startPosition="84" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="8465538089690851630" varName="editorContext" />
+      <varInfo nodeId="8465538089690851630" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="8465538089690851630" varName="editorContext" />
+      <varInfo nodeId="8465538089690851630" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="8465538089690851630" varName="editorContext" />
+      <varInfo nodeId="8465538089690851630" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddVersionBlockTagDoc_Intention" />
   </root>
 </debugInfo>

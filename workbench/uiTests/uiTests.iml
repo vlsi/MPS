@@ -14,6 +14,7 @@
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="mps-platform" />
+    <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module-library" exported="">
       <library name="jfcunit">
         <CLASSES>

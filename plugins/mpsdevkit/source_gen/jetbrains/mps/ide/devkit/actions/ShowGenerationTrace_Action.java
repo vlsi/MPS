@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
@@ -65,7 +66,7 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
       return false;
     }
     {
-      List<SNode> nodes = event.getData(MPSDataKeys.NODES);
+      List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
       boolean error = false;
       if (nodes != null) {
       }
