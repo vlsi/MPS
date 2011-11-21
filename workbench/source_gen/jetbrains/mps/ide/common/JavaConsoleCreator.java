@@ -5,8 +5,11 @@ package jetbrains.mps.ide.common;
 import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.execution.api.configurations.ConsoleCreator;
-import jetbrains.mps.execution.lib.JavaStackTraceFilter;
+import com.intellij.execution.filters.TextConsoleBuilder;
+import com.intellij.execution.filters.TextConsoleBuilderFactory;
+import com.intellij.execution.filters.Filter;
+import com.intellij.openapi.extensions.Extensions;
+import com.intellij.unscramble.AnalyzeStacktraceUtil;
 
 
 /**
@@ -20,8 +23,10 @@ public class JavaConsoleCreator {
   }
 
   public static ConsoleViewImpl createConsoleView(Project project) {
-    ConsoleViewImpl result = ConsoleCreator.createConsoleView(project, false);
-    result.addMessageFilter(new JavaStackTraceFilter());
-    return result;
+    final TextConsoleBuilder builder = TextConsoleBuilderFactory.getInstance().createBuilder(project);
+    for (Filter filter : Extensions.getExtensions(AnalyzeStacktraceUtil.EP_NAME, project)) {
+      builder.addFilter(filter);
+    }
+    return (ConsoleViewImpl) builder.getConsole();
   }
 }

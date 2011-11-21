@@ -594,7 +594,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -653,11 +652,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -692,8 +688,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -779,7 +773,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -838,11 +831,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -877,8 +867,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -925,7 +913,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -985,11 +972,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -1024,8 +1008,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1073,7 +1055,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -1132,11 +1113,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -1172,8 +1150,6 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/plugin/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1221,7 +1197,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -1280,11 +1255,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -1319,8 +1291,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1367,7 +1337,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -1427,11 +1396,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -1466,8 +1432,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1514,7 +1478,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -1575,11 +1538,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -1614,8 +1574,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1674,7 +1632,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -1734,11 +1691,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -1773,8 +1727,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1921,6 +1873,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
@@ -1969,7 +1923,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -2029,11 +1982,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -2068,8 +2018,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2117,7 +2065,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -2176,11 +2123,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -2215,8 +2159,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2263,7 +2205,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -2322,11 +2263,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -2361,8 +2299,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2409,7 +2345,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -2469,11 +2404,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -2508,8 +2440,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2578,7 +2508,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -2638,11 +2567,8 @@
     <path path="${base_dir}/languages/util/money/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -2677,8 +2603,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2733,7 +2657,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -2792,11 +2715,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -2831,8 +2751,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2879,7 +2797,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -2941,8 +2858,6 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -2977,8 +2892,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3056,7 +2969,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -3115,11 +3027,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -3155,8 +3064,6 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/plugin/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3302,6 +3209,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
@@ -3350,7 +3259,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -3410,11 +3318,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -3449,8 +3354,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3498,7 +3401,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -3561,11 +3463,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -3600,8 +3499,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3648,7 +3545,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -3708,11 +3604,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -3747,8 +3640,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3898,6 +3789,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
@@ -3948,7 +3841,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -4007,11 +3899,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -4046,8 +3935,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4094,7 +3981,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -4153,11 +4039,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -4192,8 +4075,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4240,7 +4121,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -4301,11 +4181,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -4340,8 +4217,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4447,11 +4322,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -4486,8 +4358,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4534,7 +4406,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -4593,11 +4464,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -4635,8 +4503,6 @@
     <path path="${base_dir}/plugins/debugger-java-languages/customViewers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4683,7 +4549,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -4742,11 +4607,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -4783,8 +4645,6 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4831,7 +4691,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -4890,11 +4749,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -4930,8 +4786,6 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/plugin/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4978,7 +4832,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -5037,11 +4890,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -5077,8 +4927,6 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5223,6 +5071,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
@@ -5271,7 +5121,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -5334,7 +5183,6 @@
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -5369,8 +5217,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5515,6 +5361,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
@@ -5564,7 +5412,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -5623,11 +5470,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -5662,8 +5506,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5763,7 +5605,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -5861,8 +5702,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5909,7 +5748,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -5968,11 +5806,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
@@ -6008,8 +5843,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6056,7 +5889,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -6115,11 +5947,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -6154,8 +5983,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6211,7 +6038,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -6270,11 +6096,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -6309,8 +6132,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6357,7 +6178,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -6416,11 +6236,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -6455,8 +6272,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6504,7 +6319,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -6564,11 +6378,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -6603,8 +6414,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6651,7 +6460,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -6711,11 +6519,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -6750,8 +6555,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6798,7 +6601,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -6858,11 +6660,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -6897,8 +6696,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6945,7 +6742,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -7004,11 +6800,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -7043,8 +6836,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7091,7 +6882,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -7151,11 +6941,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -7190,8 +6977,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7238,7 +7023,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -7297,11 +7081,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -7336,8 +7117,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7384,7 +7163,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -7444,11 +7222,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -7484,8 +7259,6 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/plugin/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7532,7 +7305,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -7592,11 +7364,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -7631,8 +7400,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7679,7 +7446,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -7738,11 +7504,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -7777,8 +7540,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7825,7 +7586,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -7885,11 +7645,8 @@
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/mps-lite/languages/nanoj/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -7924,8 +7681,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7972,7 +7727,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -8031,11 +7785,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -8070,8 +7821,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8170,7 +7919,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -8230,11 +7978,8 @@
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -8269,8 +8014,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8318,7 +8061,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -8377,11 +8119,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/internal/classes_gen" />
@@ -8419,8 +8158,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8467,7 +8204,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -8526,11 +8262,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
@@ -8569,8 +8302,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8617,7 +8348,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -8676,11 +8406,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/meta/classes_gen" />
@@ -8716,8 +8443,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8764,7 +8489,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -8823,11 +8547,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
@@ -8867,8 +8588,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8924,7 +8643,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -8983,11 +8701,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
@@ -9030,8 +8745,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9087,7 +8800,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -9146,11 +8858,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -9185,8 +8894,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9234,7 +8941,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -9293,11 +8999,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -9332,8 +9035,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9380,7 +9081,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -9439,11 +9139,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -9478,8 +9175,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9526,7 +9221,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -9586,11 +9280,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -9626,8 +9317,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9674,7 +9363,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -9733,11 +9421,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -9772,8 +9457,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9820,7 +9503,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -9879,11 +9561,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -9919,8 +9598,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9989,7 +9666,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -10052,8 +9728,6 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -10088,8 +9762,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -10136,7 +9808,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -10195,11 +9866,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -10235,8 +9903,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -10283,7 +9949,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -10342,11 +10007,8 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
@@ -10383,8 +10045,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
-    <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />

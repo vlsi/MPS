@@ -6,6 +6,9 @@ import com.intellij.openapi.components.ApplicationComponent;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.library.contributor.LibraryContributor;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
@@ -14,19 +17,26 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.annotations.Nullable;
-import java.io.File;
+import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.ide.plugins.PluginManager;
-import com.intellij.ide.plugins.IdeaPluginDescriptor;
+import org.jetbrains.annotations.Nullable;
+import java.io.File;
+import java.io.InputStream;
+import java.io.LineNumberReader;
+import java.io.InputStreamReader;
+import org.apache.commons.lang.StringUtils;
+import java.io.IOException;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class Languages_PluginInitializer implements ApplicationComponent {
   protected static Log log = LogFactory.getLog(Languages_PluginInitializer.class);
 
   private final LibraryContributor myContributor = new Languages_PluginInitializer.MyLibraryContributor();
+  private List<String> myLibraries = ListSequence.fromList(new ArrayList<String>());
 
   public Languages_PluginInitializer() {
     PluginUtil.addPluginContributor(new PluginContributor() {
@@ -48,6 +58,7 @@ public class Languages_PluginInitializer implements ApplicationComponent {
   }
 
   public void initComponent() {
+    ListSequence.fromList(myLibraries).addSequence(ListSequence.fromList(getLibrariesToLoad()));
     LibraryInitializer.getInstance().addContributor(myContributor);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -65,19 +76,51 @@ public class Languages_PluginInitializer implements ApplicationComponent {
     });
   }
 
-  @Nullable
-  private File getPluginPath() {
+  private IdeaPluginDescriptor getIdeaPlugin() {
     String className = this.getClass().getName();
     PluginId pluginId = PluginManager.getPluginByClassName(className);
     if (pluginId == null) {
       // <node> 
       return null;
     }
-    IdeaPluginDescriptor descriptor = PluginManager.getPlugin(pluginId);
+    return PluginManager.getPlugin(pluginId);
+  }
+
+  @Nullable
+  private File getPluginPath() {
+    IdeaPluginDescriptor descriptor = getIdeaPlugin();
     if (descriptor == null) {
       return null;
     }
     return descriptor.getPath();
+  }
+
+  private List<String> getLibrariesToLoad() {
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
+
+    IdeaPluginDescriptor plugin = getIdeaPlugin();
+    if (plugin == null) {
+      return result;
+    }
+
+    InputStream stream = plugin.getPluginClassLoader().getResourceAsStream("libraries");
+    LineNumberReader reader = new LineNumberReader(new InputStreamReader(stream));
+    try {
+      while (true) {
+        String line = reader.readLine();
+        if (line == null) {
+          break;
+        }
+        if (StringUtils.isNotEmpty(line)) {
+          ListSequence.fromList(result).addElement(line);
+        }
+      }
+    } catch (IOException e) {
+      if (log.isErrorEnabled()) {
+        log.error("", e);
+      }
+    }
+    return result;
   }
 
   public class MyLibraryContributor implements LibraryContributor {
@@ -85,12 +128,17 @@ public class Languages_PluginInitializer implements ApplicationComponent {
     }
 
     public Set<String> getLibraries() {
-      File pluginPath = getPluginPath();
+      final File pluginPath = getPluginPath();
       if (pluginPath == null) {
         return SetSequence.fromSet(new HashSet<String>());
       }
-      Set<String> libraries = SetSequence.fromSetAndArray(new HashSet<String>(), pluginPath.getAbsolutePath() + File.separator + "languages");
-      return libraries;
+      Set<String> result = SetSequence.fromSet(new HashSet<String>());
+      SetSequence.fromSet(result).addSequence(ListSequence.fromList(myLibraries).select(new ISelector<String, String>() {
+        public String select(String it) {
+          return pluginPath.getAbsolutePath() + File.separator + it;
+        }
+      }));
+      return result;
     }
   }
 }
