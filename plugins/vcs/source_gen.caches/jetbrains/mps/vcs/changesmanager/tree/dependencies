@@ -64,9 +64,38 @@
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter" file="TreeHighlighter.java">
+    <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
+    <classNode dependClassName="com.intellij.util.containers.MultiMap" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTree" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.treeMessages.TreeMessage" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNodeListener" />
+    <classNode extendsClassName="jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapListener" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" file="TreeNodeFeatureExtractor.java">
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
 </dependenciesRoot>
 

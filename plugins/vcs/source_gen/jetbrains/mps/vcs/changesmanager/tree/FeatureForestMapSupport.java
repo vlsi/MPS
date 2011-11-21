@@ -52,6 +52,7 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
     myCurrentDifferenceRegistry.removeGlobalDifferenceListener(myListener);
   }
 
+  @NotNull
   public FeatureForestMap<ModelChange> getMap() {
     return myMap;
   }
@@ -87,7 +88,7 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
     return ListSequence.fromList(result).toGenericArray(Feature.class);
   }
 
-  public class MyListener extends CurrentDifferenceAdapter {
+  private class MyListener extends CurrentDifferenceAdapter {
     public MyListener() {
     }
 

@@ -44,8 +44,8 @@ public class FeatureForestMap<V> {
       throw new IllegalArgumentException("Trying to put already present feature");
     }
     Feature[] ancestors = feature.getAncestors();
-    if (Sequence.fromIterable(Sequence.fromArray(ancestors)).any(new IWhereFilter<Object>() {
-      public boolean accept(Object a) {
+    if (Sequence.fromIterable(Sequence.fromArray(ancestors)).any(new IWhereFilter<Feature>() {
+      public boolean accept(Feature a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);
       }
     })) {
@@ -96,22 +96,28 @@ public class FeatureForestMap<V> {
     return !(myFeaturesIsAncestorCounterMap.isZero(feature));
   }
 
-  public boolean isDescendantOfAddedFeature(@NotNull Feature feature) {
+  @Nullable
+  public Feature getAddedAncestor(@NotNull Feature feature) {
     ModelAccess.assertLegalRead();
-    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).any(new IWhereFilter<Feature>() {
-      public boolean accept(Feature a) {
+    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).findFirst(new IWhereFilter<Object>() {
+      public boolean accept(Object a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);
       }
     });
   }
 
-  public void addDifferenceListener(@NotNull FeatureForestMapListener listener) {
+  @Nullable
+  public V getAddedAncestorValue(@NotNull Feature feature) {
+    return MapSequence.fromMap(myFeatureToValue).get(getAddedAncestor(feature));
+  }
+
+  public void addListener(@NotNull FeatureForestMapListener listener) {
     synchronized (myListeners) {
       ListSequence.fromList(myListeners).addElement(listener);
     }
   }
 
-  public void removeDifferenceListener(@NotNull FeatureForestMapListener listener) {
+  public void removeListener(@NotNull FeatureForestMapListener listener) {
     synchronized (myListeners) {
       ListSequence.fromList(myListeners).removeElement(listener);
     }
