@@ -85,10 +85,7 @@ public class PasteNode_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData(_params);
-      boolean successfull = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-      if (!(successfull)) {
-        return;
-      }
+      final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       final List<SNode> pasteNodes = pasteNodeData.getNodes();
       final Set<SReference> refsToResolve = pasteNodeData.getRequireResolveReferences();
       if (pasteNodes == null || pasteNodes.size() == 0) {
@@ -96,6 +93,9 @@ public class PasteNode_Action extends GeneratedAction {
       }
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
+          if (addImportsRunnable != null) {
+            addImportsRunnable.run();
+          }
           if (((SNode) MapSequence.fromMap(_params).get("node")) == null) {
             NodePaster paster = new NodePaster(pasteNodes);
             if (!(paster.canPasteAsRoots())) {

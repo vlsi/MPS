@@ -325,9 +325,9 @@ public class CopyPasteUtil {
     return CopyPasteUtil.getNodesFromClipboard(model).get(0);
   }
 
-  public static boolean addImportsWithDialog(final IModule sourceModule, final SModel targetModel, final Set<ModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
+  public static Runnable addImportsWithDialog(final IModule sourceModule, final SModel targetModel, final Set<ModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
     if (targetModel.getModelDescriptor().getModule() == null) {
-      return true;
+      return null;
     }
     final List<ModuleReference> additionalLanguages = new ArrayList<ModuleReference>();
     final List<SModelReference> additionalModels = new ArrayList<SModelReference>();
@@ -355,20 +355,18 @@ public class CopyPasteUtil {
       AddRequiredImportsDialog dialog = new AddRequiredImportsDialog(ProjectHelper.toIdeaProject(context.getProject()), necessaryImports.toArray(new SModelReference[necessaryImports.size()]), necessaryLanguages.toArray(new ModuleReference[necessaryLanguages.size()]));
       dialog.show();
       if (dialog.isOK()) {
-        addImports(context.getProject(), targetModel, dialog.getSelectedLanguages(), dialog.getSelectedImports());
-        return true;
+        return addImports(context.getProject(), targetModel, dialog.getSelectedLanguages(), dialog.getSelectedImports());
       }
-      return false;
     }
-    return true;
+    return null;
   }
 
-  private static void addImports(Project p, final SModel targetModel, @NotNull final ModuleReference[] requiredLanguages, @NotNull final SModelReference[] requiredImports) {
+  private static Runnable addImports(Project p, final SModel targetModel, @NotNull final ModuleReference[] requiredLanguages, @NotNull final SModelReference[] requiredImports) {
     if (requiredLanguages.length == 0 && requiredImports.length == 0) {
-      return;
+      return null;
     }
 
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    return new Runnable() {
       @Override
       public void run() {
         //  model properties 
@@ -416,7 +414,7 @@ public class CopyPasteUtil {
         }
         targetModule.save();
       }
-    }, p);
+    };
   }
 
   public static boolean doesClipboardContainNode() {
