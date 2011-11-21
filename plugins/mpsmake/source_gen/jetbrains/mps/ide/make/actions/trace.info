@@ -942,144 +942,43 @@
     <nodeInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="11" startPosition="48" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="14" startPosition="69" endLine="15" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContributor" />
     <nodeInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="14" startPosition="133" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="15" startPosition="12" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="16" startPosition="25" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="17" startPosition="14" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="35" startPosition="69" endLine="36" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="37" startPosition="0" endLine="38" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContributor" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="38" startPosition="101" endLine="39" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLibraries" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="43" startPosition="62" endLine="44" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="47" startPosition="54" endLine="48" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="55" startPosition="36" endLine="56" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="56" startPosition="83" endLine="57" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="60" startPosition="31" endLine="61" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="61" startPosition="96" endLine="62" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="64" startPosition="25" endLine="65" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="70" startPosition="34" endLine="71" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="73" startPosition="25" endLine="74" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="79" startPosition="48" endLine="80" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="80" startPosition="49" endLine="81" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="82" startPosition="27" endLine="83" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="83" startPosition="16" endLine="84" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="85" startPosition="5" endLine="86" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="90" startPosition="32" endLine="91" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="92" startPosition="29" endLine="93" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="94" startPosition="5" endLine="95" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="98" startPosition="45" endLine="99" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="99" startPosition="73" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="100" startPosition="0" endLine="101" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="102" startPosition="25" endLine="103" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="104" startPosition="5" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="105" startPosition="0" endLine="106" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="106" startPosition="88" endLine="107" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="109" startPosition="20" endLine="110" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="111" startPosition="27" endLine="112" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="114" startPosition="43" endLine="115" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="119" startPosition="33" endLine="120" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="122" startPosition="5" endLine="123" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="130" startPosition="39" endLine="131" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="132" startPosition="31" endLine="133" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="134" startPosition="7" endLine="135" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="137" startPosition="41" endLine="138" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="140" startPosition="10" endLine="141" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="19" startPosition="62" endLine="20" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="23" startPosition="54" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="31" startPosition="36" endLine="32" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="32" startPosition="83" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="36" startPosition="31" endLine="37" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="40" startPosition="34" endLine="41" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="126" startPosition="67" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyLibraryContributor#()V" />
     <nodeInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="91" startPosition="54" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="101" startPosition="50" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="110" startPosition="40" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="113" startPosition="9" endLine="116" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="118" startPosition="29" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="118" startPosition="29" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="131" startPosition="46" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="42" startPosition="61" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createApplicationPlugin#()Ljetbrains/mps/plugins/applicationplugins/BaseApplicationPlugin;" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProjectPlugin#()Ljetbrains/mps/plugins/projectplugins/BaseProjectPlugin;" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="63" startPosition="58" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="72" startPosition="58" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="81" startPosition="70" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="136" startPosition="121" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="62" startPosition="67" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="71" startPosition="70" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="135" startPosition="70" endLine="140" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="52" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="41" startPosition="35" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="69" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="88" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPluginPath#()Ljava/io/File;" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="108" startPosition="9" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="59" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="78" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIdeaPlugin#()Lcom/intellij/ide/plugins/IdeaPluginDescriptor;" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="40" startPosition="0" endLine="51" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Make_PluginInitializer#()V" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="129" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLibraries#()Ljava/util/Set;" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="107" startPosition="82" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="18" startPosition="61" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createApplicationPlugin#()Ljetbrains/mps/plugins/applicationplugins/BaseApplicationPlugin;" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProjectPlugin#()Ljetbrains/mps/plugins/projectplugins/BaseProjectPlugin;" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="17" startPosition="35" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="16" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Make_PluginInitializer#()V" />
     <nodeInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="1" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="97" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLibrariesToLoad#()Ljava/util/List;" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="127" startPosition="35" endLine="127" endPosition="35" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="43" startPosition="62" endLine="44" endPosition="44" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="47" startPosition="54" endLine="48" endPosition="40" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="64" startPosition="25" endLine="65" endPosition="50" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="73" startPosition="25" endLine="74" endPosition="50" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="92" startPosition="29" endLine="93" endPosition="18" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="102" startPosition="25" endLine="103" endPosition="20" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="111" startPosition="27" endLine="112" endPosition="16" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="114" startPosition="43" endLine="115" endPosition="57" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="119" startPosition="33" endLine="120" endPosition="25" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="132" startPosition="31" endLine="133" endPosition="58" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="137" startPosition="41" endLine="138" endPosition="68" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="55" startPosition="36" endLine="57" endPosition="37" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="82" startPosition="27" endLine="84" endPosition="18" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="126" startPosition="67" endLine="128" endPosition="5" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="118" startPosition="0" endLine="121" endPosition="7">
-      <varInfo nodeId="5882989260841555164" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="118" startPosition="29" endLine="121" endPosition="7" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="42" startPosition="61" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="63" startPosition="58" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="72" startPosition="58" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="136" startPosition="121" endLine="140" endPosition="0">
-      <varInfo nodeId="5882989260841555164" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="90" startPosition="32" endLine="95" endPosition="32">
-      <varInfo nodeId="5882989260841555164" varName="descriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="70" startPosition="34" endLine="76" endPosition="7" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="52" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="60" startPosition="31" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="79" startPosition="48" endLine="86" endPosition="45">
-      <varInfo nodeId="5882989260841555164" varName="className" />
-      <varInfo nodeId="5882989260841555164" varName="pluginId" />
-    </scopeInfo>
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="109" startPosition="20" endLine="116" endPosition="9">
-      <varInfo nodeId="5882989260841555164" varName="line" />
-    </scopeInfo>
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="41" startPosition="35" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="69" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="88" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="108" startPosition="9" endLine="117" endPosition="7" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="59" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="78" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="40" startPosition="0" endLine="51" endPosition="3" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="130" startPosition="39" endLine="141" endPosition="20">
-      <varInfo nodeId="5882989260841555164" varName="pluginPath" />
-      <varInfo nodeId="5882989260841555164" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="129" startPosition="0" endLine="143" endPosition="0" />
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="98" startPosition="45" endLine="123" endPosition="18">
-      <varInfo nodeId="5882989260841555164" varName="plugin" />
-      <varInfo nodeId="5882989260841555164" varName="reader" />
-      <varInfo nodeId="5882989260841555164" varName="result" />
-      <varInfo nodeId="5882989260841555164" varName="stream" />
-    </scopeInfo>
-    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="97" startPosition="0" endLine="125" endPosition="0" />
-    <unitInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="35" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer" />
-    <unitInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="63" startPosition="46" endLine="67" endPosition="5" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer$1" />
-    <unitInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="136" startPosition="92" endLine="140" endPosition="7" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer$1" />
-    <unitInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="72" startPosition="46" endLine="76" endPosition="5" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer$2" />
-    <unitInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="42" startPosition="40" endLine="50" endPosition="5" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer$3" />
-    <unitInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="126" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer$MyLibraryContributor" />
+    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="19" startPosition="62" endLine="20" endPosition="44" />
+    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="23" startPosition="54" endLine="24" endPosition="40" />
+    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="36" startPosition="31" endLine="37" endPosition="25" />
+    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="40" startPosition="34" endLine="41" endPosition="28" />
+    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="31" startPosition="36" endLine="33" endPosition="37" />
+    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="18" startPosition="61" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="17" startPosition="35" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="16" startPosition="0" endLine="27" endPosition="3" />
+    <unitInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer" />
+    <unitInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="18" startPosition="40" endLine="26" endPosition="5" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer$1" />
     <unitInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="1" startPosition="0" endLine="18" endPosition="0" unitName="plugin.xml" />
   </root>
   <root nodeId="8610665572788514618">
