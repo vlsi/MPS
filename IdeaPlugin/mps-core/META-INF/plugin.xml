@@ -27,6 +27,10 @@
         <component>
             <implementation-class>jetbrains.mps.idea.core.make.NoMakeService</implementation-class>
         </component>
+        <component>
+          <interface-class>jetbrains.mps.ide.navigation.NavigationSupport</interface-class>
+          <implementation-class>jetbrains.mps.idea.core.navigation.NavigationSupportImpl</implementation-class>
+        </component>
     </application-components>
 
     <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
