@@ -4647,7 +4647,7 @@
   </target>
   <target name="pack.jetbrains.mps.execution.configurations.deprecated">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/core/baseLanguage/runConfigurations/classes_gen" />
+    <mkdir dir="${base_dir}/plugins/execution-languages/deprecated/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.execution.configurations.deprecated.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.execution.configurations.deprecated.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.execution.configurations.deprecated" uuid="82c32a3b-4a54-4fc1-b551-7ff9f198d7c1" type="language">
@@ -4787,16 +4787,16 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.execution.configurations.deprecated-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/core/baseLanguage/runConfigurations/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/core/baseLanguage/runConfigurations/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/core/baseLanguage/runConfigurations/runConfigurations.mpl" prefix="module" />
-      <zipfileset dir="${base_dir}/core/baseLanguage/runConfigurations/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="${base_dir}/core/baseLanguage/runConfigurations/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
+      <zipfileset dir="${base_dir}/plugins/execution-languages/deprecated/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/plugins/execution-languages/deprecated/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/plugins/execution-languages/deprecated/runConfigurations.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/plugins/execution-languages/deprecated/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${base_dir}/plugins/execution-languages/deprecated/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.execution.configurations.deprecated.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.execution.configurations.deprecated.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/core/baseLanguage/runConfigurations" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/core/baseLanguage/runConfigurations/classes_gen" />
+      <zipfileset dir="${base_dir}/plugins/execution-languages/deprecated" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/plugins/execution-languages/deprecated/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.execution.configurations.deprecated.jar.jtmp" />
   </target>

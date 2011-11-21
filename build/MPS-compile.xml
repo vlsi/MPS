@@ -52,7 +52,7 @@
   <property name="jetbrains.mps.execution.commands.classes" value="${base_dir}/plugins/execution-languages/commands/classes_gen" />
   <property name="jetbrains.mps.execution.common.classes" value="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
   <property name="jetbrains.mps.execution.configurations.classes" value="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
-  <property name="jetbrains.mps.execution.configurations.deprecated.classes" value="${base_dir}/core/baseLanguage/runConfigurations/classes_gen" />
+  <property name="jetbrains.mps.execution.configurations.deprecated.classes" value="${base_dir}/plugins/execution-languages/deprecated/classes_gen" />
   <property name="jetbrains.mps.execution.lib.startup.classes" value="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
   <property name="jetbrains.mps.execution.settings.classes" value="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
   <property name="jetbrains.mps.execution.util.classes" value="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
@@ -402,8 +402,8 @@
     <path path="${base_dir}/plugins/execution-languages/configurations/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.execution.configurations.deprecated_tjc.src">
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/source_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/test_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated/source_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.execution.lib.startup_tjc.src">
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/source_gen" />
@@ -5376,7 +5376,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.execution.configurations.deprecated_tjc.classpaths">
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
@@ -5397,7 +5397,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
@@ -5506,6 +5505,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -11428,21 +11428,21 @@
   <target name="compile.cycle.jetbrains.mps.execution.configurations.deprecated_tjc" depends="compile.cycle.jetbrains.mps.uiLanguage_tjc">
     <property name="classes.dump" value="${jetbrains.mps.execution.configurations.deprecated.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/core/baseLanguage/runConfigurations/source_gen" />
-    <mkdir dir="${base_dir}/core/baseLanguage/runConfigurations/test_gen" />
+    <mkdir dir="${base_dir}/plugins/execution-languages/deprecated/source_gen" />
+    <mkdir dir="${base_dir}/plugins/execution-languages/deprecated/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.execution.configurations.deprecated.classes}" />
     <javac classpathref="cycle.jetbrains.mps.execution.configurations.deprecated_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.execution.configurations.deprecated_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.execution.configurations.deprecated.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/runConfigurations/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/runConfigurations/test_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-languages/deprecated/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-languages/deprecated/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.execution.configurations.deprecated_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.configurations.deprecated.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/core/baseLanguage/runConfigurations/source_gen" />
-        <path path="${base_dir}/core/baseLanguage/runConfigurations/test_gen" />
+        <path path="${base_dir}/plugins/execution-languages/deprecated/source_gen" />
+        <path path="${base_dir}/plugins/execution-languages/deprecated/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
