@@ -30,11 +30,16 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
   private boolean myInitialized;
 
+  @Override
+  public boolean isLeaf() {
+    return true;
+  }
+
   public ConceptTreeNode(IOperationContext operationContext, SNode node) {
     super(operationContext);
     myNode = node;
 
-    SNode concept = getSNode();
+    SNode concept = getDeclarationNode();
     if (concept != null) {
       setIcon(IconManager.getIconFor(concept));
       setNodeIdentifier(concept.getName());
@@ -44,6 +49,10 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
   }
 
   public SNode getSNode() {
+    return myNode;
+  }
+
+  public SNode getDeclarationNode() {
     return myNode.getConceptDeclarationNode();
   }
 
