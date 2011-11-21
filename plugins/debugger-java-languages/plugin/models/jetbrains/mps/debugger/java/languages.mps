@@ -13,7 +13,6 @@
   <import index="y090" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.library(MPS.Workbench/jetbrains.mps.library@java_stub)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="203415309825224444">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.debugger.java.languages" />
@@ -25,20 +24,6 @@
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
     </node>
   </roots>
-  <root id="203415309825224444">
-    <node role="library" roleId="tp4k.1535440318713307873" type="tp4k.PluginLibrary" typeId="tp4k.1535440318713277025" id="1535440318713422000">
-      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.java.languages" />
-      <property name="path" nameId="tp4k.1535440318713277028" value="languages" />
-      <node role="module" roleId="tp4k.1535440318713277027" type="tp25.ModuleReferenceExpression" typeId="tp25.4040588429969021681" id="1535440318713422007">
-        <property name="moduleId" nameId="tp25.4040588429969021683" value="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" />
-      </node>
-      <node role="module" roleId="tp4k.1535440318713277027" type="tp25.ModuleReferenceExpression" typeId="tp25.4040588429969021681" id="1535440318713422009">
-        <property name="moduleId" nameId="tp25.4040588429969021683" value="80208897-4572-437d-b50e-8f050cba9566" />
-      </node>
-      <node role="module" roleId="tp4k.1535440318713277027" type="tp25.ModuleReferenceExpression" typeId="tp25.4040588429969021681" id="1535440318713422010">
-        <property name="moduleId" nameId="tp25.4040588429969021683" value="7da4580f-9d75-4603-8162-51a896d78375" />
-      </node>
-    </node>
-  </root>
+  <root id="203415309825224444" />
 </model>
 

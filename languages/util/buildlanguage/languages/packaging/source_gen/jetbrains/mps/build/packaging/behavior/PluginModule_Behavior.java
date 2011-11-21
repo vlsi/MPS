@@ -9,11 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -54,20 +49,6 @@ public class PluginModule_Behavior {
     return PathHolder_Behavior.createPathHolder_55204148067446946(PluginModule_Behavior.call_getFullPathToPluginXml_989489456094444401(thisNode), SLinkOperations.getTargets(layout, "macro", true), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode).getPath(), new PluginModule_Behavior.QuotationClass_yq0j9l_a3a2a5().createNode(module.getModuleFqName(), module.getModuleDescriptor().getModuleReference().getModuleId().toString()));
   }
 
-  public static List<SNode> call_getLibraries_1535440318713508969(SNode thisNode) {
-    return MapSequence.fromMap(IdeaInitializerReference_Behavior.call_getLibraries_1535440318713424931(SLinkOperations.getTarget(thisNode, "pluginXml", true))).select(new ISelector<IMapping<String, Tuples._2<String, List<IModule>>>, SNode>() {
-      public SNode select(IMapping<String, Tuples._2<String, List<IModule>>> it) {
-        SNode folder = new PluginModule_Behavior.QuotationClass_yq0j9l_a0a0a0a0a0a6().createNode(it.value()._0());
-        ListSequence.fromList(SLinkOperations.getTargets(folder, "entry", true)).addSequence(ListSequence.fromList(it.value()._1()).select(new ISelector<IModule, SNode>() {
-          public SNode select(IModule module) {
-            return new PluginModule_Behavior.QuotationClass_yq0j9l_a0a0a0a0a1a0a0a0a6().createNode(module.getModuleFqName(), module.getModuleReference().getModuleId().toString());
-          }
-        }));
-        return folder;
-      }
-    }).toListSequence();
-  }
-
   public static class QuotationClass_yq0j9l_a0c0c {
     public QuotationClass_yq0j9l_a0c0c() {
     }
@@ -88,49 +69,6 @@ public class PluginModule_Behavior {
 
   public static class QuotationClass_yq0j9l_a3a2a5 {
     public QuotationClass_yq0j9l_a3a2a5() {
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Module", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setProperty("id", (String) parameter_4);
-        quotedNode1_2.setProperty("name", (String) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_yq0j9l_a0a0a0a0a0a6 {
-    public QuotationClass_yq0j9l_a0a0a0a0a0a6() {
-    }
-
-    public SNode createNode(Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Folder", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.SimpleString", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setProperty("name", (String) parameter_5);
-          quotedNode_1.addChild("title", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_yq0j9l_a0a0a0a0a1a0a0a0a6 {
-    public QuotationClass_yq0j9l_a0a0a0a0a1a0a0a0a6() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4) {
