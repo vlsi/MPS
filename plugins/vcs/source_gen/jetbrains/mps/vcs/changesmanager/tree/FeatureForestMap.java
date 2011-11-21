@@ -43,15 +43,14 @@ public class FeatureForestMap<V> {
       throw new IllegalArgumentException("Trying to put already present feature");
     }
     Feature[] ancestors = feature.getAncestors();
-    if (Sequence.fromIterable(Sequence.fromArray(ancestors)).any(new IWhereFilter<Object>() {
-      public boolean accept(Object a) {
+    if (Sequence.fromIterable(Sequence.fromArray(ancestors)).any(new IWhereFilter<Feature>() {
+      public boolean accept(Feature a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);
       }
     })) {
       throw new IllegalAccessError("Trying to put feature which is ancestor of already added one");
     }
 
-    fireFeatureStateChanged(feature);
     MapSequence.fromMap(myFeatureToValue).put(feature, value);
     MapSequence.fromMap(myFeatureToAncestors).put(feature, ancestors);
     Sequence.fromIterable(Sequence.fromArray(ancestors)).visitAll(new IVisitor<Feature>() {
@@ -59,6 +58,7 @@ public class FeatureForestMap<V> {
         myFeaturesIsAncestorCounterMap.increment(a);
       }
     });
+    fireFeatureStateChanged(feature);
   }
 
   public void removeKey(@NotNull Feature feature) {
@@ -68,7 +68,6 @@ public class FeatureForestMap<V> {
 
     Feature[] ancestors = MapSequence.fromMap(myFeatureToAncestors).get(feature);
 
-    fireFeatureStateChanged(feature);
     MapSequence.fromMap(myFeatureToValue).removeKey(feature);
     MapSequence.fromMap(myFeatureToAncestors).removeKey(feature);
     Sequence.fromIterable(Sequence.fromArray(ancestors)).visitAll(new IVisitor<Feature>() {
@@ -76,6 +75,7 @@ public class FeatureForestMap<V> {
         myFeaturesIsAncestorCounterMap.decrement(a);
       }
     });
+    fireFeatureStateChanged(feature);
   }
 
   @Nullable
@@ -90,8 +90,8 @@ public class FeatureForestMap<V> {
   @Nullable
   public Feature getAddedAncestor(@NotNull Feature feature) {
     ModelAccess.assertLegalRead();
-    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).findFirst(new IWhereFilter<Object>() {
-      public boolean accept(Object a) {
+    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).findFirst(new IWhereFilter<Feature>() {
+      public boolean accept(Feature a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);
       }
     });
