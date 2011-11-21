@@ -171,19 +171,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     public MyFeatureForestMapListener() {
     }
 
-    public void featureAdded(Feature feature) {
-      rehighlightFeature(feature);
-    }
-
-    public void featureRemoved(Feature feature) {
-      rehighlightFeature(feature);
-    }
-
-    public void allDescendantsRemoved(Feature feature) {
-      rehighlightFeature(feature);
-    }
-
-    public void descendantAdded(Feature feature) {
+    public void featureStateChanged(Feature feature) {
       rehighlightFeature(feature);
     }
   }

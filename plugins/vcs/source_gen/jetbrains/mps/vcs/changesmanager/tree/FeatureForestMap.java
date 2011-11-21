@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,25 +37,21 @@ public class FeatureForestMap<V> {
   public FeatureForestMap() {
   }
 
-  public void put(@NotNull final Feature feature, @NotNull V value) {
+  public void put(@NotNull Feature feature, @NotNull V value) {
     ModelAccess.assertLegalRead();
     if (MapSequence.fromMap(myFeatureToValue).containsKey(feature)) {
       throw new IllegalArgumentException("Trying to put already present feature");
     }
     Feature[] ancestors = feature.getAncestors();
-    if (Sequence.fromIterable(Sequence.fromArray(ancestors)).any(new IWhereFilter<Feature>() {
-      public boolean accept(Feature a) {
+    if (Sequence.fromIterable(Sequence.fromArray(ancestors)).any(new IWhereFilter<Object>() {
+      public boolean accept(Object a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);
       }
     })) {
       throw new IllegalAccessError("Trying to put feature which is ancestor of already added one");
     }
 
-    fireEvent("featureAdded", new _FunctionTypes._void_P1_E0<FeatureForestMapListener>() {
-      public void invoke(FeatureForestMapListener listener) {
-        listener.featureAdded(feature);
-      }
-    });
+    fireFeatureStateChanged(feature);
     MapSequence.fromMap(myFeatureToValue).put(feature, value);
     MapSequence.fromMap(myFeatureToAncestors).put(feature, ancestors);
     Sequence.fromIterable(Sequence.fromArray(ancestors)).visitAll(new IVisitor<Feature>() {
@@ -66,18 +61,14 @@ public class FeatureForestMap<V> {
     });
   }
 
-  public void removeKey(@NotNull final Feature feature) {
+  public void removeKey(@NotNull Feature feature) {
     if (!(MapSequence.fromMap(myFeatureToValue).containsKey(feature))) {
       throw new IllegalArgumentException("Trying to remove feature which is not added");
     }
 
     Feature[] ancestors = MapSequence.fromMap(myFeatureToAncestors).get(feature);
 
-    fireEvent("featureRemoved", new _FunctionTypes._void_P1_E0<FeatureForestMapListener>() {
-      public void invoke(FeatureForestMapListener listener) {
-        listener.featureRemoved(feature);
-      }
-    });
+    fireFeatureStateChanged(feature);
     MapSequence.fromMap(myFeatureToValue).removeKey(feature);
     MapSequence.fromMap(myFeatureToAncestors).removeKey(feature);
     Sequence.fromIterable(Sequence.fromArray(ancestors)).visitAll(new IVisitor<Feature>() {
@@ -99,8 +90,8 @@ public class FeatureForestMap<V> {
   @Nullable
   public Feature getAddedAncestor(@NotNull Feature feature) {
     ModelAccess.assertLegalRead();
-    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).findFirst(new IWhereFilter<Object>() {
-      public boolean accept(Object a) {
+    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).findFirst(new IWhereFilter<Feature>() {
+      public boolean accept(Feature a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);
       }
     });
@@ -130,13 +121,13 @@ public class FeatureForestMap<V> {
     }
   }
 
-  private void fireEvent(String name, _FunctionTypes._void_P1_E0<? super FeatureForestMapListener> task) {
+  private void fireFeatureStateChanged(@NotNull Feature feature) {
     for (FeatureForestMapListener listener : ListSequence.fromList(copyListeners())) {
       try {
-        task.invoke(listener);
+        listener.featureStateChanged(feature);
       } catch (Throwable t) {
         if (log.isErrorEnabled()) {
-          log.error("Exception on firing " + name + " event", t);
+          log.error("Exception on firing featureStateChanged event", t);
         }
       }
     }
@@ -146,20 +137,12 @@ public class FeatureForestMap<V> {
     public MyCounterMapHandler() {
     }
 
-    public void counterZero(@NotNull final Feature feature) {
-      fireEvent("allDescendantsRemoved", new _FunctionTypes._void_P1_E0<FeatureForestMapListener>() {
-        public void invoke(FeatureForestMapListener listener) {
-          listener.allDescendantsRemoved(feature);
-        }
-      });
+    public void counterZero(@NotNull Feature feature) {
+      fireFeatureStateChanged(feature);
     }
 
-    public void counterNonZero(@NotNull final Feature feature) {
-      fireEvent("descendantAdded", new _FunctionTypes._void_P1_E0<FeatureForestMapListener>() {
-        public void invoke(FeatureForestMapListener listener) {
-          listener.descendantAdded(feature);
-        }
-      });
+    public void counterNonZero(@NotNull Feature feature) {
+      fireFeatureStateChanged(feature);
     }
   }
 }
