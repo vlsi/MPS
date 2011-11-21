@@ -101,11 +101,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    TreePath[] selection = getSelectionPaths();
-    if (selection != null && selection.length > 1) {
-      return null;
-    }
-    ModuleDependencyNode current = as_he3vmc_a0a2a01(getCurrentNode(), ModuleDependencyNode.class);
+    ModuleDependencyNode current = as_he3vmc_a0a0a01(getCurrentNode(), ModuleDependencyNode.class);
     if (current == null) {
       return null;
     }
@@ -126,7 +122,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     );
   }
 
-  private static <T> T as_he3vmc_a0a2a01(Object o, Class<T> type) {
+  private static <T> T as_he3vmc_a0a0a01(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

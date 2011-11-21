@@ -27,19 +27,10 @@ import com.intellij.openapi.project.Project;
 public class ModuleDependencyNode extends MPSTreeNode {
   private List<IModule> myModules;
   private boolean myInitialized;
-  private boolean myUsedLanguage;
   private boolean myCyclic;
 
-  public ModuleDependencyNode(IModule module, boolean isUsedLanguage, boolean isRuntime, IOperationContext context) {
+  public ModuleDependencyNode(IModule module, boolean isCyclic, IOperationContext context) {
     this(ListSequence.fromListAndArray(new ArrayList<IModule>(), module), context);
-    myUsedLanguage = isUsedLanguage;
-    if (isRuntime) {
-      setNodeIdentifier(getNodeIdentifier() + " (runtime)");
-    }
-  }
-
-  public ModuleDependencyNode(IModule module, boolean isUsedLanguage, boolean isRuntime, boolean isCyclic, IOperationContext context) {
-    this(module, isUsedLanguage, isRuntime, context);
     myCyclic = isCyclic;
   }
 
@@ -65,7 +56,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
   }
 
   public boolean isUsedLanguage() {
-    return myUsedLanguage;
+    return false;
   }
 
   public void setCyclic() {
@@ -73,12 +64,12 @@ public class ModuleDependencyNode extends MPSTreeNode {
   }
 
   public ModuleDependencyNode getFromNode() {
-    TreeNode n = getParent();
-    if (n != null && isUsedLanguage()) {
-      n = n.getParent();
+    TreeNode node = getParent();
+    if (node != null && isUsedLanguage()) {
+      node = node.getParent();
     }
-    if (n != null && n instanceof ModuleDependencyNode) {
-      return (ModuleDependencyNode) n;
+    if (node != null && node instanceof ModuleDependencyNode) {
+      return (ModuleDependencyNode) node;
     }
     return null;
   }
@@ -129,7 +120,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
         return it.getModuleFqName();
       }
     }, true)) {
-      add(new ModuleDependencyNode(m, false, !(SetSequence.fromSet(reqModules).contains(m)), SetSequence.fromSet(depLoops).contains(m), getOperationContext()));
+      add(new ModuleDependencyNode.DepDependencyNode(m, !(SetSequence.fromSet(reqModules).contains(m)), SetSequence.fromSet(depLoops).contains(m), getOperationContext()));
     }
 
     if (tree.isShowUsedLanguage()) {
@@ -139,7 +130,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
           return it.getModuleFqName();
         }
       }, true)) {
-        usedlanguages.add(new ModuleDependencyNode(l, true, false, SetSequence.fromSet(langLoops).contains(l), getOperationContext()));
+        usedlanguages.add(new ModuleDependencyNode.ULangDependencyNode(l, SetSequence.fromSet(langLoops).contains(l), getOperationContext()));
       }
       add(usedlanguages);
     }
@@ -168,5 +159,29 @@ public class ModuleDependencyNode extends MPSTreeNode {
       return checkedDotOperand.getProject();
     }
     return null;
+  }
+
+  public static class DepDependencyNode extends ModuleDependencyNode {
+    public DepDependencyNode(IModule module, boolean isRuntime, boolean isCyclic, IOperationContext context) {
+      super(module, isCyclic, context);
+      if (isRuntime) {
+        setNodeIdentifier(getNodeIdentifier() + " (runtime)");
+      }
+
+    }
+
+    public boolean isUsedLanguage() {
+      return false;
+    }
+  }
+
+  public static class ULangDependencyNode extends ModuleDependencyNode {
+    public ULangDependencyNode(IModule module, boolean isCyclic, IOperationContext context) {
+      super(module, isCyclic, context);
+    }
+
+    public boolean isUsedLanguage() {
+      return true;
+    }
   }
 }

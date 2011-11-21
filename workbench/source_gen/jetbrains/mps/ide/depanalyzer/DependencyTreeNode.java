@@ -12,7 +12,6 @@ import com.intellij.openapi.project.Project;
 
 public class DependencyTreeNode extends MPSTreeNode {
   private DependencyUtil.Link myLink;
-  private boolean myIsLeaf;
   private boolean myIsCyclic;
   private DependencyTreeNode myLinkedNode;
   /**
@@ -48,8 +47,7 @@ public class DependencyTreeNode extends MPSTreeNode {
     return myUsed;
   }
 
-  public void setLeaf() {
-    myIsLeaf = true;
+  public void setDepLeaf() {
     String linktype = (myLink.linktype == null ?
       "" :
       "<i>" + myLink.linktype.toString() + "</i> "
@@ -58,7 +56,6 @@ public class DependencyTreeNode extends MPSTreeNode {
   }
 
   public void setLinkLeaf(DependencyTreeNode linkedNode) {
-    myIsLeaf = true;
     myLinkedNode = linkedNode;
     String linktype = (myLink.linktype == null ?
       "" :
@@ -68,7 +65,7 @@ public class DependencyTreeNode extends MPSTreeNode {
   }
 
   public boolean isLeaf() {
-    return myIsLeaf;
+    return children == null || children.isEmpty();
   }
 
   public void setCyclic() {

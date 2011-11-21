@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import javax.swing.JPopupMenu;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -75,7 +76,10 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   }
 
   public void setCycles(Iterable<Tuples._2<DependencyUtil.Role, IModule>> cycles) {
-    myCycles = SetSequence.fromSetWithValues(new HashSet<Tuples._2<DependencyUtil.Role, IModule>>(), cycles);
+    myCycles = (cycles == null ?
+      null :
+      SetSequence.fromSetWithValues(new HashSet<Tuples._2<DependencyUtil.Role, IModule>>(), cycles)
+    );
   }
 
   private void removeUnusedNodes(MPSTreeNode root) {
@@ -103,14 +107,17 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   }
 
   private MPSTreeNode buildTree(IModule from, Set<IModule> dependency, Set<IModule> usedlanguage) {
-    Set<DependencyUtil.Link> vis = SetSequence.fromSet(new HashSet<DependencyUtil.Link>());
     Map<Tuples._2<IModule, DependencyUtil.Role>, DependencyTreeNode> visited = MapSequence.fromMap(new HashMap<Tuples._2<IModule, DependencyUtil.Role>, DependencyTreeNode>());
     Queue<DependencyTreeNode> unprocessed = QueueSequence.fromQueue(new LinkedList<DependencyTreeNode>());
 
     Map<DependencyTreeNode, List<DependencyTreeNode>> backDeps = MapSequence.fromMap(new HashMap<DependencyTreeNode, List<DependencyTreeNode>>());
 
     DependencyTreeNode root = new DependencyTreeNode(new DependencyUtil.Link(from, DependencyUtil.Role.None, null), null);
-    if (myCycles != null && SetSequence.fromSet(myCycles).contains(MultiTuple.<DependencyUtil.Role,IModule>from(DependencyUtil.Role.None, from))) {
+    if (myCycles != null && SetSequence.fromSet(myCycles).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
+      public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
+        return it._1();
+      }
+    }).contains(from)) {
       root.setCyclic();
     }
     QueueSequence.fromQueue(unprocessed).addLastElement(root);
@@ -118,19 +125,21 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     while (QueueSequence.fromQueue(unprocessed).isNotEmpty()) {
       DependencyTreeNode node = QueueSequence.fromQueue(unprocessed).removeFirstElement();
       if (node.getLink().role == DependencyUtil.Role.UsedLanguage && SetSequence.fromSet(usedlanguage).contains(node.getLink().module) || (node.getLink().role == DependencyUtil.Role.DTDependency_ || node.getLink().role == DependencyUtil.Role.RTDependency) && SetSequence.fromSet(dependency).contains(node.getLink().module)) {
+        node.setDepLeaf();
+        // mark as used 
         setUsed(node, backDeps);
-        if (myCycles == null) {
-          node.setLeaf();
-          continue;
-        }
-      }
-      // <node> 
-      if (MapSequence.fromMap(visited).containsKey(MultiTuple.<IModule,DependencyUtil.Role>from(node.getLink().module, node.getLink().role))) {
-        if (!(isShowAll() || myCycles != null)) {
+        /*
+          while (node != null && !(node.isUsed())) {
+            // todo: move shortest branch up 
+            node.setUsed();
+          }
+        */
+      } else if (MapSequence.fromMap(visited).containsKey(MultiTuple.<IModule,DependencyUtil.Role>from(node.getLink().module, node.getLink().role))) {
+        if (!(isShowAll())) {
           continue;
         }
         DependencyTreeNode n = MapSequence.fromMap(visited).get(MultiTuple.<IModule,DependencyUtil.Role>from(node.getLink().module, node.getLink().role));
-        if (isShowAll() && !(MapSequence.fromMap(backDeps).containsKey(n))) {
+        if (!(MapSequence.fromMap(backDeps).containsKey(n))) {
           MapSequence.fromMap(backDeps).put(n, ListSequence.fromList(new ArrayList<DependencyTreeNode>()));
         }
         node.setLinkLeaf(n);
@@ -145,14 +154,11 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
           DependencyTreeNode n = new DependencyTreeNode(link, null);
           if (myCycles != null && SetSequence.fromSet(myCycles).contains(MultiTuple.<DependencyUtil.Role,IModule>from(link.role, link.module))) {
             n.setCyclic();
-            setUsed(node, backDeps);
           }
           node.add(n);
           QueueSequence.fromQueue(unprocessed).addLastElement(n);
         }
       }
-
-      // <node> 
     }
 
     return root;
@@ -160,8 +166,8 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
   protected MPSTreeNode rebuild() {
     MPSTreeNode result = new TextMPSTreeNode((ListSequence.fromList(myAllDependencies).isEmpty() ?
-      "no dependencies selected" :
-      "Dependencies found"
+      "No Dependencies Selected" :
+      "Found Dependencies:"
     ), null);
     for (Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>> dep : ListSequence.fromList(myAllDependencies)) {
       for (IModule m : SetSequence.fromSet(dep._0())) {
@@ -178,7 +184,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
   @Override
   protected JPopupMenu createPopupMenu(MPSTreeNode node) {
-    DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowInDependenciesViewer_Action")));
+    DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowInDependenciesViewer_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 

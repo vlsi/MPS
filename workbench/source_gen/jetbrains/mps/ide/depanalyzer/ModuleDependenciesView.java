@@ -22,11 +22,10 @@ import com.intellij.openapi.ui.Splitter;
 import com.intellij.ui.components.JBScrollPane;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
+import javax.swing.tree.TreePath;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import javax.swing.tree.TreePath;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -46,7 +45,6 @@ public class ModuleDependenciesView extends JPanel {
     super(new BorderLayout());
     myLeftTree = new DependencyTree(project);
     myRightTree = new DependencyPathTree(project);
-
 
     ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", Icons.DEPENDENCY_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
@@ -76,47 +74,44 @@ public class ModuleDependenciesView extends JPanel {
 
     myLeftTree.addTreeSelectionListener(new TreeSelectionListener() {
       public void valueChanged(TreeSelectionEvent e) {
-        resetDependencies();
+        rebuildDependencies();
       }
     });
   }
 
   public void setModules(List<IModule> modules) {
     myModules = modules;
-    setShowCycles(myCycles != null);
     myLeftTree.setModules(modules);
-    myLeftTree.rebuildLater();
-    resetDependencies();
+    resetAll();
   }
 
-  public void resetDependencies() {
+  public void rebuildDependencies() {
+    // rebuild right tree based on selection in the left 
     myRightTree.resetDependencies();
-
-    Map<List<IModule>, List<IModule>> dependencies = MapSequence.fromMap(new HashMap<List<IModule>, List<IModule>>());
-    Map<List<IModule>, List<IModule>> usedlanguages = MapSequence.fromMap(new HashMap<List<IModule>, List<IModule>>());
-
     TreePath[] paths = myLeftTree.getSelectionPaths();
     if (paths != null) {
+      Map<List<IModule>, List<IModule>> dependencies = MapSequence.fromMap(new HashMap<List<IModule>, List<IModule>>());
+      Map<List<IModule>, List<IModule>> usedlanguages = MapSequence.fromMap(new HashMap<List<IModule>, List<IModule>>());
       for (TreePath path : paths) {
-        MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-        if (node instanceof ModuleDependencyNode) {
-          ModuleDependencyNode n = (ModuleDependencyNode) node;
-          List<IModule> from = check_jxc64t_a0b0b0a0g0b(n.getFromNode());
+        Object o = path.getLastPathComponent();
+        if (o instanceof ModuleDependencyNode) {
+          ModuleDependencyNode node = (ModuleDependencyNode) o;
+          List<IModule> from = check_jxc64t_a0b0b0c0d0b(node.getFromNode());
           if (from != null) {
-            Map<List<IModule>, List<IModule>> collection = (n.isUsedLanguage() ?
+            Map<List<IModule>, List<IModule>> collection = (node.isUsedLanguage() ?
               usedlanguages :
               dependencies
             );
             if (!(MapSequence.fromMap(collection).containsKey(from))) {
               MapSequence.fromMap(collection).put(from, ListSequence.fromList(new ArrayList<IModule>()));
             }
-            ListSequence.fromList(MapSequence.fromMap(collection).get(from)).addSequence(ListSequence.fromList(n.getModules()));
+            ListSequence.fromList(MapSequence.fromMap(collection).get(from)).addSequence(ListSequence.fromList(node.getModules()));
           }
         }
       }
-    }
-    for (List<IModule> key : SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(usedlanguages).keySet()))) {
-      myRightTree.addDependency(key, MapSequence.fromMap(dependencies).get(key), MapSequence.fromMap(usedlanguages).get(key));
+      for (List<IModule> key : SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(usedlanguages).keySet()))) {
+        myRightTree.addDependency(key, MapSequence.fromMap(dependencies).get(key), MapSequence.fromMap(usedlanguages).get(key));
+      }
     }
     myRightTree.setCycles(myCycles);
     myRightTree.rebuildLater();
@@ -163,10 +158,10 @@ public class ModuleDependenciesView extends JPanel {
     }
     myLeftTree.setCycles(myCycles);
     myLeftTree.rebuildLater();
-    resetDependencies();
+    rebuildDependencies();
   }
 
-  private static List<IModule> check_jxc64t_a0b0b0a0g0b(ModuleDependencyNode checkedDotOperand) {
+  private static List<IModule> check_jxc64t_a0b0b0c0d0b(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModules();
     }
