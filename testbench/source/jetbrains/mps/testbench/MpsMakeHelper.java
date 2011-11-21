@@ -55,7 +55,7 @@ public class MpsMakeHelper {
     "-XX:+HeapDumpOnOutOfMemoryError",
   };
 
-  private static final boolean DIRECT_MAKE = false;
+  private static final boolean DIRECT_MAKE = true;
 
   public void make() {
     if (DIRECT_MAKE) {

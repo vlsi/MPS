@@ -166,7 +166,7 @@ public abstract class MpsWorker {
     MPSCore.getInstance().setTestMode();
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
     try {
-      MpsWorker.configureMPS();
+      configureMPS(false);
     } catch (Exception ex) {
       throw new RuntimeException(ex);
     }
@@ -244,7 +244,7 @@ public abstract class MpsWorker {
     }
   }
 
-  private void setMacro() {
+  protected void setMacro() {
     Map<String, String> macro = myWhatToDo.getMacro();
     Map<String, String> realMacros = new HashMap<String, String>();
     for (String macroName : macro.keySet()) {
@@ -260,7 +260,7 @@ public abstract class MpsWorker {
     }
   }
 
-  private void loadLibraries() {
+  protected void loadLibraries() {
     if (myLibraryContibutor == null) {
       Set<String> libraryPaths = new HashSet<String>();
       libraryPaths.addAll(PathManager.getBootstrapPaths());
@@ -451,14 +451,16 @@ public abstract class MpsWorker {
     error(text + "\n" + sb.toString());
   }
 
-  public static void configureMPS() {
+  protected void configureMPS(boolean loadIdeaPlugins) {
     String mpsInternal = System.getProperty("mps.internal");
     System.setProperty("idea.is.internal", (mpsInternal == null ?
       "false" :
       mpsInternal
     ));
     System.setProperty("idea.no.jre.check", "true");
-    System.setProperty("idea.load.plugins", "false");
+    if (!(loadIdeaPlugins)) {
+      System.setProperty("idea.load.plugins", "false");
+    }
     System.setProperty("idea.platform.prefix", "Idea");
     StringBuffer pluginPath = new StringBuffer();
     File pluginDir = new File(PathManager.getPreinstalledPluginsPath());

@@ -1,110 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="4003657351907888946">
-    <nodeInfo nodeId="4003657351907888981" fileName="MakeWorker.java" startLine="23" startPosition="68" endLine="24" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4003657351907888992" fileName="MakeWorker.java" startLine="27" startPosition="68" endLine="28" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4003657351907889003" fileName="MakeWorker.java" startLine="32" startPosition="78" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907889010" fileName="MakeWorker.java" startLine="33" startPosition="58" endLine="34" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889024" fileName="MakeWorker.java" startLine="35" startPosition="40" endLine="36" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889137" fileName="MakeWorker.java" startLine="40" startPosition="34" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907889051" fileName="MakeWorker.java" startLine="43" startPosition="9" endLine="44" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889142" fileName="MakeWorker.java" startLine="48" startPosition="42" endLine="49" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907889076" fileName="MakeWorker.java" startLine="52" startPosition="35" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907889077" fileName="MakeWorker.java" startLine="54" startPosition="5" endLine="55" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889080" fileName="MakeWorker.java" startLine="55" startPosition="34" endLine="56" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907889090" fileName="MakeWorker.java" startLine="57" startPosition="38" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889095" fileName="MakeWorker.java" startLine="58" startPosition="24" endLine="59" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889102" fileName="MakeWorker.java" startLine="59" startPosition="37" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889107" fileName="MakeWorker.java" startLine="61" startPosition="5" endLine="62" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889173" fileName="MakeWorker.java" startLine="67" startPosition="41" endLine="68" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889180" fileName="MakeWorker.java" startLine="72" startPosition="56" endLine="73" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889125" fileName="MakeWorker.java" startLine="77" startPosition="7" endLine="78" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7517326809298124976" fileName="MakeWorker.java" startLine="82" startPosition="34" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907888956" fileName="MakeWorker.java" startLine="86" startPosition="42" endLine="87" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907888969" fileName="MakeWorker.java" startLine="87" startPosition="113" endLine="88" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907888973" fileName="MakeWorker.java" startLine="22" startPosition="43" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeWorker#(Ljetbrains/mps/build/ant/WhatToDo;Lorg/apache/tools/ant/ProjectComponent;)V" />
-    <nodeInfo nodeId="4003657351907888984" fileName="MakeWorker.java" startLine="26" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeWorker#(Ljetbrains/mps/build/ant/WhatToDo;Ljetbrains/mps/build/ant/MpsWorker/AntLogger;)V" />
-    <nodeInfo nodeId="4003657351907889017" fileName="MakeWorker.java" startLine="34" startPosition="38" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4003657351907889071" fileName="MakeWorker.java" startLine="51" startPosition="7" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907889048" fileName="MakeWorker.java" startLine="39" startPosition="93" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="4003657351907889038" fileName="MakeWorker.java" startLine="38" startPosition="67" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907889066" fileName="MakeWorker.java" startLine="46" startPosition="99" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/project/IModule;)Z" />
-    <nodeInfo nodeId="4003657351907889085" fileName="MakeWorker.java" startLine="56" startPosition="41" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4003657351907889162" fileName="MakeWorker.java" startLine="65" startPosition="82" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="step#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4003657351907889167" fileName="MakeWorker.java" startLine="70" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="start#(Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="4003657351907889131" fileName="MakeWorker.java" startLine="80" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showStatistic#()V" />
-    <nodeInfo nodeId="4003657351907888949" fileName="MakeWorker.java" startLine="85" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4003657351907889056" fileName="MakeWorker.java" startLine="45" startPosition="5" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907889031" fileName="MakeWorker.java" startLine="37" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4003657351907889153" fileName="MakeWorker.java" startLine="64" startPosition="45" endLine="75" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907889122" fileName="MakeWorker.java" startLine="63" startPosition="111" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/make/MPSCompilationResult;" />
-    <nodeInfo nodeId="4003657351907889112" fileName="MakeWorker.java" startLine="62" startPosition="24" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907888995" fileName="MakeWorker.java" startLine="30" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeTask#(Ljetbrains/mps/project/Project;Ljetbrains/mps/build/ant/MpsWorker/ObjectsToProcess;)V" />
-    <scopeInfo nodeId="4003657351907888980" fileName="MakeWorker.java" startLine="23" startPosition="68" endLine="24" endPosition="31" />
-    <scopeInfo nodeId="4003657351907888991" fileName="MakeWorker.java" startLine="27" startPosition="68" endLine="28" endPosition="28" />
-    <scopeInfo nodeId="4003657351907889023" fileName="MakeWorker.java" startLine="35" startPosition="40" endLine="36" endPosition="39" />
-    <scopeInfo nodeId="4003657351907889136" fileName="MakeWorker.java" startLine="40" startPosition="34" endLine="41" endPosition="45" />
-    <scopeInfo nodeId="4003657351907889141" fileName="MakeWorker.java" startLine="48" startPosition="42" endLine="49" endPosition="65" />
-    <scopeInfo nodeId="4003657351907889075" fileName="MakeWorker.java" startLine="52" startPosition="35" endLine="53" endPosition="13" />
-    <scopeInfo nodeId="4003657351907889172" fileName="MakeWorker.java" startLine="67" startPosition="41" endLine="68" endPosition="32" />
-    <scopeInfo nodeId="4003657351907889179" fileName="MakeWorker.java" startLine="72" startPosition="56" endLine="73" endPosition="27" />
-    <scopeInfo nodeId="4003657351907889134" fileName="MakeWorker.java" startLine="82" startPosition="34" endLine="83" endPosition="22" />
-    <scopeInfo nodeId="4003657351907888955" fileName="MakeWorker.java" startLine="86" startPosition="42" endLine="88" endPosition="29">
+    <nodeInfo nodeId="4003657351907888981" fileName="MakeWorker.java" startLine="32" startPosition="68" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4003657351907888992" fileName="MakeWorker.java" startLine="36" startPosition="68" endLine="37" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4003657351907889003" fileName="MakeWorker.java" startLine="41" startPosition="78" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889010" fileName="MakeWorker.java" startLine="42" startPosition="58" endLine="43" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889024" fileName="MakeWorker.java" startLine="44" startPosition="40" endLine="45" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889137" fileName="MakeWorker.java" startLine="49" startPosition="34" endLine="50" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907889051" fileName="MakeWorker.java" startLine="52" startPosition="9" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889142" fileName="MakeWorker.java" startLine="57" startPosition="42" endLine="58" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907889076" fileName="MakeWorker.java" startLine="61" startPosition="35" endLine="62" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907889077" fileName="MakeWorker.java" startLine="63" startPosition="5" endLine="64" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889080" fileName="MakeWorker.java" startLine="64" startPosition="34" endLine="65" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889090" fileName="MakeWorker.java" startLine="66" startPosition="38" endLine="67" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889095" fileName="MakeWorker.java" startLine="67" startPosition="24" endLine="68" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889102" fileName="MakeWorker.java" startLine="68" startPosition="37" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889107" fileName="MakeWorker.java" startLine="70" startPosition="5" endLine="71" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889173" fileName="MakeWorker.java" startLine="76" startPosition="41" endLine="77" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889180" fileName="MakeWorker.java" startLine="81" startPosition="56" endLine="82" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889125" fileName="MakeWorker.java" startLine="86" startPosition="7" endLine="87" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7517326809298124976" fileName="MakeWorker.java" startLine="91" startPosition="34" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800462478" fileName="MakeWorker.java" startLine="95" startPosition="22" endLine="96" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800462480" fileName="MakeWorker.java" startLine="96" startPosition="23" endLine="97" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3368413835800462484" fileName="MakeWorker.java" startLine="97" startPosition="49" endLine="98" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3368413835800462489" fileName="MakeWorker.java" startLine="98" startPosition="69" endLine="99" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800462502" fileName="MakeWorker.java" startLine="100" startPosition="37" endLine="101" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800462513" fileName="MakeWorker.java" startLine="101" startPosition="15" endLine="102" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800462498" fileName="MakeWorker.java" startLine="103" startPosition="12" endLine="104" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800462526" fileName="MakeWorker.java" startLine="105" startPosition="5" endLine="106" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800462531" fileName="MakeWorker.java" startLine="106" startPosition="38" endLine="107" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800462533" fileName="MakeWorker.java" startLine="107" startPosition="14" endLine="108" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800464302" fileName="MakeWorker.java" startLine="111" startPosition="55" endLine="112" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3368413835800464308" fileName="MakeWorker.java" startLine="112" startPosition="104" endLine="113" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3368413835800464312" fileName="MakeWorker.java" startLine="113" startPosition="48" endLine="114" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3368413835800464318" fileName="MakeWorker.java" startLine="114" startPosition="79" endLine="115" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800464325" fileName="MakeWorker.java" startLine="115" startPosition="42" endLine="116" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800464329" fileName="MakeWorker.java" startLine="116" startPosition="31" endLine="117" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3368413835800463821" fileName="MakeWorker.java" startLine="120" startPosition="37" endLine="121" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800463837" fileName="MakeWorker.java" startLine="121" startPosition="55" endLine="122" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3513010440363257744" fileName="MakeWorker.java" startLine="123" startPosition="9" endLine="124" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800463845" fileName="MakeWorker.java" startLine="125" startPosition="28" endLine="126" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3368413835800463857" fileName="MakeWorker.java" startLine="127" startPosition="5" endLine="128" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800463859" fileName="MakeWorker.java" startLine="128" startPosition="15" endLine="129" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800463861" fileName="MakeWorker.java" startLine="129" startPosition="20" endLine="130" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800463863" fileName="MakeWorker.java" startLine="130" startPosition="11" endLine="131" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5686414413373436302" fileName="MakeWorker.java" startLine="142" startPosition="29" endLine="143" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3513010440363257755" fileName="MakeWorker.java" startLine="148" startPosition="33" endLine="149" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1638690917443621454" fileName="MakeWorker.java" startLine="149" startPosition="29" endLine="150" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1638690917443621456" fileName="MakeWorker.java" startLine="150" startPosition="100" endLine="151" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3513010440363257768" fileName="MakeWorker.java" startLine="152" startPosition="9" endLine="153" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3513010440363257761" fileName="MakeWorker.java" startLine="154" startPosition="27" endLine="155" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4003657351907888956" fileName="MakeWorker.java" startLine="159" startPosition="42" endLine="160" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907888969" fileName="MakeWorker.java" startLine="160" startPosition="113" endLine="161" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3368413835800462496" fileName="MakeWorker.java" startLine="103" startPosition="10" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4003657351907888973" fileName="MakeWorker.java" startLine="31" startPosition="43" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeWorker#(Ljetbrains/mps/build/ant/WhatToDo;Lorg/apache/tools/ant/ProjectComponent;)V" />
+    <nodeInfo nodeId="4003657351907888984" fileName="MakeWorker.java" startLine="35" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeWorker#(Ljetbrains/mps/build/ant/WhatToDo;Ljetbrains/mps/build/ant/MpsWorker/AntLogger;)V" />
+    <nodeInfo nodeId="4003657351907889017" fileName="MakeWorker.java" startLine="43" startPosition="38" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907889071" fileName="MakeWorker.java" startLine="60" startPosition="7" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5686414413373460844" fileName="MakeWorker.java" startLine="138" startPosition="53" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4003657351907889048" fileName="MakeWorker.java" startLine="48" startPosition="93" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="5686414413373436309" fileName="MakeWorker.java" startLine="137" startPosition="11" endLine="141" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889038" fileName="MakeWorker.java" startLine="47" startPosition="67" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889066" fileName="MakeWorker.java" startLine="55" startPosition="99" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/project/IModule;)Z" />
+    <nodeInfo nodeId="4003657351907889085" fileName="MakeWorker.java" startLine="65" startPosition="41" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907889162" fileName="MakeWorker.java" startLine="74" startPosition="82" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="step#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4003657351907889167" fileName="MakeWorker.java" startLine="79" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="start#(Ljava/lang/String;I)V" />
+    <nodeInfo nodeId="4003657351907889131" fileName="MakeWorker.java" startLine="89" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showStatistic#()V" />
+    <nodeInfo nodeId="3368413835800463842" fileName="MakeWorker.java" startLine="122" startPosition="52" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3513010440363257758" fileName="MakeWorker.java" startLine="151" startPosition="116" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4003657351907888949" fileName="MakeWorker.java" startLine="158" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4003657351907889056" fileName="MakeWorker.java" startLine="54" startPosition="5" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3368413835800462492" fileName="MakeWorker.java" startLine="99" startPosition="32" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907889031" fileName="MakeWorker.java" startLine="46" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5686414413373436299" fileName="MakeWorker.java" startLine="136" startPosition="33" endLine="144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3368413835800463816" fileName="MakeWorker.java" startLine="110" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDummyProject#()Ljetbrains/mps/project/StandaloneMPSProject;" />
+    <nodeInfo nodeId="5686414413373436289" fileName="MakeWorker.java" startLine="135" startPosition="28" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4003657351907889153" fileName="MakeWorker.java" startLine="73" startPosition="45" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3513010440363257750" fileName="MakeWorker.java" startLine="147" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="configureMPS#()V" />
+    <nodeInfo nodeId="4003657351907889122" fileName="MakeWorker.java" startLine="72" startPosition="111" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/make/MPSCompilationResult;" />
+    <nodeInfo nodeId="3368413835800463817" fileName="MakeWorker.java" startLine="119" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setupEnvironment#()V" />
+    <nodeInfo nodeId="5686414413373436282" fileName="MakeWorker.java" startLine="133" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="4003657351907889112" fileName="MakeWorker.java" startLine="71" startPosition="24" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3368413835800462474" fileName="MakeWorker.java" startLine="94" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="work#()V" />
+    <nodeInfo nodeId="4003657351907888995" fileName="MakeWorker.java" startLine="39" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeTask#(Ljetbrains/mps/project/Project;Ljetbrains/mps/build/ant/MpsWorker/ObjectsToProcess;)V" />
+    <scopeInfo nodeId="5686414413373460847" fileName="MakeWorker.java" startLine="139" startPosition="29" endLine="139" endPosition="29" />
+    <scopeInfo nodeId="4003657351907888980" fileName="MakeWorker.java" startLine="32" startPosition="68" endLine="33" endPosition="31" />
+    <scopeInfo nodeId="4003657351907888991" fileName="MakeWorker.java" startLine="36" startPosition="68" endLine="37" endPosition="28" />
+    <scopeInfo nodeId="4003657351907889023" fileName="MakeWorker.java" startLine="44" startPosition="40" endLine="45" endPosition="39" />
+    <scopeInfo nodeId="4003657351907889136" fileName="MakeWorker.java" startLine="49" startPosition="34" endLine="50" endPosition="45" />
+    <scopeInfo nodeId="4003657351907889141" fileName="MakeWorker.java" startLine="57" startPosition="42" endLine="58" endPosition="65" />
+    <scopeInfo nodeId="4003657351907889075" fileName="MakeWorker.java" startLine="61" startPosition="35" endLine="62" endPosition="13" />
+    <scopeInfo nodeId="4003657351907889172" fileName="MakeWorker.java" startLine="76" startPosition="41" endLine="77" endPosition="32" />
+    <scopeInfo nodeId="4003657351907889179" fileName="MakeWorker.java" startLine="81" startPosition="56" endLine="82" endPosition="27" />
+    <scopeInfo nodeId="4003657351907889134" fileName="MakeWorker.java" startLine="91" startPosition="34" endLine="92" endPosition="22" />
+    <scopeInfo nodeId="3368413835800462497" fileName="MakeWorker.java" startLine="103" startPosition="12" endLine="104" endPosition="52" />
+    <scopeInfo nodeId="3368413835800463851" fileName="MakeWorker.java" startLine="123" startPosition="9" endLine="124" endPosition="21" />
+    <scopeInfo nodeId="3368413835800463843" fileName="MakeWorker.java" startLine="125" startPosition="0" endLine="126" endPosition="37">
+      <varInfo nodeId="3368413835800463849" varName="ex" />
+    </scopeInfo>
+    <scopeInfo nodeId="3368413835800463844" fileName="MakeWorker.java" startLine="125" startPosition="28" endLine="126" endPosition="37" />
+    <scopeInfo nodeId="5686414413373436300" fileName="MakeWorker.java" startLine="142" startPosition="0" endLine="143" endPosition="28">
+      <varInfo nodeId="5686414413373436306" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="5686414413373436301" fileName="MakeWorker.java" startLine="142" startPosition="29" endLine="143" endPosition="28" />
+    <scopeInfo nodeId="3513010440363257767" fileName="MakeWorker.java" startLine="152" startPosition="9" endLine="153" endPosition="44" />
+    <scopeInfo nodeId="3513010440363257759" fileName="MakeWorker.java" startLine="154" startPosition="0" endLine="155" endPosition="36">
+      <varInfo nodeId="3513010440363257765" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3513010440363257760" fileName="MakeWorker.java" startLine="154" startPosition="27" endLine="155" endPosition="36" />
+    <scopeInfo nodeId="3368413835800462501" fileName="MakeWorker.java" startLine="100" startPosition="37" endLine="102" endPosition="31" />
+    <scopeInfo nodeId="4003657351907888955" fileName="MakeWorker.java" startLine="159" startPosition="42" endLine="161" endPosition="29">
       <varInfo nodeId="4003657351907888957" varName="generator" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907888973" fileName="MakeWorker.java" startLine="22" startPosition="43" endLine="25" endPosition="3">
+    <scopeInfo nodeId="4003657351907888973" fileName="MakeWorker.java" startLine="31" startPosition="43" endLine="34" endPosition="3">
       <varInfo nodeId="4003657351907888978" varName="component" />
       <varInfo nodeId="4003657351907888976" varName="whatToDo" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907888984" fileName="MakeWorker.java" startLine="26" startPosition="0" endLine="29" endPosition="3">
+    <scopeInfo nodeId="4003657351907888984" fileName="MakeWorker.java" startLine="35" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="4003657351907888989" varName="logger" />
       <varInfo nodeId="4003657351907888987" varName="whatToDo" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889017" fileName="MakeWorker.java" startLine="34" startPosition="38" endLine="37" endPosition="5">
+    <scopeInfo nodeId="4003657351907889017" fileName="MakeWorker.java" startLine="43" startPosition="38" endLine="46" endPosition="5">
       <varInfo nodeId="4003657351907889021" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889089" fileName="MakeWorker.java" startLine="57" startPosition="38" endLine="60" endPosition="22" />
-    <scopeInfo nodeId="4003657351907889048" fileName="MakeWorker.java" startLine="39" startPosition="93" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="4003657351907889066" fileName="MakeWorker.java" startLine="46" startPosition="99" endLine="51" endPosition="0">
+    <scopeInfo nodeId="4003657351907889089" fileName="MakeWorker.java" startLine="66" startPosition="38" endLine="69" endPosition="22" />
+    <scopeInfo nodeId="5686414413373460844" fileName="MakeWorker.java" startLine="138" startPosition="53" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="4003657351907889048" fileName="MakeWorker.java" startLine="48" startPosition="93" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="5686414413373436308" fileName="MakeWorker.java" startLine="137" startPosition="11" endLine="141" endPosition="11" />
+    <scopeInfo nodeId="4003657351907889066" fileName="MakeWorker.java" startLine="55" startPosition="99" endLine="60" endPosition="0">
       <varInfo nodeId="4003657351907889069" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889085" fileName="MakeWorker.java" startLine="56" startPosition="41" endLine="61" endPosition="5">
+    <scopeInfo nodeId="4003657351907889085" fileName="MakeWorker.java" startLine="65" startPosition="41" endLine="70" endPosition="5">
       <varInfo nodeId="4003657351907889087" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889162" fileName="MakeWorker.java" startLine="65" startPosition="82" endLine="70" endPosition="0">
+    <scopeInfo nodeId="4003657351907889162" fileName="MakeWorker.java" startLine="74" startPosition="82" endLine="79" endPosition="0">
       <varInfo nodeId="4003657351907889165" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889167" fileName="MakeWorker.java" startLine="70" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="4003657351907889167" fileName="MakeWorker.java" startLine="79" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="4003657351907889170" varName="taskName" />
       <varInfo nodeId="1637160376125512437" varName="work" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889131" fileName="MakeWorker.java" startLine="80" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="4003657351907888949" fileName="MakeWorker.java" startLine="85" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="4003657351907889131" fileName="MakeWorker.java" startLine="89" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="4003657351907888949" fileName="MakeWorker.java" startLine="158" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="4003657351907888952" varName="args" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889037" fileName="MakeWorker.java" startLine="38" startPosition="67" endLine="44" endPosition="34">
+    <scopeInfo nodeId="4003657351907889037" fileName="MakeWorker.java" startLine="47" startPosition="67" endLine="53" endPosition="34">
       <varInfo nodeId="4003657351907889039" varName="owningModule" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889031" fileName="MakeWorker.java" startLine="37" startPosition="5" endLine="45" endPosition="5">
+    <scopeInfo nodeId="3368413835800464301" fileName="MakeWorker.java" startLine="111" startPosition="55" endLine="117" endPosition="19">
+      <varInfo nodeId="3368413835800464303" varName="ideaProject" />
+      <varInfo nodeId="3368413835800464313" varName="project" />
+      <varInfo nodeId="3368413835800464309" varName="projectFile" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889031" fileName="MakeWorker.java" startLine="46" startPosition="5" endLine="54" endPosition="5">
       <varInfo nodeId="4003657351907889035" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889152" fileName="MakeWorker.java" startLine="64" startPosition="45" endLine="75" endPosition="11" />
-    <scopeInfo nodeId="4003657351907889122" fileName="MakeWorker.java" startLine="63" startPosition="111" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="4003657351907889002" fileName="MakeWorker.java" startLine="32" startPosition="78" endLine="78" endPosition="28">
+    <scopeInfo nodeId="5686414413373436298" fileName="MakeWorker.java" startLine="136" startPosition="33" endLine="144" endPosition="7" />
+    <scopeInfo nodeId="3513010440363257753" fileName="MakeWorker.java" startLine="148" startPosition="33" endLine="156" endPosition="5" />
+    <scopeInfo nodeId="3368413835800463816" fileName="MakeWorker.java" startLine="110" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="5686414413373436285" fileName="MakeWorker.java" startLine="135" startPosition="28" endLine="145" endPosition="5" />
+    <scopeInfo nodeId="5686414413373436289" fileName="MakeWorker.java" startLine="135" startPosition="28" endLine="145" endPosition="5">
+      <varInfo nodeId="5686414413373436290" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889152" fileName="MakeWorker.java" startLine="73" startPosition="45" endLine="84" endPosition="11" />
+    <scopeInfo nodeId="3368413835800463820" fileName="MakeWorker.java" startLine="120" startPosition="37" endLine="131" endPosition="13" />
+    <scopeInfo nodeId="3513010440363257750" fileName="MakeWorker.java" startLine="147" startPosition="0" endLine="158" endPosition="0" />
+    <scopeInfo nodeId="3368413835800462477" fileName="MakeWorker.java" startLine="95" startPosition="22" endLine="108" endPosition="20">
+      <varInfo nodeId="3368413835800462485" varName="go" />
+      <varInfo nodeId="3368413835800462481" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889122" fileName="MakeWorker.java" startLine="72" startPosition="111" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="3368413835800463817" fileName="MakeWorker.java" startLine="119" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="5686414413373436282" fileName="MakeWorker.java" startLine="133" startPosition="0" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="3368413835800462474" fileName="MakeWorker.java" startLine="94" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="4003657351907889002" fileName="MakeWorker.java" startLine="41" startPosition="78" endLine="87" endPosition="28">
       <varInfo nodeId="4003657351907889057" varName="finalToCompile" />
       <varInfo nodeId="4003657351907889113" varName="result" />
       <varInfo nodeId="4003657351907889081" varName="sb" />
       <varInfo nodeId="4003657351907889004" varName="toCompile" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907888995" fileName="MakeWorker.java" startLine="30" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="4003657351907888995" fileName="MakeWorker.java" startLine="39" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="4003657351907889000" varName="go" />
       <varInfo nodeId="4003657351907888998" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="4003657351907888946" fileName="MakeWorker.java" startLine="22" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.build.ant.make.MakeWorker" />
-    <unitInfo nodeId="4003657351907889046" fileName="MakeWorker.java" startLine="39" startPosition="70" endLine="43" endPosition="7" unitName="jetbrains.mps.build.ant.make.MakeWorker$1" />
-    <unitInfo nodeId="4003657351907889064" fileName="MakeWorker.java" startLine="46" startPosition="77" endLine="51" endPosition="5" unitName="jetbrains.mps.build.ant.make.MakeWorker$2" />
-    <unitInfo nodeId="4003657351907889120" fileName="MakeWorker.java" startLine="63" startPosition="75" endLine="77" endPosition="5" unitName="jetbrains.mps.build.ant.make.MakeWorker$3" />
-    <unitInfo nodeId="4003657351907889161" fileName="MakeWorker.java" startLine="65" startPosition="58" endLine="75" endPosition="9" unitName="jetbrains.mps.build.ant.make.MakeWorker$4" />
+    <unitInfo nodeId="4003657351907888946" fileName="MakeWorker.java" startLine="31" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.build.ant.make.MakeWorker" />
+    <unitInfo nodeId="4003657351907889046" fileName="MakeWorker.java" startLine="48" startPosition="70" endLine="52" endPosition="7" unitName="jetbrains.mps.build.ant.make.MakeWorker$1" />
+    <unitInfo nodeId="4003657351907889064" fileName="MakeWorker.java" startLine="55" startPosition="77" endLine="60" endPosition="5" unitName="jetbrains.mps.build.ant.make.MakeWorker$2" />
+    <unitInfo nodeId="4003657351907889120" fileName="MakeWorker.java" startLine="72" startPosition="75" endLine="86" endPosition="5" unitName="jetbrains.mps.build.ant.make.MakeWorker$3" />
+    <unitInfo nodeId="5686414413373460843" fileName="MakeWorker.java" startLine="138" startPosition="41" endLine="141" endPosition="9" unitName="jetbrains.mps.build.ant.make.MakeWorker$4" />
+    <unitInfo nodeId="4003657351907889161" fileName="MakeWorker.java" startLine="74" startPosition="58" endLine="84" endPosition="9" unitName="jetbrains.mps.build.ant.make.MakeWorker$4" />
   </root>
   <root nodeId="4003657351907889485">
     <nodeInfo nodeId="4003657351907889498" fileName="MakeTask.java" startLine="13" startPosition="57" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
