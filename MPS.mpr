@@ -49,6 +49,7 @@
       <modulePath path="${project}/core/analyzers/solutions/sandbox/sandbox.msd" folder="core.analyzers" />
       <modulePath path="${project}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/baseLanguage/sandbox/sandbox.msd" folder="baseLanguage" />
+      <modulePath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.execution/execution.msd" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="baseLanguage.unitTest" />
