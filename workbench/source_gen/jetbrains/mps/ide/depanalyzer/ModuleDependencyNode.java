@@ -16,15 +16,19 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.dependency.DependenciesManager;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import java.awt.Color;
 import com.intellij.openapi.project.Project;
 
 public class ModuleDependencyNode extends MPSTreeNode {
   private List<IModule> myModules;
   private boolean myInitialized;
   private boolean myUsedLanguage;
+  private boolean myCyclic;
 
   public ModuleDependencyNode(IModule module, boolean isUsedLanguage, boolean isRuntime, IOperationContext context) {
     this(ListSequence.fromListAndArray(new ArrayList<IModule>(), module), context);
@@ -32,6 +36,11 @@ public class ModuleDependencyNode extends MPSTreeNode {
     if (isRuntime) {
       setNodeIdentifier(getNodeIdentifier() + " (runtime)");
     }
+  }
+
+  public ModuleDependencyNode(IModule module, boolean isUsedLanguage, boolean isRuntime, boolean isCyclic, IOperationContext context) {
+    this(module, isUsedLanguage, isRuntime, context);
+    myCyclic = isCyclic;
   }
 
   public ModuleDependencyNode(List<IModule> modules, IOperationContext context) {
@@ -59,6 +68,10 @@ public class ModuleDependencyNode extends MPSTreeNode {
     return myUsedLanguage;
   }
 
+  public void setCyclic() {
+    myCyclic = true;
+  }
+
   public ModuleDependencyNode getFromNode() {
     TreeNode n = getParent();
     if (n != null && isUsedLanguage()) {
@@ -75,6 +88,8 @@ public class ModuleDependencyNode extends MPSTreeNode {
     Set<IModule> rtModules = SetSequence.fromSet(new HashSet<IModule>());
     Set<Language> usedLanguages = SetSequence.fromSet(new HashSet<Language>());
 
+    DependencyTree tree = (DependencyTree) getTree();
+
     for (IModule module : ListSequence.fromList(myModules)) {
       DependenciesManager depManager = module.getDependenciesManager();
       SetSequence.fromSet(reqModules).addSequence(SetSequence.fromSet(depManager.getAllVisibleModules()));
@@ -82,7 +97,28 @@ public class ModuleDependencyNode extends MPSTreeNode {
       SetSequence.fromSet(usedLanguages).addSequence(SetSequence.fromSet(depManager.getAllUsedLanguages()));
     }
 
-    DependencyTree tree = (DependencyTree) getTree();
+    Set<IModule> depLoops = SetSequence.fromSet(new HashSet<IModule>());
+    Set<IModule> langLoops = SetSequence.fromSet(new HashSet<IModule>());
+    if (tree.getCycles() != null) {
+      SetSequence.fromSet(depLoops).addSequence(SetSequence.fromSet(tree.getCycles()).where(new IWhereFilter<Tuples._2<DependencyUtil.Role, IModule>>() {
+        public boolean accept(Tuples._2<DependencyUtil.Role, IModule> it) {
+          return it._0() == DependencyUtil.Role.DTDependency_ || it._0() == DependencyUtil.Role.RTDependency || it._0() == DependencyUtil.Role.None;
+        }
+      }).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
+        public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
+          return it._1();
+        }
+      }));
+      SetSequence.fromSet(langLoops).addSequence(SetSequence.fromSet(tree.getCycles()).where(new IWhereFilter<Tuples._2<DependencyUtil.Role, IModule>>() {
+        public boolean accept(Tuples._2<DependencyUtil.Role, IModule> it) {
+          return it._0() == DependencyUtil.Role.UsedLanguage || it._0() == DependencyUtil.Role.None;
+        }
+      }).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
+        public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
+          return it._1();
+        }
+      }));
+    }
 
     Set<IModule> allModules = (tree.isShowRuntime() ?
       rtModules :
@@ -93,7 +129,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
         return it.getModuleFqName();
       }
     }, true)) {
-      add(new ModuleDependencyNode(m, false, !(SetSequence.fromSet(reqModules).contains(m)), getOperationContext()));
+      add(new ModuleDependencyNode(m, false, !(SetSequence.fromSet(reqModules).contains(m)), SetSequence.fromSet(depLoops).contains(m), getOperationContext()));
     }
 
     if (tree.isShowUsedLanguage()) {
@@ -103,7 +139,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
           return it.getModuleFqName();
         }
       }, true)) {
-        usedlanguages.add(new ModuleDependencyNode(l, true, false, getOperationContext()));
+        usedlanguages.add(new ModuleDependencyNode(l, true, false, SetSequence.fromSet(langLoops).contains(l), getOperationContext()));
       }
       add(usedlanguages);
     }
@@ -116,11 +152,18 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
   public void doubleClick() {
     if ((int) ListSequence.fromList(myModules).count() == 1) {
-      ProjectPane.getInstance(check_lba8jw_a0a0a0a5(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
+      ProjectPane.getInstance(check_lba8jw_a0a0a0a6(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
     }
   }
 
-  private static Project check_lba8jw_a0a0a0a5(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
+  protected void doUpdatePresentation() {
+    super.doUpdatePresentation();
+    if (myCyclic) {
+      setColor(Color.RED);
+    }
+  }
+
+  private static Project check_lba8jw_a0a0a0a6(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProject();
     }

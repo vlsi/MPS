@@ -33,21 +33,13 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.DevkitDescriptor;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.project.structure.modules.Dependency;
 
 public class DependencyPathTree extends MPSTree implements DataProvider {
   private List<Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>>>());
   private Project myProject;
   private boolean myShowAllPaths;
   private boolean myShowRuntime;
+  private Set<Tuples._2<DependencyUtil.Role, IModule>> myCycles;
 
   public DependencyPathTree(Project project) {
     myProject = project;
@@ -82,10 +74,14 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     ListSequence.fromList(myAllDependencies).addElement(MultiTuple.<Set<IModule>,Set<IModule>,Set<IModule>>from(SetSequence.fromSetWithValues(new HashSet<IModule>(), from), SetSequence.fromSetWithValues(new HashSet<IModule>(), to), SetSequence.fromSetWithValues(new HashSet<IModule>(), usedLanguage)));
   }
 
+  public void setCycles(Iterable<Tuples._2<DependencyUtil.Role, IModule>> cycles) {
+    myCycles = SetSequence.fromSetWithValues(new HashSet<Tuples._2<DependencyUtil.Role, IModule>>(), cycles);
+  }
+
   private void removeUnusedNodes(MPSTreeNode root) {
     List<MPSTreeNode> children = ListSequence.fromListWithValues(new ArrayList<MPSTreeNode>(), root);
     for (MPSTreeNode n : ListSequence.fromList(children)) {
-      DependencyTreeNode node = as_9bg0dz_a0a0a1a7(n, DependencyTreeNode.class);
+      DependencyTreeNode node = as_9bg0dz_a0a0a1a8(n, DependencyTreeNode.class);
       if (node != null && !(node.isUsed())) {
         node.removeFromParent();
       } else {
@@ -97,7 +93,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   public void setUsed(DependencyTreeNode node, final Map<DependencyTreeNode, List<DependencyTreeNode>> backDeps) {
     if (node != null && !(node.isUsed())) {
       node.setUsed();
-      setUsed(as_9bg0dz_a0a1a0a8(node.getParent(), DependencyTreeNode.class), backDeps);
+      setUsed(as_9bg0dz_a0a1a0a9(node.getParent(), DependencyTreeNode.class), backDeps);
       ListSequence.fromList(MapSequence.fromMap(backDeps).get(node)).visitAll(new IVisitor<DependencyTreeNode>() {
         public void visit(DependencyTreeNode it) {
           setUsed(it, backDeps);
@@ -107,31 +103,34 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   }
 
   private MPSTreeNode buildTree(IModule from, Set<IModule> dependency, Set<IModule> usedlanguage) {
-    Set<DependencyPathTree.Link> vis = SetSequence.fromSet(new HashSet<DependencyPathTree.Link>());
-    Map<Tuples._2<IModule, DependencyPathTree.Role>, DependencyTreeNode> visited = MapSequence.fromMap(new HashMap<Tuples._2<IModule, DependencyPathTree.Role>, DependencyTreeNode>());
+    Set<DependencyUtil.Link> vis = SetSequence.fromSet(new HashSet<DependencyUtil.Link>());
+    Map<Tuples._2<IModule, DependencyUtil.Role>, DependencyTreeNode> visited = MapSequence.fromMap(new HashMap<Tuples._2<IModule, DependencyUtil.Role>, DependencyTreeNode>());
     Queue<DependencyTreeNode> unprocessed = QueueSequence.fromQueue(new LinkedList<DependencyTreeNode>());
 
     Map<DependencyTreeNode, List<DependencyTreeNode>> backDeps = MapSequence.fromMap(new HashMap<DependencyTreeNode, List<DependencyTreeNode>>());
 
-    DependencyTreeNode root = new DependencyTreeNode(new DependencyPathTree.Link(from, DependencyPathTree.Role.None, null), "", null);
+    DependencyTreeNode root = new DependencyTreeNode(new DependencyUtil.Link(from, DependencyUtil.Role.None, null), null);
+    if (myCycles != null && SetSequence.fromSet(myCycles).contains(MultiTuple.<DependencyUtil.Role,IModule>from(DependencyUtil.Role.None, from))) {
+      root.setCyclic();
+    }
     QueueSequence.fromQueue(unprocessed).addLastElement(root);
 
     while (QueueSequence.fromQueue(unprocessed).isNotEmpty()) {
       DependencyTreeNode node = QueueSequence.fromQueue(unprocessed).removeFirstElement();
-      if (node.getLink().role == DependencyPathTree.Role.UsedLanguage && SetSequence.fromSet(usedlanguage).contains(node.getLink().module) || (node.getLink().role == DependencyPathTree.Role.DTDependency_ || node.getLink().role == DependencyPathTree.Role.RTDependency) && SetSequence.fromSet(dependency).contains(node.getLink().module)) {
-        node.setLeaf();
-        // mark as used 
+      if (node.getLink().role == DependencyUtil.Role.UsedLanguage && SetSequence.fromSet(usedlanguage).contains(node.getLink().module) || (node.getLink().role == DependencyUtil.Role.DTDependency_ || node.getLink().role == DependencyUtil.Role.RTDependency) && SetSequence.fromSet(dependency).contains(node.getLink().module)) {
         setUsed(node, backDeps);
-        while (node != null && !(node.isUsed())) {
-          // todo: move shortest branch up 
-          node.setUsed();
-        }
-      } else if (MapSequence.fromMap(visited).containsKey(MultiTuple.<IModule,DependencyPathTree.Role>from(node.getLink().module, node.getLink().role))) {
-        if (!(isShowAll())) {
+        if (myCycles == null) {
+          node.setLeaf();
           continue;
         }
-        DependencyTreeNode n = MapSequence.fromMap(visited).get(MultiTuple.<IModule,DependencyPathTree.Role>from(node.getLink().module, node.getLink().role));
-        if (!(MapSequence.fromMap(backDeps).containsKey(n))) {
+      }
+      // <node> 
+      if (MapSequence.fromMap(visited).containsKey(MultiTuple.<IModule,DependencyUtil.Role>from(node.getLink().module, node.getLink().role))) {
+        if (!(isShowAll() || myCycles != null)) {
+          continue;
+        }
+        DependencyTreeNode n = MapSequence.fromMap(visited).get(MultiTuple.<IModule,DependencyUtil.Role>from(node.getLink().module, node.getLink().role));
+        if (isShowAll() && !(MapSequence.fromMap(backDeps).containsKey(n))) {
           MapSequence.fromMap(backDeps).put(n, ListSequence.fromList(new ArrayList<DependencyTreeNode>()));
         }
         node.setLinkLeaf(n);
@@ -140,13 +139,20 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
           setUsed(node, backDeps);
         }
       } else {
-        MapSequence.fromMap(visited).put(MultiTuple.<IModule,DependencyPathTree.Role>from(node.getLink().module, node.getLink().role), node);
-        for (DependencyPathTree.Link link : ListSequence.fromList(dependencies(node.getLink().role, node.getLink().module, isShowRuntime()))) {
-          DependencyTreeNode n = new DependencyTreeNode(link, link.linktype.toString(), null);
+        MapSequence.fromMap(visited).put(MultiTuple.<IModule,DependencyUtil.Role>from(node.getLink().module, node.getLink().role), node);
+        DependencyUtil.dependencies(node.getLink().role, node.getLink().module, isShowRuntime());
+        for (DependencyUtil.Link link : ListSequence.fromList(DependencyUtil.dependencies(node.getLink().role, node.getLink().module, isShowRuntime()))) {
+          DependencyTreeNode n = new DependencyTreeNode(link, null);
+          if (myCycles != null && SetSequence.fromSet(myCycles).contains(MultiTuple.<DependencyUtil.Role,IModule>from(link.role, link.module))) {
+            n.setCyclic();
+            setUsed(node, backDeps);
+          }
           node.add(n);
           QueueSequence.fromQueue(unprocessed).addLastElement(n);
         }
       }
+
+      // <node> 
     }
 
     return root;
@@ -178,7 +184,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    DependencyTreeNode current = as_9bg0dz_a0a0a21(getCurrentNode(), DependencyTreeNode.class);
+    DependencyTreeNode current = as_9bg0dz_a0a0a31(getCurrentNode(), DependencyTreeNode.class);
     if (current == null) {
       return null;
     }
@@ -188,267 +194,45 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     if (id.equals(MPSDataKeys.MODULE.getName())) {
       return current.getModule();
     }
-    if (id.equals(MPSDataKeys.CONTEXT_MODULE.getName()) && current.getLink().linktype == DependencyPathTree.LinkType.Depends) {
-      DependencyTreeNode node = as_9bg0dz_a0a0a4a21(current.getParent(), DependencyTreeNode.class);
-      return check_9bg0dz_a1a4a21(node);
+    if (id.equals(MPSDataKeys.CONTEXT_MODULE.getName()) && current.getLink().linktype == DependencyUtil.LinkType.Depends) {
+      DependencyTreeNode node = as_9bg0dz_a0a0a4a31(current.getParent(), DependencyTreeNode.class);
+      return check_9bg0dz_a1a4a31(node);
     }
     return null;
   }
 
-  private static List<DependencyPathTree.Link> dependencies(DependencyPathTree.Role role, IModule module, boolean trackRuntime) {
-    List<DependencyPathTree.Link> result = ListSequence.fromList(new ArrayList<DependencyPathTree.Link>());
-    ModuleDescriptor descr = module.getModuleDescriptor();
-    switch (role) {
-      case None:
-        // first step 
-        addDeps(result, check_9bg0dz_b0b0a2a0(descr), DependencyPathTree.Role.UsedDevkit, DependencyPathTree.LinkType.UsesDevkit);
-        addDeps(result, check_9bg0dz_b0c0a2a0(descr), DependencyPathTree.Role.UsedLanguage, DependencyPathTree.LinkType.UsesLanguage);
-        addDeps(result, getReexportDeps(descr), DependencyPathTree.Role.DTDependency_, DependencyPathTree.LinkType.ReexportsDep);
-        addDeps(result, getNonreexportDeps(descr), DependencyPathTree.Role.DTDependency_, DependencyPathTree.LinkType.Depends);
-        break;
-
-      case UsedDevkit:
-        addDeps(result, check_9bg0dz_b0a0b2a0(as_9bg0dz_a0b0a0b2a0(descr, DevkitDescriptor.class)), DependencyPathTree.Role.UsedDevkit, DependencyPathTree.LinkType.ExtendsDevkit);
-        addDeps(result, check_9bg0dz_b0b0b2a0(as_9bg0dz_a0b0b0b2a0(descr, DevkitDescriptor.class)), DependencyPathTree.Role.UsedLanguage, DependencyPathTree.LinkType.ExportsLanguage);
-        addDeps(result, check_9bg0dz_b0c0b2a0(as_9bg0dz_a0b0c0b2a0(descr, DevkitDescriptor.class)), DependencyPathTree.Role.DTDependency_, DependencyPathTree.LinkType.ExportsSolution);
-        break;
-
-      case UsedLanguage:
-        addDeps(result, check_9bg0dz_b0a0c2a0(as_9bg0dz_a0b0a0c2a0(descr, LanguageDescriptor.class)), DependencyPathTree.Role.UsedLanguage, DependencyPathTree.LinkType.ExtendsLanguage);
-        if (trackRuntime) {
-          addDeps(result, check_9bg0dz_b0a0b0c2a0(as_9bg0dz_a0b0a0b0c2a0(descr, LanguageDescriptor.class)), DependencyPathTree.Role.RTDependency, DependencyPathTree.LinkType.ExportsRuntime);
-        }
-        break;
-
-      case DTDependency_:
-        addDeps(result, getReexportDeps(descr), DependencyPathTree.Role.DTDependency_, DependencyPathTree.LinkType.ReexportsDep);
-        if (trackRuntime) {
-          addDeps(result, getNonreexportDeps(descr), DependencyPathTree.Role.RTDependency, DependencyPathTree.LinkType.Depends);
-        }
-        break;
-
-      case RTDependency:
-        addDeps(result, getReexportDeps(descr), DependencyPathTree.Role.RTDependency, DependencyPathTree.LinkType.ReexportsDep);
-        addDeps(result, getNonreexportDeps(descr), DependencyPathTree.Role.RTDependency, DependencyPathTree.LinkType.Depends);
-        break;
-
-      default:
-    }
-    return result;
-  }
-
-  private static void addDeps(List<DependencyPathTree.Link> result, Iterable<ModuleReference> modules, final DependencyPathTree.Role role, final DependencyPathTree.LinkType linktype) {
-    if (modules == null) {
-      return;
-    }
-    ListSequence.fromList(result).addSequence(Sequence.fromIterable(modules).select(new ISelector<ModuleReference, IModule>() {
-      public IModule select(ModuleReference ref) {
-        return MPSModuleRepository.getInstance().getModule(ref);
-      }
-    }).where(new IWhereFilter<IModule>() {
-      public boolean accept(IModule module) {
-        return module != null;
-      }
-    }).select(new ISelector<IModule, DependencyPathTree.Link>() {
-      public DependencyPathTree.Link select(IModule module) {
-        return new DependencyPathTree.Link(module, role, linktype);
-      }
-    }));
-  }
-
-  private static Iterable<ModuleReference> getReexportDeps(ModuleDescriptor descr) {
-    return ListSequence.fromList(((List<Dependency>) descr.getDependencies())).where(new IWhereFilter<Dependency>() {
-      public boolean accept(Dependency dep) {
-        return dep.isReexport();
-      }
-    }).select(new ISelector<Dependency, ModuleReference>() {
-      public ModuleReference select(Dependency dep) {
-        return dep.getModuleRef();
-      }
-    });
-  }
-
-  private static Iterable<ModuleReference> getNonreexportDeps(ModuleDescriptor descr) {
-    return ListSequence.fromList(((List<Dependency>) descr.getDependencies())).where(new IWhereFilter<Dependency>() {
-      public boolean accept(Dependency dep) {
-        return !(dep.isReexport());
-      }
-    }).select(new ISelector<Dependency, ModuleReference>() {
-      public ModuleReference select(Dependency dep) {
-        return dep.getModuleRef();
-      }
-    });
-  }
-
-  private static IModule check_9bg0dz_a1a4a21(DependencyTreeNode checkedDotOperand) {
+  private static IModule check_9bg0dz_a1a4a31(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static List<ModuleReference> check_9bg0dz_b0b0a2a0(ModuleDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getUsedDevkits();
-    }
-    return null;
-  }
-
-  private static List<ModuleReference> check_9bg0dz_b0c0a2a0(ModuleDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getUsedLanguages();
-    }
-    return null;
-  }
-
-  private static List<ModuleReference> check_9bg0dz_b0a0b2a0(DevkitDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getExtendedDevkits();
-    }
-    return null;
-  }
-
-  private static List<ModuleReference> check_9bg0dz_b0b0b2a0(DevkitDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getExportedLanguages();
-    }
-    return null;
-  }
-
-  private static List<ModuleReference> check_9bg0dz_b0c0b2a0(DevkitDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getExportedSolutions();
-    }
-    return null;
-  }
-
-  private static List<ModuleReference> check_9bg0dz_b0a0c2a0(LanguageDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getExtendedLanguages();
-    }
-    return null;
-  }
-
-  private static List<ModuleReference> check_9bg0dz_b0a0b0c2a0(LanguageDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getRuntimeModules();
-    }
-    return null;
-  }
-
-  private static <T> T as_9bg0dz_a0a0a1a7(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a1a8(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_9bg0dz_a0a1a0a8(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a1a0a9(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_9bg0dz_a0a0a21(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a31(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_9bg0dz_a0a0a4a21(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a4a31(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
-  }
-
-  private static <T> T as_9bg0dz_a0b0a0b2a0(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_9bg0dz_a0b0b0b2a0(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_9bg0dz_a0b0c0b2a0(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_9bg0dz_a0b0a0c2a0(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_9bg0dz_a0b0a0b0c2a0(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  public static   enum LinkType {
-    Depends(),
-    ReexportsDep(),
-    UsesLanguage(),
-    ExtendsLanguage(),
-    ExportsRuntime(),
-    UsesDevkit(),
-    ExportsLanguage(),
-    ExportsSolution(),
-    ExtendsDevkit();
-
-    LinkType() {
-    }
-  }
-
-  public static   enum Role {
-    None(),
-    DTDependency_(),
-    DTDependency(),
-    RTDependency(),
-    UsedLanguage(),
-    UsedDevkit();
-
-    Role() {
-    }
-  }
-
-  public static class Link {
-    public DependencyPathTree.Role role;
-    public IModule module;
-    public DependencyPathTree.LinkType linktype;
-
-    public Link(IModule module, DependencyPathTree.Role role, DependencyPathTree.LinkType linktype) {
-      this.module = module;
-      this.role = role;
-      this.linktype = linktype;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-      if (object instanceof DependencyPathTree.Link) {
-        DependencyPathTree.Link link = (DependencyPathTree.Link) object;
-        return link.module.equals(module) && link.linktype == linktype && link.role == role;
-      }
-      return false;
-    }
-
-    @Override
-    public int hashCode() {
-      return module.hashCode() + linktype.hashCode();
-    }
   }
 }
