@@ -32,6 +32,7 @@ import jetbrains.mps.ide.navigation.NavigationSupport;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.util.Pair;
 
@@ -183,7 +184,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   @Nullable
   public Object getData(@NonNls String id) {
     TypeSystemStateTreeNode currentNode = (TypeSystemStateTreeNode) this.getCurrentNode();
-    if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+    if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
       return myOperationContext;
     }
     if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {

@@ -22,12 +22,9 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 
-import java.io.File;
 import java.util.Collection;
 import java.util.List;
 
@@ -54,7 +51,7 @@ public class ModelsMiner {
       }
 
       SModelReference modelReference;
-      assert dr.getUID() != null;
+      assert dr.getUID() != null : "wrong model: " + file.getPath();
 
       modelReference = SModelReference.fromString(dr.getUID());
 

@@ -25,7 +25,6 @@ public class Icons extends IdeIcons {
   // nodes: modelStub.png, libraryModels.png, moduleSkeleton.png, mps.png, projectProperties.png, script1.png, script2.png, script3.png, view.png
   // other: addFavoritesList.png, closedFolder.png, closedFolder_glamour.png, menu-replace.png, openedFolder.png, openedFolder_glamour.png
 
-  public static final Icon LANGUAGE_ICON = new ImageIcon(Icons.class.getResource("nodes/language.png"));
   public static final Icon JAVA_ICON = new ImageIcon(Icons.class.getResource("nodes/java.png"));
   public static final Icon TEXT_ICON = new ImageIcon(Icons.class.getResource("nodes/text.png"));
   public static final Icon LIB_ICON = new ImageIcon(Icons.class.getResource("nodes/ppLib.png"));
@@ -60,23 +59,11 @@ public class Icons extends IdeIcons {
 
   @Deprecated
   public static final Icon USAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/usages.png"));
-  public static final Icon CELL_EXPLORER_ICON = new ImageIcon(Icons.class.getResource("nodes/cellExplorer.png"));
-  public static final Icon CELLS_ICON = new ImageIcon(Icons.class.getResource("nodes/cells.png"));
-  public static final Icon CELL_CONSTANT_ICON = new ImageIcon(Icons.class.getResource("nodes/cellConst.png"));
-  public static final Icon CELL_DEFAULT_ICON = new ImageIcon(Icons.class.getResource("nodes/cellDefault.png"));
-  public static final Icon CELL_COMPONENT_ICON = new ImageIcon(Icons.class.getResource("nodes/cellComponent.png"));
-  public static final Icon CELL_ERROR_ICON = new ImageIcon(Icons.class.getResource("nodes/cellError.png"));
-  public static final Icon CELL_PROPERTY_ICON = new ImageIcon(Icons.class.getResource("nodes/cellProperty.png"));
-  public static final Icon CELL_KEY_MAP_ICON = new ImageIcon(Icons.class.getResource("nodes/cellKeyMap.png"));
-  public static final Icon CELL_ACTION_KEY_ICON = new ImageIcon(Icons.class.getResource("nodes/cellActionKey.png"));
-  public static final Icon CELL_TREE_ICON = new ImageIcon(Icons.class.getResource("nodes/cellTree.png"));
 
   public static final Icon DERIVATION_NODE_ICON = new ImageIcon(Icons.class.getResource("nodes/gadget.png"));
   public static final Icon INFER_FOUND_ICON = new ImageIcon(Icons.class.getResource("nodes/inferFound.png"));
   public static final Icon INFER_FAILED_ICON = new ImageIcon(Icons.class.getResource("nodes/inferFailed.png"));
   public static final Icon INFER_QUESTION_ICON = new ImageIcon(Icons.class.getResource("nodes/inferQuestion.png"));
-
-  public static final Icon INSPECTOR_ICON = new ImageIcon(Icons.class.getResource("nodes/inspector.png"));
 
   public static final Icon DELETE_ICON = new ImageIcon(Icons.class.getResource("other/cancel.png"));
   public static final Icon FIND_ICON = new ImageIcon(Icons.class.getResource("other/find.png"));

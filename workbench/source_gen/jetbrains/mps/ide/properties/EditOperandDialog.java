@@ -9,7 +9,7 @@ import javax.swing.JTree;
 import jetbrains.mps.smodel.Generator;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
 import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.smodel.ModelAccess;
@@ -39,7 +39,7 @@ public class EditOperandDialog extends BaseDialog {
   private JTree myTree;
 
   public EditOperandDialog(final Generator currentGen, final List<ModuleReference> depGenerators, MappingConfig_AbstractRef operand, final boolean isLeft) {
-    super(MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext()), "Choose Mappings");
+    super(MPSCommonDataKeys.FRAME.getData(DataManager.getInstance().getDataContext()), "Choose Mappings");
     final DefaultMutableTreeNode root = new DefaultMutableTreeNode(new MappingSelectTree.RootNodeData("All generators"));
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

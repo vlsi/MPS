@@ -83,6 +83,7 @@ public final class CopyUtil {
       to.addEngagedOnGenerationLanguage(mr);
     }
     to.setPersistenceVersion(from.getPersistenceVersion());
+    to.getSModelHeader().setVersion(from.getSModelHeader().getVersion());
   }
 
   public static SModel copyModel(SModel model) {

@@ -5,6 +5,7 @@ package jetbrains.mps.ide.dependencyViewer;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
@@ -25,7 +26,9 @@ public class ReferencesView extends UsagesView {
     super(project, new ViewOptions(false, false, false, false, false, false));
     setCustomNodeRepresentator(new ReferencesView.MyNodeRepresentator());
     myComponent = component;
-    getTreeComponent().getTree().setSelectionRow(0);
+    UsagesTree usagesTree = getTreeComponent().getTree();
+    usagesTree.setSelectionRow(0);
+    usagesTree.setShowPopupMenu(false);
   }
 
   public void close() {

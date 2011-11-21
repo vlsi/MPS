@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.checking;
 
-import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.smodel.event.*;
 
 import java.util.List;

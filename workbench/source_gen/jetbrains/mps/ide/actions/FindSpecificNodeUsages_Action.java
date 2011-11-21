@@ -72,7 +72,7 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
     }
     MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
     {
-      SNode node = event.getData(MPSDataKeys.NODE);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
       }
       MapSequence.fromMap(_params).put("node", node);

@@ -17,7 +17,6 @@ package jetbrains.mps.codeStyle;
 
 import com.intellij.codeStyle.DefaultCodeStyleFacade;
 import com.intellij.openapi.project.Project;
-import com.intellij.util.SystemProperties;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import jetbrains.mps.ide.project.ProjectHelper;
 

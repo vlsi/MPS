@@ -13,6 +13,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -167,6 +168,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -213,23 +215,19 @@
   <dependency className="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool" file="RunReplacement_Tool.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
-    <classNode dependClassName="com.intellij.ui.content.Content" />
-    <classNode dependClassName="com.intellij.ui.content.ContentManager" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.icons.IconManager" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.IComponentDisposer" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.QueryFinder" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.Query" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTabbedTool" />
   </dependency>
 </dependenciesRoot>
 

@@ -79,7 +79,18 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     if (isWarning()) {
       cell.paintSelection(g, new Color(246, 235, 188), false);
     } else {
-      ColorAndGraphicsUtil.drawWaveUnderCell(g, getColor(), cell);
+      drawWaveUnderCell(g, getColor(), cell);
     }
+  }
+
+  public static void drawWaveUnderCell(Graphics g, Color c, EditorCell cell) {
+    if (cell == null) return;
+    int x = cell.getX();
+    int y = cell.getY();
+    int height = cell.getHeight();
+    int leftInternalInset = cell.getLeftInset();
+    int effectiveWidth = cell.getEffectiveWidth();
+    g.setColor(c);
+    ColorAndGraphicsUtil.drawWave(g, x + leftInternalInset, x + leftInternalInset + effectiveWidth, y + height - ColorAndGraphicsUtil.WAVE_HEIGHT);
   }
 }

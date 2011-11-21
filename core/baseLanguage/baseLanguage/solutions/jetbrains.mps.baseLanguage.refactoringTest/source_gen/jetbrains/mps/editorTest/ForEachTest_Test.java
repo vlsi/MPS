@@ -6,12 +6,15 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import junit.framework.Assert;
 
 @MPSLaunch
 public class ForEachTest_Test extends BaseTransformationTest {
+  public ForEachTest_Test() {
+  }
+
   @Test
   public void test_ForEachTest() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
@@ -20,12 +23,15 @@ public class ForEachTest_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
+    public TestBody() {
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("1230058635764", "");
-      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      final Editor editor = TestBody.this.initEditor("1230058635764", "");
+      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "foreach");
-      Assert.assertTrue(editor.getCurrentEditorComponent().getNodeSubstituteChooser().isVisible());
+      Assert.assertTrue(((EditorComponent) editor.getCurrentEditorComponent()).getNodeSubstituteChooser().isVisible());
     }
   }
 }

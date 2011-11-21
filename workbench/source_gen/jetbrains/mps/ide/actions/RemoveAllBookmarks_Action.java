@@ -12,7 +12,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
+import jetbrains.mps.ide.bookmark.BookmarkManager;
 
 public class RemoveAllBookmarks_Action extends GeneratedAction {
   private static final Icon ICON = null;

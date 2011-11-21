@@ -4,7 +4,7 @@ package jetbrains.mps.ide.embeddableEditor;
 
 import javax.swing.JPanel;
 import com.intellij.openapi.actionSystem.DataProvider;
-import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
+import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import java.awt.BorderLayout;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;

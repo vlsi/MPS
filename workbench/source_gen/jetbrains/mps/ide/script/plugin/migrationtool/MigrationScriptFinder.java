@@ -17,6 +17,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
+import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
 import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.ui.TreeTextUtil;

@@ -32,7 +32,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import java.util.Map;
 
@@ -187,14 +186,20 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    SNodePointer nodePointer = myTracerNode.getNodePointer();
-    if (nodePointer == null) return;
-    SNode node = nodePointer.getNode();
-    if (node == null) {
-      LOG.info("clicked node was deleted");
-
-    }
-    myProject.getComponent(MPSEditorOpener.class).openNode(node);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SNodePointer nodePointer = myTracerNode.getNodePointer();
+        if (nodePointer == null) return;
+        SNode node = nodePointer.getNode();
+        if (node == null) {
+          LOG.info("clicked node was deleted");
+          return;
+        }
+        IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
+        NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
+      }
+    });
   }
 
   public boolean isLeaf() {

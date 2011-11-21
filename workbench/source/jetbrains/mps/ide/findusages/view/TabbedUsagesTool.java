@@ -24,7 +24,7 @@ import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.ide.tools.BaseProjectTool;
 
 import javax.swing.Icon;
 import javax.swing.SwingUtilities;

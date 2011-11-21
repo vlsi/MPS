@@ -26,7 +26,7 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.ide.resolve.Resolver;
+import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.*;
 
@@ -87,7 +87,7 @@ public class CellAction_PasteNode extends EditorCellAction {
           if (!successfull) return;
         }
 
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
           public void run() {
             SNode selectedNode = selectedNodePointer.getNode();
             assert !selectedNode.isDisposed();
@@ -131,7 +131,7 @@ public class CellAction_PasteNode extends EditorCellAction {
               }
             }
           }
-        });
+        }, context.getOperationContext().getProject());
 
       }
     });

@@ -26,7 +26,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.workbench.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.ide.tools.BaseProjectTool;
 
 import javax.swing.*;
 import java.awt.BorderLayout;

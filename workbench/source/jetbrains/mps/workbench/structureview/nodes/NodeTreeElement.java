@@ -21,6 +21,7 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.AsyncResult.Handler;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
@@ -31,7 +32,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.nodes.NodePresentation;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public abstract class NodeTreeElement implements StructureViewTreeElement {
   protected SNodePointer myNode;
@@ -64,10 +64,10 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
   public void navigate(boolean b) {
     DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Handler<DataContext>() {
       public void run(final DataContext dataContext) {
-        Project p = MPSDataKeys.PROJECT.getData(dataContext);
+        final Project p = MPSDataKeys.PROJECT.getData(dataContext);
         if (p == null) return;
 
-        IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+        final IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
           public IModule compute() {
             SNode node = myNode.getNode();
             if (node == null) return null;
@@ -77,15 +77,14 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
           }
         });
 
-        //todo use SNodePointer here, get rid of read action
-        SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
-          public SNode compute() {
-            return myNode.getNode();
+        if (module == null) return;
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SNode node = myNode.getNode();
+            if (node == null) return;
+            NavigationSupport.getInstance().openNode(new ModuleContext(module, ProjectHelper.toMPSProject(p)), node, true, true);
           }
         });
-
-        if (module == null) return;
-        new MPSEditorOpener(p).editNode(node, new ModuleContext(module, ProjectHelper.toMPSProject(p)));
       }
     });
   }

@@ -173,53 +173,103 @@
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="70" startPosition="27" endLine="72" endPosition="16" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="70" startPosition="42" endLine="72" endPosition="43" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="75" startPosition="30" endLine="77" endPosition="25" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="1204026592280" varName="frame" />
+    </scopeInfo>
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="102" startPosition="49" endLine="105" endPosition="7" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="116" startPosition="43" endLine="119" endPosition="21" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="129" startPosition="42" endLine="132" endPosition="21" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="162" startPosition="45" endLine="165" endPosition="61" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="175" startPosition="42" endLine="178" endPosition="58" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="181" startPosition="51" endLine="184" endPosition="58" />
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="116" startPosition="43" endLine="119" endPosition="21">
+      <varInfo nodeId="1204026592280" varName="component" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="129" startPosition="42" endLine="132" endPosition="21">
+      <varInfo nodeId="1204026592280" varName="component" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="162" startPosition="45" endLine="165" endPosition="61">
+      <varInfo nodeId="1204026592280" varName="oldValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="175" startPosition="42" endLine="178" endPosition="58">
+      <varInfo nodeId="1204026592280" varName="oldValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="181" startPosition="51" endLine="184" endPosition="58">
+      <varInfo nodeId="1204026592280" varName="oldValue" />
+    </scopeInfo>
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="59" startPosition="31" endLine="63" endPosition="37" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="109" startPosition="39" endLine="113" endPosition="21" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="122" startPosition="39" endLine="126" endPosition="21" />
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="109" startPosition="39" endLine="113" endPosition="21">
+      <varInfo nodeId="1204026592280" varName="component" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="122" startPosition="39" endLine="126" endPosition="21">
+      <varInfo nodeId="1204026592280" varName="component" />
+    </scopeInfo>
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="155" startPosition="46" endLine="159" endPosition="32" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="168" startPosition="47" endLine="172" endPosition="32" />
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="155" startPosition="46" endLine="159" endPosition="32">
+      <varInfo nodeId="1204026592280" varName="oldValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="168" startPosition="47" endLine="172" endPosition="32">
+      <varInfo nodeId="1204026592280" varName="oldValue" />
+    </scopeInfo>
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="23" startPosition="40" endLine="28" endPosition="30" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="49" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="54" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1204026592280" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="59" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1204026592280" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="64" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1204026592280" varName="newValue" />
+    </scopeInfo>
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="101" startPosition="25" endLine="106" endPosition="5" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="115" startPosition="0" endLine="121" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="128" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="161" startPosition="0" endLine="167" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="174" startPosition="0" endLine="180" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="180" startPosition="0" endLine="186" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="81" startPosition="5" endLine="88" endPosition="65" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="90" startPosition="5" endLine="97" endPosition="65" />
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="161" startPosition="0" endLine="167" endPosition="0">
+      <varInfo nodeId="1204026592280" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="174" startPosition="0" endLine="180" endPosition="0">
+      <varInfo nodeId="1204026592280" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="180" startPosition="0" endLine="186" endPosition="0">
+      <varInfo nodeId="1204026592280" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="81" startPosition="5" endLine="88" endPosition="65">
+      <varInfo nodeId="1204026592280" varName="binding" />
+      <varInfo nodeId="1204026592280" varName="sourceObject" />
+      <varInfo nodeId="1204026592280" varName="sourceProperty" />
+      <varInfo nodeId="1204026592280" varName="targetObject" />
+      <varInfo nodeId="1204026592280" varName="targetProperty" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="90" startPosition="5" endLine="97" endPosition="65">
+      <varInfo nodeId="1204026592280" varName="binding" />
+      <varInfo nodeId="1204026592280" varName="sourceObject" />
+      <varInfo nodeId="1204026592280" varName="sourceProperty" />
+      <varInfo nodeId="1204026592280" varName="targetObject" />
+      <varInfo nodeId="1204026592280" varName="targetProperty" />
+    </scopeInfo>
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="108" startPosition="0" endLine="115" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="121" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="154" startPosition="0" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="167" startPosition="0" endLine="174" endPosition="0" />
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="154" startPosition="0" endLine="161" endPosition="0">
+      <varInfo nodeId="1204026592280" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="167" startPosition="0" endLine="174" endPosition="0">
+      <varInfo nodeId="1204026592280" varName="newValue" />
+    </scopeInfo>
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="22" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="100" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="51" startPosition="39" endLine="63" endPosition="37" />
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="51" startPosition="39" endLine="63" endPosition="37">
+      <varInfo nodeId="1204026592280" varName="component" />
+    </scopeInfo>
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="50" startPosition="0" endLine="64" endPosition="3" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="80" startPosition="23" endLine="98" endPosition="5" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="79" startPosition="0" endLine="100" endPosition="0" />
@@ -261,16 +311,24 @@
     <scopeInfo nodeId="1204027191788" fileName="NewDevKitDialogContentPane.java" startLine="215" startPosition="38" endLine="216" endPosition="13" />
     <scopeInfo nodeId="1204027305860" fileName="NewDevKitDialogContentPane.java" startLine="220" startPosition="90" endLine="221" endPosition="59" />
     <scopeInfo nodeId="4015801747712977602" fileName="NewDevKitDialogContentPane.java" startLine="189" startPosition="26" endLine="191" endPosition="13" />
-    <scopeInfo nodeId="4543209876460447836" fileName="NewDevKitDialogContentPane.java" startLine="202" startPosition="63" endLine="205" endPosition="0" />
+    <scopeInfo nodeId="4543209876460447836" fileName="NewDevKitDialogContentPane.java" startLine="202" startPosition="63" endLine="205" endPosition="0">
+      <varInfo nodeId="4543209876460447836" varName="d" />
+    </scopeInfo>
     <scopeInfo nodeId="1204027369200" fileName="NewDevKitDialogContentPane.java" startLine="59" startPosition="31" endLine="63" endPosition="37" />
-    <scopeInfo nodeId="4543209876460447823" fileName="NewDevKitDialogContentPane.java" startLine="198" startPosition="217" endLine="202" endPosition="0" />
+    <scopeInfo nodeId="4543209876460447823" fileName="NewDevKitDialogContentPane.java" startLine="198" startPosition="217" endLine="202" endPosition="0">
+      <varInfo nodeId="4543209876460447823" varName="f" />
+      <varInfo nodeId="4543209876460447823" varName="p" />
+      <varInfo nodeId="4543209876460447823" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="1204027087626" fileName="NewDevKitDialogContentPane.java" startLine="209" startPosition="0" endLine="213" endPosition="0" />
     <scopeInfo nodeId="8115509433044634447" fileName="NewDevKitDialogContentPane.java" startLine="197" startPosition="50" endLine="205" endPosition="12" />
     <scopeInfo nodeId="1204027179201" fileName="NewDevKitDialogContentPane.java" startLine="214" startPosition="41" endLine="222" endPosition="5">
       <varInfo nodeId="1204027187689" varName="path" />
       <varInfo nodeId="1204027260588" varName="prefix" />
     </scopeInfo>
-    <scopeInfo nodeId="8115509433044634446" fileName="NewDevKitDialogContentPane.java" startLine="196" startPosition="116" endLine="207" endPosition="0" />
+    <scopeInfo nodeId="8115509433044634446" fileName="NewDevKitDialogContentPane.java" startLine="196" startPosition="116" endLine="207" endPosition="0">
+      <varInfo nodeId="8115509433044634446" varName="indicator" />
+    </scopeInfo>
     <scopeInfo nodeId="1204027179199" fileName="NewDevKitDialogContentPane.java" startLine="213" startPosition="0" endLine="224" endPosition="0" />
     <scopeInfo nodeId="1204027050089" fileName="NewDevKitDialogContentPane.java" startLine="187" startPosition="27" endLine="207" endPosition="70">
       <varInfo nodeId="1217961860099" varName="ideaProject" />

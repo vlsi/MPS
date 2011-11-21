@@ -13,14 +13,13 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.resolve.Resolver;
+import jetbrains.mps.resolve.Resolver;
 import org.jetbrains.annotations.Nullable;
 
 public class GoByReference_ActionGroup extends GeneratedActionGroup {
@@ -44,8 +43,8 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
     try {
       GoByReference_ActionGroup.this.removeAll();
 
-      final IOperationContext context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-      SNode node = event.getData(MPSDataKeys.NODE);
+      final IOperationContext context = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node == null || context == null) {
         GoByReference_ActionGroup.this.disable(event.getPresentation());
         return;

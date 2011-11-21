@@ -80,6 +80,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddConceptMethodStrategy" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ImplementMethodStrategy" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MethodsToImplementStrategy" />
     <classNode dependClassName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -102,6 +103,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddConceptMethodStrategy" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MethodsToOverrideStrategy" />
     <classNode dependClassName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy" />
     <classNode dependClassName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />

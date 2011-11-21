@@ -13,7 +13,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorCell;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
@@ -95,12 +95,12 @@ public class ShowSurroundWithIntentions_Action extends GeneratedAction {
     }
   }
 
-  /*package*/ EditorCell getAnchorCell(final Map<String, Object> _params) {
+  /*package*/ jetbrains.mps.nodeEditor.cells.EditorCell getAnchorCell(final Map<String, Object> _params) {
     Selection selection = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent().getSelectionManager().getSelection();
     if (selection == null) {
       return null;
     }
-    List<EditorCell> selectedCells = selection.getSelectedCells();
+    List<jetbrains.mps.nodeEditor.cells.EditorCell> selectedCells = selection.getSelectedCells();
     if (ListSequence.fromList(selectedCells).isNotEmpty()) {
       return ListSequence.fromList(selectedCells).first();
     }

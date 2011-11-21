@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.awt.Frame;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
 import javax.swing.JOptionPane;
 
@@ -61,7 +61,7 @@ public class UICode_TabDescriptor extends EditorTabDescriptor {
     String defVal = "<default>";
     Object[] msg = new Object[]{"Choose destination model for the new template:"};
     Object[] selVals = Sequence.fromIterable(Sequence.<Object>singleton(defVal)).concat(Sequence.fromIterable(EditorExtensions.getInstance().findTemplateCreatorsInfo())).toGenericArray(Object.class);
-    Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
+    Frame frame = MPSCommonDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
     Object creatorInfo = JOptionPane.showInputDialog(frame, msg, "Choose destination model", JOptionPane.QUESTION_MESSAGE, null, selVals, defVal);
     if (defVal.equals(creatorInfo)) {
       JOptionPane.showMessageDialog(frame, "Cannot create template", "Error", JOptionPane.ERROR_MESSAGE);

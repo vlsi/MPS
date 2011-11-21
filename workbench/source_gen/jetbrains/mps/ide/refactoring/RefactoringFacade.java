@@ -21,7 +21,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import javax.swing.JOptionPane;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.util.Computable;
@@ -156,7 +156,7 @@ public class RefactoringFacade {
         if (result[0] != null) {
           return;
         }
-        int promptResult = JOptionPane.showConfirmDialog(MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext()), "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
+        int promptResult = JOptionPane.showConfirmDialog(MPSCommonDataKeys.FRAME.getData(DataManager.getInstance().getDataContext()), "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
         if (promptResult == JOptionPane.YES_OPTION) {
           result[0] = new SearchResults();
         }

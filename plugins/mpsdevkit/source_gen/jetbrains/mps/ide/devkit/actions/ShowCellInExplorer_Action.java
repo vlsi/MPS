@@ -12,7 +12,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.cellExplorer.CellExplorerView;
+import jetbrains.mps.ide.devkit.cellExplorer.CellExplorerView;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;

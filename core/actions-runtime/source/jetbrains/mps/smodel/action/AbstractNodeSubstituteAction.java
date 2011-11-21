@@ -16,8 +16,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
-import jetbrains.mps.ide.ChooseItemComponent;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -26,6 +25,7 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.util.PatternUtil;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
@@ -126,7 +126,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (myParameterObject instanceof INodeAdapter) {
       return NodeIconUtil.getIcon(((INodeAdapter) myParameterObject).getNode(), referent_presentation);
     }
-    return Icons.DEFAULT_ICON;
+    return IdeIcons.DEFAULT_ICON;
   }
 
   public boolean canSubstituteStrictly(String pattern) {
@@ -151,7 +151,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     // first char must be the same
     if (matchingText.charAt(0) != pattern.charAt(0)) return false;
 
-    if (matchingText.matches(ChooseItemComponent.getExactItemPatternBuilder(pattern, false).toString() + ".*")) {
+    if (matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false).toString() + ".*")) {
       return true;
     }
 

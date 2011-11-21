@@ -32,7 +32,10 @@
     <scopeInfo nodeId="2024340988248531971" fileName="JUnit3MethodWrapper.java" startLine="24" startPosition="41" endLine="29" endPosition="16">
       <varInfo nodeId="2024340988248531973" varName="clazz" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248531910" fileName="JUnit3MethodWrapper.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="2024340988248531910" fileName="JUnit3MethodWrapper.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="2024340988248531910" varName="checkedDotOperand" />
+      <varInfo nodeId="2024340988248531910" varName="checkedDotThisExpression" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248531967" fileName="JUnit3MethodWrapper.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="2024340988248531910" fileName="JUnit3MethodWrapper.java" startLine="13" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit3MethodWrapper" />
   </root>
@@ -67,12 +70,21 @@
       <varInfo nodeId="2024340988248532000" varName="classConcept" />
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532004" fileName="JUnit3TestWrapper.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532046" fileName="JUnit3TestWrapper.java" startLine="36" startPosition="86" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532054" fileName="JUnit3TestWrapper.java" startLine="40" startPosition="56" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532062" fileName="JUnit3TestWrapper.java" startLine="44" startPosition="51" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532046" fileName="JUnit3TestWrapper.java" startLine="36" startPosition="86" endLine="40" endPosition="0">
+      <varInfo nodeId="2024340988248532046" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532054" fileName="JUnit3TestWrapper.java" startLine="40" startPosition="56" endLine="44" endPosition="0">
+      <varInfo nodeId="2024340988248532054" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532062" fileName="JUnit3TestWrapper.java" startLine="44" startPosition="51" endLine="48" endPosition="0">
+      <varInfo nodeId="2024340988248532062" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248531992" fileName="JUnit3TestWrapper.java" startLine="51" startPosition="112" endLine="55" endPosition="16" />
     <scopeInfo nodeId="2024340988248532010" fileName="JUnit3TestWrapper.java" startLine="25" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2024340988248531992" fileName="JUnit3TestWrapper.java" startLine="50" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="2024340988248531992" fileName="JUnit3TestWrapper.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="2024340988248531992" varName="checkedDotOperand" />
+      <varInfo nodeId="2024340988248531992" varName="checkedDotThisExpression" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532025" fileName="JUnit3TestWrapper.java" startLine="34" startPosition="54" endLine="48" endPosition="7">
       <varInfo nodeId="2024340988248532027" varName="methodDeclarations" />
     </scopeInfo>
@@ -135,23 +147,39 @@
       <varInfo nodeId="2024340988248532141" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532145" fileName="JUnit4MethodWrapper.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532088" fileName="JUnit4MethodWrapper.java" startLine="42" startPosition="140" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532088" fileName="JUnit4MethodWrapper.java" startLine="42" startPosition="140" endLine="46" endPosition="0">
+      <varInfo nodeId="2024340988248532088" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="54" startPosition="76" endLine="58" endPosition="16" />
     <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="61" startPosition="114" endLine="65" endPosition="16" />
     <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="68" startPosition="73" endLine="72" endPosition="6" />
-    <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="83" startPosition="7" endLine="87" endPosition="31" />
+    <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="83" startPosition="7" endLine="87" endPosition="31">
+      <varInfo nodeId="2024340988248532071" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532155" fileName="JUnit4MethodWrapper.java" startLine="32" startPosition="41" endLine="37" endPosition="16">
       <varInfo nodeId="2024340988248532157" varName="clazz" />
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="82" startPosition="32" endLine="88" endPosition="7" />
-    <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="53" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="60" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="67" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="53" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="2024340988248532071" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="60" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="2024340988248532071" varName="checkedDotOperand" />
+      <varInfo nodeId="2024340988248532071" varName="checkedDotThisExpression" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="67" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="2024340988248532071" varName="a" />
+      <varInfo nodeId="2024340988248532071" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532079" fileName="JUnit4MethodWrapper.java" startLine="41" startPosition="352" endLine="49" endPosition="7">
       <varInfo nodeId="2024340988248532081" varName="annotation" />
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532151" fileName="JUnit4MethodWrapper.java" startLine="29" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="79" startPosition="31" endLine="89" endPosition="20" />
+    <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="79" startPosition="31" endLine="89" endPosition="20">
+      <varInfo nodeId="2024340988248532071" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2024340988248532071" varName="quotedNode_1" />
+      <varInfo nodeId="2024340988248532071" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532077" fileName="JUnit4MethodWrapper.java" startLine="40" startPosition="58" endLine="51" endPosition="17" />
     <scopeInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="78" startPosition="0" endLine="91" endPosition="0" />
     <scopeInfo nodeId="2024340988248532072" fileName="JUnit4MethodWrapper.java" startLine="39" startPosition="0" endLine="53" endPosition="0">
@@ -202,13 +230,24 @@
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532196" fileName="JUnit4TestWrapper.java" startLine="58" startPosition="99" endLine="61" endPosition="7" />
     <scopeInfo nodeId="2024340988248532216" fileName="JUnit4TestWrapper.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532258" fileName="JUnit4TestWrapper.java" startLine="39" startPosition="86" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532266" fileName="JUnit4TestWrapper.java" startLine="43" startPosition="56" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532274" fileName="JUnit4TestWrapper.java" startLine="47" startPosition="51" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532258" fileName="JUnit4TestWrapper.java" startLine="39" startPosition="86" endLine="43" endPosition="0">
+      <varInfo nodeId="2024340988248532258" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532266" fileName="JUnit4TestWrapper.java" startLine="43" startPosition="56" endLine="47" endPosition="0">
+      <varInfo nodeId="2024340988248532266" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532274" fileName="JUnit4TestWrapper.java" startLine="47" startPosition="51" endLine="51" endPosition="0">
+      <varInfo nodeId="2024340988248532274" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532176" fileName="JUnit4TestWrapper.java" startLine="66" startPosition="112" endLine="70" endPosition="16" />
-    <scopeInfo nodeId="2024340988248532191" fileName="JUnit4TestWrapper.java" startLine="57" startPosition="5" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="2024340988248532191" fileName="JUnit4TestWrapper.java" startLine="57" startPosition="5" endLine="62" endPosition="5">
+      <varInfo nodeId="2024340988248532191" varName="method" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532222" fileName="JUnit4TestWrapper.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532176" fileName="JUnit4TestWrapper.java" startLine="65" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532176" fileName="JUnit4TestWrapper.java" startLine="65" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="2024340988248532176" varName="checkedDotOperand" />
+      <varInfo nodeId="2024340988248532176" varName="checkedDotThisExpression" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532182" fileName="JUnit4TestWrapper.java" startLine="54" startPosition="55" endLine="63" endPosition="17" />
     <scopeInfo nodeId="2024340988248532177" fileName="JUnit4TestWrapper.java" startLine="53" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="2024340988248532178" varName="clazz" />
@@ -305,7 +344,9 @@
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532295" fileName="LanguageTestWrapper.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="2024340988248532304" fileName="LanguageTestWrapper.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532370" fileName="LanguageTestWrapper.java" startLine="53" startPosition="229" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532370" fileName="LanguageTestWrapper.java" startLine="53" startPosition="229" endLine="57" endPosition="0">
+      <varInfo nodeId="2024340988248532370" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532391" fileName="LanguageTestWrapper.java" startLine="67" startPosition="29" endLine="71" endPosition="29" />
     <scopeInfo nodeId="2024340988248532407" fileName="LanguageTestWrapper.java" startLine="76" startPosition="27" endLine="80" endPosition="127" />
     <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="83" startPosition="115" endLine="87" endPosition="17" />
@@ -317,13 +358,34 @@
     <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="125" startPosition="114" endLine="129" endPosition="16" />
     <scopeInfo nodeId="2024340988248532378" fileName="LanguageTestWrapper.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="2024340988248532317" fileName="LanguageTestWrapper.java" startLine="33" startPosition="41" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="82" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="89" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="96" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="103" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="110" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="117" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="124" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="82" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="2024340988248532283" varName="checkedDotOperand" />
+      <varInfo nodeId="2024340988248532283" varName="checkedDotThisExpression" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="89" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="2024340988248532283" varName="checkedDotOperand" />
+      <varInfo nodeId="2024340988248532283" varName="checkedDotThisExpression" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="96" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="2024340988248532283" varName="checkedDotOperand" />
+      <varInfo nodeId="2024340988248532283" varName="checkedDotThisExpression" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="103" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="2024340988248532283" varName="checkedDotOperand" />
+      <varInfo nodeId="2024340988248532283" varName="checkedDotThisExpression" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="110" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="2024340988248532283" varName="checkedDotOperand" />
+      <varInfo nodeId="2024340988248532283" varName="checkedDotThisExpression" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="117" startPosition="0" endLine="124" endPosition="0">
+      <varInfo nodeId="2024340988248532283" varName="checkedDotOperand" />
+      <varInfo nodeId="2024340988248532283" varName="checkedDotThisExpression" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="124" startPosition="0" endLine="131" endPosition="0">
+      <varInfo nodeId="2024340988248532283" varName="checkedDotOperand" />
+      <varInfo nodeId="2024340988248532283" varName="checkedDotThisExpression" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532387" fileName="LanguageTestWrapper.java" startLine="64" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="2024340988248532403" fileName="LanguageTestWrapper.java" startLine="73" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="2024340988248532313" fileName="LanguageTestWrapper.java" startLine="30" startPosition="0" endLine="42" endPosition="0" />
@@ -498,12 +560,24 @@
     <scopeInfo nodeId="2024340988248532862" fileName="TestNodeWrapperFactory.java" startLine="158" startPosition="0" endLine="162" endPosition="0">
       <varInfo nodeId="2024340988248532872" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532461" fileName="TestNodeWrapperFactory.java" startLine="178" startPosition="136" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532471" fileName="TestNodeWrapperFactory.java" startLine="182" startPosition="62" endLine="186" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532491" fileName="TestNodeWrapperFactory.java" startLine="190" startPosition="99" endLine="194" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532506" fileName="TestNodeWrapperFactory.java" startLine="198" startPosition="99" endLine="202" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532521" fileName="TestNodeWrapperFactory.java" startLine="206" startPosition="99" endLine="210" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532553" fileName="TestNodeWrapperFactory.java" startLine="218" startPosition="136" endLine="222" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532461" fileName="TestNodeWrapperFactory.java" startLine="178" startPosition="136" endLine="182" endPosition="0">
+      <varInfo nodeId="2024340988248532461" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532471" fileName="TestNodeWrapperFactory.java" startLine="182" startPosition="62" endLine="186" endPosition="0">
+      <varInfo nodeId="2024340988248532471" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532491" fileName="TestNodeWrapperFactory.java" startLine="190" startPosition="99" endLine="194" endPosition="0">
+      <varInfo nodeId="2024340988248532491" varName="factory" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532506" fileName="TestNodeWrapperFactory.java" startLine="198" startPosition="99" endLine="202" endPosition="0">
+      <varInfo nodeId="2024340988248532506" varName="factory" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532521" fileName="TestNodeWrapperFactory.java" startLine="206" startPosition="99" endLine="210" endPosition="0">
+      <varInfo nodeId="2024340988248532521" varName="factory" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532553" fileName="TestNodeWrapperFactory.java" startLine="218" startPosition="136" endLine="222" endPosition="0">
+      <varInfo nodeId="2024340988248532553" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532422" fileName="TestNodeWrapperFactory.java" startLine="225" startPosition="73" endLine="229" endPosition="16" />
     <scopeInfo nodeId="2024340988248532422" fileName="TestNodeWrapperFactory.java" startLine="232" startPosition="63" endLine="236" endPosition="6" />
     <scopeInfo nodeId="2024340988248532422" fileName="TestNodeWrapperFactory.java" startLine="239" startPosition="63" endLine="243" endPosition="6" />
@@ -522,7 +596,9 @@
     <scopeInfo nodeId="2024340988248532813" fileName="TestNodeWrapperFactory.java" startLine="133" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="2024340988248532814" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532430" fileName="TestNodeWrapperFactory.java" startLine="168" startPosition="65" endLine="173" endPosition="5" />
+    <scopeInfo nodeId="2024340988248532430" fileName="TestNodeWrapperFactory.java" startLine="168" startPosition="65" endLine="173" endPosition="5">
+      <varInfo nodeId="2024340988248532430" varName="factory" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532488" fileName="TestNodeWrapperFactory.java" startLine="189" startPosition="54" endLine="194" endPosition="7" />
     <scopeInfo nodeId="2024340988248532503" fileName="TestNodeWrapperFactory.java" startLine="197" startPosition="58" endLine="202" endPosition="7" />
     <scopeInfo nodeId="2024340988248532518" fileName="TestNodeWrapperFactory.java" startLine="205" startPosition="61" endLine="210" endPosition="7" />
@@ -530,9 +606,17 @@
     <scopeInfo nodeId="2024340988248532781" fileName="TestNodeWrapperFactory.java" startLine="115" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="2024340988248532782" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532422" fileName="TestNodeWrapperFactory.java" startLine="224" startPosition="0" endLine="231" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532422" fileName="TestNodeWrapperFactory.java" startLine="231" startPosition="0" endLine="238" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532422" fileName="TestNodeWrapperFactory.java" startLine="238" startPosition="0" endLine="245" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532422" fileName="TestNodeWrapperFactory.java" startLine="224" startPosition="0" endLine="231" endPosition="0">
+      <varInfo nodeId="2024340988248532422" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532422" fileName="TestNodeWrapperFactory.java" startLine="231" startPosition="0" endLine="238" endPosition="0">
+      <varInfo nodeId="2024340988248532422" varName="a" />
+      <varInfo nodeId="2024340988248532422" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2024340988248532422" fileName="TestNodeWrapperFactory.java" startLine="238" startPosition="0" endLine="245" endPosition="0">
+      <varInfo nodeId="2024340988248532422" varName="a" />
+      <varInfo nodeId="2024340988248532422" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="2024340988248532565" fileName="TestNodeWrapperFactory.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="2024340988248532566" varName="node" />
     </scopeInfo>
@@ -569,78 +653,92 @@
     <unitInfo nodeId="2024340988248532553" fileName="TestNodeWrapperFactory.java" startLine="218" startPosition="108" endLine="222" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$6" />
   </root>
   <root nodeId="5881102044690178561">
-    <nodeInfo nodeId="5881102044690178706" fileName="TestRunParameters.java" startLine="10" startPosition="32" endLine="11" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestRunner" />
-    <nodeInfo nodeId="5881102044690178709" fileName="TestRunParameters.java" startLine="11" startPosition="30" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVmParameters" />
-    <nodeInfo nodeId="5881102044690178713" fileName="TestRunParameters.java" startLine="12" startPosition="38" endLine="13" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassPath" />
-    <nodeInfo nodeId="5881102044690178722" fileName="TestRunParameters.java" startLine="15" startPosition="30" endLine="16" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5881102044690178730" fileName="TestRunParameters.java" startLine="16" startPosition="51" endLine="17" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5881102044690178738" fileName="TestRunParameters.java" startLine="17" startPosition="73" endLine="18" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5881102044690178566" fileName="TestRunParameters.java" startLine="21" startPosition="42" endLine="22" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5881102044690178578" fileName="TestRunParameters.java" startLine="25" startPosition="33" endLine="26" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5881102044690178586" fileName="TestRunParameters.java" startLine="29" startPosition="56" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5881102044690178600" fileName="TestRunParameters.java" startLine="33" startPosition="41" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5881102044690178608" fileName="TestRunParameters.java" startLine="37" startPosition="52" endLine="38" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5881102044690178622" fileName="TestRunParameters.java" startLine="41" startPosition="38" endLine="42" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5881102044690178636" fileName="TestRunParameters.java" startLine="46" startPosition="46" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5881102044690178638" fileName="TestRunParameters.java" startLine="48" startPosition="5" endLine="49" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5881102044690178644" fileName="TestRunParameters.java" startLine="49" startPosition="59" endLine="50" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5881102044690178654" fileName="TestRunParameters.java" startLine="50" startPosition="82" endLine="51" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5881102044690178666" fileName="TestRunParameters.java" startLine="51" startPosition="89" endLine="52" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5881102044690178678" fileName="TestRunParameters.java" startLine="52" startPosition="83" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5881102044690178686" fileName="TestRunParameters.java" startLine="56" startPosition="25" endLine="57" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5881102044690178630" fileName="TestRunParameters.java" startLine="45" startPosition="37" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5881102044690178562" fileName="TestRunParameters.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTestRunner#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5881102044690178574" fileName="TestRunParameters.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestRunner#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5881102044690178582" fileName="TestRunParameters.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVmParameters#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="5881102044690178595" fileName="TestRunParameters.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVmParameters#()Ljava/util/List;" />
-    <nodeInfo nodeId="5881102044690178604" fileName="TestRunParameters.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setClassPath#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="5881102044690178617" fileName="TestRunParameters.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassPath#()Ljava/util/List;" />
-    <nodeInfo nodeId="5881102044690178682" fileName="TestRunParameters.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
-    <nodeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="60" startPosition="63" endLine="64" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="67" startPosition="64" endLine="71" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5881102044690178706" fileName="TestRunParameters.java" startLine="14" startPosition="32" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestRunner" />
+    <nodeInfo nodeId="5881102044690178709" fileName="TestRunParameters.java" startLine="15" startPosition="30" endLine="16" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVmParameters" />
+    <nodeInfo nodeId="5881102044690178713" fileName="TestRunParameters.java" startLine="16" startPosition="38" endLine="17" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassPath" />
+    <nodeInfo nodeId="5881102044690178722" fileName="TestRunParameters.java" startLine="19" startPosition="30" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5881102044690178730" fileName="TestRunParameters.java" startLine="20" startPosition="46" endLine="21" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9036353487070313000" fileName="TestRunParameters.java" startLine="21" startPosition="68" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9036353487070293081" fileName="TestRunParameters.java" startLine="22" startPosition="72" endLine="23" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5881102044690178738" fileName="TestRunParameters.java" startLine="23" startPosition="150" endLine="24" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9036353487070313007" fileName="TestRunParameters.java" startLine="24" startPosition="65" endLine="25" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5881102044690178566" fileName="TestRunParameters.java" startLine="28" startPosition="42" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5881102044690178578" fileName="TestRunParameters.java" startLine="32" startPosition="33" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5881102044690178586" fileName="TestRunParameters.java" startLine="36" startPosition="56" endLine="37" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5881102044690178600" fileName="TestRunParameters.java" startLine="40" startPosition="41" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5881102044690178608" fileName="TestRunParameters.java" startLine="44" startPosition="52" endLine="45" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5881102044690178622" fileName="TestRunParameters.java" startLine="48" startPosition="38" endLine="49" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5881102044690178636" fileName="TestRunParameters.java" startLine="53" startPosition="46" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5881102044690178638" fileName="TestRunParameters.java" startLine="55" startPosition="5" endLine="56" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5881102044690178644" fileName="TestRunParameters.java" startLine="56" startPosition="59" endLine="57" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5881102044690178654" fileName="TestRunParameters.java" startLine="57" startPosition="77" endLine="58" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5881102044690178666" fileName="TestRunParameters.java" startLine="58" startPosition="84" endLine="59" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5881102044690178678" fileName="TestRunParameters.java" startLine="59" startPosition="78" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5881102044690178686" fileName="TestRunParameters.java" startLine="63" startPosition="25" endLine="64" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5881102044690178630" fileName="TestRunParameters.java" startLine="52" startPosition="37" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5881102044690178562" fileName="TestRunParameters.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTestRunner#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5881102044690178574" fileName="TestRunParameters.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestRunner#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5881102044690178582" fileName="TestRunParameters.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVmParameters#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="5881102044690178595" fileName="TestRunParameters.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVmParameters#()Ljava/util/List;" />
+    <nodeInfo nodeId="5881102044690178604" fileName="TestRunParameters.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setClassPath#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="5881102044690178617" fileName="TestRunParameters.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassPath#()Ljava/util/List;" />
+    <nodeInfo nodeId="5881102044690178682" fileName="TestRunParameters.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
+    <nodeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="67" startPosition="63" endLine="71" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="74" startPosition="64" endLine="78" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5881102044690178718" fileName="TestRunParameters.java" startLine="14" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestRunParameters#()V" />
-    <nodeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="59" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_mls2ap_a0a2a6#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="66" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_mls2ap_a0a0d0g#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="73" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_mls2ap_a0a0e0g#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5881102044690178626" fileName="TestRunParameters.java" startLine="44" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="5881102044690178565" fileName="TestRunParameters.java" startLine="21" startPosition="42" endLine="22" endPosition="29" />
-    <scopeInfo nodeId="5881102044690178577" fileName="TestRunParameters.java" startLine="25" startPosition="33" endLine="26" endPosition="29" />
-    <scopeInfo nodeId="5881102044690178585" fileName="TestRunParameters.java" startLine="29" startPosition="56" endLine="30" endPosition="37" />
-    <scopeInfo nodeId="5881102044690178599" fileName="TestRunParameters.java" startLine="33" startPosition="41" endLine="34" endPosition="31" />
-    <scopeInfo nodeId="5881102044690178607" fileName="TestRunParameters.java" startLine="37" startPosition="52" endLine="38" endPosition="33" />
-    <scopeInfo nodeId="5881102044690178621" fileName="TestRunParameters.java" startLine="41" startPosition="38" endLine="42" endPosition="28" />
-    <scopeInfo nodeId="5881102044690178635" fileName="TestRunParameters.java" startLine="46" startPosition="46" endLine="47" endPosition="19" />
-    <scopeInfo nodeId="5881102044690178685" fileName="TestRunParameters.java" startLine="56" startPosition="25" endLine="57" endPosition="103" />
-    <scopeInfo nodeId="5881102044690178721" fileName="TestRunParameters.java" startLine="15" startPosition="30" endLine="18" endPosition="70" />
-    <scopeInfo nodeId="5881102044690178562" fileName="TestRunParameters.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+    <nodeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="81" startPosition="64" endLine="85" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="66" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_mls2ap_a0a2a6#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="73" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_mls2ap_a0a0d0g#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="80" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_mls2ap_a0a0e0g#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5881102044690178718" fileName="TestRunParameters.java" startLine="18" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestRunParameters#()V" />
+    <nodeInfo nodeId="5881102044690178626" fileName="TestRunParameters.java" startLine="51" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <scopeInfo nodeId="5881102044690178565" fileName="TestRunParameters.java" startLine="28" startPosition="42" endLine="29" endPosition="24" />
+    <scopeInfo nodeId="5881102044690178577" fileName="TestRunParameters.java" startLine="32" startPosition="33" endLine="33" endPosition="24" />
+    <scopeInfo nodeId="5881102044690178585" fileName="TestRunParameters.java" startLine="36" startPosition="56" endLine="37" endPosition="32" />
+    <scopeInfo nodeId="5881102044690178599" fileName="TestRunParameters.java" startLine="40" startPosition="41" endLine="41" endPosition="26" />
+    <scopeInfo nodeId="5881102044690178607" fileName="TestRunParameters.java" startLine="44" startPosition="52" endLine="45" endPosition="28" />
+    <scopeInfo nodeId="5881102044690178621" fileName="TestRunParameters.java" startLine="48" startPosition="38" endLine="49" endPosition="23" />
+    <scopeInfo nodeId="5881102044690178635" fileName="TestRunParameters.java" startLine="53" startPosition="46" endLine="54" endPosition="19" />
+    <scopeInfo nodeId="5881102044690178685" fileName="TestRunParameters.java" startLine="63" startPosition="25" endLine="64" endPosition="88" />
+    <scopeInfo nodeId="5881102044690178562" fileName="TestRunParameters.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="5881102044690178572" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="5881102044690178574" fileName="TestRunParameters.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="5881102044690178582" fileName="TestRunParameters.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="5881102044690178574" fileName="TestRunParameters.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="5881102044690178582" fileName="TestRunParameters.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="5881102044690178592" varName="parameters" />
     </scopeInfo>
-    <scopeInfo nodeId="5881102044690178595" fileName="TestRunParameters.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="5881102044690178604" fileName="TestRunParameters.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="5881102044690178595" fileName="TestRunParameters.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="5881102044690178604" fileName="TestRunParameters.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="5881102044690178614" varName="classPath" />
     </scopeInfo>
-    <scopeInfo nodeId="5881102044690178617" fileName="TestRunParameters.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="5881102044690178682" fileName="TestRunParameters.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="60" startPosition="63" endLine="64" endPosition="6" />
-    <scopeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="67" startPosition="64" endLine="71" endPosition="6" />
+    <scopeInfo nodeId="5881102044690178617" fileName="TestRunParameters.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="5881102044690178682" fileName="TestRunParameters.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="67" startPosition="63" endLine="71" endPosition="6" />
     <scopeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="74" startPosition="64" endLine="78" endPosition="6" />
-    <scopeInfo nodeId="5881102044690178718" fileName="TestRunParameters.java" startLine="14" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="59" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="66" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="73" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="5881102044690178629" fileName="TestRunParameters.java" startLine="45" startPosition="37" endLine="53" endPosition="18">
+    <scopeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="81" startPosition="64" endLine="85" endPosition="6" />
+    <scopeInfo nodeId="5881102044690178721" fileName="TestRunParameters.java" startLine="19" startPosition="30" endLine="25" endPosition="98">
+      <varInfo nodeId="9036353487070313001" varName="collector" />
+    </scopeInfo>
+    <scopeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="66" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="5881102044690178561" varName="a" />
+      <varInfo nodeId="5881102044690178561" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="73" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="5881102044690178561" varName="a" />
+      <varInfo nodeId="5881102044690178561" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="80" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="5881102044690178561" varName="a" />
+      <varInfo nodeId="5881102044690178561" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5881102044690178718" fileName="TestRunParameters.java" startLine="18" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="5881102044690178629" fileName="TestRunParameters.java" startLine="52" startPosition="37" endLine="60" endPosition="18">
       <varInfo nodeId="5881102044690178639" varName="parameters" />
       <varInfo nodeId="5881102044690178645" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5881102044690178626" fileName="TestRunParameters.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="5881102044690178626" fileName="TestRunParameters.java" startLine="51" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="5881102044690178680" varName="obj" />
     </scopeInfo>
-    <unitInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="10" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunParameters" />
+    <unitInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="14" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunParameters" />
   </root>
   <root nodeId="5881102044690179017">
     <nodeInfo nodeId="5881102044690179022" fileName="AbstractTestWrapper.java" startLine="16" startPosition="45" endLine="17" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFqName" />
@@ -975,16 +1073,30 @@
     </scopeInfo>
     <scopeInfo nodeId="5881102044690182882" fileName="TestRunState.java" startLine="157" startPosition="25" endLine="160" endPosition="24" />
     <scopeInfo nodeId="5881102044690183089" fileName="TestRunState.java" startLine="215" startPosition="41" endLine="218" endPosition="9" />
-    <scopeInfo nodeId="5881102044690183366" fileName="TestRunState.java" startLine="42" startPosition="96" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="5881102044690183377" fileName="TestRunState.java" startLine="46" startPosition="81" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="5881102044690183366" fileName="TestRunState.java" startLine="42" startPosition="96" endLine="46" endPosition="0">
+      <varInfo nodeId="5881102044690183366" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5881102044690183377" fileName="TestRunState.java" startLine="46" startPosition="81" endLine="50" endPosition="0">
+      <varInfo nodeId="5881102044690183377" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="5881102044690182711" fileName="TestRunState.java" startLine="103" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="5881102044690182722" varName="testView" />
     </scopeInfo>
-    <scopeInfo nodeId="5881102044690182734" fileName="TestRunState.java" startLine="109" startPosition="88" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="5881102044690182765" fileName="TestRunState.java" startLine="118" startPosition="88" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="5881102044690182790" fileName="TestRunState.java" startLine="127" startPosition="88" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="5881102044690182815" fileName="TestRunState.java" startLine="136" startPosition="88" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="5881102044690182840" fileName="TestRunState.java" startLine="145" startPosition="88" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="5881102044690182734" fileName="TestRunState.java" startLine="109" startPosition="88" endLine="113" endPosition="0">
+      <varInfo nodeId="5881102044690182734" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5881102044690182765" fileName="TestRunState.java" startLine="118" startPosition="88" endLine="122" endPosition="0">
+      <varInfo nodeId="5881102044690182765" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5881102044690182790" fileName="TestRunState.java" startLine="127" startPosition="88" endLine="131" endPosition="0">
+      <varInfo nodeId="5881102044690182790" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5881102044690182815" fileName="TestRunState.java" startLine="136" startPosition="88" endLine="140" endPosition="0">
+      <varInfo nodeId="5881102044690182815" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5881102044690182840" fileName="TestRunState.java" startLine="145" startPosition="88" endLine="149" endPosition="0">
+      <varInfo nodeId="5881102044690182840" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="5881102044690182909" fileName="TestRunState.java" startLine="165" startPosition="25" endLine="169" endPosition="34" />
     <scopeInfo nodeId="5881102044690182934" fileName="TestRunState.java" startLine="173" startPosition="29" endLine="177" endPosition="5" />
     <scopeInfo nodeId="5881102044690182999" fileName="TestRunState.java" startLine="192" startPosition="27" endLine="196" endPosition="5" />
@@ -1014,7 +1126,9 @@
       <varInfo nodeId="5881102044690182574" varName="testCase" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690182596" fileName="TestRunState.java" startLine="70" startPosition="67" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="5881102044690182597" fileName="TestRunState.java" startLine="70" startPosition="67" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="5881102044690182597" fileName="TestRunState.java" startLine="70" startPosition="67" endLine="75" endPosition="5">
+      <varInfo nodeId="5881102044690182597" varName="testCase" />
+    </scopeInfo>
     <scopeInfo nodeId="5881102044690183019" fileName="TestRunState.java" startLine="200" startPosition="25" endLine="205" endPosition="24" />
     <scopeInfo nodeId="5881102044690182681" fileName="TestRunState.java" startLine="91" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="5881102044690182696" fileName="TestRunState.java" startLine="97" startPosition="0" endLine="103" endPosition="0" />
@@ -1070,7 +1184,9 @@
       <varInfo nodeId="5881102044690183387" varName="tests" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690182629" fileName="TestRunState.java" startLine="78" startPosition="71" endLine="89" endPosition="5" />
-    <scopeInfo nodeId="5881102044690182630" fileName="TestRunState.java" startLine="78" startPosition="71" endLine="89" endPosition="5" />
+    <scopeInfo nodeId="5881102044690182630" fileName="TestRunState.java" startLine="78" startPosition="71" endLine="89" endPosition="5">
+      <varInfo nodeId="5881102044690182630" varName="testMethod" />
+    </scopeInfo>
     <scopeInfo nodeId="5881102044690182860" fileName="TestRunState.java" startLine="152" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="5881102044690182899" varName="className" />
       <varInfo nodeId="5881102044690182901" varName="methodName" />

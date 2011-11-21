@@ -21,7 +21,9 @@ import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.UIUtil;
 import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TIntObjectProcedure;
-import jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup;
+import jetbrains.mps.ide.actions.MPSActions;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -29,22 +31,14 @@ import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
-import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
-import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JPopupMenu;
 import javax.swing.SwingUtilities;
@@ -86,9 +80,6 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private FoldingButtonsPainter myFoldingButtonsPainter;
 
   private List<AbstractLeftColumn> myLeftColumns = new ArrayList<AbstractLeftColumn>();
-
-  private BookmarkListener myListener;
-  private BookmarkManager myBookmarkManager = null;
 
   private Set<EditorMessageIconRenderer> myIconRenderers = new HashSet<EditorMessageIconRenderer>();
   private TIntObjectHashMap<List<IconRendererLayoutConstraint>> myLineToRenderersMap = new TIntObjectHashMap<List<IconRendererLayoutConstraint>>();
@@ -148,33 +139,6 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     editorComponent.addRebuildListener(new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
         assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter$RebuildListener should be called in eventDispatchThread";
-        removeAllIconRenderers(BookmarkIconRenderer.TYPE);
-        BookmarkManager bookmarkManager = getBookmarkManager();
-        if (bookmarkManager != null) {
-          bookmarkManager.removeBookmarkListener(myListener);
-          SNode editedNode = myEditorComponent.getEditedNode();
-          if (editedNode != null) {
-            for (Pair<SNode, Integer> bookmark : bookmarkManager.getBookmarks(editedNode.getContainingRoot())) {
-              addBookmark(bookmark.o1, bookmark.o2);
-            }
-          }
-          myListener = new BookmarkListener() {
-            public void bookmarkAdded(int number, SNode node) {
-              assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter$BookmarkListener should be called in eventDispatchThread";
-              addBookmark(node, number);
-            }
-
-            public void bookmarkRemoved(int number, SNode node) {
-              assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter$BookmarkListener should be called in eventDispatchThread";
-              if (number == -1) {
-                removeUnnumberedBookmark(node);
-              } else {
-                removeBookmark(number);
-              }
-            }
-          };
-          bookmarkManager.addBookmarkListener(myListener);
-        }
         for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
           painter.editorRebuilt();
         }
@@ -232,10 +196,6 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     }
     for (AbstractLeftColumn column : myLeftColumns) {
       column.dispose();
-    }
-    BookmarkManager bookmarkManager = getBookmarkManager();
-    if (bookmarkManager != null) {
-      bookmarkManager.removeBookmarkListener(myListener);
     }
     MPSToolTipManager.getInstance().unregisterComponent(this);
   }
@@ -372,48 +332,6 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     myBracketsPainter.addBracket(cell, cell2, c);
   }
 
-  private void addBookmark(SNode node, int number) {
-    // TODO: Do we need all these checks?..
-    if (node == null) return;
-    SNode editedNode = myEditorComponent.getEditedNode();
-    if (editedNode == null) return;
-    if (node.getContainingRoot() != editedNode.getContainingRoot()) {
-      return;
-    }
-    EditorCell nodeCell = myEditorComponent.findNodeCell(node);
-    if (nodeCell == null) {
-      //   LOG.error("can't find a cell for node " + node);
-      return;
-    }
-    addIconRenderer(new BookmarkIconRenderer(node, number));
-  }
-
-  private void removeBookmark(int number) {
-    for (EditorMessageIconRenderer renderer : myIconRenderers) {
-      if (renderer instanceof BookmarkIconRenderer && ((BookmarkIconRenderer) renderer).getNumber() == number) {
-        removeIconRenderer(renderer);
-        return;
-      }
-    }
-  }
-
-  private void removeUnnumberedBookmark(SNode node) {
-    EditorCell nodeCell = myEditorComponent.findNodeCell(node);
-    if (nodeCell == null) {
-      //   LOG.error("can't find a cell for node " + node);
-      return;
-    }
-    for (EditorMessageIconRenderer renderer : myIconRenderers) {
-      if (renderer instanceof BookmarkIconRenderer) {
-        BookmarkIconRenderer bookmarkIconRenderer = (BookmarkIconRenderer) renderer;
-        if (bookmarkIconRenderer.getNumber() == -1 && bookmarkIconRenderer.getNode() == node) {
-          removeIconRenderer(bookmarkIconRenderer);
-          break;
-        }
-      }
-    }
-  }
-
   public void relayout(boolean updateFolding) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.relayout() should be executed in eventDispatchThread";
     SNode editedNode = myEditorComponent.getEditedNode();
@@ -479,19 +397,6 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       myLeftFoldingAreaWidth = Math.max(myLeftFoldingAreaWidth, painter.getLeftAreaWidth());
       myRightFoldingAreaWidth = Math.max(myRightFoldingAreaWidth, painter.getRightAreaWidth());
     }
-  }
-
-  private BookmarkManager getBookmarkManager() {
-    if (myBookmarkManager != null) {
-      return myBookmarkManager;
-    }
-    IOperationContext context = myEditorComponent.getOperationContext();
-    if (context == null) {
-      return null;
-    }
-    BookmarkManager bookmarkManager = context.getComponent(BookmarkManager.class);
-    myBookmarkManager = bookmarkManager;
-    return bookmarkManager;
   }
 
   public void addIconRenderer(EditorMessageIconRenderer renderer) {
@@ -680,7 +585,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
           mousePressedInIconsArea(e);
         }
         if (!e.isConsumed() && e.getButton() == MouseEvent.BUTTON3 && e.getID() == MouseEvent.MOUSE_PRESSED) {
-          BaseGroup actionGroup = ActionUtils.getGroup(EditorLeftPanelMenu_ActionGroup.ID);
+          BaseGroup actionGroup = ActionUtils.getGroup(MPSActions.EDITOR_LEFTPANEL_GROUP);
           if (actionGroup != null) {
             ActionPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, actionGroup);
             popupMenu.getComponent().show(e.getComponent(), e.getX(), e.getY());
@@ -824,67 +729,6 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return null;
   }
 
-  private static class BookmarkIconRenderer implements EditorMessageIconRenderer {
-    private static final IconRendererType TYPE = new IconRendererType(3);
-    private SNode myNode;
-    private int myNumber;
-
-    private BookmarkIconRenderer(SNode node, int number) {
-      myNode = node;
-      myNumber = number;
-    }
-
-    @Override
-    public Icon getIcon() {
-      return BookmarkManager.getIcon(myNumber);
-    }
-
-    @Override
-    public String getTooltipText() {
-      String nodePresentation = ModelAccess.instance().runReadAction(new Computable<String>() {
-        @Override
-        public String compute() {
-          return myNode.getPresentation();
-        }
-      });
-      return (myNumber != -1 ? "Bookmark " + myNumber + " (" : "Bookmark (") + nodePresentation + ")";
-    }
-
-    @Override
-    public SNode getNode() {
-      return myNode;
-    }
-
-    public int getNumber() {
-      return myNumber;
-    }
-
-    @Override
-    public IconRendererType getType() {
-      return TYPE;
-    }
-
-    @Override
-    public EditorCell getAnchorCell(EditorCell bigCell) {
-      return bigCell;
-    }
-
-    @Override
-    public Cursor getMouseOverCursor() {
-      return myNumber != -1 ? Cursor.getPredefinedCursor(Cursor.HAND_CURSOR) : null;
-    }
-
-    @Override
-    public AnAction getClickAction() {
-      return myNumber != -1 ? ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToBookmark_Action#" + myNumber + "!") : null;
-    }
-
-    @Override
-    public JPopupMenu getPopupMenu() {
-      return null;
-    }
-  }
-
   private class IconRendererLayoutConstraintComparator implements Comparator<IconRendererLayoutConstraint> {
     @Override
     public int compare(IconRendererLayoutConstraint constraint1, IconRendererLayoutConstraint constraint2) {
@@ -952,10 +796,10 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
     @Override
     public Object getData(@NonNls String dataId) {
-      if (MPSDataKeys.NODE.getName().equals(dataId)) {
+      if (MPSCommonDataKeys.NODE.getName().equals(dataId)) {
         return mySelectedNode;
       }
-      if (MPSDataKeys.EDITOR_CELL.getName().equals(dataId)) {
+      if (MPSEditorDataKeys.EDITOR_CELL.getName().equals(dataId)) {
         return myNodeCell;
       }
       return myEditorDataContext.getData(dataId);

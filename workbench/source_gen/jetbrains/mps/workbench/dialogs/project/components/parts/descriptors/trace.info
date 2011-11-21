@@ -128,31 +128,6 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499492191" fileName="PriorityRuleDescriptor.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.PriorityRuleDescriptor" />
   </root>
-  <root nodeId="1560298786499492265">
-    <nodeInfo nodeId="1560298786499492268" fileName="ModuleImportDescriptor.java" startLine="12" startPosition="66" endLine="13" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProps" />
-    <nodeInfo nodeId="1560298786499492271" fileName="ModuleImportDescriptor.java" startLine="13" startPosition="41" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForModel" />
-    <nodeInfo nodeId="1560298786499492287" fileName="ModuleImportDescriptor.java" startLine="16" startPosition="114" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499492291" fileName="ModuleImportDescriptor.java" startLine="17" startPosition="31" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492297" fileName="ModuleImportDescriptor.java" startLine="18" startPosition="20" endLine="19" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492307" fileName="ModuleImportDescriptor.java" startLine="22" startPosition="45" endLine="23" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492318" fileName="ModuleImportDescriptor.java" startLine="26" startPosition="41" endLine="27" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492303" fileName="ModuleImportDescriptor.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-    <nodeInfo nodeId="1560298786499492314" fileName="ModuleImportDescriptor.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditor#()Ljavax/swing/table/TableCellEditor;" />
-    <nodeInfo nodeId="1560298786499492274" fileName="ModuleImportDescriptor.java" startLine="15" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleImportDescriptor#(Ljetbrains/mps/workbench/dialogs/project/utildialogs/addmodelimport/ImportProperties;ZLjava/lang/String;Ljava/lang/String;I)V" />
-    <scopeInfo nodeId="1560298786499492306" fileName="ModuleImportDescriptor.java" startLine="22" startPosition="45" endLine="23" endPosition="73" />
-    <scopeInfo nodeId="1560298786499492317" fileName="ModuleImportDescriptor.java" startLine="26" startPosition="41" endLine="27" endPosition="55" />
-    <scopeInfo nodeId="1560298786499492286" fileName="ModuleImportDescriptor.java" startLine="16" startPosition="114" endLine="19" endPosition="26" />
-    <scopeInfo nodeId="1560298786499492303" fileName="ModuleImportDescriptor.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1560298786499492314" fileName="ModuleImportDescriptor.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1560298786499492274" fileName="ModuleImportDescriptor.java" startLine="15" startPosition="0" endLine="20" endPosition="3">
-      <varInfo nodeId="1560298786499492278" varName="forModel" />
-      <varInfo nodeId="1560298786499492282" varName="header" />
-      <varInfo nodeId="1560298786499492280" varName="name" />
-      <varInfo nodeId="1560298786499492276" varName="props" />
-      <varInfo nodeId="1560298786499492284" varName="width" />
-    </scopeInfo>
-    <unitInfo nodeId="1560298786499492265" fileName="ModuleImportDescriptor.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleImportDescriptor" />
-  </root>
   <root nodeId="1560298786499493471">
     <nodeInfo nodeId="1560298786499493483" fileName="ModuleDescriptor.java" startLine="10" startPosition="66" endLine="11" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499493491" fileName="ModuleDescriptor.java" startLine="14" startPosition="45" endLine="15" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -9,10 +9,11 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelRepository;
@@ -28,7 +29,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
     SModel model = SNodeOperations.getModel(node);
     IModule module = check_xpwqv8_a0d0a(model.getModelDescriptor());
 
-    for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
+    for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
       SModelReference oldModelRef = ref.getTargetSModelReference();
       final String fqname = check_xpwqv8_a0b0f0a(oldModelRef);
       for (IModule newModule : modules) {

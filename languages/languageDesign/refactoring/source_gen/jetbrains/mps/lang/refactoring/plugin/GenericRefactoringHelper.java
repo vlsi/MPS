@@ -10,9 +10,10 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKey;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 
 public class GenericRefactoringHelper {
@@ -49,12 +50,12 @@ public class GenericRefactoringHelper {
 
   @NotNull
   public static List<SNode> getNodes(AnActionEvent e, boolean oneEntity) {
-    return getEntities(e, oneEntity, MPSDataKeys.NODE, MPSDataKeys.NODES);
+    return getEntities(e, oneEntity, MPSCommonDataKeys.NODE, MPSCommonDataKeys.NODES);
   }
 
   @NotNull
   public static List<SModelDescriptor> getModels(AnActionEvent e, boolean oneEntity) {
-    return getEntities(e, oneEntity, MPSDataKeys.CONTEXT_MODEL, MPSDataKeys.MODELS);
+    return getEntities(e, oneEntity, MPSCommonDataKeys.CONTEXT_MODEL, MPSCommonDataKeys.MODELS);
   }
 
   @NotNull

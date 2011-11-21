@@ -11,7 +11,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 
 public class ModuleData implements NodeData {
   private final IModule myModule;
@@ -39,7 +39,7 @@ public class ModuleData implements NodeData {
         }
       }
     }
-    return Icons.LANGUAGE_ICON;
+    return IdeIcons.LANGUAGE_ICON;
   }
 
   public IModule getModule() {
