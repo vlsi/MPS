@@ -27,10 +27,13 @@ import java.util.*;
  * Time: 9:54 AM
  * To change this template use File | Settings | File Templates.
  */
-public class DefaultGenerationParametersProvider implements GenerationParametersProvider {
+public class DefaultGenerationParametersProvider implements GenerationParametersProviderEx {
 
   private Map<String, Object> defaultParams = new HashMap<String, Object>();
   private Map<SModelDescriptor, Map<String, Object>> paramMaps = new HashMap<SModelDescriptor, Map<String, Object>>();
+
+  private List<String> defaultLanguages = new ArrayList<String>();
+  private Map<SModelDescriptor, List<String>> additionalLanguages = new HashMap<SModelDescriptor, List<String>>();
 
   public Map<String, Object> getParameters(SModelDescriptor descriptor) {
     if (descriptor == null) { throw new NullPointerException();}
@@ -54,6 +57,36 @@ public class DefaultGenerationParametersProvider implements GenerationParameters
       }
       paramMaps.get(descriptor).put(key, value);
     }
+  }
+
+  @Override
+  public Collection<String> getAdditionalLanguages(SModelDescriptor descriptor) {
+    if (descriptor == null) { throw new NullPointerException();}
+
+    List<String> modelLanguages = additionalLanguages.containsKey(descriptor) ? additionalLanguages.get(descriptor) : Collections.<String>emptyList();
+    if(!defaultLanguages.isEmpty()) {
+      List<String> result = new ArrayList<String>();
+      result.addAll(defaultLanguages);
+      result.addAll(modelLanguages);
+      return result;
+    }
+    return Collections.unmodifiableCollection(modelLanguages);
+  }
+
+  public void addLanguagesEngagedOnGeneration(SModelDescriptor descriptor, Collection<String> languages) {
+    if (descriptor == null) { throw new NullPointerException();}
+    if(languages == null || languages.isEmpty()) return;
+
+    List<String> modelLanguages = additionalLanguages.get(descriptor);
+    if(modelLanguages == null) {
+      modelLanguages = new ArrayList<String>();
+      additionalLanguages.put(descriptor, modelLanguages);
+    }
+    modelLanguages.addAll(languages);
+  }
+
+  public void addLanguagesEngagedOnGeneration(Collection<String> languages) {
+    defaultLanguages.addAll(languages);
   }
 
 
