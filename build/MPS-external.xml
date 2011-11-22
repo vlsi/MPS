@@ -415,6 +415,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations.mps" />
     <mkdir dir="${deploy.dir}/MPS/plugins" />
     <copy todir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples">
       <fileset dir="${mps_home}/samples" />
