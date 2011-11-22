@@ -42,9 +42,6 @@
     <content url="file://$MODULE_DIR$/../../core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated/source_gen" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/languages/tuples/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/languages/tuples/source_gen" isTestSource="false" />
     </content>
@@ -423,6 +420,9 @@
     <content url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/privateMembers/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/privateMembers/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/source_gen" isTestSource="false" />
     </content>
@@ -541,7 +541,6 @@
     <orderEntry type="module" module-name="plugin-runtime" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="runConfigurations" />
-    <orderEntry type="module" module-name="javaRunConfigurations-runtime" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="module" module-name="ant" />

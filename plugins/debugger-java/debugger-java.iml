@@ -22,7 +22,6 @@
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="plugin-runtime" />
     <orderEntry type="module" module-name="typesystemEngine" />
-    <orderEntry type="module" module-name="javaRunConfigurations-runtime" />
     <orderEntry type="module" module-name="baseLanguageIndex" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="mps-platform" />
@@ -32,6 +31,7 @@
     <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="Tools" level="project" />
+    <orderEntry type="module" module-name="baseLanguage-execution" />
   </component>
 </module>
 

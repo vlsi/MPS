@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.execution.plugin;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import javax.swing.JLabel;
 import jetbrains.mps.execution.lib.MultiConceptNode_Configuration_Editor;
-import jetbrains.mps.execution.lib.JavaRunParameters_Configuration_Editor;
+import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
-import jetbrains.mps.baseLanguage.runConfigurations.runtime.MultiConceptChooser;
+import jetbrains.mps.execution.lib.ui.MultiConceptChooser;
 import java.awt.BorderLayout;
-import jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions;
+import jetbrains.mps.baseLanguage.execution.api.ui.JavaConfigOptions;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class Java_Configuration_Editor extends SettingsEditorEx<Java_Configuration> {

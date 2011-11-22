@@ -16,7 +16,7 @@ import com.sun.jdi.Location;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.execution.lib.Java_Command;
+import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;

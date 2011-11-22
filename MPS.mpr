@@ -49,6 +49,7 @@
       <modulePath path="${project}/core/analyzers/solutions/sandbox/sandbox.msd" folder="core.analyzers" />
       <modulePath path="${project}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/baseLanguage/sandbox/sandbox.msd" folder="baseLanguage" />
+      <modulePath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.execution.api/api.msd" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.execution/execution.msd" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" folder="baseLanguage" />
@@ -86,7 +87,6 @@
       <modulePath path="${project}/core/baseLanguage/logging/logging.mpl" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/overloadedOperators/languages/overloadedOperators/overloadedOperators.mpl" folder="baseLanguage.overloadedOperators" />
       <modulePath path="${project}/core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.msd" folder="baseLanguage.overloadedOperators" />
-      <modulePath path="${project}/core/baseLanguage/runConfigurations/runtime/runtime.msd" folder="languages.execution.deprecated" />
       <modulePath path="${project}/core/baseLanguage/tuples/languages/tuples/tuples.mpl" folder="baseLanguage.tuples" />
       <modulePath path="${project}/core/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" folder="baseLanguage.tuples" />
       <modulePath path="${project}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.customViewers/customViewers.msd" folder="debugger.java.languages.usages" />

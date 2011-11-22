@@ -247,7 +247,9 @@
       <varInfo nodeId="6396510228602725936" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="7037083547575991077" fileName="BaseMpsBeforeTaskProvider.java" startLine="41" startPosition="58" endLine="45" endPosition="16" />
-    <scopeInfo nodeId="7012936564564596304" fileName="BaseMpsBeforeTaskProvider.java" startLine="80" startPosition="141" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="7012936564564596304" fileName="BaseMpsBeforeTaskProvider.java" startLine="80" startPosition="141" endLine="84" endPosition="0">
+      <varInfo nodeId="7012936564564596304" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="7037083547575991188" fileName="BaseMpsBeforeTaskProvider.java" startLine="102" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="7037083547575991191" varName="configuration" />
     </scopeInfo>
@@ -266,7 +268,10 @@
       <varInfo nodeId="7037083547575991093" varName="task" />
     </scopeInfo>
     <scopeInfo nodeId="7037083547575991105" fileName="BaseMpsBeforeTaskProvider.java" startLine="48" startPosition="71" endLine="55" endPosition="17" />
-    <scopeInfo nodeId="7037083547575991021" fileName="BaseMpsBeforeTaskProvider.java" startLine="124" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="7037083547575991021" fileName="BaseMpsBeforeTaskProvider.java" startLine="124" startPosition="0" endLine="131" endPosition="0">
+      <varInfo nodeId="7037083547575991021" varName="a" />
+      <varInfo nodeId="7037083547575991021" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="7037083547575991072" fileName="BaseMpsBeforeTaskProvider.java" startLine="39" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="7037083547575991075" varName="runConfiguration" />
     </scopeInfo>

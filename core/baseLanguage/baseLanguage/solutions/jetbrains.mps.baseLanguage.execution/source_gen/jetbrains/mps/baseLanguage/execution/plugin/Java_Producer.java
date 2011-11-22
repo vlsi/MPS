@@ -15,7 +15,7 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration_Behavior;
 import jetbrains.mps.execution.util.behavior.IMainClass_Behavior;
-import jetbrains.mps.execution.lib.Java_Command;
+import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 
 public class Java_Producer {
   private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.baseLanguage.execution.plugin.Java_Configuration_Factory";

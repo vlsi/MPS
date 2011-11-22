@@ -4,8 +4,8 @@ package jetbrains.mps.build.execution.plugin;
 
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import javax.swing.JCheckBox;
-import jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithPathChooseDialog;
-import jetbrains.mps.baseLanguage.runConfigurations.runtime.RawLineEditorComponent;
+import jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog;
+import jetbrains.mps.execution.lib.ui.RawLineEditorComponent;
 import com.intellij.openapi.util.Factory;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
