@@ -14,10 +14,6 @@ public class DependencyTreeNode extends MPSTreeNode {
   private DependencyUtil.Link myLink;
   private boolean myIsCyclic;
   private DependencyTreeNode myLinkedNode;
-  /**
-   * Used during tree building.
-   */
-  private boolean myUsed;
 
   public DependencyTreeNode(DependencyUtil.Link link, IOperationContext operationContext) {
     super(link, operationContext);
@@ -37,14 +33,6 @@ public class DependencyTreeNode extends MPSTreeNode {
 
   public IModule getModule() {
     return check_akkfj9_a0a1(myLink);
-  }
-
-  public void setUsed() {
-    myUsed = true;
-  }
-
-  public boolean isUsed() {
-    return myUsed;
   }
 
   public void setDepLeaf() {
@@ -74,7 +62,7 @@ public class DependencyTreeNode extends MPSTreeNode {
 
   public void doubleClick() {
     if (myLinkedNode == null) {
-      ProjectPane.getInstance(check_akkfj9_a0a0a0a8(((DependencyPathTree) getTree()), this)).selectModule(getModule(), false);
+      ProjectPane.getInstance(check_akkfj9_a0a0a0a6(((DependencyPathTree) getTree()), this)).selectModule(getModule(), false);
     } else {
       getTree().selectNode(myLinkedNode);
     }
@@ -94,7 +82,7 @@ public class DependencyTreeNode extends MPSTreeNode {
     return null;
   }
 
-  private static Project check_akkfj9_a0a0a0a8(DependencyPathTree checkedDotOperand, DependencyTreeNode checkedDotThisExpression) {
+  private static Project check_akkfj9_a0a0a0a6(DependencyPathTree checkedDotOperand, DependencyTreeNode checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProject();
     }

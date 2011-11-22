@@ -18,7 +18,6 @@ import java.util.HashSet;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashMap;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -82,37 +81,11 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     );
   }
 
-  private void removeUnusedNodes(MPSTreeNode root) {
-    List<MPSTreeNode> children = ListSequence.fromListWithValues(new ArrayList<MPSTreeNode>(), root);
-    for (MPSTreeNode n : ListSequence.fromList(children)) {
-      DependencyTreeNode node = as_9bg0dz_a0a0a1a8(n, DependencyTreeNode.class);
-      if (node != null && !(node.isUsed())) {
-        node.removeFromParent();
-      } else {
-        removeUnusedNodes(n);
-      }
-    }
-  }
-
-  public void setUsed(DependencyTreeNode node, final Map<DependencyTreeNode, List<DependencyTreeNode>> backDeps) {
-    if (node != null && !(node.isUsed())) {
-      node.setUsed();
-      setUsed(as_9bg0dz_a0a1a0a9(node.getParent(), DependencyTreeNode.class), backDeps);
-      ListSequence.fromList(MapSequence.fromMap(backDeps).get(node)).visitAll(new IVisitor<DependencyTreeNode>() {
-        public void visit(DependencyTreeNode it) {
-          setUsed(it, backDeps);
-        }
-      });
-    }
-  }
-
   private MPSTreeNode buildTree(IModule from, Set<IModule> dependency, Set<IModule> usedlanguage) {
-    Map<Tuples._2<IModule, DependencyUtil.Role>, DependencyTreeNode> visited = MapSequence.fromMap(new HashMap<Tuples._2<IModule, DependencyUtil.Role>, DependencyTreeNode>());
-    Queue<DependencyTreeNode> unprocessed = QueueSequence.fromQueue(new LinkedList<DependencyTreeNode>());
+    Map<Tuples._2<IModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom> visited = MapSequence.fromMap(new HashMap<Tuples._2<IModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom>());
+    Queue<DependencyPathTree.LinkFrom> unprocessed = QueueSequence.fromQueue(new LinkedList<DependencyPathTree.LinkFrom>());
 
-    Map<DependencyTreeNode, List<DependencyTreeNode>> backDeps = MapSequence.fromMap(new HashMap<DependencyTreeNode, List<DependencyTreeNode>>());
-
-    DependencyTreeNode root = new DependencyTreeNode(new DependencyUtil.Link(from, DependencyUtil.Role.None, null), null);
+    DependencyPathTree.LinkFrom root = new DependencyPathTree.LinkFrom(new DependencyUtil.Link(from, DependencyUtil.Role.None, null), null);
     if (myCycles != null && SetSequence.fromSet(myCycles).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
       public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
         return it._1();
@@ -123,45 +96,34 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     QueueSequence.fromQueue(unprocessed).addLastElement(root);
 
     while (QueueSequence.fromQueue(unprocessed).isNotEmpty()) {
-      DependencyTreeNode node = QueueSequence.fromQueue(unprocessed).removeFirstElement();
-      if (node.getLink().role == DependencyUtil.Role.UsedLanguage && SetSequence.fromSet(usedlanguage).contains(node.getLink().module) || (node.getLink().role == DependencyUtil.Role.DTDependency_ || node.getLink().role == DependencyUtil.Role.RTDependency) && SetSequence.fromSet(dependency).contains(node.getLink().module)) {
-        node.setDepLeaf();
+      DependencyPathTree.LinkFrom node = QueueSequence.fromQueue(unprocessed).removeFirstElement();
+      if (node.link.role == DependencyUtil.Role.UsedLanguage && SetSequence.fromSet(usedlanguage).contains(node.link.module) || (node.link.role == DependencyUtil.Role.DTDependency_ || node.link.role == DependencyUtil.Role.RTDependency) && SetSequence.fromSet(dependency).contains(node.link.module)) {
         // mark as used 
-        setUsed(node, backDeps);
-        /*
-          while (node != null && !(node.isUsed())) {
-            // todo: move shortest branch up 
-            node.setUsed();
-          }
-        */
-      } else if (MapSequence.fromMap(visited).containsKey(MultiTuple.<IModule,DependencyUtil.Role>from(node.getLink().module, node.getLink().role))) {
+        node.setUsed();
+        node.node.setDepLeaf();
+      } else if (MapSequence.fromMap(visited).containsKey(MultiTuple.<IModule,DependencyUtil.Role>from(node.link.module, node.link.role))) {
         if (!(isShowAll())) {
           continue;
         }
-        DependencyTreeNode n = MapSequence.fromMap(visited).get(MultiTuple.<IModule,DependencyUtil.Role>from(node.getLink().module, node.getLink().role));
-        if (!(MapSequence.fromMap(backDeps).containsKey(n))) {
-          MapSequence.fromMap(backDeps).put(n, ListSequence.fromList(new ArrayList<DependencyTreeNode>()));
-        }
-        node.setLinkLeaf(n);
-        ListSequence.fromList(MapSequence.fromMap(backDeps).get(n)).addElement(node);
+        DependencyPathTree.LinkFrom n = MapSequence.fromMap(visited).get(MultiTuple.<IModule,DependencyUtil.Role>from(node.link.module, node.link.role));
+        n.addBackDep(node);
         if (n.isUsed()) {
-          setUsed(node, backDeps);
+          node.setUsed();
         }
       } else {
-        MapSequence.fromMap(visited).put(MultiTuple.<IModule,DependencyUtil.Role>from(node.getLink().module, node.getLink().role), node);
-        DependencyUtil.dependencies(node.getLink().role, node.getLink().module, isShowRuntime());
-        for (DependencyUtil.Link link : ListSequence.fromList(DependencyUtil.dependencies(node.getLink().role, node.getLink().module, isShowRuntime()))) {
-          DependencyTreeNode n = new DependencyTreeNode(link, null);
+        MapSequence.fromMap(visited).put(MultiTuple.<IModule,DependencyUtil.Role>from(node.link.module, node.link.role), node);
+        DependencyUtil.dependencies(node.link.role, node.link.module, isShowRuntime());
+        for (DependencyUtil.Link link : ListSequence.fromList(DependencyUtil.dependencies(node.link.role, node.link.module, isShowRuntime()))) {
+          DependencyPathTree.LinkFrom n = new DependencyPathTree.LinkFrom(link, node);
           if (myCycles != null && SetSequence.fromSet(myCycles).contains(MultiTuple.<DependencyUtil.Role,IModule>from(link.role, link.module))) {
             n.setCyclic();
           }
-          node.add(n);
           QueueSequence.fromQueue(unprocessed).addLastElement(n);
         }
       }
     }
 
-    return root;
+    return root.node;
   }
 
   protected MPSTreeNode rebuild() {
@@ -171,10 +133,12 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     ), null);
     for (Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>> dep : ListSequence.fromList(myAllDependencies)) {
       for (IModule m : SetSequence.fromSet(dep._0())) {
-        result.add(buildTree(m, dep._1(), dep._2()));
+        MPSTreeNode node = buildTree(m, dep._1(), dep._2());
+        if (node != null) {
+          result.add(buildTree(m, dep._1(), dep._2()));
+        }
       }
     }
-    removeUnusedNodes(result);
 
     setRootVisible(ListSequence.fromList(myAllDependencies).isEmpty());
     setShowsRootHandles(ListSequence.fromList(myAllDependencies).isNotEmpty());
@@ -190,7 +154,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    DependencyTreeNode current = as_9bg0dz_a0a0a31(getCurrentNode(), DependencyTreeNode.class);
+    DependencyTreeNode current = as_9bg0dz_a0a0a11(getCurrentNode(), DependencyTreeNode.class);
     if (current == null) {
       return null;
     }
@@ -201,44 +165,81 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
       return current.getModule();
     }
     if (id.equals(MPSDataKeys.CONTEXT_MODULE.getName()) && current.getLink().linktype == DependencyUtil.LinkType.Depends) {
-      DependencyTreeNode node = as_9bg0dz_a0a0a4a31(current.getParent(), DependencyTreeNode.class);
-      return check_9bg0dz_a1a4a31(node);
+      DependencyTreeNode node = as_9bg0dz_a0a0a4a11(current.getParent(), DependencyTreeNode.class);
+      return check_9bg0dz_a1a4a11(node);
     }
     return null;
   }
 
-  private static IModule check_9bg0dz_a1a4a31(DependencyTreeNode checkedDotOperand) {
+  private static IModule check_9bg0dz_a1a4a11(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static <T> T as_9bg0dz_a0a0a1a8(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a11(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_9bg0dz_a0a1a0a9(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a4a11(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_9bg0dz_a0a0a31(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
+  public static class LinkFrom {
+    private static Map<DependencyPathTree.LinkFrom, List<DependencyPathTree.LinkFrom>> backdeps = MapSequence.fromMap(new HashMap<DependencyPathTree.LinkFrom, List<DependencyPathTree.LinkFrom>>());
 
-  private static <T> T as_9bg0dz_a0a0a4a31(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    private DependencyUtil.Link link;
+    private DependencyPathTree.LinkFrom from;
+    private DependencyTreeNode node;
+    private boolean isCyclic;
+
+    public LinkFrom(DependencyUtil.Link link, DependencyPathTree.LinkFrom from) {
+      this.link = link;
+      this.from = from;
+    }
+
+    public boolean isUsed() {
+      return node != null;
+    }
+
+    public void setUsed() {
+      if (isUsed()) {
+        return;
+      }
+      node = new DependencyTreeNode(link, null);
+      if (isCyclic) {
+        node.setCyclic();
+      }
+      if (from != null) {
+        from.setUsed();
+        from.node.add(node);
+      }
+      if (MapSequence.fromMap(backdeps).containsKey(this)) {
+        for (DependencyPathTree.LinkFrom dep : ListSequence.fromList(MapSequence.fromMap(backdeps).get(this))) {
+          if (!(dep.isUsed())) {
+            dep.setUsed();
+            dep.node.setLinkLeaf(node);
+          }
+        }
+      }
+    }
+
+    public void setCyclic() {
+      isCyclic = true;
+    }
+
+    public void addBackDep(DependencyPathTree.LinkFrom dep) {
+      if (!(MapSequence.fromMap(backdeps).containsKey(this))) {
+        MapSequence.fromMap(backdeps).put(this, ListSequence.fromList(new ArrayList<DependencyPathTree.LinkFrom>()));
+      }
+      ListSequence.fromList(MapSequence.fromMap(backdeps).get(this)).addElement(dep);
+    }
   }
 }
