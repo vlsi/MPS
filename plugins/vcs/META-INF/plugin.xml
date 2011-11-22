@@ -66,7 +66,7 @@
       <skipForDefaultProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.editor.ChangesEditorHighlighterFactory</implementation-class>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory</implementation-class>
       <skipForDefaultProject/>
     </component>
     <component>
@@ -81,16 +81,6 @@
       <implementation-class>jetbrains.mps.vcs.changesmanager.tree.ProjectTreeHighlighter</implementation-class>
       <skipForDefaultProject/>
     </component>
-    <!-- old changesmanager begin -->
-    <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.OldChangesManager</implementation-class>
-      <skipForDefaultProject/>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.OldRootNodeFileStatusManager</implementation-class>
-      <skipForDefaultProject/>
-    </component>
-    <!-- old changesmanager end -->
     <component>
       <implementation-class>jetbrains.mps.vcs.MPSVcsProjectConfiguration</implementation-class>
     </component>
