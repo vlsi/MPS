@@ -16,20 +16,25 @@ import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import com.intellij.openapi.vcs.FileStatusManager;
-import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
 import jetbrains.mps.ide.ui.MPSTreeNodeListener;
+import com.intellij.openapi.vcs.FileStatusListener;
+import jetbrains.mps.vfs.IFile;
 
 public class TreeHighlighter implements TreeMessageOwner {
   private Map<FileStatus, TreeMessage> myTreeMessages = MapSequence.fromMap(new HashMap<FileStatus, TreeMessage>());
@@ -42,6 +47,7 @@ public class TreeHighlighter implements TreeMessageOwner {
   private TreeHighlighter.MyTreeNodeListener myTreeNodeListener = new TreeHighlighter.MyTreeNodeListener();
   private TreeHighlighter.MyFeatureForestMapListener myFeatureListener = new TreeHighlighter.MyFeatureForestMapListener();
   private final MultiMap<Feature, MPSTreeNode> myFeatureToNodes = new MultiMap<Feature, MPSTreeNode>();
+  private TreeHighlighter.MyFileStatusListener myFileStatusListener = new TreeHighlighter.MyFileStatusListener();
 
   public TreeHighlighter(@NotNull CurrentDifferenceRegistry registry, @NotNull FeatureForestMapSupport featureForestMapSupport, @NotNull MPSTree tree, @NotNull TreeNodeFeatureExtractor featureExtractor) {
     myRegistry = registry;
@@ -58,6 +64,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     myInitialized = true;
     myMap.addListener(myFeatureListener);
     myTree.addTreeNodeListener(myTreeNodeListener);
+    FileStatusManager.getInstance(myRegistry.getProject()).addFileStatusListener(myFileStatusListener);
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         registerNodeRecursively(myTree.getRootNode());
@@ -70,6 +77,7 @@ public class TreeHighlighter implements TreeMessageOwner {
       return;
     }
     myInitialized = false;
+    FileStatusManager.getInstance(myRegistry.getProject()).removeFileStatusListener(myFileStatusListener);
     myTree.removeTreeNodeListener(myTreeNodeListener);
     myMap.removeListener(myFeatureListener);
   }
@@ -134,6 +142,8 @@ public class TreeHighlighter implements TreeMessageOwner {
         node.addTreeMessage(getMessage(change, emd));
       } else if (myMap.isAncestorOfAddedFeature(feature)) {
         node.addTreeMessage(getMessage(FileStatus.MODIFIED));
+      } else if (feature instanceof ModelFeature) {
+        node.addTreeMessage(getMessage((ModelFeature) feature));
       }
     }
   }
@@ -152,8 +162,8 @@ public class TreeHighlighter implements TreeMessageOwner {
           SModelReference modelRef = feature.getModelReference();
           for (Feature anotherFeature : SetSequence.fromSet(myFeatureToNodes.keySet())) {
             if (modelRef.equals(anotherFeature.getModelReference())) {
-              if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
-                public boolean accept(Feature a) {
+              if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Object>() {
+                public boolean accept(Object a) {
                   return feature.equals(a);
                 }
               })) {
@@ -179,12 +189,9 @@ public class TreeHighlighter implements TreeMessageOwner {
     switch (modelChange.getType()) {
       case ADD:
         if (modelChange instanceof AddRootChange) {
-          VirtualFile vf = VirtualFileUtils.getVirtualFile(modelDescriptor.getModelFile());
-          if (vf != null) {
-            FileStatus modelStatus = FileStatusManager.getInstance(myRegistry.getProject()).getStatus(vf);
-            if (BaseVersionUtil.isAddedFileStatus(modelStatus)) {
-              return getMessage(modelStatus);
-            }
+          FileStatus modelStatus = getModelFileStatus(modelDescriptor, myRegistry.getProject());
+          if (BaseVersionUtil.isAddedFileStatus(modelStatus)) {
+            return getMessage(modelStatus);
           }
         }
         return getMessage(FileStatus.ADDED);
@@ -194,6 +201,26 @@ public class TreeHighlighter implements TreeMessageOwner {
         assert false;
         return getMessage(FileStatus.MERGED_WITH_CONFLICTS);
     }
+  }
+
+  @Nullable
+  private TreeMessage getMessage(@NotNull ModelFeature modelFeature) {
+    SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelFeature.getModelReference());
+    if (md instanceof EditableSModelDescriptor) {
+      return getMessage(getModelFileStatus((EditableSModelDescriptor) md, myRegistry.getProject()));
+    } else {
+      return null;
+    }
+  }
+
+  @Nullable
+  private static FileStatus getModelFileStatus(@NotNull EditableSModelDescriptor emd, @NotNull Project project) {
+    VirtualFile vf = VirtualFileUtils.getVirtualFile(emd.getModelFile());
+    if (vf != null) {
+      FileStatus modelStatus = FileStatusManager.getInstance(project).getStatus(vf);
+      return modelStatus;
+    }
+    return null;
   }
 
   private class MyTreeNodeListener implements MPSTreeNodeListener {
@@ -218,6 +245,29 @@ public class TreeHighlighter implements TreeMessageOwner {
 
     public void featureStateChanged(Feature feature) {
       rehighlightFeatureAndDescendants(feature);
+    }
+  }
+
+  private class MyFileStatusListener implements FileStatusListener {
+    public MyFileStatusListener() {
+    }
+
+    public void fileStatusChanged(@NotNull VirtualFile file) {
+      IFile ifile = VirtualFileUtils.toIFile(file);
+      EditableSModelDescriptor emd = SModelRepository.getInstance().findModel(ifile);
+      if (emd != null) {
+        rehighlightFeatureAndDescendants(new ModelFeature(emd.getSModelReference()));
+      }
+    }
+
+    public void fileStatusesChanged() {
+      synchronized (myFeatureToNodes) {
+        for (Feature f : SetSequence.fromSet(myFeatureToNodes.keySet())) {
+          if (f instanceof ModelFeature) {
+            rehighlightFeatureAndDescendants(f);
+          }
+        }
+      }
     }
   }
 }
