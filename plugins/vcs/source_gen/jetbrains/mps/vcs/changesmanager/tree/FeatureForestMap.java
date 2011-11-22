@@ -31,7 +31,7 @@ public class FeatureForestMap<V> {
 
   private Map<Feature, V> myFeatureToValue = MapSequence.fromMap(new HashMap<Feature, V>());
   private Map<Feature, Feature[]> myFeatureToAncestors = MapSequence.fromMap(new HashMap<Feature, Feature[]>());
-  private CounterMap<Feature> myFeaturesIsAncestorCounterMap = new CounterMap<Feature>();
+  private CounterMap<Feature> myFeaturesIsAncestorCounterMap = new CounterMap<Feature>(new FeatureForestMap.MyCounterMapHandler());
   private final List<FeatureForestMapListener> myListeners = ListSequence.fromList(new ArrayList<FeatureForestMapListener>());
 
   public FeatureForestMap() {
@@ -90,8 +90,8 @@ public class FeatureForestMap<V> {
   @Nullable
   public Feature getAddedAncestor(@NotNull Feature feature) {
     ModelAccess.assertLegalRead();
-    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).findFirst(new IWhereFilter<Feature>() {
-      public boolean accept(Feature a) {
+    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).findFirst(new IWhereFilter<Object>() {
+      public boolean accept(Object a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);
       }
     });
@@ -133,7 +133,7 @@ public class FeatureForestMap<V> {
     }
   }
 
-  public class MyCounterMapHandler implements CounterMap.CounterMapHandler<Feature> {
+  private class MyCounterMapHandler implements CounterMap.CounterMapHandler<Feature> {
     public MyCounterMapHandler() {
     }
 
