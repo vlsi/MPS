@@ -580,7 +580,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -688,6 +687,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -760,7 +760,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -868,6 +867,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -901,7 +901,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -1010,6 +1009,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1044,7 +1044,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/solutions/customViewers/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -1153,6 +1152,7 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/plugin/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1187,7 +1187,6 @@
     <path path="${base_dir}/core/baseLanguage/constructors/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -1295,6 +1294,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1328,7 +1328,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -1437,6 +1436,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1470,7 +1470,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -1580,6 +1579,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1625,7 +1625,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -1734,6 +1733,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1768,7 +1768,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -1885,6 +1884,7 @@
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1918,7 +1918,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -2027,6 +2026,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2061,7 +2061,6 @@
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/jdk7/languages/jdk7/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -2169,6 +2168,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2202,7 +2202,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -2310,6 +2309,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2343,7 +2343,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -2452,6 +2451,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2507,7 +2507,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -2616,6 +2615,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2657,7 +2657,6 @@
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -2765,6 +2764,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2798,7 +2798,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -2907,6 +2906,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2970,7 +2970,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.customViewers/classes_gen" />
@@ -3080,6 +3079,7 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/plugin/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3114,7 +3114,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -3232,6 +3231,7 @@
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3265,7 +3265,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -3374,6 +3373,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3408,7 +3408,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -3520,6 +3519,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3553,7 +3553,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -3662,6 +3661,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3696,7 +3696,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -3818,6 +3817,7 @@
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3853,7 +3853,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -3961,6 +3960,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3994,7 +3994,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -4102,6 +4101,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4135,7 +4135,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -4245,6 +4244,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4278,7 +4278,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -4389,6 +4388,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4422,7 +4422,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -4533,6 +4532,7 @@
     <path path="${base_dir}/plugins/debugger-java-languages/customViewers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4566,7 +4566,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -4676,6 +4675,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4709,7 +4709,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -4818,6 +4817,7 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/plugin/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4851,7 +4851,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -4960,6 +4959,7 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4993,7 +4993,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -5109,6 +5108,7 @@
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5142,7 +5142,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -5252,6 +5251,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5285,7 +5285,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -5401,6 +5400,7 @@
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5434,7 +5434,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -5543,6 +5542,7 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/execution-languages/deprecated/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5562,7 +5562,6 @@
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug/classes" />
@@ -5629,7 +5628,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -5740,6 +5738,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5773,7 +5772,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -5882,6 +5880,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5915,7 +5914,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -6023,6 +6021,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6065,7 +6064,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -6173,6 +6171,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6206,7 +6205,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -6314,6 +6312,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6348,7 +6347,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -6457,6 +6455,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6490,7 +6489,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -6599,6 +6597,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6632,7 +6631,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -6741,6 +6739,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6774,7 +6773,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -6882,6 +6880,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6915,7 +6914,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -7024,6 +7022,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7057,7 +7056,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -7165,6 +7163,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7198,7 +7197,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -7308,6 +7306,7 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-java-languages/plugin/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7341,7 +7340,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -7450,6 +7448,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7483,7 +7482,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -7591,6 +7589,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7624,7 +7623,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -7733,6 +7731,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7766,7 +7765,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -7874,6 +7872,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7893,7 +7892,6 @@
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug/classes" />
@@ -7959,7 +7957,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -8068,6 +8065,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8102,7 +8100,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -8213,6 +8210,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8246,7 +8244,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -8358,6 +8355,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8391,7 +8389,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -8500,6 +8497,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8533,7 +8531,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -8646,6 +8643,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8688,7 +8686,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -8804,6 +8801,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8846,7 +8844,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -8954,6 +8951,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8988,7 +8986,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -9096,6 +9093,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9129,7 +9127,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -9237,6 +9234,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9270,7 +9268,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -9380,6 +9377,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9413,7 +9411,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -9521,6 +9518,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9554,7 +9552,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -9663,6 +9660,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9718,7 +9716,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -9828,6 +9825,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -9861,7 +9859,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -9970,6 +9967,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -10003,7 +10001,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -10113,6 +10110,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-languages/library/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />

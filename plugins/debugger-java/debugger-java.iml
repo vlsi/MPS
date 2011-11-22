@@ -32,6 +32,7 @@
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="Tools" level="project" />
     <orderEntry type="module" module-name="baseLanguage-execution" />
+    <orderEntry type="module" module-name="execution-library" />
   </component>
 </module>
 
