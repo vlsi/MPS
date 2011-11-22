@@ -40,65 +40,59 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240470842553498753">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui.nodeChooser" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeChooser" />
       <property name="name" nameId="tpck.1169194664001" value="AbstractMainNodeChooser" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240470842553499171">
       <property name="name" nameId="tpck.1169194664001" value="BaseChooserComponent" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui.nodeChooser" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeChooser" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240470842553499241">
       <property name="name" nameId="tpck.1169194664001" value="BaseFieldWithButtonComponent" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui.nodeChooser" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeChooser" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240470842553499470">
       <property name="name" nameId="tpck.1169194664001" value="GlobalFilteredScope" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui.nodeChooser" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeChooser" />
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="1240470842553499679">
       <property name="name" nameId="tpck.1169194664001" value="IJavaNodeChangeListener" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui.nodeChooser" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeChooser" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240470842553499687">
       <property name="name" nameId="tpck.1169194664001" value="MainNodeChooser" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui.nodeChooser" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeChooser" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240470842553499936">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui.nodeChooser" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeChooser" />
       <property name="name" nameId="tpck.1169194664001" value="MultiConceptChooser" />
     </node>
     <node type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="1240470842553500231">
       <property name="name" nameId="tpck.1169194664001" value="FieldWithBrowseButton" />
       <property name="stub" nameId="tphr.1202393242164" value="true" />
       <property name="actionComponent" nameId="tphr.1202744343014" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui" />
       <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="1240470842553500239" resolveInfo="FieldWithPathChooseDialog" />
       <link role="extendedComponent" roleId="tphr.1202393246965" targetNodeId="tpht.1202816402995" resolveInfo="Panel" />
     </node>
     <node type="tphr.ComponentController" typeId="tphr.1202388384249" id="1240470842553500232">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui" />
       <link role="component" roleId="tphr.1202388401455" targetNodeId="1240470842553500231" resolveInfo="FieldWithBrowseButton" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240470842553500239">
       <property name="name" nameId="tpck.1169194664001" value="FieldWithPathChooseDialog" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui" />
     </node>
     <node type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="1240470842553500411">
       <property name="stub" nameId="tphr.1202393242164" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ParameterBrowser" />
       <property name="actionComponent" nameId="tphr.1202744343014" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui" />
       <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="1240470842553500417" resolveInfo="RawLineEditorComponent" />
       <link role="extendedComponent" roleId="tphr.1202393246965" targetNodeId="tpht.1202816402995" resolveInfo="Panel" />
     </node>
     <node type="tphr.ComponentController" typeId="tphr.1202388384249" id="1240470842553500412">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui" />
       <link role="component" roleId="tphr.1202388401455" targetNodeId="1240470842553500411" resolveInfo="ParameterBrowser" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240470842553500417">
       <property name="name" nameId="tpck.1169194664001" value="RawLineEditorComponent" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui" />
     </node>
   </roots>
   <root id="1240470842553498753">
