@@ -87,12 +87,12 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
         return mySolution != null;
     }
 
-    public void setSolutionDescriptor(final SolutionDescriptor solutionDescriptor) {
+    public void setConfiguration(final MPSConfigurationBean configurationBean) {
         if (wasInitialized()) {
             ModelAccess.instance().runWriteInEDT(new Runnable() {
                 @Override
                 public void run() {
-                    mySolution.setSolutionDescriptor(solutionDescriptor, false);
+                    mySolution.setSolutionDescriptor(configurationBean.getSolutionDescriptor(), false);
                 }
             });
         }

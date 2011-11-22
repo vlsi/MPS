@@ -149,7 +149,7 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
         public void onFacetInitialized(@NotNull Facet facet) {
             super.onFacetInitialized(facet);
             MPSFacet mpsFacet = (MPSFacet) facet;
-            mpsFacet.setSolutionDescriptor(myConfigurationBean.getSolutionDescriptor());
+            mpsFacet.setConfiguration(myConfigurationBean);
         }
 
         @Override

@@ -59,5 +59,13 @@
                 description="Test MPS model repository">
             <add-to-group group-id="ToolsMenu" relative-to-action="GenerateJavadoc" anchor="after"/>
         </action>
+        <action id="jetbrains.mps.idea.core.actions.MarkModelRootAction"
+                class="jetbrains.mps.idea.core.actions.MarkModelRootAction">
+            <add-to-group group-id="MarkRootGroup"/>
+        </action>
+        <action id="jetbrains.mps.idea.core.actions.UnmarkModelRootAction"
+                class="jetbrains.mps.idea.core.actions.UnmarkModelRootAction">
+            <add-to-group group-id="MarkRootGroup"/>
+        </action>
     </actions>
 </idea-plugin>
