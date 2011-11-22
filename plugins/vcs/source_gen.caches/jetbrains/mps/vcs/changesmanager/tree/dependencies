@@ -66,6 +66,7 @@
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNodeEx" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.ConceptTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.PackageNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.PropertiesTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.PropertyTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.ReferenceTreeNode" />
@@ -79,6 +80,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.PropertiesFeature" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.ReferencesFeature" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" />
@@ -98,7 +100,6 @@
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter" file="TreeHighlighter.java">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.util.containers.MultiMap" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />

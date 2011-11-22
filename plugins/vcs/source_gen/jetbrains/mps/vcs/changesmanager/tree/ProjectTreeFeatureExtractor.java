@@ -20,6 +20,8 @@ import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.PropertiesFeature;
 import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.ReferencesFeature;
+import jetbrains.mps.ide.ui.smodel.PackageNode;
+import jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature;
 
 public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
   public ProjectTreeFeatureExtractor() {
@@ -48,6 +50,9 @@ public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
       return new PropertiesFeature(nodePointer);
     } else if (treeNode instanceof ReferencesTreeNode) {
       return new ReferencesFeature(nodePointer);
+    } else if (treeNode instanceof PackageNode) {
+      PackageNode pn = ((PackageNode) treeNode);
+      return new VirtualPackageFeature(pn.getModelReference(), pn.getPackage());
     }
     return null;
   }
