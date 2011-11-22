@@ -14,18 +14,18 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
 
-public class ChangesEditorHighlighterFactory extends AbstractProjectComponent {
-  private Map<EditorComponent, ChangesEditorHighlighter> myEditorsHighlighters = MapSequence.fromMap(new HashMap<EditorComponent, ChangesEditorHighlighter>());
+public class EditorHighlighterFactory extends AbstractProjectComponent {
+  private Map<EditorComponent, EditorHighlighter> myEditorsHighlighters = MapSequence.fromMap(new HashMap<EditorComponent, EditorHighlighter>());
   private MessageBusConnection myMessageBusConnection;
 
-  public ChangesEditorHighlighterFactory(Project project) {
+  public EditorHighlighterFactory(Project project) {
     super(project);
   }
 
   @Override
   public void projectOpened() {
     myMessageBusConnection = myProject.getMessageBus().connect();
-    myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, new ChangesEditorHighlighterFactory.MyEditorComponentCreateListener());
+    myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, new EditorHighlighterFactory.MyEditorComponentCreateListener());
   }
 
   @Override
@@ -35,7 +35,7 @@ public class ChangesEditorHighlighterFactory extends AbstractProjectComponent {
 
   private void addHighighlighterIfNeeded(@NotNull EditorComponent editorComponent) {
     if (editorComponent instanceof NodeEditorComponent || editorComponent == myProject.getComponent(InspectorTool.class).getInspector()) {
-      MapSequence.fromMap(myEditorsHighlighters).put(editorComponent, new ChangesEditorHighlighter(myProject, editorComponent));
+      MapSequence.fromMap(myEditorsHighlighters).put(editorComponent, new EditorHighlighter(myProject, editorComponent));
     }
   }
 
@@ -46,7 +46,7 @@ public class ChangesEditorHighlighterFactory extends AbstractProjectComponent {
     }
   }
 
-  public ChangesEditorHighlighter getHighlighter(@NotNull EditorComponent editorComponent) {
+  public EditorHighlighter getHighlighter(@NotNull EditorComponent editorComponent) {
     return MapSequence.fromMap(myEditorsHighlighters).get(editorComponent);
   }
 

@@ -33,16 +33,16 @@ import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
 
-public class ChangesEditorHighlighter implements EditorMessageOwner {
+public class EditorHighlighter implements EditorMessageOwner {
   private EditorComponent myEditorComponent;
   private final Map<ModelChange, List<ChangeEditorMessage>> myChangesMessages = MapSequence.fromMap(new HashMap<ModelChange, List<ChangeEditorMessage>>());
   private CurrentDifference myCurrentDifference;
   private ChangeStripsPainter myStripsPainter;
-  private ChangesEditorHighlighter.MyCurrentDifferenceListener myListener;
+  private EditorHighlighter.MyCurrentDifferenceListener myListener;
   private final Object myDisposedLock = new Object();
   private boolean myDisposed = false;
 
-  public ChangesEditorHighlighter(@NotNull final Project project, @NotNull final EditorComponent editorComponent) {
+  public EditorHighlighter(@NotNull final Project project, @NotNull final EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
 
     CurrentDifferenceRegistry.getInstance(project).getCommandQueue().runTask(new Runnable() {
@@ -64,7 +64,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
               );
               if (descriptor instanceof EditableSModelDescriptor) {
                 myCurrentDifference = CurrentDifferenceRegistry.getInstance(project).getCurrentDifference((EditableSModelDescriptor) descriptor);
-                myListener = new ChangesEditorHighlighter.MyCurrentDifferenceListener();
+                myListener = new EditorHighlighter.MyCurrentDifferenceListener();
               }
               if (myListener != null) {
                 myCurrentDifference.setEnabled(true);
@@ -91,7 +91,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
                 getHighlightManager().repaintAndRebuildEditorMessages();
                 ThreadUtils.runInUIThreadNoWait(new Runnable() {
                   public void run() {
-                    myStripsPainter = new ChangeStripsPainter(ChangesEditorHighlighter.this);
+                    myStripsPainter = new ChangeStripsPainter(EditorHighlighter.this);
                     myEditorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(myStripsPainter);
                     myStripsPainter.relayout();
                   }
@@ -118,7 +118,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
         if (model == null || model.isDisposed()) {
           return;
         }
-        messages.value = ChangeEditorMessage.createMessages(model, change, ChangesEditorHighlighter.this, null, false);
+        messages.value = ChangeEditorMessage.createMessages(model, change, EditorHighlighter.this, null, false);
       }
     });
     if (messages.value == null) {
@@ -167,7 +167,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
                 }
               });
             }
-            getHighlightManager().clearForOwner(ChangesEditorHighlighter.this);
+            getHighlightManager().clearForOwner(EditorHighlighter.this);
             if (myStripsPainter != null) {
               getLeftEditorHighlighter().removeFoldingAreaPainter(myStripsPainter);
             }
@@ -184,7 +184,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
 
   @Nullable
   /*package*/ ChangeSet getChangeSet() {
-    return check_z1nuaw_a0a4(myCurrentDifference);
+    return check_urq9my_a0a4(myCurrentDifference);
   }
 
   /*package*/ ChangeStripsPainter getStripsPainter() {
@@ -203,14 +203,14 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
     return myEditorComponent.getLeftEditorHighlighter();
   }
 
-  private static ChangeSet check_z1nuaw_a0a4(CurrentDifference checkedDotOperand) {
+  private static ChangeSet check_urq9my_a0a4(CurrentDifference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getChangeSet();
     }
     return null;
   }
 
-  private static void check_z1nuaw_a3a0a2a(ChangeStripsPainter checkedDotOperand) {
+  private static void check_urq9my_a3a0a2a(ChangeStripsPainter checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.relayout();
     }
@@ -246,7 +246,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
         for (ChangeEditorMessage addedMessage : ListSequence.fromList(myAddedMessages)) {
           nodeHighlightManager.mark(addedMessage);
         }
-        check_z1nuaw_a3a0a2a(myStripsPainter);
+        check_urq9my_a3a0a2a(myStripsPainter);
         nodeHighlightManager.repaintAndRebuildEditorMessages();
         ListSequence.fromList(myAddedMessages).clear();
         ListSequence.fromList(myRemovedMessages).clear();

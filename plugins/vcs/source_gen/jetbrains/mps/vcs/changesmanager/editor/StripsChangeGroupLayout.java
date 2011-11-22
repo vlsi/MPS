@@ -12,10 +12,10 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.ChangeSet;
 
-public class StripsChangeGroupLayout extends ChangeGroupLayout {
-  private ChangesEditorHighlighter myEditorHighlighter;
+/*package*/ class StripsChangeGroupLayout extends ChangeGroupLayout {
+  private EditorHighlighter myEditorHighlighter;
 
-  public StripsChangeGroupLayout(ChangesEditorHighlighter editorHighlighter) {
+  public StripsChangeGroupLayout(EditorHighlighter editorHighlighter) {
     super(null, editorHighlighter.getEditorComponent() instanceof InspectorEditorComponent, true);
     myEditorHighlighter = editorHighlighter;
   }

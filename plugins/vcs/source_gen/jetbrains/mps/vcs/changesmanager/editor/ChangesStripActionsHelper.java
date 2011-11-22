@@ -26,7 +26,7 @@ public class ChangesStripActionsHelper {
   @Nullable
   private static ChangeGroup getNeighbourChangeGroup(@NotNull EditorContext editorContext, boolean next) {
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
-    ChangesEditorHighlighter highlighter = check_ikrecr_a0b0a(editorContext.getOperationContext().getComponent(ChangesEditorHighlighterFactory.class), editorComponent);
+    EditorHighlighter highlighter = check_ikrecr_a0b0a(editorContext.getOperationContext().getComponent(EditorHighlighterFactory.class), editorComponent);
     return check_ikrecr_a2a0(check_ikrecr_a0c0a(highlighter), editorContext, next);
   }
 
@@ -40,7 +40,7 @@ public class ChangesStripActionsHelper {
       return;
     }
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
-    ChangesEditorHighlighter highlighter = check_ikrecr_a0d0c(editorContext.getOperationContext().getComponent(ChangesEditorHighlighterFactory.class), editorComponent);
+    EditorHighlighter highlighter = check_ikrecr_a0d0c(editorContext.getOperationContext().getComponent(EditorHighlighterFactory.class), editorComponent);
     goToY(editorComponent, (int) group.getBounds(true).end());
     goToY(editorComponent, (int) group.getBounds(true).start());
     check_ikrecr_a0g0c(highlighter).showPopupForGroup(group);
@@ -55,7 +55,7 @@ public class ChangesStripActionsHelper {
 
   public static void rollbackChanges(@NotNull EditorContext editorContext) {
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
-    ChangesEditorHighlighter highlighter = check_ikrecr_a0b0e(editorContext.getOperationContext().getComponent(ChangesEditorHighlighterFactory.class), editorComponent);
+    EditorHighlighter highlighter = check_ikrecr_a0b0e(editorContext.getOperationContext().getComponent(EditorHighlighterFactory.class), editorComponent);
     final ChangeStripsPainter painter = check_ikrecr_a0c0e(highlighter);
     final List<ModelChange> changes = check_ikrecr_a0d0e(check_ikrecr_a0a3a4(painter));
     if (changes == null) {
@@ -86,7 +86,7 @@ public class ChangesStripActionsHelper {
     });
   }
 
-  private static ChangesEditorHighlighter check_ikrecr_a0b0a(ChangesEditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
+  private static EditorHighlighter check_ikrecr_a0b0a(EditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getHighlighter(editorComponent);
     }
@@ -107,35 +107,35 @@ public class ChangesStripActionsHelper {
     return null;
   }
 
-  private static ChangeStripsPainter check_ikrecr_a0c0a(ChangesEditorHighlighter checkedDotOperand) {
+  private static ChangeStripsPainter check_ikrecr_a0c0a(EditorHighlighter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStripsPainter();
     }
     return null;
   }
 
-  private static ChangesEditorHighlighter check_ikrecr_a0d0c(ChangesEditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
+  private static EditorHighlighter check_ikrecr_a0d0c(EditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getHighlighter(editorComponent);
     }
     return null;
   }
 
-  private static ChangeStripsPainter check_ikrecr_a0g0c(ChangesEditorHighlighter checkedDotOperand) {
+  private static ChangeStripsPainter check_ikrecr_a0g0c(EditorHighlighter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStripsPainter();
     }
     return null;
   }
 
-  private static ChangesEditorHighlighter check_ikrecr_a0b0e(ChangesEditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
+  private static EditorHighlighter check_ikrecr_a0b0e(EditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getHighlighter(editorComponent);
     }
     return null;
   }
 
-  private static ChangeStripsPainter check_ikrecr_a0c0e(ChangesEditorHighlighter checkedDotOperand) {
+  private static ChangeStripsPainter check_ikrecr_a0c0e(EditorHighlighter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStripsPainter();
     }

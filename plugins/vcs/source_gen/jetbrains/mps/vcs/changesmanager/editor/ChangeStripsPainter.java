@@ -35,12 +35,12 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private static final int ARROW_HEIGHT = 8;
   private static final Color AREA_FRAME_COLOR = Color.GRAY;
 
-  private ChangesEditorHighlighter myEditorHighlighter;
+  private EditorHighlighter myEditorHighlighter;
   private ChangeGroupLayout myChangeGroupLayout;
   private ChangeGroup myGroupUnderMouse;
   private PopupToolbar myPopupToolbar = null;
 
-  public ChangeStripsPainter(@NotNull ChangesEditorHighlighter editorHighlighter) {
+  public ChangeStripsPainter(@NotNull EditorHighlighter editorHighlighter) {
     super(editorHighlighter.getLeftEditorHighlighter());
     myEditorHighlighter = editorHighlighter;
     myChangeGroupLayout = new StripsChangeGroupLayout(myEditorHighlighter);
