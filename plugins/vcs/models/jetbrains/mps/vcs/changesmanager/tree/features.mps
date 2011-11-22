@@ -435,14 +435,14 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5060092229902868413">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5060092229902868391" resolveInfo="that" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5060092229902868414">
-                    <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="5060092229902868329" resolveInfo="myHashCode" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7442773437066529184">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5060092229902868356" resolveInfo="hashCode" />
                   </node>
                 </node>
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5060092229902868415">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="5060092229902868416" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5060092229902868417">
-                    <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="5060092229902868329" resolveInfo="myHashCode" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7442773437066529183">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5060092229902868356" resolveInfo="hashCode" />
                   </node>
                 </node>
               </node>

@@ -45,7 +45,7 @@ public abstract class Feature {
   public boolean equals(Object object) {
     if (this.getClass() == object.getClass()) {
       Feature that = ((Feature) object);
-      if (this.myHashCode == that.myHashCode) {
+      if (this.hashCode() == that.hashCode()) {
         if (this.myNodePointer.equals(that.myNodePointer)) {
           return true;
         }
