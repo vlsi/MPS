@@ -108,7 +108,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     </node>
     <node type="uigu.SimpleExtensionMethodsContainer" typeId="uigu.8022092943109322131" id="6753405296903707476">
-      <property name="name" nameId="tpck.1169194664001" value="MPSTreeUtil" />
+      <property name="name" nameId="tpck.1169194664001" value="OldMPSTreeUtil" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6204261414007507123">
       <property name="name" nameId="tpck.1169194664001" value="OldRootNodeFileStatusManager" />

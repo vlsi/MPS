@@ -1958,10 +1958,10 @@
     <nodeInfo nodeId="2034607283473280028" fileName="OldProjectTreeChangesHighlighter.java" startLine="229" startPosition="39" endLine="230" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5962623969496447932" fileName="OldProjectTreeChangesHighlighter.java" startLine="232" startPosition="116" endLine="233" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5962623969496447949" fileName="OldProjectTreeChangesHighlighter.java" startLine="235" startPosition="60" endLine="236" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5962623969496447966" fileName="OldProjectTreeChangesHighlighter.java" startLine="237" startPosition="116" endLine="238" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5962623969496447966" fileName="OldProjectTreeChangesHighlighter.java" startLine="237" startPosition="116" endLine="238" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5962623969496447975" fileName="OldProjectTreeChangesHighlighter.java" startLine="239" startPosition="43" endLine="240" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5962623969496447992" fileName="OldProjectTreeChangesHighlighter.java" startLine="243" startPosition="61" endLine="244" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5962623969496448009" fileName="OldProjectTreeChangesHighlighter.java" startLine="245" startPosition="116" endLine="246" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5962623969496448009" fileName="OldProjectTreeChangesHighlighter.java" startLine="245" startPosition="116" endLine="246" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5962623969496448018" fileName="OldProjectTreeChangesHighlighter.java" startLine="247" startPosition="44" endLine="248" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9167608307817304646" fileName="OldProjectTreeChangesHighlighter.java" startLine="256" startPosition="89" endLine="257" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="9167608307817304626" fileName="OldProjectTreeChangesHighlighter.java" startLine="257" startPosition="50" endLine="258" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1986,20 +1986,20 @@
     <nodeInfo nodeId="1794625231785958509" fileName="OldProjectTreeChangesHighlighter.java" startLine="317" startPosition="61" endLine="318" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1794625231785958526" fileName="OldProjectTreeChangesHighlighter.java" startLine="321" startPosition="116" endLine="322" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1794625231785958537" fileName="OldProjectTreeChangesHighlighter.java" startLine="324" startPosition="60" endLine="325" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1794625231785958554" fileName="OldProjectTreeChangesHighlighter.java" startLine="326" startPosition="116" endLine="327" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1794625231785958554" fileName="OldProjectTreeChangesHighlighter.java" startLine="326" startPosition="116" endLine="327" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1794625231785958563" fileName="OldProjectTreeChangesHighlighter.java" startLine="328" startPosition="43" endLine="329" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1794625231785958574" fileName="OldProjectTreeChangesHighlighter.java" startLine="332" startPosition="61" endLine="333" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1794625231785958591" fileName="OldProjectTreeChangesHighlighter.java" startLine="334" startPosition="116" endLine="335" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1794625231785958591" fileName="OldProjectTreeChangesHighlighter.java" startLine="334" startPosition="116" endLine="335" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1794625231785958600" fileName="OldProjectTreeChangesHighlighter.java" startLine="336" startPosition="44" endLine="337" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8332987850893596874" fileName="OldProjectTreeChangesHighlighter.java" startLine="346" startPosition="81" endLine="347" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1064435610503036352" fileName="OldProjectTreeChangesHighlighter.java" startLine="348" startPosition="5" endLine="349" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1064435610503036357" fileName="OldProjectTreeChangesHighlighter.java" startLine="349" startPosition="44" endLine="350" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1064435610503036368" fileName="OldProjectTreeChangesHighlighter.java" startLine="351" startPosition="96" endLine="352" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1064435610503036368" fileName="OldProjectTreeChangesHighlighter.java" startLine="351" startPosition="99" endLine="352" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1064435610503045282" fileName="OldProjectTreeChangesHighlighter.java" startLine="356" startPosition="67" endLine="357" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="272407866692946610" fileName="OldProjectTreeChangesHighlighter.java" startLine="358" startPosition="57" endLine="359" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1064435610503045294" fileName="OldProjectTreeChangesHighlighter.java" startLine="360" startPosition="5" endLine="361" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1064435610503045323" fileName="OldProjectTreeChangesHighlighter.java" startLine="361" startPosition="73" endLine="362" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1064435610503045336" fileName="OldProjectTreeChangesHighlighter.java" startLine="363" startPosition="96" endLine="364" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1064435610503045336" fileName="OldProjectTreeChangesHighlighter.java" startLine="363" startPosition="99" endLine="364" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2321982369880631357" fileName="OldProjectTreeChangesHighlighter.java" startLine="370" startPosition="25" endLine="371" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2321982369880631354" fileName="OldProjectTreeChangesHighlighter.java" startLine="372" startPosition="41" endLine="373" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2321982369880631355" fileName="OldProjectTreeChangesHighlighter.java" startLine="374" startPosition="9" endLine="375" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -2069,13 +2069,13 @@
     <nodeInfo nodeId="1706980770777324543" fileName="OldProjectTreeChangesHighlighter.java" startLine="596" startPosition="30" endLine="597" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8899216664493121432" fileName="OldProjectTreeChangesHighlighter.java" startLine="606" startPosition="116" endLine="607" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8899216664493121469" fileName="OldProjectTreeChangesHighlighter.java" startLine="612" startPosition="116" endLine="613" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3208730671234903488" fileName="OldProjectTreeChangesHighlighter.java" startLine="623" startPosition="116" endLine="624" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3208730671234903488" fileName="OldProjectTreeChangesHighlighter.java" startLine="623" startPosition="116" endLine="624" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3208730671234903515" fileName="OldProjectTreeChangesHighlighter.java" startLine="625" startPosition="41" endLine="626" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3208730671234903553" fileName="OldProjectTreeChangesHighlighter.java" startLine="632" startPosition="116" endLine="633" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3208730671234903553" fileName="OldProjectTreeChangesHighlighter.java" startLine="632" startPosition="116" endLine="633" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3208730671234903562" fileName="OldProjectTreeChangesHighlighter.java" startLine="634" startPosition="41" endLine="635" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2018072152268789321" fileName="OldProjectTreeChangesHighlighter.java" startLine="646" startPosition="116" endLine="647" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2018072152268789321" fileName="OldProjectTreeChangesHighlighter.java" startLine="646" startPosition="116" endLine="647" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2018072152268789328" fileName="OldProjectTreeChangesHighlighter.java" startLine="648" startPosition="41" endLine="649" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2018072152268789352" fileName="OldProjectTreeChangesHighlighter.java" startLine="655" startPosition="116" endLine="656" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2018072152268789352" fileName="OldProjectTreeChangesHighlighter.java" startLine="655" startPosition="116" endLine="656" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2018072152268789359" fileName="OldProjectTreeChangesHighlighter.java" startLine="657" startPosition="41" endLine="658" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7601193928418873026" fileName="OldProjectTreeChangesHighlighter.java" startLine="668" startPosition="79" endLine="669" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7690582295257017738" fileName="OldProjectTreeChangesHighlighter.java" startLine="672" startPosition="81" endLine="673" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2096,7 +2096,7 @@
     <nodeInfo nodeId="3375103409259067101" fileName="OldProjectTreeChangesHighlighter.java" startLine="130" startPosition="29" endLine="133" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="280428785916394435" fileName="OldProjectTreeChangesHighlighter.java" startLine="139" startPosition="15" endLine="142" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5122946031826300341" fileName="OldProjectTreeChangesHighlighter.java" startLine="143" startPosition="110" endLine="146" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4344428334011849699" fileName="OldProjectTreeChangesHighlighter.java" startLine="155" startPosition="98" endLine="158" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4344428334011849699" fileName="OldProjectTreeChangesHighlighter.java" startLine="155" startPosition="101" endLine="158" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5235541930886063819" fileName="OldProjectTreeChangesHighlighter.java" startLine="178" startPosition="5" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5235541930886077860" fileName="OldProjectTreeChangesHighlighter.java" startLine="186" startPosition="111" endLine="189" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5962623969496447847" fileName="OldProjectTreeChangesHighlighter.java" startLine="199" startPosition="66" endLine="202" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2104,8 +2104,8 @@
     <nodeInfo nodeId="5962623969496447892" fileName="OldProjectTreeChangesHighlighter.java" startLine="218" startPosition="11" endLine="221" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2034607283473280020" fileName="OldProjectTreeChangesHighlighter.java" startLine="228" startPosition="97" endLine="231" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5962623969496447924" fileName="OldProjectTreeChangesHighlighter.java" startLine="231" startPosition="11" endLine="234" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5962623969496447973" fileName="OldProjectTreeChangesHighlighter.java" startLine="238" startPosition="105" endLine="241" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5962623969496448016" fileName="OldProjectTreeChangesHighlighter.java" startLine="246" startPosition="100" endLine="249" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5962623969496447973" fileName="OldProjectTreeChangesHighlighter.java" startLine="238" startPosition="108" endLine="241" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5962623969496448016" fileName="OldProjectTreeChangesHighlighter.java" startLine="246" startPosition="103" endLine="249" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9167608307817304648" fileName="OldProjectTreeChangesHighlighter.java" startLine="259" startPosition="35" endLine="262" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="9167608307817304890" fileName="OldProjectTreeChangesHighlighter.java" startLine="262" startPosition="5" endLine="265" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1794625231785958394" fileName="OldProjectTreeChangesHighlighter.java" startLine="274" startPosition="66" endLine="277" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2113,8 +2113,8 @@
     <nodeInfo nodeId="1794625231785958469" fileName="OldProjectTreeChangesHighlighter.java" startLine="305" startPosition="31" endLine="308" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1794625231785958486" fileName="OldProjectTreeChangesHighlighter.java" startLine="311" startPosition="9" endLine="314" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1794625231785958518" fileName="OldProjectTreeChangesHighlighter.java" startLine="320" startPosition="46" endLine="323" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1794625231785958561" fileName="OldProjectTreeChangesHighlighter.java" startLine="327" startPosition="105" endLine="330" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1794625231785958598" fileName="OldProjectTreeChangesHighlighter.java" startLine="335" startPosition="100" endLine="338" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1794625231785958561" fileName="OldProjectTreeChangesHighlighter.java" startLine="327" startPosition="108" endLine="330" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1794625231785958598" fileName="OldProjectTreeChangesHighlighter.java" startLine="335" startPosition="103" endLine="338" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8332987850893596864" fileName="OldProjectTreeChangesHighlighter.java" startLine="345" startPosition="149" endLine="348" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1064435610503036365" fileName="OldProjectTreeChangesHighlighter.java" startLine="350" startPosition="83" endLine="353" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="272407866692946590" fileName="OldProjectTreeChangesHighlighter.java" startLine="357" startPosition="132" endLine="360" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2140,10 +2140,10 @@
     <nodeInfo nodeId="5052922865790629132" fileName="OldProjectTreeChangesHighlighter.java" startLine="570" startPosition="79" endLine="573" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8899216664493121416" fileName="OldProjectTreeChangesHighlighter.java" startLine="605" startPosition="49" endLine="608" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8899216664493121461" fileName="OldProjectTreeChangesHighlighter.java" startLine="611" startPosition="52" endLine="614" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3208730671234903480" fileName="OldProjectTreeChangesHighlighter.java" startLine="624" startPosition="98" endLine="627" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3208730671234903560" fileName="OldProjectTreeChangesHighlighter.java" startLine="633" startPosition="98" endLine="636" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2018072152268789326" fileName="OldProjectTreeChangesHighlighter.java" startLine="647" startPosition="98" endLine="650" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2018072152268789357" fileName="OldProjectTreeChangesHighlighter.java" startLine="656" startPosition="98" endLine="659" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3208730671234903480" fileName="OldProjectTreeChangesHighlighter.java" startLine="624" startPosition="101" endLine="627" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3208730671234903560" fileName="OldProjectTreeChangesHighlighter.java" startLine="633" startPosition="101" endLine="636" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2018072152268789326" fileName="OldProjectTreeChangesHighlighter.java" startLine="647" startPosition="101" endLine="650" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2018072152268789357" fileName="OldProjectTreeChangesHighlighter.java" startLine="656" startPosition="101" endLine="659" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7542415519011387474" fileName="OldProjectTreeChangesHighlighter.java" startLine="679" startPosition="0" endLine="682" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateStarted#()V" />
     <nodeInfo nodeId="7542415519011387595" fileName="OldProjectTreeChangesHighlighter.java" startLine="682" startPosition="0" endLine="685" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateFinished#()V" />
     <nodeInfo nodeId="3360080708000238091" fileName="OldProjectTreeChangesHighlighter.java" startLine="700" startPosition="0" endLine="703" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeUpdated#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
@@ -2319,9 +2319,9 @@
     <scopeInfo nodeId="1794625231785958562" fileName="OldProjectTreeChangesHighlighter.java" startLine="328" startPosition="43" endLine="329" endPosition="52" />
     <scopeInfo nodeId="1794625231785958599" fileName="OldProjectTreeChangesHighlighter.java" startLine="336" startPosition="44" endLine="337" endPosition="53" />
     <scopeInfo nodeId="8332987850893596865" fileName="OldProjectTreeChangesHighlighter.java" startLine="346" startPosition="81" endLine="347" endPosition="36" />
-    <scopeInfo nodeId="1064435610503036367" fileName="OldProjectTreeChangesHighlighter.java" startLine="351" startPosition="96" endLine="352" endPosition="80" />
+    <scopeInfo nodeId="1064435610503036367" fileName="OldProjectTreeChangesHighlighter.java" startLine="351" startPosition="99" endLine="352" endPosition="80" />
     <scopeInfo nodeId="272407866692946591" fileName="OldProjectTreeChangesHighlighter.java" startLine="358" startPosition="57" endLine="359" endPosition="13" />
-    <scopeInfo nodeId="1064435610503045335" fileName="OldProjectTreeChangesHighlighter.java" startLine="363" startPosition="96" endLine="364" endPosition="83" />
+    <scopeInfo nodeId="1064435610503045335" fileName="OldProjectTreeChangesHighlighter.java" startLine="363" startPosition="99" endLine="364" endPosition="83" />
     <scopeInfo nodeId="2321982369880631341" fileName="OldProjectTreeChangesHighlighter.java" startLine="372" startPosition="41" endLine="373" endPosition="17" />
     <scopeInfo nodeId="5962623969496446621" fileName="OldProjectTreeChangesHighlighter.java" startLine="383" startPosition="29" endLine="384" endPosition="19" />
     <scopeInfo nodeId="1972145774362751711" fileName="OldProjectTreeChangesHighlighter.java" startLine="388" startPosition="89" endLine="389" endPosition="23" />
@@ -2377,7 +2377,7 @@
     <scopeInfo nodeId="2361569284773587230" fileName="OldProjectTreeChangesHighlighter.java" startLine="108" startPosition="143" endLine="111" endPosition="15">
       <varInfo nodeId="2361569284773587230" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="4344428334011849688" fileName="OldProjectTreeChangesHighlighter.java" startLine="155" startPosition="98" endLine="158" endPosition="9" />
+    <scopeInfo nodeId="4344428334011849688" fileName="OldProjectTreeChangesHighlighter.java" startLine="155" startPosition="101" endLine="158" endPosition="9" />
     <scopeInfo nodeId="5433128934919610389" fileName="OldProjectTreeChangesHighlighter.java" startLine="169" startPosition="126" endLine="172" endPosition="75">
       <varInfo nodeId="5433128934919610398" varName="modelChangesManager" />
     </scopeInfo>
@@ -2964,86 +2964,86 @@
     <unitInfo nodeId="6204261414007568332" fileName="OldNodeFileStatusListener.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldNodeFileStatusListener" />
   </root>
   <root nodeId="6753405296903707476">
-    <nodeInfo nodeId="6753405296903809166" fileName="MPSTreeUtil.java" startLine="24" startPosition="48" endLine="25" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6753405296903809174" fileName="MPSTreeUtil.java" startLine="27" startPosition="5" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6753405296903809219" fileName="MPSTreeUtil.java" startLine="33" startPosition="124" endLine="34" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6753405296903809225" fileName="MPSTreeUtil.java" startLine="36" startPosition="5" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6753405296903809263" fileName="MPSTreeUtil.java" startLine="42" startPosition="48" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6753405296903809271" fileName="MPSTreeUtil.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6753405296903809309" fileName="MPSTreeUtil.java" startLine="51" startPosition="123" endLine="52" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6753405296903809315" fileName="MPSTreeUtil.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="833977803389943629" fileName="MPSTreeUtil.java" startLine="58" startPosition="84" endLine="59" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="833977803389943636" fileName="MPSTreeUtil.java" startLine="59" startPosition="85" endLine="60" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="833977803389943647" fileName="MPSTreeUtil.java" startLine="61" startPosition="60" endLine="62" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="833977803389943652" fileName="MPSTreeUtil.java" startLine="62" startPosition="56" endLine="63" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="833977803389943662" fileName="MPSTreeUtil.java" startLine="64" startPosition="5" endLine="65" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="18" startPosition="26" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSTreeUtil#()V" />
-    <nodeInfo nodeId="6753405296903809164" fileName="MPSTreeUtil.java" startLine="23" startPosition="60" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6753405296903809205" fileName="MPSTreeUtil.java" startLine="32" startPosition="96" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6753405296903809261" fileName="MPSTreeUtil.java" startLine="41" startPosition="60" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6753405296903809293" fileName="MPSTreeUtil.java" startLine="50" startPosition="96" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="833977803389943643" fileName="MPSTreeUtil.java" startLine="60" startPosition="100" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6753405296903809160" fileName="MPSTreeUtil.java" startLine="22" startPosition="91" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6753405296903809202" fileName="MPSTreeUtil.java" startLine="31" startPosition="108" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6753405296903809257" fileName="MPSTreeUtil.java" startLine="40" startPosition="91" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6753405296903809290" fileName="MPSTreeUtil.java" startLine="49" startPosition="102" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="21" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findPropertiesTreeNode#(Ljetbrains/mps/ide/ui/smodel/SNodeTreeNode;)Ljetbrains/mps/ide/ui/smodel/PropertiesTreeNode;" />
-    <nodeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="30" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findPropertyTreeNode#(Ljetbrains/mps/ide/ui/smodel/SNodeTreeNode;Ljava/lang/String;)Ljetbrains/mps/ide/ui/smodel/PropertyTreeNode;" />
-    <nodeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="39" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findReferencesTreeNode#(Ljetbrains/mps/ide/ui/smodel/SNodeTreeNode;)Ljetbrains/mps/ide/ui/smodel/ReferencesTreeNode;" />
-    <nodeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findReferenceTreeNode#(Ljetbrains/mps/ide/ui/smodel/SNodeTreeNode;Ljava/lang/String;)Ljetbrains/mps/ide/ui/smodel/ReferenceTreeNode;" />
-    <nodeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="57" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDescendants#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="19" startPosition="24" endLine="19" endPosition="24" />
-    <scopeInfo nodeId="6753405296903809165" fileName="MPSTreeUtil.java" startLine="24" startPosition="48" endLine="25" endPosition="44" />
-    <scopeInfo nodeId="6753405296903809218" fileName="MPSTreeUtil.java" startLine="33" startPosition="124" endLine="34" endPosition="42" />
-    <scopeInfo nodeId="6753405296903809262" fileName="MPSTreeUtil.java" startLine="42" startPosition="48" endLine="43" endPosition="44" />
-    <scopeInfo nodeId="6753405296903809308" fileName="MPSTreeUtil.java" startLine="51" startPosition="123" endLine="52" endPosition="43" />
-    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="18" startPosition="26" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="833977803389943646" fileName="MPSTreeUtil.java" startLine="61" startPosition="60" endLine="63" endPosition="120" />
-    <scopeInfo nodeId="6753405296903809163" fileName="MPSTreeUtil.java" startLine="23" startPosition="60" endLine="26" endPosition="7" />
-    <scopeInfo nodeId="6753405296903809204" fileName="MPSTreeUtil.java" startLine="32" startPosition="96" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="6753405296903809260" fileName="MPSTreeUtil.java" startLine="41" startPosition="60" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="6753405296903809292" fileName="MPSTreeUtil.java" startLine="50" startPosition="96" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="833977803389943643" fileName="MPSTreeUtil.java" startLine="60" startPosition="100" endLine="64" endPosition="5">
+    <nodeInfo nodeId="6753405296903809166" fileName="OldMPSTreeUtil.java" startLine="24" startPosition="48" endLine="25" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6753405296903809174" fileName="OldMPSTreeUtil.java" startLine="27" startPosition="5" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6753405296903809219" fileName="OldMPSTreeUtil.java" startLine="33" startPosition="124" endLine="34" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6753405296903809225" fileName="OldMPSTreeUtil.java" startLine="36" startPosition="5" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6753405296903809263" fileName="OldMPSTreeUtil.java" startLine="42" startPosition="48" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6753405296903809271" fileName="OldMPSTreeUtil.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6753405296903809309" fileName="OldMPSTreeUtil.java" startLine="51" startPosition="123" endLine="52" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6753405296903809315" fileName="OldMPSTreeUtil.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="833977803389943629" fileName="OldMPSTreeUtil.java" startLine="58" startPosition="84" endLine="59" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="833977803389943636" fileName="OldMPSTreeUtil.java" startLine="59" startPosition="85" endLine="60" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="833977803389943647" fileName="OldMPSTreeUtil.java" startLine="61" startPosition="60" endLine="62" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="833977803389943652" fileName="OldMPSTreeUtil.java" startLine="62" startPosition="56" endLine="63" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="833977803389943662" fileName="OldMPSTreeUtil.java" startLine="64" startPosition="5" endLine="65" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="18" startPosition="29" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OldMPSTreeUtil#()V" />
+    <nodeInfo nodeId="6753405296903809164" fileName="OldMPSTreeUtil.java" startLine="23" startPosition="60" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6753405296903809205" fileName="OldMPSTreeUtil.java" startLine="32" startPosition="99" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6753405296903809261" fileName="OldMPSTreeUtil.java" startLine="41" startPosition="60" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6753405296903809293" fileName="OldMPSTreeUtil.java" startLine="50" startPosition="99" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="833977803389943643" fileName="OldMPSTreeUtil.java" startLine="60" startPosition="100" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6753405296903809160" fileName="OldMPSTreeUtil.java" startLine="22" startPosition="91" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6753405296903809202" fileName="OldMPSTreeUtil.java" startLine="31" startPosition="108" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6753405296903809257" fileName="OldMPSTreeUtil.java" startLine="40" startPosition="91" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6753405296903809290" fileName="OldMPSTreeUtil.java" startLine="49" startPosition="102" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="21" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findPropertiesTreeNode#(Ljetbrains/mps/ide/ui/smodel/SNodeTreeNode;)Ljetbrains/mps/ide/ui/smodel/PropertiesTreeNode;" />
+    <nodeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="30" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findPropertyTreeNode#(Ljetbrains/mps/ide/ui/smodel/SNodeTreeNode;Ljava/lang/String;)Ljetbrains/mps/ide/ui/smodel/PropertyTreeNode;" />
+    <nodeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="39" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findReferencesTreeNode#(Ljetbrains/mps/ide/ui/smodel/SNodeTreeNode;)Ljetbrains/mps/ide/ui/smodel/ReferencesTreeNode;" />
+    <nodeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findReferenceTreeNode#(Ljetbrains/mps/ide/ui/smodel/SNodeTreeNode;Ljava/lang/String;)Ljetbrains/mps/ide/ui/smodel/ReferenceTreeNode;" />
+    <nodeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="57" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDescendants#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="19" startPosition="27" endLine="19" endPosition="27" />
+    <scopeInfo nodeId="6753405296903809165" fileName="OldMPSTreeUtil.java" startLine="24" startPosition="48" endLine="25" endPosition="44" />
+    <scopeInfo nodeId="6753405296903809218" fileName="OldMPSTreeUtil.java" startLine="33" startPosition="124" endLine="34" endPosition="42" />
+    <scopeInfo nodeId="6753405296903809262" fileName="OldMPSTreeUtil.java" startLine="42" startPosition="48" endLine="43" endPosition="44" />
+    <scopeInfo nodeId="6753405296903809308" fileName="OldMPSTreeUtil.java" startLine="51" startPosition="123" endLine="52" endPosition="43" />
+    <scopeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="18" startPosition="29" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="833977803389943646" fileName="OldMPSTreeUtil.java" startLine="61" startPosition="60" endLine="63" endPosition="123" />
+    <scopeInfo nodeId="6753405296903809163" fileName="OldMPSTreeUtil.java" startLine="23" startPosition="60" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="6753405296903809204" fileName="OldMPSTreeUtil.java" startLine="32" startPosition="99" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="6753405296903809260" fileName="OldMPSTreeUtil.java" startLine="41" startPosition="60" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="6753405296903809292" fileName="OldMPSTreeUtil.java" startLine="50" startPosition="99" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="833977803389943643" fileName="OldMPSTreeUtil.java" startLine="60" startPosition="100" endLine="64" endPosition="5">
       <varInfo nodeId="833977803389943643" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903809160" fileName="MPSTreeUtil.java" startLine="22" startPosition="91" endLine="27" endPosition="5">
+    <scopeInfo nodeId="6753405296903809160" fileName="OldMPSTreeUtil.java" startLine="22" startPosition="91" endLine="27" endPosition="5">
       <varInfo nodeId="6753405296903809160" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903809202" fileName="MPSTreeUtil.java" startLine="31" startPosition="108" endLine="36" endPosition="5">
+    <scopeInfo nodeId="6753405296903809202" fileName="OldMPSTreeUtil.java" startLine="31" startPosition="108" endLine="36" endPosition="5">
       <varInfo nodeId="6753405296903809202" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903809257" fileName="MPSTreeUtil.java" startLine="40" startPosition="91" endLine="45" endPosition="5">
+    <scopeInfo nodeId="6753405296903809257" fileName="OldMPSTreeUtil.java" startLine="40" startPosition="91" endLine="45" endPosition="5">
       <varInfo nodeId="6753405296903809257" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903809290" fileName="MPSTreeUtil.java" startLine="49" startPosition="102" endLine="54" endPosition="5">
+    <scopeInfo nodeId="6753405296903809290" fileName="OldMPSTreeUtil.java" startLine="49" startPosition="102" endLine="54" endPosition="5">
       <varInfo nodeId="6753405296903809290" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903718776" fileName="MPSTreeUtil.java" startLine="22" startPosition="91" endLine="28" endPosition="16" />
-    <scopeInfo nodeId="6753405296903809181" fileName="MPSTreeUtil.java" startLine="31" startPosition="108" endLine="37" endPosition="16" />
-    <scopeInfo nodeId="6753405296903809251" fileName="MPSTreeUtil.java" startLine="40" startPosition="91" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="6753405296903809245" fileName="MPSTreeUtil.java" startLine="49" startPosition="102" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="833977803389943624" fileName="MPSTreeUtil.java" startLine="58" startPosition="84" endLine="65" endPosition="86">
+    <scopeInfo nodeId="6753405296903718776" fileName="OldMPSTreeUtil.java" startLine="22" startPosition="91" endLine="28" endPosition="16" />
+    <scopeInfo nodeId="6753405296903809181" fileName="OldMPSTreeUtil.java" startLine="31" startPosition="108" endLine="37" endPosition="16" />
+    <scopeInfo nodeId="6753405296903809251" fileName="OldMPSTreeUtil.java" startLine="40" startPosition="91" endLine="46" endPosition="16" />
+    <scopeInfo nodeId="6753405296903809245" fileName="OldMPSTreeUtil.java" startLine="49" startPosition="102" endLine="55" endPosition="16" />
+    <scopeInfo nodeId="833977803389943624" fileName="OldMPSTreeUtil.java" startLine="58" startPosition="84" endLine="65" endPosition="86">
       <varInfo nodeId="833977803389943630" varName="children" />
       <varInfo nodeId="833977803389943637" varName="descendants" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="21" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="21" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="6753405296903707476" varName="_this" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="30" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="30" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="6753405296903707476" varName="_this" />
       <varInfo nodeId="6753405296903809238" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="39" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="39" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="6753405296903707476" varName="_this" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="48" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="48" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="6753405296903707476" varName="_this" />
       <varInfo nodeId="6753405296903809254" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="57" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="57" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="6753405296903707476" varName="_this" />
     </scopeInfo>
-    <unitInfo nodeId="6753405296903707476" fileName="MPSTreeUtil.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.MPSTreeUtil" />
+    <unitInfo nodeId="6753405296903707476" fileName="OldMPSTreeUtil.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldMPSTreeUtil" />
   </root>
   <root nodeId="6756213824749053844">
     <nodeInfo nodeId="6756213824749053890" fileName="CurrentDifferenceListener.java" startLine="9" startPosition="66" endLine="10" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeAdded#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />

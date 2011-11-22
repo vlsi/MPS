@@ -128,22 +128,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.SModelAdapter" />
     <classNode extendsClassName="jetbrains.mps.smodel.SModelRepositoryAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.MPSTreeUtil" file="MPSTreeUtil.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.PropertiesTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.PropertyTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.ReferenceTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.ReferencesTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SNodeTreeNode" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
-  </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.OldChangeListener" file="OldChangeListener.java">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="java.lang.Deprecated" />
@@ -343,6 +327,22 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.OldChangeListener" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.changesmanager.OldMPSTreeUtil" file="OldMPSTreeUtil.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.PropertiesTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.PropertyTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.ReferenceTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.ReferencesTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SNodeTreeNode" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.OldModelChangesManager" file="OldModelChangesManager.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
@@ -486,8 +486,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.CounterMap" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.MPSTreeUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.OldChangesManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.OldMPSTreeUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.OldModelChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" />
