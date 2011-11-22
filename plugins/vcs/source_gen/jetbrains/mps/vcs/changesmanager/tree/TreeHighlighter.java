@@ -21,6 +21,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.ui.MPSTreeNodeListener;
 
 public class TreeHighlighter implements TreeMessageOwner {
@@ -129,11 +132,29 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
   }
 
-  private void rehighlightFeature(@NotNull final Feature feature) {
+  private void rehighlightFeature(@NotNull Feature feature) {
+    for (MPSTreeNode node : Sequence.fromIterable(myFeatureToNodes.get(feature))) {
+      rehighlightNode(node, feature);
+    }
+  }
+
+  private void rehighlightFeatureAndDescendants(@NotNull final Feature feature) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (MPSTreeNode node : Sequence.fromIterable(myFeatureToNodes.get(feature))) {
-          rehighlightNode(node, feature);
+        synchronized (myFeatureToNodes) {
+          rehighlightFeature(feature);
+          SModelReference modelRef = feature.getNodePointer().getModelReference();
+          for (Feature anotherFeature : SetSequence.fromSet(myFeatureToNodes.keySet())) {
+            if (modelRef.equals(anotherFeature.getNodePointer().getModelReference())) {
+              if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
+                public boolean accept(Feature a) {
+                  return feature.equals(a);
+                }
+              })) {
+                rehighlightFeature(anotherFeature);
+              }
+            }
+          }
         }
       }
     });
@@ -181,7 +202,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
 
     public void featureStateChanged(Feature feature) {
-      rehighlightFeature(feature);
+      rehighlightFeatureAndDescendants(feature);
     }
   }
 }
