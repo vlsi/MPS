@@ -12340,6 +12340,7 @@
                   </node>
                 </node>
                 <node role="entry" roleId="tps4.1203617897549" type="tps4.Echo" typeId="tps4.1205331422635" id="7974642282558177736">
+                  <property name="append" nameId="tps4.1240852090407" value="true" />
                   <node role="sourcePath" roleId="tps4.1220981955937" type="tps4.Path" typeId="tps4.1220973916698" id="7974642282558177737">
                     <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="7974642282558177738">
                       <property name="name" nameId="tps4.1220976068141" value="base_dir" />

@@ -10,6 +10,7 @@
 <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
 <idea-version since-build="3000"></idea-version>
 
+<depends>jetbrains.mps.debugger.api.languages</depends>
 
 <application-components><component><implementation-class>jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer</implementation-class>
 </component>
