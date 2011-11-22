@@ -17,6 +17,7 @@ public class ChangesStrip_ActionGroup extends GeneratedActionGroup {
       ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToNextChange_Action");
       ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToPreviousChange_Action");
       ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.RollbackChanges_Action");
+      ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ShowDiffFromChanges_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

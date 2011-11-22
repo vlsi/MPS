@@ -17,6 +17,8 @@ import java.awt.GridBagLayout;
 import java.awt.BorderLayout;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.diff.impl.util.TextDiffType;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import java.awt.Frame;
 import javax.swing.JSplitPane;
 import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
@@ -26,6 +28,7 @@ import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
@@ -37,7 +40,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JComponent;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import com.intellij.openapi.util.Ref;
@@ -58,17 +60,17 @@ public class RootDifferenceDialog extends BaseDialog implements DataProvider {
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
   private boolean myClosed;
 
-  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName) {
+  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, @Nullable Bounds firstChange) {
     super(modelDialog, "Difference for " + rootName);
-    init(modelDialog, rootId);
+    init(modelDialog, rootId, firstChange);
   }
 
-  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, Frame frame) {
+  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, Frame frame, @Nullable Bounds firstChange) {
     super(frame, "Difference for " + rootName);
-    init(modelDialog, rootId);
+    init(modelDialog, rootId, firstChange);
   }
 
-  private void init(ModelDifferenceDialog modelDialog, SNodeId rootId) {
+  private void init(ModelDifferenceDialog modelDialog, SNodeId rootId, @Nullable final Bounds firstChange) {
     // Two constructors and init method is needed because different superconstructors should be invoked 
     myModelDialog = modelDialog;
     myRootId = rootId;
@@ -83,7 +85,7 @@ public class RootDifferenceDialog extends BaseDialog implements DataProvider {
     splitPane.setResizeWeight(0.7);
 
     RootDifferenceDialog.MyGoToNeighbourRootActions neighbourActions = new RootDifferenceDialog.MyGoToNeighbourRootActions();
-    NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myNewEditor.getMainEditor());
+    final NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myNewEditor.getMainEditor());
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(neighbourActions.previous(), neighbourActions.next(), Separator.getInstance(), neighbourTraverser.previousAction(), neighbourTraverser.nextAction(), Separator.getInstance(), new RevertRootsAction(myModelDialog) {
       protected SNodeId[] getRoots() {
         return new SNodeId[]{myRootId};
@@ -102,7 +104,15 @@ public class RootDifferenceDialog extends BaseDialog implements DataProvider {
 
     highlightAllChanges();
 
-    neighbourTraverser.goToFirstChangeLater();
+    if (firstChange != null) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          neighbourTraverser.goToBounds(firstChange);
+        }
+      });
+    } else {
+      neighbourTraverser.goToFirstChangeLater();
+    }
   }
 
   @Override

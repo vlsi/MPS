@@ -208,12 +208,12 @@ public class NextPreviousTraverser {
     final int maxY = rc.getY() + rc.getHeight() - 2;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        goToChangeGroup(new Bounds((int) firstGroup.start(), maxY));
+        goToBounds(new Bounds((int) firstGroup.start(), maxY));
       }
     });
   }
 
-  private void goToChangeGroup(Bounds bounds) {
+  public void goToBounds(Bounds bounds) {
     goToY((int) bounds.end());
     goToY((int) bounds.start());
   }
@@ -265,7 +265,7 @@ public class NextPreviousTraverser {
 
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
       assert getNeighbourGroupBounds(myPrevious) != null;
-      goToChangeGroup(getNeighbourGroupBounds(myPrevious));
+      goToBounds(getNeighbourGroupBounds(myPrevious));
     }
 
     @Override

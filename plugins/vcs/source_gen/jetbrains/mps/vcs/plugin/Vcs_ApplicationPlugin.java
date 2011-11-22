@@ -34,6 +34,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OldRollbackChanges_Action());
     addAction(new ReRunMergeFromBackup_Action());
     addAction(new RollbackChanges_Action());
+    addAction(new ShowDiffFromChanges_Action());
     addAction(new ShowDifferencesWithModelOnDisk_Action());
     addAction(new ShowDiffererenceWithCurrentRevision_Action());
     // groups 

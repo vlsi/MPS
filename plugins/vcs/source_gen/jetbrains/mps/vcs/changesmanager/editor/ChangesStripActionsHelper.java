@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.vcs.diff.ui.common.Bounds;
 
 public class ChangesStripActionsHelper {
   private ChangesStripActionsHelper() {
@@ -86,6 +87,15 @@ public class ChangesStripActionsHelper {
     });
   }
 
+  public static Bounds getCurrentChangeGroupPositionAndHidePopup(@NotNull EditorContext editorContext) {
+    EditorComponent editorComponent = editorContext.getNodeEditorComponent();
+    EditorHighlighter highlighter = check_ikrecr_a0b0f(editorContext.getOperationContext().getComponent(EditorHighlighterFactory.class), editorComponent);
+    ChangeStripsPainter painter = check_ikrecr_a0c0f(highlighter);
+    ChangeGroup cg = check_ikrecr_a0d0f(painter);
+    check_ikrecr_a4a5(painter);
+    return check_ikrecr_a5a5(cg);
+  }
+
   private static EditorHighlighter check_ikrecr_a0b0a(EditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getHighlighter(editorComponent);
@@ -152,6 +162,41 @@ public class ChangesStripActionsHelper {
   private static ChangeGroup check_ikrecr_a0a3a4(ChangeStripsPainter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getCurrentChangeGroup();
+    }
+    return null;
+  }
+
+  private static EditorHighlighter check_ikrecr_a0b0f(EditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getHighlighter(editorComponent);
+    }
+    return null;
+  }
+
+  private static ChangeStripsPainter check_ikrecr_a0c0f(EditorHighlighter checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getStripsPainter();
+    }
+    return null;
+  }
+
+  private static ChangeGroup check_ikrecr_a0d0f(ChangeStripsPainter checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getCurrentChangeGroup();
+    }
+    return null;
+  }
+
+  private static void check_ikrecr_a4a5(ChangeStripsPainter checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.showPopupForGroup(null);
+    }
+
+  }
+
+  private static Bounds check_ikrecr_a5a5(ChangeGroup checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getBounds(true);
     }
     return null;
   }

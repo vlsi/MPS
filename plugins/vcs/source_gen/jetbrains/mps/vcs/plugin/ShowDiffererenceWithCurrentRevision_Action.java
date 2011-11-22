@@ -20,8 +20,6 @@ import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
 import java.io.IOException;
@@ -66,20 +64,12 @@ public class ShowDiffererenceWithCurrentRevision_Action extends GeneratedAction 
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
@@ -91,7 +81,7 @@ public class ShowDiffererenceWithCurrentRevision_Action extends GeneratedAction 
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      VcsActionsHelper.showRootDifference(((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")));
+      VcsActionsHelper.showRootDifference((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), null);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);
