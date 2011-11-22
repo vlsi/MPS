@@ -72,6 +72,10 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     myCommandQueue.dispose();
   }
 
+  public Project getProject() {
+    return myProject;
+  }
+
   private void updateModel(@NotNull EditableSModelDescriptor modelDescriptor) {
     synchronized (myCurrentDifferences) {
       SModelReference modelRef = modelDescriptor.getSModelReference();

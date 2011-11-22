@@ -1174,213 +1174,217 @@
     <nodeInfo nodeId="3161776655522590123" fileName="CurrentDifferenceRegistry.java" startLine="67" startPosition="127" endLine="68" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161776655522590128" fileName="CurrentDifferenceRegistry.java" startLine="69" startPosition="7" endLine="70" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161776655522590132" fileName="CurrentDifferenceRegistry.java" startLine="71" startPosition="5" endLine="72" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590591" fileName="CurrentDifferenceRegistry.java" startLine="76" startPosition="41" endLine="77" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161776655522682404" fileName="CurrentDifferenceRegistry.java" startLine="78" startPosition="76" endLine="79" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590610" fileName="CurrentDifferenceRegistry.java" startLine="79" startPosition="105" endLine="80" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161776655522590611" fileName="CurrentDifferenceRegistry.java" startLine="81" startPosition="7" endLine="82" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161776655522590618" fileName="CurrentDifferenceRegistry.java" startLine="82" startPosition="79" endLine="83" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590198" fileName="CurrentDifferenceRegistry.java" startLine="88" startPosition="23" endLine="89" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161776655522590202" fileName="CurrentDifferenceRegistry.java" startLine="90" startPosition="5" endLine="91" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161776655522590209" fileName="CurrentDifferenceRegistry.java" startLine="92" startPosition="24" endLine="93" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161776655522590213" fileName="CurrentDifferenceRegistry.java" startLine="94" startPosition="5" endLine="95" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161776655522590222" fileName="CurrentDifferenceRegistry.java" startLine="96" startPosition="103" endLine="97" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161776655522590232" fileName="CurrentDifferenceRegistry.java" startLine="98" startPosition="5" endLine="99" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590262" fileName="CurrentDifferenceRegistry.java" startLine="104" startPosition="51" endLine="105" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590278" fileName="CurrentDifferenceRegistry.java" startLine="112" startPosition="82" endLine="113" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590285" fileName="CurrentDifferenceRegistry.java" startLine="113" startPosition="80" endLine="114" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590305" fileName="CurrentDifferenceRegistry.java" startLine="121" startPosition="41" endLine="122" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161776655522590313" fileName="CurrentDifferenceRegistry.java" startLine="123" startPosition="79" endLine="124" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590327" fileName="CurrentDifferenceRegistry.java" startLine="125" startPosition="7" endLine="126" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8579517044346355348" fileName="CurrentDifferenceRegistry.java" startLine="130" startPosition="88" endLine="131" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8579517044346355360" fileName="CurrentDifferenceRegistry.java" startLine="134" startPosition="91" endLine="135" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590510" fileName="CurrentDifferenceRegistry.java" startLine="139" startPosition="47" endLine="140" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8579517044346355320" fileName="CurrentDifferenceRegistry.java" startLine="143" startPosition="67" endLine="144" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161776655522590020" fileName="CurrentDifferenceRegistry.java" startLine="147" startPosition="72" endLine="148" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161776655522589907" fileName="CurrentDifferenceRegistry.java" startLine="156" startPosition="60" endLine="157" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522589924" fileName="CurrentDifferenceRegistry.java" startLine="162" startPosition="77" endLine="163" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590721" fileName="CurrentDifferenceRegistry.java" startLine="167" startPosition="81" endLine="168" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522589959" fileName="CurrentDifferenceRegistry.java" startLine="172" startPosition="98" endLine="173" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522589970" fileName="CurrentDifferenceRegistry.java" startLine="178" startPosition="142" endLine="179" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522589992" fileName="CurrentDifferenceRegistry.java" startLine="189" startPosition="51" endLine="190" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590682" fileName="CurrentDifferenceRegistry.java" startLine="195" startPosition="51" endLine="196" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590692" fileName="CurrentDifferenceRegistry.java" startLine="197" startPosition="7" endLine="198" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3161776655522590533" fileName="CurrentDifferenceRegistry.java" startLine="207" startPosition="33" endLine="208" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590555" fileName="CurrentDifferenceRegistry.java" startLine="218" startPosition="59" endLine="219" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522589980" fileName="CurrentDifferenceRegistry.java" startLine="151" startPosition="64" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyChangeListListener#()V" />
-    <nodeInfo nodeId="3161776655522590011" fileName="CurrentDifferenceRegistry.java" startLine="184" startPosition="62" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyGlobalSModelListener#()V" />
-    <nodeInfo nodeId="3161776655522590524" fileName="CurrentDifferenceRegistry.java" startLine="202" startPosition="56" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyReloadListener#()V" />
-    <nodeInfo nodeId="3161776655522590538" fileName="CurrentDifferenceRegistry.java" startLine="212" startPosition="76" endLine="214" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MySModelRepositoryListener#()V" />
+    <nodeInfo nodeId="1162831315436754822" fileName="CurrentDifferenceRegistry.java" startLine="75" startPosition="31" endLine="76" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161776655522590591" fileName="CurrentDifferenceRegistry.java" startLine="80" startPosition="41" endLine="81" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161776655522682404" fileName="CurrentDifferenceRegistry.java" startLine="82" startPosition="76" endLine="83" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590610" fileName="CurrentDifferenceRegistry.java" startLine="83" startPosition="105" endLine="84" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161776655522590611" fileName="CurrentDifferenceRegistry.java" startLine="85" startPosition="7" endLine="86" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161776655522590618" fileName="CurrentDifferenceRegistry.java" startLine="86" startPosition="79" endLine="87" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590198" fileName="CurrentDifferenceRegistry.java" startLine="92" startPosition="23" endLine="93" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161776655522590202" fileName="CurrentDifferenceRegistry.java" startLine="94" startPosition="5" endLine="95" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161776655522590209" fileName="CurrentDifferenceRegistry.java" startLine="96" startPosition="24" endLine="97" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161776655522590213" fileName="CurrentDifferenceRegistry.java" startLine="98" startPosition="5" endLine="99" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161776655522590222" fileName="CurrentDifferenceRegistry.java" startLine="100" startPosition="103" endLine="101" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161776655522590232" fileName="CurrentDifferenceRegistry.java" startLine="102" startPosition="5" endLine="103" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590262" fileName="CurrentDifferenceRegistry.java" startLine="108" startPosition="51" endLine="109" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590278" fileName="CurrentDifferenceRegistry.java" startLine="116" startPosition="82" endLine="117" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590285" fileName="CurrentDifferenceRegistry.java" startLine="117" startPosition="80" endLine="118" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590305" fileName="CurrentDifferenceRegistry.java" startLine="125" startPosition="41" endLine="126" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161776655522590313" fileName="CurrentDifferenceRegistry.java" startLine="127" startPosition="79" endLine="128" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590327" fileName="CurrentDifferenceRegistry.java" startLine="129" startPosition="7" endLine="130" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8579517044346355348" fileName="CurrentDifferenceRegistry.java" startLine="134" startPosition="88" endLine="135" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8579517044346355360" fileName="CurrentDifferenceRegistry.java" startLine="138" startPosition="91" endLine="139" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590510" fileName="CurrentDifferenceRegistry.java" startLine="143" startPosition="47" endLine="144" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8579517044346355320" fileName="CurrentDifferenceRegistry.java" startLine="147" startPosition="67" endLine="148" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161776655522590020" fileName="CurrentDifferenceRegistry.java" startLine="151" startPosition="72" endLine="152" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161776655522589907" fileName="CurrentDifferenceRegistry.java" startLine="160" startPosition="60" endLine="161" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522589924" fileName="CurrentDifferenceRegistry.java" startLine="166" startPosition="77" endLine="167" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590721" fileName="CurrentDifferenceRegistry.java" startLine="171" startPosition="81" endLine="172" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522589959" fileName="CurrentDifferenceRegistry.java" startLine="176" startPosition="98" endLine="177" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522589970" fileName="CurrentDifferenceRegistry.java" startLine="182" startPosition="142" endLine="183" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522589992" fileName="CurrentDifferenceRegistry.java" startLine="193" startPosition="51" endLine="194" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590682" fileName="CurrentDifferenceRegistry.java" startLine="199" startPosition="51" endLine="200" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590692" fileName="CurrentDifferenceRegistry.java" startLine="201" startPosition="7" endLine="202" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3161776655522590533" fileName="CurrentDifferenceRegistry.java" startLine="211" startPosition="33" endLine="212" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590555" fileName="CurrentDifferenceRegistry.java" startLine="222" startPosition="59" endLine="223" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522589980" fileName="CurrentDifferenceRegistry.java" startLine="155" startPosition="64" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyChangeListListener#()V" />
+    <nodeInfo nodeId="3161776655522590011" fileName="CurrentDifferenceRegistry.java" startLine="188" startPosition="62" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyGlobalSModelListener#()V" />
+    <nodeInfo nodeId="3161776655522590524" fileName="CurrentDifferenceRegistry.java" startLine="206" startPosition="56" endLine="208" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyReloadListener#()V" />
+    <nodeInfo nodeId="3161776655522590538" fileName="CurrentDifferenceRegistry.java" startLine="216" startPosition="76" endLine="218" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MySModelRepositoryListener#()V" />
     <nodeInfo nodeId="3161776655522590513" fileName="CurrentDifferenceRegistry.java" startLine="46" startPosition="0" endLine="49" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CurrentDifferenceRegistry#(Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="3161776655522590117" fileName="CurrentDifferenceRegistry.java" startLine="66" startPosition="41" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3161776655522590196" fileName="CurrentDifferenceRegistry.java" startLine="87" startPosition="56" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161776655522590207" fileName="CurrentDifferenceRegistry.java" startLine="91" startPosition="49" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161776655522590220" fileName="CurrentDifferenceRegistry.java" startLine="95" startPosition="95" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161776655522590252" fileName="CurrentDifferenceRegistry.java" startLine="103" startPosition="109" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161776655522590311" fileName="CurrentDifferenceRegistry.java" startLine="122" startPosition="70" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161776655522589903" fileName="CurrentDifferenceRegistry.java" startLine="155" startPosition="61" endLine="158" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3161776655522589967" fileName="CurrentDifferenceRegistry.java" startLine="177" startPosition="46" endLine="180" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3161776655522590663" fileName="CurrentDifferenceRegistry.java" startLine="188" startPosition="52" endLine="191" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161776655522590680" fileName="CurrentDifferenceRegistry.java" startLine="194" startPosition="119" endLine="197" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161776655522590553" fileName="CurrentDifferenceRegistry.java" startLine="217" startPosition="65" endLine="220" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161776655522590597" fileName="CurrentDifferenceRegistry.java" startLine="77" startPosition="70" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161776655522590276" fileName="CurrentDifferenceRegistry.java" startLine="111" startPosition="41" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8579517044346355344" fileName="CurrentDifferenceRegistry.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addGlobalDifferenceListener#(Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceListener;)V" />
-    <nodeInfo nodeId="8579517044346355356" fileName="CurrentDifferenceRegistry.java" startLine="133" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeGlobalDifferenceListener#(Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceListener;)V" />
-    <nodeInfo nodeId="8579517044346355316" fileName="CurrentDifferenceRegistry.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGlobalBroadcaster#()Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceBroadcaster;" />
-    <nodeInfo nodeId="3161776655522590016" fileName="CurrentDifferenceRegistry.java" startLine="146" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;" />
-    <nodeInfo nodeId="3161776655522590246" fileName="CurrentDifferenceRegistry.java" startLine="102" startPosition="36" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3161776655522590506" fileName="CurrentDifferenceRegistry.java" startLine="137" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommandQueue#()Ljetbrains/mps/vcs/changesmanager/SimpleCommandQueue;" />
-    <nodeInfo nodeId="3161776655522589915" fileName="CurrentDifferenceRegistry.java" startLine="160" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changesAdded#(Ljava/util/Collection;Lcom/intellij/openapi/vcs/changes/ChangeList;)V" />
-    <nodeInfo nodeId="3161776655522589928" fileName="CurrentDifferenceRegistry.java" startLine="165" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changesRemoved#(Ljava/util/Collection;Lcom/intellij/openapi/vcs/changes/ChangeList;)V" />
-    <nodeInfo nodeId="3161776655522589948" fileName="CurrentDifferenceRegistry.java" startLine="170" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changesMoved#(Ljava/util/Collection;Lcom/intellij/openapi/vcs/changes/ChangeList;Lcom/intellij/openapi/vcs/changes/ChangeList;)V" />
-    <nodeInfo nodeId="3161776655522590529" fileName="CurrentDifferenceRegistry.java" startLine="205" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onAfterReload#()V" />
+    <nodeInfo nodeId="3161776655522590196" fileName="CurrentDifferenceRegistry.java" startLine="91" startPosition="56" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161776655522590207" fileName="CurrentDifferenceRegistry.java" startLine="95" startPosition="49" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161776655522590220" fileName="CurrentDifferenceRegistry.java" startLine="99" startPosition="95" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161776655522590252" fileName="CurrentDifferenceRegistry.java" startLine="107" startPosition="109" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161776655522590311" fileName="CurrentDifferenceRegistry.java" startLine="126" startPosition="70" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161776655522589903" fileName="CurrentDifferenceRegistry.java" startLine="159" startPosition="61" endLine="162" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3161776655522589967" fileName="CurrentDifferenceRegistry.java" startLine="181" startPosition="46" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3161776655522590663" fileName="CurrentDifferenceRegistry.java" startLine="192" startPosition="52" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161776655522590680" fileName="CurrentDifferenceRegistry.java" startLine="198" startPosition="119" endLine="201" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161776655522590553" fileName="CurrentDifferenceRegistry.java" startLine="221" startPosition="65" endLine="224" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1162831315436744270" fileName="CurrentDifferenceRegistry.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProject#()Lcom/intellij/openapi/project/Project;" />
+    <nodeInfo nodeId="3161776655522590597" fileName="CurrentDifferenceRegistry.java" startLine="81" startPosition="70" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161776655522590276" fileName="CurrentDifferenceRegistry.java" startLine="115" startPosition="41" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8579517044346355344" fileName="CurrentDifferenceRegistry.java" startLine="133" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addGlobalDifferenceListener#(Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceListener;)V" />
+    <nodeInfo nodeId="8579517044346355356" fileName="CurrentDifferenceRegistry.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeGlobalDifferenceListener#(Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceListener;)V" />
+    <nodeInfo nodeId="8579517044346355316" fileName="CurrentDifferenceRegistry.java" startLine="146" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGlobalBroadcaster#()Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceBroadcaster;" />
+    <nodeInfo nodeId="3161776655522590016" fileName="CurrentDifferenceRegistry.java" startLine="150" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;" />
+    <nodeInfo nodeId="3161776655522590246" fileName="CurrentDifferenceRegistry.java" startLine="106" startPosition="36" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3161776655522590506" fileName="CurrentDifferenceRegistry.java" startLine="141" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommandQueue#()Ljetbrains/mps/vcs/changesmanager/SimpleCommandQueue;" />
+    <nodeInfo nodeId="3161776655522589915" fileName="CurrentDifferenceRegistry.java" startLine="164" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changesAdded#(Ljava/util/Collection;Lcom/intellij/openapi/vcs/changes/ChangeList;)V" />
+    <nodeInfo nodeId="3161776655522589928" fileName="CurrentDifferenceRegistry.java" startLine="169" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changesRemoved#(Ljava/util/Collection;Lcom/intellij/openapi/vcs/changes/ChangeList;)V" />
+    <nodeInfo nodeId="3161776655522589948" fileName="CurrentDifferenceRegistry.java" startLine="174" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changesMoved#(Ljava/util/Collection;Lcom/intellij/openapi/vcs/changes/ChangeList;Lcom/intellij/openapi/vcs/changes/ChangeList;)V" />
+    <nodeInfo nodeId="3161776655522590529" fileName="CurrentDifferenceRegistry.java" startLine="209" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onAfterReload#()V" />
     <nodeInfo nodeId="3161776655522590725" fileName="CurrentDifferenceRegistry.java" startLine="65" startPosition="0" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="3161776655522590735" fileName="CurrentDifferenceRegistry.java" startLine="110" startPosition="84" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="3161776655522589896" fileName="CurrentDifferenceRegistry.java" startLine="154" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processChanges#(Ljava/util/Collection;)V" />
-    <nodeInfo nodeId="3161776655522589986" fileName="CurrentDifferenceRegistry.java" startLine="187" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelReplaced#(Ljetbrains/mps/smodel/SModelDescriptor;)V" />
-    <nodeInfo nodeId="3161776655522590740" fileName="CurrentDifferenceRegistry.java" startLine="120" startPosition="100" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="3161776655522589963" fileName="CurrentDifferenceRegistry.java" startLine="175" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unchangedFileStatusChanged#()V" />
-    <nodeInfo nodeId="3161776655522589996" fileName="CurrentDifferenceRegistry.java" startLine="193" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelLoadingStateChanged#(Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/ModelLoadingState;Ljetbrains/mps/smodel/ModelLoadingState;)V" />
-    <nodeInfo nodeId="3161776655522590543" fileName="CurrentDifferenceRegistry.java" startLine="215" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModelRemoved#(Ljetbrains/mps/smodel/SModelDescriptor;)V" />
-    <nodeInfo nodeId="3161776655522590242" fileName="CurrentDifferenceRegistry.java" startLine="101" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateLoadedModels#()V" />
+    <nodeInfo nodeId="3161776655522590735" fileName="CurrentDifferenceRegistry.java" startLine="114" startPosition="84" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="3161776655522589896" fileName="CurrentDifferenceRegistry.java" startLine="158" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processChanges#(Ljava/util/Collection;)V" />
+    <nodeInfo nodeId="3161776655522589986" fileName="CurrentDifferenceRegistry.java" startLine="191" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelReplaced#(Ljetbrains/mps/smodel/SModelDescriptor;)V" />
+    <nodeInfo nodeId="3161776655522590740" fileName="CurrentDifferenceRegistry.java" startLine="124" startPosition="100" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="3161776655522589963" fileName="CurrentDifferenceRegistry.java" startLine="179" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unchangedFileStatusChanged#()V" />
+    <nodeInfo nodeId="3161776655522589996" fileName="CurrentDifferenceRegistry.java" startLine="197" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelLoadingStateChanged#(Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/ModelLoadingState;Ljetbrains/mps/smodel/ModelLoadingState;)V" />
+    <nodeInfo nodeId="3161776655522590543" fileName="CurrentDifferenceRegistry.java" startLine="219" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModelRemoved#(Ljetbrains/mps/smodel/SModelDescriptor;)V" />
+    <nodeInfo nodeId="3161776655522590242" fileName="CurrentDifferenceRegistry.java" startLine="105" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateLoadedModels#()V" />
     <nodeInfo nodeId="3161776655522590063" fileName="CurrentDifferenceRegistry.java" startLine="50" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
-    <nodeInfo nodeId="3161776655522590730" fileName="CurrentDifferenceRegistry.java" startLine="75" startPosition="79" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="3161776655522590266" fileName="CurrentDifferenceRegistry.java" startLine="109" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeModelChangesManager#(Ljetbrains/mps/smodel/SModelReference;)V" />
-    <nodeInfo nodeId="3161776655522590297" fileName="CurrentDifferenceRegistry.java" startLine="118" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentDifference#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)Ljetbrains/mps/vcs/changesmanager/CurrentDifference;" />
-    <nodeInfo nodeId="3161776655522590575" fileName="CurrentDifferenceRegistry.java" startLine="74" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)V" />
+    <nodeInfo nodeId="3161776655522590730" fileName="CurrentDifferenceRegistry.java" startLine="79" startPosition="79" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="3161776655522590266" fileName="CurrentDifferenceRegistry.java" startLine="113" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeModelChangesManager#(Ljetbrains/mps/smodel/SModelReference;)V" />
+    <nodeInfo nodeId="3161776655522590297" fileName="CurrentDifferenceRegistry.java" startLine="122" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentDifference#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)Ljetbrains/mps/vcs/changesmanager/CurrentDifference;" />
+    <nodeInfo nodeId="3161776655522590575" fileName="CurrentDifferenceRegistry.java" startLine="78" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)V" />
     <nodeInfo nodeId="3161776655522590091" fileName="CurrentDifferenceRegistry.java" startLine="59" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
-    <nodeInfo nodeId="3161776655522590192" fileName="CurrentDifferenceRegistry.java" startLine="86" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
-    <scopeInfo nodeId="3161776655522589983" fileName="CurrentDifferenceRegistry.java" startLine="152" startPosition="35" endLine="152" endPosition="35" />
-    <scopeInfo nodeId="3161776655522590014" fileName="CurrentDifferenceRegistry.java" startLine="185" startPosition="37" endLine="185" endPosition="37" />
-    <scopeInfo nodeId="3161776655522590527" fileName="CurrentDifferenceRegistry.java" startLine="203" startPosition="31" endLine="203" endPosition="31" />
-    <scopeInfo nodeId="3161776655522590541" fileName="CurrentDifferenceRegistry.java" startLine="213" startPosition="41" endLine="213" endPosition="41" />
+    <nodeInfo nodeId="3161776655522590192" fileName="CurrentDifferenceRegistry.java" startLine="90" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
+    <scopeInfo nodeId="3161776655522589983" fileName="CurrentDifferenceRegistry.java" startLine="156" startPosition="35" endLine="156" endPosition="35" />
+    <scopeInfo nodeId="3161776655522590014" fileName="CurrentDifferenceRegistry.java" startLine="189" startPosition="37" endLine="189" endPosition="37" />
+    <scopeInfo nodeId="3161776655522590527" fileName="CurrentDifferenceRegistry.java" startLine="207" startPosition="31" endLine="207" endPosition="31" />
+    <scopeInfo nodeId="3161776655522590541" fileName="CurrentDifferenceRegistry.java" startLine="217" startPosition="41" endLine="217" endPosition="41" />
     <scopeInfo nodeId="3161776655522590516" fileName="CurrentDifferenceRegistry.java" startLine="47" startPosition="62" endLine="48" endPosition="19" />
     <scopeInfo nodeId="3161776655522590122" fileName="CurrentDifferenceRegistry.java" startLine="67" startPosition="127" endLine="68" endPosition="38" />
-    <scopeInfo nodeId="3161776655522590197" fileName="CurrentDifferenceRegistry.java" startLine="88" startPosition="23" endLine="89" endPosition="13" />
-    <scopeInfo nodeId="3161776655522590208" fileName="CurrentDifferenceRegistry.java" startLine="92" startPosition="24" endLine="93" endPosition="13" />
-    <scopeInfo nodeId="3161776655522590221" fileName="CurrentDifferenceRegistry.java" startLine="96" startPosition="103" endLine="97" endPosition="13" />
-    <scopeInfo nodeId="3161776655522590261" fileName="CurrentDifferenceRegistry.java" startLine="104" startPosition="51" endLine="105" endPosition="51" />
-    <scopeInfo nodeId="3161776655522590312" fileName="CurrentDifferenceRegistry.java" startLine="123" startPosition="79" endLine="124" endPosition="115" />
-    <scopeInfo nodeId="8579517044346355347" fileName="CurrentDifferenceRegistry.java" startLine="130" startPosition="88" endLine="131" endPosition="56" />
-    <scopeInfo nodeId="8579517044346355359" fileName="CurrentDifferenceRegistry.java" startLine="134" startPosition="91" endLine="135" endPosition="59" />
-    <scopeInfo nodeId="3161776655522590509" fileName="CurrentDifferenceRegistry.java" startLine="139" startPosition="47" endLine="140" endPosition="26" />
-    <scopeInfo nodeId="8579517044346355319" fileName="CurrentDifferenceRegistry.java" startLine="143" startPosition="67" endLine="144" endPosition="31" />
-    <scopeInfo nodeId="3161776655522590019" fileName="CurrentDifferenceRegistry.java" startLine="147" startPosition="72" endLine="148" endPosition="65" />
-    <scopeInfo nodeId="3161776655522589906" fileName="CurrentDifferenceRegistry.java" startLine="156" startPosition="60" endLine="157" endPosition="45" />
-    <scopeInfo nodeId="3161776655522589923" fileName="CurrentDifferenceRegistry.java" startLine="162" startPosition="77" endLine="163" endPosition="30" />
-    <scopeInfo nodeId="3161776655522589936" fileName="CurrentDifferenceRegistry.java" startLine="167" startPosition="81" endLine="168" endPosition="30" />
-    <scopeInfo nodeId="3161776655522589958" fileName="CurrentDifferenceRegistry.java" startLine="172" startPosition="98" endLine="173" endPosition="30" />
-    <scopeInfo nodeId="3161776655522589969" fileName="CurrentDifferenceRegistry.java" startLine="178" startPosition="142" endLine="179" endPosition="33" />
-    <scopeInfo nodeId="3161776655522590664" fileName="CurrentDifferenceRegistry.java" startLine="189" startPosition="51" endLine="190" endPosition="53" />
-    <scopeInfo nodeId="3161776655522590681" fileName="CurrentDifferenceRegistry.java" startLine="195" startPosition="51" endLine="196" endPosition="53" />
-    <scopeInfo nodeId="3161776655522590532" fileName="CurrentDifferenceRegistry.java" startLine="207" startPosition="33" endLine="208" endPosition="27" />
-    <scopeInfo nodeId="3161776655522590554" fileName="CurrentDifferenceRegistry.java" startLine="218" startPosition="59" endLine="219" endPosition="68" />
-    <scopeInfo nodeId="3161776655522590602" fileName="CurrentDifferenceRegistry.java" startLine="78" startPosition="76" endLine="80" endPosition="15" />
-    <scopeInfo nodeId="3161776655522590277" fileName="CurrentDifferenceRegistry.java" startLine="112" startPosition="82" endLine="114" endPosition="76" />
-    <scopeInfo nodeId="3161776655522589980" fileName="CurrentDifferenceRegistry.java" startLine="151" startPosition="64" endLine="153" endPosition="5" />
-    <scopeInfo nodeId="3161776655522590011" fileName="CurrentDifferenceRegistry.java" startLine="184" startPosition="62" endLine="186" endPosition="5" />
-    <scopeInfo nodeId="3161776655522590524" fileName="CurrentDifferenceRegistry.java" startLine="202" startPosition="56" endLine="204" endPosition="5" />
-    <scopeInfo nodeId="3161776655522590538" fileName="CurrentDifferenceRegistry.java" startLine="212" startPosition="76" endLine="214" endPosition="5" />
+    <scopeInfo nodeId="1162831315436744273" fileName="CurrentDifferenceRegistry.java" startLine="75" startPosition="31" endLine="76" endPosition="21" />
+    <scopeInfo nodeId="3161776655522590197" fileName="CurrentDifferenceRegistry.java" startLine="92" startPosition="23" endLine="93" endPosition="13" />
+    <scopeInfo nodeId="3161776655522590208" fileName="CurrentDifferenceRegistry.java" startLine="96" startPosition="24" endLine="97" endPosition="13" />
+    <scopeInfo nodeId="3161776655522590221" fileName="CurrentDifferenceRegistry.java" startLine="100" startPosition="103" endLine="101" endPosition="13" />
+    <scopeInfo nodeId="3161776655522590261" fileName="CurrentDifferenceRegistry.java" startLine="108" startPosition="51" endLine="109" endPosition="51" />
+    <scopeInfo nodeId="3161776655522590312" fileName="CurrentDifferenceRegistry.java" startLine="127" startPosition="79" endLine="128" endPosition="115" />
+    <scopeInfo nodeId="8579517044346355347" fileName="CurrentDifferenceRegistry.java" startLine="134" startPosition="88" endLine="135" endPosition="56" />
+    <scopeInfo nodeId="8579517044346355359" fileName="CurrentDifferenceRegistry.java" startLine="138" startPosition="91" endLine="139" endPosition="59" />
+    <scopeInfo nodeId="3161776655522590509" fileName="CurrentDifferenceRegistry.java" startLine="143" startPosition="47" endLine="144" endPosition="26" />
+    <scopeInfo nodeId="8579517044346355319" fileName="CurrentDifferenceRegistry.java" startLine="147" startPosition="67" endLine="148" endPosition="31" />
+    <scopeInfo nodeId="3161776655522590019" fileName="CurrentDifferenceRegistry.java" startLine="151" startPosition="72" endLine="152" endPosition="65" />
+    <scopeInfo nodeId="3161776655522589906" fileName="CurrentDifferenceRegistry.java" startLine="160" startPosition="60" endLine="161" endPosition="45" />
+    <scopeInfo nodeId="3161776655522589923" fileName="CurrentDifferenceRegistry.java" startLine="166" startPosition="77" endLine="167" endPosition="30" />
+    <scopeInfo nodeId="3161776655522589936" fileName="CurrentDifferenceRegistry.java" startLine="171" startPosition="81" endLine="172" endPosition="30" />
+    <scopeInfo nodeId="3161776655522589958" fileName="CurrentDifferenceRegistry.java" startLine="176" startPosition="98" endLine="177" endPosition="30" />
+    <scopeInfo nodeId="3161776655522589969" fileName="CurrentDifferenceRegistry.java" startLine="182" startPosition="142" endLine="183" endPosition="33" />
+    <scopeInfo nodeId="3161776655522590664" fileName="CurrentDifferenceRegistry.java" startLine="193" startPosition="51" endLine="194" endPosition="53" />
+    <scopeInfo nodeId="3161776655522590681" fileName="CurrentDifferenceRegistry.java" startLine="199" startPosition="51" endLine="200" endPosition="53" />
+    <scopeInfo nodeId="3161776655522590532" fileName="CurrentDifferenceRegistry.java" startLine="211" startPosition="33" endLine="212" endPosition="27" />
+    <scopeInfo nodeId="3161776655522590554" fileName="CurrentDifferenceRegistry.java" startLine="222" startPosition="59" endLine="223" endPosition="68" />
+    <scopeInfo nodeId="3161776655522590602" fileName="CurrentDifferenceRegistry.java" startLine="82" startPosition="76" endLine="84" endPosition="15" />
+    <scopeInfo nodeId="3161776655522590277" fileName="CurrentDifferenceRegistry.java" startLine="116" startPosition="82" endLine="118" endPosition="76" />
+    <scopeInfo nodeId="3161776655522589980" fileName="CurrentDifferenceRegistry.java" startLine="155" startPosition="64" endLine="157" endPosition="5" />
+    <scopeInfo nodeId="3161776655522590011" fileName="CurrentDifferenceRegistry.java" startLine="188" startPosition="62" endLine="190" endPosition="5" />
+    <scopeInfo nodeId="3161776655522590524" fileName="CurrentDifferenceRegistry.java" startLine="206" startPosition="56" endLine="208" endPosition="5" />
+    <scopeInfo nodeId="3161776655522590538" fileName="CurrentDifferenceRegistry.java" startLine="216" startPosition="76" endLine="218" endPosition="5" />
     <scopeInfo nodeId="3161776655522590513" fileName="CurrentDifferenceRegistry.java" startLine="46" startPosition="0" endLine="49" endPosition="3">
       <varInfo nodeId="3161776655522590519" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="3161776655522590117" fileName="CurrentDifferenceRegistry.java" startLine="66" startPosition="41" endLine="69" endPosition="7">
       <varInfo nodeId="3161776655522590117" varName="modelChangesManager" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522590251" fileName="CurrentDifferenceRegistry.java" startLine="103" startPosition="109" endLine="106" endPosition="7" />
-    <scopeInfo nodeId="3161776655522589902" fileName="CurrentDifferenceRegistry.java" startLine="155" startPosition="61" endLine="158" endPosition="7" />
-    <scopeInfo nodeId="3161776655522589903" fileName="CurrentDifferenceRegistry.java" startLine="155" startPosition="61" endLine="158" endPosition="7">
+    <scopeInfo nodeId="3161776655522590251" fileName="CurrentDifferenceRegistry.java" startLine="107" startPosition="109" endLine="110" endPosition="7" />
+    <scopeInfo nodeId="3161776655522589902" fileName="CurrentDifferenceRegistry.java" startLine="159" startPosition="61" endLine="162" endPosition="7" />
+    <scopeInfo nodeId="3161776655522589903" fileName="CurrentDifferenceRegistry.java" startLine="159" startPosition="61" endLine="162" endPosition="7">
       <varInfo nodeId="3161776655522589903" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522589966" fileName="CurrentDifferenceRegistry.java" startLine="177" startPosition="46" endLine="180" endPosition="7" />
-    <scopeInfo nodeId="3161776655522589967" fileName="CurrentDifferenceRegistry.java" startLine="177" startPosition="46" endLine="180" endPosition="7">
+    <scopeInfo nodeId="3161776655522589966" fileName="CurrentDifferenceRegistry.java" startLine="181" startPosition="46" endLine="184" endPosition="7" />
+    <scopeInfo nodeId="3161776655522589967" fileName="CurrentDifferenceRegistry.java" startLine="181" startPosition="46" endLine="184" endPosition="7">
       <varInfo nodeId="3161776655522589967" varName="virtualFile" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522589991" fileName="CurrentDifferenceRegistry.java" startLine="188" startPosition="52" endLine="191" endPosition="7" />
-    <scopeInfo nodeId="3161776655522590548" fileName="CurrentDifferenceRegistry.java" startLine="217" startPosition="65" endLine="220" endPosition="7" />
+    <scopeInfo nodeId="3161776655522589991" fileName="CurrentDifferenceRegistry.java" startLine="192" startPosition="52" endLine="195" endPosition="7" />
+    <scopeInfo nodeId="3161776655522590548" fileName="CurrentDifferenceRegistry.java" startLine="221" startPosition="65" endLine="224" endPosition="7" />
     <scopeInfo nodeId="3161776655522590727" fileName="CurrentDifferenceRegistry.java" startLine="66" startPosition="41" endLine="70" endPosition="56" />
-    <scopeInfo nodeId="3161776655522590737" fileName="CurrentDifferenceRegistry.java" startLine="111" startPosition="41" endLine="115" endPosition="7" />
-    <scopeInfo nodeId="8579517044346355344" fileName="CurrentDifferenceRegistry.java" startLine="129" startPosition="0" endLine="133" endPosition="0">
+    <scopeInfo nodeId="1162831315436744270" fileName="CurrentDifferenceRegistry.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="3161776655522590737" fileName="CurrentDifferenceRegistry.java" startLine="115" startPosition="41" endLine="119" endPosition="7" />
+    <scopeInfo nodeId="8579517044346355344" fileName="CurrentDifferenceRegistry.java" startLine="133" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="8579517044346355353" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="8579517044346355356" fileName="CurrentDifferenceRegistry.java" startLine="133" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="8579517044346355356" fileName="CurrentDifferenceRegistry.java" startLine="137" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="8579517044346355365" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="8579517044346355316" fileName="CurrentDifferenceRegistry.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="3161776655522590016" fileName="CurrentDifferenceRegistry.java" startLine="146" startPosition="0" endLine="150" endPosition="0">
+    <scopeInfo nodeId="8579517044346355316" fileName="CurrentDifferenceRegistry.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="3161776655522590016" fileName="CurrentDifferenceRegistry.java" startLine="150" startPosition="0" endLine="154" endPosition="0">
       <varInfo nodeId="3161776655522590025" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522590005" fileName="CurrentDifferenceRegistry.java" startLine="194" startPosition="119" endLine="198" endPosition="36" />
-    <scopeInfo nodeId="3161776655522590245" fileName="CurrentDifferenceRegistry.java" startLine="102" startPosition="36" endLine="107" endPosition="5" />
-    <scopeInfo nodeId="3161776655522590246" fileName="CurrentDifferenceRegistry.java" startLine="102" startPosition="36" endLine="107" endPosition="5">
+    <scopeInfo nodeId="3161776655522590005" fileName="CurrentDifferenceRegistry.java" startLine="198" startPosition="119" endLine="202" endPosition="36" />
+    <scopeInfo nodeId="3161776655522590245" fileName="CurrentDifferenceRegistry.java" startLine="106" startPosition="36" endLine="111" endPosition="5" />
+    <scopeInfo nodeId="3161776655522590246" fileName="CurrentDifferenceRegistry.java" startLine="106" startPosition="36" endLine="111" endPosition="5">
       <varInfo nodeId="3161776655522590246" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522590742" fileName="CurrentDifferenceRegistry.java" startLine="121" startPosition="41" endLine="126" endPosition="69">
+    <scopeInfo nodeId="3161776655522590742" fileName="CurrentDifferenceRegistry.java" startLine="125" startPosition="41" endLine="130" endPosition="69">
       <varInfo nodeId="3161776655522590306" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522590506" fileName="CurrentDifferenceRegistry.java" startLine="137" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="3161776655522589915" fileName="CurrentDifferenceRegistry.java" startLine="160" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="3161776655522590506" fileName="CurrentDifferenceRegistry.java" startLine="141" startPosition="0" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="3161776655522589915" fileName="CurrentDifferenceRegistry.java" startLine="164" startPosition="0" endLine="169" endPosition="0">
       <varInfo nodeId="3161776655522589918" varName="changes" />
       <varInfo nodeId="3161776655522589921" varName="toList" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522589928" fileName="CurrentDifferenceRegistry.java" startLine="165" startPosition="0" endLine="170" endPosition="0">
+    <scopeInfo nodeId="3161776655522589928" fileName="CurrentDifferenceRegistry.java" startLine="169" startPosition="0" endLine="174" endPosition="0">
       <varInfo nodeId="3161776655522589931" varName="changes" />
       <varInfo nodeId="3161776655522589934" varName="fromList" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522589948" fileName="CurrentDifferenceRegistry.java" startLine="170" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="3161776655522589948" fileName="CurrentDifferenceRegistry.java" startLine="174" startPosition="0" endLine="179" endPosition="0">
       <varInfo nodeId="3161776655522589951" varName="changes" />
       <varInfo nodeId="3161776655522589954" varName="fromList" />
       <varInfo nodeId="3161776655522589956" varName="toList" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522590529" fileName="CurrentDifferenceRegistry.java" startLine="205" startPosition="0" endLine="210" endPosition="0" />
+    <scopeInfo nodeId="3161776655522590529" fileName="CurrentDifferenceRegistry.java" startLine="209" startPosition="0" endLine="214" endPosition="0" />
     <scopeInfo nodeId="3161776655522590066" fileName="CurrentDifferenceRegistry.java" startLine="51" startPosition="31" endLine="57" endPosition="25" />
-    <scopeInfo nodeId="3161776655522590269" fileName="CurrentDifferenceRegistry.java" startLine="110" startPosition="84" endLine="116" endPosition="5" />
-    <scopeInfo nodeId="3161776655522589896" fileName="CurrentDifferenceRegistry.java" startLine="154" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="3161776655522590269" fileName="CurrentDifferenceRegistry.java" startLine="114" startPosition="84" endLine="120" endPosition="5" />
+    <scopeInfo nodeId="3161776655522589896" fileName="CurrentDifferenceRegistry.java" startLine="158" startPosition="0" endLine="164" endPosition="0">
       <varInfo nodeId="3161776655522589897" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522589986" fileName="CurrentDifferenceRegistry.java" startLine="187" startPosition="0" endLine="193" endPosition="0">
+    <scopeInfo nodeId="3161776655522589986" fileName="CurrentDifferenceRegistry.java" startLine="191" startPosition="0" endLine="197" endPosition="0">
       <varInfo nodeId="3161776655522589989" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522590732" fileName="CurrentDifferenceRegistry.java" startLine="76" startPosition="41" endLine="83" endPosition="66">
+    <scopeInfo nodeId="3161776655522590732" fileName="CurrentDifferenceRegistry.java" startLine="80" startPosition="41" endLine="87" endPosition="66">
       <varInfo nodeId="3161776655522590612" varName="cd" />
       <varInfo nodeId="3161776655522590592" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522590300" fileName="CurrentDifferenceRegistry.java" startLine="120" startPosition="100" endLine="127" endPosition="5" />
-    <scopeInfo nodeId="3161776655522589963" fileName="CurrentDifferenceRegistry.java" startLine="175" startPosition="0" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="3161776655522589996" fileName="CurrentDifferenceRegistry.java" startLine="193" startPosition="0" endLine="200" endPosition="0">
+    <scopeInfo nodeId="3161776655522590300" fileName="CurrentDifferenceRegistry.java" startLine="124" startPosition="100" endLine="131" endPosition="5" />
+    <scopeInfo nodeId="3161776655522589963" fileName="CurrentDifferenceRegistry.java" startLine="179" startPosition="0" endLine="186" endPosition="0" />
+    <scopeInfo nodeId="3161776655522589996" fileName="CurrentDifferenceRegistry.java" startLine="197" startPosition="0" endLine="204" endPosition="0">
       <varInfo nodeId="3161776655522589999" varName="md" />
       <varInfo nodeId="3161776655522590003" varName="newState" />
       <varInfo nodeId="3161776655522590001" varName="oldState" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522590543" fileName="CurrentDifferenceRegistry.java" startLine="215" startPosition="0" endLine="222" endPosition="0">
+    <scopeInfo nodeId="3161776655522590543" fileName="CurrentDifferenceRegistry.java" startLine="219" startPosition="0" endLine="226" endPosition="0">
       <varInfo nodeId="3161776655522590546" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522590242" fileName="CurrentDifferenceRegistry.java" startLine="101" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="3161776655522590242" fileName="CurrentDifferenceRegistry.java" startLine="105" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="3161776655522590063" fileName="CurrentDifferenceRegistry.java" startLine="50" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="3161776655522590578" fileName="CurrentDifferenceRegistry.java" startLine="75" startPosition="79" endLine="84" endPosition="5" />
-    <scopeInfo nodeId="3161776655522590266" fileName="CurrentDifferenceRegistry.java" startLine="109" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="3161776655522590578" fileName="CurrentDifferenceRegistry.java" startLine="79" startPosition="79" endLine="88" endPosition="5" />
+    <scopeInfo nodeId="3161776655522590266" fileName="CurrentDifferenceRegistry.java" startLine="113" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="3161776655522590294" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522590297" fileName="CurrentDifferenceRegistry.java" startLine="118" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="3161776655522590297" fileName="CurrentDifferenceRegistry.java" startLine="122" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="3161776655522590331" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="3161776655522590094" fileName="CurrentDifferenceRegistry.java" startLine="60" startPosition="31" endLine="72" endPosition="29" />
-    <scopeInfo nodeId="3161776655522590575" fileName="CurrentDifferenceRegistry.java" startLine="74" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="3161776655522590575" fileName="CurrentDifferenceRegistry.java" startLine="78" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="3161776655522590625" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522590195" fileName="CurrentDifferenceRegistry.java" startLine="87" startPosition="56" endLine="99" endPosition="33">
+    <scopeInfo nodeId="3161776655522590195" fileName="CurrentDifferenceRegistry.java" startLine="91" startPosition="56" endLine="103" endPosition="33">
       <varInfo nodeId="3161776655522590203" varName="iFile" />
       <varInfo nodeId="3161776655522590214" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="3161776655522590091" fileName="CurrentDifferenceRegistry.java" startLine="59" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="3161776655522590192" fileName="CurrentDifferenceRegistry.java" startLine="86" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="3161776655522590192" fileName="CurrentDifferenceRegistry.java" startLine="90" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="3161776655522590236" varName="file" />
     </scopeInfo>
-    <unitInfo nodeId="3161776655522589894" fileName="CurrentDifferenceRegistry.java" startLine="38" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
-    <unitInfo nodeId="3161776655522589895" fileName="CurrentDifferenceRegistry.java" startLine="151" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry$MyChangeListListener" />
-    <unitInfo nodeId="3161776655522589985" fileName="CurrentDifferenceRegistry.java" startLine="184" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry$MyGlobalSModelListener" />
-    <unitInfo nodeId="3161776655522590522" fileName="CurrentDifferenceRegistry.java" startLine="202" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry$MyReloadListener" />
-    <unitInfo nodeId="3161776655522590536" fileName="CurrentDifferenceRegistry.java" startLine="212" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry$MySModelRepositoryListener" />
+    <unitInfo nodeId="3161776655522589894" fileName="CurrentDifferenceRegistry.java" startLine="38" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
+    <unitInfo nodeId="3161776655522589895" fileName="CurrentDifferenceRegistry.java" startLine="155" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry$MyChangeListListener" />
+    <unitInfo nodeId="3161776655522589985" fileName="CurrentDifferenceRegistry.java" startLine="188" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry$MyGlobalSModelListener" />
+    <unitInfo nodeId="3161776655522590522" fileName="CurrentDifferenceRegistry.java" startLine="206" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry$MyReloadListener" />
+    <unitInfo nodeId="3161776655522590536" fileName="CurrentDifferenceRegistry.java" startLine="216" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry$MySModelRepositoryListener" />
   </root>
   <root nodeId="3161776655522682154">
     <nodeInfo nodeId="3161776655522682154" fileName="ChangesTracking.java" startLine="29" startPosition="30" endLine="30" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />

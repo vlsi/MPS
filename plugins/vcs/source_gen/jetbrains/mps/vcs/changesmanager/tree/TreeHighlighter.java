@@ -24,6 +24,11 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import com.intellij.openapi.vcs.FileStatusManager;
+import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
 import jetbrains.mps.ide.ui.MPSTreeNodeListener;
 
 public class TreeHighlighter implements TreeMessageOwner {
@@ -118,17 +123,18 @@ public class TreeHighlighter implements TreeMessageOwner {
 
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(feature.getModelReference());
     if (model instanceof EditableSModelDescriptor) {
-      myRegistry.getCurrentDifference((EditableSModelDescriptor) model).setEnabled(true);
-    }
+      EditableSModelDescriptor emd = (EditableSModelDescriptor) model;
+      myRegistry.getCurrentDifference(emd).setEnabled(true);
 
-    ModelChange change = myMap.get(feature);
-    if (change == null) {
-      change = myMap.getAddedAncestorValue(feature);
-    }
-    if (change != null) {
-      node.addTreeMessage(getMessage(change));
-    } else if (myMap.isAncestorOfAddedFeature(feature)) {
-      node.addTreeMessage(getMessage(FileStatus.MODIFIED));
+      ModelChange change = myMap.get(feature);
+      if (change == null) {
+        change = myMap.getAddedAncestorValue(feature);
+      }
+      if (change != null) {
+        node.addTreeMessage(getMessage(change, emd));
+      } else if (myMap.isAncestorOfAddedFeature(feature)) {
+        node.addTreeMessage(getMessage(FileStatus.MODIFIED));
+      }
     }
   }
 
@@ -169,9 +175,18 @@ public class TreeHighlighter implements TreeMessageOwner {
   }
 
   @NotNull
-  private TreeMessage getMessage(@NotNull ModelChange modelChange) {
+  private TreeMessage getMessage(@NotNull ModelChange modelChange, @NotNull EditableSModelDescriptor modelDescriptor) {
     switch (modelChange.getType()) {
       case ADD:
+        if (modelChange instanceof AddRootChange) {
+          VirtualFile vf = VirtualFileUtils.getVirtualFile(modelDescriptor.getModelFile());
+          if (vf != null) {
+            FileStatus modelStatus = FileStatusManager.getInstance(myRegistry.getProject()).getStatus(vf);
+            if (BaseVersionUtil.isAddedFileStatus(modelStatus)) {
+              return getMessage(modelStatus);
+            }
+          }
+        }
         return getMessage(FileStatus.ADDED);
       case CHANGE:
         return getMessage(FileStatus.MODIFIED);
