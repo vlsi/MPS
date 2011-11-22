@@ -81,11 +81,11 @@ public class ChangesTracking {
     if (FileStatus.NOT_CHANGED == status) {
       return;
     }
-    if (FileStatus.ADDED == status || FileStatus.UNKNOWN == status) {
+    if (BaseVersionUtil.isAddedFileStatus(status)) {
       baseVersionModel.value = new SModel(currentModel.getSModelReference());
     } else {
       String content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
-      if (content == null && status != FileStatus.NOT_CHANGED && status != FileStatus.UNKNOWN) {
+      if (content == null && status != FileStatus.NOT_CHANGED && !(BaseVersionUtil.isAddedFileStatus(status))) {
         if (log.isErrorEnabled()) {
           log.error("Base version content is null while file status is " + status);
         }

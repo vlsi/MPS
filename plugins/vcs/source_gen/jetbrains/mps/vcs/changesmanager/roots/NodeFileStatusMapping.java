@@ -31,6 +31,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vcs.diff.ChangeSet;
@@ -107,8 +108,11 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
             if (ListSequence.fromList(rootChanges).first() instanceof AddRootChange) {
               status.value = FileStatus.ADDED;
               VirtualFile vf = VirtualFileUtils.getVirtualFile(emd.getModelFile());
-              if (vf != null && FileStatusManager.getInstance(myProject).getStatus(vf) == FileStatus.UNKNOWN) {
-                status.value = FileStatus.UNKNOWN;
+              if (vf != null) {
+                FileStatus modelStatus = FileStatusManager.getInstance(myProject).getStatus(vf);
+                if (BaseVersionUtil.isAddedFileStatus(modelStatus)) {
+                  status.value = modelStatus;
+                }
               }
             } else {
               status.value = FileStatus.MODIFIED;

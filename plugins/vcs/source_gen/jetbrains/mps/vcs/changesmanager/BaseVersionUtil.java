@@ -4,8 +4,9 @@ package jetbrains.mps.vcs.changesmanager;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.vcs.FileStatus;
+import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
@@ -20,6 +21,10 @@ public class BaseVersionUtil {
   protected static Log log = LogFactory.getLog(BaseVersionUtil.class);
 
   private BaseVersionUtil() {
+  }
+
+  public static boolean isAddedFileStatus(@NotNull FileStatus status) {
+    return status == FileStatus.ADDED || status == FileStatus.UNKNOWN || status == FileStatus.IGNORED;
   }
 
   @Nullable
