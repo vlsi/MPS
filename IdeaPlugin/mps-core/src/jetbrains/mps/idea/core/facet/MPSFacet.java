@@ -91,4 +91,8 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
             }
         });
     }
+
+    public Solution getSolution() {
+        return mySolution;
+    }
 }
