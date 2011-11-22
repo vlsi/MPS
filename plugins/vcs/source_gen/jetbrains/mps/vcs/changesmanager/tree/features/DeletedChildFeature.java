@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 
-public class DeletedChildFeature extends Feature {
+public class DeletedChildFeature extends AbstractNodeFeature {
   private String myRole;
   private int myIndex;
 
@@ -18,7 +18,7 @@ public class DeletedChildFeature extends Feature {
 
   @NotNull
   public String toString() {
-    return "Node reference {" + nodePointerToString(myNodePointer) + "|" + myRole + "|" + myIndex + "}";
+    return "Node reference {" + getNodePointerString() + "|" + myRole + "|" + myIndex + "}";
   }
 
   @Nullable

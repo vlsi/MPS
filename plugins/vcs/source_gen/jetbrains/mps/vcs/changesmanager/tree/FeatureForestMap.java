@@ -43,8 +43,8 @@ public class FeatureForestMap<V> {
       throw new IllegalArgumentException("Trying to put already present feature");
     }
     Feature[] ancestors = feature.getAncestors();
-    if (Sequence.fromIterable(Sequence.fromArray(ancestors)).any(new IWhereFilter<Object>() {
-      public boolean accept(Object a) {
+    if (Sequence.fromIterable(Sequence.fromArray(ancestors)).any(new IWhereFilter<Feature>() {
+      public boolean accept(Feature a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);
       }
     })) {

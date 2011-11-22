@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 
-public class ReferenceFeature extends Feature {
+public class ReferenceFeature extends AbstractNodeFeature {
   private String myReferenceRole;
 
   public ReferenceFeature(@NotNull SNodePointer nodePointer, @NotNull String referenceRole) {
@@ -32,6 +32,6 @@ public class ReferenceFeature extends Feature {
   @Override
   @NotNull
   public String toString() {
-    return "Node reference {" + nodePointerToString(myNodePointer) + "|" + myReferenceRole + "}";
+    return "Node reference {" + getNodePointerString() + "|" + myReferenceRole + "}";
   }
 }

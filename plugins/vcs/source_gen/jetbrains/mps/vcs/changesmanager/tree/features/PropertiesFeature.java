@@ -13,6 +13,6 @@ public class PropertiesFeature extends NodeAggregationFeature {
   @Override
   @NotNull
   public String toString() {
-    return "Node properties {" + nodePointerToString(myNodePointer) + "}";
+    return "Node properties {" + getNodePointerString() + "}";
   }
 }

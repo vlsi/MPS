@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
-public class NodeFeature extends Feature {
+public class NodeFeature extends AbstractNodeFeature {
   public NodeFeature(SNodePointer nodePointer) {
     super(nodePointer);
   }
@@ -24,6 +24,6 @@ public class NodeFeature extends Feature {
   @Override
   @NotNull
   public String toString() {
-    return "Node {" + nodePointerToString(myNodePointer) + "}";
+    return "Node {" + getNodePointerString() + "}";
   }
 }

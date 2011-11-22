@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.changesmanager.tree.features;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
 
-public abstract class NodeAggregationFeature extends Feature {
+public abstract class NodeAggregationFeature extends AbstractNodeFeature {
   protected NodeAggregationFeature(@NotNull SNodePointer nodePointer) {
     super(nodePointer);
   }

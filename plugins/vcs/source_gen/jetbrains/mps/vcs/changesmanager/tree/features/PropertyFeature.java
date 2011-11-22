@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 
-public class PropertyFeature extends Feature {
+public class PropertyFeature extends AbstractNodeFeature {
   private String myPropertyName;
 
   public PropertyFeature(@NotNull SNodePointer nodePointer, @NotNull String propertyName) {
@@ -32,6 +32,6 @@ public class PropertyFeature extends Feature {
   @Override
   @NotNull
   public String toString() {
-    return "Node property {" + nodePointerToString(myNodePointer) + "|" + myPropertyName + "}";
+    return "Node property {" + getNodePointerString() + "|" + myPropertyName + "}";
   }
 }

@@ -116,7 +116,7 @@ public class TreeHighlighter implements TreeMessageOwner {
   private void rehighlightNode(@NotNull MPSTreeNode node, @NotNull Feature feature) {
     unhighlightNode(node);
 
-    SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(feature.getNodePointer().getModelReference());
+    SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(feature.getModelReference());
     if (model instanceof EditableSModelDescriptor) {
       myRegistry.getCurrentDifference((EditableSModelDescriptor) model).setEnabled(true);
     }
@@ -143,11 +143,11 @@ public class TreeHighlighter implements TreeMessageOwner {
       public void run() {
         synchronized (myFeatureToNodes) {
           rehighlightFeature(feature);
-          SModelReference modelRef = feature.getNodePointer().getModelReference();
+          SModelReference modelRef = feature.getModelReference();
           for (Feature anotherFeature : SetSequence.fromSet(myFeatureToNodes.keySet())) {
-            if (modelRef.equals(anotherFeature.getNodePointer().getModelReference())) {
-              if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
-                public boolean accept(Feature a) {
+            if (modelRef.equals(anotherFeature.getModelReference())) {
+              if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Object>() {
+                public boolean accept(Object a) {
                   return feature.equals(a);
                 }
               })) {

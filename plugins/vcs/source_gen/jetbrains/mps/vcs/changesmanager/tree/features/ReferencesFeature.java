@@ -13,6 +13,6 @@ public class ReferencesFeature extends NodeAggregationFeature {
   @Override
   @NotNull
   public String toString() {
-    return "Node references {" + nodePointerToString(myNodePointer) + "}";
+    return "Node references {" + getNodePointerString() + "}";
   }
 }
