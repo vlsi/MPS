@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -107,20 +108,22 @@ public class EditorHighlighter implements EditorMessageOwner {
 
   private List<ChangeEditorMessage> createMessages(final ModelChange change) {
     final Wrappers._T<List<ChangeEditorMessage>> messages = new Wrappers._T<List<ChangeEditorMessage>>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SModel model;
-        SNode editedNode = myEditorComponent.getEditedNode();
-        if (editedNode == null || editedNode.isDisposed()) {
-          return;
+    if (!(change instanceof AddRootChange)) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          SModel model;
+          SNode editedNode = myEditorComponent.getEditedNode();
+          if (editedNode == null || editedNode.isDisposed()) {
+            return;
+          }
+          model = editedNode.getModel();
+          if (model == null || model.isDisposed()) {
+            return;
+          }
+          messages.value = ChangeEditorMessage.createMessages(model, change, EditorHighlighter.this, null, false);
         }
-        model = editedNode.getModel();
-        if (model == null || model.isDisposed()) {
-          return;
-        }
-        messages.value = ChangeEditorMessage.createMessages(model, change, EditorHighlighter.this, null, false);
-      }
-    });
+      });
+    }
     if (messages.value == null) {
       messages.value = ListSequence.fromList(new ArrayList<ChangeEditorMessage>());
     }
