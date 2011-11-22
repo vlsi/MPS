@@ -5,6 +5,9 @@ package jetbrains.mps.vcs.changesmanager.tree.features;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 public class NodeFeature extends AbstractNodeFeature {
@@ -14,9 +17,15 @@ public class NodeFeature extends AbstractNodeFeature {
 
   @Nullable
   public Feature getParent() {
-    SNode parentNode = getNodePointer().getNode().getParent();
+    SNode node = getNodePointer().getNode();
+    SNode parentNode = SNodeOperations.getParent(node);
     if (parentNode == null) {
-      return null;
+      String virtualPackage = SPropertyOperations.getString(node, "virtualPackage");
+      if (StringUtils.isEmpty(virtualPackage)) {
+        return null;
+      } else {
+        return new VirtualPackageFeature(getModelReference(), virtualPackage);
+      }
     }
     return new NodeFeature(new SNodePointer(parentNode));
   }
