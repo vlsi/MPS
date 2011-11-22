@@ -16,7 +16,14 @@ import com.sun.jdi.Location;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.baseLanguage.execution.api.Java_Command;
+import jetbrains.mps.reloading.ClasspathStringCollector;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.CollectionUtil;
+import java.util.Set;
+import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -26,7 +33,6 @@ import com.sun.jdi.Type;
 import com.sun.jdi.ClassNotLoadedException;
 import com.sun.jdi.InvalidStackFrameException;
 import com.sun.jdi.AbsentInformationException;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -46,7 +52,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.debug.evaluation.transform.TransformatorBuilder;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNodeId;
-import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -95,11 +100,24 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
   @NotNull
   public List<String> getClassPath() {
-    IModule locationModule = getLocationModule();
+    final IModule locationModule = getLocationModule();
     if (locationModule == null) {
       return super.getClassPath();
     }
-    return Java_Command.getClasspath(locationModule, true);
+
+    // todo duplication between this method and java.getClasspath 
+    // but this code is compiled in idea so we cant use Java_Command here:( 
+    final ClasspathStringCollector visitor = new ClasspathStringCollector();
+    locationModule.getClassPathItem().accept(visitor);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        AbstractModule.getDependenciesClasspath(CollectionUtil.set(locationModule), false).accept(visitor);
+      }
+    });
+
+    Set<String> visited = visitor.getClasspath();
+    visited.removeAll(CommonPaths.getJDKPath());
+    return ListSequence.fromListWithValues(new ArrayList<String>(), visited);
   }
 
   @NotNull

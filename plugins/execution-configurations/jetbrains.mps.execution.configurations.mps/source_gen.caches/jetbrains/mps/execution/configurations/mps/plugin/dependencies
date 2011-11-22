@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.configurations.mps.MPSInstance_Configuration" file="MPSInstance_Configuration.java">
+  <dependency className="jetbrains.mps.execution.configurations.mps.plugin.MPSInstance_Configuration" file="MPSInstance_Configuration.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.Executor" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationInfoProvider" />
@@ -20,11 +20,11 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.mps.MPSInstance_Configuration_Editor" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.mps.MPSInstance_Configuration_Factory" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.mps.MPSInstance_Configuration_RunProfileState" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.mps.Mps_Command" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.MPSInstance_Configuration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.MPSInstance_Configuration_Factory" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.MPSInstance_Configuration_RunProfileState" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.Mps_Command" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
@@ -34,29 +34,29 @@
     <classNode extendsClassName="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.configurations.mps.MPSInstance_Configuration_Editor" file="MPSInstance_Configuration_Editor.java">
+  <dependency className="jetbrains.mps.execution.configurations.mps.plugin.MPSInstance_Configuration_Editor" file="MPSInstance_Configuration_Editor.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.mps.MPSInstance_Configuration" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.mps.Mps_Command" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.MPSInstance_Configuration" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.Mps_Command" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.RawLineEditorComponent" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.configurations.mps.MPSInstance_Configuration_Factory" file="MPSInstance_Configuration_Factory.java">
+  <dependency className="jetbrains.mps.execution.configurations.mps.plugin.MPSInstance_Configuration_Factory" file="MPSInstance_Configuration_Factory.java">
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.mps.MPSInstance_Configuration" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.mps.MPS_Kind" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.MPSInstance_Configuration" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.MPS_Kind" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.configurations.mps.MPSInstance_Configuration_RunProfileState" file="MPSInstance_Configuration_RunProfileState.java">
+  <dependency className="jetbrains.mps.execution.configurations.mps.plugin.MPSInstance_Configuration_RunProfileState" file="MPSInstance_Configuration_RunProfileState.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.ExecutionResult" />
     <classNode dependClassName="com.intellij.execution.Executor" />
@@ -72,19 +72,19 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.run.IDebuggerConfiguration" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.mps.MPSInstance_Configuration" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.mps.Mps_Command" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleCreator" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.MPSInstance_Configuration" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.Mps_Command" />
     <classNode dependClassName="jetbrains.mps.ide.actions.JavaStackTraceFilter" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.configurations.mps.MPS_Kind" file="MPS_Kind.java">
+  <dependency className="jetbrains.mps.execution.configurations.mps.plugin.MPS_Kind" file="MPS_Kind.java">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
     <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
@@ -93,13 +93,22 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.mps.MPSInstance_Configuration_Factory" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.MPSInstance_Configuration_Factory" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.configurations.mps.Mps_Command" file="Mps_Command.java">
+  <dependency className="jetbrains.mps.execution.configurations.mps.plugin.Mps_ApplicationPlugin" file="Mps_ApplicationPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
+    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.mps.plugin.Mps_Command" file="Mps_Command.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="com.intellij.util.SystemProperties" />
@@ -128,16 +137,33 @@
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.configurations.mps.RunConfigurationsInitializer_CustomApplicationPlugin" file="RunConfigurationsInitializer_CustomApplicationPlugin.java">
+  <dependency className="jetbrains.mps.execution.configurations.mps.plugin.Mps_PluginInitializer" file="Mps_PluginInitializer.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.Mps_ApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.Mps_ProjectPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginContributor" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginLibrariesContributor" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
+    <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.mps.plugin.Mps_ProjectPlugin" file="Mps_ProjectPlugin.java">
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.mps.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" file="RunConfigurationsInitializer_CustomApplicationPlugin.java">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
     <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.mps.MPS_Kind" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.mps.plugin.MPS_Kind" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.mps.plugin.plugin" file="plugin.xml" />
 </dependenciesRoot>
 

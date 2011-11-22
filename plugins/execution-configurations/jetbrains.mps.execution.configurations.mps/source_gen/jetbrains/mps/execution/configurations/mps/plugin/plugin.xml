@@ -1,0 +1,19 @@
+<!DOCTYPE idea-plugin
+  PUBLIC
+    "Plugin/DTD"
+    "http://plugins.intellij.net/plugin.dtd"
+>
+<idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude"><id>jetbrains.mps.execution.configurations.mps</id>
+<name>MPS Execution</name>
+<description>MPS Execution Support</description>
+<version>1.0</version>
+<vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
+<idea-version since-build="3000"></idea-version>
+
+<depends>jetbrains.mps.baseLanguage.execution</depends>
+<depends>jetbrains.mps.execution.languages</depends>
+
+<application-components><component><implementation-class>jetbrains.mps.execution.configurations.mps.plugin.Mps_PluginInitializer</implementation-class>
+</component>
+</application-components>
+</idea-plugin>

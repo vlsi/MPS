@@ -14,6 +14,7 @@
     <dependency reexport="false">80515883-e659-4200-a66e-c8a0d7f5a17b(jetbrains.mps.baseLanguage.execution)</dependency>
     <dependency reexport="false">2fe588b4-688c-48ba-b903-0b7dc3d30070(jetbrains.mps.execution.languages)</dependency>
     <dependency reexport="false">50240497-028c-45fc-a657-4fa2488251db(jetbrains.mps.debugger.api.languages.plugin)</dependency>
+    <dependency reexport="false">0a7070d4-a215-46a9-a94b-845ffbcfa0d4(jetbrains.mps.execution.configurations.mps)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)</usedLanguage>
