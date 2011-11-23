@@ -29,6 +29,7 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.ModelAccess;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import com.intellij.openapi.actionSystem.ToggleAction;
@@ -129,11 +130,15 @@ public class ModuleDependenciesView extends JPanel {
   }
 
   private void calcCycles() {
-    myCycles = SetSequence.fromSetWithValues(new HashSet<Tuples._2<DependencyUtil.Role, IModule>>(), ListSequence.fromList(myModules).translate(new ITranslator2<IModule, Tuples._2<DependencyUtil.Role, IModule>>() {
-      public Iterable<Tuples._2<DependencyUtil.Role, IModule>> translate(IModule it) {
-        return DependencyUtil.getLoops(DependencyUtil.Role.None, it, myLeftTree.isShowRuntime());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myCycles = SetSequence.fromSetWithValues(new HashSet<Tuples._2<DependencyUtil.Role, IModule>>(), ListSequence.fromList(myModules).translate(new ITranslator2<IModule, Tuples._2<DependencyUtil.Role, IModule>>() {
+          public Iterable<Tuples._2<DependencyUtil.Role, IModule>> translate(IModule it) {
+            return DependencyUtil.getLoops(DependencyUtil.Role.None, it, myLeftTree.isShowRuntime());
+          }
+        }));
       }
-    }));
+    });
   }
 
   public void setShowCycles(boolean b) {
