@@ -26,6 +26,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessageFactory;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -120,7 +121,7 @@ public class EditorHighlighter implements EditorMessageOwner {
           if (model == null || model.isDisposed()) {
             return;
           }
-          messages.value = ChangeEditorMessage.createMessages(model, change, EditorHighlighter.this, null, false);
+          messages.value = ChangeEditorMessageFactory.createMessages(model, change, EditorHighlighter.this, null, false);
         }
       });
     }
