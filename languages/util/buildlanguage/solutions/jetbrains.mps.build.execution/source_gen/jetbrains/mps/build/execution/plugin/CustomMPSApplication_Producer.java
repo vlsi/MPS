@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CustomMPSApplication_Producer {
   private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.build.execution.plugin.CustomMPSApplication_Configuration_Factory";
@@ -130,7 +130,7 @@ public class CustomMPSApplication_Producer {
           isApplicable.value = (layout.value != null);
           configuration.value = ListSequence.fromList(SLinkOperations.getTargets(layout.value, "configuration", true)).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return AbstractProjectComponent_Behavior.call_included_1213877333807(source, it);
+              return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(source, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "call_included_1213877333807", new Class[]{SNode.class, SNode.class}, it));
             }
           });
           configurationId.value = configuration.value.getId();

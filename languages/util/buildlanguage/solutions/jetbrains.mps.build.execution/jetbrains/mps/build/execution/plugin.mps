@@ -775,6 +775,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2228878981387110330" resolveInfo="project" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2228878981387110384">
+                          <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpss.1213877351819" resolveInfo="getFileName" />
                         </node>
                       </node>
@@ -4437,6 +4438,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2555954362606543980" resolveInfo="mpsbuild" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2555954362606544009">
+                      <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1213877333807" resolveInfo="included" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2555954362606544010">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2555954362606543950" resolveInfo="configuration" />
@@ -5081,6 +5083,7 @@
                               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2555954362606544298">
                                 <node role="operand" roleId="tpee.1197027771414" type="uhxm.Source_ConceptFunctionParameter" typeId="uhxm.3642991921657904775" id="2555954362606544299" />
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2555954362606544300">
+                                  <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1213877333807" resolveInfo="included" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2555954362606544301">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2555954362606544302" resolveInfo="it" />
