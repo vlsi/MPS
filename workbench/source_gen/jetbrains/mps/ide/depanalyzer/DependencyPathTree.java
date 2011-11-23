@@ -18,7 +18,6 @@ import java.util.HashSet;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashMap;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -99,7 +98,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
     while (QueueSequence.fromQueue(unprocessed).isNotEmpty()) {
       DependencyPathTree.LinkFrom node = QueueSequence.fromQueue(unprocessed).removeFirstElement();
-      if (node.link.role == DependencyUtil.Role.UsedLanguage && SetSequence.fromSet(usedlanguage).contains(node.link.module) || (node.link.role == DependencyUtil.Role.DTDependency_ || node.link.role == DependencyUtil.Role.DTDependency || node.link.role == DependencyUtil.Role.RTDependency || node.link.role == DependencyUtil.Role.RTLibraries) && SetSequence.fromSet(dependency).contains(node.link.module)) {
+      if (node.link.role.isUsedLanguage() && SetSequence.fromSet(usedlanguage).contains(node.link.module) || node.link.role.isDependency() && SetSequence.fromSet(dependency).contains(node.link.module)) {
         // copy path to real tree 
         node.setDepUsed();
       } else if (MapSequence.fromMap(visited).containsKey(MultiTuple.<IModule,DependencyUtil.Role>from(node.link.module, node.link.role))) {

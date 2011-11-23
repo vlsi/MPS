@@ -8,13 +8,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -40,16 +41,14 @@ public class DependencyUtil {
         addDeps(result, getReexportDeps(descr), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ReexportsDep);
         addDeps(result, getNonreexportDeps(descr), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.Depends);
         if (descr instanceof LanguageDescriptor) {
-          addDeps(result, ListSequence.fromList(((List<GeneratorDescriptor>) as_he47wm_a0a0a0b0a0f0a3a0(descr, LanguageDescriptor.class).getGenerators())).select(new ISelector<GeneratorDescriptor, ModuleReference>() {
-            public ModuleReference select(GeneratorDescriptor it) {
-              return it.getModuleReference();
-            }
-          }), DependencyUtil.Role.Generator, DependencyUtil.LinkType.Generator);
-          addDeps(result, (as_he47wm_a0a1a1a5a0d0a(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ExtendsLanguage);
+          addDeps(result, (as_he47wm_a0a1a0a5a0d0a(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ExtendsLanguage);
+          ListSequence.fromList(result).addElement(new DependencyUtil.Link(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c")), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.LangCore));
         }
         if (descr instanceof GeneratorDescriptor) {
           GeneratorDescriptor gen = (GeneratorDescriptor) descr;
-          ListSequence.fromList(result).addElement(new DependencyUtil.Link((as_he47wm_a0a0a0a0b0g0a3a0(module, Generator.class)).getSourceLanguage(), DependencyUtil.Role.GeneratorLanguage, DependencyUtil.LinkType.GeneratorLanguage));
+          addDeps(result, gen.getDepGenerators(), DependencyUtil.Role.DTDependency, DependencyUtil.LinkType.DependsOnGenerator);
+          ListSequence.fromList(result).addElement(new DependencyUtil.Link((as_he47wm_a0a0a0a0c0g0a3a0(module, Generator.class)).getSourceLanguage(), DependencyUtil.Role.DTDependency, DependencyUtil.LinkType.GeneratorLanguage));
+          ListSequence.fromList(result).addElement(new DependencyUtil.Link((as_he47wm_a0a0a0a0d0g0a3a0(module, Generator.class)).getSourceLanguage(), DependencyUtil.Role.GeneratorLanguage, DependencyUtil.LinkType.GeneratorLanguage));
         }
         break;
 
@@ -87,16 +86,19 @@ public class DependencyUtil {
         }
         break;
 
+      case DTDependency:
+        if (trackRuntime) {
+          addDeps(result, getReexportDeps(descr), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.ReexportsDep);
+          addDeps(result, getNonreexportDeps(descr), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.Depends);
+        }
+        break;
+
       case RTDependency:
         addDeps(result, getReexportDeps(descr), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.ReexportsDep);
         addDeps(result, getNonreexportDeps(descr), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.Depends);
         break;
 
       case RTLibraries:
-        break;
-
-      case Generator:
-
         break;
 
       case GeneratorLanguage:
@@ -205,21 +207,21 @@ public class DependencyUtil {
     return null;
   }
 
-  private static <T> T as_he47wm_a0a0a0b0a0f0a3a0(Object o, Class<T> type) {
+  private static <T> T as_he47wm_a0a1a0a5a0d0a(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_he47wm_a0a1a1a5a0d0a(Object o, Class<T> type) {
+  private static <T> T as_he47wm_a0a0a0a0c0g0a3a0(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_he47wm_a0a0a0a0b0g0a3a0(Object o, Class<T> type) {
+  private static <T> T as_he47wm_a0a0a0a0d0g0a3a0(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
@@ -272,8 +274,9 @@ public class DependencyUtil {
     ExportsLanguage("exports language"),
     ExportsSolution("exports solution"),
     ExtendsDevkit("extends devkit"),
-    Generator("generator"),
-    GeneratorLanguage("generator language");
+    GeneratorLanguage("generator language"),
+    DependsOnGenerator("depends on generator"),
+    LangCore("");
 
     private String myText;
 
@@ -295,10 +298,25 @@ public class DependencyUtil {
     RTLibraries(),
     UsedLanguage(),
     UsedDevkit(),
-    Generator(),
     GeneratorLanguage();
 
     Role() {
+    }
+
+    public boolean isUsedLanguage() {
+      return this == DependencyUtil.Role.UsedLanguage;
+    }
+
+    public boolean isDTDependency() {
+      return this == DependencyUtil.Role.DTDependency_ || this == DependencyUtil.Role.DTDependency;
+    }
+
+    public boolean isRTDependency() {
+      return this == DependencyUtil.Role.RTDependency || this == DependencyUtil.Role.RTLibraries;
+    }
+
+    public boolean isDependency() {
+      return isDTDependency() || isRTDependency();
     }
   }
 
