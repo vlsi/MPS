@@ -8,7 +8,6 @@
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" file="FeatureForestMap.java">
     <classNode dependClassName="java.lang.IllegalAccessError" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
@@ -98,7 +97,6 @@
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.util.containers.MultiMap" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -148,6 +146,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTree" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTree" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -155,6 +154,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.ProjectTreeFeatureExtractor" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.UsagesTreeFeatureExtractor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
   </dependency>
@@ -163,6 +163,22 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.UsagesTreeFeatureExtractor" file="UsagesTreeFeatureExtractor.java">
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" />
   </dependency>
 </dependenciesRoot>
 
