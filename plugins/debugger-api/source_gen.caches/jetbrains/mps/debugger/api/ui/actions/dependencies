@@ -171,6 +171,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.Runtime_ApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.Runtime_ProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginContributor" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginLibrariesContributor" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
     <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
