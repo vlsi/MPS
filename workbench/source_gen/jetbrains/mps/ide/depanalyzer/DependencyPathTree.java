@@ -34,6 +34,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class DependencyPathTree extends MPSTree implements DataProvider {
   private List<Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>>>());
@@ -98,18 +99,18 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
     while (QueueSequence.fromQueue(unprocessed).isNotEmpty()) {
       DependencyPathTree.LinkFrom node = QueueSequence.fromQueue(unprocessed).removeFirstElement();
-      if (node.link.role == DependencyUtil.Role.UsedLanguage && SetSequence.fromSet(usedlanguage).contains(node.link.module) || (node.link.role == DependencyUtil.Role.DTDependency_ || node.link.role == DependencyUtil.Role.RTDependency) && SetSequence.fromSet(dependency).contains(node.link.module)) {
-        // mark as used 
-        node.setUsed();
-        node.node.setDepLeaf();
+      if (node.link.role == DependencyUtil.Role.UsedLanguage && SetSequence.fromSet(usedlanguage).contains(node.link.module) || (node.link.role == DependencyUtil.Role.DTDependency_ || node.link.role == DependencyUtil.Role.DTDependency || node.link.role == DependencyUtil.Role.RTDependency || node.link.role == DependencyUtil.Role.RTLibraries) && SetSequence.fromSet(dependency).contains(node.link.module)) {
+        // copy path to real tree 
+        node.setDepUsed();
       } else if (MapSequence.fromMap(visited).containsKey(MultiTuple.<IModule,DependencyUtil.Role>from(node.link.module, node.link.role))) {
         if (!(isShowAll())) {
           continue;
         }
         DependencyPathTree.LinkFrom n = MapSequence.fromMap(visited).get(MultiTuple.<IModule,DependencyUtil.Role>from(node.link.module, node.link.role));
         n.addBackDep(node);
+        // if we came to dependency, copy path to real tree 
         if (n.isUsed()) {
-          node.setUsed();
+          node.setLinkUsed(n);
         }
       } else {
         MapSequence.fromMap(visited).put(MultiTuple.<IModule,DependencyUtil.Role>from(node.link.module, node.link.role), node);
@@ -194,12 +195,11 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   }
 
   public static class LinkFrom {
-    private static Map<DependencyPathTree.LinkFrom, List<DependencyPathTree.LinkFrom>> backdeps = MapSequence.fromMap(new HashMap<DependencyPathTree.LinkFrom, List<DependencyPathTree.LinkFrom>>());
-
     private DependencyUtil.Link link;
     private DependencyPathTree.LinkFrom from;
-    private DependencyTreeNode node;
+    private List<DependencyPathTree.LinkFrom> backdeps = ListSequence.fromList(new ArrayList<DependencyPathTree.LinkFrom>());
     private boolean isCyclic;
+    private DependencyTreeNode node;
 
     public LinkFrom(DependencyUtil.Link link, DependencyPathTree.LinkFrom from) {
       this.link = link;
@@ -222,14 +222,21 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
         from.setUsed();
         from.node.add(node);
       }
-      if (MapSequence.fromMap(backdeps).containsKey(this)) {
-        for (DependencyPathTree.LinkFrom dep : ListSequence.fromList(MapSequence.fromMap(backdeps).get(this))) {
-          if (!(dep.isUsed())) {
-            dep.setUsed();
-            dep.node.setLinkLeaf(node);
-          }
+      ListSequence.fromList(backdeps).visitAll(new IVisitor<DependencyPathTree.LinkFrom>() {
+        public void visit(DependencyPathTree.LinkFrom dep) {
+          dep.setLinkUsed(LinkFrom.this);
         }
-      }
+      });
+    }
+
+    public void setLinkUsed(DependencyPathTree.LinkFrom link) {
+      setUsed();
+      node.setLinkLeaf(link.node);
+    }
+
+    public void setDepUsed() {
+      setUsed();
+      node.setDepLeaf();
     }
 
     public void setCyclic() {
@@ -237,10 +244,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     }
 
     public void addBackDep(DependencyPathTree.LinkFrom dep) {
-      if (!(MapSequence.fromMap(backdeps).containsKey(this))) {
-        MapSequence.fromMap(backdeps).put(this, ListSequence.fromList(new ArrayList<DependencyPathTree.LinkFrom>()));
-      }
-      ListSequence.fromList(MapSequence.fromMap(backdeps).get(this)).addElement(dep);
+      ListSequence.fromList(backdeps).addElement(dep);
     }
   }
 }
