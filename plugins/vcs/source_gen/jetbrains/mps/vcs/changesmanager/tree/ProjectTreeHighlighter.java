@@ -47,7 +47,7 @@ public class ProjectTreeHighlighter extends AbstractProjectComponent {
   }
 
   private void registerAndInitHighlighter(@NotNull ProjectTree tree) {
-    myTreeHighlighter = new TreeHighlighter(myRegistry, myFeatureForestMapSupport, tree, new ProjectTreeFeatureExtractor());
+    myTreeHighlighter = new TreeHighlighter(myRegistry, myFeatureForestMapSupport, tree, new ProjectTreeFeatureExtractor(), true);
     myTreeHighlighter.init();
   }
 }

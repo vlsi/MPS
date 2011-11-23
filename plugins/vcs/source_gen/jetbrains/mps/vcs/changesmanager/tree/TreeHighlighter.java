@@ -19,6 +19,7 @@ import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.FileStatusManager;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -37,6 +38,12 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.ide.ui.MPSTreeNodeListener;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModel;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class TreeHighlighter implements TreeMessageOwner {
   protected static Log log = LogFactory.getLog(TreeHighlighter.class);
@@ -52,13 +59,17 @@ public class TreeHighlighter implements TreeMessageOwner {
   private TreeHighlighter.MyFeatureForestMapListener myFeatureListener = new TreeHighlighter.MyFeatureForestMapListener();
   private final MultiMap<Feature, MPSTreeNode> myFeatureToNodes = new MultiMap<Feature, MPSTreeNode>();
   private TreeHighlighter.MyFileStatusListener myFileStatusListener = new TreeHighlighter.MyFileStatusListener();
+  private TreeHighlighter.MyModelListener myGlobalModelListener;
 
-  public TreeHighlighter(@NotNull CurrentDifferenceRegistry registry, @NotNull FeatureForestMapSupport featureForestMapSupport, @NotNull MPSTree tree, @NotNull TreeNodeFeatureExtractor featureExtractor) {
+  public TreeHighlighter(@NotNull CurrentDifferenceRegistry registry, @NotNull FeatureForestMapSupport featureForestMapSupport, @NotNull MPSTree tree, @NotNull TreeNodeFeatureExtractor featureExtractor, boolean removeNodesOnModelDisposal) {
     myRegistry = registry;
     myCommandQueue = registry.getCommandQueue();
     myMap = featureForestMapSupport.getMap();
     myTree = tree;
     myFeatureExtractor = featureExtractor;
+    if (removeNodesOnModelDisposal) {
+      myGlobalModelListener = new TreeHighlighter.MyModelListener();
+    }
   }
 
   public synchronized void init() {
@@ -66,9 +77,14 @@ public class TreeHighlighter implements TreeMessageOwner {
       return;
     }
     myInitialized = true;
+
     myMap.addListener(myFeatureListener);
     myTree.addTreeNodeListener(myTreeNodeListener);
     FileStatusManager.getInstance(myRegistry.getProject()).addFileStatusListener(myFileStatusListener);
+    if (myGlobalModelListener != null) {
+      GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelListener);
+    }
+
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         registerNodeRecursively(myTree.getRootNode());
@@ -81,6 +97,10 @@ public class TreeHighlighter implements TreeMessageOwner {
       return;
     }
     myInitialized = false;
+
+    if (myGlobalModelListener != null) {
+      GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelListener);
+    }
     FileStatusManager.getInstance(myRegistry.getProject()).removeFileStatusListener(myFileStatusListener);
     myTree.removeTreeNodeListener(myTreeNodeListener);
     myMap.removeListener(myFeatureListener);
@@ -278,6 +298,30 @@ public class TreeHighlighter implements TreeMessageOwner {
           }
         }
       }
+    }
+  }
+
+  private class MyModelListener extends SModelAdapter {
+    public MyModelListener() {
+    }
+
+    @Override
+    public void beforeModelDisposed(SModel model) {
+      SModelReference modelRef = model.getSModelReference();
+      List<MPSTreeNode> obsoleteTreeNodes = ListSequence.fromList(new ArrayList<MPSTreeNode>());
+      synchronized (myFeatureToNodes) {
+        for (Feature f : SetSequence.fromSet(myFeatureToNodes.keySet())) {
+          if (!(f instanceof ModelFeature) && modelRef.equals(f.getModelReference())) {
+            ListSequence.fromList(obsoleteTreeNodes).addSequence(Sequence.fromIterable(myFeatureToNodes.get(f)));
+            myFeatureToNodes.remove(f);
+          }
+        }
+      }
+      ListSequence.fromList(obsoleteTreeNodes).visitAll(new IVisitor<MPSTreeNode>() {
+        public void visit(MPSTreeNode tn) {
+          unhighlightNode(tn);
+        }
+      });
     }
   }
 }

@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" file="FeatureForestMap.java">
     <classNode dependClassName="java.lang.IllegalAccessError" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
@@ -105,18 +104,25 @@
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.util.containers.MultiMap" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTree" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.treeMessages.TreeMessage" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.GlobalSModelEventsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
@@ -139,6 +145,7 @@
     <classNode extendsClassName="com.intellij.openapi.vcs.FileStatusListener" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNodeListener" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner" />
+    <classNode extendsClassName="jetbrains.mps.smodel.SModelAdapter" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" file="TreeNodeFeatureExtractor.java">

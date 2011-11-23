@@ -37,10 +37,13 @@ public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
     } else if (treeNode.getParent() instanceof MPSTreeNodeEx) {
       node = ((MPSTreeNodeEx) treeNode.getParent()).getSNode();
     }
-    SNodePointer nodePointer = (node == null ?
-      null :
-      new SNodePointer(node)
-    );
+    SNodePointer nodePointer = null;
+    if (node != null) {
+      if (node.isDisposed()) {
+        return null;
+      }
+      nodePointer = new SNodePointer(node);
+    }
     if (treeNode instanceof SNodeTreeNode || treeNode instanceof ConceptTreeNode) {
       return new NodeFeature(nodePointer);
     } else if (treeNode instanceof PropertyTreeNode && treeNode.getParent() instanceof MPSTreeNodeEx) {
