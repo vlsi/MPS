@@ -22,8 +22,10 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.depanalyzer.DependencyPathTree;
 import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -38,6 +40,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.ex.IFileEx;
 import jetbrains.mps.vfs.impl.IoFile;
 import jetbrains.mps.workbench.dialogs.project.newproject.SolutionStep;
 import org.junit.After;
@@ -124,8 +127,7 @@ public class ModuleDependenciesTest {
     testDependency(testTree, solutions[0], solutions[4], 0);    //not reexport
     testTree.setShowRuntime(true);
     testDependency(testTree, solutions[0], solutions[4], 1);    //runtime dependencies are on
-
-}
+  }
 
   @Test
   public void testRuntimeDependencies() {
@@ -160,8 +162,39 @@ public class ModuleDependenciesTest {
     testDependency(testTree, solutions[0], solutions[3], 0);  //runtime dependencies can not pass through used language
   }
 
+  @Test
+  public void testUsedLanguages() {
+    final Language[] languages = new Language[7];
+    for (int i = 0; i < 7; i++) {
+      languages[i] = createLanguage();
+    }
+    DevKit devKit = createDevKit();
+    DevKit devKit2 = createDevKit();
+    final DependencyPathTree testTree = new DependencyPathTree(null);
+    /*
+     l[0]--uses-->l[1]--extends-->l[2]---uses-->l[3]
+                   |
+                 devKit---extends-->devKit2-->l[5]-->l[6]
+                   |
+                  l[4]
+     */
+    languages[0].addUsedLanguage(languages[1].getModuleReference());
+    languages[1].addExtendedLanguage(languages[2].getModuleReference());
+    languages[2].addUsedLanguage(languages[3].getModuleReference());
+    devKit.getModuleDescriptor().getExportedLanguages().add(languages[4].getModuleReference());
+    devKit2.getModuleDescriptor().getExtendedDevkits().add(devKit2.getModuleReference());
+    devKit2.getModuleDescriptor().getExportedLanguages().add(languages[5].getModuleReference());
+    languages[1].addUsedDevkit(devKit.getModuleReference());
+    languages[5].addExtendedLanguage(languages[6].getModuleReference());
 
-
+    testUsedLanguage(testTree, languages[0], languages[1], 1);    //simple
+    testUsedLanguage(testTree, languages[0], languages[2], 1);
+    testUsedLanguage(testTree, languages[0], languages[3], 0);
+    testUsedLanguage(testTree, languages[1], languages[4], 1); //devKit
+    testUsedLanguage(testTree, languages[0], languages[4], 0); //extended lang + devKit
+   // testUsedLanguage(testTree, languages[1], languages[5], 1); //extended DevKit
+   // testUsedLanguage(testTree, languages[1], languages[6], 1); //extended DevKit+extended language
+  }
 
   //----------------------------------------------
 
@@ -186,9 +219,7 @@ public class ModuleDependenciesTest {
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
     d.setUUID(uuid);
-    DevKit devKit = new DevKit();
-    devKit.setDevKitDescriptor(d, false);
-    return devKit;
+    return DevKit.newInstance(new ModuleHandle(null, d),OWNER);
   }
 
 }
