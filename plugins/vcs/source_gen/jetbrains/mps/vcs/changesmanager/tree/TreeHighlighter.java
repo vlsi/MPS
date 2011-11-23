@@ -192,8 +192,8 @@ public class TreeHighlighter implements TreeMessageOwner {
           SModelReference modelRef = feature.getModelReference();
           for (Feature anotherFeature : SetSequence.fromSet(myFeatureToNodes.keySet())) {
             if (modelRef.equals(anotherFeature.getModelReference())) {
-              if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
-                public boolean accept(Feature a) {
+              if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Object>() {
+                public boolean accept(Object a) {
                   return feature.equals(a);
                 }
               })) {
@@ -269,6 +269,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
 
     public void beforeTreeDisposed(MPSTree tree) {
+      TreeHighlighterFactory.getInstance(myRegistry.getProject()).unhighlightTree(myTree);
     }
   }
 

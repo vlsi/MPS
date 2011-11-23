@@ -78,7 +78,7 @@
       <skipForDefaultProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.tree.ProjectTreeHighlighter</implementation-class>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.tree.TreeHighlighterFactory</implementation-class>
       <skipForDefaultProject/>
     </component>
     <component>
@@ -108,6 +108,7 @@
   <extensions defaultExtensionNs="com.intellij">
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusProvider"/>
     <mps.TabColorProvider implementation="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider"/>
+    <mps.treeCreationHandler implementation="jetbrains.mps.vcs.changesmanager.tree.ChangesTreeCreationHandler"/>
     <checkoutListener implementation="jetbrains.mps.vcs.integration.ProjectCheckoutListener"/>
     <checkinHandlerFactory implementation="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory"/>
     <directoryIndexExcludePolicy implementation="jetbrains.mps.vcs.integration.GeneratedFilesExcludePolicy"/>
