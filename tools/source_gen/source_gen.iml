@@ -6,6 +6,9 @@
     <content url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.execution.api/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.execution.api/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.execution/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.execution/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/source_gen" isTestSource="false" />
     </content>
