@@ -7,12 +7,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import java.awt.Color;
 import com.intellij.openapi.project.Project;
 
 public class DependencyTreeNode extends MPSTreeNode {
   private DependencyUtil.Link myLink;
-  private boolean myIsCyclic;
   private DependencyTreeNode myLinkedNode;
 
   public DependencyTreeNode(DependencyUtil.Link link, IOperationContext operationContext) {
@@ -56,22 +54,11 @@ public class DependencyTreeNode extends MPSTreeNode {
     return children == null || children.isEmpty();
   }
 
-  public void setCyclic() {
-    myIsCyclic = true;
-  }
-
   public void doubleClick() {
     if (myLinkedNode == null) {
-      ProjectPane.getInstance(check_akkfj9_a0a0a0a6(((DependencyPathTree) getTree()), this)).selectModule(getModule(), false);
+      ProjectPane.getInstance(check_akkfj9_a0a0a0a5(((DependencyPathTree) getTree()), this)).selectModule(getModule(), false);
     } else {
       getTree().selectNode(myLinkedNode);
-    }
-  }
-
-  public void doUpdatePresentation() {
-    super.doUpdatePresentation();
-    if (myIsCyclic) {
-      setColor(Color.RED);
     }
   }
 
@@ -82,7 +69,7 @@ public class DependencyTreeNode extends MPSTreeNode {
     return null;
   }
 
-  private static Project check_akkfj9_a0a0a0a6(DependencyPathTree checkedDotOperand, DependencyTreeNode checkedDotThisExpression) {
+  private static Project check_akkfj9_a0a0a0a5(DependencyPathTree checkedDotOperand, DependencyTreeNode checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProject();
     }

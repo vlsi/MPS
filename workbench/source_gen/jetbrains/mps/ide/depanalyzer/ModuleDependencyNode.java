@@ -90,26 +90,24 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
     Set<IModule> depLoops = SetSequence.fromSet(new HashSet<IModule>());
     Set<IModule> langLoops = SetSequence.fromSet(new HashSet<IModule>());
-    if (tree.getCycles() != null) {
-      SetSequence.fromSet(depLoops).addSequence(SetSequence.fromSet(tree.getCycles()).where(new IWhereFilter<Tuples._2<DependencyUtil.Role, IModule>>() {
-        public boolean accept(Tuples._2<DependencyUtil.Role, IModule> it) {
-          return it._0() == DependencyUtil.Role.DTDependency_ || it._0() == DependencyUtil.Role.RTDependency || it._0() == DependencyUtil.Role.None;
-        }
-      }).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
-        public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
-          return it._1();
-        }
-      }));
-      SetSequence.fromSet(langLoops).addSequence(SetSequence.fromSet(tree.getCycles()).where(new IWhereFilter<Tuples._2<DependencyUtil.Role, IModule>>() {
-        public boolean accept(Tuples._2<DependencyUtil.Role, IModule> it) {
-          return it._0() == DependencyUtil.Role.UsedLanguage || it._0() == DependencyUtil.Role.None;
-        }
-      }).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
-        public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
-          return it._1();
-        }
-      }));
-    }
+    SetSequence.fromSet(depLoops).addSequence(SetSequence.fromSet(tree.getCycles()).where(new IWhereFilter<Tuples._2<DependencyUtil.Role, IModule>>() {
+      public boolean accept(Tuples._2<DependencyUtil.Role, IModule> it) {
+        return it._0() == DependencyUtil.Role.DTDependency_ || it._0() == DependencyUtil.Role.RTDependency || it._0() == DependencyUtil.Role.None;
+      }
+    }).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
+      public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
+        return it._1();
+      }
+    }));
+    SetSequence.fromSet(langLoops).addSequence(SetSequence.fromSet(tree.getCycles()).where(new IWhereFilter<Tuples._2<DependencyUtil.Role, IModule>>() {
+      public boolean accept(Tuples._2<DependencyUtil.Role, IModule> it) {
+        return it._0() == DependencyUtil.Role.UsedLanguage || it._0() == DependencyUtil.Role.None;
+      }
+    }).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
+      public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
+        return it._1();
+      }
+    }));
 
     Set<IModule> allModules = (tree.isShowRuntime() ?
       rtModules :

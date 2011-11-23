@@ -9,10 +9,12 @@ import java.util.List;
 import jetbrains.mps.project.IModule;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.TreePath;
@@ -30,7 +32,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
   private List<IModule> myModules;
   private boolean myShowRuntime;
   private boolean myShowUsedLanguage = true;
-  private Set<Tuples._2<DependencyUtil.Role, IModule>> myCycles;
+  private Set<Tuples._2<DependencyUtil.Role, IModule>> myCycles = SetSequence.fromSet(new HashSet<Tuples._2<DependencyUtil.Role, IModule>>());
 
   public DependencyTree(Project project) {
     myProject = project;
@@ -64,16 +66,18 @@ public class DependencyTree extends MPSTree implements DataProvider {
     return myCycles;
   }
 
-  public void setCycles(Set<Tuples._2<DependencyUtil.Role, IModule>> cycles) {
-    myCycles = cycles;
-  }
-
   protected MPSTreeNode rebuild() {
+    SetSequence.fromSet(myCycles).clear();
     if (myModules == null || ListSequence.fromList(myModules).isEmpty()) {
       return new TextMPSTreeNode("No Content", null);
     }
+    SetSequence.fromSet(myCycles).addSequence(ListSequence.fromList(myModules).translate(new ITranslator2<IModule, Tuples._2<DependencyUtil.Role, IModule>>() {
+      public Iterable<Tuples._2<DependencyUtil.Role, IModule>> translate(IModule it) {
+        return DependencyUtil.getLoops(DependencyUtil.Role.None, it, isShowRuntime());
+      }
+    }));
     ModuleDependencyNode root = new ModuleDependencyNode(myModules, null);
-    if (myCycles != null && SetSequence.fromSet(myCycles).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
+    if (SetSequence.fromSet(myCycles).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
       public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
         return it._1();
       }
@@ -90,7 +94,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     if (selection != null && selection.length > 1) {
       return null;
     }
-    ModuleDependencyNode current = as_he3vmc_a0a2a9(getCurrentNode(), ModuleDependencyNode.class);
+    ModuleDependencyNode current = as_he3vmc_a0a2a8(getCurrentNode(), ModuleDependencyNode.class);
     if (current == null || ListSequence.fromList(current.getModules()).count() != 1) {
       return null;
     }
@@ -101,7 +105,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    ModuleDependencyNode current = as_he3vmc_a0a0a01(getCurrentNode(), ModuleDependencyNode.class);
+    ModuleDependencyNode current = as_he3vmc_a0a0a9(getCurrentNode(), ModuleDependencyNode.class);
     if (current == null) {
       return null;
     }
@@ -115,14 +119,14 @@ public class DependencyTree extends MPSTree implements DataProvider {
     return null;
   }
 
-  private static <T> T as_he3vmc_a0a2a9(Object o, Class<T> type) {
+  private static <T> T as_he3vmc_a0a2a8(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_he3vmc_a0a0a01(Object o, Class<T> type) {
+  private static <T> T as_he3vmc_a0a0a9(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

@@ -22,7 +22,6 @@ import java.util.HashMap;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import javax.swing.JPopupMenu;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -40,7 +39,6 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   private Project myProject;
   private boolean myShowAllPaths;
   private boolean myShowRuntime;
-  private Set<Tuples._2<DependencyUtil.Role, IModule>> myCycles;
 
   public DependencyPathTree(Project project) {
     myProject = project;
@@ -75,25 +73,11 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     ListSequence.fromList(myAllDependencies).addElement(MultiTuple.<Set<IModule>,Set<IModule>,Set<IModule>>from(SetSequence.fromSetWithValues(new HashSet<IModule>(), from), SetSequence.fromSetWithValues(new HashSet<IModule>(), to), SetSequence.fromSetWithValues(new HashSet<IModule>(), usedLanguage)));
   }
 
-  public void setCycles(Iterable<Tuples._2<DependencyUtil.Role, IModule>> cycles) {
-    myCycles = (cycles == null ?
-      null :
-      SetSequence.fromSetWithValues(new HashSet<Tuples._2<DependencyUtil.Role, IModule>>(), cycles)
-    );
-  }
-
   private MPSTreeNode buildTree(IModule from, Set<IModule> dependency, Set<IModule> usedlanguage) {
     Map<Tuples._2<IModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom> visited = MapSequence.fromMap(new HashMap<Tuples._2<IModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom>());
     Queue<DependencyPathTree.LinkFrom> unprocessed = QueueSequence.fromQueue(new LinkedList<DependencyPathTree.LinkFrom>());
 
     DependencyPathTree.LinkFrom root = new DependencyPathTree.LinkFrom(new DependencyUtil.Link(from, DependencyUtil.Role.None, null), null);
-    if (myCycles != null && SetSequence.fromSet(myCycles).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
-      public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
-        return it._1();
-      }
-    }).contains(from)) {
-      root.setCyclic();
-    }
     QueueSequence.fromQueue(unprocessed).addLastElement(root);
 
     while (QueueSequence.fromQueue(unprocessed).isNotEmpty()) {
@@ -116,9 +100,6 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
         DependencyUtil.dependencies(node.link.role, node.link.module, isShowRuntime());
         for (DependencyUtil.Link link : ListSequence.fromList(DependencyUtil.dependencies(node.link.role, node.link.module, isShowRuntime()))) {
           DependencyPathTree.LinkFrom n = new DependencyPathTree.LinkFrom(link, node);
-          if (myCycles != null && SetSequence.fromSet(myCycles).contains(MultiTuple.<DependencyUtil.Role,IModule>from(link.role, link.module))) {
-            n.setCyclic();
-          }
           QueueSequence.fromQueue(unprocessed).addLastElement(n);
         }
       }
@@ -166,7 +147,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    DependencyTreeNode current = as_9bg0dz_a0a0a21(getCurrentNode(), DependencyTreeNode.class);
+    DependencyTreeNode current = as_9bg0dz_a0a0a11(getCurrentNode(), DependencyTreeNode.class);
     if (current == null) {
       return null;
     }
@@ -177,27 +158,27 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
       return current.getModule();
     }
     if (id.equals(MPSDataKeys.CONTEXT_MODULE.getName()) && current.getLink().linktype == DependencyUtil.LinkType.Depends) {
-      DependencyTreeNode node = as_9bg0dz_a0a0a4a21(current.getParent(), DependencyTreeNode.class);
-      return check_9bg0dz_a1a4a21(node);
+      DependencyTreeNode node = as_9bg0dz_a0a0a4a11(current.getParent(), DependencyTreeNode.class);
+      return check_9bg0dz_a1a4a11(node);
     }
     return null;
   }
 
-  private static IModule check_9bg0dz_a1a4a21(DependencyTreeNode checkedDotOperand) {
+  private static IModule check_9bg0dz_a1a4a11(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static <T> T as_9bg0dz_a0a0a21(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a11(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_9bg0dz_a0a0a4a21(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a4a11(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
@@ -208,7 +189,6 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     private DependencyUtil.Link link;
     private DependencyPathTree.LinkFrom from;
     private List<DependencyPathTree.LinkFrom> backdeps = ListSequence.fromList(new ArrayList<DependencyPathTree.LinkFrom>());
-    private boolean isCyclic;
     private DependencyTreeNode node;
 
     public LinkFrom(DependencyUtil.Link link, DependencyPathTree.LinkFrom from) {
@@ -225,9 +205,6 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
         return;
       }
       node = new DependencyTreeNode(link, null);
-      if (isCyclic) {
-        node.setCyclic();
-      }
       if (from != null) {
         from.setUsed();
         from.node.add(node);
@@ -247,10 +224,6 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     public void setDepUsed() {
       setUsed();
       node.setDepLeaf();
-    }
-
-    public void setCyclic() {
-      isCyclic = true;
     }
 
     public void addBackDep(DependencyPathTree.LinkFrom dep) {
