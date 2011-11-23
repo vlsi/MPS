@@ -48,10 +48,6 @@ public class ModuleDependenciesView extends JPanel {
       public void invoke(Boolean b) {
         setShowUsedLanguages(b);
       }
-    }), new ModuleDependenciesView.MyToggleAction("Show cycles", Icons.CYCLE_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
-      public void invoke(Boolean b) {
-        setShowCycles(b);
-      }
     }), new ModuleDependenciesView.MyToggleAction("Show all paths", jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
         setShowAllPaths(b);
@@ -110,23 +106,18 @@ public class ModuleDependenciesView extends JPanel {
     myRightTree.expandAll();
   }
 
-  public void setShowRuntime(boolean b) {
+  private void setShowRuntime(boolean b) {
     myLeftTree.setShowRuntime(b);
     myRightTree.setShowRuntime(b);
     resetAll();
   }
 
-  public void setShowUsedLanguages(boolean b) {
+  private void setShowUsedLanguages(boolean b) {
     myLeftTree.setShowUsedLanguage(b);
     resetAll();
   }
 
-  public void setShowCycles(boolean b) {
-    myLeftTree.rebuildLater();
-    myRightTree.rebuildLater();
-  }
-
-  public void setShowAllPaths(boolean b) {
+  private void setShowAllPaths(boolean b) {
     myRightTree.setShowAllPaths(b);
     myRightTree.rebuildLater();
   }
