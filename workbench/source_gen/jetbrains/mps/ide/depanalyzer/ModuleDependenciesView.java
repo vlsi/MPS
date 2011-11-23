@@ -47,7 +47,7 @@ public class ModuleDependenciesView extends JPanel {
     myLeftTree = new DependencyTree(project);
     myRightTree = new DependencyPathTree(project);
 
-    ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", Icons.DEPENDENCY_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
+    ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", Icons.RUNTIME, false, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
         setShowRuntime(b);
       }

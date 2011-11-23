@@ -22,5 +22,7 @@ public class Icons {
   public static final Icon CYCLE_ICON = new ImageIcon(Icons.class.getResource("cycle.png"));
   public static final Icon USED_LANGUAGES_ICON = new ImageIcon(Icons.class.getResource("usedLanguages.png"));
   public static final Icon DEPENDENCY_ICON = new ImageIcon(Icons.class.getResource("dependency.png"));
+  public static final Icon ALL_PATHS = new ImageIcon(Icons.class.getResource("allPaths.png"));
+  public static final Icon RUNTIME = new ImageIcon(Icons.class.getResource("runtime.png"));
   public static final Icon MODULES_GROUP_ICON = new ImageIcon(Icons.class.getResource("modulesGroup.png"));
 }

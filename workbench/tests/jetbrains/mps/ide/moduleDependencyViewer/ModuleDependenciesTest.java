@@ -96,10 +96,16 @@ public class ModuleDependenciesTest {
 
   private void testDependency(DependencyPathTree testTree, IModule source, IModule target, int numPaths) {
     assertEquals(numPaths, findPaths((DependencyTreeNode)testTree.testBuildTree(source, target, null), target));
+    if (testTree.isShowRuntime()) {
+      assertEquals(numPaths != 0, source.getDependenciesManager().getAllRequiredModules().contains(target));
+    } else {
+      assertEquals(numPaths != 0, source.getDependenciesManager().getAllVisibleModules().contains(target));
+    }
   }
 
-  private void testUsedLanguage(DependencyPathTree testTree, IModule source, IModule target, int numPaths) {
+  private void testUsedLanguage(DependencyPathTree testTree, IModule source, Language target, int numPaths) {
     assertEquals(numPaths, findPaths((DependencyTreeNode)testTree.testBuildTree(source, null, target), target));
+    assertEquals(numPaths != 0, source.getDependenciesManager().getAllUsedLanguages().contains(target));
   }
 
   @Test

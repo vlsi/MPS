@@ -127,13 +127,13 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     return root.node;
   }
 
-  public MPSTreeNode testBuildTree(IModule from, @Nullable IModule dependency, @Nullable IModule used) {
-    HashSet<IModule> dependencies = new HashSet<IModule>();
-    if (dependency !=null) {
+  public MPSTreeNode testBuildTree(IModule from, IModule dependency, IModule used) {
+    jetbrains.mps.util.misc.hash.HashSet<IModule> dependencies = new jetbrains.mps.util.misc.hash.HashSet<IModule>();
+    if (dependency != null) {
       dependencies.add(dependency);
     }
-    HashSet<IModule> usedLanguages = new HashSet<IModule>();
-    if (used !=null) {
+    jetbrains.mps.util.misc.hash.HashSet<IModule> usedLanguages = new jetbrains.mps.util.misc.hash.HashSet<IModule>();
+    if (used != null) {
       usedLanguages.add(used);
     }
     return buildTree(from, dependencies, usedLanguages);
@@ -167,7 +167,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    DependencyTreeNode current = as_9bg0dz_a0a0a11(getCurrentNode(), DependencyTreeNode.class);
+    DependencyTreeNode current = as_9bg0dz_a0a0a21(getCurrentNode(), DependencyTreeNode.class);
     if (current == null) {
       return null;
     }
@@ -178,27 +178,27 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
       return current.getModule();
     }
     if (id.equals(MPSDataKeys.CONTEXT_MODULE.getName()) && current.getLink().linktype == DependencyUtil.LinkType.Depends) {
-      DependencyTreeNode node = as_9bg0dz_a0a0a4a11(current.getParent(), DependencyTreeNode.class);
-      return check_9bg0dz_a1a4a11(node);
+      DependencyTreeNode node = as_9bg0dz_a0a0a4a21(current.getParent(), DependencyTreeNode.class);
+      return check_9bg0dz_a1a4a21(node);
     }
     return null;
   }
 
-  private static IModule check_9bg0dz_a1a4a11(DependencyTreeNode checkedDotOperand) {
+  private static IModule check_9bg0dz_a1a4a21(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static <T> T as_9bg0dz_a0a0a11(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a21(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_9bg0dz_a0a0a4a11(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a4a21(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
