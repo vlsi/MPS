@@ -83,7 +83,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     );
   }
 
-  public MPSTreeNode buildTree(IModule from, Set<IModule> dependency, Set<IModule> usedlanguage) {
+  private MPSTreeNode buildTree(IModule from, Set<IModule> dependency, Set<IModule> usedlanguage) {
     Map<Tuples._2<IModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom> visited = MapSequence.fromMap(new HashMap<Tuples._2<IModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom>());
     Queue<DependencyPathTree.LinkFrom> unprocessed = QueueSequence.fromQueue(new LinkedList<DependencyPathTree.LinkFrom>());
 
@@ -126,6 +126,18 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     }
 
     return root.node;
+  }
+
+  public MPSTreeNode testBuildTree(IModule from, @Nullable IModule dependency, @Nullable IModule used) {
+    HashSet<IModule> dependencies = new HashSet<IModule>();
+    if (dependency !=null) {
+      dependencies.add(dependency);
+    }
+    HashSet<IModule> usedLanguages = new HashSet<IModule>();
+    if (used !=null) {
+      usedLanguages.add(used);
+    }
+    return buildTree(from, dependencies, usedLanguages);
   }
 
   protected MPSTreeNode rebuild() {
