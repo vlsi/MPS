@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree;
+import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 
 public class TreeHighlighterFactory extends AbstractProjectComponent {
   private CurrentDifferenceRegistry myRegistry;
@@ -30,6 +31,8 @@ public class TreeHighlighterFactory extends AbstractProjectComponent {
       highlighter = new TreeHighlighter(myRegistry, myFeatureForestMapSupport, tree, new ProjectTreeFeatureExtractor(), true);
     } else if (tree instanceof UsagesTree) {
       highlighter = new TreeHighlighter(myRegistry, myFeatureForestMapSupport, tree, new UsagesTreeFeatureExtractor(), false);
+    } else if (tree instanceof AbstractHierarchyTree) {
+      highlighter = new TreeHighlighter(myRegistry, myFeatureForestMapSupport, tree, new HierarchyFeatureExtractor(), false);
     }
     if (highlighter != null) {
       highlighter.init();
