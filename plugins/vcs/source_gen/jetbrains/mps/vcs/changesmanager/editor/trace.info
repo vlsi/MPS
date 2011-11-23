@@ -323,7 +323,7 @@
     <nodeInfo nodeId="166132277801288837" fileName="EditorHighlighter.java" startLine="47" startPosition="40" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7090398860987902384" fileName="EditorHighlighter.java" startLine="54" startPosition="31" endLine="55" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8689837533387251561" fileName="EditorHighlighter.java" startLine="56" startPosition="15" endLine="57" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8689837533387259902" fileName="EditorHighlighter.java" startLine="58" startPosition="66" endLine="59" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8689837533387259902" fileName="EditorHighlighter.java" startLine="58" startPosition="98" endLine="59" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6099081905063733777" fileName="EditorHighlighter.java" startLine="60" startPosition="15" endLine="61" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6080400160196253743" fileName="EditorHighlighter.java" startLine="66" startPosition="67" endLine="67" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6080400160196253646" fileName="EditorHighlighter.java" startLine="67" startPosition="145" endLine="68" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -448,7 +448,7 @@
     <nodeInfo nodeId="6402272430682173542" fileName="EditorHighlighter.java" startLine="45" startPosition="0" endLine="107" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorHighlighter#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
     <scopeInfo nodeId="6402272430682178254" fileName="EditorHighlighter.java" startLine="227" startPosition="42" endLine="227" endPosition="42" />
     <scopeInfo nodeId="7090398860987902383" fileName="EditorHighlighter.java" startLine="54" startPosition="31" endLine="55" endPosition="23" />
-    <scopeInfo nodeId="8689837533387259884" fileName="EditorHighlighter.java" startLine="58" startPosition="66" endLine="59" endPosition="23" />
+    <scopeInfo nodeId="8689837533387259884" fileName="EditorHighlighter.java" startLine="58" startPosition="98" endLine="59" endPosition="23" />
     <scopeInfo nodeId="6402272430682179134" fileName="EditorHighlighter.java" startLine="76" startPosition="54" endLine="77" endPosition="40" />
     <scopeInfo nodeId="6402272430682179337" fileName="EditorHighlighter.java" startLine="85" startPosition="66" endLine="86" endPosition="56" />
     <scopeInfo nodeId="8601487597690662341" fileName="EditorHighlighter.java" startLine="116" startPosition="62" endLine="117" endPosition="19" />

@@ -302,7 +302,11 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
       String role = ngc.getRole();
       SNodeId parentId = ngc.getParentNodeId();
-      List<SNode> changeChildren = changeModel.getNodeById(parentId).getChildren(role);
+      SNode parentNode = changeModel.getNodeById(parentId);
+      if (parentNode == null) {
+        return null;
+      }
+      List<SNode> changeChildren = parentNode.getChildren(role);
 
       int changeBegin = (reversed ?
         ngc.getBegin() :
@@ -323,7 +327,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
         changeChildren.get(changeEnd).getSNodeId() :
         null
       );
-      int currentChildrenSize = editedModel.getNodeById(parentId).getChildren(role).size();
+      int currentChildrenSize = parentNode.getChildren(role).size();
 
       int beginIndex = (beginId == null ?
         currentChildrenSize :
@@ -340,7 +344,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
         id = parentId;
         messageTarget = new DeletedNodeMessageTarget(role, beginIndex);
       } else {
-        List<SNode> editedChildren = editedModel.getNodeById(parentId).getChildren(role);
+        List<SNode> editedChildren = parentNode.getChildren(role);
         for (int i = beginIndex; i < endIndex; i++) {
           ListSequence.fromList(messages).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker, highlighted));
         }

@@ -55,7 +55,7 @@ public class EditorHighlighter implements EditorMessageOwner {
                 return;
               }
               SNode editedNode = editorComponent.getEditedNode();
-              if (editedNode == null || editedNode.isDisposed()) {
+              if (editedNode == null || editedNode.isDisposed() || !(editedNode.isRegistered())) {
                 return;
               }
               final SModel model = editedNode.getModel();
