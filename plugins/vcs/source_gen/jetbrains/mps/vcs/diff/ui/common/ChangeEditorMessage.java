@@ -258,7 +258,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     if (currentNodeIndex == nodeIndex - 1) {
       return collectionCell.getChildCount();
     }
-    assert false;
+    assert false: "Current node index is " + currentNodeIndex + ", total cells=" + collectionCell.getChildCount() + ", requested nodeIndex=" + nodeIndex;
     return -1;
   }
 
