@@ -267,6 +267,9 @@ public class TreeHighlighter implements TreeMessageOwner {
 
     public void treeNodeUpdated(MPSTreeNode node, MPSTree tree) {
     }
+
+    public void beforeTreeDisposed(MPSTree tree) {
+    }
   }
 
   private class MyFeatureForestMapListener implements FeatureForestMapListener {

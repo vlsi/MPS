@@ -700,5 +700,8 @@ public class OldProjectTreeChangesHighlighter extends AbstractProjectComponent i
 
     public void treeNodeUpdated(MPSTreeNode node, MPSTree tree) {
     }
+
+    public void beforeTreeDisposed(MPSTree tree) {
+    }
   }
 }

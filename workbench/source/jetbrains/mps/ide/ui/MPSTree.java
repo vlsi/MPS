@@ -130,6 +130,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     myTreeNodeListeners.remove(listener);
   }
 
+  private void fireBeforeTreeDisposed() {
+    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+      listener.beforeTreeDisposed(this);
+    }
+  }
+
   void fireTreeNodeUpdated(MPSTreeNode node) {
     for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
       listener.treeNodeUpdated(node, this);
@@ -579,6 +585,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   public void dispose() {
     assert !myDisposed;
 
+    fireBeforeTreeDisposed();
     myDisposed = true;
     if (getModel().getRoot() instanceof MPSTreeNode) {
       ((MPSTreeNode) getModel().getRoot()).removeThisAndChildren();

@@ -2156,7 +2156,8 @@
     <nodeInfo nodeId="2018072152268789357" fileName="OldProjectTreeChangesHighlighter.java" startLine="656" startPosition="101" endLine="659" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7542415519011387474" fileName="OldProjectTreeChangesHighlighter.java" startLine="679" startPosition="0" endLine="682" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateStarted#()V" />
     <nodeInfo nodeId="7542415519011387595" fileName="OldProjectTreeChangesHighlighter.java" startLine="682" startPosition="0" endLine="685" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateFinished#()V" />
-    <nodeInfo nodeId="3360080708000238091" fileName="OldProjectTreeChangesHighlighter.java" startLine="700" startPosition="0" endLine="703" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeUpdated#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="7014360199877989234" fileName="OldProjectTreeChangesHighlighter.java" startLine="700" startPosition="0" endLine="703" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeUpdated#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="7014360199878017513" fileName="OldProjectTreeChangesHighlighter.java" startLine="703" startPosition="0" endLine="706" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeTreeDisposed#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
     <nodeInfo nodeId="3675383609572068164" fileName="OldProjectTreeChangesHighlighter.java" startLine="135" startPosition="65" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1794625231785958354" fileName="OldProjectTreeChangesHighlighter.java" startLine="206" startPosition="63" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1794625231785958607" fileName="OldProjectTreeChangesHighlighter.java" startLine="284" startPosition="63" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -2293,7 +2294,8 @@
     <scopeInfo nodeId="7542415519011387477" fileName="OldProjectTreeChangesHighlighter.java" startLine="680" startPosition="39" endLine="680" endPosition="39" />
     <scopeInfo nodeId="7542415519011387598" fileName="OldProjectTreeChangesHighlighter.java" startLine="683" startPosition="40" endLine="683" endPosition="40" />
     <scopeInfo nodeId="272407866692946572" fileName="OldProjectTreeChangesHighlighter.java" startLine="688" startPosition="36" endLine="688" endPosition="36" />
-    <scopeInfo nodeId="3360080708000238098" fileName="OldProjectTreeChangesHighlighter.java" startLine="701" startPosition="65" endLine="701" endPosition="65" />
+    <scopeInfo nodeId="7014360199877989241" fileName="OldProjectTreeChangesHighlighter.java" startLine="701" startPosition="65" endLine="701" endPosition="65" />
+    <scopeInfo nodeId="7014360199878017520" fileName="OldProjectTreeChangesHighlighter.java" startLine="704" startPosition="50" endLine="704" endPosition="50" />
     <scopeInfo nodeId="2838566016556416932" fileName="OldProjectTreeChangesHighlighter.java" startLine="92" startPosition="23" endLine="93" endPosition="13" />
     <scopeInfo nodeId="2361569284773587235" fileName="OldProjectTreeChangesHighlighter.java" startLine="109" startPosition="99" endLine="110" endPosition="68" />
     <scopeInfo nodeId="5235541930886063778" fileName="OldProjectTreeChangesHighlighter.java" startLine="119" startPosition="47" endLine="120" endPosition="13" />
@@ -2428,9 +2430,12 @@
     </scopeInfo>
     <scopeInfo nodeId="7542415519011387474" fileName="OldProjectTreeChangesHighlighter.java" startLine="679" startPosition="0" endLine="682" endPosition="0" />
     <scopeInfo nodeId="7542415519011387595" fileName="OldProjectTreeChangesHighlighter.java" startLine="682" startPosition="0" endLine="685" endPosition="0" />
-    <scopeInfo nodeId="3360080708000238091" fileName="OldProjectTreeChangesHighlighter.java" startLine="700" startPosition="0" endLine="703" endPosition="0">
-      <varInfo nodeId="3360080708000238094" varName="node" />
-      <varInfo nodeId="3360080708000238096" varName="tree" />
+    <scopeInfo nodeId="7014360199877989234" fileName="OldProjectTreeChangesHighlighter.java" startLine="700" startPosition="0" endLine="703" endPosition="0">
+      <varInfo nodeId="7014360199877989237" varName="node" />
+      <varInfo nodeId="7014360199877989239" varName="tree" />
+    </scopeInfo>
+    <scopeInfo nodeId="7014360199878017513" fileName="OldProjectTreeChangesHighlighter.java" startLine="703" startPosition="0" endLine="706" endPosition="0">
+      <varInfo nodeId="7014360199878017518" varName="tree" />
     </scopeInfo>
     <scopeInfo nodeId="7601193928418877031" fileName="OldProjectTreeChangesHighlighter.java" startLine="80" startPosition="56" endLine="84" endPosition="62">
       <varInfo nodeId="7601193928418877049" varName="createdTree" />
@@ -2772,7 +2777,7 @@
     <scopeInfo nodeId="7690582295257017435" fileName="OldProjectTreeChangesHighlighter.java" startLine="367" startPosition="0" endLine="477" endPosition="0">
       <varInfo nodeId="7690582295257017488" varName="treeNode" />
     </scopeInfo>
-    <unitInfo nodeId="5052922865790629132" fileName="OldProjectTreeChangesHighlighter.java" startLine="51" startPosition="0" endLine="705" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter" />
+    <unitInfo nodeId="5052922865790629132" fileName="OldProjectTreeChangesHighlighter.java" startLine="51" startPosition="0" endLine="708" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter" />
     <unitInfo nodeId="1706980770777324546" fileName="OldProjectTreeChangesHighlighter.java" startLine="582" startPosition="41" endLine="587" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter$1" />
     <unitInfo nodeId="2838566016556416884" fileName="OldProjectTreeChangesHighlighter.java" startLine="79" startPosition="51" endLine="86" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter$1" />
     <unitInfo nodeId="365157171029572566" fileName="OldProjectTreeChangesHighlighter.java" startLine="498" startPosition="56" endLine="506" endPosition="21" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter$10" />
@@ -2796,7 +2801,7 @@
     <unitInfo nodeId="4279893763240431627" fileName="OldProjectTreeChangesHighlighter.java" startLine="490" startPosition="53" endLine="510" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter$9" />
     <unitInfo nodeId="272407866692946531" fileName="OldProjectTreeChangesHighlighter.java" startLine="601" startPosition="0" endLine="617" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter$MyChangeCountForNodeHandler" />
     <unitInfo nodeId="272407866692946558" fileName="OldProjectTreeChangesHighlighter.java" startLine="664" startPosition="0" endLine="686" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter$MyChangeListener" />
-    <unitInfo nodeId="272407866692946567" fileName="OldProjectTreeChangesHighlighter.java" startLine="687" startPosition="0" endLine="704" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter$MyMPSTreeNodeListener" />
+    <unitInfo nodeId="272407866692946567" fileName="OldProjectTreeChangesHighlighter.java" startLine="687" startPosition="0" endLine="707" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter$MyMPSTreeNodeListener" />
     <unitInfo nodeId="272407866692946540" fileName="OldProjectTreeChangesHighlighter.java" startLine="618" startPosition="0" endLine="640" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter$MyPropertyChangeCountForNodeHandler" />
     <unitInfo nodeId="272407866692946549" fileName="OldProjectTreeChangesHighlighter.java" startLine="641" startPosition="0" endLine="663" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter$MyReferenceChangeCountForNodeHandler" />
     <unitInfo nodeId="6023428257643014523" fileName="OldProjectTreeChangesHighlighter.java" startLine="577" startPosition="0" endLine="600" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter$PrimaryMessage" />
