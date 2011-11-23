@@ -182,7 +182,7 @@ public class ModuleDependenciesTest {
     languages[1].addExtendedLanguage(languages[2].getModuleReference());
     languages[2].addUsedLanguage(languages[3].getModuleReference());
     devKit.getModuleDescriptor().getExportedLanguages().add(languages[4].getModuleReference());
-    devKit2.getModuleDescriptor().getExtendedDevkits().add(devKit2.getModuleReference());
+    devKit.getModuleDescriptor().getExtendedDevkits().add(devKit2.getModuleReference());
     devKit2.getModuleDescriptor().getExportedLanguages().add(languages[5].getModuleReference());
     languages[1].addUsedDevkit(devKit.getModuleReference());
     languages[5].addExtendedLanguage(languages[6].getModuleReference());
@@ -192,8 +192,8 @@ public class ModuleDependenciesTest {
     testUsedLanguage(testTree, languages[0], languages[3], 0);
     testUsedLanguage(testTree, languages[1], languages[4], 1); //devKit
     testUsedLanguage(testTree, languages[0], languages[4], 0); //extended lang + devKit
-   // testUsedLanguage(testTree, languages[1], languages[5], 1); //extended DevKit
-   // testUsedLanguage(testTree, languages[1], languages[6], 1); //extended DevKit+extended language
+    testUsedLanguage(testTree, languages[1], languages[5], 1); //extended DevKit
+    testUsedLanguage(testTree, languages[1], languages[6], 1); //extended DevKit+extended language
   }
 
   //----------------------------------------------
