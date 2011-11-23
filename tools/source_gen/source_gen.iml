@@ -60,6 +60,9 @@
     <content url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.test/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.test/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/solutions/execution/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/solutions/execution/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/solutions/runtime/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/solutions/runtime/source_gen" isTestSource="false" />
     </content>
