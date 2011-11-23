@@ -115,7 +115,8 @@ public class ModuleDependenciesView extends JPanel {
       }
     }
     myRightTree.setCycles(myCycles);
-    myRightTree.rebuildLater();
+    myRightTree.rebuildNow();
+    myRightTree.expandAll();
   }
 
   public void setShowRuntime(boolean b) {
