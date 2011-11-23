@@ -108,6 +108,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
     };
 
+    myTree.fireTreeCreated(UsagesTreeComponent.this.getProject());
     myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
 
     JScrollPane treePane = ScrollPaneFactory.createScrollPane(myTree);
@@ -130,6 +131,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   }
 
   public void dispose() {
+    myTree.dispose();
     myContents.stopListening();
   }
 
