@@ -6,7 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import com.intellij.util.containers.MultiMap;
+import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import org.jetbrains.annotations.NotNull;
@@ -46,7 +46,7 @@ public class ChangesTracking {
   private EditableSModelDescriptor myModelDescriptor;
   private ChangesTracking.MyModelListener myModelListener = new ChangesTracking.MyModelListener();
   private boolean myDisposed = false;
-  private MultiMap<SNodeId, ModelChange> myNodesToDirectChanges = new MultiMap<SNodeId, ModelChange>();
+  private ManyToManyMap<SNodeId, ModelChange> myNodesToDirectChanges = new ManyToManyMap<SNodeId, ModelChange>();
 
   public ChangesTracking(@NotNull Project project, @NotNull CurrentDifference difference) {
     myDifference = difference;
@@ -58,21 +58,30 @@ public class ChangesTracking {
     }
   }
 
-  /*package*/ void scheduleFullUpdate() {
-    myQueue.addTask(new Runnable() {
-      public void run() {
-        update();
+  public void dispose() {
+    synchronized (this) {
+      if (!(myDisposed)) {
+        myDisposed = true;
+        myModelDescriptor.removeModelListener(myModelListener);
       }
-    });
+    }
   }
 
   private void buildCaches() {
     myNodesToDirectChanges.clear();
     for (ModelChange ch : ListSequence.fromList(myDifference.getChangeSet().getModelChanges())) {
       for (SNodeId id : Sequence.fromIterable(getNodeIdsForChange(ch))) {
-        myNodesToDirectChanges.putValue(id, ch);
+        myNodesToDirectChanges.addLink(id, ch);
       }
     }
+  }
+
+  /*package*/ void scheduleFullUpdate() {
+    myQueue.addTask(new Runnable() {
+      public void run() {
+        update();
+      }
+    });
   }
 
   private void update() {
@@ -124,19 +133,22 @@ public class ChangesTracking {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, currentModel, true);
-        buildCaches();
         myDifference.setChangeSet((ChangeSetImpl) changeSet);
+        buildCaches();
       }
     });
   }
 
-  public void dispose() {
-    synchronized (this) {
-      if (!(myDisposed)) {
-        myDisposed = true;
-        myModelDescriptor.removeModelListener(myModelListener);
-      }
+  private void addChange(@NotNull ModelChange change) {
+    for (SNodeId id : Sequence.fromIterable(getNodeIdsForChange(change))) {
+      myNodesToDirectChanges.addLink(id, change);
     }
+    myDifference.addChange(change);
+  }
+
+  private void removeChange(@NotNull ModelChange change) {
+    myNodesToDirectChanges.clearSecond(change);
+    myDifference.addChange(change);
   }
 
   private static Iterable<SNodeId> getNodeIdsForChange(@NotNull ModelChange change) {

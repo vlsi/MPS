@@ -68,6 +68,24 @@ public class CurrentDifference {
     myBroadcaster.changeUpdateFinished();
   }
 
+  /*package*/ CurrentDifferenceBroadcaster getBroadcaster() {
+    return myBroadcaster;
+  }
+
+  /*package*/ void addChange(@NotNull ModelChange change) {
+    if (myChangeSet != null) {
+      myChangeSet.add(change);
+      myBroadcaster.changeAdded(change);
+    }
+  }
+
+  /*package*/ void removeChange(@NotNull ModelChange change) {
+    if (myChangeSet != null) {
+      myChangeSet.remove(change);
+      myBroadcaster.changeRemoved(change);
+    }
+  }
+
   /*package*/ EditableSModelDescriptor getModelDescriptor() {
     return myModelDescriptor;
   }
