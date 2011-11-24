@@ -11221,7 +11221,7 @@
       </node>
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="2260496836771390996">
-      <property name="name" nameId="tpck.1169194664001" value="getBuilder" />
+      <property name="name" nameId="tpck.1169194664001" value="createBuilder" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2260496836771391000">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748341229" resolveInfo="ChangeSetBuilder" />
       </node>

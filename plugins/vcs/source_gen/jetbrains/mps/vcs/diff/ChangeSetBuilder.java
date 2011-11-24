@@ -315,7 +315,7 @@ public class ChangeSetBuilder {
     builder.commit();
   }
 
-  public static ChangeSetBuilder getBuilder(ChangeSet changeSet) {
+  public static ChangeSetBuilder createBuilder(ChangeSet changeSet) {
     return new ChangeSetBuilder((ChangeSetImpl) changeSet);
   }
 
