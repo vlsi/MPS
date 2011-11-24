@@ -26,16 +26,25 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import java.util.Arrays;
-import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
-import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ChangesTracking {
   protected static Log log = LogFactory.getLog(ChangesTracking.class);
@@ -148,7 +157,38 @@ public class ChangesTracking {
 
   private void removeChange(@NotNull ModelChange change) {
     myNodesToDirectChanges.clearSecond(change);
-    myDifference.addChange(change);
+    myDifference.removeChange(change);
+  }
+
+  private void runUpdateTask(final _FunctionTypes._void_P0_E0 task, SNode currentNode) {
+    final List<SNodeId> ancestors = ListSequence.fromList(SNodeOperations.getAncestors(currentNode, null, true)).select(new ISelector<SNode, SNodeId>() {
+      public SNodeId select(SNode a) {
+        return a.getSNodeId();
+      }
+    }).toListSequence();
+    myQueue.runTask(new Runnable() {
+      public void run() {
+        if (ListSequence.fromList(ancestors).translate(new ITranslator2<SNodeId, ModelChange>() {
+          public Iterable<ModelChange> translate(SNodeId a) {
+            return myNodesToDirectChanges.getByFirst(a);
+          }
+        }).any(new IWhereFilter<ModelChange>() {
+          public boolean accept(ModelChange ch) {
+            return ch instanceof AddRootChange || ch instanceof NodeGroupChange;
+          }
+        })) {
+          // ignore 
+        } else {
+          myDifference.getBroadcaster().changeUpdateStarted();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              task.invoke();
+            }
+          });
+          myDifference.getBroadcaster().changeUpdateFinished();
+        }
+      }
+    });
   }
 
   private static Iterable<SNodeId> getNodeIdsForChange(@NotNull ModelChange change) {
@@ -168,8 +208,44 @@ public class ChangesTracking {
     return Sequence.fromIterable(Collections.<SNodeId>emptyList());
   }
 
+  private static boolean eq_5iuzi5_a0a0a0a0a0a0e0a0a0a0a0a(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
   private class MyModelListener extends SModelAdapter {
     public MyModelListener() {
+    }
+
+    @Override
+    public void propertyChanged(final SModelPropertyEvent event) {
+      runUpdateTask(new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          SNodeId nodeId = event.getNode().getSNodeId();
+          final String propertyName = event.getPropertyName();
+          Set<ModelChange> changes = myNodesToDirectChanges.getByFirst(nodeId);
+
+          ModelChange old = SetSequence.fromSet(changes).findFirst(new IWhereFilter<ModelChange>() {
+            public boolean accept(ModelChange ch) {
+              return ch instanceof SetPropertyChange && eq_5iuzi5_a0a0a0a0a0a0e0a0a0a0a0a(propertyName, ((SetPropertyChange) ch).getPropertyName());
+            }
+          });
+          if (old != null) {
+            removeChange(old);
+          }
+
+          ChangeSet cs = myDifference.getChangeSet();
+          ChangeSetBuilder builder = ChangeSetBuilder.createBuilder(cs);
+          builder.buildPropertyChanges(cs.getOldModel().getNodeById(nodeId), event.getNode(), propertyName);
+          ListSequence.fromList(builder.getNewChanges()).visitAll(new IVisitor<ModelChange>() {
+            public void visit(ModelChange ch) {
+              addChange(ch);
+            }
+          });
+        }
+      }, event.getNode());
     }
   }
 }
