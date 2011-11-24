@@ -445,7 +445,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleAfterDotExpression" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNotNull" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleCreator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleFieldReference" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleMethodCall" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleNullLiteral" />
@@ -555,19 +554,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull" file="RuleEqualsNull.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.nullInstruction" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.nullableInstruction" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.RuleFieldReference" file="RuleFieldReference.java">
     <classNode dependClassName="java.lang.Object" />
