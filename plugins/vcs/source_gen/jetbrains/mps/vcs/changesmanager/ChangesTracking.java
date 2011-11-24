@@ -166,8 +166,14 @@ public class ChangesTracking {
         return a.getSNodeId();
       }
     }).toListSequence();
+    if (myDifference.getChangeSet() == null) {
+      return;
+    }
     myQueue.runTask(new Runnable() {
       public void run() {
+        if (myDifference.getChangeSet() == null) {
+          return;
+        }
         if (ListSequence.fromList(ancestors).translate(new ITranslator2<SNodeId, ModelChange>() {
           public Iterable<ModelChange> translate(SNodeId a) {
             return myNodesToDirectChanges.getByFirst(a);
