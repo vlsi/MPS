@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import jetbrains.mps.ide.common.LayoutUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class BuildLanguageProject_Configuration_Editor extends SettingsEditorEx<BuildLanguageProject_Configuration> {
@@ -42,7 +43,7 @@ public class BuildLanguageProject_Configuration_Editor extends SettingsEditorEx<
     myTargetChooser = new TargetChoosePanel();
     myChooser.addNodeChangeListener(new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode project) {
-        myTargetChooser.nodeChanged(project);
+        myTargetChooser.nodeChanged(SNodeOperations.cast(project, "jetbrains.mps.buildlanguage.structure.Project"));
       }
     });
     panel.add(myTargetChooser, LayoutUtil.createPanelConstraints(2));
@@ -60,6 +61,6 @@ public class BuildLanguageProject_Configuration_Editor extends SettingsEditorEx<
   public void resetEditorFrom(final BuildLanguageProject_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
     mySettings.resetEditorFrom(configuration.getSettings());
-    myTargetChooser.reset(configuration.getNode().getNode(), configuration.getTargetId());
+    myTargetChooser.reset(SNodeOperations.cast(configuration.getNode().getNode(), "jetbrains.mps.buildlanguage.structure.Project"), configuration.getTargetId());
   }
 }
