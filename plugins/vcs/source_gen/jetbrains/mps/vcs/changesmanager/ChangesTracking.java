@@ -27,12 +27,15 @@ import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
+import java.util.Set;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
@@ -41,10 +44,10 @@ import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 
 public class ChangesTracking {
   protected static Log log = LogFactory.getLog(ChangesTracking.class);
@@ -160,6 +163,20 @@ public class ChangesTracking {
     myDifference.removeChange(change);
   }
 
+  private <C extends ModelChange> void removeChanges(SNodeId nodeId, final Class<C> changeClass, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super C> condition) {
+    Set<ModelChange> changes = myNodesToDirectChanges.getByFirst(nodeId);
+    List<ModelChange> toRemove = SetSequence.fromSet(changes).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return changeClass.isInstance(ch) && condition.invoke((C) ch);
+      }
+    }).toListSequence();
+    ListSequence.fromList(toRemove).visitAll(new IVisitor<ModelChange>() {
+      public void visit(ModelChange it) {
+        removeChange(it);
+      }
+    });
+  }
+
   private void runUpdateTask(final _FunctionTypes._void_P0_E0 task, SNode currentNode) {
     final List<SNodeId> ancestors = ListSequence.fromList(SNodeOperations.getAncestors(currentNode, null, true)).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode a) {
@@ -221,6 +238,13 @@ public class ChangesTracking {
     );
   }
 
+  private static boolean eq_5iuzi5_a0a0a0a2a2a0a0a0a0b0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
   private class MyModelListener extends SModelAdapter {
     public MyModelListener() {
     }
@@ -252,6 +276,39 @@ public class ChangesTracking {
           });
         }
       }, event.getNode());
+    }
+
+    private void processReferenceEvent(final SModelReferenceEvent event) {
+      runUpdateTask(new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          final SReference ref = event.getReference();
+          SNode refNode = ref.getSourceNode();
+          removeChanges(refNode.getSNodeId(), SetReferenceChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetReferenceChange>() {
+            public Boolean invoke(SetReferenceChange src) {
+              return eq_5iuzi5_a0a0a0a2a2a0a0a0a0b0(ref.getRole(), src.getRole());
+            }
+          });
+
+          ChangeSet cs = myDifference.getChangeSet();
+          ChangeSetBuilder builder = ChangeSetBuilder.createBuilder(cs);
+          builder.buildReferenceChanges(cs.getOldModel().getNodeById(refNode.getSNodeId()), refNode, ref.getRole());
+          ListSequence.fromList(builder.getNewChanges()).visitAll(new IVisitor<ModelChange>() {
+            public void visit(ModelChange ch) {
+              addChange(ch);
+            }
+          });
+        }
+      }, event.getReference().getSourceNode());
+    }
+
+    @Override
+    public void referenceAdded(SModelReferenceEvent event) {
+      processReferenceEvent(event);
+    }
+
+    @Override
+    public void referenceRemoved(SModelReferenceEvent event) {
+      processReferenceEvent(event);
     }
   }
 }

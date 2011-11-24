@@ -24,6 +24,8 @@
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.impl.VcsFileStatusProvider" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -48,8 +50,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelReferenceEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.util.ManyToManyMap" />
@@ -66,6 +70,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
