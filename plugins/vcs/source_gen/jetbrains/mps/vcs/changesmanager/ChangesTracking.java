@@ -36,8 +36,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
 
 public class ChangesTracking {
   protected static Log log = LogFactory.getLog(ChangesTracking.class);
@@ -47,7 +45,6 @@ public class ChangesTracking {
   private SimpleCommandQueue myQueue;
   private EditableSModelDescriptor myModelDescriptor;
   private ChangesTracking.MyModelListener myModelListener = new ChangesTracking.MyModelListener();
-  private ChangesTracking.MyCommandListener myCommandListener = new ChangesTracking.MyCommandListener();
   private boolean myDisposed = false;
   private MultiMap<SNodeId, ModelChange> myNodesToDirectChanges = new MultiMap<SNodeId, ModelChange>();
 
@@ -58,7 +55,6 @@ public class ChangesTracking {
     myQueue = CurrentDifferenceRegistry.getInstance(project).getCommandQueue();
     synchronized (this) {
       myModelDescriptor.addModelListener(myModelListener);
-      myModelDescriptor.addModelCommandListener(myCommandListener);
     }
   }
 
@@ -160,18 +156,8 @@ public class ChangesTracking {
     return Sequence.fromIterable(Collections.<SNodeId>emptyList());
   }
 
-  public class MyModelListener extends SModelAdapter {
+  private class MyModelListener extends SModelAdapter {
     public MyModelListener() {
-    }
-  }
-
-  public class MyCommandListener implements SModelCommandListener {
-    private MyCommandListener() {
-    }
-
-    public void eventsHappenedInCommand(List<SModelEvent> list) {
-      // TODO this is temporary 
-      scheduleFullUpdate();
     }
   }
 }
