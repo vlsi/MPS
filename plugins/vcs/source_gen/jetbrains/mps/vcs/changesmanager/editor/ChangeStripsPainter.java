@@ -15,11 +15,12 @@ import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
+import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
+import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Point;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -109,16 +110,18 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     if (myGroupUnderMouse == null) {
       return null;
     } else {
-      // TODO avoid read in EDT 
-      return ModelAccess.instance().runReadAction(new Computable<String>() {
-        public String compute() {
-          return IterableUtils.join(ListSequence.fromList(myGroupUnderMouse.getChanges()).select(new ISelector<ModelChange, String>() {
-            public String select(ModelChange ch) {
-              return ch.getDescription();
-            }
-          }), "\n\n");
+      List<ModelChange> changes = myGroupUnderMouse.getChanges();
+      if ((int) ListSequence.fromList(changes).count() == 1) {
+        ModelChange change = ListSequence.fromList(changes).first();
+        if (change instanceof SetPropertyChange) {
+          return "Changed " + ((SetPropertyChange) change).getPropertyName();
+        } else if (change instanceof SetReferenceChange) {
+          return "Changed " + ((SetReferenceChange) change).getRole();
+        } else if (change instanceof NodeGroupChange) {
+          return ((NodeGroupChange) change).getDescription(false);
         }
-      });
+      }
+      return NameUtil.formatNumericalString(ListSequence.fromList(changes).count(), "change");
     }
   }
 
