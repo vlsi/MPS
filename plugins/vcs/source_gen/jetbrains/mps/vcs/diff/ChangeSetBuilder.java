@@ -119,55 +119,58 @@ public class ChangeSetBuilder {
     buildPropertyChanges(oldNode, newNode);
     buildReferenceChanges(oldNode, newNode);
 
-    Set<String> roles = SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(SNodeOperations.getChildren(oldNode)).concat(ListSequence.fromList(SNodeOperations.getChildren(newNode))).select(new ISelector<SNode, String>() {
+    for (String role : SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(SNodeOperations.getChildren(oldNode)).concat(ListSequence.fromList(SNodeOperations.getChildren(newNode))).select(new ISelector<SNode, String>() {
       public String select(SNode ch) {
         return SNodeOperations.getContainingLinkRole(ch);
       }
-    }));
-    for (String role : SetSequence.fromSet(roles)) {
-      final List<SNode> oldChildren = oldNode.getChildren(role);
-      List<SNode> newChildren = newNode.getChildren(role);
-      List<SNodeId> oldIds = ListSequence.fromList(oldChildren).select(new ISelector<SNode, SNodeId>() {
-        public SNodeId select(SNode n) {
-          return n.getSNodeId();
-        }
-      }).toListSequence();
-      List<SNodeId> newIds = ListSequence.fromList(newChildren).select(new ISelector<SNode, SNodeId>() {
-        public SNodeId select(SNode n) {
-          return n.getSNodeId();
-        }
-      }).toListSequence();
-      LongestCommonSubsequenceFinder<SNodeId> finder = new LongestCommonSubsequenceFinder<SNodeId>(oldIds, newIds);
-
-      // Finding insertings, deletings and replacings 
-      List<Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>>> differentIndices = finder.getDifferentIndices();
-      for (Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>> indices : ListSequence.fromList(differentIndices)) {
-        Tuples._2<Integer, Integer> oldIndices = indices._0();
-        Tuples._2<Integer, Integer> newIndices = indices._1();
-        ListSequence.fromList(myNewChanges).addElement(new NodeGroupChange(myChangeSet, nodeId, role, (int) oldIndices._0(), (int) oldIndices._1(), (int) newIndices._0(), (int) newIndices._1()));
-      }
-
-      // Finding changes for children 
-      List<Tuples._2<Integer, Integer>> commonIndices = finder.getCommonIndices();
-      ListSequence.fromList(commonIndices).select(new ISelector<Tuples._2<Integer, Integer>, SNode>() {
-        public SNode select(Tuples._2<Integer, Integer> in) {
-          return ListSequence.fromList(oldChildren).getElement((int) in._0());
-        }
-      }).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode child) {
-          buildNodeChanges(child);
-        }
-      });
+    }))) {
+      buildNodeRoleChanges(oldNode, newNode, role);
     }
+  }
+
+  public void buildNodeRoleChanges(SNode oldNode, SNode newNode, String role) {
+    final List<SNode> oldChildren = oldNode.getChildren(role);
+    List<SNode> newChildren = newNode.getChildren(role);
+    List<SNodeId> oldIds = ListSequence.fromList(oldChildren).select(new ISelector<SNode, SNodeId>() {
+      public SNodeId select(SNode n) {
+        return n.getSNodeId();
+      }
+    }).toListSequence();
+    List<SNodeId> newIds = ListSequence.fromList(newChildren).select(new ISelector<SNode, SNodeId>() {
+      public SNodeId select(SNode n) {
+        return n.getSNodeId();
+      }
+    }).toListSequence();
+    LongestCommonSubsequenceFinder<SNodeId> finder = new LongestCommonSubsequenceFinder<SNodeId>(oldIds, newIds);
+
+    // Finding insertings, deletings and replacings 
+    List<Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>>> differentIndices = finder.getDifferentIndices();
+    for (Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>> indices : ListSequence.fromList(differentIndices)) {
+      Tuples._2<Integer, Integer> oldIndices = indices._0();
+      Tuples._2<Integer, Integer> newIndices = indices._1();
+      ListSequence.fromList(myNewChanges).addElement(new NodeGroupChange(myChangeSet, oldNode.getSNodeId(), role, (int) oldIndices._0(), (int) oldIndices._1(), (int) newIndices._0(), (int) newIndices._1()));
+    }
+
+    // Finding changes for children 
+    List<Tuples._2<Integer, Integer>> commonIndices = finder.getCommonIndices();
+    ListSequence.fromList(commonIndices).select(new ISelector<Tuples._2<Integer, Integer>, SNode>() {
+      public SNode select(Tuples._2<Integer, Integer> in) {
+        return ListSequence.fromList(oldChildren).getElement((int) in._0());
+      }
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode child) {
+        buildNodeChanges(child);
+      }
+    });
   }
 
   private <D> void buildAddedAndDeletedChanges(_FunctionTypes._return_P1_E0<? extends Iterable<D>, ? super SModel> referencesExtractor, final _FunctionTypes._return_P2_E0<? extends DependencyChange, ? super D, ? super Boolean> changeCreator) {
     Iterable<D> added;
     Iterable<D> deleted;
     {
-      Tuples._2<Iterable<D>, Iterable<D>> _tmp_nbyrtw_c0f = getAddedAndDeleted(referencesExtractor);
-      added = _tmp_nbyrtw_c0f._0();
-      deleted = _tmp_nbyrtw_c0f._1();
+      Tuples._2<Iterable<D>, Iterable<D>> _tmp_nbyrtw_c0g = getAddedAndDeleted(referencesExtractor);
+      added = _tmp_nbyrtw_c0g._0();
+      deleted = _tmp_nbyrtw_c0g._1();
     }
     ListSequence.fromList(myNewChanges).addSequence(Sequence.fromIterable(added).select(new ISelector<D, DependencyChange>() {
       public DependencyChange select(D r) {
