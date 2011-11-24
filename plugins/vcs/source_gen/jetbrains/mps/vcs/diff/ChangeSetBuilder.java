@@ -283,6 +283,11 @@ public class ChangeSetBuilder {
         myChangeSet.add(it);
       }
     });
+    ListSequence.fromList(myNewChanges).clear();
+  }
+
+  public List<ModelChange> getNewChanges() {
+    return myNewChanges;
   }
 
   private <D> Tuples._2<Iterable<D>, Iterable<D>> getAddedAndDeleted(Iterable<D> oldItems, Iterable<D> newItems) {
