@@ -77,7 +77,7 @@ public class ChangeSetImpl implements ChangeSet {
       myOppositeChangeSet = new ChangeSetImpl(myNewModel, myOldModel);
       myOppositeChangeSet.myOppositeChangeSet = this;
 
-      myOppositeChangeSet.addAll(ListSequence.fromList(myModelChanges).select(new ISelector<ModelChange, ModelChange>() {
+      ListSequence.fromList(myOppositeChangeSet.myModelChanges).addSequence(ListSequence.fromList(myModelChanges).select(new ISelector<ModelChange, ModelChange>() {
         public ModelChange select(ModelChange c) {
           return c.getOppositeChange();
         }
@@ -87,9 +87,26 @@ public class ChangeSetImpl implements ChangeSet {
 
   public void add(@NotNull ModelChange change) {
     ListSequence.fromList(myModelChanges).addElement(change);
+    if (myOppositeChangeSet != null) {
+      ListSequence.fromList(myOppositeChangeSet.myModelChanges).addElement(change.getOppositeChange());
+    }
   }
 
-  public void addAll(Iterable<? extends ModelChange> change) {
-    ListSequence.fromList(myModelChanges).addSequence(Sequence.fromIterable(change));
+  public void remove(@NotNull ModelChange change) {
+    ListSequence.fromList(myModelChanges).removeElement(change);
+    if (myOppositeChangeSet != null) {
+      ListSequence.fromList(myOppositeChangeSet.myModelChanges).removeElement(change.getOppositeChange());
+    }
+  }
+
+  public void addAll(Iterable<? extends ModelChange> changes) {
+    ListSequence.fromList(myModelChanges).addSequence(Sequence.fromIterable(changes));
+    if (myOppositeChangeSet != null) {
+      ListSequence.fromList(myOppositeChangeSet.myModelChanges).addSequence(Sequence.fromIterable(changes).select(new ISelector<ModelChange, ModelChange>() {
+        public ModelChange select(ModelChange c) {
+          return c.getOppositeChange();
+        }
+      }));
+    }
   }
 }
