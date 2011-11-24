@@ -91,7 +91,16 @@ public abstract class ChangeGroupLayout {
           return a.merge(b);
         }
       });
-      ListSequence.fromList(myChangeGroups).addElement(new ChangeGroup(lb, rb, SetSequence.fromSet(s).toListSequence(), myConflictChecker));
+      List<ModelChange> sortedChanges = SetSequence.fromSet(s).sort(new ISelector<ModelChange, Comparable<?>>() {
+        public Comparable<?> select(ModelChange ch) {
+          return (int) MapSequence.fromMap(right).get(ch).start();
+        }
+      }, true).sort(new ISelector<ModelChange, Comparable<?>>() {
+        public Comparable<?> select(ModelChange ch) {
+          return (int) MapSequence.fromMap(left).get(ch).start();
+        }
+      }, true).toListSequence();
+      ListSequence.fromList(myChangeGroups).addElement(new ChangeGroup(lb, rb, sortedChanges, myConflictChecker));
     }
     myChangeGroups = ListSequence.fromList(myChangeGroups).sort(new ISelector<ChangeGroup, Comparable<?>>() {
       public Comparable<?> select(ChangeGroup g) {
