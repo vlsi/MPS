@@ -6,7 +6,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import com.intellij.util.containers.MultiMap;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -21,9 +26,17 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
+import jetbrains.mps.vcs.diff.changes.NodeChange;
+import java.util.Arrays;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
+import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Collections;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelCommandListener;
-import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 
 public class ChangesTracking {
@@ -36,6 +49,7 @@ public class ChangesTracking {
   private ChangesTracking.MyModelListener myModelListener = new ChangesTracking.MyModelListener();
   private ChangesTracking.MyCommandListener myCommandListener = new ChangesTracking.MyCommandListener();
   private boolean myDisposed = false;
+  private MultiMap<SNodeId, ModelChange> myNodesToDirectChanges = new MultiMap<SNodeId, ModelChange>();
 
   public ChangesTracking(@NotNull Project project, @NotNull CurrentDifference difference) {
     myDifference = difference;
@@ -54,6 +68,15 @@ public class ChangesTracking {
         update();
       }
     });
+  }
+
+  private void buildCaches() {
+    myNodesToDirectChanges.clear();
+    for (ModelChange ch : ListSequence.fromList(myDifference.getChangeSet().getModelChanges())) {
+      for (SNodeId id : Sequence.fromIterable(getNodeIdsForChange(ch))) {
+        myNodesToDirectChanges.putValue(id, ch);
+      }
+    }
   }
 
   private void update() {
@@ -105,6 +128,7 @@ public class ChangesTracking {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, currentModel, true);
+        buildCaches();
         myDifference.setChangeSet((ChangeSetImpl) changeSet);
       }
     });
@@ -117,6 +141,23 @@ public class ChangesTracking {
         myModelDescriptor.removeModelListener(myModelListener);
       }
     }
+  }
+
+  private static Iterable<SNodeId> getNodeIdsForChange(@NotNull ModelChange change) {
+    if (change instanceof NodeChange) {
+      return Arrays.asList(((NodeChange) change).getAffectedNodeId());
+    } else if (change instanceof AddRootChange || change instanceof DeleteRootChange) {
+      return Arrays.asList(change.getRootId());
+    } else if (change instanceof NodeGroupChange) {
+      NodeGroupChange ngc = (NodeGroupChange) change;
+      List<SNode> children = change.getChangeSet().getNewModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole());
+      return ListSequence.fromList(children).page(ngc.getResultBegin(), ngc.getResultBegin()).select(new ISelector<SNode, SNodeId>() {
+        public SNodeId select(SNode n) {
+          return n.getSNodeId();
+        }
+      });
+    }
+    return Sequence.fromIterable(Collections.<SNodeId>emptyList());
   }
 
   public class MyModelListener extends SModelAdapter {
