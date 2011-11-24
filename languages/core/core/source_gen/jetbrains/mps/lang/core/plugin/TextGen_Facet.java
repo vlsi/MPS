@@ -101,7 +101,7 @@ public class TextGen_Facet extends IFacet.Stub {
               monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (IResource resource : Sequence.fromIterable(input)) {
                 final GResource gres = (GResource) resource;
-                monitor.currentProgress().advanceWork("Writing", 50, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
+                monitor.currentProgress().advanceWork("Writing", 100, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
                 if (!(gres.status().isOk())) {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generation was not OK")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
@@ -182,7 +182,6 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
-                monitor.currentProgress().advanceWork("Writing", 50);
                 _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), Sequence.fromIterable(javaStreamHandler.delta()).concat(Sequence.fromIterable(retainedFilesDelta)).concat(Sequence.fromIterable(retainedCachesDelta)), gres.model()))));
               }
               monitor.currentProgress().finishWork("Writing");

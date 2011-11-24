@@ -78,15 +78,15 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     check();
 
     myDone = myTotal;
-    doneInternal();
+    doneInternal(getTaskName());
     update();
   }
 
   protected abstract void update(double fraction);
 
-  protected abstract void startInternal(String name);
+  protected abstract void startInternal(String text);
 
-  protected abstract void doneInternal();
+  protected abstract void doneInternal(String text);
 
   protected abstract void setTitleInternal(String name);
 
@@ -160,13 +160,17 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     }
 
     @Override
-    protected void doneInternal() {
+    protected void doneInternal(String text) {
 
     }
 
     @Override
-    protected void startInternal(String name) {
+    protected void startInternal(String text) {
 
+    }
+
+    protected ProgressMonitorBase getParent () {
+      return parent;
     }
 
     @Override

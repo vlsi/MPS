@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.facet.ITargetEx;
 import jetbrains.mps.make.script.IFeedback;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.smodel.TimeOutRuntimeException;
 import jetbrains.mps.make.script.IConfigMonitor;
@@ -228,7 +229,7 @@ __switch__:
   private void executeTargets(IScriptController ctl, final Iterable<ITarget> toExecute, final Iterable<? extends IResource> scriptInput, final Script.ParametersPool pool, final CompositeResult results) {
     ctl.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
       public void invoke(final IJobMonitor monit) {
-        String scriptName = "Script";
+        String scriptName = "__script__";
         int work = Sequence.fromIterable(toExecute).foldLeft(0, new ILeftCombinator<ITarget, Integer>() {
           public Integer combine(Integer s, ITarget it) {
             return s + ((it.requiresInput() || it.producesOutput() ?
@@ -284,7 +285,8 @@ with_targets:
               }
             }
 
-            monit.currentProgress().beginWork(trg.getName().toString(), 1000, (trg.requiresInput() || trg.producesOutput() ?
+            String workName = "__" + StringUtils.trim(trg.getName().toString()) + "__";
+            monit.currentProgress().beginWork(workName, 1000, (trg.requiresInput() || trg.producesOutput() ?
               1000 :
               10
             ));
@@ -316,7 +318,7 @@ with_targets:
               return;
             }
 
-            monit.currentProgress().finishWork(trg.getName().toString());
+            monit.currentProgress().finishWork(workName);
           } catch (TimeOutRuntimeException to) {
             LOG.debug("Timeout executing target " + trg.getName(), to);
             monit.reportFeedback(new IFeedback.ERROR("Target execution aborted " + trg.getName(), to));

@@ -124,7 +124,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                   continue;
                 }
 
-                monitor.currentProgress().advanceWork("Compiling", 50, tres.module().getModuleReference().getModuleFqName());
+                monitor.currentProgress().advanceWork("Compiling", 100, tres.module().getModuleReference().getModuleFqName());
 
                 final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();
                 ModelAccess.instance().runReadAction(new Runnable() {
@@ -150,7 +150,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
                   }
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
-                monitor.currentProgress().advanceWork("Compiling", 50);
                 _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
               }
               monitor.currentProgress().finishWork("Compiling");

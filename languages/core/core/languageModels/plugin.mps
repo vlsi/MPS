@@ -1325,7 +1325,7 @@
                     </node>
                   </node>
                   <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6648795410103966599">
-                    <property name="value" nameId="tpee.1068580320021" value="50" />
+                    <property name="value" nameId="tpee.1068580320021" value="100" />
                   </node>
                 </node>
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="6648795410103966600">
@@ -2028,12 +2028,6 @@
                     <node role="statement" roleId="tpee.1068581517665" type="q9ra.ResultStatement" typeId="q9ra.7077360340906447917" id="8613583559145284780">
                       <property name="result" nameId="q9ra.7077360340906447918" value="FAILURE" />
                     </node>
-                  </node>
-                </node>
-                <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="6648795410103966866">
-                  <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="6648795410103966570" />
-                  <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6648795410103966867">
-                    <property name="value" nameId="tpee.1068580320021" value="50" />
                   </node>
                 </node>
                 <node role="statement" roleId="tpee.1068581517665" type="q9ra.OutputResources" typeId="q9ra.2360002718792622184" id="6648795410103966868">
