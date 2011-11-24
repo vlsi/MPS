@@ -20,6 +20,7 @@ import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime.DependentComputationWrapper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -49,8 +50,8 @@ public class ModelRules {
   private static final Logger LOG = Logger.getLogger(RulesManager.class);
 
   public ModelRules(SModelDescriptor model) {
-    List<Language> languages = SModelOperations.getLanguages(model.getSModel(), GlobalScope.getInstance());
-    for (Language language : languages) {
+    Set<ModuleReference> languages = SModelOperations.getUsedLanguages(model.getSModel());
+    for (ModuleReference language : languages) {
       loadLanguage(language.getModuleFqName());
     }
   }
