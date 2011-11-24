@@ -12326,13 +12326,13 @@
           </node>
           <node role="entry" roleId="tps4.1203617897549" type="tps4.Echo" typeId="tps4.1205331422635" id="2454311172623298016">
             <property name="append" nameId="tps4.1240852090407" value="true" />
-            <node role="sourcePath" roleId="tps4.1220981955937" type="tps4.Path" typeId="tps4.1220973916698" id="2454311172623298017">
-              <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="2454311172623298018">
-                <property name="name" nameId="tps4.1220976068141" value="base_dir" />
+            <node role="message" roleId="tps4.1205340508811" type="tps4.CompositeString" typeId="tps4.1205342812422" id="3905466710328225783">
+              <node role="right" roleId="tps4.1205342834160" type="tps4.VariableReference" typeId="tps4.1205339464939" id="3905466710328225786">
+                <link role="variable" roleId="tps4.1205339484191" targetNodeId="nqc9.5558646027962551662" resolveInfo="\n" />
               </node>
-            </node>
-            <node role="message" roleId="tps4.1205340508811" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2454311172623298019">
-              <property name="name" nameId="tps4.1223641503366" value="lib" />
+              <node role="left" roleId="tps4.1205342829799" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2454311172623298019">
+                <property name="name" nameId="tps4.1223641503366" value="lib" />
+              </node>
             </node>
             <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2454311172623298020">
               <property name="name" nameId="tps4.1223641503366" value="libraries" />
