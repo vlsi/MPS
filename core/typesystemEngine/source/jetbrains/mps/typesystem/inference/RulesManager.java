@@ -143,7 +143,7 @@ public class RulesManager {
   }
 
   public List<Pair<InferenceRule_Runtime, IsApplicableStatus>> getInferenceRules(final SNode node) {
-    /*List<Pair<InferenceRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
+    List<Pair<InferenceRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
     Set<InferenceRule_Runtime> ruleSet;
     //synchronized (RULES_LOCK) {
       ruleSet = myInferenceRules.getRules(node);
@@ -153,8 +153,8 @@ public class RulesManager {
       if (status.isApplicable()) {
         result.add(new Pair<InferenceRule_Runtime, IsApplicableStatus>(rule, status));
       }
-    }   */
-    return myRulesManagerNew.getInferenceRules(node);
+    }
+    return result;
   }
 
 
