@@ -8,13 +8,14 @@ import com.intellij.openapi.project.Project;
 import java.util.List;
 import jetbrains.mps.project.IModule;
 import java.util.Set;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.TreePath;
@@ -32,7 +33,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
   private List<IModule> myModules;
   private boolean myShowRuntime;
   private boolean myShowUsedLanguage = true;
-  private Set<Tuples._2<DependencyUtil.Role, IModule>> myCycles = SetSequence.fromSet(new HashSet<Tuples._2<DependencyUtil.Role, IModule>>());
+  private Set<IModule> myCycles = SetSequence.fromSet(new HashSet<IModule>());
 
   public DependencyTree(Project project) {
     myProject = project;
@@ -62,7 +63,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     myShowUsedLanguage = showUsedLanguage;
   }
 
-  public Set<Tuples._2<DependencyUtil.Role, IModule>> getCycles() {
+  public Set<IModule> getLoops() {
     return myCycles;
   }
 
@@ -72,18 +73,19 @@ public class DependencyTree extends MPSTree implements DataProvider {
       return new TextMPSTreeNode("No Content", null);
     }
     SetSequence.fromSet(myCycles).addSequence(ListSequence.fromList(myModules).translate(new ITranslator2<IModule, Tuples._2<DependencyUtil.Role, IModule>>() {
-      public Iterable<Tuples._2<DependencyUtil.Role, IModule>> translate(IModule it) {
-        return DependencyUtil.getLoops(DependencyUtil.Role.None, it, isShowRuntime());
+      public Iterable<Tuples._2<DependencyUtil.Role, IModule>> translate(IModule m) {
+        return DependencyUtil.getLoops(DependencyUtil.Role.None, m, isShowRuntime());
+      }
+    }).where(new IWhereFilter<Tuples._2<DependencyUtil.Role, IModule>>() {
+      public boolean accept(Tuples._2<DependencyUtil.Role, IModule> dep) {
+        return dep._0().isDependency();
+      }
+    }).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
+      public IModule select(Tuples._2<DependencyUtil.Role, IModule> dep) {
+        return dep._1();
       }
     }));
     ModuleDependencyNode root = new ModuleDependencyNode(myModules, null);
-    if (SetSequence.fromSet(myCycles).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
-      public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
-        return it._1();
-      }
-    }).intersect(ListSequence.fromList(myModules)).isNotEmpty()) {
-      root.setCyclic();
-    }
     expandRoot();
     return root;
   }

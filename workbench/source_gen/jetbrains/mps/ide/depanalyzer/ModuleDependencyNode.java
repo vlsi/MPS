@@ -16,8 +16,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.dependency.DependenciesManager;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -29,9 +27,8 @@ public class ModuleDependencyNode extends MPSTreeNode {
   private boolean myInitialized;
   private boolean myCyclic;
 
-  public ModuleDependencyNode(IModule module, boolean isCyclic, IOperationContext context) {
+  public ModuleDependencyNode(IModule module, IOperationContext context) {
     this(ListSequence.fromListAndArray(new ArrayList<IModule>(), module), context);
-    myCyclic = isCyclic;
   }
 
   public ModuleDependencyNode(List<IModule> modules, IOperationContext context) {
@@ -88,31 +85,15 @@ public class ModuleDependencyNode extends MPSTreeNode {
       SetSequence.fromSet(usedLanguages).addSequence(SetSequence.fromSet(depManager.getAllUsedLanguages()));
     }
 
-    Set<IModule> depLoops = SetSequence.fromSet(new HashSet<IModule>());
-    Set<IModule> langLoops = SetSequence.fromSet(new HashSet<IModule>());
-    SetSequence.fromSet(depLoops).addSequence(SetSequence.fromSet(tree.getCycles()).where(new IWhereFilter<Tuples._2<DependencyUtil.Role, IModule>>() {
-      public boolean accept(Tuples._2<DependencyUtil.Role, IModule> it) {
-        return it._0() == DependencyUtil.Role.DTDependency_ || it._0() == DependencyUtil.Role.RTDependency || it._0() == DependencyUtil.Role.None;
-      }
-    }).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
-      public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
-        return it._1();
-      }
-    }));
-    SetSequence.fromSet(langLoops).addSequence(SetSequence.fromSet(tree.getCycles()).where(new IWhereFilter<Tuples._2<DependencyUtil.Role, IModule>>() {
-      public boolean accept(Tuples._2<DependencyUtil.Role, IModule> it) {
-        return it._0() == DependencyUtil.Role.UsedLanguage || it._0() == DependencyUtil.Role.None;
-      }
-    }).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
-      public IModule select(Tuples._2<DependencyUtil.Role, IModule> it) {
-        return it._1();
-      }
-    }));
-
     Set<IModule> allModules = (tree.isShowRuntime() ?
       rtModules :
       reqModules
     );
+
+    Set<IModule> depLoops = tree.getLoops();
+    // Dependency manager doesn't add module itself to its dependencies, fixing this here 
+    SetSequence.fromSet(allModules).addSequence(SetSequence.fromSet(depLoops).intersect(ListSequence.fromList(myModules)));
+
     for (IModule m : SetSequence.fromSet(allModules).sort(new ISelector<IModule, Comparable<?>>() {
       public Comparable<?> select(IModule it) {
         return it.getModuleFqName();
@@ -128,7 +109,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
           return it.getModuleFqName();
         }
       }, true)) {
-        usedlanguages.add(new ModuleDependencyNode.ULangDependencyNode(l, SetSequence.fromSet(langLoops).contains(l), getOperationContext()));
+        usedlanguages.add(new ModuleDependencyNode.ULangDependencyNode(l, getOperationContext()));
       }
       add(usedlanguages);
     }
@@ -161,11 +142,13 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
   public static class DepDependencyNode extends ModuleDependencyNode {
     public DepDependencyNode(IModule module, boolean isRuntime, boolean isCyclic, IOperationContext context) {
-      super(module, isCyclic, context);
+      super(module, context);
       if (isRuntime) {
         setNodeIdentifier(getNodeIdentifier() + " (runtime)");
       }
-
+      if (isCyclic) {
+        setCyclic();
+      }
     }
 
     public boolean isUsedLanguage() {
@@ -174,8 +157,8 @@ public class ModuleDependencyNode extends MPSTreeNode {
   }
 
   public static class ULangDependencyNode extends ModuleDependencyNode {
-    public ULangDependencyNode(IModule module, boolean isCyclic, IOperationContext context) {
-      super(module, isCyclic, context);
+    public ULangDependencyNode(IModule module, IOperationContext context) {
+      super(module, context);
     }
 
     public boolean isUsedLanguage() {
