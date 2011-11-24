@@ -693,7 +693,7 @@
     <nodeInfo nodeId="5814105446971273902" fileName="ChangeStripsPainter.java" startLine="112" startPosition="12" endLine="113" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5814105446971273964" fileName="ChangeStripsPainter.java" startLine="114" startPosition="62" endLine="115" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5814105446971273980" fileName="ChangeStripsPainter.java" startLine="116" startPosition="50" endLine="117" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5814105446971274004" fileName="ChangeStripsPainter.java" startLine="118" startPosition="58" endLine="119" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5814105446971274004" fileName="ChangeStripsPainter.java" startLine="118" startPosition="58" endLine="119" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5814105446971274026" fileName="ChangeStripsPainter.java" startLine="120" startPosition="55" endLine="121" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5814105446971279192" fileName="ChangeStripsPainter.java" startLine="123" startPosition="7" endLine="124" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7429456937243135808" fileName="ChangeStripsPainter.java" startLine="129" startPosition="69" endLine="130" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -807,7 +807,7 @@
     <scopeInfo nodeId="867367425399189695" fileName="ChangeStripsPainter.java" startLine="104" startPosition="26" endLine="105" endPosition="37" />
     <scopeInfo nodeId="4747879030830910045" fileName="ChangeStripsPainter.java" startLine="110" startPosition="36" endLine="111" endPosition="18" />
     <scopeInfo nodeId="5814105446971273957" fileName="ChangeStripsPainter.java" startLine="116" startPosition="50" endLine="117" endPosition="77" />
-    <scopeInfo nodeId="5814105446971273998" fileName="ChangeStripsPainter.java" startLine="118" startPosition="58" endLine="119" endPosition="70" />
+    <scopeInfo nodeId="5814105446971273998" fileName="ChangeStripsPainter.java" startLine="118" startPosition="58" endLine="119" endPosition="85" />
     <scopeInfo nodeId="5814105446971274020" fileName="ChangeStripsPainter.java" startLine="120" startPosition="55" endLine="121" endPosition="66" />
     <scopeInfo nodeId="7429456937243135895" fileName="ChangeStripsPainter.java" startLine="138" startPosition="12" endLine="139" endPosition="18" />
     <scopeInfo nodeId="2472608513402197703" fileName="ChangeStripsPainter.java" startLine="146" startPosition="72" endLine="147" endPosition="53" />

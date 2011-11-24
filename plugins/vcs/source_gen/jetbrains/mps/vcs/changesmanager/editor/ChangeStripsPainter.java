@@ -116,7 +116,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
         if (change instanceof SetPropertyChange) {
           return "Changed " + ((SetPropertyChange) change).getPropertyName();
         } else if (change instanceof SetReferenceChange) {
-          return "Changed " + ((SetReferenceChange) change).getRole();
+          return "Changed " + ((SetReferenceChange) change).getRole() + " reference";
         } else if (change instanceof NodeGroupChange) {
           return ((NodeGroupChange) change).getDescription(false);
         }
