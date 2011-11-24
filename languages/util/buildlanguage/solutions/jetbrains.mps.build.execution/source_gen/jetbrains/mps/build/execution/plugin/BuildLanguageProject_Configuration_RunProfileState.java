@@ -14,6 +14,7 @@ import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
@@ -48,7 +49,7 @@ public class BuildLanguageProject_Configuration_RunProfileState implements RunPr
       ProcessHandler _processHandler = new Ant_Command().setAntLocation_String((myRunConfiguration.getSettings().getUseOtherAntLocation() ?
         myRunConfiguration.getSettings().getOtherAntLocation() :
         null
-      )).setOptions_String(myRunConfiguration.getSettings().getAntOptions()).setTarget_NodeTargetDeclaration(myRunConfiguration.getTarget()).createProcess(myRunConfiguration.getNode().getNode());
+      )).setOptions_String(myRunConfiguration.getSettings().getAntOptions()).setTarget_NodeTargetDeclaration(myRunConfiguration.getTarget()).createProcess(SNodeOperations.cast(myRunConfiguration.getNode().getNode(), "jetbrains.mps.buildlanguage.structure.Project"));
       final ConsoleView _consoleView = ConsoleCreator.createConsoleView(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
