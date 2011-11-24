@@ -114,7 +114,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 48:
         return new CompiledConceptDescriptor("jetbrains.mps.build.packaging.structure.Plugin", "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", false, new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent"}, new String[]{}, new String[]{});
       case 49:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.packaging.structure.PluginModule", "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", false, new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.packaging.structure.PluginModule", "jetbrains.mps.build.packaging.structure.Module", false, new String[]{"jetbrains.mps.build.packaging.structure.Module"}, new String[]{}, new String[]{});
       case 50:
         return new CompiledConceptDescriptor("jetbrains.mps.build.packaging.structure.PostProcessingTask", "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", false, new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent"}, new String[]{}, new String[]{});
       case 51:

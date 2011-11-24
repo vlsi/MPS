@@ -300,7 +300,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="989489456094386109">
       <property name="name" nameId="tpck.1169194664001" value="PluginModule" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ideaPlugin" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1203599702327" resolveInfo="Module" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="989489456094387696">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ideaPlugin" />
@@ -1202,7 +1202,7 @@
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="989489456094387704">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="pluginXml" />
+      <property name="role" nameId="tpce.1071599776563" value="pluginXmlReference" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="989489456094387696" resolveInfo="IdeaInitializerReference" />
     </node>
@@ -1211,6 +1211,12 @@
       <property name="role" nameId="tpce.1071599776563" value="libraries" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="7972626602783737959" resolveInfo="Library" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5610328873691243476">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="classpath" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
     </node>
   </root>
   <root id="989489456094387696">

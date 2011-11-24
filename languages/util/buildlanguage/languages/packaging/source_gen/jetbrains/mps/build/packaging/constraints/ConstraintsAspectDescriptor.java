@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.Antcall", "jetbrains.mps.build.packaging.structure.BaseDirPath", "jetbrains.mps.build.packaging.structure.Branding", "jetbrains.mps.build.packaging.structure.Configuration", "jetbrains.mps.build.packaging.structure.Delete", "jetbrains.mps.build.packaging.structure.Echo", "jetbrains.mps.build.packaging.structure.File", "jetbrains.mps.build.packaging.structure.Folder", "jetbrains.mps.build.packaging.structure.Jar", "jetbrains.mps.build.packaging.structure.MacroReference", "jetbrains.mps.build.packaging.structure.Module", "jetbrains.mps.build.packaging.structure.Plugin", "jetbrains.mps.build.packaging.structure.Variable"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.Antcall", "jetbrains.mps.build.packaging.structure.BaseDirPath", "jetbrains.mps.build.packaging.structure.Branding", "jetbrains.mps.build.packaging.structure.Configuration", "jetbrains.mps.build.packaging.structure.Delete", "jetbrains.mps.build.packaging.structure.Echo", "jetbrains.mps.build.packaging.structure.File", "jetbrains.mps.build.packaging.structure.Folder", "jetbrains.mps.build.packaging.structure.Jar", "jetbrains.mps.build.packaging.structure.MacroReference", "jetbrains.mps.build.packaging.structure.Module", "jetbrains.mps.build.packaging.structure.Plugin", "jetbrains.mps.build.packaging.structure.PluginModule", "jetbrains.mps.build.packaging.structure.Variable"};
 
   public ConstraintsAspectDescriptor() {
   }
@@ -24,7 +24,7 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new Echo_Constraints();
       case 7:
         return new File_Constraints();
-      case 13:
+      case 14:
         return new Variable_Constraints();
       case 5:
         return new Delete_Constraints();
@@ -42,6 +42,8 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new Plugin_Constraints();
       case 3:
         return new Branding_Constraints();
+      case 13:
+        return new PluginModule_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
