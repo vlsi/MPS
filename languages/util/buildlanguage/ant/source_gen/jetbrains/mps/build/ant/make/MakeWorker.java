@@ -29,6 +29,10 @@ import javax.swing.SwingUtilities;
 import com.intellij.idea.IdeaTestApplication;
 
 public class MakeWorker extends MpsWorker {
+  public MakeWorker(WhatToDo whatToDo) {
+    super(whatToDo);
+  }
+
   public MakeWorker(WhatToDo whatToDo, ProjectComponent component) {
     super(whatToDo, component);
   }

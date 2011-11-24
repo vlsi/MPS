@@ -25,6 +25,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.ant.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.build.ant.IBuildServerMessageFormat" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
     <classNode dependClassName="jetbrains.mps.build.ant.TeamCityMessageFormat" />
     <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
@@ -40,7 +41,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.make.MakeWorker" />
   </dependency>
 </dependenciesRoot>
 

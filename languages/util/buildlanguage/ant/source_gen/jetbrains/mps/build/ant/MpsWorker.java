@@ -151,10 +151,10 @@ public abstract class MpsWorker {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         p.dispose();
-        ModelAccess.instance().flushEventQueue();
-        System.gc();
       }
     });
+    ModelAccess.instance().flushEventQueue();
+    System.gc();
   }
 
   protected void setupEnvironment() {

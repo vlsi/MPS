@@ -22,7 +22,8 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 
-@SuiteClassSymbols({"jetbrains.mps.build.ant.BrokenReferencesTestTest",
+@SuiteClassSymbols({
+  "jetbrains.mps.build.ant.BrokenReferencesTestTest",
   "jetbrains.mps.build.ant.GenerateTaskFilesCreationTest",
   "jetbrains.mps.build.ant.TeamCityMesageFormatTest",
   "jetbrains.mps.build.ant.WhatToDoSerializationConsistencyTest",

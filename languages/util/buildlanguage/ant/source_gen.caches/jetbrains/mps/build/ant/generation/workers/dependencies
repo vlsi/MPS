@@ -69,6 +69,7 @@
     <classNode dependClassName="java.util.concurrent.Future" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
     <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.GenerateTask" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
@@ -96,7 +97,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.IMResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
-    <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.make.MakeWorker" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" file="TestGenerationWorker.java">
