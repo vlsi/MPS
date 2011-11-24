@@ -32,6 +32,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -177,6 +178,22 @@ public class ChangesTracking {
     });
   }
 
+  private void buildAndAddChanges(_FunctionTypes._void_P1_E0<? super ChangeSetBuilder> builderTask) {
+    ChangeSet cs = myDifference.getChangeSet();
+    ChangeSetBuilder builder = ChangeSetBuilder.createBuilder(cs);
+    builderTask.invoke(builder);
+    ListSequence.fromList(builder.getNewChanges()).visitAll(new IVisitor<ModelChange>() {
+      public void visit(ModelChange ch) {
+        addChange(ch);
+      }
+    });
+  }
+
+  @Nullable
+  private SNode getOldNode(@NotNull SNodeId id) {
+    return check_5iuzi5_a0a0a8(myDifference.getChangeSet()).getNodeById(id);
+  }
+
   private void runUpdateTask(final _FunctionTypes._void_P0_E0 task, SNode currentNode) {
     final List<SNodeId> ancestors = ListSequence.fromList(SNodeOperations.getAncestors(currentNode, null, true)).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode a) {
@@ -231,14 +248,21 @@ public class ChangesTracking {
     return Sequence.fromIterable(Collections.<SNodeId>emptyList());
   }
 
-  private static boolean eq_5iuzi5_a0a0a0a0a0a0e0a0a0a0a0a(Object a, Object b) {
+  private static SModel check_5iuzi5_a0a0a8(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getOldModel();
+    }
+    return null;
+  }
+
+  private static boolean eq_5iuzi5_a0a0a0a2a3a0a0a0a0a0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_5iuzi5_a0a0a0a2a2a0a0a0a0b0(Object a, Object b) {
+  private static boolean eq_5iuzi5_a0a0a0a2a3a0a0a0a0b0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
@@ -253,25 +277,17 @@ public class ChangesTracking {
     public void propertyChanged(final SModelPropertyEvent event) {
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          SNodeId nodeId = event.getNode().getSNodeId();
+          final SNodeId nodeId = event.getNode().getSNodeId();
           final String propertyName = event.getPropertyName();
-          Set<ModelChange> changes = myNodesToDirectChanges.getByFirst(nodeId);
 
-          ModelChange old = SetSequence.fromSet(changes).findFirst(new IWhereFilter<ModelChange>() {
-            public boolean accept(ModelChange ch) {
-              return ch instanceof SetPropertyChange && eq_5iuzi5_a0a0a0a0a0a0e0a0a0a0a0a(propertyName, ((SetPropertyChange) ch).getPropertyName());
+          removeChanges(nodeId, SetPropertyChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetPropertyChange>() {
+            public Boolean invoke(SetPropertyChange ch) {
+              return eq_5iuzi5_a0a0a0a2a3a0a0a0a0a0(propertyName, ch.getPropertyName());
             }
           });
-          if (old != null) {
-            removeChange(old);
-          }
-
-          ChangeSet cs = myDifference.getChangeSet();
-          ChangeSetBuilder builder = ChangeSetBuilder.createBuilder(cs);
-          builder.buildPropertyChanges(cs.getOldModel().getNodeById(nodeId), event.getNode(), propertyName);
-          ListSequence.fromList(builder.getNewChanges()).visitAll(new IVisitor<ModelChange>() {
-            public void visit(ModelChange ch) {
-              addChange(ch);
+          buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
+            public void invoke(ChangeSetBuilder b) {
+              b.buildPropertyChanges(getOldNode(nodeId), event.getNode(), propertyName);
             }
           });
         }
@@ -282,19 +298,16 @@ public class ChangesTracking {
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           final SReference ref = event.getReference();
-          SNode refNode = ref.getSourceNode();
-          removeChanges(refNode.getSNodeId(), SetReferenceChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetReferenceChange>() {
-            public Boolean invoke(SetReferenceChange src) {
-              return eq_5iuzi5_a0a0a0a2a2a0a0a0a0b0(ref.getRole(), src.getRole());
+          final SNodeId refNodeId = ref.getSourceNode().getSNodeId();
+
+          removeChanges(refNodeId, SetReferenceChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetReferenceChange>() {
+            public Boolean invoke(SetReferenceChange ch) {
+              return eq_5iuzi5_a0a0a0a2a3a0a0a0a0b0(ref.getRole(), ch.getRole());
             }
           });
-
-          ChangeSet cs = myDifference.getChangeSet();
-          ChangeSetBuilder builder = ChangeSetBuilder.createBuilder(cs);
-          builder.buildReferenceChanges(cs.getOldModel().getNodeById(refNode.getSNodeId()), refNode, ref.getRole());
-          ListSequence.fromList(builder.getNewChanges()).visitAll(new IVisitor<ModelChange>() {
-            public void visit(ModelChange ch) {
-              addChange(ch);
+          buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
+            public void invoke(ChangeSetBuilder b) {
+              b.buildReferenceChanges(getOldNode(refNodeId), ref.getSourceNode(), ref.getRole());
             }
           });
         }
