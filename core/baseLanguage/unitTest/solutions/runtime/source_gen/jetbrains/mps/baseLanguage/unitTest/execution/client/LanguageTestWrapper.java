@@ -4,16 +4,15 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior;
 
 public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   public LanguageTestWrapper(SNode test) {
@@ -32,7 +31,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @Override
   public ITestNodeWrapper getTestCase() {
     if (check_9og6tg_a0a2(getNode(), this)) {
-      return TestNodeWrapperFactory.tryToWrap(ITestMethod_Behavior.call_getTestCase_1216134500045(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")));
+      return TestNodeWrapperFactory.tryToWrap(((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), "virtual_getTestCase_1216134500045", new Class[]{SNode.class})));
     }
     if (isTestCase()) {
       return null;
@@ -50,7 +49,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     if (node == null) {
       return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
     }
-    return ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))).select(new ISelector<SNode, ITestNodeWrapper>() {
+    return ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getTestMethods_2148145109766218395", new Class[]{SNode.class}))).select(new ISelector<SNode, ITestNodeWrapper>() {
       public ITestNodeWrapper select(SNode it) {
         return TestNodeWrapperFactory.tryToWrap(it);
       }
@@ -103,28 +102,28 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
 
   private static TestRunParameters check_9og6tg_a0a4(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return ITestable_Behavior.call_getTestRunParameters_1216045139515(checkedDotOperand);
+      return ((TestRunParameters) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), "virtual_getTestRunParameters_1216045139515", new Class[]{SNode.class}));
     }
     return null;
   }
 
   private static String check_9og6tg_a0a0a5(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return ITestCase_Behavior.call_getClassName_1216136193905(checkedDotOperand);
+      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getClassName_1216136193905", new Class[]{SNode.class}));
     }
     return null;
   }
 
   private static String check_9og6tg_a0a0a6(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return ITestMethod_Behavior.call_getTestName_1216136419751(checkedDotOperand);
+      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), "virtual_getTestName_1216136419751", new Class[]{SNode.class}));
     }
     return null;
   }
 
   private static String check_9og6tg_a1a6(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return ITestCase_Behavior.call_getSimpleClassName_1229278847513(checkedDotOperand);
+      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getSimpleClassName_1229278847513", new Class[]{SNode.class}));
     }
     return null;
   }

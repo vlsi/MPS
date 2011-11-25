@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -38,7 +38,7 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
   }
 
   public static boolean isJUnit4TestMethod(SNode method) {
-    if (!(BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(method)) && (SLinkOperations.getTarget(method, "visibility", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (SPropertyOperations.getString(method, "name") != null)) {
+    if (!(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isAbstract_1232982539764", new Class[]{SNode.class}))) && (SLinkOperations.getTarget(method, "visibility", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (SPropertyOperations.getString(method, "name") != null)) {
       SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return eq_lclll2_a0a0a0a0a0a0a0a0(check_lclll2_a0a0a0a0a0a0a(it), SLinkOperations.getTarget(new JUnit4MethodWrapper.QuotationClass_lclll2_a0a0a0a0a0a0a0a().createNode(), "annotation", false));

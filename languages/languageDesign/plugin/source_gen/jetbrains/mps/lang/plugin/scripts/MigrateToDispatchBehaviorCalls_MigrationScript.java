@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionKind;
 
 public class MigrateToDispatchBehaviorCalls_MigrationScript extends BaseMigrationScript {
   public MigrateToDispatchBehaviorCalls_MigrationScript(IOperationContext operationContext) {
@@ -34,7 +33,7 @@ public class MigrateToDispatchBehaviorCalls_MigrationScript extends BaseMigratio
         }
         ModuleDescriptor descriptor = SNodeOperations.getModel(node).getModelDescriptor().getModule().getModuleDescriptor();
         if (descriptor instanceof SolutionDescriptor) {
-          return ((SolutionDescriptor) descriptor).getKind() == SolutionKind.PLUGIN_OTHER;
+          return ((SolutionDescriptor) descriptor).getKind() != null;
         }
         return false;
       }

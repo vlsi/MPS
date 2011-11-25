@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class JUnit3MethodWrapper extends AbstractTestWrapper<SNode> {
@@ -30,7 +30,7 @@ public class JUnit3MethodWrapper extends AbstractTestWrapper<SNode> {
   }
 
   public static boolean isTestMethod(@NotNull SNode method) {
-    return !(BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(method)) && (SLinkOperations.getTarget(method, "visibility", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (SPropertyOperations.getString(method, "name") != null) && SPropertyOperations.getString(method, "name").startsWith("test");
+    return !(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isAbstract_1232982539764", new Class[]{SNode.class}))) && (SLinkOperations.getTarget(method, "visibility", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (SPropertyOperations.getString(method, "name") != null) && SPropertyOperations.getString(method, "name").startsWith("test");
   }
 
   private static SNode check_pj3jcm_a0a0b(SNode checkedDotOperand, JUnit3MethodWrapper checkedDotThisExpression) {

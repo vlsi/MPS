@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
   public JUnit4TestWrapper(SNode clazz) {
@@ -65,7 +65,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
 
   private static String check_rdmqn1_a0a1(SNode checkedDotOperand, JUnit4TestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return INamedConcept_Behavior.call_getFqName_1213877404258(checkedDotOperand);
+      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(checkedDotOperand, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
     }
     return null;
   }

@@ -8,8 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import junit.framework.TestCase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -66,10 +65,10 @@ public enum TestNodeWrapperFactory {
           return false;
         }
         SNode ancestor = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
-        if (!(Classifier_Behavior.call_checkLoops_3980490811621705344(ancestor))) {
+        if (!(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_checkLoops_3980490811621705344", new Class[]{SNode.class})))) {
           return false;
         }
-        while (ancestor != null && SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(INamedConcept_Behavior.call_getFqName_1213877404258(ancestor).equals(TestCase.class.getCanonicalName()))) {
+        while (ancestor != null && SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(ancestor, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})).equals(TestCase.class.getCanonicalName()))) {
           ancestor = check_kl7j79_a0a0d0a0b2(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true));
         }
         return ancestor != null;
@@ -217,7 +216,7 @@ public enum TestNodeWrapperFactory {
     );
     return SNodeOperations.getAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return INamedConcept_Behavior.call_getFqName_1213877404258(it);
+        return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
       }
     }).toGenericArray(String.class), true, isRoot);
   }
