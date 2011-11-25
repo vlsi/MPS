@@ -57,15 +57,15 @@ public class ChangeSetBuilder {
     myChangeSet = changeSet;
   }
 
-  private void buildPropertyChanges(SNode oldNode, SNode newNode) {
+  private void buildForProperties(SNode oldNode, SNode newNode) {
     Set<String> oldProperties = (Set<String>) oldNode.getPropertyNames();
     Set<String> newProperties = (Set<String>) newNode.getPropertyNames();
     for (String name : SetSequence.fromSet(oldProperties).union(SetSequence.fromSet(newProperties))) {
-      buildPropertyChanges(oldNode, newNode, name);
+      buildForProperty(oldNode, newNode, name);
     }
   }
 
-  public void buildPropertyChanges(SNode oldNode, SNode newNode, String name) {
+  public void buildForProperty(SNode oldNode, SNode newNode, String name) {
     PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
     if (ApplicationManager.getApplication() != null) {
       SNode propertyDeclaration = oldNode.getPropertyDeclaration(name);
@@ -81,15 +81,15 @@ public class ChangeSetBuilder {
     }
   }
 
-  private void buildReferenceChanges(SNode oldNode, SNode newNode) {
+  private void buildForReferences(SNode oldNode, SNode newNode) {
     Set<String> oldReferences = (Set<String>) oldNode.getReferenceRoles();
     Set<String> newReferences = (Set<String>) newNode.getReferenceRoles();
     for (String role : SetSequence.fromSet(oldReferences).union(SetSequence.fromSet(newReferences))) {
-      buildReferenceChanges(oldNode, newNode, role);
+      buildForReference(oldNode, newNode, role);
     }
   }
 
-  public void buildReferenceChanges(SNode oldNode, SNode newNode, String role) {
+  public void buildForReference(SNode oldNode, SNode newNode, String role) {
     SReference oldReference = oldNode.getReference(role);
     SReference newReference = newNode.getReference(role);
     SNodeId oldTargetId = (oldReference instanceof DynamicReference ?
@@ -112,7 +112,7 @@ public class ChangeSetBuilder {
     }
   }
 
-  public void buildNodeChanges(@Nullable SNode oldNode, @Nullable SNode newNode) {
+  public void buildForNode(@Nullable SNode oldNode, @Nullable SNode newNode) {
     assert oldNode != null || newNode != null;
 
     if (oldNode == null) {
@@ -120,20 +120,20 @@ public class ChangeSetBuilder {
     } else if (newNode == null) {
       ListSequence.fromList(myNewChanges).addElement(new DeleteRootChange(myChangeSet, oldNode.getSNodeId()));
     } else {
-      buildPropertyChanges(oldNode, newNode);
-      buildReferenceChanges(oldNode, newNode);
+      buildForProperties(oldNode, newNode);
+      buildForReferences(oldNode, newNode);
 
       for (String role : SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(SNodeOperations.getChildren(oldNode)).concat(ListSequence.fromList(SNodeOperations.getChildren(newNode))).select(new ISelector<SNode, String>() {
         public String select(SNode ch) {
           return SNodeOperations.getContainingLinkRole(ch);
         }
       }))) {
-        buildNodeRoleChanges(oldNode, newNode, role);
+        buildForNodeRole(oldNode, newNode, role);
       }
     }
   }
 
-  public void buildNodeRoleChanges(SNode oldNode, SNode newNode, String role) {
+  public void buildForNodeRole(SNode oldNode, SNode newNode, String role) {
     final List<SNode> oldChildren = oldNode.getChildren(role);
     List<SNode> newChildren = newNode.getChildren(role);
     List<SNodeId> oldIds = ListSequence.fromList(oldChildren).select(new ISelector<SNode, SNodeId>() {
@@ -164,12 +164,12 @@ public class ChangeSetBuilder {
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode child) {
-        buildNodeChanges(child, myNewModel.getNodeById(child.getSNodeId()));
+        buildForNode(child, myNewModel.getNodeById(child.getSNodeId()));
       }
     });
   }
 
-  private <D> void buildAddedAndDeletedChanges(_FunctionTypes._return_P1_E0<? extends Iterable<D>, ? super SModel> referencesExtractor, final _FunctionTypes._return_P2_E0<? extends DependencyChange, ? super D, ? super Boolean> changeCreator) {
+  private <D> void buildAddedAndDeletedDependencies(_FunctionTypes._return_P1_E0<? extends Iterable<D>, ? super SModel> referencesExtractor, final _FunctionTypes._return_P2_E0<? extends DependencyChange, ? super D, ? super Boolean> changeCreator) {
     Iterable<D> added;
     Iterable<D> deleted;
     {
@@ -189,7 +189,7 @@ public class ChangeSetBuilder {
     }));
   }
 
-  private void buildModelImports() {
+  private void buildForImports() {
     _FunctionTypes._return_P1_E0<? extends Iterable<SModelReference>, ? super SModel> importedModelsExtractor = new _FunctionTypes._return_P1_E0<ISequence<SModelReference>, SModel>() {
       public ISequence<SModelReference> invoke(SModel model) {
         return ListSequence.fromList(((List<SModel.ImportElement>) model.importedModels())).select(new ISelector<SModel.ImportElement, SModelReference>() {
@@ -204,32 +204,32 @@ public class ChangeSetBuilder {
         return new ImportedModelChange(myChangeSet, mr, deleted);
       }
     };
-    buildAddedAndDeletedChanges(importedModelsExtractor, changeCreator);
+    buildAddedAndDeletedDependencies(importedModelsExtractor, changeCreator);
   }
 
-  private void buildModuleDependencies(final ModuleDependencyChange.DependencyType dependencyType, _FunctionTypes._return_P1_E0<? extends Iterable<ModuleReference>, ? super SModel> referencesExtractor) {
+  private void buildForDependencies(final ModuleDependencyChange.DependencyType dependencyType, _FunctionTypes._return_P1_E0<? extends Iterable<ModuleReference>, ? super SModel> referencesExtractor) {
     _FunctionTypes._return_P2_E0<? extends ModuleDependencyChange, ? super ModuleReference, ? super Boolean> changeCreator = new _FunctionTypes._return_P2_E0<ModuleDependencyChange, ModuleReference, Boolean>() {
       public ModuleDependencyChange invoke(ModuleReference mr, Boolean deleted) {
         return new ModuleDependencyChange(myChangeSet, mr, dependencyType, deleted);
       }
     };
-    buildAddedAndDeletedChanges(referencesExtractor, changeCreator);
+    buildAddedAndDeletedDependencies(referencesExtractor, changeCreator);
   }
 
-  private void buildMetadataChanges() {
-    buildModelImports();
+  private void buildForMetadata() {
+    buildForImports();
 
-    buildModuleDependencies(ModuleDependencyChange.DependencyType.USED_LANG, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
+    buildForDependencies(ModuleDependencyChange.DependencyType.USED_LANG, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
       public List<ModuleReference> invoke(SModel model) {
         return model.importedLanguages();
       }
     });
-    buildModuleDependencies(ModuleDependencyChange.DependencyType.USED_DEVKIT, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
+    buildForDependencies(ModuleDependencyChange.DependencyType.USED_DEVKIT, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
       public List<ModuleReference> invoke(SModel model) {
         return model.importedDevkits();
       }
     });
-    buildModuleDependencies(ModuleDependencyChange.DependencyType.LANG_ENGAGED_ON_GENERATION, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
+    buildForDependencies(ModuleDependencyChange.DependencyType.LANG_ENGAGED_ON_GENERATION, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
       public List<ModuleReference> invoke(SModel model) {
         return model.engagedOnGenerationLanguages();
       }
@@ -243,17 +243,17 @@ public class ChangeSetBuilder {
     }
   }
 
-  private void buildChanges(boolean withOpposite) {
+  private void build(boolean withOpposite) {
     Iterable<SNodeId> allRootIds = ListSequence.fromList(SModelOperations.getRoots(myOldModel, null)).concat(ListSequence.fromList(SModelOperations.getRoots(myNewModel, null))).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getSNodeId();
       }
     });
     for (SNodeId rootId : SetSequence.fromSetWithValues(new HashSet<SNodeId>(), allRootIds)) {
-      buildNodeChanges(myOldModel.getNodeById(rootId), myNewModel.getNodeById(rootId));
+      buildForNode(myOldModel.getNodeById(rootId), myNewModel.getNodeById(rootId));
     }
 
-    buildMetadataChanges();
+    buildForMetadata();
 
     if (withOpposite) {
       myChangeSet.buildOppositeChangeSet();
@@ -289,7 +289,7 @@ public class ChangeSetBuilder {
 
   public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel, boolean withOpposite) {
     ChangeSetBuilder builder = new ChangeSetBuilder(oldModel, newModel);
-    builder.buildChanges(withOpposite);
+    builder.build(withOpposite);
     builder.commit();
     return builder.myChangeSet;
   }
@@ -299,7 +299,7 @@ public class ChangeSetBuilder {
     impl.clear();
     impl.clearOppositeChangeSet();
     ChangeSetBuilder builder = new ChangeSetBuilder(impl);
-    builder.buildChanges(true);
+    builder.build(true);
     builder.commit();
   }
 

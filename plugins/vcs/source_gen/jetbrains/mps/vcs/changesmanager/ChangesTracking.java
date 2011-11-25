@@ -311,7 +311,7 @@ public class ChangesTracking {
           });
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildPropertyChanges(getOldNode(nodeId), event.getNode(), propertyName);
+              b.buildForProperty(getOldNode(nodeId), event.getNode(), propertyName);
             }
           });
         }
@@ -332,7 +332,7 @@ public class ChangesTracking {
           });
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildReferenceChanges(getOldNode(nodeId), ref.getSourceNode(), role);
+              b.buildForReference(getOldNode(nodeId), ref.getSourceNode(), role);
             }
           });
         }
@@ -367,7 +367,7 @@ public class ChangesTracking {
           }
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildNodeRoleChanges(getOldNode(parentId), event.getParent(), role);
+              b.buildForNodeRole(getOldNode(parentId), event.getParent(), role);
             }
           });
         }
@@ -399,7 +399,7 @@ public class ChangesTracking {
             removeDescendantChanges(rootId);
             buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
               public void invoke(ChangeSetBuilder b) {
-                b.buildNodeChanges(getOldNode(rootId), null);
+                b.buildForNode(getOldNode(rootId), null);
               }
             });
           }
@@ -419,7 +419,7 @@ public class ChangesTracking {
           });
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildNodeChanges(getOldNode(rootId), event.getRoot());
+              b.buildForNode(getOldNode(rootId), event.getRoot());
             }
           });
         }
