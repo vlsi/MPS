@@ -1801,8 +1801,8 @@
   <root nodeId="7082523601896740167">
     <nodeInfo nodeId="7082523601896740168" fileName="ChangeSetImpl.java" startLine="17" startPosition="49" endLine="18" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOldModel" />
     <nodeInfo nodeId="7082523601896740171" fileName="ChangeSetImpl.java" startLine="18" startPosition="34" endLine="19" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNewModel" />
-    <nodeInfo nodeId="7082523601896740174" fileName="ChangeSetImpl.java" startLine="19" startPosition="34" endLine="20" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelChanges" />
-    <nodeInfo nodeId="7082523601896740181" fileName="ChangeSetImpl.java" startLine="20" startPosition="103" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOppositeChangeSet" />
+    <nodeInfo nodeId="7082523601896740174" fileName="ChangeSetImpl.java" startLine="19" startPosition="34" endLine="20" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelChanges" />
+    <nodeInfo nodeId="7082523601896740181" fileName="ChangeSetImpl.java" startLine="20" startPosition="91" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOppositeChangeSet" />
     <nodeInfo nodeId="7082523601896740189" fileName="ChangeSetImpl.java" startLine="23" startPosition="76" endLine="24" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7082523601896740193" fileName="ChangeSetImpl.java" startLine="24" startPosition="26" endLine="25" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3834754559947642512" fileName="ChangeSetImpl.java" startLine="29" startPosition="46" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

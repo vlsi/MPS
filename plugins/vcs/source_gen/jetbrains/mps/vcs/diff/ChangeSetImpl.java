@@ -5,10 +5,10 @@ package jetbrains.mps.vcs.diff;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.ModelAccess;
@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class ChangeSetImpl implements ChangeSet {
   private final SModel myOldModel;
   private final SModel myNewModel;
-  private final List<ModelChange> myModelChanges = ListSequence.fromList(new ArrayList<ModelChange>());
+  private final List<ModelChange> myModelChanges = new CopyOnWriteArrayList<ModelChange>();
   private ChangeSetImpl myOppositeChangeSet = null;
 
   public ChangeSetImpl(@NotNull SModel oldModel, @NotNull SModel newModel) {
