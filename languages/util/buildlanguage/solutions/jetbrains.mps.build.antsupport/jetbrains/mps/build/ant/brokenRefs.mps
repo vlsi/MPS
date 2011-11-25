@@ -145,6 +145,11 @@
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4003657351907889523">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907889518" resolveInfo="systemOutLogger" />
           </node>
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6246650800743981193">
+            <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6246650800743981195">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fr0q.1117107720588641321" resolveInfo="MakeEnvironment" />
+            </node>
+          </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4003657351907889524">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4003657351907889525">

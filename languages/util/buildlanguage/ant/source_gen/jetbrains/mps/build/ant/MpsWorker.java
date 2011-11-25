@@ -5,22 +5,10 @@ package jetbrains.mps.build.ant;
 import org.apache.log4j.Logger;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.project.PathMacrosProvider;
-import jetbrains.mps.build.ant.util.SetLibraryContributor;
 import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.Project;
-import java.io.File;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.project.PathMacros;
-import jetbrains.mps.library.LibraryInitializer;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.build.ant.util.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.ConsoleAppender;
-import jetbrains.mps.MPSCore;
-import jetbrains.mps.generator.GenerationSettingsProvider;
-import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.LinkedHashSet;
@@ -30,15 +18,8 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.apache.commons.lang.StringUtils;
 import org.apache.tools.ant.BuildException;
 import java.util.Set;
-import org.apache.log4j.Level;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.build.ant.util.PathUtil;
-import jetbrains.mps.build.ant.util.MapPathMacrosProvider;
-import java.util.HashSet;
-import jetbrains.mps.build.ant.util.PathManager;
+import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
-import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
@@ -57,6 +38,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.build.ant.util.PathManager;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.logging.ILoggingHandler;
@@ -69,13 +51,7 @@ public abstract class MpsWorker {
   protected final List<String> myWarnings = new ArrayList<String>();
   protected final WhatToDo myWhatToDo;
   private final MpsWorker.AntLogger myLogger;
-  private MpsWorker.MyMessageHandlerAppender myMessageHandler = new MpsWorker.MyMessageHandlerAppender();
-  private PathMacrosProvider myMacroProvider;
-  private SetLibraryContributor myLibraryContibutor;
-
-  private MpsWorker() {
-    this(null, (MpsWorker.AntLogger) null);
-  }
+  private Environment myEnvironment = new Environment();
 
   public MpsWorker(WhatToDo whatToDo) {
     this(whatToDo, new MpsWorker.LogLogger());
@@ -85,9 +61,23 @@ public abstract class MpsWorker {
     this(whatToDo, new MpsWorker.ProjectComponentLogger(component));
   }
 
+  public MpsWorker(WhatToDo whatToDo, ProjectComponent component, Environment environment) {
+    this(whatToDo, new MpsWorker.ProjectComponentLogger(component), environment);
+  }
+
   public MpsWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger) {
+    this(whatToDo, logger, new Environment());
+  }
+
+  public MpsWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger, Environment environment) {
     myWhatToDo = whatToDo;
     myLogger = logger;
+    this.myEnvironment = environment;
+    myEnvironment.init(whatToDo, new MpsWorker.MyMessageHandlerAppender());
+  }
+
+  public void setEnvironment(Environment environment) {
+    this.myEnvironment = environment;
   }
 
   public void workFromMain() {
@@ -117,34 +107,11 @@ public abstract class MpsWorker {
   }
 
   protected Project createDummyProject() {
-    File projectFile = FileUtil.createTmpFile();
-    FileMPSProject project = new FileMPSProject(projectFile);
-    project.init(new FileMPSProject.ProjectDescriptor(projectFile));
-    projectFile.deleteOnExit();
-    return project;
+    return myEnvironment.createDummyProject();
   }
 
   protected void dispose() {
-    if (myMacroProvider != null) {
-      PathMacros.getInstance().removeMacrosProvider(myMacroProvider);
-      this.myMacroProvider = null;
-    }
-    if (myLibraryContibutor != null) {
-      LibraryInitializer.getInstance().removeContributor(myLibraryContibutor);
-      this.myLibraryContibutor = null;
-    }
-    for (int i = 0; i < 3; i++) {
-      try {
-        SwingUtilities.invokeAndWait(new Runnable() {
-          public void run() {
-          }
-        });
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-    }
-    MpsPlatform.dispose();
-    jetbrains.mps.logging.Logger.removeLoggingHandler(myMessageHandler);
+    myEnvironment.dispose();
   }
 
   protected void disposeProject(final Project p) {
@@ -158,20 +125,7 @@ public abstract class MpsWorker {
   }
 
   protected void setupEnvironment() {
-    BasicConfigurator.configure(new ConsoleAppender());
-    Logger.getRootLogger().setLevel(getLog4jLevel());
-    jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
-    // <node> 
-    MpsPlatform.init();
-    MPSCore.getInstance().setTestMode();
-    GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
-    try {
-      configureMPS(false);
-    } catch (Exception ex) {
-      throw new RuntimeException(ex);
-    }
-    setMacro();
-    loadLibraries();
+    myEnvironment.setup();
     make();
     reload();
   }
@@ -225,59 +179,6 @@ public abstract class MpsWorker {
     }
   }
 
-  private Level getLog4jLevel() {
-    //  still warn, info only for messages from this task 
-    //  now we have info 
-    switch (myWhatToDo.getLogLevel()) {
-      case org.apache.tools.ant.Project.MSG_ERR:
-        return Level.ERROR;
-      case org.apache.tools.ant.Project.MSG_WARN:
-        return Level.WARN;
-      case org.apache.tools.ant.Project.MSG_INFO:
-        return Level.WARN;
-      case org.apache.tools.ant.Project.MSG_VERBOSE:
-        return Level.INFO;
-      case org.apache.tools.ant.Project.MSG_DEBUG:
-        return Level.DEBUG;
-      default:
-        return null;
-    }
-  }
-
-  protected void setMacro() {
-    Map<String, String> macro = myWhatToDo.getMacro();
-    Map<String, String> realMacros = new HashMap<String, String>();
-    for (String macroName : macro.keySet()) {
-      String canonicalPath = PathUtil.getCanonicalPath(macro.get(macroName));
-      File file = new File(canonicalPath);
-      if (file.exists() && file.isDirectory()) {
-        realMacros.put(macroName, canonicalPath);
-      }
-    }
-    if (myMacroProvider == null) {
-      this.myMacroProvider = new MapPathMacrosProvider(realMacros);
-      PathMacros.getInstance().addMacrosProvider(myMacroProvider);
-    }
-  }
-
-  protected void loadLibraries() {
-    if (myLibraryContibutor == null) {
-      Set<String> libraryPaths = new HashSet<String>();
-      libraryPaths.addAll(PathManager.getBootstrapPaths());
-      libraryPaths.add(PathManager.getLanguagesPath());
-      for (String libName : myWhatToDo.getLibraries().keySet()) {
-        libraryPaths.add(myWhatToDo.getLibraries().get(libName).getAbsolutePath());
-      }
-      this.myLibraryContibutor = new SetLibraryContributor(libraryPaths);
-      LibraryInitializer.getInstance().addContributor(myLibraryContibutor);
-    }
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        LibraryInitializer.getInstance().update();
-      }
-    });
-  }
-
   public void collectModelsToGenerate(MpsWorker.ObjectsToProcess go) {
     collectFromProjects(go.getProjects());
     collectFromModuleFiles(go.getModules());
@@ -287,14 +188,7 @@ public abstract class MpsWorker {
   private void collectFromProjects(Set<Project> projects) {
     for (File projectFile : myWhatToDo.getMPSProjectFiles().keySet()) {
       if (projectFile.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
-        Project project;
-        try {
-          Class<?> cls = Class.forName("jetbrains.mps.TestMain");
-          Method meth = cls.getMethod("loadProject", File.class);
-          project = (Project) meth.invoke(null, projectFile);
-        } catch (Exception ex) {
-          throw new RuntimeException(ex);
-        }
+        Project project = myEnvironment.loadProject(projectFile);
         info("Loaded project " + project);
         projects.add(project);
       }

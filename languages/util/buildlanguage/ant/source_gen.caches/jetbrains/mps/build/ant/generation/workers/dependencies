@@ -62,6 +62,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
@@ -69,7 +70,7 @@
     <classNode dependClassName="java.util.concurrent.Future" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
+    <classNode dependClassName="jetbrains.mps.build.ant.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.GenerateTask" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
@@ -84,20 +85,25 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer" />
+    <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
+    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.IMResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
-    <classNode extendsClassName="jetbrains.mps.build.ant.make.MakeWorker" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" file="TestGenerationWorker.java">

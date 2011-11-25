@@ -5,6 +5,7 @@ package jetbrains.mps.build.ant.make;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
 import org.apache.tools.ant.ProjectComponent;
+import jetbrains.mps.build.ant.Environment;
 import jetbrains.mps.project.Project;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
@@ -17,28 +18,19 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.StandaloneMPSProject;
-import com.intellij.openapi.project.ProjectManager;
 import java.io.File;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.ConsoleAppender;
-import jetbrains.mps.ide.IdeMain;
-import javax.swing.SwingUtilities;
-import com.intellij.idea.IdeaTestApplication;
 
 public class MakeWorker extends MpsWorker {
-  public MakeWorker(WhatToDo whatToDo) {
-    super(whatToDo);
-  }
-
   public MakeWorker(WhatToDo whatToDo, ProjectComponent component) {
-    super(whatToDo, component);
+    super(whatToDo, component, new MakeEnvironment());
   }
 
   public MakeWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger) {
-    super(whatToDo, logger);
+    super(whatToDo, logger, new MakeEnvironment());
+  }
+
+  public MakeWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger, Environment environment) {
+    super(whatToDo, logger, environment);
   }
 
   @Override
@@ -110,54 +102,6 @@ public class MakeWorker extends MpsWorker {
     disposeProjects(go.getProjects());
     dispose();
     showStatistic();
-  }
-
-  protected StandaloneMPSProject createDummyProject() {
-    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
-    File projectFile = FileUtil.createTmpFile();
-    final StandaloneMPSProject project = new StandaloneMPSProject(ideaProject);
-    project.init(new ProjectDescriptor());
-    projectFile.deleteOnExit();
-    return project;
-  }
-
-  protected void setupEnvironment() {
-    BasicConfigurator.configure(new ConsoleAppender());
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-    try {
-      configureMPS();
-    } catch (Exception ex) {
-      throw new RuntimeException(ex);
-    }
-    setMacro();
-    loadLibraries();
-    make();
-    reload();
-  }
-
-  @Override
-  protected void dispose() {
-    for (int i = 0; i < 3; i++) {
-      try {
-        SwingUtilities.invokeAndWait(new Runnable() {
-          public void run() {
-          }
-        });
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-    }
-  }
-
-  protected void configureMPS() {
-    super.configureMPS(true);
-    //   Value of this property is comma-separated list of plugin IDs intended to load by platform  
-    System.setProperty("idea.load.plugins.id", "jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make");
-    try {
-      IdeaTestApplication.getInstance(null);
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
   }
 
   public static void main(String[] args) {

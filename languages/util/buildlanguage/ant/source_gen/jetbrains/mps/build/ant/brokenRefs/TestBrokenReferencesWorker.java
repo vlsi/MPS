@@ -6,6 +6,7 @@ import jetbrains.mps.build.ant.make.MakeWorker;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.MpsWorker;
+import jetbrains.mps.build.ant.make.MakeEnvironment;
 import java.lang.management.MemoryMXBean;
 import java.lang.management.ManagementFactory;
 import com.intellij.openapi.project.Project;
@@ -34,7 +35,7 @@ public class TestBrokenReferencesWorker extends MakeWorker {
   private long myUsedNonHeap;
 
   public TestBrokenReferencesWorker(WhatToDo whatToDo, MpsWorker.LogLogger systemOutLogger) {
-    super(whatToDo, systemOutLogger);
+    super(whatToDo, systemOutLogger, new MakeEnvironment());
     MemoryMXBean mmbean = ManagementFactory.getMemoryMXBean();
     this.myUsedHeap = mmbean.getHeapMemoryUsage().getUsed();
     this.myUsedNonHeap = mmbean.getNonHeapMemoryUsage().getUsed();

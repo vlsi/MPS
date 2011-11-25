@@ -28,6 +28,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
     <classNode dependClassName="jetbrains.mps.build.ant.TeamCityMessageFormat" />
     <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.build.ant.make.MakeEnvironment" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
