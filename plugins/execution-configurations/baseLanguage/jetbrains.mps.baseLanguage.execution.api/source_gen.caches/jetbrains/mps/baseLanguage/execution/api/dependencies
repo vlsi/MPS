@@ -102,7 +102,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState" />
+    <classNode extendsClassName="jetbrains.mps.debug.BaseRunProfileState" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.execution.api.Java_Command" file="Java_Command.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
