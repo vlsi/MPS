@@ -17,6 +17,7 @@ import java.util.HashMap;
 import org.eclipse.jdt.internal.compiler.ast.Expression;
 import org.eclipse.jdt.internal.compiler.ast.Literal;
 import org.eclipse.jdt.internal.compiler.impl.Constant;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -28,7 +29,6 @@ import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.eclipse.jdt.internal.compiler.impl.ByteConstant;
 import org.eclipse.jdt.internal.compiler.impl.CharConstant;
-import jetbrains.mps.util.NameUtil;
 import org.eclipse.jdt.internal.compiler.impl.DoubleConstant;
 import org.eclipse.jdt.internal.compiler.impl.FloatConstant;
 import org.eclipse.jdt.internal.compiler.impl.IntConstant;
@@ -144,8 +144,13 @@ public class JavaConverterTreeBuilder {
 
   public SNode processExpressionRefl(Expression expression) {
     SNode result = null;
-    if (expression instanceof Literal && expression.constant != null && expression.constant != Constant.NotAConstant) {
-      result = SNodeOperations.cast(dispatchRefl("processConstant", expression.constant), "jetbrains.mps.baseLanguage.structure.Expression");
+    if (expression instanceof Literal && expression.constant != null) {
+      if (expression.constant == Constant.NotAConstant) {
+        // import token as string constant even if it was an error in literal 
+        result = new JavaConverterTreeBuilder.QuotationClass_m30mvz_a0a1a0a1a0().createNode(NameUtil.escapeString(new String(((Literal) expression).source())));
+      } else {
+        result = SNodeOperations.cast(dispatchRefl("processConstant", expression.constant), "jetbrains.mps.baseLanguage.structure.Expression");
+      }
     }
     if ((result == null)) {
       result = SNodeOperations.cast(dispatchRefl("processExpression", expression), "jetbrains.mps.baseLanguage.structure.Expression");
@@ -1698,6 +1703,24 @@ public class JavaConverterTreeBuilder {
       }
     }
     return result;
+  }
+
+  public static class QuotationClass_m30mvz_a0a1a0a1a0 {
+    public QuotationClass_m30mvz_a0a1a0a1a0() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setProperty("value", (String) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 
   public static class QuotationClass_m30mvz_a0c0b0nb {
