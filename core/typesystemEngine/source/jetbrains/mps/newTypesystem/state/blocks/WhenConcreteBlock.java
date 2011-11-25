@@ -33,7 +33,7 @@ import java.util.Set;
 public class WhenConcreteBlock extends Block {
   private final Runnable myRunnable;
   private final SNode myArgument;
-  private final ConditionKind myConditionKind;
+  protected final ConditionKind myConditionKind;
   private final boolean mySkipError;
 
   public WhenConcreteBlock(State state, Runnable runnable, String nodeModel, String nodeId, SNode argument, boolean isShallow, boolean skipError) {

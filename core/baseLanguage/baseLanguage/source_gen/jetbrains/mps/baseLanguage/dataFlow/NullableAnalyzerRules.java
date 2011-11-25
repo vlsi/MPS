@@ -22,14 +22,6 @@ public class NullableAnalyzerRules {
 
   public NullableAnalyzerRules() {
     {
-      DataFlowConstructor rule = new RuleEqualsNull();
-      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
-      if (!(myApplicableMap.containsKey(conceptName))) {
-        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
-      }
-      myApplicableMap.get(conceptName).add(rule);
-    }
-    {
       DataFlowConstructor rule = new RuleAssertNotNull();
       String conceptName = "jetbrains.mps.baseLanguage.structure.AssertStatement";
       if (!(myApplicableMap.containsKey(conceptName))) {

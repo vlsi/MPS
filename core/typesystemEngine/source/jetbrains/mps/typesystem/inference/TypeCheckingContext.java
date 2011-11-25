@@ -156,6 +156,8 @@ public abstract class TypeCheckingContext {
 
   public abstract void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError);
 
+  public abstract void whenConcrete(List<SNode> argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError);
+
   public abstract void whenConcrete(List<NodeInfo> arguments, Runnable r);
 
   public abstract void dispose();
