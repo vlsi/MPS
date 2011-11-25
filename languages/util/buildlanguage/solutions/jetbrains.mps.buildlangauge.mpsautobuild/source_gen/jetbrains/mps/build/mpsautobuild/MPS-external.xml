@@ -367,27 +367,27 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.runtime" />
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp">
-      <fileset dir="${base_dir}/core/baseLanguage/collections/solutions/customViewers/classes_gen" />
+      <fileset dir="${base_dir}/plugins/debugger-java-customViewers/collections/classes_gen" />
     </copy>
-    <copy file="${base_dir}/core/baseLanguage/collections/solutions/customViewers/source_gen/jetbrains/mps/baseLanguage/collections/customViewers/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp/META-INF/plugin.xml" />
+    <copy file="${base_dir}/plugins/debugger-java-customViewers/collections/source_gen/jetbrains/mps/baseLanguage/collections/customViewers/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp/META-INF/plugin.xml" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp/META-INF" />
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp" excludes="" />
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp">
-      <fileset dir="${base_dir}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.customViewers/classes_gen" />
+      <fileset dir="${base_dir}/plugins/debugger-java-customViewers/smodel/classes_gen" />
     </copy>
-    <copy file="${base_dir}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.customViewers/source_gen/jetbrains/mps/lang/smodel/customViewers/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp/META-INF/plugin.xml" />
+    <copy file="${base_dir}/plugins/debugger-java-customViewers/smodel/source_gen/jetbrains/mps/lang/smodel/customViewers/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp/META-INF/plugin.xml" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp/META-INF" />
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp" excludes="" />
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp">
-      <fileset dir="${base_dir}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.customViewers/classes_gen" />
+      <fileset dir="${base_dir}/plugins/debugger-java-customViewers/tuples/classes_gen" />
     </copy>
-    <copy file="${base_dir}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.customViewers/source_gen/jetbrains/mps/baseLanguage/tuples/customViewers/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp/META-INF/plugin.xml" />
+    <copy file="${base_dir}/plugins/debugger-java-customViewers/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/customViewers/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp/META-INF/plugin.xml" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp/META-INF" />
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp" excludes="" />
