@@ -50,8 +50,8 @@ public class ModelRules {
   private static final Logger LOG = Logger.getLogger(RulesManager.class);
 
   public ModelRules(SModelDescriptor model) {
-    Set<ModuleReference> languages = SModelOperations.getUsedLanguages(model.getSModel());
-    for (ModuleReference language : languages) {
+    List<Language> languages = SModelOperations.getLanguages(model.getSModel(), GlobalScope.getInstance());
+    for (Language language : languages) {
       loadLanguage(language.getModuleFqName());
     }
   }
