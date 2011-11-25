@@ -428,18 +428,18 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin" />
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.build.execution.jar.tmp">
-      <fileset dir="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.execution/classes_gen" />
+      <fileset dir="${base_dir}/plugins/execution-configurations/ant/jetbrains.mps.build.execution/classes_gen" />
     </copy>
-    <copy file="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.execution/source_gen/jetbrains/mps/build/execution/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.build.execution.jar.tmp/META-INF/plugin.xml" />
+    <copy file="${base_dir}/plugins/execution-configurations/ant/jetbrains.mps.build.execution/source_gen/jetbrains/mps/build/execution/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.build.execution.jar.tmp/META-INF/plugin.xml" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.build.execution.jar.tmp/META-INF" />
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.build.execution.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.build.execution.jar.tmp" excludes="" />
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.build.execution.jar.tmp" />
-    <copy file="${base_dir}/core/baseLanguage/unitTest/solutions/execution/source_gen/jetbrains/mps/baseLanguage/unitTest/execution/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/META-INF/plugin.xml" />
+    <copy file="${base_dir}/plugins/execution-configurations/unitTests/execution/source_gen/jetbrains/mps/baseLanguage/unitTest/execution/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/META-INF/plugin.xml" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/META-INF" />
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/lib/jetbrains.mps.baseLanguage.unitTest.execution.jar.tmp">
-      <fileset dir="${base_dir}/core/baseLanguage/unitTest/solutions/execution/classes_gen" />
+      <fileset dir="${base_dir}/plugins/execution-configurations/unitTests/execution/classes_gen" />
     </copy>
     <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/lib/jetbrains.mps.baseLanguage.unitTest.execution.jar.tmp/libraries" append="true">lib${line.separator}</echo>
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/lib/jetbrains.mps.baseLanguage.unitTest.execution.jar" duplicate="preserve" filesonly="true">
@@ -449,10 +449,10 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution" />
-    <copy file="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.execution/source_gen/jetbrains/mps/baseLanguage/execution/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.execution/META-INF/plugin.xml" />
+    <copy file="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution/source_gen/jetbrains/mps/baseLanguage/execution/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.execution/META-INF/plugin.xml" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.execution/META-INF" />
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.execution/lib/jetbrains.mps.baseLanguage.execution.jar.tmp">
-      <fileset dir="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.execution/classes_gen" />
+      <fileset dir="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution/classes_gen" />
     </copy>
     <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.execution/lib/jetbrains.mps.baseLanguage.execution.jar.tmp/libraries" append="true">lib${line.separator}</echo>
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.execution/lib/jetbrains.mps.baseLanguage.execution.jar" duplicate="preserve" filesonly="true">
