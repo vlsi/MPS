@@ -42,7 +42,6 @@ import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
-import jetbrains.mps.idea.core.facet.ModelRootContentEntryEditor;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 
 import javax.swing.*;

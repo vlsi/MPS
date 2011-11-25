@@ -111,6 +111,7 @@ public class SolutionIdea extends Solution {
                     Dependency dep = new Dependency();
                     dep.setModuleRef(usedModuleMPSFacet.getSolution().getModuleReference());
                     dep.setReexport(false);
+                    myDependencies.add(dep);
                 }
             }
         }

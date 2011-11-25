@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.facet;
+package jetbrains.mps.idea.core.facet.ui;
 
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.roots.ContentEntry;

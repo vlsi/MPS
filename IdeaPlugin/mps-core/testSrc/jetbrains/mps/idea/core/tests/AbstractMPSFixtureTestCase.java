@@ -20,12 +20,25 @@ import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetType;
 import com.intellij.facet.FacetTypeRegistry;
 import com.intellij.facet.ModifiableFacetModel;
+import com.intellij.ide.highlighter.ModuleFileType;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.module.Module;
-import com.intellij.testFramework.fixtures.JavaCodeInsightFixtureTestCase;
+import com.intellij.openapi.module.ModuleManager;
+import com.intellij.openapi.module.StdModuleTypes;
+import com.intellij.openapi.project.Project;
+import com.intellij.testFramework.PlatformTestUtil;
+import com.intellij.testFramework.UsefulTestCase;
+import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
+import com.intellij.testFramework.fixtures.*;
+import com.intellij.testFramework.fixtures.impl.JavaTestFixtureFactoryImpl;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.smodel.ModelAccess;
+
+import javax.swing.*;
+import java.io.File;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,14 +47,78 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
  * Time: 4:15 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class AbstractMPSFixtureTestCase extends JavaCodeInsightFixtureTestCase {
+public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
+    private static int ourIndex = 0;
 
     protected MPSFacet myFacet;
+    private JavaCodeInsightTestFixture myFixture;
+    protected Module myModule;
+    protected TestFixtureBuilder<IdeaProjectTestFixture> myProjectBuilder;
+
+    static {
+        IdeaTestFixtureFactory.getFixtureFactory().registerFixtureBuilder(CustomJavaModuleFixtureBuilder.class, CustomJavaModuleFixtureBuilder.class);
+    }
+
+    private static int getNextIndex() {
+        return ourIndex++;
+    }
+
+    public static void flushEDT() throws InterruptedException {
+        assert SwingUtilities.isEventDispatchThread();
+        final boolean[] flag = new boolean[]{false};
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+            @Override
+            public void run() {
+                flag[0] = true;
+            }
+        });
+        while (!flag[0]) {
+            PlatformTestUtil.dispatchAllInvocationEventsInIdeEventQueue();
+        }
+    }
 
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+
+        // was copied from JavaCodeInsightFixtureTestCase
+        // we can remove these lines and extend from JavaCodeInsightFixtureTestCase in IDEA 11.
+        myProjectBuilder = IdeaTestFixtureFactory.getFixtureFactory().createFixtureBuilder();
+        myFixture = JavaTestFixtureFactory.getFixtureFactory().createCodeInsightFixture(myProjectBuilder.getFixture());
+        JavaModuleFixtureBuilder moduleFixtureBuilder = myProjectBuilder.addModule(CustomJavaModuleFixtureBuilder.class);
+        moduleFixtureBuilder.addSourceContentRoot(myFixture.getTempDirPath());
+        tuneFixture(moduleFixtureBuilder);
+
+        myFixture.setUp();
+        myFixture.setTestDataPath(getTestDataPath());
+        myModule = moduleFixtureBuilder.getFixture().getModule();
+
         myFacet = addMPSFacet(myModule);
+    }
+
+    protected Module addModule(TestFixtureBuilder<IdeaProjectTestFixture> projectBuilder) {
+        CustomJavaModuleFixtureBuilder moduleFixtureBuilder = projectBuilder.addModule(CustomJavaModuleFixtureBuilder.class);
+        String moduleFolderName = "module" + getNextIndex();
+        File moduleFolder = new File(myFixture.getTempDirPath() + File.separator + moduleFolderName);
+        assertTrue(moduleFolder.mkdirs());
+        moduleFixtureBuilder.setModuleFolderName(moduleFolderName);
+        moduleFixtureBuilder.addSourceContentRoot(moduleFolder.getPath());
+        return moduleFixtureBuilder.getFixture().getModule();
+    }
+
+    protected File getModuleHome() {
+        return new File(myModule.getModuleFilePath()).getParentFile();
+    }
+
+    protected void tuneFixture(final JavaModuleFixtureBuilder moduleBuilder) throws Exception {
+    }
+
+    protected String getTestDataPath() {
+        return PathManager.getHomePath().replace(File.separatorChar, '/') + getBasePath();
+    }
+
+    protected String getBasePath() {
+        return "";
     }
 
     protected MPSFacet addMPSFacet(Module module) {
@@ -65,8 +142,32 @@ public abstract class AbstractMPSFixtureTestCase extends JavaCodeInsightFixtureT
     protected void preConfigureFacet(MPSFacetConfiguration configuration) {
     }
 
-    @Override
-    protected void tearDown() throws Exception {
-        super.tearDown();
+    public static class CustomJavaModuleFixtureBuilder extends JavaTestFixtureFactoryImpl.MyJavaModuleFixtureBuilderImpl {
+        private static int ourIndex;
+        private String myModuleFolderName;
+
+        public CustomJavaModuleFixtureBuilder(TestFixtureBuilder<? extends IdeaProjectTestFixture> testFixtureBuilder) {
+            super(testFixtureBuilder);
+        }
+
+        protected Module createModule() {
+            IdeaProjectTestFixture fixture = (IdeaProjectTestFixture) myFixtureBuilder.getFixture();
+            final Project project = fixture.getProject();
+            assert project != null;
+            final String moduleFilePath = new File(project.getProjectFilePath()).getParent() + File.separator + getModuleFileName();
+            return ModuleManager.getInstance(project).newModule(moduleFilePath, StdModuleTypes.JAVA);
+        }
+
+        private static int getNextIndex() {
+            return ourIndex++;
+        }
+
+        private String getModuleFileName() {
+            return (myModuleFolderName == null ? getNextIndex() : myModuleFolderName + File.separator + myModuleFolderName) + ModuleFileType.DOT_DEFAULT_EXTENSION;
+        }
+
+        public void setModuleFolderName(String moduleFolderName) {
+            myModuleFolderName = moduleFolderName;
+        }
     }
 }

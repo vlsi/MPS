@@ -24,7 +24,6 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -36,8 +35,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 import java.util.*;
 import java.util.List;
 
@@ -186,17 +183,8 @@ public class UsedLanguagesTab {
                 @Override
                 public void run() {
                     final List<ModuleReference> allLanguages = new ArrayList<ModuleReference>();
-// TODO: Uncomment then languages will be available in MPS
-//                    for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
-//                        allLanguages.add(language.getModuleReference());
-//                    }
-                    for (Field field : BootstrapLanguages.class.getFields()) {
-                        if (Modifier.isStatic(field.getModifiers()) && field.getType().equals(ModuleReference.class)) {
-                            try {
-                                allLanguages.add((ModuleReference) field.get(null));
-                            } catch (IllegalAccessException e1) {
-                            }
-                        }
+                    for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
+                        allLanguages.add(language.getModuleReference());
                     }
                     SwingUtilities.invokeLater(new Runnable() {
                         @Override
