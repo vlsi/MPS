@@ -20,6 +20,9 @@ import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.LongestCommonSubsequenceFinder;
@@ -35,10 +38,7 @@ import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange;
 import jetbrains.mps.vcs.diff.changes.ModelVersionChange;
-import jetbrains.mps.internal.collections.runtime.ISetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.vcs.diff.changes.AddRootChange;
-import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class ChangeSetBuilder {
@@ -112,19 +112,24 @@ public class ChangeSetBuilder {
     }
   }
 
-  private void buildNodeChanges(SNode oldNode) {
-    SNodeId nodeId = oldNode.getSNodeId();
-    SNode newNode = myNewModel.getNodeById(nodeId);
+  public void buildNodeChanges(@Nullable SNode oldNode, @Nullable SNode newNode) {
+    assert oldNode != null || newNode != null;
 
-    buildPropertyChanges(oldNode, newNode);
-    buildReferenceChanges(oldNode, newNode);
+    if (oldNode == null) {
+      ListSequence.fromList(myNewChanges).addElement(new AddRootChange(myChangeSet, newNode.getSNodeId()));
+    } else if (newNode == null) {
+      ListSequence.fromList(myNewChanges).addElement(new DeleteRootChange(myChangeSet, oldNode.getSNodeId()));
+    } else {
+      buildPropertyChanges(oldNode, newNode);
+      buildReferenceChanges(oldNode, newNode);
 
-    for (String role : SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(SNodeOperations.getChildren(oldNode)).concat(ListSequence.fromList(SNodeOperations.getChildren(newNode))).select(new ISelector<SNode, String>() {
-      public String select(SNode ch) {
-        return SNodeOperations.getContainingLinkRole(ch);
+      for (String role : SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(SNodeOperations.getChildren(oldNode)).concat(ListSequence.fromList(SNodeOperations.getChildren(newNode))).select(new ISelector<SNode, String>() {
+        public String select(SNode ch) {
+          return SNodeOperations.getContainingLinkRole(ch);
+        }
+      }))) {
+        buildNodeRoleChanges(oldNode, newNode, role);
       }
-    }))) {
-      buildNodeRoleChanges(oldNode, newNode, role);
     }
   }
 
@@ -159,7 +164,7 @@ public class ChangeSetBuilder {
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode child) {
-        buildNodeChanges(child);
+        buildNodeChanges(child, myNewModel.getNodeById(child.getSNodeId()));
       }
     });
   }
@@ -238,39 +243,14 @@ public class ChangeSetBuilder {
     }
   }
 
-  private Iterable<SNodeId> generateRootChanges() {
-    // Returns common root ids 
-
-    _FunctionTypes._return_P1_E0<? extends Set<SNodeId>, ? super SModel> rootIds = new _FunctionTypes._return_P1_E0<ISetSequence<SNodeId>, SModel>() {
-      public ISetSequence<SNodeId> invoke(SModel m) {
-        return SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SModelOperations.getRoots(m, null)).select(new ISelector<SNode, SNodeId>() {
-          public SNodeId select(SNode node) {
-            return node.getSNodeId();
-          }
-        }));
-      }
-    };
-    Set<SNodeId> oldRootIds = rootIds.invoke(myOldModel);
-    Set<SNodeId> newRootIds = rootIds.invoke(myNewModel);
-
-    ListSequence.fromList(myNewChanges).addSequence(SetSequence.fromSet(newRootIds).subtract(SetSequence.fromSet(oldRootIds)).select(new ISelector<SNodeId, AddRootChange>() {
-      public AddRootChange select(SNodeId r) {
-        return new AddRootChange(myChangeSet, r);
-      }
-    }));
-    ListSequence.fromList(myNewChanges).addSequence(SetSequence.fromSet(oldRootIds).subtract(SetSequence.fromSet(newRootIds)).select(new ISelector<SNodeId, DeleteRootChange>() {
-      public DeleteRootChange select(SNodeId r) {
-        return new DeleteRootChange(myChangeSet, r);
-      }
-    }));
-
-    return SetSequence.fromSet(oldRootIds).intersect(SetSequence.fromSet(newRootIds));
-  }
-
   private void buildChanges(boolean withOpposite) {
-    Iterable<SNodeId> commonRootIds = generateRootChanges();
-    for (SNodeId rootId : Sequence.fromIterable(commonRootIds)) {
-      buildNodeChanges(myOldModel.getNodeById(rootId));
+    Iterable<SNodeId> allRootIds = ListSequence.fromList(SModelOperations.getRoots(myOldModel, null)).concat(ListSequence.fromList(SModelOperations.getRoots(myNewModel, null))).select(new ISelector<SNode, SNodeId>() {
+      public SNodeId select(SNode n) {
+        return n.getSNodeId();
+      }
+    });
+    for (SNodeId rootId : SetSequence.fromSetWithValues(new HashSet<SNodeId>(), allRootIds)) {
+      buildNodeChanges(myOldModel.getNodeById(rootId), myNewModel.getNodeById(rootId));
     }
 
     buildMetadataChanges();

@@ -36,9 +36,9 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
@@ -49,7 +49,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.event.SModelChildEvent;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 
 public class ChangesTracking {
   protected static Log log = LogFactory.getLog(ChangesTracking.class);
@@ -178,7 +178,7 @@ public class ChangesTracking {
     myDifference.removeChange(change);
   }
 
-  private <C extends ModelChange> void removeChanges(SNodeId nodeId, final Class<C> changeClass, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super C> condition) {
+  private <C extends ModelChange> int removeChanges(SNodeId nodeId, final Class<C> changeClass, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super C> condition) {
     Set<ModelChange> changes = myNodesToChanges.getValues(nodeId);
     List<ModelChange> toRemove = SetSequence.fromSet(changes).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
@@ -190,6 +190,30 @@ public class ChangesTracking {
         removeChange(it);
       }
     });
+    return ListSequence.fromList(toRemove).count();
+  }
+
+  private void removeDescendantChanges(SNodeId parentId, String role) {
+    SNode oldNode = getOldNode(parentId);
+    assert oldNode != null;
+    List<SNode> children = oldNode.getChildren(role);
+    ListSequence.fromList(children).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode c) {
+        removeDescendantChanges(c.getSNodeId());
+      }
+    });
+  }
+
+  private void removeDescendantChanges(SNodeId nodeId) {
+    SNode oldNode = getOldNode(nodeId);
+    assert oldNode != null;
+    for (SNode d : ListSequence.fromList(SNodeOperations.getDescendants(oldNode, null, true, new String[]{}))) {
+      removeChanges(d.getSNodeId(), ModelChange.class, new _FunctionTypes._return_P1_E0<Boolean, ModelChange>() {
+        public Boolean invoke(ModelChange ch) {
+          return true;
+        }
+      });
+    }
   }
 
   private void buildAndAddChanges(_FunctionTypes._void_P1_E0<? super ChangeSetBuilder> buildAction) {
@@ -205,7 +229,7 @@ public class ChangesTracking {
 
   @Nullable
   private SNode getOldNode(@NotNull SNodeId id) {
-    return check_5iuzi5_a0a0a9(myDifference.getChangeSet()).getNodeById(id);
+    return check_5iuzi5_a0a0a11(myDifference.getChangeSet()).getNodeById(id);
   }
 
   private void runUpdateTask(final _FunctionTypes._void_P0_E0 task, SNode currentNode) {
@@ -262,7 +286,7 @@ public class ChangesTracking {
     return null;
   }
 
-  private static SModel check_5iuzi5_a0a0a9(ChangeSet checkedDotOperand) {
+  private static SModel check_5iuzi5_a0a0a11(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOldModel();
     }
@@ -336,20 +360,7 @@ public class ChangesTracking {
               return role.equals(ch.getRole());
             }
           });
-          SNode oldNode = getOldNode(parentId);
-          assert oldNode != null;
-          List<SNode> children = oldNode.getChildren(role);
-          for (SNode d : ListSequence.fromList(children).translate(new ITranslator2<SNode, SNode>() {
-            public Iterable<SNode> translate(SNode it) {
-              return SNodeOperations.getDescendants(it, null, true, new String[]{});
-            }
-          })) {
-            removeChanges(d.getSNodeId(), ModelChange.class, new _FunctionTypes._return_P1_E0<Boolean, ModelChange>() {
-              public Boolean invoke(ModelChange ch) {
-                return true;
-              }
-            });
-          }
+          removeDescendantChanges(parentId, role);
           if (event.getModel().getNodeById(parentId) == null) {
             // node is already deleted, no need to build diff for it 
             return;
@@ -371,6 +382,48 @@ public class ChangesTracking {
     @Override
     public void childRemoved(SModelChildEvent event) {
       processChildEvent(event);
+    }
+
+    @Override
+    public void rootRemoved(final SModelRootEvent event) {
+      runUpdateTask(new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          final SNodeId rootId = event.getRoot().getSNodeId();
+
+          if (removeChanges(rootId, AddRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, AddRootChange>() {
+            public Boolean invoke(AddRootChange ch) {
+              return true;
+            }
+          }) == 0) {
+            // root was not added 
+            removeDescendantChanges(rootId);
+            buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
+              public void invoke(ChangeSetBuilder b) {
+                b.buildNodeChanges(getOldNode(rootId), null);
+              }
+            });
+          }
+        }
+      }, event.getRoot());
+    }
+
+    @Override
+    public void rootAdded(final SModelRootEvent event) {
+      runUpdateTask(new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          final SNodeId rootId = event.getRoot().getSNodeId();
+          removeChanges(rootId, DeleteRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, DeleteRootChange>() {
+            public Boolean invoke(DeleteRootChange ch) {
+              return true;
+            }
+          });
+          buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
+            public void invoke(ChangeSetBuilder b) {
+              b.buildNodeChanges(getOldNode(rootId), event.getRoot());
+            }
+          });
+        }
+      }, event.getRoot());
     }
   }
 }
