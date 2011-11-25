@@ -92,7 +92,6 @@
       <modulePath path="${project}/core/baseLanguage/unitTest/solutions/lib/jetbrains.mps.baseLnaguage.unitTest.lib.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/core/baseLanguage/unitTest/unitTest.mpl" folder="baseLanguage.unitTest" />
-      <modulePath path="${project}/core/debug-api/languages/api/api.mpl" folder="debugger.api" />
       <modulePath path="${project}/core/debug-api/solutions/jetbrains.mps.debugger.api.api/api.msd" folder="debugger.api" />
       <modulePath path="${project}/core/debug/solutions/jetbrains.mps.debugger.java.api/jetbrains.mps.debugger.java.api.msd" folder="debugger.java" />
       <modulePath path="${project}/core/dependencies/dependencies.msd" folder="core" />
@@ -259,6 +258,7 @@
       <modulePath path="${project}/obsolete/matrixLanguage/languages/matrixLanguage/matrixLanguage.mpl" folder="samples" />
       <modulePath path="${project}/obsolete/matrixLanguage/solutions/jetbrains.mps.matrixLanguage.runtime/jetbrains.mps.matrixLanguage.runtime.msd" folder="samples" />
       <modulePath path="${project}/obsolete/matrixLanguage/solutions/jetbrains.mps.matrixLanguage.sandbox/jetbrains.mps.matrixLanguage.sandbox.msd" folder="samples" />
+      <modulePath path="${project}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/api.mpl" folder="debugger.api" />
       <modulePath path="${project}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.languages.plugin/plugin.msd" folder="debugger.api" />
       <modulePath path="${project}/plugins/debugger-api/jetbrains.mps.debugger-api.msd" folder="debugger.api" />
       <modulePath path="${project}/plugins/debugger-java-customViewers/collections/customViewers.msd" folder="debugger.java.languages.usages" />

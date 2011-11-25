@@ -72,8 +72,8 @@
     <content url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../core/debug-api/languages/api/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/debug-api/languages/api/source_gen" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../../plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../core/dependencies/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/dependencies/source_gen" isTestSource="false" />

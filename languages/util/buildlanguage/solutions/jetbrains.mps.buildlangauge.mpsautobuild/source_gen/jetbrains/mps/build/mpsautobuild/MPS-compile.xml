@@ -40,7 +40,7 @@
   <property name="jetbrains.mps.build.packaging.classes" value="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
   <property name="jetbrains.mps.build.property.classes" value="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
   <property name="jetbrains.mps.buildlanguage.classes" value="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
-  <property name="jetbrains.mps.debugger.api.lang.classes" value="${base_dir}/core/debug-api/languages/api/classes_gen" />
+  <property name="jetbrains.mps.debugger.api.lang.classes" value="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/classes_gen" />
   <property name="jetbrains.mps.debugger.java.customViewers.classes" value="${base_dir}/plugins/debugger-java-languages/customViewers/classes_gen" />
   <property name="jetbrains.mps.debugger.java.evaluation.classes" value="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
   <property name="jetbrains.mps.debugger.java.privateMembers.classes" value="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
@@ -348,8 +348,8 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.debugger.api.lang_tjc.src">
-    <path path="${base_dir}/core/debug-api/languages/api/source_gen" />
-    <path path="${base_dir}/core/debug-api/languages/api/test_gen" />
+    <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen" />
+    <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.debugger.java.customViewers_tjc.src">
     <path path="${base_dir}/plugins/debugger-java-languages/customViewers/source_gen" />
@@ -3587,7 +3587,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debugger.api.lang_tjc.classpaths">
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
@@ -3620,7 +3620,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -3715,6 +3714,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -4185,7 +4185,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -4283,6 +4282,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -4474,7 +4474,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -4572,6 +4571,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -10344,21 +10344,21 @@
   <target name="compile.cycle.jetbrains.mps.debugger.api.lang_tjc" depends="compile.cycle.jetbrains.mps.build.gentest_tjc">
     <property name="classes.dump" value="${jetbrains.mps.debugger.api.lang.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/core/debug-api/languages/api/source_gen" />
-    <mkdir dir="${base_dir}/core/debug-api/languages/api/test_gen" />
+    <mkdir dir="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen" />
+    <mkdir dir="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.debugger.api.lang.classes}" />
     <javac classpathref="cycle.jetbrains.mps.debugger.api.lang_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.debugger.api.lang_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.debugger.api.lang.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/core/debug-api/languages/api/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/core/debug-api/languages/api/test_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.debugger.api.lang_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debugger.api.lang.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/core/debug-api/languages/api/source_gen" />
-        <path path="${base_dir}/core/debug-api/languages/api/test_gen" />
+        <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen" />
+        <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
