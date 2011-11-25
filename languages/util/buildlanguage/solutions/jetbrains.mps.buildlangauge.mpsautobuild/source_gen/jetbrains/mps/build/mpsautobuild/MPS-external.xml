@@ -402,7 +402,7 @@
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp">
       <fileset dir="${base_dir}/plugins/debugger-java-languages/plugin/classes_gen" />
     </copy>
-    <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp/libraries" append="true">lib</echo>
+    <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp/libraries" append="true">lib${line.separator}</echo>
     <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp/libraries" append="true">languages</echo>
     <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp/libraries" append="true">${line.separator}</echo>
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar" duplicate="preserve" filesonly="true">
@@ -418,7 +418,7 @@
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp">
       <fileset dir="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.languages.plugin/classes_gen" />
     </copy>
-    <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp/libraries" append="true">lib</echo>
+    <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp/libraries" append="true">lib${line.separator}</echo>
     <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp/libraries" append="true">languages</echo>
     <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp/libraries" append="true">${line.separator}</echo>
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar" duplicate="preserve" filesonly="true">
@@ -441,7 +441,7 @@
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/lib/jetbrains.mps.baseLanguage.unitTest.execution.jar.tmp">
       <fileset dir="${base_dir}/core/baseLanguage/unitTest/solutions/execution/classes_gen" />
     </copy>
-    <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/lib/jetbrains.mps.baseLanguage.unitTest.execution.jar.tmp/libraries" append="true">lib</echo>
+    <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/lib/jetbrains.mps.baseLanguage.unitTest.execution.jar.tmp/libraries" append="true">lib${line.separator}</echo>
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/lib/jetbrains.mps.baseLanguage.unitTest.execution.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/lib/jetbrains.mps.baseLanguage.unitTest.execution.jar.tmp" excludes="" />
     </jar>
@@ -454,7 +454,7 @@
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.execution/lib/jetbrains.mps.baseLanguage.execution.jar.tmp">
       <fileset dir="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.execution/classes_gen" />
     </copy>
-    <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.execution/lib/jetbrains.mps.baseLanguage.execution.jar.tmp/libraries" append="true">lib</echo>
+    <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.execution/lib/jetbrains.mps.baseLanguage.execution.jar.tmp/libraries" append="true">lib${line.separator}</echo>
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.execution/lib/jetbrains.mps.baseLanguage.execution.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.execution/lib/jetbrains.mps.baseLanguage.execution.jar.tmp" excludes="" />
     </jar>
@@ -472,7 +472,7 @@
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp">
       <fileset dir="${base_dir}/plugins/execution-languages/plugin/classes_gen" />
     </copy>
-    <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp/libraries" append="true">lib</echo>
+    <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp/libraries" append="true">lib${line.separator}</echo>
     <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp/libraries" append="true">languages</echo>
     <echo file="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp/libraries" append="true">${line.separator}</echo>
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar" duplicate="preserve" filesonly="true">
