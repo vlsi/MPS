@@ -1410,6 +1410,9 @@ public class JavaConverterTreeBuilder {
         throw new JavaConverterException("Native methods not supported");
       }
       myCurrentMethod = method;
+      if (b.isSynchronized()) {
+        SPropertyOperations.set(method, "isSynchronized", "" + true);
+      }
       SNode methodBody = SLinkOperations.getTarget(method, "body", true);
       if ((methodBody == null)) {
         methodBody = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
