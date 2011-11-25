@@ -149,6 +149,9 @@ public class FileMPSProject extends Project {
     }
 
     private void load(File projFile) {
+      if (projFile == null) {
+        return;
+      }
       Document document = null;
       try {
         document = JDOMUtil.loadDocument(projFile);

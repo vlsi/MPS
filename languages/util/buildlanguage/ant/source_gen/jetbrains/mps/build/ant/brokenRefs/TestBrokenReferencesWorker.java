@@ -46,7 +46,7 @@ public class TestBrokenReferencesWorker extends MakeWorker {
 
     File projectFile = FileUtil.createTmpFile();
     FileMPSProject project = new FileMPSProject(projectFile);
-    project.init(new FileMPSProject.ProjectDescriptor(projectFile));
+    project.init(new FileMPSProject.ProjectDescriptor(null));
     projectFile.deleteOnExit();
 
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess();
