@@ -12,4 +12,8 @@ public class VariableReference_Behavior {
   public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return TypeAnnotable_Behavior.call_getTypeAnnotation_1233920952262(SLinkOperations.getTarget(thisNode, "variableDeclaration", false));
   }
+
+  public static SNode virtual_getVariable_1023687332192481693(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "variableDeclaration", false);
+  }
 }
