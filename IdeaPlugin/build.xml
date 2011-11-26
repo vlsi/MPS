@@ -344,8 +344,9 @@
                 <fileset dir="${home.idea_ce}/plugins/junit/lib">
                     <include name="junit-rt.jar"/>
                 </fileset>
-                <fileset dir="${base_dir}/IdeaPlugin/mps-core/lib">
-                    <include name="**/*.jar"/>
+                <fileset dir="${base_dir}/lib">
+                    <include name="asm.jar"/>
+                    <include name="diffutils-1.2.1.jar"/>
                 </fileset>
                 <pathelement path="${build_dir}/mpscore_jar"/>
                 <pathelement path="${build_dir}/mpsworkbench_jar"/>
