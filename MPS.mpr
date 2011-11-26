@@ -221,8 +221,6 @@
       <modulePath path="${project}/languages/util/runConfigurations/languages/settings/settings.mpl" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/languages/util/util.mpl" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" folder="languages.execution" />
-      <modulePath path="${project}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.impl.tests.sandbox/sandbox.msd" folder="languages.execution" />
-      <modulePath path="${project}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.impl.tests/tests.msd" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.impl/impl.msd" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="languages.execution" />
       <modulePath path="${project}/languages/util/ui/languages/gwt/gwt.mpl" folder="languages.ui" />
@@ -286,6 +284,8 @@
       <modulePath path="${project}/plugins/execution-languages/deprecated/runConfigurations.mpl" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/library/jetbrains.mps.execution.lib.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/plugin/languages.msd" folder="languages.execution.languages-plugin" />
+      <modulePath path="${project}/plugins/execution-languages/tests.sandbox/sandbox.msd" folder="languages.execution.languages-plugin" />
+      <modulePath path="${project}/plugins/execution-languages/tests/tests.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="workbench" />
       <modulePath path="${project}/plugins/migration/solution/jetbrains.mps.ide.migration.msd" folder="plugins" />
       <modulePath path="${project}/plugins/migration21/solution/migration21.msd" folder="plugins" />
