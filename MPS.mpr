@@ -272,10 +272,7 @@
       <modulePath path="${project}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/api.msd" folder="languages.execution.usages.baseLanguage" />
       <modulePath path="${project}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/startup.msd" folder="languages.execution.usages.baseLanguage" />
       <modulePath path="${project}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution/execution.msd" folder="languages.execution.usages.baseLanguage" />
-      <modulePath path="${project}/plugins/execution-configurations/baseLanguage/jetbrains.mps.execution.lib.startup/startup.msd" folder="languages.execution.usages.baseLanguage" />
       <modulePath path="${project}/plugins/execution-configurations/jetbrains.mps.execution.configurations.mps/mps.msd" folder="languages.execution.usages" />
-      <modulePath path="${project}/plugins/execution-configurations/unitTest/execution/execution.msd" folder="languages.execution.usages" />
-      <modulePath path="${project}/plugins/execution-configurations/unitTest/runtime/jetbrains.mps.baseLanguage.unitTest.runtime.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/plugins/execution-configurations/unitTests/execution/execution.msd" folder="languages.execution.usages.unitTests" />
       <modulePath path="${project}/plugins/execution-configurations/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.runtime.msd" folder="languages.execution.usages.unitTests" />
       <modulePath path="${project}/plugins/execution-languages/commands/commands.mpl" folder="languages.execution.languages-plugin" />
