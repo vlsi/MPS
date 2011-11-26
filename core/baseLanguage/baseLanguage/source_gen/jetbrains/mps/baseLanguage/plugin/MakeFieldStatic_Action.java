@@ -66,13 +66,9 @@ public class MakeFieldStatic_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final RefactoringContext c = RefactoringContext.createRefactoringContext(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings" + "." + "MakeFieldStatic"), Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("field")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
-      new Thread() {
-        public void run() {
-          new RefactoringFacade().execute(c);
-        }
-      }.start();
+      final RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("field")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
 
+      new RefactoringFacade().execute(c);
 
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeFieldStatic", t);

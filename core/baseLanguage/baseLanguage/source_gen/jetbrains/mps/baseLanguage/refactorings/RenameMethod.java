@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -51,8 +50,8 @@ public class RenameMethod extends BaseRefactoring {
       }
     });
     return (ListSequence.fromList(overriding.value).isEmpty() ?
-      RenameMethod.this.ask(refactoringContext, MPSChooserFactory.createStringChooser(refactoringContext, "newName", new RenameMethod_newName_Settings(refactoringContext))) :
-      RenameMethod.this.ask(refactoringContext, MPSChooserFactory.createStringChooser(refactoringContext, "newName", new RenameMethod_newName_Settings(refactoringContext)), MPSChooserFactory.createBooleanChooser(refactoringContext, "refactorOverriding", new RenameMethod_refactorOverriding_Settings(refactoringContext)))
+      false :
+      false
     );
   }
 

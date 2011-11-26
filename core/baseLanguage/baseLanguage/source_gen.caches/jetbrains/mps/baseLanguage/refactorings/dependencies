@@ -28,12 +28,10 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.ConvertAnonymousClass_Target" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.ConvertAnonymousClass_name_Settings" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring" />
     <classNode dependClassName="jetbrains.mps.lang.core.refactorings.MoveNodes" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.refactorings.ConvertAnonymousClass_Target" file="ConvertAnonymousClass_Target.java">
@@ -105,7 +103,6 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField_Target" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField_destination_Settings" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticFieldRefactoring" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
@@ -114,7 +111,6 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
@@ -138,7 +134,6 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod_Target" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod_destination_Settings" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
@@ -147,7 +142,6 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
@@ -175,8 +169,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.RenameMethod_Target" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.RenameMethod_newName_Settings" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.RenameMethod_refactorOverriding_Settings" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.RenameUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
@@ -188,7 +180,6 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

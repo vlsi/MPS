@@ -66,7 +66,7 @@ public class GenericRefactoringAction extends BaseAction {
     new Thread() {
       public void run() {
         context.setRefactoring(myRefactoring);
-        new RefactoringFacade().execute(context);
+        new RefactoringFacade().executeInThread(context);
       }
     }.start();
   }

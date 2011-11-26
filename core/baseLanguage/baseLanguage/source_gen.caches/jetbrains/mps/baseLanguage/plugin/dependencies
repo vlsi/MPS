@@ -143,16 +143,13 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring" />
-    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringFacade" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -774,7 +771,6 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Map" />

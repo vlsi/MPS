@@ -6,7 +6,6 @@ import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.lang.core.refactorings.MoveNodes;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring;
 
 public class ConvertAnonymousClass extends BaseRefactoring {
@@ -31,7 +30,7 @@ public class ConvertAnonymousClass extends BaseRefactoring {
   }
 
   public boolean init(final RefactoringContext refactoringContext) {
-    return ConvertAnonymousClass.this.ask(refactoringContext, MPSChooserFactory.createStringChooser(refactoringContext, "name", new ConvertAnonymousClass_name_Settings(refactoringContext)));
+    return false;
   }
 
   public void refactor(final RefactoringContext refactoringContext) {

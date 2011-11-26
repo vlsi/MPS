@@ -5,13 +5,25 @@ package jetbrains.mps.lang.core.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.lang.core.scripts.RenameUtil;
+import jetbrains.mps.ide.ThreadUtils;
+import javax.swing.JOptionPane;
+import java.awt.Frame;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import java.util.Arrays;
+import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.refactoring.RenameDialogWrapper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Rename_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -23,9 +35,33 @@ public class Rename_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings" + "." + "Rename"), ((SNode) MapSequence.fromMap(_params).get("target"))))) {
+      return false;
+    }
+    // is applicable is running is EDT? 
+    if (!(RenameUtil.canBeRenamed(((SNode) MapSequence.fromMap(_params).get("target"))))) {
+      new Thread(new Runnable() {
+        public void run() {
+          ThreadUtils.runInUIThreadAndWait(new Runnable() {
+            public void run() {
+              JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Nodes with getter for the \"name\" property can't be renamed", "Node can't be renamed", JOptionPane.INFORMATION_MESSAGE);
+            }
+          });
+        }
+      }).start();
+      return false;
+    }
+    return true;
+
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "Rename", t);
       this.disable(event.getPresentation());
@@ -48,13 +84,31 @@ public class Rename_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("target") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      String newName = Rename_Action.this.init(_params);
+      if (newName == null) {
+        return;
+      }
+      final RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.Rename", Arrays.asList("newName"), Arrays.asList(newName), ((SNode) MapSequence.fromMap(_params).get("target")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
+      new RefactoringFacade().execute(c);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "Rename", t);
     }
+  }
+
+  private String init(final Map<String, Object> _params) {
+    return RenameDialogWrapper.getNewName(((Project) MapSequence.fromMap(_params).get("project")), SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "name"));
   }
 }

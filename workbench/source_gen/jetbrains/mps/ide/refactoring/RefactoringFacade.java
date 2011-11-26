@@ -55,7 +55,7 @@ public class RefactoringFacade {
   public RefactoringFacade() {
   }
 
-  public void execute(final RefactoringContext refactoringContext) {
+  public void executeInThread(final RefactoringContext refactoringContext) {
     final boolean[] success = new boolean[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
@@ -75,6 +75,15 @@ public class RefactoringFacade {
     } else {
       doExecuteWithDialog(refactoringContext);
     }
+
+  }
+
+  public void execute(final RefactoringContext refactoringContext) {
+    new Thread(new Runnable() {
+      public void run() {
+        executeInThread(refactoringContext);
+      }
+    }).start();
   }
 
   private void doExecuteWithDialog(final RefactoringContext refactoringContext) {

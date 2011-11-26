@@ -264,10 +264,18 @@
     <scopeInfo nodeId="1225099380388" fileName="QueriesUtil.java" startLine="174" startPosition="0" endLine="178" endPosition="0">
       <varInfo nodeId="1225099388565" varName="inputModel" />
     </scopeInfo>
-    <scopeInfo nodeId="545838410333635433" fileName="QueriesUtil.java" startLine="232" startPosition="80" endLine="236" endPosition="0" />
-    <scopeInfo nodeId="545838410333767190" fileName="QueriesUtil.java" startLine="240" startPosition="80" endLine="244" endPosition="0" />
-    <scopeInfo nodeId="545838410333635595" fileName="QueriesUtil.java" startLine="292" startPosition="80" endLine="296" endPosition="0" />
-    <scopeInfo nodeId="545838410333767026" fileName="QueriesUtil.java" startLine="300" startPosition="80" endLine="304" endPosition="0" />
+    <scopeInfo nodeId="545838410333635433" fileName="QueriesUtil.java" startLine="232" startPosition="80" endLine="236" endPosition="0">
+      <varInfo nodeId="545838410333635433" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="545838410333767190" fileName="QueriesUtil.java" startLine="240" startPosition="80" endLine="244" endPosition="0">
+      <varInfo nodeId="545838410333767190" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="545838410333635595" fileName="QueriesUtil.java" startLine="292" startPosition="80" endLine="296" endPosition="0">
+      <varInfo nodeId="545838410333635595" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="545838410333767026" fileName="QueriesUtil.java" startLine="300" startPosition="80" endLine="304" endPosition="0">
+      <varInfo nodeId="545838410333767026" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1167262266913" fileName="QueriesUtil.java" startLine="33" startPosition="68" endLine="38" endPosition="17">
       <varInfo nodeId="1167262266915" varName="dataType" />
     </scopeInfo>

@@ -40,11 +40,13 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.lang.reflect.Constructor;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class RefactoringContext {
   private static final Logger LOG = Logger.getLogger(RefactoringContext.class);
@@ -576,37 +578,47 @@ public class RefactoringContext {
     return myDoesGenerateModels;
   }
 
-  private void setTarget(Object target) {
-    IRefactoringTarget refTarget = myRefactoring.getRefactoringTarget();
-    if (!(refTarget.allowMultipleTargets())) {
-      switch (myRefactoring.getRefactoringTarget().getTarget()) {
-        case NODE:
-          setSelectedNode((SNode) target);
-          break;
-        case MODEL:
-          setSelectedModel(((SModel) target).getModelDescriptor());
-          break;
-        case MODULE:
-          setSelectedModule((IModule) target);
-          break;
-        default:
-          throw new IllegalArgumentException("Wrong refactoring type " + refTarget.getTarget().getClass().getName());
+  private void setTarget(final Object target) {
+    final IRefactoringTarget refTarget = myRefactoring.getRefactoringTarget();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        if (!(refTarget.allowMultipleTargets())) {
+          switch (myRefactoring.getRefactoringTarget().getTarget()) {
+            case NODE:
+              SNode node = ((SNode) target);
+              setSelectedNode(node);
+              setSelectedModel(node.getModel().getModelDescriptor());
+              setSelectedModule(node.getModel().getModelDescriptor().getModule());
+
+              break;
+            case MODEL:
+              SModelDescriptor descriptor = ((SModel) target).getModelDescriptor();
+              setSelectedModel(descriptor);
+              setSelectedModule(descriptor.getModule());
+              break;
+            case MODULE:
+              setSelectedModule((IModule) target);
+              break;
+            default:
+              throw new IllegalArgumentException("Wrong refactoring type " + refTarget.getTarget().getClass().getName());
+          }
+        } else {
+          switch (myRefactoring.getRefactoringTarget().getTarget()) {
+            case NODE:
+              setSelectedNodes((List) target);
+              break;
+            case MODEL:
+              setSelectedModels((List) target);
+              break;
+            case MODULE:
+              setSelectedModules((List) target);
+              break;
+            default:
+              throw new IllegalArgumentException("Wrong refactoring type " + refTarget.getTarget().getClass().getName());
+          }
+        }
       }
-    } else {
-      switch (myRefactoring.getRefactoringTarget().getTarget()) {
-        case NODE:
-          setSelectedNodes((List) target);
-          break;
-        case MODEL:
-          setSelectedModels((List) target);
-          break;
-        case MODULE:
-          setSelectedModules((List) target);
-          break;
-        default:
-          throw new IllegalArgumentException("Wrong refactoring type " + refTarget.getTarget().getClass().getName());
-      }
-    }
+    });
   }
 
   private static String getRefactoringClassName(IRefactoring refactoring) {
@@ -657,9 +669,18 @@ public class RefactoringContext {
     RefactoringContext result = new RefactoringContext(refactoring);
     result.setSelectedProject(project);
     result.setCurrentOperationContext(new ProjectOperationContext(project));
-
-    result.setParameters(names, parameters);
     result.setTarget(target);
+    result.setParameters(names, parameters);
     return result;
+  }
+
+  public static RefactoringContext createRefactoringContextByName(final String refName, List names, List parameters, Object target, Project project) {
+    final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        refactoring.value = RefactoringUtil.getRefactoringByClassName(refName);
+      }
+    });
+    return createRefactoringContext(refactoring.value, names, parameters, target, project);
   }
 }

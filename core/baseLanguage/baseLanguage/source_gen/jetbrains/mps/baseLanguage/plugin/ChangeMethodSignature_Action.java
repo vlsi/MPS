@@ -17,15 +17,13 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog;
 
 public class ChangeMethodSignature_Action extends GeneratedAction {
@@ -35,7 +33,7 @@ public class ChangeMethodSignature_Action extends GeneratedAction {
   public ChangeMethodSignature_Action() {
     super("ChangeMethodSignature", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
@@ -74,6 +72,10 @@ public class ChangeMethodSignature_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
+      return false;
+    }
     return true;
   }
 
@@ -85,26 +87,14 @@ public class ChangeMethodSignature_Action extends GeneratedAction {
           SModelRepository.getInstance().saveAll();
         }
       });
-
-      new Thread() {
-        public void run() {
-          final List<ChangeMethodSignatureRefactoring> myRefactorings = ChangeMethodSignature_Action.this.init(event.getData(MPSDataKeys.OPERATION_CONTEXT), _params);
-          if (ListSequence.fromList(myRefactorings).isEmpty()) {
-            return;
-          }
-          final Wrappers._T<RefactoringContext> c = new Wrappers._T<RefactoringContext>();
-
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              c.value = RefactoringContext.createRefactoringContext(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings" + "." + "ChangeMethodSignature"), Arrays.asList("myRefactorings"), Arrays.asList(myRefactorings), ((SNode) MapSequence.fromMap(_params).get("method")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
-            }
-          });
-          new RefactoringFacade().execute(c.value);
+      List<ChangeMethodSignatureRefactoring> myRefactorings = ChangeMethodSignature_Action.this.init(((IOperationContext) MapSequence.fromMap(_params).get("context")), _params);
+      if (ListSequence.fromList(myRefactorings).isEmpty()) {
+        return;
+      }
+      RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature", Arrays.asList("myRefactorings"), Arrays.asList(myRefactorings), ((SNode) MapSequence.fromMap(_params).get("method")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
+      new RefactoringFacade().execute(c);
 
 
-
-        }
-      }.start();
 
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ChangeMethodSignature", t);
@@ -112,14 +102,8 @@ public class ChangeMethodSignature_Action extends GeneratedAction {
   }
 
   private List<ChangeMethodSignatureRefactoring> init(final IOperationContext context, final Map<String, Object> _params) {
-    final List[] result = new List[1];
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        ChangeMethodSignatureDialog dialog = new ChangeMethodSignatureDialog(((SNode) MapSequence.fromMap(_params).get("method")), context);
-        dialog.showDialog();
-        result[0] = dialog.getAllRefactorings();
-      }
-    });
-    return (List<ChangeMethodSignatureRefactoring>) result[0];
+    ChangeMethodSignatureDialog dialog = new ChangeMethodSignatureDialog(((SNode) MapSequence.fromMap(_params).get("method")), context);
+    dialog.showDialog();
+    return dialog.getAllRefactorings();
   }
 }
