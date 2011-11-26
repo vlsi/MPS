@@ -53,6 +53,8 @@ import java.util.Set;
 public class FacetTests extends AbstractMPSFixtureTestCase {
 
     public void testFacetInitialized() {
+        System.out.println("here we are!");
+        fail(";-((");
         FacetManager facetManager = FacetManager.getInstance(myModule);
         Collection<MPSFacet> mpsFacets = facetManager.getFacetsByType(MPSFacetType.ID);
         assertEquals(1, mpsFacets.size());
