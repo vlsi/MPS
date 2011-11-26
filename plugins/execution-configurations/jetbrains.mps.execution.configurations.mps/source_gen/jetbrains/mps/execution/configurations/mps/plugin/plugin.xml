@@ -13,7 +13,7 @@
 <depends>jetbrains.mps.baseLanguage.execution</depends>
 <depends>jetbrains.mps.execution.languages</depends>
 
-<application-components><component><implementation-class>jetbrains.mps.execution.configurations.mps.plugin.Mps_PluginInitializer</implementation-class>
+<application-components><component><implementation-class>jetbrains.mps.execution.configurations.mps.plugin.Execution_PluginInitializer</implementation-class>
 </component>
 </application-components>
 </idea-plugin>

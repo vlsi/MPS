@@ -4,7 +4,7 @@ package jetbrains.mps.execution.configurations.mps.plugin;
 
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
-public class Mps_ProjectPlugin extends BaseProjectPlugin {
-  public Mps_ProjectPlugin() {
+public class Execution_ProjectPlugin extends BaseProjectPlugin {
+  public Execution_ProjectPlugin() {
   }
 }

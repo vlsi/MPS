@@ -11,17 +11,17 @@ import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class Mps_PluginInitializer implements ApplicationComponent {
-  private final PluginLibrariesContributor myContributor = new PluginLibrariesContributor("jetbrains.mps.execution.configurations.mps.plugin.Mps_PluginInitializer", "libraries");
+public class Execution_PluginInitializer implements ApplicationComponent {
+  private final PluginLibrariesContributor myContributor = new PluginLibrariesContributor("jetbrains.mps.execution.configurations.mps.plugin.Execution_PluginInitializer", "libraries");
 
-  public Mps_PluginInitializer() {
+  public Execution_PluginInitializer() {
     PluginUtil.addPluginContributor(new PluginContributor() {
       public BaseApplicationPlugin createApplicationPlugin() {
-        return new Mps_ApplicationPlugin();
+        return new Execution_ApplicationPlugin();
       }
 
       public BaseProjectPlugin createProjectPlugin() {
-        return new Mps_ProjectPlugin();
+        return new Execution_ProjectPlugin();
       }
     });
   }

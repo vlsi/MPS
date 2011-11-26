@@ -9,10 +9,10 @@ import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
-public class Mps_ApplicationPlugin extends BaseApplicationPlugin {
-  private PluginId myId = PluginId.getId("jetbrains.mps.execution.configurations.mps");
+public class Execution_ApplicationPlugin extends BaseApplicationPlugin {
+  private PluginId myId = PluginId.getId("jetbrains.mps.mps.execution");
 
-  public Mps_ApplicationPlugin() {
+  public Execution_ApplicationPlugin() {
   }
 
   public PluginId getId() {
