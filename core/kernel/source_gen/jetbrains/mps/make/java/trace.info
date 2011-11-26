@@ -166,48 +166,132 @@
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="185" startPosition="32" endLine="187" endPosition="15" />
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="222" startPosition="0" endLine="224" endPosition="5" />
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="76" startPosition="54" endLine="79" endPosition="7" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="88" startPosition="54" endLine="91" endPosition="51" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="104" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="126" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="153" startPosition="41" endLine="156" endPosition="15" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="88" startPosition="54" endLine="91" endPosition="51">
+      <varInfo nodeId="757342313568246027" varName="name" />
+      <varInfo nodeId="757342313568246027" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="104" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="name" />
+      <varInfo nodeId="757342313568246027" varName="resultObject" />
+      <varInfo nodeId="757342313568246027" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="126" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="resultObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="153" startPosition="41" endLine="156" endPosition="15">
+      <varInfo nodeId="757342313568246027" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="234" startPosition="43" endLine="237" endPosition="15" />
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="239" startPosition="44" endLine="242" endPosition="15" />
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="attrs" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="111" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="resultObject" />
+      <varInfo nodeId="757342313568246027" varName="tagName" />
+      <varInfo nodeId="757342313568246027" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="116" startPosition="86" endLine="120" endPosition="64" />
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="143" startPosition="100" endLine="147" endPosition="40" />
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="193" startPosition="100" endLine="197" endPosition="40" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="75" startPosition="22" endLine="80" endPosition="5" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="87" startPosition="25" endLine="92" endPosition="5" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="136" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="167" startPosition="0" endLine="172" endPosition="0" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="locator" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="75" startPosition="22" endLine="80" endPosition="5">
+      <varInfo nodeId="757342313568246027" varName="attr" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="87" startPosition="25" endLine="92" endPosition="5">
+      <varInfo nodeId="757342313568246027" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="136" startPosition="0" endLine="141" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="attrs" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="167" startPosition="0" endLine="172" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="172" startPosition="0" endLine="177" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="225" startPosition="0" endLine="230" endPosition="0" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="225" startPosition="0" endLine="230" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="52" startPosition="26" endLine="58" endPosition="7" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="38" startPosition="80" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="115" startPosition="0" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="151" startPosition="103" endLine="158" endPosition="54" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="141" startPosition="0" endLine="149" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="191" startPosition="0" endLine="199" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="49" startPosition="90" endLine="59" endPosition="5" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="179" startPosition="104" endLine="189" endPosition="55" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="36" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="149" startPosition="0" endLine="160" endPosition="0" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="38" startPosition="80" endLine="45" endPosition="5">
+      <varInfo nodeId="757342313568246027" varName="current" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="115" startPosition="0" endLine="122" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="resultObject" />
+      <varInfo nodeId="757342313568246027" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="151" startPosition="103" endLine="158" endPosition="54">
+      <varInfo nodeId="757342313568246027" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="141" startPosition="0" endLine="149" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="191" startPosition="0" endLine="199" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="49" startPosition="90" endLine="59" endPosition="5">
+      <varInfo nodeId="757342313568246027" varName="childValue" />
+      <varInfo nodeId="757342313568246027" varName="current" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="179" startPosition="104" endLine="189" endPosition="55">
+      <varInfo nodeId="757342313568246027" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="36" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="array" />
+      <varInfo nodeId="757342313568246027" varName="len" />
+      <varInfo nodeId="757342313568246027" varName="start" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="149" startPosition="0" endLine="160" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="resultObject" />
+      <varInfo nodeId="757342313568246027" varName="tagName" />
+      <varInfo nodeId="757342313568246027" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="203" startPosition="40" endLine="214" endPosition="15">
+      <varInfo nodeId="757342313568246027" varName="child" />
       <varInfo nodeId="757342313568246048" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="232" startPosition="104" endLine="244" endPosition="55" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="47" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="177" startPosition="0" endLine="191" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="201" startPosition="103" endLine="216" endPosition="54" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="230" startPosition="0" endLine="246" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="199" startPosition="0" endLine="218" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="63" startPosition="115" endLine="94" endPosition="26" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="61" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="232" startPosition="104" endLine="244" endPosition="55">
+      <varInfo nodeId="757342313568246027" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="47" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="localName" />
+      <varInfo nodeId="757342313568246027" varName="qName" />
+      <varInfo nodeId="757342313568246027" varName="uri" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="177" startPosition="0" endLine="191" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="name" />
+      <varInfo nodeId="757342313568246027" varName="resultObject" />
+      <varInfo nodeId="757342313568246027" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="201" startPosition="103" endLine="216" endPosition="54">
+      <varInfo nodeId="757342313568246027" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="230" startPosition="0" endLine="246" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="name" />
+      <varInfo nodeId="757342313568246027" varName="resultObject" />
+      <varInfo nodeId="757342313568246027" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="199" startPosition="0" endLine="218" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="resultObject" />
+      <varInfo nodeId="757342313568246027" varName="tagName" />
+      <varInfo nodeId="757342313568246027" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="63" startPosition="115" endLine="94" endPosition="26">
+      <varInfo nodeId="757342313568246027" varName="current" />
+      <varInfo nodeId="757342313568246027" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="61" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="757342313568246027" varName="attributes" />
+      <varInfo nodeId="757342313568246027" varName="localName" />
+      <varInfo nodeId="757342313568246027" varName="qName" />
+      <varInfo nodeId="757342313568246027" varName="uri" />
+    </scopeInfo>
     <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="14" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler" />
     <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="220" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$ClassNodeElementHandler" />
     <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="131" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$DependenciesRootElementHandler" />

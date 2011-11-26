@@ -56,7 +56,10 @@
     <scopeInfo nodeId="1007939372524169766" fileName="JobProgressMonitorAdapter.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1007939372524169769" varName="frac" />
     </scopeInfo>
-    <scopeInfo nodeId="1007939372524169703" fileName="JobProgressMonitorAdapter.java" startLine="58" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="1007939372524169703" fileName="JobProgressMonitorAdapter.java" startLine="58" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="1007939372524169703" varName="a" />
+      <varInfo nodeId="1007939372524169703" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1007939372524175663" fileName="JobProgressMonitorAdapter.java" startLine="42" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="1007939372524169765" fileName="JobProgressMonitorAdapter.java" startLine="30" startPosition="48" endLine="40" endPosition="67" />
     <scopeInfo nodeId="1007939372524169760" fileName="JobProgressMonitorAdapter.java" startLine="29" startPosition="0" endLine="42" endPosition="0">

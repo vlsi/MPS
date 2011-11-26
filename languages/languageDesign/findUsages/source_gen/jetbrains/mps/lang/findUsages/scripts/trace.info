@@ -56,26 +56,46 @@
     <scopeInfo nodeId="6056923343037361536" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="40" startPosition="103" endLine="43" endPosition="108">
       <varInfo nodeId="6056923343037361567" varName="finderRef" />
     </scopeInfo>
-    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="72" startPosition="9" endLine="75" endPosition="58" />
-    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="77" startPosition="9" endLine="80" endPosition="60" />
+    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="72" startPosition="9" endLine="75" endPosition="58">
+      <varInfo nodeId="6056923343037360228" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="77" startPosition="9" endLine="80" endPosition="60">
+      <varInfo nodeId="6056923343037360228" varName="quotedNode1_6" />
+    </scopeInfo>
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="21" startPosition="76" endLine="25" endPosition="0" />
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="6056923343037360228" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="6056923343037361533" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="39" startPosition="138" endLine="44" endPosition="9" />
+    <scopeInfo nodeId="6056923343037361533" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="39" startPosition="138" endLine="44" endPosition="9">
+      <varInfo nodeId="6056923343037361533" varName="finder" />
+    </scopeInfo>
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="71" startPosition="43" endLine="76" endPosition="9" />
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="76" startPosition="9" endLine="81" endPosition="9" />
     <scopeInfo nodeId="6056923343037360231" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="38" startPosition="52" endLine="50" endPosition="59">
       <varInfo nodeId="6056923343037361509" varName="replacer" />
     </scopeInfo>
-    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="69" startPosition="7" endLine="82" endPosition="31" />
-    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="37" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="69" startPosition="7" endLine="82" endPosition="31">
+      <varInfo nodeId="6056923343037360228" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="37" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="6056923343037360228" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="68" startPosition="32" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="63" startPosition="31" endLine="84" endPosition="20" />
+    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="63" startPosition="31" endLine="84" endPosition="20">
+      <varInfo nodeId="6056923343037360228" varName="_parameterValues_129834374" />
+      <varInfo nodeId="6056923343037360228" varName="quotedNode_1" />
+      <varInfo nodeId="6056923343037360228" varName="quotedNode_2" />
+      <varInfo nodeId="6056923343037360228" varName="quotedNode_3" />
+      <varInfo nodeId="6056923343037360228" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="62" startPosition="0" endLine="86" endPosition="0" />
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="19" startPosition="84" endLine="56" endPosition="7" />
-    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="18" startPosition="80" endLine="57" endPosition="3" />
+    <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="18" startPosition="80" endLine="57" endPosition="3">
+      <varInfo nodeId="6056923343037360228" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="18" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.findUsages.scripts.ConvertExecuteFinders_MigrationScript" />
     <unitInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="21" startPosition="28" endLine="56" endPosition="5" unitName="jetbrains.mps.lang.findUsages.scripts.ConvertExecuteFinders_MigrationScript$1" />
     <unitInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="59" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.findUsages.scripts.ConvertExecuteFinders_MigrationScript$QuotationClass_v4ym8i_a0a0c0e0a0a0b0a" />

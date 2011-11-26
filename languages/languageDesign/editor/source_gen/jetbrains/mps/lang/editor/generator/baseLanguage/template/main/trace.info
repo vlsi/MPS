@@ -1057,7 +1057,9 @@
     <scopeInfo nodeId="496727441192170882" fileName="QueriesGenerated.java" startLine="559" startPosition="104" endLine="560" endPosition="80" />
     <scopeInfo nodeId="496727441192652894" fileName="QueriesGenerated.java" startLine="564" startPosition="43" endLine="565" endPosition="88" />
     <scopeInfo nodeId="496727441192171370" fileName="QueriesGenerated.java" startLine="563" startPosition="114" endLine="567" endPosition="75" />
-    <scopeInfo nodeId="496727441192171367" fileName="QueriesGenerated.java" startLine="562" startPosition="23" endLine="568" endPosition="5" />
+    <scopeInfo nodeId="496727441192171367" fileName="QueriesGenerated.java" startLine="562" startPosition="23" endLine="568" endPosition="5">
+      <varInfo nodeId="496727441192171367" varName="tagWrapper" />
+    </scopeInfo>
     <scopeInfo nodeId="1214320937730" fileName="QueriesGenerated.java" startLine="558" startPosition="148" endLine="569" endPosition="18">
       <varInfo nodeId="496727441192170930" varName="result" />
     </scopeInfo>
@@ -1171,7 +1173,9 @@
     <nodeInfo nodeId="4531786690998911337" fileName="QueriesGenerated.java" startLine="974" startPosition="107" endLine="979" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="9138927109407481299" fileName="QueriesGenerated.java" startLine="976" startPosition="39" endLine="977" endPosition="95" />
     <scopeInfo nodeId="4531786690998911326" fileName="QueriesGenerated.java" startLine="1723" startPosition="155" endLine="1724" endPosition="82" />
-    <scopeInfo nodeId="9138927109407481298" fileName="QueriesGenerated.java" startLine="975" startPosition="234" endLine="979" endPosition="0" />
+    <scopeInfo nodeId="9138927109407481298" fileName="QueriesGenerated.java" startLine="975" startPosition="234" endLine="979" endPosition="0">
+      <varInfo nodeId="9138927109407481298" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="4531786690998911336" fileName="QueriesGenerated.java" startLine="973" startPosition="151" endLine="979" endPosition="7">
       <varInfo nodeId="9138927109407481218" varName="methodName" />
     </scopeInfo>

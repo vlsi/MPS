@@ -16,8 +16,12 @@
     <scopeInfo nodeId="1227876798398" fileName="QueriesUtil.java" startLine="17" startPosition="39" endLine="18" endPosition="80" />
     <scopeInfo nodeId="1227876804169" fileName="QueriesUtil.java" startLine="26" startPosition="39" endLine="27" endPosition="82" />
     <scopeInfo nodeId="8949395081772864052" fileName="QueriesUtil.java" startLine="11" startPosition="26" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1227876798395" fileName="QueriesUtil.java" startLine="16" startPosition="136" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1227876804166" fileName="QueriesUtil.java" startLine="25" startPosition="138" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1227876798395" fileName="QueriesUtil.java" startLine="16" startPosition="136" endLine="20" endPosition="0">
+      <varInfo nodeId="1227876798395" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1227876804166" fileName="QueriesUtil.java" startLine="25" startPosition="138" endLine="29" endPosition="0">
+      <varInfo nodeId="1227876804166" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1184606480710" fileName="QueriesUtil.java" startLine="15" startPosition="58" endLine="21" endPosition="70">
       <varInfo nodeId="1184606705291" varName="regiserSelfMethod" />
     </scopeInfo>

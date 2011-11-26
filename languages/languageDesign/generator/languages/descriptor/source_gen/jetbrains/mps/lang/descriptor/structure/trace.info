@@ -64,24 +64,46 @@
     <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="85" startPosition="69" endLine="86" endPosition="70" />
     <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="89" startPosition="73" endLine="90" endPosition="189" />
     <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="93" startPosition="59" endLine="94" endPosition="53" />
-    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+      <varInfo nodeId="9020561928507175845" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="9020561928507175845" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="9020561928507175845" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="9020561928507175845" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="9020561928507175845" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="9020561928507175845" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="9020561928507175845" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="9020561928507175845" varName="node" />
+      <varInfo nodeId="9020561928507175845" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="9020561928507175845" varName="init" />
+      <varInfo nodeId="9020561928507175845" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="9020561928507175845" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="9020561928507175845" fileName="LanguageDescriptor.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.descriptor.structure.LanguageDescriptor" />
   </root>
 </debugInfo>

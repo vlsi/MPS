@@ -50,16 +50,45 @@
     <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="31" startPosition="49" endLine="32" endPosition="81" />
     <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="37" startPosition="105" endLine="38" endPosition="47" />
     <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="47" startPosition="26" endLine="49" endPosition="73" />
-    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="52" startPosition="35" endLine="55" endPosition="105" />
-    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="16" startPosition="66" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="29" startPosition="90" endLine="33" endPosition="22" />
-    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="36" startPosition="88" endLine="40" endPosition="22" />
-    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="21" startPosition="89" endLine="26" endPosition="22" />
-    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="20" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="43" startPosition="88" endLine="57" endPosition="22" />
-    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="42" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="52" startPosition="35" endLine="55" endPosition="105">
+      <varInfo nodeId="9020561928507175846" varName="manager" />
+      <varInfo nodeId="9020561928507175846" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="16" startPosition="66" endLine="20" endPosition="0">
+      <varInfo nodeId="9020561928507175846" varName="editorContext" />
+      <varInfo nodeId="9020561928507175846" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="29" startPosition="90" endLine="33" endPosition="22">
+      <varInfo nodeId="9020561928507175846" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="36" startPosition="88" endLine="40" endPosition="22">
+      <varInfo nodeId="9020561928507175846" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="21" startPosition="89" endLine="26" endPosition="22">
+      <varInfo nodeId="9020561928507175846" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="28" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="9020561928507175846" varName="editorContext" />
+      <varInfo nodeId="9020561928507175846" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="9020561928507175846" varName="editorContext" />
+      <varInfo nodeId="9020561928507175846" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="20" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="9020561928507175846" varName="editorContext" />
+      <varInfo nodeId="9020561928507175846" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="43" startPosition="88" endLine="57" endPosition="22">
+      <varInfo nodeId="9020561928507175846" varName="attributeConcept" />
+      <varInfo nodeId="9020561928507175846" varName="attributeKind" />
+      <varInfo nodeId="9020561928507175846" varName="editorCell" />
+      <varInfo nodeId="9020561928507175846" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="42" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="9020561928507175846" varName="editorContext" />
+      <varInfo nodeId="9020561928507175846" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.descriptor.editor.LanguageDescriptor_Editor" />
   </root>
 </debugInfo>

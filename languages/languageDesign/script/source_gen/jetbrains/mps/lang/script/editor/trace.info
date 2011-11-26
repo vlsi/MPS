@@ -240,73 +240,221 @@
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="236" startPosition="97" endLine="237" endPosition="50" />
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="261" startPosition="34" endLine="262" endPosition="95" />
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="264" startPosition="131" endLine="265" endPosition="139" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="49" startPosition="5" endLine="51" endPosition="51" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="65" startPosition="5" endLine="67" endPosition="51" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="77" startPosition="5" endLine="79" endPosition="51" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="89" startPosition="5" endLine="91" endPosition="51" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="122" startPosition="5" endLine="124" endPosition="51" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="133" startPosition="5" endLine="135" endPosition="51" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="149" startPosition="91" endLine="151" endPosition="18" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="240" startPosition="66" endLine="242" endPosition="93" />
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="49" startPosition="5" endLine="51" endPosition="51">
+      <varInfo nodeId="1177460073219" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="65" startPosition="5" endLine="67" endPosition="51">
+      <varInfo nodeId="1177460073219" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="77" startPosition="5" endLine="79" endPosition="51">
+      <varInfo nodeId="1177460073219" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="89" startPosition="5" endLine="91" endPosition="51">
+      <varInfo nodeId="1177460073219" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="122" startPosition="5" endLine="124" endPosition="51">
+      <varInfo nodeId="1177460073219" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="133" startPosition="5" endLine="135" endPosition="51">
+      <varInfo nodeId="1177460073219" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="149" startPosition="91" endLine="151" endPosition="18">
+      <varInfo nodeId="1177460073219" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="240" startPosition="66" endLine="242" endPosition="93">
+      <varInfo nodeId="1177460073219" varName="listOwner" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="55" startPosition="82" endLine="58" endPosition="5" />
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="158" startPosition="26" endLine="161" endPosition="73" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="164" startPosition="35" endLine="167" endPosition="105" />
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="164" startPosition="35" endLine="167" endPosition="105">
+      <varInfo nodeId="1177460073219" varName="manager" />
+      <varInfo nodeId="1177460073219" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="176" startPosition="26" endLine="179" endPosition="73" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="182" startPosition="35" endLine="185" endPosition="105" />
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="182" startPosition="35" endLine="185" endPosition="105">
+      <varInfo nodeId="1177460073219" varName="manager" />
+      <varInfo nodeId="1177460073219" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="194" startPosition="26" endLine="197" endPosition="73" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="200" startPosition="35" endLine="203" endPosition="105" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="215" startPosition="5" endLine="218" endPosition="66" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="223" startPosition="35" endLine="226" endPosition="105" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="235" startPosition="78" endLine="238" endPosition="5" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="245" startPosition="86" endLine="248" endPosition="25" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="30" startPosition="63" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="98" startPosition="89" endLine="102" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="105" startPosition="90" endLine="109" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="112" startPosition="89" endLine="116" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="230" startPosition="0" endLine="234" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="251" startPosition="68" endLine="255" endPosition="23" />
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="200" startPosition="35" endLine="203" endPosition="105">
+      <varInfo nodeId="1177460073219" varName="manager" />
+      <varInfo nodeId="1177460073219" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="215" startPosition="5" endLine="218" endPosition="66">
+      <varInfo nodeId="1177460073219" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="223" startPosition="35" endLine="226" endPosition="105">
+      <varInfo nodeId="1177460073219" varName="manager" />
+      <varInfo nodeId="1177460073219" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="235" startPosition="78" endLine="238" endPosition="5">
+      <varInfo nodeId="1177460073219" varName="childRole" />
+      <varInfo nodeId="1177460073219" varName="context" />
+      <varInfo nodeId="1177460073219" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="245" startPosition="86" endLine="248" endPosition="25">
+      <varInfo nodeId="1177460073219" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="30" startPosition="63" endLine="34" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="98" startPosition="89" endLine="102" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="105" startPosition="90" endLine="109" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="112" startPosition="89" endLine="116" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="230" startPosition="0" endLine="234" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+      <varInfo nodeId="1177460073219" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="251" startPosition="68" endLine="255" endPosition="23">
+      <varInfo nodeId="1177460073219" varName="emptyCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="47" startPosition="99" endLine="52" endPosition="5" />
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="63" startPosition="99" endLine="68" endPosition="5" />
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="75" startPosition="99" endLine="80" endPosition="5" />
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="87" startPosition="99" endLine="92" endPosition="5" />
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="120" startPosition="86" endLine="125" endPosition="5" />
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="131" startPosition="95" endLine="136" endPosition="5" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="141" startPosition="92" endLine="146" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="148" startPosition="0" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="239" startPosition="0" endLine="244" endPosition="0" />
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="141" startPosition="92" endLine="146" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+      <varInfo nodeId="1177460073219" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="148" startPosition="0" endLine="153" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="239" startPosition="0" endLine="244" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="213" startPosition="58" endLine="219" endPosition="5" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="244" startPosition="0" endLine="250" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="97" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="104" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="111" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="250" startPosition="0" endLine="257" endPosition="0" />
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="244" startPosition="0" endLine="250" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="97" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="104" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="111" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="250" startPosition="0" endLine="257" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="259" startPosition="96" endLine="266" endPosition="9" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="35" startPosition="89" endLine="43" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="119" startPosition="88" endLine="127" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="130" startPosition="88" endLine="138" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="140" startPosition="0" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="35" startPosition="89" endLine="43" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="119" startPosition="88" endLine="127" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="130" startPosition="88" endLine="138" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="140" startPosition="0" endLine="148" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="212" startPosition="26" endLine="220" endPosition="73" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="62" startPosition="91" endLine="71" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="74" startPosition="90" endLine="83" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="86" startPosition="90" endLine="95" endPosition="22" />
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="62" startPosition="91" endLine="71" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="74" startPosition="90" endLine="83" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="86" startPosition="90" endLine="95" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="258" startPosition="132" endLine="267" endPosition="7" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="34" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="118" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="129" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="61" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="73" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="85" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="257" startPosition="0" endLine="269" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="46" startPosition="90" endLine="59" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="154" startPosition="89" endLine="169" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="172" startPosition="89" endLine="187" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="190" startPosition="90" endLine="205" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="45" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="153" startPosition="0" endLine="171" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="171" startPosition="0" endLine="189" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="189" startPosition="0" endLine="207" endPosition="0" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="208" startPosition="89" endLine="228" endPosition="22" />
-    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="207" startPosition="0" endLine="230" endPosition="0" />
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="34" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="118" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="129" startPosition="0" endLine="140" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="61" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="73" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="85" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="257" startPosition="0" endLine="269" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="elementCell" />
+      <varInfo nodeId="1177460073219" varName="elementNode" />
+      <varInfo nodeId="1177460073219" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="46" startPosition="90" endLine="59" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="154" startPosition="89" endLine="169" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="attributeConcept" />
+      <varInfo nodeId="1177460073219" varName="attributeKind" />
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+      <varInfo nodeId="1177460073219" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="172" startPosition="89" endLine="187" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="attributeConcept" />
+      <varInfo nodeId="1177460073219" varName="attributeKind" />
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+      <varInfo nodeId="1177460073219" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="190" startPosition="90" endLine="205" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="attributeConcept" />
+      <varInfo nodeId="1177460073219" varName="attributeKind" />
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+      <varInfo nodeId="1177460073219" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="153" startPosition="0" endLine="171" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="171" startPosition="0" endLine="189" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="189" startPosition="0" endLine="207" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="208" startPosition="89" endLine="228" endPosition="22">
+      <varInfo nodeId="1177460073219" varName="attributeConcept" />
+      <varInfo nodeId="1177460073219" varName="attributeKind" />
+      <varInfo nodeId="1177460073219" varName="editorCell" />
+      <varInfo nodeId="1177460073219" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="207" startPosition="0" endLine="230" endPosition="0">
+      <varInfo nodeId="1177460073219" varName="editorContext" />
+      <varInfo nodeId="1177460073219" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="30" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.lang.script.editor.MigrationScript_Editor" />
     <unitInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="235" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.lang.script.editor.MigrationScript_Editor$partListHandler_th2ud5_b4a" />
   </root>
@@ -653,11 +801,21 @@
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="325" startPosition="35" endLine="326" endPosition="14" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="329" startPosition="69" endLine="330" endPosition="67" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="333" startPosition="81" endLine="334" endPosition="68" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="58" startPosition="5" endLine="60" endPosition="51" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="71" startPosition="5" endLine="73" endPosition="51" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="84" startPosition="5" endLine="86" endPosition="51" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="97" startPosition="5" endLine="99" endPosition="51" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="110" startPosition="5" endLine="112" endPosition="51" />
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="58" startPosition="5" endLine="60" endPosition="51">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="71" startPosition="5" endLine="73" endPosition="51">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="84" startPosition="5" endLine="86" endPosition="51">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="97" startPosition="5" endLine="99" endPosition="51">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="110" startPosition="5" endLine="112" endPosition="51">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="121" startPosition="97" endLine="123" endPosition="74" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="141" startPosition="103" endLine="143" endPosition="74" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="161" startPosition="94" endLine="163" endPosition="74" />
@@ -665,40 +823,96 @@
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="201" startPosition="88" endLine="203" endPosition="74" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="254" startPosition="26" endLine="256" endPosition="73" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="271" startPosition="26" endLine="273" endPosition="73" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="291" startPosition="5" endLine="293" endPosition="66" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="345" startPosition="7" endLine="347" endPosition="70" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="131" startPosition="5" endLine="134" endPosition="65" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="151" startPosition="5" endLine="154" endPosition="65" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="171" startPosition="5" endLine="174" endPosition="65" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="191" startPosition="5" endLine="194" endPosition="65" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="211" startPosition="5" endLine="214" endPosition="65" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="223" startPosition="5" endLine="226" endPosition="65" />
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="291" startPosition="5" endLine="293" endPosition="66">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="345" startPosition="7" endLine="347" endPosition="70">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="131" startPosition="5" endLine="134" endPosition="65">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="151" startPosition="5" endLine="154" endPosition="65">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="171" startPosition="5" endLine="174" endPosition="65">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="191" startPosition="5" endLine="194" endPosition="65">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="211" startPosition="5" endLine="214" endPosition="65">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="223" startPosition="5" endLine="226" endPosition="65">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="236" startPosition="26" endLine="239" endPosition="73" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="242" startPosition="35" endLine="245" endPosition="105" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="259" startPosition="35" endLine="262" endPosition="105" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="276" startPosition="35" endLine="279" endPosition="105" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="298" startPosition="35" endLine="301" endPosition="105" />
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="242" startPosition="35" endLine="245" endPosition="105">
+      <varInfo nodeId="1177460802386" varName="manager" />
+      <varInfo nodeId="1177460802386" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="259" startPosition="35" endLine="262" endPosition="105">
+      <varInfo nodeId="1177460802386" varName="manager" />
+      <varInfo nodeId="1177460802386" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="276" startPosition="35" endLine="279" endPosition="105">
+      <varInfo nodeId="1177460802386" varName="manager" />
+      <varInfo nodeId="1177460802386" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="298" startPosition="35" endLine="301" endPosition="105">
+      <varInfo nodeId="1177460802386" varName="manager" />
+      <varInfo nodeId="1177460802386" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="310" startPosition="26" endLine="313" endPosition="73" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="316" startPosition="35" endLine="319" endPosition="105" />
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="316" startPosition="35" endLine="319" endPosition="105">
+      <varInfo nodeId="1177460802386" varName="manager" />
+      <varInfo nodeId="1177460802386" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="324" startPosition="71" endLine="327" endPosition="5" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="352" startPosition="37" endLine="355" endPosition="107" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="23" startPosition="76" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="40" startPosition="5" endLine="44" endPosition="69" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="328" startPosition="0" endLine="332" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="332" startPosition="0" endLine="336" endPosition="0" />
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="352" startPosition="37" endLine="355" endPosition="107">
+      <varInfo nodeId="1177460802386" varName="manager" />
+      <varInfo nodeId="1177460802386" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="23" startPosition="76" endLine="27" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="40" startPosition="5" endLine="44" endPosition="69">
+      <varInfo nodeId="1177460802386" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="328" startPosition="0" endLine="332" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="332" startPosition="0" endLine="336" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="56" startPosition="99" endLine="61" endPosition="5" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="69" startPosition="99" endLine="74" endPosition="5" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="82" startPosition="99" endLine="87" endPosition="5" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="95" startPosition="99" endLine="100" endPosition="5" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="108" startPosition="99" endLine="113" endPosition="5" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="120" startPosition="90" endLine="125" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="140" startPosition="90" endLine="145" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="160" startPosition="90" endLine="165" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="180" startPosition="90" endLine="185" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="200" startPosition="90" endLine="205" endPosition="22" />
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="120" startPosition="90" endLine="125" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="140" startPosition="90" endLine="145" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="160" startPosition="90" endLine="165" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="180" startPosition="90" endLine="185" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="200" startPosition="90" endLine="205" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="289" startPosition="58" endLine="294" endPosition="5" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="343" startPosition="60" endLine="348" endPosition="7" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="28" startPosition="89" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="28" startPosition="89" endLine="34" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="129" startPosition="87" endLine="135" endPosition="5" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="149" startPosition="87" endLine="155" endPosition="5" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="169" startPosition="87" endLine="175" endPosition="5" />
@@ -708,48 +922,174 @@
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="38" startPosition="97" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="288" startPosition="26" endLine="295" endPosition="73" />
     <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="342" startPosition="28" endLine="349" endPosition="75" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="119" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="139" startPosition="0" endLine="147" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="159" startPosition="0" endLine="167" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="179" startPosition="0" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="199" startPosition="0" endLine="207" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="27" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="128" startPosition="90" endLine="137" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="148" startPosition="90" endLine="157" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="168" startPosition="90" endLine="177" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="188" startPosition="90" endLine="197" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="208" startPosition="90" endLine="217" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="220" startPosition="88" endLine="229" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="55" startPosition="91" endLine="65" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="68" startPosition="91" endLine="78" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="81" startPosition="91" endLine="91" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="94" startPosition="91" endLine="104" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="107" startPosition="91" endLine="117" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="127" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="147" startPosition="0" endLine="159" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="167" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="187" startPosition="0" endLine="199" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="207" startPosition="0" endLine="219" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="219" startPosition="0" endLine="231" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="54" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="67" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="80" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="93" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="106" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="250" startPosition="89" endLine="264" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="267" startPosition="89" endLine="281" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="37" startPosition="90" endLine="52" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="232" startPosition="89" endLine="247" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="306" startPosition="90" endLine="321" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="249" startPosition="0" endLine="266" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="266" startPosition="0" endLine="283" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="231" startPosition="0" endLine="249" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="305" startPosition="0" endLine="323" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="284" startPosition="90" endLine="303" endPosition="22" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="337" startPosition="94" endLine="357" endPosition="24" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="283" startPosition="0" endLine="305" endPosition="0" />
-    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="336" startPosition="0" endLine="359" endPosition="0" />
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="119" startPosition="0" endLine="127" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="139" startPosition="0" endLine="147" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="159" startPosition="0" endLine="167" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="179" startPosition="0" endLine="187" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="199" startPosition="0" endLine="207" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="27" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="128" startPosition="90" endLine="137" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="148" startPosition="90" endLine="157" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="168" startPosition="90" endLine="177" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="188" startPosition="90" endLine="197" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="208" startPosition="90" endLine="217" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="220" startPosition="88" endLine="229" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="55" startPosition="91" endLine="65" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="68" startPosition="91" endLine="78" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="81" startPosition="91" endLine="91" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="94" startPosition="91" endLine="104" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="107" startPosition="91" endLine="117" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="127" startPosition="0" endLine="139" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="147" startPosition="0" endLine="159" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="167" startPosition="0" endLine="179" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="187" startPosition="0" endLine="199" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="207" startPosition="0" endLine="219" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="219" startPosition="0" endLine="231" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="54" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="67" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="80" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="93" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="106" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="250" startPosition="89" endLine="264" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="attributeConcept" />
+      <varInfo nodeId="1177460802386" varName="attributeKind" />
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+      <varInfo nodeId="1177460802386" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="267" startPosition="89" endLine="281" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="attributeConcept" />
+      <varInfo nodeId="1177460802386" varName="attributeKind" />
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+      <varInfo nodeId="1177460802386" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="37" startPosition="90" endLine="52" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="232" startPosition="89" endLine="247" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="attributeConcept" />
+      <varInfo nodeId="1177460802386" varName="attributeKind" />
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+      <varInfo nodeId="1177460802386" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="306" startPosition="90" endLine="321" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="attributeConcept" />
+      <varInfo nodeId="1177460802386" varName="attributeKind" />
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+      <varInfo nodeId="1177460802386" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="249" startPosition="0" endLine="266" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="266" startPosition="0" endLine="283" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="36" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="231" startPosition="0" endLine="249" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="305" startPosition="0" endLine="323" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="284" startPosition="90" endLine="303" endPosition="22">
+      <varInfo nodeId="1177460802386" varName="attributeConcept" />
+      <varInfo nodeId="1177460802386" varName="attributeKind" />
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+      <varInfo nodeId="1177460802386" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="337" startPosition="94" endLine="357" endPosition="24">
+      <varInfo nodeId="1177460802386" varName="attributeConcept" />
+      <varInfo nodeId="1177460802386" varName="attributeKind" />
+      <varInfo nodeId="1177460802386" varName="editorCell" />
+      <varInfo nodeId="1177460802386" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="283" startPosition="0" endLine="305" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="336" startPosition="0" endLine="359" endPosition="0">
+      <varInfo nodeId="1177460802386" varName="editorContext" />
+      <varInfo nodeId="1177460802386" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="23" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.lang.script.editor.MigrationScriptPart_Instance_Editor" />
     <unitInfo nodeId="1177460802386" fileName="MigrationScriptPart_Instance_Editor.java" startLine="324" startPosition="0" endLine="360" endPosition="0" unitName="jetbrains.mps.lang.script.editor.MigrationScriptPart_Instance_Editor$_Inline_nl0fz6_a2c0a" />
   </root>

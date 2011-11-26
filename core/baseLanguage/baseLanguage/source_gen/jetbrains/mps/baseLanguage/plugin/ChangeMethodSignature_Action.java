@@ -11,8 +11,9 @@ import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.List;
@@ -57,7 +58,7 @@ public class ChangeMethodSignature_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.NODE);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
           node = null;
@@ -70,6 +71,15 @@ public class ChangeMethodSignature_Action extends GeneratedAction {
     }
     MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
+    {
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
+      if (node != null) {
+      }
+      MapSequence.fromMap(_params).put("field", node);
+    }
+    if (MapSequence.fromMap(_params).get("field") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));

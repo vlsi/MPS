@@ -82,8 +82,12 @@
     <scopeInfo nodeId="2742566862758593499" fileName="HistoryWriter.java" startLine="91" startPosition="35" endLine="92" endPosition="57" />
     <scopeInfo nodeId="3796120688729144744" fileName="HistoryWriter.java" startLine="101" startPosition="32" endLine="102" endPosition="50" />
     <scopeInfo nodeId="2742566862758590076" fileName="HistoryWriter.java" startLine="33" startPosition="0" endLine="35" endPosition="3" />
-    <scopeInfo nodeId="2742566862758593200" fileName="HistoryWriter.java" startLine="39" startPosition="96" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593405" fileName="HistoryWriter.java" startLine="63" startPosition="104" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="2742566862758593200" fileName="HistoryWriter.java" startLine="39" startPosition="96" endLine="43" endPosition="0">
+      <varInfo nodeId="2742566862758593200" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593405" fileName="HistoryWriter.java" startLine="63" startPosition="104" endLine="67" endPosition="0">
+      <varInfo nodeId="2742566862758593405" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2742566862758593418" fileName="HistoryWriter.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="2742566862758593424" varName="ptr" />
     </scopeInfo>
@@ -102,7 +106,9 @@
     <scopeInfo nodeId="2742566862758593637" fileName="HistoryWriter.java" startLine="107" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="2742566862758593682" varName="data" />
     </scopeInfo>
-    <scopeInfo nodeId="2742566862758593252" fileName="HistoryWriter.java" startLine="53" startPosition="34" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="2742566862758593252" fileName="HistoryWriter.java" startLine="53" startPosition="34" endLine="61" endPosition="5">
+      <varInfo nodeId="2742566862758593252" varName="dependency" />
+    </scopeInfo>
     <scopeInfo nodeId="2742566862758593389" fileName="HistoryWriter.java" startLine="76" startPosition="61" endLine="84" endPosition="16" />
     <scopeInfo nodeId="2742566862758593570" fileName="HistoryWriter.java" startLine="97" startPosition="72" endLine="105" endPosition="16">
       <varInfo nodeId="2742566862758593572" varName="elem" />
@@ -389,65 +395,185 @@
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="346" startPosition="32" endLine="348" endPosition="15" />
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="359" startPosition="0" endLine="361" endPosition="5" />
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="85" startPosition="54" endLine="88" endPosition="7" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="97" startPosition="54" endLine="100" endPosition="51" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="113" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="135" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="162" startPosition="52" endLine="165" endPosition="15" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="203" startPosition="43" endLine="206" endPosition="15" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="208" startPosition="35" endLine="211" endPosition="15" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="213" startPosition="37" endLine="216" endPosition="15" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="218" startPosition="42" endLine="221" endPosition="15" />
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="97" startPosition="54" endLine="100" endPosition="51">
+      <varInfo nodeId="2742566862758593747" varName="name" />
+      <varInfo nodeId="2742566862758593747" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="113" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="name" />
+      <varInfo nodeId="2742566862758593747" varName="resultObject" />
+      <varInfo nodeId="2742566862758593747" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="135" startPosition="0" endLine="138" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="resultObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="162" startPosition="52" endLine="165" endPosition="15">
+      <varInfo nodeId="2742566862758593747" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="203" startPosition="43" endLine="206" endPosition="15">
+      <varInfo nodeId="2742566862758593747" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="208" startPosition="35" endLine="211" endPosition="15">
+      <varInfo nodeId="2742566862758593747" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="213" startPosition="37" endLine="216" endPosition="15">
+      <varInfo nodeId="2742566862758593747" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="218" startPosition="42" endLine="221" endPosition="15">
+      <varInfo nodeId="2742566862758593747" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="116" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="109" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="attrs" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="116" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="120" startPosition="0" endLine="124" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="resultObject" />
+      <varInfo nodeId="2742566862758593747" varName="tagName" />
+      <varInfo nodeId="2742566862758593747" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="125" startPosition="86" endLine="129" endPosition="64" />
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="152" startPosition="99" endLine="156" endPosition="40" />
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="239" startPosition="99" endLine="243" endPosition="40" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="84" startPosition="22" endLine="89" endPosition="5" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="96" startPosition="25" endLine="101" endPosition="5" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="145" startPosition="0" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="232" startPosition="0" endLine="237" endPosition="0" />
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="40" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="locator" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="84" startPosition="22" endLine="89" endPosition="5">
+      <varInfo nodeId="2742566862758593747" varName="attr" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="96" startPosition="25" endLine="101" endPosition="5">
+      <varInfo nodeId="2742566862758593747" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="145" startPosition="0" endLine="150" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="attrs" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="232" startPosition="0" endLine="237" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="249" startPosition="36" endLine="254" endPosition="15">
+      <varInfo nodeId="2742566862758593747" varName="child" />
       <varInfo nodeId="2742566862758596832" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="265" startPosition="0" endLine="270" endPosition="0" />
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="265" startPosition="0" endLine="270" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="270" startPosition="0" endLine="275" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="297" startPosition="0" endLine="302" endPosition="0" />
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="297" startPosition="0" endLine="302" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="302" startPosition="0" endLine="307" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="326" startPosition="0" endLine="331" endPosition="0" />
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="326" startPosition="0" endLine="331" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="331" startPosition="0" endLine="336" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="362" startPosition="0" endLine="367" endPosition="0" />
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="362" startPosition="0" endLine="367" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="367" startPosition="0" endLine="372" endPosition="0" />
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="61" startPosition="26" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="176" startPosition="0" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="47" startPosition="80" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="124" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="160" startPosition="103" endLine="167" endPosition="54" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="150" startPosition="0" endLine="158" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="237" startPosition="0" endLine="245" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="309" startPosition="104" endLine="317" endPosition="55" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="374" startPosition="104" endLine="382" endPosition="55" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="247" startPosition="103" endLine="256" endPosition="54" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="58" startPosition="90" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="45" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="158" startPosition="0" endLine="169" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="277" startPosition="104" endLine="288" endPosition="55" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="307" startPosition="0" endLine="319" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="372" startPosition="0" endLine="384" endPosition="0" />
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="176" startPosition="0" endLine="182" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="attrs" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="47" startPosition="80" endLine="54" endPosition="5">
+      <varInfo nodeId="2742566862758593747" varName="current" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="124" startPosition="0" endLine="131" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="resultObject" />
+      <varInfo nodeId="2742566862758593747" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="160" startPosition="103" endLine="167" endPosition="54">
+      <varInfo nodeId="2742566862758593747" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="150" startPosition="0" endLine="158" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="237" startPosition="0" endLine="245" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="309" startPosition="104" endLine="317" endPosition="55">
+      <varInfo nodeId="2742566862758593747" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="374" startPosition="104" endLine="382" endPosition="55">
+      <varInfo nodeId="2742566862758593747" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="247" startPosition="103" endLine="256" endPosition="54">
+      <varInfo nodeId="2742566862758593747" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="58" startPosition="90" endLine="68" endPosition="5">
+      <varInfo nodeId="2742566862758593747" varName="childValue" />
+      <varInfo nodeId="2742566862758593747" varName="current" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="45" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="array" />
+      <varInfo nodeId="2742566862758593747" varName="len" />
+      <varInfo nodeId="2742566862758593747" varName="start" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="158" startPosition="0" endLine="169" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="resultObject" />
+      <varInfo nodeId="2742566862758593747" varName="tagName" />
+      <varInfo nodeId="2742566862758593747" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="277" startPosition="104" endLine="288" endPosition="55">
+      <varInfo nodeId="2742566862758593747" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="307" startPosition="0" endLine="319" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="name" />
+      <varInfo nodeId="2742566862758593747" varName="resultObject" />
+      <varInfo nodeId="2742566862758593747" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="372" startPosition="0" endLine="384" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="name" />
+      <varInfo nodeId="2742566862758593747" varName="resultObject" />
+      <varInfo nodeId="2742566862758593747" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="184" startPosition="99" endLine="197" endPosition="40" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="245" startPosition="0" endLine="258" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="56" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="275" startPosition="0" endLine="290" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="338" startPosition="104" endLine="353" endPosition="55" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="182" startPosition="0" endLine="199" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="336" startPosition="0" endLine="355" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="201" startPosition="103" endLine="223" endPosition="54" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="199" startPosition="0" endLine="225" endPosition="0" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="72" startPosition="115" endLine="103" endPosition="26" />
-    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="70" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="245" startPosition="0" endLine="258" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="resultObject" />
+      <varInfo nodeId="2742566862758593747" varName="tagName" />
+      <varInfo nodeId="2742566862758593747" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="56" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="localName" />
+      <varInfo nodeId="2742566862758593747" varName="qName" />
+      <varInfo nodeId="2742566862758593747" varName="uri" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="275" startPosition="0" endLine="290" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="name" />
+      <varInfo nodeId="2742566862758593747" varName="resultObject" />
+      <varInfo nodeId="2742566862758593747" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="338" startPosition="104" endLine="353" endPosition="55">
+      <varInfo nodeId="2742566862758593747" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="182" startPosition="0" endLine="199" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="336" startPosition="0" endLine="355" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="name" />
+      <varInfo nodeId="2742566862758593747" varName="resultObject" />
+      <varInfo nodeId="2742566862758593747" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="201" startPosition="103" endLine="223" endPosition="54">
+      <varInfo nodeId="2742566862758593747" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="199" startPosition="0" endLine="225" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="resultObject" />
+      <varInfo nodeId="2742566862758593747" varName="tagName" />
+      <varInfo nodeId="2742566862758593747" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="72" startPosition="115" endLine="103" endPosition="26">
+      <varInfo nodeId="2742566862758593747" varName="current" />
+      <varInfo nodeId="2742566862758593747" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="70" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="2742566862758593747" varName="attributes" />
+      <varInfo nodeId="2742566862758593747" varName="localName" />
+      <varInfo nodeId="2742566862758593747" varName="qName" />
+      <varInfo nodeId="2742566862758593747" varName="uri" />
+    </scopeInfo>
     <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="18" startPosition="0" endLine="386" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler" />
     <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="227" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$DependenciesElementHandler" />
     <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="171" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$ElementElementHandler" />
@@ -554,7 +680,9 @@
     </scopeInfo>
     <scopeInfo nodeId="2742566862758590052" fileName="StructureModification.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="2742566862758590064" fileName="StructureModification.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="7323995121011047840" fileName="StructureModification.java" startLine="54" startPosition="100" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="7323995121011047840" fileName="StructureModification.java" startLine="54" startPosition="100" endLine="58" endPosition="0">
+      <varInfo nodeId="7323995121011047840" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="5817662974489412297" fileName="StructureModification.java" startLine="62" startPosition="68" endLine="66" endPosition="6" />
     <scopeInfo nodeId="5817662974489416588" fileName="StructureModification.java" startLine="78" startPosition="0" endLine="82" endPosition="5">
       <varInfo nodeId="2742566862758589866" varName="id" />
@@ -587,7 +715,10 @@
     <scopeInfo nodeId="7323995121011047823" fileName="StructureModification.java" startLine="52" startPosition="52" endLine="59" endPosition="25">
       <varInfo nodeId="7323995121011047828" varName="updated" />
     </scopeInfo>
-    <scopeInfo nodeId="5817662974489412297" fileName="StructureModification.java" startLine="61" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="5817662974489412297" fileName="StructureModification.java" startLine="61" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="5817662974489412297" varName="o" />
+      <varInfo nodeId="5817662974489412297" varName="type" />
+    </scopeInfo>
     <scopeInfo nodeId="1190334391238664552" fileName="StructureModification.java" startLine="29" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="1190334391238664556" varName="modelRef" />
     </scopeInfo>
@@ -850,7 +981,9 @@
     <scopeInfo nodeId="5817662974489429911" fileName="ModelLinkMap.java" startLine="38" startPosition="0" endLine="41" endPosition="3">
       <varInfo nodeId="3729328437991306867" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4525791269560356932" fileName="ModelLinkMap.java" startLine="47" startPosition="78" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="4525791269560356932" fileName="ModelLinkMap.java" startLine="47" startPosition="78" endLine="50" endPosition="7">
+      <varInfo nodeId="4525791269560356932" varName="prop" />
+    </scopeInfo>
     <scopeInfo nodeId="2742566862758589394" fileName="ModelLinkMap.java" startLine="96" startPosition="38" endLine="99" endPosition="106">
       <varInfo nodeId="2742566862758589399" varName="modelName" />
       <varInfo nodeId="2742566862758589415" varName="name" />
@@ -859,7 +992,9 @@
     <scopeInfo nodeId="6383770312891636763" fileName="ModelLinkMap.java" startLine="221" startPosition="41" endLine="224" endPosition="0">
       <varInfo nodeId="6383770312891636799" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="5911625124420811147" fileName="ModelLinkMap.java" startLine="239" startPosition="39" endLine="242" endPosition="7" />
+    <scopeInfo nodeId="5911625124420811147" fileName="ModelLinkMap.java" startLine="239" startPosition="39" endLine="242" endPosition="7">
+      <varInfo nodeId="5911625124420811147" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="5817662974489429600" fileName="ModelLinkMap.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="5817662974489429610" varName="ptr" />
       <varInfo nodeId="5817662974489429612" varName="ref" />
@@ -885,53 +1020,117 @@
       <varInfo nodeId="5817662974489429690" varName="model" />
       <varInfo nodeId="5817662974489429692" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="2742566862758589448" fileName="ModelLinkMap.java" startLine="102" startPosition="81" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="2742566862758589460" fileName="ModelLinkMap.java" startLine="107" startPosition="85" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="2742566862758589471" fileName="ModelLinkMap.java" startLine="112" startPosition="95" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="2742566862758589513" fileName="ModelLinkMap.java" startLine="122" startPosition="79" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="2742566862758589531" fileName="ModelLinkMap.java" startLine="127" startPosition="79" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="2742566862758589566" fileName="ModelLinkMap.java" startLine="132" startPosition="83" endLine="136" endPosition="0" />
-    <scopeInfo nodeId="2742566862758589599" fileName="ModelLinkMap.java" startLine="137" startPosition="93" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="2742566862758589814" fileName="ModelLinkMap.java" startLine="168" startPosition="80" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="2742566862758589840" fileName="ModelLinkMap.java" startLine="173" startPosition="84" endLine="177" endPosition="0" />
+    <scopeInfo nodeId="2742566862758589448" fileName="ModelLinkMap.java" startLine="102" startPosition="81" endLine="106" endPosition="0">
+      <varInfo nodeId="2742566862758589448" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758589460" fileName="ModelLinkMap.java" startLine="107" startPosition="85" endLine="111" endPosition="0">
+      <varInfo nodeId="2742566862758589460" varName="r" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758589471" fileName="ModelLinkMap.java" startLine="112" startPosition="95" endLine="116" endPosition="0">
+      <varInfo nodeId="2742566862758589471" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758589513" fileName="ModelLinkMap.java" startLine="122" startPosition="79" endLine="126" endPosition="0">
+      <varInfo nodeId="2742566862758589513" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758589531" fileName="ModelLinkMap.java" startLine="127" startPosition="79" endLine="131" endPosition="0">
+      <varInfo nodeId="2742566862758589531" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758589566" fileName="ModelLinkMap.java" startLine="132" startPosition="83" endLine="136" endPosition="0">
+      <varInfo nodeId="2742566862758589566" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758589599" fileName="ModelLinkMap.java" startLine="137" startPosition="93" endLine="141" endPosition="0">
+      <varInfo nodeId="2742566862758589599" varName="prop" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758589814" fileName="ModelLinkMap.java" startLine="168" startPosition="80" endLine="172" endPosition="0">
+      <varInfo nodeId="2742566862758589814" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758589840" fileName="ModelLinkMap.java" startLine="173" startPosition="84" endLine="177" endPosition="0">
+      <varInfo nodeId="2742566862758589840" varName="ref" />
+    </scopeInfo>
     <scopeInfo nodeId="5252604008186657638" fileName="ModelLinkMap.java" startLine="184" startPosition="90" endLine="188" endPosition="7" />
-    <scopeInfo nodeId="6383770312891638787" fileName="ModelLinkMap.java" startLine="199" startPosition="77" endLine="203" endPosition="0" />
-    <scopeInfo nodeId="6383770312891636713" fileName="ModelLinkMap.java" startLine="209" startPosition="115" endLine="213" endPosition="0" />
-    <scopeInfo nodeId="980809437931347416" fileName="ModelLinkMap.java" startLine="244" startPosition="107" endLine="248" endPosition="0" />
-    <scopeInfo nodeId="980809437931347444" fileName="ModelLinkMap.java" startLine="251" startPosition="107" endLine="255" endPosition="0" />
-    <scopeInfo nodeId="980809437931347480" fileName="ModelLinkMap.java" startLine="258" startPosition="111" endLine="262" endPosition="0" />
-    <scopeInfo nodeId="980809437931347517" fileName="ModelLinkMap.java" startLine="265" startPosition="121" endLine="269" endPosition="0" />
-    <scopeInfo nodeId="2742566862758577849" fileName="ModelLinkMap.java" startLine="290" startPosition="60" endLine="294" endPosition="0" />
-    <scopeInfo nodeId="2742566862758581684" fileName="ModelLinkMap.java" startLine="304" startPosition="60" endLine="308" endPosition="0" />
-    <scopeInfo nodeId="2742566862758581593" fileName="ModelLinkMap.java" startLine="317" startPosition="60" endLine="321" endPosition="0" />
-    <scopeInfo nodeId="6383770312891638945" fileName="ModelLinkMap.java" startLine="326" startPosition="128" endLine="330" endPosition="0" />
-    <scopeInfo nodeId="6383770312891638957" fileName="ModelLinkMap.java" startLine="330" startPosition="24" endLine="334" endPosition="5" />
+    <scopeInfo nodeId="6383770312891638787" fileName="ModelLinkMap.java" startLine="199" startPosition="77" endLine="203" endPosition="0">
+      <varInfo nodeId="6383770312891638787" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="6383770312891636713" fileName="ModelLinkMap.java" startLine="209" startPosition="115" endLine="213" endPosition="0">
+      <varInfo nodeId="6383770312891636713" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="980809437931347416" fileName="ModelLinkMap.java" startLine="244" startPosition="107" endLine="248" endPosition="0">
+      <varInfo nodeId="980809437931347416" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="980809437931347444" fileName="ModelLinkMap.java" startLine="251" startPosition="107" endLine="255" endPosition="0">
+      <varInfo nodeId="980809437931347444" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="980809437931347480" fileName="ModelLinkMap.java" startLine="258" startPosition="111" endLine="262" endPosition="0">
+      <varInfo nodeId="980809437931347480" varName="r" />
+    </scopeInfo>
+    <scopeInfo nodeId="980809437931347517" fileName="ModelLinkMap.java" startLine="265" startPosition="121" endLine="269" endPosition="0">
+      <varInfo nodeId="980809437931347517" varName="nP" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758577849" fileName="ModelLinkMap.java" startLine="290" startPosition="60" endLine="294" endPosition="0">
+      <varInfo nodeId="2742566862758577849" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758581684" fileName="ModelLinkMap.java" startLine="304" startPosition="60" endLine="308" endPosition="0">
+      <varInfo nodeId="2742566862758581684" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758581593" fileName="ModelLinkMap.java" startLine="317" startPosition="60" endLine="321" endPosition="0">
+      <varInfo nodeId="2742566862758581593" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="6383770312891638945" fileName="ModelLinkMap.java" startLine="326" startPosition="128" endLine="330" endPosition="0">
+      <varInfo nodeId="6383770312891638945" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="6383770312891638957" fileName="ModelLinkMap.java" startLine="330" startPosition="24" endLine="334" endPosition="5">
+      <varInfo nodeId="6383770312891638957" varName="ptr" />
+    </scopeInfo>
     <scopeInfo nodeId="4525791269560364839" fileName="ModelLinkMap.java" startLine="337" startPosition="47" endLine="341" endPosition="6" />
-    <scopeInfo nodeId="2742566862758589349" fileName="ModelLinkMap.java" startLine="89" startPosition="96" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="2742566862758589663" fileName="ModelLinkMap.java" startLine="147" startPosition="80" endLine="152" endPosition="0" />
+    <scopeInfo nodeId="2742566862758589349" fileName="ModelLinkMap.java" startLine="89" startPosition="96" endLine="94" endPosition="0">
+      <varInfo nodeId="2742566862758589349" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758589663" fileName="ModelLinkMap.java" startLine="147" startPosition="80" endLine="152" endPosition="0">
+      <varInfo nodeId="2742566862758589663" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2742566862758589705" fileName="ModelLinkMap.java" startLine="154" startPosition="52" endLine="159" endPosition="48">
       <varInfo nodeId="2742566862758589714" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="6383770312891639023" fileName="ModelLinkMap.java" startLine="189" startPosition="5" endLine="194" endPosition="5" />
+    <scopeInfo nodeId="6383770312891639023" fileName="ModelLinkMap.java" startLine="189" startPosition="5" endLine="194" endPosition="5">
+      <varInfo nodeId="6383770312891639023" varName="element" />
+    </scopeInfo>
     <scopeInfo nodeId="980809437931347365" fileName="ModelLinkMap.java" startLine="243" startPosition="103" endLine="248" endPosition="11" />
     <scopeInfo nodeId="980809437931347431" fileName="ModelLinkMap.java" startLine="250" startPosition="103" endLine="255" endPosition="11" />
     <scopeInfo nodeId="980809437931347467" fileName="ModelLinkMap.java" startLine="257" startPosition="102" endLine="262" endPosition="11" />
     <scopeInfo nodeId="980809437931347504" fileName="ModelLinkMap.java" startLine="264" startPosition="103" endLine="269" endPosition="11" />
     <scopeInfo nodeId="4525791269560364536" fileName="ModelLinkMap.java" startLine="51" startPosition="89" endLine="57" endPosition="9" />
-    <scopeInfo nodeId="2742566862758589393" fileName="ModelLinkMap.java" startLine="95" startPosition="88" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="5252604008186657635" fileName="ModelLinkMap.java" startLine="183" startPosition="22" endLine="189" endPosition="5" />
+    <scopeInfo nodeId="2742566862758589393" fileName="ModelLinkMap.java" startLine="95" startPosition="88" endLine="101" endPosition="0">
+      <varInfo nodeId="2742566862758589393" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5252604008186657635" fileName="ModelLinkMap.java" startLine="183" startPosition="22" endLine="189" endPosition="5">
+      <varInfo nodeId="5252604008186657635" varName="element" />
+    </scopeInfo>
     <scopeInfo nodeId="6383770312891636639" fileName="ModelLinkMap.java" startLine="207" startPosition="50" endLine="213" endPosition="11" />
-    <scopeInfo nodeId="6383770312891636762" fileName="ModelLinkMap.java" startLine="220" startPosition="107" endLine="226" endPosition="0" />
+    <scopeInfo nodeId="6383770312891636762" fileName="ModelLinkMap.java" startLine="220" startPosition="107" endLine="226" endPosition="0">
+      <varInfo nodeId="6383770312891636762" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6383770312891638759" fileName="ModelLinkMap.java" startLine="197" startPosition="23" endLine="204" endPosition="59" />
-    <scopeInfo nodeId="980809437931347362" fileName="ModelLinkMap.java" startLine="242" startPosition="7" endLine="249" endPosition="7" />
-    <scopeInfo nodeId="980809437931347426" fileName="ModelLinkMap.java" startLine="249" startPosition="7" endLine="256" endPosition="7" />
-    <scopeInfo nodeId="980809437931347462" fileName="ModelLinkMap.java" startLine="256" startPosition="7" endLine="263" endPosition="7" />
-    <scopeInfo nodeId="980809437931347499" fileName="ModelLinkMap.java" startLine="263" startPosition="7" endLine="270" endPosition="7" />
+    <scopeInfo nodeId="980809437931347362" fileName="ModelLinkMap.java" startLine="242" startPosition="7" endLine="249" endPosition="7">
+      <varInfo nodeId="980809437931347362" varName="ptr" />
+    </scopeInfo>
+    <scopeInfo nodeId="980809437931347426" fileName="ModelLinkMap.java" startLine="249" startPosition="7" endLine="256" endPosition="7">
+      <varInfo nodeId="980809437931347426" varName="ptr" />
+    </scopeInfo>
+    <scopeInfo nodeId="980809437931347462" fileName="ModelLinkMap.java" startLine="256" startPosition="7" endLine="263" endPosition="7">
+      <varInfo nodeId="980809437931347462" varName="ptr" />
+    </scopeInfo>
+    <scopeInfo nodeId="980809437931347499" fileName="ModelLinkMap.java" startLine="263" startPosition="7" endLine="270" endPosition="7">
+      <varInfo nodeId="980809437931347499" varName="ptr" />
+    </scopeInfo>
     <scopeInfo nodeId="4525791269560364836" fileName="ModelLinkMap.java" startLine="336" startPosition="0" endLine="343" endPosition="0">
       <varInfo nodeId="4525791269560364844" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4525791269560364533" fileName="ModelLinkMap.java" startLine="50" startPosition="7" endLine="58" endPosition="7" />
-    <scopeInfo nodeId="2742566862758589704" fileName="ModelLinkMap.java" startLine="153" startPosition="94" endLine="161" endPosition="0" />
+    <scopeInfo nodeId="4525791269560364533" fileName="ModelLinkMap.java" startLine="50" startPosition="7" endLine="58" endPosition="7">
+      <varInfo nodeId="4525791269560364533" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="2742566862758589704" fileName="ModelLinkMap.java" startLine="153" startPosition="94" endLine="161" endPosition="0">
+      <varInfo nodeId="2742566862758589704" varName="prop" />
+    </scopeInfo>
     <scopeInfo nodeId="6383770312891636630" fileName="ModelLinkMap.java" startLine="206" startPosition="93" endLine="214" endPosition="7" />
     <scopeInfo nodeId="6383770312891636751" fileName="ModelLinkMap.java" startLine="218" startPosition="50" endLine="226" endPosition="11" />
     <scopeInfo nodeId="2742566862758577724" fileName="ModelLinkMap.java" startLine="274" startPosition="76" endLine="282" endPosition="50">
@@ -940,7 +1139,9 @@
     <scopeInfo nodeId="6383770312891638920" fileName="ModelLinkMap.java" startLine="325" startPosition="130" endLine="334" endPosition="5">
       <varInfo nodeId="6383770312891638936" varName="ptrList" />
     </scopeInfo>
-    <scopeInfo nodeId="6383770312891636627" fileName="ModelLinkMap.java" startLine="205" startPosition="5" endLine="215" endPosition="5" />
+    <scopeInfo nodeId="6383770312891636627" fileName="ModelLinkMap.java" startLine="205" startPosition="5" endLine="215" endPosition="5">
+      <varInfo nodeId="6383770312891636627" varName="ptr" />
+    </scopeInfo>
     <scopeInfo nodeId="6383770312891636729" fileName="ModelLinkMap.java" startLine="217" startPosition="95" endLine="227" endPosition="7" />
     <scopeInfo nodeId="2742566862758581624" fileName="ModelLinkMap.java" startLine="299" startPosition="134" endLine="309" endPosition="16">
       <varInfo nodeId="2742566862758581649" varName="list" />
@@ -956,7 +1157,9 @@
     <scopeInfo nodeId="2742566862758577709" fileName="ModelLinkMap.java" startLine="285" startPosition="153" endLine="296" endPosition="16">
       <varInfo nodeId="2742566862758577818" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="6383770312891636726" fileName="ModelLinkMap.java" startLine="216" startPosition="57" endLine="228" endPosition="5" />
+    <scopeInfo nodeId="6383770312891636726" fileName="ModelLinkMap.java" startLine="216" startPosition="57" endLine="228" endPosition="5">
+      <varInfo nodeId="6383770312891636726" varName="ptr" />
+    </scopeInfo>
     <scopeInfo nodeId="6383770312891638917" fileName="ModelLinkMap.java" startLine="324" startPosition="0" endLine="336" endPosition="0">
       <varInfo nodeId="6383770312891638924" varName="map" />
       <varInfo nodeId="6383770312891639091" varName="newModel" />
@@ -1166,12 +1369,16 @@
       <varInfo nodeId="8035425343761251235" varName="model" />
       <varInfo nodeId="9051163691968378157" varName="modelMap" />
     </scopeInfo>
-    <scopeInfo nodeId="9051163691968378212" fileName="StructureModificationProcessor.java" startLine="32" startPosition="44" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="9051163691968378212" fileName="StructureModificationProcessor.java" startLine="32" startPosition="44" endLine="36" endPosition="5">
+      <varInfo nodeId="9051163691968378212" varName="entry" />
+    </scopeInfo>
     <scopeInfo nodeId="489412339685421508" fileName="StructureModificationProcessor.java" startLine="44" startPosition="114" endLine="48" endPosition="40" />
     <scopeInfo nodeId="489412339685421499" fileName="StructureModificationProcessor.java" startLine="82" startPosition="120" endLine="86" endPosition="9">
       <varInfo nodeId="9051163691968353796" varName="usedModel" />
     </scopeInfo>
-    <scopeInfo nodeId="1190334391238664534" fileName="StructureModificationProcessor.java" startLine="95" startPosition="98" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="1190334391238664534" fileName="StructureModificationProcessor.java" startLine="95" startPosition="98" endLine="99" endPosition="0">
+      <varInfo nodeId="1190334391238664534" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="489412339685421482" fileName="StructureModificationProcessor.java" startLine="114" startPosition="118" endLine="118" endPosition="9">
       <varInfo nodeId="9051163691968353874" varName="usedModel" />
     </scopeInfo>
@@ -1182,22 +1389,38 @@
     <scopeInfo nodeId="9051163691968354036" fileName="StructureModificationProcessor.java" startLine="31" startPosition="72" endLine="37" endPosition="18">
       <varInfo nodeId="1233603318756976721" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="489412339685421505" fileName="StructureModificationProcessor.java" startLine="43" startPosition="29" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="489412339685421496" fileName="StructureModificationProcessor.java" startLine="81" startPosition="21" endLine="87" endPosition="7" />
+    <scopeInfo nodeId="489412339685421505" fileName="StructureModificationProcessor.java" startLine="43" startPosition="29" endLine="49" endPosition="7">
+      <varInfo nodeId="489412339685421505" varName="data" />
+    </scopeInfo>
+    <scopeInfo nodeId="489412339685421496" fileName="StructureModificationProcessor.java" startLine="81" startPosition="21" endLine="87" endPosition="7">
+      <varInfo nodeId="489412339685421496" varName="importElement" />
+    </scopeInfo>
     <scopeInfo nodeId="3294668569473094849" fileName="StructureModificationProcessor.java" startLine="102" startPosition="103" endLine="108" endPosition="29">
       <varInfo nodeId="9051163691968353692" varName="model" />
       <varInfo nodeId="9051163691968353703" varName="modificationLog" />
     </scopeInfo>
     <scopeInfo nodeId="489412339685402747" fileName="StructureModificationProcessor.java" startLine="113" startPosition="79" endLine="119" endPosition="7" />
-    <scopeInfo nodeId="489412339685421479" fileName="StructureModificationProcessor.java" startLine="113" startPosition="79" endLine="119" endPosition="7" />
+    <scopeInfo nodeId="489412339685421479" fileName="StructureModificationProcessor.java" startLine="113" startPosition="79" endLine="119" endPosition="7">
+      <varInfo nodeId="489412339685421479" varName="importElement" />
+    </scopeInfo>
     <scopeInfo nodeId="9051163691968353784" fileName="StructureModificationProcessor.java" startLine="80" startPosition="8" endLine="87" endPosition="7" />
-    <scopeInfo nodeId="1190334391238652051" fileName="StructureModificationProcessor.java" startLine="93" startPosition="56" endLine="100" endPosition="5" />
-    <scopeInfo nodeId="9051163691968353666" fileName="StructureModificationProcessor.java" startLine="127" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="9051163691968353666" fileName="StructureModificationProcessor.java" startLine="134" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="1190334391238652051" fileName="StructureModificationProcessor.java" startLine="93" startPosition="56" endLine="100" endPosition="5">
+      <varInfo nodeId="1190334391238652051" varName="entry" />
+    </scopeInfo>
+    <scopeInfo nodeId="9051163691968353666" fileName="StructureModificationProcessor.java" startLine="127" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="9051163691968353666" varName="o" />
+      <varInfo nodeId="9051163691968353666" varName="type" />
+    </scopeInfo>
+    <scopeInfo nodeId="9051163691968353666" fileName="StructureModificationProcessor.java" startLine="134" startPosition="0" endLine="141" endPosition="0">
+      <varInfo nodeId="9051163691968353666" varName="o" />
+      <varInfo nodeId="9051163691968353666" varName="type" />
+    </scopeInfo>
     <scopeInfo nodeId="9051163691968353932" fileName="StructureModificationProcessor.java" startLine="42" startPosition="37" endLine="50" endPosition="20">
       <varInfo nodeId="9051163691968353934" varName="played" />
     </scopeInfo>
-    <scopeInfo nodeId="3294668569473094846" fileName="StructureModificationProcessor.java" startLine="101" startPosition="48" endLine="109" endPosition="5" />
+    <scopeInfo nodeId="3294668569473094846" fileName="StructureModificationProcessor.java" startLine="101" startPosition="48" endLine="109" endPosition="5">
+      <varInfo nodeId="3294668569473094846" varName="dependency" />
+    </scopeInfo>
     <scopeInfo nodeId="9051163691968378166" fileName="StructureModificationProcessor.java" startLine="30" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="9051163691968354033" varName="data" />
     </scopeInfo>

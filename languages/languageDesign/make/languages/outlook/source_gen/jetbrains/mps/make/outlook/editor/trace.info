@@ -124,42 +124,126 @@
     <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="140" startPosition="34" endLine="141" endPosition="95" />
     <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="143" startPosition="131" endLine="144" endPosition="139" />
     <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="150" startPosition="88" endLine="151" endPosition="51" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="43" startPosition="5" endLine="45" endPosition="51" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="56" startPosition="5" endLine="58" endPosition="51" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="87" startPosition="91" endLine="89" endPosition="18" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="115" startPosition="66" endLine="117" endPosition="93" />
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="43" startPosition="5" endLine="45" endPosition="51">
+      <varInfo nodeId="5608160002100058532" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="56" startPosition="5" endLine="58" endPosition="51">
+      <varInfo nodeId="5608160002100058532" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="87" startPosition="91" endLine="89" endPosition="18">
+      <varInfo nodeId="5608160002100058532" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="115" startPosition="66" endLine="117" endPosition="93">
+      <varInfo nodeId="5608160002100058532" varName="listOwner" />
+    </scopeInfo>
     <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="96" startPosition="26" endLine="99" endPosition="73" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="102" startPosition="35" endLine="105" endPosition="105" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="110" startPosition="79" endLine="113" endPosition="5" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="120" startPosition="86" endLine="123" endPosition="25" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="27" startPosition="55" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="65" startPosition="89" endLine="69" endPosition="22" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="72" startPosition="89" endLine="76" endPosition="22" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="126" startPosition="68" endLine="130" endPosition="23" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="132" startPosition="0" endLine="136" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="149" startPosition="92" endLine="153" endPosition="24" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="32" startPosition="89" endLine="37" endPosition="22" />
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="102" startPosition="35" endLine="105" endPosition="105">
+      <varInfo nodeId="5608160002100058532" varName="manager" />
+      <varInfo nodeId="5608160002100058532" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="110" startPosition="79" endLine="113" endPosition="5">
+      <varInfo nodeId="5608160002100058532" varName="childRole" />
+      <varInfo nodeId="5608160002100058532" varName="context" />
+      <varInfo nodeId="5608160002100058532" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="120" startPosition="86" endLine="123" endPosition="25">
+      <varInfo nodeId="5608160002100058532" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="27" startPosition="55" endLine="31" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="65" startPosition="89" endLine="69" endPosition="22">
+      <varInfo nodeId="5608160002100058532" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="72" startPosition="89" endLine="76" endPosition="22">
+      <varInfo nodeId="5608160002100058532" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="126" startPosition="68" endLine="130" endPosition="23">
+      <varInfo nodeId="5608160002100058532" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="132" startPosition="0" endLine="136" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="149" startPosition="92" endLine="153" endPosition="24">
+      <varInfo nodeId="5608160002100058532" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="32" startPosition="89" endLine="37" endPosition="22">
+      <varInfo nodeId="5608160002100058532" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="41" startPosition="99" endLine="46" endPosition="5" />
     <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="54" startPosition="99" endLine="59" endPosition="5" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="79" startPosition="92" endLine="84" endPosition="22" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="86" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="114" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="119" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="64" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="71" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="125" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="79" startPosition="92" endLine="84" endPosition="22">
+      <varInfo nodeId="5608160002100058532" varName="editorCell" />
+      <varInfo nodeId="5608160002100058532" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="86" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="114" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="119" startPosition="0" endLine="125" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="71" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="125" startPosition="0" endLine="132" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="138" startPosition="96" endLine="145" endPosition="9" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="148" startPosition="0" endLine="155" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="31" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="78" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="53" startPosition="90" endLine="62" endPosition="22" />
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="148" startPosition="0" endLine="155" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="31" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="78" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="53" startPosition="90" endLine="62" endPosition="22">
+      <varInfo nodeId="5608160002100058532" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="137" startPosition="132" endLine="146" endPosition="7" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="40" startPosition="90" endLine="50" endPosition="22" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="52" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="136" startPosition="0" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="39" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="92" startPosition="89" endLine="107" endPosition="22" />
-    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="91" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="40" startPosition="90" endLine="50" endPosition="22">
+      <varInfo nodeId="5608160002100058532" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="52" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="136" startPosition="0" endLine="148" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="elementCell" />
+      <varInfo nodeId="5608160002100058532" varName="elementNode" />
+      <varInfo nodeId="5608160002100058532" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="39" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="92" startPosition="89" endLine="107" endPosition="22">
+      <varInfo nodeId="5608160002100058532" varName="attributeConcept" />
+      <varInfo nodeId="5608160002100058532" varName="attributeKind" />
+      <varInfo nodeId="5608160002100058532" varName="editorCell" />
+      <varInfo nodeId="5608160002100058532" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="91" startPosition="0" endLine="109" endPosition="0">
+      <varInfo nodeId="5608160002100058532" varName="editorContext" />
+      <varInfo nodeId="5608160002100058532" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="27" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.make.outlook.editor.Outlook_Editor" />
     <unitInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="110" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.make.outlook.editor.Outlook_Editor$facetListHandler_qlzo2n_b1a" />
   </root>

@@ -18,12 +18,20 @@
     <scopeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="20" startPosition="46" endLine="21" endPosition="89" />
     <scopeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="31" startPosition="30" endLine="32" endPosition="16" />
     <scopeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="12" startPosition="143" endLine="14" endPosition="3" />
-    <scopeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="25" startPosition="5" endLine="27" endPosition="45" />
-    <scopeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="25" startPosition="5" endLine="27" endPosition="45">
+      <varInfo nodeId="1178562976720" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1178562976720" varName="sourceNode" />
+      <varInfo nodeId="1178562976720" varName="status" />
+      <varInfo nodeId="1178562976720" varName="typeCheckingContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="24" startPosition="68" endLine="28" endPosition="5" />
     <scopeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="23" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="23" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1178562976720" varName="argument" />
+    </scopeInfo>
     <unitInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateFunctionParameter_sourceNode_InferenceRule" />
   </root>
   <root nodeId="1178562976728">
@@ -52,14 +60,21 @@
     <scopeInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="45" startPosition="46" endLine="46" endPosition="69" />
     <scopeInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="56" startPosition="30" endLine="57" endPosition="17" />
     <scopeInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="22" startPosition="123" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="1183153521354" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="35" startPosition="13" endLine="37" endPosition="334" />
-    <scopeInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="50" startPosition="5" endLine="52" endPosition="45" />
+    <scopeInfo nodeId="1183153521354" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="35" startPosition="13" endLine="37" endPosition="334">
+      <varInfo nodeId="1183153521354" varName="_reporter_2309309498" />
+      <varInfo nodeId="1183153521354" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="50" startPosition="5" endLine="52" endPosition="45">
+      <varInfo nodeId="1178562976728" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1183153521353" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="34" startPosition="124" endLine="38" endPosition="13" />
     <scopeInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="49" startPosition="68" endLine="53" endPosition="5" />
     <scopeInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="1183153521351" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="33" startPosition="85" endLine="39" endPosition="11" />
-    <scopeInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="48" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1178562976728" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="1178565177445" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="30" startPosition="29" endLine="40" endPosition="9">
       <varInfo nodeId="1178565280619" varName="ruleApplicableConcept" />
       <varInfo nodeId="1178565253501" varName="templateApplicableConcept" />
@@ -70,7 +85,11 @@
     <scopeInfo nodeId="1178562976729" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="26" startPosition="117" endLine="42" endPosition="5">
       <varInfo nodeId="1178564471182" varName="template" />
     </scopeInfo>
-    <scopeInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="25" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="25" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1178562976728" varName="rule" />
+      <varInfo nodeId="1178562976728" varName="status" />
+      <varInfo nodeId="1178562976728" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="1178562976728" fileName="typeof_Root_MappingRule_InferenceRule.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_Root_MappingRule_InferenceRule" />
   </root>
   <root nodeId="1178562976744">
@@ -103,9 +122,17 @@
     <scopeInfo nodeId="1178562976744" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="46" startPosition="46" endLine="47" endPosition="66" />
     <scopeInfo nodeId="1178562976744" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="57" startPosition="30" endLine="58" endPosition="17" />
     <scopeInfo nodeId="1178562976744" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="19" startPosition="120" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="1722980698497666339" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="30" startPosition="9" endLine="32" endPosition="254" />
-    <scopeInfo nodeId="1178562976744" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="51" startPosition="5" endLine="53" endPosition="45" />
-    <scopeInfo nodeId="4665309944889675072" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="36" startPosition="11" endLine="39" endPosition="374" />
+    <scopeInfo nodeId="1722980698497666339" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="30" startPosition="9" endLine="32" endPosition="254">
+      <varInfo nodeId="1722980698497666339" varName="_reporter_2309309498" />
+      <varInfo nodeId="1722980698497666339" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178562976744" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="51" startPosition="5" endLine="53" endPosition="45">
+      <varInfo nodeId="1178562976744" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4665309944889675072" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="36" startPosition="11" endLine="39" endPosition="374">
+      <varInfo nodeId="4665309944889675072" varName="_info_12389875345" />
+      <varInfo nodeId="4665309944889675072" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
     <scopeInfo nodeId="1722980698497666338" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="29" startPosition="115" endLine="33" endPosition="9" />
     <scopeInfo nodeId="1178562976744" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1178562976744" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="50" startPosition="68" endLine="54" endPosition="5" />
@@ -115,7 +142,9 @@
     <scopeInfo nodeId="4665309944889663122" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="34" startPosition="14" endLine="41" endPosition="9">
       <varInfo nodeId="4665309944889663123" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1178562976744" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="49" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1178562976744" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="49" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1178562976744" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="1722980698497666274" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="26" startPosition="38" endLine="42" endPosition="7">
       <varInfo nodeId="1722980698497666282" varName="actualArguments" />
       <varInfo nodeId="1722980698497666276" varName="parameterDeclarations" />
@@ -124,7 +153,11 @@
       <varInfo nodeId="1722980698497666267" varName="b" />
       <varInfo nodeId="1722980698497666261" varName="templateDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1178562976744" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="22" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1178562976744" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="22" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1178562976744" varName="iTemplateCall" />
+      <varInfo nodeId="1178562976744" varName="status" />
+      <varInfo nodeId="1178562976744" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="1178562976744" fileName="typeof_ITemplateCall_InferenceRule.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_ITemplateCall_InferenceRule" />
   </root>
   <root nodeId="1178666070052">
@@ -502,30 +535,68 @@
     <scopeInfo nodeId="1178907996331" fileName="QueriesUtil.java" startLine="63" startPosition="46" endLine="66" endPosition="15">
       <varInfo nodeId="1178907996333" varName="query" />
     </scopeInfo>
-    <scopeInfo nodeId="1206286374200" fileName="QueriesUtil.java" startLine="71" startPosition="5" endLine="74" endPosition="190" />
+    <scopeInfo nodeId="1206286374200" fileName="QueriesUtil.java" startLine="71" startPosition="5" endLine="74" endPosition="190">
+      <varInfo nodeId="1206286374200" varName="_info_12389875345" />
+      <varInfo nodeId="1206286374200" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
     <scopeInfo nodeId="1225935546088" fileName="QueriesUtil.java" startLine="150" startPosition="27" endLine="153" endPosition="34" />
     <scopeInfo nodeId="1225935546088" fileName="QueriesUtil.java" startLine="157" startPosition="27" endLine="160" endPosition="28" />
-    <scopeInfo nodeId="1206286245992" fileName="QueriesUtil.java" startLine="208" startPosition="7" endLine="211" endPosition="174" />
-    <scopeInfo nodeId="2562694294549309787" fileName="QueriesUtil.java" startLine="216" startPosition="5" endLine="219" endPosition="485" />
-    <scopeInfo nodeId="1226671862829" fileName="QueriesUtil.java" startLine="221" startPosition="5" endLine="224" endPosition="240" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="308" startPosition="7" endLine="311" endPosition="31" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="320" startPosition="7" endLine="323" endPosition="31" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="437" startPosition="7" endLine="440" endPosition="31" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="472" startPosition="7" endLine="475" endPosition="31" />
+    <scopeInfo nodeId="1206286245992" fileName="QueriesUtil.java" startLine="208" startPosition="7" endLine="211" endPosition="174">
+      <varInfo nodeId="1206286245992" varName="_info_12389875345" />
+      <varInfo nodeId="1206286245992" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2562694294549309787" fileName="QueriesUtil.java" startLine="216" startPosition="5" endLine="219" endPosition="485">
+      <varInfo nodeId="2562694294549309787" varName="_info_12389875345" />
+      <varInfo nodeId="2562694294549309787" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="1226671862829" fileName="QueriesUtil.java" startLine="221" startPosition="5" endLine="224" endPosition="240">
+      <varInfo nodeId="1226671862829" varName="_info_12389875345" />
+      <varInfo nodeId="1226671862829" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="308" startPosition="7" endLine="311" endPosition="31">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="320" startPosition="7" endLine="323" endPosition="31">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="437" startPosition="7" endLine="440" endPosition="31">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="472" startPosition="7" endLine="475" endPosition="31">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1625973203907740999" fileName="QueriesUtil.java" startLine="82" startPosition="240" endLine="86" endPosition="7">
       <varInfo nodeId="5220804608733395778" varName="parent" />
     </scopeInfo>
     <scopeInfo nodeId="1178667390815" fileName="QueriesUtil.java" startLine="95" startPosition="112" endLine="99" endPosition="11" />
     <scopeInfo nodeId="1178667527166" fileName="QueriesUtil.java" startLine="101" startPosition="108" endLine="105" endPosition="11" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="277" startPosition="7" endLine="281" endPosition="31" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="290" startPosition="7" endLine="294" endPosition="31" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="346" startPosition="11" endLine="350" endPosition="64" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="354" startPosition="9" endLine="358" endPosition="59" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="378" startPosition="11" endLine="382" endPosition="64" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="386" startPosition="9" endLine="390" endPosition="59" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="406" startPosition="7" endLine="410" endPosition="31" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="419" startPosition="7" endLine="423" endPosition="31" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="454" startPosition="7" endLine="458" endPosition="31" />
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="277" startPosition="7" endLine="281" endPosition="31">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="290" startPosition="7" endLine="294" endPosition="31">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="346" startPosition="11" endLine="350" endPosition="64">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_7" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="354" startPosition="9" endLine="358" endPosition="59">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="378" startPosition="11" endLine="382" endPosition="64">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_7" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="386" startPosition="9" endLine="390" endPosition="59">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="406" startPosition="7" endLine="410" endPosition="31">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="419" startPosition="7" endLine="423" endPosition="31">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="454" startPosition="7" endLine="458" endPosition="31">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1203116192573" fileName="QueriesUtil.java" startLine="39" startPosition="252" endLine="44" endPosition="11">
       <varInfo nodeId="1203116363340" varName="query" />
     </scopeInfo>
@@ -557,20 +628,62 @@
     <scopeInfo nodeId="1226663373809" fileName="QueriesUtil.java" startLine="239" startPosition="14" endLine="247" endPosition="9">
       <varInfo nodeId="1226663373811" varName="outputSequenceType" />
     </scopeInfo>
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="304" startPosition="76" endLine="313" endPosition="20" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="316" startPosition="31" endLine="325" endPosition="20" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="343" startPosition="9" endLine="352" endPosition="59" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="375" startPosition="9" endLine="384" endPosition="59" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="433" startPosition="31" endLine="442" endPosition="20" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="468" startPosition="31" endLine="477" endPosition="20" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="273" startPosition="96" endLine="283" endPosition="20" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="286" startPosition="49" endLine="296" endPosition="20" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="402" startPosition="96" endLine="412" endPosition="20" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="415" startPosition="49" endLine="425" endPosition="20" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="450" startPosition="49" endLine="460" endPosition="20" />
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="304" startPosition="76" endLine="313" endPosition="20">
+      <varInfo nodeId="1178666070052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_1" />
+      <varInfo nodeId="1178666070052" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="316" startPosition="31" endLine="325" endPosition="20">
+      <varInfo nodeId="1178666070052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_1" />
+      <varInfo nodeId="1178666070052" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="343" startPosition="9" endLine="352" endPosition="59">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="375" startPosition="9" endLine="384" endPosition="59">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="433" startPosition="31" endLine="442" endPosition="20">
+      <varInfo nodeId="1178666070052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_1" />
+      <varInfo nodeId="1178666070052" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="468" startPosition="31" endLine="477" endPosition="20">
+      <varInfo nodeId="1178666070052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_1" />
+      <varInfo nodeId="1178666070052" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="273" startPosition="96" endLine="283" endPosition="20">
+      <varInfo nodeId="1178666070052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_1" />
+      <varInfo nodeId="1178666070052" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="286" startPosition="49" endLine="296" endPosition="20">
+      <varInfo nodeId="1178666070052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_1" />
+      <varInfo nodeId="1178666070052" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="402" startPosition="96" endLine="412" endPosition="20">
+      <varInfo nodeId="1178666070052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_1" />
+      <varInfo nodeId="1178666070052" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="415" startPosition="49" endLine="425" endPosition="20">
+      <varInfo nodeId="1178666070052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_1" />
+      <varInfo nodeId="1178666070052" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="450" startPosition="49" endLine="460" endPosition="20">
+      <varInfo nodeId="1178666070052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_1" />
+      <varInfo nodeId="1178666070052" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="342" startPosition="43" endLine="353" endPosition="9" />
     <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="374" startPosition="43" endLine="385" endPosition="9" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="303" startPosition="0" endLine="315" endPosition="0" />
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="303" startPosition="0" endLine="315" endPosition="0">
+      <varInfo nodeId="1178666070052" varName="typeCheckingContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="315" startPosition="0" endLine="327" endPosition="0" />
     <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="432" startPosition="0" endLine="444" endPosition="0" />
     <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="467" startPosition="0" endLine="479" endPosition="0" />
@@ -581,20 +694,40 @@
       <varInfo nodeId="1178670295329" varName="ancestor" />
       <varInfo nodeId="1178670506572" varName="rootAnnotation" />
     </scopeInfo>
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="272" startPosition="0" endLine="285" endPosition="0" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="285" startPosition="0" endLine="298" endPosition="0" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="401" startPosition="0" endLine="414" endPosition="0" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="414" startPosition="0" endLine="427" endPosition="0" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="449" startPosition="0" endLine="462" endPosition="0" />
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="272" startPosition="0" endLine="285" endPosition="0">
+      <varInfo nodeId="1178666070052" varName="parameter_3" />
+      <varInfo nodeId="1178666070052" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="285" startPosition="0" endLine="298" endPosition="0">
+      <varInfo nodeId="1178666070052" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="401" startPosition="0" endLine="414" endPosition="0">
+      <varInfo nodeId="1178666070052" varName="parameter_3" />
+      <varInfo nodeId="1178666070052" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="414" startPosition="0" endLine="427" endPosition="0">
+      <varInfo nodeId="1178666070052" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="449" startPosition="0" endLine="462" endPosition="0">
+      <varInfo nodeId="1178666070052" varName="parameter_3" />
+    </scopeInfo>
     <scopeInfo nodeId="1178667366464" fileName="QueriesUtil.java" startLine="94" startPosition="116" endLine="108" endPosition="116" />
     <scopeInfo nodeId="1178670165537" fileName="QueriesUtil.java" startLine="252" startPosition="0" endLine="268" endPosition="0">
       <varInfo nodeId="1178670218097" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1178667279974" fileName="QueriesUtil.java" startLine="90" startPosition="63" endLine="109" endPosition="7" />
-    <scopeInfo nodeId="1184801497279" fileName="QueriesUtil.java" startLine="206" startPosition="157" endLine="225" endPosition="5" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="340" startPosition="7" endLine="360" endPosition="31" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="372" startPosition="7" endLine="392" endPosition="31" />
-    <scopeInfo nodeId="1178667279971" fileName="QueriesUtil.java" startLine="89" startPosition="27" endLine="110" endPosition="5" />
+    <scopeInfo nodeId="1184801497279" fileName="QueriesUtil.java" startLine="206" startPosition="157" endLine="225" endPosition="5">
+      <varInfo nodeId="1226671834537" varName="Concept_typevar_1226671834537" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="340" startPosition="7" endLine="360" endPosition="31">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="372" startPosition="7" endLine="392" endPosition="31">
+      <varInfo nodeId="1178666070052" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178667279971" fileName="QueriesUtil.java" startLine="89" startPosition="27" endLine="110" endPosition="5">
+      <varInfo nodeId="1178667279971" varName="attribute" />
+    </scopeInfo>
     <scopeInfo nodeId="1178667968419" fileName="QueriesUtil.java" startLine="180" startPosition="79" endLine="202" endPosition="16" />
     <scopeInfo nodeId="1226663231604" fileName="QueriesUtil.java" startLine="228" startPosition="70" endLine="250" endPosition="70">
       <varInfo nodeId="1226663324363" varName="OutputType" />
@@ -604,6 +737,7 @@
     <scopeInfo nodeId="1184801497276" fileName="QueriesUtil.java" startLine="204" startPosition="0" endLine="227" endPosition="0">
       <varInfo nodeId="1206283500724" varName="TypeToEquate" />
       <varInfo nodeId="1184801497342" varName="query" />
+      <varInfo nodeId="1184801497276" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="1178667968416" fileName="QueriesUtil.java" startLine="179" startPosition="0" endLine="204" endPosition="0">
       <varInfo nodeId="1178668019953" varName="macro" />
@@ -611,15 +745,36 @@
     <scopeInfo nodeId="1226663231601" fileName="QueriesUtil.java" startLine="227" startPosition="0" endLine="252" endPosition="0">
       <varInfo nodeId="1226663270626" varName="query" />
     </scopeInfo>
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="333" startPosition="117" endLine="362" endPosition="20" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="365" startPosition="70" endLine="394" endPosition="20" />
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="333" startPosition="117" endLine="362" endPosition="20">
+      <varInfo nodeId="1178666070052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_1" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_2" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_3" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_4" />
+      <varInfo nodeId="1178666070052" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="365" startPosition="70" endLine="394" endPosition="20">
+      <varInfo nodeId="1178666070052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_1" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_2" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_3" />
+      <varInfo nodeId="1178666070052" varName="quotedNode_4" />
+      <varInfo nodeId="1178666070052" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1178907996317" fileName="QueriesUtil.java" startLine="36" startPosition="33" endLine="67" endPosition="7">
       <varInfo nodeId="1184078877494" varName="enclosingNodeMacro" />
       <varInfo nodeId="1178907996319" varName="macroOwner" />
       <varInfo nodeId="1178907996325" varName="prevSourceSubstituteMacro" />
     </scopeInfo>
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="332" startPosition="0" endLine="364" endPosition="0" />
-    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="364" startPosition="0" endLine="396" endPosition="0" />
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="332" startPosition="0" endLine="364" endPosition="0">
+      <varInfo nodeId="1178666070052" varName="parameter_10" />
+      <varInfo nodeId="1178666070052" varName="parameter_9" />
+      <varInfo nodeId="1178666070052" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="364" startPosition="0" endLine="396" endPosition="0">
+      <varInfo nodeId="1178666070052" varName="parameter_10" />
+      <varInfo nodeId="1178666070052" varName="parameter_9" />
+    </scopeInfo>
     <scopeInfo nodeId="1178667009996" fileName="QueriesUtil.java" startLine="78" startPosition="91" endLine="115" endPosition="85">
       <varInfo nodeId="1178667158265" varName="attributes" />
       <varInfo nodeId="1178667187694" varName="prevMacro" />
@@ -637,12 +792,15 @@
     <scopeInfo nodeId="1178844146368" fileName="QueriesUtil.java" startLine="32" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="1206286195782" varName="InputNodeType" />
       <varInfo nodeId="1178844345408" varName="contextNode" />
+      <varInfo nodeId="1178844146368" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="1225935546088" fileName="QueriesUtil.java" startLine="127" startPosition="0" endLine="172" endPosition="0" />
     <scopeInfo nodeId="1225935546088" fileName="QueriesUtil.java" startLine="123" startPosition="45" endLine="172" endPosition="14" />
     <scopeInfo nodeId="1225935546088" fileName="QueriesUtil.java" startLine="122" startPosition="38" endLine="174" endPosition="0" />
     <scopeInfo nodeId="1225935546088" fileName="QueriesUtil.java" startLine="121" startPosition="56" endLine="174" endPosition="10" />
-    <scopeInfo nodeId="1225935546088" fileName="QueriesUtil.java" startLine="120" startPosition="140" endLine="176" endPosition="0" />
+    <scopeInfo nodeId="1225935546088" fileName="QueriesUtil.java" startLine="120" startPosition="140" endLine="176" endPosition="0">
+      <varInfo nodeId="1225935546088" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1225934547833" fileName="QueriesUtil.java" startLine="118" startPosition="65" endLine="177" endPosition="46">
       <varInfo nodeId="1225935546079" varName="TFs" />
     </scopeInfo>
@@ -685,19 +843,37 @@
     <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="38" startPosition="46" endLine="39" endPosition="73" />
     <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="49" startPosition="30" endLine="50" endPosition="17" />
     <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="18" startPosition="138" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="1195601255636" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="24" startPosition="163" endLine="26" endPosition="260" />
-    <scopeInfo nodeId="1195601346473" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="31" startPosition="164" endLine="33" endPosition="261" />
-    <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="43" startPosition="5" endLine="45" endPosition="45" />
+    <scopeInfo nodeId="1195601255636" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="24" startPosition="163" endLine="26" endPosition="260">
+      <varInfo nodeId="1195601255636" varName="_reporter_2309309498" />
+      <varInfo nodeId="1195601255636" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1195601346473" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="31" startPosition="164" endLine="33" endPosition="261">
+      <varInfo nodeId="1195601346473" varName="_reporter_2309309498" />
+      <varInfo nodeId="1195601346473" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="43" startPosition="5" endLine="45" endPosition="45">
+      <varInfo nodeId="1195601047105" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1195601206272" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="23" startPosition="115" endLine="27" endPosition="7" />
     <scopeInfo nodeId="1195601346472" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="30" startPosition="116" endLine="34" endPosition="7" />
     <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="42" startPosition="68" endLine="46" endPosition="5" />
     <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1195601206269" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="22" startPosition="115" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="1195601346470" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="29" startPosition="10" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1195601206269" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="22" startPosition="115" endLine="28" endPosition="5">
+      <varInfo nodeId="1195601206269" varName="scriptReference" />
+    </scopeInfo>
+    <scopeInfo nodeId="1195601346470" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="29" startPosition="10" endLine="35" endPosition="5">
+      <varInfo nodeId="1195601346470" varName="scriptReference" />
+    </scopeInfo>
+    <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1195601047105" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="1195601047106" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="22" startPosition="115" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1195601047105" varName="mc" />
+      <varInfo nodeId="1195601047105" varName="status" />
+      <varInfo nodeId="1195601047105" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.check_MappingConfiguration_NonTypesystemRule" />
   </root>
   <root nodeId="1200921388036">
@@ -772,35 +948,83 @@
     <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="43" startPosition="46" endLine="44" endPosition="68" />
     <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="54" startPosition="30" endLine="55" endPosition="17" />
     <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="23" startPosition="122" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="1203556587912" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="30" startPosition="9" endLine="32" endPosition="244" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="48" startPosition="5" endLine="50" endPosition="45" />
+    <scopeInfo nodeId="1203556587912" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="30" startPosition="9" endLine="32" endPosition="244">
+      <varInfo nodeId="1203556587912" varName="_reporter_2309309498" />
+      <varInfo nodeId="1203556587912" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="48" startPosition="5" endLine="50" endPosition="45">
+      <varInfo nodeId="1200921388036" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="58" startPosition="54" endLine="60" endPosition="5" />
     <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="89" startPosition="56" endLine="91" endPosition="5" />
-    <scopeInfo nodeId="1200922039515" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="35" startPosition="7" endLine="38" endPosition="510" />
+    <scopeInfo nodeId="1200922039515" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="35" startPosition="7" endLine="38" endPosition="510">
+      <varInfo nodeId="1200922039515" varName="_info_12389875345" />
+      <varInfo nodeId="1200922039515" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
     <scopeInfo nodeId="1203556587911" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="29" startPosition="258" endLine="33" endPosition="9" />
     <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="47" startPosition="68" endLine="51" endPosition="5" />
     <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="66" startPosition="7" endLine="70" endPosition="31" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="79" startPosition="7" endLine="83" endPosition="31" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="97" startPosition="7" endLine="101" endPosition="31" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="110" startPosition="7" endLine="114" endPosition="31" />
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="66" startPosition="7" endLine="70" endPosition="31">
+      <varInfo nodeId="1200921388036" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="79" startPosition="7" endLine="83" endPosition="31">
+      <varInfo nodeId="1200921388036" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="97" startPosition="7" endLine="101" endPosition="31">
+      <varInfo nodeId="1200921388036" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="110" startPosition="7" endLine="114" endPosition="31">
+      <varInfo nodeId="1200921388036" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="65" startPosition="32" endLine="71" endPosition="7" />
     <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="78" startPosition="32" endLine="84" endPosition="7" />
     <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="96" startPosition="32" endLine="102" endPosition="7" />
     <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="109" startPosition="32" endLine="115" endPosition="7" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="46" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="62" startPosition="96" endLine="72" endPosition="20" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="75" startPosition="49" endLine="85" endPosition="20" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="93" startPosition="96" endLine="103" endPosition="20" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="106" startPosition="49" endLine="116" endPosition="20" />
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="46" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1200921388036" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="62" startPosition="96" endLine="72" endPosition="20">
+      <varInfo nodeId="1200921388036" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1200921388036" varName="quotedNode_1" />
+      <varInfo nodeId="1200921388036" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="75" startPosition="49" endLine="85" endPosition="20">
+      <varInfo nodeId="1200921388036" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1200921388036" varName="quotedNode_1" />
+      <varInfo nodeId="1200921388036" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="93" startPosition="96" endLine="103" endPosition="20">
+      <varInfo nodeId="1200921388036" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1200921388036" varName="quotedNode_1" />
+      <varInfo nodeId="1200921388036" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="106" startPosition="49" endLine="116" endPosition="20">
+      <varInfo nodeId="1200921388036" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1200921388036" varName="quotedNode_1" />
+      <varInfo nodeId="1200921388036" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1200921432952" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="28" startPosition="135" endLine="39" endPosition="7" />
     <scopeInfo nodeId="1200921388037" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="27" startPosition="124" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="61" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="74" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="92" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="105" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="26" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="61" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="1200921388036" varName="parameter_3" />
+      <varInfo nodeId="1200921388036" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="74" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1200921388036" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="92" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="1200921388036" varName="parameter_3" />
+      <varInfo nodeId="1200921388036" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="105" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="1200921388036" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="26" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1200921388036" varName="nodeToCheck" />
+      <varInfo nodeId="1200921388036" varName="status" />
+      <varInfo nodeId="1200921388036" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="23" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_BaseMappingRule_InferenceRule" />
     <unitInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="58" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_BaseMappingRule_InferenceRule$QuotationClass_dxi99s_a0a1a0a0" />
     <unitInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="89" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_BaseMappingRule_InferenceRule$QuotationClass_dxi99s_a0a1a0a0_0" />
@@ -873,33 +1097,78 @@
     <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="32" startPosition="46" endLine="33" endPosition="67" />
     <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="17" />
     <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="18" startPosition="121" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="37" startPosition="5" endLine="39" endPosition="45" />
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="37" startPosition="5" endLine="39" endPosition="45">
+      <varInfo nodeId="1200923760356" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="47" startPosition="54" endLine="49" endPosition="5" />
     <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="78" startPosition="56" endLine="80" endPosition="5" />
-    <scopeInfo nodeId="1200923779365" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="24" startPosition="7" endLine="27" endPosition="525" />
+    <scopeInfo nodeId="1200923779365" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="24" startPosition="7" endLine="27" endPosition="525">
+      <varInfo nodeId="1200923779365" varName="_info_12389875345" />
+      <varInfo nodeId="1200923779365" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
     <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="36" startPosition="68" endLine="40" endPosition="5" />
     <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="55" startPosition="7" endLine="59" endPosition="31" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="68" startPosition="7" endLine="72" endPosition="31" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="86" startPosition="7" endLine="90" endPosition="31" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="99" startPosition="7" endLine="103" endPosition="31" />
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="55" startPosition="7" endLine="59" endPosition="31">
+      <varInfo nodeId="1200923760356" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="68" startPosition="7" endLine="72" endPosition="31">
+      <varInfo nodeId="1200923760356" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="86" startPosition="7" endLine="90" endPosition="31">
+      <varInfo nodeId="1200923760356" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="99" startPosition="7" endLine="103" endPosition="31">
+      <varInfo nodeId="1200923760356" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1200923775261" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="23" startPosition="73" endLine="28" endPosition="7" />
     <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="54" startPosition="32" endLine="60" endPosition="7" />
     <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="67" startPosition="32" endLine="73" endPosition="7" />
     <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="85" startPosition="32" endLine="91" endPosition="7" />
     <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="98" startPosition="32" endLine="104" endPosition="7" />
     <scopeInfo nodeId="1200923760357" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="22" startPosition="124" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="51" startPosition="96" endLine="61" endPosition="20" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="64" startPosition="49" endLine="74" endPosition="20" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="82" startPosition="96" endLine="92" endPosition="20" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="95" startPosition="49" endLine="105" endPosition="20" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="50" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="63" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="81" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="94" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1200923760356" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1200923760356" varName="nodeToCheck" />
+      <varInfo nodeId="1200923760356" varName="status" />
+      <varInfo nodeId="1200923760356" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="51" startPosition="96" endLine="61" endPosition="20">
+      <varInfo nodeId="1200923760356" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1200923760356" varName="quotedNode_1" />
+      <varInfo nodeId="1200923760356" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="64" startPosition="49" endLine="74" endPosition="20">
+      <varInfo nodeId="1200923760356" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1200923760356" varName="quotedNode_1" />
+      <varInfo nodeId="1200923760356" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="82" startPosition="96" endLine="92" endPosition="20">
+      <varInfo nodeId="1200923760356" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1200923760356" varName="quotedNode_1" />
+      <varInfo nodeId="1200923760356" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="95" startPosition="49" endLine="105" endPosition="20">
+      <varInfo nodeId="1200923760356" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1200923760356" varName="quotedNode_1" />
+      <varInfo nodeId="1200923760356" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="50" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="1200923760356" varName="parameter_3" />
+      <varInfo nodeId="1200923760356" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="63" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="1200923760356" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="81" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="1200923760356" varName="parameter_3" />
+      <varInfo nodeId="1200923760356" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="94" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="1200923760356" varName="parameter_3" />
+    </scopeInfo>
     <unitInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="18" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_CreateRootRule_InferenceRule" />
     <unitInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="47" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_CreateRootRule_InferenceRule$QuotationClass_nbqazj_a0a0a0a0" />
     <unitInfo nodeId="1200923760356" fileName="typeof_CreateRootRule_InferenceRule.java" startLine="78" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_CreateRootRule_InferenceRule$QuotationClass_nbqazj_a0a0a0a0_0" />
@@ -992,19 +1261,38 @@
     <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="56" startPosition="46" endLine="57" endPosition="89" />
     <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="67" startPosition="30" endLine="68" endPosition="17" />
     <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="18" startPosition="143" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="61" startPosition="5" endLine="63" endPosition="45" />
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="61" startPosition="5" endLine="63" endPosition="45">
+      <varInfo nodeId="1221153432505" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="71" startPosition="54" endLine="73" endPosition="5" />
     <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="100" startPosition="55" endLine="102" endPosition="5" />
-    <scopeInfo nodeId="1227099240563" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="25" startPosition="7" endLine="28" endPosition="368" />
-    <scopeInfo nodeId="1225234911251" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="40" startPosition="7" endLine="43" endPosition="387" />
-    <scopeInfo nodeId="1225234961708" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="48" startPosition="7" endLine="51" endPosition="378" />
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="79" startPosition="7" endLine="82" endPosition="31" />
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="91" startPosition="7" endLine="94" endPosition="31" />
+    <scopeInfo nodeId="1227099240563" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="25" startPosition="7" endLine="28" endPosition="368">
+      <varInfo nodeId="1227099240563" varName="_info_12389875345" />
+      <varInfo nodeId="1227099240563" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225234911251" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="40" startPosition="7" endLine="43" endPosition="387">
+      <varInfo nodeId="1225234911251" varName="_info_12389875345" />
+      <varInfo nodeId="1225234911251" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225234961708" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="48" startPosition="7" endLine="51" endPosition="378">
+      <varInfo nodeId="1225234961708" varName="_info_12389875345" />
+      <varInfo nodeId="1225234961708" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="79" startPosition="7" endLine="82" endPosition="31">
+      <varInfo nodeId="1221153432505" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="91" startPosition="7" endLine="94" endPosition="31">
+      <varInfo nodeId="1221153432505" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="60" startPosition="68" endLine="64" endPosition="5" />
     <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="108" startPosition="7" endLine="112" endPosition="31" />
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="121" startPosition="7" endLine="125" endPosition="31" />
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="108" startPosition="7" endLine="112" endPosition="31">
+      <varInfo nodeId="1221153432505" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="121" startPosition="7" endLine="125" endPosition="31">
+      <varInfo nodeId="1221153432505" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1225234883739" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="39" startPosition="29" endLine="44" endPosition="7" />
     <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="78" startPosition="32" endLine="83" endPosition="7" />
     <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="90" startPosition="32" endLine="95" endPosition="7" />
@@ -1014,20 +1302,49 @@
     <scopeInfo nodeId="1225234940729" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="45" startPosition="12" endLine="52" endPosition="7">
       <varInfo nodeId="1225234961700" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="59" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="75" startPosition="76" endLine="84" endPosition="20" />
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="87" startPosition="31" endLine="96" endPosition="20" />
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="104" startPosition="96" endLine="114" endPosition="20" />
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="117" startPosition="49" endLine="127" endPosition="20" />
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="74" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="59" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1221153432505" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="75" startPosition="76" endLine="84" endPosition="20">
+      <varInfo nodeId="1221153432505" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1221153432505" varName="quotedNode_1" />
+      <varInfo nodeId="1221153432505" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="87" startPosition="31" endLine="96" endPosition="20">
+      <varInfo nodeId="1221153432505" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1221153432505" varName="quotedNode_1" />
+      <varInfo nodeId="1221153432505" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="104" startPosition="96" endLine="114" endPosition="20">
+      <varInfo nodeId="1221153432505" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1221153432505" varName="quotedNode_1" />
+      <varInfo nodeId="1221153432505" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="117" startPosition="49" endLine="127" endPosition="20">
+      <varInfo nodeId="1221153432505" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1221153432505" varName="quotedNode_1" />
+      <varInfo nodeId="1221153432505" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="74" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1221153432505" varName="typeCheckingContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="86" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="103" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="116" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="103" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="1221153432505" varName="parameter_3" />
+      <varInfo nodeId="1221153432505" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="116" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="1221153432505" varName="parameter_3" />
+    </scopeInfo>
     <scopeInfo nodeId="1221153432506" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="22" startPosition="117" endLine="53" endPosition="5">
       <varInfo nodeId="1225234650098" varName="mapperFunc" />
       <varInfo nodeId="1225234457221" varName="parentMacro" />
     </scopeInfo>
-    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="21" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="21" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1221153432505" varName="node" />
+      <varInfo nodeId="1221153432505" varName="status" />
+      <varInfo nodeId="1221153432505" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="18" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateFunctionParameter_outputNode_InferenceRule" />
     <unitInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="71" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateFunctionParameter_outputNode_InferenceRule$QuotationClass_fai2pj_a0a0a1a0" />
     <unitInfo nodeId="1221153432505" fileName="typeof_TemplateFunctionParameter_outputNode_InferenceRule.java" startLine="100" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateFunctionParameter_outputNode_InferenceRule$QuotationClass_fai2pj_a0a2a0f0a" />
@@ -1052,16 +1369,27 @@
     <scopeInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="66" />
     <scopeInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" />
     <scopeInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="16" startPosition="131" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="1225935926122" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="23" startPosition="9" endLine="25" endPosition="250" />
-    <scopeInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45" />
+    <scopeInfo nodeId="1225935926122" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="23" startPosition="9" endLine="25" endPosition="250">
+      <varInfo nodeId="1225935926122" varName="_reporter_2309309498" />
+      <varInfo nodeId="1225935926122" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45">
+      <varInfo nodeId="1225934347908" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1225935913286" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="22" startPosition="96" endLine="26" endPosition="9" />
     <scopeInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" />
     <scopeInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="1225934476734" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="21" startPosition="129" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1225934347908" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="1225934347909" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="20" startPosition="118" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1225934347908" varName="macro" />
+      <varInfo nodeId="1225934347908" varName="status" />
+      <varInfo nodeId="1225934347908" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="1225934347908" fileName="check_PropertyMacro_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.check_PropertyMacro_NonTypesystemRule" />
   </root>
   <root nodeId="1226346278934">
@@ -1084,16 +1412,27 @@
     <scopeInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="67" />
     <scopeInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" />
     <scopeInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="16" startPosition="132" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="1226346278940" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="23" startPosition="9" endLine="25" endPosition="250" />
-    <scopeInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45" />
+    <scopeInfo nodeId="1226346278940" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="23" startPosition="9" endLine="25" endPosition="250">
+      <varInfo nodeId="1226346278940" varName="_reporter_2309309498" />
+      <varInfo nodeId="1226346278940" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45">
+      <varInfo nodeId="1226346278934" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1226346278939" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="22" startPosition="96" endLine="26" endPosition="9" />
     <scopeInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" />
     <scopeInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="1226346278937" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="21" startPosition="129" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1226346278934" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="1226346278935" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="20" startPosition="118" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1226346278934" varName="macro" />
+      <varInfo nodeId="1226346278934" varName="status" />
+      <varInfo nodeId="1226346278934" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="1226346278934" fileName="check_ReferenceMacro_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.check_ReferenceMacro_NonTypesystemRule" />
   </root>
   <root nodeId="1226346325144">
@@ -1116,16 +1455,27 @@
     <scopeInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="62" />
     <scopeInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" />
     <scopeInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="16" startPosition="127" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="1226346325150" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="23" startPosition="9" endLine="25" endPosition="250" />
-    <scopeInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45" />
+    <scopeInfo nodeId="1226346325150" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="23" startPosition="9" endLine="25" endPosition="250">
+      <varInfo nodeId="1226346325150" varName="_reporter_2309309498" />
+      <varInfo nodeId="1226346325150" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45">
+      <varInfo nodeId="1226346325144" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1226346325149" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="22" startPosition="96" endLine="26" endPosition="9" />
     <scopeInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" />
     <scopeInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="1226346325147" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="21" startPosition="129" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1226346325144" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="1226346325145" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="20" startPosition="118" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1226346325144" varName="macro" />
+      <varInfo nodeId="1226346325144" varName="status" />
+      <varInfo nodeId="1226346325144" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="1226346325144" fileName="check_NodeMacro_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.check_NodeMacro_NonTypesystemRule" />
   </root>
   <root nodeId="1226664040798">
@@ -1163,17 +1513,30 @@
     <scopeInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="52" startPosition="46" endLine="53" endPosition="78" />
     <scopeInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="63" startPosition="30" endLine="64" endPosition="17" />
     <scopeInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="19" startPosition="143" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="546192990993044375" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="26" startPosition="7" endLine="28" endPosition="232" />
-    <scopeInfo nodeId="546192990993046864" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="31" startPosition="7" endLine="33" endPosition="257" />
-    <scopeInfo nodeId="546192990993046908" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="44" startPosition="9" endLine="46" endPosition="258" />
-    <scopeInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="57" startPosition="5" endLine="59" endPosition="45" />
+    <scopeInfo nodeId="546192990993044375" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="26" startPosition="7" endLine="28" endPosition="232">
+      <varInfo nodeId="546192990993044375" varName="_reporter_2309309498" />
+      <varInfo nodeId="546192990993044375" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="546192990993046864" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="31" startPosition="7" endLine="33" endPosition="257">
+      <varInfo nodeId="546192990993046864" varName="_reporter_2309309498" />
+      <varInfo nodeId="546192990993046864" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="546192990993046908" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="44" startPosition="9" endLine="46" endPosition="258">
+      <varInfo nodeId="546192990993046908" varName="_reporter_2309309498" />
+      <varInfo nodeId="546192990993046908" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="57" startPosition="5" endLine="59" endPosition="45">
+      <varInfo nodeId="1226664040798" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="546192990993044374" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="25" startPosition="29" endLine="29" endPosition="7" />
     <scopeInfo nodeId="546192990993044385" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="30" startPosition="109" endLine="34" endPosition="7" />
     <scopeInfo nodeId="546192990993046907" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="43" startPosition="86" endLine="47" endPosition="9" />
     <scopeInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="56" startPosition="68" endLine="60" endPosition="5" />
     <scopeInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="55" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="55" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="1226664040798" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="546192990993046869" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="35" startPosition="12" endLine="48" endPosition="7">
       <varInfo nodeId="546192990993046895" varName="NT" />
       <varInfo nodeId="546192990993046900" varName="nodeConcept" />
@@ -1183,7 +1546,11 @@
     <scopeInfo nodeId="1226664040799" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="23" startPosition="122" endLine="49" endPosition="5">
       <varInfo nodeId="546192990993046840" varName="template" />
     </scopeInfo>
-    <scopeInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1226664040798" varName="status" />
+      <varInfo nodeId="1226664040798" varName="typeCheckingContext" />
+      <varInfo nodeId="1226664040798" varName="weaveEach" />
+    </scopeInfo>
     <unitInfo nodeId="1226664040798" fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.check_WeaveEach_RuleConsequence_NonTypesystemRule" />
   </root>
   <root nodeId="1241017459780">
@@ -1212,8 +1579,13 @@
     <scopeInfo nodeId="1241017459780" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="39" startPosition="46" endLine="40" endPosition="72" />
     <scopeInfo nodeId="1241017459780" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="50" startPosition="30" endLine="51" endPosition="17" />
     <scopeInfo nodeId="1241017459780" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="17" startPosition="125" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1241017586622" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="31" startPosition="9" endLine="33" endPosition="321" />
-    <scopeInfo nodeId="1241017459780" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="44" startPosition="5" endLine="46" endPosition="45" />
+    <scopeInfo nodeId="1241017586622" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="31" startPosition="9" endLine="33" endPosition="321">
+      <varInfo nodeId="1241017586622" varName="_reporter_2309309498" />
+      <varInfo nodeId="1241017586622" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241017459780" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="44" startPosition="5" endLine="46" endPosition="45">
+      <varInfo nodeId="1241017459780" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1241017468601" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="25" startPosition="113" endLine="28" endPosition="9" />
     <scopeInfo nodeId="1241017582461" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="30" startPosition="36" endLine="34" endPosition="9" />
     <scopeInfo nodeId="1241017459780" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
@@ -1222,13 +1594,19 @@
     <scopeInfo nodeId="1241017468600" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="24" startPosition="46" endLine="29" endPosition="7">
       <varInfo nodeId="1241017468610" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="1241017459780" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1241017459780" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1241017459780" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="1241017468581" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="22" startPosition="168" endLine="35" endPosition="7">
       <varInfo nodeId="1241017468592" varName="template" />
       <varInfo nodeId="1241017530072" varName="useRootTemplateFragment" />
     </scopeInfo>
     <scopeInfo nodeId="1241017459781" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="21" startPosition="117" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="1241017459780" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="20" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1241017459780" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="20" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1241017459780" varName="rule" />
+      <varInfo nodeId="1241017459780" varName="status" />
+      <varInfo nodeId="1241017459780" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="1241017459780" fileName="check_Weaving_MappingRule_InferenceRule.java" startLine="17" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.check_Weaving_MappingRule_InferenceRule" />
   </root>
   <root nodeId="1510949579267745151">
@@ -1252,17 +1630,28 @@
     <scopeInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="31" startPosition="46" endLine="32" endPosition="70" />
     <scopeInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" />
     <scopeInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="16" startPosition="124" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="1510949579267769258" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="24" startPosition="7" endLine="26" endPosition="229" />
-    <scopeInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45" />
+    <scopeInfo nodeId="1510949579267769258" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="24" startPosition="7" endLine="26" endPosition="229">
+      <varInfo nodeId="1510949579267769258" varName="_reporter_2309309498" />
+      <varInfo nodeId="1510949579267769258" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45">
+      <varInfo nodeId="1510949579267745151" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1510949579267769252" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="23" startPosition="29" endLine="27" endPosition="7" />
     <scopeInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" />
     <scopeInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1510949579267745151" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="1510949579267745152" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="20" startPosition="118" endLine="28" endPosition="5">
       <varInfo nodeId="1510949579267745155" varName="template" />
     </scopeInfo>
-    <scopeInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="19" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="19" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1510949579267745151" varName="macro" />
+      <varInfo nodeId="1510949579267745151" varName="status" />
+      <varInfo nodeId="1510949579267745151" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="1510949579267745151" fileName="typeof_TemplateCallMacro_InferenceRule.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateCallMacro_InferenceRule" />
   </root>
   <root nodeId="1722980698497666402">
@@ -1289,14 +1678,21 @@
     <scopeInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="40" startPosition="46" endLine="41" endPosition="81" />
     <scopeInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="51" startPosition="30" endLine="52" endPosition="17" />
     <scopeInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="20" startPosition="135" endLine="22" endPosition="3" />
-    <scopeInfo nodeId="1722980698497666436" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="31" startPosition="11" endLine="33" endPosition="349" />
-    <scopeInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="45" startPosition="5" endLine="47" endPosition="45" />
+    <scopeInfo nodeId="1722980698497666436" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="31" startPosition="11" endLine="33" endPosition="349">
+      <varInfo nodeId="1722980698497666436" varName="_reporter_2309309498" />
+      <varInfo nodeId="1722980698497666436" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="45" startPosition="5" endLine="47" endPosition="45">
+      <varInfo nodeId="1722980698497666402" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1722980698497666435" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="30" startPosition="122" endLine="34" endPosition="11" />
     <scopeInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="44" startPosition="68" endLine="48" endPosition="5" />
     <scopeInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="1722980698497666433" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="29" startPosition="79" endLine="35" endPosition="9" />
-    <scopeInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="43" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1722980698497666402" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="1722980698497666417" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="26" startPosition="23" endLine="36" endPosition="7">
       <varInfo nodeId="1722980698497666427" varName="ruleApplicableConcept" />
       <varInfo nodeId="1722980698497666419" varName="templateApplicableConcept" />
@@ -1304,7 +1700,11 @@
     <scopeInfo nodeId="1722980698497666403" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="24" startPosition="128" endLine="37" endPosition="5">
       <varInfo nodeId="1722980698497666409" varName="rule" />
     </scopeInfo>
-    <scopeInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="23" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="23" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1722980698497666402" varName="status" />
+      <varInfo nodeId="1722980698497666402" varName="templateDeclRef" />
+      <varInfo nodeId="1722980698497666402" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="1722980698497666402" fileName="typeof_TemplateDeclarationReference_InferenceRule.java" startLine="20" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateDeclarationReference_InferenceRule" />
   </root>
   <root nodeId="1805153994417064767">
@@ -1380,37 +1780,85 @@
     <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="44" startPosition="46" endLine="45" endPosition="81" />
     <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="55" startPosition="30" endLine="56" endPosition="17" />
     <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="23" startPosition="135" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="1805153994417064793" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="31" startPosition="9" endLine="33" endPosition="243" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="49" startPosition="5" endLine="51" endPosition="45" />
+    <scopeInfo nodeId="1805153994417064793" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="31" startPosition="9" endLine="33" endPosition="243">
+      <varInfo nodeId="1805153994417064793" varName="_reporter_2309309498" />
+      <varInfo nodeId="1805153994417064793" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="49" startPosition="5" endLine="51" endPosition="45">
+      <varInfo nodeId="1805153994417064767" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="59" startPosition="54" endLine="61" endPosition="5" />
     <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="90" startPosition="56" endLine="92" endPosition="5" />
-    <scopeInfo nodeId="1805153994417064796" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="36" startPosition="7" endLine="39" endPosition="541" />
+    <scopeInfo nodeId="1805153994417064796" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="36" startPosition="7" endLine="39" endPosition="541">
+      <varInfo nodeId="1805153994417064796" varName="_info_12389875345" />
+      <varInfo nodeId="1805153994417064796" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
     <scopeInfo nodeId="1805153994417064792" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="30" startPosition="202" endLine="34" endPosition="9" />
     <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="48" startPosition="68" endLine="52" endPosition="5" />
     <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="67" startPosition="7" endLine="71" endPosition="31" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="80" startPosition="7" endLine="84" endPosition="31" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="98" startPosition="7" endLine="102" endPosition="31" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="111" startPosition="7" endLine="115" endPosition="31" />
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="67" startPosition="7" endLine="71" endPosition="31">
+      <varInfo nodeId="1805153994417064767" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="80" startPosition="7" endLine="84" endPosition="31">
+      <varInfo nodeId="1805153994417064767" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="98" startPosition="7" endLine="102" endPosition="31">
+      <varInfo nodeId="1805153994417064767" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="111" startPosition="7" endLine="115" endPosition="31">
+      <varInfo nodeId="1805153994417064767" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="66" startPosition="32" endLine="72" endPosition="7" />
     <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="79" startPosition="32" endLine="85" endPosition="7" />
     <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="97" startPosition="32" endLine="103" endPosition="7" />
     <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="110" startPosition="32" endLine="116" endPosition="7" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="47" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="63" startPosition="96" endLine="73" endPosition="20" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="76" startPosition="49" endLine="86" endPosition="20" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="94" startPosition="96" endLine="104" endPosition="20" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="107" startPosition="49" endLine="117" endPosition="20" />
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1805153994417064767" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="63" startPosition="96" endLine="73" endPosition="20">
+      <varInfo nodeId="1805153994417064767" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1805153994417064767" varName="quotedNode_1" />
+      <varInfo nodeId="1805153994417064767" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="76" startPosition="49" endLine="86" endPosition="20">
+      <varInfo nodeId="1805153994417064767" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1805153994417064767" varName="quotedNode_1" />
+      <varInfo nodeId="1805153994417064767" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="94" startPosition="96" endLine="104" endPosition="20">
+      <varInfo nodeId="1805153994417064767" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1805153994417064767" varName="quotedNode_1" />
+      <varInfo nodeId="1805153994417064767" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="107" startPosition="49" endLine="117" endPosition="20">
+      <varInfo nodeId="1805153994417064767" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1805153994417064767" varName="quotedNode_1" />
+      <varInfo nodeId="1805153994417064767" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1805153994417064778" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="29" startPosition="159" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="75" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="93" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="106" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="62" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="1805153994417064767" varName="parameter_3" />
+      <varInfo nodeId="1805153994417064767" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="75" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="1805153994417064767" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="93" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="1805153994417064767" varName="parameter_3" />
+      <varInfo nodeId="1805153994417064767" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="106" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="1805153994417064767" varName="parameter_3" />
+    </scopeInfo>
     <scopeInfo nodeId="1805153994417064768" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="27" startPosition="117" endLine="41" endPosition="5">
       <varInfo nodeId="1805153994417123422" varName="applicableConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="26" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="26" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1805153994417064767" varName="rule" />
+      <varInfo nodeId="1805153994417064767" varName="status" />
+      <varInfo nodeId="1805153994417064767" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="23" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_PatternReduction_MappingRule_InferenceRule" />
     <unitInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="59" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_PatternReduction_MappingRule_InferenceRule$QuotationClass_xjg16h_a0a1a1a0" />
     <unitInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="90" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_PatternReduction_MappingRule_InferenceRule$QuotationClass_xjg16h_a0a1a1a0_0" />
@@ -1434,14 +1882,25 @@
     <scopeInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="92" />
     <scopeInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
     <scopeInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="14" startPosition="146" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45" />
-    <scopeInfo nodeId="4665309944889434861" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="477" />
+    <scopeInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
+      <varInfo nodeId="4665309944889434858" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4665309944889434861" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="477">
+      <varInfo nodeId="4665309944889434861" varName="_info_12389875345" />
+      <varInfo nodeId="4665309944889434861" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
     <scopeInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
     <scopeInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="4665309944889434859" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="18" startPosition="152" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="29" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="4665309944889434858" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="4665309944889434858" varName="status" />
+      <varInfo nodeId="4665309944889434858" varName="templateArgumentPatternVarRefExpression" />
+      <varInfo nodeId="4665309944889434858" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="4665309944889434858" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateArgumentPatternVarRefExpression_InferenceRule" />
   </root>
   <root nodeId="4816349095291149936">
@@ -1463,14 +1922,25 @@
     <scopeInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="97" />
     <scopeInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
     <scopeInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="14" startPosition="151" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45" />
-    <scopeInfo nodeId="4816349095291152103" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="483" />
+    <scopeInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
+      <varInfo nodeId="4816349095291149936" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4816349095291152103" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="483">
+      <varInfo nodeId="4816349095291152103" varName="_info_12389875345" />
+      <varInfo nodeId="4816349095291152103" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
     <scopeInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
     <scopeInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="4816349095291149937" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="18" startPosition="157" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="29" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="4816349095291149936" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="4816349095291149936" varName="status" />
+      <varInfo nodeId="4816349095291149936" varName="templateArgumentPropertyPatternRefExpression" />
+      <varInfo nodeId="4816349095291149936" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="4816349095291149936" fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule" />
   </root>
   <root nodeId="4816349095291153405">
@@ -1492,14 +1962,25 @@
     <scopeInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="93" />
     <scopeInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
     <scopeInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="14" startPosition="147" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45" />
-    <scopeInfo nodeId="4816349095291153412" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="474" />
+    <scopeInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
+      <varInfo nodeId="4816349095291153405" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4816349095291153412" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="474">
+      <varInfo nodeId="4816349095291153412" varName="_info_12389875345" />
+      <varInfo nodeId="4816349095291153412" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
     <scopeInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
     <scopeInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="4816349095291153406" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="18" startPosition="153" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="29" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="4816349095291153405" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="4816349095291153405" varName="status" />
+      <varInfo nodeId="4816349095291153405" varName="templateArgumentLinkPatternRefExpression" />
+      <varInfo nodeId="4816349095291153405" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="4816349095291153405" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule" />
   </root>
   <root nodeId="5005282049925943809">
@@ -1521,14 +2002,25 @@
     <scopeInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="88" />
     <scopeInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
     <scopeInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="14" startPosition="142" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45" />
-    <scopeInfo nodeId="5005282049925943816" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="436" />
+    <scopeInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
+      <varInfo nodeId="5005282049925943809" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5005282049925943816" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="436">
+      <varInfo nodeId="5005282049925943816" varName="_info_12389875345" />
+      <varInfo nodeId="5005282049925943816" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
     <scopeInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
     <scopeInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="5005282049925943810" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="18" startPosition="116" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="29" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="5005282049925943809" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5005282049925943809" varName="arg" />
+      <varInfo nodeId="5005282049925943809" varName="status" />
+      <varInfo nodeId="5005282049925943809" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="5005282049925943809" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateArgumentParameterExpression_InferenceRule" />
   </root>
   <root nodeId="5659786285834495241">
@@ -1550,14 +2042,25 @@
     <scopeInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="81" />
     <scopeInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
     <scopeInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="14" startPosition="135" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45" />
-    <scopeInfo nodeId="5659786285834507295" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="290" />
+    <scopeInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
+      <varInfo nodeId="5659786285834495241" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5659786285834507295" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="290">
+      <varInfo nodeId="5659786285834507295" varName="_info_12389875345" />
+      <varInfo nodeId="5659786285834507295" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
     <scopeInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
     <scopeInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="5659786285834495242" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="18" startPosition="116" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="29" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="5659786285834495241" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5659786285834495241" varName="status" />
+      <varInfo nodeId="5659786285834495241" varName="tpd" />
+      <varInfo nodeId="5659786285834495241" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="5659786285834495241" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateParameterDeclaration_InferenceRule" />
   </root>
   <root nodeId="7648411942405144477">
@@ -1583,21 +2086,32 @@
     <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="36" startPosition="46" endLine="37" endPosition="62" />
     <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="47" startPosition="30" endLine="48" endPosition="17" />
     <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="17" startPosition="127" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1098116234534104047" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="27" startPosition="11" endLine="29" endPosition="344" />
-    <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="41" startPosition="5" endLine="43" endPosition="45" />
+    <scopeInfo nodeId="1098116234534104047" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="27" startPosition="11" endLine="29" endPosition="344">
+      <varInfo nodeId="1098116234534104047" varName="_reporter_2309309498" />
+      <varInfo nodeId="1098116234534104047" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="41" startPosition="5" endLine="43" endPosition="45">
+      <varInfo nodeId="7648411942405144477" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1098116234534104018" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="26" startPosition="166" endLine="30" endPosition="11" />
     <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="40" startPosition="68" endLine="44" endPosition="5" />
     <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="1098116234534082666" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="25" startPosition="114" endLine="31" endPosition="9" />
-    <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="7648411942405144477" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="7648411942405145538" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="23" startPosition="35" endLine="32" endPosition="7">
       <varInfo nodeId="1098116234534074048" varName="linkdecl" />
     </scopeInfo>
     <scopeInfo nodeId="7648411942405144478" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="21" startPosition="122" endLine="33" endPosition="5">
       <varInfo nodeId="7648411942405232794" varName="attributedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="7648411942405144477" varName="loopMacro" />
+      <varInfo nodeId="7648411942405144477" varName="status" />
+      <varInfo nodeId="7648411942405144477" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.check_LoopMacro_NonTypesystemRule" />
   </root>
   <root nodeId="933643154465925356">
@@ -1639,12 +2153,28 @@
     <scopeInfo nodeId="933643154465925356" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="64" startPosition="46" endLine="65" endPosition="65" />
     <scopeInfo nodeId="933643154465925356" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="75" startPosition="30" endLine="76" endPosition="17" />
     <scopeInfo nodeId="933643154465925356" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="23" startPosition="119" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="933643154465925404" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="32" startPosition="7" endLine="34" endPosition="228" />
-    <scopeInfo nodeId="933643154466064615" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="38" startPosition="9" endLine="40" endPosition="257" />
-    <scopeInfo nodeId="933643154466207801" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="50" startPosition="11" endLine="52" endPosition="284" />
-    <scopeInfo nodeId="933643154466207820" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="55" startPosition="11" endLine="57" endPosition="293" />
-    <scopeInfo nodeId="933643154465925356" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="69" startPosition="5" endLine="71" endPosition="45" />
-    <scopeInfo nodeId="933643154466207636" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="44" startPosition="87" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="933643154465925404" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="32" startPosition="7" endLine="34" endPosition="228">
+      <varInfo nodeId="933643154465925404" varName="_reporter_2309309498" />
+      <varInfo nodeId="933643154465925404" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="933643154466064615" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="38" startPosition="9" endLine="40" endPosition="257">
+      <varInfo nodeId="933643154466064615" varName="_reporter_2309309498" />
+      <varInfo nodeId="933643154466064615" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="933643154466207801" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="50" startPosition="11" endLine="52" endPosition="284">
+      <varInfo nodeId="933643154466207801" varName="_reporter_2309309498" />
+      <varInfo nodeId="933643154466207801" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="933643154466207820" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="55" startPosition="11" endLine="57" endPosition="293">
+      <varInfo nodeId="933643154466207820" varName="_reporter_2309309498" />
+      <varInfo nodeId="933643154466207820" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="933643154465925356" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="69" startPosition="5" endLine="71" endPosition="45">
+      <varInfo nodeId="933643154465925356" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="933643154466207636" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="44" startPosition="87" endLine="47" endPosition="7">
+      <varInfo nodeId="933643154466207636" varName="param" />
+    </scopeInfo>
     <scopeInfo nodeId="933643154465925395" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="31" startPosition="37" endLine="35" endPosition="7" />
     <scopeInfo nodeId="933643154466058161" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="37" startPosition="112" endLine="41" endPosition="9" />
     <scopeInfo nodeId="933643154466207704" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="49" startPosition="102" endLine="53" endPosition="11" />
@@ -1653,9 +2183,13 @@
     <scopeInfo nodeId="933643154465925356" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="68" startPosition="68" endLine="72" endPosition="5" />
     <scopeInfo nodeId="933643154465925356" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="933643154466034064" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="36" startPosition="46" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="933643154465925356" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="67" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="933643154465925356" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="67" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="933643154465925356" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="933643154466201169" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="48" startPosition="110" endLine="59" endPosition="9" />
-    <scopeInfo nodeId="933643154466201166" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="47" startPosition="7" endLine="60" endPosition="7" />
+    <scopeInfo nodeId="933643154466201166" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="47" startPosition="7" endLine="60" endPosition="7">
+      <varInfo nodeId="933643154466201166" varName="p" />
+    </scopeInfo>
     <scopeInfo nodeId="933643154466175292" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="43" startPosition="12" endLine="60" endPosition="7">
       <varInfo nodeId="933643154466201186" varName="available" />
     </scopeInfo>
@@ -1663,7 +2197,11 @@
       <varInfo nodeId="933643154465925360" varName="containingTemplate" />
       <varInfo nodeId="933643154465925383" varName="includedTemplate" />
     </scopeInfo>
-    <scopeInfo nodeId="933643154465925356" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="26" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="933643154465925356" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="26" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="933643154465925356" varName="macro" />
+      <varInfo nodeId="933643154465925356" varName="status" />
+      <varInfo nodeId="933643154465925356" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="933643154465925356" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="23" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_IncludeMacro_InferenceRule" />
   </root>
 </debugInfo>

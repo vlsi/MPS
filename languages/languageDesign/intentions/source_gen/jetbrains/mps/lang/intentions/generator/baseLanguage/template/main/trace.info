@@ -137,9 +137,15 @@
     <scopeInfo nodeId="7991477654791693986" fileName="QueriesGenerated.java" startLine="96" startPosition="154" endLine="99" endPosition="81">
       <varInfo nodeId="7991477654791704918" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="4228980283917439838" fileName="QueriesGenerated.java" startLine="89" startPosition="195" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="4228980283917439814" fileName="QueriesGenerated.java" startLine="182" startPosition="196" endLine="186" endPosition="0" />
-    <scopeInfo nodeId="7040691005578851902" fileName="QueriesGenerated.java" startLine="242" startPosition="198" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="4228980283917439838" fileName="QueriesGenerated.java" startLine="89" startPosition="195" endLine="93" endPosition="0">
+      <varInfo nodeId="4228980283917439838" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4228980283917439814" fileName="QueriesGenerated.java" startLine="182" startPosition="196" endLine="186" endPosition="0">
+      <varInfo nodeId="4228980283917439814" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7040691005578851902" fileName="QueriesGenerated.java" startLine="242" startPosition="198" endLine="246" endPosition="0">
+      <varInfo nodeId="7040691005578851902" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="7040691005578862317" fileName="QueriesGenerated.java" startLine="88" startPosition="154" endLine="93" endPosition="23" />
     <scopeInfo nodeId="4228980283917439753" fileName="QueriesGenerated.java" startLine="181" startPosition="136" endLine="186" endPosition="24" />
     <scopeInfo nodeId="3804167831988450082" fileName="QueriesGenerated.java" startLine="241" startPosition="155" endLine="247" endPosition="0" />

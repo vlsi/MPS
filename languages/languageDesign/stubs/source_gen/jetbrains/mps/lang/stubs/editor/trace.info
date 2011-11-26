@@ -70,27 +70,78 @@
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="63" startPosition="109" endLine="64" endPosition="50" />
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="88" startPosition="34" endLine="89" endPosition="95" />
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="91" startPosition="131" endLine="92" endPosition="139" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="57" startPosition="91" endLine="59" endPosition="18" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="67" startPosition="66" endLine="69" endPosition="93" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="62" startPosition="90" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="72" startPosition="86" endLine="75" endPosition="25" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="21" startPosition="69" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="42" startPosition="88" endLine="46" endPosition="22" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="78" startPosition="68" endLine="82" endPosition="23" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="26" startPosition="89" endLine="31" endPosition="22" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="34" startPosition="90" endLine="39" endPosition="22" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="49" startPosition="92" endLine="54" endPosition="22" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="56" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="66" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="71" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="41" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="77" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="57" startPosition="91" endLine="59" endPosition="18">
+      <varInfo nodeId="368569065472988616" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="67" startPosition="66" endLine="69" endPosition="93">
+      <varInfo nodeId="368569065472988616" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="62" startPosition="90" endLine="65" endPosition="5">
+      <varInfo nodeId="368569065472988616" varName="childRole" />
+      <varInfo nodeId="368569065472988616" varName="context" />
+      <varInfo nodeId="368569065472988616" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="72" startPosition="86" endLine="75" endPosition="25">
+      <varInfo nodeId="368569065472988616" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="21" startPosition="69" endLine="25" endPosition="0">
+      <varInfo nodeId="368569065472988616" varName="editorContext" />
+      <varInfo nodeId="368569065472988616" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="42" startPosition="88" endLine="46" endPosition="22">
+      <varInfo nodeId="368569065472988616" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="78" startPosition="68" endLine="82" endPosition="23">
+      <varInfo nodeId="368569065472988616" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="26" startPosition="89" endLine="31" endPosition="22">
+      <varInfo nodeId="368569065472988616" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="34" startPosition="90" endLine="39" endPosition="22">
+      <varInfo nodeId="368569065472988616" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="49" startPosition="92" endLine="54" endPosition="22">
+      <varInfo nodeId="368569065472988616" varName="editorCell" />
+      <varInfo nodeId="368569065472988616" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="56" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="368569065472988616" varName="editorContext" />
+      <varInfo nodeId="368569065472988616" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="66" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="368569065472988616" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="71" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="368569065472988616" varName="editorContext" />
+      <varInfo nodeId="368569065472988616" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="368569065472988616" varName="editorContext" />
+      <varInfo nodeId="368569065472988616" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="77" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="368569065472988616" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="86" startPosition="96" endLine="93" endPosition="9" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="25" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="33" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="25" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="368569065472988616" varName="editorContext" />
+      <varInfo nodeId="368569065472988616" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="33" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="368569065472988616" varName="editorContext" />
+      <varInfo nodeId="368569065472988616" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="48" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="368569065472988616" varName="editorContext" />
+      <varInfo nodeId="368569065472988616" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="85" startPosition="132" endLine="94" endPosition="7" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="84" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="84" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="368569065472988616" varName="editorContext" />
+      <varInfo nodeId="368569065472988616" varName="elementCell" />
+      <varInfo nodeId="368569065472988616" varName="elementNode" />
+      <varInfo nodeId="368569065472988616" varName="listOwner" />
+    </scopeInfo>
     <unitInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="21" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelCreationSettings_Editor" />
     <unitInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="62" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelCreationSettings_Editor$importedLanguageListHandler_ioe0e8_b1a" />
   </root>
@@ -141,20 +192,58 @@
     <scopeInfo nodeId="562112407432160072" fileName="LanguageRef_Editor.java" startLine="78" startPosition="68" endLine="79" endPosition="117" />
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="49" startPosition="99" endLine="51" endPosition="5" />
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="35" startPosition="26" endLine="38" endPosition="189" />
-    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="41" startPosition="35" endLine="44" endPosition="105" />
-    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="26" startPosition="59" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="562112407432160048" fileName="LanguageRef_Editor.java" startLine="55" startPosition="87" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="41" startPosition="35" endLine="44" endPosition="105">
+      <varInfo nodeId="368569065472988631" varName="manager" />
+      <varInfo nodeId="368569065472988631" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="26" startPosition="59" endLine="30" endPosition="0">
+      <varInfo nodeId="368569065472988631" varName="editorContext" />
+      <varInfo nodeId="368569065472988631" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="562112407432160048" fileName="LanguageRef_Editor.java" startLine="55" startPosition="87" endLine="59" endPosition="0">
+      <varInfo nodeId="562112407432160048" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="368569065472988631" varName="editorContext" />
+      <varInfo nodeId="368569065472988631" varName="model" />
+      <varInfo nodeId="368569065472988631" varName="node" />
+      <varInfo nodeId="368569065472988631" varName="operationContext" />
+      <varInfo nodeId="368569065472988631" varName="parameterObject" />
+      <varInfo nodeId="368569065472988631" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="368569065472988631" varName="editorContext" />
+      <varInfo nodeId="368569065472988631" varName="model" />
+      <varInfo nodeId="368569065472988631" varName="node" />
+      <varInfo nodeId="368569065472988631" varName="operationContext" />
+      <varInfo nodeId="368569065472988631" varName="parameterObject" />
+      <varInfo nodeId="368569065472988631" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="368569065472988631" varName="parameterObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="368569065472988631" varName="parameterObject" />
+    </scopeInfo>
     <scopeInfo nodeId="562112407432160031" fileName="LanguageRef_Editor.java" startLine="53" startPosition="105" endLine="59" endPosition="26">
       <varInfo nodeId="562112407432160037" varName="langList" />
     </scopeInfo>
-    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="52" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="31" startPosition="87" endLine="46" endPosition="22" />
-    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="30" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="52" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="368569065472988631" varName="node" />
+      <varInfo nodeId="368569065472988631" varName="operationContext" />
+      <varInfo nodeId="368569065472988631" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="31" startPosition="87" endLine="46" endPosition="22">
+      <varInfo nodeId="368569065472988631" varName="attributeConcept" />
+      <varInfo nodeId="368569065472988631" varName="attributeKind" />
+      <varInfo nodeId="368569065472988631" varName="editorCell" />
+      <varInfo nodeId="368569065472988631" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="30" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="368569065472988631" varName="editorContext" />
+      <varInfo nodeId="368569065472988631" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="26" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.LanguageRef_Editor" />
     <unitInfo nodeId="562112407432160048" fileName="LanguageRef_Editor.java" startLine="55" startPosition="56" endLine="59" endPosition="7" unitName="jetbrains.mps.lang.stubs.editor.LanguageRef_Editor$1" />
     <unitInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="49" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.LanguageRef_Editor$LanguageRef_generic_cellMenu_a0a" />
@@ -211,15 +300,45 @@
     <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="23" startPosition="80" endLine="24" endPosition="80" />
     <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="32" startPosition="26" endLine="34" endPosition="73" />
     <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="49" startPosition="26" endLine="51" endPosition="73" />
-    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="37" startPosition="35" endLine="40" endPosition="105" />
-    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="54" startPosition="35" endLine="57" endPosition="105" />
-    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="15" startPosition="59" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="20" startPosition="89" endLine="25" endPosition="22" />
-    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="28" startPosition="87" endLine="42" endPosition="22" />
-    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="45" startPosition="87" endLine="59" endPosition="22" />
-    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="27" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="44" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="37" startPosition="35" endLine="40" endPosition="105">
+      <varInfo nodeId="4063774604867508732" varName="manager" />
+      <varInfo nodeId="4063774604867508732" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="54" startPosition="35" endLine="57" endPosition="105">
+      <varInfo nodeId="4063774604867508732" varName="manager" />
+      <varInfo nodeId="4063774604867508732" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="15" startPosition="59" endLine="19" endPosition="0">
+      <varInfo nodeId="4063774604867508732" varName="editorContext" />
+      <varInfo nodeId="4063774604867508732" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="20" startPosition="89" endLine="25" endPosition="22">
+      <varInfo nodeId="4063774604867508732" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="19" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="4063774604867508732" varName="editorContext" />
+      <varInfo nodeId="4063774604867508732" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="28" startPosition="87" endLine="42" endPosition="22">
+      <varInfo nodeId="4063774604867508732" varName="attributeConcept" />
+      <varInfo nodeId="4063774604867508732" varName="attributeKind" />
+      <varInfo nodeId="4063774604867508732" varName="editorCell" />
+      <varInfo nodeId="4063774604867508732" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="45" startPosition="87" endLine="59" endPosition="22">
+      <varInfo nodeId="4063774604867508732" varName="attributeConcept" />
+      <varInfo nodeId="4063774604867508732" varName="attributeKind" />
+      <varInfo nodeId="4063774604867508732" varName="editorCell" />
+      <varInfo nodeId="4063774604867508732" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="27" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4063774604867508732" varName="editorContext" />
+      <varInfo nodeId="4063774604867508732" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="44" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="4063774604867508732" varName="editorContext" />
+      <varInfo nodeId="4063774604867508732" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="4063774604867508732" fileName="CreateBlock_Editor.java" startLine="15" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.CreateBlock_Editor" />
   </root>
   <root nodeId="4293145514664530016">
@@ -594,92 +713,290 @@
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="297" startPosition="131" endLine="298" endPosition="139" />
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="305" startPosition="100" endLine="306" endPosition="50" />
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="334" startPosition="131" endLine="335" endPosition="139" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="40" startPosition="5" endLine="42" endPosition="51" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="55" startPosition="5" endLine="57" endPosition="51" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="77" startPosition="5" endLine="79" endPosition="51" />
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="40" startPosition="5" endLine="42" endPosition="51">
+      <varInfo nodeId="444366895203545215" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="55" startPosition="5" endLine="57" endPosition="51">
+      <varInfo nodeId="444366895203545215" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="77" startPosition="5" endLine="79" endPosition="51">
+      <varInfo nodeId="444366895203545215" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="110" startPosition="87" endLine="112" endPosition="76" />
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="146" startPosition="87" endLine="148" endPosition="77" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="169" startPosition="91" endLine="171" endPosition="18" />
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="169" startPosition="91" endLine="171" endPosition="18">
+      <varInfo nodeId="444366895203545215" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="178" startPosition="26" endLine="180" endPosition="73" />
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="195" startPosition="26" endLine="197" endPosition="73" />
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="212" startPosition="26" endLine="214" endPosition="73" />
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="229" startPosition="26" endLine="231" endPosition="73" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="273" startPosition="66" endLine="275" endPosition="93" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="309" startPosition="66" endLine="311" endPosition="93" />
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="273" startPosition="66" endLine="275" endPosition="93">
+      <varInfo nodeId="444366895203545215" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="309" startPosition="66" endLine="311" endPosition="93">
+      <varInfo nodeId="444366895203545215" varName="listOwner" />
+    </scopeInfo>
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="330" startPosition="34" endLine="332" endPosition="80" />
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="45" startPosition="83" endLine="48" endPosition="5" />
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="59" startPosition="84" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="183" startPosition="35" endLine="186" endPosition="105" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="200" startPosition="35" endLine="203" endPosition="105" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="217" startPosition="35" endLine="220" endPosition="105" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="234" startPosition="35" endLine="237" endPosition="105" />
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="183" startPosition="35" endLine="186" endPosition="105">
+      <varInfo nodeId="444366895203545215" varName="manager" />
+      <varInfo nodeId="444366895203545215" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="200" startPosition="35" endLine="203" endPosition="105">
+      <varInfo nodeId="444366895203545215" varName="manager" />
+      <varInfo nodeId="444366895203545215" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="217" startPosition="35" endLine="220" endPosition="105">
+      <varInfo nodeId="444366895203545215" varName="manager" />
+      <varInfo nodeId="444366895203545215" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="234" startPosition="35" endLine="237" endPosition="105">
+      <varInfo nodeId="444366895203545215" varName="manager" />
+      <varInfo nodeId="444366895203545215" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="246" startPosition="26" endLine="249" endPosition="73" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="252" startPosition="35" endLine="255" endPosition="105" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="268" startPosition="80" endLine="271" endPosition="5" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="278" startPosition="86" endLine="281" endPosition="25" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="304" startPosition="81" endLine="307" endPosition="5" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="314" startPosition="86" endLine="317" endPosition="25" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="32" startPosition="71" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="102" startPosition="90" endLine="106" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="117" startPosition="90" endLine="121" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="124" startPosition="90" endLine="128" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="131" startPosition="90" endLine="135" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="138" startPosition="90" endLine="142" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="259" startPosition="0" endLine="263" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="263" startPosition="0" endLine="267" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="284" startPosition="68" endLine="288" endPosition="23" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="320" startPosition="68" endLine="324" endPosition="23" />
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="252" startPosition="35" endLine="255" endPosition="105">
+      <varInfo nodeId="444366895203545215" varName="manager" />
+      <varInfo nodeId="444366895203545215" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="268" startPosition="80" endLine="271" endPosition="5">
+      <varInfo nodeId="444366895203545215" varName="childRole" />
+      <varInfo nodeId="444366895203545215" varName="context" />
+      <varInfo nodeId="444366895203545215" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="278" startPosition="86" endLine="281" endPosition="25">
+      <varInfo nodeId="444366895203545215" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="304" startPosition="81" endLine="307" endPosition="5">
+      <varInfo nodeId="444366895203545215" varName="childRole" />
+      <varInfo nodeId="444366895203545215" varName="context" />
+      <varInfo nodeId="444366895203545215" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="314" startPosition="86" endLine="317" endPosition="25">
+      <varInfo nodeId="444366895203545215" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="32" startPosition="71" endLine="36" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="102" startPosition="90" endLine="106" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="117" startPosition="90" endLine="121" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="124" startPosition="90" endLine="128" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="131" startPosition="90" endLine="135" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="138" startPosition="90" endLine="142" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="259" startPosition="0" endLine="263" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+      <varInfo nodeId="444366895203545215" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="263" startPosition="0" endLine="267" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+      <varInfo nodeId="444366895203545215" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="284" startPosition="68" endLine="288" endPosition="23">
+      <varInfo nodeId="444366895203545215" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="320" startPosition="68" endLine="324" endPosition="23">
+      <varInfo nodeId="444366895203545215" varName="emptyCell" />
+    </scopeInfo>
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="38" startPosition="97" endLine="43" endPosition="5" />
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="53" startPosition="99" endLine="58" endPosition="5" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="66" startPosition="91" endLine="71" endPosition="22" />
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="66" startPosition="91" endLine="71" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="75" startPosition="99" endLine="80" endPosition="5" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="109" startPosition="89" endLine="114" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="145" startPosition="88" endLine="150" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="153" startPosition="93" endLine="158" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="161" startPosition="93" endLine="166" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="168" startPosition="0" endLine="173" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="272" startPosition="0" endLine="277" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="308" startPosition="0" endLine="313" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="341" startPosition="84" endLine="346" endPosition="24" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="277" startPosition="0" endLine="283" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="313" startPosition="0" endLine="319" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="101" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="116" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="123" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="130" startPosition="0" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="137" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="283" startPosition="0" endLine="290" endPosition="0" />
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="109" startPosition="89" endLine="114" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="145" startPosition="88" endLine="150" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="153" startPosition="93" endLine="158" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+      <varInfo nodeId="444366895203545215" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="161" startPosition="93" endLine="166" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+      <varInfo nodeId="444366895203545215" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="168" startPosition="0" endLine="173" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="272" startPosition="0" endLine="277" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="308" startPosition="0" endLine="313" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="341" startPosition="84" endLine="346" endPosition="24">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="277" startPosition="0" endLine="283" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="313" startPosition="0" endLine="319" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="101" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="116" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="123" startPosition="0" endLine="130" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="130" startPosition="0" endLine="137" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="137" startPosition="0" endLine="144" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="283" startPosition="0" endLine="290" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="292" startPosition="96" endLine="299" endPosition="9" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="319" startPosition="0" endLine="326" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="65" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="108" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="144" startPosition="0" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="152" startPosition="0" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="160" startPosition="0" endLine="168" endPosition="0" />
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="319" startPosition="0" endLine="326" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="65" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="108" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="144" startPosition="0" endLine="152" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="152" startPosition="0" endLine="160" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="160" startPosition="0" endLine="168" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="328" startPosition="96" endLine="336" endPosition="9" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="74" startPosition="90" endLine="83" endPosition="22" />
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="74" startPosition="90" endLine="83" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="291" startPosition="132" endLine="300" endPosition="7" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="339" startPosition="0" endLine="348" endPosition="0" />
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="339" startPosition="0" endLine="348" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="327" startPosition="132" endLine="337" endPosition="7" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="52" startPosition="90" endLine="63" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="37" startPosition="89" endLine="49" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="73" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="290" startPosition="0" endLine="302" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="86" startPosition="91" endLine="99" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="326" startPosition="0" endLine="339" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="51" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="174" startPosition="89" endLine="188" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="191" startPosition="89" endLine="205" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="208" startPosition="89" endLine="222" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="225" startPosition="89" endLine="239" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="36" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="242" startPosition="90" endLine="257" endPosition="22" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="85" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="173" startPosition="0" endLine="190" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="190" startPosition="0" endLine="207" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="207" startPosition="0" endLine="224" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="224" startPosition="0" endLine="241" endPosition="0" />
-    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="241" startPosition="0" endLine="259" endPosition="0" />
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="52" startPosition="90" endLine="63" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="37" startPosition="89" endLine="49" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="73" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="290" startPosition="0" endLine="302" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="elementCell" />
+      <varInfo nodeId="444366895203545215" varName="elementNode" />
+      <varInfo nodeId="444366895203545215" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="86" startPosition="91" endLine="99" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="326" startPosition="0" endLine="339" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="elementCell" />
+      <varInfo nodeId="444366895203545215" varName="elementNode" />
+      <varInfo nodeId="444366895203545215" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="51" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="174" startPosition="89" endLine="188" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="attributeConcept" />
+      <varInfo nodeId="444366895203545215" varName="attributeKind" />
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+      <varInfo nodeId="444366895203545215" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="191" startPosition="89" endLine="205" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="attributeConcept" />
+      <varInfo nodeId="444366895203545215" varName="attributeKind" />
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+      <varInfo nodeId="444366895203545215" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="208" startPosition="89" endLine="222" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="attributeConcept" />
+      <varInfo nodeId="444366895203545215" varName="attributeKind" />
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+      <varInfo nodeId="444366895203545215" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="225" startPosition="89" endLine="239" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="attributeConcept" />
+      <varInfo nodeId="444366895203545215" varName="attributeKind" />
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+      <varInfo nodeId="444366895203545215" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="36" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="242" startPosition="90" endLine="257" endPosition="22">
+      <varInfo nodeId="444366895203545215" varName="attributeConcept" />
+      <varInfo nodeId="444366895203545215" varName="attributeKind" />
+      <varInfo nodeId="444366895203545215" varName="editorCell" />
+      <varInfo nodeId="444366895203545215" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="85" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="173" startPosition="0" endLine="190" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="190" startPosition="0" endLine="207" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="207" startPosition="0" endLine="224" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="224" startPosition="0" endLine="241" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="241" startPosition="0" endLine="259" endPosition="0">
+      <varInfo nodeId="444366895203545215" varName="editorContext" />
+      <varInfo nodeId="444366895203545215" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="32" startPosition="0" endLine="350" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.StubsCreatorDeclaration_Editor" />
     <unitInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="268" startPosition="0" endLine="303" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.StubsCreatorDeclaration_Editor$fieldListHandler_58sib0_i1b0" />
     <unitInfo nodeId="444366895203545215" fileName="StubsCreatorDeclaration_Editor.java" startLine="304" startPosition="0" endLine="349" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.StubsCreatorDeclaration_Editor$methodListHandler_58sib0_j1b0" />
@@ -781,32 +1098,88 @@
     <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="96" startPosition="69" endLine="97" endPosition="67" />
     <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="100" startPosition="81" endLine="101" endPosition="66" />
     <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="110" startPosition="60" endLine="111" endPosition="44" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="42" startPosition="5" endLine="44" endPosition="81" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="65" startPosition="5" endLine="67" endPosition="56" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="53" startPosition="5" endLine="56" endPosition="57" />
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="42" startPosition="5" endLine="44" endPosition="81">
+      <varInfo nodeId="5516999836374121345" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="65" startPosition="5" endLine="67" endPosition="56">
+      <varInfo nodeId="5516999836374121345" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="53" startPosition="5" endLine="56" endPosition="57">
+      <varInfo nodeId="5516999836374121345" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="77" startPosition="26" endLine="80" endPosition="73" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="83" startPosition="35" endLine="86" endPosition="105" />
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="83" startPosition="35" endLine="86" endPosition="105">
+      <varInfo nodeId="5516999836374121345" varName="manager" />
+      <varInfo nodeId="5516999836374121345" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="91" startPosition="69" endLine="94" endPosition="5" />
     <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="109" startPosition="28" endLine="112" endPosition="75" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="115" startPosition="37" endLine="118" endPosition="107" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="23" startPosition="64" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="115" startPosition="37" endLine="118" endPosition="107">
+      <varInfo nodeId="5516999836374121345" varName="manager" />
+      <varInfo nodeId="5516999836374121345" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="23" startPosition="64" endLine="27" endPosition="0">
+      <varInfo nodeId="5516999836374121345" varName="editorContext" />
+      <varInfo nodeId="5516999836374121345" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="5516999836374121345" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="5516999836374121345" varName="editorContext" />
+      <varInfo nodeId="5516999836374121345" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="63" startPosition="87" endLine="68" endPosition="5" />
     <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="39" startPosition="97" endLine="45" endPosition="5" />
     <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="51" startPosition="87" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="28" startPosition="89" endLine="35" endPosition="22" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="62" startPosition="88" endLine="70" endPosition="22" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="38" startPosition="88" endLine="47" endPosition="22" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="50" startPosition="88" endLine="59" endPosition="22" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="27" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="61" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="37" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="49" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="73" startPosition="87" endLine="88" endPosition="22" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="104" startPosition="92" endLine="120" endPosition="24" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="72" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="103" startPosition="0" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="28" startPosition="89" endLine="35" endPosition="22">
+      <varInfo nodeId="5516999836374121345" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="62" startPosition="88" endLine="70" endPosition="22">
+      <varInfo nodeId="5516999836374121345" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="38" startPosition="88" endLine="47" endPosition="22">
+      <varInfo nodeId="5516999836374121345" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="50" startPosition="88" endLine="59" endPosition="22">
+      <varInfo nodeId="5516999836374121345" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="27" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="5516999836374121345" varName="editorContext" />
+      <varInfo nodeId="5516999836374121345" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="61" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="5516999836374121345" varName="editorContext" />
+      <varInfo nodeId="5516999836374121345" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="37" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="5516999836374121345" varName="editorContext" />
+      <varInfo nodeId="5516999836374121345" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="49" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="5516999836374121345" varName="editorContext" />
+      <varInfo nodeId="5516999836374121345" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="73" startPosition="87" endLine="88" endPosition="22">
+      <varInfo nodeId="5516999836374121345" varName="attributeConcept" />
+      <varInfo nodeId="5516999836374121345" varName="attributeKind" />
+      <varInfo nodeId="5516999836374121345" varName="editorCell" />
+      <varInfo nodeId="5516999836374121345" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="104" startPosition="92" endLine="120" endPosition="24">
+      <varInfo nodeId="5516999836374121345" varName="attributeConcept" />
+      <varInfo nodeId="5516999836374121345" varName="attributeKind" />
+      <varInfo nodeId="5516999836374121345" varName="editorCell" />
+      <varInfo nodeId="5516999836374121345" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="72" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="5516999836374121345" varName="editorContext" />
+      <varInfo nodeId="5516999836374121345" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="103" startPosition="0" endLine="122" endPosition="0">
+      <varInfo nodeId="5516999836374121345" varName="editorContext" />
+      <varInfo nodeId="5516999836374121345" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="23" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.StubsCreatorType_Editor" />
     <unitInfo nodeId="5516999836374121345" fileName="StubsCreatorType_Editor.java" startLine="91" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.StubsCreatorType_Editor$_Inline_p622c5_a2a" />
   </root>
@@ -1093,90 +1466,277 @@
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="273" startPosition="100" endLine="274" endPosition="50" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="295" startPosition="89" endLine="296" endPosition="67" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="306" startPosition="131" endLine="307" endPosition="139" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="40" startPosition="5" endLine="42" endPosition="51" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="55" startPosition="5" endLine="57" endPosition="51" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="77" startPosition="5" endLine="79" endPosition="51" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="40" startPosition="5" endLine="42" endPosition="51">
+      <varInfo nodeId="5553449326502622465" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="55" startPosition="5" endLine="57" endPosition="51">
+      <varInfo nodeId="5553449326502622465" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="77" startPosition="5" endLine="79" endPosition="51">
+      <varInfo nodeId="5553449326502622465" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="107" startPosition="87" endLine="109" endPosition="76" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="136" startPosition="87" endLine="138" endPosition="77" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="159" startPosition="91" endLine="161" endPosition="18" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="159" startPosition="91" endLine="161" endPosition="18">
+      <varInfo nodeId="5553449326502622465" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="168" startPosition="26" endLine="170" endPosition="73" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="185" startPosition="26" endLine="187" endPosition="73" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="229" startPosition="66" endLine="231" endPosition="93" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="229" startPosition="66" endLine="231" endPosition="93">
+      <varInfo nodeId="5553449326502622465" varName="listOwner" />
+    </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="264" startPosition="96" endLine="266" endPosition="76" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="277" startPosition="66" endLine="279" endPosition="93" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="277" startPosition="66" endLine="279" endPosition="93">
+      <varInfo nodeId="5553449326502622465" varName="listOwner" />
+    </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="302" startPosition="34" endLine="304" endPosition="80" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="322" startPosition="97" endLine="324" endPosition="76" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="45" startPosition="83" endLine="48" endPosition="5" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="59" startPosition="84" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="173" startPosition="35" endLine="176" endPosition="105" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="190" startPosition="35" endLine="193" endPosition="105" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="173" startPosition="35" endLine="176" endPosition="105">
+      <varInfo nodeId="5553449326502622465" varName="manager" />
+      <varInfo nodeId="5553449326502622465" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="190" startPosition="35" endLine="193" endPosition="105">
+      <varInfo nodeId="5553449326502622465" varName="manager" />
+      <varInfo nodeId="5553449326502622465" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="202" startPosition="26" endLine="205" endPosition="73" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="208" startPosition="35" endLine="211" endPosition="105" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="224" startPosition="80" endLine="227" endPosition="5" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="234" startPosition="86" endLine="237" endPosition="25" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="272" startPosition="81" endLine="275" endPosition="5" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="282" startPosition="86" endLine="285" endPosition="25" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="32" startPosition="71" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="99" startPosition="90" endLine="103" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="114" startPosition="90" endLine="118" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="121" startPosition="90" endLine="125" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="128" startPosition="90" endLine="132" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="215" startPosition="0" endLine="219" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="219" startPosition="0" endLine="223" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="240" startPosition="68" endLine="244" endPosition="23" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="246" startPosition="0" endLine="250" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="288" startPosition="68" endLine="292" endPosition="23" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="294" startPosition="0" endLine="298" endPosition="0" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="208" startPosition="35" endLine="211" endPosition="105">
+      <varInfo nodeId="5553449326502622465" varName="manager" />
+      <varInfo nodeId="5553449326502622465" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="224" startPosition="80" endLine="227" endPosition="5">
+      <varInfo nodeId="5553449326502622465" varName="childRole" />
+      <varInfo nodeId="5553449326502622465" varName="context" />
+      <varInfo nodeId="5553449326502622465" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="234" startPosition="86" endLine="237" endPosition="25">
+      <varInfo nodeId="5553449326502622465" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="272" startPosition="81" endLine="275" endPosition="5">
+      <varInfo nodeId="5553449326502622465" varName="childRole" />
+      <varInfo nodeId="5553449326502622465" varName="context" />
+      <varInfo nodeId="5553449326502622465" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="282" startPosition="86" endLine="285" endPosition="25">
+      <varInfo nodeId="5553449326502622465" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="32" startPosition="71" endLine="36" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="99" startPosition="90" endLine="103" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="114" startPosition="90" endLine="118" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="121" startPosition="90" endLine="125" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="128" startPosition="90" endLine="132" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="215" startPosition="0" endLine="219" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+      <varInfo nodeId="5553449326502622465" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="219" startPosition="0" endLine="223" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+      <varInfo nodeId="5553449326502622465" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="240" startPosition="68" endLine="244" endPosition="23">
+      <varInfo nodeId="5553449326502622465" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="246" startPosition="0" endLine="250" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="288" startPosition="68" endLine="292" endPosition="23">
+      <varInfo nodeId="5553449326502622465" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="294" startPosition="0" endLine="298" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="38" startPosition="97" endLine="43" endPosition="5" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="53" startPosition="99" endLine="58" endPosition="5" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="66" startPosition="91" endLine="71" endPosition="22" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="66" startPosition="91" endLine="71" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="75" startPosition="99" endLine="80" endPosition="5" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="106" startPosition="89" endLine="111" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="135" startPosition="88" endLine="140" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="143" startPosition="93" endLine="148" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="151" startPosition="93" endLine="156" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="158" startPosition="0" endLine="163" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="228" startPosition="0" endLine="233" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="263" startPosition="93" endLine="268" endPosition="24" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="276" startPosition="0" endLine="281" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="313" startPosition="84" endLine="318" endPosition="24" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="321" startPosition="93" endLine="326" endPosition="24" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="233" startPosition="0" endLine="239" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="281" startPosition="0" endLine="287" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="98" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="113" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="120" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="127" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="239" startPosition="0" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="106" startPosition="89" endLine="111" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="135" startPosition="88" endLine="140" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="143" startPosition="93" endLine="148" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+      <varInfo nodeId="5553449326502622465" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="151" startPosition="93" endLine="156" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+      <varInfo nodeId="5553449326502622465" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="158" startPosition="0" endLine="163" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="228" startPosition="0" endLine="233" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="263" startPosition="93" endLine="268" endPosition="24">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="276" startPosition="0" endLine="281" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="313" startPosition="84" endLine="318" endPosition="24">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="321" startPosition="93" endLine="326" endPosition="24">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="233" startPosition="0" endLine="239" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="281" startPosition="0" endLine="287" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="98" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="113" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="120" startPosition="0" endLine="127" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="127" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="239" startPosition="0" endLine="246" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="252" startPosition="96" endLine="259" endPosition="9" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="287" startPosition="0" endLine="294" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="65" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="105" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="134" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="142" startPosition="0" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="150" startPosition="0" endLine="158" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="262" startPosition="0" endLine="270" endPosition="0" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="287" startPosition="0" endLine="294" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="65" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="105" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="134" startPosition="0" endLine="142" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="142" startPosition="0" endLine="150" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="150" startPosition="0" endLine="158" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="262" startPosition="0" endLine="270" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="300" startPosition="96" endLine="308" endPosition="9" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="320" startPosition="0" endLine="328" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="74" startPosition="90" endLine="83" endPosition="22" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="320" startPosition="0" endLine="328" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="74" startPosition="90" endLine="83" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="251" startPosition="132" endLine="260" endPosition="7" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="311" startPosition="0" endLine="320" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="86" startPosition="91" endLine="96" endPosition="22" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="311" startPosition="0" endLine="320" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="86" startPosition="91" endLine="96" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="299" startPosition="132" endLine="309" endPosition="7" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="52" startPosition="90" endLine="63" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="37" startPosition="89" endLine="49" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="73" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="250" startPosition="0" endLine="262" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="85" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="298" startPosition="0" endLine="311" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="51" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="164" startPosition="89" endLine="178" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="181" startPosition="89" endLine="195" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="36" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="198" startPosition="90" endLine="213" endPosition="22" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="163" startPosition="0" endLine="180" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="180" startPosition="0" endLine="197" endPosition="0" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="197" startPosition="0" endLine="215" endPosition="0" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="52" startPosition="90" endLine="63" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="37" startPosition="89" endLine="49" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="73" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="250" startPosition="0" endLine="262" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="elementCell" />
+      <varInfo nodeId="5553449326502622465" varName="elementNode" />
+      <varInfo nodeId="5553449326502622465" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="85" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="298" startPosition="0" endLine="311" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="elementCell" />
+      <varInfo nodeId="5553449326502622465" varName="elementNode" />
+      <varInfo nodeId="5553449326502622465" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="51" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="164" startPosition="89" endLine="178" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="attributeConcept" />
+      <varInfo nodeId="5553449326502622465" varName="attributeKind" />
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+      <varInfo nodeId="5553449326502622465" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="181" startPosition="89" endLine="195" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="attributeConcept" />
+      <varInfo nodeId="5553449326502622465" varName="attributeKind" />
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+      <varInfo nodeId="5553449326502622465" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="36" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="198" startPosition="90" endLine="213" endPosition="22">
+      <varInfo nodeId="5553449326502622465" varName="attributeConcept" />
+      <varInfo nodeId="5553449326502622465" varName="attributeKind" />
+      <varInfo nodeId="5553449326502622465" varName="editorCell" />
+      <varInfo nodeId="5553449326502622465" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="163" startPosition="0" endLine="180" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="180" startPosition="0" endLine="197" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="197" startPosition="0" endLine="215" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="32" startPosition="0" endLine="330" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelManagerDeclaration_Editor" />
     <unitInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="224" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelManagerDeclaration_Editor$fieldListHandler_asco8r_e1b0" />
     <unitInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="272" startPosition="0" endLine="329" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelManagerDeclaration_Editor$methodListHandler_asco8r_g1b0" />
@@ -1623,16 +2183,32 @@
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="445" startPosition="69" endLine="446" endPosition="67" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="449" startPosition="81" endLine="450" endPosition="70" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="459" startPosition="60" endLine="460" endPosition="46" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="42" startPosition="5" endLine="44" endPosition="51" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="57" startPosition="5" endLine="59" endPosition="51" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="79" startPosition="5" endLine="81" endPosition="51" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="115" startPosition="5" endLine="117" endPosition="51" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="127" startPosition="5" endLine="129" endPosition="51" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="139" startPosition="5" endLine="141" endPosition="51" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="151" startPosition="5" endLine="153" endPosition="51" />
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="42" startPosition="5" endLine="44" endPosition="51">
+      <varInfo nodeId="8529737993487833472" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="57" startPosition="5" endLine="59" endPosition="51">
+      <varInfo nodeId="8529737993487833472" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="79" startPosition="5" endLine="81" endPosition="51">
+      <varInfo nodeId="8529737993487833472" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="115" startPosition="5" endLine="117" endPosition="51">
+      <varInfo nodeId="8529737993487833472" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="127" startPosition="5" endLine="129" endPosition="51">
+      <varInfo nodeId="8529737993487833472" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="139" startPosition="5" endLine="141" endPosition="51">
+      <varInfo nodeId="8529737993487833472" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="151" startPosition="5" endLine="153" endPosition="51">
+      <varInfo nodeId="8529737993487833472" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="168" startPosition="87" endLine="170" endPosition="76" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="218" startPosition="87" endLine="220" endPosition="77" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="225" startPosition="91" endLine="227" endPosition="18" />
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="225" startPosition="91" endLine="227" endPosition="18">
+      <varInfo nodeId="8529737993487833472" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="270" startPosition="26" endLine="272" endPosition="73" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="287" startPosition="26" endLine="289" endPosition="73" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="304" startPosition="26" endLine="306" endPosition="73" />
@@ -1642,102 +2218,351 @@
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="61" startPosition="84" endLine="64" endPosition="5" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="103" startPosition="86" endLine="106" endPosition="5" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="234" startPosition="26" endLine="237" endPosition="73" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="240" startPosition="35" endLine="243" endPosition="105" />
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="240" startPosition="35" endLine="243" endPosition="105">
+      <varInfo nodeId="8529737993487833472" varName="manager" />
+      <varInfo nodeId="8529737993487833472" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="252" startPosition="26" endLine="255" endPosition="73" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="258" startPosition="35" endLine="261" endPosition="105" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="275" startPosition="35" endLine="278" endPosition="105" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="292" startPosition="35" endLine="295" endPosition="105" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="309" startPosition="35" endLine="312" endPosition="105" />
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="258" startPosition="35" endLine="261" endPosition="105">
+      <varInfo nodeId="8529737993487833472" varName="manager" />
+      <varInfo nodeId="8529737993487833472" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="275" startPosition="35" endLine="278" endPosition="105">
+      <varInfo nodeId="8529737993487833472" varName="manager" />
+      <varInfo nodeId="8529737993487833472" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="292" startPosition="35" endLine="295" endPosition="105">
+      <varInfo nodeId="8529737993487833472" varName="manager" />
+      <varInfo nodeId="8529737993487833472" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="309" startPosition="35" endLine="312" endPosition="105">
+      <varInfo nodeId="8529737993487833472" varName="manager" />
+      <varInfo nodeId="8529737993487833472" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="321" startPosition="26" endLine="324" endPosition="73" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="327" startPosition="35" endLine="330" endPosition="105" />
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="327" startPosition="35" endLine="330" endPosition="105">
+      <varInfo nodeId="8529737993487833472" varName="manager" />
+      <varInfo nodeId="8529737993487833472" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="339" startPosition="26" endLine="342" endPosition="298" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="345" startPosition="35" endLine="348" endPosition="105" />
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="345" startPosition="35" endLine="348" endPosition="105">
+      <varInfo nodeId="8529737993487833472" varName="manager" />
+      <varInfo nodeId="8529737993487833472" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="407" startPosition="73" endLine="410" endPosition="5" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="425" startPosition="28" endLine="428" endPosition="75" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="431" startPosition="37" endLine="434" endPosition="107" />
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="431" startPosition="37" endLine="434" endPosition="107">
+      <varInfo nodeId="8529737993487833472" varName="manager" />
+      <varInfo nodeId="8529737993487833472" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="440" startPosition="73" endLine="443" endPosition="5" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="458" startPosition="28" endLine="461" endPosition="75" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="464" startPosition="37" endLine="467" endPosition="107" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="34" startPosition="69" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="160" startPosition="90" endLine="164" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="175" startPosition="92" endLine="179" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="182" startPosition="92" endLine="186" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="189" startPosition="92" endLine="193" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="196" startPosition="92" endLine="200" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="203" startPosition="90" endLine="207" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="210" startPosition="90" endLine="214" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="352" startPosition="0" endLine="356" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="356" startPosition="0" endLine="360" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="360" startPosition="0" endLine="364" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="368" startPosition="0" endLine="372" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="372" startPosition="0" endLine="376" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="376" startPosition="0" endLine="380" endPosition="0" />
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="464" startPosition="37" endLine="467" endPosition="107">
+      <varInfo nodeId="8529737993487833472" varName="manager" />
+      <varInfo nodeId="8529737993487833472" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="34" startPosition="69" endLine="38" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="160" startPosition="90" endLine="164" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="175" startPosition="92" endLine="179" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="182" startPosition="92" endLine="186" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="189" startPosition="92" endLine="193" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="196" startPosition="92" endLine="200" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="203" startPosition="90" endLine="207" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="210" startPosition="90" endLine="214" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="352" startPosition="0" endLine="356" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+      <varInfo nodeId="8529737993487833472" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="356" startPosition="0" endLine="360" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+      <varInfo nodeId="8529737993487833472" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="360" startPosition="0" endLine="364" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+      <varInfo nodeId="8529737993487833472" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="368" startPosition="0" endLine="372" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="node" />
+      <varInfo nodeId="8529737993487833472" varName="operationContext" />
+      <varInfo nodeId="8529737993487833472" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="372" startPosition="0" endLine="376" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="model" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+      <varInfo nodeId="8529737993487833472" varName="operationContext" />
+      <varInfo nodeId="8529737993487833472" varName="parameterObject" />
+      <varInfo nodeId="8529737993487833472" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="376" startPosition="0" endLine="380" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="model" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+      <varInfo nodeId="8529737993487833472" varName="operationContext" />
+      <varInfo nodeId="8529737993487833472" varName="parameterObject" />
+      <varInfo nodeId="8529737993487833472" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="380" startPosition="0" endLine="384" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="384" startPosition="0" endLine="388" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="388" startPosition="0" endLine="392" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="397" startPosition="0" endLine="401" endPosition="0" />
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="384" startPosition="0" endLine="388" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="parameterObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="388" startPosition="0" endLine="392" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="parameterObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="397" startPosition="0" endLine="401" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="model" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+      <varInfo nodeId="8529737993487833472" varName="operationContext" />
+      <varInfo nodeId="8529737993487833472" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="401" startPosition="0" endLine="405" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="411" startPosition="0" endLine="415" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="415" startPosition="0" endLine="419" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="444" startPosition="0" endLine="448" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="448" startPosition="0" endLine="452" endPosition="0" />
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="411" startPosition="0" endLine="415" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="415" startPosition="0" endLine="419" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="444" startPosition="0" endLine="448" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="448" startPosition="0" endLine="452" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="40" startPosition="97" endLine="45" endPosition="5" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="55" startPosition="99" endLine="60" endPosition="5" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="68" startPosition="91" endLine="73" endPosition="22" />
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="68" startPosition="91" endLine="73" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="77" startPosition="99" endLine="82" endPosition="5" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="113" startPosition="99" endLine="118" endPosition="5" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="125" startPosition="99" endLine="130" endPosition="5" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="137" startPosition="99" endLine="142" endPosition="5" />
     <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="149" startPosition="99" endLine="154" endPosition="5" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="167" startPosition="89" endLine="172" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="217" startPosition="88" endLine="222" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="224" startPosition="0" endLine="229" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="159" startPosition="0" endLine="166" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="174" startPosition="0" endLine="181" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="181" startPosition="0" endLine="188" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="188" startPosition="0" endLine="195" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="195" startPosition="0" endLine="202" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="202" startPosition="0" endLine="209" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="209" startPosition="0" endLine="216" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="67" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="88" startPosition="91" endLine="96" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="166" startPosition="0" endLine="174" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="216" startPosition="0" endLine="224" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="76" startPosition="90" endLine="85" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="112" startPosition="93" endLine="121" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="124" startPosition="93" endLine="133" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="136" startPosition="93" endLine="145" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="148" startPosition="93" endLine="157" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="99" startPosition="92" endLine="109" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="54" startPosition="90" endLine="65" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="87" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="39" startPosition="89" endLine="51" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="75" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="111" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="123" startPosition="0" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="135" startPosition="0" endLine="147" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="147" startPosition="0" endLine="159" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="98" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="53" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="266" startPosition="91" endLine="280" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="283" startPosition="89" endLine="297" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="300" startPosition="89" endLine="314" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="38" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="230" startPosition="91" endLine="245" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="248" startPosition="91" endLine="263" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="317" startPosition="90" endLine="332" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="335" startPosition="92" endLine="350" endPosition="22" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="420" startPosition="96" endLine="436" endPosition="24" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="453" startPosition="96" endLine="469" endPosition="24" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="265" startPosition="0" endLine="282" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="282" startPosition="0" endLine="299" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="299" startPosition="0" endLine="316" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="229" startPosition="0" endLine="247" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="247" startPosition="0" endLine="265" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="316" startPosition="0" endLine="334" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="334" startPosition="0" endLine="352" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="419" startPosition="0" endLine="438" endPosition="0" />
-    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="452" startPosition="0" endLine="471" endPosition="0" />
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="167" startPosition="89" endLine="172" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="217" startPosition="88" endLine="222" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="224" startPosition="0" endLine="229" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="159" startPosition="0" endLine="166" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="174" startPosition="0" endLine="181" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="181" startPosition="0" endLine="188" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="188" startPosition="0" endLine="195" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="195" startPosition="0" endLine="202" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="202" startPosition="0" endLine="209" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="209" startPosition="0" endLine="216" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="67" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="88" startPosition="91" endLine="96" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="166" startPosition="0" endLine="174" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="216" startPosition="0" endLine="224" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="76" startPosition="90" endLine="85" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="112" startPosition="93" endLine="121" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="124" startPosition="93" endLine="133" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="136" startPosition="93" endLine="145" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="148" startPosition="93" endLine="157" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="99" startPosition="92" endLine="109" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="54" startPosition="90" endLine="65" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="87" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="39" startPosition="89" endLine="51" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="75" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="111" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="123" startPosition="0" endLine="135" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="135" startPosition="0" endLine="147" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="147" startPosition="0" endLine="159" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="98" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="53" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="266" startPosition="91" endLine="280" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="attributeConcept" />
+      <varInfo nodeId="8529737993487833472" varName="attributeKind" />
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+      <varInfo nodeId="8529737993487833472" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="283" startPosition="89" endLine="297" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="attributeConcept" />
+      <varInfo nodeId="8529737993487833472" varName="attributeKind" />
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+      <varInfo nodeId="8529737993487833472" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="300" startPosition="89" endLine="314" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="attributeConcept" />
+      <varInfo nodeId="8529737993487833472" varName="attributeKind" />
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+      <varInfo nodeId="8529737993487833472" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="38" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="230" startPosition="91" endLine="245" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="attributeConcept" />
+      <varInfo nodeId="8529737993487833472" varName="attributeKind" />
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+      <varInfo nodeId="8529737993487833472" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="248" startPosition="91" endLine="263" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="attributeConcept" />
+      <varInfo nodeId="8529737993487833472" varName="attributeKind" />
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+      <varInfo nodeId="8529737993487833472" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="317" startPosition="90" endLine="332" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="attributeConcept" />
+      <varInfo nodeId="8529737993487833472" varName="attributeKind" />
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+      <varInfo nodeId="8529737993487833472" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="335" startPosition="92" endLine="350" endPosition="22">
+      <varInfo nodeId="8529737993487833472" varName="attributeConcept" />
+      <varInfo nodeId="8529737993487833472" varName="attributeKind" />
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+      <varInfo nodeId="8529737993487833472" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="420" startPosition="96" endLine="436" endPosition="24">
+      <varInfo nodeId="8529737993487833472" varName="attributeConcept" />
+      <varInfo nodeId="8529737993487833472" varName="attributeKind" />
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+      <varInfo nodeId="8529737993487833472" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="453" startPosition="96" endLine="469" endPosition="24">
+      <varInfo nodeId="8529737993487833472" varName="attributeConcept" />
+      <varInfo nodeId="8529737993487833472" varName="attributeKind" />
+      <varInfo nodeId="8529737993487833472" varName="editorCell" />
+      <varInfo nodeId="8529737993487833472" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="265" startPosition="0" endLine="282" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="282" startPosition="0" endLine="299" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="299" startPosition="0" endLine="316" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="229" startPosition="0" endLine="247" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="247" startPosition="0" endLine="265" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="316" startPosition="0" endLine="334" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="334" startPosition="0" endLine="352" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="419" startPosition="0" endLine="438" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="452" startPosition="0" endLine="471" endPosition="0">
+      <varInfo nodeId="8529737993487833472" varName="editorContext" />
+      <varInfo nodeId="8529737993487833472" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="34" startPosition="0" endLine="473" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.LibraryStubDescriptor_Editor" />
     <unitInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="365" startPosition="0" endLine="393" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.LibraryStubDescriptor_Editor$LibraryStubDescriptor_generic_cellMenu_a0b0a1b0" />
     <unitInfo nodeId="8529737993487833472" fileName="LibraryStubDescriptor_Editor.java" startLine="394" startPosition="0" endLine="406" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.LibraryStubDescriptor_Editor$LibraryStubDescriptor_generic_cellMenu_b0b0a1b0" />
@@ -1807,18 +2632,52 @@
     <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="40" startPosition="87" endLine="42" endPosition="85" />
     <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="48" startPosition="87" endLine="50" endPosition="77" />
     <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="59" startPosition="26" endLine="61" endPosition="73" />
-    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="64" startPosition="35" endLine="67" endPosition="105" />
-    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="17" startPosition="58" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="32" startPosition="88" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="39" startPosition="88" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="47" startPosition="88" endLine="52" endPosition="22" />
-    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22" />
-    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="38" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="46" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="55" startPosition="87" endLine="69" endPosition="22" />
-    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="54" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="64" startPosition="35" endLine="67" endPosition="105">
+      <varInfo nodeId="972176972348203842" varName="manager" />
+      <varInfo nodeId="972176972348203842" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="17" startPosition="58" endLine="21" endPosition="0">
+      <varInfo nodeId="972176972348203842" varName="editorContext" />
+      <varInfo nodeId="972176972348203842" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="32" startPosition="88" endLine="36" endPosition="22">
+      <varInfo nodeId="972176972348203842" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="39" startPosition="88" endLine="44" endPosition="22">
+      <varInfo nodeId="972176972348203842" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="47" startPosition="88" endLine="52" endPosition="22">
+      <varInfo nodeId="972176972348203842" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22">
+      <varInfo nodeId="972176972348203842" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="972176972348203842" varName="editorContext" />
+      <varInfo nodeId="972176972348203842" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="972176972348203842" varName="editorContext" />
+      <varInfo nodeId="972176972348203842" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="46" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="972176972348203842" varName="editorContext" />
+      <varInfo nodeId="972176972348203842" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="972176972348203842" varName="editorContext" />
+      <varInfo nodeId="972176972348203842" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="55" startPosition="87" endLine="69" endPosition="22">
+      <varInfo nodeId="972176972348203842" varName="attributeConcept" />
+      <varInfo nodeId="972176972348203842" varName="attributeKind" />
+      <varInfo nodeId="972176972348203842" varName="editorCell" />
+      <varInfo nodeId="972176972348203842" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="54" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="972176972348203842" varName="editorContext" />
+      <varInfo nodeId="972176972348203842" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="972176972348203842" fileName="Stereotype_Editor.java" startLine="17" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.Stereotype_Editor" />
   </root>
 </debugInfo>

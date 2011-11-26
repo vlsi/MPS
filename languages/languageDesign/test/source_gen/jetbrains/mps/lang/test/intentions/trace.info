@@ -42,12 +42,24 @@
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1210673906861" varName="editorContext" />
+      <varInfo nodeId="1210673906861" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="39" startPosition="84" endLine="43" endPosition="16" />
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1210673906861" varName="editorContext" />
+      <varInfo nodeId="1210673906861" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="49" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1210673906861" varName="editorContext" />
+      <varInfo nodeId="1210673906861" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1210673906861" varName="editorContext" />
+      <varInfo nodeId="1210673906861" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention" />
   </root>
   <root nodeId="1215508253864">
@@ -91,12 +103,24 @@
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1215508253864" varName="editorContext" />
+      <varInfo nodeId="1215508253864" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="39" startPosition="84" endLine="43" endPosition="16" />
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1215508253864" varName="editorContext" />
+      <varInfo nodeId="1215508253864" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="49" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1215508253864" varName="editorContext" />
+      <varInfo nodeId="1215508253864" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1215508253864" varName="editorContext" />
+      <varInfo nodeId="1215508253864" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddPropertiesMark_Intention" />
   </root>
   <root nodeId="1215604006108">
@@ -140,12 +164,24 @@
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1215604006108" varName="editorContext" />
+      <varInfo nodeId="1215604006108" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="39" startPosition="84" endLine="43" endPosition="16" />
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1215604006108" varName="editorContext" />
+      <varInfo nodeId="1215604006108" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="49" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1215604006108" varName="editorContext" />
+      <varInfo nodeId="1215604006108" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1215604006108" varName="editorContext" />
+      <varInfo nodeId="1215604006108" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddOperationsMark_Intention" />
   </root>
   <root nodeId="1225963656881">
@@ -224,11 +260,20 @@
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1225963656881" varName="editorContext" />
+      <varInfo nodeId="1225963656881" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="46" startPosition="84" endLine="50" endPosition="16" />
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1225963656881" varName="editorContext" />
+      <varInfo nodeId="1225963656881" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1225963656881" varName="editorContext" />
+      <varInfo nodeId="1225963656881" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1228588348424" fileName="AddCellAnnotation_Intention.java" startLine="70" startPosition="50" endLine="80" endPosition="91">
       <varInfo nodeId="1229432616639" varName="caretPosition" />
       <varInfo nodeId="6268941039745612490" varName="label" />
@@ -239,7 +284,10 @@
       <varInfo nodeId="1226066626901" varName="newAnnotation" />
       <varInfo nodeId="1017540429574408418" varName="selection" />
     </scopeInfo>
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="56" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="56" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="1225963656881" varName="editorContext" />
+      <varInfo nodeId="1225963656881" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="22" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddCellAnnotation_Intention" />
   </root>
   <root nodeId="1230224371548">
@@ -282,12 +330,24 @@
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1230224371548" varName="editorContext" />
+      <varInfo nodeId="1230224371548" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="39" startPosition="84" endLine="43" endPosition="16" />
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1230224371548" varName="editorContext" />
+      <varInfo nodeId="1230224371548" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="49" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="49" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1230224371548" varName="editorContext" />
+      <varInfo nodeId="1230224371548" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1230224371548" varName="editorContext" />
+      <varInfo nodeId="1230224371548" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddMockAnnotation_Intention" />
   </root>
   <root nodeId="6017652711700380617">
@@ -329,15 +389,27 @@
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="6017652711700380617" varName="editorContext" />
+      <varInfo nodeId="6017652711700380617" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="39" startPosition="84" endLine="43" endPosition="16" />
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="6017652711700380617" varName="editorContext" />
+      <varInfo nodeId="6017652711700380617" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6017652711700380623" fileName="AddNodeHasErrorMark_Intention.java" startLine="50" startPosition="76" endLine="54" endPosition="40">
       <varInfo nodeId="6017652711700380625" varName="newAnnotation" />
     </scopeInfo>
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="49" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="6017652711700380617" varName="editorContext" />
+      <varInfo nodeId="6017652711700380617" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="49" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="6017652711700380617" varName="editorContext" />
+      <varInfo nodeId="6017652711700380617" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="15" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddNodeHasErrorMark_Intention" />
   </root>
 </debugInfo>

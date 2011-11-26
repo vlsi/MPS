@@ -91,7 +91,9 @@
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="180" startPosition="31" endLine="180" endPosition="31" />
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="183" startPosition="84" endLine="183" endPosition="84" />
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="187" startPosition="11" endLine="187" endPosition="11" />
-    <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="188" startPosition="0" endLine="188" endPosition="37" />
+    <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="188" startPosition="0" endLine="188" endPosition="37">
+      <varInfo nodeId="258639336594455174" varName="re" />
+    </scopeInfo>
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="188" startPosition="37" endLine="188" endPosition="37" />
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="36" startPosition="32" endLine="37" endPosition="94" />
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="40" startPosition="38" endLine="41" endPosition="19" />
@@ -119,10 +121,15 @@
     <scopeInfo nodeId="994937056134597788" fileName="CopyTraceInfo_Facet.java" startLine="92" startPosition="84" endLine="94" endPosition="109">
       <varInfo nodeId="834312300517875098" varName="copy" />
     </scopeInfo>
-    <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="173" startPosition="61" endLine="175" endPosition="15" />
+    <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="173" startPosition="61" endLine="175" endPosition="15">
+      <varInfo nodeId="258639336594466423" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="179" startPosition="74" endLine="181" endPosition="5" />
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="35" startPosition="0" endLine="38" endPosition="3" />
-    <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="182" startPosition="0" endLine="185" endPosition="0" />
+    <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="182" startPosition="0" endLine="185" endPosition="0">
+      <varInfo nodeId="258639336594455174" varName="properties" />
+      <varInfo nodeId="258639336594455174" varName="store" />
+    </scopeInfo>
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="186" startPosition="83" endLine="189" endPosition="7" />
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
@@ -130,8 +137,12 @@
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="258639336594480909" fileName="CopyTraceInfo_Facet.java" startLine="108" startPosition="86" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988215" fileName="CopyTraceInfo_Facet.java" startLine="113" startPosition="102" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="258639336594480909" fileName="CopyTraceInfo_Facet.java" startLine="108" startPosition="86" endLine="112" endPosition="0">
+      <varInfo nodeId="258639336594480909" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="6648795410103988215" fileName="CopyTraceInfo_Facet.java" startLine="113" startPosition="102" endLine="117" endPosition="0">
+      <varInfo nodeId="6648795410103988215" varName="ftc" />
+    </scopeInfo>
     <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="128" startPosition="0" endLine="132" endPosition="0" />
     <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="132" startPosition="0" endLine="136" endPosition="0" />
     <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
@@ -142,16 +153,26 @@
     <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="156" startPosition="0" endLine="160" endPosition="0" />
     <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="160" startPosition="0" endLine="164" endPosition="0" />
     <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="164" startPosition="0" endLine="168" endPosition="0" />
-    <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="168" startPosition="0" endLine="172" endPosition="0" />
+    <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="168" startPosition="0" endLine="172" endPosition="0">
+      <varInfo nodeId="258639336594466423" varName="cls" />
+    </scopeInfo>
     <scopeInfo nodeId="1670948443106485499" fileName="CopyTraceInfo_Facet.java" startLine="91" startPosition="64" endLine="96" endPosition="36" />
-    <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="172" startPosition="0" endLine="177" endPosition="0" />
-    <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="185" startPosition="0" endLine="191" endPosition="0" />
+    <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="172" startPosition="0" endLine="177" endPosition="0">
+      <varInfo nodeId="258639336594466423" varName="cls" />
+      <varInfo nodeId="258639336594466423" varName="copyFrom" />
+    </scopeInfo>
+    <scopeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="185" startPosition="0" endLine="191" endPosition="0">
+      <varInfo nodeId="258639336594455174" varName="properties" />
+      <varInfo nodeId="258639336594455174" varName="store" />
+    </scopeInfo>
     <scopeInfo nodeId="1670948443106485494" fileName="CopyTraceInfo_Facet.java" startLine="89" startPosition="63" endLine="98" endPosition="0">
       <varInfo nodeId="1670948443106485497" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="1611229975416546811" fileName="CopyTraceInfo_Facet.java" startLine="88" startPosition="48" endLine="98" endPosition="23" />
     <scopeInfo nodeId="3736430118459669530" fileName="CopyTraceInfo_Facet.java" startLine="107" startPosition="39" endLine="117" endPosition="25" />
-    <scopeInfo nodeId="1611229975416546810" fileName="CopyTraceInfo_Facet.java" startLine="87" startPosition="85" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="1611229975416546810" fileName="CopyTraceInfo_Facet.java" startLine="87" startPosition="85" endLine="100" endPosition="0">
+      <varInfo nodeId="1611229975416546810" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="3736430118459669527" fileName="CopyTraceInfo_Facet.java" startLine="106" startPosition="70" endLine="119" endPosition="0" />
     <scopeInfo nodeId="1986840443401665514" fileName="CopyTraceInfo_Facet.java" startLine="105" startPosition="35" endLine="119" endPosition="21" />
     <scopeInfo nodeId="1986840443401665513" fileName="CopyTraceInfo_Facet.java" startLine="104" startPosition="63" endLine="121" endPosition="0" />
@@ -166,8 +187,14 @@
       <varInfo nodeId="834312300517875109" varName="toCopy" />
       <varInfo nodeId="258639336594480869" varName="toCreate" />
     </scopeInfo>
-    <scopeInfo nodeId="258639336594466425" fileName="CopyTraceInfo_Facet.java" startLine="75" startPosition="122" endLine="124" endPosition="11" />
-    <scopeInfo nodeId="258639336594466425" fileName="CopyTraceInfo_Facet.java" startLine="74" startPosition="30" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="258639336594466425" fileName="CopyTraceInfo_Facet.java" startLine="75" startPosition="122" endLine="124" endPosition="11">
+      <varInfo nodeId="258639336594466425" varName="_output_zgz0lb_a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="258639336594466425" fileName="CopyTraceInfo_Facet.java" startLine="74" startPosition="30" endLine="126" endPosition="0">
+      <varInfo nodeId="258639336594466425" varName="input" />
+      <varInfo nodeId="258639336594466425" varName="monitor" />
+      <varInfo nodeId="258639336594466425" varName="pa" />
+    </scopeInfo>
     <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="73" startPosition="29" endLine="126" endPosition="8" />
     <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="72" startPosition="0" endLine="128" endPosition="0" />
     <unitInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="32" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet" />

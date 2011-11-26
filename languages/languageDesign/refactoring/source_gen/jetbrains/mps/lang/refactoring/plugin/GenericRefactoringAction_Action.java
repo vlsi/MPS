@@ -97,7 +97,7 @@ public class GenericRefactoringAction_Action extends GeneratedAction {
       new Thread() {
         public void run() {
           context.setRefactoring(GenericRefactoringAction_Action.this.refactoring);
-          new RefactoringFacade().execute(context);
+          new RefactoringFacade().executeInThread(context);
         }
       }.start();
     } catch (Throwable t) {

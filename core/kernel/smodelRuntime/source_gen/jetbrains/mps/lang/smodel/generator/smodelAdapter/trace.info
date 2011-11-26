@@ -34,7 +34,9 @@
     <scopeInfo nodeId="1101499704720825524" fileName="SEnumOperations.java" startLine="44" startPosition="39" endLine="45" endPosition="243" />
     <scopeInfo nodeId="1101499704720825544" fileName="SEnumOperations.java" startLine="51" startPosition="24" endLine="52" endPosition="251" />
     <scopeInfo nodeId="1101499704720825564" fileName="SEnumOperations.java" startLine="55" startPosition="39" endLine="56" endPosition="80" />
-    <scopeInfo nodeId="1101499704720825439" fileName="SEnumOperations.java" startLine="18" startPosition="170" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1101499704720825439" fileName="SEnumOperations.java" startLine="18" startPosition="170" endLine="22" endPosition="0">
+      <varInfo nodeId="1101499704720825439" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1101499704720825456" fileName="SEnumOperations.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1101499704720825465" varName="enumm" />
     </scopeInfo>
@@ -48,8 +50,12 @@
     <scopeInfo nodeId="1101499704720825492" fileName="SEnumOperations.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="1101499704720825503" varName="member" />
     </scopeInfo>
-    <scopeInfo nodeId="1101499704720825523" fileName="SEnumOperations.java" startLine="43" startPosition="133" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1101499704720825563" fileName="SEnumOperations.java" startLine="54" startPosition="130" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1101499704720825523" fileName="SEnumOperations.java" startLine="43" startPosition="133" endLine="47" endPosition="0">
+      <varInfo nodeId="1101499704720825523" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1101499704720825563" fileName="SEnumOperations.java" startLine="54" startPosition="130" endLine="58" endPosition="0">
+      <varInfo nodeId="1101499704720825563" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1101499704720825508" fileName="SEnumOperations.java" startLine="41" startPosition="73" endLine="47" endPosition="8">
       <varInfo nodeId="1101499704720825510" varName="enumNode" />
     </scopeInfo>
@@ -253,7 +259,9 @@
       <varInfo nodeId="6407023681583031181" varName="node" />
       <varInfo nodeId="6407023681583031183" varName="oldRole" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583007505" fileName="AttributeOperations.java" startLine="41" startPosition="125" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="6407023681583007505" fileName="AttributeOperations.java" startLine="41" startPosition="125" endLine="45" endPosition="0">
+      <varInfo nodeId="6407023681583007505" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="6407023681583011540" fileName="AttributeOperations.java" startLine="81" startPosition="51" endLine="85" endPosition="44" />
     <scopeInfo nodeId="6407023681583065614" fileName="AttributeOperations.java" startLine="95" startPosition="91" endLine="99" endPosition="6" />
     <scopeInfo nodeId="6407023681583065781" fileName="AttributeOperations.java" startLine="101" startPosition="0" endLine="105" endPosition="0">
@@ -325,8 +333,12 @@
       <varInfo nodeId="1287809918884497539" varName="node" />
       <varInfo nodeId="1287809918884497541" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="4507439356949661427" fileName="AttributeOperations.java" startLine="183" startPosition="208" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="1113897827127266134" fileName="AttributeOperations.java" startLine="187" startPosition="41" endLine="191" endPosition="0" />
+    <scopeInfo nodeId="4507439356949661427" fileName="AttributeOperations.java" startLine="183" startPosition="208" endLine="187" endPosition="0">
+      <varInfo nodeId="4507439356949661427" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1113897827127266134" fileName="AttributeOperations.java" startLine="187" startPosition="41" endLine="191" endPosition="0">
+      <varInfo nodeId="1113897827127266134" varName="name" />
+    </scopeInfo>
     <scopeInfo nodeId="1287809918884497459" fileName="AttributeOperations.java" startLine="193" startPosition="0" endLine="197" endPosition="0">
       <varInfo nodeId="1287809918884497477" varName="linkAttribute" />
       <varInfo nodeId="1287809918884497475" varName="linkRole" />
@@ -353,8 +365,12 @@
       <varInfo nodeId="1287809918884497598" varName="linkRole" />
       <varInfo nodeId="1287809918884497596" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4507439356949661459" fileName="AttributeOperations.java" startLine="215" startPosition="204" endLine="219" endPosition="0" />
-    <scopeInfo nodeId="1113897827127263987" fileName="AttributeOperations.java" startLine="219" startPosition="41" endLine="223" endPosition="0" />
+    <scopeInfo nodeId="4507439356949661459" fileName="AttributeOperations.java" startLine="215" startPosition="204" endLine="219" endPosition="0">
+      <varInfo nodeId="4507439356949661459" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1113897827127263987" fileName="AttributeOperations.java" startLine="219" startPosition="41" endLine="223" endPosition="0">
+      <varInfo nodeId="1113897827127263987" varName="role" />
+    </scopeInfo>
     <scopeInfo nodeId="6407023681583065639" fileName="AttributeOperations.java" startLine="228" startPosition="0" endLine="232" endPosition="5">
       <varInfo nodeId="6407023681583065648" varName="attributed" />
       <varInfo nodeId="6407023681583065650" varName="descriptor" />
@@ -370,7 +386,9 @@
       <varInfo nodeId="6407023681583065698" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6407023681582958594" fileName="AttributeOperations.java" startLine="40" startPosition="98" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="6407023681583016440" fileName="AttributeOperations.java" startLine="71" startPosition="100" endLine="76" endPosition="5" />
+    <scopeInfo nodeId="6407023681583016440" fileName="AttributeOperations.java" startLine="71" startPosition="100" endLine="76" endPosition="5">
+      <varInfo nodeId="6407023681583016440" varName="attribute" />
+    </scopeInfo>
     <scopeInfo nodeId="6407023681583065766" fileName="AttributeOperations.java" startLine="129" startPosition="49" endLine="134" endPosition="70">
       <varInfo nodeId="8647109073523579963" varName="role" />
     </scopeInfo>
@@ -1165,7 +1183,9 @@
     </scopeInfo>
     <scopeInfo nodeId="6599163591527280928" fileName="SModelOperations.java" startLine="157" startPosition="61" endLine="161" endPosition="16" />
     <scopeInfo nodeId="6599163591527280950" fileName="SModelOperations.java" startLine="164" startPosition="51" endLine="168" endPosition="31" />
-    <scopeInfo nodeId="8920265417895136665" fileName="SModelOperations.java" startLine="182" startPosition="117" endLine="186" endPosition="0" />
+    <scopeInfo nodeId="8920265417895136665" fileName="SModelOperations.java" startLine="182" startPosition="117" endLine="186" endPosition="0">
+      <varInfo nodeId="8920265417895136665" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="6599163591527280390" fileName="SModelOperations.java" startLine="197" startPosition="74" endLine="201" endPosition="6" />
     <scopeInfo nodeId="6599163591527280418" fileName="SModelOperations.java" startLine="38" startPosition="32" endLine="43" endPosition="20">
       <varInfo nodeId="6599163591527280420" varName="result" />
@@ -1190,7 +1210,10 @@
     <scopeInfo nodeId="6599163591527280945" fileName="SModelOperations.java" startLine="163" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="6599163591527280948" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527280390" fileName="SModelOperations.java" startLine="196" startPosition="0" endLine="203" endPosition="0" />
+    <scopeInfo nodeId="6599163591527280390" fileName="SModelOperations.java" startLine="196" startPosition="0" endLine="203" endPosition="0">
+      <varInfo nodeId="6599163591527280390" varName="a" />
+      <varInfo nodeId="6599163591527280390" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="6599163591527280585" fileName="SModelOperations.java" startLine="78" startPosition="105" endLine="89" endPosition="67">
       <varInfo nodeId="6599163591527280615" varName="concept" />
     </scopeInfo>

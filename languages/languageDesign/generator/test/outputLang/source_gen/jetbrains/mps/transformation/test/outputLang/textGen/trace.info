@@ -24,7 +24,9 @@
     <scopeInfo nodeId="1236704266066" fileName="OutputNode_TextGen.java" startLine="19" startPosition="100" endLine="26" endPosition="23" />
     <scopeInfo nodeId="1237463992348" fileName="OutputNode_TextGen.java" startLine="19" startPosition="100" endLine="26" endPosition="23" />
     <scopeInfo nodeId="1236704181256" fileName="OutputNode_TextGen.java" startLine="13" startPosition="42" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="1236704181256" fileName="OutputNode_TextGen.java" startLine="12" startPosition="54" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1236704181256" fileName="OutputNode_TextGen.java" startLine="12" startPosition="54" endLine="29" endPosition="0">
+      <varInfo nodeId="1236704181256" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1236704181256" fileName="OutputNode_TextGen.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.textGen.OutputNode_TextGen" />
   </root>
   <root nodeId="1236704302588">
@@ -61,7 +63,9 @@
     </scopeInfo>
     <scopeInfo nodeId="1237463992181" fileName="OutputRoot_TextGen.java" startLine="12" startPosition="42" endLine="21" endPosition="7" />
     <scopeInfo nodeId="1236704302588" fileName="OutputRoot_TextGen.java" startLine="12" startPosition="42" endLine="33" endPosition="5" />
-    <scopeInfo nodeId="1236704302588" fileName="OutputRoot_TextGen.java" startLine="11" startPosition="54" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1236704302588" fileName="OutputRoot_TextGen.java" startLine="11" startPosition="54" endLine="35" endPosition="0">
+      <varInfo nodeId="1236704302588" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1236704302588" fileName="OutputRoot_TextGen.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.textGen.OutputRoot_TextGen" />
   </root>
 </debugInfo>

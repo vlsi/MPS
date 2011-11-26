@@ -28,7 +28,9 @@
     <scopeInfo nodeId="1291978361072223868" fileName="CompositeResult.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1291978361072223873" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="8057264969877337080" fileName="CompositeResult.java" startLine="29" startPosition="105" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="8057264969877337080" fileName="CompositeResult.java" startLine="29" startPosition="105" endLine="33" endPosition="0">
+      <varInfo nodeId="8057264969877337080" varName="r" />
+    </scopeInfo>
     <scopeInfo nodeId="1291978361072214472" fileName="CompositeResult.java" startLine="36" startPosition="39" endLine="40" endPosition="88" />
     <scopeInfo nodeId="1291978361072214439" fileName="CompositeResult.java" startLine="28" startPosition="32" endLine="33" endPosition="7" />
     <scopeInfo nodeId="1291978361072214467" fileName="CompositeResult.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
@@ -222,7 +224,10 @@
     <scopeInfo nodeId="5589305777382265479" fileName="AbstractProgressStrategy.java" startLine="23" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="5589305777382265482" varName="wrk" />
     </scopeInfo>
-    <scopeInfo nodeId="5589305777382265132" fileName="AbstractProgressStrategy.java" startLine="44" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="5589305777382265132" fileName="AbstractProgressStrategy.java" startLine="44" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="5589305777382265132" varName="a" />
+      <varInfo nodeId="5589305777382265132" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="5589305777382267198" fileName="AbstractProgressStrategy.java" startLine="67" startPosition="67" endLine="74" endPosition="55" />
     <scopeInfo nodeId="8530713690800023597" fileName="AbstractProgressStrategy.java" startLine="80" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="8530713690800023600" varName="comment" />
@@ -645,7 +650,9 @@
       <varInfo nodeId="6168415856807657671" varName="defaultTargetName" />
       <varInfo nodeId="6168415856807657669" varName="targetRange" />
     </scopeInfo>
-    <scopeInfo nodeId="4314104530874080005" fileName="Script.java" startLine="79" startPosition="157" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="4314104530874080005" fileName="Script.java" startLine="79" startPosition="157" endLine="83" endPosition="0">
+      <varInfo nodeId="4314104530874080005" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="5566937012378944706" fileName="Script.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="6168415856807657543" fileName="Script.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="6168415856807657551" fileName="Script.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
@@ -654,11 +661,19 @@
       <varInfo nodeId="6168415856807657599" varName="o" />
     </scopeInfo>
     <scopeInfo nodeId="7130238060580894267" fileName="Script.java" startLine="232" startPosition="57" endLine="236" endPosition="15" />
-    <scopeInfo nodeId="7130238060580894328" fileName="Script.java" startLine="245" startPosition="114" endLine="249" endPosition="0" />
-    <scopeInfo nodeId="7130238060580894339" fileName="Script.java" startLine="249" startPosition="65" endLine="253" endPosition="0" />
-    <scopeInfo nodeId="7130238060580894388" fileName="Script.java" startLine="261" startPosition="118" endLine="265" endPosition="0" />
+    <scopeInfo nodeId="7130238060580894328" fileName="Script.java" startLine="245" startPosition="114" endLine="249" endPosition="0">
+      <varInfo nodeId="7130238060580894328" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7130238060580894339" fileName="Script.java" startLine="249" startPosition="65" endLine="253" endPosition="0">
+      <varInfo nodeId="7130238060580894339" varName="r" />
+    </scopeInfo>
+    <scopeInfo nodeId="7130238060580894388" fileName="Script.java" startLine="261" startPosition="118" endLine="265" endPosition="0">
+      <varInfo nodeId="7130238060580894388" varName="ifc" />
+    </scopeInfo>
     <scopeInfo nodeId="7130238060580894409" fileName="Script.java" startLine="271" startPosition="59" endLine="275" endPosition="23" />
-    <scopeInfo nodeId="7130238060580894484" fileName="Script.java" startLine="285" startPosition="103" endLine="289" endPosition="0" />
+    <scopeInfo nodeId="7130238060580894484" fileName="Script.java" startLine="285" startPosition="103" endLine="289" endPosition="0">
+      <varInfo nodeId="7130238060580894484" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="800904592173542479" fileName="Script.java" startLine="312" startPosition="0" endLine="316" endPosition="19">
       <varInfo nodeId="800904592173542480" varName="to" />
     </scopeInfo>
@@ -712,7 +727,10 @@
     <scopeInfo nodeId="3754120030656252227" fileName="Script.java" startLine="378" startPosition="0" endLine="384" endPosition="0">
       <varInfo nodeId="3754120030656252230" varName="ppool" />
     </scopeInfo>
-    <scopeInfo nodeId="7130238060580894266" fileName="Script.java" startLine="231" startPosition="105" endLine="238" endPosition="0" />
+    <scopeInfo nodeId="7130238060580894266" fileName="Script.java" startLine="231" startPosition="105" endLine="238" endPosition="0">
+      <varInfo nodeId="7130238060580894266" varName="it" />
+      <varInfo nodeId="7130238060580894266" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="2958721966247271788" fileName="Script.java" startLine="398" startPosition="0" endLine="405" endPosition="0">
       <varInfo nodeId="2958721966247271791" varName="ppool" />
     </scopeInfo>
@@ -721,7 +739,9 @@
     <scopeInfo nodeId="2892614774105532346" fileName="Script.java" startLine="110" startPosition="35" endLine="118" endPosition="15">
       <varInfo nodeId="2892614774105532352" varName="trg" />
     </scopeInfo>
-    <scopeInfo nodeId="7130238060580894380" fileName="Script.java" startLine="259" startPosition="131" endLine="267" endPosition="0" />
+    <scopeInfo nodeId="7130238060580894380" fileName="Script.java" startLine="259" startPosition="131" endLine="267" endPosition="0">
+      <varInfo nodeId="7130238060580894380" varName="res" />
+    </scopeInfo>
     <scopeInfo nodeId="7130238060580893278" fileName="Script.java" startLine="333" startPosition="15" endLine="341" endPosition="13">
       <varInfo nodeId="7130238060580893253" varName="cfg" />
     </scopeInfo>
@@ -755,8 +775,12 @@
       <varInfo nodeId="6872280991287272249" varName="target" />
     </scopeInfo>
     <scopeInfo nodeId="7130238060580893273" fileName="Script.java" startLine="331" startPosition="47" endLine="348" endPosition="9" />
-    <scopeInfo nodeId="7130238060580893274" fileName="Script.java" startLine="331" startPosition="47" endLine="348" endPosition="9" />
-    <scopeInfo nodeId="7130238060580893272" fileName="Script.java" startLine="330" startPosition="79" endLine="350" endPosition="0" />
+    <scopeInfo nodeId="7130238060580893274" fileName="Script.java" startLine="331" startPosition="47" endLine="348" endPosition="9">
+      <varInfo nodeId="7130238060580893274" varName="trg" />
+    </scopeInfo>
+    <scopeInfo nodeId="7130238060580893272" fileName="Script.java" startLine="330" startPosition="79" endLine="350" endPosition="0">
+      <varInfo nodeId="7130238060580893272" varName="cmon" />
+    </scopeInfo>
     <scopeInfo nodeId="7130238060580893267" fileName="Script.java" startLine="329" startPosition="156" endLine="350" endPosition="7" />
     <scopeInfo nodeId="6168415856807657492" fileName="Script.java" startLine="65" startPosition="26" endLine="87" endPosition="21" />
     <scopeInfo nodeId="7130238060580893259" fileName="Script.java" startLine="328" startPosition="0" endLine="352" endPosition="0">
@@ -772,7 +796,9 @@
     <scopeInfo nodeId="5599300738479603516" fileName="Script.java" startLine="139" startPosition="49" endLine="188" endPosition="16" />
     <scopeInfo nodeId="5599300738479603516" fileName="Script.java" startLine="138" startPosition="42" endLine="190" endPosition="0" />
     <scopeInfo nodeId="5599300738479603516" fileName="Script.java" startLine="137" startPosition="62" endLine="190" endPosition="12" />
-    <scopeInfo nodeId="5599300738479603516" fileName="Script.java" startLine="136" startPosition="158" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="5599300738479603516" fileName="Script.java" startLine="136" startPosition="158" endLine="192" endPosition="0">
+      <varInfo nodeId="5599300738479603516" varName="tn" />
+    </scopeInfo>
     <scopeInfo nodeId="7130238060580894311" fileName="Script.java" startLine="243" startPosition="15" endLine="311" endPosition="73">
       <varInfo nodeId="7130238060580894223" varName="impre" />
       <varInfo nodeId="7130238060580894230" varName="input" />
@@ -782,7 +808,9 @@
       <varInfo nodeId="7130238060580894227" varName="rawInput" />
     </scopeInfo>
     <scopeInfo nodeId="7130238060580894300" fileName="Script.java" startLine="241" startPosition="68" endLine="322" endPosition="11" />
-    <scopeInfo nodeId="7130238060580894298" fileName="Script.java" startLine="240" startPosition="0" endLine="323" endPosition="9" />
+    <scopeInfo nodeId="7130238060580894298" fileName="Script.java" startLine="240" startPosition="0" endLine="323" endPosition="9">
+      <varInfo nodeId="7130238060580894298" varName="trg" />
+    </scopeInfo>
     <scopeInfo nodeId="7480932071789576287" fileName="Script.java" startLine="127" startPosition="9" endLine="221" endPosition="21">
       <varInfo nodeId="5646063728432304705" varName="ctl" />
       <varInfo nodeId="6872280991287272357" varName="pool" />
@@ -794,7 +822,9 @@
       <varInfo nodeId="7130238060580894220" varName="scriptName" />
       <varInfo nodeId="7130238060580894221" varName="work" />
     </scopeInfo>
-    <scopeInfo nodeId="7130238060580894255" fileName="Script.java" startLine="228" startPosition="73" endLine="326" endPosition="0" />
+    <scopeInfo nodeId="7130238060580894255" fileName="Script.java" startLine="228" startPosition="73" endLine="326" endPosition="0">
+      <varInfo nodeId="7130238060580894255" varName="monit" />
+    </scopeInfo>
     <scopeInfo nodeId="6168415856807657610" fileName="Script.java" startLine="125" startPosition="124" endLine="224" endPosition="5" />
     <scopeInfo nodeId="7130238060580894250" fileName="Script.java" startLine="227" startPosition="203" endLine="326" endPosition="7" />
     <scopeInfo nodeId="6168415856807657603" fileName="Script.java" startLine="124" startPosition="0" endLine="226" endPosition="0">
@@ -1015,20 +1045,36 @@
     <scopeInfo nodeId="6168415856807658929" fileName="TargetRange.java" startLine="161" startPosition="64" endLine="164" endPosition="7" />
     <scopeInfo nodeId="6168415856807658952" fileName="TargetRange.java" startLine="166" startPosition="63" endLine="169" endPosition="7" />
     <scopeInfo nodeId="6168415856807658385" fileName="TargetRange.java" startLine="185" startPosition="59" endLine="188" endPosition="27" />
-    <scopeInfo nodeId="6168415856807658650" fileName="TargetRange.java" startLine="43" startPosition="210" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="6168415856807658728" fileName="TargetRange.java" startLine="55" startPosition="137" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1668362517005010797" fileName="TargetRange.java" startLine="69" startPosition="210" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1668362517005010878" fileName="TargetRange.java" startLine="81" startPosition="138" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="6168415856807658650" fileName="TargetRange.java" startLine="43" startPosition="210" endLine="47" endPosition="0">
+      <varInfo nodeId="6168415856807658650" varName="trg" />
+    </scopeInfo>
+    <scopeInfo nodeId="6168415856807658728" fileName="TargetRange.java" startLine="55" startPosition="137" endLine="59" endPosition="0">
+      <varInfo nodeId="6168415856807658728" varName="tn" />
+    </scopeInfo>
+    <scopeInfo nodeId="1668362517005010797" fileName="TargetRange.java" startLine="69" startPosition="210" endLine="73" endPosition="0">
+      <varInfo nodeId="1668362517005010797" varName="trg" />
+    </scopeInfo>
+    <scopeInfo nodeId="1668362517005010878" fileName="TargetRange.java" startLine="81" startPosition="138" endLine="85" endPosition="0">
+      <varInfo nodeId="1668362517005010878" varName="tn" />
+    </scopeInfo>
     <scopeInfo nodeId="6168415856807658765" fileName="TargetRange.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="6168415856807658766" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="6168415856807658775" fileName="TargetRange.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="6168415856807658784" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="6168415856807658796" fileName="TargetRange.java" startLine="103" startPosition="130" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="5566937012378945006" fileName="TargetRange.java" startLine="114" startPosition="131" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="1291978361072220633" fileName="TargetRange.java" startLine="125" startPosition="121" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="1291978361072220654" fileName="TargetRange.java" startLine="129" startPosition="54" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="6168415856807658796" fileName="TargetRange.java" startLine="103" startPosition="130" endLine="107" endPosition="0">
+      <varInfo nodeId="6168415856807658796" varName="tn" />
+    </scopeInfo>
+    <scopeInfo nodeId="5566937012378945006" fileName="TargetRange.java" startLine="114" startPosition="131" endLine="118" endPosition="0">
+      <varInfo nodeId="5566937012378945006" varName="tn" />
+    </scopeInfo>
+    <scopeInfo nodeId="1291978361072220633" fileName="TargetRange.java" startLine="125" startPosition="121" endLine="129" endPosition="0">
+      <varInfo nodeId="1291978361072220633" varName="tn" />
+    </scopeInfo>
+    <scopeInfo nodeId="1291978361072220654" fileName="TargetRange.java" startLine="129" startPosition="54" endLine="133" endPosition="0">
+      <varInfo nodeId="1291978361072220654" varName="tn" />
+    </scopeInfo>
     <scopeInfo nodeId="6168415856807658806" fileName="TargetRange.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
     <scopeInfo nodeId="6168415856807658817" fileName="TargetRange.java" startLine="139" startPosition="0" endLine="143" endPosition="0" />
     <scopeInfo nodeId="6168415856807658412" fileName="TargetRange.java" startLine="190" startPosition="0" endLine="194" endPosition="0" />
@@ -1049,12 +1095,20 @@
     <scopeInfo nodeId="7082294419594885843" fileName="TargetRange.java" startLine="230" startPosition="0" endLine="234" endPosition="0" />
     <scopeInfo nodeId="2878100257845923140" fileName="TargetRange.java" startLine="234" startPosition="0" endLine="238" endPosition="0" />
     <scopeInfo nodeId="2224665722255585795" fileName="TargetRange.java" startLine="238" startPosition="0" endLine="242" endPosition="0" />
-    <scopeInfo nodeId="6168415856807658531" fileName="TargetRange.java" startLine="258" startPosition="118" endLine="262" endPosition="0" />
-    <scopeInfo nodeId="6168415856807658556" fileName="TargetRange.java" startLine="267" startPosition="119" endLine="271" endPosition="0" />
+    <scopeInfo nodeId="6168415856807658531" fileName="TargetRange.java" startLine="258" startPosition="118" endLine="262" endPosition="0">
+      <varInfo nodeId="6168415856807658531" varName="tn" />
+    </scopeInfo>
+    <scopeInfo nodeId="6168415856807658556" fileName="TargetRange.java" startLine="267" startPosition="119" endLine="271" endPosition="0">
+      <varInfo nodeId="6168415856807658556" varName="tn" />
+    </scopeInfo>
     <scopeInfo nodeId="6168415856807658604" fileName="TargetRange.java" startLine="34" startPosition="38" endLine="39" endPosition="5" />
     <scopeInfo nodeId="6168415856807658788" fileName="TargetRange.java" startLine="102" startPosition="44" endLine="107" endPosition="7" />
-    <scopeInfo nodeId="6168415856807658924" fileName="TargetRange.java" startLine="160" startPosition="133" endLine="165" endPosition="5" />
-    <scopeInfo nodeId="6168415856807658947" fileName="TargetRange.java" startLine="165" startPosition="5" endLine="170" endPosition="5" />
+    <scopeInfo nodeId="6168415856807658924" fileName="TargetRange.java" startLine="160" startPosition="133" endLine="165" endPosition="5">
+      <varInfo nodeId="6168415856807658924" varName="bf" />
+    </scopeInfo>
+    <scopeInfo nodeId="6168415856807658947" fileName="TargetRange.java" startLine="165" startPosition="5" endLine="170" endPosition="5">
+      <varInfo nodeId="6168415856807658947" varName="bf" />
+    </scopeInfo>
     <scopeInfo nodeId="6168415856807658382" fileName="TargetRange.java" startLine="184" startPosition="0" endLine="189" endPosition="5">
       <varInfo nodeId="6168415856807658407" varName="first" />
       <varInfo nodeId="6168415856807658409" varName="second" />
@@ -1071,7 +1125,9 @@
     </scopeInfo>
     <scopeInfo nodeId="6168415856807658786" fileName="TargetRange.java" startLine="101" startPosition="0" endLine="109" endPosition="0" />
     <scopeInfo nodeId="5566937012378944998" fileName="TargetRange.java" startLine="110" startPosition="75" endLine="118" endPosition="7" />
-    <scopeInfo nodeId="6168415856807658970" fileName="TargetRange.java" startLine="170" startPosition="5" endLine="178" endPosition="5" />
+    <scopeInfo nodeId="6168415856807658970" fileName="TargetRange.java" startLine="170" startPosition="5" endLine="178" endPosition="5">
+      <varInfo nodeId="6168415856807658970" varName="m" />
+    </scopeInfo>
     <scopeInfo nodeId="6168415856807658828" fileName="TargetRange.java" startLine="143" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="6168415856807658831" varName="trg" />
     </scopeInfo>

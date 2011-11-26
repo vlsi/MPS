@@ -118,7 +118,9 @@
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="103" startPosition="39" endLine="104" endPosition="40" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="108" startPosition="211" endLine="109" endPosition="20" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="113" startPosition="11" endLine="114" endPosition="84" />
-    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="115" startPosition="0" endLine="116" endPosition="39" />
+    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="115" startPosition="0" endLine="116" endPosition="39">
+      <varInfo nodeId="1209150022679" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="115" startPosition="45" endLine="116" endPosition="39" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="117" startPosition="17" endLine="118" endPosition="70" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="141" startPosition="31" endLine="142" endPosition="50" />
@@ -131,12 +133,16 @@
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="137" startPosition="21" endLine="139" endPosition="89" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="146" startPosition="17" endLine="148" endPosition="81" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="154" startPosition="68" endLine="156" endPosition="5" />
-    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="181" startPosition="142" endLine="183" endPosition="20" />
+    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="181" startPosition="142" endLine="183" endPosition="20">
+      <varInfo nodeId="1209150022679" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="37" startPosition="43" endLine="40" endPosition="103" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1209150022679" varName="generator" />
+    </scopeInfo>
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
@@ -154,15 +160,33 @@
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="165" startPosition="0" endLine="169" endPosition="0" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="169" startPosition="0" endLine="173" endPosition="0" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="174" startPosition="127" endLine="178" endPosition="18" />
-    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="36" startPosition="0" endLine="41" endPosition="3" />
-    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="180" startPosition="0" endLine="185" endPosition="0" />
-    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="173" startPosition="0" endLine="180" endPosition="0" />
+    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="36" startPosition="0" endLine="41" endPosition="3">
+      <varInfo nodeId="1209150022679" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="180" startPosition="0" endLine="185" endPosition="0">
+      <varInfo nodeId="1209150022679" varName="context" />
+      <varInfo nodeId="1209150022679" varName="environment" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="173" startPosition="0" endLine="180" endPosition="0">
+      <varInfo nodeId="1209150022679" varName="context" />
+      <varInfo nodeId="1209150022679" varName="environment" />
+    </scopeInfo>
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="107" startPosition="147" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="130" startPosition="9" endLine="144" endPosition="33" />
-    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="106" startPosition="0" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="130" startPosition="9" endLine="144" endPosition="33">
+      <varInfo nodeId="1209150022679" varName="tnode2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="106" startPosition="0" endLine="122" endPosition="0">
+      <varInfo nodeId="1209150022679" varName="context" />
+      <varInfo nodeId="1209150022679" varName="environment" />
+    </scopeInfo>
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="126" startPosition="11" endLine="145" endPosition="9" />
-    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="123" startPosition="143" endLine="150" endPosition="48" />
-    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="122" startPosition="0" endLine="152" endPosition="0" />
+    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="123" startPosition="143" endLine="150" endPosition="48">
+      <varInfo nodeId="1209150022679" varName="tnode1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="122" startPosition="0" endLine="152" endPosition="0">
+      <varInfo nodeId="1209150022679" varName="context" />
+      <varInfo nodeId="1209150022679" varName="environment" />
+    </scopeInfo>
     <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="25" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain" />
     <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="91" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$ReductionRule0" />
     <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="154" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$RootMappingRule0" />
@@ -261,19 +285,38 @@
     <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="114" startPosition="15" endLine="116" endPosition="78" />
     <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="48" startPosition="17" endLine="51" endPosition="0" />
     <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="63" startPosition="17" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="78" startPosition="17" endLine="81" endPosition="201" />
-    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="84" startPosition="13" endLine="87" endPosition="13" />
+    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="78" startPosition="17" endLine="81" endPosition="201">
+      <varInfo nodeId="1209150125542" varName="copySrcInput5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="84" startPosition="13" endLine="87" endPosition="13">
+      <varInfo nodeId="1209150125542" varName="child6" />
+    </scopeInfo>
     <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="101" startPosition="13" endLine="104" endPosition="0" />
     <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="76" startPosition="11" endLine="88" endPosition="35" />
-    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="46" startPosition="11" endLine="59" endPosition="35" />
-    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="61" startPosition="11" endLine="74" endPosition="35" />
-    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="99" startPosition="7" endLine="112" endPosition="31" />
+    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="76" startPosition="11" endLine="88" endPosition="35">
+      <varInfo nodeId="1209150125542" varName="tlist5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="46" startPosition="11" endLine="59" endPosition="35">
+      <varInfo nodeId="1209150125542" varName="tnode3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="61" startPosition="11" endLine="74" endPosition="35">
+      <varInfo nodeId="1209150125542" varName="tnode4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="99" startPosition="7" endLine="112" endPosition="31">
+      <varInfo nodeId="1209150125542" varName="tnode7" />
+    </scopeInfo>
     <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="41" startPosition="13" endLine="89" endPosition="11" />
-    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="39" startPosition="7" endLine="97" endPosition="31" />
+    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="39" startPosition="7" endLine="97" endPosition="31">
+      <varInfo nodeId="1209150125542" varName="tnode2" />
+    </scopeInfo>
     <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="34" startPosition="9" endLine="113" endPosition="7" />
-    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="32" startPosition="158" endLine="118" endPosition="46" />
-    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="31" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="32" startPosition="158" endLine="118" endPosition="46">
+      <varInfo nodeId="1209150125542" varName="tnode1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="31" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="1209150125542" varName="context" />
+      <varInfo nodeId="1209150125542" varName="environment" />
+    </scopeInfo>
     <unitInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="16" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Templateout__class" />
   </root>
 </debugInfo>

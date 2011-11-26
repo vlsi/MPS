@@ -113,7 +113,9 @@
     </scopeInfo>
     <scopeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="66" startPosition="27" endLine="72" endPosition="28" />
     <scopeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="73" startPosition="27" endLine="79" endPosition="28" />
-    <scopeInfo nodeId="1189585833182" fileName="QueriesUtil.java" startLine="112" startPosition="18" endLine="118" endPosition="5" />
+    <scopeInfo nodeId="1189585833182" fileName="QueriesUtil.java" startLine="112" startPosition="18" endLine="118" endPosition="5">
+      <varInfo nodeId="1189585833182" varName="curItem" />
+    </scopeInfo>
     <scopeInfo nodeId="1186773435545" fileName="QueriesUtil.java" startLine="37" startPosition="107" endLine="45" endPosition="86">
       <varInfo nodeId="1186775150070" varName="ancestor" />
     </scopeInfo>
@@ -145,7 +147,9 @@
     <scopeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="53" startPosition="45" endLine="102" endPosition="14" />
     <scopeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="52" startPosition="38" endLine="104" endPosition="0" />
     <scopeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="51" startPosition="56" endLine="104" endPosition="10" />
-    <scopeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="50" startPosition="113" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="50" startPosition="113" endLine="106" endPosition="0">
+      <varInfo nodeId="1227876793089" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1186775920906" fileName="QueriesUtil.java" startLine="48" startPosition="103" endLine="107" endPosition="56">
       <varInfo nodeId="1186776238854" varName="ancestors" />
       <varInfo nodeId="1186776253123" varName="outputClasses" />

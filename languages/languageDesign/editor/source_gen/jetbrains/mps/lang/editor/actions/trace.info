@@ -337,7 +337,9 @@
     <scopeInfo nodeId="226730285127012662" fileName="QueriesGenerated.java" startLine="764" startPosition="98" endLine="766" endPosition="41">
       <varInfo nodeId="226730285127399210" varName="abstractOperation" />
     </scopeInfo>
-    <scopeInfo nodeId="226730285127018095" fileName="QueriesGenerated.java" startLine="753" startPosition="80" endLine="757" endPosition="0" />
+    <scopeInfo nodeId="226730285127018095" fileName="QueriesGenerated.java" startLine="753" startPosition="80" endLine="757" endPosition="0">
+      <varInfo nodeId="226730285127018095" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="226730285127012660" fileName="QueriesGenerated.java" startLine="741" startPosition="37" endLine="757" endPosition="32">
       <varInfo nodeId="3903367331817991757" varName="emptyList" />
       <varInfo nodeId="226730285127399053" varName="list" />

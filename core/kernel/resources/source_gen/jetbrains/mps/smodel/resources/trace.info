@@ -20,11 +20,17 @@
     <scopeInfo nodeId="1290126658903852188" fileName="DResource.java" startLine="28" startPosition="65" endLine="29" endPosition="42" />
     <scopeInfo nodeId="2708838034905939900" fileName="DResource.java" startLine="32" startPosition="28" endLine="33" endPosition="16" />
     <scopeInfo nodeId="1290126658903852188" fileName="DResource.java" startLine="10" startPosition="101" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1290126658903852188" fileName="DResource.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="1290126658903852188" fileName="DResource.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1290126658903852188" fileName="DResource.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="1290126658903852188" varName="delta" />
+    </scopeInfo>
+    <scopeInfo nodeId="1290126658903852188" fileName="DResource.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="1290126658903852188" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1290126658903852188" fileName="DResource.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="2708838034905939897" fileName="DResource.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1290126658903852188" fileName="DResource.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1290126658903852188" fileName="DResource.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1290126658903852188" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="1290126658903852188" fileName="DResource.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.smodel.resources.DResource" />
   </root>
   <root nodeId="1390934629233975240">
@@ -67,16 +73,28 @@
     <scopeInfo nodeId="2708838034905939906" fileName="TResource.java" startLine="52" startPosition="28" endLine="53" endPosition="16" />
     <scopeInfo nodeId="834312300517864804" fileName="TResource.java" startLine="56" startPosition="40" endLine="57" endPosition="71" />
     <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="14" startPosition="149" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
+      <varInfo nodeId="2257725414731981663" varName="delta" />
+      <varInfo nodeId="2257725414731981663" varName="modelDescriptor" />
+      <varInfo nodeId="2257725414731981663" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="2257725414731981663" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="2257725414731981663" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="2257725414731981663" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="2708838034905939903" fileName="TResource.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="834312300517864801" fileName="TResource.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="46" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="46" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="2257725414731981663" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="14" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.smodel.resources.TResource" />
   </root>
   <root nodeId="2257725414731981668">
@@ -117,17 +135,32 @@
     <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="54" startPosition="120" endLine="55" endPosition="42" />
     <scopeInfo nodeId="2708838034905939912" fileName="GResource.java" startLine="58" startPosition="28" endLine="59" endPosition="16" />
     <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="12" startPosition="152" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="2257725414731981668" varName="model" />
+      <varInfo nodeId="2257725414731981668" varName="module" />
+      <varInfo nodeId="2257725414731981668" varName="retainedModels" />
+      <varInfo nodeId="2257725414731981668" varName="status" />
+    </scopeInfo>
+    <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="2257725414731981668" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="2257725414731981668" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="2257725414731981668" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="2257725414731981668" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="2708838034905939909" fileName="GResource.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="52" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="52" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="2257725414731981668" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="12" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.smodel.resources.GResource" />
   </root>
   <root nodeId="2257725414731981680">
@@ -159,14 +192,23 @@
     <scopeInfo nodeId="2708838034905920971" fileName="MResource.java" startLine="44" startPosition="28" endLine="45" endPosition="91" />
     <scopeInfo nodeId="5555789605584709647" fileName="MResource.java" startLine="48" startPosition="40" endLine="49" endPosition="71" />
     <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="14" startPosition="141" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
+      <varInfo nodeId="2257725414731981680" varName="models" />
+      <varInfo nodeId="2257725414731981680" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="2257725414731981680" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="2257725414731981680" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="2708838034905920968" fileName="MResource.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="5555789605584709644" fileName="MResource.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="38" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="2257725414731981680" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="14" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.smodel.resources.MResource" />
   </root>
   <root nodeId="5555789605584709649">
@@ -282,17 +324,32 @@
     <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="53" startPosition="103" endLine="54" endPosition="42" />
     <scopeInfo nodeId="2708838034905939918" fileName="FResource.java" startLine="57" startPosition="28" endLine="58" endPosition="16" />
     <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="11" startPosition="124" endLine="14" endPosition="3" />
-    <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="695262645445904871" varName="contents" />
+      <varInfo nodeId="695262645445904871" varName="model" />
+      <varInfo nodeId="695262645445904871" varName="module" />
+      <varInfo nodeId="695262645445904871" varName="packageName" />
+    </scopeInfo>
+    <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="695262645445904871" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="695262645445904871" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="695262645445904871" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="695262645445904871" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="2708838034905939915" fileName="FResource.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="51" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="695262645445904871" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="695262645445904871" fileName="FResource.java" startLine="11" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.smodel.resources.FResource" />
   </root>
   <root nodeId="695262645445911158">
@@ -315,11 +372,17 @@
     <scopeInfo nodeId="695262645445911158" fileName="CResource.java" startLine="28" startPosition="61" endLine="29" endPosition="42" />
     <scopeInfo nodeId="2708838034905939893" fileName="CResource.java" startLine="32" startPosition="28" endLine="33" endPosition="16" />
     <scopeInfo nodeId="695262645445911158" fileName="CResource.java" startLine="10" startPosition="92" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="695262645445911158" fileName="CResource.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="695262645445911158" fileName="CResource.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="695262645445911158" fileName="CResource.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="695262645445911158" varName="classes" />
+    </scopeInfo>
+    <scopeInfo nodeId="695262645445911158" fileName="CResource.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="695262645445911158" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="695262645445911158" fileName="CResource.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="2708838034905939890" fileName="CResource.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="695262645445911158" fileName="CResource.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="695262645445911158" fileName="CResource.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="695262645445911158" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="695262645445911158" fileName="CResource.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.smodel.resources.CResource" />
   </root>
   <root nodeId="7219626660275504879">
@@ -403,7 +466,7 @@
     <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="72" startPosition="27" endLine="76" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="79" startPosition="28" endLine="83" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="86" startPosition="28" endLine="90" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3608835296802640805" fileName="ModelsToResources.java" startLine="142" startPosition="53" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/resources/MResource;)Ljetbrains/mps/make/resources/IResource;" />
+    <nodeInfo nodeId="3608835296802640805" fileName="ModelsToResources.java" startLine="142" startPosition="53" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljetbrains/mps/make/resources/IResource;" />
     <nodeInfo nodeId="3608835296802635773" fileName="ModelsToResources.java" startLine="29" startPosition="45" endLine="34" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7219626660275509691" fileName="ModelsToResources.java" startLine="27" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resources#(Z)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="52" startPosition="20" endLine="134" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
@@ -450,8 +513,12 @@
       <varInfo nodeId="3608835296802635842" varName="context" />
       <varInfo nodeId="7219626660275504885" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="3608835296802635779" fileName="ModelsToResources.java" startLine="30" startPosition="94" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="3608835296802640805" fileName="ModelsToResources.java" startLine="142" startPosition="53" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="3608835296802635779" fileName="ModelsToResources.java" startLine="30" startPosition="94" endLine="34" endPosition="0">
+      <varInfo nodeId="3608835296802635779" varName="desc" />
+    </scopeInfo>
+    <scopeInfo nodeId="3608835296802640805" fileName="ModelsToResources.java" startLine="142" startPosition="53" endLine="146" endPosition="0">
+      <varInfo nodeId="3608835296802640805" varName="r" />
+    </scopeInfo>
     <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="58" startPosition="27" endLine="64" endPosition="28" />
     <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="65" startPosition="27" endLine="71" endPosition="28" />
     <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="72" startPosition="27" endLine="78" endPosition="28" />
@@ -469,7 +536,9 @@
     <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="46" startPosition="49" endLine="138" endPosition="14" />
     <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="45" startPosition="42" endLine="140" endPosition="0" />
     <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="44" startPosition="72" endLine="140" endPosition="10" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="43" startPosition="194" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="43" startPosition="194" endLine="142" endPosition="0">
+      <varInfo nodeId="3608835296802640727" varName="smd" />
+    </scopeInfo>
     <scopeInfo nodeId="3608835296802538215" fileName="ModelsToResources.java" startLine="41" startPosition="80" endLine="146" endPosition="24">
       <varInfo nodeId="3608835296802538217" varName="models" />
     </scopeInfo>

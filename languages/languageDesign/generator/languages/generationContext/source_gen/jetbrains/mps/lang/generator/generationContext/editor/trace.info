@@ -124,36 +124,104 @@
     <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="120" startPosition="81" endLine="121" endPosition="66" />
     <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="130" startPosition="60" endLine="131" endPosition="44" />
     <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="40" startPosition="96" endLine="42" endPosition="76" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="51" />
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="51">
+      <varInfo nodeId="1216860146338" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="60" startPosition="87" endLine="62" endPosition="76" />
     <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="68" startPosition="87" endLine="70" endPosition="77" />
     <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="98" startPosition="26" endLine="100" endPosition="73" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="86" startPosition="35" endLine="89" endPosition="105" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="103" startPosition="35" endLine="106" endPosition="105" />
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="86" startPosition="35" endLine="89" endPosition="105">
+      <varInfo nodeId="1216860146338" varName="manager" />
+      <varInfo nodeId="1216860146338" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="103" startPosition="35" endLine="106" endPosition="105">
+      <varInfo nodeId="1216860146338" varName="manager" />
+      <varInfo nodeId="1216860146338" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="111" startPosition="69" endLine="114" endPosition="5" />
     <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="129" startPosition="28" endLine="132" endPosition="75" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="135" startPosition="37" endLine="138" endPosition="107" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="22" startPosition="92" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="135" startPosition="37" endLine="138" endPosition="107">
+      <varInfo nodeId="1216860146338" varName="manager" />
+      <varInfo nodeId="1216860146338" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="22" startPosition="92" endLine="26" endPosition="0">
+      <varInfo nodeId="1216860146338" varName="editorContext" />
+      <varInfo nodeId="1216860146338" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="79" startPosition="26" endLine="83" endPosition="73" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="39" startPosition="88" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="59" startPosition="88" endLine="64" endPosition="22" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="67" startPosition="88" endLine="72" endPosition="22" />
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="115" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="1216860146338" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="1216860146338" varName="editorContext" />
+      <varInfo nodeId="1216860146338" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="39" startPosition="88" endLine="44" endPosition="22">
+      <varInfo nodeId="1216860146338" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="59" startPosition="88" endLine="64" endPosition="22">
+      <varInfo nodeId="1216860146338" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="67" startPosition="88" endLine="72" endPosition="22">
+      <varInfo nodeId="1216860146338" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="48" startPosition="89" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="38" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="58" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="66" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="27" startPosition="89" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="47" startPosition="88" endLine="56" endPosition="22" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="26" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="46" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="94" startPosition="87" endLine="108" endPosition="22" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="75" startPosition="87" endLine="91" endPosition="22" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="124" startPosition="92" endLine="140" endPosition="24" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="93" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="74" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="123" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1216860146338" varName="editorContext" />
+      <varInfo nodeId="1216860146338" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="58" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1216860146338" varName="editorContext" />
+      <varInfo nodeId="1216860146338" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="66" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="1216860146338" varName="editorContext" />
+      <varInfo nodeId="1216860146338" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="27" startPosition="89" endLine="36" endPosition="22">
+      <varInfo nodeId="1216860146338" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="47" startPosition="88" endLine="56" endPosition="22">
+      <varInfo nodeId="1216860146338" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="26" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1216860146338" varName="editorContext" />
+      <varInfo nodeId="1216860146338" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="46" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1216860146338" varName="editorContext" />
+      <varInfo nodeId="1216860146338" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="94" startPosition="87" endLine="108" endPosition="22">
+      <varInfo nodeId="1216860146338" varName="attributeConcept" />
+      <varInfo nodeId="1216860146338" varName="attributeKind" />
+      <varInfo nodeId="1216860146338" varName="editorCell" />
+      <varInfo nodeId="1216860146338" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="75" startPosition="87" endLine="91" endPosition="22">
+      <varInfo nodeId="1216860146338" varName="attributeConcept" />
+      <varInfo nodeId="1216860146338" varName="attributeKind" />
+      <varInfo nodeId="1216860146338" varName="editorCell" />
+      <varInfo nodeId="1216860146338" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="124" startPosition="92" endLine="140" endPosition="24">
+      <varInfo nodeId="1216860146338" varName="attributeConcept" />
+      <varInfo nodeId="1216860146338" varName="attributeKind" />
+      <varInfo nodeId="1216860146338" varName="editorCell" />
+      <varInfo nodeId="1216860146338" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="93" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="1216860146338" varName="editorContext" />
+      <varInfo nodeId="1216860146338" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="74" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="1216860146338" varName="editorContext" />
+      <varInfo nodeId="1216860146338" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="123" startPosition="0" endLine="142" endPosition="0">
+      <varInfo nodeId="1216860146338" varName="editorContext" />
+      <varInfo nodeId="1216860146338" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="22" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetOutputByLabelAndInput_Editor" />
     <unitInfo nodeId="1216860146338" fileName="GenerationContextOp_GetOutputByLabelAndInput_Editor.java" startLine="111" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetOutputByLabelAndInput_Editor$_Inline_k5omkm_a1a" />
   </root>
@@ -228,22 +296,62 @@
     <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="67" startPosition="81" endLine="68" endPosition="66" />
     <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="77" startPosition="60" endLine="78" endPosition="44" />
     <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="32" startPosition="96" endLine="34" endPosition="76" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="50" startPosition="35" endLine="53" endPosition="105" />
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="50" startPosition="35" endLine="53" endPosition="105">
+      <varInfo nodeId="1216860146346" varName="manager" />
+      <varInfo nodeId="1216860146346" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="58" startPosition="69" endLine="61" endPosition="5" />
     <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="76" startPosition="28" endLine="79" endPosition="75" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="82" startPosition="37" endLine="85" endPosition="107" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="18" startPosition="84" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="82" startPosition="37" endLine="85" endPosition="107">
+      <varInfo nodeId="1216860146346" varName="manager" />
+      <varInfo nodeId="1216860146346" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="18" startPosition="84" endLine="22" endPosition="0">
+      <varInfo nodeId="1216860146346" varName="editorContext" />
+      <varInfo nodeId="1216860146346" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="43" startPosition="26" endLine="47" endPosition="73" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="23" startPosition="89" endLine="28" endPosition="22" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="31" startPosition="88" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="22" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="30" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="39" startPosition="87" endLine="55" endPosition="22" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="71" startPosition="92" endLine="87" endPosition="24" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="38" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="70" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1216860146346" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1216860146346" varName="editorContext" />
+      <varInfo nodeId="1216860146346" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="23" startPosition="89" endLine="28" endPosition="22">
+      <varInfo nodeId="1216860146346" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="31" startPosition="88" endLine="36" endPosition="22">
+      <varInfo nodeId="1216860146346" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1216860146346" varName="editorContext" />
+      <varInfo nodeId="1216860146346" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1216860146346" varName="editorContext" />
+      <varInfo nodeId="1216860146346" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="39" startPosition="87" endLine="55" endPosition="22">
+      <varInfo nodeId="1216860146346" varName="attributeConcept" />
+      <varInfo nodeId="1216860146346" varName="attributeKind" />
+      <varInfo nodeId="1216860146346" varName="editorCell" />
+      <varInfo nodeId="1216860146346" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="71" startPosition="92" endLine="87" endPosition="24">
+      <varInfo nodeId="1216860146346" varName="attributeConcept" />
+      <varInfo nodeId="1216860146346" varName="attributeKind" />
+      <varInfo nodeId="1216860146346" varName="editorCell" />
+      <varInfo nodeId="1216860146346" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="38" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="1216860146346" varName="editorContext" />
+      <varInfo nodeId="1216860146346" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="70" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="1216860146346" varName="editorContext" />
+      <varInfo nodeId="1216860146346" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="18" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetOutputByLabel_Editor" />
     <unitInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="58" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetOutputByLabel_Editor$_Inline_3dlbxb_a1a" />
   </root>
@@ -272,13 +380,29 @@
     <nodeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="27" startPosition="26" endLine="35" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="22" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_a81d8a_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="68" />
-    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="31" startPosition="5" endLine="33" endPosition="81" />
-    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="38" startPosition="35" endLine="41" endPosition="105" />
-    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="18" startPosition="72" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="31" startPosition="5" endLine="33" endPosition="81">
+      <varInfo nodeId="1217004808034" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="38" startPosition="35" endLine="41" endPosition="105">
+      <varInfo nodeId="1217004808034" varName="manager" />
+      <varInfo nodeId="1217004808034" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="18" startPosition="72" endLine="22" endPosition="0">
+      <varInfo nodeId="1217004808034" varName="editorContext" />
+      <varInfo nodeId="1217004808034" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="28" startPosition="58" endLine="34" endPosition="5" />
     <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="27" startPosition="26" endLine="35" endPosition="73" />
-    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="23" startPosition="94" endLine="43" endPosition="22" />
-    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="22" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="23" startPosition="94" endLine="43" endPosition="22">
+      <varInfo nodeId="1217004808034" varName="attributeConcept" />
+      <varInfo nodeId="1217004808034" varName="attributeKind" />
+      <varInfo nodeId="1217004808034" varName="editorCell" />
+      <varInfo nodeId="1217004808034" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="22" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1217004808034" varName="editorContext" />
+      <varInfo nodeId="1217004808034" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_Base_Editor" />
   </root>
   <root nodeId="1217882105986">
@@ -352,22 +476,62 @@
     <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="67" startPosition="81" endLine="68" endPosition="66" />
     <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="77" startPosition="60" endLine="78" endPosition="44" />
     <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="32" startPosition="100" endLine="34" endPosition="76" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="50" startPosition="35" endLine="53" endPosition="105" />
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="50" startPosition="35" endLine="53" endPosition="105">
+      <varInfo nodeId="1217882105986" varName="manager" />
+      <varInfo nodeId="1217882105986" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="58" startPosition="69" endLine="61" endPosition="5" />
     <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="76" startPosition="28" endLine="79" endPosition="75" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="82" startPosition="37" endLine="85" endPosition="107" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="18" startPosition="87" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="82" startPosition="37" endLine="85" endPosition="107">
+      <varInfo nodeId="1217882105986" varName="manager" />
+      <varInfo nodeId="1217882105986" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="18" startPosition="87" endLine="22" endPosition="0">
+      <varInfo nodeId="1217882105986" varName="editorContext" />
+      <varInfo nodeId="1217882105986" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="43" startPosition="26" endLine="47" endPosition="73" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="23" startPosition="89" endLine="28" endPosition="22" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="31" startPosition="88" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="22" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="30" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="39" startPosition="87" endLine="55" endPosition="22" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="71" startPosition="92" endLine="87" endPosition="24" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="38" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="70" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1217882105986" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1217882105986" varName="editorContext" />
+      <varInfo nodeId="1217882105986" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="23" startPosition="89" endLine="28" endPosition="22">
+      <varInfo nodeId="1217882105986" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="31" startPosition="88" endLine="36" endPosition="22">
+      <varInfo nodeId="1217882105986" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1217882105986" varName="editorContext" />
+      <varInfo nodeId="1217882105986" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1217882105986" varName="editorContext" />
+      <varInfo nodeId="1217882105986" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="39" startPosition="87" endLine="55" endPosition="22">
+      <varInfo nodeId="1217882105986" varName="attributeConcept" />
+      <varInfo nodeId="1217882105986" varName="attributeKind" />
+      <varInfo nodeId="1217882105986" varName="editorCell" />
+      <varInfo nodeId="1217882105986" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="71" startPosition="92" endLine="87" endPosition="24">
+      <varInfo nodeId="1217882105986" varName="attributeConcept" />
+      <varInfo nodeId="1217882105986" varName="attributeKind" />
+      <varInfo nodeId="1217882105986" varName="editorCell" />
+      <varInfo nodeId="1217882105986" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="38" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="1217882105986" varName="editorContext" />
+      <varInfo nodeId="1217882105986" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="70" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="1217882105986" varName="editorContext" />
+      <varInfo nodeId="1217882105986" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="18" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetPrevInputByLabel_Editor" />
     <unitInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="58" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetPrevInputByLabel_Editor$_Inline_swjj57_a1a" />
   </root>
@@ -435,18 +599,52 @@
     <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="41" startPosition="87" endLine="43" endPosition="76" />
     <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="49" startPosition="87" endLine="51" endPosition="77" />
     <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="60" startPosition="26" endLine="62" endPosition="73" />
-    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="65" startPosition="35" endLine="68" endPosition="105" />
-    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="17" startPosition="90" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="32" startPosition="88" endLine="37" endPosition="22" />
-    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="40" startPosition="88" endLine="45" endPosition="22" />
-    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="48" startPosition="88" endLine="53" endPosition="22" />
-    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22" />
-    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="31" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="39" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="47" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="56" startPosition="87" endLine="70" endPosition="22" />
-    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="55" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="65" startPosition="35" endLine="68" endPosition="105">
+      <varInfo nodeId="1217884859679" varName="manager" />
+      <varInfo nodeId="1217884859679" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="17" startPosition="90" endLine="21" endPosition="0">
+      <varInfo nodeId="1217884859679" varName="editorContext" />
+      <varInfo nodeId="1217884859679" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="32" startPosition="88" endLine="37" endPosition="22">
+      <varInfo nodeId="1217884859679" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="40" startPosition="88" endLine="45" endPosition="22">
+      <varInfo nodeId="1217884859679" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="48" startPosition="88" endLine="53" endPosition="22">
+      <varInfo nodeId="1217884859679" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22">
+      <varInfo nodeId="1217884859679" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="31" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1217884859679" varName="editorContext" />
+      <varInfo nodeId="1217884859679" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="39" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1217884859679" varName="editorContext" />
+      <varInfo nodeId="1217884859679" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1217884859679" varName="editorContext" />
+      <varInfo nodeId="1217884859679" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1217884859679" varName="editorContext" />
+      <varInfo nodeId="1217884859679" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="56" startPosition="87" endLine="70" endPosition="22">
+      <varInfo nodeId="1217884859679" varName="attributeConcept" />
+      <varInfo nodeId="1217884859679" varName="attributeKind" />
+      <varInfo nodeId="1217884859679" varName="editorCell" />
+      <varInfo nodeId="1217884859679" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="55" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="1217884859679" varName="editorContext" />
+      <varInfo nodeId="1217884859679" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetCopiedOutputByInput_Editor" />
   </root>
   <root nodeId="1217890062975">
@@ -528,27 +726,69 @@
     <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="80" />
     <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="32" startPosition="80" endLine="33" endPosition="81" />
     <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="97" startPosition="47" endLine="98" endPosition="113" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="41" startPosition="5" endLine="43" endPosition="51" />
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="41" startPosition="5" endLine="43" endPosition="51">
+      <varInfo nodeId="1217890062975" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="50" startPosition="87" endLine="52" endPosition="76" />
     <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="61" startPosition="26" endLine="63" endPosition="73" />
     <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="79" startPosition="58" endLine="81" endPosition="76" />
     <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="93" startPosition="149" endLine="95" endPosition="5" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="105" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="85" startPosition="35" endLine="88" endPosition="105" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="22" startPosition="88" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="105">
+      <varInfo nodeId="1217890062975" varName="manager" />
+      <varInfo nodeId="1217890062975" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="85" startPosition="35" endLine="88" endPosition="105">
+      <varInfo nodeId="1217890062975" varName="manager" />
+      <varInfo nodeId="1217890062975" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="22" startPosition="88" endLine="26" endPosition="0">
+      <varInfo nodeId="1217890062975" varName="editorContext" />
+      <varInfo nodeId="1217890062975" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="78" startPosition="26" endLine="82" endPosition="252" />
     <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="49" startPosition="88" endLine="54" endPosition="22" />
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="49" startPosition="88" endLine="54" endPosition="22">
+      <varInfo nodeId="1217890062975" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="38" startPosition="87" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="27" startPosition="89" endLine="34" endPosition="22" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="37" startPosition="88" endLine="46" endPosition="22" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="26" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="36" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="57" startPosition="87" endLine="71" endPosition="22" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="74" startPosition="95" endLine="90" endPosition="22" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="56" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="73" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="27" startPosition="89" endLine="34" endPosition="22">
+      <varInfo nodeId="1217890062975" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="48" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1217890062975" varName="editorContext" />
+      <varInfo nodeId="1217890062975" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="37" startPosition="88" endLine="46" endPosition="22">
+      <varInfo nodeId="1217890062975" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="26" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1217890062975" varName="editorContext" />
+      <varInfo nodeId="1217890062975" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="36" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1217890062975" varName="editorContext" />
+      <varInfo nodeId="1217890062975" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="57" startPosition="87" endLine="71" endPosition="22">
+      <varInfo nodeId="1217890062975" varName="attributeConcept" />
+      <varInfo nodeId="1217890062975" varName="attributeKind" />
+      <varInfo nodeId="1217890062975" varName="editorCell" />
+      <varInfo nodeId="1217890062975" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="74" startPosition="95" endLine="90" endPosition="22">
+      <varInfo nodeId="1217890062975" varName="attributeConcept" />
+      <varInfo nodeId="1217890062975" varName="attributeKind" />
+      <varInfo nodeId="1217890062975" varName="editorCell" />
+      <varInfo nodeId="1217890062975" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="56" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1217890062975" varName="editorContext" />
+      <varInfo nodeId="1217890062975" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="73" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="1217890062975" varName="editorContext" />
+      <varInfo nodeId="1217890062975" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="22" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_UserObjectAccessBase_Editor" />
     <unitInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="93" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_UserObjectAccessBase_Editor$ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_a0a0" />
   </root>
@@ -641,28 +881,76 @@
     <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="81" />
     <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="80" />
     <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="106" startPosition="47" endLine="107" endPosition="108" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="41" startPosition="5" endLine="43" endPosition="51" />
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="41" startPosition="5" endLine="43" endPosition="51">
+      <varInfo nodeId="1217960436029" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="53" startPosition="26" endLine="55" endPosition="73" />
     <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="70" startPosition="26" endLine="72" endPosition="73" />
     <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="88" startPosition="58" endLine="90" endPosition="76" />
     <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="102" startPosition="144" endLine="104" endPosition="5" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="58" startPosition="35" endLine="61" endPosition="105" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="75" startPosition="35" endLine="78" endPosition="105" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="94" startPosition="35" endLine="97" endPosition="105" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="22" startPosition="83" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="58" startPosition="35" endLine="61" endPosition="105">
+      <varInfo nodeId="1217960436029" varName="manager" />
+      <varInfo nodeId="1217960436029" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="75" startPosition="35" endLine="78" endPosition="105">
+      <varInfo nodeId="1217960436029" varName="manager" />
+      <varInfo nodeId="1217960436029" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="94" startPosition="35" endLine="97" endPosition="105">
+      <varInfo nodeId="1217960436029" varName="manager" />
+      <varInfo nodeId="1217960436029" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="22" startPosition="83" endLine="26" endPosition="0">
+      <varInfo nodeId="1217960436029" varName="editorContext" />
+      <varInfo nodeId="1217960436029" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="87" startPosition="26" endLine="91" endPosition="242" />
     <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
     <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="38" startPosition="88" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="27" startPosition="89" endLine="34" endPosition="22" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="37" startPosition="88" endLine="46" endPosition="22" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="26" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="36" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="49" startPosition="87" endLine="63" endPosition="22" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="66" startPosition="87" endLine="80" endPosition="22" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="83" startPosition="95" endLine="99" endPosition="22" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="48" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="65" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="82" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="27" startPosition="89" endLine="34" endPosition="22">
+      <varInfo nodeId="1217960436029" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="37" startPosition="88" endLine="46" endPosition="22">
+      <varInfo nodeId="1217960436029" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="26" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1217960436029" varName="editorContext" />
+      <varInfo nodeId="1217960436029" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="36" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1217960436029" varName="editorContext" />
+      <varInfo nodeId="1217960436029" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="49" startPosition="87" endLine="63" endPosition="22">
+      <varInfo nodeId="1217960436029" varName="attributeConcept" />
+      <varInfo nodeId="1217960436029" varName="attributeKind" />
+      <varInfo nodeId="1217960436029" varName="editorCell" />
+      <varInfo nodeId="1217960436029" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="66" startPosition="87" endLine="80" endPosition="22">
+      <varInfo nodeId="1217960436029" varName="attributeConcept" />
+      <varInfo nodeId="1217960436029" varName="attributeKind" />
+      <varInfo nodeId="1217960436029" varName="editorCell" />
+      <varInfo nodeId="1217960436029" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="83" startPosition="95" endLine="99" endPosition="22">
+      <varInfo nodeId="1217960436029" varName="attributeConcept" />
+      <varInfo nodeId="1217960436029" varName="attributeKind" />
+      <varInfo nodeId="1217960436029" varName="editorCell" />
+      <varInfo nodeId="1217960436029" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="48" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="1217960436029" varName="editorContext" />
+      <varInfo nodeId="1217960436029" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="65" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1217960436029" varName="editorContext" />
+      <varInfo nodeId="1217960436029" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="82" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="1217960436029" varName="editorContext" />
+      <varInfo nodeId="1217960436029" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="22" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ShowMessageBase_Editor" />
     <unitInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="102" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ShowMessageBase_Editor$ReplaceWith_GenerationContextOp_ShowMessageBase_cellMenu_a0a0" />
   </root>
@@ -784,27 +1072,87 @@
     <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="77" startPosition="87" endLine="79" endPosition="77" />
     <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="88" startPosition="26" endLine="90" endPosition="73" />
     <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="105" startPosition="26" endLine="107" endPosition="73" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="93" startPosition="35" endLine="96" endPosition="105" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="110" startPosition="35" endLine="113" endPosition="105" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="17" startPosition="84" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="36" startPosition="88" endLine="41" endPosition="22" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="44" startPosition="88" endLine="49" endPosition="22" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="52" startPosition="88" endLine="57" endPosition="22" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="60" startPosition="88" endLine="65" endPosition="22" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="68" startPosition="88" endLine="73" endPosition="22" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="76" startPosition="88" endLine="81" endPosition="22" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="35" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="43" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="51" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="59" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="67" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="75" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="22" startPosition="89" endLine="33" endPosition="22" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="21" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="84" startPosition="87" endLine="98" endPosition="22" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="101" startPosition="87" endLine="115" endPosition="22" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="83" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="100" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="93" startPosition="35" endLine="96" endPosition="105">
+      <varInfo nodeId="1218047951855" varName="manager" />
+      <varInfo nodeId="1218047951855" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="110" startPosition="35" endLine="113" endPosition="105">
+      <varInfo nodeId="1218047951855" varName="manager" />
+      <varInfo nodeId="1218047951855" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="17" startPosition="84" endLine="21" endPosition="0">
+      <varInfo nodeId="1218047951855" varName="editorContext" />
+      <varInfo nodeId="1218047951855" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="36" startPosition="88" endLine="41" endPosition="22">
+      <varInfo nodeId="1218047951855" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="44" startPosition="88" endLine="49" endPosition="22">
+      <varInfo nodeId="1218047951855" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="52" startPosition="88" endLine="57" endPosition="22">
+      <varInfo nodeId="1218047951855" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="60" startPosition="88" endLine="65" endPosition="22">
+      <varInfo nodeId="1218047951855" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="68" startPosition="88" endLine="73" endPosition="22">
+      <varInfo nodeId="1218047951855" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="76" startPosition="88" endLine="81" endPosition="22">
+      <varInfo nodeId="1218047951855" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="35" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1218047951855" varName="editorContext" />
+      <varInfo nodeId="1218047951855" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="43" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1218047951855" varName="editorContext" />
+      <varInfo nodeId="1218047951855" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="51" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1218047951855" varName="editorContext" />
+      <varInfo nodeId="1218047951855" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="59" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1218047951855" varName="editorContext" />
+      <varInfo nodeId="1218047951855" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="67" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="1218047951855" varName="editorContext" />
+      <varInfo nodeId="1218047951855" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="75" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1218047951855" varName="editorContext" />
+      <varInfo nodeId="1218047951855" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="22" startPosition="89" endLine="33" endPosition="22">
+      <varInfo nodeId="1218047951855" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="21" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1218047951855" varName="editorContext" />
+      <varInfo nodeId="1218047951855" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="84" startPosition="87" endLine="98" endPosition="22">
+      <varInfo nodeId="1218047951855" varName="attributeConcept" />
+      <varInfo nodeId="1218047951855" varName="attributeKind" />
+      <varInfo nodeId="1218047951855" varName="editorCell" />
+      <varInfo nodeId="1218047951855" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="101" startPosition="87" endLine="115" endPosition="22">
+      <varInfo nodeId="1218047951855" varName="attributeConcept" />
+      <varInfo nodeId="1218047951855" varName="attributeKind" />
+      <varInfo nodeId="1218047951855" varName="editorCell" />
+      <varInfo nodeId="1218047951855" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="83" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="1218047951855" varName="editorContext" />
+      <varInfo nodeId="1218047951855" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="100" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="1218047951855" varName="editorContext" />
+      <varInfo nodeId="1218047951855" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="17" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_CreateUniqueName_Editor" />
   </root>
   <root nodeId="1218067348270">
@@ -814,8 +1162,12 @@
     <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="15" startPosition="57" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="16" startPosition="62" endLine="17" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="11" startPosition="32" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getGenContext_operation#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
-    <scopeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="12" startPosition="70" endLine="17" endPosition="17" />
-    <scopeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="11" startPosition="32" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="12" startPosition="70" endLine="17" endPosition="17">
+      <varInfo nodeId="1218067348270" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="11" startPosition="32" endLine="19" endPosition="0">
+      <varInfo nodeId="1218067348270" varName="cell" />
+    </scopeInfo>
     <unitInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.Styles_StyleSheet" />
   </root>
   <root nodeId="1221156644527">
@@ -942,36 +1294,104 @@
     <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="120" startPosition="81" endLine="121" endPosition="66" />
     <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="130" startPosition="60" endLine="131" endPosition="44" />
     <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="40" startPosition="101" endLine="42" endPosition="76" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="51" />
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="51">
+      <varInfo nodeId="1221156644527" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="60" startPosition="87" endLine="62" endPosition="76" />
     <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="68" startPosition="87" endLine="70" endPosition="77" />
     <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="98" startPosition="26" endLine="100" endPosition="73" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="86" startPosition="35" endLine="89" endPosition="105" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="103" startPosition="35" endLine="106" endPosition="105" />
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="86" startPosition="35" endLine="89" endPosition="105">
+      <varInfo nodeId="1221156644527" varName="manager" />
+      <varInfo nodeId="1221156644527" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="103" startPosition="35" endLine="106" endPosition="105">
+      <varInfo nodeId="1221156644527" varName="manager" />
+      <varInfo nodeId="1221156644527" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="111" startPosition="69" endLine="114" endPosition="5" />
     <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="129" startPosition="28" endLine="132" endPosition="75" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="135" startPosition="37" endLine="138" endPosition="107" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="22" startPosition="96" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="135" startPosition="37" endLine="138" endPosition="107">
+      <varInfo nodeId="1221156644527" varName="manager" />
+      <varInfo nodeId="1221156644527" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="22" startPosition="96" endLine="26" endPosition="0">
+      <varInfo nodeId="1221156644527" varName="editorContext" />
+      <varInfo nodeId="1221156644527" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="79" startPosition="26" endLine="83" endPosition="73" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="39" startPosition="88" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="59" startPosition="88" endLine="64" endPosition="22" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="67" startPosition="88" endLine="72" endPosition="22" />
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="115" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="1221156644527" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="1221156644527" varName="editorContext" />
+      <varInfo nodeId="1221156644527" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="39" startPosition="88" endLine="44" endPosition="22">
+      <varInfo nodeId="1221156644527" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="59" startPosition="88" endLine="64" endPosition="22">
+      <varInfo nodeId="1221156644527" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="67" startPosition="88" endLine="72" endPosition="22">
+      <varInfo nodeId="1221156644527" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="48" startPosition="89" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="38" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="58" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="66" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="27" startPosition="89" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="47" startPosition="88" endLine="56" endPosition="22" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="26" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="46" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="94" startPosition="87" endLine="108" endPosition="22" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="75" startPosition="87" endLine="91" endPosition="22" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="124" startPosition="92" endLine="140" endPosition="24" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="93" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="74" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="123" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1221156644527" varName="editorContext" />
+      <varInfo nodeId="1221156644527" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="58" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1221156644527" varName="editorContext" />
+      <varInfo nodeId="1221156644527" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="66" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="1221156644527" varName="editorContext" />
+      <varInfo nodeId="1221156644527" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="27" startPosition="89" endLine="36" endPosition="22">
+      <varInfo nodeId="1221156644527" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="47" startPosition="88" endLine="56" endPosition="22">
+      <varInfo nodeId="1221156644527" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="26" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1221156644527" varName="editorContext" />
+      <varInfo nodeId="1221156644527" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="46" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1221156644527" varName="editorContext" />
+      <varInfo nodeId="1221156644527" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="94" startPosition="87" endLine="108" endPosition="22">
+      <varInfo nodeId="1221156644527" varName="attributeConcept" />
+      <varInfo nodeId="1221156644527" varName="attributeKind" />
+      <varInfo nodeId="1221156644527" varName="editorCell" />
+      <varInfo nodeId="1221156644527" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="75" startPosition="87" endLine="91" endPosition="22">
+      <varInfo nodeId="1221156644527" varName="attributeConcept" />
+      <varInfo nodeId="1221156644527" varName="attributeKind" />
+      <varInfo nodeId="1221156644527" varName="editorCell" />
+      <varInfo nodeId="1221156644527" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="124" startPosition="92" endLine="140" endPosition="24">
+      <varInfo nodeId="1221156644527" varName="attributeConcept" />
+      <varInfo nodeId="1221156644527" varName="attributeKind" />
+      <varInfo nodeId="1221156644527" varName="editorCell" />
+      <varInfo nodeId="1221156644527" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="93" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="1221156644527" varName="editorContext" />
+      <varInfo nodeId="1221156644527" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="74" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="1221156644527" varName="editorContext" />
+      <varInfo nodeId="1221156644527" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="123" startPosition="0" endLine="142" endPosition="0">
+      <varInfo nodeId="1221156644527" varName="editorContext" />
+      <varInfo nodeId="1221156644527" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="22" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetOutputListByLabelAndInput_Editor" />
     <unitInfo nodeId="1221156644527" fileName="GenerationContextOp_GetOutputListByLabelAndInput_Editor.java" startLine="111" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetOutputListByLabelAndInput_Editor$_Inline_5qqvz9_a1a" />
   </root>
@@ -1099,36 +1519,104 @@
     <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="120" startPosition="81" endLine="121" endPosition="65" />
     <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="130" startPosition="60" endLine="131" endPosition="44" />
     <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="40" startPosition="97" endLine="42" endPosition="76" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="51" />
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="51">
+      <varInfo nodeId="1221219511506" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="60" startPosition="87" endLine="62" endPosition="76" />
     <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="68" startPosition="87" endLine="70" endPosition="77" />
     <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="98" startPosition="26" endLine="100" endPosition="73" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="86" startPosition="35" endLine="89" endPosition="105" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="103" startPosition="35" endLine="106" endPosition="105" />
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="86" startPosition="35" endLine="89" endPosition="105">
+      <varInfo nodeId="1221219511506" varName="manager" />
+      <varInfo nodeId="1221219511506" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="103" startPosition="35" endLine="106" endPosition="105">
+      <varInfo nodeId="1221219511506" varName="manager" />
+      <varInfo nodeId="1221219511506" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="111" startPosition="68" endLine="114" endPosition="5" />
     <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="129" startPosition="28" endLine="132" endPosition="75" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="135" startPosition="37" endLine="138" endPosition="107" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="22" startPosition="109" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="135" startPosition="37" endLine="138" endPosition="107">
+      <varInfo nodeId="1221219511506" varName="manager" />
+      <varInfo nodeId="1221219511506" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="22" startPosition="109" endLine="26" endPosition="0">
+      <varInfo nodeId="1221219511506" varName="editorContext" />
+      <varInfo nodeId="1221219511506" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="79" startPosition="26" endLine="83" endPosition="73" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="39" startPosition="87" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="59" startPosition="87" endLine="64" endPosition="22" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="67" startPosition="87" endLine="72" endPosition="22" />
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="115" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="1221219511506" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="1221219511506" varName="editorContext" />
+      <varInfo nodeId="1221219511506" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="39" startPosition="87" endLine="44" endPosition="22">
+      <varInfo nodeId="1221219511506" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="59" startPosition="87" endLine="64" endPosition="22">
+      <varInfo nodeId="1221219511506" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="67" startPosition="87" endLine="72" endPosition="22">
+      <varInfo nodeId="1221219511506" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="48" startPosition="89" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="38" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="58" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="66" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="27" startPosition="88" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="47" startPosition="87" endLine="56" endPosition="22" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="26" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="46" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="94" startPosition="86" endLine="108" endPosition="22" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="75" startPosition="86" endLine="91" endPosition="22" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="124" startPosition="91" endLine="140" endPosition="24" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="93" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="74" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="123" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1221219511506" varName="editorContext" />
+      <varInfo nodeId="1221219511506" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="58" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1221219511506" varName="editorContext" />
+      <varInfo nodeId="1221219511506" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="66" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="1221219511506" varName="editorContext" />
+      <varInfo nodeId="1221219511506" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="27" startPosition="88" endLine="36" endPosition="22">
+      <varInfo nodeId="1221219511506" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="47" startPosition="87" endLine="56" endPosition="22">
+      <varInfo nodeId="1221219511506" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="26" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1221219511506" varName="editorContext" />
+      <varInfo nodeId="1221219511506" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="46" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1221219511506" varName="editorContext" />
+      <varInfo nodeId="1221219511506" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="94" startPosition="86" endLine="108" endPosition="22">
+      <varInfo nodeId="1221219511506" varName="attributeConcept" />
+      <varInfo nodeId="1221219511506" varName="attributeKind" />
+      <varInfo nodeId="1221219511506" varName="editorCell" />
+      <varInfo nodeId="1221219511506" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="75" startPosition="86" endLine="91" endPosition="22">
+      <varInfo nodeId="1221219511506" varName="attributeConcept" />
+      <varInfo nodeId="1221219511506" varName="attributeKind" />
+      <varInfo nodeId="1221219511506" varName="editorCell" />
+      <varInfo nodeId="1221219511506" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="124" startPosition="91" endLine="140" endPosition="24">
+      <varInfo nodeId="1221219511506" varName="attributeConcept" />
+      <varInfo nodeId="1221219511506" varName="attributeKind" />
+      <varInfo nodeId="1221219511506" varName="editorCell" />
+      <varInfo nodeId="1221219511506" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="93" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="1221219511506" varName="editorContext" />
+      <varInfo nodeId="1221219511506" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="74" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="1221219511506" varName="editorContext" />
+      <varInfo nodeId="1221219511506" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="123" startPosition="0" endLine="142" endPosition="0">
+      <varInfo nodeId="1221219511506" varName="editorContext" />
+      <varInfo nodeId="1221219511506" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="22" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor" />
     <unitInfo nodeId="1221219511506" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor.java" startLine="111" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor$_Inline_m29bq_a1a" />
   </root>
@@ -1196,18 +1684,52 @@
     <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="41" startPosition="87" endLine="43" endPosition="76" />
     <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="49" startPosition="87" endLine="51" endPosition="77" />
     <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="60" startPosition="26" endLine="62" endPosition="73" />
-    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="65" startPosition="35" endLine="68" endPosition="105" />
-    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="17" startPosition="98" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="32" startPosition="88" endLine="37" endPosition="22" />
-    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="40" startPosition="88" endLine="45" endPosition="22" />
-    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="48" startPosition="88" endLine="53" endPosition="22" />
-    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22" />
-    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="31" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="39" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="47" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="56" startPosition="87" endLine="70" endPosition="22" />
-    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="55" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="65" startPosition="35" endLine="68" endPosition="105">
+      <varInfo nodeId="1229477688085" varName="manager" />
+      <varInfo nodeId="1229477688085" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="17" startPosition="98" endLine="21" endPosition="0">
+      <varInfo nodeId="1229477688085" varName="editorContext" />
+      <varInfo nodeId="1229477688085" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="32" startPosition="88" endLine="37" endPosition="22">
+      <varInfo nodeId="1229477688085" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="40" startPosition="88" endLine="45" endPosition="22">
+      <varInfo nodeId="1229477688085" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="48" startPosition="88" endLine="53" endPosition="22">
+      <varInfo nodeId="1229477688085" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22">
+      <varInfo nodeId="1229477688085" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="31" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1229477688085" varName="editorContext" />
+      <varInfo nodeId="1229477688085" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="39" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1229477688085" varName="editorContext" />
+      <varInfo nodeId="1229477688085" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1229477688085" varName="editorContext" />
+      <varInfo nodeId="1229477688085" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1229477688085" varName="editorContext" />
+      <varInfo nodeId="1229477688085" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="56" startPosition="87" endLine="70" endPosition="22">
+      <varInfo nodeId="1229477688085" varName="attributeConcept" />
+      <varInfo nodeId="1229477688085" varName="attributeKind" />
+      <varInfo nodeId="1229477688085" varName="editorCell" />
+      <varInfo nodeId="1229477688085" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="55" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="1229477688085" varName="editorContext" />
+      <varInfo nodeId="1229477688085" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1229477688085" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetOriginalCopiedInputByOutput_Editor" />
   </root>
   <root nodeId="1758784108619220829">
@@ -1273,21 +1795,58 @@
     <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="56" startPosition="69" endLine="57" endPosition="67" />
     <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="60" startPosition="81" endLine="61" endPosition="66" />
     <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="37" startPosition="26" endLine="40" endPosition="73" />
-    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="43" startPosition="35" endLine="46" endPosition="105" />
+    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="43" startPosition="35" endLine="46" endPosition="105">
+      <varInfo nodeId="1758784108619220829" varName="manager" />
+      <varInfo nodeId="1758784108619220829" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="51" startPosition="69" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="72" startPosition="7" endLine="75" endPosition="68" />
-    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="80" startPosition="37" endLine="83" endPosition="107" />
-    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="21" startPosition="82" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="26" startPosition="89" endLine="30" endPosition="22" />
-    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="72" startPosition="7" endLine="75" endPosition="68">
+      <varInfo nodeId="1758784108619220829" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="80" startPosition="37" endLine="83" endPosition="107">
+      <varInfo nodeId="1758784108619220829" varName="manager" />
+      <varInfo nodeId="1758784108619220829" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="21" startPosition="82" endLine="25" endPosition="0">
+      <varInfo nodeId="1758784108619220829" varName="editorContext" />
+      <varInfo nodeId="1758784108619220829" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="26" startPosition="89" endLine="30" endPosition="22">
+      <varInfo nodeId="1758784108619220829" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1758784108619220829" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="1758784108619220829" varName="editorContext" />
+      <varInfo nodeId="1758784108619220829" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="70" startPosition="60" endLine="76" endPosition="7" />
-    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1758784108619220829" varName="editorContext" />
+      <varInfo nodeId="1758784108619220829" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="69" startPosition="28" endLine="77" endPosition="75" />
-    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="33" startPosition="87" endLine="48" endPosition="22" />
-    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="32" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="64" startPosition="92" endLine="85" endPosition="24" />
-    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="63" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="33" startPosition="87" endLine="48" endPosition="22">
+      <varInfo nodeId="1758784108619220829" varName="attributeConcept" />
+      <varInfo nodeId="1758784108619220829" varName="attributeKind" />
+      <varInfo nodeId="1758784108619220829" varName="editorCell" />
+      <varInfo nodeId="1758784108619220829" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="32" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1758784108619220829" varName="editorContext" />
+      <varInfo nodeId="1758784108619220829" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="64" startPosition="92" endLine="85" endPosition="24">
+      <varInfo nodeId="1758784108619220829" varName="attributeConcept" />
+      <varInfo nodeId="1758784108619220829" varName="attributeKind" />
+      <varInfo nodeId="1758784108619220829" varName="editorCell" />
+      <varInfo nodeId="1758784108619220829" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="63" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1758784108619220829" varName="editorContext" />
+      <varInfo nodeId="1758784108619220829" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_LinkPatternRef_Editor" />
     <unitInfo nodeId="1758784108619220829" fileName="GenerationContextOp_LinkPatternRef_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_LinkPatternRef_Editor$_Inline_m3gdfo_a0a" />
   </root>
@@ -1354,21 +1913,58 @@
     <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="56" startPosition="69" endLine="57" endPosition="67" />
     <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="60" startPosition="81" endLine="61" endPosition="66" />
     <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="37" startPosition="26" endLine="40" endPosition="73" />
-    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="43" startPosition="35" endLine="46" endPosition="105" />
+    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="43" startPosition="35" endLine="46" endPosition="105">
+      <varInfo nodeId="1758784108619220836" varName="manager" />
+      <varInfo nodeId="1758784108619220836" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="51" startPosition="69" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="72" startPosition="7" endLine="75" endPosition="68" />
-    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="80" startPosition="37" endLine="83" endPosition="107" />
-    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="21" startPosition="86" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="26" startPosition="89" endLine="30" endPosition="22" />
-    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="72" startPosition="7" endLine="75" endPosition="68">
+      <varInfo nodeId="1758784108619220836" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="80" startPosition="37" endLine="83" endPosition="107">
+      <varInfo nodeId="1758784108619220836" varName="manager" />
+      <varInfo nodeId="1758784108619220836" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="21" startPosition="86" endLine="25" endPosition="0">
+      <varInfo nodeId="1758784108619220836" varName="editorContext" />
+      <varInfo nodeId="1758784108619220836" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="26" startPosition="89" endLine="30" endPosition="22">
+      <varInfo nodeId="1758784108619220836" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1758784108619220836" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="1758784108619220836" varName="editorContext" />
+      <varInfo nodeId="1758784108619220836" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="70" startPosition="60" endLine="76" endPosition="7" />
-    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1758784108619220836" varName="editorContext" />
+      <varInfo nodeId="1758784108619220836" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="69" startPosition="28" endLine="77" endPosition="75" />
-    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="33" startPosition="87" endLine="48" endPosition="22" />
-    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="32" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="64" startPosition="92" endLine="85" endPosition="24" />
-    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="63" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="33" startPosition="87" endLine="48" endPosition="22">
+      <varInfo nodeId="1758784108619220836" varName="attributeConcept" />
+      <varInfo nodeId="1758784108619220836" varName="attributeKind" />
+      <varInfo nodeId="1758784108619220836" varName="editorCell" />
+      <varInfo nodeId="1758784108619220836" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="32" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1758784108619220836" varName="editorContext" />
+      <varInfo nodeId="1758784108619220836" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="64" startPosition="92" endLine="85" endPosition="24">
+      <varInfo nodeId="1758784108619220836" varName="attributeConcept" />
+      <varInfo nodeId="1758784108619220836" varName="attributeKind" />
+      <varInfo nodeId="1758784108619220836" varName="editorCell" />
+      <varInfo nodeId="1758784108619220836" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="63" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1758784108619220836" varName="editorContext" />
+      <varInfo nodeId="1758784108619220836" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_PropertyPatternRef_Editor" />
     <unitInfo nodeId="1758784108619220836" fileName="GenerationContextOp_PropertyPatternRef_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_PropertyPatternRef_Editor$_Inline_56eyyu_a0a" />
   </root>
@@ -1429,24 +2025,59 @@
     <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="71" startPosition="81" endLine="72" endPosition="79" />
     <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="87" startPosition="46" endLine="88" endPosition="53" />
     <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="91" startPosition="74" endLine="92" endPosition="64" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="46" startPosition="5" endLine="49" endPosition="60" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="54" startPosition="35" endLine="57" endPosition="105" />
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="46" startPosition="5" endLine="49" endPosition="60">
+      <varInfo nodeId="2507865635201650193" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="54" startPosition="35" endLine="57" endPosition="105">
+      <varInfo nodeId="2507865635201650193" varName="manager" />
+      <varInfo nodeId="2507865635201650193" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="62" startPosition="69" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="27" startPosition="83" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="32" startPosition="89" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="2507865635201650193" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="27" startPosition="83" endLine="31" endPosition="0">
+      <varInfo nodeId="2507865635201650193" varName="editorContext" />
+      <varInfo nodeId="2507865635201650193" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="32" startPosition="89" endLine="36" endPosition="22">
+      <varInfo nodeId="2507865635201650193" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="2507865635201650193" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="2507865635201650193" varName="editorContext" />
+      <varInfo nodeId="2507865635201650193" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2507865635201650204" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="77" startPosition="33" endLine="81" endPosition="12" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="2507865635201650193" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="45" startPosition="58" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="2507865635201650193" varName="editorContext" />
+      <varInfo nodeId="2507865635201650193" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="76" startPosition="102" endLine="83" endPosition="0" />
     <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="43" startPosition="26" endLine="51" endPosition="73" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="75" startPosition="117" endLine="93" endPosition="24" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="39" startPosition="87" endLine="59" endPosition="22" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="74" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="38" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="75" startPosition="117" endLine="93" endPosition="24">
+      <varInfo nodeId="2507865635201650193" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="39" startPosition="87" endLine="59" endPosition="22">
+      <varInfo nodeId="2507865635201650193" varName="attributeConcept" />
+      <varInfo nodeId="2507865635201650193" varName="attributeKind" />
+      <varInfo nodeId="2507865635201650193" varName="editorCell" />
+      <varInfo nodeId="2507865635201650193" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="74" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="2507865635201650193" varName="editorContext" />
+      <varInfo nodeId="2507865635201650193" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="38" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="2507865635201650193" varName="editorContext" />
+      <varInfo nodeId="2507865635201650193" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="27" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GenParameterRef_Editor" />
     <unitInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="76" startPosition="85" endLine="90" endPosition="7" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GenParameterRef_Editor$1" />
     <unitInfo nodeId="2507865635201650193" fileName="GenerationContextOp_GenParameterRef_Editor.java" startLine="62" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GenParameterRef_Editor$_Inline_h52dks_a0a" />
@@ -1514,21 +2145,58 @@
     <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="56" startPosition="69" endLine="57" endPosition="67" />
     <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="60" startPosition="81" endLine="61" endPosition="66" />
     <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="37" startPosition="26" endLine="40" endPosition="73" />
-    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="43" startPosition="35" endLine="46" endPosition="105" />
+    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="43" startPosition="35" endLine="46" endPosition="105">
+      <varInfo nodeId="4589968773278063830" varName="manager" />
+      <varInfo nodeId="4589968773278063830" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="51" startPosition="69" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="72" startPosition="7" endLine="75" endPosition="68" />
-    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="80" startPosition="37" endLine="83" endPosition="107" />
-    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="21" startPosition="82" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="26" startPosition="89" endLine="30" endPosition="22" />
-    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="72" startPosition="7" endLine="75" endPosition="68">
+      <varInfo nodeId="4589968773278063830" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="80" startPosition="37" endLine="83" endPosition="107">
+      <varInfo nodeId="4589968773278063830" varName="manager" />
+      <varInfo nodeId="4589968773278063830" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="21" startPosition="82" endLine="25" endPosition="0">
+      <varInfo nodeId="4589968773278063830" varName="editorContext" />
+      <varInfo nodeId="4589968773278063830" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="26" startPosition="89" endLine="30" endPosition="22">
+      <varInfo nodeId="4589968773278063830" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="4589968773278063830" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="4589968773278063830" varName="editorContext" />
+      <varInfo nodeId="4589968773278063830" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="70" startPosition="60" endLine="76" endPosition="7" />
-    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="4589968773278063830" varName="editorContext" />
+      <varInfo nodeId="4589968773278063830" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="69" startPosition="28" endLine="77" endPosition="75" />
-    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="33" startPosition="87" endLine="48" endPosition="22" />
-    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="32" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="64" startPosition="92" endLine="85" endPosition="24" />
-    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="63" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="33" startPosition="87" endLine="48" endPosition="22">
+      <varInfo nodeId="4589968773278063830" varName="attributeConcept" />
+      <varInfo nodeId="4589968773278063830" varName="attributeKind" />
+      <varInfo nodeId="4589968773278063830" varName="editorCell" />
+      <varInfo nodeId="4589968773278063830" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="32" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="4589968773278063830" varName="editorContext" />
+      <varInfo nodeId="4589968773278063830" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="64" startPosition="92" endLine="85" endPosition="24">
+      <varInfo nodeId="4589968773278063830" varName="attributeConcept" />
+      <varInfo nodeId="4589968773278063830" varName="attributeKind" />
+      <varInfo nodeId="4589968773278063830" varName="editorCell" />
+      <varInfo nodeId="4589968773278063830" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="63" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="4589968773278063830" varName="editorContext" />
+      <varInfo nodeId="4589968773278063830" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_NodePatternRef_Editor" />
     <unitInfo nodeId="4589968773278063830" fileName="GenerationContextOp_NodePatternRef_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_NodePatternRef_Editor$_Inline_i26oow_a0a" />
   </root>
@@ -1595,21 +2263,58 @@
     <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="56" startPosition="69" endLine="57" endPosition="67" />
     <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="60" startPosition="81" endLine="61" endPosition="66" />
     <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="37" startPosition="26" endLine="40" endPosition="73" />
-    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="43" startPosition="35" endLine="46" endPosition="105" />
+    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="43" startPosition="35" endLine="46" endPosition="105">
+      <varInfo nodeId="5190093307972736267" varName="manager" />
+      <varInfo nodeId="5190093307972736267" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="51" startPosition="69" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="72" startPosition="7" endLine="75" endPosition="68" />
-    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="80" startPosition="37" endLine="83" endPosition="107" />
-    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="21" startPosition="80" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="26" startPosition="89" endLine="30" endPosition="22" />
-    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="72" startPosition="7" endLine="75" endPosition="68">
+      <varInfo nodeId="5190093307972736267" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="80" startPosition="37" endLine="83" endPosition="107">
+      <varInfo nodeId="5190093307972736267" varName="manager" />
+      <varInfo nodeId="5190093307972736267" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="21" startPosition="80" endLine="25" endPosition="0">
+      <varInfo nodeId="5190093307972736267" varName="editorContext" />
+      <varInfo nodeId="5190093307972736267" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="26" startPosition="89" endLine="30" endPosition="22">
+      <varInfo nodeId="5190093307972736267" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="5190093307972736267" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="5190093307972736267" varName="editorContext" />
+      <varInfo nodeId="5190093307972736267" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="70" startPosition="60" endLine="76" endPosition="7" />
-    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="5190093307972736267" varName="editorContext" />
+      <varInfo nodeId="5190093307972736267" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="69" startPosition="28" endLine="77" endPosition="75" />
-    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="33" startPosition="87" endLine="48" endPosition="22" />
-    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="32" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="64" startPosition="92" endLine="85" endPosition="24" />
-    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="63" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="33" startPosition="87" endLine="48" endPosition="22">
+      <varInfo nodeId="5190093307972736267" varName="attributeConcept" />
+      <varInfo nodeId="5190093307972736267" varName="attributeKind" />
+      <varInfo nodeId="5190093307972736267" varName="editorCell" />
+      <varInfo nodeId="5190093307972736267" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="32" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="5190093307972736267" varName="editorContext" />
+      <varInfo nodeId="5190093307972736267" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="64" startPosition="92" endLine="85" endPosition="24">
+      <varInfo nodeId="5190093307972736267" varName="attributeConcept" />
+      <varInfo nodeId="5190093307972736267" varName="attributeKind" />
+      <varInfo nodeId="5190093307972736267" varName="editorCell" />
+      <varInfo nodeId="5190093307972736267" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="63" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="5190093307972736267" varName="editorContext" />
+      <varInfo nodeId="5190093307972736267" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ParameterRef_Editor" />
     <unitInfo nodeId="5190093307972736267" fileName="GenerationContextOp_ParameterRef_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ParameterRef_Editor$_Inline_e6tvy5_a0a" />
   </root>
@@ -1677,18 +2382,52 @@
     <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="41" startPosition="87" endLine="43" endPosition="85" />
     <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="49" startPosition="87" endLine="51" endPosition="77" />
     <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="60" startPosition="26" endLine="62" endPosition="73" />
-    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="65" startPosition="35" endLine="68" endPosition="105" />
-    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="17" startPosition="77" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="32" startPosition="88" endLine="37" endPosition="22" />
-    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="40" startPosition="88" endLine="45" endPosition="22" />
-    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="48" startPosition="88" endLine="53" endPosition="22" />
-    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22" />
-    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="31" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="39" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="47" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="56" startPosition="87" endLine="70" endPosition="22" />
-    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="55" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="65" startPosition="35" endLine="68" endPosition="105">
+      <varInfo nodeId="5403673535105109117" varName="manager" />
+      <varInfo nodeId="5403673535105109117" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="17" startPosition="77" endLine="21" endPosition="0">
+      <varInfo nodeId="5403673535105109117" varName="editorContext" />
+      <varInfo nodeId="5403673535105109117" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="32" startPosition="88" endLine="37" endPosition="22">
+      <varInfo nodeId="5403673535105109117" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="40" startPosition="88" endLine="45" endPosition="22">
+      <varInfo nodeId="5403673535105109117" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="48" startPosition="88" endLine="53" endPosition="22">
+      <varInfo nodeId="5403673535105109117" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22">
+      <varInfo nodeId="5403673535105109117" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="31" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="5403673535105109117" varName="editorContext" />
+      <varInfo nodeId="5403673535105109117" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="39" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="5403673535105109117" varName="editorContext" />
+      <varInfo nodeId="5403673535105109117" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="5403673535105109117" varName="editorContext" />
+      <varInfo nodeId="5403673535105109117" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="5403673535105109117" varName="editorContext" />
+      <varInfo nodeId="5403673535105109117" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="56" startPosition="87" endLine="70" endPosition="22">
+      <varInfo nodeId="5403673535105109117" varName="attributeConcept" />
+      <varInfo nodeId="5403673535105109117" varName="attributeKind" />
+      <varInfo nodeId="5403673535105109117" varName="editorCell" />
+      <varInfo nodeId="5403673535105109117" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="55" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="5403673535105109117" varName="editorContext" />
+      <varInfo nodeId="5403673535105109117" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="5403673535105109117" fileName="GenerationContextOp_DirtyNode_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_DirtyNode_Editor" />
   </root>
 </debugInfo>

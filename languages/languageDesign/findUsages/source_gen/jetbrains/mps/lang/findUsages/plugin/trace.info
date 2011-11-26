@@ -46,13 +46,26 @@
     <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="7157723551789065908" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="7157723551789065908" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="7157723551789065908" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="7157723551789065908" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="7157723551789065908" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="7157723551789065908" varName="concept" />
+      <varInfo nodeId="7157723551789065908" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
     <unitInfo nodeId="3911341278723469292" fileName="FindUsages_Order.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.findUsages.plugin.FindUsages_Order" />
     <unitInfo nodeId="7157723551789065908" fileName="Find_Usages_TabDescriptor.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.findUsages.plugin.Find_Usages_TabDescriptor" />

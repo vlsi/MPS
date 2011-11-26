@@ -119,8 +119,12 @@
     <scopeInfo nodeId="1906791586424054329" fileName="QueriesGenerated.java" startLine="306" startPosition="150" endLine="307" endPosition="73" />
     <scopeInfo nodeId="1906791586424054370" fileName="QueriesGenerated.java" startLine="310" startPosition="150" endLine="311" endPosition="74" />
     <scopeInfo nodeId="1906791586424011844" fileName="QueriesGenerated.java" startLine="314" startPosition="150" endLine="315" endPosition="73" />
-    <scopeInfo nodeId="5537134633111653674" fileName="QueriesGenerated.java" startLine="191" startPosition="198" endLine="195" endPosition="0" />
-    <scopeInfo nodeId="5537134633111653722" fileName="QueriesGenerated.java" startLine="197" startPosition="117" endLine="201" endPosition="0" />
+    <scopeInfo nodeId="5537134633111653674" fileName="QueriesGenerated.java" startLine="191" startPosition="198" endLine="195" endPosition="0">
+      <varInfo nodeId="5537134633111653674" varName="imd" />
+    </scopeInfo>
+    <scopeInfo nodeId="5537134633111653722" fileName="QueriesGenerated.java" startLine="197" startPosition="117" endLine="201" endPosition="0">
+      <varInfo nodeId="5537134633111653722" varName="p" />
+    </scopeInfo>
     <scopeInfo nodeId="8170824575195233651" fileName="QueriesGenerated.java" startLine="187" startPosition="151" endLine="203" endPosition="6">
       <varInfo nodeId="5537134633111843933" varName="cfgcls" />
       <varInfo nodeId="5537134633111653665" varName="imd" />

@@ -11,6 +11,7 @@ import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
@@ -49,7 +50,7 @@ public class MakeFieldStatic_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.NODE);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
       }
       MapSequence.fromMap(_params).put("field", node);
@@ -67,8 +68,12 @@ public class MakeFieldStatic_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("field")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
+      new Thread() {
+        public void run() {
+          new RefactoringFacade().executeInThread(c);
+        }
+      }.start();
 
-      new RefactoringFacade().execute(c);
 
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeFieldStatic", t);

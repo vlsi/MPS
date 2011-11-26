@@ -240,7 +240,9 @@
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="335" startPosition="35" endLine="336" endPosition="27" />
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="30" startPosition="0" endLine="32" endPosition="3" />
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="75" startPosition="26" endLine="77" endPosition="29" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="104" startPosition="67" endLine="106" endPosition="51" />
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="104" startPosition="67" endLine="106" endPosition="51">
+      <varInfo nodeId="651246788329803429" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="109" startPosition="32" endLine="111" endPosition="5" />
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="145" startPosition="0" endLine="147" endPosition="5" />
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="150" startPosition="64" endLine="152" endPosition="52" />
@@ -251,56 +253,164 @@
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="329" startPosition="0" endLine="331" endPosition="5" />
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="355" startPosition="0" endLine="357" endPosition="5" />
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="83" startPosition="54" endLine="86" endPosition="7" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="95" startPosition="54" endLine="98" endPosition="51" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="116" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="138" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="202" startPosition="35" endLine="205" endPosition="15" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="266" startPosition="35" endLine="269" endPosition="15" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="344" startPosition="35" endLine="347" endPosition="15" />
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="95" startPosition="54" endLine="98" endPosition="51">
+      <varInfo nodeId="651246788329803429" varName="name" />
+      <varInfo nodeId="651246788329803429" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="116" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="name" />
+      <varInfo nodeId="651246788329803429" varName="resultObject" />
+      <varInfo nodeId="651246788329803429" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="138" startPosition="0" endLine="141" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="resultObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="202" startPosition="35" endLine="205" endPosition="15">
+      <varInfo nodeId="651246788329803429" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="266" startPosition="35" endLine="269" endPosition="15">
+      <varInfo nodeId="651246788329803429" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="344" startPosition="35" endLine="347" endPosition="15">
+      <varInfo nodeId="651246788329803429" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="112" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="attrs" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="123" startPosition="0" endLine="127" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="resultObject" />
+      <varInfo nodeId="651246788329803429" varName="tagName" />
+      <varInfo nodeId="651246788329803429" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="128" startPosition="86" endLine="132" endPosition="64" />
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="334" startPosition="109" endLine="338" endPosition="40" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="82" startPosition="22" endLine="87" endPosition="5" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="94" startPosition="25" endLine="99" endPosition="5" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="103" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="37" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="locator" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="82" startPosition="22" endLine="87" endPosition="5">
+      <varInfo nodeId="651246788329803429" varName="attr" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="94" startPosition="25" endLine="99" endPosition="5">
+      <varInfo nodeId="651246788329803429" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="103" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="resultObject" />
+      <varInfo nodeId="651246788329803429" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="216" startPosition="0" endLine="221" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="252" startPosition="39" endLine="257" endPosition="15" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="259" startPosition="35" endLine="264" endPosition="15" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="280" startPosition="0" endLine="285" endPosition="0" />
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="252" startPosition="39" endLine="257" endPosition="15">
+      <varInfo nodeId="651246788329803429" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="259" startPosition="35" endLine="264" endPosition="15">
+      <varInfo nodeId="651246788329803429" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="280" startPosition="0" endLine="285" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="285" startPosition="0" endLine="290" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="292" startPosition="104" endLine="297" endPosition="55" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="306" startPosition="0" endLine="311" endPosition="0" />
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="292" startPosition="104" endLine="297" endPosition="55">
+      <varInfo nodeId="651246788329803429" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="306" startPosition="0" endLine="311" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="311" startPosition="0" endLine="316" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="318" startPosition="104" endLine="323" endPosition="55" />
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="318" startPosition="104" endLine="323" endPosition="55">
+      <varInfo nodeId="651246788329803429" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="59" startPosition="26" endLine="65" endPosition="7" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="148" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="127" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="342" startPosition="103" endLine="349" endPosition="54" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="44" startPosition="80" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="332" startPosition="0" endLine="340" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="223" startPosition="104" endLine="232" endPosition="55" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="290" startPosition="0" endLine="299" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="316" startPosition="0" endLine="325" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="56" startPosition="90" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="148" startPosition="0" endLine="154" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="attrs" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="127" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="resultObject" />
+      <varInfo nodeId="651246788329803429" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="342" startPosition="103" endLine="349" endPosition="54">
+      <varInfo nodeId="651246788329803429" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="44" startPosition="80" endLine="52" endPosition="5">
+      <varInfo nodeId="651246788329803429" varName="current" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="332" startPosition="0" endLine="340" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="223" startPosition="104" endLine="232" endPosition="55">
+      <varInfo nodeId="651246788329803429" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="290" startPosition="0" endLine="299" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="name" />
+      <varInfo nodeId="651246788329803429" varName="resultObject" />
+      <varInfo nodeId="651246788329803429" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="316" startPosition="0" endLine="325" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="name" />
+      <varInfo nodeId="651246788329803429" varName="resultObject" />
+      <varInfo nodeId="651246788329803429" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="56" startPosition="90" endLine="66" endPosition="5">
+      <varInfo nodeId="651246788329803429" varName="childValue" />
+      <varInfo nodeId="651246788329803429" varName="current" />
+    </scopeInfo>
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="236" startPosition="109" endLine="246" endPosition="40" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="340" startPosition="0" endLine="351" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="42" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="221" startPosition="0" endLine="234" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="54" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="234" startPosition="0" endLine="248" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="250" startPosition="103" endLine="271" endPosition="54" />
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="340" startPosition="0" endLine="351" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="resultObject" />
+      <varInfo nodeId="651246788329803429" varName="tagName" />
+      <varInfo nodeId="651246788329803429" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="42" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="array" />
+      <varInfo nodeId="651246788329803429" varName="len" />
+      <varInfo nodeId="651246788329803429" varName="start" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="221" startPosition="0" endLine="234" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="name" />
+      <varInfo nodeId="651246788329803429" varName="resultObject" />
+      <varInfo nodeId="651246788329803429" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="54" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="localName" />
+      <varInfo nodeId="651246788329803429" varName="qName" />
+      <varInfo nodeId="651246788329803429" varName="uri" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="234" startPosition="0" endLine="248" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="250" startPosition="103" endLine="271" endPosition="54">
+      <varInfo nodeId="651246788329803429" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="156" startPosition="109" endLine="178" endPosition="40" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="182" startPosition="103" endLine="207" endPosition="54" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="248" startPosition="0" endLine="273" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="154" startPosition="0" endLine="180" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="180" startPosition="0" endLine="209" endPosition="0" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="70" startPosition="115" endLine="101" endPosition="26" />
-    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="68" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="182" startPosition="103" endLine="207" endPosition="54">
+      <varInfo nodeId="651246788329803429" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="248" startPosition="0" endLine="273" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="resultObject" />
+      <varInfo nodeId="651246788329803429" varName="tagName" />
+      <varInfo nodeId="651246788329803429" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="154" startPosition="0" endLine="180" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="180" startPosition="0" endLine="209" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="resultObject" />
+      <varInfo nodeId="651246788329803429" varName="tagName" />
+      <varInfo nodeId="651246788329803429" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="70" startPosition="115" endLine="101" endPosition="26">
+      <varInfo nodeId="651246788329803429" varName="current" />
+      <varInfo nodeId="651246788329803429" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="68" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="651246788329803429" varName="attributes" />
+      <varInfo nodeId="651246788329803429" varName="localName" />
+      <varInfo nodeId="651246788329803429" varName="qName" />
+      <varInfo nodeId="651246788329803429" varName="uri" />
+    </scopeInfo>
     <unitInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="16" startPosition="0" endLine="360" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler" />
     <unitInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="109" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$ElementHandler" />
     <unitInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="301" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$LinkElementHandler" />
@@ -675,87 +785,240 @@
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="513" startPosition="39" endLine="515" endPosition="15" />
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="517" startPosition="40" endLine="519" endPosition="15" />
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="98" startPosition="54" endLine="101" endPosition="7" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="110" startPosition="54" endLine="113" endPosition="51" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="126" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="148" startPosition="0" endLine="151" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="214" startPosition="39" endLine="217" endPosition="15" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="219" startPosition="61" endLine="222" endPosition="15" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="224" startPosition="37" endLine="227" endPosition="15" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="229" startPosition="37" endLine="232" endPosition="15" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="110" startPosition="54" endLine="113" endPosition="51">
+      <varInfo nodeId="7319439566871678351" varName="name" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="126" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="name" />
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="148" startPosition="0" endLine="151" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="214" startPosition="39" endLine="217" endPosition="15">
+      <varInfo nodeId="7319439566871678351" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="219" startPosition="61" endLine="222" endPosition="15">
+      <varInfo nodeId="7319439566871678351" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="224" startPosition="37" endLine="227" endPosition="15">
+      <varInfo nodeId="7319439566871678351" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="229" startPosition="37" endLine="232" endPosition="15">
+      <varInfo nodeId="7319439566871678351" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="253" startPosition="70" endLine="256" endPosition="7" />
     <scopeInfo nodeId="212199194136557556" fileName="ModelReader6Handler.java" startLine="444" startPosition="31" endLine="447" endPosition="11" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="456" startPosition="35" endLine="459" endPosition="15" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="44" startPosition="0" endLine="48" endPosition="3" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="456" startPosition="35" endLine="459" endPosition="15">
+      <varInfo nodeId="7319439566871678351" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="44" startPosition="0" endLine="48" endPosition="3">
+      <varInfo nodeId="7319439566871678351" varName="header" />
+      <varInfo nodeId="7319439566871678351" varName="toState" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="122" startPosition="0" endLine="126" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="attrs" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="129" startPosition="0" endLine="133" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="133" startPosition="0" endLine="137" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="tagName" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="138" startPosition="86" endLine="142" endPosition="64" />
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="144" startPosition="0" endLine="148" endPosition="0" />
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="360" startPosition="98" endLine="364" endPosition="40" />
     <scopeInfo nodeId="212199194136557544" fileName="ModelReader6Handler.java" startLine="444" startPosition="31" endLine="448" endPosition="17" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="53" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="97" startPosition="22" endLine="102" endPosition="5" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="109" startPosition="25" endLine="114" endPosition="5" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="53" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="locator" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="97" startPosition="22" endLine="102" endPosition="5">
+      <varInfo nodeId="7319439566871678351" varName="attr" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="109" startPosition="25" endLine="114" endPosition="5">
+      <varInfo nodeId="7319439566871678351" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="160" startPosition="83" endLine="165" endPosition="96" />
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="167" startPosition="0" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="174" startPosition="104" endLine="179" endPosition="55" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="234" startPosition="35" endLine="239" endPosition="15" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="258" startPosition="0" endLine="263" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="270" startPosition="0" endLine="275" endPosition="0" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="174" startPosition="104" endLine="179" endPosition="55">
+      <varInfo nodeId="7319439566871678351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="234" startPosition="35" endLine="239" endPosition="15">
+      <varInfo nodeId="7319439566871678351" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="258" startPosition="0" endLine="263" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="270" startPosition="0" endLine="275" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="275" startPosition="0" endLine="280" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="282" startPosition="104" endLine="287" endPosition="55" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="296" startPosition="0" endLine="301" endPosition="0" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="282" startPosition="104" endLine="287" endPosition="55">
+      <varInfo nodeId="7319439566871678351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="296" startPosition="0" endLine="301" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="301" startPosition="0" endLine="306" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="308" startPosition="104" endLine="313" endPosition="55" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="322" startPosition="0" endLine="327" endPosition="0" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="308" startPosition="104" endLine="313" endPosition="55">
+      <varInfo nodeId="7319439566871678351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="322" startPosition="0" endLine="327" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="327" startPosition="0" endLine="332" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="370" startPosition="35" endLine="375" endPosition="15" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="386" startPosition="0" endLine="391" endPosition="0" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="370" startPosition="35" endLine="375" endPosition="15">
+      <varInfo nodeId="7319439566871678351" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="386" startPosition="0" endLine="391" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="391" startPosition="0" endLine="396" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="435" startPosition="39" endLine="440" endPosition="15" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="470" startPosition="0" endLine="475" endPosition="0" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="435" startPosition="39" endLine="440" endPosition="15">
+      <varInfo nodeId="7319439566871678351" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="470" startPosition="0" endLine="475" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="475" startPosition="0" endLine="480" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="500" startPosition="0" endLine="505" endPosition="0" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="500" startPosition="0" endLine="505" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="attrs" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="74" startPosition="26" endLine="80" endPosition="7" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="241" startPosition="41" endLine="247" endPosition="15" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="241" startPosition="41" endLine="247" endPosition="15">
+      <varInfo nodeId="7319439566871678351" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="407" startPosition="30" endLine="413" endPosition="15">
       <varInfo nodeId="7319439566871678666" varName="id" />
     </scopeInfo>
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="60" startPosition="80" endLine="67" endPosition="5" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="137" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="251" startPosition="0" endLine="258" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="358" startPosition="0" endLine="366" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="158" startPosition="0" endLine="167" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="172" startPosition="0" endLine="181" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="280" startPosition="0" endLine="289" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="306" startPosition="0" endLine="315" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="368" startPosition="103" endLine="377" endPosition="54" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="482" startPosition="104" endLine="491" endPosition="55" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="71" startPosition="90" endLine="81" endPosition="5" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="60" startPosition="80" endLine="67" endPosition="5">
+      <varInfo nodeId="7319439566871678351" varName="current" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="137" startPosition="0" endLine="144" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="251" startPosition="0" endLine="258" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="358" startPosition="0" endLine="366" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="158" startPosition="0" endLine="167" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="attrs" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="172" startPosition="0" endLine="181" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="name" />
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="280" startPosition="0" endLine="289" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="name" />
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="306" startPosition="0" endLine="315" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="name" />
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="368" startPosition="103" endLine="377" endPosition="54">
+      <varInfo nodeId="7319439566871678351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="482" startPosition="104" endLine="491" endPosition="55">
+      <varInfo nodeId="7319439566871678351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="71" startPosition="90" endLine="81" endPosition="5">
+      <varInfo nodeId="7319439566871678351" varName="childValue" />
+      <varInfo nodeId="7319439566871678351" varName="current" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="419" startPosition="98" endLine="429" endPosition="40" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="58" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="58" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="array" />
+      <varInfo nodeId="7319439566871678351" varName="len" />
+      <varInfo nodeId="7319439566871678351" varName="start" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="442" startPosition="35" endLine="454" endPosition="15">
+      <varInfo nodeId="7319439566871678351" varName="child" />
       <varInfo nodeId="2791660890086899467" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="366" startPosition="0" endLine="379" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="480" startPosition="0" endLine="493" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="69" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="417" startPosition="0" endLine="431" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="507" startPosition="104" endLine="521" endPosition="55" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="334" startPosition="104" endLine="349" endPosition="55" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="398" startPosition="104" endLine="415" endPosition="55" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="505" startPosition="0" endLine="523" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="332" startPosition="0" endLine="351" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="396" startPosition="0" endLine="417" endPosition="0" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="366" startPosition="0" endLine="379" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="tagName" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="480" startPosition="0" endLine="493" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="name" />
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="69" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="localName" />
+      <varInfo nodeId="7319439566871678351" varName="qName" />
+      <varInfo nodeId="7319439566871678351" varName="uri" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="417" startPosition="0" endLine="431" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="507" startPosition="104" endLine="521" endPosition="55">
+      <varInfo nodeId="7319439566871678351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="334" startPosition="104" endLine="349" endPosition="55">
+      <varInfo nodeId="7319439566871678351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="398" startPosition="104" endLine="415" endPosition="55">
+      <varInfo nodeId="7319439566871678351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="505" startPosition="0" endLine="523" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="name" />
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="332" startPosition="0" endLine="351" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="name" />
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="396" startPosition="0" endLine="417" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="name" />
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="183" startPosition="98" endLine="205" endPosition="40" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="181" startPosition="0" endLine="207" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="433" startPosition="103" endLine="461" endPosition="54" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="85" startPosition="115" endLine="116" endPosition="26" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="431" startPosition="0" endLine="463" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="83" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="209" startPosition="103" endLine="249" endPosition="54" />
-    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="207" startPosition="0" endLine="251" endPosition="0" />
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="181" startPosition="0" endLine="207" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="tagName" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="433" startPosition="103" endLine="461" endPosition="54">
+      <varInfo nodeId="7319439566871678351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="85" startPosition="115" endLine="116" endPosition="26">
+      <varInfo nodeId="7319439566871678351" varName="current" />
+      <varInfo nodeId="7319439566871678351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="431" startPosition="0" endLine="463" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="tagName" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="83" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="attributes" />
+      <varInfo nodeId="7319439566871678351" varName="localName" />
+      <varInfo nodeId="7319439566871678351" varName="qName" />
+      <varInfo nodeId="7319439566871678351" varName="uri" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="209" startPosition="103" endLine="249" endPosition="54">
+      <varInfo nodeId="7319439566871678351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="207" startPosition="0" endLine="251" endPosition="0">
+      <varInfo nodeId="7319439566871678351" varName="resultObject" />
+      <varInfo nodeId="7319439566871678351" varName="tagName" />
+      <varInfo nodeId="7319439566871678351" varName="value" />
+    </scopeInfo>
     <unitInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="24" startPosition="0" endLine="525" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler" />
     <unitInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="119" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$ElementHandler" />
     <unitInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="317" startPosition="0" endLine="352" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$ImportElementHandler" />
