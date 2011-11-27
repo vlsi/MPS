@@ -1215,6 +1215,10 @@ public class JavaConverterTreeBuilder {
       SNode currentSwitchCase = null;
       for (Statement stmt : x.statements) {
         if (stmt instanceof CaseStatement) {
+          // advance end of previous case block 
+          if ((currentSwitchCase != null)) {
+            getBlock(currentSwitchCase)._3(stmt.sourceStart);
+          }
           CaseStatement caseStatement = (CaseStatement) stmt;
           if (caseStatement.constantExpression == null) {
             currentSwitchCase = SLinkOperations.getTarget(result, "defaultBlock", true);
@@ -1230,8 +1234,14 @@ public class JavaConverterTreeBuilder {
           }
         } else
         if ((currentSwitchCase != null)) {
+          // advance end of case block 
+          getBlock(currentSwitchCase)._3(stmt.sourceEnd);
           ListSequence.fromList(SLinkOperations.getTargets(currentSwitchCase, "statement", true)).addElement(processStatementRefl(stmt));
         }
+      }
+      // adjust end of last case block up to the end of switch statement 
+      if ((currentSwitchCase != null)) {
+        getBlock(currentSwitchCase)._3(x.sourceEnd);
       }
     }
     return result;
