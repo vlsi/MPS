@@ -4,6 +4,7 @@ package jetbrains.mps.lang.test.runtime;
 
 import jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner;
 import org.junit.runner.Request;
+import jetbrains.mps.util.CachesUtil;
 import jetbrains.mps.TestMain;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.application.impl.ApplicationImpl;
@@ -23,9 +24,11 @@ public class TransformationTestRunner extends TestRunner {
 
   public static void main(String[] argv) {
     try {
+      CachesUtil.setupCaches();
       new TransformationTestRunner().executeTestsFromArguments(argv);
     } catch (Throwable t) {
       t.printStackTrace(System.err);
+      CachesUtil.cleanupCaches();
       System.exit(1);
     }
     TestMain.PROJECT_CONTAINER.clear();
@@ -38,6 +41,7 @@ public class TransformationTestRunner extends TestRunner {
     } catch (Exception e) {
       e.printStackTrace();
     }
+    CachesUtil.cleanupCaches();
     System.exit(0);
   }
 
