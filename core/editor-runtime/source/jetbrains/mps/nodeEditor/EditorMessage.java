@@ -24,24 +24,14 @@ import java.awt.*;
 import java.util.*;
 import java.util.List;
 
-public interface EditorMessage {
-  int getStart(EditorComponent editorComponent);
-
-  int getHeight(EditorComponent editorComponent);
-
+public interface EditorMessage extends SimpleEditorMessage {
   void doNavigate(EditorComponent editorComponent);
 
   boolean isValid(EditorComponent editorComponent);
 
-  String getMessage();
-
   SNode getNode();
 
   MessageStatus getStatus();
-
-  Color getColor();
-
-  EditorMessageOwner getOwner();
 
   EditorCell getCell(EditorComponent editorComponent);
 
