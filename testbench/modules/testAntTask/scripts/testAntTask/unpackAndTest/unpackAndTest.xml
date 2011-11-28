@@ -1,0 +1,33 @@
+<project name="unpackAndTest" default="default" basedir=".">
+  <property name="projectsdir" value="${basedir}/../../../projects" />
+  <property name="mps.ant.workdir" value="${java.io.tmpdir}/mps.ant.workdir" />
+  <property name="tmpdir" value="${mps.ant.workdir}/testproject" />
+  <property name="mps.zip" value="${mps_home}/artifacts/${build.number}.zip" />
+  <property name="mps.build.dir" value="${mps.ant.workdir}/MPS ${version}" />
+  <target name="init">
+    <fail unless="mps_home" message="mps_home undefined" />
+    <fail unless="build.number" message="build.number undefined" />
+    <fail unless="version" message="version undefined" />
+  </target>
+  <target name="clean" depends="init">
+    <delete dir="${mps.ant.workdir}" />
+  </target>
+  <target name="unpack" depends="clean">
+    <mkdir dir="${tmpdir}" />
+    <unzip dest="${tmpdir}">
+      <fileset dir="${projectsdir}" includes="*.zip" />
+    </unzip>
+    <unzip dest="${mps.ant.workdir}" src="${mps.zip}" />
+  </target>
+  <target name="test" depends="unpack">
+    <ant antfile="${tmpdir}/TestMPSAntTask/generate.xml" dir="${tmpdir}/TestMPSAntTask" inheritall="false">
+      <property name="mps_build" value="${mps.build.dir}" />
+    </ant>
+    <ant antfile="${tmpdir}/TestMPSAntTask/test.xml" dir="${tmpdir}/TestMPSAntTask" inheritall="false">
+      <property name="mps_build" value="${mps.build.dir}" />
+    </ant>
+  </target>
+  <target name="default" depends="test">
+    <delete dir="${mps.ant.workdir}" deleteonexit="true" />
+  </target>
+</project>
