@@ -48,6 +48,11 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   @Override
+  public boolean showInGutter() {
+    return false;
+  }
+
+  @Override
   public Color getColor() {
     return ChangeColors.get((isConflicted() ?
       ChangeType.CONFLICTED :
