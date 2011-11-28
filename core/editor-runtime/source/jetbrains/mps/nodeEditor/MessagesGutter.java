@@ -384,6 +384,19 @@ public class MessagesGutter extends JPanel {
     }
 
     @Override
+    protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
+      int shift = 9;
+      g.translate(shift, 0);
+      super.paintThumb(g, c, thumbBounds);
+      g.translate(-shift, 0);
+    }
+
+    @Override
+    protected int adjustThumbWidth(int width) {
+      return width - 2;
+    }
+
+    @Override
     protected int getThickness() {
       return super.getThickness() + 7;
     }
