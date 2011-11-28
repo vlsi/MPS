@@ -182,7 +182,7 @@ public class MessagesGutter extends JPanel {
       if (msg == null || !msg.isValid(myEditorComponent)) {
         continue;
       }
-      int messageY = getMessagePosition(msg);
+      int messageY = getMessageStart(msg);
       int messageHeight = Math.max(getMessageHeight(msg), 3);
 
 //      g.setColor(new Color(80, 80, 80, 70));
@@ -200,7 +200,7 @@ public class MessagesGutter extends JPanel {
       Color brighter = color.brighter();
       g.setColor(brighter);
       //left decoration
-      UIUtil.drawLine(g, x, messageY, x, messageY + messageHeight - 1);
+      UIUtil.drawLine(g, x, messageY, x, messageY + messageHeight);
 //      if (drawTopDecoration) {
         //top decoration
         UIUtil.drawLine(g, x + 1, messageY, x + width - 2, messageY);
@@ -210,37 +210,12 @@ public class MessagesGutter extends JPanel {
       g.setColor(darker);
 //      if (drawBottomDecoration) {
         // bottom decoration
-        UIUtil.drawLine(g, x + 1, messageY + messageHeight - 1/* - 1*/, x + width - 2, messageY + messageHeight - 1);   // large bottom to let overwrite by hl below
+        UIUtil.drawLine(g, x + 1, messageY + messageHeight, x + width - 2, messageY + messageHeight);   // large bottom to let overwrite by hl below
 //      }
       //right decoration
       UIUtil.drawLine(g, x + width - 2, messageY, x + width - 2, messageY + messageHeight - 1);
     }
     //removeLater(messagesToRemove);
-  }
-
-  private int getMessagePosition(EditorMessage msg) {
-    int start = getMessageStart(msg);
-    int length = getMessageHeight(msg);
-
-    int messageY;
-    switch (msg.getLocationOnCell()) {
-      case CENTER: {
-        messageY = start + (length / 2);
-        break;
-      }
-      case BOTTOM: {
-        messageY = start + length;
-        break;
-      }
-      case TOP: {
-        messageY = start;
-        break;
-      }
-      default: {
-        messageY = start + (length/2);
-      }
-    }
-    return messageY;
   }
 
   private int getMessagesAreaShift() {
@@ -328,7 +303,7 @@ public class MessagesGutter extends JPanel {
       List<EditorMessage> messages = getMessagesAt(y);
       if (messages.size() > 0) {
         EditorMessage msg = messages.get(messages.size() - 1);
-        int pos = getMessagePosition(msg);
+        int pos = getMessageStart(msg);
 
         return new Point(event.getX(), pos);
       }
@@ -347,7 +322,7 @@ public class MessagesGutter extends JPanel {
             result.add(msg);
           }
         } else {
-          int position = getMessagePosition(msg);
+          int position = getMessageStart(msg);
           if (y >= position - 5 && y <= position + 5) {
             result.add(msg);
           }
