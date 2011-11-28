@@ -277,40 +277,7 @@
 
     <target name="runTests">
         <delete dir="${plugins.sandbox.dir}"/>
-<!--
-        <java classname="com.intellij.rt.execution.junit.JUnitStarter"
-              fork="true"
-              failonerror="true"
-              maxmemory="1024m"
-              dir=".">
-            <jvmarg value="-Didea.platform.prefix=Idea"/>
-            <jvmarg value="-Didea.config.path=${plugins.sandbox.dir}/config"/>
-            <jvmarg value="-Didea.system.path=${plugins.sandbox.dir}/system"/>
-            <!- -                    <jvmarg value="-Didea.plugins.path=${base_dir}/IdeaPlugin"/> - ->
-            <jvmarg value="-Didea.plugins.path=${artifacts}"/>
-            <jvmarg value="-Xbootclasspath/a:${home.idea_ce}/lib/boot.jar"/>
-            <jvmarg value="-Didea.load.plugins.id=jetbrains.mps.core"/>
-            <jvmarg value="-Didea.home.path=${plugins.sandbox.dir}/test"/>
-            <jvmarg value="-Didea.launcher.bin.path=${home.idea_ce}/bin"/>
-            <jvmarg value="-Dfile.encoding=UTF-8"/>
-            <!- - <arg value="com.intellij.rt.execution.junit.JUnitStarter"/> - ->
-            <arg value="-ideVersion5"/>
-            <arg value="-junit4"/>
-            <arg value="jetbrains.mps.idea.core.tests.AllTests"/>
-            <classpath>
-                <fileset dir="${home.idea_ce}/lib">
-                    <include name="**/*.jar"/>
-                </fileset>
-                <fileset dir="${home.idea_ce}/plugins/junit/lib">
-                    <include name="junit-rt.jar"/>
-                </fileset>
-                <fileset dir="${artifacts}/mps-core/lib">
-                    <include name="*.jar"/>
-                </fileset>
-                <pathelement path="${java.class.path}"/>
-            </classpath>
-        </java>
--->
+
         <junit fork="true"
                dir="."
                haltonfailure="true"
