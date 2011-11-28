@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.impl.ApplicationImpl;
+import com.intellij.util.ui.ButtonlessScrollBarUI;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
@@ -24,16 +27,14 @@ import jetbrains.mps.nodeEditor.icons.Icons;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
+import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MessagesGutter extends JPanel {
   private EditorComponent myEditorComponent;
-  private JLabel myErrosLabel = new JLabel(Icons.OK);
+  private MyErrorsButton myErrorsButton = new MyErrorsButton();
   private List<EditorMessage> myMessages = new CopyOnWriteArrayList<EditorMessage>();
   private Map<EditorMessage, EditorMessageOwner> myOwners = new HashMap<EditorMessage, EditorMessageOwner>();
   private boolean myStatusIsDirty = false;
@@ -45,8 +46,10 @@ public class MessagesGutter extends JPanel {
 
     setLayout(new BorderLayout());
 
-    add(myErrosLabel, BorderLayout.NORTH);
+    add(myErrorsButton, BorderLayout.NORTH);
     add(myMessagesGutter = new MyMessagesGutter(), BorderLayout.CENTER);
+
+    myEditorComponent.getVerticalScrollBar().setPersistentUI(new MyScrollBarUI());
     /*NodeTypesComponentsRepository.getInstance().addTypesComponentListener(new TypesComponentRepositoryListener() {
       public void typesComponentRemoved(NodeTypesComponent component) {
         removeMessages(component);
@@ -99,16 +102,16 @@ public class MessagesGutter extends JPanel {
   public void setStatus(GutterStatus status) {
     switch (status) {
       case OK:
-        myErrosLabel.setIcon(Icons.OK);
+        myErrorsButton.setIcon(Icons.OK);
         break;
       case WARNING:
-        myErrosLabel.setIcon(Icons.WARNINGS);
+        myErrorsButton.setIcon(Icons.WARNINGS);
         break;
       case ERROR:
-        myErrosLabel.setIcon(Icons.ERRORS);
+        myErrorsButton.setIcon(Icons.ERRORS);
         break;
       case IN_PROGRESS:
-        myErrosLabel.setIcon(Icons.IN_PROGRESS);
+        myErrorsButton.setIcon(Icons.IN_PROGRESS);
         break;
     }
   }
@@ -338,5 +341,51 @@ public class MessagesGutter extends JPanel {
     WARNING,
     ERROR,
     IN_PROGRESS
+  }
+
+  private class MyErrorsButton extends JButton {
+    private MyErrorsButton() {
+      super(Icons.OK);
+      setFocusable(false);
+    }
+
+    public void paint(Graphics g) {
+      ((ApplicationImpl) ApplicationManager.getApplication()).editorPaintStart();
+
+      final Rectangle bounds = getBounds();
+
+      g.setColor(ButtonlessScrollBarUI.TRACK_BACKGROUND);
+      g.fillRect(0, 0, bounds.width, bounds.height);
+
+      g.setColor(ButtonlessScrollBarUI.TRACK_BORDER);
+      g.drawLine(0, 0, 0, bounds.height);
+
+      try {
+        Icon icon = getIcon();
+        if (icon != null) {
+          icon.paintIcon(this, g, (getWidth() - icon.getIconWidth()) / 2 + 1, (getHeight() - icon.getIconHeight()) / 2);
+        }
+      }
+      finally {
+        ((ApplicationImpl)ApplicationManager.getApplication()).editorPaintFinish();
+      }
+    }
+
+    @Override
+    public Dimension getPreferredSize() {
+      return new Dimension(Icons.OK.getIconWidth() + 3, Icons.OK.getIconHeight() + 4);
+    }
+  }
+
+  private class MyScrollBarUI extends ButtonlessScrollBarUI {
+    @Override
+    protected JButton createDecreaseButton(int orientation) {
+      return myErrorsButton;
+    }
+
+    @Override
+    protected int getThickness() {
+      return super.getThickness() + 7;
+    }
   }
 }

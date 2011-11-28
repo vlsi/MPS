@@ -189,7 +189,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   private JScrollPane myScrollPane;
   @NotNull
-  private MyScrollBar myVerticalScrollBar;
+  private MyScrollBar myVerticalScrollBar = new MyScrollBar(Adjustable.VERTICAL);
   @NotNull
   private JComponent myContainer;
   protected EditorCell myRootCell;
@@ -294,8 +294,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (rightToLeft) {
       myScrollPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
     }
-    myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-    myScrollPane.setVerticalScrollBar(myVerticalScrollBar = new MyScrollBar(Adjustable.VERTICAL));
+    myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+    myScrollPane.setVerticalScrollBar(myVerticalScrollBar);
     myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     myScrollPane.setViewportView(this);
     myScrollPane.getViewport().addChangeListener(new ChangeListener() {
