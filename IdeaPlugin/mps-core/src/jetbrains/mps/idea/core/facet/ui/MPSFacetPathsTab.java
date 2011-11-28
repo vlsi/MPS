@@ -32,6 +32,7 @@ import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -119,6 +120,9 @@ public class MPSFacetPathsTab {
         myModuleReferenceCompo.removeAllItems();
         for (ContentEntry entry : myContext.getRootModel().getContentEntries()) {
             for (SourceFolder sourceFolder : entry.getSourceFolders()) {
+                if (sourceFolder.getFile() == null) {
+                    continue;
+                }
                 String path = sourceFolder.getFile().getPath();
                 myModuleReferenceCompo.addItem(path);
                 if (path.equals(oldSelection)) {
@@ -126,6 +130,7 @@ public class MPSFacetPathsTab {
                 }
             }
         }
+        limitWidth(myModuleReferenceCompo);
 
         if (oldSelection != null) {
             if (hasOldItem) {
@@ -134,6 +139,14 @@ public class MPSFacetPathsTab {
                 myUseCustomFolderRadioButton.doClick();
                 myFieldPanel.setText(oldSelection);
             }
+        }
+    }
+
+    private void limitWidth(JComponent component) {
+        Dimension preferredSize = component.getPreferredSize();
+        if (preferredSize.getWidth() > 250) {
+            preferredSize.setSize(250, preferredSize.getHeight());
+            component.setPreferredSize(preferredSize);
         }
     }
 
@@ -184,7 +197,6 @@ public class MPSFacetPathsTab {
                 commitRunnable.run();
             }
         }, null, commitRunnable);
-
     }
 
     private void initGeneratorOutputPathPanel() {
