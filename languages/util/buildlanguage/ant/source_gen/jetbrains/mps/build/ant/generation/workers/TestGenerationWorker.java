@@ -226,7 +226,6 @@ public class TestGenerationWorker extends MpsWorker {
         myReporter.startRun("Module cluster " + String.valueOf(count[0]++));
       }
     };
-    myReporter.startRun("Initializing");
     final Wrappers._T<IResult> result = new Wrappers._T<IResult>();
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -637,16 +636,20 @@ public class TestGenerationWorker extends MpsWorker {
     private void outputLine(String out) {
       if (currentTestName != null) {
         testReporter.testOutputLine(currentTestName, out);
-      } else {
+      } else if (testReporter != null) {
         testReporter.outputLine(out);
+      } else {
+        System.out.println(out);
       }
     }
 
     private void errorLine(String err) {
       if (currentTestName != null) {
         testReporter.testErrorLine(currentTestName, err);
-      } else {
+      } else if (testReporter != null) {
         testReporter.errorLine(err);
+      } else {
+        System.err.println(err);
       }
     }
   }
