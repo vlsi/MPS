@@ -17,7 +17,9 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.impl.ApplicationImpl;
+import com.intellij.ui.ColorUtil;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
@@ -153,6 +155,113 @@ public class MessagesGutter extends JPanel {
     myMessagesGutter.dispose();
   }
 
+  private void paintMarks(Graphics graphics, int x, int width) {
+    removeBadMessages();
+    Graphics2D g = (Graphics2D) graphics;
+    //Set<EditorMessage> messagesToRemove = new HashSet<EditorMessage>();
+    List<EditorMessage> editorMessages = new ArrayList<EditorMessage>(myMessages);
+    Collections.sort(editorMessages, new Comparator<EditorMessage>() {
+      public int compare(EditorMessage o1, EditorMessage o2) {
+        if (o1 == o2) return 0;
+        if (o1 == null) return -1;
+        if (o2 == null) return 1;
+        if (o1.getStatus().ordinal() == o2.getStatus().ordinal()) {
+          if (o1.isLongInGutter() == o2.isLongInGutter()) {
+            return getMessageStart(o1) - getMessageStart(o2);
+          } else {
+            return o1.isLongInGutter() ? -1 : 1;
+          }
+        } else {
+          return o1.getStatus().ordinal() - o2.getStatus().ordinal();
+        }
+      }
+    });
+    for (EditorMessage msg : editorMessages) {
+      if (msg == null || !msg.isValid(myEditorComponent)) {
+        continue;
+      }
+      int messageY = getMessagePosition(msg);
+      int messageHeight = Math.max(getMessageHeight(msg), 3);
+
+//      g.setColor(new Color(80, 80, 80, 70));
+//      g.fillRect(x + 1, messageY, width, 2);
+//
+//      g.setColor(msg.getColorInGutter());
+//      g.fillRect(x, messageY - 1, width, 2);
+
+      Color color = msg.getColorInGutter();
+
+      if (color == null) return;
+      g.setColor(color);
+      g.fillRect(x + 1, messageY, width - 2, messageHeight);
+
+      Color brighter = color.brighter();
+      g.setColor(brighter);
+      //left decoration
+      UIUtil.drawLine(g, x, messageY, x, messageY + messageHeight - 1);
+//      if (drawTopDecoration) {
+        //top decoration
+        UIUtil.drawLine(g, x + 1, messageY, x + width - 2, messageY);
+//      }
+      Color darker = ColorUtil.shift(color, 0.75);
+
+      g.setColor(darker);
+//      if (drawBottomDecoration) {
+        // bottom decoration
+        UIUtil.drawLine(g, x + 1, messageY + messageHeight - 1/* - 1*/, x + width - 2, messageY + messageHeight - 1);   // large bottom to let overwrite by hl below
+//      }
+      //right decoration
+      UIUtil.drawLine(g, x + width - 2, messageY, x + width - 2, messageY + messageHeight - 1);
+    }
+    //removeLater(messagesToRemove);
+  }
+
+  private int getMessagePosition(EditorMessage msg) {
+    int start = getMessageStart(msg);
+    int length = getMessageHeight(msg);
+
+    int messageY;
+    switch (msg.getLocationOnCell()) {
+      case CENTER: {
+        messageY = start + (length / 2);
+        break;
+      }
+      case BOTTOM: {
+        messageY = start + length;
+        break;
+      }
+      case TOP: {
+        messageY = start;
+        break;
+      }
+      default: {
+        messageY = start + (length/2);
+      }
+    }
+    return messageY;
+  }
+
+  private int getMessagesAreaShift() {
+    MyScrollBar scrollBar = myEditorComponent.getVerticalScrollBar();
+    return scrollBar.isVisible() ? Math.max(0, scrollBar.getDecScrollButtonHeight() - getBounds().y) : 0;
+  }
+
+  private int getMessagesAreaHeight() {
+    MyScrollBar scrollBar = myEditorComponent.getVerticalScrollBar();
+    if (!scrollBar.isVisible()) {
+      return getHeight();
+    }
+    return scrollBar.getHeight() - scrollBar.getIncScrollButtonHeight() - Math.max(scrollBar.getDecScrollButtonHeight(), getBounds().y);
+  }
+
+  private int getMessageHeight(EditorMessage msg) {
+    return (int) (Math.max(2.0d, msg.getHeight(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight()))));
+  }
+
+  private int getMessageStart(EditorMessage msg) {
+    return getMessagesAreaShift() + (int) (msg.getStart(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight())));
+  }
+
   private class MyMessagesGutter extends JPanel implements TooltipComponent {
     public MyMessagesGutter() {
       MPSToolTipManager.getInstance().registerComponentRightAligned(this);
@@ -179,100 +288,8 @@ public class MessagesGutter extends JPanel {
     }
 
     protected void paintComponent(Graphics graphics) {
-      removeBadMessages();
       super.paintComponent(graphics);
-      Graphics2D g = (Graphics2D) graphics;
-      //Set<EditorMessage> messagesToRemove = new HashSet<EditorMessage>();
-      List<EditorMessage> editorMessages = new ArrayList<EditorMessage>(myMessages);
-      Collections.sort(editorMessages, new Comparator<EditorMessage>() {
-        public int compare(EditorMessage o1, EditorMessage o2) {
-          if (o1 == o2) return 0;
-          if (o1 == null) return -1;
-          if (o2 == null) return 1;
-          if (o1.getStatus().ordinal() == o2.getStatus().ordinal()) {
-            if (o1.isLongInGutter() == o2.isLongInGutter()) {
-              return getMessageStart(o1) - getMessageStart(o2);
-            } else {
-              return o1.isLongInGutter() ? -1 : 1;
-            }
-          } else {
-            return o1.getStatus().ordinal() - o2.getStatus().ordinal();
-          }
-        }
-      });
-      for (EditorMessage msg : editorMessages) {
-        if (msg == null || !msg.isValid(myEditorComponent)) {
-          continue;
-        }
-        if (msg.isLongInGutter()) {
-          int messageY = getMessageStart(msg);
-          int messageHeight = getMessageHeight(msg) + 1;
-
-          g.setColor(msg.getColorInGutter());
-          int messageX = (getWidth() - 2) / 3;
-          int messageWidth = (getWidth() - 2) / 3 + 1;
-          g.fillRect(messageX, messageY, messageWidth, messageHeight);
-
-          g.setColor(msg.getColorInGutter().darker());
-          g.drawLine(messageX, messageY + messageHeight, messageX + messageWidth, messageY + messageHeight);
-          g.drawLine(messageX + messageWidth, messageY, messageX + messageWidth, messageY + messageHeight);
-        } else {
-          int messageY = getMessagePosition(msg);
-
-          g.setColor(new Color(80, 80, 80, 70));
-          g.fillRect(1, messageY, getWidth() - 2, 2);
-
-          g.setColor(msg.getColorInGutter());
-          g.fillRect(0, messageY - 1, getWidth() - 2, 2);
-        }
-      }
-      //removeLater(messagesToRemove);
-    }
-
-    private int getMessagePosition(EditorMessage msg) {
-      int start = getMessageStart(msg);
-      int length = getMessageHeight(msg);
-
-      int messageY;
-      switch (msg.getLocationOnCell()) {
-        case CENTER: {
-          messageY = start + (length / 2);
-          break;
-        }
-        case BOTTOM: {
-          messageY = start + length;
-          break;
-        }
-        case TOP: {
-          messageY = start;
-          break;
-        }
-        default: {
-          messageY = start + (length/2);
-        }
-      }
-      return messageY;
-    }
-
-    private int getMessagesAreaShift() {
-      MyScrollBar scrollBar = myEditorComponent.getVerticalScrollBar();
-      return scrollBar.isVisible() ? Math.max(0, scrollBar.getDecScrollButtonHeight() - getBounds().y) : 0;
-    }
-
-    private int getMessagesAreaHeight() {
-      MyScrollBar scrollBar = myEditorComponent.getVerticalScrollBar();
-      if (!scrollBar.isVisible()) {
-        return getHeight();
-      }
-      return scrollBar.getHeight() - scrollBar.getIncScrollButtonHeight() - Math.max(scrollBar.getDecScrollButtonHeight(), getBounds().y);
-    }
-
-    private int getMessageHeight(EditorMessage msg) {
-      return (int) (Math.max(2.0d, msg.getHeight(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight()))));
-    }
-
-    private int getMessageStart(EditorMessage msg) {
-      return getMessagesAreaShift() + (int) (msg.getStart(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight())));
+      paintMarks(graphics, 0, getWidth());
     }
 
     public String getMPSTooltipText(MouseEvent event) {
@@ -389,6 +406,18 @@ public class MessagesGutter extends JPanel {
       g.translate(shift, 0);
       super.paintThumb(g, c, thumbBounds);
       g.translate(-shift, 0);
+    }
+
+    @Override
+    protected void paintTrack(Graphics g, JComponent c, Rectangle bounds) {
+      g.setColor(TRACK_BACKGROUND);
+      g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+
+      g.setColor(TRACK_BORDER);
+      int border = bounds.x;
+      g.drawLine(border, bounds.y, border, bounds.y + bounds.height);
+
+      paintMarks(g, 5, Icons.OK.getIconWidth() - 1);
     }
 
     @Override
