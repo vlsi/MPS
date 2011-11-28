@@ -66,6 +66,7 @@ public class ModuleDependenciesView extends JPanel {
     add(toolbar, BorderLayout.NORTH);
 
     Splitter splitter = new Splitter();
+    splitter.setDividerWidth(2);
     add(splitter, BorderLayout.CENTER);
     splitter.setFirstComponent(new JBScrollPane(myLeftTree));
     splitter.setSecondComponent(new JBScrollPane(myRightTree));
@@ -127,7 +128,8 @@ public class ModuleDependenciesView extends JPanel {
 
   private void setShowAllPaths(boolean b) {
     myRightTree.setShowAllPaths(b);
-    myRightTree.rebuildLater();
+    myRightTree.rebuildNow();
+    myRightTree.expandAll();
   }
 
   public void setHideSourceModules(boolean b) {
@@ -136,7 +138,7 @@ public class ModuleDependenciesView extends JPanel {
   }
 
   public void resetAll() {
-    myLeftTree.rebuildLater();
+    myLeftTree.rebuildNow();
     rebuildDependencies();
   }
 

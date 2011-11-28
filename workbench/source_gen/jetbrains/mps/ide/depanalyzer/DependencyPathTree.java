@@ -134,7 +134,6 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
         }
       }
     }
-
     setRootVisible(ListSequence.fromList(myAllDependencies).isEmpty());
     setShowsRootHandles(ListSequence.fromList(myAllDependencies).isNotEmpty());
     return result;
