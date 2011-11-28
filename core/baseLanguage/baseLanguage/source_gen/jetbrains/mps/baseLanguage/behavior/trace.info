@@ -7597,7 +7597,7 @@
     <nodeInfo nodeId="5311267937735178454" fileName="FieldReferenceOperation_Behavior.java" startLine="36" startPosition="68" endLine="37" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5311267937735178459" fileName="FieldReferenceOperation_Behavior.java" startLine="37" startPosition="23" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5311267937735178467" fileName="FieldReferenceOperation_Behavior.java" startLine="39" startPosition="24" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5311267937735178478" fileName="FieldReferenceOperation_Behavior.java" startLine="43" startPosition="590" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5311267937735178478" fileName="FieldReferenceOperation_Behavior.java" startLine="43" startPosition="605" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5311267937735178515" fileName="FieldReferenceOperation_Behavior.java" startLine="47" startPosition="205" endLine="48" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5311267937735178525" fileName="FieldReferenceOperation_Behavior.java" startLine="49" startPosition="5" endLine="50" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5311267937735178530" fileName="FieldReferenceOperation_Behavior.java" startLine="50" startPosition="91" endLine="51" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -7628,7 +7628,7 @@
     <scopeInfo nodeId="1239212524762" fileName="FieldReferenceOperation_Behavior.java" startLine="27" startPosition="95" endLine="28" endPosition="17" />
     <scopeInfo nodeId="5311267937735178426" fileName="FieldReferenceOperation_Behavior.java" startLine="32" startPosition="158" endLine="33" endPosition="19" />
     <scopeInfo nodeId="5311267937735178466" fileName="FieldReferenceOperation_Behavior.java" startLine="39" startPosition="24" endLine="40" endPosition="19" />
-    <scopeInfo nodeId="5311267937735178477" fileName="FieldReferenceOperation_Behavior.java" startLine="43" startPosition="590" endLine="44" endPosition="21" />
+    <scopeInfo nodeId="5311267937735178477" fileName="FieldReferenceOperation_Behavior.java" startLine="43" startPosition="605" endLine="44" endPosition="21" />
     <scopeInfo nodeId="5311267937735178514" fileName="FieldReferenceOperation_Behavior.java" startLine="47" startPosition="205" endLine="48" endPosition="18" />
     <scopeInfo nodeId="5311267937735178539" fileName="FieldReferenceOperation_Behavior.java" startLine="52" startPosition="161" endLine="53" endPosition="19" />
     <scopeInfo nodeId="5311267937735178581" fileName="FieldReferenceOperation_Behavior.java" startLine="58" startPosition="190" endLine="59" endPosition="23" />
