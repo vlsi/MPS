@@ -3203,7 +3203,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  class MyScrollBar extends JBScrollBar implements IdeGlassPane.TopComponent {
+  class MyScrollBar extends JBScrollBar implements IdeGlassPane.TopComponent, TooltipComponent {
     @NonNls
     private static final String APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS = "apple.laf.AquaScrollBarUI";
     private ScrollBarUI myPersistentUI;
@@ -3288,6 +3288,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       JViewport vp = myScrollPane.getViewport();
       Rectangle vr = vp.getViewRect();
       return getScrollableBlockIncrement(vr, SwingConstants.VERTICAL, direction);
+    }
+
+    @Override
+    public String getMPSTooltipText(MouseEvent mouseEvent) {
+      if (getUI() instanceof TooltipComponent) {
+        return ((TooltipComponent) getUI()).getMPSTooltipText(mouseEvent);
+      }
+      return null;
     }
   }
 }

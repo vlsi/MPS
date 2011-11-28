@@ -30,20 +30,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.icons.Icons;
 
 import javax.swing.*;
+import javax.tools.Tool;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class MessagesGutter extends JPanel {
+public class MessagesGutter extends JPanel implements TooltipComponent {
   private EditorComponent myEditorComponent;
   private MyErrorsButton myErrorsButton = new MyErrorsButton();
   private List<EditorMessage> myMessages = new CopyOnWriteArrayList<EditorMessage>();
   private Map<EditorMessage, EditorMessageOwner> myOwners = new HashMap<EditorMessage, EditorMessageOwner>();
   private boolean myStatusIsDirty = false;
   private Set<EditorMessage> myMessagesToRemove = new HashSet<EditorMessage>();
-  private MyMessagesGutter myMessagesGutter;
 
   public MessagesGutter(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -51,7 +51,6 @@ public class MessagesGutter extends JPanel {
     setLayout(new BorderLayout());
 
     add(myErrorsButton, BorderLayout.NORTH);
-    add(myMessagesGutter = new MyMessagesGutter(), BorderLayout.CENTER);
 
     myEditorComponent.getVerticalScrollBar().setPersistentUI(new MyScrollBarUI());
     /*NodeTypesComponentsRepository.getInstance().addTypesComponentListener(new TypesComponentRepositoryListener() {
@@ -154,7 +153,6 @@ public class MessagesGutter extends JPanel {
   }
 
   public void dispose() {
-    myMessagesGutter.dispose();
   }
 
   private void paintMarks(Graphics graphics, int x, int width) {
@@ -184,12 +182,6 @@ public class MessagesGutter extends JPanel {
       }
       int messageY = getMessageStart(msg);
       int messageHeight = Math.max(getMessageHeight(msg), 3);
-
-//      g.setColor(new Color(80, 80, 80, 70));
-//      g.fillRect(x + 1, messageY, width, 2);
-//
-//      g.setColor(msg.getColorInGutter());
-//      g.fillRect(x, messageY - 1, width, 2);
 
       Color color = msg.getColorInGutter();
 
@@ -247,96 +239,54 @@ public class MessagesGutter extends JPanel {
     return getMessagesAreaShift() + (int) (msg.getStart(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight())));
   }
 
-  private class MyMessagesGutter extends JPanel implements TooltipComponent {
-    public MyMessagesGutter() {
-      MPSToolTipManager.getInstance().registerComponentRightAligned(this);
+  private List<EditorMessage> getMessagesAt(int y) {
+    List<EditorMessage> result = new ArrayList<EditorMessage>();
+    Set<EditorMessage> messagesToRemove = new HashSet<EditorMessage>();
+    for (EditorMessage msg : myMessages) {
+      if (!msg.isValid(myEditorComponent)) continue;
 
-      addMouseListener(new MouseAdapter() {
-        public void mousePressed(MouseEvent e) {
-          List<EditorMessage> messages = getMessagesAt(e.getY());
-          if (messages.size() > 0) {
-            messages.get(0).doNavigate(myEditorComponent);
-          }
-        }
-      });
-
-      addMouseMotionListener(new MouseMotionAdapter() {
-        public void mouseMoved(MouseEvent e) {
-          List<EditorMessage> messages = getMessagesAt(e.getY());
-          if (messages.size() > 0) {
-            setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-          } else {
-            setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-          }
-        }
-      });
-    }
-
-    protected void paintComponent(Graphics graphics) {
-      super.paintComponent(graphics);
-      paintMarks(graphics, 0, getWidth());
-    }
-
-    public String getMPSTooltipText(MouseEvent event) {
-      int y = event.getY();
-
-      List<EditorMessage> messages = getMessagesAt(y);
-      if (messages.size() > 0) {
-        StringBuffer text = new StringBuffer();
-        for (EditorMessage msg : messages) {
-          if (text.length() > 0) {
-            text.append("\n");
-          }
-          text.append(msg.getMessage());
-          // text.append("(owner: " + msg.getOwner() + ")");
-        }
-        return text.toString();
+      int start = getMessageStart(msg);
+      int end = start + getMessageHeight(msg);
+      if (start - 3 <= y && y <= end + 3) {
+        result.add(msg);
       }
-
-      return null;
     }
-
-    @Override
-    public Point getToolTipLocation(MouseEvent event) {
-      int y = event.getY();
-
-      List<EditorMessage> messages = getMessagesAt(y);
-      if (messages.size() > 0) {
-        EditorMessage msg = messages.get(messages.size() - 1);
-        int pos = getMessageStart(msg);
-
-        return new Point(event.getX(), pos);
-      }
-      return null;
-    }
-
-    private List<EditorMessage> getMessagesAt(int y) {
-      List<EditorMessage> result = new ArrayList<EditorMessage>();
-      Set<EditorMessage> messagesToRemove = new HashSet<EditorMessage>();
-      for (EditorMessage msg : myMessages) {
-        if (!msg.isValid(myEditorComponent)) continue;
-        if (msg.isLongInGutter()) {
-          int messageY = getMessageStart(msg);
-          int messageHeight = getMessageHeight(msg) + 1;
-          if (y >= messageY - 5 && y <= messageY + messageHeight + 5) {
-            result.add(msg);
-          }
-        } else {
-          int position = getMessageStart(msg);
-          if (y >= position - 5 && y <= position + 5) {
-            result.add(msg);
-          }
-        }
-      }
-      removeLater(messagesToRemove);
-      return result;
-    }
-
-    public void dispose() {
-      MPSToolTipManager.getInstance().unregisterComponentRightAligned(this);
-    }
+    removeLater(messagesToRemove);
+    return result;
   }
 
+  @Override
+  public Point getToolTipLocation(MouseEvent event) {
+    int y = event.getY();
+
+    List<EditorMessage> messages = getMessagesAt(y);
+    if (messages.size() > 0) {
+      EditorMessage msg = messages.get(messages.size() - 1);
+      int pos = getMessageStart(msg);
+
+      return new Point(event.getX(), pos);
+    }
+    return null;
+  }
+
+  public String getMPSTooltipText(MouseEvent event) {
+    int y = event.getY();
+
+    List<EditorMessage> messages = getMessagesAt(y);
+    if (messages.size() > 0) {
+      StringBuffer text = new StringBuffer();
+      for (EditorMessage msg : messages) {
+        if (text.length() > 0) {
+          text.append("\n");
+        }
+        text.append(msg.getMessage());
+        // text.append("(owner: " + msg.getOwner() + ")");
+      }
+      return text.toString();
+    }
+
+    return null;
+  }
 
   public enum GutterStatus {
     OK,
@@ -379,10 +329,26 @@ public class MessagesGutter extends JPanel {
     }
   }
 
-  private class MyScrollBarUI extends ButtonlessScrollBarUI {
+  private class MyScrollBarUI extends ButtonlessScrollBarUI implements TooltipComponent, MouseMotionListener, MouseListener {
     @Override
     protected JButton createDecreaseButton(int orientation) {
       return myErrorsButton;
+    }
+
+    @Override
+    protected void installListeners() {
+      super.installListeners();
+      MPSToolTipManager.getInstance().registerComponentRightAligned(scrollbar);
+      scrollbar.addMouseListener(this);
+      scrollbar.addMouseMotionListener(this);
+    }
+
+    @Override
+    protected void uninstallListeners() {
+      scrollbar.addMouseMotionListener(this);
+      scrollbar.addMouseListener(this);
+      MPSToolTipManager.getInstance().unregisterComponentRightAligned(scrollbar);
+      super.uninstallListeners();
     }
 
     @Override
@@ -413,6 +379,51 @@ public class MessagesGutter extends JPanel {
     @Override
     protected int getThickness() {
       return super.getThickness() + 7;
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+      List<EditorMessage> messages = getMessagesAt(e.getY());
+      if (messages.size() > 0) {
+        scrollbar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+      } else {
+        scrollbar.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+      }
+    }
+
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+      List<EditorMessage> messages = getMessagesAt(e.getY());
+      if (messages.size() > 0) {
+        messages.get(0).doNavigate(myEditorComponent);
+      }
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+    }
+
+
+    @Override
+    public String getMPSTooltipText(MouseEvent mouseEvent) {
+      return MessagesGutter.this.getMPSTooltipText(mouseEvent);
     }
   }
 }
