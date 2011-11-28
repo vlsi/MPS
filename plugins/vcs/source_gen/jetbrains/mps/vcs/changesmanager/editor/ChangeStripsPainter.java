@@ -7,6 +7,7 @@ import java.awt.Color;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -45,6 +46,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     super(editorHighlighter.getLeftEditorHighlighter());
     myEditorHighlighter = editorHighlighter;
     myChangeGroupLayout = new StripsChangeGroupLayout(myEditorHighlighter);
+    new ChangeGroupMessages(myChangeGroupLayout, true).startMaintaining();
   }
 
   @NotNull
