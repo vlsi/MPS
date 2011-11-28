@@ -65,15 +65,6 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     paintDecorations(g, cell);
   }
 
-  @Override
-  public LocationOnCell getLocationOnCell() {
-    if (isWarning()) {
-      return LocationOnCell.CENTER;
-    } else {
-      return LocationOnCell.BOTTOM;
-    }
-  }
-
   private void paintDecorations(Graphics g, EditorCell cell) {
     if (cell == null) return;
     if (isWarning()) {

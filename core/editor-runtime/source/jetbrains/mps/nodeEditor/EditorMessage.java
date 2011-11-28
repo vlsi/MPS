@@ -62,8 +62,6 @@ public interface EditorMessage {
   public void putUserObject(Object key, Object value);
   public Object getUserObject(Object key);
 
-  LocationOnCell getLocationOnCell();
-
   boolean isLongInGutter();
 
   Color getColorInGutter();
