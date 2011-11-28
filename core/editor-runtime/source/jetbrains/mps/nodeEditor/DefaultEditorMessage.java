@@ -199,16 +199,6 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   @Override
-  public boolean isLongInGutter() {
-    return false;
-  }
-
-  @Override
-  public Color getColorInGutter() {
-    return getColor();
-  }
-
-  @Override
   public int getPriority() {
     return DEFAULT_MESSAGE_PRIORITY;
   }

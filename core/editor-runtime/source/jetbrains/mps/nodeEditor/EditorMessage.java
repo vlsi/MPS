@@ -62,10 +62,6 @@ public interface EditorMessage {
   public void putUserObject(Object key, Object value);
   public Object getUserObject(Object key);
 
-  boolean isLongInGutter();
-
-  Color getColorInGutter();
-
   int getPriority();
 
   boolean showInGutter();

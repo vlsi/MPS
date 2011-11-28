@@ -247,12 +247,8 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
         if (o1 == o2) return 0;
         if (o1 == null) return -1;
         if (o2 == null) return 1;
-        if (o1.getStatus().ordinal() == o2.getStatus().ordinal()) {
-          if (o1.isLongInGutter() == o2.isLongInGutter()) {
-            return getMessageStart(o1) - getMessageStart(o2);
-          } else {
-            return o1.isLongInGutter() ? -1 : 1;
-          }
+        if (o1.getStatus() == o2.getStatus()) {
+          return getMessageStart(o1) - getMessageStart(o2);
         } else {
           return o1.getStatus().ordinal() - o2.getStatus().ordinal();
         }
@@ -265,7 +261,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
       int messageY = getMessageStart(msg);
       int messageHeight = Math.max(getMessageHeight(msg), 3);
 
-      Color color = msg.getColorInGutter();
+      Color color = msg.getColor();
 
       if (color == null) return;
       g.setColor(color);

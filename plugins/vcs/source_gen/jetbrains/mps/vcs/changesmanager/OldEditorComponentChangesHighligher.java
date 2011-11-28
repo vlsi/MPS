@@ -463,17 +463,6 @@ public class OldEditorComponentChangesHighligher implements EditorMessageOwner {
     }
 
     @Override
-    public boolean isLongInGutter() {
-      return true;
-    }
-
-    @Override
-    @NotNull
-    public Color getColorInGutter() {
-      return OldEditorComponentChangesHighligher.GUTTER_COLOR;
-    }
-
-    @Override
     public boolean isBackground() {
       return myHighlighted || myEnabled;
     }

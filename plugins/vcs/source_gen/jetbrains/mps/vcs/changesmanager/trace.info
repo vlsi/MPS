@@ -158,28 +158,26 @@
     <nodeInfo nodeId="7429456937243134868" fileName="OldEditorComponentChangesHighligher.java" startLine="450" startPosition="53" endLine="451" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719874279484892358" fileName="OldEditorComponentChangesHighligher.java" startLine="456" startPosition="29" endLine="457" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="531813502180021745" fileName="OldEditorComponentChangesHighligher.java" startLine="461" startPosition="34" endLine="462" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1994185481787546085" fileName="OldEditorComponentChangesHighligher.java" startLine="466" startPosition="37" endLine="467" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7752093726709244934" fileName="OldEditorComponentChangesHighligher.java" startLine="472" startPosition="37" endLine="473" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6371186153576917403" fileName="OldEditorComponentChangesHighligher.java" startLine="477" startPosition="35" endLine="478" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7240192589568741091" fileName="OldEditorComponentChangesHighligher.java" startLine="483" startPosition="44" endLine="484" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7240192589568741097" fileName="OldEditorComponentChangesHighligher.java" startLine="485" startPosition="14" endLine="486" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7240192589568741101" fileName="OldEditorComponentChangesHighligher.java" startLine="492" startPosition="44" endLine="493" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7240192589568741108" fileName="OldEditorComponentChangesHighligher.java" startLine="494" startPosition="14" endLine="495" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7542415519011417063" fileName="OldEditorComponentChangesHighligher.java" startLine="500" startPosition="63" endLine="501" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAddedMessages" />
-    <nodeInfo nodeId="7542415519011417482" fileName="OldEditorComponentChangesHighligher.java" startLine="501" startPosition="104" endLine="502" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRemovedMessages" />
-    <nodeInfo nodeId="967454776205090401" fileName="OldEditorComponentChangesHighligher.java" startLine="507" startPosition="79" endLine="508" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="928328222692503836" fileName="OldEditorComponentChangesHighligher.java" startLine="509" startPosition="33" endLine="510" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="967454776205091700" fileName="OldEditorComponentChangesHighligher.java" startLine="510" startPosition="77" endLine="511" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="967454776205090735" fileName="OldEditorComponentChangesHighligher.java" startLine="515" startPosition="81" endLine="516" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="967454776205091981" fileName="OldEditorComponentChangesHighligher.java" startLine="517" startPosition="35" endLine="518" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="928328222692503824" fileName="OldEditorComponentChangesHighligher.java" startLine="518" startPosition="76" endLine="519" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974964540305863488" fileName="OldEditorComponentChangesHighligher.java" startLine="530" startPosition="121" endLine="531" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="967454776205093346" fileName="OldEditorComponentChangesHighligher.java" startLine="532" startPosition="87" endLine="533" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="967454776205099353" fileName="OldEditorComponentChangesHighligher.java" startLine="535" startPosition="83" endLine="536" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="967454776205100320" fileName="OldEditorComponentChangesHighligher.java" startLine="537" startPosition="9" endLine="538" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="967454776205100699" fileName="OldEditorComponentChangesHighligher.java" startLine="540" startPosition="29" endLine="541" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2343602534332756996" fileName="OldEditorComponentChangesHighligher.java" startLine="543" startPosition="11" endLine="544" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2343602534332756988" fileName="OldEditorComponentChangesHighligher.java" startLine="544" startPosition="55" endLine="545" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6371186153576917403" fileName="OldEditorComponentChangesHighligher.java" startLine="466" startPosition="35" endLine="467" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7240192589568741091" fileName="OldEditorComponentChangesHighligher.java" startLine="472" startPosition="44" endLine="473" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7240192589568741097" fileName="OldEditorComponentChangesHighligher.java" startLine="474" startPosition="14" endLine="475" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7240192589568741101" fileName="OldEditorComponentChangesHighligher.java" startLine="481" startPosition="44" endLine="482" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7240192589568741108" fileName="OldEditorComponentChangesHighligher.java" startLine="483" startPosition="14" endLine="484" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7542415519011417063" fileName="OldEditorComponentChangesHighligher.java" startLine="489" startPosition="63" endLine="490" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAddedMessages" />
+    <nodeInfo nodeId="7542415519011417482" fileName="OldEditorComponentChangesHighligher.java" startLine="490" startPosition="104" endLine="491" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRemovedMessages" />
+    <nodeInfo nodeId="967454776205090401" fileName="OldEditorComponentChangesHighligher.java" startLine="496" startPosition="79" endLine="497" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="928328222692503836" fileName="OldEditorComponentChangesHighligher.java" startLine="498" startPosition="33" endLine="499" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="967454776205091700" fileName="OldEditorComponentChangesHighligher.java" startLine="499" startPosition="77" endLine="500" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="967454776205090735" fileName="OldEditorComponentChangesHighligher.java" startLine="504" startPosition="81" endLine="505" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="967454776205091981" fileName="OldEditorComponentChangesHighligher.java" startLine="506" startPosition="35" endLine="507" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="928328222692503824" fileName="OldEditorComponentChangesHighligher.java" startLine="507" startPosition="76" endLine="508" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8974964540305863488" fileName="OldEditorComponentChangesHighligher.java" startLine="519" startPosition="121" endLine="520" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="967454776205093346" fileName="OldEditorComponentChangesHighligher.java" startLine="521" startPosition="87" endLine="522" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="967454776205099353" fileName="OldEditorComponentChangesHighligher.java" startLine="524" startPosition="83" endLine="525" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="967454776205100320" fileName="OldEditorComponentChangesHighligher.java" startLine="526" startPosition="9" endLine="527" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="967454776205100699" fileName="OldEditorComponentChangesHighligher.java" startLine="529" startPosition="29" endLine="530" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2343602534332756996" fileName="OldEditorComponentChangesHighligher.java" startLine="532" startPosition="11" endLine="533" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2343602534332756988" fileName="OldEditorComponentChangesHighligher.java" startLine="533" startPosition="55" endLine="534" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4410510979167112725" fileName="OldEditorComponentChangesHighligher.java" startLine="149" startPosition="14" endLine="151" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="94490962879304446" fileName="OldEditorComponentChangesHighligher.java" startLine="176" startPosition="10" endLine="178" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7152638585749154642" fileName="OldEditorComponentChangesHighligher.java" startLine="326" startPosition="10" endLine="328" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -189,9 +187,9 @@
     <nodeInfo nodeId="3719874279484891777" fileName="OldEditorComponentChangesHighligher.java" startLine="386" startPosition="12" endLine="388" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2936752800012777745" fileName="OldEditorComponentChangesHighligher.java" startLine="413" startPosition="20" endLine="415" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2936752800012781043" fileName="OldEditorComponentChangesHighligher.java" startLine="423" startPosition="20" endLine="425" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7240192589568741095" fileName="OldEditorComponentChangesHighligher.java" startLine="485" startPosition="12" endLine="487" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7240192589568741106" fileName="OldEditorComponentChangesHighligher.java" startLine="494" startPosition="12" endLine="496" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5264204858747865439" fileName="OldEditorComponentChangesHighligher.java" startLine="503" startPosition="0" endLine="505" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyChangeListener#()V" />
+    <nodeInfo nodeId="7240192589568741095" fileName="OldEditorComponentChangesHighligher.java" startLine="474" startPosition="12" endLine="476" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7240192589568741106" fileName="OldEditorComponentChangesHighligher.java" startLine="483" startPosition="12" endLine="485" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5264204858747865439" fileName="OldEditorComponentChangesHighligher.java" startLine="492" startPosition="0" endLine="494" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyChangeListener#()V" />
     <nodeInfo nodeId="7090398860987902382" fileName="OldEditorComponentChangesHighligher.java" startLine="79" startPosition="43" endLine="82" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8689837533387259883" fileName="OldEditorComponentChangesHighligher.java" startLine="83" startPosition="65" endLine="86" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1998524321632141961" fileName="OldEditorComponentChangesHighligher.java" startLine="96" startPosition="45" endLine="99" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -210,10 +208,10 @@
     <nodeInfo nodeId="3768510864479102973" fileName="OldEditorComponentChangesHighligher.java" startLine="278" startPosition="99" endLine="281" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="166132277801266530" fileName="OldEditorComponentChangesHighligher.java" startLine="331" startPosition="93" endLine="334" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3719874279484891781" fileName="OldEditorComponentChangesHighligher.java" startLine="373" startPosition="106" endLine="376" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1041446044406864801" fileName="OldEditorComponentChangesHighligher.java" startLine="522" startPosition="0" endLine="525" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusChanged#(Lcom/intellij/openapi/vcs/FileStatus;Ljetbrains/mps/smodel/SModel;)V" />
-    <nodeInfo nodeId="7542415519011416804" fileName="OldEditorComponentChangesHighligher.java" startLine="525" startPosition="0" endLine="528" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateStarted#()V" />
-    <nodeInfo nodeId="967454776205093008" fileName="OldEditorComponentChangesHighligher.java" startLine="531" startPosition="74" endLine="534" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="967454776205093019" fileName="OldEditorComponentChangesHighligher.java" startLine="534" startPosition="9" endLine="537" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1041446044406864801" fileName="OldEditorComponentChangesHighligher.java" startLine="511" startPosition="0" endLine="514" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusChanged#(Lcom/intellij/openapi/vcs/FileStatus;Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="7542415519011416804" fileName="OldEditorComponentChangesHighligher.java" startLine="514" startPosition="0" endLine="517" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateStarted#()V" />
+    <nodeInfo nodeId="967454776205093008" fileName="OldEditorComponentChangesHighligher.java" startLine="520" startPosition="74" endLine="523" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="967454776205093019" fileName="OldEditorComponentChangesHighligher.java" startLine="523" startPosition="9" endLine="526" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2034607283473279946" fileName="OldEditorComponentChangesHighligher.java" startLine="87" startPosition="57" endLine="91" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5643745088231029815" fileName="OldEditorComponentChangesHighligher.java" startLine="91" startPosition="16" endLine="95" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8974964540305863464" fileName="OldEditorComponentChangesHighligher.java" startLine="106" startPosition="64" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -236,9 +234,9 @@
     <nodeInfo nodeId="7152638585749130007" fileName="OldEditorComponentChangesHighligher.java" startLine="401" startPosition="0" endLine="405" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3719874279484891809" fileName="OldEditorComponentChangesHighligher.java" startLine="440" startPosition="9" endLine="444" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7429456937243134864" fileName="OldEditorComponentChangesHighligher.java" startLine="449" startPosition="0" endLine="453" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setHighlighted#(Z)V" />
-    <nodeInfo nodeId="967454776205090453" fileName="OldEditorComponentChangesHighligher.java" startLine="508" startPosition="59" endLine="512" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="967454776205091104" fileName="OldEditorComponentChangesHighligher.java" startLine="516" startPosition="63" endLine="520" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="967454776205100697" fileName="OldEditorComponentChangesHighligher.java" startLine="539" startPosition="56" endLine="543" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="967454776205090453" fileName="OldEditorComponentChangesHighligher.java" startLine="497" startPosition="59" endLine="501" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="967454776205091104" fileName="OldEditorComponentChangesHighligher.java" startLine="505" startPosition="63" endLine="509" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="967454776205100697" fileName="OldEditorComponentChangesHighligher.java" startLine="528" startPosition="56" endLine="532" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="3375103409259077543" fileName="OldEditorComponentChangesHighligher.java" startLine="99" startPosition="17" endLine="104" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="8974964540305863462" fileName="OldEditorComponentChangesHighligher.java" startLine="105" startPosition="72" endLine="110" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7627490208786700324" fileName="OldEditorComponentChangesHighligher.java" startLine="158" startPosition="66" endLine="163" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -255,25 +253,23 @@
     <nodeInfo nodeId="2936752800012777697" fileName="OldEditorComponentChangesHighligher.java" startLine="410" startPosition="20" endLine="415" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2936752800012781027" fileName="OldEditorComponentChangesHighligher.java" startLine="420" startPosition="20" endLine="425" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="531813502180021741" fileName="OldEditorComponentChangesHighligher.java" startLine="459" startPosition="0" endLine="464" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChange#()Ljetbrains/mps/vcs/diff/oldchanges/OldChange;" />
-    <nodeInfo nodeId="1994185481787540152" fileName="OldEditorComponentChangesHighligher.java" startLine="464" startPosition="0" endLine="469" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLongInGutter#()Z" />
-    <nodeInfo nodeId="6371186153576896351" fileName="OldEditorComponentChangesHighligher.java" startLine="475" startPosition="0" endLine="480" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBackground#()Z" />
-    <nodeInfo nodeId="7240192589568741085" fileName="OldEditorComponentChangesHighligher.java" startLine="482" startPosition="52" endLine="487" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7240192589568741099" fileName="OldEditorComponentChangesHighligher.java" startLine="491" startPosition="53" endLine="496" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="967454776205100695" fileName="OldEditorComponentChangesHighligher.java" startLine="538" startPosition="63" endLine="543" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6371186153576896351" fileName="OldEditorComponentChangesHighligher.java" startLine="464" startPosition="0" endLine="469" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBackground#()Z" />
+    <nodeInfo nodeId="7240192589568741085" fileName="OldEditorComponentChangesHighligher.java" startLine="471" startPosition="52" endLine="476" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7240192589568741099" fileName="OldEditorComponentChangesHighligher.java" startLine="480" startPosition="53" endLine="485" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="967454776205100695" fileName="OldEditorComponentChangesHighligher.java" startLine="527" startPosition="63" endLine="532" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7429456937243134896" fileName="OldEditorComponentChangesHighligher.java" startLine="453" startPosition="0" endLine="459" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="4589042405947503392" fileName="OldEditorComponentChangesHighligher.java" startLine="469" startPosition="0" endLine="475" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColorInGutter#()Ljava/awt/Color;" />
     <nodeInfo nodeId="3375103409259077554" fileName="OldEditorComponentChangesHighligher.java" startLine="198" startPosition="26" endLine="205" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="4209733725028850846" fileName="OldEditorComponentChangesHighligher.java" startLine="214" startPosition="15" endLine="221" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="9048291698849221221" fileName="OldEditorComponentChangesHighligher.java" startLine="239" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditorMessages#()Ljava/util/List;" />
     <nodeInfo nodeId="166132277801266530" fileName="OldEditorComponentChangesHighligher.java" startLine="330" startPosition="0" endLine="337" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_w2a75v_a0a41#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/mps/nodeEditor/NodeHighlightManager;" />
     <nodeInfo nodeId="4410510979167112711" fileName="OldEditorComponentChangesHighligher.java" startLine="140" startPosition="63" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4366048675740426755" fileName="OldEditorComponentChangesHighligher.java" startLine="506" startPosition="0" endLine="514" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeAdded#(Ljetbrains/mps/vcs/diff/oldchanges/OldChange;Ljetbrains/mps/smodel/SModel;)V" />
-    <nodeInfo nodeId="4366048675740426771" fileName="OldEditorComponentChangesHighligher.java" startLine="514" startPosition="0" endLine="522" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeRemoved#(Ljetbrains/mps/vcs/diff/oldchanges/OldChange;Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="4366048675740426755" fileName="OldEditorComponentChangesHighligher.java" startLine="495" startPosition="0" endLine="503" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeAdded#(Ljetbrains/mps/vcs/diff/oldchanges/OldChange;Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="4366048675740426771" fileName="OldEditorComponentChangesHighligher.java" startLine="503" startPosition="0" endLine="511" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeRemoved#(Ljetbrains/mps/vcs/diff/oldchanges/OldChange;Ljetbrains/mps/smodel/SModel;)V" />
     <nodeInfo nodeId="4410510979167112710" fileName="OldEditorComponentChangesHighligher.java" startLine="139" startPosition="61" endLine="148" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="94490962879300591" fileName="OldEditorComponentChangesHighligher.java" startLine="169" startPosition="12" endLine="178" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6105081101195305255" fileName="OldEditorComponentChangesHighligher.java" startLine="304" startPosition="0" endLine="313" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rollbackChanges#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="7240192589568729035" fileName="OldEditorComponentChangesHighligher.java" startLine="480" startPosition="0" endLine="489" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStart#(Ljetbrains/mps/nodeEditor/EditorComponent;)I" />
-    <nodeInfo nodeId="7240192589568729029" fileName="OldEditorComponentChangesHighligher.java" startLine="489" startPosition="0" endLine="498" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#(Ljetbrains/mps/nodeEditor/EditorComponent;)I" />
+    <nodeInfo nodeId="7240192589568729035" fileName="OldEditorComponentChangesHighligher.java" startLine="469" startPosition="0" endLine="478" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStart#(Ljetbrains/mps/nodeEditor/EditorComponent;)I" />
+    <nodeInfo nodeId="7240192589568729029" fileName="OldEditorComponentChangesHighligher.java" startLine="478" startPosition="0" endLine="487" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#(Ljetbrains/mps/nodeEditor/EditorComponent;)I" />
     <nodeInfo nodeId="3375103409259077549" fileName="OldEditorComponentChangesHighligher.java" startLine="183" startPosition="68" endLine="193" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="7152638585749154597" fileName="OldEditorComponentChangesHighligher.java" startLine="318" startPosition="72" endLine="328" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3768510864479102966" fileName="OldEditorComponentChangesHighligher.java" startLine="277" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToMessageGroup#(Ljetbrains/mps/vcs/changesmanager/OldChangesFoldingAreaPainter/MessageGroup;)V" />
@@ -287,11 +283,11 @@
     <nodeInfo nodeId="4434895596490168857" fileName="OldEditorComponentChangesHighligher.java" startLine="355" startPosition="0" endLine="370" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getY#(Ljetbrains/mps/nodeEditor/EditorComponent;)I" />
     <nodeInfo nodeId="9018999988555488434" fileName="OldEditorComponentChangesHighligher.java" startLine="213" startPosition="28" endLine="229" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1998524321632141959" fileName="OldEditorComponentChangesHighligher.java" startLine="95" startPosition="15" endLine="112" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="967454776205092308" fileName="OldEditorComponentChangesHighligher.java" startLine="529" startPosition="40" endLine="546" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="967454776205092308" fileName="OldEditorComponentChangesHighligher.java" startLine="518" startPosition="40" endLine="535" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7090398860987902387" fileName="OldEditorComponentChangesHighligher.java" startLine="211" startPosition="25" endLine="230" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="2936752800012781013" fileName="OldEditorComponentChangesHighligher.java" startLine="418" startPosition="18" endLine="437" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3719874279484891743" fileName="OldEditorComponentChangesHighligher.java" startLine="370" startPosition="0" endLine="390" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActualColor#(Ljava/awt/Color;)Ljava/awt/Color;" />
-    <nodeInfo nodeId="7542415519011416849" fileName="OldEditorComponentChangesHighligher.java" startLine="528" startPosition="0" endLine="548" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateFinished#()V" />
+    <nodeInfo nodeId="7542415519011416849" fileName="OldEditorComponentChangesHighligher.java" startLine="517" startPosition="0" endLine="537" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateFinished#()V" />
     <nodeInfo nodeId="1004615668282177891" fileName="OldEditorComponentChangesHighligher.java" startLine="210" startPosition="57" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1004615668282177890" fileName="OldEditorComponentChangesHighligher.java" startLine="209" startPosition="25" endLine="232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6080400160196253706" fileName="OldEditorComponentChangesHighligher.java" startLine="208" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
@@ -310,9 +306,9 @@
     <nodeInfo nodeId="6149144798615862405" fileName="OldEditorComponentChangesHighligher.java" startLine="393" startPosition="83" endLine="447" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6149144798615862395" fileName="OldEditorComponentChangesHighligher.java" startLine="390" startPosition="0" endLine="449" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/cells/EditorCell;)V" />
     <nodeInfo nodeId="166132277801275728" fileName="OldEditorComponentChangesHighligher.java" startLine="119" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="highlightChange#(Ljetbrains/mps/vcs/diff/oldchanges/OldChange;)Ljetbrains/mps/nodeEditor/EditorMessage;" />
-    <scopeInfo nodeId="5264204858747865442" fileName="OldEditorComponentChangesHighligher.java" startLine="504" startPosition="31" endLine="504" endPosition="31" />
-    <scopeInfo nodeId="1041446044406864808" fileName="OldEditorComponentChangesHighligher.java" startLine="523" startPosition="94" endLine="523" endPosition="94" />
-    <scopeInfo nodeId="7542415519011416807" fileName="OldEditorComponentChangesHighligher.java" startLine="526" startPosition="39" endLine="526" endPosition="39" />
+    <scopeInfo nodeId="5264204858747865442" fileName="OldEditorComponentChangesHighligher.java" startLine="493" startPosition="31" endLine="493" endPosition="31" />
+    <scopeInfo nodeId="1041446044406864808" fileName="OldEditorComponentChangesHighligher.java" startLine="512" startPosition="94" endLine="512" endPosition="94" />
+    <scopeInfo nodeId="7542415519011416807" fileName="OldEditorComponentChangesHighligher.java" startLine="515" startPosition="39" endLine="515" endPosition="39" />
     <scopeInfo nodeId="7090398860987902383" fileName="OldEditorComponentChangesHighligher.java" startLine="80" startPosition="31" endLine="81" endPosition="23" />
     <scopeInfo nodeId="8689837533387259884" fileName="OldEditorComponentChangesHighligher.java" startLine="84" startPosition="66" endLine="85" endPosition="23" />
     <scopeInfo nodeId="1998524321632141963" fileName="OldEditorComponentChangesHighligher.java" startLine="97" startPosition="103" endLine="98" endPosition="42" />
@@ -366,16 +362,14 @@
     <scopeInfo nodeId="7429456937243134867" fileName="OldEditorComponentChangesHighligher.java" startLine="450" startPosition="53" endLine="451" endPosition="34" />
     <scopeInfo nodeId="7429456937243134899" fileName="OldEditorComponentChangesHighligher.java" startLine="456" startPosition="29" endLine="457" endPosition="46" />
     <scopeInfo nodeId="531813502180021744" fileName="OldEditorComponentChangesHighligher.java" startLine="461" startPosition="34" endLine="462" endPosition="22" />
-    <scopeInfo nodeId="1994185481787540155" fileName="OldEditorComponentChangesHighligher.java" startLine="466" startPosition="37" endLine="467" endPosition="18" />
-    <scopeInfo nodeId="4589042405947503395" fileName="OldEditorComponentChangesHighligher.java" startLine="472" startPosition="37" endLine="473" endPosition="62" />
-    <scopeInfo nodeId="6371186153576896354" fileName="OldEditorComponentChangesHighligher.java" startLine="477" startPosition="35" endLine="478" endPosition="40" />
-    <scopeInfo nodeId="7240192589568741086" fileName="OldEditorComponentChangesHighligher.java" startLine="483" startPosition="44" endLine="484" endPosition="31" />
-    <scopeInfo nodeId="7240192589568741096" fileName="OldEditorComponentChangesHighligher.java" startLine="485" startPosition="14" endLine="486" endPosition="41" />
-    <scopeInfo nodeId="7240192589568741100" fileName="OldEditorComponentChangesHighligher.java" startLine="492" startPosition="44" endLine="493" endPosition="17" />
-    <scopeInfo nodeId="7240192589568741107" fileName="OldEditorComponentChangesHighligher.java" startLine="494" startPosition="14" endLine="495" endPosition="42" />
-    <scopeInfo nodeId="967454776205093013" fileName="OldEditorComponentChangesHighligher.java" startLine="532" startPosition="87" endLine="533" endPosition="54" />
-    <scopeInfo nodeId="967454776205093024" fileName="OldEditorComponentChangesHighligher.java" startLine="535" startPosition="83" endLine="536" endPosition="50" />
-    <scopeInfo nodeId="967454776205100698" fileName="OldEditorComponentChangesHighligher.java" startLine="540" startPosition="29" endLine="541" endPosition="44" />
+    <scopeInfo nodeId="6371186153576896354" fileName="OldEditorComponentChangesHighligher.java" startLine="466" startPosition="35" endLine="467" endPosition="40" />
+    <scopeInfo nodeId="7240192589568741086" fileName="OldEditorComponentChangesHighligher.java" startLine="472" startPosition="44" endLine="473" endPosition="31" />
+    <scopeInfo nodeId="7240192589568741096" fileName="OldEditorComponentChangesHighligher.java" startLine="474" startPosition="14" endLine="475" endPosition="41" />
+    <scopeInfo nodeId="7240192589568741100" fileName="OldEditorComponentChangesHighligher.java" startLine="481" startPosition="44" endLine="482" endPosition="17" />
+    <scopeInfo nodeId="7240192589568741107" fileName="OldEditorComponentChangesHighligher.java" startLine="483" startPosition="14" endLine="484" endPosition="42" />
+    <scopeInfo nodeId="967454776205093013" fileName="OldEditorComponentChangesHighligher.java" startLine="521" startPosition="87" endLine="522" endPosition="54" />
+    <scopeInfo nodeId="967454776205093024" fileName="OldEditorComponentChangesHighligher.java" startLine="524" startPosition="83" endLine="525" endPosition="50" />
+    <scopeInfo nodeId="967454776205100698" fileName="OldEditorComponentChangesHighligher.java" startLine="529" startPosition="29" endLine="530" endPosition="44" />
     <scopeInfo nodeId="5643745088231029816" fileName="OldEditorComponentChangesHighligher.java" startLine="92" startPosition="67" endLine="94" endPosition="94" />
     <scopeInfo nodeId="94490962879304460" fileName="OldEditorComponentChangesHighligher.java" startLine="179" startPosition="45" endLine="181" endPosition="18" />
     <scopeInfo nodeId="1216651720809581164" fileName="OldEditorComponentChangesHighligher.java" startLine="225" startPosition="48" endLine="227" endPosition="38" />
@@ -385,9 +379,9 @@
       <varInfo nodeId="4434895596490125496" varName="cell" />
     </scopeInfo>
     <scopeInfo nodeId="7152638585749130008" fileName="OldEditorComponentChangesHighligher.java" startLine="402" startPosition="56" endLine="404" endPosition="21" />
-    <scopeInfo nodeId="5264204858747865439" fileName="OldEditorComponentChangesHighligher.java" startLine="503" startPosition="0" endLine="505" endPosition="5" />
-    <scopeInfo nodeId="967454776205090454" fileName="OldEditorComponentChangesHighligher.java" startLine="509" startPosition="33" endLine="511" endPosition="72" />
-    <scopeInfo nodeId="967454776205091105" fileName="OldEditorComponentChangesHighligher.java" startLine="517" startPosition="35" endLine="519" endPosition="77" />
+    <scopeInfo nodeId="5264204858747865439" fileName="OldEditorComponentChangesHighligher.java" startLine="492" startPosition="0" endLine="494" endPosition="5" />
+    <scopeInfo nodeId="967454776205090454" fileName="OldEditorComponentChangesHighligher.java" startLine="498" startPosition="33" endLine="500" endPosition="72" />
+    <scopeInfo nodeId="967454776205091105" fileName="OldEditorComponentChangesHighligher.java" startLine="506" startPosition="35" endLine="508" endPosition="77" />
     <scopeInfo nodeId="1998524321632141961" fileName="OldEditorComponentChangesHighligher.java" startLine="96" startPosition="45" endLine="99" endPosition="17">
       <varInfo nodeId="1998524321632141961" varName="change" />
     </scopeInfo>
@@ -396,15 +390,15 @@
       <varInfo nodeId="8974964540305863410" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="9048291698849221224" fileName="OldEditorComponentChangesHighligher.java" startLine="241" startPosition="97" endLine="244" endPosition="5" />
-    <scopeInfo nodeId="1041446044406864801" fileName="OldEditorComponentChangesHighligher.java" startLine="522" startPosition="0" endLine="525" endPosition="0">
+    <scopeInfo nodeId="1041446044406864801" fileName="OldEditorComponentChangesHighligher.java" startLine="511" startPosition="0" endLine="514" endPosition="0">
       <varInfo nodeId="1041446044406864806" varName="model" />
       <varInfo nodeId="1041446044406864804" varName="newFileStatus" />
     </scopeInfo>
-    <scopeInfo nodeId="7542415519011416804" fileName="OldEditorComponentChangesHighligher.java" startLine="525" startPosition="0" endLine="528" endPosition="0" />
-    <scopeInfo nodeId="967454776205093008" fileName="OldEditorComponentChangesHighligher.java" startLine="531" startPosition="74" endLine="534" endPosition="9">
+    <scopeInfo nodeId="7542415519011416804" fileName="OldEditorComponentChangesHighligher.java" startLine="514" startPosition="0" endLine="517" endPosition="0" />
+    <scopeInfo nodeId="967454776205093008" fileName="OldEditorComponentChangesHighligher.java" startLine="520" startPosition="74" endLine="523" endPosition="9">
       <varInfo nodeId="967454776205093008" varName="removedMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="967454776205093019" fileName="OldEditorComponentChangesHighligher.java" startLine="534" startPosition="9" endLine="537" endPosition="9">
+    <scopeInfo nodeId="967454776205093019" fileName="OldEditorComponentChangesHighligher.java" startLine="523" startPosition="9" endLine="526" endPosition="9">
       <varInfo nodeId="967454776205093019" varName="addedMessage" />
     </scopeInfo>
     <scopeInfo nodeId="8974964540305863464" fileName="OldEditorComponentChangesHighligher.java" startLine="106" startPosition="64" endLine="110" endPosition="0" />
@@ -449,7 +443,7 @@
     <scopeInfo nodeId="7429456937243134864" fileName="OldEditorComponentChangesHighligher.java" startLine="449" startPosition="0" endLine="453" endPosition="0">
       <varInfo nodeId="7429456937243134874" varName="highlighted" />
     </scopeInfo>
-    <scopeInfo nodeId="967454776205100697" fileName="OldEditorComponentChangesHighligher.java" startLine="539" startPosition="56" endLine="543" endPosition="0" />
+    <scopeInfo nodeId="967454776205100697" fileName="OldEditorComponentChangesHighligher.java" startLine="528" startPosition="56" endLine="532" endPosition="0" />
     <scopeInfo nodeId="4410510979167112712" fileName="OldEditorComponentChangesHighligher.java" startLine="141" startPosition="31" endLine="146" endPosition="16">
       <varInfo nodeId="9197004340779234603" varName="parentId" />
     </scopeInfo>
@@ -463,14 +457,13 @@
       <varInfo nodeId="4434895596490125485" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="531813502180021741" fileName="OldEditorComponentChangesHighligher.java" startLine="459" startPosition="0" endLine="464" endPosition="0" />
-    <scopeInfo nodeId="1994185481787540152" fileName="OldEditorComponentChangesHighligher.java" startLine="464" startPosition="0" endLine="469" endPosition="0" />
-    <scopeInfo nodeId="6371186153576896351" fileName="OldEditorComponentChangesHighligher.java" startLine="475" startPosition="0" endLine="480" endPosition="0" />
-    <scopeInfo nodeId="7240192589568729040" fileName="OldEditorComponentChangesHighligher.java" startLine="482" startPosition="52" endLine="487" endPosition="7" />
-    <scopeInfo nodeId="7240192589568729034" fileName="OldEditorComponentChangesHighligher.java" startLine="491" startPosition="53" endLine="496" endPosition="7" />
-    <scopeInfo nodeId="4366048675740426760" fileName="OldEditorComponentChangesHighligher.java" startLine="507" startPosition="79" endLine="512" endPosition="7">
+    <scopeInfo nodeId="6371186153576896351" fileName="OldEditorComponentChangesHighligher.java" startLine="464" startPosition="0" endLine="469" endPosition="0" />
+    <scopeInfo nodeId="7240192589568729040" fileName="OldEditorComponentChangesHighligher.java" startLine="471" startPosition="52" endLine="476" endPosition="7" />
+    <scopeInfo nodeId="7240192589568729034" fileName="OldEditorComponentChangesHighligher.java" startLine="480" startPosition="53" endLine="485" endPosition="7" />
+    <scopeInfo nodeId="4366048675740426760" fileName="OldEditorComponentChangesHighligher.java" startLine="496" startPosition="79" endLine="501" endPosition="7">
       <varInfo nodeId="967454776205090402" varName="addedMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="4366048675740426776" fileName="OldEditorComponentChangesHighligher.java" startLine="515" startPosition="81" endLine="520" endPosition="7">
+    <scopeInfo nodeId="4366048675740426776" fileName="OldEditorComponentChangesHighligher.java" startLine="504" startPosition="81" endLine="509" endPosition="7">
       <varInfo nodeId="967454776205090736" varName="removedMessage" />
     </scopeInfo>
     <scopeInfo nodeId="6105081101195305258" fileName="OldEditorComponentChangesHighligher.java" startLine="305" startPosition="69" endLine="311" endPosition="47" />
@@ -481,7 +474,6 @@
       <varInfo nodeId="3717011451301308940" varName="saturated" />
     </scopeInfo>
     <scopeInfo nodeId="7429456937243134896" fileName="OldEditorComponentChangesHighligher.java" startLine="453" startPosition="0" endLine="459" endPosition="0" />
-    <scopeInfo nodeId="4589042405947503392" fileName="OldEditorComponentChangesHighligher.java" startLine="469" startPosition="0" endLine="475" endPosition="0" />
     <scopeInfo nodeId="9048291698849221221" fileName="OldEditorComponentChangesHighligher.java" startLine="239" startPosition="0" endLine="246" endPosition="0" />
     <scopeInfo nodeId="166132277801266530" fileName="OldEditorComponentChangesHighligher.java" startLine="330" startPosition="0" endLine="337" endPosition="0">
       <varInfo nodeId="166132277801266530" varName="checkedDotOperand" />
@@ -500,11 +492,11 @@
     <scopeInfo nodeId="1536420391249887148" fileName="OldEditorComponentChangesHighligher.java" startLine="409" startPosition="27" endLine="417" endPosition="73">
       <varInfo nodeId="2936752800012777734" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="4366048675740426755" fileName="OldEditorComponentChangesHighligher.java" startLine="506" startPosition="0" endLine="514" endPosition="0">
+    <scopeInfo nodeId="4366048675740426755" fileName="OldEditorComponentChangesHighligher.java" startLine="495" startPosition="0" endLine="503" endPosition="0">
       <varInfo nodeId="4366048675740426758" varName="change" />
       <varInfo nodeId="2652739098952684298" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4366048675740426771" fileName="OldEditorComponentChangesHighligher.java" startLine="514" startPosition="0" endLine="522" endPosition="0">
+    <scopeInfo nodeId="4366048675740426771" fileName="OldEditorComponentChangesHighligher.java" startLine="503" startPosition="0" endLine="511" endPosition="0">
       <varInfo nodeId="4366048675740426774" varName="change" />
       <varInfo nodeId="2652739098952684301" varName="model" />
     </scopeInfo>
@@ -522,10 +514,10 @@
     <scopeInfo nodeId="6105081101195305255" fileName="OldEditorComponentChangesHighligher.java" startLine="304" startPosition="0" endLine="313" endPosition="0">
       <varInfo nodeId="6105081101195305293" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7240192589568729035" fileName="OldEditorComponentChangesHighligher.java" startLine="480" startPosition="0" endLine="489" endPosition="0">
+    <scopeInfo nodeId="7240192589568729035" fileName="OldEditorComponentChangesHighligher.java" startLine="469" startPosition="0" endLine="478" endPosition="0">
       <varInfo nodeId="7240192589568729038" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="7240192589568729029" fileName="OldEditorComponentChangesHighligher.java" startLine="489" startPosition="0" endLine="498" endPosition="0">
+    <scopeInfo nodeId="7240192589568729029" fileName="OldEditorComponentChangesHighligher.java" startLine="478" startPosition="0" endLine="487" endPosition="0">
       <varInfo nodeId="7240192589568729032" varName="component" />
     </scopeInfo>
     <scopeInfo nodeId="7152638585749154571" fileName="OldEditorComponentChangesHighligher.java" startLine="318" startPosition="72" endLine="328" endPosition="5" />
@@ -549,12 +541,12 @@
     <scopeInfo nodeId="4434895596490168857" fileName="OldEditorComponentChangesHighligher.java" startLine="355" startPosition="0" endLine="370" endPosition="0">
       <varInfo nodeId="4434895596490168866" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="967454776205092309" fileName="OldEditorComponentChangesHighligher.java" startLine="530" startPosition="121" endLine="545" endPosition="57">
+    <scopeInfo nodeId="967454776205092309" fileName="OldEditorComponentChangesHighligher.java" startLine="519" startPosition="121" endLine="534" endPosition="57">
       <varInfo nodeId="8974964540305863489" varName="nodeHighlightManager" />
     </scopeInfo>
     <scopeInfo nodeId="3719874279484891746" fileName="OldEditorComponentChangesHighligher.java" startLine="372" startPosition="64" endLine="388" endPosition="7" />
     <scopeInfo nodeId="7090398860987902389" fileName="OldEditorComponentChangesHighligher.java" startLine="212" startPosition="39" endLine="229" endPosition="11" />
-    <scopeInfo nodeId="7542415519011416852" fileName="OldEditorComponentChangesHighligher.java" startLine="529" startPosition="40" endLine="546" endPosition="7" />
+    <scopeInfo nodeId="7542415519011416852" fileName="OldEditorComponentChangesHighligher.java" startLine="518" startPosition="40" endLine="535" endPosition="7" />
     <scopeInfo nodeId="2936752800012781014" fileName="OldEditorComponentChangesHighligher.java" startLine="418" startPosition="20" endLine="436" endPosition="101">
       <varInfo nodeId="2936752800012781025" varName="x" />
       <varInfo nodeId="2451109806934128331" varName="y1" />
@@ -564,7 +556,7 @@
     <scopeInfo nodeId="3719874279484891743" fileName="OldEditorComponentChangesHighligher.java" startLine="370" startPosition="0" endLine="390" endPosition="0">
       <varInfo nodeId="3719874279484891749" varName="defaultColor" />
     </scopeInfo>
-    <scopeInfo nodeId="7542415519011416849" fileName="OldEditorComponentChangesHighligher.java" startLine="528" startPosition="0" endLine="548" endPosition="0" />
+    <scopeInfo nodeId="7542415519011416849" fileName="OldEditorComponentChangesHighligher.java" startLine="517" startPosition="0" endLine="537" endPosition="0" />
     <scopeInfo nodeId="1004615668282177891" fileName="OldEditorComponentChangesHighligher.java" startLine="210" startPosition="57" endLine="232" endPosition="0" />
     <scopeInfo nodeId="6080400160196253709" fileName="OldEditorComponentChangesHighligher.java" startLine="209" startPosition="25" endLine="232" endPosition="7" />
     <scopeInfo nodeId="6080400160196253706" fileName="OldEditorComponentChangesHighligher.java" startLine="208" startPosition="0" endLine="234" endPosition="0" />
@@ -619,9 +611,9 @@
     <scopeInfo nodeId="166132277801275728" fileName="OldEditorComponentChangesHighligher.java" startLine="119" startPosition="0" endLine="196" endPosition="0">
       <varInfo nodeId="166132277801275914" varName="change" />
     </scopeInfo>
-    <unitInfo nodeId="166132277801266530" fileName="OldEditorComponentChangesHighligher.java" startLine="52" startPosition="0" endLine="550" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher" />
+    <unitInfo nodeId="166132277801266530" fileName="OldEditorComponentChangesHighligher.java" startLine="52" startPosition="0" endLine="539" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher" />
     <unitInfo nodeId="7152638585749154664" fileName="OldEditorComponentChangesHighligher.java" startLine="321" startPosition="84" endLine="325" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$1" />
-    <unitInfo nodeId="967454776205100697" fileName="OldEditorComponentChangesHighligher.java" startLine="539" startPosition="44" endLine="543" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$1" />
+    <unitInfo nodeId="967454776205100697" fileName="OldEditorComponentChangesHighligher.java" startLine="528" startPosition="44" endLine="532" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$1" />
     <unitInfo nodeId="5455599429139860995" fileName="OldEditorComponentChangesHighligher.java" startLine="123" startPosition="45" endLine="153" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$2" />
     <unitInfo nodeId="7627490208786700325" fileName="OldEditorComponentChangesHighligher.java" startLine="159" startPosition="45" endLine="163" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$3" />
     <unitInfo nodeId="4410510979167112711" fileName="OldEditorComponentChangesHighligher.java" startLine="140" startPosition="51" endLine="148" endPosition="11" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$3" />
@@ -633,8 +625,8 @@
     <unitInfo nodeId="8974964540305863464" fileName="OldEditorComponentChangesHighligher.java" startLine="106" startPosition="52" endLine="110" endPosition="17" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$7" />
     <unitInfo nodeId="3499023120082621850" fileName="OldEditorComponentChangesHighligher.java" startLine="271" startPosition="88" endLine="275" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$7" />
     <unitInfo nodeId="2107542654406138048" fileName="OldEditorComponentChangesHighligher.java" startLine="306" startPosition="136" endLine="310" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$8" />
-    <unitInfo nodeId="6149144798615862330" fileName="OldEditorComponentChangesHighligher.java" startLine="338" startPosition="0" endLine="499" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$ChangeEditorMessage" />
-    <unitInfo nodeId="5264204858747865437" fileName="OldEditorComponentChangesHighligher.java" startLine="500" startPosition="0" endLine="549" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$MyChangeListener" />
+    <unitInfo nodeId="6149144798615862330" fileName="OldEditorComponentChangesHighligher.java" startLine="338" startPosition="0" endLine="488" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$ChangeEditorMessage" />
+    <unitInfo nodeId="5264204858747865437" fileName="OldEditorComponentChangesHighligher.java" startLine="489" startPosition="0" endLine="538" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.OldEditorComponentChangesHighligher$MyChangeListener" />
   </root>
   <root nodeId="2253323551303625635">
     <nodeInfo nodeId="2253323551303625635" fileName="BaseVersionUtil.java" startLine="20" startPosition="30" endLine="21" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
