@@ -281,7 +281,6 @@
         <!-- dir="${artifacts}"-->
         <!-- dir="${base_dir}/IdeaPlugin"-->
         <!-- classname="com.intellij.rt.execution.application.AppMain" -->
-        <!--
                 <java classname="com.intellij.rt.execution.junit.JUnitStarter"
                       fork="true"
                       failonerror="true"
@@ -294,10 +293,10 @@
                     <jvmarg value="-Xbootclasspath/a:${home.idea_ce}/lib/boot.jar"/>
                     <jvmarg value="-Didea.load.plugins.id=jetbrains.mps.core"/>
                     <jvmarg value="-Didea.home.path=${plugins.sandbox.dir}/test"/>
-                    <!- - <jvmarg value="-Didea.launcher.port=7532"/> - ->
+                    <!-- <jvmarg value="-Didea.launcher.port=7532"/> -->
                     <jvmarg value="-Didea.launcher.bin.path=${home.idea_ce}/bin"/>
                     <jvmarg value="-Dfile.encoding=UTF-8"/>
-                    <!- - <arg value="com.intellij.rt.execution.junit.JUnitStarter"/> - ->
+                    <!-- <arg value="com.intellij.rt.execution.junit.JUnitStarter"/> -->
                     <arg value="-ideVersion5"/>
                     <arg value="-junit4"/>
                     <arg value="jetbrains.mps.idea.core.tests.AllTests"/>
@@ -308,8 +307,9 @@
                         <fileset dir="${home.idea_ce}/plugins/junit/lib">
                             <include name="junit-rt.jar"/>
                         </fileset>
-                        <fileset dir="${base_dir}/IdeaPlugin/mps-core/lib">
-                            <include name="**/*.jar"/>
+                        <fileset dir="${base_dir}/lib">
+                            <include name="asm.jar"/>
+                            <include name="diffutils-1.2.1.jar"/>
                         </fileset>
                         <pathelement path="${build_dir}/mpscore_jar"/>
                         <pathelement path="${build_dir}/mpsworkbench_jar"/>
@@ -319,8 +319,7 @@
                         <pathelement path="${java.class.path}"/>
                     </classpath>
                 </java>
-        -->
-        <junit fork="true"
+<!--        <junit fork="true"
                dir="${base_dir}/IdeaPlugin"
                haltonfailure="true"
                showoutput="true"
@@ -357,6 +356,7 @@
             </classpath>
             <test name="jetbrains.mps.idea.core.tests.AllTests"/>
         </junit>
+-->
     </target>
 
     <target name="zip" depends="compile, compileTests">
