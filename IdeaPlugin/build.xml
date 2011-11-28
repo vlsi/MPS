@@ -285,11 +285,12 @@
                       fork="true"
                       failonerror="true"
                       maxmemory="1024m"
-                      dir="${base_dir}/IdeaPlugin">
+                      dir="${artifacts}">
                     <jvmarg value="-Didea.platform.prefix=Idea"/>
                     <jvmarg value="-Didea.config.path=${plugins.sandbox.dir}/config"/>
                     <jvmarg value="-Didea.system.path=${plugins.sandbox.dir}/system"/>
-                    <jvmarg value="-Didea.plugins.path=${base_dir}/IdeaPlugin"/>
+<!--                    <jvmarg value="-Didea.plugins.path=${base_dir}/IdeaPlugin"/> -->
+                    <jvmarg value="-Didea.plugins.path=${artifacts}"/>
                     <jvmarg value="-Xbootclasspath/a:${home.idea_ce}/lib/boot.jar"/>
                     <jvmarg value="-Didea.load.plugins.id=jetbrains.mps.core"/>
                     <jvmarg value="-Didea.home.path=${plugins.sandbox.dir}/test"/>
@@ -307,15 +308,9 @@
                         <fileset dir="${home.idea_ce}/plugins/junit/lib">
                             <include name="junit-rt.jar"/>
                         </fileset>
-                        <fileset dir="${base_dir}/lib">
-                            <include name="asm.jar"/>
-                            <include name="diffutils-1.2.1.jar"/>
+                        <fileset dir="${artifacts}/mps-core/lib/">
+                            <include name="*.jar"/>
                         </fileset>
-                        <pathelement path="${build_dir}/mpscore_jar"/>
-                        <pathelement path="${build_dir}/mpsworkbench_jar"/>
-                        <pathelement path="${build_dir}/mpseditor_jar"/>
-                        <pathelement path="${build_dir}/mpsplugin_jar"/>
-                        <pathelement path="${build_dir}/mpsplugintests_jar"/>
                         <pathelement path="${java.class.path}"/>
                     </classpath>
                 </java>
