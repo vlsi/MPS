@@ -16,33 +16,41 @@
 <project name="IDEA-plugin-compile" default="compile" basedir=".">
 
     <property name="base_dir" value=".."/>
-    <property name="build_dir" value="${base_dir}/IdeaPlugin/build"/>
-    <property name="artifacts" value="${base_dir}/IdeaPlugin/build/artifacts"/>
-    <property name="plugins.sandbox.dir" value="${build_dir}/plugins-sandbox"/>
+    <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
+    <property name="build_dir" value="${build.home}/build_dir/"/>
+    <property name="artifacts" value="${build.home}/artifacts"/>
+    <property name="dist.dir" value="${build.home}/dist"/>
+    <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
     <property file="build.properties"/>
     <property name="ideaPath" value="${home.idea_ce}"/>
 
     <path id="javac2.classpath">
-        <pathelement location="${ideaPath}/lib/javac2.jar"/>
-        <pathelement location="${ideaPath}/lib/jdom.jar"/>
-        <pathelement location="${ideaPath}/lib/asm.jar"/>
-        <pathelement location="${ideaPath}/lib/asm-commons.jar"/>
-        <pathelement location="${ideaPath}/lib/jgoodies-forms.jar"/>
+        <fileset dir="${ideaPath}/lib">
+            <include name="javac2.jar"/>
+            <include name="jdom.jar"/>
+            <include name="asm.jar"/>
+            <include name="asm-commons.jar"/>
+            <include name="jgoodies-forms.jar"/>
+        </fileset>
     </path>
     <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
 
     <path id="mps.core.libraries">
-        <path path="${home.idea_ce}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar"/>
-        <path path="${home.idea_ce}/lib/guava-r09.jar"/>
-        <path path="${home.idea_ce}/lib/jdom.jar"/>
-        <path path="${home.idea_ce}/lib/log4j.jar"/>
-        <path path="${home.idea_ce}/lib/trove4j.jar"/>
-        <path path="${home.idea_ce}/lib/xstream.jar"/>
-        <path path="${home.idea_ce}/lib/annotations.jar"/>
-        <path path="${home.idea_ce}/lib/commons-lang-2.4.jar"/>
-        <path path="${home.idea_ce}/lib/commons-logging-1.1.1.jar"/>
-        <path path="${base_dir}/lib/asm.jar"/>
-        <path path="${base_dir}/lib/diffutils-1.2.1.jar"/>
+        <fileset dir="${ideaPath}/lib">
+            <include name="org.eclipse.jdt.core_3.5.2.v_981_R35x.jar"/>
+            <include name="guava-r09.jar"/>
+            <include name="jdom.jar"/>
+            <include name="log4j.jar"/>
+            <include name="trove4j.jar"/>
+            <include name="xstream.jar"/>
+            <include name="annotations.jar"/>
+            <include name="commons-lang-2.4.jar"/>
+            <include name="commons-logging-1.1.1.jar"/>
+        </fileset>
+        <fileset dir="${base_dir}/lib">
+            <include name="asm.jar"/>
+            <include name="diffutils-1.2.1.jar"/>
+        </fileset>
     </path>
 
     <target name="prepare">
@@ -59,18 +67,16 @@
     </target>
 
     <target name="clean">
-        <delete dir="${artifacts}"/>
-        <delete dir="${build_dir}"/>
+        <delete dir="${build.home}"/>
     </target>
 
     <target name="compile" depends="clean">
-        <mkdir dir="${artifacts}"/>
-        <mkdir dir="${artifacts}/mps-core"/>
-        <mkdir dir="${artifacts}/mps-core/lib"/>
-        <mkdir dir="${artifacts}/mps-core/languages"/>
-        <touch file="${artifacts}/mps-core/build.number"/>
+        <mkdir dir="${dist.dir}"/>
+        <mkdir dir="${dist.dir}/lib"/>
+        <mkdir dir="${dist.dir}/languages"/>
+        <touch file="${dist.dir}/build.number"/>
 
-        <copy includeemptydirs="false" todir="${artifacts}/mps-core/languages">
+        <copy includeemptydirs="false" todir="${dist.dir}/languages">
             <fileset dir="${base_dir}/IdeaPlugin/mps-core/languages" erroronmissingdir="false"/>
         </copy>
 
@@ -124,7 +130,7 @@
                 <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen"/>
             </src>
         </javac>
-        <jar destfile="${artifacts}/mps-core/lib/mps-core.jar">
+        <jar destfile="${dist.dir}/lib/mps-core.jar">
             <fileset dir="${build_dir}/mpscore_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -133,7 +139,7 @@
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
-        <copy todir="${artifacts}/mps-core/lib" flatten="true">
+        <copy todir="${dist.dir}/lib" flatten="true">
             <resources>
                 <file file="${base_dir}/lib/asm.jar"/>
                 <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
@@ -152,14 +158,14 @@
                 <path path="${base_dir}/workbench/mps-platform/source_gen"/>
             </src>
             <classpath>
-                <fileset dir="${artifacts}/mps-core/lib" includes="*.jar"/>
+                <fileset dir="${dist.dir}/lib" includes="*.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench_jar">
             <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
         </copy>
-        <jar destfile="${artifacts}/mps-core/lib/mps-workbench.jar">
+        <jar destfile="${dist.dir}/lib/mps-workbench.jar">
             <fileset dir="${build_dir}/mpsworkbench_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -186,7 +192,7 @@
                 <path path="${base_dir}/workbench/mps-editor/source"/>
             </src>
             <classpath>
-                <fileset dir="${artifacts}/mps-core/lib" includes="*.jar"/>
+                <fileset dir="${dist.dir}/lib" includes="*.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac>
@@ -199,7 +205,7 @@
             <fileset dir="${base_dir}/core/intentions-runtime/source" includes="**/*.png"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source" includes="**/*.png"/>
         </copy>
-        <jar destfile="${artifacts}/mps-core/lib/mps-editor.jar">
+        <jar destfile="${dist.dir}/lib/mps-editor.jar">
             <fileset dir="${build_dir}/mpseditor_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -220,7 +226,7 @@
                 <path path="${base_dir}/IdeaPlugin/mps-core/src"/>
             </src>
             <classpath>
-                <fileset dir="${artifacts}/mps-core/lib" includes="*.jar"/>
+                <fileset dir="${dist.dir}/lib" includes="*.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac2>
@@ -238,7 +244,7 @@
                 </tokenfilter>
             </filterchain>
         </copy>
-        <jar destfile="${artifacts}/mps-core/lib/mps-plugin.jar">
+        <jar destfile="${dist.dir}/lib/mps-plugin.jar">
             <fileset dir="${build_dir}/mpsplugin_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -260,11 +266,11 @@
                 <path path="${base_dir}/IdeaPlugin/mps-core/testSrc"/>
             </src>
             <classpath>
-                <fileset dir="${artifacts}/mps-core/lib" includes="*.jar"/>
+                <fileset dir="${dist.dir}/lib" includes="*.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac2>
-        <jar destfile="${artifacts}/mps-core/lib/mps-plugin-tests.jar">
+        <jar destfile="${dist.dir}/lib/mps-plugin-tests.jar">
             <fileset dir="${build_dir}/mpsplugintests_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -277,6 +283,10 @@
 
     <target name="runTests">
         <delete dir="${plugins.sandbox.dir}"/>
+        <mkdir dir="${plugins.sandbox.dir}/plugins"/>
+        <copy todir="${plugins.sandbox.dir}/plugins/mps-core">
+            <fileset dir="${dist.dir}"/>
+        </copy>
 
         <junit fork="true"
                dir="."
@@ -286,23 +296,23 @@
             <jvmarg value="-ea"/>
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1024m"/>
-            <jvmarg value="-Xbootclasspath/a:${home.idea_ce}/lib/boot.jar"/>
+            <jvmarg value="-Xbootclasspath/a:${ideaPath}/lib/boot.jar"/>
             <sysproperty key="idea.platform.prefix" value="Idea"/>
             <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
             <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
-            <sysproperty key="idea.plugins.path" value="${artifacts}"/>
+            <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
             <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core"/>
             <sysproperty key="idea.home.path" value="${plugins.sandbox.dir}/test"/>
-            <sysproperty key="idea.launcher.bin.path" value="${home.idea_ce}/bin"/>
+            <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
             <sysproperty key="file.encoding" value="UTF-8"/>
             <classpath>
-                <fileset dir="${home.idea_ce}/lib">
+                <fileset dir="${ideaPath}/lib">
                     <include name="**/*.jar"/>
                 </fileset>
-                <fileset dir="${home.idea_ce}/plugins/junit/lib">
+                <fileset dir="${ideaPath}/plugins/junit/lib">
                     <include name="junit-rt.jar"/>
                 </fileset>
-                <fileset dir="${artifacts}/mps-core/lib">
+                <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
                     <include name="*.jar"/>
                 </fileset>
                 <pathelement path="${java.class.path}"/>
@@ -313,18 +323,16 @@
 
     <target name="zip" depends="compile, compileTests">
         <zip file="${artifacts}/mps-core-${plugin.version}.zip">
-            <fileset dir="${artifacts}">
-                <include name="mps-core/**"/>
-                <exclude name="**/*-tests.jar"/>
-                <exclude name=""/>
-            </fileset>
+            <zipfileset dir="${dist.dir}" prefix="mps-core">
+                <exclude name="lib/*-tests.jar"/>
+            </zipfileset>
         </zip>
     </target>
 
     <target name="install-plugin" depends="compile">
         <property name="pluginPath" value="${home.idea_ce.plugins}"/>
-        <copy includeemptydirs="false" todir="${pluginPath}/">
-            <fileset dir="${artifacts}" includes="mps-core/**"/>
+        <copy todir="${pluginPath}/mps-core">
+            <fileset dir="${dist.dir}"/>
         </copy>
     </target>
 
