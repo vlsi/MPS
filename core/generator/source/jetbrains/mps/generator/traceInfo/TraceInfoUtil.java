@@ -105,6 +105,7 @@ public class TraceInfoUtil {
             return positionsGetter.value(debugInfoRoot);
           }
         });
+        if (infoForPosition.isEmpty()) return null;
         List<SNode> nodes = new ArrayList<SNode>();
         for (T info : infoForPosition) {
           nodes.add(descriptor.getSModel().getNodeById(info.getNodeId()));

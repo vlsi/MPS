@@ -41,7 +41,7 @@ public class AntBootstrap {
     } catch (Exception e) {
       e.printStackTrace(System.err);
     } finally {
-      CachesUtil.setupCaches();
+      CachesUtil.cleanupCaches();
     }
     System.exit(1);
   }
