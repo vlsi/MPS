@@ -4,6 +4,9 @@
     <modelRoot path="${solution_descriptor}/" />
   </models>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
+  </dependencies>
   <usedLanguages>
     <usedLanguage>774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)</usedLanguage>
   </usedLanguages>

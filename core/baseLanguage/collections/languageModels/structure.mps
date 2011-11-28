@@ -887,6 +887,9 @@
       <property name="role" nameId="tpce.1071599776563" value="variable" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1153944193378" resolveInfo="ForEachVariable" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1023687332192347381">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1023687332192347378" resolveInfo="IVariableReference" />
+    </node>
   </root>
   <root id="1160600644654">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1160600692093">

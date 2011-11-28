@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class VariableReference extends Expression implements TypeAnnotable {
+public class VariableReference extends Expression implements TypeAnnotable, IVariableReference {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.VariableReference";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
