@@ -24,7 +24,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
 

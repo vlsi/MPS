@@ -30,14 +30,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.icons.Icons;
 
 import javax.swing.*;
-import javax.tools.Tool;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class MessagesGutter extends JPanel implements TooltipComponent {
+public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComponent, MouseMotionListener, MouseListener {
   private EditorComponent myEditorComponent;
   private MyErrorsButton myErrorsButton = new MyErrorsButton();
   private List<EditorMessage> myMessages = new CopyOnWriteArrayList<EditorMessage>();
@@ -48,16 +47,97 @@ public class MessagesGutter extends JPanel implements TooltipComponent {
   public MessagesGutter(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
 
-    setLayout(new BorderLayout());
+    myEditorComponent.getVerticalScrollBar().setPersistentUI(this);
+  }
 
-    add(myErrorsButton, BorderLayout.NORTH);
+  @Override
+  protected JButton createDecreaseButton(int orientation) {
+    return myErrorsButton;
+  }
 
-    myEditorComponent.getVerticalScrollBar().setPersistentUI(new MyScrollBarUI());
-    /*NodeTypesComponentsRepository.getInstance().addTypesComponentListener(new TypesComponentRepositoryListener() {
-      public void typesComponentRemoved(NodeTypesComponent component) {
-        removeMessages(component);
-      }
-    });*/
+  @Override
+  protected void installListeners() {
+    super.installListeners();
+    MPSToolTipManager.getInstance().registerComponentRightAligned(scrollbar);
+    scrollbar.addMouseListener(this);
+    scrollbar.addMouseMotionListener(this);
+  }
+
+  @Override
+  protected void uninstallListeners() {
+    scrollbar.addMouseMotionListener(this);
+    scrollbar.addMouseListener(this);
+    MPSToolTipManager.getInstance().unregisterComponentRightAligned(scrollbar);
+    super.uninstallListeners();
+  }
+
+  @Override
+  protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
+    int shift = 9;
+    g.translate(shift, 0);
+    super.paintThumb(g, c, thumbBounds);
+    g.translate(-shift, 0);
+  }
+
+  @Override
+  protected void paintTrack(Graphics g, JComponent c, Rectangle bounds) {
+    g.setColor(TRACK_BACKGROUND);
+    g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+
+    g.setColor(TRACK_BORDER);
+    int border = bounds.x;
+    g.drawLine(border, bounds.y, border, bounds.y + bounds.height);
+
+    paintMarks(g, 5, Icons.OK.getIconWidth() - 1);
+  }
+
+  @Override
+  protected int adjustThumbWidth(int width) {
+    return width - 2;
+  }
+
+  @Override
+  protected int getThickness() {
+    return super.getThickness() + 7;
+  }
+
+  @Override
+  public void mouseDragged(MouseEvent e) {
+  }
+
+  @Override
+  public void mouseMoved(MouseEvent e) {
+    List<EditorMessage> messages = getMessagesAt(e.getY());
+    if (messages.size() > 0) {
+      scrollbar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    } else {
+      scrollbar.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+    }
+  }
+
+
+  @Override
+  public void mouseClicked(MouseEvent e) {
+  }
+
+  @Override
+  public void mousePressed(MouseEvent e) {
+    List<EditorMessage> messages = getMessagesAt(e.getY());
+    if (messages.size() > 0) {
+      messages.get(0).doNavigate(myEditorComponent);
+    }
+  }
+
+  @Override
+  public void mouseReleased(MouseEvent e) {
+  }
+
+  @Override
+  public void mouseEntered(MouseEvent e) {
+  }
+
+  @Override
+  public void mouseExited(MouseEvent e) {
   }
 
   public EditorComponent getEditorComponent() {
@@ -88,7 +168,9 @@ public class MessagesGutter extends JPanel implements TooltipComponent {
         myStatusIsDirty = false;
 
         //otherwise some messages (removal of which does not affect model) could be not repainted
-        repaint();
+        if (scrollbar != null) {
+          scrollbar.repaint();
+        }
       }
     });
   }
@@ -211,16 +293,11 @@ public class MessagesGutter extends JPanel implements TooltipComponent {
   }
 
   private int getMessagesAreaShift() {
-    MyScrollBar scrollBar = myEditorComponent.getVerticalScrollBar();
-    return scrollBar.isVisible() ? Math.max(0, scrollBar.getDecScrollButtonHeight() - getBounds().y) : 0;
+    return Math.max(0, getDecrButtonHeight() - scrollbar.getBounds().y);
   }
 
   private int getMessagesAreaHeight() {
-    MyScrollBar scrollBar = myEditorComponent.getVerticalScrollBar();
-    if (!scrollBar.isVisible()) {
-      return getHeight();
-    }
-    return scrollBar.getHeight() - scrollBar.getIncScrollButtonHeight() - Math.max(scrollBar.getDecScrollButtonHeight(), getBounds().y);
+    return scrollbar.getHeight() - getIncrButtonHeight() - Math.max(getDecrButtonHeight(), scrollbar.getBounds().y);
   }
 
   private int getMessageHeight(EditorMessage msg) {
@@ -253,20 +330,6 @@ public class MessagesGutter extends JPanel implements TooltipComponent {
     }
     removeLater(messagesToRemove);
     return result;
-  }
-
-  @Override
-  public Point getToolTipLocation(MouseEvent event) {
-    int y = event.getY();
-
-    List<EditorMessage> messages = getMessagesAt(y);
-    if (messages.size() > 0) {
-      EditorMessage msg = messages.get(messages.size() - 1);
-      int pos = getMessageStart(msg);
-
-      return new Point(event.getX(), pos);
-    }
-    return null;
   }
 
   public String getMPSTooltipText(MouseEvent event) {
@@ -326,104 +389,6 @@ public class MessagesGutter extends JPanel implements TooltipComponent {
     @Override
     public Dimension getPreferredSize() {
       return new Dimension(Icons.OK.getIconWidth() + 3, Icons.OK.getIconHeight() + 4);
-    }
-  }
-
-  private class MyScrollBarUI extends ButtonlessScrollBarUI implements TooltipComponent, MouseMotionListener, MouseListener {
-    @Override
-    protected JButton createDecreaseButton(int orientation) {
-      return myErrorsButton;
-    }
-
-    @Override
-    protected void installListeners() {
-      super.installListeners();
-      MPSToolTipManager.getInstance().registerComponentRightAligned(scrollbar);
-      scrollbar.addMouseListener(this);
-      scrollbar.addMouseMotionListener(this);
-    }
-
-    @Override
-    protected void uninstallListeners() {
-      scrollbar.addMouseMotionListener(this);
-      scrollbar.addMouseListener(this);
-      MPSToolTipManager.getInstance().unregisterComponentRightAligned(scrollbar);
-      super.uninstallListeners();
-    }
-
-    @Override
-    protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
-      int shift = 9;
-      g.translate(shift, 0);
-      super.paintThumb(g, c, thumbBounds);
-      g.translate(-shift, 0);
-    }
-
-    @Override
-    protected void paintTrack(Graphics g, JComponent c, Rectangle bounds) {
-      g.setColor(TRACK_BACKGROUND);
-      g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
-
-      g.setColor(TRACK_BORDER);
-      int border = bounds.x;
-      g.drawLine(border, bounds.y, border, bounds.y + bounds.height);
-
-      paintMarks(g, 5, Icons.OK.getIconWidth() - 1);
-    }
-
-    @Override
-    protected int adjustThumbWidth(int width) {
-      return width - 2;
-    }
-
-    @Override
-    protected int getThickness() {
-      return super.getThickness() + 7;
-    }
-
-    @Override
-    public void mouseDragged(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent e) {
-      List<EditorMessage> messages = getMessagesAt(e.getY());
-      if (messages.size() > 0) {
-        scrollbar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-      } else {
-        scrollbar.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-      }
-    }
-
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-      List<EditorMessage> messages = getMessagesAt(e.getY());
-      if (messages.size() > 0) {
-        messages.get(0).doNavigate(myEditorComponent);
-      }
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-    }
-
-
-    @Override
-    public String getMPSTooltipText(MouseEvent mouseEvent) {
-      return MessagesGutter.this.getMPSTooltipText(mouseEvent);
     }
   }
 }

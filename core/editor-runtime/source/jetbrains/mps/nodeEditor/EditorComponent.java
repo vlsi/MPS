@@ -325,7 +325,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myScrollPane.setBorder(new LineBorder(Color.LIGHT_GRAY));
 
     if (showErrorsGutter) {
-      myContainer.add(myMessagesGutter, BorderLayout.EAST);
+      getVerticalScrollBar().setPersistentUI(myMessagesGutter);
     }
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
@@ -1428,7 +1428,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     doRelayout();
     revalidate();
     repaint();
-    myMessagesGutter.repaint();
+    getVerticalScrollBar().repaint();
     if (getEditorContext() != null) {
       getEditorContext().popTracerTask();
     }
