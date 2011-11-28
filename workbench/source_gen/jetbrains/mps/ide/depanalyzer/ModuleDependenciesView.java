@@ -9,7 +9,7 @@ import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.CloseAction;
-import jetbrains.mps.ide.moduleDependencies.icons.Icons;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -44,15 +44,19 @@ public class ModuleDependenciesView extends JPanel {
     myLeftTree = new DependencyTree(project);
     myRightTree = new DependencyPathTree(project);
 
-    ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", Icons.RUNTIME, false, new _FunctionTypes._void_P1_E0<Boolean>() {
+    ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ModuleDependenciesView.MyToggleAction("Hide source modules", Icons.DEFAULT_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
+      public void invoke(Boolean b) {
+        setHideSourceModules(b);
+      }
+    }), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", jetbrains.mps.ide.moduleDependencies.icons.Icons.RUNTIME, false, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
         setShowRuntime(b);
       }
-    }), new ModuleDependenciesView.MyToggleAction("Show Used Languages", Icons.USED_LANGUAGES_ICON, true, new _FunctionTypes._void_P1_E0<Boolean>() {
+    }), new ModuleDependenciesView.MyToggleAction("Show Used Languages", jetbrains.mps.ide.moduleDependencies.icons.Icons.USED_LANGUAGES_ICON, true, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
         setShowUsedLanguages(b);
       }
-    }), new ModuleDependenciesView.MyToggleAction("Show all paths", jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
+    }), new ModuleDependenciesView.MyToggleAction("Show all paths", Icons.DEFAULT_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
         setShowAllPaths(b);
       }
@@ -126,6 +130,11 @@ public class ModuleDependenciesView extends JPanel {
     myRightTree.rebuildLater();
   }
 
+  public void setHideSourceModules(boolean b) {
+    myLeftTree.setHideSourceModules(b);
+    resetAll();
+  }
+
   public void resetAll() {
     myLeftTree.rebuildLater();
     rebuildDependencies();
@@ -144,7 +153,7 @@ public class ModuleDependenciesView extends JPanel {
       public void run() {
         tree.expandPath(new TreePath(node.getPath()));
         for (MPSTreeNode child : Sequence.fromIterable(node)) {
-          ModuleDependencyNode n = as_jxc64t_a0a0a1a0a0a0a6a6(child, ModuleDependencyNode.class);
+          ModuleDependencyNode n = as_jxc64t_a0a0a1a0a0a0a6a7(child, ModuleDependencyNode.class);
           if (n == null) {
             continue;
           }
@@ -163,7 +172,7 @@ public class ModuleDependenciesView extends JPanel {
     return null;
   }
 
-  private static <T> T as_jxc64t_a0a0a1a0a0a0a6a6(Object o, Class<T> type) {
+  private static <T> T as_jxc64t_a0a0a1a0a0a0a6a7(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

@@ -14,7 +14,6 @@ import javax.swing.tree.TreeNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.dependency.DependenciesManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
@@ -78,7 +77,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
   protected void doInit() {
     Set<IModule> reqModules = SetSequence.fromSet(new HashSet<IModule>());
     Set<IModule> rtModules = SetSequence.fromSet(new HashSet<IModule>());
-    Set<Language> usedLanguages = SetSequence.fromSet(new HashSet<Language>());
+    Set<IModule> usedLanguages = SetSequence.fromSet(new HashSet<IModule>());
 
     DependencyTree tree = (DependencyTree) getTree();
 
@@ -93,10 +92,14 @@ public class ModuleDependencyNode extends MPSTreeNode {
       rtModules :
       reqModules
     );
-
     Set<IModule> depLoops = tree.getLoops();
     // Dependency manager doesn't add module itself to its dependencies, fixing this here 
     SetSequence.fromSet(allModules).addSequence(SetSequence.fromSet(depLoops).intersect(ListSequence.fromList(myModules)));
+
+    if (tree.isHideSourceModules()) {
+      SetSequence.fromSet(allModules).removeSequence(ListSequence.fromList(tree.getModules()));
+      SetSequence.fromSet(usedLanguages).removeSequence(ListSequence.fromList(tree.getModules()));
+    }
 
     for (IModule m : SetSequence.fromSet(allModules).sort(new ISelector<IModule, Comparable<?>>() {
       public Comparable<?> select(IModule it) {
@@ -108,8 +111,8 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
     if (tree.isShowUsedLanguage()) {
       MPSTreeNode usedlanguages = new TextMPSTreeNode("Used Languages", getOperationContext());
-      for (Language l : SetSequence.fromSet(usedLanguages).sort(new ISelector<Language, Comparable<?>>() {
-        public Comparable<?> select(Language it) {
+      for (IModule l : SetSequence.fromSet(usedLanguages).sort(new ISelector<IModule, Comparable<?>>() {
+        public Comparable<?> select(IModule it) {
           return it.getModuleFqName();
         }
       }, true)) {

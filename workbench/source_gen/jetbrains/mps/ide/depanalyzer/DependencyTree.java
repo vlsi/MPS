@@ -33,6 +33,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
   private List<IModule> myModules;
   private boolean myShowRuntime;
   private boolean myShowUsedLanguage = true;
+  private boolean myHideSourceModules;
   private Set<IModule> myCycles = SetSequence.fromSet(new HashSet<IModule>());
 
   public DependencyTree(Project project) {
@@ -45,6 +46,10 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
   public void setModules(List<IModule> modules) {
     myModules = modules;
+  }
+
+  public List<IModule> getModules() {
+    return myModules;
   }
 
   public boolean isShowRuntime() {
@@ -61,6 +66,14 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
   public void setShowUsedLanguage(boolean showUsedLanguage) {
     myShowUsedLanguage = showUsedLanguage;
+  }
+
+  public boolean isHideSourceModules() {
+    return myHideSourceModules;
+  }
+
+  public void setHideSourceModules(boolean hideSourceModules) {
+    myHideSourceModules = hideSourceModules;
   }
 
   public Set<IModule> getLoops() {
@@ -96,7 +109,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     if (selection != null && selection.length > 1) {
       return null;
     }
-    ModuleDependencyNode current = as_he3vmc_a0a2a8(getCurrentNode(), ModuleDependencyNode.class);
+    ModuleDependencyNode current = as_he3vmc_a0a2a11(getCurrentNode(), ModuleDependencyNode.class);
     if (current == null || ListSequence.fromList(current.getModules()).count() != 1) {
       return null;
     }
@@ -107,7 +120,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    ModuleDependencyNode current = as_he3vmc_a0a0a9(getCurrentNode(), ModuleDependencyNode.class);
+    ModuleDependencyNode current = as_he3vmc_a0a0a21(getCurrentNode(), ModuleDependencyNode.class);
     if (current == null) {
       return null;
     }
@@ -124,14 +137,14 @@ public class DependencyTree extends MPSTree implements DataProvider {
     return null;
   }
 
-  private static <T> T as_he3vmc_a0a2a8(Object o, Class<T> type) {
+  private static <T> T as_he3vmc_a0a2a11(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_he3vmc_a0a0a9(Object o, Class<T> type) {
+  private static <T> T as_he3vmc_a0a0a21(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
