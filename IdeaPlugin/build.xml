@@ -278,34 +278,16 @@
     <target name="runTests">
         <delete dir="${plugins.sandbox.dir}"/>
 
-        <mkdir dir="${plugins.sandbox.dir}/plugins"/>
-        <mkdir dir="${plugins.sandbox.dir}/plugins/mps-core"/>
-        <mkdir dir="${plugins.sandbox.dir}/plugins/mps-core/classes"/>
-        <unzip src="${artifacts}/mps-core/lib/mps-core.jar" dest="${plugins.sandbox.dir}/plugins/mps-core/classes"/>
-        <unzip src="${artifacts}/mps-core/lib/mps-workbench.jar"
-               dest="${plugins.sandbox.dir}/plugins/mps-core/classes"/>
-        <unzip src="${artifacts}/mps-core/lib/mps-editor.jar" dest="${plugins.sandbox.dir}/plugins/mps-core/classes"/>
-        <unzip src="${artifacts}/mps-core/lib/mps-plugin.jar" dest="${plugins.sandbox.dir}/plugins/mps-core/classes"/>
-        <unzip src="${artifacts}/mps-core/lib/mps-plugin-tests.jar"
-               dest="${plugins.sandbox.dir}/plugins/mps-core/classes"/>
-        <copy todir="${plugins.sandbox.dir}/plugins/mps-core/META-INF">
-            <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/classes/META-INF"/>
-        </copy>
-        <copy todir="${plugins.sandbox.dir}/plugins/mps-core/languages">
-            <fileset dir="${artifacts}/mps-core/languages"/>
-        </copy>
-        <copy todir="${plugins.sandbox.dir}/plugins/mps-core" file="${artifacts}/mps-core/build.number"/>
-
         <java classname="com.intellij.rt.execution.junit.JUnitStarter"
               fork="true"
               failonerror="true"
               maxmemory="1024m"
-              dir="${plugins.sandbox.dir}">
+              dir=".">
             <jvmarg value="-Didea.platform.prefix=Idea"/>
-            <jvmarg value="-Didea.config.path=./config"/>
-            <jvmarg value="-Didea.system.path=./system"/>
+            <jvmarg value="-Didea.config.path=${plugins.sandbox.dir}/config"/>
+            <jvmarg value="-Didea.system.path=${plugins.sandbox.dir}/system"/>
             <!--                    <jvmarg value="-Didea.plugins.path=${base_dir}/IdeaPlugin"/> -->
-            <jvmarg value="-Didea.plugins.path=./plugins"/>
+            <jvmarg value="-Didea.plugins.path=${artifacts}"/>
             <jvmarg value="-Xbootclasspath/a:${home.idea_ce}/lib/boot.jar"/>
             <jvmarg value="-Didea.load.plugins.id=jetbrains.mps.core"/>
             <jvmarg value="-Didea.home.path=${plugins.sandbox.dir}/test"/>
@@ -322,7 +304,9 @@
                 <fileset dir="${home.idea_ce}/plugins/junit/lib">
                     <include name="junit-rt.jar"/>
                 </fileset>
-                <pathelement path="${plugins.sandbox.dir}/plugins/mps-core/classes"/>
+                <fileset dir="${artifacts}/mps-core/lib">
+                    <include name="*.jar"/>
+                </fileset>
                 <pathelement path="${java.class.path}"/>
             </classpath>
         </java>
