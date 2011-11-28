@@ -322,8 +322,8 @@
     </target>
 
     <target name="zip" depends="compile, compileTests">
-        <zip file="${artifacts}/mps-core-${plugin.version}.zip">
-            <zipfileset dir="${dist.dir}" prefix="mps-core">
+        <zip file="${artifacts}/mps-core${plugin.prefix}-${plugin.version}.zip">
+            <zipfileset dir="${dist.dir}" prefix="mps-core${plugin.prefix}">
                 <exclude name="lib/*-tests.jar"/>
             </zipfileset>
         </zip>
