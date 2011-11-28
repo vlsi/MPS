@@ -25,6 +25,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.nodeEditor.EditorComponent.MyScrollBar;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.icons.Icons;
 
 import javax.swing.*;
@@ -255,7 +257,15 @@ public class MessagesGutter extends JPanel {
   }
 
   private int getMessageHeight(EditorMessage msg) {
-    return (int) (Math.max(2.0d, msg.getHeight(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight()))));
+    int height = msg.getHeight(myEditorComponent);
+    EditorCell cell = msg.getCell(myEditorComponent);
+    if (cell != null) {
+      while (cell instanceof EditorCell_Collection) {
+        cell = cell.getLastChild();
+      }
+      height -= cell.getHeight();
+    }
+    return (int) (height * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight()))) + 3;
   }
 
   private int getMessageStart(EditorMessage msg) {
