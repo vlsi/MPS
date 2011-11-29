@@ -17,8 +17,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.ide.dependencyViewer.DependenciesPanel;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.List;
@@ -26,6 +24,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class SafeDeleteModuleDependency_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -80,11 +79,7 @@ public class SafeDeleteModuleDependency_Action extends GeneratedAction {
         if (res == 1) {
           SafeDeleteModuleDependency_Action.this.removeDependency(_params);
         } else if (res == 0) {
-          AnalyzeDependencies_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
-          DependenciesPanel panel = as_iuftgz_a0a1a0b0a6a0a2(tool.getComponent(), DependenciesPanel.class);
-          panel.setContent(fromScope, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
-          panel.selectInTargetsView(((IModule) MapSequence.fromMap(_params).get("to")));
-          tool.openToolLater(true);
+          DependenciesUtil.analyzeDependencies(((IModule) MapSequence.fromMap(_params).get("from")), ((IModule) MapSequence.fromMap(_params).get("to")), ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
         }
       }
     } catch (Throwable t) {
@@ -109,12 +104,5 @@ public class SafeDeleteModuleDependency_Action extends GeneratedAction {
     });
     ModuleDependenies_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class);
     tool.resetAll();
-  }
-
-  private static <T> T as_iuftgz_a0a1a0b0a6a0a2(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 }

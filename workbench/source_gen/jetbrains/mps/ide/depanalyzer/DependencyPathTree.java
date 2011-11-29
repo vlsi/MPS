@@ -210,7 +210,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
   @Override
   protected JPopupMenu createPopupMenu(MPSTreeNode node) {
-    DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action")));
+    DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowInDependenciesViewer_Action")));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 

@@ -110,6 +110,9 @@ public class DependenciesPanel extends JPanel {
 
   public void selectInTargetsView(IModule module) {
     myTargetsView.selectModule(module);
+    Scope scope = new Scope();
+    scope.add(module);
+    updateReferencesView(scope);
   }
 
   public void updateReferencesView(final Scope scope) {
