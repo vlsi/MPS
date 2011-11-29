@@ -31,6 +31,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -64,21 +65,25 @@ public class SolutionIdea extends Solution {
 
             @Override
             public void rootsChanged(ModuleRootEvent event) {
-                // TODO: optimize?
-                setModuleDescriptor(getModuleDescriptor(), false);
+                if (myModule.getProject().equals(event.getSource())) {
+                    ModelAccess.instance().runWriteInEDT(new Runnable() {
+                        @Override
+                        public void run() {
+                            setModuleDescriptor(getModuleDescriptor(), false);
+                        }
+                    });
+                }
             }
         });
         myConnection.subscribe(FacetManager.FACETS_TOPIC, new FacetManagerAdapter() {
             @Override
             public void facetAdded(@NotNull Facet facet) {
-                // TODO: optimize?
-                setModuleDescriptor(getModuleDescriptor(), false);
+                handleFacetChanged(facet);
             }
 
             @Override
             public void facetRemoved(@NotNull Facet facet) {
-                // TODO: optimize?
-                setModuleDescriptor(getModuleDescriptor(), false);
+                handleFacetChanged(facet);
             }
         });
     }
@@ -144,5 +149,31 @@ public class SolutionIdea extends Solution {
     @Override
     public IFile getDescriptorFile() {
         return FileSystem.getInstance().getFileByPath(myModule.getModuleFilePath());
+    }
+
+    private void handleFacetChanged(Facet facet) {
+        if (skipFacetNotification(facet)) {
+            return;
+        }
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
+            @Override
+            public void run() {
+                setModuleDescriptor(getModuleDescriptor(), false);
+            }
+        });
+    }
+
+    private boolean skipFacetNotification(Facet facet) {
+        if (!myModule.getProject().equals(facet.getModule().getProject())) {
+            return true;
+        }
+        Module[] dependencies = ModuleRootManager.getInstance(myModule).getDependencies();
+        Module facetModule = facet.getModule();
+        for (Module dependency : dependencies) {
+            if (dependency.equals(facetModule)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
