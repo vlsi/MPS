@@ -5,15 +5,8 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SReference;
-import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -24,6 +17,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -34,24 +28,7 @@ public class RuntimeUtils {
   }
 
   public static SModel getRuntimeModel() {
-    SNode classifierType = new RuntimeUtils.QuotationClass_hadnfw_a0a0a0().createNode();
-    SNode node = SLinkOperations.getTarget(classifierType, "classifier", false);
-    if ((node != null)) {
-      return SNodeOperations.getModel(node);
-    } else {
-      final SReference oldRef = SNodeOperations.getReference(classifierType, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier"));
-      List<SModelDescriptor> ownModelDescriptors = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea")).getOwnModelDescriptors();
-      SModelDescriptor modelDescriptor = ListSequence.fromList(ownModelDescriptors).findFirst(new IWhereFilter<SModelDescriptor>() {
-        public boolean accept(SModelDescriptor it) {
-          return eq_hadnfw_a0a0a0a0a0a2a0c0a(it.getLongName(), oldRef.getTargetSModelReference().getLongName());
-        }
-      });
-      if (modelDescriptor != null) {
-        return modelDescriptor.getSModel();
-      }
-    }
-
-    return null;
+    return SNodeOperations.getModel(SLinkOperations.getTarget(new RuntimeUtils.QuotationClass_hadnfw_a0a0a0a().createNode(), "classifier", false));
   }
 
   public static Map<String, SNode> getRuntimeClassifiersMap() {
@@ -74,15 +51,8 @@ public class RuntimeUtils {
     return runtimeClassifiers;
   }
 
-  private static boolean eq_hadnfw_a0a0a0a0a0a2a0c0a(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  public static class QuotationClass_hadnfw_a0a0a0 {
-    public QuotationClass_hadnfw_a0a0a0() {
+  public static class QuotationClass_hadnfw_a0a0a0a {
+    public QuotationClass_hadnfw_a0a0a0a() {
     }
 
     public SNode createNode() {
