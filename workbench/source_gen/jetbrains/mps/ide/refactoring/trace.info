@@ -1182,6 +1182,27 @@
     <unitInfo nodeId="2482360940803573298" fileName="RenameSolutionDialog.java" startLine="23" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RenameSolutionDialog" />
     <unitInfo nodeId="2482360940803573457" fileName="RenameSolutionDialog.java" startLine="52" startPosition="73" endLine="66" endPosition="5" unitName="jetbrains.mps.ide.refactoring.RenameSolutionDialog$1" />
   </root>
+  <root nodeId="3839699242126884917">
+    <nodeInfo nodeId="3839699242126884941" fileName="RefactoringDialog.java" startLine="12" startPosition="54" endLine="13" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3839699242126884950" fileName="RefactoringDialog.java" startLine="13" startPosition="25" endLine="14" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3839699242126884929" fileName="RefactoringDialog.java" startLine="18" startPosition="44" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8847539102234123174" fileName="RefactoringDialog.java" startLine="23" startPosition="31" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7643363697480570951" fileName="RefactoringDialog.java" startLine="24" startPosition="23" endLine="25" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3839699242126884963" fileName="RefactoringDialog.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <nodeInfo nodeId="3839699242126884932" fileName="RefactoringDialog.java" startLine="11" startPosition="63" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringDialog#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="3839699242126884924" fileName="RefactoringDialog.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="8847539102234123157" fileName="RefactoringDialog.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
+    <scopeInfo nodeId="3839699242126884928" fileName="RefactoringDialog.java" startLine="18" startPosition="44" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="3839699242126884940" fileName="RefactoringDialog.java" startLine="12" startPosition="54" endLine="14" endPosition="11" />
+    <scopeInfo nodeId="8847539102234123160" fileName="RefactoringDialog.java" startLine="23" startPosition="31" endLine="25" endPosition="26" />
+    <scopeInfo nodeId="3839699242126884963" fileName="RefactoringDialog.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="3839699242126884932" fileName="RefactoringDialog.java" startLine="11" startPosition="63" endLine="15" endPosition="3">
+      <varInfo nodeId="3839699242126884933" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="3839699242126884924" fileName="RefactoringDialog.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="8847539102234123157" fileName="RefactoringDialog.java" startLine="21" startPosition="0" endLine="27" endPosition="0" />
+    <unitInfo nodeId="3839699242126884917" fileName="RefactoringDialog.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RefactoringDialog" />
+  </root>
   <root nodeId="8847539102233959343">
     <nodeInfo nodeId="8860531876471687717" fileName="RenameDialogWrapper.java" startLine="26" startPosition="56" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFACTORING_NAME" />
     <nodeInfo nodeId="8847539102233996702" fileName="RenameDialogWrapper.java" startLine="28" startPosition="0" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
@@ -1223,59 +1244,54 @@
     <nodeInfo nodeId="7727878092218484860" fileName="RenameDialogWrapper.java" startLine="81" startPosition="32" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8847539102234123149" fileName="RenameDialogWrapper.java" startLine="82" startPosition="0" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7727878092218484861" fileName="RenameDialogWrapper.java" startLine="83" startPosition="19" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8847539102234123174" fileName="RenameDialogWrapper.java" startLine="88" startPosition="31" endLine="89" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7643363697480570951" fileName="RenameDialogWrapper.java" startLine="89" startPosition="23" endLine="90" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8847539102234123163" fileName="RenameDialogWrapper.java" startLine="93" startPosition="27" endLine="94" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7643363697480570954" fileName="RenameDialogWrapper.java" startLine="94" startPosition="45" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7643363697480575833" fileName="RenameDialogWrapper.java" startLine="98" startPosition="44" endLine="99" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7643363697480575806" fileName="RenameDialogWrapper.java" startLine="102" startPosition="38" endLine="103" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7643363697480575820" fileName="RenameDialogWrapper.java" startLine="103" startPosition="74" endLine="104" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7643363697480575839" fileName="RenameDialogWrapper.java" startLine="104" startPosition="67" endLine="105" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7643363697480575849" fileName="RenameDialogWrapper.java" startLine="105" startPosition="65" endLine="106" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8847539102233996718" fileName="RenameDialogWrapper.java" startLine="109" startPosition="68" endLine="110" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8847539102234041187" fileName="RenameDialogWrapper.java" startLine="110" startPosition="75" endLine="111" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8847539102234041214" fileName="RenameDialogWrapper.java" startLine="111" startPosition="18" endLine="112" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7643363697480570251" fileName="RenameDialogWrapper.java" startLine="116" startPosition="29" endLine="117" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7643363697480570256" fileName="RenameDialogWrapper.java" startLine="117" startPosition="74" endLine="118" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7643363697480570914" fileName="RenameDialogWrapper.java" startLine="121" startPosition="52" endLine="122" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8847539102234123163" fileName="RenameDialogWrapper.java" startLine="87" startPosition="27" endLine="88" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7643363697480570954" fileName="RenameDialogWrapper.java" startLine="88" startPosition="45" endLine="89" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7643363697480575833" fileName="RenameDialogWrapper.java" startLine="92" startPosition="44" endLine="93" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7643363697480575806" fileName="RenameDialogWrapper.java" startLine="96" startPosition="38" endLine="97" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7643363697480575820" fileName="RenameDialogWrapper.java" startLine="97" startPosition="74" endLine="98" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7643363697480575839" fileName="RenameDialogWrapper.java" startLine="98" startPosition="67" endLine="99" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7643363697480575849" fileName="RenameDialogWrapper.java" startLine="99" startPosition="65" endLine="100" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8847539102233996718" fileName="RenameDialogWrapper.java" startLine="103" startPosition="68" endLine="104" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8847539102234041187" fileName="RenameDialogWrapper.java" startLine="104" startPosition="75" endLine="105" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8847539102234041214" fileName="RenameDialogWrapper.java" startLine="105" startPosition="18" endLine="106" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7643363697480570251" fileName="RenameDialogWrapper.java" startLine="110" startPosition="29" endLine="111" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7643363697480570256" fileName="RenameDialogWrapper.java" startLine="111" startPosition="74" endLine="112" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7643363697480570914" fileName="RenameDialogWrapper.java" startLine="115" startPosition="52" endLine="116" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8847539102234041194" fileName="RenameDialogWrapper.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNewName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7643363697480575828" fileName="RenameDialogWrapper.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactorAction#()Ljavax/swing/Action;" />
-    <nodeInfo nodeId="7643363697480570245" fileName="RenameDialogWrapper.java" startLine="115" startPosition="55" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactorAction#()V" />
-    <nodeInfo nodeId="7643363697480570903" fileName="RenameDialogWrapper.java" startLine="120" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="7643363697480575828" fileName="RenameDialogWrapper.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactorAction#()Ljavax/swing/Action;" />
+    <nodeInfo nodeId="7643363697480570245" fileName="RenameDialogWrapper.java" startLine="109" startPosition="55" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactorAction#()V" />
+    <nodeInfo nodeId="7643363697480570903" fileName="RenameDialogWrapper.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
     <nodeInfo nodeId="8847539102234122975" fileName="RenameDialogWrapper.java" startLine="46" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="7643363697480570909" fileName="RenameDialogWrapper.java" startLine="92" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAction#()V" />
+    <nodeInfo nodeId="7643363697480570909" fileName="RenameDialogWrapper.java" startLine="86" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAction#()V" />
     <nodeInfo nodeId="7643363697480570932" fileName="RenameDialogWrapper.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDefaultActions#()V" />
-    <nodeInfo nodeId="8847539102234123157" fileName="RenameDialogWrapper.java" startLine="86" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
-    <nodeInfo nodeId="8847539102233996710" fileName="RenameDialogWrapper.java" startLine="108" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNewName#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8847539102233996710" fileName="RenameDialogWrapper.java" startLine="102" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNewName#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="8847539102233959345" fileName="RenameDialogWrapper.java" startLine="34" startPosition="0" endLine="41" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameDialogWrapper#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7643363697480575798" fileName="RenameDialogWrapper.java" startLine="101" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
+    <nodeInfo nodeId="7643363697480575798" fileName="RenameDialogWrapper.java" startLine="95" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
     <nodeInfo nodeId="8847539102234123143" fileName="RenameDialogWrapper.java" startLine="57" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNorthPanel#()Ljavax/swing/JComponent;" />
     <scopeInfo nodeId="8847539102234041197" fileName="RenameDialogWrapper.java" startLine="43" startPosition="31" endLine="44" endPosition="18" />
     <scopeInfo nodeId="8847539102234122979" fileName="RenameDialogWrapper.java" startLine="48" startPosition="44" endLine="49" endPosition="16" />
-    <scopeInfo nodeId="7643363697480575831" fileName="RenameDialogWrapper.java" startLine="98" startPosition="44" endLine="99" endPosition="28" />
-    <scopeInfo nodeId="7643363697480570908" fileName="RenameDialogWrapper.java" startLine="121" startPosition="52" endLine="122" endPosition="17" />
+    <scopeInfo nodeId="7643363697480575831" fileName="RenameDialogWrapper.java" startLine="92" startPosition="44" endLine="93" endPosition="28" />
+    <scopeInfo nodeId="7643363697480570908" fileName="RenameDialogWrapper.java" startLine="115" startPosition="52" endLine="116" endPosition="17" />
     <scopeInfo nodeId="7643363697480570935" fileName="RenameDialogWrapper.java" startLine="53" startPosition="41" endLine="55" endPosition="64" />
-    <scopeInfo nodeId="8847539102234123160" fileName="RenameDialogWrapper.java" startLine="88" startPosition="31" endLine="90" endPosition="15" />
-    <scopeInfo nodeId="7643363697480570912" fileName="RenameDialogWrapper.java" startLine="93" startPosition="27" endLine="95" endPosition="19" />
-    <scopeInfo nodeId="7643363697480570248" fileName="RenameDialogWrapper.java" startLine="116" startPosition="29" endLine="118" endPosition="65" />
-    <scopeInfo nodeId="8847539102233996713" fileName="RenameDialogWrapper.java" startLine="109" startPosition="68" endLine="112" endPosition="31">
+    <scopeInfo nodeId="7643363697480570912" fileName="RenameDialogWrapper.java" startLine="87" startPosition="27" endLine="89" endPosition="19" />
+    <scopeInfo nodeId="7643363697480570248" fileName="RenameDialogWrapper.java" startLine="110" startPosition="29" endLine="112" endPosition="65" />
+    <scopeInfo nodeId="8847539102233996713" fileName="RenameDialogWrapper.java" startLine="103" startPosition="68" endLine="106" endPosition="31">
       <varInfo nodeId="8847539102233996719" varName="dialog" />
     </scopeInfo>
     <scopeInfo nodeId="8847539102234041194" fileName="RenameDialogWrapper.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="7643363697480575828" fileName="RenameDialogWrapper.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="7643363697480575801" fileName="RenameDialogWrapper.java" startLine="102" startPosition="38" endLine="106" endPosition="71">
+    <scopeInfo nodeId="7643363697480575828" fileName="RenameDialogWrapper.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="7643363697480575801" fileName="RenameDialogWrapper.java" startLine="96" startPosition="38" endLine="100" endPosition="71">
       <varInfo nodeId="7643363697480575807" varName="actions" />
     </scopeInfo>
-    <scopeInfo nodeId="7643363697480570245" fileName="RenameDialogWrapper.java" startLine="115" startPosition="55" endLine="119" endPosition="5" />
-    <scopeInfo nodeId="7643363697480570903" fileName="RenameDialogWrapper.java" startLine="120" startPosition="0" endLine="124" endPosition="0">
+    <scopeInfo nodeId="7643363697480570245" fileName="RenameDialogWrapper.java" startLine="109" startPosition="55" endLine="113" endPosition="5" />
+    <scopeInfo nodeId="7643363697480570903" fileName="RenameDialogWrapper.java" startLine="114" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="7643363697480570906" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="8847539102233959348" fileName="RenameDialogWrapper.java" startLine="35" startPosition="72" endLine="40" endPosition="33" />
     <scopeInfo nodeId="8847539102234122975" fileName="RenameDialogWrapper.java" startLine="46" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="7643363697480570909" fileName="RenameDialogWrapper.java" startLine="92" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="7643363697480570909" fileName="RenameDialogWrapper.java" startLine="86" startPosition="0" endLine="91" endPosition="0" />
     <scopeInfo nodeId="7643363697480570932" fileName="RenameDialogWrapper.java" startLine="51" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="8847539102234123157" fileName="RenameDialogWrapper.java" startLine="86" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="8847539102233996710" fileName="RenameDialogWrapper.java" startLine="108" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="8847539102233996710" fileName="RenameDialogWrapper.java" startLine="102" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="8847539102234017058" varName="oldName" />
       <varInfo nodeId="8847539102234016397" varName="project" />
     </scopeInfo>
@@ -1283,13 +1299,13 @@
       <varInfo nodeId="8847539102234017061" varName="oldName" />
       <varInfo nodeId="8847539102233978687" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="7643363697480575798" fileName="RenameDialogWrapper.java" startLine="101" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="7643363697480575798" fileName="RenameDialogWrapper.java" startLine="95" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="8847539102234123146" fileName="RenameDialogWrapper.java" startLine="59" startPosition="43" endLine="84" endPosition="0">
       <varInfo nodeId="8847539102234122993" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="8847539102234123143" fileName="RenameDialogWrapper.java" startLine="57" startPosition="0" endLine="86" endPosition="0" />
-    <unitInfo nodeId="8847539102233959343" fileName="RenameDialogWrapper.java" startLine="26" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RenameDialogWrapper" />
-    <unitInfo nodeId="7643363697480570243" fileName="RenameDialogWrapper.java" startLine="115" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RenameDialogWrapper$RefactorAction" />
+    <unitInfo nodeId="8847539102233959343" fileName="RenameDialogWrapper.java" startLine="26" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RenameDialogWrapper" />
+    <unitInfo nodeId="7643363697480570243" fileName="RenameDialogWrapper.java" startLine="109" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RenameDialogWrapper$RefactorAction" />
   </root>
 </debugInfo>
 

@@ -84,12 +84,6 @@ public class RenameDialogWrapper extends DialogWrapper {
 
   }
 
-  @Override
-  protected void doOKAction() {
-    super.doOKAction();
-    doAction();
-  }
-
   private void doAction() {
     this.myName = this.myNameField.getText();
     this.dispose();

@@ -33,6 +33,14 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.refactoring.RefactoringDialog" file="RefactoringDialog.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.RefactoringFacade" file="RefactoringFacade.java">
     <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
