@@ -55,14 +55,6 @@ public class MPSConfigurationBean {
         myDescriptor.setUUID(uuid);
     }
 
-    public String getNamespace() {
-        return myDescriptor.getNamespace();
-    }
-
-    public void setNamespace(String namespace) {
-        myDescriptor.setNamespace(namespace);
-    }
-
     public void setUseModuleSourceFolder(boolean use) {
         myUseModuleSourceFolder = use;
     }

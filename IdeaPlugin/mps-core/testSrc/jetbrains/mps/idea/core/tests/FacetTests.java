@@ -22,6 +22,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.ModifiableModuleModel;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
+import com.intellij.openapi.module.ModuleWithNameAlreadyExists;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleOrderEntry;
 import com.intellij.openapi.roots.ModuleRootManager;
@@ -70,6 +71,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
         Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solution.getModuleReference());
         assertEquals(solution, repositorySolution);
+        assertEquals(myModule.getName(), solution.getModuleDescriptor().getNamespace());
     }
 
     public void testSolutionRemovedOnFacetDeletion() {
@@ -209,5 +211,25 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
         flushEDT();
 
         assertEmpty(mpsFacet2.getSolution().getDependencies());
+    }
+
+    public void testUpdateNamespaceOnModuleRename() throws InterruptedException {
+        final String newModuleName = "newModuleName__";
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+            @Override
+            public void run() {
+                ModifiableModuleModel modifiableModel = ModuleManager.getInstance(myModule.getProject()).getModifiableModel();
+                try {
+                    modifiableModel.renameModule(myModule, newModuleName);
+                } catch (ModuleWithNameAlreadyExists moduleWithNameAlreadyExists) {
+                    fail(moduleWithNameAlreadyExists.getMessage());
+                }
+                modifiableModel.commit();
+            }
+        });
+        flushEDT();
+
+        assertEquals(newModuleName, myModule.getName());
+        assertEquals(newModuleName, myFacet.getSolution().getModuleDescriptor().getNamespace());
     }
 }

@@ -84,6 +84,12 @@ public class SolutionIdea extends Solution {
     }
 
     @Override
+    public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
+        newDescriptor.setNamespace(myModule.getName());
+        super.setSolutionDescriptor(newDescriptor, reloadClasses);
+    }
+
+    @Override
     public boolean needReloading() {
         return false;
     }

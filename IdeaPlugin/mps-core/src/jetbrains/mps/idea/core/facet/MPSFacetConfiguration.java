@@ -85,9 +85,6 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
                 }
             }
         }
-        if (myConfigurationBean.getNamespace() == null || myConfigurationBean.getNamespace().isEmpty()) {
-            myConfigurationBean.setNamespace(myMpsFacet.getModule().getName());
-        }
         if (myConfigurationBean.getUsedLanguages() == null) {
             myConfigurationBean.setUsedLanguages(new String[]{BootstrapLanguages.BASE_LANGUAGE.toString()});
         }

@@ -18,6 +18,8 @@ package jetbrains.mps.idea.core.facet.ui;
 
 import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.module.ModifiableModuleModel;
+import com.intellij.openapi.roots.ui.configuration.ProjectStructureConfigurable;
 import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
@@ -30,9 +32,9 @@ import javax.swing.*;
  */
 public class MPSFacetCommonTabUI {
 
-    private JTextField namespace;
     private JPanel rootPanel;
     private JComponent myCentralComponent;
+    private JTextField mySolutionNamespace;
 
     private Disposable myParentDisposable;
     private MPSFacetSourcesTab mySourcesTab;
@@ -46,22 +48,28 @@ public class MPSFacetCommonTabUI {
     }
 
     public void setData(MPSConfigurationBean data) {
-        namespace.setText(data.getNamespace());
+        refreshSolutionDescriptorName();
         mySourcesTab.setData(data);
         myPathsTab.setData(data);
         myUsedLanguagesTab.setData(data);
     }
 
+    private void refreshSolutionDescriptorName() {
+        ModifiableModuleModel moduleModel = ProjectStructureConfigurable.getInstance(myContext.getProject()).getContext().getModulesConfigurator().getModuleModel();
+        String moduleName = moduleModel.getNewName(myContext.getModule());
+        if (moduleName == null) {
+            moduleName = myContext.getModule().getName();
+        }
+        mySolutionNamespace.setText(moduleName);
+    }
+
     public void getData(MPSConfigurationBean data) {
-        data.setNamespace(namespace.getText());
         mySourcesTab.getData(data);
         myPathsTab.getData(data);
         myUsedLanguagesTab.getData(data);
     }
 
     public boolean isModified(MPSConfigurationBean data) {
-        if (namespace.getText() != null ? !namespace.getText().equals(data.getNamespace()) : data.getNamespace() != null)
-            return true;
         return mySourcesTab.isModified(data) || myPathsTab.isModified(data) || myUsedLanguagesTab.isModified(data);
     }
 
@@ -78,10 +86,12 @@ public class MPSFacetCommonTabUI {
         tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, (mySourcesTab = new MPSFacetSourcesTab(myContext, myParentDisposable)).getRootPanel(), null);
         tabbedPane.addTab(MPSBundle.message("facet.paths.tab.name"), MPSIcons.PATHS_TAB_ICON, (myPathsTab = new MPSFacetPathsTab(myContext)).getRootPanel(), null);
         tabbedPane.addTab(MPSBundle.message("facet.languages.tab.name"), MPSIcons.LANGUAGES_TAB_ICON, (myUsedLanguagesTab = new UsedLanguagesTab()).createComponent(), null);
+        tabbedPane.addTab(MPSBundle.message("facet.devkits.tab.name"), MPSIcons.DEVKITS_TAB_ICON, new JPanel(), null);
         myCentralComponent = tabbedPane.getComponent();
     }
 
     public void onTabEntering() {
+        refreshSolutionDescriptorName();
         myPathsTab.onTabEntering();
     }
 }

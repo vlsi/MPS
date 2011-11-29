@@ -34,7 +34,6 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.idea.core.MPSBundle;
-import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.messages.MessageKind;
@@ -154,7 +153,7 @@ public class MPSCompiler implements TranslatingCompiler {
                 });
                 for (String root : rootNames) {
                     File genFile = new File(output, root + ".java");
-                    String content = "package "+ packageName +";\npublic class " + root + " {}";
+                    String content = "package " + packageName + ";\npublic class " + root + " {}";
                     try {
                         FileUtil.writeFile(genFile, content);
                     } catch (IOException e) {
@@ -177,8 +176,9 @@ public class MPSCompiler implements TranslatingCompiler {
         for (final Module module : modules) {
             MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
             if (facet != null) {
-                MPSConfigurationBean configuration = facet.getConfiguration().getState();
-                boolean hasNamespace = configuration.getNamespace() != null && configuration.getNamespace().trim().length() > 0;
+                // TODO: add more reasonable checks here
+                String namespace = facet.getSolution().getModuleDescriptor().getNamespace();
+                boolean hasNamespace = namespace != null && namespace.trim().length() > 0;
 
                 if (!hasNamespace) {
                     Messages.showErrorDialog(module.getProject(), MPSBundle.message("compiler.facetproblem.no_namespace", module.getName()),
