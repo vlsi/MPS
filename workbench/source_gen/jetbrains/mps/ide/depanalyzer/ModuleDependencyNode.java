@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.icons.IconManager;
+import javax.swing.tree.TreeNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -41,13 +42,28 @@ public class ModuleDependencyNode extends MPSTreeNode {
     setNodeIdentifier(text);
   }
 
+  public List<IModule> getModules() {
+    return myModules;
+  }
+
+  public ModuleDependencyNode getFromNode() {
+    TreeNode n = getParent();
+    if (n != null) {
+      n = n.getParent();
+    }
+    if (n != null && n instanceof ModuleDependencyNode) {
+      return (ModuleDependencyNode) n;
+    }
+    return null;
+  }
+
   protected void doInit() {
     Set<IModule> reqModules = SetSequence.fromSet(new HashSet<IModule>());
     Set<Language> usedLanguages = SetSequence.fromSet(new HashSet<Language>());
 
     for (IModule module : ListSequence.fromList(myModules)) {
       DependenciesManager depManager = module.getDependenciesManager();
-      SetSequence.fromSet(reqModules).addSequence(SetSequence.fromSet(depManager.getAllRequiredModules()));
+      SetSequence.fromSet(reqModules).addSequence(SetSequence.fromSet(depManager.getAllVisibleModules()));
       SetSequence.fromSet(usedLanguages).addSequence(SetSequence.fromSet(depManager.getAllUsedLanguages()));
     }
 
