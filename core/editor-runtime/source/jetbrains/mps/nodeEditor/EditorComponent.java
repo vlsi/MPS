@@ -218,7 +218,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private IOperationContext myOperationContext;
 
-  private MessagesGutter myMessagesGutter = new MessagesGutter(this);
+  private MessagesGutter myMessagesGutter;
   private LeftEditorHighlighter myLeftHighlighter;
   @Nullable
   protected SNode myNode;
@@ -464,6 +464,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         processKeyReleased(e);
       }
     });
+
+    myMessagesGutter = new MessagesGutter(this, rightToLeft);
 
     myLeftHighlighter = new LeftEditorHighlighter(this, rightToLeft);
     myLeftHighlighter.addMouseListener(new MouseAdapter() {

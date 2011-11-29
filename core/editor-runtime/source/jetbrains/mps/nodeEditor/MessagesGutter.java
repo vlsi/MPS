@@ -35,8 +35,6 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.io.PrintWriter;
-import java.io.Writer;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -48,9 +46,11 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   private Map<SimpleEditorMessage, EditorMessageOwner> myOwners = new HashMap<SimpleEditorMessage, EditorMessageOwner>();
   private boolean myStatusIsDirty = false;
   private Set<SimpleEditorMessage> myMessagesToRemove = new HashSet<SimpleEditorMessage>();
+  private boolean myRightToLeft;
 
-  public MessagesGutter(EditorComponent editorComponent) {
+  public MessagesGutter(EditorComponent editorComponent, boolean rightToLeft) {
     myEditorComponent = editorComponent;
+    myRightToLeft = rightToLeft;
 
     myEditorComponent.getVerticalScrollBar().setPersistentUI(this);
   }
@@ -78,7 +78,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   @Override
   protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
-    int shift = 9;
+    int shift = myRightToLeft ? -9 : 9;
     g.translate(shift, 0);
     super.paintThumb(g, c, thumbBounds);
     g.translate(-shift, 0);
@@ -90,10 +90,10 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
     g.setColor(TRACK_BORDER);
-    int border = bounds.x;
+    int border = myRightToLeft ? bounds.x + bounds.width - 1 : bounds.x;
     g.drawLine(border, bounds.y, border, bounds.y + bounds.height);
 
-    paintMarks(g);
+    drawMarks(g);
   }
 
   @Override
@@ -253,7 +253,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   public void dispose() {
   }
 
-  private void paintMarks(Graphics graphics) {
+  private void drawMarks(Graphics graphics) {
     removeBadMessages();
     Graphics2D g = (Graphics2D) graphics;
     //Set<EditorMessage> messagesToRemove = new HashSet<EditorMessage>();
@@ -283,14 +283,14 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
       if (msg == null || msg instanceof EditorMessage && !((EditorMessage) msg).isValid(myEditorComponent)) {
         continue;
       }
-      int x = 5;
+      int x = myRightToLeft ? 3 : 5;
       int width = Icons.OK.getIconWidth() - 1;
       if (!(msg instanceof EditorMessage)) {
         // thin
 
         width /= 2;
         width += 1;
-        x = 0;
+        x = myRightToLeft ? width + 2 : 0;
       }
       Color color = msg.getColor();
       int messageY = getMessageStart(msg);
