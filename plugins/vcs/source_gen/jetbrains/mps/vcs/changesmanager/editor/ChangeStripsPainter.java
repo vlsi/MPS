@@ -46,7 +46,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     super(editorHighlighter.getLeftEditorHighlighter());
     myEditorHighlighter = editorHighlighter;
     myChangeGroupLayout = new StripsChangeGroupLayout(myEditorHighlighter);
-    new ChangeGroupMessages(myChangeGroupLayout, true).startMaintaining();
+    ChangeGroupMessages.startMaintaining(myChangeGroupLayout, true);
   }
 
   @NotNull

@@ -2583,7 +2583,7 @@
     <nodeInfo nodeId="739457190729175670" fileName="ChangeGroupMessages.java" startLine="13" startPosition="64" endLine="14" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLayout" />
     <nodeInfo nodeId="739457190729177641" fileName="ChangeGroupMessages.java" startLine="14" startPosition="37" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeft" />
     <nodeInfo nodeId="739457190729183631" fileName="ChangeGroupMessages.java" startLine="15" startPosition="25" endLine="16" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGutter" />
-    <nodeInfo nodeId="739457190729177652" fileName="ChangeGroupMessages.java" startLine="18" startPosition="70" endLine="19" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="739457190729177652" fileName="ChangeGroupMessages.java" startLine="18" startPosition="71" endLine="19" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="739457190729177661" fileName="ChangeGroupMessages.java" startLine="19" startPosition="22" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="739457190729183681" fileName="ChangeGroupMessages.java" startLine="29" startPosition="45" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="739457190729177712" fileName="ChangeGroupMessages.java" startLine="35" startPosition="39" endLine="36" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2648,7 +2648,7 @@
     <scopeInfo nodeId="1995253788898151248" fileName="ChangeGroupMessages.java" startLine="47" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1995253788898151259" varName="layout" />
     </scopeInfo>
-    <scopeInfo nodeId="739457190729177649" fileName="ChangeGroupMessages.java" startLine="18" startPosition="70" endLine="24" endPosition="27" />
+    <scopeInfo nodeId="739457190729177649" fileName="ChangeGroupMessages.java" startLine="18" startPosition="71" endLine="24" endPosition="27" />
     <scopeInfo nodeId="739457190729177671" fileName="ChangeGroupMessages.java" startLine="35" startPosition="39" endLine="41" endPosition="7" />
     <scopeInfo nodeId="739457190729177645" fileName="ChangeGroupMessages.java" startLine="17" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="739457190729177650" varName="layout" />

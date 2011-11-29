@@ -15,7 +15,7 @@ public class ChangeGroupMessages implements EditorMessageOwner {
   private boolean myLeft;
   private MessagesGutter myGutter;
 
-  public ChangeGroupMessages(ChangeGroupLayout layout, boolean left) {
+  private ChangeGroupMessages(ChangeGroupLayout layout, boolean left) {
     myLayout = layout;
     myLeft = left;
     myGutter = ((left ?
