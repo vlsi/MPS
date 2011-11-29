@@ -10162,7 +10162,7 @@
     <unitInfo nodeId="5476509602181674172" fileName="AnalyzeModuleDependencies_Action.java" startLine="19" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.actions.AnalyzeModuleDependencies_Action" />
   </root>
   <root nodeId="5476509602181674192">
-    <nodeInfo nodeId="5476509602181674192" fileName="ModuleDependenies_Tool.java" startLine="15" startPosition="59" endLine="16" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5476509602181674192" fileName="ModuleDependenies_Tool.java" startLine="15" startPosition="59" endLine="16" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5476509602181674199" fileName="ModuleDependenies_Tool.java" startLine="17" startPosition="0" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="5476509602181674192" fileName="ModuleDependenies_Tool.java" startLine="20" startPosition="50" endLine="21" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5476509602181674192" fileName="ModuleDependenies_Tool.java" startLine="24" startPosition="37" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -13523,7 +13523,9 @@
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="3" />
     <scopeInfo nodeId="7889360268649440578" fileName="SetNodePackage_Action.java" startLine="44" startPosition="87" endLine="49" endPosition="7" />
     <scopeInfo nodeId="1680229125543348954" fileName="SetNodePackage_Action.java" startLine="105" startPosition="59" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="81" startPosition="26" endLine="87" endPosition="9" />
+    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="81" startPosition="26" endLine="87" endPosition="9">
+      <varInfo nodeId="7889360268649425705" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1680229125543349051" fileName="SetNodePackage_Action.java" startLine="119" startPosition="111" endLine="125" endPosition="13" />
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="43" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="7889360268649425705" varName="_params" />
