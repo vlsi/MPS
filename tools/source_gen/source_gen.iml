@@ -3,12 +3,6 @@
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.execution/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.execution/source_gen" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/source_gen" isTestSource="false" />
     </content>
@@ -60,20 +54,11 @@
     <content url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.test/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.test/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/execution/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/execution/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/runtime/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/runtime/source_gen" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/solutions/sandbox/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/solutions/sandbox/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../core/dependencies/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/dependencies/source_gen" isTestSource="false" />
@@ -369,14 +354,8 @@
     <content url="file://$MODULE_DIR$/../../languages/util/regexp/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/regexp/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../languages/util/runConfigurations/languages/commands/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/runConfigurations/languages/commands/source_gen" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../../languages/util/runConfigurations/languages/common/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/runConfigurations/languages/common/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../languages/util/runConfigurations/languages/configurations/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/runConfigurations/languages/configurations/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../languages/util/runConfigurations/languages/settings/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/runConfigurations/languages/settings/source_gen" isTestSource="false" />
@@ -420,6 +399,9 @@
     <content url="file://$MODULE_DIR$/../../obsolete/matrixLanguage/languages/matrixLanguage/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../obsolete/matrixLanguage/languages/matrixLanguage/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/customViewers/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/customViewers/source_gen" isTestSource="false" />
     </content>
@@ -429,9 +411,14 @@
     <content url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/privateMembers/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/privateMembers/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/jetbrains.mps.execution.configurations.mps/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/jetbrains.mps.execution.configurations.mps/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/execution/source_gen" />
+    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/runtime/source_gen" />
     <content url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated/source_gen" isTestSource="false" />
     </content>

@@ -275,8 +275,8 @@
       <modulePath path="${project}/plugins/execution-configurations/jetbrains.mps.execution.configurations.mps/mps.msd" folder="languages.execution.usages" />
       <modulePath path="${project}/plugins/execution-configurations/unitTests/execution/execution.msd" folder="languages.execution.usages.unitTests" />
       <modulePath path="${project}/plugins/execution-configurations/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.runtime.msd" folder="languages.execution.usages.unitTests" />
-      <modulePath path="${project}/plugins/execution-languages/commands/commands.mpl" folder="languages.execution.languages-plugin" />
-      <modulePath path="${project}/plugins/execution-languages/configurations/configurations.mpl" folder="languages.execution.languages-plugin" />
+      <modulePath path="${project}/plugins/execution-languages/commands/commands.mpl" folder="languages.execution" />
+      <modulePath path="${project}/plugins/execution-languages/configurations/configurations.mpl" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/demo/demo.mpl" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/deprecated/runConfigurations.mpl" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/library/jetbrains.mps.execution.lib.msd" folder="languages.execution.languages-plugin" />
