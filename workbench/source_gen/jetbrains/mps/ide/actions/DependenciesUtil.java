@@ -17,17 +17,20 @@ public class DependenciesUtil {
   public static SearchResults analyzeDependencies(IModule from, IModule to, Project project, MPSProject mpsProject, boolean openTool) {
     Scope fromScope = new Scope();
     fromScope.add(from);
+    Scope toScope = new Scope();
+    toScope.add(to);
+
     AnalyzeDependencies_Tool tool = project.getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
-    DependenciesPanel panel = as_ehks51_a0a3a0(tool.getComponent(), DependenciesPanel.class);
+    DependenciesPanel panel = as_ehks51_a0a6a0(tool.getComponent(), DependenciesPanel.class);
     panel.setContent(fromScope, mpsProject);
     panel.selectInTargetsView(to);
     if (openTool) {
       tool.openToolLater(true);
     }
-    return panel.getReferencesViewComponent().getSearchResults();
+    return panel.updateReferencesView(toScope);
   }
 
-  private static <T> T as_ehks51_a0a3a0(Object o, Class<T> type) {
+  private static <T> T as_ehks51_a0a6a0(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

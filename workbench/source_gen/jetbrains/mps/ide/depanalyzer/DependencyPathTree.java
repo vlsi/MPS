@@ -18,6 +18,7 @@ import java.util.HashSet;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashMap;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -81,7 +82,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     );
   }
 
-  private MPSTreeNode buildTree(IModule from, Set<IModule> dependency, Set<IModule> usedlanguage) {
+  public MPSTreeNode buildTree(IModule from, Set<IModule> dependency, Set<IModule> usedlanguage) {
     Map<Tuples._2<IModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom> visited = MapSequence.fromMap(new HashMap<Tuples._2<IModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom>());
     Queue<DependencyPathTree.LinkFrom> unprocessed = QueueSequence.fromQueue(new LinkedList<DependencyPathTree.LinkFrom>());
 
