@@ -93,6 +93,7 @@ public class SafeDeleteModuleDependency_Action extends GeneratedAction {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         ((IModule) MapSequence.fromMap(_params).get("from")).setModuleDescriptor(descriptor, false);
+        ((IModule) MapSequence.fromMap(_params).get("from")).save();
       }
     });
     ModuleDependenies_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class);
