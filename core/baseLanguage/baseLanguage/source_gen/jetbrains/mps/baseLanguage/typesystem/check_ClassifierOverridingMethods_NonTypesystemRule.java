@@ -34,11 +34,11 @@ public class check_ClassifierOverridingMethods_NonTypesystemRule extends Abstrac
         SNode returnType = SLinkOperations.getTarget(overridenMethod, "returnType", true);
         SNode ancestor = SNodeOperations.cast(SNodeOperations.getParent(overridenMethod), "jetbrains.mps.baseLanguage.structure.Classifier");
         SNode descendant = SNodeOperations.cast(SNodeOperations.getParent(overridingMethod), "jetbrains.mps.baseLanguage.structure.Classifier");
-        SNode resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(descendant, returnType, ancestor);
+        SNode resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(descendant, returnType, ancestor, overridingMethod, overridenMethod);
         if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(overridingMethod, "returnType", true), resolvedReturnType))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(overridingMethod, "method's return type is incompatible with overridden method ", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2792291462223216211", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(overridingMethod, "returnType", true), "method's return type is incompatible with overridden method ", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2792291462223216211", null, errorTarget);
           }
           break;
         }
