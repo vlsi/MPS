@@ -56,7 +56,7 @@ public class CommitUtil {
     new Thread() {
       public void run() {
         refactoringContext.setRefactoring(refactoring);
-        new RefactoringFacade().execute(refactoringContext);
+        new RefactoringFacade().executeInThread(refactoringContext);
       }
     }.start();
   }

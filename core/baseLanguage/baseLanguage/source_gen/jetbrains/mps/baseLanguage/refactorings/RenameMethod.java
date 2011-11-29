@@ -6,13 +6,9 @@ import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.lang.core.refactorings.Rename;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -24,6 +20,7 @@ public class RenameMethod extends BaseRefactoring {
   public RenameMethod() {
     this.addTransientParameter("newName");
     this.addTransientParameter("refactorOverriding");
+    this.addTransientParameter("overriding");
   }
 
   public String getUserFriendlyName() {
@@ -42,25 +39,10 @@ public class RenameMethod extends BaseRefactoring {
     return new RenameMethod_Target();
   }
 
-  public boolean init(final RefactoringContext refactoringContext) {
-    final Wrappers._T<List<SNode>> overriding = new Wrappers._T<List<SNode>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        overriding.value = MethodRefactoringUtils.findOverridingMethods(RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode()), new EmptyProgressIndicator());
-      }
-    });
-    return (ListSequence.fromList(overriding.value).isEmpty() ?
-      false :
-      false
-    );
-  }
-
   public void refactor(final RefactoringContext refactoringContext) {
     SNode method = RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
-
-    List<SNode> overriding = MethodRefactoringUtils.findOverridingMethods(method, new EmptyProgressIndicator());
-    if (ListSequence.fromList(overriding).isNotEmpty() && ((Boolean) refactoringContext.getParameter("refactorOverriding"))) {
-      for (SNode node : ListSequence.fromList(overriding)) {
+    if (ListSequence.fromList(((List<SNode>) refactoringContext.getParameter("overriding"))).isNotEmpty() && ((Boolean) refactoringContext.getParameter("refactorOverriding"))) {
+      for (SNode node : ListSequence.fromList(((List<SNode>) refactoringContext.getParameter("overriding")))) {
         SPropertyOperations.set(node, "name", ((String) refactoringContext.getParameter("newName")));
       }
     }

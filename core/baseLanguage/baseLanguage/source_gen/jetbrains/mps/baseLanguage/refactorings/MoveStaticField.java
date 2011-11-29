@@ -6,6 +6,7 @@ import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.lang.core.refactorings.MoveNodes;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticFieldRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
@@ -37,7 +38,7 @@ public class MoveStaticField extends BaseRefactoring {
   }
 
   public boolean init(final RefactoringContext refactoringContext) {
-    boolean hasDestination = false;
+    boolean hasDestination = MoveStaticField.this.ask(refactoringContext, MPSChooserFactory.createNodeChooser(refactoringContext, "destination", new MoveStaticField_destination_Settings(refactoringContext)));
     if (hasDestination) {
       refactoringContext.setParameter("refactor", new MoveStaticFieldRefactoring(refactoringContext.getSelectedNode(), ((SNode) refactoringContext.getParameter("destination"))));
       ModelAccess.instance().runReadAction(new Runnable() {

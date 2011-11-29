@@ -8937,7 +8937,7 @@
     <nodeInfo nodeId="2165772098013717939" fileName="CommitUtil.java" startLine="53" startPosition="69" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2165772098013717937" fileName="CommitUtil.java" startLine="54" startPosition="58" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4846444759635186144" fileName="CommitUtil.java" startLine="57" startPosition="25" endLine="58" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2754395556039700639" fileName="CommitUtil.java" startLine="58" startPosition="55" endLine="59" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2754395556039700639" fileName="CommitUtil.java" startLine="58" startPosition="55" endLine="59" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2165772098013617348" fileName="CommitUtil.java" startLine="64" startPosition="122" endLine="65" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2165772098013617374" fileName="CommitUtil.java" startLine="67" startPosition="38" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2165772098013617381" fileName="CommitUtil.java" startLine="69" startPosition="7" endLine="70" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -8973,7 +8973,7 @@
     <scopeInfo nodeId="2165772098013617443" fileName="CommitUtil.java" startLine="76" startPosition="19" endLine="77" endPosition="78" />
     <scopeInfo nodeId="2165772098013617519" fileName="CommitUtil.java" startLine="81" startPosition="109" endLine="82" endPosition="140" />
     <scopeInfo nodeId="2165772098013617549" fileName="CommitUtil.java" startLine="83" startPosition="18" endLine="84" endPosition="133" />
-    <scopeInfo nodeId="2754395556039700638" fileName="CommitUtil.java" startLine="57" startPosition="25" endLine="59" endPosition="60" />
+    <scopeInfo nodeId="2754395556039700638" fileName="CommitUtil.java" startLine="57" startPosition="25" endLine="59" endPosition="68" />
     <scopeInfo nodeId="2754395556039700561" fileName="CommitUtil.java" startLine="22" startPosition="67" endLine="26" endPosition="0" />
     <scopeInfo nodeId="2165772098013573682" fileName="CommitUtil.java" startLine="45" startPosition="57" endLine="49" endPosition="0" />
     <scopeInfo nodeId="2754395556039700635" fileName="CommitUtil.java" startLine="56" startPosition="18" endLine="61" endPosition="0" />

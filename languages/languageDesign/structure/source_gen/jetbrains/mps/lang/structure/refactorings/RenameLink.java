@@ -48,9 +48,6 @@ public class RenameLink extends BaseLoggableRefactoring {
   public boolean init(final RefactoringContext refactoringContext) {
     // myNewName can be pre-set in context to skip chooser dialog - temporary solution 
     if (((String) refactoringContext.getParameter("myNewName")) == null) {
-      if (!(false)) {
-        return false;
-      }
       refactoringContext.setParameter("myNewName", ((String) refactoringContext.getParameter("newName")));
     }
     return true;

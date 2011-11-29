@@ -49,7 +49,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
   public boolean init(final RefactoringContext refactoringContext) {
     ((RefactoringContext) refactoringContext).setLocal(true);
 
-    if (!(false)) {
+    if (!(MoveNodes.this.ask(refactoringContext, new MoveNodes_target_Chooser(refactoringContext)))) {
       return false;
     }
 

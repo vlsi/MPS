@@ -10,6 +10,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.Iterator;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -84,12 +85,12 @@ public class DeleteNodesHelper {
       return;
     } else
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      refactoringClass = "jetbrains.mps.lang.structure.refactorings.SafeDeleteConcept";
+      refactoringClass = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1851015849775237139"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
     } else
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
-      refactoringClass = "jetbrains.mps.lang.structure.refactorings.SafeDeleteLink";
+      refactoringClass = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1851015849775217786"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
     } else {
-      refactoringClass = "jetbrains.mps.lang.core.refactorings.SafeDelete";
+      refactoringClass = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)", "1851015849775217755"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
     }
     final IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName(refactoringClass);
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring);

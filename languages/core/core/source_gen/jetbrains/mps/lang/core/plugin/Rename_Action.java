@@ -110,6 +110,6 @@ public class Rename_Action extends GeneratedAction {
   }
 
   private String init(final Map<String, Object> _params) {
-    return RenameDialogWrapper.getNewName(((Project) MapSequence.fromMap(_params).get("project")), SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "name"));
+    return RenameDialogWrapper.getNewName(((Project) MapSequence.fromMap(_params).get("project")), SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "name"), "node");
   }
 }

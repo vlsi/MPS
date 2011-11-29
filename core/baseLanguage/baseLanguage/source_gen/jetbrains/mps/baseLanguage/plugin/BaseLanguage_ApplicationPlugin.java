@@ -41,8 +41,10 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new IntroduceConstant_Action());
     addAction(new IntroduceField_Action());
     addAction(new IntroduceVariable_Action());
+    addAction(new MakeFieldFinal_Action());
     addAction(new MakeFieldStatic_Action());
     addAction(new OverrideMethod_Action());
+    addAction(new RenameMethod_Action());
     addAction(new RenameVariable_Action());
     addAction(new ShowMembers_Action());
     addAction(new ShowNullDFA_Action());
