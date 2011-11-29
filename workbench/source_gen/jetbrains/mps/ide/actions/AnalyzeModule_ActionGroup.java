@@ -17,6 +17,7 @@ public class AnalyzeModule_ActionGroup extends GeneratedActionGroup {
       AnalyzeModule_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action");
       AnalyzeModule_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action");
       AnalyzeModule_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeDependencies_Action");
+      AnalyzeModule_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeModuleDependencies_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
