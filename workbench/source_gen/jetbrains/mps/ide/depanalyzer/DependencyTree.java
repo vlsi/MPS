@@ -18,7 +18,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import javax.swing.JPopupMenu;
-import javax.swing.tree.TreePath;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -27,6 +26,8 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.workbench.MPSDataKeys;
+import javax.swing.tree.TreePath;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class DependencyTree extends MPSTree implements DataProvider {
   private Project myProject;
@@ -105,15 +106,6 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
   @Override
   protected JPopupMenu createPopupMenu(MPSTreeNode treeNode) {
-    TreePath[] selection = getSelectionPaths();
-    if (selection != null && selection.length > 1) {
-      return null;
-    }
-    ModuleDependencyNode current = as_he3vmc_a0a2a11(getCurrentNode(), ModuleDependencyNode.class);
-    if (current == null || ListSequence.fromList(current.getModules()).count() != 1) {
-      return null;
-    }
-
     DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowModuleDependencyLoop_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
@@ -121,27 +113,35 @@ public class DependencyTree extends MPSTree implements DataProvider {
   @Nullable
   public Object getData(@NonNls String id) {
     ModuleDependencyNode current = as_he3vmc_a0a0a21(getCurrentNode(), ModuleDependencyNode.class);
-    if (current == null) {
-      return null;
-    }
-
-    if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
-      return current.getOperationContext();
-    }
-    if (id.equals(MPSDataKeys.MODULE.getName())) {
-      return ListSequence.fromList(current.getModules()).first();
-    }
     if (id.equals(MPSDataKeys.LOGICAL_VIEW_NODE.getName())) {
       return current;
+    }
+    if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+      return check_he3vmc_a0a2a21(current);
+    }
+    if (id.equals(MPSDataKeys.MODULE.getName())) {
+      List<IModule> modules = check_he3vmc_a0a0d0m(current);
+      TreePath[] selection = getSelectionPaths();
+      if (ListSequence.fromList(modules).count() != 1 || (selection != null && selection.length > 1)) {
+        return null;
+      }
+      return ListSequence.fromList(modules).first();
     }
     return null;
   }
 
-  private static <T> T as_he3vmc_a0a2a11(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+  private static IOperationContext check_he3vmc_a0a2a21(ModuleDependencyNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getOperationContext();
+    }
+    return null;
+  }
+
+  private static List<IModule> check_he3vmc_a0a0d0m(ModuleDependencyNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModules();
+    }
+    return null;
   }
 
   private static <T> T as_he3vmc_a0a0a21(Object o, Class<T> type) {

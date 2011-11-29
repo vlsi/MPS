@@ -2850,6 +2850,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -2857,9 +2858,12 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="javax.swing.tree.TreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AnalyzeDependencies_Tool" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DependenciesUtil" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModuleDependenies_Tool" />
+    <classNode dependClassName="jetbrains.mps.ide.depanalyzer.DependencyTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.depanalyzer.DependencyUtil" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -3148,12 +3152,16 @@
   <dependency className="jetbrains.mps.ide.actions.ShowInDependenciesViewer_Action" file="ShowInDependenciesViewer_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="javax.swing.tree.TreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DependenciesUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.depanalyzer.DependencyTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.depanalyzer.DependencyUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />

@@ -32,6 +32,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class DependencyPathTree extends MPSTree implements DataProvider {
@@ -148,23 +149,26 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   @Nullable
   public Object getData(@NonNls String id) {
     DependencyTreeNode current = as_9bg0dz_a0a0a11(getCurrentNode(), DependencyTreeNode.class);
-    if (current == null) {
-      return null;
+    if (id.equals(MPSDataKeys.LOGICAL_VIEW_NODE.getName())) {
+      return current;
     }
     if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
-      return current.getOperationContext();
+      return check_9bg0dz_a0a2a11(current);
     }
     if (id.equals(MPSDataKeys.MODULE.getName())) {
-      return current.getModule();
-    }
-    if (id.equals(MPSDataKeys.CONTEXT_MODULE.getName()) && current.getLink().linktype == DependencyUtil.LinkType.Depends) {
-      DependencyTreeNode node = as_9bg0dz_a0a0a4a11(current.getParent(), DependencyTreeNode.class);
-      return check_9bg0dz_a1a4a11(node);
+      return check_9bg0dz_a0a3a11(current);
     }
     return null;
   }
 
-  private static IModule check_9bg0dz_a1a4a11(DependencyTreeNode checkedDotOperand) {
+  private static IOperationContext check_9bg0dz_a0a2a11(DependencyTreeNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getOperationContext();
+    }
+    return null;
+  }
+
+  private static IModule check_9bg0dz_a0a3a11(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
@@ -172,13 +176,6 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   }
 
   private static <T> T as_9bg0dz_a0a0a11(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_9bg0dz_a0a0a4a11(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
