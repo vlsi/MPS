@@ -28,7 +28,6 @@ public class LibraryActions_ActionGroup extends GeneratedActionGroup {
         LibraryActions_ActionGroup.this.addAction(action);
       }
       LibraryActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action");
-      LibraryActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action");
       LibraryActions_ActionGroup.this.addSeparator();
       LibraryActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action");
       LibraryActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action");
