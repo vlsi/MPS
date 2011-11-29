@@ -21,7 +21,7 @@ public class AnalyzeModuleDependencies_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(AnalyzeModuleDependencies_Action.class);
 
   public AnalyzeModuleDependencies_Action() {
-    super("Analyze Module(s) Dependencies", "", ICON);
+    super("Analyze Module Dependencies", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

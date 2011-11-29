@@ -1252,7 +1252,7 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5476509602181674172">
       <property name="name" nameId="tpck.1169194664001" value="AnalyzeModuleDependencies" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Analyze Module(s) Dependencies" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Analyze Module Dependencies" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="dependencies" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5542140910050886364">
