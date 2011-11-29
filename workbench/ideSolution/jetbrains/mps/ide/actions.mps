@@ -31263,6 +31263,9 @@
     </node>
   </root>
   <root id="5476509602181674172">
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6987076566522078025">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/dependencies.png" />
+    </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="5476509602181674173">
       <property name="name" nameId="tpck.1169194664001" value="myModules" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="kt54.~MPSDataKeys%dMODULES" resolveInfo="MODULES" />

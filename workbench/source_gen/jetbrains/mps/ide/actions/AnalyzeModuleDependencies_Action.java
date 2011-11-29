@@ -15,9 +15,12 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import java.util.List;
 import jetbrains.mps.project.IModule;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class AnalyzeModuleDependencies_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(AnalyzeModuleDependencies_Action.class);
 
   public AnalyzeModuleDependencies_Action() {
@@ -61,6 +64,17 @@ public class AnalyzeModuleDependencies_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AnalyzeModuleDependencies", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(AnalyzeModuleDependencies_Action.class.getResourceAsStream("dependencies.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for AnalyzeModuleDependencies", e);
+      }
+      return null;
     }
   }
 }
