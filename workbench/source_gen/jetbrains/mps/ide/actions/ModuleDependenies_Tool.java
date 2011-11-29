@@ -30,6 +30,10 @@ public class ModuleDependenies_Tool extends GeneratedTool {
     ModuleDependenies_Tool.this.myComponent.setModules(modules);
   }
 
+  public void resetAll() {
+    ModuleDependenies_Tool.this.myComponent.resetAll();
+  }
+
   public JComponent getComponent() {
     return ModuleDependenies_Tool.this.myComponent;
   }

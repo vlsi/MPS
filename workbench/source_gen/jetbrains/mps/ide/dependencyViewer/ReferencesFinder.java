@@ -12,6 +12,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.ArrayList;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
@@ -61,6 +62,11 @@ public class ReferencesFinder {
       monitor.done();
     }
     return results;
+  }
+
+  public SearchResults getReferencesFromTo(Scope from, Scope to) {
+    List<SReference> references = getReferences(from, new EmptyProgressMonitor());
+    return getRefSearchResults(references, to, new EmptyProgressMonitor());
   }
 
   public List<SReference> getReferences(Scope scope, ProgressMonitor monitor) {

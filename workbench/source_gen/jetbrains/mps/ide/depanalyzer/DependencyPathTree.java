@@ -195,7 +195,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
   @Override
   protected JPopupMenu createPopupMenu(MPSTreeNode node) {
-    DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")));
+    DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action")));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
@@ -211,10 +211,31 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     if (id.equals(MPSDataKeys.MODULE.getName())) {
       return current.getModule();
     }
+    if (!(current.getRole().equals("depends on "))) {
+      return null;
+    }
+    if (id.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
+      DependencyTreeNode node = as_9bg0dz_a0a0a5a9(current.getParent(), DependencyTreeNode.class);
+      return check_9bg0dz_a1a5a9(node);
+    }
+    return null;
+  }
+
+  private static IModule check_9bg0dz_a1a5a9(DependencyTreeNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
     return null;
   }
 
   private static <T> T as_9bg0dz_a0a0a9(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_9bg0dz_a0a0a5a9(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

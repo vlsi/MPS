@@ -19,10 +19,12 @@ import jetbrains.mps.ide.icons.IconManager;
 public class DependencyTreeNode extends MPSTreeNode {
   private IModule myModule;
   private Color myColor;
+  private String myRole;
 
   public DependencyTreeNode(IModule module, String role, IOperationContext operationContext) {
     super(module, operationContext);
     myModule = module;
+    myRole = role;
     setIcon(IconManager.getIconFor(myModule));
     setNodeIdentifier(role + module.getModuleFqName());
     setText("<html>" + "<i>" + role + "</i>" + module.getModuleFqName() + "</html>");
@@ -42,5 +44,9 @@ public class DependencyTreeNode extends MPSTreeNode {
     if (myColor != null) {
       setColor(myColor);
     }
+  }
+
+  public String getRole() {
+    return myRole;
   }
 }
