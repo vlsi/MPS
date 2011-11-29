@@ -11,20 +11,18 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.ide.dependencyViewer.ReferencesFinder;
-import jetbrains.mps.ide.dependencyViewer.Scope;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.project.IModule;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class SafeDeleteModuleDependency_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -66,12 +64,7 @@ public class SafeDeleteModuleDependency_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ReferencesFinder finder = new ReferencesFinder();
-      Scope fromScope = new Scope();
-      fromScope.add(((IModule) MapSequence.fromMap(_params).get("from")));
-      Scope toScope = new Scope();
-      toScope.add(((IModule) MapSequence.fromMap(_params).get("to")));
-      SearchResults results = finder.getReferencesFromTo(fromScope, toScope);
+      SearchResults results = DependenciesUtil.analyzeDependencies(((IModule) MapSequence.fromMap(_params).get("from")), ((IModule) MapSequence.fromMap(_params).get("to")), ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), false);
       if (results.getSearchResults().isEmpty()) {
         SafeDeleteModuleDependency_Action.this.removeDependency(_params);
       } else {
@@ -79,7 +72,7 @@ public class SafeDeleteModuleDependency_Action extends GeneratedAction {
         if (res == 1) {
           SafeDeleteModuleDependency_Action.this.removeDependency(_params);
         } else if (res == 0) {
-          DependenciesUtil.analyzeDependencies(((IModule) MapSequence.fromMap(_params).get("from")), ((IModule) MapSequence.fromMap(_params).get("to")), ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+          ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class).openToolLater(true);
         }
       }
     } catch (Throwable t) {

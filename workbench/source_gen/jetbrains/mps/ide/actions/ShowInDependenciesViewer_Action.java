@@ -20,7 +20,7 @@ public class ShowInDependenciesViewer_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(ShowInDependenciesViewer_Action.class);
 
   public ShowInDependenciesViewer_Action() {
-    super("Show in Dependencies Viewer", "show usages", ICON);
+    super("Show Usages", "show usages in dependencies viewer", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -55,7 +55,7 @@ public class ShowInDependenciesViewer_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      DependenciesUtil.analyzeDependencies(((IModule) MapSequence.fromMap(_params).get("from")), ((IModule) MapSequence.fromMap(_params).get("to")), ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+      DependenciesUtil.analyzeDependencies(((IModule) MapSequence.fromMap(_params).get("from")), ((IModule) MapSequence.fromMap(_params).get("to")), ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowInDependenciesViewer", t);

@@ -860,6 +860,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.AnalyzeDependencies_Tool" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.Scope" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
@@ -2852,10 +2853,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.AnalyzeDependencies_Tool" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DependenciesUtil" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModuleDependenies_Tool" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.ReferencesFinder" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.Scope" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

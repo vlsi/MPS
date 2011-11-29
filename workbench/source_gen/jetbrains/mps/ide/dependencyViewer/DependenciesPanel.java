@@ -105,17 +105,20 @@ public class DependenciesPanel extends JPanel {
       }
     });
     myTargetsView.setContents(results.value);
-    updateReferencesView(new Scope());
+    updateReferencesView(null);
   }
 
   public void selectInTargetsView(IModule module) {
     myTargetsView.selectModule(module);
     Scope scope = new Scope();
     scope.add(module);
-    updateReferencesView(scope);
   }
 
   public void updateReferencesView(final Scope scope) {
+    if (scope == null) {
+      myReferencesView.setContents(new SearchResults());
+      return;
+    }
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Analyzing dependencies", true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
