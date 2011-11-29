@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JComponent;
@@ -166,6 +167,12 @@ public class MergeRootsDialog extends BaseDialog {
         higlightChange(myRepositoryEditor, myMergeSession.getRepositoryModel(), change);
       }
     }
+    ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
+      public void visit(ChangeGroupLayout b) {
+        b.invalidate();
+      }
+    });
+
     myMineEditor.repaintAndRebuildEditorMessages();
     myResultEditor.repaintAndRebuildEditorMessages();
     myRepositoryEditor.repaintAndRebuildEditorMessages();
@@ -184,9 +191,10 @@ public class MergeRootsDialog extends BaseDialog {
   private void linkEditors(boolean mine, boolean inspector) {
     // create change group builder, trapecium strip and merge buttons painter 
     // 'mine' parameter means mine changeset, 'inspector' - highlight inspector editor component 
-    ChangeGroupLayout changeGroupLayout = createChangeGroupLayout(mine, inspector);
-    ListSequence.fromList(myChangeGroupLayouts).addElement(changeGroupLayout);
-    DiffEditorSeparator separator = new DiffEditorSeparator(changeGroupLayout);
+    ChangeGroupLayout layout = createChangeGroupLayout(mine, inspector);
+    ChangeGroupMessages.startMaintaining(layout);
+    ListSequence.fromList(myChangeGroupLayouts).addElement(layout);
+    DiffEditorSeparator separator = new DiffEditorSeparator(layout);
     JPanel panel = (inspector ?
       myBottomPanel :
       myTopPanel
@@ -200,7 +208,7 @@ public class MergeRootsDialog extends BaseDialog {
     MergeButtonsPainter.addTo(this, (mine ?
       myMineEditor :
       myRepositoryEditor
-    ), changeGroupLayout, inspector);
+    ), layout, inspector);
   }
 
   private SNode getRootNode(SModel model) {

@@ -38,6 +38,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
+import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.NonNls;
@@ -143,11 +144,16 @@ public class RootDifferenceDialog extends BaseDialog implements DataProvider {
         b.invalidate();
       }
     });
-
     for (ModelChange change : ListSequence.fromList(myModelDialog.getChangesForRoot(myRootId))) {
       higlightChange(myOldEditor, myModelDialog.getChangeSet().getOldModel(), change);
       higlightChange(myNewEditor, myModelDialog.getChangeSet().getNewModel(), change);
     }
+    ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
+      public void visit(ChangeGroupLayout b) {
+        b.invalidate();
+      }
+    });
+
     myOldEditor.repaintAndRebuildEditorMessages();
     myNewEditor.repaintAndRebuildEditorMessages();
 
@@ -161,9 +167,10 @@ public class RootDifferenceDialog extends BaseDialog implements DataProvider {
   private void linkEditors(boolean inspector) {
     // create change group builder, trapecium strip and merge buttons painter 
     // 'mine' parameter means mine changeset, 'inspector' - highlight inspector editor component 
-    ChangeGroupLayout changeGroupLayout = new DiffChangeGroupLayout(null, myModelDialog.getChangeSet(), myOldEditor, myNewEditor, inspector);
-    ListSequence.fromList(myChangeGroupLayouts).addElement(changeGroupLayout);
-    DiffEditorSeparator separator = new DiffEditorSeparator(changeGroupLayout);
+    ChangeGroupLayout layout = new DiffChangeGroupLayout(null, myModelDialog.getChangeSet(), myOldEditor, myNewEditor, inspector);
+    ChangeGroupMessages.startMaintaining(layout);
+    ListSequence.fromList(myChangeGroupLayouts).addElement(layout);
+    DiffEditorSeparator separator = new DiffEditorSeparator(layout);
     GridBagConstraints gbc = new GridBagConstraints(1, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0);
     ((inspector ?
       myBottomPanel :
@@ -171,8 +178,8 @@ public class RootDifferenceDialog extends BaseDialog implements DataProvider {
     )).add(separator, gbc);
     ListSequence.fromList(myEditorSeparators).addElement(separator);
     if (!(myModelDialog.getChangeSet().getNewModel().isNotEditable())) {
-      DiffButtonsPainter.addTo(this, myOldEditor, changeGroupLayout, inspector);
-      DiffButtonsPainter.addTo(this, myNewEditor, changeGroupLayout, inspector);
+      DiffButtonsPainter.addTo(this, myOldEditor, layout, inspector);
+      DiffButtonsPainter.addTo(this, myNewEditor, layout, inspector);
     }
   }
 
