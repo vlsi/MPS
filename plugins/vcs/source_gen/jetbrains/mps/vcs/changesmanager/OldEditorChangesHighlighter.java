@@ -99,7 +99,7 @@ public class OldEditorChangesHighlighter extends AbstractProjectComponent implem
 
     public void editorComponentCreated(@NotNull EditorComponent editorComponent) {
       if (editorComponent instanceof NodeEditorComponent || editorComponent == myProject.getComponent(InspectorTool.class).getInspector()) {
-        addHighighlighter(editorComponent, EditorSettings.getInstance().isHighightChanges());
+        addHighighlighter(editorComponent, false);
       }
     }
 

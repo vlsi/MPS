@@ -49,7 +49,6 @@ class EditorSettingsPreferencesPage {
   private MyColorComponent mySelectionForegroundColorComponent;
   private JCheckBox myAntialiasingCheckBox;
   private JCheckBox myPowerSaveModeCheckBox;
-  private JCheckBox myHighlightChangesCheckBox;
   private JCheckBox myUseBraces;
   private JSlider myBlinkingRateSlider;
   private final EditorComponent myBlinkingDemo;
@@ -139,12 +138,6 @@ class EditorSettingsPreferencesPage {
     powerSaveModePanel.add(myPowerSaveModeCheckBox);
 
     panel.add(powerSaveModePanel);
-
-    JPanel highlightChangesPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    myHighlightChangesCheckBox = new JCheckBox("Highlight nodes with changes relative to base version");
-    highlightChangesPanel.add(myHighlightChangesCheckBox);
-
-    panel.add(highlightChangesPanel);
 
     JPanel colorSettingsPanel = new JPanel();
     Border border = BorderFactory.createEmptyBorder(5, 5, 0, 0);
@@ -277,7 +270,6 @@ class EditorSettingsPreferencesPage {
         mySettings.setUseBraces(myUseBraces.isSelected());
 
         mySettings.setPowerSaveMode(myPowerSaveModeCheckBox.isSelected());
-        mySettings.setHighlightChanges(myHighlightChangesCheckBox.isSelected());
 
         try {
           mySettings.getState().setLineSpacing(Double.parseDouble(myLineSpacingField.getText()));
@@ -326,7 +318,6 @@ class EditorSettingsPreferencesPage {
     boolean sameAntialiasing = myAntialiasingCheckBox.isSelected() == mySettings.isUseAntialiasing();
     boolean sameUseBraces = myUseBraces.isSelected() == mySettings.useBraces();
     boolean samePowerSaveMode = myPowerSaveModeCheckBox.isSelected() == mySettings.isPowerSaveMode();
-    boolean sameHighlightChanges = myHighlightChangesCheckBox.isSelected() == mySettings.isHighightChanges();
     boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals("" + mySettings.getState().getFontSize());
     boolean sameFontFamily = myFontsComboBox.getSelectedItem().equals("" + mySettings.getState().getFontFamily());
     boolean sameLineSpacing = myLineSpacingField.getText().equals("" + mySettings.getState().getLineSpacing());
@@ -335,7 +326,7 @@ class EditorSettingsPreferencesPage {
     boolean sameBlinkingRate = myBlinkingRateSlider.getValue() == (int) (SLIDER_RATIO / (long) CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis());
     boolean sameTabs = myFirstSelection.isSelected();
 
-    return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces && samePowerSaveMode && sameHighlightChanges
+    return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces && samePowerSaveMode
       && sameFontSize && sameFontFamily && sameLineSpacing && sameBgColor && sameFgColor && sameBlinkingRate &&sameTabs);
   }
 
@@ -350,10 +341,7 @@ class EditorSettingsPreferencesPage {
 
     myPowerSaveModeCheckBox.setSelected(mySettings.isPowerSaveMode());
 
-    myHighlightChangesCheckBox.setSelected(mySettings.isHighightChanges());
-
     myFontSizesComboBox.setSelectedItem("" + mySettings.getState().getFontSize());
-
 
     myFontsComboBox.setSelectedItem("" + mySettings.getState().getFontFamily());
 
