@@ -6,14 +6,16 @@ import jetbrains.mps.ide.findusages.view.UsagesView;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import java.util.Enumeration;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
-import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
-import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.smodel.SNode;
@@ -45,6 +47,34 @@ public class TargetsView extends UsagesView {
   public void close() {
   }
 
+  public void selectModule(IModule module) {
+    MPSTreeNode node = findModule(module);
+    if (node != null) {
+      getTreeComponent().getTree().selectNode(node);
+    }
+  }
+
+  private MPSTreeNode findModule(IModule module) {
+    UsagesTree usagesTree = getTreeComponent().getTree();
+    Enumeration nodes = usagesTree.getRootNode().breadthFirstEnumeration();
+    while (nodes.hasMoreElements()) {
+      MPSTreeNode treeNode = as_w7qo2b_a0a0a2a2(nodes.nextElement(), MPSTreeNode.class);
+      if (treeNode == null) {
+        continue;
+      }
+      Object userObject = treeNode.getUserObject();
+      if (userObject instanceof DataNode) {
+        BaseNodeData data = ((DataNode) userObject).getData();
+        if (data instanceof ModuleNodeData) {
+          if (((ModuleNodeData) data).getModule() == module) {
+            return treeNode;
+          }
+        }
+      }
+    }
+    return null;
+  }
+
   private static <T> T as_w7qo2b_a0a0a0a1a2a3a0a(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
@@ -60,6 +90,13 @@ public class TargetsView extends UsagesView {
   }
 
   private static <T> T as_w7qo2b_a0a0a0a3a2a3a0a(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_w7qo2b_a0a0a2a2(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

@@ -212,10 +212,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     dep.setReexport(true);
     result.add(dep);
 
-    for (Generator g : getGenerators()) {
-      result.addAll(g.getDependencies());
-    }
-
     return result;
   }
 
