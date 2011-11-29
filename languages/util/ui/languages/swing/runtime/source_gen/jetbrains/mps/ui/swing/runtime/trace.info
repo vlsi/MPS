@@ -46,8 +46,8 @@
       <varInfo nodeId="9201869079511430358" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="5220699420101883069" fileName="JXSingleTaskPaneContainer.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="5220699420101883088" varName="tp" />
       <varInfo nodeId="5220699420101883117" varName="collapsed" />
+      <varInfo nodeId="5220699420101883088" varName="tp" />
     </scopeInfo>
     <scopeInfo nodeId="5220699420101838239" fileName="JXSingleTaskPaneContainer.java" startLine="52" startPosition="42" endLine="56" endPosition="73">
       <varInfo nodeId="5220699420101875040" varName="initcollapsed" />
@@ -77,10 +77,10 @@
     <scopeInfo nodeId="5220699420101874636" fileName="JXSingleTaskPaneContainer.java" startLine="18" startPosition="82" endLine="34" endPosition="0">
       <varInfo nodeId="5220699420101874639" varName="e" />
     </scopeInfo>
+    <unitInfo nodeId="2204726755035753584" fileName="JXSingleTaskPaneContainer.java" startLine="15" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer" />
+    <unitInfo nodeId="5220699420101874625" fileName="JXSingleTaskPaneContainer.java" startLine="18" startPosition="56" endLine="34" endPosition="3" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer$1" />
     <unitInfo nodeId="5220699420101892502" fileName="JXSingleTaskPaneContainer.java" startLine="26" startPosition="41" endLine="30" endPosition="11" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer$2" />
     <unitInfo nodeId="9201869079511430353" fileName="JXSingleTaskPaneContainer.java" startLine="38" startPosition="23" endLine="42" endPosition="5" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer$2" />
-    <unitInfo nodeId="5220699420101874625" fileName="JXSingleTaskPaneContainer.java" startLine="18" startPosition="56" endLine="34" endPosition="3" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer$1" />
-    <unitInfo nodeId="2204726755035753584" fileName="JXSingleTaskPaneContainer.java" startLine="15" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer" />
   </root>
   <root nodeId="5220699420101883037">
     <nodeInfo nodeId="3784331761033100070" fileName="JXSingleTaskPane.java" startLine="8" startPosition="29" endLine="9" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -298,14 +298,14 @@
       <varInfo nodeId="7948103825060355707" varName="cmp" />
     </scopeInfo>
     <scopeInfo nodeId="7948103825060355823" fileName="DockLayout.java" startLine="206" startPosition="0" endLine="214" endPosition="0">
-      <varInfo nodeId="7948103825060355848" varName="list" />
       <varInfo nodeId="7948103825060355846" varName="ctrl" />
+      <varInfo nodeId="7948103825060355848" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="7948103825060361167" fileName="DockLayout.java" startLine="99" startPosition="44" endLine="108" endPosition="100">
       <varInfo nodeId="7948103825060361169" varName="center" />
       <varInfo nodeId="7948103825060361267" varName="height" />
-      <varInfo nodeId="7948103825060361233" varName="mHeight" />
       <varInfo nodeId="7948103825060362404" varName="insets" />
+      <varInfo nodeId="7948103825060361233" varName="mHeight" />
       <varInfo nodeId="7948103825060361175" varName="width" />
     </scopeInfo>
     <scopeInfo nodeId="7948103825060318796" fileName="DockLayout.java" startLine="71" startPosition="0" endLine="81" endPosition="0">
@@ -349,9 +349,9 @@
       <varInfo nodeId="7948103825060355896" varName="center" />
     </scopeInfo>
     <scopeInfo nodeId="7948103825060361453" fileName="DockLayout.java" startLine="111" startPosition="0" endLine="141" endPosition="0">
+      <varInfo nodeId="7948103825060361456" varName="border" />
       <varInfo nodeId="7948103825060361454" varName="comp" />
       <varInfo nodeId="7948103825060361458" varName="insides" />
-      <varInfo nodeId="7948103825060361456" varName="border" />
     </scopeInfo>
     <scopeInfo nodeId="7948103825060355868" fileName="DockLayout.java" startLine="174" startPosition="0" endLine="206" endPosition="0" />
     <unitInfo nodeId="7948103825060305166" fileName="DockLayout.java" startLine="17" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.ui.swing.runtime.DockLayout" />
@@ -514,8 +514,8 @@
       <varInfo nodeId="9201869079511422927" varName="container" />
     </scopeInfo>
     <scopeInfo nodeId="9201869079511427621" fileName="VerticalStackLayout.java" startLine="36" startPosition="29" endLine="41" endPosition="34">
-      <varInfo nodeId="9201869079511429965" varName="maxHeight" />
       <varInfo nodeId="9201869079511429959" varName="box" />
+      <varInfo nodeId="9201869079511429965" varName="maxHeight" />
       <varInfo nodeId="9201869079511429979" varName="ps" />
     </scopeInfo>
     <scopeInfo nodeId="9201869079511430153" fileName="VerticalStackLayout.java" startLine="60" startPosition="55" endLine="66" endPosition="9" />
@@ -532,20 +532,20 @@
     </scopeInfo>
     <scopeInfo nodeId="9201869079511422943" fileName="VerticalStackLayout.java" startLine="22" startPosition="44" endLine="45" endPosition="17">
       <varInfo nodeId="9201869079511427561" varName="dim" />
-      <varInfo nodeId="9201869079511423047" varName="w" />
-      <varInfo nodeId="9201869079511422981" varName="selected" />
-      <varInfo nodeId="9201869079511422972" varName="ins" />
       <varInfo nodeId="9201869079511423053" varName="h" />
+      <varInfo nodeId="9201869079511422972" varName="ins" />
+      <varInfo nodeId="9201869079511422981" varName="selected" />
+      <varInfo nodeId="9201869079511423047" varName="w" />
     </scopeInfo>
     <scopeInfo nodeId="9201869079511422923" fileName="VerticalStackLayout.java" startLine="21" startPosition="61" endLine="46" endPosition="5" />
     <scopeInfo nodeId="9201869079511429769" fileName="VerticalStackLayout.java" startLine="54" startPosition="44" endLine="79" endPosition="7">
-      <varInfo nodeId="9201869079511429777" varName="selected" />
-      <varInfo nodeId="9201869079511430217" varName="height" />
-      <varInfo nodeId="9201869079511429781" varName="width" />
-      <varInfo nodeId="9201869079511429771" varName="ins" />
       <varInfo nodeId="9201869079511430017" varName="box" />
-      <varInfo nodeId="9201869079511429785" varName="y" />
+      <varInfo nodeId="9201869079511430217" varName="height" />
+      <varInfo nodeId="9201869079511429771" varName="ins" />
+      <varInfo nodeId="9201869079511429777" varName="selected" />
+      <varInfo nodeId="9201869079511429781" varName="width" />
       <varInfo nodeId="9201869079511430257" varName="x" />
+      <varInfo nodeId="9201869079511429785" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="9201869079511422935" fileName="VerticalStackLayout.java" startLine="53" startPosition="52" endLine="80" endPosition="5" />
     <scopeInfo nodeId="9201869079511422918" fileName="VerticalStackLayout.java" startLine="20" startPosition="0" endLine="48" endPosition="0">

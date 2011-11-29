@@ -5,20 +5,9 @@ package jetbrains.mps.build.ant;
 import org.apache.log4j.Logger;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.Project;
-import com.intellij.openapi.project.ProjectManager;
-import java.io.File;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.ThreadUtils;
-import com.intellij.ide.IdeEventQueue;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.ConsoleAppender;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.build.ant.util.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
@@ -26,24 +15,11 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.plugins.PluginUtil;
-import java.util.Collections;
-import jetbrains.mps.library.Library;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.make.MPSCompilationResult;
 import org.apache.commons.lang.StringUtils;
 import org.apache.tools.ant.BuildException;
-import org.apache.log4j.Level;
-import java.util.Map;
-import com.intellij.util.PathUtil;
-import com.intellij.openapi.application.PathMacros;
-import jetbrains.mps.library.BaseLibraryManager;
-import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.library.LibraryInitializer;
+import java.util.Set;
+import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
-import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
@@ -52,6 +28,7 @@ import jetbrains.mps.generator.GenerationFacade;
 import java.util.Collection;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
+import java.util.Collections;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -61,8 +38,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import com.intellij.openapi.application.PathManager;
-import com.intellij.idea.IdeaTestApplication;
+import jetbrains.mps.build.ant.util.PathManager;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.logging.ILoggingHandler;
@@ -75,12 +51,7 @@ public abstract class MpsWorker {
   protected final List<String> myWarnings = new ArrayList<String>();
   protected final WhatToDo myWhatToDo;
   private final MpsWorker.AntLogger myLogger;
-  private MpsWorker.MyMessageHandlerAppender myMessageHandler = new MpsWorker.MyMessageHandlerAppender();
-  private final List<BaseApplicationPlugin> myPlugins = new ArrayList<BaseApplicationPlugin>();
-
-  private MpsWorker() {
-    this(null, (MpsWorker.AntLogger) null);
-  }
+  private Environment myEnvironment = new Environment();
 
   public MpsWorker(WhatToDo whatToDo) {
     this(whatToDo, new MpsWorker.LogLogger());
@@ -90,9 +61,23 @@ public abstract class MpsWorker {
     this(whatToDo, new MpsWorker.ProjectComponentLogger(component));
   }
 
+  public MpsWorker(WhatToDo whatToDo, ProjectComponent component, Environment environment) {
+    this(whatToDo, new MpsWorker.ProjectComponentLogger(component), environment);
+  }
+
   public MpsWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger) {
+    this(whatToDo, logger, new Environment());
+  }
+
+  public MpsWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger, Environment environment) {
     myWhatToDo = whatToDo;
     myLogger = logger;
+    this.myEnvironment = environment;
+    myEnvironment.init(whatToDo, new MpsWorker.MyMessageHandlerAppender());
+  }
+
+  public void setEnvironment(Environment environment) {
+    this.myEnvironment = environment;
   }
 
   public void workFromMain() {
@@ -112,13 +97,7 @@ public abstract class MpsWorker {
     collectModelsToGenerate(go);
     if (go.hasAnythingToGenerate()) {
       reload();
-      if (go.getProjects().isEmpty()) {
-        loadPlugins();
-      }
       executeTask(project, go);
-      if (go.getProjects().isEmpty()) {
-        disposePlugins();
-      }
     } else {
       error("Could not find anything to generate.");
     }
@@ -128,52 +107,25 @@ public abstract class MpsWorker {
   }
 
   protected Project createDummyProject() {
-    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
-    File projectFile = FileUtil.createTmpFile();
-    final StandaloneMPSProject project = new StandaloneMPSProject(ideaProject);
-    project.setProjectFile(projectFile);
-    project.init(new ProjectDescriptor());
-    projectFile.deleteOnExit();
-    return project;
+    return myEnvironment.createDummyProject();
   }
 
   protected void dispose() {
-    disposePlugins();
-    for (int i = 0; i < 3; i++) {
-      try {
-        SwingUtilities.invokeAndWait(new Runnable() {
-          public void run() {
-          }
-        });
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-    }
-    jetbrains.mps.logging.Logger.removeLoggingHandler(myMessageHandler);
+    myEnvironment.dispose();
   }
 
   protected void disposeProject(final Project p) {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         p.dispose();
-        IdeEventQueue.getInstance().flushQueue();
-        System.gc();
       }
     });
+    ModelAccess.instance().flushEventQueue();
+    System.gc();
   }
 
   protected void setupEnvironment() {
-    BasicConfigurator.configure(new ConsoleAppender());
-    Logger.getRootLogger().setLevel(getLog4jLevel());
-    jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-    try {
-      MpsWorker.configureMPS("jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make");
-    } catch (Exception ex) {
-      throw new RuntimeException(ex);
-    }
-    setMacro();
-    loadLibraries();
+    myEnvironment.setup();
     make();
     reload();
   }
@@ -194,51 +146,6 @@ public abstract class MpsWorker {
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
     });
-  }
-
-  protected void loadPlugins() {
-    Set<IModule> modules = new HashSet<IModule>();
-    modules.add(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.make.facet"));
-    myPlugins.addAll(PluginUtil.createPlugins(modules, new PluginUtil.ApplicationPluginCreator()));
-    for (BaseApplicationPlugin plugin : myPlugins) {
-      try {
-        plugin.createCustomParts();
-      } catch (Throwable t1) {
-        log("Plugin " + plugin + " threw an exception during initialization ", t1);
-      }
-    }
-  }
-
-  protected void disposePlugins() {
-    Collections.reverse(myPlugins);
-    for (BaseApplicationPlugin plugin : myPlugins) {
-      try {
-        plugin.dispose();
-      } catch (Throwable t) {
-        log("Plugin " + plugin + " threw an exception during disposing ", t);
-      }
-    }
-    myPlugins.clear();
-  }
-
-  protected void startMake(Set<Library> compiledLibraries, Set<IModule> toCompile) {
-    info("Starting compilation:");
-    StringBuffer sb = new StringBuffer();
-    for (IModule m : toCompile) {
-      sb.append("    ");
-      sb.append(m.getModuleFqName());
-      sb.append("\n");
-    }
-    info(sb.toString());
-  }
-
-  protected void finishMake(Set<Library> compiledLibraries, @NotNull MPSCompilationResult result) {
-    if (!(result.isOk())) {
-      error(result.toString());
-      throw new RuntimeException(result.toString());
-    } else {
-      info(result.toString());
-    }
   }
 
   protected abstract void executeTask(Project project, MpsWorker.ObjectsToProcess go);
@@ -272,53 +179,6 @@ public abstract class MpsWorker {
     }
   }
 
-  private Level getLog4jLevel() {
-    //  still warn, info only for messages from this task 
-    //  now we have info 
-    switch (myWhatToDo.getLogLevel()) {
-      case org.apache.tools.ant.Project.MSG_ERR:
-        return Level.ERROR;
-      case org.apache.tools.ant.Project.MSG_WARN:
-        return Level.WARN;
-      case org.apache.tools.ant.Project.MSG_INFO:
-        return Level.WARN;
-      case org.apache.tools.ant.Project.MSG_VERBOSE:
-        return Level.INFO;
-      case org.apache.tools.ant.Project.MSG_DEBUG:
-        return Level.DEBUG;
-      default:
-        return null;
-    }
-  }
-
-  private void setMacro() {
-    Map<String, String> macro = myWhatToDo.getMacro();
-    for (String macroName : macro.keySet()) {
-      String canonicalPath = PathUtil.getCanonicalPath(macro.get(macroName));
-      File file = new File(canonicalPath);
-      if (file.exists() && file.isDirectory()) {
-        PathMacros.getInstance().setMacro(macroName, canonicalPath);
-      }
-    }
-  }
-
-  private void loadLibraries() {
-    BaseLibraryManager.MyState state = LibraryManager.getInstance().getState();
-    Map<String, Library> libraries = state.getLibraries();
-    for (String libName : myWhatToDo.getLibraries().keySet()) {
-      Library library = new Library();
-      library.setName(libName);
-      library.setPath(myWhatToDo.getLibraries().get(libName).getAbsolutePath());
-      libraries.put(libName, library);
-    }
-    LibraryManager.getInstance().loadState(state);
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        LibraryInitializer.getInstance().update();
-      }
-    });
-  }
-
   public void collectModelsToGenerate(MpsWorker.ObjectsToProcess go) {
     collectFromProjects(go.getProjects());
     collectFromModuleFiles(go.getModules());
@@ -328,14 +188,7 @@ public abstract class MpsWorker {
   private void collectFromProjects(Set<Project> projects) {
     for (File projectFile : myWhatToDo.getMPSProjectFiles().keySet()) {
       if (projectFile.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
-        Project project;
-        try {
-          Class<?> cls = Class.forName("jetbrains.mps.TestMain");
-          Method meth = cls.getMethod("loadProject", File.class);
-          project = (Project) meth.invoke(null, projectFile);
-        } catch (Exception ex) {
-          throw new RuntimeException(ex);
-        }
+        Project project = myEnvironment.loadProject(projectFile);
         info("Loaded project " + project);
         projects.add(project);
       }
@@ -492,14 +345,14 @@ public abstract class MpsWorker {
     error(text + "\n" + sb.toString());
   }
 
-  public static void configureMPS(String... plugins) {
+  protected void configureMPS(boolean loadIdeaPlugins) {
     String mpsInternal = System.getProperty("mps.internal");
     System.setProperty("idea.is.internal", (mpsInternal == null ?
       "false" :
       mpsInternal
     ));
     System.setProperty("idea.no.jre.check", "true");
-    if (plugins.length == 0) {
+    if (!(loadIdeaPlugins)) {
       System.setProperty("idea.load.plugins", "false");
     }
     System.setProperty("idea.platform.prefix", "Idea");
@@ -512,13 +365,6 @@ public abstract class MpsWorker {
       pluginPath.append(pluginFolder.getPath());
     }
     System.setProperty("plugin.path", pluginPath.toString());
-    //  Value of this property is comma-separated list of plugin IDs intended to load by platform 
-    System.setProperty("idea.load.plugins.id", StringUtils.join(plugins, ","));
-    try {
-      IdeaTestApplication.getInstance(null);
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
   }
 
   public static StringBuffer extractStackTrace(Throwable e) {
@@ -623,7 +469,7 @@ public abstract class MpsWorker {
     public ObjectsToProcess() {
     }
 
-    public ObjectsToProcess(Set<Project> mpsProjects, Set<IModule> modules, Set<SModelDescriptor> models) {
+    public ObjectsToProcess(Set<? extends Project> mpsProjects, Set<IModule> modules, Set<SModelDescriptor> models) {
       myProjects.addAll(mpsProjects);
       myModules.addAll(modules);
       myModels.addAll(models);

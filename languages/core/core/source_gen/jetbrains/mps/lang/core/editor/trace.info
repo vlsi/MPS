@@ -15,11 +15,21 @@
     <nodeInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="21" startPosition="86" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="19" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_uvdaa2_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="61" />
-    <scopeInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="15" startPosition="59" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="23" startPosition="5" endLine="27" endPosition="59" />
+    <scopeInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="15" startPosition="59" endLine="19" endPosition="0">
+      <varInfo nodeId="1133921100033" varName="editorContext" />
+      <varInfo nodeId="1133921100033" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="23" startPosition="5" endLine="27" endPosition="59">
+      <varInfo nodeId="1133921100033" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="21" startPosition="86" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="20" startPosition="87" endLine="30" endPosition="22" />
-    <scopeInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="19" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="20" startPosition="87" endLine="30" endPosition="22">
+      <varInfo nodeId="1133921100033" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="19" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1133921100033" varName="editorContext" />
+      <varInfo nodeId="1133921100033" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1133921100033" fileName="BaseConcept_Editor.java" startLine="15" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.core.editor.BaseConcept_Editor" />
   </root>
   <root nodeId="2565736246230036155">
@@ -70,20 +80,53 @@
     <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="26" startPosition="48" endLine="27" endPosition="88" />
     <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="27" startPosition="88" endLine="28" endPosition="91" />
     <scopeInfo nodeId="2638080004385076810" fileName="ExportScopePublic_Editor.java" startLine="71" startPosition="109" endLine="72" endPosition="97" />
-    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="63" startPosition="35" endLine="66" endPosition="105" />
-    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="19" startPosition="65" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="32" startPosition="98" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="24" startPosition="89" endLine="29" endPosition="22" />
-    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="63" startPosition="35" endLine="66" endPosition="105">
+      <varInfo nodeId="2565736246230036155" varName="manager" />
+      <varInfo nodeId="2565736246230036155" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="19" startPosition="65" endLine="23" endPosition="0">
+      <varInfo nodeId="2565736246230036155" varName="editorContext" />
+      <varInfo nodeId="2565736246230036155" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="32" startPosition="98" endLine="36" endPosition="22">
+      <varInfo nodeId="2565736246230036155" varName="editorCell" />
+      <varInfo nodeId="2565736246230036155" varName="manager" />
+      <varInfo nodeId="2565736246230036155" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="2565736246230036155" varName="editorContext" />
+      <varInfo nodeId="2565736246230036155" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="24" startPosition="89" endLine="29" endPosition="22">
+      <varInfo nodeId="2565736246230036155" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="2565736246230036155" varName="editorContext" />
+      <varInfo nodeId="2565736246230036155" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="49" startPosition="51" endLine="56" endPosition="13" />
-    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="23" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="48" startPosition="92" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="46" startPosition="5" endLine="58" endPosition="9" />
+    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="23" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2565736246230036155" varName="editorContext" />
+      <varInfo nodeId="2565736246230036155" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="48" startPosition="92" endLine="58" endPosition="0">
+      <varInfo nodeId="2565736246230036155" varName="cell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="46" startPosition="5" endLine="58" endPosition="9">
+      <varInfo nodeId="2565736246230036155" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="44" startPosition="58" endLine="59" endPosition="5" />
     <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="43" startPosition="26" endLine="60" endPosition="73" />
-    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="39" startPosition="95" endLine="68" endPosition="22" />
-    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="38" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="39" startPosition="95" endLine="68" endPosition="22">
+      <varInfo nodeId="2565736246230036155" varName="attributeConcept" />
+      <varInfo nodeId="2565736246230036155" varName="attributeKind" />
+      <varInfo nodeId="2565736246230036155" varName="editorCell" />
+      <varInfo nodeId="2565736246230036155" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="38" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="2565736246230036155" varName="editorContext" />
+      <varInfo nodeId="2565736246230036155" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.core.editor.ExportScopePublic_Editor" />
     <unitInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="48" startPosition="60" endLine="58" endPosition="7" unitName="jetbrains.mps.lang.core.editor.ExportScopePublic_Editor$1" />
   </root>
@@ -135,20 +178,53 @@
     <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="26" startPosition="48" endLine="27" endPosition="88" />
     <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="27" startPosition="88" endLine="28" endPosition="91" />
     <scopeInfo nodeId="2638080004385077963" fileName="ExportScopeModule_Editor.java" startLine="71" startPosition="109" endLine="72" endPosition="97" />
-    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="63" startPosition="35" endLine="66" endPosition="105" />
-    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="19" startPosition="65" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="32" startPosition="98" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="24" startPosition="89" endLine="29" endPosition="22" />
-    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="63" startPosition="35" endLine="66" endPosition="105">
+      <varInfo nodeId="2565736246230036164" varName="manager" />
+      <varInfo nodeId="2565736246230036164" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="19" startPosition="65" endLine="23" endPosition="0">
+      <varInfo nodeId="2565736246230036164" varName="editorContext" />
+      <varInfo nodeId="2565736246230036164" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="32" startPosition="98" endLine="36" endPosition="22">
+      <varInfo nodeId="2565736246230036164" varName="editorCell" />
+      <varInfo nodeId="2565736246230036164" varName="manager" />
+      <varInfo nodeId="2565736246230036164" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="2565736246230036164" varName="editorContext" />
+      <varInfo nodeId="2565736246230036164" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="24" startPosition="89" endLine="29" endPosition="22">
+      <varInfo nodeId="2565736246230036164" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="2565736246230036164" varName="editorContext" />
+      <varInfo nodeId="2565736246230036164" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="49" startPosition="51" endLine="56" endPosition="13" />
-    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="23" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="48" startPosition="92" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="46" startPosition="5" endLine="58" endPosition="9" />
+    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="23" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2565736246230036164" varName="editorContext" />
+      <varInfo nodeId="2565736246230036164" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="48" startPosition="92" endLine="58" endPosition="0">
+      <varInfo nodeId="2565736246230036164" varName="cell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="46" startPosition="5" endLine="58" endPosition="9">
+      <varInfo nodeId="2565736246230036164" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="44" startPosition="58" endLine="59" endPosition="5" />
     <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="43" startPosition="26" endLine="60" endPosition="73" />
-    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="39" startPosition="95" endLine="68" endPosition="22" />
-    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="38" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="39" startPosition="95" endLine="68" endPosition="22">
+      <varInfo nodeId="2565736246230036164" varName="attributeConcept" />
+      <varInfo nodeId="2565736246230036164" varName="attributeKind" />
+      <varInfo nodeId="2565736246230036164" varName="editorCell" />
+      <varInfo nodeId="2565736246230036164" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="38" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="2565736246230036164" varName="editorContext" />
+      <varInfo nodeId="2565736246230036164" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.core.editor.ExportScopeModule_Editor" />
     <unitInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="48" startPosition="60" endLine="58" endPosition="7" unitName="jetbrains.mps.lang.core.editor.ExportScopeModule_Editor$1" />
   </root>
@@ -223,23 +299,66 @@
     <scopeInfo nodeId="2638080004385070307" fileName="ExportScopeNamespace_Editor.java" startLine="90" startPosition="109" endLine="91" endPosition="97" />
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="36" startPosition="105" endLine="38" endPosition="70" />
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="76" startPosition="26" endLine="79" endPosition="73" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="82" startPosition="35" endLine="85" endPosition="105" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="20" startPosition="68" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="65" startPosition="98" endLine="69" endPosition="22" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="35" startPosition="88" endLine="40" endPosition="22" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="25" startPosition="89" endLine="32" endPosition="22" />
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="82" startPosition="35" endLine="85" endPosition="105">
+      <varInfo nodeId="2565736246230036172" varName="manager" />
+      <varInfo nodeId="2565736246230036172" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="20" startPosition="68" endLine="24" endPosition="0">
+      <varInfo nodeId="2565736246230036172" varName="editorContext" />
+      <varInfo nodeId="2565736246230036172" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="65" startPosition="98" endLine="69" endPosition="22">
+      <varInfo nodeId="2565736246230036172" varName="editorCell" />
+      <varInfo nodeId="2565736246230036172" varName="manager" />
+      <varInfo nodeId="2565736246230036172" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="89" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="2565736246230036172" varName="editorContext" />
+      <varInfo nodeId="2565736246230036172" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="35" startPosition="88" endLine="40" endPosition="22">
+      <varInfo nodeId="2565736246230036172" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="25" startPosition="89" endLine="32" endPosition="22">
+      <varInfo nodeId="2565736246230036172" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="50" startPosition="51" endLine="57" endPosition="13" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="64" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="34" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="49" startPosition="92" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="46" startPosition="5" endLine="59" endPosition="9" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="72" startPosition="88" endLine="87" endPosition="22" />
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="2565736246230036172" varName="editorContext" />
+      <varInfo nodeId="2565736246230036172" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="34" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="2565736246230036172" varName="editorContext" />
+      <varInfo nodeId="2565736246230036172" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="2565736246230036172" varName="editorContext" />
+      <varInfo nodeId="2565736246230036172" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="49" startPosition="92" endLine="59" endPosition="0">
+      <varInfo nodeId="2565736246230036172" varName="cell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="46" startPosition="5" endLine="59" endPosition="9">
+      <varInfo nodeId="2565736246230036172" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="72" startPosition="88" endLine="87" endPosition="22">
+      <varInfo nodeId="2565736246230036172" varName="attributeConcept" />
+      <varInfo nodeId="2565736246230036172" varName="attributeKind" />
+      <varInfo nodeId="2565736246230036172" varName="editorCell" />
+      <varInfo nodeId="2565736246230036172" varName="provider" />
+    </scopeInfo>
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="44" startPosition="87" endLine="60" endPosition="5" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="71" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="43" startPosition="88" endLine="62" endPosition="22" />
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="42" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="71" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="2565736246230036172" varName="editorContext" />
+      <varInfo nodeId="2565736246230036172" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="43" startPosition="88" endLine="62" endPosition="22">
+      <varInfo nodeId="2565736246230036172" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="42" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="2565736246230036172" varName="editorContext" />
+      <varInfo nodeId="2565736246230036172" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.core.editor.ExportScopeNamespace_Editor" />
     <unitInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="49" startPosition="60" endLine="59" endPosition="7" unitName="jetbrains.mps.lang.core.editor.ExportScopeNamespace_Editor$1" />
   </root>
@@ -260,11 +379,22 @@
     <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="24" startPosition="40" endLine="25" endPosition="29" />
     <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="28" startPosition="54" endLine="29" endPosition="56" />
     <scopeInfo nodeId="2565736246230068878" fileName="DeleteExportScope.java" startLine="32" startPosition="75" endLine="33" endPosition="39" />
-    <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="19" startPosition="0" endLine="22" endPosition="5" />
-    <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="12" startPosition="32" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="19" startPosition="0" endLine="22" endPosition="5">
+      <varInfo nodeId="2565736246230068875" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="12" startPosition="32" endLine="16" endPosition="0">
+      <varInfo nodeId="2565736246230068875" varName="context" />
+      <varInfo nodeId="2565736246230068875" varName="editorCell" />
+      <varInfo nodeId="2565736246230068875" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2565736246230068875" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="2565736246230068875" varName="editorContext" />
+      <varInfo nodeId="2565736246230068875" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.core.editor.DeleteExportScope" />
     <unitInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.core.editor.DeleteExportScope$DeleteExportScope_DELETE" />
   </root>
@@ -279,9 +409,19 @@
     <nodeInfo nodeId="5169995583184591171" fileName="Attribute_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAttributedNodeCell_mc4j88_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="5169995583184591171" fileName="Attribute_Editor.java" startLine="20" startPosition="67" endLine="20" endPosition="67" />
     <scopeInfo nodeId="5169995583184591171" fileName="Attribute_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="71" />
-    <scopeInfo nodeId="5169995583184591171" fileName="Attribute_Editor.java" startLine="12" startPosition="57" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5169995583184591171" fileName="Attribute_Editor.java" startLine="17" startPosition="97" endLine="21" endPosition="22" />
-    <scopeInfo nodeId="5169995583184591171" fileName="Attribute_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="5169995583184591171" fileName="Attribute_Editor.java" startLine="12" startPosition="57" endLine="16" endPosition="0">
+      <varInfo nodeId="5169995583184591171" varName="editorContext" />
+      <varInfo nodeId="5169995583184591171" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5169995583184591171" fileName="Attribute_Editor.java" startLine="17" startPosition="97" endLine="21" endPosition="22">
+      <varInfo nodeId="5169995583184591171" varName="editorCell" />
+      <varInfo nodeId="5169995583184591171" varName="manager" />
+      <varInfo nodeId="5169995583184591171" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5169995583184591171" fileName="Attribute_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="5169995583184591171" varName="editorContext" />
+      <varInfo nodeId="5169995583184591171" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="5169995583184591171" fileName="Attribute_Editor.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.core.editor.Attribute_Editor" />
   </root>
 </debugInfo>

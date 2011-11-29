@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="testAntTask.unpackAndTest.unpackAndTest" file="unpackAndTest.xml" />
+</dependenciesRoot>
+

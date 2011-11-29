@@ -33,7 +33,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
-import com.intellij.openapi.application.impl.ApplicationImpl;
 import jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
@@ -234,7 +233,6 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
 
     @Override
     public void runJobWithMonitor(final _FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-      final boolean oldFlag = ApplicationImpl.setExceptionalThreadWithReadAccessFlag(true);
       try {
         if (delegate != null) {
           delegate.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
@@ -248,7 +246,6 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
       } catch (Throwable e) {
         BuildMakeService.LOG.error("error running job", e);
       } finally {
-        ApplicationImpl.setExceptionalThreadWithReadAccessFlag(oldFlag);
       }
     }
 

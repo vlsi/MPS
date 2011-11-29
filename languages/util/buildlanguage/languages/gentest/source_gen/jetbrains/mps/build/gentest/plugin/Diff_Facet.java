@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
+import jetbrains.mps.make.facet.ITargetEx;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.ITResource;
 import jetbrains.mps.make.script.IJob;
@@ -23,6 +24,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -65,7 +67,7 @@ public class Diff_Facet extends IFacet.Stub {
     return new Diff_Facet.TargetProperties();
   }
 
-  public static class Target_diff implements ITarget {
+  public static class Target_diff implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -97,21 +99,12 @@ public class Diff_Facet extends IFacet.Stub {
                   });
                   final Differ differ = new Differ(retainedPaths, pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).excludedFiles());
                   final StringBuilder errors = new StringBuilder();
-                  final String outRootPath = tgres.module().getOutputFor(tgres.modelDescriptor());
+                  final String origOutRootPath = tgres.module().getOutputFor(tgres.modelDescriptor());
+                  final String outDirPath = FileGenerationUtil.getDefaultOutputDir(tgres.modelDescriptor(), FileSystem.getInstance().getFileByPath(origOutRootPath)).getPath();
 
-                  dr.visitAll(new FilesDelta.Visitor() {
-                    @Override
-                    public boolean acceptRoot(IFile root) {
-                      String rootPath = pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).fileToPath().invoke(root);
-                      if (outRootPath.startsWith(rootPath)) {
-                        IFile outDir = FileGenerationUtil.getDefaultOutputDir(tgres.modelDescriptor(), root);
-                        for (String diff : differ.diff(pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).fileToPath().invoke(outDir), outDir.getPath())) {
-                          errors.append("\n").append(diff);
-                        }
-                      }
-                      return true;
-                    }
-                  });
+                  for (String diff : differ.diff(outDirPath, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), jetbrains.mps.lang.core.plugin.Make_Facet.Target_make.Parameters.class).pathToFile().invoke(outDirPath).getPath())) {
+                    errors.append("\n").append(diff);
+                  }
                   if (errors.length() > 0) {
                     monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Differences\n" + errors.toString())));
                   }
@@ -148,6 +141,10 @@ public class Diff_Facet extends IFacet.Stub {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean isOptional() {
+      return false;
     }
 
     public boolean requiresInput() {

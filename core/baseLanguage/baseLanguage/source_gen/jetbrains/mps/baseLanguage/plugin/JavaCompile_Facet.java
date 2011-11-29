@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
+import jetbrains.mps.make.facet.ITargetEx;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.ITResource;
 import jetbrains.mps.make.script.IJob;
@@ -86,7 +87,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
     return new JavaCompile_Facet.TargetProperties();
   }
 
-  public static class Target_compile implements ITarget {
+  public static class Target_compile implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -123,7 +124,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                   continue;
                 }
 
-                monitor.currentProgress().advanceWork("Compiling", 50, tres.module().getModuleReference().getModuleFqName());
+                monitor.currentProgress().advanceWork("Compiling", 100, tres.module().getModuleReference().getModuleFqName());
 
                 final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();
                 ModelAccess.instance().runReadAction(new Runnable() {
@@ -149,7 +150,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
                   }
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
-                monitor.currentProgress().advanceWork("Compiling", 50);
                 _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
               }
               monitor.currentProgress().finishWork("Compiling");
@@ -182,6 +182,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean isOptional() {
+      return false;
     }
 
     public boolean requiresInput() {
@@ -236,7 +240,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_auxCompile implements ITarget {
+  public static class Target_auxCompile implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -346,6 +350,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
       return name;
     }
 
+    public boolean isOptional() {
+      return false;
+    }
+
     public boolean requiresInput() {
       return true;
     }
@@ -398,7 +406,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_compileToMemory implements ITarget {
+  public static class Target_compileToMemory implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IFResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -488,6 +496,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean isOptional() {
+      return false;
     }
 
     public boolean requiresInput() {

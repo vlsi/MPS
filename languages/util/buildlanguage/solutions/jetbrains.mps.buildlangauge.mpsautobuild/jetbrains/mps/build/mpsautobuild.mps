@@ -2916,11 +2916,6 @@
         </node>
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="2901107368280474181">
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="4715659374659285044">
-          <property name="id" nameId="tps4.1222447189012" value="a47a7608-84cc-4f1d-800f-301c16bc1595" />
-          <property name="name" nameId="tpck.1169194664001" value="typesystemIntegration" />
-          <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
-        </node>
         <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7451905405776981202">
           <property name="id" nameId="tps4.1222447189012" value="34e84b8f-afa8-4364-abcd-a279fddddbe7" />
           <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.editor.runtime" />

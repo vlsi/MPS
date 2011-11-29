@@ -42,7 +42,7 @@ public abstract class AbstractProgressStrategy {
     return current;
   }
 
-  private static boolean eq_idfyc1_a0a0b0k0(Object a, Object b) {
+  private static boolean eq_idfyc1_a0a0b0n0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
@@ -96,6 +96,18 @@ public abstract class AbstractProgressStrategy {
       return Math.max(0, estimate - done);
     }
 
+    public int workDone() {
+      return Math.min(estimate, done);
+    }
+
+    public int prevWork() {
+      return total;
+    }
+
+    public double prevWorkRatio() {
+      return ((double) prev.estimate) / total;
+    }
+
     public String name() {
       return name;
     }
@@ -121,7 +133,7 @@ public abstract class AbstractProgressStrategy {
     public AbstractProgressStrategy.Work matchingOrTotal(String name) {
       AbstractProgressStrategy.Work wrk = this;
       while (wrk.prev != null) {
-        if (eq_idfyc1_a0a0b0k0(wrk.name, name)) {
+        if (eq_idfyc1_a0a0b0n0(wrk.name, name)) {
           return wrk;
         }
         wrk = wrk.prev;

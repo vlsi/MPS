@@ -51,20 +51,36 @@
     <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1193396656620" varName="editorContext" />
+      <varInfo nodeId="1193396656620" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="41" startPosition="84" endLine="45" endPosition="16" />
-    <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1227876798261" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="62" startPosition="270" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1193396656620" varName="editorContext" />
+      <varInfo nodeId="1193396656620" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1227876798261" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="62" startPosition="270" endLine="66" endPosition="0">
+      <varInfo nodeId="1227876798261" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1193397276523" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="61" startPosition="71" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1193396656620" varName="editorContext" />
+      <varInfo nodeId="1193396656620" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1193397276523" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="61" startPosition="71" endLine="68" endPosition="5">
+      <varInfo nodeId="1193397276523" varName="oldRef" />
+    </scopeInfo>
     <scopeInfo nodeId="1193396656626" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="52" startPosition="76" endLine="68" endPosition="5">
       <varInfo nodeId="1193396802065" varName="foreachStatement" />
       <varInfo nodeId="1193397029397" varName="newVariable" />
       <varInfo nodeId="1193397150805" varName="oldVariable" />
       <varInfo nodeId="1193397770168" varName="variableType" />
     </scopeInfo>
-    <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="51" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="51" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1193396656620" varName="editorContext" />
+      <varInfo nodeId="1193396656620" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.ConvertForEachStatementToForeachStatement_Intention" />
     <unitInfo nodeId="1227876798261" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="62" startPosition="247" endLine="66" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.intentions.ConvertForEachStatementToForeachStatement_Intention$1" />
   </root>
@@ -105,12 +121,24 @@
     <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1206658014161" varName="editorContext" />
+      <varInfo nodeId="1206658014161" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="37" startPosition="84" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1206658014161" varName="editorContext" />
+      <varInfo nodeId="1206658014161" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1206658014161" varName="editorContext" />
+      <varInfo nodeId="1206658014161" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1206658014161" varName="editorContext" />
+      <varInfo nodeId="1206658014161" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.CreateInitializer_Intention" />
   </root>
   <root nodeId="1237739140549">
@@ -150,12 +178,24 @@
     <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1237739140549" varName="editorContext" />
+      <varInfo nodeId="1237739140549" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="38" startPosition="84" endLine="42" endPosition="16" />
-    <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1237739140549" varName="editorContext" />
+      <varInfo nodeId="1237739140549" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1237739140549" varName="editorContext" />
+      <varInfo nodeId="1237739140549" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1237739140549" varName="editorContext" />
+      <varInfo nodeId="1237739140549" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_init_values_Intention" />
   </root>
   <root nodeId="1237739246401">
@@ -195,12 +235,24 @@
     <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1237739246401" varName="editorContext" />
+      <varInfo nodeId="1237739246401" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="38" startPosition="84" endLine="42" endPosition="16" />
-    <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1237739246401" varName="editorContext" />
+      <varInfo nodeId="1237739246401" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1237739246401" varName="editorContext" />
+      <varInfo nodeId="1237739246401" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1237739246401" varName="editorContext" />
+      <varInfo nodeId="1237739246401" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_copy_from_Intention" />
   </root>
   <root nodeId="2261417478149151571">
@@ -299,30 +351,66 @@
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="60" startPosition="52" endLine="62" endPosition="5" />
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="85" startPosition="20" endLine="87" endPosition="43" />
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="104" startPosition="20" endLine="106" endPosition="44" />
-    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="114" startPosition="9" endLine="117" endPosition="56" />
+    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="114" startPosition="9" endLine="117" endPosition="56">
+      <varInfo nodeId="2261417478149151571" varName="quotedNode1_12" />
+    </scopeInfo>
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="2261417478149151571" varName="editorContext" />
+      <varInfo nodeId="2261417478149151571" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="41" startPosition="84" endLine="45" endPosition="16" />
-    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="2261417478149151571" varName="editorContext" />
+      <varInfo nodeId="2261417478149151571" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="2261417478149151571" varName="editorContext" />
+      <varInfo nodeId="2261417478149151571" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="113" startPosition="9" endLine="118" endPosition="9" />
-    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="80" startPosition="11" endLine="91" endPosition="13" />
-    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="99" startPosition="11" endLine="110" endPosition="13" />
+    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="2261417478149151571" varName="editorContext" />
+      <varInfo nodeId="2261417478149151571" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="80" startPosition="11" endLine="91" endPosition="13">
+      <varInfo nodeId="2261417478149151571" varName="quotedNode1_9" />
+    </scopeInfo>
+    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="99" startPosition="11" endLine="110" endPosition="13">
+      <varInfo nodeId="2261417478149151571" varName="quotedNode1_11" />
+    </scopeInfo>
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="79" startPosition="49" endLine="92" endPosition="11" />
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="98" startPosition="50" endLine="111" endPosition="11" />
-    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="76" startPosition="9" endLine="93" endPosition="60" />
-    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="95" startPosition="9" endLine="112" endPosition="61" />
+    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="76" startPosition="9" endLine="93" endPosition="60">
+      <varInfo nodeId="2261417478149151571" varName="quotedNode1_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="95" startPosition="9" endLine="112" endPosition="61">
+      <varInfo nodeId="2261417478149151571" varName="quotedNode1_10" />
+    </scopeInfo>
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="75" startPosition="43" endLine="94" endPosition="9" />
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="94" startPosition="9" endLine="113" endPosition="9" />
-    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="73" startPosition="7" endLine="119" endPosition="31" />
+    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="73" startPosition="7" endLine="119" endPosition="31">
+      <varInfo nodeId="2261417478149151571" varName="quotedNode1_7" />
+    </scopeInfo>
     <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="72" startPosition="32" endLine="120" endPosition="7" />
-    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="64" startPosition="71" endLine="121" endPosition="20" />
-    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="63" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="64" startPosition="71" endLine="121" endPosition="20">
+      <varInfo nodeId="2261417478149151571" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2261417478149151571" varName="quotedNode_1" />
+      <varInfo nodeId="2261417478149151571" varName="quotedNode_2" />
+      <varInfo nodeId="2261417478149151571" varName="quotedNode_3" />
+      <varInfo nodeId="2261417478149151571" varName="quotedNode_4" />
+      <varInfo nodeId="2261417478149151571" varName="quotedNode_5" />
+      <varInfo nodeId="2261417478149151571" varName="quotedNode_6" />
+      <varInfo nodeId="2261417478149151571" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="63" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="2261417478149151571" varName="parameter_13" />
+      <varInfo nodeId="2261417478149151571" varName="parameter_14" />
+    </scopeInfo>
     <unitInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="17" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.Add_Comparator_Intention" />
     <unitInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="60" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.Add_Comparator_Intention$QuotationClass_z9bmn4_a2a0a7" />
   </root>
@@ -363,12 +451,24 @@
     <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="2826767102480497650" varName="editorContext" />
+      <varInfo nodeId="2826767102480497650" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="36" startPosition="84" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="2826767102480497650" varName="editorContext" />
+      <varInfo nodeId="2826767102480497650" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="2826767102480497650" varName="editorContext" />
+      <varInfo nodeId="2826767102480497650" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="2826767102480497650" varName="editorContext" />
+      <varInfo nodeId="2826767102480497650" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_sequence_initializer_Intention" />
   </root>
   <root nodeId="309173295241374789">
@@ -431,26 +531,47 @@
     <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="18" startPosition="95" endLine="20" endPosition="3" />
     <scopeInfo nodeId="309173295241374797" fileName="IterateOverSequence_Intention.java" startLine="49" startPosition="90" endLine="51" endPosition="604" />
     <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="70" startPosition="54" endLine="72" endPosition="5" />
-    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="82" startPosition="9" endLine="85" endPosition="62" />
+    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="82" startPosition="9" endLine="85" endPosition="62">
+      <varInfo nodeId="309173295241374789" varName="quotedNode1_4" />
+    </scopeInfo>
     <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="309173295241374789" varName="editorContext" />
+      <varInfo nodeId="309173295241374789" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="42" startPosition="84" endLine="46" endPosition="16" />
     <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="48" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="48" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="309173295241374789" varName="editorContext" />
+      <varInfo nodeId="309173295241374789" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="81" startPosition="43" endLine="86" endPosition="9" />
-    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="79" startPosition="7" endLine="87" endPosition="31" />
+    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="309173295241374789" varName="editorContext" />
+      <varInfo nodeId="309173295241374789" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="79" startPosition="7" endLine="87" endPosition="31">
+      <varInfo nodeId="309173295241374789" varName="quotedNode1_3" />
+    </scopeInfo>
     <scopeInfo nodeId="309173295241374793" fileName="IterateOverSequence_Intention.java" startLine="54" startPosition="76" endLine="63" endPosition="84">
       <varInfo nodeId="309173295241392490" varName="deleteStatement" />
       <varInfo nodeId="309173295241389477" varName="forStatement" />
       <varInfo nodeId="309173295241392450" varName="outerStatement" />
     </scopeInfo>
     <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="78" startPosition="32" endLine="88" endPosition="7" />
-    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="53" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="74" startPosition="31" endLine="89" endPosition="20" />
+    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="53" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="309173295241374789" varName="editorContext" />
+      <varInfo nodeId="309173295241374789" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="74" startPosition="31" endLine="89" endPosition="20">
+      <varInfo nodeId="309173295241374789" varName="_parameterValues_129834374" />
+      <varInfo nodeId="309173295241374789" varName="quotedNode_1" />
+      <varInfo nodeId="309173295241374789" varName="quotedNode_2" />
+      <varInfo nodeId="309173295241374789" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="73" startPosition="0" endLine="91" endPosition="0" />
     <unitInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="18" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.IterateOverSequence_Intention" />
     <unitInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="70" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.IterateOverSequence_Intention$QuotationClass_wo71su_a1a0a1a6" />
@@ -512,15 +633,32 @@
     <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4863683935051453872" varName="editorContext" />
+      <varInfo nodeId="4863683935051453872" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4863683935051453872" varName="editorContext" />
+      <varInfo nodeId="4863683935051453872" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="61" startPosition="9" endLine="72" endPosition="11" />
+    <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="61" startPosition="9" endLine="72" endPosition="11">
+      <varInfo nodeId="4863683935051453872" varName="quotedNode1_4" />
+    </scopeInfo>
     <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="60" startPosition="43" endLine="73" endPosition="9" />
-    <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="58" startPosition="7" endLine="74" endPosition="31" />
+    <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="58" startPosition="7" endLine="74" endPosition="31">
+      <varInfo nodeId="4863683935051453872" varName="quotedNode1_3" />
+    </scopeInfo>
     <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="57" startPosition="32" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="53" startPosition="49" endLine="76" endPosition="20" />
-    <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="52" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="53" startPosition="49" endLine="76" endPosition="20">
+      <varInfo nodeId="4863683935051453872" varName="_parameterValues_129834374" />
+      <varInfo nodeId="4863683935051453872" varName="quotedNode_1" />
+      <varInfo nodeId="4863683935051453872" varName="quotedNode_2" />
+      <varInfo nodeId="4863683935051453872" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="52" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="4863683935051453872" varName="parameter_5" />
+    </scopeInfo>
     <unitInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.RemoveSetElementOperation_replace_Intention" />
     <unitInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="49" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.RemoveSetElementOperation_replace_Intention$QuotationClass_wpx8v9_a1a0a5" />
   </root>
@@ -581,15 +719,32 @@
     <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4863683935051469795" varName="editorContext" />
+      <varInfo nodeId="4863683935051469795" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4863683935051469795" varName="editorContext" />
+      <varInfo nodeId="4863683935051469795" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="61" startPosition="9" endLine="72" endPosition="11" />
+    <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="61" startPosition="9" endLine="72" endPosition="11">
+      <varInfo nodeId="4863683935051469795" varName="quotedNode1_4" />
+    </scopeInfo>
     <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="60" startPosition="43" endLine="73" endPosition="9" />
-    <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="58" startPosition="7" endLine="74" endPosition="31" />
+    <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="58" startPosition="7" endLine="74" endPosition="31">
+      <varInfo nodeId="4863683935051469795" varName="quotedNode1_3" />
+    </scopeInfo>
     <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="57" startPosition="32" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="53" startPosition="49" endLine="76" endPosition="20" />
-    <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="52" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="53" startPosition="49" endLine="76" endPosition="20">
+      <varInfo nodeId="4863683935051469795" varName="_parameterValues_129834374" />
+      <varInfo nodeId="4863683935051469795" varName="quotedNode_1" />
+      <varInfo nodeId="4863683935051469795" varName="quotedNode_2" />
+      <varInfo nodeId="4863683935051469795" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="52" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="4863683935051469795" varName="parameter_5" />
+    </scopeInfo>
     <unitInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.AddSetElementOperation_replace_Intention" />
     <unitInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="49" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.AddSetElementOperation_replace_Intention$QuotationClass_iq7pzb_a1a0a5" />
   </root>
@@ -650,15 +805,32 @@
     <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4863683935051516260" varName="editorContext" />
+      <varInfo nodeId="4863683935051516260" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4863683935051516260" varName="editorContext" />
+      <varInfo nodeId="4863683935051516260" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="61" startPosition="9" endLine="72" endPosition="11" />
+    <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="61" startPosition="9" endLine="72" endPosition="11">
+      <varInfo nodeId="4863683935051516260" varName="quotedNode1_4" />
+    </scopeInfo>
     <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="60" startPosition="43" endLine="73" endPosition="9" />
-    <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="58" startPosition="7" endLine="74" endPosition="31" />
+    <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="58" startPosition="7" endLine="74" endPosition="31">
+      <varInfo nodeId="4863683935051516260" varName="quotedNode1_3" />
+    </scopeInfo>
     <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="57" startPosition="32" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="53" startPosition="49" endLine="76" endPosition="20" />
-    <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="52" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="53" startPosition="49" endLine="76" endPosition="20">
+      <varInfo nodeId="4863683935051516260" varName="_parameterValues_129834374" />
+      <varInfo nodeId="4863683935051516260" varName="quotedNode_1" />
+      <varInfo nodeId="4863683935051516260" varName="quotedNode_2" />
+      <varInfo nodeId="4863683935051516260" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="52" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="4863683935051516260" varName="parameter_5" />
+    </scopeInfo>
     <unitInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.AddAllSetElementsOperation_replace_Intention" />
     <unitInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="49" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.AddAllSetElementsOperation_replace_Intention$QuotationClass_g56htk_a1a0a5" />
   </root>
@@ -719,15 +891,32 @@
     <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4863683935051516296" varName="editorContext" />
+      <varInfo nodeId="4863683935051516296" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4863683935051516296" varName="editorContext" />
+      <varInfo nodeId="4863683935051516296" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="61" startPosition="9" endLine="72" endPosition="11" />
+    <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="61" startPosition="9" endLine="72" endPosition="11">
+      <varInfo nodeId="4863683935051516296" varName="quotedNode1_4" />
+    </scopeInfo>
     <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="60" startPosition="43" endLine="73" endPosition="9" />
-    <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="58" startPosition="7" endLine="74" endPosition="31" />
+    <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="58" startPosition="7" endLine="74" endPosition="31">
+      <varInfo nodeId="4863683935051516296" varName="quotedNode1_3" />
+    </scopeInfo>
     <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="57" startPosition="32" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="53" startPosition="49" endLine="76" endPosition="20" />
-    <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="52" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="53" startPosition="49" endLine="76" endPosition="20">
+      <varInfo nodeId="4863683935051516296" varName="_parameterValues_129834374" />
+      <varInfo nodeId="4863683935051516296" varName="quotedNode_1" />
+      <varInfo nodeId="4863683935051516296" varName="quotedNode_2" />
+      <varInfo nodeId="4863683935051516296" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="52" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="4863683935051516296" varName="parameter_5" />
+    </scopeInfo>
     <unitInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.RemoveAllSetElementsOperation_replace_Intention" />
     <unitInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="49" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.RemoveAllSetElementsOperation_replace_Intention$QuotationClass_9ijhau_a1a0a5" />
   </root>
