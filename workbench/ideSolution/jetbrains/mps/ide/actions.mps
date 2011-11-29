@@ -1259,7 +1259,7 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1942098792227670965">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="dependencies" />
       <property name="name" nameId="tpck.1169194664001" value="ShowModuleDependencyLoop" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Cycle" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Show Cycle Paths" />
       <property name="description" nameId="tp4k.1213273179528" value="Show All Cycle Paths for Selected Module" />
     </node>
   </roots>
@@ -31263,25 +31263,6 @@
     </node>
   </root>
   <root id="5476509602181674172">
-    <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="5534980211124343915">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5534980211124343916">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5534980211124414383">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.NotExpression" typeId="tpee.1081516740877" id="5534980211124414460">
-            <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5534980211124414461">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5534980211124414462">
-                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="5534980211124414463" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="5534980211124414464">
-                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="5476509602181674173" resolveInfo="modules" />
-                </node>
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5534980211124414465">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%disEmpty()%cboolean" resolveInfo="isEmpty" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="5476509602181674173">
       <property name="name" nameId="tpck.1169194664001" value="modules" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="kt54.~MPSDataKeys%dMODULES" resolveInfo="MODULES" />
@@ -31346,6 +31327,25 @@
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6987076566522078025">
       <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/dependencies.png" />
+    </node>
+    <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="5534980211124343915">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5534980211124343916">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5534980211124414383">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.NotExpression" typeId="tpee.1081516740877" id="5534980211124414460">
+            <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5534980211124414461">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5534980211124414462">
+                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="5534980211124414463" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="5534980211124414464">
+                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="5476509602181674173" resolveInfo="modules" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5534980211124414465">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%disEmpty()%cboolean" resolveInfo="isEmpty" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </root>
   <root id="5542140910050886364">

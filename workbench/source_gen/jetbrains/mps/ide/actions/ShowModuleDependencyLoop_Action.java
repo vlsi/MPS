@@ -21,7 +21,7 @@ public class ShowModuleDependencyLoop_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(ShowModuleDependencyLoop_Action.class);
 
   public ShowModuleDependencyLoop_Action() {
-    super("Show Cycle", "Show All Cycle Paths for Selected Module", ICON);
+    super("Show Cycle Paths", "Show All Cycle Paths for Selected Module", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

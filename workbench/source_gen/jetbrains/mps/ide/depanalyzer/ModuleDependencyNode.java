@@ -107,7 +107,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
     }
 
     if (tree.isShowUsedLanguage()) {
-      MPSTreeNode usedlanguages = new TextMPSTreeNode("Used languages", getOperationContext());
+      MPSTreeNode usedlanguages = new TextMPSTreeNode("Used Languages", getOperationContext());
       for (Language l : SetSequence.fromSet(usedLanguages).sort(new ISelector<Language, Comparable<?>>() {
         public Comparable<?> select(Language it) {
           return it.getModuleFqName();
