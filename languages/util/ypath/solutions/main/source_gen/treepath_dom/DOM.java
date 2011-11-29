@@ -33,7 +33,7 @@ public class DOM extends TreePath<Node> {
     public static Iterable<Node> children(Node node) {
       Iterable<Node> children = new NodeListIterableAdapter(node.getChildNodes());
       if (node instanceof Element) {
-        return (Iterable<Node>) new ChainedIterable(new NamedNodeMapIterableAdapter(node.getAttributes()), children);
+        return new ChainedIterable<Node>(new NamedNodeMapIterableAdapter(node.getAttributes()), children);
       }
       return (Iterable<Node>) children;
     }

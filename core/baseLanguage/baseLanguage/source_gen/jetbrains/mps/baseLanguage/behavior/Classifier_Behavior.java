@@ -21,6 +21,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -196,14 +197,14 @@ public class Classifier_Behavior {
     return result;
   }
 
-  public static SNode call_getWithResolvedTypevars_3305065273710852527(SNode thisNode, SNode t, SNode ancestor) {
+  public static SNode call_getWithResolvedTypevars_3305065273710852527(SNode thisNode, SNode t, SNode ancestor, SNode method, SNode baseMethod) {
     SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(thisNode), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a02(ancestor), true);
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      return Classifier_Behavior.call_getResolvedVar_3305065273710881245(thisNode, SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), ancestor, coercedType);
+      return Classifier_Behavior.call_getResolvedVar_3305065273710881245(thisNode, SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), ancestor, coercedType, method, baseMethod);
     } else {
       SNode result = SNodeOperations.copyNode(t);
       for (SNode reference : SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})) {
-        SNode resolvedVar = Classifier_Behavior.call_getResolvedVar_3305065273710881245(thisNode, reference, ancestor, coercedType);
+        SNode resolvedVar = Classifier_Behavior.call_getResolvedVar_3305065273710881245(thisNode, reference, ancestor, coercedType, method, baseMethod);
         if (reference != resolvedVar) {
           SNodeOperations.replaceWithAnother(reference, resolvedVar);
         }
@@ -212,19 +213,32 @@ public class Classifier_Behavior {
     }
   }
 
-  public static SNode call_getResolvedVar_3305065273710881245(SNode thisNode, SNode reference, SNode ancestor, SNode coercedType) {
+  public static SNode call_getResolvedVar_3305065273710881245(SNode thisNode, SNode reference, SNode ancestor, SNode coercedType, SNode method, SNode baseMethod) {
     SNode decl = SLinkOperations.getTarget(reference, "typeVariableDeclaration", false);
     int i = ListSequence.fromList(SLinkOperations.getTargets(ancestor, "typeVariableDeclaration", true)).indexOf(decl);
     SNode resolvedVar;
     if (i < 0) {
+      SNode var = Classifier_Behavior.call_getResolvedMethodVar_836080658851951996(thisNode, reference, method, baseMethod);
+      if (var != null) {
+        return var;
+      }
       resolvedVar = reference;
-      // todo method vars 
     } else if (i < ListSequence.fromList(SLinkOperations.getTargets(coercedType, "parameter", true)).count()) {
       resolvedVar = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(coercedType, "parameter", true)).getElement(i));
     } else {
       resolvedVar = TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(decl);
     }
     return resolvedVar;
+  }
+
+  public static SNode call_getResolvedMethodVar_836080658851951996(SNode thisNode, SNode reference, SNode method, SNode baseMethod) {
+    int i = ListSequence.fromList(SLinkOperations.getTargets(baseMethod, "typeVariableDeclaration", true)).indexOf(SLinkOperations.getTarget(reference, "typeVariableDeclaration", false));
+    if (i >= 0 && i <= ListSequence.fromList(SLinkOperations.getTargets(method, "typeVariableDeclaration", true)).count()) {
+      SNode varRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
+      SLinkOperations.setTarget(varRef, "typeVariableDeclaration", ListSequence.fromList(SLinkOperations.getTargets(method, "typeVariableDeclaration", true)).getElement(i), false);
+      return varRef;
+    }
+    return null;
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633081868(SNode thisNode) {
