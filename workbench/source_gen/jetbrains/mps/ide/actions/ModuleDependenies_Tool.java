@@ -5,40 +5,17 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
-import javax.swing.JPanel;
-import jetbrains.mps.ide.depanalyzer.DependencyTree;
-import jetbrains.mps.ide.depanalyzer.DependencyPathTree;
+import jetbrains.mps.ide.depanalyzer.ModuleDependenciesView;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import java.awt.BorderLayout;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.tools.CloseAction;
-import javax.swing.JComponent;
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.ui.Splitter;
-import com.intellij.ui.components.JBScrollPane;
-import javax.swing.event.TreeSelectionListener;
-import javax.swing.event.TreeSelectionEvent;
-import java.util.Map;
 import java.util.List;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import javax.swing.tree.TreePath;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.depanalyzer.ModuleDependencyNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.IMapping;
+import javax.swing.JComponent;
 
 public class ModuleDependenies_Tool extends GeneratedTool {
   private static final Icon ICON = IconManager.EMPTY_ICON;
 
-  private JPanel myComponent;
-  private DependencyTree myLeftTree;
-  private DependencyPathTree myRightTree;
+  private ModuleDependenciesView myComponent;
 
   public ModuleDependenies_Tool(Project project) {
     super(project, "Module Dependencies", -1, ICON, ToolWindowAnchor.BOTTOM, false);
@@ -46,62 +23,14 @@ public class ModuleDependenies_Tool extends GeneratedTool {
 
   public void init(Project project) {
     super.init(project);
-    ModuleDependenies_Tool.this.myComponent = new JPanel(new BorderLayout());
-
-    ModuleDependenies_Tool.this.myLeftTree = new DependencyTree(project, ModuleDependenies_Tool.this.myComponent);
-    ModuleDependenies_Tool.this.myRightTree = new DependencyPathTree();
-
-    ActionGroup group = ActionUtils.groupFromActions(new CloseAction(ModuleDependenies_Tool.this));
-    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
-
-    Splitter splitter = new Splitter();
-
-    ModuleDependenies_Tool.this.myComponent.add(toolbar, BorderLayout.NORTH);
-    ModuleDependenies_Tool.this.myComponent.add(splitter, BorderLayout.CENTER);
-    splitter.setFirstComponent(new JBScrollPane(ModuleDependenies_Tool.this.myLeftTree));
-    splitter.setSecondComponent(new JBScrollPane(ModuleDependenies_Tool.this.myRightTree));
-
-    ModuleDependenies_Tool.this.myLeftTree.addTreeSelectionListener(new TreeSelectionListener() {
-      public void valueChanged(TreeSelectionEvent p0) {
-        ModuleDependenies_Tool.this.myRightTree.resetDependencies();
-        Map<List<IModule>, List<IModule>> dependencies = MapSequence.fromMap(new HashMap<List<IModule>, List<IModule>>());
-        TreePath[] paths = ModuleDependenies_Tool.this.myLeftTree.getSelectionPaths();
-        if (paths != null) {
-          for (TreePath path : paths) {
-            MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-            if (node instanceof ModuleDependencyNode) {
-              ModuleDependencyNode n = (ModuleDependencyNode) node;
-              List<IModule> from = check_8yoj0b_a0b0b0a0d0a0a0a0p0a(n.getFromNode());
-              if (from != null) {
-                if (!(MapSequence.fromMap(dependencies).containsKey(from))) {
-                  MapSequence.fromMap(dependencies).put(from, ListSequence.fromList(new ArrayList<IModule>()));
-                }
-                ListSequence.fromList(MapSequence.fromMap(dependencies).get(from)).addSequence(ListSequence.fromList(n.getModules()));
-              }
-            }
-          }
-        }
-        for (IMapping<List<IModule>, List<IModule>> dep : MapSequence.fromMap(dependencies)) {
-          ModuleDependenies_Tool.this.myRightTree.addDependency(dep.key(), dep.value(), null);
-        }
-        ModuleDependenies_Tool.this.myRightTree.rebuildLater();
-      }
-    });
+    ModuleDependenies_Tool.this.myComponent = new ModuleDependenciesView(ModuleDependenies_Tool.this, project);
   }
 
   /*package*/ void setModules(List<IModule> modules) {
-    ModuleDependenies_Tool.this.myLeftTree.setModules(modules);
-    ModuleDependenies_Tool.this.myLeftTree.rebuildLater();
+    ModuleDependenies_Tool.this.myComponent.setModules(modules);
   }
 
   public JComponent getComponent() {
     return ModuleDependenies_Tool.this.myComponent;
-  }
-
-  private static List<IModule> check_8yoj0b_a0b0b0a0d0a0a0a0p0a(ModuleDependencyNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModules();
-    }
-    return null;
   }
 }

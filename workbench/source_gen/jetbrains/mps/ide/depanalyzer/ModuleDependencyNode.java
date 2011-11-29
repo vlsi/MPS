@@ -22,8 +22,11 @@ public class ModuleDependencyNode extends MPSTreeNode {
   private List<IModule> myModules;
   private boolean myInitialized;
 
-  public ModuleDependencyNode(IModule module, IOperationContext context) {
+  public ModuleDependencyNode(IModule module, boolean isRuntime, IOperationContext context) {
     this(ListSequence.fromListAndArray(new ArrayList<IModule>(), module), context);
+    if (isRuntime) {
+      setNodeIdentifier(getNodeIdentifier() + " (runtime)");
+    }
   }
 
   public ModuleDependencyNode(List<IModule> modules, IOperationContext context) {
@@ -59,11 +62,13 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
   protected void doInit() {
     Set<IModule> reqModules = SetSequence.fromSet(new HashSet<IModule>());
+    Set<IModule> rtModules = SetSequence.fromSet(new HashSet<IModule>());
     Set<Language> usedLanguages = SetSequence.fromSet(new HashSet<Language>());
 
     for (IModule module : ListSequence.fromList(myModules)) {
       DependenciesManager depManager = module.getDependenciesManager();
       SetSequence.fromSet(reqModules).addSequence(SetSequence.fromSet(depManager.getAllVisibleModules()));
+      SetSequence.fromSet(rtModules).addSequence(SetSequence.fromSet(depManager.getAllRequiredModules()));
       SetSequence.fromSet(usedLanguages).addSequence(SetSequence.fromSet(depManager.getAllUsedLanguages()));
     }
 
@@ -74,14 +79,14 @@ public class ModuleDependencyNode extends MPSTreeNode {
         return it.getModuleFqName();
       }
     }, true)) {
-      dependencies.add(new ModuleDependencyNode(m, getOperationContext()));
+      dependencies.add(new ModuleDependencyNode(m, !(SetSequence.fromSet(reqModules).contains(m)), getOperationContext()));
     }
     for (Language l : SetSequence.fromSet(usedLanguages).sort(new ISelector<Language, Comparable<?>>() {
       public Comparable<?> select(Language it) {
         return it.getModuleFqName();
       }
     }, true)) {
-      usedlanguages.add(new ModuleDependencyNode(l, getOperationContext()));
+      usedlanguages.add(new ModuleDependencyNode(l, false, getOperationContext()));
     }
     add(dependencies);
     add(usedlanguages);
