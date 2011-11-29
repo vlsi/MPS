@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
+import jetbrains.mps.make.facet.ITargetEx;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
@@ -55,7 +56,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
     return new FFFFacet_Facet.TargetProperties();
   }
 
-  public static class Target_QQQ implements ITarget {
+  public static class Target_QQQ implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -103,6 +104,10 @@ public class FFFFacet_Facet extends IFacet.Stub {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean isOptional() {
+      return false;
     }
 
     public boolean requiresInput() {
@@ -157,7 +162,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_qweqwe implements ITarget {
+  public static class Target_qweqwe implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -208,6 +213,10 @@ public class FFFFacet_Facet extends IFacet.Stub {
       return name;
     }
 
+    public boolean isOptional() {
+      return false;
+    }
+
     public boolean requiresInput() {
       return true;
     }
@@ -234,7 +243,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_Nanana implements ITarget {
+  public static class Target_Nanana implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -278,6 +287,10 @@ public class FFFFacet_Facet extends IFacet.Stub {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean isOptional() {
+      return false;
     }
 
     public boolean requiresInput() {

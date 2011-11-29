@@ -25,8 +25,8 @@
       <varInfo nodeId="1880762541167901452" varName="args" />
     </scopeInfo>
     <scopeInfo nodeId="1880762541167901458" fileName="SWTDemo.java" startLine="14" startPosition="22" endLine="27" endPosition="18">
-      <varInfo nodeId="1880762541167901465" varName="sh" />
       <varInfo nodeId="1880762541167901460" varName="dsp" />
+      <varInfo nodeId="1880762541167901465" varName="sh" />
     </scopeInfo>
     <scopeInfo nodeId="1880762541167901455" fileName="SWTDemo.java" startLine="13" startPosition="0" endLine="29" endPosition="0" />
     <unitInfo nodeId="1880762541167901442" fileName="SWTDemo.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.sandbox.swt.SWTDemo" />

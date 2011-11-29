@@ -24,6 +24,7 @@ import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.IGenerationSettings;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.ide.generator.GenerationSettings.MyState;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
@@ -43,7 +44,7 @@ import javax.swing.JComponent;
     )
   }
 )
-public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable, IGenerationSettings {
+public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable, IGenerationSettings, IModifiableGenerationSettings {
 
   public static GenerationSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(GenerationSettings.class);
@@ -125,10 +126,12 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
   }
 
 
+  @Override
   public boolean isSaveTransientModels() {
     return myState.mySaveTransientModels;
   }
 
+  @Override
   public void setSaveTransientModels(boolean saveTransientModels) {
     myState.mySaveTransientModels = saveTransientModels;
   }
@@ -151,10 +154,12 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myGenerateRequirementsPolicy = generateRequirementsPolicy;
   }
 
+  @Override
   public boolean isCheckModelsBeforeGeneration() {
     return myState.myCheckModelsBeforeGeneration;
   }
 
+  @Override
   public void setCheckModelsBeforeGeneration(boolean checkModelsBeforeGeneration) {
     myState.myCheckModelsBeforeGeneration = checkModelsBeforeGeneration;
   }
@@ -164,6 +169,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myState.myParallelGenerator;
   }
 
+  @Override
   public void setParallelGenerator(boolean useNewGenerator) {
     myState.myParallelGenerator = useNewGenerator;
   }
@@ -173,6 +179,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myState.myStrictMode;
   }
 
+  @Override
   public void setStrictMode(boolean strictMode) {
     myState.myStrictMode = strictMode;
   }
@@ -182,6 +189,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myState.myNumberOfParallelThreads;
   }
 
+  @Override
   public void setNumberOfParallelThreads(int coreNumber) {
     myState.myNumberOfParallelThreads = coreNumber;
   }
@@ -191,6 +199,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myState.myPerformanceTracingLevel;
   }
 
+  @Override
   public void setPerformanceTracingLevel(int performanceTracingLevel) {
     myState.myPerformanceTracingLevel = performanceTracingLevel;
   }
@@ -200,6 +209,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myState.myNumberOfModelsToKeep;
   }
 
+  @Override
   public void setNumberOfModelsToKeep(int numberOfModelsToKeep) {
     myState.myNumberOfModelsToKeep = numberOfModelsToKeep;
   }
@@ -209,6 +219,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myState.myShowInfo;
   }
 
+  @Override
   public void setShowInfo(boolean showInfo) {
     myState.myShowInfo = showInfo;
   }
@@ -218,6 +229,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myState.myShowWarnings;
   }
 
+  @Override
   public void setShowWarnings(boolean showWarnings) {
     myState.myShowWarnings = showWarnings;
   }
@@ -227,6 +239,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myState.myKeepModelsWithWarnings;
   }
 
+  @Override
   public void setKeepModelsWithWarnings(boolean keepModelsWithWarnings) {
     myState.myKeepModelsWithWarnings = keepModelsWithWarnings;
   }
@@ -236,6 +249,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myState.myIncremental;
   }
 
+  @Override
   public void setIncremental(boolean isIncremental) {
     myState.myIncremental = isIncremental;
   }
@@ -245,6 +259,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myState.myIncrementalUseCache;
   }
 
+  @Override
   public void setIncrementalUseCache(boolean incrementalUseCache) {
     myState.myIncrementalUseCache = incrementalUseCache;
   }
@@ -254,22 +269,27 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myState.myFailOnMissingTextGen;
   }
 
+  @Override
   public void setFailOnMissingTextGen(boolean fail) {
     myState.myFailOnMissingTextGen = fail;
   }
 
+  @Override
   public boolean isGenerateDebugInfo() {
     return myState.myGenerateDebugInfo;
   }
 
+  @Override
   public void setGenerateDebugInfo(boolean generateDebugInfo) {
     myState.myGenerateDebugInfo = generateDebugInfo;
   }
 
+  @Override
   public boolean isShowBadChildWarning() {
     return myState.myShowBadChildWarning;
   }
 
+  @Override
   public void setShowBadChildWarning(boolean showBadChildWarning) {
     myState.myShowBadChildWarning = showBadChildWarning;
   }

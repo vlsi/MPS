@@ -48,6 +48,7 @@
   </generators>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)</dependency>
     <dependency reexport="false">a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)</dependency>
   </dependencies>
   <usedLanguages>

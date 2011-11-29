@@ -26,20 +26,20 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${mps_home}/core/generator/solutions/jetbrains.mps.generator.msd" folder="" />
-      <modulePath path="${project}/test/sandbox/sandbox.msd" />
-      <modulePath path="${project}/test/incremental/jetbrains.mps.transformation.test.incremental.msd" folder="" />
-      <modulePath path="${project}/test/inputModels/inputModels.msd" />
       <modulePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" />
+      <modulePath path="${mps_home}/core/generator/solutions/jetbrains.mps.generator.msd" folder="" />
+      <modulePath path="${mps_home}/core/kernel/patternRuntime/runtime.msd" folder="" />
+      <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" />
+      <modulePath path="${project}/languages/descriptor/descriptor.mpl" folder="" />
       <modulePath path="${project}/languages/errorReporting/errorReporting.mpl" folder="" />
       <modulePath path="${project}/languages/generationContext/generationContext.mpl" />
       <modulePath path="${project}/languages/generationParameters/generationParameters.mpl" folder="" />
       <modulePath path="${project}/languages/templateLanguage/templateLanguage.mpl" />
+      <modulePath path="${project}/test/incremental/jetbrains.mps.transformation.test.incremental.msd" folder="" />
       <modulePath path="${project}/test/inputLang/inputLang.mpl" />
+      <modulePath path="${project}/test/inputModels/inputModels.msd" />
       <modulePath path="${project}/test/outputLang/outputLang.mpl" />
-      <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" />
-      <modulePath path="${project}/languages/descriptor/descriptor.mpl" folder="" />
-      <modulePath path="${mps_home}/core/kernel/patternRuntime/runtime.msd" folder="" />
+      <modulePath path="${project}/test/sandbox/sandbox.msd" />
     </projectModules>
     <genConfs>
       <genConfModule name="generator engine (solution)" moduleRef="jetbrains.mps.generator" />

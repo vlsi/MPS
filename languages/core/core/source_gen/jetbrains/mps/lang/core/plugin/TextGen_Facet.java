@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
+import jetbrains.mps.make.facet.ITargetEx;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.IGResource;
 import jetbrains.mps.make.script.IJob;
@@ -82,7 +83,7 @@ public class TextGen_Facet extends IFacet.Stub {
     return new TextGen_Facet.TargetProperties();
   }
 
-  public static class Target_textGen implements ITarget {
+  public static class Target_textGen implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IGResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -100,7 +101,7 @@ public class TextGen_Facet extends IFacet.Stub {
               monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (IResource resource : Sequence.fromIterable(input)) {
                 final GResource gres = (GResource) resource;
-                monitor.currentProgress().advanceWork("Writing", 50, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
+                monitor.currentProgress().advanceWork("Writing", 100, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
                 if (!(gres.status().isOk())) {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generation was not OK")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
@@ -181,7 +182,6 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
-                monitor.currentProgress().advanceWork("Writing", 50);
                 _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), Sequence.fromIterable(javaStreamHandler.delta()).concat(Sequence.fromIterable(retainedFilesDelta)).concat(Sequence.fromIterable(retainedCachesDelta)), gres.model()))));
               }
               monitor.currentProgress().finishWork("Writing");
@@ -214,6 +214,10 @@ public class TextGen_Facet extends IFacet.Stub {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean isOptional() {
+      return false;
     }
 
     public boolean requiresInput() {
@@ -276,7 +280,7 @@ public class TextGen_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_textGenToMemory implements ITarget {
+  public static class Target_textGenToMemory implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IGResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -356,6 +360,10 @@ public class TextGen_Facet extends IFacet.Stub {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean isOptional() {
+      return false;
     }
 
     public boolean requiresInput() {

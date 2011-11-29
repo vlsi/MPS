@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.build.ant.generation.GenerateTask;
-import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -32,7 +32,7 @@ import jetbrains.mps.build.ant.generation.unittest.UnitTestListener;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.build.ant.util.ThreadUtils;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.MakeSession;
@@ -42,17 +42,19 @@ import jetbrains.mps.make.facet.IFacet;
 import java.util.concurrent.ExecutionException;
 import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
-import java.lang.reflect.Method;
-import jetbrains.mps.project.MPSProject;
-import java.util.Collections;
+import jetbrains.mps.build.ant.FileMPSProject;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.make.ModuleMaker;
 import java.util.HashSet;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -105,12 +107,12 @@ public class TestGenerationWorker extends MpsWorker {
 
   private void setGenerationProperties() {
     boolean strictMode = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.STRICT_MODE));
-    GenerationSettings.getInstance().setStrictMode(strictMode);
+    GenerationSettingsProvider.getInstance().getGenerationSettings().setStrictMode(strictMode);
     if (strictMode) {
       boolean parallelMode = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.PARALLEL_MODE));
-      GenerationSettings.getInstance().setParallelGenerator(parallelMode);
+      GenerationSettingsProvider.getInstance().getGenerationSettings().setParallelGenerator(parallelMode);
       if (parallelMode) {
-        GenerationSettings.getInstance().setNumberOfParallelThreads(8);
+        GenerationSettingsProvider.getInstance().getGenerationSettings().setNumberOfParallelThreads(8);
       }
       info("Generating in strict mode, parallel generation = " + ((parallelMode ?
         "on" :
@@ -261,24 +263,37 @@ public class TestGenerationWorker extends MpsWorker {
   public void work() {
     setupEnvironment();
     myReporter.init();
+    boolean doneSomething = false;
     //  for each project 
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
     for (File file : mpsProjects.keySet()) {
       if (!(file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
         continue;
       }
-      Project p;
-      try {
-        Class<?> cls = Class.forName("jetbrains.mps.TestMain");
-        Method meth = cls.getMethod("loadProject", File.class);
-        p = (MPSProject) meth.invoke(null, file);
-      } catch (Exception ex) {
-        throw new RuntimeException(ex);
-      }
+
+      FileMPSProject p = new FileMPSProject(file);
+      p.init(new FileMPSProject.ProjectDescriptor(file));
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().updateClassPath();
+          new ModuleMaker().make(new HashSet(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
+        }
+      });
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+        }
+      });
+      p.projectOpened();
+
       info("Loaded project " + p);
+
       executeTask(p, new MpsWorker.ObjectsToProcess(Collections.singleton(p), new HashSet<IModule>(), new HashSet<SModelDescriptor>()));
+
+      p.projectClosed();
       disposeProject(p);
       dispose();
+      doneSomething = true;
     }
 
     // the rest -- using dummy project 
@@ -290,7 +305,9 @@ public class TestGenerationWorker extends MpsWorker {
     if (go.hasAnythingToGenerate()) {
       Project project = createDummyProject();
       executeTask(project, go);
-    } else {
+      doneSomething = true;
+    }
+    if (!(doneSomething)) {
       error("Could not find anything to generate.");
       myTestFailed = true;
     }
@@ -326,8 +343,8 @@ public class TestGenerationWorker extends MpsWorker {
           if (isWholeProject(prj)) {
             _modules.value = Sequence.fromIterable(_modules.value).concat(ListSequence.fromList(prj.getModules()));
           } else
-          if (!(((StandaloneMPSProject) prj).getProjectDescriptor().getTestConfigurations().isEmpty())) {
-            for (BaseTestConfiguration tconf : ((StandaloneMPSProject) prj).getProjectDescriptor().getTestConfigurations()) {
+          if (!(((FileMPSProject) prj).getDescriptor().getTestConfiturations().isEmpty())) {
+            for (BaseTestConfiguration tconf : ((FileMPSProject) prj).getDescriptor().getTestConfiturations()) {
               try {
                 result.value = Sequence.fromIterable(result.value).concat(ListSequence.fromList(tconf.getGenParams(prj, true).getModelDescriptors()));
               } catch (IllegalGeneratorConfigurationException e) {
@@ -619,16 +636,20 @@ public class TestGenerationWorker extends MpsWorker {
     private void outputLine(String out) {
       if (currentTestName != null) {
         testReporter.testOutputLine(currentTestName, out);
-      } else {
+      } else if (testReporter != null) {
         testReporter.outputLine(out);
+      } else {
+        System.out.println(out);
       }
     }
 
     private void errorLine(String err) {
       if (currentTestName != null) {
         testReporter.testErrorLine(currentTestName, err);
-      } else {
+      } else if (testReporter != null) {
         testReporter.errorLine(err);
+      } else {
+        System.err.println(err);
       }
     }
   }

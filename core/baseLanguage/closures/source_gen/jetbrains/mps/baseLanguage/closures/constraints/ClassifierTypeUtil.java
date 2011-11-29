@@ -107,7 +107,7 @@ public class ClassifierTypeUtil {
   }
 
   public static boolean isFunctionTypeClassifier(SNode classifier) {
-    return SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.getModel(classifier) == SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a0d().createNode(), "classifier", false));
+    return SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") && eq_zgotlq_a0a0a3(SNodeOperations.getModel(classifier).getSModelFqName(), SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a0a0d().createNode(), "classifier", false)).getSModelFqName());
   }
 
   public static boolean isFunctionTypeClassifierReturningValue(SNode classifier) {
@@ -265,6 +265,13 @@ public class ClassifierTypeUtil {
     return cType;
   }
 
+  private static boolean eq_zgotlq_a0a0a3(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
   public static class QuotationClass_zgotlq_a0a0g0a {
     public QuotationClass_zgotlq_a0a0g0a() {
     }
@@ -283,8 +290,8 @@ public class ClassifierTypeUtil {
     }
   }
 
-  public static class QuotationClass_zgotlq_a0a0a0a0d {
-    public QuotationClass_zgotlq_a0a0a0a0d() {
+  public static class QuotationClass_zgotlq_a0a0a0a0a0d {
+    public QuotationClass_zgotlq_a0a0a0a0a0d() {
     }
 
     public SNode createNode() {
@@ -294,7 +301,7 @@ public class ClassifierTypeUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#4c6a28d1-2c60-478d-b36e-db9b3cbb21fb#jetbrains.mps.baseLanguage.closures.runtime(closures.runtime/jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~FunctionTypes")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~_FunctionTypes")));
         result = quotedNode1_2;
       }
       return result;

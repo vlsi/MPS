@@ -28,6 +28,9 @@ public abstract class TreeNodeVisitor {
   private static ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 2, 5, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>());
 
   public final void visitNode(final MPSTreeNode node) {
+    if (!(node instanceof SModelTreeNode || node instanceof ProjectModuleTreeNode || node instanceof ProjectTreeNode)) {
+      return;
+    }
     myExecutor.execute(new Runnable() {
       public void run() {
         if (node instanceof SModelTreeNode) {

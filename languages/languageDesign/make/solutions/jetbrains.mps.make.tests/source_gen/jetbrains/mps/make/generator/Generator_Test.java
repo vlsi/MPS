@@ -46,20 +46,20 @@ public class Generator_Test extends MockTestCase {
     final IProgress pstub = context.mock(IProgress.class);
     context.checking(new Expectations() {
       {
-        exactly(1).of(pstub).beginWork(with(equal("Script")), with(equal(1020)), with(any(Integer.class)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Generator_.Configure").toString())), with(equal(1000)), with(equal(10)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Generator_.Generate").toString())), with(equal(1000)), with(equal(1000)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Maker_.Make").toString())), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(internalWorkName("script"))), with(equal(1020)), with(any(Integer.class)));
+        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("Generator_.Configure").toString()))), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("Generator_.Generate").toString()))), with(equal(1000)), with(equal(1000)));
+        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("Maker_.Make").toString()))), with(equal(1000)), with(equal(10)));
 
         exactly(1).of(pstub).beginWork(with(equal("GENERATE")), with(same(100)), with(any(Integer.class)));
         atMost(1).of(pstub).advanceWork(with(equal("GENERATE")), with(same(50)));
         exactly(1).of(pstub).finishWork(with(equal("GENERATE")));
 
-        atMost(3).of(pstub).advanceWork(with(equal("Script")), with(same(1)));
-        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Maker_.Make").toString())));
-        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Generator_.Generate").toString())));
-        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Generator_.Configure").toString())));
-        exactly(1).of(pstub).finishWork(with(equal("Script")));
+        atMost(3).of(pstub).advanceWork(with(equal(internalWorkName("script"))), with(same(1)));
+        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("Maker_.Make").toString()))));
+        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("Generator_.Generate").toString()))));
+        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("Generator_.Configure").toString()))));
+        exactly(1).of(pstub).finishWork(with(equal(internalWorkName("script"))));
         allowing(pstub).workLeft();
         will(returnValue(Integer.MAX_VALUE));
       }
@@ -214,9 +214,9 @@ public class Generator_Test extends MockTestCase {
     final IProgress pstub = context.mock(IProgress.class);
     context.checking(new Expectations() {
       {
-        exactly(1).of(pstub).beginWork(with(equal("Script")), with(same(20)), with(any(Integer.class)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Worker_.work").toString())), with(equal(1000)), with(equal(10)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Maker_.Make").toString())), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(internalWorkName("script"))), with(same(20)), with(any(Integer.class)));
+        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("Worker_.work").toString()))), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("Maker_.Make").toString()))), with(equal(1000)), with(equal(10)));
 
 
         org.jmock.Sequence seq = context.sequence("sequence");
@@ -235,10 +235,10 @@ public class Generator_Test extends MockTestCase {
         exactly(1).of(pstub).finishWork(with(equal("WORK")));
         inSequence(seq);
 
-        atMost(2).of(pstub).advanceWork(with(equal("Script")), with(same(1)));
-        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Maker_.Make").toString())));
-        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Worker_.work").toString())));
-        exactly(1).of(pstub).finishWork(with(equal("Script")));
+        atMost(2).of(pstub).advanceWork(with(equal(internalWorkName("script"))), with(same(1)));
+        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("Maker_.Make").toString()))));
+        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("Worker_.work").toString()))));
+        exactly(1).of(pstub).finishWork(with(equal(internalWorkName("script"))));
 
         allowing(pstub).workLeft();
         will(returnValue(Integer.MAX_VALUE));
@@ -263,16 +263,16 @@ public class Generator_Test extends MockTestCase {
     final LoggingProgressStrategy.Log logger = context.mock(LoggingProgressStrategy.Log.class);
     context.checking(new Expectations() {
       {
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK -- started")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK -- done 50%")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK/WORKWORK -- started")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK -- done 62%")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK/WORKWORK -- done 50%")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK -- done 74%")));
-        exactly(2).of(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK/WORKWORK -- done 100%")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK/WORKWORK -- finished")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK -- done 100%")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK -- finished")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- started")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- done 50%")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK/WORKWORK -- started")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- done 62%")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK/WORKWORK -- done 50%")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- done 74%")));
+        exactly(2).of(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK/WORKWORK -- done 100%")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK/WORKWORK -- finished")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- done 100%")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- finished")));
 
         allowing(logger).info(with(new BaseMatcher<String>() {
           public boolean matches(Object s) {
@@ -329,5 +329,9 @@ public class Generator_Test extends MockTestCase {
     for (IFacet fct : fm.facets()) {
       FacetRegistry.getInstance().unregister(fct);
     }
+  }
+
+  private String internalWorkName(String name) {
+    return "__" + name + "__";
   }
 }
