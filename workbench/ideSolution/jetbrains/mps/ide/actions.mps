@@ -117,7 +117,6 @@
   <import index="maet" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.ui.smodel(MPS.Workbench/jetbrains.mps.ide.ui.smodel@java_stub)" version="-1" />
   <import index="pif4" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes(MPS.Workbench/jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes@java_stub)" version="-1" />
   <import index="uq8x" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view.treeholder.tree(MPS.Workbench/jetbrains.mps.ide.findusages.view.treeholder.tree@java_stub)" version="-1" />
-  <import index="oqg6" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.dependency(MPS.Workbench/jetbrains.mps.ide.dependency@java_stub)" version="-1" />
   <import index="im40" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.fileEditor(MPS.Workbench/com.intellij.openapi.fileEditor@java_stub)" version="-1" />
   <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="5oe6" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench.actions.goTo.matcher(MPS.Workbench/jetbrains.mps.workbench.actions.goTo.matcher@java_stub)" version="-1" />
@@ -564,11 +563,6 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Delete Module..." />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Actions" />
-    </node>
-    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1241373307827">
-      <property name="name" nameId="tpck.1169194664001" value="ShowModuleDependencies" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Module Dependencies" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3575273646046443826">
@@ -7687,73 +7681,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </root>
-  <root id="1241373307827">
-    <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1241373307828">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1241373307829">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1241373356800">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1241373356801">
-            <property name="name" nameId="tpck.1169194664001" value="viewer" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1241373356802">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oqg6.~DependencyViewer" resolveInfo="DependencyViewer" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1241373382633">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1241373378758">
-                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1241373378759" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1241373378760">
-                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="1241373334705" resolveInfo="project" />
-                </node>
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1241373388496">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1bi5.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="1241373394981">
-                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="oqg6.~DependencyViewer" resolveInfo="DependencyViewer" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1241373415191">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1241373416130">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1241373415192">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1241373356801" resolveInfo="viewer" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1241373418561">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oqg6.~DependencyViewer%dsetModule(jetbrains%dmps%dproject%dIModule)%cvoid" resolveInfo="setModule" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1241373419969">
-                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1241373419970" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1241373419971">
-                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="1241373403845" resolveInfo="module" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1241373423707">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1241373424709">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1241373423708">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1241373356801" resolveInfo="viewer" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1241373427963">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k128.~BaseTool%dopenToolLater(boolean)%cvoid" resolveInfo="openToolLater" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1241373430933">
-                <property name="value" nameId="tpee.1068580123138" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1241373334705">
-      <property name="name" nameId="tpck.1169194664001" value="project" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="1qcs.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
-      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8898893144448210209" />
-    </node>
-    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1241373403845">
-      <property name="name" nameId="tpck.1169194664001" value="module" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="kt54.~MPSDataKeys%dMODULE" resolveInfo="MODULE" />
-      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8898893144448209930" />
     </node>
   </root>
   <root id="3575273646046443826">
@@ -28444,9 +28371,6 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1767309729052614555">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1236349476737" resolveInfo="OptimizeModuleImports" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1767309729052614557">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1241373307827" resolveInfo="ShowModuleDependencies" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1767309729052614558" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1767309729052614559">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1241020019659" resolveInfo="AddModuleToProject" />
@@ -29131,9 +29055,6 @@
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8033185057371911849">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="401659284115173018">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1215868765946" resolveInfo="AnalyzeClasspath" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="401659284115173019">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1241373307827" resolveInfo="ShowModuleDependencies" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5102590037491954754">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="7318050879424155903" resolveInfo="AnalyzeDependencies" />
@@ -30047,9 +29968,6 @@
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="3996994949102154342">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3996994949102183271">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="7318050879424155903" resolveInfo="AnalyzeDependencies" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3996994949102183273">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1241373307827" resolveInfo="ShowModuleDependencies" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7653827905500861943">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="5476509602181674172" resolveInfo="AnalyzeModuleDependencies" />

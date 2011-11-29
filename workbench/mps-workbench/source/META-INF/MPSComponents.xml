@@ -328,6 +328,18 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.nodeEditor.cellExplorer.CellExplorerView</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.search.SearchHistoryComponent</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.InspectorTool</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>com.intellij.util.indexing.FileBasedIndexProjectHandler</implementation-class>
     </component>
 
