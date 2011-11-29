@@ -6,9 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -32,7 +33,11 @@ public class ExecuteCommandPart_Behavior {
 
   public static List<SNode> call_getParameters_6129022259108621180(SNode thisNode) {
     if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(thisNode))) {
-      return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterDeclaration", true)).union(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(thisNode), "debuggerParameter", true)))).toListSequence();
+      return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterDeclaration", true)).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration");
+        }
+      }).union(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(thisNode), "debuggerParameter", true)))).toListSequence();
     }
     return SLinkOperations.getTargets(thisNode, "parameterDeclaration", true);
   }
