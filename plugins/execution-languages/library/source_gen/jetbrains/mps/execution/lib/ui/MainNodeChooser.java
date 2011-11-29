@@ -7,7 +7,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -42,17 +41,17 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
     myTargetConcept = targetConcept;
     myAcceptor = acceptor;
 
-    final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
+    final IModule[] module = new IModule[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        module.value = SNodeOperations.getModel(targetConcept).getModelDescriptor().getModule();
+        module[0] = SNodeOperations.getModel(targetConcept).getModelDescriptor().getModule();
       }
     });
     myScope = new GlobalFilteredScope(MPSModuleRepository.getInstance(), SModelRepository.getInstance()) {
       @Nullable
       @Override
       protected Iterable<IModule> getRequiredModules() {
-        return Sequence.<IModule>singleton(module.value);
+        return Sequence.<IModule>singleton(module[0]);
       }
     };
   }

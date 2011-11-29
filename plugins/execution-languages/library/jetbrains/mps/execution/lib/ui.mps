@@ -2214,9 +2214,23 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1240470842553499727">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1240470842553499728">
             <property name="name" nameId="tpck.1169194664001" value="module" />
-            <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553499729">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
+            <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1388651548839496842">
+              <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553499729">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
+              </node>
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1388651548839496845">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreator" typeId="tpee.1184950988562" id="1388651548839496847">
+                <node role="dimensionExpression" roleId="tpee.1184952969026" type="tpee.DimensionExpression" typeId="tpee.1184952934362" id="1388651548839496848">
+                  <node role="expression" roleId="tpee.1184953288404" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1388651548839496851">
+                    <property name="value" nameId="tpee.1068580320021" value="1" />
+                  </node>
+                </node>
+                <node role="componentType" roleId="tpee.1184951007469" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1388651548839496850">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -2243,8 +2257,13 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelDescriptor%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
                     </node>
                   </node>
-                  <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1240470842553499743">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553499728" resolveInfo="module" />
+                  <node role="lValue" roleId="tpee.1068498886295" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="1388651548839496852">
+                    <node role="index" roleId="tpee.1173175577737" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1388651548839496855">
+                      <property name="value" nameId="tpee.1068580320021" value="0" />
+                    </node>
+                    <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1240470842553499743">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553499728" resolveInfo="module" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2275,8 +2294,13 @@
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1240470842553499756">
                         <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1240470842553499757">
                           <node role="creator" roleId="tpee.1145553007750" type="tp2q.SingletonSequenceCreator" typeId="tp2q.1235573135402" id="1240470842553499758">
-                            <node role="singletonValue" roleId="tp2q.1235573187520" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1240470842553499759">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553499728" resolveInfo="module" />
+                            <node role="singletonValue" roleId="tp2q.1235573187520" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="1388651548839496856">
+                              <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1240470842553499759">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553499728" resolveInfo="module" />
+                              </node>
+                              <node role="index" roleId="tpee.1173175577737" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1388651548839496860">
+                                <property name="value" nameId="tpee.1068580320021" value="0" />
+                              </node>
                             </node>
                             <node role="elementType" roleId="tp2q.1235573175711" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553499760">
                               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
@@ -2685,7 +2709,9 @@
     </node>
     <node role="typeVariableDeclaration" roleId="tpee.1109279881614" type="tpee.TypeVariableDeclaration" typeId="tpee.1109279763828" id="1240470842553499934">
       <property name="name" nameId="tpck.1169194664001" value="C" />
-      <node role="bound" roleId="tpee.1214996921760" type="tp25.SConceptType" typeId="tp25.1172420572800" id="1240470842553499935" />
+      <node role="bound" roleId="tpee.1214996921760" type="tp25.SConceptType" typeId="tp25.1172420572800" id="1240470842553499935">
+        <link role="conceptDeclaraton" roleId="tp25.1180481110358" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
     </node>
   </root>
   <root id="1240470842553499936">
