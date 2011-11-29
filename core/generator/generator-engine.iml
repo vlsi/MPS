@@ -24,6 +24,7 @@
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" scope="TEST" name="Log4j" level="project" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
+    <orderEntry type="module" module-name="Closures-runtime" />
   </component>
 </module>
 
