@@ -26,9 +26,9 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/solutions/testRefactoring.sandbox/testRefactoring.sandbox.msd" />
       <modulePath path="${project}/languages/testRefactoring/testRefactoring.mpl" />
       <modulePath path="${project}/languages/testRefactoringTargetLang/testRefactoringTargetLang.mpl" />
+      <modulePath path="${project}/solutions/testRefactoring.sandbox/testRefactoring.sandbox.msd" />
     </projectModules>
     <genConfs />
   </component>
