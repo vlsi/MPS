@@ -31,7 +31,7 @@ public class UsagesTreeFeatureExtractor implements TreeNodeFeatureExtractor {
         }
       } else if (nodeData instanceof NodeNodeData) {
         SNodePointer np = ((NodeNodeData) nodeData).getNodePointer();
-        if (np != null) {
+        if (np != null && np.getModelReference() != null && np.getNodeId() != null) {
           return new NodeFeature(np);
         }
       }
