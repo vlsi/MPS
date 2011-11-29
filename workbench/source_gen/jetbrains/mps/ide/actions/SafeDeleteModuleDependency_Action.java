@@ -19,6 +19,7 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.dependencyViewer.DependenciesPanel;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -59,6 +60,7 @@ public class SafeDeleteModuleDependency_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("from") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
     MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
     return true;
   }
@@ -80,6 +82,8 @@ public class SafeDeleteModuleDependency_Action extends GeneratedAction {
         } else if (res == 0) {
           AnalyzeDependencies_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
           DependenciesPanel panel = as_iuftgz_a0a1a0b0a6a0a2(tool.getComponent(), DependenciesPanel.class);
+          panel.setContent(fromScope, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+          panel.selectInTargetsView(((IModule) MapSequence.fromMap(_params).get("to")));
           tool.openToolLater(true);
         }
       }
