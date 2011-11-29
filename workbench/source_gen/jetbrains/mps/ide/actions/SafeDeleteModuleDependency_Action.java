@@ -8,13 +8,13 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.project.IModule;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
 import jetbrains.mps.ide.depanalyzer.DependencyUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
@@ -38,7 +38,8 @@ public class SafeDeleteModuleDependency_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return check_bai5av_a0a0a0(as_iuftgz_a0a0a0a0(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
+    IModule from = check_bai5av_a0a0a_0(as_iuftgz_a0a0a0a(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
+    return from != null && !(from.isPackaged()) && check_bai5av_a0a0b0a(as_iuftgz_a0a0a0b0a(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -107,7 +108,14 @@ public class SafeDeleteModuleDependency_Action extends GeneratedAction {
     ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).resetAll();
   }
 
-  private static DependencyUtil.Link check_bai5av_a0a0a0(DependencyTreeNode checkedDotOperand) {
+  private static IModule check_bai5av_a0a0a_0(DependencyTreeNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static DependencyUtil.Link check_bai5av_a0a0b0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLink();
     }
@@ -128,7 +136,14 @@ public class SafeDeleteModuleDependency_Action extends GeneratedAction {
     return null;
   }
 
-  private static <T> T as_iuftgz_a0a0a0a0(Object o, Class<T> type) {
+  private static <T> T as_iuftgz_a0a0a0a(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_iuftgz_a0a0a0b0a(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
