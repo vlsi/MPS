@@ -144,6 +144,8 @@
     <classNode dependClassName="jetbrains.mps.ide.depanalyzer.DependencyTree" />
     <classNode dependClassName="jetbrains.mps.ide.depanalyzer.ModuleDependencyNode" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.ide.tools.BaseTool" />
+    <classNode dependClassName="jetbrains.mps.ide.tools.CloseAction" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTree" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -153,8 +155,6 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
-    <classNode dependClassName="jetbrains.mps.workbench.tools.BaseTool" />
-    <classNode dependClassName="jetbrains.mps.workbench.tools.CloseAction" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>

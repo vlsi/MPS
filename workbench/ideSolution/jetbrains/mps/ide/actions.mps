@@ -145,7 +145,6 @@
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <import index="tp3b" modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
-  <import index="hsl1" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench.tools(MPS.Workbench/jetbrains.mps.workbench.tools@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1204991218714">
       <property name="name" nameId="tpck.1169194664001" value="ModelActions" />
@@ -31316,7 +31315,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5476509602181674180" resolveInfo="tool" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5476509602181674190">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsl1.~BaseTool%dopenToolLater(boolean)%cvoid" resolveInfo="openToolLater" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k128.~BaseTool%dopenToolLater(boolean)%cvoid" resolveInfo="openToolLater" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5476509602181674191">
                 <property name="value" nameId="tpee.1068580123138" value="true" />
               </node>
@@ -31753,7 +31752,7 @@
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="3111174745502295891">
       <property name="name" nameId="tpck.1169194664001" value="mpsProject" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="kt54.~MPSDataKeys%dMPS_PROJECT" resolveInfo="MPS_PROJECT" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="on5u.~MPSCommonDataKeys%dMPS_PROJECT" resolveInfo="MPS_PROJECT" />
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="595968436824335640">
       <property name="name" nameId="tpck.1169194664001" value="project" />
@@ -32071,7 +32070,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4691887782450496097">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsl1.~BaseTool%dopenToolLater(boolean)%cvoid" resolveInfo="openToolLater" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k128.~BaseTool%dopenToolLater(boolean)%cvoid" resolveInfo="openToolLater" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4691887782450496098">
                         <property name="value" nameId="tpee.1068580123138" value="true" />
                       </node>
@@ -32211,7 +32210,7 @@
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1298565956308924840">
       <property name="name" nameId="tpck.1169194664001" value="mpsProject" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="kt54.~MPSDataKeys%dMPS_PROJECT" resolveInfo="MPS_PROJECT" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="on5u.~MPSCommonDataKeys%dMPS_PROJECT" resolveInfo="MPS_PROJECT" />
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1298565956308924841">
       <property name="name" nameId="tpck.1169194664001" value="project" />
@@ -32427,7 +32426,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="595968436824339487" resolveInfo="tool" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="595968436824339649">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsl1.~BaseTool%dgetComponent()%cjavax%dswing%dJComponent" resolveInfo="getComponent" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k128.~BaseTool%dgetComponent()%cjavax%dswing%dJComponent" resolveInfo="getComponent" />
                 </node>
               </node>
             </node>
@@ -32470,7 +32469,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="595968436824339487" resolveInfo="tool" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="595968436824337795">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsl1.~BaseTool%dopenToolLater(boolean)%cvoid" resolveInfo="openToolLater" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k128.~BaseTool%dopenToolLater(boolean)%cvoid" resolveInfo="openToolLater" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="595968436824338232">
                     <property name="value" nameId="tpee.1068580123138" value="true" />
                   </node>
