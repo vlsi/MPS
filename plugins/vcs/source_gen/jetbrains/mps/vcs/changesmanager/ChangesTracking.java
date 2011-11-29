@@ -21,8 +21,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -131,14 +131,13 @@ public class ChangesTracking {
       return;
     }
 
-    final SModel currentModel = myModelDescriptor.getSModel();
     final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
     FileStatus status = myProject.getComponent(VcsFileStatusProvider.class).getFileStatus(modelVFile);
     if (FileStatus.NOT_CHANGED == status) {
       return;
     }
     if (BaseVersionUtil.isAddedFileStatus(status)) {
-      baseVersionModel.value = new SModel(currentModel.getSModelReference());
+      baseVersionModel.value = new SModel(myModelDescriptor.getSModelReference());
     } else {
       String content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
       if (content == null && status != FileStatus.NOT_CHANGED && !(BaseVersionUtil.isAddedFileStatus(status))) {
@@ -160,7 +159,7 @@ public class ChangesTracking {
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, currentModel, true);
+        ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor.getSModel(), true);
         myDifference.setChangeSet((ChangeSetImpl) changeSet);
         buildCaches();
       }
