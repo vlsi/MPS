@@ -30,7 +30,6 @@ public class ChangeGroupMessages implements EditorMessageOwner {
         rebuildGutterMessages();
       }
     });
-    rebuildGutterMessages();
   }
 
   public void rebuildGutterMessages() {
@@ -40,6 +39,15 @@ public class ChangeGroupMessages implements EditorMessageOwner {
         myGutter.add(new ChangeGroupMessages.MyChangeGroupMessage(cg));
       }
     });
+  }
+
+  public static void startMaintaining(ChangeGroupLayout layout, boolean left) {
+    new ChangeGroupMessages(layout, left).startMaintaining();
+  }
+
+  public static void startMaintaining(ChangeGroupLayout layout) {
+    startMaintaining(layout, false);
+    startMaintaining(layout, true);
   }
 
   private class MyChangeGroupMessage implements SimpleEditorMessage {
