@@ -156,20 +156,44 @@
     <scopeInfo nodeId="1936544640085949723" fileName="GraphAnalyzer.java" startLine="194" startPosition="0" endLine="197" endPosition="5">
       <varInfo nodeId="1682545549094398075" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="2611988743427260336" fileName="GraphAnalyzer.java" startLine="22" startPosition="112" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="6976901853022624210" fileName="GraphAnalyzer.java" startLine="31" startPosition="113" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="4141757805202322548" fileName="GraphAnalyzer.java" startLine="60" startPosition="105" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="5566937012378945042" fileName="GraphAnalyzer.java" startLine="69" startPosition="153" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="5566937012378945105" fileName="GraphAnalyzer.java" startLine="99" startPosition="81" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="8382282457890483479" fileName="GraphAnalyzer.java" startLine="115" startPosition="81" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="8382282457890483492" fileName="GraphAnalyzer.java" startLine="120" startPosition="82" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="2611988743427260336" fileName="GraphAnalyzer.java" startLine="22" startPosition="112" endLine="26" endPosition="0">
+      <varInfo nodeId="2611988743427260336" varName="v" />
+    </scopeInfo>
+    <scopeInfo nodeId="6976901853022624210" fileName="GraphAnalyzer.java" startLine="31" startPosition="113" endLine="35" endPosition="0">
+      <varInfo nodeId="6976901853022624210" varName="v" />
+    </scopeInfo>
+    <scopeInfo nodeId="4141757805202322548" fileName="GraphAnalyzer.java" startLine="60" startPosition="105" endLine="64" endPosition="0">
+      <varInfo nodeId="4141757805202322548" varName="w" />
+    </scopeInfo>
+    <scopeInfo nodeId="5566937012378945042" fileName="GraphAnalyzer.java" startLine="69" startPosition="153" endLine="73" endPosition="0">
+      <varInfo nodeId="5566937012378945042" varName="w" />
+    </scopeInfo>
+    <scopeInfo nodeId="5566937012378945105" fileName="GraphAnalyzer.java" startLine="99" startPosition="81" endLine="103" endPosition="0">
+      <varInfo nodeId="5566937012378945105" varName="w" />
+    </scopeInfo>
+    <scopeInfo nodeId="8382282457890483479" fileName="GraphAnalyzer.java" startLine="115" startPosition="81" endLine="119" endPosition="0">
+      <varInfo nodeId="8382282457890483479" varName="w" />
+    </scopeInfo>
+    <scopeInfo nodeId="8382282457890483492" fileName="GraphAnalyzer.java" startLine="120" startPosition="82" endLine="124" endPosition="0">
+      <varInfo nodeId="8382282457890483492" varName="w" />
+    </scopeInfo>
     <scopeInfo nodeId="8382282457890483522" fileName="GraphAnalyzer.java" startLine="127" startPosition="92" endLine="131" endPosition="13" />
     <scopeInfo nodeId="706015266664531302" fileName="GraphAnalyzer.java" startLine="144" startPosition="54" endLine="148" endPosition="9" />
-    <scopeInfo nodeId="8382282457890483462" fileName="GraphAnalyzer.java" startLine="155" startPosition="81" endLine="159" endPosition="0" />
-    <scopeInfo nodeId="1150613940746737201" fileName="GraphAnalyzer.java" startLine="160" startPosition="82" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="1150613940746737221" fileName="GraphAnalyzer.java" startLine="164" startPosition="58" endLine="168" endPosition="0" />
-    <scopeInfo nodeId="8382282457890465333" fileName="GraphAnalyzer.java" startLine="175" startPosition="99" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="8382282457890465343" fileName="GraphAnalyzer.java" startLine="179" startPosition="62" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="8382282457890483462" fileName="GraphAnalyzer.java" startLine="155" startPosition="81" endLine="159" endPosition="0">
+      <varInfo nodeId="8382282457890483462" varName="w" />
+    </scopeInfo>
+    <scopeInfo nodeId="1150613940746737201" fileName="GraphAnalyzer.java" startLine="160" startPosition="82" endLine="164" endPosition="0">
+      <varInfo nodeId="1150613940746737201" varName="w" />
+    </scopeInfo>
+    <scopeInfo nodeId="1150613940746737221" fileName="GraphAnalyzer.java" startLine="164" startPosition="58" endLine="168" endPosition="0">
+      <varInfo nodeId="1150613940746737221" varName="w" />
+    </scopeInfo>
+    <scopeInfo nodeId="8382282457890465333" fileName="GraphAnalyzer.java" startLine="175" startPosition="99" endLine="179" endPosition="0">
+      <varInfo nodeId="8382282457890465333" varName="ww" />
+    </scopeInfo>
+    <scopeInfo nodeId="8382282457890465343" fileName="GraphAnalyzer.java" startLine="179" startPosition="62" endLine="183" endPosition="0">
+      <varInfo nodeId="8382282457890465343" varName="ww" />
+    </scopeInfo>
     <scopeInfo nodeId="5717061624762460027" fileName="GraphAnalyzer.java" startLine="198" startPosition="0" endLine="202" endPosition="0">
       <varInfo nodeId="5717061624762460031" varName="succ" />
     </scopeInfo>
@@ -179,8 +203,14 @@
     <scopeInfo nodeId="6976901853022624202" fileName="GraphAnalyzer.java" startLine="30" startPosition="83" endLine="35" endPosition="9" />
     <scopeInfo nodeId="1936544640085949778" fileName="GraphAnalyzer.java" startLine="47" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="6329960826076759435" fileName="GraphAnalyzer.java" startLine="52" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="4141757805202317986" fileName="GraphAnalyzer.java" startLine="88" startPosition="100" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="5566937012378945122" fileName="GraphAnalyzer.java" startLine="104" startPosition="107" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="4141757805202317986" fileName="GraphAnalyzer.java" startLine="88" startPosition="100" endLine="93" endPosition="0">
+      <varInfo nodeId="4141757805202317986" varName="cont" />
+      <varInfo nodeId="4141757805202317986" varName="w" />
+    </scopeInfo>
+    <scopeInfo nodeId="5566937012378945122" fileName="GraphAnalyzer.java" startLine="104" startPosition="107" endLine="109" endPosition="0">
+      <varInfo nodeId="5566937012378945122" varName="cont" />
+      <varInfo nodeId="5566937012378945122" varName="ww" />
+    </scopeInfo>
     <scopeInfo nodeId="2611988743427260360" fileName="GraphAnalyzer.java" startLine="210" startPosition="0" endLine="215" endPosition="0" />
     <scopeInfo nodeId="8315466408454508329" fileName="GraphAnalyzer.java" startLine="58" startPosition="40" endLine="64" endPosition="7">
       <varInfo nodeId="4141757805202322530" varName="ws" />
@@ -188,12 +218,23 @@
     <scopeInfo nodeId="5566937012378944758" fileName="GraphAnalyzer.java" startLine="67" startPosition="38" endLine="73" endPosition="7">
       <varInfo nodeId="5566937012378945026" varName="ws" />
     </scopeInfo>
-    <scopeInfo nodeId="1682545549094398067" fileName="GraphAnalyzer.java" startLine="77" startPosition="96" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1682545549094398067" fileName="GraphAnalyzer.java" startLine="77" startPosition="96" endLine="83" endPosition="0">
+      <varInfo nodeId="1682545549094398067" varName="v" />
+    </scopeInfo>
     <scopeInfo nodeId="706015266664522389" fileName="GraphAnalyzer.java" startLine="76" startPosition="73" endLine="83" endPosition="24" />
-    <scopeInfo nodeId="8382282457890483515" fileName="GraphAnalyzer.java" startLine="126" startPosition="108" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="706015266664531301" fileName="GraphAnalyzer.java" startLine="143" startPosition="91" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="2611988743427260327" fileName="GraphAnalyzer.java" startLine="20" startPosition="228" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="6976901853022624201" fileName="GraphAnalyzer.java" startLine="29" startPosition="229" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="8382282457890483515" fileName="GraphAnalyzer.java" startLine="126" startPosition="108" endLine="133" endPosition="0">
+      <varInfo nodeId="8382282457890483515" varName="cont" />
+      <varInfo nodeId="8382282457890483515" varName="ww" />
+    </scopeInfo>
+    <scopeInfo nodeId="706015266664531301" fileName="GraphAnalyzer.java" startLine="143" startPosition="91" endLine="150" endPosition="0">
+      <varInfo nodeId="706015266664531301" varName="ww" />
+    </scopeInfo>
+    <scopeInfo nodeId="2611988743427260327" fileName="GraphAnalyzer.java" startLine="20" startPosition="228" endLine="28" endPosition="0">
+      <varInfo nodeId="2611988743427260327" varName="d" />
+    </scopeInfo>
+    <scopeInfo nodeId="6976901853022624201" fileName="GraphAnalyzer.java" startLine="29" startPosition="229" endLine="37" endPosition="0">
+      <varInfo nodeId="6976901853022624201" varName="d" />
+    </scopeInfo>
     <scopeInfo nodeId="4141757805202317968" fileName="GraphAnalyzer.java" startLine="86" startPosition="90" endLine="94" endPosition="53">
       <varInfo nodeId="4141757805202318016" varName="res" />
     </scopeInfo>
@@ -218,7 +259,9 @@
     <scopeInfo nodeId="5566937012378945055" fileName="GraphAnalyzer.java" startLine="97" startPosition="237" endLine="110" endPosition="15">
       <varInfo nodeId="5566937012378945091" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="8382282457890483502" fileName="GraphAnalyzer.java" startLine="124" startPosition="58" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="8382282457890483502" fileName="GraphAnalyzer.java" startLine="124" startPosition="58" endLine="138" endPosition="0">
+      <varInfo nodeId="8382282457890483502" varName="w" />
+    </scopeInfo>
     <scopeInfo nodeId="1150613940746731983" fileName="GraphAnalyzer.java" startLine="154" startPosition="293" endLine="168" endPosition="7" />
     <scopeInfo nodeId="1150613940746737104" fileName="GraphAnalyzer.java" startLine="171" startPosition="293" endLine="186" endPosition="13" />
     <scopeInfo nodeId="5566937012378945052" fileName="GraphAnalyzer.java" startLine="96" startPosition="0" endLine="112" endPosition="0">
@@ -322,8 +365,14 @@
     <scopeInfo nodeId="315679020132025228" fileName="FqName.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="315679020132025140" fileName="FqName.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="315679020132025152" fileName="FqName.java" startLine="39" startPosition="38" endLine="46" endPosition="126" />
-    <scopeInfo nodeId="315679020132025010" fileName="FqName.java" startLine="59" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="315679020132025010" fileName="FqName.java" startLine="66" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="315679020132025010" fileName="FqName.java" startLine="59" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="315679020132025010" varName="a" />
+      <varInfo nodeId="315679020132025010" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="315679020132025010" fileName="FqName.java" startLine="66" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="315679020132025010" varName="a" />
+      <varInfo nodeId="315679020132025010" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="315679020132025040" fileName="FqName.java" startLine="49" startPosition="33" endLine="57" endPosition="5">
       <varInfo nodeId="315679020132025055" varName="matcher" />
     </scopeInfo>
@@ -411,11 +460,22 @@
     <scopeInfo nodeId="505174985642740520" fileName="DeltaReconciler.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="505174985642740526" varName="delta" />
     </scopeInfo>
-    <scopeInfo nodeId="505174985642750279" fileName="DeltaReconciler.java" startLine="33" startPosition="72" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="5675045708290411794" fileName="DeltaReconciler.java" startLine="41" startPosition="97" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="7471912399447708279" fileName="DeltaReconciler.java" startLine="58" startPosition="97" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="5675045708290411758" fileName="DeltaReconciler.java" startLine="74" startPosition="128" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1040398553439436406" fileName="DeltaReconciler.java" startLine="103" startPosition="103" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="505174985642750279" fileName="DeltaReconciler.java" startLine="33" startPosition="72" endLine="37" endPosition="0">
+      <varInfo nodeId="505174985642750279" varName="d" />
+    </scopeInfo>
+    <scopeInfo nodeId="5675045708290411794" fileName="DeltaReconciler.java" startLine="41" startPosition="97" endLine="45" endPosition="0">
+      <varInfo nodeId="5675045708290411794" varName="dc" />
+    </scopeInfo>
+    <scopeInfo nodeId="7471912399447708279" fileName="DeltaReconciler.java" startLine="58" startPosition="97" endLine="62" endPosition="0">
+      <varInfo nodeId="7471912399447708279" varName="dc" />
+    </scopeInfo>
+    <scopeInfo nodeId="5675045708290411758" fileName="DeltaReconciler.java" startLine="74" startPosition="128" endLine="78" endPosition="0">
+      <varInfo nodeId="5675045708290411758" varName="d" />
+      <varInfo nodeId="5675045708290411758" varName="dc" />
+    </scopeInfo>
+    <scopeInfo nodeId="1040398553439436406" fileName="DeltaReconciler.java" startLine="103" startPosition="103" endLine="107" endPosition="0">
+      <varInfo nodeId="1040398553439436406" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="505174985642741932" fileName="DeltaReconciler.java" startLine="32" startPosition="58" endLine="37" endPosition="7" />
     <scopeInfo nodeId="7471912399447708268" fileName="DeltaReconciler.java" startLine="57" startPosition="53" endLine="62" endPosition="7" />
     <scopeInfo nodeId="5675045708290411735" fileName="DeltaReconciler.java" startLine="73" startPosition="35" endLine="78" endPosition="9" />
@@ -631,16 +691,28 @@
     <scopeInfo nodeId="7471912399447707917" fileName="FilesDelta.java" startLine="242" startPosition="56" endLine="244" endPosition="5" />
     <scopeInfo nodeId="1268765481875666723" fileName="FilesDelta.java" startLine="267" startPosition="0" endLine="269" endPosition="5" />
     <scopeInfo nodeId="505174985642750416" fileName="FilesDelta.java" startLine="45" startPosition="43" endLine="48" endPosition="19" />
-    <scopeInfo nodeId="4032590186464473912" fileName="FilesDelta.java" startLine="233" startPosition="7" endLine="236" endPosition="39" />
+    <scopeInfo nodeId="4032590186464473912" fileName="FilesDelta.java" startLine="233" startPosition="7" endLine="236" endPosition="39">
+      <varInfo nodeId="4032590186464473912" varName="_tmp_32m4sw_a0c0o" />
+    </scopeInfo>
     <scopeInfo nodeId="505174985642693150" fileName="FilesDelta.java" startLine="39" startPosition="0" endLine="43" endPosition="3">
       <varInfo nodeId="505174985642735425" varName="dir" />
     </scopeInfo>
     <scopeInfo nodeId="6067326609049463889" fileName="FilesDelta.java" startLine="81" startPosition="55" endLine="85" endPosition="62" />
-    <scopeInfo nodeId="7471912399447726327" fileName="FilesDelta.java" startLine="109" startPosition="87" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="7471912399447720982" fileName="FilesDelta.java" startLine="118" startPosition="116" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="7471912399447721015" fileName="FilesDelta.java" startLine="130" startPosition="52" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="7471912399447721194" fileName="FilesDelta.java" startLine="146" startPosition="159" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="7471912399447721206" fileName="FilesDelta.java" startLine="150" startPosition="72" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="7471912399447726327" fileName="FilesDelta.java" startLine="109" startPosition="87" endLine="113" endPosition="0">
+      <varInfo nodeId="7471912399447726327" varName="f" />
+    </scopeInfo>
+    <scopeInfo nodeId="7471912399447720982" fileName="FilesDelta.java" startLine="118" startPosition="116" endLine="122" endPosition="0">
+      <varInfo nodeId="7471912399447720982" varName="f" />
+    </scopeInfo>
+    <scopeInfo nodeId="7471912399447721015" fileName="FilesDelta.java" startLine="130" startPosition="52" endLine="134" endPosition="0">
+      <varInfo nodeId="7471912399447721015" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="7471912399447721194" fileName="FilesDelta.java" startLine="146" startPosition="159" endLine="150" endPosition="0">
+      <varInfo nodeId="7471912399447721194" varName="f" />
+    </scopeInfo>
+    <scopeInfo nodeId="7471912399447721206" fileName="FilesDelta.java" startLine="150" startPosition="72" endLine="154" endPosition="0">
+      <varInfo nodeId="7471912399447721206" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="7471912399447721097" fileName="FilesDelta.java" startLine="161" startPosition="88" endLine="165" endPosition="13" />
     <scopeInfo nodeId="7471912399447721147" fileName="FilesDelta.java" startLine="169" startPosition="16" endLine="173" endPosition="11">
       <varInfo nodeId="7471912399447720966" varName="fidx" />
@@ -693,8 +765,12 @@
     <scopeInfo nodeId="86783001230300433" fileName="FilesDelta.java" startLine="191" startPosition="0" endLine="198" endPosition="0">
       <varInfo nodeId="86783001230300442" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="7471912399447721246" fileName="FilesDelta.java" startLine="100" startPosition="92" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="7471912399447720992" fileName="FilesDelta.java" startLine="122" startPosition="75" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="7471912399447721246" fileName="FilesDelta.java" startLine="100" startPosition="92" endLine="108" endPosition="0">
+      <varInfo nodeId="7471912399447721246" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="7471912399447720992" fileName="FilesDelta.java" startLine="122" startPosition="75" endLine="130" endPosition="0">
+      <varInfo nodeId="7471912399447720992" varName="f" />
+    </scopeInfo>
     <scopeInfo nodeId="3461159877638387772" fileName="FilesDelta.java" startLine="179" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="3461159877638387778" varName="maybeUrl" />
     </scopeInfo>
@@ -801,7 +877,10 @@
       <varInfo nodeId="5105453120349025969" varName="h" />
     </scopeInfo>
     <scopeInfo nodeId="5105453120349025889" fileName="SmartWrapper.java" startLine="41" startPosition="38" endLine="48" endPosition="70" />
-    <scopeInfo nodeId="5105453120349025843" fileName="SmartWrapper.java" startLine="60" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="5105453120349025843" fileName="SmartWrapper.java" startLine="60" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="5105453120349025843" varName="a" />
+      <varInfo nodeId="5105453120349025843" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="8321680453184998950" fileName="SmartWrapper.java" startLine="28" startPosition="35" endLine="36" endPosition="19">
       <varInfo nodeId="8321680453184999021" varName="name" />
       <varInfo nodeId="8991950132407605006" varName="sn" />
