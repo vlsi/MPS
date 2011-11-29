@@ -10,6 +10,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import java.util.List;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.ide.depanalyzer.ModuleDependencyNode;
 import javax.swing.JComponent;
 
 public class ModuleDependenies_Tool extends GeneratedTool {
@@ -32,6 +33,10 @@ public class ModuleDependenies_Tool extends GeneratedTool {
 
   public void resetAll() {
     ModuleDependenies_Tool.this.myComponent.resetAll();
+  }
+
+  public void ShowLoops(ModuleDependencyNode node) {
+    ModuleDependenies_Tool.this.myComponent.showLoops(node);
   }
 
   public JComponent getComponent() {

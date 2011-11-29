@@ -60,6 +60,10 @@ public class ModuleDependencyNode extends MPSTreeNode {
     myCyclic = true;
   }
 
+  public boolean isCyclic() {
+    return myCyclic;
+  }
+
   public ModuleDependencyNode getFromNode() {
     TreeNode node = getParent();
     if (node != null && isUsedLanguage()) {
@@ -122,7 +126,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
   public void doubleClick() {
     if ((int) ListSequence.fromList(myModules).count() == 1) {
-      ProjectPane.getInstance(check_lba8jw_a0a0a0a6(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
+      ProjectPane.getInstance(check_lba8jw_a0a0a0a7(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
     }
   }
 
@@ -133,7 +137,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
     }
   }
 
-  private static Project check_lba8jw_a0a0a0a6(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
+  private static Project check_lba8jw_a0a0a0a7(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProject();
     }

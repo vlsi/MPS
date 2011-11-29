@@ -27,6 +27,10 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -127,11 +131,43 @@ public class ModuleDependenciesView extends JPanel {
     rebuildDependencies();
   }
 
+  public void showLoops(final ModuleDependencyNode node) {
+    final IModule module = ListSequence.fromList(node.getModules()).first();
+    final MPSTree tree = node.getTree();
+    // check if everything is already selected now 
+    ModuleDependencyNode parent = node.getFromNode();
+    if (parent != null && (int) ListSequence.fromList(parent.getModules()).count() == 1 && ListSequence.fromList(parent.getModules()).first() == module) {
+      return;
+    }
+    // expand node and show dependencies on itself 
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        tree.expandPath(new TreePath(node.getPath()));
+        for (MPSTreeNode child : Sequence.fromIterable(node)) {
+          ModuleDependencyNode n = as_jxc64t_a0a0a1a0a0a0a6a6(child, ModuleDependencyNode.class);
+          if (n == null) {
+            continue;
+          }
+          if (ListSequence.fromList(n.getModules()).first() == module) {
+            tree.selectNode(n);
+          }
+        }
+      }
+    });
+  }
+
   private static List<IModule> check_jxc64t_a0b0b0c0d0b(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModules();
     }
     return null;
+  }
+
+  private static <T> T as_jxc64t_a0a0a1a0a0a0a6a6(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 
   public static class MyToggleAction extends ToggleAction {

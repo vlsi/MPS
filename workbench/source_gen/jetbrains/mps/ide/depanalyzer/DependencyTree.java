@@ -101,7 +101,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
       return null;
     }
 
-    DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")));
+    DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowModuleDependencyLoop_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
@@ -117,6 +117,9 @@ public class DependencyTree extends MPSTree implements DataProvider {
     }
     if (id.equals(MPSDataKeys.MODULE.getName())) {
       return ListSequence.fromList(current.getModules()).first();
+    }
+    if (id.equals(MPSDataKeys.LOGICAL_VIEW_NODE.getName())) {
+      return current;
     }
     return null;
   }
