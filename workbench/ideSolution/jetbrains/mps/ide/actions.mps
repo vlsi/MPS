@@ -31263,16 +31263,32 @@
     </node>
   </root>
   <root id="5476509602181674172">
-    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6987076566522078025">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/dependencies.png" />
+    <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="5534980211124343915">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5534980211124343916">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5534980211124414383">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.NotExpression" typeId="tpee.1081516740877" id="5534980211124414460">
+            <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5534980211124414461">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5534980211124414462">
+                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="5534980211124414463" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="5534980211124414464">
+                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="5476509602181674173" resolveInfo="modules" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5534980211124414465">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%disEmpty()%cboolean" resolveInfo="isEmpty" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="5476509602181674173">
-      <property name="name" nameId="tpck.1169194664001" value="myModules" />
+      <property name="name" nameId="tpck.1169194664001" value="modules" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="kt54.~MPSDataKeys%dMODULES" resolveInfo="MODULES" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="5476509602181674174" />
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="5476509602181674175">
-      <property name="name" nameId="tpck.1169194664001" value="myProject" />
+      <property name="name" nameId="tpck.1169194664001" value="project" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="1qcs.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="5476509602181674176" />
     </node>
@@ -31288,7 +31304,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5476509602181674183">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="5476509602181674184" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="5476509602181674185">
-                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="5476509602181674175" resolveInfo="myProject" />
+                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="5476509602181674175" resolveInfo="project" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp4k.GetToolInProjectOperation" typeId="tp4k.3339131993542058151" id="5476509602181674186">
@@ -31307,7 +31323,7 @@
               <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4584053716645527899">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4584053716645527900" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4584053716645527901">
-                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="5476509602181674173" resolveInfo="myModules" />
+                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="5476509602181674173" resolveInfo="modules" />
                 </node>
               </node>
             </node>
@@ -31327,6 +31343,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6987076566522078025">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/dependencies.png" />
     </node>
   </root>
   <root id="5542140910050886364">
