@@ -245,7 +245,7 @@ public class MPSFacetSourcesTab {
                     }
                 }
             }
-// TODO: check similar conditions for other mudule's MPS facets
+// TODO: check similar conditions for other module's MPS facets
 //            ModulesProvider modulesProvider = myContext.getModulesProvider();
 //            Module[] modules = modulesProvider.getModules();
 //            for (Module module : modules) {

@@ -27,7 +27,7 @@ import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
-import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.PathUtil;
 import com.intellij.util.xmlb.XmlSerializerUtil;
 import jetbrains.mps.idea.core.facet.ui.MPSFacetCommonTabUI;
 import jetbrains.mps.idea.core.icons.MPSIcons;
@@ -38,12 +38,12 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import java.io.File;
 
 /**
  * evgeny, 10/26/11
  */
 public class MPSFacetConfiguration implements FacetConfiguration, PersistentStateComponent<MPSConfigurationBean> {
+    private static final String FILE_SEPARATOR = "/";
     @NonNls
     private static final String SOURCE_GEN = "source_gen";
     private MPSConfigurationBean myConfigurationBean = new MPSConfigurationBean();
@@ -76,13 +76,10 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
 
     private void setConfigurationDefaults() {
         if (myConfigurationBean.getGeneratorOutputPath() == null) {
-            VirtualFile moduleFile = myMpsFacet.getModule().getModuleFile();
-            if (moduleFile != null) {
-                VirtualFile moduleFolder = moduleFile.getParent();
-                if (moduleFolder != null) {
-                    myConfigurationBean.setGeneratorOutputPath(moduleFolder.getPath() + File.separator + SOURCE_GEN);
-                    myConfigurationBean.setUseModuleSourceFolder(false);
-                }
+            String moduleDirPath = PathUtil.getParentPath(myMpsFacet.getModule().getModuleFilePath());
+            if (moduleDirPath != null) {
+                myConfigurationBean.setGeneratorOutputPath(moduleDirPath + FILE_SEPARATOR + SOURCE_GEN);
+                myConfigurationBean.setUseModuleSourceFolder(false);
             }
         }
         if (myConfigurationBean.getUsedLanguages() == null) {

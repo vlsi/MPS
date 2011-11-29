@@ -67,7 +67,8 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
         assertEmpty(solution.getSModelRoots());
         assertEmpty(solution.getDependencies());
         assertEmpty(solution.getUsedLanguagesReferences());
-        assertEquals(getModuleHome().getPath() + File.separator + "source_gen", solution.getGeneratorOutputPath());
+
+        assertEquals(getModuleHome() + "/source_gen", solution.getGeneratorOutputPath());
 
         Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solution.getModuleReference());
         assertEquals(solution, repositorySolution);
@@ -168,7 +169,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     }
 
     public void testSetGeneratorOutputPath() throws InterruptedException {
-        @NonNls String generatorOutputPath = getModuleHome().getPath() + File.separator + "generatorOut";
+        @NonNls String generatorOutputPath = getModuleHome() + "/generatorOut";
         MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
         configurationBean.setGeneratorOutputPath(generatorOutputPath);
         myFacet.setConfiguration(configurationBean);

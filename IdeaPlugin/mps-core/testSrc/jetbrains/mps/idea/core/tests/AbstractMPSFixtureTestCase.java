@@ -32,6 +32,7 @@ import com.intellij.testFramework.UsefulTestCase;
 import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
 import com.intellij.testFramework.fixtures.*;
 import com.intellij.testFramework.fixtures.impl.JavaTestFixtureFactoryImpl;
+import com.intellij.util.PathUtil;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -106,8 +107,8 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
         return moduleFixtureBuilder.getFixture().getModule();
     }
 
-    protected File getModuleHome() {
-        return new File(myModule.getModuleFilePath()).getParentFile();
+    protected String getModuleHome() {
+        return PathUtil.getParentPath(myModule.getModuleFilePath());
     }
 
     protected void tuneFixture(final JavaModuleFixtureBuilder moduleBuilder) throws Exception {
