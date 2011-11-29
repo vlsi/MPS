@@ -17,7 +17,7 @@ import jetbrains.mps.workbench.tools.CloseAction;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import javax.swing.JSplitPane;
+import com.intellij.openapi.ui.Splitter;
 import com.intellij.ui.components.JBScrollPane;
 import java.util.List;
 import jetbrains.mps.project.IModule;
@@ -42,13 +42,14 @@ public class ModuleDependenies_Tool extends GeneratedTool {
     ActionGroup group = ActionUtils.groupFromActions(new CloseAction(ModuleDependenies_Tool.this));
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
 
-    JSplitPane splitter = new JSplitPane();
+    Splitter splitter = new Splitter();
 
-    ModuleDependenies_Tool.this.myComponent.add(toolbar, BorderLayout.WEST);
+    ModuleDependenies_Tool.this.myComponent.add(toolbar, BorderLayout.NORTH);
     ModuleDependenies_Tool.this.myComponent.add(splitter, BorderLayout.CENTER);
     // <node> 
-    splitter.setResizeWeight(0.5);
-    splitter.setLeftComponent(new JBScrollPane(ModuleDependenies_Tool.this.myLeftTree));
+    // <node> 
+    splitter.setFirstComponent(new JBScrollPane(ModuleDependenies_Tool.this.myLeftTree));
+    splitter.setSecondComponent(new JBScrollPane());
     // <node> 
   }
 
