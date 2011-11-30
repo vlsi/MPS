@@ -35,6 +35,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
@@ -42,8 +43,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -212,9 +215,14 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   public String getFolderFor(IModule module) {
     IFile file = module.getDescriptorFile();
     assert file != null;
-    Path path = new Path(file.getPath());
+    String canonicalPath;
+    try {
+      canonicalPath = new File(file.getPath()).getCanonicalPath();
+    } catch (IOException e) {
+      return null;
+    }
     for (Path sp : getAllModulePaths()) {
-      if (sp.isSamePath(path)) {
+      if (sp.isSamePath(canonicalPath)) {
         return sp.getMPSFolder();
       }
     }
