@@ -98,12 +98,11 @@ public class RenameMethod_Action extends GeneratedAction {
       RenameMethodDialog d = new RenameMethodDialog(((Project) MapSequence.fromMap(_params).get("project")), oldName, "Method", ListSequence.fromList(overridingList.value).isNotEmpty());
       d.show();
 
-      boolean overriding = d.getOverriding();
       String newName = d.getNewName();
       if (newName == null) {
         return;
       }
-      RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.RenameMethod", Arrays.asList("newName", "refactorOverriding"), Arrays.asList(newName, overriding), ((SNode) MapSequence.fromMap(_params).get("target")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
+      RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.RenameMethod", Arrays.asList("newName", "refactorOverriding"), Arrays.asList(newName, d.getOverriding()), ((SNode) MapSequence.fromMap(_params).get("target")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
       new RefactoringFacade().execute(c);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RenameMethod", t);

@@ -4,6 +4,7 @@
   <language namespace="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="64d34fcd-ad02-4e73-aff8-a581124c2e30(jetbrains.mps.lang.findUsages)" />
+  <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpeg" modelUID="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)" version="-1" />
@@ -72,12 +73,6 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
       </node>
     </node>
-    <node role="parameter" roleId="tp1h.6895093993902236376" type="tp1h.RefactoringParameter" typeId="tp1h.6895093993902311012" id="5671790773531913161">
-      <property name="name" nameId="tpck.1169194664001" value="overriding" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="5671790773531913163">
-        <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
-      </node>
-    </node>
     <node role="target" roleId="tp1h.6895093993902310998" type="tp1h.NodeTarget" typeId="tp1h.6895093993902310764" id="7874812549549771310">
       <node role="isApplicableBlock" roleId="tp1h.5497648299878742040" type="tp1h.IsApplicableToNodeClause" typeId="tp1h.6895093993902310808" id="4413749148913389808">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913389809">
@@ -128,9 +123,6 @@
               <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="1494876485718558726">
                 <property name="name" nameId="tpck.1169194664001" value="node" />
               </node>
-              <node role="inputSequence" roleId="tp2q.1153944424730" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="5671790773531913172">
-                <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="5671790773531913161" resolveInfo="overriding" />
-              </node>
               <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1494876485718558728">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1494876485718558729">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1494876485718558730">
@@ -148,18 +140,22 @@
                   </node>
                 </node>
               </node>
+              <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7871474585848184420">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399170915" resolveInfo="findOverridingMethods" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89o2.8492459591399170869" resolveInfo="MethodRefactoringUtils" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7871474585848184421">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7874812549549876827" resolveInfo="method" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7871474585848184422">
+                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7871474585848184423">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mfkk.~EmptyProgressIndicator%d&lt;init&gt;()" resolveInfo="EmptyProgressIndicator" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="1494876485718558720">
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1494876485718558707">
-              <node role="operand" roleId="tpee.1197027771414" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="5671790773531913168">
-                <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="5671790773531913161" resolveInfo="overriding" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp2q.IsNotEmptyOperation" typeId="tp2q.1176501494711" id="1494876485718558711" />
-            </node>
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="1494876485718558723">
-              <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="7874812549549919722" resolveInfo="refactorOverriding" />
-            </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="1494876485718558723">
+            <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="7874812549549919722" resolveInfo="refactorOverriding" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5679731535836386771">

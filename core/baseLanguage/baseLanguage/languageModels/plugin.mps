@@ -4,7 +4,7 @@
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="97a52717-898f-4598-8150-573d9fd03868(jetbrains.mps.analyzers)" />
-  <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debug.apiLang)" />
+  <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debugger.api.lang)" />
   <language namespace="22e72e4c-0f69-46ce-8403-6750153aa615(jetbrains.mps.execution.configurations)" />
   <language namespace="756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.execution.settings)" />
   <language namespace="5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)" />
@@ -16041,20 +16041,6 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="6637315361769883445" />
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="759258373983274408">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="759258373983274409">
-            <property name="name" nameId="tpck.1169194664001" value="overriding" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="759258373983274410" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="759258373983358733">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="759258373983358732">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="759258373983358633" resolveInfo="d" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="759258373983358737">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.759258373983325729" resolveInfo="getOverriding" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="759258373983358739">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="759258373983358740">
             <property name="name" nameId="tpck.1169194664001" value="newName" />
@@ -16089,8 +16075,13 @@
               <node role="parameters" roleId="tp1h.3700868637771354794" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="759258373983358767">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="759258373983358740" resolveInfo="newName" />
               </node>
-              <node role="parameters" roleId="tp1h.3700868637771354794" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="759258373983358768">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="759258373983274409" resolveInfo="overriding" />
+              <node role="parameters" roleId="tp1h.3700868637771354794" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7871474585848184431">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7871474585848184432">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="759258373983358633" resolveInfo="d" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7871474585848184433">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.759258373983325729" resolveInfo="getOverriding" />
+                </node>
               </node>
               <node role="project" roleId="tp1h.7340098493333217414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="759258373983358761">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8iu6.~ProjectHelper%dtoMPSProject(com%dintellij%dopenapi%dproject%dProject)%cjetbrains%dmps%dproject%dProject" resolveInfo="toMPSProject" />

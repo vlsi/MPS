@@ -165,12 +165,14 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.BaseChooserSettings" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.refactorings.RenameMethod" file="RenameMethod.java">
+    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.RenameMethod_Target" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.RenameUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
