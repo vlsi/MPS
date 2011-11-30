@@ -214,7 +214,12 @@ public class MergeRootsDialog extends BaseDialog {
   }
 
   private DiffEditor addEditor(int index, SModel model) {
-    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myModelsDialog.getProject(), model), model.getNodeById(getRootNodeId(model)), myModelsDialog.getContentTitles()[index], index == 0);
+    SNodeId rootId = getRootNodeId(model);
+    SNode root = (rootId == null ?
+      null :
+      model.getNodeById(rootId)
+    );
+    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myModelsDialog.getProject(), model), root, myModelsDialog.getContentTitles()[index], index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :
