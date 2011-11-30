@@ -208,6 +208,8 @@ public abstract class TypeCheckingContext {
 
   public abstract SNode getTypeDontCheck(SNode node);
 
+  public abstract SNode getExpandedNode(SNode node);
+
   public abstract List<IErrorReporter> getTypeMessagesDontCheck(SNode node);
 
   //returns the most serious error for node (warning if no errors, info if no warnings and errors)

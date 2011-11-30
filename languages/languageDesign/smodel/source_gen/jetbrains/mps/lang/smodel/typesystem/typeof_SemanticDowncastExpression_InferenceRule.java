@@ -64,7 +64,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
                     {
                       SNode _nodeToCheck_1029348928467 = expr;
                       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206060275783", 0, null);
-                      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206060275785", true), (SNode) new typeof_SemanticDowncastExpression_InferenceRule.QuotationClass_kyl6z5_a0a0a0a0a0a0d0a0a().createNode(SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getRepresentative(lt), "jetbrains.mps.lang.smodel.structure.SNodeListType"), "elementConcept", false), typeCheckingContext), _info_12389875345);
+                      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206060275785", true), (SNode) new typeof_SemanticDowncastExpression_InferenceRule.QuotationClass_kyl6z5_a0a0a0a0a0a0d0a0a().createNode(SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getExpandedNode(lt), "jetbrains.mps.lang.smodel.structure.SNodeListType"), "elementConcept", false), typeCheckingContext), _info_12389875345);
                     }
                   }
                 }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2930785965020102451", false, false);
