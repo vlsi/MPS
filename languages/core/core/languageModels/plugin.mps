@@ -126,6 +126,9 @@
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="caption" nameId="tp4k.1205250923097" value="Safe Delete" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2704531651333053833">
+      <property name="name" nameId="tpck.1169194664001" value="RefactoringAdditions" />
+    </node>
   </roots>
   <root id="1209308509191">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1209308509192">
@@ -5642,6 +5645,19 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="2704531651333053833">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2704531651333053835">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2704531651333053836">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5734694512880444077" resolveInfo="Rename" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2704531651333053838">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="103726234340947401" resolveInfo="SafeDelete" />
+      </node>
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="3317278357219630946">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.2704531651333004425" resolveInfo="NodeRefactoring" />
     </node>
   </root>
 </model>

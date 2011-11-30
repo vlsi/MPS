@@ -100,6 +100,10 @@
       <property name="name" nameId="tpck.1169194664001" value="RenameProperty" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rename Property" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2704531651333053824">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="name" nameId="tpck.1169194664001" value="RefactoringAdditions" />
+    </node>
   </roots>
   <root id="1216651471788">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1216651485227">
@@ -3101,6 +3105,22 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="2704531651333053824">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="3317278357219634606">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.2704531651333004425" resolveInfo="NodeRefactoring" />
+    </node>
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2704531651333053826">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2704531651333053827">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3839699242126885013" resolveInfo="RenameConcept" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2704531651333053829">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6108007449136612795" resolveInfo="RenameLink" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2704531651333053831">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="8266187838630680518" resolveInfo="RenameProperty" />
       </node>
     </node>
   </root>

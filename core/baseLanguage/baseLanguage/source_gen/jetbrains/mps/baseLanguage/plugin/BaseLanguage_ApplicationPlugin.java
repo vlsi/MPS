@@ -8,7 +8,7 @@ import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
-import jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup;
+import jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup;
 import jetbrains.mps.ide.actions.Code_ActionGroup;
 import jetbrains.mps.lang.dataFlow.plugin.DFAActions_ActionGroup;
 import java.util.List;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Core_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ApplicationPlugin" />
+  <unitInfo fileName="Core_ApplicationPlugin.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ApplicationPlugin" />
   <unitInfo fileName="Core_ProjectPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ProjectPlugin" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.lang.core.plugin.FacetAspectDescriptor$1" />
@@ -574,6 +574,26 @@
     </scopeInfo>
     <unitInfo nodeId="1225978220759" fileName="FindLanguageConceptsUsages_Action.java" startLine="28" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action" />
     <unitInfo nodeId="1225978220793" fileName="FindLanguageConceptsUsages_Action.java" startLine="90" startPosition="47" endLine="95" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action$1" />
+  </root>
+  <root nodeId="2704531651333053833">
+    <nodeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="8" startPosition="76" endLine="9" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="9" startPosition="87" endLine="10" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="12" startPosition="45" endLine="13" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="13" startPosition="38" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2704531651333053836" fileName="RefactoringAdditions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2704531651333053838" fileName="RefactoringAdditions_ActionGroup.java" startLine="17" startPosition="102" endLine="18" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="15" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringAdditions_ActionGroup#()V" />
+    <scopeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
+      <varInfo nodeId="2704531651333053833" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="16" startPosition="9" endLine="18" endPosition="106" />
+    <scopeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="12" startPosition="45" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" />
+    <unitInfo nodeId="2704531651333053833" fileName="RefactoringAdditions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.RefactoringAdditions_ActionGroup" />
   </root>
   <root nodeId="3110513929263083458">
     <nodeInfo nodeId="3110513929263083472" fileName="RetainedUtil.java" startLine="30" startPosition="112" endLine="31" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

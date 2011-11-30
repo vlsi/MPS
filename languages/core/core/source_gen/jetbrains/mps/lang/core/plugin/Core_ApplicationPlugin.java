@@ -7,6 +7,7 @@ import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -34,12 +35,14 @@ public class Core_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new CoreActions_ActionGroup());
     addGroup(new FindLanguageUsages_ActionGroup());
     addGroup(new FindModelUsages_ActionGroup());
+    addGroup(new RefactoringAdditions_ActionGroup());
   }
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(FindModelUsages_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
     insertGroupIntoAnother(FindLanguageUsages_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_usages);
     insertGroupIntoAnother(CoreActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
+    insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

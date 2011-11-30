@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Structure_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ApplicationPlugin" />
+  <unitInfo fileName="Structure_ApplicationPlugin.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ApplicationPlugin" />
   <unitInfo fileName="Structure_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin" />
   <root nodeId="1216651471788">
     <nodeInfo nodeId="1216651471788" fileName="Structure_ActionGroup.java" startLine="11" startPosition="65" endLine="12" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -551,6 +551,27 @@
       <varInfo nodeId="2542706524531725660" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="2542706524531725660" fileName="Structure_TabDescriptor.java" startLine="15" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_TabDescriptor" />
+  </root>
+  <root nodeId="2704531651333053824">
+    <nodeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="8" startPosition="76" endLine="9" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="9" startPosition="87" endLine="10" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="12" startPosition="45" endLine="13" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="13" startPosition="38" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2704531651333053827" fileName="RefactoringAdditions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2704531651333053829" fileName="RefactoringAdditions_ActionGroup.java" startLine="17" startPosition="114" endLine="18" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2704531651333053831" fileName="RefactoringAdditions_ActionGroup.java" startLine="18" startPosition="111" endLine="19" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="15" startPosition="25" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="11" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringAdditions_ActionGroup#()V" />
+    <scopeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39">
+      <varInfo nodeId="2704531651333053824" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" />
+    <scopeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="16" startPosition="9" endLine="19" endPosition="115" />
+    <scopeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="12" startPosition="45" endLine="22" endPosition="5" />
+    <scopeInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="11" startPosition="0" endLine="23" endPosition="3" />
+    <unitInfo nodeId="2704531651333053824" fileName="RefactoringAdditions_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.RefactoringAdditions_ActionGroup" />
   </root>
   <root nodeId="3552608880959246745">
     <nodeInfo nodeId="3552608880959246971" fileName="ConceptEditorOpenHelper.java" startLine="20" startPosition="47" endLine="21" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

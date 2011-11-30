@@ -59,6 +59,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.plugin.RefactoringAdditions_ActionGroup" file="RefactoringAdditions_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.structure.plugin.RenameConcept_Action" file="RenameConcept_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -226,8 +232,10 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Default_KeymapChanges" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.RefactoringAdditions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.structure.plugin.RenameConcept_Action" />
     <classNode dependClassName="jetbrains.mps.lang.structure.plugin.RenameLink_Action" />
     <classNode dependClassName="jetbrains.mps.lang.structure.plugin.RenameProperty_Action" />
