@@ -1210,8 +1210,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1194880014510">
-    <nodeInfo nodeId="1194880104698" fileName="QueriesGenerated.java" startLine="2095" startPosition="144" endLine="2096" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1194880100322" fileName="QueriesGenerated.java" startLine="2095" startPosition="144" endLine="2096" endPosition="71" />
+    <nodeInfo nodeId="1194880104698" fileName="QueriesGenerated.java" startLine="2096" startPosition="144" endLine="2097" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1194880100322" fileName="QueriesGenerated.java" startLine="2096" startPosition="144" endLine="2097" endPosition="71" />
   </root>
   <root nodeId="1196959476437">
     <nodeInfo nodeId="5830155447076591790" fileName="QueriesGenerated.java" startLine="680" startPosition="154" endLine="681" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1825,8 +1825,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1223922791836">
-    <nodeInfo nodeId="1223922984040" fileName="QueriesGenerated.java" startLine="882" startPosition="148" endLine="883" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1223922835694" fileName="QueriesGenerated.java" startLine="882" startPosition="148" endLine="883" endPosition="164" />
+    <nodeInfo nodeId="1223922984040" fileName="QueriesGenerated.java" startLine="883" startPosition="148" endLine="884" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1223922835694" fileName="QueriesGenerated.java" startLine="883" startPosition="148" endLine="884" endPosition="164" />
   </root>
   <root nodeId="1223987247896">
     <nodeInfo nodeId="1223987307013" fileName="QueriesGenerated.java" startLine="887" startPosition="148" endLine="888" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
