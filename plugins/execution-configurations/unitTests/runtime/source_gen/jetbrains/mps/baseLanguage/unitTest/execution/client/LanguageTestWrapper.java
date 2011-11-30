@@ -12,6 +12,23 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.util.ArrayList;
+import com.intellij.openapi.application.PathMacros;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.application.PathManager;
+import java.io.File;
+import com.intellij.util.lang.UrlClassLoader;
+import java.net.URL;
+import java.net.URI;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.project.StubPath;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NonNls;
 
 public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
@@ -57,15 +74,84 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   }
 
   @Override
-  public TestRunParameters getTestRunParameters() {
-    return check_9og6tg_a0a4(getNode(), this);
+  @NotNull
+  public Tuples._3<String, List<String>, List<String>> getTestRunParameters() {
+    SNode node = getNode();
+    if (node == null) {
+      return super.getTestRunParameters();
+    }
+    if (ITestable_Behavior.call_isMpsStartRequired_3310779261129403089(node)) {
+      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.lang.test.runtime.TransformationTestRunner", ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "-Xmx1024m")).union(Sequence.fromIterable(ListSequence.fromCollection(PathMacros.getInstance().getUserMacroNames()).select(new _FunctionTypes._return_P1_E0<String, String>() {
+        public String invoke(String key) {
+          return "-D" + "path.macro." + key + "=" + PathMacros.getInstance().getValue(key);
+        }
+      }))).toListSequence(), getIdeaClasspath());
+    }
+    return super.getTestRunParameters();
+  }
+
+  private List<String> getPluginClasspath() {
+    List<String> path = ListSequence.fromList(new ArrayList<String>());
+    String pluginsPath = PathManager.getPreinstalledPluginsPath();
+    File pluginsDir = new File(pluginsPath);
+    for (File pluginDirFile : pluginsDir.listFiles()) {
+      if (pluginDirFile.isDirectory()) {
+        // adding classes dir 
+        File classesDir = new File(pluginDirFile, "classes");
+        if (classesDir.exists()) {
+          ListSequence.fromList(path).addElement(classesDir.getAbsolutePath());
+        }
+        // adding contents of lib dir 
+        File libDir = new File(pluginDirFile, "lib");
+        if (libDir.exists()) {
+          for (File libChild : libDir.listFiles()) {
+            if (libChild.isFile()) {
+              String name = libChild.getName();
+              if (name.toLowerCase().endsWith(".jar") || name.toLowerCase().endsWith(".zip")) {
+                ListSequence.fromList(path).addElement(libChild.getAbsolutePath());
+              }
+            } else {
+              ListSequence.fromList(path).addElement(libChild.getAbsolutePath());
+            }
+          }
+        }
+      } else {
+        ListSequence.fromList(path).addElement(pluginDirFile.getAbsolutePath());
+      }
+    }
+    return path;
+  }
+
+  private List<String> getIdeaClasspath() {
+    final List<String> result = ListSequence.fromList(new ArrayList<String>());
+    ClassLoader classLoader = UrlClassLoader.class.getClassLoader();
+    Class cls = classLoader.getClass();
+    try {
+      List<URL> urls = ((List<URL>) cls.getMethod("getUrls", new Class[0]).invoke(classLoader, new Object[0]));
+      for (URL url : urls) {
+        ListSequence.fromList(result).addElement(new URI(url.toString()).getPath());
+      }
+    } catch (Throwable e) {
+    }
+    Language testsLanguage = (Language) SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase")).getModelDescriptor().getModule();
+    for (StubPath path : ListSequence.fromList(testsLanguage.getRuntimeStubPaths())) {
+      ListSequence.fromList(result).addElement(path.getPath());
+    }
+    for (ModuleReference dep : ListSequence.fromList(testsLanguage.getRuntimeModulesReferences())) {
+      AbstractModule module = (AbstractModule) MPSModuleRepository.getInstance().getModule(dep);
+      for (StubPath path : ListSequence.fromList(module.getStubPaths())) {
+        ListSequence.fromList(result).addElement(path.getPath());
+      }
+    }
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(getPluginClasspath()));
+    return result;
   }
 
   @NonNls
   @Override
   public String getFqName() {
     if (isTestCase()) {
-      return check_9og6tg_a0a0a5(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), this);
+      return check_9og6tg_a0a0a7(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), this);
     }
     return super.getFqName();
   }
@@ -74,9 +160,9 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @Override
   public String getName() {
     if (isTestMethod()) {
-      return check_9og6tg_a0a0a6(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), this);
+      return check_9og6tg_a0a0a8(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), this);
     }
-    return check_9og6tg_a1a6(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), this);
+    return check_9og6tg_a1a8(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), this);
   }
 
   private static boolean check_9og6tg_a0a0(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
@@ -100,28 +186,21 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     return false;
   }
 
-  private static TestRunParameters check_9og6tg_a0a4(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      return ((TestRunParameters) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), "virtual_getTestRunParameters_1216045139515", new Class[]{SNode.class}));
-    }
-    return null;
-  }
-
-  private static String check_9og6tg_a0a0a5(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+  private static String check_9og6tg_a0a0a7(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getClassName_1216136193905", new Class[]{SNode.class}));
     }
     return null;
   }
 
-  private static String check_9og6tg_a0a0a6(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+  private static String check_9og6tg_a0a0a8(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), "virtual_getTestName_1216136419751", new Class[]{SNode.class}));
     }
     return null;
   }
 
-  private static String check_9og6tg_a1a6(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+  private static String check_9og6tg_a1a8(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getSimpleClassName_1229278847513", new Class[]{SNode.class}));
     }

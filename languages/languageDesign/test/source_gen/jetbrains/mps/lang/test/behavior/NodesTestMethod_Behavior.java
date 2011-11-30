@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunParameters;
 
 public class NodesTestMethod_Behavior {
   public static void init(SNode thisNode) {
@@ -22,7 +21,7 @@ public class NodesTestMethod_Behavior {
     return "test_" + SPropertyOperations.getString(thisNode, "name");
   }
 
-  public static TestRunParameters virtual_getTestRunParameters_1216045139515(SNode thisNode) {
-    return NodesTestCase_Behavior.getTestRunParameters_1217424543047();
+  public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
+    return true;
   }
 }

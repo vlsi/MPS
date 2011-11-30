@@ -10,8 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunParameters;
-import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -47,15 +45,15 @@ public class BTestCase_Behavior {
     return INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
   }
 
-  public static TestRunParameters virtual_getTestRunParameters_1216045139515(SNode thisNode) {
+  public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     for (SNode method : SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)) {
       for (SNode annotationInstance : SLinkOperations.getTargets(method, "annotation", true)) {
-        if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Workbench/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)", "~MPSLaunch"))) {
-          return NodesTestCase_Behavior.getTestRunParameters_1217424543047();
+        if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)", "8492459591399146889"))) {
+          return true;
         }
       }
     }
-    return new TestRunParameters();
+    return false;
   }
 
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {

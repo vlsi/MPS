@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 import com.intellij.execution.ExecutionException;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunParameters;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
@@ -24,6 +23,7 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
@@ -129,14 +129,14 @@ public class Junit_Command {
     if (tests == null) {
       throw new ExecutionException("Tests to run are null.");
     }
-    Tuples._2<List<ITestNodeWrapper>, TestRunParameters> testsToRun = Junit_Command.getTestsToRunWithParameters(tests);
+    Tuples._2<List<ITestNodeWrapper>, Tuples._3<String, List<String>, List<String>>> testsToRun = Junit_Command.getTestsToRunWithParameters(tests);
     if (ListSequence.fromList(testsToRun._0()).isEmpty()) {
       throw new ExecutionException("Could not find tests to run.");
     }
-    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun._1().getVmParameters()), " ") + ((StringUtils.isNotEmpty(myVirtualMachineParameter_String) ?
+    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun._1()._1()), " ") + ((StringUtils.isNotEmpty(myVirtualMachineParameter_String) ?
       " " + myVirtualMachineParameter_String :
       ""
-    ))).setClassPath_ListString(ListSequence.fromList(testsToRun._1().getClassPath()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(Junit_Command.getProgramParameters(testsToRun._0())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun._1().getTestRunner());
+    ))).setClassPath_ListString(ListSequence.fromList(testsToRun._1()._2()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(Junit_Command.getProgramParameters(testsToRun._0())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun._1()._0());
   }
 
   public static IDebugger getDebugger() {
@@ -160,9 +160,9 @@ public class Junit_Command {
     return IterableUtils.join(ListSequence.fromList(testsCommandLine.value), " ");
   }
 
-  private static Tuples._2<List<ITestNodeWrapper>, TestRunParameters> getTestsToRunWithParameters(@NotNull List<ITestNodeWrapper> tests) throws ExecutionException {
+  private static Tuples._2<List<ITestNodeWrapper>, Tuples._3<String, List<String>, List<String>>> getTestsToRunWithParameters(@NotNull List<ITestNodeWrapper> tests) throws ExecutionException {
     final Wrappers._T<List<ITestNodeWrapper>> _tests = new Wrappers._T<List<ITestNodeWrapper>>(tests);
-    final Wrappers._T<TestRunParameters> runParams = new Wrappers._T<TestRunParameters>();
+    final Wrappers._T<Tuples._3<String, List<String>, List<String>>> runParams = new Wrappers._T<Tuples._3<String, List<String>, List<String>>>();
     final Wrappers._T<List<ITestNodeWrapper>> testsToRun = new Wrappers._T<List<ITestNodeWrapper>>();
     final Wrappers._T<String> skipped = new Wrappers._T<String>();
     _tests.value = ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
@@ -171,7 +171,7 @@ public class Junit_Command {
       }
     }).toListSequence();
     if (ListSequence.fromList(_tests.value).isEmpty()) {
-      return MultiTuple.<List<ITestNodeWrapper>,TestRunParameters>from(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), new TestRunParameters());
+      return MultiTuple.<List<ITestNodeWrapper>,Tuples._3<String, List<String>, List<String>>>from(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), AbstractTestWrapper.getDefaultRunParameters());
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -197,7 +197,7 @@ public class Junit_Command {
         log.warn("All tests could not be executed together. Skipped " + skipped.value);
       }
     }
-    return MultiTuple.<List<ITestNodeWrapper>,TestRunParameters>from(testsToRun.value, runParams.value);
+    return MultiTuple.<List<ITestNodeWrapper>,Tuples._3<String, List<String>, List<String>>>from(testsToRun.value, runParams.value);
   }
 
   private static List<String> getClasspath(final List<ITestNodeWrapper> tests) {
