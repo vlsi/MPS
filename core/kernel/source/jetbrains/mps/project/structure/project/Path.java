@@ -57,6 +57,16 @@ public final class Path {
     }
   }
 
+  public boolean isSamePath(String canonical) {
+    if (myPath == null) return false;
+    try {
+      String canonicalPath = new File(myPath).getCanonicalPath();
+      return canonicalPath.equals(canonical);
+    } catch (IOException e) {
+      return false;
+    }
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;

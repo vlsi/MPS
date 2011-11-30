@@ -48,7 +48,7 @@
   <unitInfo fileName="FoldLeftOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.FoldLeftOperation_BehaviorDescriptor" />
   <unitInfo fileName="FoldRightOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.FoldRightOperation_BehaviorDescriptor" />
   <unitInfo fileName="ForEachStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ForEachStatement_BehaviorDescriptor" />
-  <unitInfo fileName="ForEachVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ForEachVariableReference_BehaviorDescriptor" />
+  <unitInfo fileName="ForEachVariableReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ForEachVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="ForEachVariable_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ForEachVariable_BehaviorDescriptor" />
   <unitInfo fileName="GetCurrentOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.GetCurrentOperation_BehaviorDescriptor" />
   <unitInfo fileName="GetElementOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.GetElementOperation_BehaviorDescriptor" />
@@ -164,6 +164,20 @@
   <unitInfo fileName="ValueAccessOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ValueAccessOperation_BehaviorDescriptor" />
   <unitInfo fileName="VisitAllOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.VisitAllOperation_BehaviorDescriptor" />
   <unitInfo fileName="WhereOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.WhereOperation_BehaviorDescriptor" />
+  <root nodeId="1023687332192534913">
+    <nodeInfo nodeId="1023687332192534920" fileName="ForEachVariableReference_Behavior.java" startLine="12" startPosition="79" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1023687332192534913" fileName="ForEachVariableReference_Behavior.java" startLine="8" startPosition="48" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1023687332192534913" fileName="ForEachVariableReference_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVariable_1023687332192481693#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1023687332192534915" fileName="ForEachVariableReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1023687332192534918" fileName="ForEachVariableReference_Behavior.java" startLine="12" startPosition="79" endLine="13" endPosition="66" />
+    <scopeInfo nodeId="1023687332192534913" fileName="ForEachVariableReference_Behavior.java" startLine="8" startPosition="48" endLine="11" endPosition="0">
+      <varInfo nodeId="1023687332192534913" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1023687332192534913" fileName="ForEachVariableReference_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1023687332192534913" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1023687332192534913" fileName="ForEachVariableReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ForEachVariableReference_Behavior" />
+  </root>
   <root nodeId="1213877245174">
     <nodeInfo nodeId="1213877245179" fileName="SequenceType_Behavior.java" startLine="27" startPosition="78" endLine="28" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877245192" fileName="SequenceType_Behavior.java" startLine="31" startPosition="88" endLine="32" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

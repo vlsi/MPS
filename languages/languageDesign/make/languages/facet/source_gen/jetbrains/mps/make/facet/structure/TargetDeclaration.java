@@ -19,6 +19,7 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String OPTIONAL = "optional";
   public static final String RESOURCES_POLICY = "resourcesPolicy";
   public static final String OVERRIDES = "overrides";
   public static final String PARAMETERS = "parameters";
@@ -62,6 +63,14 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(TargetDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getOptional() {
+    return this.getBooleanProperty(TargetDeclaration.OPTIONAL);
+  }
+
+  public void setOptional(boolean value) {
+    this.setBooleanProperty(TargetDeclaration.OPTIONAL, value);
   }
 
   public ResourcesPolicy getResourcesPolicy() {

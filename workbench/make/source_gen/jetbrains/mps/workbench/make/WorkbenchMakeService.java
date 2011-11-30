@@ -18,11 +18,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.PluginReloader;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.generator.GenerationSettingsProvider;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import com.intellij.openapi.project.DumbService;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.concurrent.ExecutionException;
@@ -33,7 +37,6 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
@@ -52,7 +55,6 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IProgress;
@@ -81,9 +83,11 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     INSTANCE = this;
     IMakeService.INSTANCE.set(this);
     pluginReloader.setMakeService(this);
+    GenerationSettingsProvider.getInstance().setGenerationSettings(GenerationSettings.getInstance());
   }
 
   public void disposeComponent() {
+    GenerationSettingsProvider.getInstance().setGenerationSettings(null);
     pluginReloader.setMakeService(null);
     IMakeService.INSTANCE.set(null);
     INSTANCE = null;
@@ -124,6 +128,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
   public boolean openNewSession(MakeSession session) {
     this.checkValidUsage();
+    if (DumbService.getInstance(ProjectHelper.toIdeaProject(session.getContext().getProject())).isDumb()) {
+      DumbService.getInstance(ProjectHelper.toIdeaProject(session.getContext().getProject())).showDumbModeNotification("Generation is not available until indices are built.");
+      return false;
+    }
     if (!(currentSessionStickyMark.compareAndSet(null, session, false, session.isSticky()))) {
       return false;
     }

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 import jetbrains.mps.TestMain;
+import jetbrains.mps.build.ant.Environment;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
 import jetbrains.mps.testbench.junit.runners.WatchingSuite;
@@ -22,8 +23,8 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 
-@SuiteClassSymbols({"jetbrains.mps.build.ant.BrokenReferencesTestTest",
-  "jetbrains.mps.build.ant.GenerateTaskFilesCreationTest",
+@SuiteClassSymbols({
+  "jetbrains.mps.build.ant.BrokenReferencesTestTest",
   "jetbrains.mps.build.ant.TeamCityMesageFormatTest",
   "jetbrains.mps.build.ant.WhatToDoSerializationConsistencyTest",
   "jetbrains.mps.generator.test.IncrementalGenerationTest",

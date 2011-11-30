@@ -34,8 +34,6 @@ public class LibraryInitializer {
   private MPSModuleRepository myRepo = MPSModuleRepository.getInstance();
   private ClassLoaderManager myCLM = ClassLoaderManager.getInstance();
 
-  private boolean myFirstLoad = true;
-
   public void update() {
     update(false);
   }
@@ -78,11 +76,8 @@ public class LibraryInitializer {
     CleanupManager.getInstance().cleanup();
     ClassLoaderManager.getInstance().updateClassPath();
 
-    if (myFirstLoad) {
-      myFirstLoad = false;
-      myCLM.initRuntimeEnvironment();
-      LanguageRegistry.getInstance().loadLanguages();
-    }
+    myCLM.initRuntimeEnvironment();
+    LanguageRegistry.getInstance().loadLanguages();
   }
 
   protected void fireOnLoad(final MPSModuleOwner owner) {

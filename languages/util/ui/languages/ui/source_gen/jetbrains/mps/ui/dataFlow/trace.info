@@ -9,7 +9,10 @@
     <scopeInfo nodeId="3546006303814984669" fileName="UIObjectProviderStatement_DataFlow.java" startLine="12" startPosition="47" endLine="12" endPosition="47" />
     <scopeInfo nodeId="3546006303814984669" fileName="UIObjectProviderStatement_DataFlow.java" startLine="11" startPosition="73" endLine="13" endPosition="3" />
     <scopeInfo nodeId="3546006303814984671" fileName="UIObjectProviderStatement_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="101" />
-    <scopeInfo nodeId="3546006303814984669" fileName="UIObjectProviderStatement_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="3546006303814984669" fileName="UIObjectProviderStatement_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="3546006303814984669" varName="_context" />
+      <varInfo nodeId="3546006303814984669" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="3546006303814984669" fileName="UIObjectProviderStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.UIObjectProviderStatement_DataFlow" />
   </root>
   <root nodeId="5745619648519009139">
@@ -21,7 +24,10 @@
     <scopeInfo nodeId="5745619648519009144" fileName="CompartmentReferenceExpression_DataFlow.java" startLine="16" startPosition="84" endLine="17" endPosition="107" />
     <scopeInfo nodeId="5745619648519009139" fileName="CompartmentReferenceExpression_DataFlow.java" startLine="11" startPosition="78" endLine="13" endPosition="3" />
     <scopeInfo nodeId="5745619648519009141" fileName="CompartmentReferenceExpression_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="5745619648519009139" fileName="CompartmentReferenceExpression_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="5745619648519009139" fileName="CompartmentReferenceExpression_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="5745619648519009139" varName="_context" />
+      <varInfo nodeId="5745619648519009139" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="5745619648519009139" fileName="CompartmentReferenceExpression_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.CompartmentReferenceExpression_DataFlow" />
   </root>
   <root nodeId="6410919744913683383">
@@ -31,7 +37,10 @@
     <scopeInfo nodeId="6410919744913683383" fileName="CreateUIObjectStatement_DataFlow.java" startLine="10" startPosition="45" endLine="10" endPosition="45" />
     <scopeInfo nodeId="6410919744913683385" fileName="CreateUIObjectStatement_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="56" />
     <scopeInfo nodeId="6410919744913683383" fileName="CreateUIObjectStatement_DataFlow.java" startLine="9" startPosition="71" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="6410919744913683383" fileName="CreateUIObjectStatement_DataFlow.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6410919744913683383" fileName="CreateUIObjectStatement_DataFlow.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="6410919744913683383" varName="_context" />
+      <varInfo nodeId="6410919744913683383" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="6410919744913683383" fileName="CreateUIObjectStatement_DataFlow.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.CreateUIObjectStatement_DataFlow" />
   </root>
   <root nodeId="6410919744913683397">
@@ -41,7 +50,10 @@
     <scopeInfo nodeId="6410919744913683397" fileName="UIObjectReference_DataFlow.java" startLine="11" startPosition="39" endLine="11" endPosition="39" />
     <scopeInfo nodeId="6410919744913683399" fileName="UIObjectReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="104" />
     <scopeInfo nodeId="6410919744913683397" fileName="UIObjectReference_DataFlow.java" startLine="10" startPosition="65" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="6410919744913683397" fileName="UIObjectReference_DataFlow.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="6410919744913683397" fileName="UIObjectReference_DataFlow.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="6410919744913683397" varName="_context" />
+      <varInfo nodeId="6410919744913683397" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="6410919744913683397" fileName="UIObjectReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.UIObjectReference_DataFlow" />
   </root>
   <root nodeId="7109250785404625270">
@@ -64,12 +76,23 @@
     <scopeInfo nodeId="5572604531249690015" fileName="UIObjectStatement_DataFlow.java" startLine="27" startPosition="108" endLine="28" endPosition="46" />
     <scopeInfo nodeId="7109250785404655874" fileName="UIObjectStatement_DataFlow.java" startLine="30" startPosition="100" endLine="31" endPosition="38" />
     <scopeInfo nodeId="7109250785404625270" fileName="UIObjectStatement_DataFlow.java" startLine="13" startPosition="65" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="7109250785404646659" fileName="UIObjectStatement_DataFlow.java" startLine="17" startPosition="102" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="7109250785404646676" fileName="UIObjectStatement_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="7109250785404646693" fileName="UIObjectStatement_DataFlow.java" startLine="23" startPosition="5" endLine="26" endPosition="5" />
-    <scopeInfo nodeId="5572604531249690012" fileName="UIObjectStatement_DataFlow.java" startLine="26" startPosition="5" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="7109250785404646659" fileName="UIObjectStatement_DataFlow.java" startLine="17" startPosition="102" endLine="20" endPosition="5">
+      <varInfo nodeId="7109250785404646659" varName="vb" />
+    </scopeInfo>
+    <scopeInfo nodeId="7109250785404646676" fileName="UIObjectStatement_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5">
+      <varInfo nodeId="7109250785404646676" varName="cb" />
+    </scopeInfo>
+    <scopeInfo nodeId="7109250785404646693" fileName="UIObjectStatement_DataFlow.java" startLine="23" startPosition="5" endLine="26" endPosition="5">
+      <varInfo nodeId="7109250785404646693" varName="cc" />
+    </scopeInfo>
+    <scopeInfo nodeId="5572604531249690012" fileName="UIObjectStatement_DataFlow.java" startLine="26" startPosition="5" endLine="29" endPosition="5">
+      <varInfo nodeId="5572604531249690012" varName="as" />
+    </scopeInfo>
     <scopeInfo nodeId="7109250785404625272" fileName="UIObjectStatement_DataFlow.java" startLine="17" startPosition="102" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="7109250785404625270" fileName="UIObjectStatement_DataFlow.java" startLine="16" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="7109250785404625270" fileName="UIObjectStatement_DataFlow.java" startLine="16" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="7109250785404625270" varName="_context" />
+      <varInfo nodeId="7109250785404625270" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="7109250785404625270" fileName="UIObjectStatement_DataFlow.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.UIObjectStatement_DataFlow" />
   </root>
   <root nodeId="7109250785404655884">
@@ -79,7 +102,10 @@
     <scopeInfo nodeId="7109250785404655884" fileName="ViewBinding_DataFlow.java" startLine="12" startPosition="33" endLine="12" endPosition="33" />
     <scopeInfo nodeId="7109250785404655886" fileName="ViewBinding_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
     <scopeInfo nodeId="7109250785404655884" fileName="ViewBinding_DataFlow.java" startLine="11" startPosition="59" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="7109250785404655884" fileName="ViewBinding_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7109250785404655884" fileName="ViewBinding_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="7109250785404655884" varName="_context" />
+      <varInfo nodeId="7109250785404655884" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="7109250785404655884" fileName="ViewBinding_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ViewBinding_DataFlow" />
   </root>
   <root nodeId="7109250785404661167">
@@ -89,7 +115,10 @@
     <scopeInfo nodeId="7109250785404661167" fileName="BeanPropertyView_DataFlow.java" startLine="12" startPosition="38" endLine="12" endPosition="38" />
     <scopeInfo nodeId="7109250785404661169" fileName="BeanPropertyView_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
     <scopeInfo nodeId="7109250785404661167" fileName="BeanPropertyView_DataFlow.java" startLine="11" startPosition="64" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="7109250785404661167" fileName="BeanPropertyView_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7109250785404661167" fileName="BeanPropertyView_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="7109250785404661167" varName="_context" />
+      <varInfo nodeId="7109250785404661167" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="7109250785404661167" fileName="BeanPropertyView_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.BeanPropertyView_DataFlow" />
   </root>
   <root nodeId="7109250785404661178">
@@ -99,7 +128,10 @@
     <scopeInfo nodeId="7109250785404661178" fileName="ExpressionView_DataFlow.java" startLine="12" startPosition="36" endLine="12" endPosition="36" />
     <scopeInfo nodeId="7109250785404661180" fileName="ExpressionView_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="7109250785404661178" fileName="ExpressionView_DataFlow.java" startLine="11" startPosition="62" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="7109250785404661178" fileName="ExpressionView_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7109250785404661178" fileName="ExpressionView_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="7109250785404661178" varName="_context" />
+      <varInfo nodeId="7109250785404661178" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="7109250785404661178" fileName="ExpressionView_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ExpressionView_DataFlow" />
   </root>
   <root nodeId="7109250785404661189">
@@ -110,7 +142,10 @@
     <scopeInfo nodeId="7109250785404661189" fileName="ValidatingView_DataFlow.java" startLine="12" startPosition="36" endLine="12" endPosition="36" />
     <scopeInfo nodeId="7109250785404661189" fileName="ValidatingView_DataFlow.java" startLine="11" startPosition="62" endLine="13" endPosition="3" />
     <scopeInfo nodeId="7109250785404661191" fileName="ValidatingView_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="106" />
-    <scopeInfo nodeId="7109250785404661189" fileName="ValidatingView_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="7109250785404661189" fileName="ValidatingView_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="7109250785404661189" varName="_context" />
+      <varInfo nodeId="7109250785404661189" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="7109250785404661189" fileName="ValidatingView_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ValidatingView_DataFlow" />
   </root>
   <root nodeId="7109250785404661209">
@@ -120,7 +155,10 @@
     <scopeInfo nodeId="7109250785404661209" fileName="Validator_DataFlow.java" startLine="12" startPosition="31" endLine="12" endPosition="31" />
     <scopeInfo nodeId="7109250785404661211" fileName="Validator_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="110" />
     <scopeInfo nodeId="7109250785404661209" fileName="Validator_DataFlow.java" startLine="11" startPosition="57" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="7109250785404661209" fileName="Validator_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7109250785404661209" fileName="Validator_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="7109250785404661209" varName="_context" />
+      <varInfo nodeId="7109250785404661209" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="7109250785404661209" fileName="Validator_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.Validator_DataFlow" />
   </root>
   <root nodeId="7109250785404661220">
@@ -130,7 +168,10 @@
     <scopeInfo nodeId="7109250785404661220" fileName="ControllerBinding_DataFlow.java" startLine="12" startPosition="39" endLine="12" endPosition="39" />
     <scopeInfo nodeId="7109250785404661222" fileName="ControllerBinding_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="7109250785404661220" fileName="ControllerBinding_DataFlow.java" startLine="11" startPosition="65" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="7109250785404661220" fileName="ControllerBinding_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7109250785404661220" fileName="ControllerBinding_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="7109250785404661220" varName="_context" />
+      <varInfo nodeId="7109250785404661220" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="7109250785404661220" fileName="ControllerBinding_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ControllerBinding_DataFlow" />
   </root>
   <root nodeId="7109250785404661231">
@@ -140,7 +181,10 @@
     <scopeInfo nodeId="7109250785404661231" fileName="InlineController_DataFlow.java" startLine="12" startPosition="38" endLine="12" endPosition="38" />
     <scopeInfo nodeId="7109250785404661233" fileName="InlineController_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="115" />
     <scopeInfo nodeId="7109250785404661231" fileName="InlineController_DataFlow.java" startLine="11" startPosition="64" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="7109250785404661231" fileName="InlineController_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7109250785404661231" fileName="InlineController_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="7109250785404661231" varName="_context" />
+      <varInfo nodeId="7109250785404661231" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="7109250785404661231" fileName="InlineController_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.InlineController_DataFlow" />
   </root>
   <root nodeId="7109250785404661289">
@@ -150,7 +194,10 @@
     <scopeInfo nodeId="7109250785404661289" fileName="ContainerCompartment_DataFlow.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
     <scopeInfo nodeId="7109250785404661291" fileName="ContainerCompartment_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
     <scopeInfo nodeId="7109250785404661289" fileName="ContainerCompartment_DataFlow.java" startLine="11" startPosition="68" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="7109250785404661289" fileName="ContainerCompartment_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7109250785404661289" fileName="ContainerCompartment_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="7109250785404661289" varName="_context" />
+      <varInfo nodeId="7109250785404661289" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="7109250785404661289" fileName="ContainerCompartment_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ContainerCompartment_DataFlow" />
   </root>
   <root nodeId="7109250785404670088">
@@ -160,7 +207,10 @@
     <scopeInfo nodeId="7109250785404670088" fileName="ChildAspect_DataFlow.java" startLine="12" startPosition="33" endLine="12" endPosition="33" />
     <scopeInfo nodeId="7109250785404670090" fileName="ChildAspect_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" />
     <scopeInfo nodeId="7109250785404670088" fileName="ChildAspect_DataFlow.java" startLine="11" startPosition="59" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="7109250785404670088" fileName="ChildAspect_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7109250785404670088" fileName="ChildAspect_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="7109250785404670088" varName="_context" />
+      <varInfo nodeId="7109250785404670088" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="7109250785404670088" fileName="ChildAspect_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ChildAspect_DataFlow" />
   </root>
   <root nodeId="8923564134260024214">
@@ -171,7 +221,10 @@
     <scopeInfo nodeId="8923564134260024214" fileName="CompartmentProviderStatement_DataFlow.java" startLine="12" startPosition="50" endLine="12" endPosition="50" />
     <scopeInfo nodeId="8923564134260024214" fileName="CompartmentProviderStatement_DataFlow.java" startLine="11" startPosition="76" endLine="13" endPosition="3" />
     <scopeInfo nodeId="8923564134260024216" fileName="CompartmentProviderStatement_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="101" />
-    <scopeInfo nodeId="8923564134260024214" fileName="CompartmentProviderStatement_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="8923564134260024214" fileName="CompartmentProviderStatement_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="8923564134260024214" varName="_context" />
+      <varInfo nodeId="8923564134260024214" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="8923564134260024214" fileName="CompartmentProviderStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.CompartmentProviderStatement_DataFlow" />
   </root>
 </debugInfo>

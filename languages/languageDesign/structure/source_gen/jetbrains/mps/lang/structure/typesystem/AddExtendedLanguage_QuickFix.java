@@ -5,8 +5,6 @@ package jetbrains.mps.lang.structure.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class AddExtendedLanguage_QuickFix extends QuickFix_Runtime {
   public AddExtendedLanguage_QuickFix() {
@@ -18,6 +16,5 @@ public class AddExtendedLanguage_QuickFix extends QuickFix_Runtime {
 
   public void execute(SNode node) {
     ((Language) AddExtendedLanguage_QuickFix.this.getField("lang")[0]).addExtendedLanguage(((Language) AddExtendedLanguage_QuickFix.this.getField("extLang")[0]).getModuleReference());
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 }

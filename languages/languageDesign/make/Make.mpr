@@ -39,10 +39,10 @@
     <projectModules>
       <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="facets" />
       <modulePath path="${mps_home}/core/kernel/resources/jetbrains.mps.smodel.resources.msd" folder="" />
-      <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" folder="facets" />
       <modulePath path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" />
       <modulePath path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
       <modulePath path="${mps_home}/languages/core/core/languageDescriptor.mpl" folder="facets" />
+      <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" folder="facets" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/custommps/custommps.mpl" folder="build" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/gentest/gentest.mpl" folder="build" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" folder="build" />

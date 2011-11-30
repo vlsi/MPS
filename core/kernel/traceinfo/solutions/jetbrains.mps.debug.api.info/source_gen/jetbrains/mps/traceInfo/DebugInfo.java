@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import org.jdom.Element;
 import java.util.Arrays;
@@ -258,7 +259,8 @@ public class DebugInfo {
     return model.getNodeById(id);
   }
 
-  private <T extends PositionInfo> List<T> getInfoForPosition(final String file, int line, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
+  @NotNull
+  public <T extends PositionInfo> List<T> getInfoForPosition(final String file, int line, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
     List<T> resultList = ListSequence.fromList(new ArrayList<T>());
     for (T element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).where(new IWhereFilter<DebugInfoRoot>() {
       public boolean accept(DebugInfoRoot it) {
@@ -274,6 +276,33 @@ public class DebugInfo {
       }
     }
     return resultList;
+  }
+
+  @NotNull
+  public List<TraceablePositionInfo> getTraceableInfoForPosition(String file, int line) {
+    return getInfoForPosition(file, line, new _FunctionTypes._return_P1_E0<Set<TraceablePositionInfo>, DebugInfoRoot>() {
+      public Set<TraceablePositionInfo> invoke(DebugInfoRoot root) {
+        return root.getPositions();
+      }
+    });
+  }
+
+  @NotNull
+  public List<ScopePositionInfo> getScopeInfoForPosition(String file, int line) {
+    return getInfoForPosition(file, line, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
+      public Set<ScopePositionInfo> invoke(DebugInfoRoot root) {
+        return root.getScopePositions();
+      }
+    });
+  }
+
+  @NotNull
+  public List<UnitPositionInfo> getUnitInfoForPosition(String file, int line) {
+    return getInfoForPosition(file, line, new _FunctionTypes._return_P1_E0<Set<UnitPositionInfo>, DebugInfoRoot>() {
+      public Set<UnitPositionInfo> invoke(DebugInfoRoot root) {
+        return root.getUnitPositions();
+      }
+    });
   }
 
   public List<String> getRoots() {

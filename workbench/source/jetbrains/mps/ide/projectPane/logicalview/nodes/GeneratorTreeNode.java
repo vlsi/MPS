@@ -34,6 +34,7 @@ public class GeneratorTreeNode extends jetbrains.mps.ide.projectPane.logicalview
     super(new ModuleContext(generator, project));
     setNodeIdentifier(calculateNodeIdenifier());
     setIcon(Icons.GENERATOR_ICON);
+    init();
   }
 
   protected String getModulePresentation() {

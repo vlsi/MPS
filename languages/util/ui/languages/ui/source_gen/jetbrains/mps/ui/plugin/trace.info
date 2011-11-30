@@ -60,8 +60,12 @@
       <varInfo nodeId="8117382572454923115" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="8117382572454923160" fileName="Variants.java" startLine="45" startPosition="30" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="8117382572454923181" fileName="Variants.java" startLine="53" startPosition="126" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="8117382572454923202" fileName="Variants.java" startLine="61" startPosition="124" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="8117382572454923181" fileName="Variants.java" startLine="53" startPosition="126" endLine="57" endPosition="0">
+      <varInfo nodeId="8117382572454923181" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="8117382572454923202" fileName="Variants.java" startLine="61" startPosition="124" endLine="65" endPosition="0">
+      <varInfo nodeId="8117382572454923202" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="8117382572454923244" fileName="Variants.java" startLine="77" startPosition="45" endLine="81" endPosition="20" />
     <scopeInfo nodeId="8117382572454923256" fileName="Variants.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="8117382572454923283" fileName="Variants.java" startLine="22" startPosition="0" endLine="27" endPosition="3" />

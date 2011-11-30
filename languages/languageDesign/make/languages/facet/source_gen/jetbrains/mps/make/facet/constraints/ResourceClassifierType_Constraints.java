@@ -14,11 +14,13 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.AbstractClassifiersScope;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -60,9 +62,9 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return (Iterable<SNode>) new VisibleClassifiersScope(_context.getEnclosingNode(), AbstractClassifiersScope.INTERFACE, operationContext.getScope()).getNodes(new Condition<SNode>() {
+            return (List<SNode>) new VisibleClassifiersScope(_context.getEnclosingNode(), AbstractClassifiersScope.INTERFACE, operationContext.getScope()).getNodes(new Condition<SNode>() {
               public boolean met(SNode cls) {
-                return Classifier_Behavior.call_isDescendant_7165541881557222913(cls, SLinkOperations.getTarget(new ResourceClassifierType_Constraints.QuotationClass_ymgo28_a0a0a0a0a0a0a2a0a0a1a0b0a1a0().createNode(), "classifier", false));
+                return Classifier_Behavior.call_isDescendant_7165541881557222913((SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Classifier")), SLinkOperations.getTarget(new ResourceClassifierType_Constraints.QuotationClass_ymgo28_a0a0a0a0a0a0a2a0a0a1a0b0a1a0().createNode(), "classifier", false));
               }
             });
           }

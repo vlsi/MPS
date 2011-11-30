@@ -23,14 +23,15 @@
     <classNode dependClassName="java.lang.management.ManagementFactory" />
     <classNode dependClassName="java.lang.management.MemoryMXBean" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.build.ant.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.build.ant.IBuildServerMessageFormat" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
     <classNode dependClassName="jetbrains.mps.build.ant.TeamCityMessageFormat" />
     <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.build.ant.make.MakeEnvironment" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.validation.ModelValidator" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -41,7 +42,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.make.MakeWorker" />
   </dependency>
 </dependenciesRoot>
 

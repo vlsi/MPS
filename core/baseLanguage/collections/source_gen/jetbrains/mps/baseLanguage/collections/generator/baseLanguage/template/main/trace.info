@@ -672,7 +672,10 @@
     <scopeInfo nodeId="2063877164996195549" fileName="QueriesGenerated.java" startLine="873" startPosition="164" endLine="879" endPosition="7">
       <varInfo nodeId="2063877164996195570" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="2063877164996195576" fileName="QueriesGenerated.java" startLine="881" startPosition="5" endLine="887" endPosition="7" />
+    <scopeInfo nodeId="2063877164996195576" fileName="QueriesGenerated.java" startLine="881" startPosition="5" endLine="887" endPosition="7">
+      <varInfo nodeId="2063877164996195576" varName="coercedNode_x583g4_c0ah" />
+      <varInfo nodeId="2063877164996195576" varName="pattern_x583g4_c0ah" />
+    </scopeInfo>
     <scopeInfo nodeId="1240221363710" fileName="QueriesGenerated.java" startLine="2523" startPosition="149" endLine="2529" endPosition="16">
       <varInfo nodeId="1240221363712" varName="entries" />
       <varInfo nodeId="1240221363724" varName="keys" />
@@ -1360,8 +1363,12 @@
     <scopeInfo nodeId="1562299158921547998" fileName="QueriesGenerated.java" startLine="2123" startPosition="150" endLine="2124" endPosition="226" />
     <scopeInfo nodeId="8536718853244884609" fileName="QueriesGenerated.java" startLine="2127" startPosition="150" endLine="2128" endPosition="226" />
     <scopeInfo nodeId="1279588871815121473" fileName="QueriesGenerated.java" startLine="2639" startPosition="139" endLine="2640" endPosition="155" />
-    <scopeInfo nodeId="8536718853244948029" fileName="QueriesGenerated.java" startLine="894" startPosition="109" endLine="898" endPosition="0" />
-    <scopeInfo nodeId="8536718853244948039" fileName="QueriesGenerated.java" startLine="898" startPosition="44" endLine="902" endPosition="0" />
+    <scopeInfo nodeId="8536718853244948029" fileName="QueriesGenerated.java" startLine="894" startPosition="109" endLine="898" endPosition="0">
+      <varInfo nodeId="8536718853244948029" varName="chld" />
+    </scopeInfo>
+    <scopeInfo nodeId="8536718853244948039" fileName="QueriesGenerated.java" startLine="898" startPosition="44" endLine="902" endPosition="0">
+      <varInfo nodeId="8536718853244948039" varName="cd" />
+    </scopeInfo>
     <scopeInfo nodeId="8536718853244882882" fileName="QueriesGenerated.java" startLine="892" startPosition="151" endLine="902" endPosition="7">
       <varInfo nodeId="8536718853244884588" varName="clsf" />
     </scopeInfo>
@@ -1527,9 +1534,15 @@
     <scopeInfo nodeId="7602110602932572880" fileName="QueriesGenerated.java" startLine="2648" startPosition="85" endLine="2649" endPosition="112" />
     <scopeInfo nodeId="7602110602932572929" fileName="QueriesGenerated.java" startLine="2651" startPosition="87" endLine="2652" endPosition="114" />
     <scopeInfo nodeId="7602110602932572773" fileName="QueriesGenerated.java" startLine="2655" startPosition="38" endLine="2656" endPosition="274" />
-    <scopeInfo nodeId="6651873253983906851" fileName="QueriesGenerated.java" startLine="907" startPosition="109" endLine="911" endPosition="0" />
-    <scopeInfo nodeId="6651873253983906861" fileName="QueriesGenerated.java" startLine="911" startPosition="44" endLine="915" endPosition="0" />
-    <scopeInfo nodeId="7602110602932572772" fileName="QueriesGenerated.java" startLine="2654" startPosition="199" endLine="2658" endPosition="0" />
+    <scopeInfo nodeId="6651873253983906851" fileName="QueriesGenerated.java" startLine="907" startPosition="109" endLine="911" endPosition="0">
+      <varInfo nodeId="6651873253983906851" varName="chld" />
+    </scopeInfo>
+    <scopeInfo nodeId="6651873253983906861" fileName="QueriesGenerated.java" startLine="911" startPosition="44" endLine="915" endPosition="0">
+      <varInfo nodeId="6651873253983906861" varName="cd" />
+    </scopeInfo>
+    <scopeInfo nodeId="7602110602932572772" fileName="QueriesGenerated.java" startLine="2654" startPosition="199" endLine="2658" endPosition="0">
+      <varInfo nodeId="7602110602932572772" varName="tvr" />
+    </scopeInfo>
     <scopeInfo nodeId="6651873253983906829" fileName="QueriesGenerated.java" startLine="905" startPosition="151" endLine="915" endPosition="7">
       <varInfo nodeId="6651873253983906831" varName="clsf" />
     </scopeInfo>

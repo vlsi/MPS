@@ -112,7 +112,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 47:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"}, new String[]{}, new String[]{});
       case 48:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"variable"});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IVariableReference"}, new String[]{}, new String[]{"variable"});
       case 49:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.GetCurrentOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation", false, new String[]{"jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation"}, new String[]{}, new String[]{});
       case 50:
