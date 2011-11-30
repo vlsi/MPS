@@ -6,19 +6,14 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunParameters;
+import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior;
-import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class PatternTest_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestCase_BehaviorDescriptor, ITestMethod_BehaviorDescriptor {
   public PatternTest_BehaviorDescriptor() {
-  }
-
-  public TestRunParameters virtual_getTestRunParameters_1216045139515(SNode thisNode) {
-    return ITestable_Behavior.virtual_getTestRunParameters_1216045139515(thisNode);
   }
 
   public List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
@@ -27,6 +22,10 @@ public class PatternTest_BehaviorDescriptor extends BaseConcept_BehaviorDescript
 
   public String virtual_getClassName_1216136193905(SNode thisNode) {
     return PatternTest_Behavior.virtual_getClassName_1216136193905(thisNode);
+  }
+
+  public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
+    return ITestable_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
   }
 
   public SNode virtual_getTestCase_1216134500045(SNode thisNode) {

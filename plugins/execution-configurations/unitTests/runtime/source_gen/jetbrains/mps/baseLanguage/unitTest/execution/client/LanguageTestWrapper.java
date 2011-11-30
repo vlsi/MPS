@@ -81,11 +81,11 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
       return super.getTestRunParameters();
     }
     if (ITestable_Behavior.call_isMpsStartRequired_3310779261129403089(node)) {
-      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.lang.test.runtime.TransformationTestRunner", ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "-Xmx1024m")).union(Sequence.fromIterable(ListSequence.fromCollection(PathMacros.getInstance().getUserMacroNames()).select(new _FunctionTypes._return_P1_E0<String, String>() {
+      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestRunner", ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "-Xmx1024m")).union(Sequence.fromIterable(ListSequence.fromCollection(PathMacros.getInstance().getUserMacroNames()).select(new _FunctionTypes._return_P1_E0<String, String>() {
         public String invoke(String key) {
           return "-D" + "path.macro." + key + "=" + PathMacros.getInstance().getValue(key);
         }
-      }))).toListSequence(), getIdeaClasspath());
+      }))).toListSequence(), ListSequence.fromList(getIdeaClasspath()).union(ListSequence.fromList(super.getTestRunParameters()._2())).toListSequence());
     }
     return super.getTestRunParameters();
   }
