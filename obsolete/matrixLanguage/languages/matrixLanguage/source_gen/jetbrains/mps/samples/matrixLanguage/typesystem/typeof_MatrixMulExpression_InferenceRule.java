@@ -35,10 +35,10 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
             typeCheckingContext.whenConcrete(right, new Runnable() {
               public void run() {
                 boolean done = false;
-                if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(left), new typeof_MatrixMulExpression_InferenceRule.QuotationClass_s4fcwx_a1a0b0a0a0a().createNode(typeCheckingContext))) {
+                if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getExpandedNode(left), new typeof_MatrixMulExpression_InferenceRule.QuotationClass_s4fcwx_a1a0b0a0a0a().createNode(typeCheckingContext))) {
                   {
                     IMatchingPattern pattern_bwoj06_a0b0a0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.samples.matrixLanguage.structure.MatrixType");
-                    SNode coercedNode_bwoj06_a0b0a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(right), pattern_bwoj06_a0b0a0a0);
+                    SNode coercedNode_bwoj06_a0b0a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(right), pattern_bwoj06_a0b0a0a0);
                     if (coercedNode_bwoj06_a0b0a0a0 != null) {
                       {
                         SNode _nodeToCheck_1029348928467 = nodeToCheck;
@@ -52,14 +52,14 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
                   if (!(done)) {
                     {
                       MessageTarget errorTarget = new NodeMessageTarget();
-                      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(nodeToCheck, "rightExpression", true), "Type must be Matrix but " + SNodeOperations.getConceptDeclaration(typeCheckingContext.getRepresentative(right)), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210175930104", null, errorTarget);
+                      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(nodeToCheck, "rightExpression", true), "Type must be Matrix but " + SNodeOperations.getConceptDeclaration(typeCheckingContext.getExpandedNode(right)), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210175930104", null, errorTarget);
                     }
                   }
                 } else
-                if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(right), new typeof_MatrixMulExpression_InferenceRule.QuotationClass_s4fcwx_a1a0a1a0a0a0().createNode(typeCheckingContext))) {
+                if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getExpandedNode(right), new typeof_MatrixMulExpression_InferenceRule.QuotationClass_s4fcwx_a1a0a1a0a0a0().createNode(typeCheckingContext))) {
                   {
                     IMatchingPattern pattern_bwoj06_a0a1a0a0a = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.samples.matrixLanguage.structure.MatrixType");
-                    SNode coercedNode_bwoj06_a0a1a0a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(left), pattern_bwoj06_a0a1a0a0a);
+                    SNode coercedNode_bwoj06_a0a1a0a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(left), pattern_bwoj06_a0a1a0a0a);
                     if (coercedNode_bwoj06_a0a1a0a0a != null) {
                       {
                         SNode _nodeToCheck_1029348928467 = nodeToCheck;
@@ -73,7 +73,7 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
                   if (!(done)) {
                     {
                       MessageTarget errorTarget = new NodeMessageTarget();
-                      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(nodeToCheck, "leftExpression", true), "Type must be Matrix but " + SNodeOperations.getConceptDeclaration(typeCheckingContext.getRepresentative(left)), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210176257229", null, errorTarget);
+                      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(nodeToCheck, "leftExpression", true), "Type must be Matrix but " + SNodeOperations.getConceptDeclaration(typeCheckingContext.getExpandedNode(left)), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210176257229", null, errorTarget);
                     }
                   }
                 } else {
