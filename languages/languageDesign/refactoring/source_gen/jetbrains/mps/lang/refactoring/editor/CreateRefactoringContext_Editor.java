@@ -94,10 +94,6 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_drsbu8_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_drsbu8_g0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -172,10 +168,6 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     BaseLanguageStyle_StyleSheet.getParameter(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
