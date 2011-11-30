@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.packaging.structure.Antcall", "jetbrains.mps.build.packaging.structure.BaseDirPath", "jetbrains.mps.build.packaging.structure.Block", "jetbrains.mps.build.packaging.structure.BlockReference", "jetbrains.mps.build.packaging.structure.Branding", "jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference", "jetbrains.mps.build.packaging.structure.ComponentsList", "jetbrains.mps.build.packaging.structure.CompositePathComponent", "jetbrains.mps.build.packaging.structure.CompositeString", "jetbrains.mps.build.packaging.structure.Configuration", "jetbrains.mps.build.packaging.structure.ConfigurationReference", "jetbrains.mps.build.packaging.structure.Copy", "jetbrains.mps.build.packaging.structure.Delete", "jetbrains.mps.build.packaging.structure.Echo", "jetbrains.mps.build.packaging.structure.File", "jetbrains.mps.build.packaging.structure.FileExistsCondition", "jetbrains.mps.build.packaging.structure.Folder", "jetbrains.mps.build.packaging.structure.Help", "jetbrains.mps.build.packaging.structure.IdeaInitializerReference", "jetbrains.mps.build.packaging.structure.Jar", "jetbrains.mps.build.packaging.structure.Layout", "jetbrains.mps.build.packaging.structure.MPSLayoutConfigurationReferencePropertyValueExpression", "jetbrains.mps.build.packaging.structure.Macro", "jetbrains.mps.build.packaging.structure.MacroReference", "jetbrains.mps.build.packaging.structure.Manifest", "jetbrains.mps.build.packaging.structure.ManifestAttribute", "jetbrains.mps.build.packaging.structure.Module", "jetbrains.mps.build.packaging.structure.ModuleCycle", "jetbrains.mps.build.packaging.structure.ModuleCycleReference", "jetbrains.mps.build.packaging.structure.NewModuleReference", "jetbrains.mps.build.packaging.structure.NonExistingPath", "jetbrains.mps.build.packaging.structure.NotCondition", "jetbrains.mps.build.packaging.structure.Pair", "jetbrains.mps.build.packaging.structure.Path", "jetbrains.mps.build.packaging.structure.PathComponent", "jetbrains.mps.build.packaging.structure.PathHolder", "jetbrains.mps.build.packaging.structure.Plugin", "jetbrains.mps.build.packaging.structure.PluginModule", "jetbrains.mps.build.packaging.structure.PropertyFileImport", "jetbrains.mps.build.packaging.structure.PropertyNodeImport", "jetbrains.mps.build.packaging.structure.Replace", "jetbrains.mps.build.packaging.structure.SimpleString", "jetbrains.mps.build.packaging.structure.Space", "jetbrains.mps.build.packaging.structure.UpdateWebsite", "jetbrains.mps.build.packaging.structure.Variable", "jetbrains.mps.build.packaging.structure.VariableReference", "jetbrains.mps.build.packaging.structure.WelcomeScreen", "jetbrains.mps.build.packaging.structure.Zip"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.packaging.structure.Antcall", "jetbrains.mps.build.packaging.structure.BaseDirPath", "jetbrains.mps.build.packaging.structure.Block", "jetbrains.mps.build.packaging.structure.BlockReference", "jetbrains.mps.build.packaging.structure.Branding", "jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference", "jetbrains.mps.build.packaging.structure.ComponentsList", "jetbrains.mps.build.packaging.structure.CompositePathComponent", "jetbrains.mps.build.packaging.structure.CompositeString", "jetbrains.mps.build.packaging.structure.Configuration", "jetbrains.mps.build.packaging.structure.ConfigurationReference", "jetbrains.mps.build.packaging.structure.Copy", "jetbrains.mps.build.packaging.structure.Delete", "jetbrains.mps.build.packaging.structure.Echo", "jetbrains.mps.build.packaging.structure.File", "jetbrains.mps.build.packaging.structure.FileExistsCondition", "jetbrains.mps.build.packaging.structure.Folder", "jetbrains.mps.build.packaging.structure.Help", "jetbrains.mps.build.packaging.structure.IdeaInitializerReference", "jetbrains.mps.build.packaging.structure.Jar", "jetbrains.mps.build.packaging.structure.Layout", "jetbrains.mps.build.packaging.structure.Library", "jetbrains.mps.build.packaging.structure.MPSLayoutConfigurationReferencePropertyValueExpression", "jetbrains.mps.build.packaging.structure.Macro", "jetbrains.mps.build.packaging.structure.MacroReference", "jetbrains.mps.build.packaging.structure.Manifest", "jetbrains.mps.build.packaging.structure.ManifestAttribute", "jetbrains.mps.build.packaging.structure.Module", "jetbrains.mps.build.packaging.structure.ModuleCycle", "jetbrains.mps.build.packaging.structure.ModuleCycleReference", "jetbrains.mps.build.packaging.structure.NewModuleReference", "jetbrains.mps.build.packaging.structure.NonExistingPath", "jetbrains.mps.build.packaging.structure.NotCondition", "jetbrains.mps.build.packaging.structure.Pair", "jetbrains.mps.build.packaging.structure.Path", "jetbrains.mps.build.packaging.structure.PathComponent", "jetbrains.mps.build.packaging.structure.PathHolder", "jetbrains.mps.build.packaging.structure.Plugin", "jetbrains.mps.build.packaging.structure.PluginModule", "jetbrains.mps.build.packaging.structure.PropertyFileImport", "jetbrains.mps.build.packaging.structure.PropertyNodeImport", "jetbrains.mps.build.packaging.structure.Replace", "jetbrains.mps.build.packaging.structure.SimpleString", "jetbrains.mps.build.packaging.structure.Space", "jetbrains.mps.build.packaging.structure.UpdateWebsite", "jetbrains.mps.build.packaging.structure.Variable", "jetbrains.mps.build.packaging.structure.VariableReference", "jetbrains.mps.build.packaging.structure.WelcomeScreen", "jetbrains.mps.build.packaging.structure.Zip"};
 
   public BehaviorAspectDescriptor() {
   }
@@ -22,11 +22,11 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new Jar_BehaviorDescriptor();
       case 16:
         return new Folder_BehaviorDescriptor();
-      case 26:
+      case 27:
         return new Module_BehaviorDescriptor();
       case 11:
         return new Copy_BehaviorDescriptor();
-      case 47:
+      case 48:
         return new Zip_BehaviorDescriptor();
       case 9:
         return new Configuration_BehaviorDescriptor();
@@ -34,15 +34,15 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConfigurationReference_BehaviorDescriptor();
       case 12:
         return new Delete_BehaviorDescriptor();
-      case 35:
+      case 36:
         return new PathHolder_BehaviorDescriptor();
       case 13:
         return new Echo_BehaviorDescriptor();
-      case 44:
-        return new Variable_BehaviorDescriptor();
-      case 41:
-        return new SimpleString_BehaviorDescriptor();
       case 45:
+        return new Variable_BehaviorDescriptor();
+      case 42:
+        return new SimpleString_BehaviorDescriptor();
+      case 46:
         return new VariableReference_BehaviorDescriptor();
       case 8:
         return new CompositeString_BehaviorDescriptor();
@@ -50,66 +50,68 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new Antcall_BehaviorDescriptor();
       case 5:
         return new BuildLanguageTargetReference_BehaviorDescriptor();
-      case 40:
+      case 41:
         return new Replace_BehaviorDescriptor();
-      case 32:
-        return new Pair_BehaviorDescriptor();
-      case 27:
-        return new ModuleCycle_BehaviorDescriptor();
-      case 29:
-        return new NewModuleReference_BehaviorDescriptor();
-      case 22:
-        return new Macro_BehaviorDescriptor();
       case 33:
-        return new Path_BehaviorDescriptor();
+        return new Pair_BehaviorDescriptor();
+      case 28:
+        return new ModuleCycle_BehaviorDescriptor();
+      case 30:
+        return new NewModuleReference_BehaviorDescriptor();
+      case 23:
+        return new Macro_BehaviorDescriptor();
       case 34:
+        return new Path_BehaviorDescriptor();
+      case 35:
         return new PathComponent_BehaviorDescriptor();
       case 7:
         return new CompositePathComponent_BehaviorDescriptor();
-      case 23:
+      case 24:
         return new MacroReference_BehaviorDescriptor();
       case 1:
         return new BaseDirPath_BehaviorDescriptor();
-      case 21:
+      case 22:
         return new MPSLayoutConfigurationReferencePropertyValueExpression_BehaviorDescriptor();
       case 15:
         return new FileExistsCondition_BehaviorDescriptor();
-      case 31:
+      case 32:
         return new NotCondition_BehaviorDescriptor();
-      case 30:
+      case 31:
         return new NonExistingPath_BehaviorDescriptor();
-      case 42:
+      case 43:
         return new Space_BehaviorDescriptor();
-      case 24:
-        return new Manifest_BehaviorDescriptor();
       case 25:
+        return new Manifest_BehaviorDescriptor();
+      case 26:
         return new ManifestAttribute_BehaviorDescriptor();
       case 6:
         return new ComponentsList_BehaviorDescriptor();
-      case 39:
+      case 40:
         return new PropertyNodeImport_BehaviorDescriptor();
-      case 38:
+      case 39:
         return new PropertyFileImport_BehaviorDescriptor();
       case 3:
         return new BlockReference_BehaviorDescriptor();
       case 2:
         return new Block_BehaviorDescriptor();
-      case 28:
+      case 29:
         return new ModuleCycleReference_BehaviorDescriptor();
-      case 36:
+      case 37:
         return new Plugin_BehaviorDescriptor();
       case 4:
         return new Branding_BehaviorDescriptor();
-      case 46:
+      case 47:
         return new WelcomeScreen_BehaviorDescriptor();
-      case 43:
+      case 44:
         return new UpdateWebsite_BehaviorDescriptor();
       case 17:
         return new Help_BehaviorDescriptor();
-      case 37:
+      case 38:
         return new PluginModule_BehaviorDescriptor();
       case 18:
         return new IdeaInitializerReference_BehaviorDescriptor();
+      case 21:
+        return new Library_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

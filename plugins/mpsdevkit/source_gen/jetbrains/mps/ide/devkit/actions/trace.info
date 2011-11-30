@@ -3314,40 +3314,43 @@
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="11" startPosition="48" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="14" startPosition="74" endLine="15" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContributor" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="14" startPosition="140" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="15" startPosition="12" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="16" startPosition="25" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="16" startPosition="62" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="17" startPosition="14" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="20" startPosition="54" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="28" startPosition="36" endLine="29" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="29" startPosition="83" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="19" startPosition="62" endLine="20" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="23" startPosition="54" endLine="24" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="31" startPosition="36" endLine="32" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="32" startPosition="83" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="36" startPosition="31" endLine="37" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="40" startPosition="34" endLine="41" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="15" startPosition="61" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createApplicationPlugin#()Ljetbrains/mps/plugins/applicationplugins/BaseApplicationPlugin;" />
-    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProjectPlugin#()Ljetbrains/mps/plugins/projectplugins/BaseProjectPlugin;" />
-    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="25" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="14" startPosition="40" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="13" startPosition="74" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Mpsdevkit_PluginInitializer#()V" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="18" startPosition="61" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createApplicationPlugin#()Ljetbrains/mps/plugins/applicationplugins/BaseApplicationPlugin;" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProjectPlugin#()Ljetbrains/mps/plugins/projectplugins/BaseProjectPlugin;" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="17" startPosition="40" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="16" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Mpsdevkit_PluginInitializer#()V" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="1" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="33" startPosition="31" endLine="33" endPosition="31" />
-    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="36" startPosition="34" endLine="36" endPosition="34" />
-    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="16" startPosition="62" endLine="17" endPosition="49" />
-    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="20" startPosition="54" endLine="21" endPosition="45" />
-    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="28" startPosition="36" endLine="30" endPosition="37" />
-    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="15" startPosition="61" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="14" startPosition="40" endLine="23" endPosition="7" />
-    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="13" startPosition="74" endLine="24" endPosition="3" />
-    <unitInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_PluginInitializer" />
-    <unitInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="15" startPosition="40" endLine="23" endPosition="5" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_PluginInitializer$1" />
+    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="19" startPosition="62" endLine="20" endPosition="49" />
+    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="23" startPosition="54" endLine="24" endPosition="45" />
+    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="36" startPosition="31" endLine="37" endPosition="25" />
+    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="40" startPosition="34" endLine="41" endPosition="28" />
+    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="31" startPosition="36" endLine="33" endPosition="37" />
+    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="18" startPosition="61" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="17" startPosition="40" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="16" startPosition="0" endLine="27" endPosition="3" />
+    <unitInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_PluginInitializer" />
+    <unitInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="18" startPosition="40" endLine="26" endPosition="5" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_PluginInitializer$1" />
     <unitInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="1" startPosition="0" endLine="18" endPosition="0" unitName="plugin.xml" />
   </root>
   <root nodeId="8970236339104100116">

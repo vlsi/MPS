@@ -8,7 +8,7 @@ import jetbrains.mps.execution.lib.Node_Configuration_Editor;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
-import jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser;
+import jetbrains.mps.execution.lib.ui.MainNodeChooser;
 import java.awt.BorderLayout;
 import com.intellij.openapi.options.ConfigurationException;
 

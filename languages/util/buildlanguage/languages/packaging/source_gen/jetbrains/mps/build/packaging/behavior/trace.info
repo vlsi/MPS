@@ -3,7 +3,7 @@
   <unitInfo fileName="AbstractProjectComponent_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_BehaviorDescriptor" />
   <unitInfo fileName="Antcall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Antcall_BehaviorDescriptor" />
   <unitInfo fileName="BaseDirPath_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.BaseDirPath_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BlockReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.BlockReference_BehaviorDescriptor" />
   <unitInfo fileName="Block_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Block_BehaviorDescriptor" />
   <unitInfo fileName="Branding_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Branding_BehaviorDescriptor" />
@@ -33,6 +33,7 @@
   <unitInfo fileName="IdeaInitializerReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.IdeaInitializerReference_BehaviorDescriptor" />
   <unitInfo fileName="Jar_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Jar_BehaviorDescriptor" />
   <unitInfo fileName="Layout_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Layout_BehaviorDescriptor" />
+  <unitInfo fileName="Library_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Library_BehaviorDescriptor" />
   <unitInfo fileName="MPSLayoutConfigurationReferencePropertyValueExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.MPSLayoutConfigurationReferencePropertyValueExpression_BehaviorDescriptor" />
   <unitInfo fileName="MacroReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.MacroReference_BehaviorDescriptor" />
   <unitInfo fileName="Macro_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Macro_BehaviorDescriptor" />
@@ -2279,67 +2280,50 @@
     <unitInfo nodeId="7323513735995554361" fileName="Block_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Block_Behavior" />
   </root>
   <root nodeId="989489456094442305">
-    <nodeInfo nodeId="989489456094442318" fileName="PluginModule_Behavior.java" startLine="21" startPosition="81" endLine="22" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="989489456094442318" fileName="PluginModule_Behavior.java" startLine="21" startPosition="81" endLine="22" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="989489456094471988" fileName="PluginModule_Behavior.java" startLine="25" startPosition="76" endLine="26" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="989489456094472005" fileName="PluginModule_Behavior.java" startLine="27" startPosition="24" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="989489456094459878" fileName="PluginModule_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="989489456094459005" fileName="PluginModule_Behavior.java" startLine="33" startPosition="89" endLine="34" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="989489456094459799" fileName="PluginModule_Behavior.java" startLine="35" startPosition="74" endLine="36" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="989489456094459801" fileName="PluginModule_Behavior.java" startLine="37" startPosition="12" endLine="38" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="989489456094458931" fileName="PluginModule_Behavior.java" startLine="42" startPosition="87" endLine="43" endPosition="458" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="989489456094458931" fileName="PluginModule_Behavior.java" startLine="42" startPosition="87" endLine="43" endPosition="476" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="989489456094459833" fileName="PluginModule_Behavior.java" startLine="46" startPosition="89" endLine="47" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="989489456094459842" fileName="PluginModule_Behavior.java" startLine="47" startPosition="119" endLine="48" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="989489456094459873" fileName="PluginModule_Behavior.java" startLine="48" startPosition="93" endLine="49" endPosition="454" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="56" startPosition="49" endLine="57" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="57" startPosition="26" endLine="58" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="58" startPosition="67" endLine="59" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="60" startPosition="7" endLine="61" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="61" startPosition="166" endLine="62" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="62" startPosition="43" endLine="63" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="63" startPosition="64" endLine="64" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="65" startPosition="7" endLine="66" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="74" startPosition="69" endLine="75" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="75" startPosition="26" endLine="76" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="76" startPosition="67" endLine="77" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="78" startPosition="7" endLine="79" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="79" startPosition="158" endLine="80" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="80" startPosition="43" endLine="81" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="81" startPosition="62" endLine="82" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="82" startPosition="64" endLine="83" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="84" startPosition="7" endLine="85" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="989489456094459873" fileName="PluginModule_Behavior.java" startLine="47" startPosition="119" endLine="48" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="55" startPosition="49" endLine="56" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="56" startPosition="26" endLine="57" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="57" startPosition="67" endLine="58" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="59" startPosition="7" endLine="60" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="60" startPosition="166" endLine="61" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="61" startPosition="43" endLine="62" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="62" startPosition="64" endLine="63" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="64" startPosition="7" endLine="65" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="989489456094459791" fileName="PluginModule_Behavior.java" startLine="37" startPosition="10" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="52" startPosition="51" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yq0j9l_a0c0c#()V" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="70" startPosition="52" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yq0j9l_a3a2a5#()V" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="51" startPosition="51" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yq0j9l_a0c0c#()V" />
     <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="17" startPosition="36" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="989489456094471996" fileName="PluginModule_Behavior.java" startLine="26" startPosition="143" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPluginModule_989489456094442313#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/project/IModule;" />
     <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFullPathToPluginXml_989489456094444401#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="989489456094459776" fileName="PluginModule_Behavior.java" startLine="34" startPosition="105" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_createPluginXmlPathHolder_989489456094459829#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="59" startPosition="32" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="59" startPosition="32" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="77" startPosition="32" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="77" startPosition="32" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_createPluginXmlPathHolder_989489456094459829#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="58" startPosition="32" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="58" startPosition="32" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="24" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPathMacro_989489456094444381#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPathToPluginXml_989489456094444386#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="55" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="73" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="54" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="989489456094442307" fileName="PluginModule_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="53" startPosition="42" endLine="53" endPosition="42" />
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="71" startPosition="43" endLine="71" endPosition="43" />
-    <scopeInfo nodeId="989489456094442316" fileName="PluginModule_Behavior.java" startLine="21" startPosition="81" endLine="22" endPosition="144" />
+    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="52" startPosition="42" endLine="52" endPosition="42" />
+    <scopeInfo nodeId="989489456094442316" fileName="PluginModule_Behavior.java" startLine="21" startPosition="81" endLine="22" endPosition="153" />
     <scopeInfo nodeId="989489456094471997" fileName="PluginModule_Behavior.java" startLine="27" startPosition="24" endLine="28" endPosition="18" />
     <scopeInfo nodeId="989489456094459777" fileName="PluginModule_Behavior.java" startLine="35" startPosition="74" endLine="36" endPosition="166" />
     <scopeInfo nodeId="989489456094459792" fileName="PluginModule_Behavior.java" startLine="37" startPosition="12" endLine="38" endPosition="166" />
-    <scopeInfo nodeId="989489456094444404" fileName="PluginModule_Behavior.java" startLine="42" startPosition="87" endLine="43" endPosition="458" />
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="52" startPosition="51" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="70" startPosition="52" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="989489456094444404" fileName="PluginModule_Behavior.java" startLine="42" startPosition="87" endLine="43" endPosition="476" />
+    <scopeInfo nodeId="989489456094459832" fileName="PluginModule_Behavior.java" startLine="46" startPosition="89" endLine="48" endPosition="293">
+      <varInfo nodeId="989489456094459826" varName="layout" />
+    </scopeInfo>
+    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="51" startPosition="51" endLine="53" endPosition="5" />
     <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="17" startPosition="36" endLine="20" endPosition="0">
       <varInfo nodeId="989489456094442305" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="989489456094459832" fileName="PluginModule_Behavior.java" startLine="46" startPosition="89" endLine="49" endPosition="454">
-      <varInfo nodeId="989489456094459826" varName="layout" />
-      <varInfo nodeId="989489456094459827" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="989489456094442305" varName="thisNode" />
@@ -2347,49 +2331,35 @@
     <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="989489456094442305" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="60" startPosition="7" endLine="64" endPosition="31">
+    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="59" startPosition="7" endLine="63" endPosition="31">
       <varInfo nodeId="989489456094442305" varName="quotedNode1_2" />
     </scopeInfo>
     <scopeInfo nodeId="989489456094444384" fileName="PluginModule_Behavior.java" startLine="25" startPosition="76" endLine="30" endPosition="124">
       <varInfo nodeId="989489456094471989" varName="macro" />
     </scopeInfo>
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="78" startPosition="7" endLine="83" endPosition="31">
-      <varInfo nodeId="989489456094442305" varName="quotedNode1_2" />
+    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="45" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="989489456094442305" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="989489456094444389" fileName="PluginModule_Behavior.java" startLine="33" startPosition="89" endLine="39" endPosition="5">
       <varInfo nodeId="989489456094459006" varName="pathHolder" />
     </scopeInfo>
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="45" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="989489456094442305" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="59" startPosition="32" endLine="65" endPosition="7" />
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="77" startPosition="32" endLine="84" endPosition="7" />
+    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="58" startPosition="32" endLine="64" endPosition="7" />
     <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="24" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="989489456094442305" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="32" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="989489456094442305" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="56" startPosition="49" endLine="66" endPosition="20">
+    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="55" startPosition="49" endLine="65" endPosition="20">
       <varInfo nodeId="989489456094442305" varName="_parameterValues_129834374" />
       <varInfo nodeId="989489456094442305" varName="quotedNode_1" />
       <varInfo nodeId="989489456094442305" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="74" startPosition="69" endLine="85" endPosition="20">
-      <varInfo nodeId="989489456094442305" varName="_parameterValues_129834374" />
-      <varInfo nodeId="989489456094442305" varName="quotedNode_1" />
-      <varInfo nodeId="989489456094442305" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="55" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="54" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="989489456094442305" varName="parameter_3" />
     </scopeInfo>
-    <scopeInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="73" startPosition="0" endLine="87" endPosition="0">
-      <varInfo nodeId="989489456094442305" varName="parameter_3" />
-      <varInfo nodeId="989489456094442305" varName="parameter_4" />
-    </scopeInfo>
-    <unitInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.PluginModule_Behavior" />
-    <unitInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="52" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.PluginModule_Behavior$QuotationClass_yq0j9l_a0c0c" />
-    <unitInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="70" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.PluginModule_Behavior$QuotationClass_yq0j9l_a3a2a5" />
+    <unitInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.PluginModule_Behavior" />
+    <unitInfo nodeId="989489456094442305" fileName="PluginModule_Behavior.java" startLine="51" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.PluginModule_Behavior$QuotationClass_yq0j9l_a0c0c" />
   </root>
   <root nodeId="989489456094443587">
     <nodeInfo nodeId="989489456094443595" fileName="IdeaInitializerReference_Behavior.java" startLine="16" startPosition="84" endLine="17" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

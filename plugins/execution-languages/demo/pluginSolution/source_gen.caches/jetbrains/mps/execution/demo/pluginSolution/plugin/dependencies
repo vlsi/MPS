@@ -50,9 +50,9 @@
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
     <classNode dependClassName="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.lib.Node_Configuration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.ui.MainNodeChooser" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>
@@ -80,6 +80,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.Java_Command" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
@@ -90,7 +91,6 @@
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />
     <classNode dependClassName="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.Java_Command" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
@@ -143,6 +143,7 @@
     <classNode dependClassName="jetbrains.mps.execution.demo.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.execution.demo.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginContributor" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginLibrariesContributor" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
     <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />

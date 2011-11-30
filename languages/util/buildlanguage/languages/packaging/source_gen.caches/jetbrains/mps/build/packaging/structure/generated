@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3s3sa8vfslp3szb4mbji08hqjemqujx">
+<dependencies version="2" modelHash="eihc6cr1bxjcplafw84yj1pkzydf6k0">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="auc6jui7deer5vkr9v1h1ws94bw74n1" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="aj3kofqak9dfnww4qcxie9dut9wbbk7" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-68sllyg7p1fd6dgkrce6zowrtm9cm0d" />
@@ -71,6 +71,7 @@
     <dep root="701559220729139189" />
     <dep root="701559220729212645" />
     <dep root="7857794759871898774" />
+    <dep root="7972626602783737959" />
     <dep root="989489456094386109" />
     <dep root="989489456094387696" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -275,10 +276,13 @@
   <source id="437343344536486293" name="Help" hash="-ye1nkwqvdmih63uinwa5qvrehlqpmg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="989489456094386109" name="PluginModule" hash="-8kx0a6stp0sxwliskirrf3gnj19ddfk">
+  <source id="989489456094386109" name="PluginModule" hash="2nw74er66nws5jt351eff18a1txvbgc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="989489456094387696" name="IdeaInitializerReference" hash="9c8j36xi21ljbdyg5rhxajug37bcerc">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7972626602783737959" name="Library" hash="-ecjm722s0vhgdp3t64v617m5sm5nwsz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

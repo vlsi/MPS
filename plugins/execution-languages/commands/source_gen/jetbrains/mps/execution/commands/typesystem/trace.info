@@ -275,7 +275,7 @@
     <unitInfo nodeId="612376536074297013" fileName="CommandProcessIsProcess_SubtypingRule.java" startLine="38" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.execution.commands.typesystem.CommandProcessIsProcess_SubtypingRule$QuotationClass_y17zi2_a0a0a" />
   </root>
   <root nodeId="612376536074297025">
-    <nodeInfo nodeId="612376536074297028" fileName="CommandProcessCanSurviveWithoutCommand_SubtypingRule.java" startLine="19" startPosition="128" endLine="20" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1388651548839401768" fileName="CommandProcessCanSurviveWithoutCommand_SubtypingRule.java" startLine="19" startPosition="128" endLine="20" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="612376536074297025" fileName="CommandProcessCanSurviveWithoutCommand_SubtypingRule.java" startLine="23" startPosition="46" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="612376536074297025" fileName="CommandProcessCanSurviveWithoutCommand_SubtypingRule.java" startLine="28" startPosition="5" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="612376536074297025" fileName="CommandProcessCanSurviveWithoutCommand_SubtypingRule.java" startLine="29" startPosition="117" endLine="30" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

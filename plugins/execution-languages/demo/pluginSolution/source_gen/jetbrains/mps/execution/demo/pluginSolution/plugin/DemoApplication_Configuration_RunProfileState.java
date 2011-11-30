@@ -15,7 +15,7 @@ import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.execution.lib.Java_Command;
+import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
