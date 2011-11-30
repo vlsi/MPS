@@ -1177,10 +1177,6 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp1h.6895093993902236375" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1851015849775217766">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_DELETE" />
-    </node>
     <node role="affectedNodesBlock" roleId="tp1h.1347577327951503399" type="tp1h.AffectedNodesClause" typeId="tp1h.1200932465350" id="1851015849775217767">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1851015849775217768">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8527005260551193786">
@@ -1312,6 +1308,10 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="keystroke" roleId="tp1h.6895093993902236375" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1851015849775217766">
+      <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
+      <property name="keycode" nameId="tp4k.1207318242774" value="VK_DELETE" />
     </node>
   </root>
 </model>

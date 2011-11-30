@@ -28,6 +28,7 @@ public class Core_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindLanguageUsages_Action());
     addAction(new FindModelUsages_Action());
     addAction(new Rename_Action());
+    addAction(new SafeDelete_Action());
     addAction(new ShowNodeMessages_Action());
     // groups 
     addGroup(new CoreActions_ActionGroup());
