@@ -15,8 +15,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
-import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
 
 public class MakeFieldStatic_Action extends GeneratedAction {
@@ -58,7 +57,7 @@ public class MakeFieldStatic_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("field") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -67,12 +66,9 @@ public class MakeFieldStatic_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("field")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
-      new Thread() {
-        public void run() {
-          new RefactoringFacade().executeInThread(c);
-        }
-      }.start();
+      final RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("field")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
+      new RefactoringFacade().execute(c);
+
 
 
     } catch (Throwable t) {

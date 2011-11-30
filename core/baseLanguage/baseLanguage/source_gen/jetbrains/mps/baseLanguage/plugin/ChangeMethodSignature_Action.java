@@ -22,8 +22,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
-import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog;
 
@@ -69,7 +68,7 @@ public class ChangeMethodSignature_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("method") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -101,7 +100,7 @@ public class ChangeMethodSignature_Action extends GeneratedAction {
       if (ListSequence.fromList(myRefactorings).isEmpty()) {
         return;
       }
-      RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature", Arrays.asList("myRefactorings"), Arrays.asList(myRefactorings), ((SNode) MapSequence.fromMap(_params).get("method")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
+      RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature", Arrays.asList("myRefactorings"), Arrays.asList(myRefactorings), ((SNode) MapSequence.fromMap(_params).get("method")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
       new RefactoringFacade().execute(c);
 
 

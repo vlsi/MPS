@@ -375,9 +375,7 @@
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="56" startPosition="57" endLine="60" endPosition="11" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="3" />
-    <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="55" startPosition="26" endLine="61" endPosition="9">
-      <varInfo nodeId="1205248417575" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="55" startPosition="26" endLine="61" endPosition="9" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="79" startPosition="96" endLine="85" endPosition="5" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="36" startPosition="89" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="78" startPosition="0" endLine="87" endPosition="0">
@@ -2771,136 +2769,136 @@
     <unitInfo nodeId="4670094048336778317" fileName="ImplementMethod_Action.java" startLine="25" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ImplementMethod_Action" />
   </root>
   <root nodeId="4846444759634889921">
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="30" startPosition="67" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="31" startPosition="40" endLine="32" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="34" startPosition="41" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="35" startPosition="45" endLine="36" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="36" startPosition="35" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3426612557874800553" fileName="ChangeMethodSignature_Action.java" startLine="40" startPosition="87" endLine="41" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="46" startPosition="7" endLine="47" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="47" startPosition="60" endLine="48" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="50" startPosition="27" endLine="51" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="51" startPosition="94" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="63" startPosition="114" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="66" startPosition="7" endLine="67" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="69" startPosition="61" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="73" startPosition="62" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="76" startPosition="5" endLine="77" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="79" startPosition="7" endLine="80" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="82" startPosition="60" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="84" startPosition="5" endLine="85" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="86" startPosition="62" endLine="87" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="88" startPosition="5" endLine="89" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3795717784226462591" fileName="ChangeMethodSignature_Action.java" startLine="93" startPosition="9" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1106479162954057375" fileName="ChangeMethodSignature_Action.java" startLine="96" startPosition="27" endLine="97" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5957075241641501297" fileName="ChangeMethodSignature_Action.java" startLine="99" startPosition="9" endLine="100" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5161277940733431339" fileName="ChangeMethodSignature_Action.java" startLine="101" startPosition="60" endLine="102" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6154323256625882662" fileName="ChangeMethodSignature_Action.java" startLine="103" startPosition="7" endLine="104" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9105523200710433835" fileName="ChangeMethodSignature_Action.java" startLine="104" startPosition="347" endLine="105" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8686288815841849395" fileName="ChangeMethodSignature_Action.java" startLine="105" startPosition="41" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9105523200710433845" fileName="ChangeMethodSignature_Action.java" startLine="106" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4846444759634918725" fileName="ChangeMethodSignature_Action.java" startLine="107" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="109" startPosition="27" endLine="110" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3795717784226428060" fileName="ChangeMethodSignature_Action.java" startLine="114" startPosition="123" endLine="115" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5161277940733430355" fileName="ChangeMethodSignature_Action.java" startLine="115" startPosition="136" endLine="116" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8686288815841849380" fileName="ChangeMethodSignature_Action.java" startLine="116" startPosition="24" endLine="117" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="77" startPosition="57" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="56" startPosition="95" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="62" startPosition="25" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="68" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="72" startPosition="84" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="81" startPosition="5" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="85" startPosition="94" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5161277940733431325" fileName="ChangeMethodSignature_Action.java" startLine="100" startPosition="177" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="45" startPosition="9" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="84" startPosition="5" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1106479162954057373" fileName="ChangeMethodSignature_Action.java" startLine="95" startPosition="60" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeMethodSignature_Action#()V" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="61" startPosition="57" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1106479162954057372" fileName="ChangeMethodSignature_Action.java" startLine="94" startPosition="0" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="75" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9105523200710612542" fileName="ChangeMethodSignature_Action.java" startLine="113" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/IOperationContext;Ljava/util/Map;)Ljava/util/List;" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="44" startPosition="89" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="59" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="75" startPosition="5" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="43" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="59" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="92" startPosition="96" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="91" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="55" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="78" startPosition="25" endLine="78" endPosition="25" />
-    <scopeInfo nodeId="3426612557875228788" fileName="ChangeMethodSignature_Action.java" startLine="40" startPosition="87" endLine="41" endPosition="212" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="63" startPosition="114" endLine="64" endPosition="22" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="69" startPosition="61" endLine="70" endPosition="19" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="73" startPosition="62" endLine="74" endPosition="19" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="82" startPosition="60" endLine="83" endPosition="19" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="86" startPosition="62" endLine="87" endPosition="19" />
-    <scopeInfo nodeId="1106479162954057374" fileName="ChangeMethodSignature_Action.java" startLine="96" startPosition="27" endLine="97" endPosition="51" />
-    <scopeInfo nodeId="5161277940733431326" fileName="ChangeMethodSignature_Action.java" startLine="101" startPosition="60" endLine="102" endPosition="15" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="109" startPosition="0" endLine="110" endPosition="93">
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="29" startPosition="67" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="30" startPosition="40" endLine="31" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="33" startPosition="41" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="34" startPosition="45" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="35" startPosition="35" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3426612557874800553" fileName="ChangeMethodSignature_Action.java" startLine="39" startPosition="87" endLine="40" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="45" startPosition="7" endLine="46" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="46" startPosition="60" endLine="47" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="49" startPosition="27" endLine="50" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="50" startPosition="94" endLine="51" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="56" startPosition="53" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="59" startPosition="5" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="62" startPosition="114" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="65" startPosition="7" endLine="66" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="68" startPosition="61" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="72" startPosition="62" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="75" startPosition="5" endLine="76" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="78" startPosition="7" endLine="79" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="81" startPosition="60" endLine="82" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="83" startPosition="5" endLine="84" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="85" startPosition="62" endLine="86" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="87" startPosition="5" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3795717784226462591" fileName="ChangeMethodSignature_Action.java" startLine="92" startPosition="9" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1106479162954057375" fileName="ChangeMethodSignature_Action.java" startLine="95" startPosition="27" endLine="96" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5957075241641501297" fileName="ChangeMethodSignature_Action.java" startLine="98" startPosition="9" endLine="99" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5161277940733431339" fileName="ChangeMethodSignature_Action.java" startLine="100" startPosition="60" endLine="101" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6154323256625882662" fileName="ChangeMethodSignature_Action.java" startLine="102" startPosition="7" endLine="103" endPosition="322" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9105523200710433835" fileName="ChangeMethodSignature_Action.java" startLine="103" startPosition="322" endLine="104" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8686288815841849395" fileName="ChangeMethodSignature_Action.java" startLine="104" startPosition="41" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9105523200710433845" fileName="ChangeMethodSignature_Action.java" startLine="105" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4846444759634918725" fileName="ChangeMethodSignature_Action.java" startLine="106" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="108" startPosition="27" endLine="109" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3795717784226428060" fileName="ChangeMethodSignature_Action.java" startLine="113" startPosition="123" endLine="114" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5161277940733430355" fileName="ChangeMethodSignature_Action.java" startLine="114" startPosition="136" endLine="115" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8686288815841849380" fileName="ChangeMethodSignature_Action.java" startLine="115" startPosition="24" endLine="116" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="76" startPosition="57" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="55" startPosition="95" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="61" startPosition="25" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="67" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="71" startPosition="88" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="80" startPosition="5" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="84" startPosition="94" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5161277940733431325" fileName="ChangeMethodSignature_Action.java" startLine="99" startPosition="177" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="44" startPosition="9" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="83" startPosition="5" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1106479162954057373" fileName="ChangeMethodSignature_Action.java" startLine="94" startPosition="60" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="32" startPosition="0" endLine="37" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeMethodSignature_Action#()V" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="60" startPosition="57" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1106479162954057372" fileName="ChangeMethodSignature_Action.java" startLine="93" startPosition="0" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="74" startPosition="5" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9105523200710612542" fileName="ChangeMethodSignature_Action.java" startLine="112" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/IOperationContext;Ljava/util/Map;)Ljava/util/List;" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="43" startPosition="89" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="58" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="74" startPosition="5" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="42" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="58" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="91" startPosition="96" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="90" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="54" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="77" startPosition="25" endLine="77" endPosition="25" />
+    <scopeInfo nodeId="3426612557875228788" fileName="ChangeMethodSignature_Action.java" startLine="39" startPosition="87" endLine="40" endPosition="212" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="56" startPosition="53" endLine="57" endPosition="19" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="62" startPosition="114" endLine="63" endPosition="22" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="68" startPosition="61" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="72" startPosition="62" endLine="73" endPosition="19" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="81" startPosition="60" endLine="82" endPosition="19" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="85" startPosition="62" endLine="86" endPosition="19" />
+    <scopeInfo nodeId="1106479162954057374" fileName="ChangeMethodSignature_Action.java" startLine="95" startPosition="27" endLine="96" endPosition="51" />
+    <scopeInfo nodeId="5161277940733431326" fileName="ChangeMethodSignature_Action.java" startLine="100" startPosition="60" endLine="101" endPosition="15" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="108" startPosition="0" endLine="109" endPosition="93">
       <varInfo nodeId="4846444759634889921" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="109" startPosition="27" endLine="110" endPosition="93" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="46" startPosition="7" endLine="48" endPosition="63">
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="108" startPosition="27" endLine="109" endPosition="93" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="45" startPosition="7" endLine="47" endPosition="63">
       <varInfo nodeId="4846444759634889921" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="50" startPosition="0" endLine="52" endPosition="44">
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="49" startPosition="0" endLine="51" endPosition="44">
       <varInfo nodeId="4846444759634889921" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="50" startPosition="27" endLine="52" endPosition="44" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="34" startPosition="41" endLine="37" endPosition="40" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="62" startPosition="25" endLine="65" endPosition="9" />
-    <scopeInfo nodeId="9105523200710612544" fileName="ChangeMethodSignature_Action.java" startLine="114" startPosition="123" endLine="117" endPosition="39">
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="49" startPosition="27" endLine="51" endPosition="44" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="33" startPosition="41" endLine="36" endPosition="40" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="61" startPosition="25" endLine="64" endPosition="9" />
+    <scopeInfo nodeId="9105523200710612544" fileName="ChangeMethodSignature_Action.java" startLine="113" startPosition="123" endLine="116" endPosition="39">
       <varInfo nodeId="3795717784226428061" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="4846444759634889921" varName="_params" />
       <varInfo nodeId="4846444759634889921" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="45" startPosition="9" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="76" startPosition="5" endLine="80" endPosition="54">
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="44" startPosition="9" endLine="48" endPosition="7" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="54">
       <varInfo nodeId="4846444759634889921" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="84" startPosition="5" endLine="88" endPosition="5" />
-    <scopeInfo nodeId="1106479162954057373" fileName="ChangeMethodSignature_Action.java" startLine="95" startPosition="60" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="3" />
-    <scopeInfo nodeId="9105523200710612542" fileName="ChangeMethodSignature_Action.java" startLine="113" startPosition="0" endLine="119" endPosition="0">
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="83" startPosition="5" endLine="87" endPosition="5" />
+    <scopeInfo nodeId="1106479162954057373" fileName="ChangeMethodSignature_Action.java" startLine="94" startPosition="60" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="32" startPosition="0" endLine="37" endPosition="3" />
+    <scopeInfo nodeId="9105523200710612542" fileName="ChangeMethodSignature_Action.java" startLine="112" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="9105523200710612542" varName="_params" />
       <varInfo nodeId="9105523200710612551" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="60" startPosition="5" endLine="67" endPosition="55">
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="59" startPosition="5" endLine="66" endPosition="55">
       <varInfo nodeId="4846444759634889921" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="44" startPosition="89" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="75" startPosition="5" endLine="84" endPosition="5" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="43" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="43" startPosition="89" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="74" startPosition="5" endLine="83" endPosition="5" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="42" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="4846444759634889921" varName="_params" />
       <varInfo nodeId="4846444759634889921" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="59" startPosition="5" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="93" startPosition="9" endLine="108" endPosition="0">
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="58" startPosition="5" endLine="70" endPosition="5" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="92" startPosition="9" endLine="107" endPosition="0">
       <varInfo nodeId="6154323256625882663" varName="c" />
       <varInfo nodeId="5957075241641501298" varName="myRefactorings" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="92" startPosition="96" endLine="111" endPosition="5" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="91" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="91" startPosition="96" endLine="110" endPosition="5" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="90" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="4846444759634889921" varName="_params" />
       <varInfo nodeId="4846444759634889921" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="56" startPosition="95" endLine="89" endPosition="16" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="55" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="55" startPosition="95" endLine="88" endPosition="16" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="54" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="4846444759634889921" varName="_params" />
       <varInfo nodeId="4846444759634889921" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="30" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action" />
-    <unitInfo nodeId="1106479162954057373" fileName="ChangeMethodSignature_Action.java" startLine="95" startPosition="48" endLine="99" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action$1" />
+    <unitInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="29" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action" />
+    <unitInfo nodeId="1106479162954057373" fileName="ChangeMethodSignature_Action.java" startLine="94" startPosition="48" endLine="98" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action$1" />
   </root>
   <root nodeId="5002400195357779994">
     <nodeInfo nodeId="6268328477151491179" fileName="OverrideMethodsChecker.java" startLine="39" startPosition="66" endLine="40" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MAX_MESSAGE_NUMBER" />
@@ -3690,95 +3688,91 @@
     <unitInfo nodeId="4717960406884198286" fileName="OverridingMethodsFinder.java" startLine="137" startPosition="54" endLine="141" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.OverridingMethodsFinder$9" />
   </root>
   <root nodeId="6446963551370383333">
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="22" startPosition="61" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="23" startPosition="40" endLine="24" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="26" startPosition="35" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="27" startPosition="39" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="28" startPosition="35" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1851015849775187118" fileName="MakeFieldStatic_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="38" startPosition="7" endLine="39" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="39" startPosition="60" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="42" startPosition="27" endLine="43" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="43" startPosition="88" endLine="44" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="52" startPosition="5" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="55" startPosition="7" endLine="56" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="58" startPosition="60" endLine="59" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="62" startPosition="62" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7340098493333429828" fileName="MakeFieldStatic_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="316" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6446963551370383360" fileName="MakeFieldStatic_Action.java" startLine="72" startPosition="27" endLine="73" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6598645150040132430" fileName="MakeFieldStatic_Action.java" startLine="75" startPosition="16" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5957075241641393937" fileName="MakeFieldStatic_Action.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="78" startPosition="27" endLine="79" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="53" startPosition="57" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="48" startPosition="95" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="57" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="61" startPosition="84" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="60" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1106479162954057359" fileName="MakeFieldStatic_Action.java" startLine="71" startPosition="20" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeFieldStatic_Action#()V" />
-    <nodeInfo nodeId="1106479162954057354" fileName="MakeFieldStatic_Action.java" startLine="70" startPosition="316" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="51" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="36" startPosition="89" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="51" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="35" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="68" startPosition="96" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="67" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="47" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="54" startPosition="25" endLine="54" endPosition="25" />
-    <scopeInfo nodeId="6598645150040132438" fileName="MakeFieldStatic_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="205" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="58" startPosition="60" endLine="59" endPosition="19" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="62" startPosition="62" endLine="63" endPosition="19" />
-    <scopeInfo nodeId="1106479162954057362" fileName="MakeFieldStatic_Action.java" startLine="72" startPosition="27" endLine="73" endPosition="53" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="78" startPosition="0" endLine="79" endPosition="87">
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="21" startPosition="61" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="22" startPosition="40" endLine="23" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="25" startPosition="35" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="26" startPosition="39" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="27" startPosition="35" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851015849775187118" fileName="MakeFieldStatic_Action.java" startLine="31" startPosition="87" endLine="32" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="37" startPosition="7" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="38" startPosition="60" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="41" startPosition="27" endLine="42" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="42" startPosition="88" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="48" startPosition="53" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="51" startPosition="5" endLine="52" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="54" startPosition="7" endLine="55" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="57" startPosition="60" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="59" startPosition="5" endLine="60" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="61" startPosition="62" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="63" startPosition="5" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7340098493333429828" fileName="MakeFieldStatic_Action.java" startLine="68" startPosition="9" endLine="69" endPosition="291" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6446963551370383360" fileName="MakeFieldStatic_Action.java" startLine="69" startPosition="291" endLine="70" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8416108457267502347" fileName="MakeFieldStatic_Action.java" startLine="70" startPosition="41" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6598645150040132430" fileName="MakeFieldStatic_Action.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5957075241641393937" fileName="MakeFieldStatic_Action.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="74" startPosition="27" endLine="75" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="52" startPosition="57" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="47" startPosition="95" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="56" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="60" startPosition="88" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="36" startPosition="9" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="24" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeFieldStatic_Action#()V" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="50" startPosition="5" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="35" startPosition="89" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="50" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="67" startPosition="96" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="34" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="66" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="46" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="53" startPosition="25" endLine="53" endPosition="25" />
+    <scopeInfo nodeId="6598645150040132438" fileName="MakeFieldStatic_Action.java" startLine="31" startPosition="87" endLine="32" endPosition="205" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="48" startPosition="53" endLine="49" endPosition="19" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="57" startPosition="60" endLine="58" endPosition="19" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="61" startPosition="62" endLine="62" endPosition="19" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="74" startPosition="0" endLine="75" endPosition="87">
       <varInfo nodeId="6446963551370383333" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="78" startPosition="27" endLine="79" endPosition="87" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="38" startPosition="7" endLine="40" endPosition="63">
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="74" startPosition="27" endLine="75" endPosition="87" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="37" startPosition="7" endLine="39" endPosition="63">
       <varInfo nodeId="6446963551370383333" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="42" startPosition="0" endLine="44" endPosition="44">
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="41" startPosition="0" endLine="43" endPosition="44">
       <varInfo nodeId="6446963551370383333" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="42" startPosition="27" endLine="44" endPosition="44" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="26" startPosition="35" endLine="29" endPosition="41" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="41" startPosition="27" endLine="43" endPosition="44" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="25" startPosition="35" endLine="28" endPosition="41" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="6446963551370383333" varName="_params" />
       <varInfo nodeId="6446963551370383333" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="52" startPosition="5" endLine="56" endPosition="54">
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="36" startPosition="9" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="51" startPosition="5" endLine="55" endPosition="54">
       <varInfo nodeId="6446963551370383333" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="60" startPosition="5" endLine="64" endPosition="5" />
-    <scopeInfo nodeId="1106479162954057359" fileName="MakeFieldStatic_Action.java" startLine="71" startPosition="20" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="3" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="69" startPosition="9" endLine="77" endPosition="0">
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="24" startPosition="0" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="68" startPosition="9" endLine="73" endPosition="0">
       <varInfo nodeId="7340098493333429829" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="36" startPosition="89" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="51" startPosition="5" endLine="60" endPosition="5" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="35" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="35" startPosition="89" endLine="44" endPosition="5" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="50" startPosition="5" endLine="59" endPosition="5" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="67" startPosition="96" endLine="76" endPosition="5" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="34" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="6446963551370383333" varName="_params" />
       <varInfo nodeId="6446963551370383333" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="68" startPosition="96" endLine="80" endPosition="5" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="67" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="66" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="6446963551370383333" varName="_params" />
       <varInfo nodeId="6446963551370383333" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="48" startPosition="95" endLine="65" endPosition="16" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="47" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="47" startPosition="95" endLine="64" endPosition="16" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="46" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="6446963551370383333" varName="_params" />
       <varInfo nodeId="6446963551370383333" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.MakeFieldStatic_Action" />
-    <unitInfo nodeId="1106479162954057358" fileName="MakeFieldStatic_Action.java" startLine="71" startPosition="10" endLine="75" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.MakeFieldStatic_Action$1" />
+    <unitInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.MakeFieldStatic_Action" />
   </root>
   <root nodeId="6556826051425136566">
     <nodeInfo nodeId="6556826051425136566" fileName="GoToInheritedClassifier_Action.java" startLine="39" startPosition="69" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -5166,206 +5160,206 @@
     <unitInfo nodeId="7000507154716606309" fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.Default_KeymapChanges" />
   </root>
   <root nodeId="759258373983203487">
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="33" startPosition="58" endLine="34" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="34" startPosition="40" endLine="35" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="37" startPosition="32" endLine="38" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="38" startPosition="37" endLine="39" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="39" startPosition="35" endLine="40" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983274401" fileName="RenameMethod_Action.java" startLine="43" startPosition="87" endLine="44" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="49" startPosition="7" endLine="50" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="50" startPosition="60" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="53" startPosition="27" endLine="54" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="54" startPosition="85" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="60" startPosition="53" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="63" startPosition="5" endLine="64" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="66" startPosition="7" endLine="67" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="69" startPosition="61" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="73" startPosition="62" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="75" startPosition="5" endLine="76" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="77" startPosition="62" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="79" startPosition="5" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7874812549549919820" fileName="RenameMethod_Action.java" startLine="84" startPosition="9" endLine="85" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8158329457802146071" fileName="RenameMethod_Action.java" startLine="87" startPosition="27" endLine="88" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6637315361769883674" fileName="RenameMethod_Action.java" startLine="90" startPosition="9" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8158329457802292219" fileName="RenameMethod_Action.java" startLine="91" startPosition="0" endLine="92" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8158329457802292239" fileName="RenameMethod_Action.java" startLine="93" startPosition="147" endLine="94" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8158329457802292277" fileName="RenameMethod_Action.java" startLine="95" startPosition="164" endLine="96" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983358632" fileName="RenameMethod_Action.java" startLine="97" startPosition="7" endLine="98" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759258373983358724" fileName="RenameMethod_Action.java" startLine="98" startPosition="186" endLine="99" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6637315361769883445" fileName="RenameMethod_Action.java" startLine="99" startPosition="15" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="759258373983358739" fileName="RenameMethod_Action.java" startLine="100" startPosition="0" endLine="101" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759258373983358783" fileName="RenameMethod_Action.java" startLine="102" startPosition="28" endLine="103" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983358750" fileName="RenameMethod_Action.java" startLine="104" startPosition="7" endLine="105" endPosition="365" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759258373983358785" fileName="RenameMethod_Action.java" startLine="105" startPosition="365" endLine="106" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="107" startPosition="27" endLine="108" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="64" startPosition="57" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="59" startPosition="95" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="68" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="72" startPosition="84" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="76" startPosition="94" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="759258373983358774" fileName="RenameMethod_Action.java" startLine="101" startPosition="38" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="48" startPosition="9" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8158329457802146069" fileName="RenameMethod_Action.java" startLine="86" startPosition="59" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="36" startPosition="0" endLine="41" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameMethod_Action#()V" />
-    <nodeInfo nodeId="8158329457802146068" fileName="RenameMethod_Action.java" startLine="85" startPosition="85" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8158329457802292223" fileName="RenameMethod_Action.java" startLine="92" startPosition="26" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="62" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="47" startPosition="89" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="62" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="46" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="58" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="83" startPosition="96" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="82" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="65" startPosition="25" endLine="65" endPosition="25" />
-    <scopeInfo nodeId="759258373983257951" fileName="RenameMethod_Action.java" startLine="43" startPosition="87" endLine="44" endPosition="203" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="60" startPosition="53" endLine="61" endPosition="19" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="69" startPosition="61" endLine="70" endPosition="19" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="73" startPosition="62" endLine="74" endPosition="19" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="77" startPosition="62" endLine="78" endPosition="19" />
-    <scopeInfo nodeId="8158329457802146070" fileName="RenameMethod_Action.java" startLine="87" startPosition="27" endLine="88" endPosition="195" />
-    <scopeInfo nodeId="8158329457802292224" fileName="RenameMethod_Action.java" startLine="93" startPosition="147" endLine="94" endPosition="243" />
-    <scopeInfo nodeId="8158329457802292266" fileName="RenameMethod_Action.java" startLine="95" startPosition="164" endLine="96" endPosition="194" />
-    <scopeInfo nodeId="759258373983358775" fileName="RenameMethod_Action.java" startLine="102" startPosition="28" endLine="103" endPosition="15" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="107" startPosition="0" endLine="108" endPosition="84">
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="32" startPosition="58" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="33" startPosition="40" endLine="34" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="36" startPosition="32" endLine="37" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="37" startPosition="37" endLine="38" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="38" startPosition="35" endLine="39" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983274401" fileName="RenameMethod_Action.java" startLine="42" startPosition="87" endLine="43" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="48" startPosition="7" endLine="49" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="49" startPosition="60" endLine="50" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="52" startPosition="27" endLine="53" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="53" startPosition="85" endLine="54" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="59" startPosition="53" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="65" startPosition="7" endLine="66" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="68" startPosition="61" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="72" startPosition="62" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="74" startPosition="5" endLine="75" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="76" startPosition="62" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="78" startPosition="5" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7874812549549919820" fileName="RenameMethod_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8158329457802146071" fileName="RenameMethod_Action.java" startLine="86" startPosition="27" endLine="87" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6637315361769883674" fileName="RenameMethod_Action.java" startLine="89" startPosition="9" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8158329457802292219" fileName="RenameMethod_Action.java" startLine="90" startPosition="0" endLine="91" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8158329457802292239" fileName="RenameMethod_Action.java" startLine="92" startPosition="147" endLine="93" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8158329457802292277" fileName="RenameMethod_Action.java" startLine="94" startPosition="164" endLine="95" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983358632" fileName="RenameMethod_Action.java" startLine="96" startPosition="7" endLine="97" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="759258373983358724" fileName="RenameMethod_Action.java" startLine="97" startPosition="202" endLine="98" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6637315361769883445" fileName="RenameMethod_Action.java" startLine="98" startPosition="15" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="759258373983358739" fileName="RenameMethod_Action.java" startLine="99" startPosition="0" endLine="100" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="759258373983358783" fileName="RenameMethod_Action.java" startLine="101" startPosition="28" endLine="102" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="759258373983358750" fileName="RenameMethod_Action.java" startLine="103" startPosition="7" endLine="104" endPosition="340" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="759258373983358785" fileName="RenameMethod_Action.java" startLine="104" startPosition="340" endLine="105" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="106" startPosition="27" endLine="107" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="63" startPosition="57" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="58" startPosition="95" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="67" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="71" startPosition="88" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="75" startPosition="94" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="759258373983358774" fileName="RenameMethod_Action.java" startLine="100" startPosition="38" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="47" startPosition="9" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8158329457802146069" fileName="RenameMethod_Action.java" startLine="85" startPosition="59" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="35" startPosition="0" endLine="40" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameMethod_Action#()V" />
+    <nodeInfo nodeId="8158329457802146068" fileName="RenameMethod_Action.java" startLine="84" startPosition="85" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8158329457802292223" fileName="RenameMethod_Action.java" startLine="91" startPosition="26" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="61" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="46" startPosition="89" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="61" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="45" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="57" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="82" startPosition="96" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="81" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="64" startPosition="25" endLine="64" endPosition="25" />
+    <scopeInfo nodeId="759258373983257951" fileName="RenameMethod_Action.java" startLine="42" startPosition="87" endLine="43" endPosition="203" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="59" startPosition="53" endLine="60" endPosition="19" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="68" startPosition="61" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="72" startPosition="62" endLine="73" endPosition="19" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="76" startPosition="62" endLine="77" endPosition="19" />
+    <scopeInfo nodeId="8158329457802146070" fileName="RenameMethod_Action.java" startLine="86" startPosition="27" endLine="87" endPosition="195" />
+    <scopeInfo nodeId="8158329457802292224" fileName="RenameMethod_Action.java" startLine="92" startPosition="147" endLine="93" endPosition="243" />
+    <scopeInfo nodeId="8158329457802292266" fileName="RenameMethod_Action.java" startLine="94" startPosition="164" endLine="95" endPosition="194" />
+    <scopeInfo nodeId="759258373983358775" fileName="RenameMethod_Action.java" startLine="101" startPosition="28" endLine="102" endPosition="15" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="106" startPosition="0" endLine="107" endPosition="84">
       <varInfo nodeId="759258373983203487" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="107" startPosition="27" endLine="108" endPosition="84" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="49" startPosition="7" endLine="51" endPosition="63">
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="106" startPosition="27" endLine="107" endPosition="84" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="48" startPosition="7" endLine="50" endPosition="63">
       <varInfo nodeId="759258373983203487" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="53" startPosition="0" endLine="55" endPosition="44">
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="52" startPosition="0" endLine="54" endPosition="44">
       <varInfo nodeId="759258373983203487" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="53" startPosition="27" endLine="55" endPosition="44" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="37" startPosition="32" endLine="40" endPosition="41" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="52" startPosition="27" endLine="54" endPosition="44" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="36" startPosition="32" endLine="39" endPosition="41" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="759258373983203487" varName="_params" />
       <varInfo nodeId="759258373983203487" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="48" startPosition="9" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="55">
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="47" startPosition="9" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="55">
       <varInfo nodeId="759258373983203487" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" />
-    <scopeInfo nodeId="8158329457802146069" fileName="RenameMethod_Action.java" startLine="86" startPosition="59" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="36" startPosition="0" endLine="41" endPosition="3" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="47" startPosition="89" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="62" startPosition="5" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="46" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" />
+    <scopeInfo nodeId="8158329457802146069" fileName="RenameMethod_Action.java" startLine="85" startPosition="59" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="35" startPosition="0" endLine="40" endPosition="3" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="46" startPosition="89" endLine="55" endPosition="5" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="61" startPosition="5" endLine="70" endPosition="5" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="45" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="759258373983203487" varName="_params" />
       <varInfo nodeId="759258373983203487" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="59" startPosition="95" endLine="80" endPosition="16" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="84" startPosition="9" endLine="106" endPosition="41">
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="58" startPosition="95" endLine="79" endPosition="16" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="83" startPosition="9" endLine="105" endPosition="41">
       <varInfo nodeId="759258373983358751" varName="c" />
       <varInfo nodeId="759258373983358633" varName="d" />
       <varInfo nodeId="759258373983358740" varName="newName" />
       <varInfo nodeId="8158329457802292220" varName="oldName" />
       <varInfo nodeId="7874812549549919821" varName="overridingList" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="58" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="57" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="759258373983203487" varName="_params" />
       <varInfo nodeId="759258373983203487" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="83" startPosition="96" endLine="109" endPosition="5" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="82" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="82" startPosition="96" endLine="108" endPosition="5" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="81" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="759258373983203487" varName="_params" />
       <varInfo nodeId="759258373983203487" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="33" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.RenameMethod_Action" />
-    <unitInfo nodeId="8158329457802146069" fileName="RenameMethod_Action.java" startLine="86" startPosition="47" endLine="90" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.RenameMethod_Action$1" />
+    <unitInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="32" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.RenameMethod_Action" />
+    <unitInfo nodeId="8158329457802146069" fileName="RenameMethod_Action.java" startLine="85" startPosition="47" endLine="89" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.RenameMethod_Action$1" />
   </root>
   <root nodeId="759258373983358795">
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="23" startPosition="60" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="24" startPosition="40" endLine="25" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="27" startPosition="34" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="28" startPosition="40" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="29" startPosition="35" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983359346" fileName="MakeFieldFinal_Action.java" startLine="33" startPosition="87" endLine="34" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="39" startPosition="7" endLine="40" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="40" startPosition="60" endLine="41" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="43" startPosition="27" endLine="44" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="44" startPosition="87" endLine="45" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="50" startPosition="53" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="53" startPosition="5" endLine="54" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="56" startPosition="109" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="59" startPosition="7" endLine="60" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="62" startPosition="61" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="66" startPosition="62" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="68" startPosition="5" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983359357" fileName="MakeFieldFinal_Action.java" startLine="73" startPosition="9" endLine="74" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759258373983359378" fileName="MakeFieldFinal_Action.java" startLine="74" startPosition="310" endLine="75" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="76" startPosition="27" endLine="77" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="49" startPosition="95" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="55" startPosition="25" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="61" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="65" startPosition="84" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="38" startPosition="9" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="64" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeFieldFinal_Action#()V" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="54" startPosition="57" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="72" startPosition="96" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="37" startPosition="89" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="52" startPosition="5" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="71" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="36" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="52" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="48" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="759258373983359345" fileName="MakeFieldFinal_Action.java" startLine="33" startPosition="87" endLine="34" endPosition="205" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="50" startPosition="53" endLine="51" endPosition="19" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="56" startPosition="109" endLine="57" endPosition="22" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="62" startPosition="61" endLine="63" endPosition="19" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="66" startPosition="62" endLine="67" endPosition="19" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="76" startPosition="0" endLine="77" endPosition="86">
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="22" startPosition="60" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="23" startPosition="40" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="26" startPosition="34" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="27" startPosition="40" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="28" startPosition="35" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983359346" fileName="MakeFieldFinal_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="38" startPosition="7" endLine="39" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="39" startPosition="60" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="42" startPosition="27" endLine="43" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="43" startPosition="87" endLine="44" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="52" startPosition="5" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="55" startPosition="109" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="58" startPosition="7" endLine="59" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="61" startPosition="61" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="63" startPosition="5" endLine="64" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="65" startPosition="62" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="67" startPosition="5" endLine="68" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="759258373983359357" fileName="MakeFieldFinal_Action.java" startLine="72" startPosition="9" endLine="73" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="759258373983359378" fileName="MakeFieldFinal_Action.java" startLine="73" startPosition="285" endLine="74" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="75" startPosition="27" endLine="76" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="48" startPosition="95" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="54" startPosition="25" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="60" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="64" startPosition="88" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeFieldFinal_Action#()V" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="53" startPosition="57" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="71" startPosition="96" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="36" startPosition="89" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="51" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="70" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="35" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="51" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="47" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="759258373983359345" fileName="MakeFieldFinal_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="205" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="55" startPosition="109" endLine="56" endPosition="22" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="61" startPosition="61" endLine="62" endPosition="19" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="65" startPosition="62" endLine="66" endPosition="19" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="75" startPosition="0" endLine="76" endPosition="86">
       <varInfo nodeId="759258373983358795" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="76" startPosition="27" endLine="77" endPosition="86" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="39" startPosition="7" endLine="41" endPosition="63">
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="75" startPosition="27" endLine="76" endPosition="86" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="38" startPosition="7" endLine="40" endPosition="63">
       <varInfo nodeId="759258373983358795" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="43" startPosition="0" endLine="45" endPosition="44">
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="42" startPosition="0" endLine="44" endPosition="44">
       <varInfo nodeId="759258373983358795" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="43" startPosition="27" endLine="45" endPosition="44" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="73" startPosition="9" endLine="75" endPosition="41">
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="42" startPosition="27" endLine="44" endPosition="44" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="72" startPosition="9" endLine="74" endPosition="41">
       <varInfo nodeId="759258373983359358" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="27" startPosition="34" endLine="30" endPosition="41" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="55" startPosition="25" endLine="58" endPosition="9" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="26" startPosition="34" endLine="29" endPosition="41" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="54" startPosition="25" endLine="57" endPosition="9" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="759258373983358795" varName="_params" />
       <varInfo nodeId="759258373983358795" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="38" startPosition="9" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="64" startPosition="5" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="72" startPosition="96" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="53" startPosition="5" endLine="60" endPosition="55">
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="3" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="71" startPosition="96" endLine="77" endPosition="5" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="52" startPosition="5" endLine="59" endPosition="55">
       <varInfo nodeId="759258373983358795" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="37" startPosition="89" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="71" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="36" startPosition="89" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="70" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="759258373983358795" varName="_params" />
       <varInfo nodeId="759258373983358795" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="36" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="35" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="759258373983358795" varName="_params" />
       <varInfo nodeId="759258373983358795" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="52" startPosition="5" endLine="64" endPosition="5" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="49" startPosition="95" endLine="69" endPosition="16" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="48" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="51" startPosition="5" endLine="63" endPosition="5" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="48" startPosition="95" endLine="68" endPosition="16" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="47" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="759258373983358795" varName="_params" />
       <varInfo nodeId="759258373983358795" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="23" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.MakeFieldFinal_Action" />
+    <unitInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="22" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.MakeFieldFinal_Action" />
   </root>
   <root nodeId="8596238429278788966">
     <nodeInfo nodeId="8596238429278788966" fileName="GoToOverridingMethod_Action.java" startLine="41" startPosition="66" endLine="42" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

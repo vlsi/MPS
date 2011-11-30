@@ -1082,7 +1082,7 @@
     <unitInfo nodeId="7425580205971833416" fileName="BaseChooseNodeDialog.java" startLine="91" startPosition="64" endLine="95" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.BaseChooseNodeDialog$2" />
   </root>
   <root nodeId="759258373983325702">
-    <nodeInfo nodeId="759258373983325725" fileName="RenameMethodDialog.java" startLine="12" startPosition="61" endLine="13" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverridingCheckBox" />
+    <nodeInfo nodeId="759258373983325725" fileName="RenameMethodDialog.java" startLine="12" startPosition="54" endLine="13" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverridingCheckBox" />
     <nodeInfo nodeId="759258373983325733" fileName="RenameMethodDialog.java" startLine="13" startPosition="41" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsOverriding" />
     <nodeInfo nodeId="6637315361769894690" fileName="RenameMethodDialog.java" startLine="14" startPosition="33" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverridingEnabled" />
     <nodeInfo nodeId="759258373983325719" fileName="RenameMethodDialog.java" startLine="17" startPosition="108" endLine="18" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1145,7 +1145,6 @@
       <varInfo nodeId="7782234301060592931" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="7782234301060592925" fileName="MethodDuplicatesProcessor.java" startLine="16" startPosition="43" endLine="15" endPosition="0" />
-    <unitInfo nodeId="7782234301060366093" fileName="MethodDuplicatesProcessor.java" startLine="15" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodDuplicatesProcessor" />
   </root>
   <root nodeId="7782234301060403220">
     <nodeInfo nodeId="7782234301060403238" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="86" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />

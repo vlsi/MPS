@@ -16,10 +16,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
-import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
-import jetbrains.mps.ide.refactoring.RenameDialogWrapper;
+import jetbrains.mps.ide.refactoring.RenameDialog;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class RenameProperty_Action extends GeneratedAction {
@@ -64,7 +63,7 @@ public class RenameProperty_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("target") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -77,7 +76,7 @@ public class RenameProperty_Action extends GeneratedAction {
       if (newName == null) {
         return;
       }
-      RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.RenameProperty", Arrays.asList("newName"), Arrays.asList(newName), ((SNode) MapSequence.fromMap(_params).get("target")), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
+      RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.RenameProperty", Arrays.asList("newName"), Arrays.asList(newName), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
       new RefactoringFacade().execute(c);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RenameProperty", t);
@@ -85,6 +84,6 @@ public class RenameProperty_Action extends GeneratedAction {
   }
 
   private String init(final Map<String, Object> _params) {
-    return RenameDialogWrapper.getNewName(((Project) MapSequence.fromMap(_params).get("project")), SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "name"), "Property");
+    return RenameDialog.getNewName(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "name"), "property");
   }
 }

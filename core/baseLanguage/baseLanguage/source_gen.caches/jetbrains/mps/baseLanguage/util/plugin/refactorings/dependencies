@@ -1006,7 +1006,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode extendsClassName="jetbrains.mps.ide.refactoring.RenameDialogWrapper" />
+    <classNode extendsClassName="jetbrains.mps.ide.refactoring.RenameDialog" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.RenameRefactoringDialog" file="RenameRefactoringDialog.java">
     <classNode dependClassName="java.awt.Frame" />
