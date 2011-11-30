@@ -1261,6 +1261,13 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Show Cycle Paths" />
       <property name="description" nameId="tp4k.1213273179528" value="Show All Cycle Paths for Selected Module" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2704531651333004425">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node" />
+      <property name="name" nameId="tpck.1169194664001" value="NodeRefactoring" />
+      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
+      <property name="caption" nameId="tp4k.1204991940915" value="Refactoring (*)" />
+      <property name="mnemonic" nameId="tp4k.1205160812895" value="r" />
+    </node>
   </roots>
   <root id="1204991218714">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148419636">
@@ -32599,6 +32606,13 @@
         </node>
       </node>
     </node>
+  </root>
+  <root id="2704531651333004425">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2704531651333004427">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1587195459761469116" resolveInfo="FindUsages" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="1587195459761469122" resolveInfo="refactoring" />
+    </node>
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2704531651333004437" />
   </root>
 </model>
 
