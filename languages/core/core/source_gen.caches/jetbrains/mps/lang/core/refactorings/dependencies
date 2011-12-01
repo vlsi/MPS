@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.core.refactorings.ModelOrNodeChooser" file="ModelOrNodeChooser.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTree" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SModelTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SNodeTreeNode" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode extendsClassName="com.intellij.ui.components.JBScrollPane" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.core.refactorings.MoveNodes" file="MoveNodes.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -30,7 +15,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.lang.core.refactorings.MoveNodes_Target" />
-    <classNode dependClassName="jetbrains.mps.lang.core.refactorings.MoveNodes_target_Chooser" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -50,16 +34,6 @@
   <dependency className="jetbrains.mps.lang.core.refactorings.MoveNodes_Target" file="MoveNodes_Target.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.core.refactorings.MoveNodes_target_Chooser" file="MoveNodes_target_Chooser.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.lang.core.refactorings.ModelOrNodeChooser" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.InvalidInputValueException" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.refactoring.framework.paramchooser.BaseChooser" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.refactorings.Rename" file="Rename.java">
     <classNode dependClassName="java.lang.String" />
