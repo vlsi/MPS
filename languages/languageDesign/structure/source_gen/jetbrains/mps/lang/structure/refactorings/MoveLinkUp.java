@@ -60,24 +60,15 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
     if ((concept.value == null)) {
       return false;
     }
-
-    if (!(MoveLinkUp.this.ask(refactoringContext))) {
-      return false;
-    }
     // check if merge possible 
+    if (!(((Boolean) refactoringContext.getParameter("mergeLinks")))) {
+      refactoringContext.setParameter("linkToReplace", null);
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         refactoringContext.setParameter("linkToReplace", RefUtil.findLinkToMerge(((SNode) refactoringContext.getParameter("targetConcept")), refactoringContext.getSelectedNode()));
       }
     });
-    if ((((SNode) refactoringContext.getParameter("linkToReplace")) != null)) {
-      if (!(MoveLinkUp.this.askBool(refactoringContext, "Merge to link with the same name?", "mergeLinks", new MoveLinkUp_mergeLinks_Settings(refactoringContext)))) {
-        return false;
-      }
-      if (!(((Boolean) refactoringContext.getParameter("mergeLinks")))) {
-        refactoringContext.setParameter("linkToReplace", null);
-      }
-    }
     return true;
   }
 

@@ -34,14 +34,18 @@ public class NodeHierarchyChooser extends JBScrollPane {
   }
 
   public SNode getSelectedObject() {
-    final ChildHierarchyTreeNode treeNode = (ChildHierarchyTreeNode) myTree.getSelectionPath().getLastPathComponent();
+    Object treeNode = myTree.getSelectionPath().getLastPathComponent();
     if (treeNode == null) {
       return null;
     }
+    if (!(treeNode instanceof ChildHierarchyTreeNode)) {
+      return null;
+    }
+    final ChildHierarchyTreeNode treeNodeChild = (ChildHierarchyTreeNode) treeNode;
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = treeNode.getNode();
+        result.value = treeNodeChild.getNode();
       }
     });
     return ((SNode) result.value);

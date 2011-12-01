@@ -19,6 +19,7 @@ public class RefactoringAdditions_ActionGroup extends GeneratedActionGroup {
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.RenameProperty_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.SafeDeleteConcept_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.SafeDeleteLink_Action");
+      RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.MoveLinkUp_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

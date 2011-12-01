@@ -94,7 +94,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.refactorings.MoveLinkUp_Target" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.refactorings.MoveLinkUp_mergeLinks_Settings" />
     <classNode dependClassName="jetbrains.mps.lang.structure.scripts.RefUtil" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -114,12 +113,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.structure.refactorings.MoveLinkUp_mergeLinks_Settings" file="MoveLinkUp_mergeLinks_Settings.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings" />
-    <classNode extendsClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.BaseChooserSettings" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.refactorings.MovePropertyUp" file="MovePropertyUp.java">
     <classNode dependClassName="java.lang.Class" />
