@@ -49,7 +49,7 @@ public abstract class RefactoringDialog extends DialogWrapper {
   private class RefactorAction extends AbstractAction {
     public RefactorAction() {
       putValue(NAME, RefactoringBundle.message("refactor.button"));
-      putValue(RenameDialog.DEFAULT_ACTION, Boolean.TRUE);
+      putValue(DialogWrapper.DEFAULT_ACTION, Boolean.TRUE);
     }
 
     public void actionPerformed(ActionEvent event) {

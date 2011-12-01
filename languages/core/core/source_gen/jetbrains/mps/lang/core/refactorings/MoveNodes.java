@@ -49,6 +49,10 @@ public class MoveNodes extends BaseLoggableRefactoring {
   public boolean init(final RefactoringContext refactoringContext) {
     ((RefactoringContext) refactoringContext).setLocal(true);
 
+    if (!(MoveNodes.this.ask(refactoringContext, new MoveNodes_target_Chooser(refactoringContext)))) {
+      return false;
+    }
+
     final Wrappers._boolean result = new Wrappers._boolean(false);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -129,6 +133,6 @@ public class MoveNodes extends BaseLoggableRefactoring {
   }
 
   public static String getKeyStroke_static() {
-    return "";
+    return " F6";
   }
 }

@@ -53,6 +53,6 @@ public class SafeDelete extends BaseRefactoring {
   }
 
   public static String getKeyStroke_static() {
-    return "";
+    return "alt DELETE";
   }
 }

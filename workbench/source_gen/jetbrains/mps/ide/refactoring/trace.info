@@ -1196,7 +1196,7 @@
     <nodeInfo nodeId="7643363697480570936" fileName="RefactoringDialog.java" startLine="42" startPosition="41" endLine="43" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7643363697480570938" fileName="RefactoringDialog.java" startLine="43" startPosition="33" endLine="44" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7643363697480570251" fileName="RefactoringDialog.java" startLine="50" startPosition="29" endLine="51" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7643363697480570256" fileName="RefactoringDialog.java" startLine="51" startPosition="67" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7643363697480570256" fileName="RefactoringDialog.java" startLine="51" startPosition="67" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7643363697480570914" fileName="RefactoringDialog.java" startLine="55" startPosition="52" endLine="56" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3839699242126884963" fileName="RefactoringDialog.java" startLine="46" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
     <nodeInfo nodeId="3839699242126884932" fileName="RefactoringDialog.java" startLine="19" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringDialog#(Lcom/intellij/openapi/project/Project;Z)V" />
@@ -1212,7 +1212,7 @@
     <scopeInfo nodeId="3839699242126884940" fileName="RefactoringDialog.java" startLine="20" startPosition="75" endLine="22" endPosition="24" />
     <scopeInfo nodeId="7643363697480570935" fileName="RefactoringDialog.java" startLine="42" startPosition="41" endLine="44" endPosition="62" />
     <scopeInfo nodeId="3839699242126884963" fileName="RefactoringDialog.java" startLine="46" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="7643363697480570248" fileName="RefactoringDialog.java" startLine="50" startPosition="29" endLine="52" endPosition="58" />
+    <scopeInfo nodeId="7643363697480570248" fileName="RefactoringDialog.java" startLine="50" startPosition="29" endLine="52" endPosition="59" />
     <scopeInfo nodeId="3839699242126884932" fileName="RefactoringDialog.java" startLine="19" startPosition="0" endLine="23" endPosition="3">
       <varInfo nodeId="3839699242126884974" varName="canBeParent" />
       <varInfo nodeId="3839699242126884933" varName="project" />
@@ -1230,85 +1230,6 @@
     <scopeInfo nodeId="7643363697480575798" fileName="RefactoringDialog.java" startLine="33" startPosition="0" endLine="40" endPosition="0" />
     <unitInfo nodeId="3839699242126884917" fileName="RefactoringDialog.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RefactoringDialog" />
     <unitInfo nodeId="7643363697480570243" fileName="RefactoringDialog.java" startLine="49" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RefactoringDialog$RefactorAction" />
-  </root>
-  <root nodeId="6188135140808769438">
-    <nodeInfo nodeId="6188135140808769526" fileName="NodeHierarchyChooser.java" startLine="17" startPosition="56" endLine="18" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
-    <nodeInfo nodeId="6188135140808769444" fileName="NodeHierarchyChooser.java" startLine="20" startPosition="49" endLine="21" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6188135140808769445" fileName="NodeHierarchyChooser.java" startLine="21" startPosition="12" endLine="22" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5187166430600698216" fileName="NodeHierarchyChooser.java" startLine="24" startPosition="25" endLine="25" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6188135140808769453" fileName="NodeHierarchyChooser.java" startLine="27" startPosition="7" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6188135140808769464" fileName="NodeHierarchyChooser.java" startLine="30" startPosition="25" endLine="31" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5278386773476806956" fileName="NodeHierarchyChooser.java" startLine="36" startPosition="36" endLine="37" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5278386773476806933" fileName="NodeHierarchyChooser.java" startLine="38" startPosition="27" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6188135140808769486" fileName="NodeHierarchyChooser.java" startLine="40" startPosition="5" endLine="41" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8536960582516048688" fileName="NodeHierarchyChooser.java" startLine="43" startPosition="25" endLine="44" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6188135140808769523" fileName="NodeHierarchyChooser.java" startLine="46" startPosition="7" endLine="47" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6188135140809517406" fileName="NodeHierarchyChooser.java" startLine="50" startPosition="69" endLine="51" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="ancestorsProvider" />
-    <nodeInfo nodeId="6188135140809479888" fileName="NodeHierarchyChooser.java" startLine="53" startPosition="30" endLine="54" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6188135140809514249" fileName="NodeHierarchyChooser.java" startLine="57" startPosition="46" endLine="58" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6188135140809517409" fileName="NodeHierarchyChooser.java" startLine="61" startPosition="73" endLine="62" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6188135140809517391" fileName="NodeHierarchyChooser.java" startLine="62" startPosition="62" endLine="63" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6188135140809479921" fileName="NodeHierarchyChooser.java" startLine="66" startPosition="43" endLine="67" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6188135140809514233" fileName="NodeHierarchyChooser.java" startLine="70" startPosition="69" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6188135140809514231" fileName="NodeHierarchyChooser.java" startLine="74" startPosition="37" endLine="75" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5278386773476806924" fileName="NodeHierarchyChooser.java" startLine="37" startPosition="118" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6188135140809447967" fileName="NodeHierarchyChooser.java" startLine="52" startPosition="0" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyHierarchyTree#()V" />
-    <nodeInfo nodeId="5187166430600698212" fileName="NodeHierarchyChooser.java" startLine="23" startPosition="57" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6188135140808769462" fileName="NodeHierarchyChooser.java" startLine="29" startPosition="52" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6188135140808769491" fileName="NodeHierarchyChooser.java" startLine="42" startPosition="57" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6188135140809514243" fileName="NodeHierarchyChooser.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setHierarchyNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="6188135140809479902" fileName="NodeHierarchyChooser.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParent#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6188135140809479908" fileName="NodeHierarchyChooser.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParents#(Ljetbrains/mps/smodel/SNode;Ljava/util/Set;)Ljava/util/Set;" />
-    <nodeInfo nodeId="6188135140809479915" fileName="NodeHierarchyChooser.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="noNodeString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5187166430600698211" fileName="NodeHierarchyChooser.java" startLine="22" startPosition="61" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6188135140808769460" fileName="NodeHierarchyChooser.java" startLine="28" startPosition="38" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6188135140808769490" fileName="NodeHierarchyChooser.java" startLine="41" startPosition="63" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6188135140809479895" fileName="NodeHierarchyChooser.java" startLine="60" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescendants#(Ljetbrains/mps/smodel/SNode;Ljava/util/Set;)Ljava/util/Set;" />
-    <nodeInfo nodeId="6188135140808769473" fileName="NodeHierarchyChooser.java" startLine="35" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedObject#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6188135140808769440" fileName="NodeHierarchyChooser.java" startLine="19" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeHierarchyChooser#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="5187166430600698213" fileName="NodeHierarchyChooser.java" startLine="24" startPosition="25" endLine="25" endPosition="176" />
-    <scopeInfo nodeId="6188135140808769463" fileName="NodeHierarchyChooser.java" startLine="30" startPosition="25" endLine="31" endPosition="54" />
-    <scopeInfo nodeId="5278386773476806925" fileName="NodeHierarchyChooser.java" startLine="38" startPosition="27" endLine="39" endPosition="18" />
-    <scopeInfo nodeId="6188135140808769492" fileName="NodeHierarchyChooser.java" startLine="43" startPosition="25" endLine="44" endPosition="42" />
-    <scopeInfo nodeId="6188135140809447970" fileName="NodeHierarchyChooser.java" startLine="53" startPosition="30" endLine="54" endPosition="74" />
-    <scopeInfo nodeId="6188135140809514246" fileName="NodeHierarchyChooser.java" startLine="57" startPosition="46" endLine="58" endPosition="34" />
-    <scopeInfo nodeId="6188135140809479907" fileName="NodeHierarchyChooser.java" startLine="66" startPosition="43" endLine="67" endPosition="18" />
-    <scopeInfo nodeId="6188135140809479914" fileName="NodeHierarchyChooser.java" startLine="70" startPosition="69" endLine="71" endPosition="34" />
-    <scopeInfo nodeId="6188135140809479918" fileName="NodeHierarchyChooser.java" startLine="74" startPosition="37" endLine="75" endPosition="23" />
-    <scopeInfo nodeId="6188135140809479901" fileName="NodeHierarchyChooser.java" startLine="61" startPosition="73" endLine="63" endPosition="57" />
-    <scopeInfo nodeId="6188135140809447967" fileName="NodeHierarchyChooser.java" startLine="52" startPosition="0" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="5187166430600698212" fileName="NodeHierarchyChooser.java" startLine="23" startPosition="57" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="6188135140808769462" fileName="NodeHierarchyChooser.java" startLine="29" startPosition="52" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="6188135140808769491" fileName="NodeHierarchyChooser.java" startLine="42" startPosition="57" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6188135140809514243" fileName="NodeHierarchyChooser.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="6188135140809514247" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="6188135140809479902" fileName="NodeHierarchyChooser.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="6188135140809479905" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="6188135140809479908" fileName="NodeHierarchyChooser.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="6188135140809479912" varName="node" />
-      <varInfo nodeId="5373778178059746772" varName="visited" />
-    </scopeInfo>
-    <scopeInfo nodeId="6188135140809479915" fileName="NodeHierarchyChooser.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="6188135140809479895" fileName="NodeHierarchyChooser.java" startLine="60" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="6188135140809479899" varName="node" />
-      <varInfo nodeId="5373778178059754720" varName="visited" />
-    </scopeInfo>
-    <scopeInfo nodeId="6188135140808769475" fileName="NodeHierarchyChooser.java" startLine="36" startPosition="36" endLine="47" endPosition="34">
-      <varInfo nodeId="6188135140808769487" varName="result" />
-      <varInfo nodeId="5278386773476806957" varName="treeNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6188135140808769443" fileName="NodeHierarchyChooser.java" startLine="20" startPosition="49" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="6188135140808769473" fileName="NodeHierarchyChooser.java" startLine="35" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="6188135140808769440" fileName="NodeHierarchyChooser.java" startLine="19" startPosition="0" endLine="34" endPosition="3">
-      <varInfo nodeId="8416108457267542652" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="6188135140808769438" fileName="NodeHierarchyChooser.java" startLine="17" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.refactoring.NodeHierarchyChooser" />
-    <unitInfo nodeId="5187166430600698212" fileName="NodeHierarchyChooser.java" startLine="23" startPosition="45" endLine="27" endPosition="5" unitName="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$1" />
-    <unitInfo nodeId="6188135140808769462" fileName="NodeHierarchyChooser.java" startLine="29" startPosition="40" endLine="33" endPosition="5" unitName="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$2" />
-    <unitInfo nodeId="6188135140808769491" fileName="NodeHierarchyChooser.java" startLine="42" startPosition="45" endLine="46" endPosition="5" unitName="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$3" />
-    <unitInfo nodeId="6188135140809447965" fileName="NodeHierarchyChooser.java" startLine="50" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$MyHierarchyTree" />
   </root>
   <root nodeId="7012097027058828343">
     <nodeInfo nodeId="4284078376668155142" fileName="ModelOrNodeChooser.java" startLine="17" startPosition="54" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
