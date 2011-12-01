@@ -7,7 +7,7 @@
   <unitInfo fileName="AffectedNodesClause_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.AffectedNodesClause_BehaviorDescriptor" />
   <unitInfo fileName="AskBooleanExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.AskBooleanExpression_BehaviorDescriptor" />
   <unitInfo fileName="AskExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.AskExpression_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BooleanMPSParameterType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.BooleanMPSParameterType_BehaviorDescriptor" />
   <unitInfo fileName="ChangeFeatureNameExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ChangeFeatureNameExpression_BehaviorDescriptor" />
   <unitInfo fileName="ChangeFeatureNameOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ChangeFeatureNameOperation_BehaviorDescriptor" />
@@ -31,6 +31,7 @@
   <unitInfo fileName="DoWhenDoneClause_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.DoWhenDoneClause_BehaviorDescriptor" />
   <unitInfo fileName="ErrorStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ErrorStatement_BehaviorDescriptor" />
   <unitInfo fileName="ExecuteFindersExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ExecuteFindersExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ExecuteRefactoringStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ExecuteRefactoringStatement_BehaviorDescriptor" />
   <unitInfo fileName="FilterArgumentClause_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.FilterArgumentClause_BehaviorDescriptor" />
   <unitInfo fileName="FilterParameterClause_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.FilterParameterClause_BehaviorDescriptor" />
   <unitInfo fileName="FinderReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.FinderReference_BehaviorDescriptor" />

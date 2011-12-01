@@ -8,12 +8,14 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -25,41 +27,44 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xt8j9n_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xt8j9n_a");
-    editorCell.addEditorCell(this.createConstant_xt8j9n_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_xt8j9n_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xt8j9n_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_xt8j9n_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xt8j9n_d0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_xt8j9n_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xt8j9n_f0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_xt8j9n_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isRefactoringApplicable");
-    editorCell.setCellId("Constant_xt8j9n_a0");
-    editorCell.setDefaultText("");
+    editorCell.addEditorCell(this.createConstant_xt8j9n_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_xt8j9n_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_xt8j9n_g0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_xt8j9n_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_xt8j9n_b0");
-    BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
+    Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xt8j9n_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_xt8j9n_d0");
+    Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_xt8j9n_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_xt8j9n_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    editorCell.setCellId("Constant_xt8j9n_e0");
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_xt8j9n_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_xt8j9n_f0");
-    BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
+    editorCell.setCellId("Constant_xt8j9n_g0");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -82,12 +87,31 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_xt8j9n_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_xt8j9n_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConceptProperty_xt8j9n_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
+    provider.setRole("alias");
+    provider.setNoTargetText("<no alias>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("conceptProperty_alias");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
