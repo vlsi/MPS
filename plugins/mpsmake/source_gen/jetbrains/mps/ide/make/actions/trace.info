@@ -727,7 +727,7 @@
     <nodeInfo nodeId="6942777512604551093" fileName="DefaultMakeTask.java" startLine="34" startPosition="57" endLine="35" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1637160376125502138" fileName="DefaultMakeTask.java" startLine="35" startPosition="53" endLine="36" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1637160376125502135" fileName="DefaultMakeTask.java" startLine="36" startPosition="74" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4753172061859438968" fileName="DefaultMakeTask.java" startLine="44" startPosition="27" endLine="45" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1024532694476280359" fileName="DefaultMakeTask.java" startLine="44" startPosition="27" endLine="45" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4753172061859438975" fileName="DefaultMakeTask.java" startLine="46" startPosition="26" endLine="47" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4753172061859438982" fileName="DefaultMakeTask.java" startLine="48" startPosition="11" endLine="49" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6942777512604552501" fileName="DefaultMakeTask.java" startLine="49" startPosition="91" endLine="50" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -772,7 +772,7 @@
     <scopeInfo nodeId="4753172061859438991" fileName="DefaultMakeTask.java" startLine="53" startPosition="31" endLine="58" endPosition="11" />
     <scopeInfo nodeId="4753172061859438967" fileName="DefaultMakeTask.java" startLine="44" startPosition="27" endLine="50" endPosition="69">
       <varInfo nodeId="4753172061859438983" varName="compilationResult" />
-      <varInfo nodeId="4753172061859438969" varName="maker" />
+      <varInfo nodeId="1024532694476280360" varName="maker" />
     </scopeInfo>
     <scopeInfo nodeId="4753172061859438966" fileName="DefaultMakeTask.java" startLine="43" startPosition="59" endLine="52" endPosition="0" />
     <scopeInfo nodeId="1637160376125502148" fileName="DefaultMakeTask.java" startLine="42" startPosition="9" endLine="59" endPosition="7" />
