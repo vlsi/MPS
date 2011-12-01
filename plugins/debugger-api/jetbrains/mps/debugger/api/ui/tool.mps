@@ -15,7 +15,6 @@
   <import index="v38v" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.ui(MPS.Workbench/jetbrains.mps.ide.ui@java_stub)" version="-1" />
   <import index="lels" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.execution.process(MPS.Workbench/com.intellij.execution.process@java_stub)" version="-1" />
   <import index="vo76" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.execution.ui.actions(MPS.Workbench/com.intellij.execution.ui.actions@java_stub)" version="-1" />
-  <import index="gb0u" modelUID="f:java_stub#25891414-2b70-48c7-b1cc-8dc0c127d669#jetbrains.mps.debugger.api.ui.actions(jetbrains.mps.debugger.api.runtime/jetbrains.mps.debugger.api.ui.actions@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" implicit="yes" />
@@ -1028,6 +1027,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="2314980964144011832">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="2314980964144011833">
+            <property name="text" nameId="tpee.6329021646629104958" value="todo" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4474271214083120553">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4474271214083120554">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4474271214083120555">
@@ -1042,9 +1046,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4474271214083120559">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1qcs.~ActionManager%dgetAction(java%dlang%dString)%ccom%dintellij%dopenapi%dactionSystem%dAnAction" resolveInfo="getAction" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4474271214083120560">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gb0u.~DebugTool_ActionGroup" resolveInfo="DebugTool_ActionGroup" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gb0u.~DebugTool_ActionGroup%dID" resolveInfo="ID" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2314980964144011830">
+                    <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup" />
                   </node>
                 </node>
               </node>
