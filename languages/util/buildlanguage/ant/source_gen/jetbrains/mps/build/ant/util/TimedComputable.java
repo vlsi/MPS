@@ -8,6 +8,9 @@ import org.jetbrains.annotations.NotNull;
 public abstract class TimedComputable<T> extends Timed<T> {
   private int myAcquireCount = 0;
 
+  public TimedComputable() {
+  }
+
   public T acquire() {
     myAccessCount++;
     myAcquireCount++;
