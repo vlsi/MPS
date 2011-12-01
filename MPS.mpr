@@ -166,6 +166,7 @@
       <modulePath path="${project}/languages/languageDesign/typesystem/languages/test/test.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/jetbrains.mps.bootstrap.helgins.sandbox/jetbrains.mps.bootstrap.helgins.sandbox.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/typesystem.mpl" folder="core.language-design" />
+      <modulePath path="${project}/languages/migration/migration.mpl" folder="languages.execution.usages" />
       <modulePath path="${project}/languages/util/bash/languages/bash/bash.mpl" folder="languages.bash" />
       <modulePath path="${project}/languages/util/bash/solutions/jetbrains.mps.bash.sandbox/jetbrains.mps.bash.sandbox.msd" folder="languages.bash" />
       <modulePath path="${project}/languages/util/builders/builders.mpl" folder="baseLanguage.builders" />
@@ -273,6 +274,7 @@
       <modulePath path="${project}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/startup.msd" folder="languages.execution.usages.baseLanguage" />
       <modulePath path="${project}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution/execution.msd" folder="languages.execution.usages.baseLanguage" />
       <modulePath path="${project}/plugins/execution-configurations/jetbrains.mps.execution.configurations.mps/mps.msd" folder="languages.execution.usages" />
+      <modulePath path="${project}/plugins/execution-configurations/migration/migration.mpl" folder="unitTests" />
       <modulePath path="${project}/plugins/execution-configurations/unitTests/execution/execution.msd" folder="languages.execution.usages.unitTests" />
       <modulePath path="${project}/plugins/execution-configurations/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.runtime.msd" folder="languages.execution.usages.unitTests" />
       <modulePath path="${project}/plugins/execution-languages/commands/commands.mpl" folder="languages.execution" />

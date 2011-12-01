@@ -3017,6 +3017,13 @@
         <property name="id" nameId="tps4.1222447189012" value="f618e99a-2641-465c-bb54-31fe76f9e285" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.unitTest.runtime" />
       </node>
+      <node role="libraries" roleId="tps4.7972626602783739367" type="tps4.Library" typeId="tps4.7972626602783737959" id="8166483729924380444">
+        <property name="path" nameId="tps4.7972626602783737960" value="migration" />
+        <node role="module" roleId="tps4.7972626602783737961" type="tps4.Module" typeId="tps4.1203599702327" id="8166483729924380446">
+          <property name="id" nameId="tps4.1222447189012" value="92f5dc44-466d-4972-9f92-b03994f153c4" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.migration" />
+        </node>
+      </node>
     </node>
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="8549696200077330815">
       <node role="classpath" roleId="tps4.5610328873691243476" type="tps4.Module" typeId="tps4.1203599702327" id="2712129534618471817">
