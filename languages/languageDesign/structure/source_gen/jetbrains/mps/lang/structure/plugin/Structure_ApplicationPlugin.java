@@ -28,6 +28,8 @@ public class Structure_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RenameConcept_Action());
     addAction(new RenameLink_Action());
     addAction(new RenameProperty_Action());
+    addAction(new SafeDeleteConcept_Action());
+    addAction(new SafeDeleteLink_Action());
     addAction(new ShowDefaultHelp_Action());
     addAction(new ShowHelpForAspect_Action());
     addAction(new ShowHelpForNode_Action());
