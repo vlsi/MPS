@@ -425,7 +425,7 @@
     <nodeInfo nodeId="1858552893540404499" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="63" startPosition="15" endLine="64" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1858552893540404499" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="64" startPosition="83" endLine="65" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1858552893540404499" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="65" startPosition="222" endLine="66" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1858552893540404499" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="66" startPosition="72" endLine="67" endPosition="322" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1858552893540404499" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="66" startPosition="72" endLine="67" endPosition="320" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1201614912300" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="74" startPosition="5" endLine="75" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1201614912300" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="75" startPosition="23" endLine="76" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1201614912300" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="76" startPosition="23" endLine="77" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -594,7 +594,7 @@
     <nodeInfo nodeId="1201614755266" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="312" startPosition="9" endLine="317" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201614755266" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="312" startPosition="9" endLine="317" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1858552893540404502" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="50" startPosition="96" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1858552893540404499" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="62" startPosition="154" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1858552893540404499" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="62" startPosition="152" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201614912300" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="87" startPosition="48" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201614990748" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="87" startPosition="48" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1858552893540404498" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="101" startPosition="108" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -718,7 +718,7 @@
       <varInfo nodeId="1858552893540404502" varName="_info_12389875345" />
       <varInfo nodeId="1858552893540404502" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="1858552893540404499" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="63" startPosition="15" endLine="67" endPosition="322">
+    <scopeInfo nodeId="1858552893540404499" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="63" startPosition="15" endLine="67" endPosition="320">
       <varInfo nodeId="1858552893540404499" varName="_info_12389875345" />
       <varInfo nodeId="1858552893540404499" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
@@ -752,7 +752,7 @@
     <scopeInfo nodeId="1201614755266" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="312" startPosition="9" endLine="317" endPosition="9" />
     <scopeInfo nodeId="1229719003025" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="34" startPosition="109" endLine="40" endPosition="13" />
     <scopeInfo nodeId="1201618806242" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="42" startPosition="195" endLine="48" endPosition="13" />
-    <scopeInfo nodeId="1237814209724" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="62" startPosition="154" endLine="68" endPosition="15" />
+    <scopeInfo nodeId="1237814209724" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="62" startPosition="152" endLine="68" endPosition="15" />
     <scopeInfo nodeId="1201614912305" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="87" startPosition="48" endLine="93" endPosition="9" />
     <scopeInfo nodeId="1214834497823" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="101" startPosition="108" endLine="107" endPosition="7" />
     <scopeInfo nodeId="1232130715271" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="124" startPosition="241" endLine="130" endPosition="9" />

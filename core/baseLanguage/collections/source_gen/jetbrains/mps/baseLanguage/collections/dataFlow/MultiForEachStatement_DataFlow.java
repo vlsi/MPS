@@ -16,7 +16,7 @@ public class MultiForEachStatement_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode it : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "forEach", true))) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(it, "input", true));
-      _context.getBuilder().emitWrite(SLinkOperations.getTarget(it, "variable", true));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(it, "variable", true));
     }
     _context.getBuilder().emitLabel("foreach");
     _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()));
