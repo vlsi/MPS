@@ -58,6 +58,7 @@ public class ModuleMaker {
   private Dependencies myDependencies;
   private final IPerformanceTracer ttrace;
   private final IMessageHandler handler;
+  private MessageKind myLevel = MessageKind.ERROR;
 
   public ModuleMaker() {
     this(null);
@@ -68,6 +69,11 @@ public class ModuleMaker {
       ? new PerformanceTracer("module maker")
       : new NullPerformanceTracer();
     this.handler = handler;
+  }
+
+  public ModuleMaker(@Nullable IMessageHandler handler, MessageKind level) {
+    this (handler);
+    myLevel = level;
   }
 
   public void clean(final Set<IModule> modules, @NotNull final ProgressMonitor monitor) {
@@ -139,6 +145,11 @@ public class ModuleMaker {
           warnCount += result.getWarnings();
           compiled = compiled || result.isCompiledAnything();
           messages.addAll(result.getMessages());
+          for (IMessage msg: result.getMessages()) {
+            if (msg.getKind() == MessageKind.ERROR) {
+              handle(msg);
+            }
+          }
         }
       } finally {
         inner.done();
@@ -149,9 +160,15 @@ public class ModuleMaker {
       ttrace.pop();
       final String report = ttrace.report();
       if (report != null) {
-        handler.handle(new Message(MessageKind.INFORMATION, report));
+        handle(new Message(MessageKind.INFORMATION, report));
       }
       monitor.done();
+    }
+  }
+
+  private  void handle (IMessage msg) {
+    if (handler != null && msg.getKind().ordinal() >= myLevel.ordinal()) {
+      handler.handle(msg);
     }
   }
 
@@ -413,7 +430,7 @@ public class ModuleMaker {
             LOG.debug(errMsg, hintObject);
           } else {
             if (myOutputtedErrors == 0) {
-              myMessages.add(new MyMessage(MessageKind.ERROR, "Errors encountered", null));
+              myMessages.add(new MyMessage(MessageKind.ERROR, "Compilation problems", null));
               LOG.debug("Errors encountered");
               LOG.debug("Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
             }

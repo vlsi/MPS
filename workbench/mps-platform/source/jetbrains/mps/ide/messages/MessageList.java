@@ -304,9 +304,9 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
       public void mouseMoved(MouseEvent e) {
         int index = myList.locationToIndex(e.getPoint());
 
-        Message item = null;
+        IMessage item = null;
         if (index != -1) {
-          item = (Message) myModel.getElementAt(index);
+          item = (IMessage) myModel.getElementAt(index);
         }
 
         if (item != null && item.getHintObject() != null && myAutoscrollToSourceAction.isSelected(null)) {
@@ -319,7 +319,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
   }
 
   protected void openCurrentMessageIfPossible() {
-    final Message selectedMessage = (Message) myList.getSelectedValue();
+    final IMessage selectedMessage = (IMessage) myList.getSelectedValue();
     if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
 
     /* temp hack: write action instead of read, TODO remove lock*/
@@ -355,7 +355,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
         public void actionPerformed(AnActionEvent e) {
           StringBuilder sb = new StringBuilder();
           for (Object o : myList.getSelectedValues()) {
-            sb.append(((Message) o).getText());
+            sb.append(((IMessage) o).getText());
             sb.append("\n");
           }
           CopyPasteManagerEx.getInstance().setContents(new StringSelection(sb.toString()));
@@ -409,7 +409,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
   private String getHelpUrlForCurrentMessage() {
     if (myList.getSelectedValues().length != 1) return null;
 
-    Message message = (Message) (myList.getSelectedValue());
+    IMessage message = (IMessage) (myList.getSelectedValue());
     return message.getHelpUrl();
   }
 
@@ -630,7 +630,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
       if (MPSCommonDataKeys.EXCEPTION.getName().equals(id)) {
         Throwable exc = null;
         for (Object message : myList.getSelectedValues()) {
-          exc = ((Message) message).getException();
+          exc = ((IMessage) message).getException();
           if(exc != null) break;
         }
         return exc;
@@ -676,7 +676,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
     private OccurenceInfo next(final int delta, boolean doMove) {
       int current = myList.getSelectedIndex();
       for (current += delta; current >= 0 && current < myModel.getSize(); current += delta) {
-        Message msg = ((Message) myModel.getElementAt(current));
+        IMessage msg = ((IMessage) myModel.getElementAt(current));
         if (msg.getHintObject() == null) continue;
         if (doMove) {
           myList.setSelectedIndex(current);
