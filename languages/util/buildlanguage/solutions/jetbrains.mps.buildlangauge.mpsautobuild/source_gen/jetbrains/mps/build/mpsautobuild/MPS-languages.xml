@@ -1131,7 +1131,7 @@
   </target>
   <target name="pack.jetbrains.mps.execution.migration">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/migration/classes_gen" />
+    <mkdir dir="${base_dir}/plugins/execution-configurations/migration/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/migration/jetbrains.mps.execution.migration.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/migration/jetbrains.mps.execution.migration.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.execution.migration" uuid="92f5dc44-466d-4972-9f92-b03994f153c4" type="language">
@@ -1250,15 +1250,15 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/migration/jetbrains.mps.execution.migration-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/languages/migration/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/languages/migration/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/languages/migration/migration.mpl" prefix="module" />
-      <zipfileset dir="${base_dir}/languages/migration/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${base_dir}/plugins/execution-configurations/migration/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/plugins/execution-configurations/migration/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/plugins/execution-configurations/migration/migration.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/plugins/execution-configurations/migration/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/migration/jetbrains.mps.execution.migration.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/migration/jetbrains.mps.execution.migration.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/languages/migration" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/languages/migration/classes_gen" />
+      <zipfileset dir="${base_dir}/plugins/execution-configurations/migration" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/plugins/execution-configurations/migration/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.unitTest.execution/migration/jetbrains.mps.execution.migration.jar.jtmp" />
   </target>

@@ -50,7 +50,7 @@
   <property name="jetbrains.mps.execution.configurations.classes" value="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
   <property name="jetbrains.mps.execution.configurations.deprecated.classes" value="${base_dir}/plugins/execution-languages/deprecated/classes_gen" />
   <property name="jetbrains.mps.execution.lib.classes" value="${base_dir}/plugins/execution-languages/library/classes_gen" />
-  <property name="jetbrains.mps.execution.migration.classes" value="${base_dir}/languages/migration/classes_gen" />
+  <property name="jetbrains.mps.execution.migration.classes" value="${base_dir}/plugins/execution-configurations/migration/classes_gen" />
   <property name="jetbrains.mps.execution.settings.classes" value="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
   <property name="jetbrains.mps.execution.util.classes" value="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
   <property name="jetbrains.mps.gtext.classes" value="${base_dir}/languages/util/gtext/classes_gen" />
@@ -389,8 +389,8 @@
     <path path="${base_dir}/plugins/execution-languages/library/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.execution.migration_tjc.src">
-    <path path="${base_dir}/languages/migration/source_gen" />
-    <path path="${base_dir}/languages/migration/test_gen" />
+    <path path="${base_dir}/plugins/execution-configurations/migration/source_gen" />
+    <path path="${base_dir}/plugins/execution-configurations/migration/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.execution.settings_tjc.src">
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/source_gen" />
@@ -4945,7 +4945,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.execution.migration_tjc.classpaths">
-    <path path="${base_dir}/languages/migration/classes_gen" />
+    <path path="${base_dir}/plugins/execution-configurations/migration/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
@@ -5021,7 +5021,6 @@
     <path path="${base_dir}/languages/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
-    <path path="${base_dir}/languages/migration/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
@@ -5069,6 +5068,7 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/execution-configurations/migration/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -10876,21 +10876,21 @@
   <target name="compile.cycle.jetbrains.mps.execution.migration_tjc" depends="compile.cycle.jetbrains.mps.execution.configurations.deprecated_tjc">
     <property name="classes.dump" value="${jetbrains.mps.execution.migration.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/migration/source_gen" />
-    <mkdir dir="${base_dir}/languages/migration/test_gen" />
+    <mkdir dir="${base_dir}/plugins/execution-configurations/migration/source_gen" />
+    <mkdir dir="${base_dir}/plugins/execution-configurations/migration/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.execution.migration.classes}" />
     <javac classpathref="cycle.jetbrains.mps.execution.migration_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.execution.migration_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.execution.migration.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/migration/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/migration/test_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-configurations/migration/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-configurations/migration/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.execution.migration_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.migration.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/languages/migration/source_gen" />
-        <path path="${base_dir}/languages/migration/test_gen" />
+        <path path="${base_dir}/plugins/execution-configurations/migration/source_gen" />
+        <path path="${base_dir}/plugins/execution-configurations/migration/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
