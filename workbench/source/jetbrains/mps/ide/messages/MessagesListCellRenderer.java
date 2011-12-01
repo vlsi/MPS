@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.messages;
 
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 
 import javax.swing.DefaultListCellRenderer;
@@ -36,16 +37,19 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
     JLabel component = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
-    final Message message = (Message) value;
+    final IMessage message = (IMessage) value;
 
     component.setBackground(isSelected ? Color.LIGHT_GRAY : Color.WHITE);
     component.setBorder(new EmptyBorder(0, 0, 0, 0));
 
+    String text = (message instanceof Message) ?
+      ((Message)message).getCreationTimeString() + "\t: " + message :
+      message.getText();
     if (message.getHintObject() != null) {
-      component.setText(message.getCreationTimeString() + "\t: " + message);
+      component.setText(text);
       component.setForeground(Color.BLUE);
     } else {
-      component.setText(message.getCreationTimeString() + "\t: " + message);
+      component.setText(text);
       component.setForeground(Color.BLACK);
     }
 

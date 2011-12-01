@@ -12,8 +12,12 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.messages.IMessage;
 
 public class DefaultMakeTask extends Task.Modal {
   private boolean needClean;
@@ -29,7 +33,7 @@ public class DefaultMakeTask extends Task.Modal {
     final boolean[] reloadingNeeded = new boolean[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ModuleMaker maker = new ModuleMaker();
+        ModuleMaker maker = new ModuleMaker(new DefaultMakeTask.MessageHandler(), MessageKind.ERROR);
         if (needClean) {
           maker.clean(modules, indicator);
         }
@@ -43,6 +47,22 @@ public class DefaultMakeTask extends Task.Modal {
           ClassLoaderManager.getInstance().reloadAll(indicator);
         }
       });
+    }
+  }
+
+  private class MessageHandler implements IMessageHandler {
+    private MessagesViewTool mvt;
+
+    public MessageHandler() {
+      this.mvt = getProject().getComponent(MessagesViewTool.class);
+    }
+
+    public void clear() {
+      this.mvt.clear();
+    }
+
+    public void handle(IMessage message) {
+      this.mvt.add(message);
     }
   }
 }

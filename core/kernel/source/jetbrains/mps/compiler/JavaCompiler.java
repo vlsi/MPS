@@ -149,7 +149,7 @@ public class JavaCompiler {
       if (result.getErrors() != null) {
         for (CategorizedProblem e : result.getErrors()) {
           char[] fname = e.getOriginatingFileName();
-          LOG.error((fname == null ? "" : new String(fname)) + ":::" + e.getMessage());
+          LOG.debug("Compilation error: "+(fname == null ? "" : new String(fname)) + ":::" + e.getMessage());
         }
       }
       for (ClassFile file : result.getClassFiles()) {
