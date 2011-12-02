@@ -60,19 +60,54 @@
     <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="56" startPosition="81" endLine="57" endPosition="66" />
     <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="66" startPosition="60" endLine="67" endPosition="47" />
     <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="33" startPosition="26" endLine="36" endPosition="73" />
-    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="39" startPosition="35" endLine="42" endPosition="105" />
+    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="39" startPosition="35" endLine="42" endPosition="105">
+      <varInfo nodeId="1563914226484898745" varName="manager" />
+      <varInfo nodeId="1563914226484898745" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="47" startPosition="69" endLine="50" endPosition="5" />
     <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="65" startPosition="28" endLine="68" endPosition="75" />
-    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="71" startPosition="37" endLine="74" endPosition="107" />
-    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="17" startPosition="77" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="22" startPosition="89" endLine="26" endPosition="22" />
-    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="29" startPosition="87" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
-    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="71" startPosition="37" endLine="74" endPosition="107">
+      <varInfo nodeId="1563914226484898745" varName="manager" />
+      <varInfo nodeId="1563914226484898745" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="17" startPosition="77" endLine="21" endPosition="0">
+      <varInfo nodeId="1563914226484898745" varName="editorContext" />
+      <varInfo nodeId="1563914226484898745" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="22" startPosition="89" endLine="26" endPosition="22">
+      <varInfo nodeId="1563914226484898745" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1563914226484898745" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1563914226484898745" varName="editorContext" />
+      <varInfo nodeId="1563914226484898745" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1563914226484898745" varName="editorContext" />
+      <varInfo nodeId="1563914226484898745" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="29" startPosition="87" endLine="44" endPosition="22">
+      <varInfo nodeId="1563914226484898745" varName="attributeConcept" />
+      <varInfo nodeId="1563914226484898745" varName="attributeKind" />
+      <varInfo nodeId="1563914226484898745" varName="editorCell" />
+      <varInfo nodeId="1563914226484898745" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24">
+      <varInfo nodeId="1563914226484898745" varName="attributeConcept" />
+      <varInfo nodeId="1563914226484898745" varName="attributeKind" />
+      <varInfo nodeId="1563914226484898745" varName="editorCell" />
+      <varInfo nodeId="1563914226484898745" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1563914226484898745" varName="editorContext" />
+      <varInfo nodeId="1563914226484898745" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1563914226484898745" varName="editorContext" />
+      <varInfo nodeId="1563914226484898745" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestPropertyVariableReference_Editor" />
     <unitInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestPropertyVariableReference_Editor$_Inline_qm76pe_a0a" />
   </root>
@@ -140,23 +175,62 @@
     <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="27" startPosition="80" endLine="28" endPosition="81" />
     <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="80" />
     <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="34" startPosition="88" endLine="35" endPosition="47" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="46" startPosition="5" endLine="48" endPosition="66" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="67" startPosition="5" endLine="69" endPosition="66" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="53" startPosition="35" endLine="56" endPosition="105" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="74" startPosition="35" endLine="77" endPosition="105" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="19" startPosition="61" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="33" startPosition="88" endLine="37" endPosition="22" />
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="46" startPosition="5" endLine="48" endPosition="66">
+      <varInfo nodeId="1563914226484921026" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="67" startPosition="5" endLine="69" endPosition="66">
+      <varInfo nodeId="1563914226484921026" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="53" startPosition="35" endLine="56" endPosition="105">
+      <varInfo nodeId="1563914226484921026" varName="manager" />
+      <varInfo nodeId="1563914226484921026" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="74" startPosition="35" endLine="77" endPosition="105">
+      <varInfo nodeId="1563914226484921026" varName="manager" />
+      <varInfo nodeId="1563914226484921026" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="19" startPosition="61" endLine="23" endPosition="0">
+      <varInfo nodeId="1563914226484921026" varName="editorContext" />
+      <varInfo nodeId="1563914226484921026" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="33" startPosition="88" endLine="37" endPosition="22">
+      <varInfo nodeId="1563914226484921026" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="45" startPosition="58" endLine="49" endPosition="5" />
     <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="66" startPosition="58" endLine="70" endPosition="5" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="24" startPosition="89" endLine="30" endPosition="22" />
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="24" startPosition="89" endLine="30" endPosition="22">
+      <varInfo nodeId="1563914226484921026" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="44" startPosition="26" endLine="50" endPosition="73" />
     <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="65" startPosition="26" endLine="71" endPosition="73" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="23" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="40" startPosition="87" endLine="58" endPosition="22" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="61" startPosition="87" endLine="79" endPosition="22" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="39" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="60" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="32" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1563914226484921026" varName="editorContext" />
+      <varInfo nodeId="1563914226484921026" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="23" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1563914226484921026" varName="editorContext" />
+      <varInfo nodeId="1563914226484921026" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="40" startPosition="87" endLine="58" endPosition="22">
+      <varInfo nodeId="1563914226484921026" varName="attributeConcept" />
+      <varInfo nodeId="1563914226484921026" varName="attributeKind" />
+      <varInfo nodeId="1563914226484921026" varName="editorCell" />
+      <varInfo nodeId="1563914226484921026" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="61" startPosition="87" endLine="79" endPosition="22">
+      <varInfo nodeId="1563914226484921026" varName="attributeConcept" />
+      <varInfo nodeId="1563914226484921026" varName="attributeKind" />
+      <varInfo nodeId="1563914226484921026" varName="editorCell" />
+      <varInfo nodeId="1563914226484921026" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="39" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1563914226484921026" varName="editorContext" />
+      <varInfo nodeId="1563914226484921026" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="60" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="1563914226484921026" varName="editorContext" />
+      <varInfo nodeId="1563914226484921026" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="19" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.PropertyValue_Editor" />
   </root>
   <root nodeId="1563914226484928846">
@@ -241,29 +315,86 @@
     <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="73" startPosition="97" endLine="74" endPosition="50" />
     <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="102" startPosition="131" endLine="103" endPosition="139" />
     <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="59" startPosition="26" endLine="61" endPosition="73" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="77" startPosition="66" endLine="79" endPosition="93" />
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="77" startPosition="66" endLine="79" endPosition="93">
+      <varInfo nodeId="1563914226484928846" varName="listOwner" />
+    </scopeInfo>
     <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="98" startPosition="34" endLine="100" endPosition="80" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="64" startPosition="35" endLine="67" endPosition="105" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="72" startPosition="78" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="82" startPosition="86" endLine="85" endPosition="25" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="26" startPosition="57" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="40" startPosition="88" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="88" startPosition="68" endLine="92" endPosition="23" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="47" startPosition="91" endLine="52" endPosition="22" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="76" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="109" startPosition="84" endLine="114" endPosition="24" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="31" startPosition="89" endLine="37" endPosition="22" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="81" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="39" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="87" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="46" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="64" startPosition="35" endLine="67" endPosition="105">
+      <varInfo nodeId="1563914226484928846" varName="manager" />
+      <varInfo nodeId="1563914226484928846" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="72" startPosition="78" endLine="75" endPosition="5">
+      <varInfo nodeId="1563914226484928846" varName="childRole" />
+      <varInfo nodeId="1563914226484928846" varName="context" />
+      <varInfo nodeId="1563914226484928846" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="82" startPosition="86" endLine="85" endPosition="25">
+      <varInfo nodeId="1563914226484928846" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="26" startPosition="57" endLine="30" endPosition="0">
+      <varInfo nodeId="1563914226484928846" varName="editorContext" />
+      <varInfo nodeId="1563914226484928846" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="40" startPosition="88" endLine="44" endPosition="22">
+      <varInfo nodeId="1563914226484928846" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="88" startPosition="68" endLine="92" endPosition="23">
+      <varInfo nodeId="1563914226484928846" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="47" startPosition="91" endLine="52" endPosition="22">
+      <varInfo nodeId="1563914226484928846" varName="editorCell" />
+      <varInfo nodeId="1563914226484928846" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="76" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="1563914226484928846" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="109" startPosition="84" endLine="114" endPosition="24">
+      <varInfo nodeId="1563914226484928846" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="31" startPosition="89" endLine="37" endPosition="22">
+      <varInfo nodeId="1563914226484928846" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="81" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1563914226484928846" varName="editorContext" />
+      <varInfo nodeId="1563914226484928846" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1563914226484928846" varName="editorContext" />
+      <varInfo nodeId="1563914226484928846" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="87" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="1563914226484928846" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="46" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1563914226484928846" varName="editorContext" />
+      <varInfo nodeId="1563914226484928846" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="96" startPosition="96" endLine="104" endPosition="9" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="30" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="107" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="30" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1563914226484928846" varName="editorContext" />
+      <varInfo nodeId="1563914226484928846" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="107" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="1563914226484928846" varName="editorContext" />
+      <varInfo nodeId="1563914226484928846" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="95" startPosition="132" endLine="105" endPosition="7" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="94" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="55" startPosition="87" endLine="69" endPosition="22" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="54" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="94" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="1563914226484928846" varName="editorContext" />
+      <varInfo nodeId="1563914226484928846" varName="elementCell" />
+      <varInfo nodeId="1563914226484928846" varName="elementNode" />
+      <varInfo nodeId="1563914226484928846" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="55" startPosition="87" endLine="69" endPosition="22">
+      <varInfo nodeId="1563914226484928846" varName="attributeConcept" />
+      <varInfo nodeId="1563914226484928846" varName="attributeKind" />
+      <varInfo nodeId="1563914226484928846" varName="editorCell" />
+      <varInfo nodeId="1563914226484928846" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="54" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="1563914226484928846" varName="editorContext" />
+      <varInfo nodeId="1563914226484928846" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="26" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.ListValue_Editor" />
     <unitInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="72" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.ListValue_Editor$valueListHandler_9xngu4_c0" />
   </root>
@@ -327,19 +458,54 @@
     <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="56" startPosition="81" endLine="57" endPosition="66" />
     <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="66" startPosition="60" endLine="67" endPosition="47" />
     <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="33" startPosition="26" endLine="36" endPosition="73" />
-    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="39" startPosition="35" endLine="42" endPosition="105" />
+    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="39" startPosition="35" endLine="42" endPosition="105">
+      <varInfo nodeId="1563914226484929057" varName="manager" />
+      <varInfo nodeId="1563914226484929057" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="47" startPosition="69" endLine="50" endPosition="5" />
     <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="65" startPosition="28" endLine="68" endPosition="75" />
-    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="71" startPosition="37" endLine="74" endPosition="107" />
-    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="17" startPosition="65" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="22" startPosition="89" endLine="26" endPosition="22" />
-    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="29" startPosition="87" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
-    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="71" startPosition="37" endLine="74" endPosition="107">
+      <varInfo nodeId="1563914226484929057" varName="manager" />
+      <varInfo nodeId="1563914226484929057" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="17" startPosition="65" endLine="21" endPosition="0">
+      <varInfo nodeId="1563914226484929057" varName="editorContext" />
+      <varInfo nodeId="1563914226484929057" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="22" startPosition="89" endLine="26" endPosition="22">
+      <varInfo nodeId="1563914226484929057" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1563914226484929057" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1563914226484929057" varName="editorContext" />
+      <varInfo nodeId="1563914226484929057" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1563914226484929057" varName="editorContext" />
+      <varInfo nodeId="1563914226484929057" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="29" startPosition="87" endLine="44" endPosition="22">
+      <varInfo nodeId="1563914226484929057" varName="attributeConcept" />
+      <varInfo nodeId="1563914226484929057" varName="attributeKind" />
+      <varInfo nodeId="1563914226484929057" varName="editorCell" />
+      <varInfo nodeId="1563914226484929057" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24">
+      <varInfo nodeId="1563914226484929057" varName="attributeConcept" />
+      <varInfo nodeId="1563914226484929057" varName="attributeKind" />
+      <varInfo nodeId="1563914226484929057" varName="editorCell" />
+      <varInfo nodeId="1563914226484929057" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1563914226484929057" varName="editorContext" />
+      <varInfo nodeId="1563914226484929057" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1563914226484929057" varName="editorContext" />
+      <varInfo nodeId="1563914226484929057" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestListReference_Editor" />
     <unitInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestListReference_Editor$_Inline_fpz45k_a0a" />
   </root>
@@ -407,23 +573,62 @@
     <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="26" startPosition="48" endLine="27" endPosition="80" />
     <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="27" startPosition="80" endLine="28" endPosition="81" />
     <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="80" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="36" startPosition="5" endLine="38" endPosition="66" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="50" startPosition="5" endLine="52" endPosition="66" />
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="36" startPosition="5" endLine="38" endPosition="66">
+      <varInfo nodeId="8707387027762047763" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="50" startPosition="5" endLine="52" endPosition="66">
+      <varInfo nodeId="8707387027762047763" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="69" startPosition="26" endLine="71" endPosition="73" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="57" startPosition="35" endLine="60" endPosition="105" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="74" startPosition="35" endLine="77" endPosition="105" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="19" startPosition="61" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="57" startPosition="35" endLine="60" endPosition="105">
+      <varInfo nodeId="8707387027762047763" varName="manager" />
+      <varInfo nodeId="8707387027762047763" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="74" startPosition="35" endLine="77" endPosition="105">
+      <varInfo nodeId="8707387027762047763" varName="manager" />
+      <varInfo nodeId="8707387027762047763" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="19" startPosition="61" endLine="23" endPosition="0">
+      <varInfo nodeId="8707387027762047763" varName="editorContext" />
+      <varInfo nodeId="8707387027762047763" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="49" startPosition="58" endLine="53" endPosition="5" />
     <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="34" startPosition="88" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="24" startPosition="89" endLine="30" endPosition="22" />
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="24" startPosition="89" endLine="30" endPosition="22">
+      <varInfo nodeId="8707387027762047763" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="48" startPosition="26" endLine="54" endPosition="73" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="33" startPosition="88" endLine="41" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="23" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="32" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="65" startPosition="87" endLine="79" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="64" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="44" startPosition="87" endLine="62" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="43" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="33" startPosition="88" endLine="41" endPosition="22">
+      <varInfo nodeId="8707387027762047763" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="23" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="8707387027762047763" varName="editorContext" />
+      <varInfo nodeId="8707387027762047763" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="32" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="8707387027762047763" varName="editorContext" />
+      <varInfo nodeId="8707387027762047763" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="65" startPosition="87" endLine="79" endPosition="22">
+      <varInfo nodeId="8707387027762047763" varName="attributeConcept" />
+      <varInfo nodeId="8707387027762047763" varName="attributeKind" />
+      <varInfo nodeId="8707387027762047763" varName="editorCell" />
+      <varInfo nodeId="8707387027762047763" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="64" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="8707387027762047763" varName="editorContext" />
+      <varInfo nodeId="8707387027762047763" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="44" startPosition="87" endLine="62" endPosition="22">
+      <varInfo nodeId="8707387027762047763" varName="attributeConcept" />
+      <varInfo nodeId="8707387027762047763" varName="attributeKind" />
+      <varInfo nodeId="8707387027762047763" varName="editorCell" />
+      <varInfo nodeId="8707387027762047763" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="43" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="8707387027762047763" varName="editorContext" />
+      <varInfo nodeId="8707387027762047763" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="19" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.VariableValue_Editor" />
   </root>
   <root nodeId="8707387027762047771">
@@ -486,19 +691,54 @@
     <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="56" startPosition="81" endLine="57" endPosition="66" />
     <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="66" startPosition="60" endLine="67" endPosition="47" />
     <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="33" startPosition="26" endLine="36" endPosition="73" />
-    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="39" startPosition="35" endLine="42" endPosition="105" />
+    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="39" startPosition="35" endLine="42" endPosition="105">
+      <varInfo nodeId="8707387027762047771" varName="manager" />
+      <varInfo nodeId="8707387027762047771" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="47" startPosition="69" endLine="50" endPosition="5" />
     <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="65" startPosition="28" endLine="68" endPosition="75" />
-    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="71" startPosition="37" endLine="74" endPosition="107" />
-    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="17" startPosition="69" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="22" startPosition="89" endLine="26" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="29" startPosition="87" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
-    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="71" startPosition="37" endLine="74" endPosition="107">
+      <varInfo nodeId="8707387027762047771" varName="manager" />
+      <varInfo nodeId="8707387027762047771" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="17" startPosition="69" endLine="21" endPosition="0">
+      <varInfo nodeId="8707387027762047771" varName="editorContext" />
+      <varInfo nodeId="8707387027762047771" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="22" startPosition="89" endLine="26" endPosition="22">
+      <varInfo nodeId="8707387027762047771" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="8707387027762047771" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="8707387027762047771" varName="editorContext" />
+      <varInfo nodeId="8707387027762047771" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="8707387027762047771" varName="editorContext" />
+      <varInfo nodeId="8707387027762047771" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="29" startPosition="87" endLine="44" endPosition="22">
+      <varInfo nodeId="8707387027762047771" varName="attributeConcept" />
+      <varInfo nodeId="8707387027762047771" varName="attributeKind" />
+      <varInfo nodeId="8707387027762047771" varName="editorCell" />
+      <varInfo nodeId="8707387027762047771" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24">
+      <varInfo nodeId="8707387027762047771" varName="attributeConcept" />
+      <varInfo nodeId="8707387027762047771" varName="attributeKind" />
+      <varInfo nodeId="8707387027762047771" varName="editorCell" />
+      <varInfo nodeId="8707387027762047771" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="8707387027762047771" varName="editorContext" />
+      <varInfo nodeId="8707387027762047771" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="8707387027762047771" varName="editorContext" />
+      <varInfo nodeId="8707387027762047771" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestVariableReference_Editor" />
     <unitInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestVariableReference_Editor$_Inline_t5xgl3_a0a" />
   </root>
@@ -893,55 +1133,158 @@
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="429" startPosition="98" endLine="430" endPosition="50" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="454" startPosition="34" endLine="455" endPosition="95" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="457" startPosition="131" endLine="458" endPosition="139" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="57" startPosition="5" endLine="59" endPosition="51" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="76" startPosition="5" endLine="78" endPosition="51" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="89" startPosition="5" endLine="91" endPosition="51" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="102" startPosition="5" endLine="104" endPosition="51" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="165" startPosition="5" endLine="167" endPosition="62" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="188" startPosition="5" endLine="190" endPosition="62" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="211" startPosition="5" endLine="213" endPosition="62" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="223" startPosition="5" endLine="225" endPosition="70" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="235" startPosition="5" endLine="237" endPosition="70" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="247" startPosition="5" endLine="249" endPosition="70" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="261" startPosition="5" endLine="263" endPosition="62" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="282" startPosition="5" endLine="284" endPosition="62" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="303" startPosition="5" endLine="305" endPosition="62" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="325" startPosition="5" endLine="327" endPosition="62" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="361" startPosition="66" endLine="363" endPosition="93" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="397" startPosition="66" endLine="399" endPosition="93" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="433" startPosition="66" endLine="435" endPosition="93" />
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="57" startPosition="5" endLine="59" endPosition="51">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="76" startPosition="5" endLine="78" endPosition="51">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="89" startPosition="5" endLine="91" endPosition="51">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="102" startPosition="5" endLine="104" endPosition="51">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="165" startPosition="5" endLine="167" endPosition="62">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="188" startPosition="5" endLine="190" endPosition="62">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="211" startPosition="5" endLine="213" endPosition="62">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="223" startPosition="5" endLine="225" endPosition="70">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="235" startPosition="5" endLine="237" endPosition="70">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="247" startPosition="5" endLine="249" endPosition="70">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="261" startPosition="5" endLine="263" endPosition="62">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="282" startPosition="5" endLine="284" endPosition="62">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="303" startPosition="5" endLine="305" endPosition="62">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="325" startPosition="5" endLine="327" endPosition="62">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="361" startPosition="66" endLine="363" endPosition="93">
+      <varInfo nodeId="8707387027762047777" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="397" startPosition="66" endLine="399" endPosition="93">
+      <varInfo nodeId="8707387027762047777" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="433" startPosition="66" endLine="435" endPosition="93">
+      <varInfo nodeId="8707387027762047777" varName="listOwner" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="47" startPosition="80" endLine="50" endPosition="5" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="60" startPosition="5" endLine="63" endPosition="5" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="63" startPosition="5" endLine="66" endPosition="5" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="66" startPosition="5" endLine="69" endPosition="5" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="122" startPosition="5" endLine="125" endPosition="51" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="134" startPosition="5" endLine="137" endPosition="51" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="153" startPosition="5" endLine="156" endPosition="51" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="176" startPosition="5" endLine="179" endPosition="51" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="199" startPosition="5" endLine="202" endPosition="51" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="268" startPosition="35" endLine="271" endPosition="105" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="289" startPosition="35" endLine="292" endPosition="105" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="310" startPosition="35" endLine="313" endPosition="105" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="332" startPosition="35" endLine="335" endPosition="105" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="356" startPosition="83" endLine="359" endPosition="5" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="366" startPosition="86" endLine="369" endPosition="25" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="392" startPosition="83" endLine="395" endPosition="5" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="402" startPosition="86" endLine="405" endPosition="25" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="428" startPosition="79" endLine="431" endPosition="5" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="438" startPosition="86" endLine="441" endPosition="25" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="32" startPosition="59" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="112" startPosition="88" endLine="116" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="143" startPosition="88" endLine="147" endPosition="22" />
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="122" startPosition="5" endLine="125" endPosition="51">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="134" startPosition="5" endLine="137" endPosition="51">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="153" startPosition="5" endLine="156" endPosition="51">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="176" startPosition="5" endLine="179" endPosition="51">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="199" startPosition="5" endLine="202" endPosition="51">
+      <varInfo nodeId="8707387027762047777" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="268" startPosition="35" endLine="271" endPosition="105">
+      <varInfo nodeId="8707387027762047777" varName="manager" />
+      <varInfo nodeId="8707387027762047777" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="289" startPosition="35" endLine="292" endPosition="105">
+      <varInfo nodeId="8707387027762047777" varName="manager" />
+      <varInfo nodeId="8707387027762047777" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="310" startPosition="35" endLine="313" endPosition="105">
+      <varInfo nodeId="8707387027762047777" varName="manager" />
+      <varInfo nodeId="8707387027762047777" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="332" startPosition="35" endLine="335" endPosition="105">
+      <varInfo nodeId="8707387027762047777" varName="manager" />
+      <varInfo nodeId="8707387027762047777" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="356" startPosition="83" endLine="359" endPosition="5">
+      <varInfo nodeId="8707387027762047777" varName="childRole" />
+      <varInfo nodeId="8707387027762047777" varName="context" />
+      <varInfo nodeId="8707387027762047777" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="366" startPosition="86" endLine="369" endPosition="25">
+      <varInfo nodeId="8707387027762047777" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="392" startPosition="83" endLine="395" endPosition="5">
+      <varInfo nodeId="8707387027762047777" varName="childRole" />
+      <varInfo nodeId="8707387027762047777" varName="context" />
+      <varInfo nodeId="8707387027762047777" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="402" startPosition="86" endLine="405" endPosition="25">
+      <varInfo nodeId="8707387027762047777" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="428" startPosition="79" endLine="431" endPosition="5">
+      <varInfo nodeId="8707387027762047777" varName="childRole" />
+      <varInfo nodeId="8707387027762047777" varName="context" />
+      <varInfo nodeId="8707387027762047777" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="438" startPosition="86" endLine="441" endPosition="25">
+      <varInfo nodeId="8707387027762047777" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="32" startPosition="59" endLine="36" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="112" startPosition="88" endLine="116" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="143" startPosition="88" endLine="147" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="260" startPosition="58" endLine="264" endPosition="5" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="281" startPosition="58" endLine="285" endPosition="5" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="302" startPosition="58" endLine="306" endPosition="5" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="339" startPosition="0" endLine="343" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="343" startPosition="0" endLine="347" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="347" startPosition="0" endLine="351" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="351" startPosition="0" endLine="355" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="372" startPosition="68" endLine="376" endPosition="23" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="408" startPosition="68" endLine="412" endPosition="23" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="444" startPosition="68" endLine="448" endPosition="23" />
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="339" startPosition="0" endLine="343" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+      <varInfo nodeId="8707387027762047777" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="343" startPosition="0" endLine="347" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+      <varInfo nodeId="8707387027762047777" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="347" startPosition="0" endLine="351" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+      <varInfo nodeId="8707387027762047777" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="351" startPosition="0" endLine="355" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+      <varInfo nodeId="8707387027762047777" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="372" startPosition="68" endLine="376" endPosition="23">
+      <varInfo nodeId="8707387027762047777" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="408" startPosition="68" endLine="412" endPosition="23">
+      <varInfo nodeId="8707387027762047777" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="444" startPosition="68" endLine="448" endPosition="23">
+      <varInfo nodeId="8707387027762047777" varName="emptyCell" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="55" startPosition="96" endLine="60" endPosition="5" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="74" startPosition="96" endLine="79" endPosition="5" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="87" startPosition="96" endLine="92" endPosition="5" />
@@ -953,9 +1296,15 @@
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="233" startPosition="106" endLine="238" endPosition="5" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="245" startPosition="106" endLine="250" endPosition="5" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="323" startPosition="58" endLine="328" endPosition="5" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="360" startPosition="0" endLine="365" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="396" startPosition="0" endLine="401" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="432" startPosition="0" endLine="437" endPosition="0" />
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="360" startPosition="0" endLine="365" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="396" startPosition="0" endLine="401" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="432" startPosition="0" endLine="437" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="120" startPosition="86" endLine="126" endPosition="5" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="132" startPosition="86" endLine="138" endPosition="5" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="151" startPosition="86" endLine="157" endPosition="5" />
@@ -964,64 +1313,215 @@
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="259" startPosition="26" endLine="265" endPosition="73" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="280" startPosition="26" endLine="286" endPosition="73" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="301" startPosition="26" endLine="307" endPosition="73" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="365" startPosition="0" endLine="371" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="401" startPosition="0" endLine="407" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="437" startPosition="0" endLine="443" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="111" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="142" startPosition="0" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="365" startPosition="0" endLine="371" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="401" startPosition="0" endLine="407" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="437" startPosition="0" endLine="443" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="111" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="142" startPosition="0" endLine="149" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="322" startPosition="26" endLine="329" endPosition="73" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="371" startPosition="0" endLine="378" endPosition="0" />
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="371" startPosition="0" endLine="378" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="380" startPosition="96" endLine="387" endPosition="9" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="407" startPosition="0" endLine="414" endPosition="0" />
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="407" startPosition="0" endLine="414" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="416" startPosition="96" endLine="423" endPosition="9" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="443" startPosition="0" endLine="450" endPosition="0" />
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="443" startPosition="0" endLine="450" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="452" startPosition="96" endLine="459" endPosition="9" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="162" startPosition="90" endLine="170" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="185" startPosition="90" endLine="193" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="208" startPosition="90" endLine="216" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="119" startPosition="88" endLine="128" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="131" startPosition="88" endLine="140" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="150" startPosition="90" endLine="159" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="173" startPosition="90" endLine="182" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="196" startPosition="90" endLine="205" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="219" startPosition="93" endLine="228" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="231" startPosition="93" endLine="240" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="243" startPosition="93" endLine="252" endPosition="22" />
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="162" startPosition="90" endLine="170" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="185" startPosition="90" endLine="193" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="208" startPosition="90" endLine="216" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="119" startPosition="88" endLine="128" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="131" startPosition="88" endLine="140" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="150" startPosition="90" endLine="159" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="173" startPosition="90" endLine="182" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="196" startPosition="90" endLine="205" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="219" startPosition="93" endLine="228" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+      <varInfo nodeId="8707387027762047777" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="231" startPosition="93" endLine="240" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+      <varInfo nodeId="8707387027762047777" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="243" startPosition="93" endLine="252" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+      <varInfo nodeId="8707387027762047777" varName="handler" />
+    </scopeInfo>
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="379" startPosition="132" endLine="388" endPosition="7" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="415" startPosition="132" endLine="424" endPosition="7" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="451" startPosition="132" endLine="460" endPosition="7" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="73" startPosition="91" endLine="83" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="86" startPosition="91" endLine="96" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="99" startPosition="91" endLine="109" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="161" startPosition="0" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="184" startPosition="0" endLine="195" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="207" startPosition="0" endLine="218" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="118" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="130" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="149" startPosition="0" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="172" startPosition="0" endLine="184" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="195" startPosition="0" endLine="207" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="218" startPosition="0" endLine="230" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="230" startPosition="0" endLine="242" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="242" startPosition="0" endLine="254" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="378" startPosition="0" endLine="390" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="414" startPosition="0" endLine="426" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="450" startPosition="0" endLine="462" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="72" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="85" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="98" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="37" startPosition="89" endLine="51" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="54" startPosition="90" endLine="70" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="255" startPosition="87" endLine="273" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="276" startPosition="87" endLine="294" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="297" startPosition="87" endLine="315" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="53" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="318" startPosition="88" endLine="337" endPosition="22" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="254" startPosition="0" endLine="275" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="275" startPosition="0" endLine="296" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="296" startPosition="0" endLine="317" endPosition="0" />
-    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="317" startPosition="0" endLine="339" endPosition="0" />
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="73" startPosition="91" endLine="83" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="86" startPosition="91" endLine="96" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="99" startPosition="91" endLine="109" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="161" startPosition="0" endLine="172" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="184" startPosition="0" endLine="195" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="207" startPosition="0" endLine="218" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="118" startPosition="0" endLine="130" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="130" startPosition="0" endLine="142" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="149" startPosition="0" endLine="161" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="172" startPosition="0" endLine="184" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="195" startPosition="0" endLine="207" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="218" startPosition="0" endLine="230" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="230" startPosition="0" endLine="242" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="242" startPosition="0" endLine="254" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="378" startPosition="0" endLine="390" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="elementCell" />
+      <varInfo nodeId="8707387027762047777" varName="elementNode" />
+      <varInfo nodeId="8707387027762047777" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="414" startPosition="0" endLine="426" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="elementCell" />
+      <varInfo nodeId="8707387027762047777" varName="elementNode" />
+      <varInfo nodeId="8707387027762047777" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="450" startPosition="0" endLine="462" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="elementCell" />
+      <varInfo nodeId="8707387027762047777" varName="elementNode" />
+      <varInfo nodeId="8707387027762047777" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="72" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="85" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="98" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="37" startPosition="89" endLine="51" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="54" startPosition="90" endLine="70" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="255" startPosition="87" endLine="273" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="attributeConcept" />
+      <varInfo nodeId="8707387027762047777" varName="attributeKind" />
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+      <varInfo nodeId="8707387027762047777" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="276" startPosition="87" endLine="294" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="attributeConcept" />
+      <varInfo nodeId="8707387027762047777" varName="attributeKind" />
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+      <varInfo nodeId="8707387027762047777" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="297" startPosition="87" endLine="315" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="attributeConcept" />
+      <varInfo nodeId="8707387027762047777" varName="attributeKind" />
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+      <varInfo nodeId="8707387027762047777" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="53" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="318" startPosition="88" endLine="337" endPosition="22">
+      <varInfo nodeId="8707387027762047777" varName="attributeConcept" />
+      <varInfo nodeId="8707387027762047777" varName="attributeKind" />
+      <varInfo nodeId="8707387027762047777" varName="editorCell" />
+      <varInfo nodeId="8707387027762047777" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="254" startPosition="0" endLine="275" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="275" startPosition="0" endLine="296" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="296" startPosition="0" endLine="317" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="317" startPosition="0" endLine="339" endPosition="0">
+      <varInfo nodeId="8707387027762047777" varName="editorContext" />
+      <varInfo nodeId="8707387027762047777" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="32" startPosition="0" endLine="464" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.PatternTest_Editor" />
     <unitInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="428" startPosition="0" endLine="463" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.PatternTest_Editor$listListHandler_kasahx_c2i0" />
     <unitInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="392" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.PatternTest_Editor$propertyListHandler_kasahx_c1i0" />

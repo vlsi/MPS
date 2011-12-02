@@ -60,10 +60,6 @@
       <property name="name" nameId="tpck.1169194664001" value="core.baseLanguage" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="modules.core" />
     </node>
-    <node type="tps4.Block" typeId="tps4.701559220729212645" id="8431776905956472896">
-      <property name="name" nameId="tpck.1169194664001" value="core.debug" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="modules.core" />
-    </node>
     <node type="tps4.Block" typeId="tps4.701559220729212645" id="8431776905956472902">
       <property name="name" nameId="tpck.1169194664001" value="core.devkits" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="modules.core" />
@@ -1794,9 +1790,6 @@
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="8431776905956472862">
       <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472902" resolveInfo="core.devkits" />
     </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="8431776905956472863">
-      <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472896" resolveInfo="core.debug" />
-    </node>
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="8669189765730048454">
       <link role="block" roleId="tps4.701559220729212648" targetNodeId="2738111162319948310" resolveInfo="core.execution" />
     </node>
@@ -1850,17 +1843,6 @@
       </node>
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8431776905956472895">
         <property name="name" nameId="tps4.1223641503366" value="baseLanguage" />
-      </node>
-    </node>
-  </root>
-  <root id="8431776905956472896">
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Folder" typeId="tps4.1203598512427" id="2520429355395831032">
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="5978697451487588432">
-        <property name="id" nameId="tps4.1222447189012" value="cf8c9de5-1b4a-4dc8-8e6d-847159af31dd" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.java.api" />
-      </node>
-      <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2520429355395831040">
-        <property name="name" nameId="tps4.1223641503366" value="debug" />
       </node>
     </node>
   </root>
@@ -3034,6 +3016,13 @@
       <node role="classpath" roleId="tps4.5610328873691243476" type="tps4.Module" typeId="tps4.1203599702327" id="2454311172622930823">
         <property name="id" nameId="tps4.1222447189012" value="f618e99a-2641-465c-bb54-31fe76f9e285" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.unitTest.runtime" />
+      </node>
+      <node role="libraries" roleId="tps4.7972626602783739367" type="tps4.Library" typeId="tps4.7972626602783737959" id="8166483729924380444">
+        <property name="path" nameId="tps4.7972626602783737960" value="migration" />
+        <node role="module" roleId="tps4.7972626602783737961" type="tps4.Module" typeId="tps4.1203599702327" id="8166483729924380446">
+          <property name="id" nameId="tps4.1222447189012" value="92f5dc44-466d-4972-9f92-b03994f153c4" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.migration" />
+        </node>
       </node>
     </node>
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="8549696200077330815">

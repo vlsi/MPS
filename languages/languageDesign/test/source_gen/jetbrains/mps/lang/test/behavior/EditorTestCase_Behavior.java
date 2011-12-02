@@ -7,7 +7,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunParameters;
 
 public class EditorTestCase_Behavior {
   public static void init(SNode thisNode) {
@@ -23,10 +22,6 @@ public class EditorTestCase_Behavior {
 
   public static SNode virtual_getTestCase_1216134500045(SNode thisNode) {
     return thisNode;
-  }
-
-  public static TestRunParameters virtual_getTestRunParameters_1216045139515(SNode thisNode) {
-    return NodesTestCase_Behavior.getTestRunParameters_1217424543047();
   }
 
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {

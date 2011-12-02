@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunParameters;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
@@ -30,10 +29,6 @@ public class NodesTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return IClassifier_Behavior.virtual_createType_1213877527970(thisNode);
   }
 
-  public TestRunParameters virtual_getTestRunParameters_1216045139515(SNode thisNode) {
-    return NodesTestCase_Behavior.virtual_getTestRunParameters_1216045139515(thisNode);
-  }
-
   public List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
     return IClassifier_Behavior.virtual_getMembers_1213877528020(thisNode, contextNode);
   }
@@ -44,6 +39,10 @@ public class NodesTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescri
 
   public String virtual_getClassName_1216136193905(SNode thisNode) {
     return ITestCase_Behavior.virtual_getClassName_1216136193905(thisNode);
+  }
+
+  public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
+    return NodesTestCase_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
   }
 
   public List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
