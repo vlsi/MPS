@@ -10,6 +10,11 @@ import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.integration.ModelMergeTool;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.project.MPSExtentions;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.intellij.util.io.ZipUtil;
@@ -17,7 +22,6 @@ import com.intellij.openapi.application.PathManager;
 import java.io.FilenameFilter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.UnzipUtil;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -40,7 +44,7 @@ public class MergeBackupUtil {
     writeContentsToFile(contents[ModelMergeTool.ORIGINAL], file, tmp, MergeVersion.BASE.getSuffix());
     writeContentsToFile(contents[ModelMergeTool.CURRENT], file, tmp, MergeVersion.MINE.getSuffix());
     writeContentsToFile(contents[ModelMergeTool.LAST_REVISION], file, tmp, MergeVersion.REPOSITORY.getSuffix());
-    File zipfile = chooseZipFileForModelFile(file.getName());
+    File zipfile = chooseZipFileForModelFile(VirtualFileUtils.toIFile(file));
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);
     FileUtil.delete(tmp);
@@ -52,8 +56,13 @@ public class MergeBackupUtil {
     FileUtil.writeFile(file, contents);
   }
 
-  public static File chooseZipFileForModelFile(String modelFileName) {
-    String prefix = getMergeBackupDirPath() + File.separator + modelFileName;
+  public static File chooseZipFileForModelFile(IFile file) {
+    String fileName = file.getName();
+    EditableSModelDescriptor model = SModelRepository.getInstance().findModel(file);
+    if (model != null) {
+      fileName = model.getLongName() + MPSExtentions.DOT_MODEL;
+    }
+    String prefix = getMergeBackupDirPath() + File.separator + fileName;
     prefix = prefix + "." + new SimpleDateFormat("yyyy-MM-dd_HH-mm").format(new Date());
     File zipfile = new File(prefix + ".zip");
     int i = 0;
