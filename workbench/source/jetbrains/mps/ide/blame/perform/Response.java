@@ -15,14 +15,22 @@
  */
 package jetbrains.mps.ide.blame.perform;
 
+import jetbrains.mps.logging.Logger;
+import org.jdom.Attribute;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.input.SAXBuilder;
+import org.jetbrains.annotations.Nullable;
+
+import java.io.StringReader;
+
 public class Response {
+  private static final Logger LOG = Logger.getLogger(Response.class);
+
   private boolean mySuccess = true;
   private String myMessage = "";
   private Throwable myThrowable = null;
   private String myResponseString = null;
-
-  public Response() {
-  }
 
   public Response(String message, String response, boolean success, Throwable throwable) {
     myMessage = message;
@@ -47,19 +55,33 @@ public class Response {
     return myResponseString;
   }
 
-  public void setResponseString(String responseString) {
-    myResponseString = responseString;
+  @Nullable
+  public Element getResponseXml() {
+    String responseString = getResponseString();
+    if (responseString == null || responseString.isEmpty()) {
+      return null;
+    }
+    SAXBuilder saxBuilder = new SAXBuilder();
+    Document document;
+    try {
+      document = saxBuilder.build(new StringReader(responseString));
+    } catch (Exception e) {
+      LOG.error("Can't open created issue", e);
+      return null;
+    }
+    return document.getRootElement();
   }
 
-  public void setMessage(String message) {
-    myMessage = message;
-  }
-
-  public void setSuccess(boolean success) {
-    mySuccess = success;
-  }
-
-  public void setThrowable(Throwable throwable) {
-    myThrowable = throwable;
+  @Nullable
+  public String getIssueId() {
+    final String ID = "id";
+    Element responseXml = getResponseXml();
+    if (responseXml != null) {
+      Attribute attribute = responseXml.getAttribute(ID);
+      if (attribute != null) {
+        return attribute.getValue();
+      }
+    }
+    return null;
   }
 }

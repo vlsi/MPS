@@ -15,57 +15,78 @@
  */
 package jetbrains.mps.ide.blame.perform;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.io.File;
+
 public class Query {
   public static final Query ANONYMOUS = new Query("mpsexception", "mpsexception");
 
-  private String myUser = "";
-  private String myPassword = "";
-  private String myIssue = "";
+  private String myUser;
+  private String myPassword;
+  private String myIssueTitle = "";
   private String myDescription = "";
+  private boolean myHidden = false;
+  private String mySubsystem;
+  private File[] myFiles = new File[0];
 
-  public Query() {
-  }
-
-  public Query(String user, String password) {
-    this(user, password, null, null);
-  }
-
-  public Query(String user, String password, String issue, String description) {
-    myDescription = description;
-    myIssue = issue;
-    myPassword = password;
+  public Query(@NotNull String user, @NotNull String password) {
     myUser = user;
+    myPassword = password;
   }
 
+  @NotNull
   public String getDescription() {
     return myDescription;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@NotNull String description) {
     myDescription = description;
   }
 
-  public String getIssue() {
-    return myIssue;
+  @NotNull
+  public String getIssueTitle() {
+    return myIssueTitle;
   }
 
-  public void setIssue(String issue) {
-    myIssue = issue;
+  public void setIssueTitle(@NotNull String issueTitle) {
+    myIssueTitle = issueTitle;
   }
 
+  @NotNull
   public String getPassword() {
     return myPassword;
   }
 
-  public void setPassword(String password) {
-    myPassword = password;
-  }
-
+  @NotNull
   public String getUser() {
     return myUser;
   }
 
-  public void setUser(String user) {
-    myUser = user;
+  public boolean isHidden() {
+    return myHidden;
+  }
+
+  public void setHidden(boolean hidden) {
+    myHidden = hidden;
+  }
+
+  @Nullable
+  public String getSubsystem() {
+    return mySubsystem;
+  }
+
+  public void setSubsystem(@Nullable String subsystem) {
+    mySubsystem = subsystem;
+  }
+
+  @NotNull
+  public File[] getFiles() {
+    return myFiles;
+  }
+
+  public void setFiles(@NotNull File[] files) {
+    myFiles = files;
   }
 }
