@@ -25,9 +25,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.RenameMethodDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
-import jetbrains.mps.ide.refactoring.RefactoringFacade;
 
 public class RenameMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -101,8 +101,7 @@ public class RenameMethod_Action extends GeneratedAction {
       if (newName == null) {
         return;
       }
-      RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.RenameMethod", Arrays.asList("newName", "refactorOverriding"), Arrays.asList(newName, d.getOverriding()), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
-      new RefactoringFacade().execute(c);
+      new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.RenameMethod", Arrays.asList("newName", "refactorOverriding"), Arrays.asList(newName, d.getOverriding()), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RenameMethod", t);
     }

@@ -14,28 +14,26 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.ide.refactoring.MoveUpDialog;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.structure.scripts.RefUtil;
-import jetbrains.mps.ide.refactoring.OptionDialog;
+import jetbrains.mps.ide.refactoring.MoveUpDialog;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 
-public class MoveLinkUp_Action extends GeneratedAction {
+public class MoveProperyUp_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(MoveLinkUp_Action.class);
+  private static Logger LOG = Logger.getLogger(MoveProperyUp_Action.class);
 
-  public MoveLinkUp_Action() {
-    super("Move Link Up", "", ICON);
+  public MoveProperyUp_Action() {
+    super("Move Property Up", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.structure.refactorings" + "." + "MoveLinkUp"), ((SNode) MapSequence.fromMap(_params).get("target")));
+    return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.structure.refactorings" + "." + "MovePropertyUp"), ((SNode) MapSequence.fromMap(_params).get("target")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -45,7 +43,7 @@ public class MoveLinkUp_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "MoveLinkUp", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "MoveProperyUp", t);
       this.disable(event.getPresentation());
     }
   }
@@ -57,7 +55,7 @@ public class MoveLinkUp_Action extends GeneratedAction {
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"))) {
           node = null;
         }
       }
@@ -67,45 +65,28 @@ public class MoveLinkUp_Action extends GeneratedAction {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SNode targetConcept = MoveUpDialog.getConcept(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), "link");
+      final Wrappers._T<SNode> concept = new Wrappers._T<SNode>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          concept.value = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("target")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+        }
+      });
+      if ((concept.value == null)) {
+        return;
+      }
+
+      SNode targetConcept = MoveUpDialog.getConcept(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), "property");
       if (targetConcept == null) {
         return;
       }
-      final Wrappers._T<SNode> linkToReplace = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          linkToReplace.value = RefUtil.findLinkToMerge(targetConcept, ((SNode) MapSequence.fromMap(_params).get("target")));
-
-        }
-      });
-      Boolean mergeLinks = false;
-      if ((linkToReplace.value != null)) {
-        String title = "Merge to link with the same name";
-        switch (OptionDialog.showDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), title, title + "?", true)) {
-          case 0:
-            mergeLinks = true;
-            break;
-          case 1:
-            mergeLinks = false;
-            break;
-          case 2:
-            return;
-          default:
-        }
-      }
-      new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MoveLinkUp", Arrays.asList("targetConcept", "mergeLinks"), Arrays.asList(targetConcept, mergeLinks), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
-
-
+      new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MovePropertyUp", Arrays.asList("targetConcept"), Arrays.asList(targetConcept), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "MoveLinkUp", t);
+      LOG.error("User's action execute method failed. Action:" + "MoveProperyUp", t);
     }
   }
 }

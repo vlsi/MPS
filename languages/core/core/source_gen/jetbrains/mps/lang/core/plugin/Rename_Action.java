@@ -18,10 +18,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.ide.refactoring.RenameDialog;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -101,8 +101,7 @@ public class Rename_Action extends GeneratedAction {
       if (newName == null) {
         return;
       }
-      final RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.Rename", Arrays.asList("newName"), Arrays.asList(newName), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
-      new RefactoringFacade().execute(c);
+      new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.Rename", Arrays.asList("newName"), Arrays.asList(newName), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "Rename", t);
     }

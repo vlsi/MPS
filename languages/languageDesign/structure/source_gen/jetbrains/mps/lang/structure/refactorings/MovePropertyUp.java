@@ -6,11 +6,9 @@ import jetbrains.mps.refactoring.framework.BaseLoggableRefactoring;
 import jetbrains.mps.lang.core.refactorings.MoveNodes;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.scripts.RefUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -46,20 +44,6 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
 
   public IRefactoringTarget getRefactoringTarget() {
     return new MovePropertyUp_Target();
-  }
-
-  public boolean init(final RefactoringContext refactoringContext) {
-    final Wrappers._T<SNode> concept = new Wrappers._T<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        concept.value = SNodeOperations.getAncestor(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
-      }
-    });
-    if ((concept.value == null)) {
-      return false;
-    }
-
-    return MovePropertyUp.this.ask(refactoringContext);
   }
 
   public void refactor(final RefactoringContext refactoringContext) {

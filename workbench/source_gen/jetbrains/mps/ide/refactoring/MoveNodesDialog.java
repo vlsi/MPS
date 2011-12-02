@@ -28,10 +28,11 @@ public class MoveNodesDialog extends RefactoringDialog {
   }
 
   protected void doRefactoringAction() {
-    this.mySelectedObject = this.myPanel.getSelectedObject();
+    Object selectedObject = this.myPanel.getSelectedObject();
     if (!(this.mySelectedObject instanceof SNode) && !(this.mySelectedObject instanceof SModelDescriptor)) {
       JOptionPane.showMessageDialog(this.myPanel, "Choose Node or Model", "Node can't be moved", JOptionPane.INFORMATION_MESSAGE);
     } else {
+      this.mySelectedObject = selectedObject;
       this.dispose();
     }
 

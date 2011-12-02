@@ -7,8 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.hierarchy.ChildHierarchyTreeNode;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
 import java.util.Set;
@@ -33,22 +32,12 @@ public class NodeHierarchyChooser extends JBScrollPane {
     });
   }
 
-  public SNode getSelectedObject() {
-    Object treeNode = myTree.getSelectionPath().getLastPathComponent();
-    if (treeNode == null) {
+  public Object getSelectedObject() {
+    TreePath path = myTree.getSelectionPath();
+    if (path == null) {
       return null;
     }
-    if (!(treeNode instanceof ChildHierarchyTreeNode)) {
-      return null;
-    }
-    final ChildHierarchyTreeNode treeNodeChild = (ChildHierarchyTreeNode) treeNode;
-    final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        result.value = treeNodeChild.getNode();
-      }
-    });
-    return ((SNode) result.value);
+    return myTree.getSelectionPath().getLastPathComponent();
   }
 
   public static class MyHierarchyTree extends AbstractHierarchyTree {

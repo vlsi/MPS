@@ -72,6 +72,7 @@ public class MakeFieldFinal_Action extends GeneratedAction {
     try {
       RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
       new RefactoringFacade().execute(c);
+      new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeFieldFinal", t);
     }

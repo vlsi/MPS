@@ -26,6 +26,7 @@ public class Structure_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new MoveLinkUp_Action());
+    addAction(new MoveProperyUp_Action());
     addAction(new RenameConcept_Action());
     addAction(new RenameLink_Action());
     addAction(new RenameProperty_Action());

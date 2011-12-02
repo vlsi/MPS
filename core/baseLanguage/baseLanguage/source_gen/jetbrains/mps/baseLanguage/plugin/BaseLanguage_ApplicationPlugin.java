@@ -59,6 +59,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new BaseLanguageToolsAddition_ActionGroup());
     addGroup(new BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup());
     addGroup(new RefactoringAddition_ActionGroup());
+    addGroup(new RefactoringAdditions_ActionGroup());
   }
 
   public void adjustRegularGroups() {
@@ -69,6 +70,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(RefactoringAddition_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
     insertGroupIntoAnother(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_comments);
+    insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
   }
 
