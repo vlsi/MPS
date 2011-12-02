@@ -137,7 +137,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.InstallVcsAddons_ActionGroup" file="InstallVcsAddons_ActionGroup.java">
+  <dependency className="jetbrains.mps.vcs.plugin.MPSGlobalVcsGroup_ActionGroup" file="MPSGlobalVcsGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -209,6 +209,42 @@
     <classNode dependClassName="jetbrains.mps.vcs.MergeVersion" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.plugin.ReportModelMergeProblem_Action" file="ReportModelMergeProblem_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.application.PathManager" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
+    <classNode dependClassName="com.intellij.openapi.vcs.VcsDirectoryMapping" />
+    <classNode dependClassName="java.awt.Frame" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FilenameFilter" />
+    <classNode dependClassName="java.lang.Comparable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.blame.dialog.BlameDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.blame.dialog.BlameDialogComponent" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.vcs.MergeBackupUtil" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="jetbrains.mps.workbench.WorkbenchPathManager" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -365,10 +401,11 @@
     <classNode dependClassName="jetbrains.mps.vcs.plugin.GoToVCS_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.IgnoreModuleInVcs_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.InstalVcsAddons_Action" />
-    <classNode dependClassName="jetbrains.mps.vcs.plugin.InstallVcsAddons_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.vcs.plugin.MPSGlobalVcsGroup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.MakeFromChangesView_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ModuleVcsActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" />
+    <classNode dependClassName="jetbrains.mps.vcs.plugin.ReportModelMergeProblem_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.RollbackChanges_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" />
