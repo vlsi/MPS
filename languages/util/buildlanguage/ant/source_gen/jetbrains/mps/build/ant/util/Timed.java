@@ -23,6 +23,9 @@ import java.util.concurrent.TimeUnit;
   protected T myT;
   /*package*/ boolean myPolled;
 
+  public Timed() {
+  }
+
   public void dispose() {
     final Object t = myT;
     myT = null;
