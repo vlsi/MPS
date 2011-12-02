@@ -47,6 +47,8 @@ public class MergeDriverMain {
       return;
     }
     configureLog4j();
+    String systemPath = new File(System.getProperty(LOG_PROPERTY)).getParentFile().getParentFile().getAbsolutePath();
+    System.setProperty("idea.system.path", systemPath);
     AbstractFileMerger merger = selectMerger(baseFile, currentFile, otherFile);
     if (merger == null) {
       merger = (SVN_OPTION.equals(args[0]) ?
