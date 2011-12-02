@@ -20,7 +20,11 @@ import com.intellij.openapi.diff.DiffContent;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vcs.merge.MergeData;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.*;
 
 import java.io.*;
 import java.nio.ByteBuffer;
@@ -56,7 +60,7 @@ public class VcsHelperUtil {
     writeContentsToFile(contents[ModelMergeRequestConstants.CURRENT], file, tmp, VcsMergeVersion.MINE.getSuffix());
     writeContentsToFile(contents[ModelMergeRequestConstants.LAST_REVISION], file, tmp, VcsMergeVersion.REPOSITORY.getSuffix());
     writeMetaInformation(request, file, tmp);
-    File zipfile = chooseZipFileForModelFile(file.getName());
+    File zipfile = chooseZipFileForModelFile(FileSystem.getInstance().getFileByPath(file.getPath()));
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);
 
@@ -73,8 +77,13 @@ public class VcsHelperUtil {
     stream.close();
   }
 
-  public static File chooseZipFileForModelFile(String modelFileName) {
-    String prefix = getMergeBackupDirPath() + File.separator + modelFileName;
+  public static File chooseZipFileForModelFile(IFile file) {
+    String fileName = file.getName();
+    EditableSModelDescriptor model = SModelRepository.getInstance().findModel(file);
+    if (model != null) {
+      fileName = model.getLongName() + MPSExtentions.DOT_MODEL;
+    }
+    String prefix = getMergeBackupDirPath() + File.separator + fileName;
     prefix = prefix + "." + new SimpleDateFormat("yyyy-MM-dd_HH-mm").format(new Date());
     File zipfile = new File(prefix + ".zip");
     int i = 0;
