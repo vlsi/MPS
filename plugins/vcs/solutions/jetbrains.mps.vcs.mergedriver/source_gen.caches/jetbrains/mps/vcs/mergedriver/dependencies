@@ -265,7 +265,9 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.ModelMerger" file="ModelMerger.java">
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileInputStream" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
@@ -281,7 +283,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.RoleIdsComponent" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.ModelUtils" />
+    <classNode dependClassName="jetbrains.mps.vcs.VcsHelperUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeContext" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergerRoleIdsHandler" />
