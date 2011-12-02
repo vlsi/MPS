@@ -53,17 +53,31 @@
     <scopeInfo nodeId="3343985444902960476" fileName="Where_Test.java" startLine="44" startPosition="41" endLine="45" endPosition="27" />
     <scopeInfo nodeId="3343985444902960511" fileName="Where_Test.java" startLine="49" startPosition="41" endLine="50" endPosition="27" />
     <scopeInfo nodeId="1241360757813" fileName="Where_Test.java" startLine="58" startPosition="40" endLine="59" endPosition="26" />
-    <scopeInfo nodeId="1241360792896" fileName="Where_Test.java" startLine="69" startPosition="0" endLine="70" endPosition="28" />
+    <scopeInfo nodeId="1241360792896" fileName="Where_Test.java" startLine="69" startPosition="0" endLine="70" endPosition="28">
+      <varInfo nodeId="1241360792896" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1241360792896" fileName="Where_Test.java" startLine="69" startPosition="40" endLine="70" endPosition="28" />
     <scopeInfo nodeId="1682545549094440459" fileName="Where_Test.java" startLine="78" startPosition="40" endLine="79" endPosition="22" />
     <scopeInfo nodeId="1682545549094440477" fileName="Where_Test.java" startLine="84" startPosition="58" endLine="85" endPosition="57" />
     <scopeInfo nodeId="1241360792896" fileName="Where_Test.java" startLine="66" startPosition="9" endLine="68" endPosition="20" />
-    <scopeInfo nodeId="1203883107838" fileName="Where_Test.java" startLine="21" startPosition="69" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1204735229833" fileName="Where_Test.java" startLine="31" startPosition="64" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="3343985444902960473" fileName="Where_Test.java" startLine="43" startPosition="102" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="3343985444902960508" fileName="Where_Test.java" startLine="48" startPosition="128" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1241360757812" fileName="Where_Test.java" startLine="57" startPosition="159" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1682545549094440458" fileName="Where_Test.java" startLine="77" startPosition="67" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1203883107838" fileName="Where_Test.java" startLine="21" startPosition="69" endLine="25" endPosition="0">
+      <varInfo nodeId="1203883107838" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204735229833" fileName="Where_Test.java" startLine="31" startPosition="64" endLine="35" endPosition="0">
+      <varInfo nodeId="1204735229833" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902960473" fileName="Where_Test.java" startLine="43" startPosition="102" endLine="47" endPosition="0">
+      <varInfo nodeId="3343985444902960473" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902960508" fileName="Where_Test.java" startLine="48" startPosition="128" endLine="52" endPosition="0">
+      <varInfo nodeId="3343985444902960508" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241360757812" fileName="Where_Test.java" startLine="57" startPosition="159" endLine="61" endPosition="0">
+      <varInfo nodeId="1241360757812" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1682545549094440458" fileName="Where_Test.java" startLine="77" startPosition="67" endLine="81" endPosition="0">
+      <varInfo nodeId="1682545549094440458" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="1682545549094440468" fileName="Where_Test.java" startLine="82" startPosition="36" endLine="87" endPosition="49">
       <varInfo nodeId="5746517363044260118" varName="idx" />
     </scopeInfo>
@@ -76,7 +90,9 @@
       <varInfo nodeId="1204735219222" varName="seq" />
       <varInfo nodeId="1204735219229" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1682545549094440467" fileName="Where_Test.java" startLine="81" startPosition="41" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="1682545549094440467" fileName="Where_Test.java" startLine="81" startPosition="41" endLine="89" endPosition="0">
+      <varInfo nodeId="1682545549094440467" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="1203883087690" fileName="Where_Test.java" startLine="18" startPosition="43" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1204735206254" fileName="Where_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1204735541063" fileName="Where_Test.java" startLine="40" startPosition="54" endLine="53" endPosition="78">
@@ -657,14 +673,30 @@
     <scopeInfo nodeId="1241363026344" fileName="Mapper_Test.java" startLine="612" startPosition="27" endLine="615" endPosition="34" />
     <scopeInfo nodeId="1241363026344" fileName="Mapper_Test.java" startLine="616" startPosition="27" endLine="619" endPosition="34" />
     <scopeInfo nodeId="7797065405157468600" fileName="Mapper_Test.java" startLine="655" startPosition="27" endLine="658" endPosition="34" />
-    <scopeInfo nodeId="1226320143392" fileName="Mapper_Test.java" startLine="550" startPosition="66" endLine="554" endPosition="0" />
-    <scopeInfo nodeId="3343985444902959838" fileName="Mapper_Test.java" startLine="555" startPosition="116" endLine="559" endPosition="0" />
-    <scopeInfo nodeId="1226320152838" fileName="Mapper_Test.java" startLine="561" startPosition="66" endLine="565" endPosition="0" />
-    <scopeInfo nodeId="3343985444902959855" fileName="Mapper_Test.java" startLine="566" startPosition="117" endLine="570" endPosition="0" />
-    <scopeInfo nodeId="1226320169399" fileName="Mapper_Test.java" startLine="572" startPosition="66" endLine="576" endPosition="0" />
-    <scopeInfo nodeId="3343985444902959872" fileName="Mapper_Test.java" startLine="577" startPosition="125" endLine="581" endPosition="0" />
-    <scopeInfo nodeId="1226320183950" fileName="Mapper_Test.java" startLine="583" startPosition="66" endLine="587" endPosition="0" />
-    <scopeInfo nodeId="3343985444902959889" fileName="Mapper_Test.java" startLine="588" startPosition="125" endLine="592" endPosition="0" />
+    <scopeInfo nodeId="1226320143392" fileName="Mapper_Test.java" startLine="550" startPosition="66" endLine="554" endPosition="0">
+      <varInfo nodeId="1226320143392" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902959838" fileName="Mapper_Test.java" startLine="555" startPosition="116" endLine="559" endPosition="0">
+      <varInfo nodeId="3343985444902959838" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1226320152838" fileName="Mapper_Test.java" startLine="561" startPosition="66" endLine="565" endPosition="0">
+      <varInfo nodeId="1226320152838" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902959855" fileName="Mapper_Test.java" startLine="566" startPosition="117" endLine="570" endPosition="0">
+      <varInfo nodeId="3343985444902959855" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1226320169399" fileName="Mapper_Test.java" startLine="572" startPosition="66" endLine="576" endPosition="0">
+      <varInfo nodeId="1226320169399" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902959872" fileName="Mapper_Test.java" startLine="577" startPosition="125" endLine="581" endPosition="0">
+      <varInfo nodeId="3343985444902959872" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1226320183950" fileName="Mapper_Test.java" startLine="583" startPosition="66" endLine="587" endPosition="0">
+      <varInfo nodeId="1226320183950" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902959889" fileName="Mapper_Test.java" startLine="588" startPosition="125" endLine="592" endPosition="0">
+      <varInfo nodeId="3343985444902959889" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="7797065405157468550" fileName="Mapper_Test.java" startLine="673" startPosition="36" endLine="677" endPosition="58" />
     <scopeInfo nodeId="1224754206559" fileName="Mapper_Test.java" startLine="207" startPosition="27" endLine="213" endPosition="28" />
     <scopeInfo nodeId="1224754206559" fileName="Mapper_Test.java" startLine="214" startPosition="27" endLine="220" endPosition="28" />
@@ -680,7 +712,9 @@
     <scopeInfo nodeId="1224497017169" fileName="Mapper_Test.java" startLine="455" startPosition="27" endLine="461" endPosition="28" />
     <scopeInfo nodeId="1224497117765" fileName="Mapper_Test.java" startLine="504" startPosition="27" endLine="510" endPosition="28" />
     <scopeInfo nodeId="1224497117765" fileName="Mapper_Test.java" startLine="511" startPosition="27" endLine="517" endPosition="28" />
-    <scopeInfo nodeId="7797065405157468549" fileName="Mapper_Test.java" startLine="672" startPosition="41" endLine="679" endPosition="0" />
+    <scopeInfo nodeId="7797065405157468549" fileName="Mapper_Test.java" startLine="672" startPosition="41" endLine="679" endPosition="0">
+      <varInfo nodeId="7797065405157468549" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="7797065405157468600" fileName="Mapper_Test.java" startLine="649" startPosition="20" endLine="664" endPosition="19" />
     <scopeInfo nodeId="1203688904920" fileName="Mapper_Test.java" startLine="33" startPosition="20" endLine="52" endPosition="19" />
     <scopeInfo nodeId="1203688860713" fileName="Mapper_Test.java" startLine="76" startPosition="20" endLine="95" endPosition="19" />
@@ -712,17 +746,29 @@
     <scopeInfo nodeId="1204739142390" fileName="Mapper_Test.java" startLine="112" startPosition="40" endLine="144" endPosition="0" />
     <scopeInfo nodeId="1224754206491" fileName="Mapper_Test.java" startLine="153" startPosition="40" endLine="185" endPosition="0" />
     <scopeInfo nodeId="1241363026344" fileName="Mapper_Test.java" startLine="599" startPosition="40" endLine="631" endPosition="0" />
-    <scopeInfo nodeId="7797065405157468600" fileName="Mapper_Test.java" startLine="640" startPosition="80" endLine="672" endPosition="0" />
+    <scopeInfo nodeId="7797065405157468600" fileName="Mapper_Test.java" startLine="640" startPosition="80" endLine="672" endPosition="0">
+      <varInfo nodeId="7797065405157468600" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="1203688904920" fileName="Mapper_Test.java" startLine="25" startPosition="61" endLine="58" endPosition="10" />
     <scopeInfo nodeId="1203688860713" fileName="Mapper_Test.java" startLine="68" startPosition="59" endLine="101" endPosition="10" />
     <scopeInfo nodeId="1204739142390" fileName="Mapper_Test.java" startLine="111" startPosition="59" endLine="144" endPosition="10" />
     <scopeInfo nodeId="1224754206491" fileName="Mapper_Test.java" startLine="152" startPosition="60" endLine="185" endPosition="10" />
     <scopeInfo nodeId="1241363026344" fileName="Mapper_Test.java" startLine="598" startPosition="59" endLine="631" endPosition="10" />
-    <scopeInfo nodeId="1203688904920" fileName="Mapper_Test.java" startLine="24" startPosition="82" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1203688860713" fileName="Mapper_Test.java" startLine="67" startPosition="81" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="1204739142390" fileName="Mapper_Test.java" startLine="110" startPosition="114" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="1224754206491" fileName="Mapper_Test.java" startLine="151" startPosition="114" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="1241363026344" fileName="Mapper_Test.java" startLine="597" startPosition="163" endLine="633" endPosition="0" />
+    <scopeInfo nodeId="1203688904920" fileName="Mapper_Test.java" startLine="24" startPosition="82" endLine="60" endPosition="0">
+      <varInfo nodeId="1203688904920" varName="it1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203688860713" fileName="Mapper_Test.java" startLine="67" startPosition="81" endLine="103" endPosition="0">
+      <varInfo nodeId="1203688860713" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204739142390" fileName="Mapper_Test.java" startLine="110" startPosition="114" endLine="146" endPosition="0">
+      <varInfo nodeId="1204739142390" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224754206491" fileName="Mapper_Test.java" startLine="151" startPosition="114" endLine="187" endPosition="0">
+      <varInfo nodeId="1224754206491" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241363026344" fileName="Mapper_Test.java" startLine="597" startPosition="163" endLine="633" endPosition="0">
+      <varInfo nodeId="1241363026344" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="1224754206523" fileName="Mapper_Test.java" startLine="330" startPosition="20" endLine="367" endPosition="19" />
     <scopeInfo nodeId="1224754206604" fileName="Mapper_Test.java" startLine="386" startPosition="20" endLine="423" endPosition="19" />
     <scopeInfo nodeId="1224497017169" fileName="Mapper_Test.java" startLine="442" startPosition="20" endLine="479" endPosition="19" />
@@ -791,16 +837,28 @@
     <scopeInfo nodeId="1224497117765" fileName="Mapper_Test.java" startLine="490" startPosition="60" endLine="541" endPosition="10" />
     <scopeInfo nodeId="1224754206559" fileName="Mapper_Test.java" startLine="195" startPosition="47" endLine="249" endPosition="14" />
     <scopeInfo nodeId="1224451389695" fileName="Mapper_Test.java" startLine="258" startPosition="47" endLine="312" endPosition="14" />
-    <scopeInfo nodeId="1224754206523" fileName="Mapper_Test.java" startLine="321" startPosition="114" endLine="375" endPosition="0" />
-    <scopeInfo nodeId="1224754206604" fileName="Mapper_Test.java" startLine="377" startPosition="115" endLine="431" endPosition="0" />
-    <scopeInfo nodeId="1224497017169" fileName="Mapper_Test.java" startLine="433" startPosition="115" endLine="487" endPosition="0" />
-    <scopeInfo nodeId="1224497117765" fileName="Mapper_Test.java" startLine="489" startPosition="115" endLine="543" endPosition="0" />
+    <scopeInfo nodeId="1224754206523" fileName="Mapper_Test.java" startLine="321" startPosition="114" endLine="375" endPosition="0">
+      <varInfo nodeId="1224754206523" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224754206604" fileName="Mapper_Test.java" startLine="377" startPosition="115" endLine="431" endPosition="0">
+      <varInfo nodeId="1224754206604" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224497017169" fileName="Mapper_Test.java" startLine="433" startPosition="115" endLine="487" endPosition="0">
+      <varInfo nodeId="1224497017169" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224497117765" fileName="Mapper_Test.java" startLine="489" startPosition="115" endLine="543" endPosition="0">
+      <varInfo nodeId="1224497117765" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1224754206559" fileName="Mapper_Test.java" startLine="194" startPosition="40" endLine="251" endPosition="0" />
     <scopeInfo nodeId="1224451389695" fileName="Mapper_Test.java" startLine="257" startPosition="40" endLine="314" endPosition="0" />
     <scopeInfo nodeId="1224754206559" fileName="Mapper_Test.java" startLine="193" startPosition="60" endLine="251" endPosition="10" />
     <scopeInfo nodeId="1224451389695" fileName="Mapper_Test.java" startLine="256" startPosition="60" endLine="314" endPosition="10" />
-    <scopeInfo nodeId="1224754206559" fileName="Mapper_Test.java" startLine="192" startPosition="115" endLine="253" endPosition="0" />
-    <scopeInfo nodeId="1224451389695" fileName="Mapper_Test.java" startLine="255" startPosition="116" endLine="316" endPosition="0" />
+    <scopeInfo nodeId="1224754206559" fileName="Mapper_Test.java" startLine="192" startPosition="115" endLine="253" endPosition="0">
+      <varInfo nodeId="1224754206559" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224451389695" fileName="Mapper_Test.java" startLine="255" startPosition="116" endLine="316" endPosition="0">
+      <varInfo nodeId="1224451389695" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1205838970898" fileName="Mapper_Test.java" startLine="191" startPosition="48" endLine="317" endPosition="61">
       <varInfo nodeId="1205838983436" varName="test" />
       <varInfo nodeId="1224451371424" varName="test2" />
@@ -925,10 +983,18 @@
     <scopeInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="84" startPosition="27" endLine="86" endPosition="28" />
     <scopeInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="35" startPosition="27" endLine="38" endPosition="34" />
     <scopeInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="80" startPosition="27" endLine="83" endPosition="34" />
-    <scopeInfo nodeId="1222270427660" fileName="ChainedOperations_Test.java" startLine="16" startPosition="108" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1204129169614" fileName="ChainedOperations_Test.java" startLine="52" startPosition="41" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1204797574898" fileName="ChainedOperations_Test.java" startLine="61" startPosition="107" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1204797574875" fileName="ChainedOperations_Test.java" startLine="97" startPosition="41" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="1222270427660" fileName="ChainedOperations_Test.java" startLine="16" startPosition="108" endLine="20" endPosition="0">
+      <varInfo nodeId="1222270427660" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204129169614" fileName="ChainedOperations_Test.java" startLine="52" startPosition="41" endLine="56" endPosition="0">
+      <varInfo nodeId="1204129169614" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204797574898" fileName="ChainedOperations_Test.java" startLine="61" startPosition="107" endLine="65" endPosition="0">
+      <varInfo nodeId="1204797574898" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204797574875" fileName="ChainedOperations_Test.java" startLine="97" startPosition="41" endLine="101" endPosition="0">
+      <varInfo nodeId="1204797574875" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="29" startPosition="20" endLine="44" endPosition="19" />
     <scopeInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="74" startPosition="20" endLine="89" endPosition="19" />
     <scopeInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="27" startPosition="46" endLine="46" endPosition="29" />
@@ -941,8 +1007,12 @@
     <scopeInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="67" startPosition="39" endLine="95" endPosition="0" />
     <scopeInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="21" startPosition="59" endLine="50" endPosition="10" />
     <scopeInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="66" startPosition="59" endLine="95" endPosition="10" />
-    <scopeInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="20" startPosition="54" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="65" startPosition="54" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="20" startPosition="54" endLine="52" endPosition="0">
+      <varInfo nodeId="1204129169626" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="65" startPosition="54" endLine="97" endPosition="0">
+      <varInfo nodeId="1204797574888" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1204111038461" fileName="ChainedOperations_Test.java" startLine="15" startPosition="51" endLine="57" endPosition="76">
       <varInfo nodeId="1204129169609" varName="test" />
     </scopeInfo>
@@ -1039,13 +1109,17 @@
     <scopeInfo nodeId="1204793880608" fileName="Util_Test.java" startLine="97" startPosition="41" endLine="98" endPosition="34" />
     <scopeInfo nodeId="1204981312412" fileName="Util_Test.java" startLine="101" startPosition="43" endLine="102" endPosition="41" />
     <scopeInfo nodeId="1241362803926" fileName="Util_Test.java" startLine="106" startPosition="29" endLine="107" endPosition="38" />
-    <scopeInfo nodeId="1241362803936" fileName="Util_Test.java" startLine="113" startPosition="0" endLine="114" endPosition="28" />
+    <scopeInfo nodeId="1241362803936" fileName="Util_Test.java" startLine="113" startPosition="0" endLine="114" endPosition="28">
+      <varInfo nodeId="1241362803936" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362803936" fileName="Util_Test.java" startLine="113" startPosition="40" endLine="114" endPosition="28" />
     <scopeInfo nodeId="1241362803936" fileName="Util_Test.java" startLine="110" startPosition="9" endLine="112" endPosition="20" />
     <scopeInfo nodeId="1205510374413" fileName="Util_Test.java" startLine="31" startPosition="35" endLine="34" endPosition="5">
       <varInfo nodeId="1205510374417" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1241362803923" fileName="Util_Test.java" startLine="105" startPosition="67" endLine="108" endPosition="5" />
+    <scopeInfo nodeId="1241362803923" fileName="Util_Test.java" startLine="105" startPosition="67" endLine="108" endPosition="5">
+      <varInfo nodeId="1241362803923" varName="v" />
+    </scopeInfo>
     <scopeInfo nodeId="1204129298262" fileName="Util_Test.java" startLine="15" startPosition="41" endLine="19" endPosition="0" />
     <scopeInfo nodeId="1204991762959" fileName="Util_Test.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="1204793778541" fileName="Util_Test.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
@@ -1203,23 +1277,45 @@
     <scopeInfo nodeId="1225716463484" fileName="SelectTest_Test.java" startLine="105" startPosition="27" endLine="107" endPosition="28" />
     <scopeInfo nodeId="1225716463484" fileName="SelectTest_Test.java" startLine="101" startPosition="27" endLine="104" endPosition="34" />
     <scopeInfo nodeId="1204286012444" fileName="SelectTest_Test.java" startLine="25" startPosition="41" endLine="29" endPosition="10" />
-    <scopeInfo nodeId="1204567471859" fileName="SelectTest_Test.java" startLine="39" startPosition="74" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1204567471859" fileName="SelectTest_Test.java" startLine="39" startPosition="74" endLine="43" endPosition="0">
+      <varInfo nodeId="1204567471859" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1204566288180" fileName="SelectTest_Test.java" startLine="50" startPosition="41" endLine="54" endPosition="10" />
-    <scopeInfo nodeId="3343985444902960201" fileName="SelectTest_Test.java" startLine="62" startPosition="130" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="3343985444902960236" fileName="SelectTest_Test.java" startLine="67" startPosition="128" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1224754206637" fileName="SelectTest_Test.java" startLine="76" startPosition="108" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="1225715193739" fileName="SelectTest_Test.java" startLine="119" startPosition="80" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="1225716422692" fileName="SelectTest_Test.java" startLine="124" startPosition="113" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="1241362847983" fileName="SelectTest_Test.java" startLine="133" startPosition="160" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="7797065405157461030" fileName="SelectTest_Test.java" startLine="144" startPosition="74" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="3343985444902960201" fileName="SelectTest_Test.java" startLine="62" startPosition="130" endLine="66" endPosition="0">
+      <varInfo nodeId="3343985444902960201" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902960236" fileName="SelectTest_Test.java" startLine="67" startPosition="128" endLine="71" endPosition="0">
+      <varInfo nodeId="3343985444902960236" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224754206637" fileName="SelectTest_Test.java" startLine="76" startPosition="108" endLine="80" endPosition="0">
+      <varInfo nodeId="1224754206637" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225715193739" fileName="SelectTest_Test.java" startLine="119" startPosition="80" endLine="123" endPosition="0">
+      <varInfo nodeId="1225715193739" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225716422692" fileName="SelectTest_Test.java" startLine="124" startPosition="113" endLine="128" endPosition="0">
+      <varInfo nodeId="1225716422692" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241362847983" fileName="SelectTest_Test.java" startLine="133" startPosition="160" endLine="137" endPosition="0">
+      <varInfo nodeId="1241362847983" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="7797065405157461030" fileName="SelectTest_Test.java" startLine="144" startPosition="74" endLine="148" endPosition="0">
+      <varInfo nodeId="7797065405157461030" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="7797065405157460987" fileName="SelectTest_Test.java" startLine="149" startPosition="36" endLine="153" endPosition="58" />
     <scopeInfo nodeId="1241362817133" fileName="SelectTest_Test.java" startLine="132" startPosition="58" endLine="137" endPosition="28" />
     <scopeInfo nodeId="1205840763858" fileName="SelectTest_Test.java" startLine="75" startPosition="54" endLine="81" endPosition="57">
       <varInfo nodeId="1205840773370" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1204286012443" fileName="SelectTest_Test.java" startLine="24" startPosition="76" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1204566288179" fileName="SelectTest_Test.java" startLine="49" startPosition="78" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="7797065405157460986" fileName="SelectTest_Test.java" startLine="148" startPosition="41" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="1204286012443" fileName="SelectTest_Test.java" startLine="24" startPosition="76" endLine="31" endPosition="0">
+      <varInfo nodeId="1204286012443" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204566288179" fileName="SelectTest_Test.java" startLine="49" startPosition="78" endLine="56" endPosition="0">
+      <varInfo nodeId="1204566288179" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7797065405157460986" fileName="SelectTest_Test.java" startLine="148" startPosition="41" endLine="155" endPosition="0">
+      <varInfo nodeId="7797065405157460986" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362817131" fileName="SelectTest_Test.java" startLine="131" startPosition="0" endLine="139" endPosition="0" />
     <scopeInfo nodeId="1204567341456" fileName="SelectTest_Test.java" startLine="35" startPosition="53" endLine="44" endPosition="89">
       <varInfo nodeId="1204567390245" varName="a" />
@@ -1370,13 +1466,27 @@
     <scopeInfo nodeId="1226336653016" fileName="VisitAll_Test.java" startLine="111" startPosition="35" endLine="112" endPosition="32" />
     <scopeInfo nodeId="3229004455031219554" fileName="VisitAll_Test.java" startLine="122" startPosition="37" endLine="123" endPosition="54" />
     <scopeInfo nodeId="1226336578143" fileName="VisitAll_Test.java" startLine="129" startPosition="72" endLine="130" endPosition="50" />
-    <scopeInfo nodeId="1204981231857" fileName="VisitAll_Test.java" startLine="21" startPosition="42" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1204981468137" fileName="VisitAll_Test.java" startLine="32" startPosition="57" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1205842213970" fileName="VisitAll_Test.java" startLine="43" startPosition="75" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="3343985444902960398" fileName="VisitAll_Test.java" startLine="53" startPosition="96" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1224754206455" fileName="VisitAll_Test.java" startLine="64" startPosition="75" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1226336653015" fileName="VisitAll_Test.java" startLine="110" startPosition="45" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="3229004455031219553" fileName="VisitAll_Test.java" startLine="121" startPosition="66" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="1204981231857" fileName="VisitAll_Test.java" startLine="21" startPosition="42" endLine="25" endPosition="0">
+      <varInfo nodeId="1204981231857" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204981468137" fileName="VisitAll_Test.java" startLine="32" startPosition="57" endLine="36" endPosition="0">
+      <varInfo nodeId="1204981468137" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1205842213970" fileName="VisitAll_Test.java" startLine="43" startPosition="75" endLine="47" endPosition="0">
+      <varInfo nodeId="1205842213970" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902960398" fileName="VisitAll_Test.java" startLine="53" startPosition="96" endLine="57" endPosition="0">
+      <varInfo nodeId="3343985444902960398" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224754206455" fileName="VisitAll_Test.java" startLine="64" startPosition="75" endLine="68" endPosition="0">
+      <varInfo nodeId="1224754206455" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1226336653015" fileName="VisitAll_Test.java" startLine="110" startPosition="45" endLine="114" endPosition="0">
+      <varInfo nodeId="1226336653015" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="3229004455031219553" fileName="VisitAll_Test.java" startLine="121" startPosition="66" endLine="125" endPosition="0">
+      <varInfo nodeId="3229004455031219553" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1226336578140" fileName="VisitAll_Test.java" startLine="128" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="1226336582809" varName="seqs" />
       <varInfo nodeId="1226336596823" varName="visitor" />
@@ -1419,8 +1529,12 @@
     <scopeInfo nodeId="1226336502964" fileName="VisitAll_Test.java" startLine="106" startPosition="0" endLine="117" endPosition="0" />
     <scopeInfo nodeId="3229004455031219525" fileName="VisitAll_Test.java" startLine="117" startPosition="0" endLine="128" endPosition="0" />
     <scopeInfo nodeId="1204981444171" fileName="VisitAll_Test.java" startLine="28" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1224754206405" fileName="VisitAll_Test.java" startLine="74" startPosition="76" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1224497514095" fileName="VisitAll_Test.java" startLine="90" startPosition="76" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="1224754206405" fileName="VisitAll_Test.java" startLine="74" startPosition="76" endLine="87" endPosition="0">
+      <varInfo nodeId="1224754206405" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224497514095" fileName="VisitAll_Test.java" startLine="90" startPosition="76" endLine="103" endPosition="0">
+      <varInfo nodeId="1224497514095" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1205847859852" fileName="VisitAll_Test.java" startLine="72" startPosition="48" endLine="104" endPosition="60">
       <varInfo nodeId="1205847939751" varName="res" />
     </scopeInfo>
@@ -1513,19 +1627,47 @@
     <scopeInfo nodeId="599357942184268677" fileName="Sort_Test.java" startLine="102" startPosition="46" endLine="103" endPosition="18" />
     <scopeInfo nodeId="599357942184353389" fileName="Sort_Test.java" startLine="107" startPosition="46" endLine="108" endPosition="27" />
     <scopeInfo nodeId="599357942184353399" fileName="Sort_Test.java" startLine="111" startPosition="46" endLine="112" endPosition="18" />
-    <scopeInfo nodeId="1205687027624" fileName="Sort_Test.java" startLine="18" startPosition="80" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1205694004155" fileName="Sort_Test.java" startLine="28" startPosition="86" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1205751769125" fileName="Sort_Test.java" startLine="34" startPosition="86" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1205737614820" fileName="Sort_Test.java" startLine="47" startPosition="102" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1205738230334" fileName="Sort_Test.java" startLine="53" startPosition="110" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="3343985444902960344" fileName="Sort_Test.java" startLine="58" startPosition="126" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="3343985444902960250" fileName="Sort_Test.java" startLine="64" startPosition="131" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1239112469489" fileName="Sort_Test.java" startLine="73" startPosition="170" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="1239112752053" fileName="Sort_Test.java" startLine="82" startPosition="95" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1224754206672" fileName="Sort_Test.java" startLine="91" startPosition="102" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="599357942184268676" fileName="Sort_Test.java" startLine="101" startPosition="99" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="599357942184353388" fileName="Sort_Test.java" startLine="106" startPosition="99" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="599357942184353398" fileName="Sort_Test.java" startLine="110" startPosition="63" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="1205687027624" fileName="Sort_Test.java" startLine="18" startPosition="80" endLine="22" endPosition="0">
+      <varInfo nodeId="1205687027624" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1205694004155" fileName="Sort_Test.java" startLine="28" startPosition="86" endLine="32" endPosition="0">
+      <varInfo nodeId="1205694004155" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1205751769125" fileName="Sort_Test.java" startLine="34" startPosition="86" endLine="38" endPosition="0">
+      <varInfo nodeId="1205751769125" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1205737614820" fileName="Sort_Test.java" startLine="47" startPosition="102" endLine="51" endPosition="0">
+      <varInfo nodeId="1205737614820" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1205738230334" fileName="Sort_Test.java" startLine="53" startPosition="110" endLine="57" endPosition="0">
+      <varInfo nodeId="1205738230334" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902960344" fileName="Sort_Test.java" startLine="58" startPosition="126" endLine="62" endPosition="0">
+      <varInfo nodeId="3343985444902960344" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902960250" fileName="Sort_Test.java" startLine="64" startPosition="131" endLine="68" endPosition="0">
+      <varInfo nodeId="3343985444902960250" varName="a" />
+      <varInfo nodeId="3343985444902960250" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1239112469489" fileName="Sort_Test.java" startLine="73" startPosition="170" endLine="77" endPosition="0">
+      <varInfo nodeId="1239112469489" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1239112752053" fileName="Sort_Test.java" startLine="82" startPosition="95" endLine="86" endPosition="0">
+      <varInfo nodeId="1239112752053" varName="a" />
+      <varInfo nodeId="1239112752053" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224754206672" fileName="Sort_Test.java" startLine="91" startPosition="102" endLine="95" endPosition="0">
+      <varInfo nodeId="1224754206672" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="599357942184268676" fileName="Sort_Test.java" startLine="101" startPosition="99" endLine="105" endPosition="0">
+      <varInfo nodeId="599357942184268676" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="599357942184353388" fileName="Sort_Test.java" startLine="106" startPosition="99" endLine="110" endPosition="0">
+      <varInfo nodeId="599357942184353388" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="599357942184353398" fileName="Sort_Test.java" startLine="110" startPosition="63" endLine="114" endPosition="0">
+      <varInfo nodeId="599357942184353398" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1239112332046" fileName="Sort_Test.java" startLine="71" startPosition="53" endLine="77" endPosition="14">
       <varInfo nodeId="1239112347840" varName="test" />
     </scopeInfo>
@@ -1634,17 +1776,34 @@
     <scopeInfo nodeId="1228852926397" fileName="ForEach_Test.java" startLine="81" startPosition="39" endLine="82" endPosition="29" />
     <scopeInfo nodeId="1228852006365" fileName="ForEach_Test.java" startLine="37" startPosition="44" endLine="39" endPosition="21" />
     <scopeInfo nodeId="1228853116593" fileName="ForEach_Test.java" startLine="46" startPosition="23" endLine="48" endPosition="21" />
-    <scopeInfo nodeId="796360049988318287" fileName="ForEach_Test.java" startLine="71" startPosition="6" endLine="73" endPosition="5" />
-    <scopeInfo nodeId="796360049988326077" fileName="ForEach_Test.java" startLine="73" startPosition="5" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="1205849856969" fileName="ForEach_Test.java" startLine="15" startPosition="54" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="1228851851994" fileName="ForEach_Test.java" startLine="24" startPosition="42" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="1228851974750" fileName="ForEach_Test.java" startLine="29" startPosition="44" endLine="32" endPosition="5" />
+    <scopeInfo nodeId="796360049988318287" fileName="ForEach_Test.java" startLine="71" startPosition="6" endLine="73" endPosition="5">
+      <varInfo nodeId="796360049988318287" varName="bars" />
+    </scopeInfo>
+    <scopeInfo nodeId="796360049988326077" fileName="ForEach_Test.java" startLine="73" startPosition="5" endLine="75" endPosition="5">
+      <varInfo nodeId="796360049988326077" varName="bars" />
+    </scopeInfo>
+    <scopeInfo nodeId="1205849856969" fileName="ForEach_Test.java" startLine="15" startPosition="54" endLine="18" endPosition="5">
+      <varInfo nodeId="1205849856969" varName="foo" />
+    </scopeInfo>
+    <scopeInfo nodeId="1228851851994" fileName="ForEach_Test.java" startLine="24" startPosition="42" endLine="27" endPosition="5">
+      <varInfo nodeId="1228851851994" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1228851974750" fileName="ForEach_Test.java" startLine="29" startPosition="44" endLine="32" endPosition="5">
+      <varInfo nodeId="1228851974750" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="1228852898824" fileName="ForEach_Test.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1228852917299" varName="valid" />
     </scopeInfo>
-    <scopeInfo nodeId="1228852006362" fileName="ForEach_Test.java" startLine="36" startPosition="42" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="1228853116583" fileName="ForEach_Test.java" startLine="45" startPosition="41" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="4272335308992149360" fileName="ForEach_Test.java" startLine="56" startPosition="122" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1228852006362" fileName="ForEach_Test.java" startLine="36" startPosition="42" endLine="40" endPosition="5">
+      <varInfo nodeId="1228852006362" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1228853116583" fileName="ForEach_Test.java" startLine="45" startPosition="41" endLine="49" endPosition="5">
+      <varInfo nodeId="1228853116583" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="4272335308992149360" fileName="ForEach_Test.java" startLine="56" startPosition="122" endLine="60" endPosition="0">
+      <varInfo nodeId="4272335308992149360" varName="a" />
+      <varInfo nodeId="4272335308992149360" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="796360049988318278" fileName="ForEach_Test.java" startLine="67" startPosition="27" endLine="71" endPosition="0" />
     <scopeInfo nodeId="1228852926394" fileName="ForEach_Test.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1228852934300" varName="invalid" />
@@ -1660,7 +1819,9 @@
       <varInfo nodeId="1228853127708" varName="arr" />
       <varInfo nodeId="1228853121973" varName="exp" />
     </scopeInfo>
-    <scopeInfo nodeId="4272335308992149325" fileName="ForEach_Test.java" startLine="54" startPosition="16" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="4272335308992149325" fileName="ForEach_Test.java" startLine="54" startPosition="16" endLine="61" endPosition="5">
+      <varInfo nodeId="4272335308992149325" varName="ints" />
+    </scopeInfo>
     <scopeInfo nodeId="1205849849011" fileName="ForEach_Test.java" startLine="13" startPosition="45" endLine="21" endPosition="0" />
     <scopeInfo nodeId="1228851995510" fileName="ForEach_Test.java" startLine="34" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="1228853104818" fileName="ForEach_Test.java" startLine="42" startPosition="0" endLine="51" endPosition="0" />
@@ -1864,21 +2025,51 @@
     <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="124" startPosition="27" endLine="127" endPosition="28" />
     <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="128" startPosition="27" endLine="131" endPosition="34" />
     <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="191" startPosition="27" endLine="194" endPosition="34" />
-    <scopeInfo nodeId="3343985444902967802" fileName="Find_Test.java" startLine="66" startPosition="92" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="3343985444902959420" fileName="Find_Test.java" startLine="71" startPosition="128" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="3343985444902967830" fileName="Find_Test.java" startLine="77" startPosition="92" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="3343985444902959698" fileName="Find_Test.java" startLine="82" startPosition="129" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="7973341469126548366" fileName="Find_Test.java" startLine="91" startPosition="105" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1235567599361" fileName="Find_Test.java" startLine="149" startPosition="83" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="3343985444902959732" fileName="Find_Test.java" startLine="154" startPosition="128" endLine="158" endPosition="0" />
-    <scopeInfo nodeId="1235567612812" fileName="Find_Test.java" startLine="160" startPosition="84" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="3343985444902959766" fileName="Find_Test.java" startLine="165" startPosition="129" endLine="169" endPosition="0" />
-    <scopeInfo nodeId="1235567723178" fileName="Find_Test.java" startLine="171" startPosition="83" endLine="175" endPosition="0" />
-    <scopeInfo nodeId="1235567704231" fileName="Find_Test.java" startLine="209" startPosition="84" endLine="213" endPosition="0" />
-    <scopeInfo nodeId="1235568122646" fileName="Find_Test.java" startLine="214" startPosition="85" endLine="218" endPosition="0" />
-    <scopeInfo nodeId="1235567714048" fileName="Find_Test.java" startLine="219" startPosition="84" endLine="223" endPosition="0" />
-    <scopeInfo nodeId="1235567749451" fileName="Find_Test.java" startLine="225" startPosition="85" endLine="229" endPosition="0" />
-    <scopeInfo nodeId="1235567758243" fileName="Find_Test.java" startLine="230" startPosition="84" endLine="234" endPosition="0" />
+    <scopeInfo nodeId="3343985444902967802" fileName="Find_Test.java" startLine="66" startPosition="92" endLine="70" endPosition="0">
+      <varInfo nodeId="3343985444902967802" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902959420" fileName="Find_Test.java" startLine="71" startPosition="128" endLine="75" endPosition="0">
+      <varInfo nodeId="3343985444902959420" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902967830" fileName="Find_Test.java" startLine="77" startPosition="92" endLine="81" endPosition="0">
+      <varInfo nodeId="3343985444902967830" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902959698" fileName="Find_Test.java" startLine="82" startPosition="129" endLine="86" endPosition="0">
+      <varInfo nodeId="3343985444902959698" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7973341469126548366" fileName="Find_Test.java" startLine="91" startPosition="105" endLine="95" endPosition="0">
+      <varInfo nodeId="7973341469126548366" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1235567599361" fileName="Find_Test.java" startLine="149" startPosition="83" endLine="153" endPosition="0">
+      <varInfo nodeId="1235567599361" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902959732" fileName="Find_Test.java" startLine="154" startPosition="128" endLine="158" endPosition="0">
+      <varInfo nodeId="3343985444902959732" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1235567612812" fileName="Find_Test.java" startLine="160" startPosition="84" endLine="164" endPosition="0">
+      <varInfo nodeId="1235567612812" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902959766" fileName="Find_Test.java" startLine="165" startPosition="129" endLine="169" endPosition="0">
+      <varInfo nodeId="3343985444902959766" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1235567723178" fileName="Find_Test.java" startLine="171" startPosition="83" endLine="175" endPosition="0">
+      <varInfo nodeId="1235567723178" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1235567704231" fileName="Find_Test.java" startLine="209" startPosition="84" endLine="213" endPosition="0">
+      <varInfo nodeId="1235567704231" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1235568122646" fileName="Find_Test.java" startLine="214" startPosition="85" endLine="218" endPosition="0">
+      <varInfo nodeId="1235568122646" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1235567714048" fileName="Find_Test.java" startLine="219" startPosition="84" endLine="223" endPosition="0">
+      <varInfo nodeId="1235567714048" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1235567749451" fileName="Find_Test.java" startLine="225" startPosition="85" endLine="229" endPosition="0">
+      <varInfo nodeId="1235567749451" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1235567758243" fileName="Find_Test.java" startLine="230" startPosition="84" endLine="234" endPosition="0">
+      <varInfo nodeId="1235567758243" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="7973341469126541506" fileName="Find_Test.java" startLine="236" startPosition="0" endLine="240" endPosition="0" />
     <scopeInfo nodeId="7973341469126541501" fileName="Find_Test.java" startLine="90" startPosition="48" endLine="95" endPosition="8" />
     <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="34" startPosition="27" endLine="40" endPosition="28" />
@@ -2076,22 +2267,69 @@
     <scopeInfo nodeId="7592121047689022695" fileName="ReduceFold_Test.java" startLine="143" startPosition="21" endLine="144" endPosition="39" />
     <scopeInfo nodeId="5037332032045096472" fileName="ReduceFold_Test.java" startLine="154" startPosition="43" endLine="155" endPosition="27" />
     <scopeInfo nodeId="5037332032045096481" fileName="ReduceFold_Test.java" startLine="158" startPosition="52" endLine="159" endPosition="21" />
-    <scopeInfo nodeId="3343985444902959903" fileName="ReduceFold_Test.java" startLine="19" startPosition="140" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="3343985444902959967" fileName="ReduceFold_Test.java" startLine="24" startPosition="154" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="3343985444902959916" fileName="ReduceFold_Test.java" startLine="30" startPosition="140" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1522217801069642529" fileName="ReduceFold_Test.java" startLine="36" startPosition="108" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="3343985444902959988" fileName="ReduceFold_Test.java" startLine="55" startPosition="142" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="3343985444902960053" fileName="ReduceFold_Test.java" startLine="60" startPosition="154" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="3343985444902960001" fileName="ReduceFold_Test.java" startLine="66" startPosition="158" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1522217801069655353" fileName="ReduceFold_Test.java" startLine="72" startPosition="110" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="3343985444902960072" fileName="ReduceFold_Test.java" startLine="91" startPosition="118" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="3343985444902960112" fileName="ReduceFold_Test.java" startLine="96" startPosition="150" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1522217801069692838" fileName="ReduceFold_Test.java" startLine="103" startPosition="119" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="3343985444902960131" fileName="ReduceFold_Test.java" startLine="122" startPosition="120" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="3343985444902960171" fileName="ReduceFold_Test.java" startLine="127" startPosition="150" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="5428628206778311072" fileName="ReduceFold_Test.java" startLine="134" startPosition="121" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="5037332032045096471" fileName="ReduceFold_Test.java" startLine="153" startPosition="87" endLine="157" endPosition="0" />
-    <scopeInfo nodeId="5037332032045096480" fileName="ReduceFold_Test.java" startLine="157" startPosition="59" endLine="161" endPosition="0" />
+    <scopeInfo nodeId="3343985444902959903" fileName="ReduceFold_Test.java" startLine="19" startPosition="140" endLine="23" endPosition="0">
+      <varInfo nodeId="3343985444902959903" varName="a" />
+      <varInfo nodeId="3343985444902959903" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902959967" fileName="ReduceFold_Test.java" startLine="24" startPosition="154" endLine="28" endPosition="0">
+      <varInfo nodeId="3343985444902959967" varName="a" />
+      <varInfo nodeId="3343985444902959967" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902959916" fileName="ReduceFold_Test.java" startLine="30" startPosition="140" endLine="34" endPosition="0">
+      <varInfo nodeId="3343985444902959916" varName="a" />
+      <varInfo nodeId="3343985444902959916" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1522217801069642529" fileName="ReduceFold_Test.java" startLine="36" startPosition="108" endLine="40" endPosition="0">
+      <varInfo nodeId="1522217801069642529" varName="a" />
+      <varInfo nodeId="1522217801069642529" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902959988" fileName="ReduceFold_Test.java" startLine="55" startPosition="142" endLine="59" endPosition="0">
+      <varInfo nodeId="3343985444902959988" varName="a" />
+      <varInfo nodeId="3343985444902959988" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902960053" fileName="ReduceFold_Test.java" startLine="60" startPosition="154" endLine="64" endPosition="0">
+      <varInfo nodeId="3343985444902960053" varName="a" />
+      <varInfo nodeId="3343985444902960053" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902960001" fileName="ReduceFold_Test.java" startLine="66" startPosition="158" endLine="70" endPosition="0">
+      <varInfo nodeId="3343985444902960001" varName="a" />
+      <varInfo nodeId="3343985444902960001" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1522217801069655353" fileName="ReduceFold_Test.java" startLine="72" startPosition="110" endLine="76" endPosition="0">
+      <varInfo nodeId="1522217801069655353" varName="a" />
+      <varInfo nodeId="1522217801069655353" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902960072" fileName="ReduceFold_Test.java" startLine="91" startPosition="118" endLine="95" endPosition="0">
+      <varInfo nodeId="3343985444902960072" varName="it" />
+      <varInfo nodeId="3343985444902960072" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902960112" fileName="ReduceFold_Test.java" startLine="96" startPosition="150" endLine="100" endPosition="0">
+      <varInfo nodeId="3343985444902960112" varName="it" />
+      <varInfo nodeId="3343985444902960112" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="1522217801069692838" fileName="ReduceFold_Test.java" startLine="103" startPosition="119" endLine="107" endPosition="0">
+      <varInfo nodeId="1522217801069692838" varName="it" />
+      <varInfo nodeId="1522217801069692838" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902960131" fileName="ReduceFold_Test.java" startLine="122" startPosition="120" endLine="126" endPosition="0">
+      <varInfo nodeId="3343985444902960131" varName="it" />
+      <varInfo nodeId="3343985444902960131" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="3343985444902960171" fileName="ReduceFold_Test.java" startLine="127" startPosition="150" endLine="131" endPosition="0">
+      <varInfo nodeId="3343985444902960171" varName="it" />
+      <varInfo nodeId="3343985444902960171" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="5428628206778311072" fileName="ReduceFold_Test.java" startLine="134" startPosition="121" endLine="138" endPosition="0">
+      <varInfo nodeId="5428628206778311072" varName="it" />
+      <varInfo nodeId="5428628206778311072" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="5037332032045096471" fileName="ReduceFold_Test.java" startLine="153" startPosition="87" endLine="157" endPosition="0">
+      <varInfo nodeId="5037332032045096471" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5037332032045096480" fileName="ReduceFold_Test.java" startLine="157" startPosition="59" endLine="161" endPosition="0">
+      <varInfo nodeId="5037332032045096480" varName="a" />
+      <varInfo nodeId="5037332032045096480" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1522217801069650853" fileName="ReduceFold_Test.java" startLine="43" startPosition="52" endLine="48" endPosition="17">
       <varInfo nodeId="7592121047689022644" varName="i" />
     </scopeInfo>
@@ -2104,10 +2342,22 @@
     <scopeInfo nodeId="5428628206778311089" fileName="ReduceFold_Test.java" startLine="141" startPosition="51" endLine="146" endPosition="21">
       <varInfo nodeId="7592121047689022691" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1522217801069650852" fileName="ReduceFold_Test.java" startLine="42" startPosition="103" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1522217801069655366" fileName="ReduceFold_Test.java" startLine="78" startPosition="105" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="5428628206778274769" fileName="ReduceFold_Test.java" startLine="109" startPosition="116" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="5428628206778311088" fileName="ReduceFold_Test.java" startLine="140" startPosition="118" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="1522217801069650852" fileName="ReduceFold_Test.java" startLine="42" startPosition="103" endLine="50" endPosition="0">
+      <varInfo nodeId="1522217801069650852" varName="a" />
+      <varInfo nodeId="1522217801069650852" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1522217801069655366" fileName="ReduceFold_Test.java" startLine="78" startPosition="105" endLine="86" endPosition="0">
+      <varInfo nodeId="1522217801069655366" varName="a" />
+      <varInfo nodeId="1522217801069655366" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5428628206778274769" fileName="ReduceFold_Test.java" startLine="109" startPosition="116" endLine="117" endPosition="0">
+      <varInfo nodeId="5428628206778274769" varName="it" />
+      <varInfo nodeId="5428628206778274769" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="5428628206778311088" fileName="ReduceFold_Test.java" startLine="140" startPosition="118" endLine="148" endPosition="0">
+      <varInfo nodeId="5428628206778311088" varName="it" />
+      <varInfo nodeId="5428628206778311088" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="5037332032045095736" fileName="ReduceFold_Test.java" startLine="151" startPosition="48" endLine="162" endPosition="30">
       <varInfo nodeId="5037332032045096409" varName="input" />
       <varInfo nodeId="5037332032045096463" varName="res" />
@@ -2181,8 +2431,12 @@
     <nodeInfo nodeId="3055999550621124057" fileName="RemoveWhereTest_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_queueRemoveWhere#()V" />
     <scopeInfo nodeId="3055999550621094374" fileName="RemoveWhereTest_Test.java" startLine="18" startPosition="40" endLine="19" endPosition="31" />
     <scopeInfo nodeId="3055999550621124155" fileName="RemoveWhereTest_Test.java" startLine="29" startPosition="40" endLine="30" endPosition="31" />
-    <scopeInfo nodeId="3055999550621094373" fileName="RemoveWhereTest_Test.java" startLine="17" startPosition="70" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="3055999550621124154" fileName="RemoveWhereTest_Test.java" startLine="28" startPosition="90" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="3055999550621094373" fileName="RemoveWhereTest_Test.java" startLine="17" startPosition="70" endLine="21" endPosition="0">
+      <varInfo nodeId="3055999550621094373" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3055999550621124154" fileName="RemoveWhereTest_Test.java" startLine="28" startPosition="90" endLine="32" endPosition="0">
+      <varInfo nodeId="3055999550621124154" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="3055999550620993914" fileName="RemoveWhereTest_Test.java" startLine="15" startPosition="55" endLine="23" endPosition="64">
       <varInfo nodeId="3055999550620993916" varName="l1" />
     </scopeInfo>
@@ -2246,7 +2500,9 @@
     <scopeInfo nodeId="5562883592574833575" fileName="MPS10313.java" startLine="52" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="5562883592574833579" varName="foos" />
     </scopeInfo>
-    <scopeInfo nodeId="5562883592575009923" fileName="MPS10313.java" startLine="32" startPosition="98" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="5562883592575009923" fileName="MPS10313.java" startLine="32" startPosition="98" endLine="36" endPosition="0">
+      <varInfo nodeId="5562883592575009923" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="5562883592574828335" fileName="MPS10313.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="3031165383882147763" fileName="MPS10313.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="5562883592574833587" fileName="MPS10313.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
