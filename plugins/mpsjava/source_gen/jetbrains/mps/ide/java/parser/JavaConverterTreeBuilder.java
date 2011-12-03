@@ -17,10 +17,11 @@ import java.util.HashMap;
 import org.eclipse.jdt.internal.compiler.ast.Expression;
 import org.eclipse.jdt.internal.compiler.ast.Literal;
 import org.eclipse.jdt.internal.compiler.impl.Constant;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.eclipse.jdt.internal.compiler.ast.ASTNode;
+import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.util.NameUtil;
+import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
 import java.lang.reflect.Method;
@@ -55,7 +56,6 @@ import org.eclipse.jdt.internal.compiler.ast.PostfixExpression;
 import org.eclipse.jdt.internal.compiler.ast.PrefixExpression;
 import org.eclipse.jdt.internal.compiler.ast.CastExpression;
 import org.eclipse.jdt.internal.compiler.ast.NameReference;
-import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
 import org.eclipse.jdt.internal.compiler.ast.SuperReference;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.eclipse.jdt.internal.compiler.ast.NormalAnnotation;
@@ -145,11 +145,13 @@ public class JavaConverterTreeBuilder {
   public SNode processExpressionRefl(Expression expression) {
     SNode result = null;
     if (expression instanceof Literal && expression.constant != null) {
-      if (expression.constant == Constant.NotAConstant) {
-        // import token as string constant even if it was an error in literal 
-        result = new JavaConverterTreeBuilder.QuotationClass_m30mvz_a0a1a0a1a0().createNode(NameUtil.escapeString(new String(((Literal) expression).source())));
-      } else {
+      if (expression.constant != Constant.NotAConstant) {
         result = SNodeOperations.cast(dispatchRefl("processConstant", expression.constant), "jetbrains.mps.baseLanguage.structure.Expression");
+      } else if (expression instanceof NullLiteral) {
+        result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.NullLiteral", null);
+      } else {
+        // import token as string constant even if it was an error in literal 
+        result = new JavaConverterTreeBuilder.QuotationClass_m30mvz_a0a1a0a0b0a().createNode(NameUtil.escapeString(new String(((Literal) expression).source())));
       }
     }
     if ((result == null)) {
@@ -1715,8 +1717,8 @@ public class JavaConverterTreeBuilder {
     return result;
   }
 
-  public static class QuotationClass_m30mvz_a0a1a0a1a0 {
-    public QuotationClass_m30mvz_a0a1a0a1a0() {
+  public static class QuotationClass_m30mvz_a0a1a0a0b0a {
+    public QuotationClass_m30mvz_a0a1a0a0b0a() {
     }
 
     public SNode createNode(Object parameter_3) {
