@@ -41,13 +41,13 @@ public class ModelRootUtil {
     if (modelFile == null) return result;
 
     IModule module = model.getModule();
-    Class modelRootManager = model.getModelRootManager().getClass();
+    String modelRootManager = model.getModelRootManager().getClass().getName();
     String modelCanonicalPath = IFileUtils.getCanonicalPath(modelFile);
     for (SModelRoot modelRoot : module.getSModelRoots()) {
-      Class rootManager = modelRoot.getManager().getClass();
+      String rootManager = modelRoot.getManager().getClass().getName();
       String rootCanonicalPath = FileUtil.getCanonicalPath(modelRoot.getPath());
 
-      if (modelRootManager == rootManager && modelCanonicalPath.startsWith(rootCanonicalPath)) {
+      if (modelRootManager.equals(rootManager) && modelCanonicalPath.startsWith(rootCanonicalPath)) {
         result.add(modelRoot);
       }
     }
