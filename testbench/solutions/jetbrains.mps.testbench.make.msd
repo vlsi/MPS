@@ -45,6 +45,7 @@
     <dependency reexport="false">8243a5aa-ceff-484d-8124-da694e9f8ef4(jetbrains.mps.ui.unittest)</dependency>
     <dependency reexport="false">2f499867-d42a-4e31-a93d-33e16883e187(jetbrains.mps.xml.tests)</dependency>
     <dependency reexport="false">26af8f6b-3531-46d0-8700-83a313e4566e(ypath.test)</dependency>
+    <dependency reexport="false">dc080be0-da6e-4885-aed0-7d999c120619(jetbrains.mps.traceInfo.testWeaving)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>

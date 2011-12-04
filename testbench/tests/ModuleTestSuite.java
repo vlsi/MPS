@@ -43,6 +43,7 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.tests.TestModule_jetbrains_mps_make_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_smodel_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_test",
+  "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_testWeaving",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_ui_unittest",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_xml_tests",
   "jetbrains.mps.tests.TestModule_ypath_test"})

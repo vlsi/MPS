@@ -21,6 +21,7 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -302,6 +303,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       return;
     }
 
+    fillOriginalNode(inputNode, outputNodeToWeave);
+
     // check child
     RoleValidationStatus status = generator.validateChild(contextParentNode, childRole, outputNodeToWeave);
     if (status != null) {
@@ -321,6 +324,17 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         contextParentNode.addChild(childRole, outputNodeToWeave);
       } else {
         contextParentNode.setChild(childRole, outputNodeToWeave);
+      }
+    }
+  }
+
+  private void fillOriginalNode(SNode inputNode, SNode outputNode) {
+    if (inputNode.getModel() == getGenerator().getGeneratorSessionContext().getOriginalInputModel()) {
+      outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+    } else {
+      Object userObject = inputNode.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
+      if (userObject != null) {
+        outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, userObject);
       }
     }
   }
