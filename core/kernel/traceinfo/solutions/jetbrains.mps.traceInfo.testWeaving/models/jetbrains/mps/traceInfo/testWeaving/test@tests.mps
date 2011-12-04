@@ -24,6 +24,9 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2819311507031225990">
       <property name="name" nameId="tpck.1169194664001" value="TestUtil" />
     </node>
+    <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="6558706544265543752">
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+    </node>
   </roots>
   <root id="6186432342008539165">
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="6186432342008539169">
@@ -472,5 +475,6 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2819311507031225995" />
     </node>
   </root>
+  <root id="6558706544265543752" />
 </model>
 
