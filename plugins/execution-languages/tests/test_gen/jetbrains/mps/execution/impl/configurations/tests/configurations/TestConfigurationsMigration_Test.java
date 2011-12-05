@@ -13,6 +13,11 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.execution.impl.RunManagerImpl;
 import jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager;
 import com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.io.StringWriter;
+import org.jdom.Document;
+import jetbrains.mps.util.JDOMUtil;
+import java.io.IOException;
 import com.intellij.execution.configurations.UnknownConfigurationType;
 import com.intellij.openapi.util.InvalidDataException;
 
@@ -41,7 +46,7 @@ public class TestConfigurationsMigration_Test extends BaseTransformationTest {
     }
 
     public void testConfigurationMigrated(String configFile, String xslFile) {
-      Element element = XslTest.readAndTransform(configFile, xslFile);
+      final Element element = XslTest.readAndTransform(configFile, xslFile);
       Assert.assertTrue(element.getChildren().size() > 0);
 
       Project project = ProjectManager.getInstance().getOpenProjects()[0];
@@ -52,7 +57,18 @@ public class TestConfigurationsMigration_Test extends BaseTransformationTest {
         RunnerAndConfigurationSettingsImpl settings = new RunnerAndConfigurationSettingsImpl(runManagerImpl);
         try {
           settings.readExternal((Element) child);
-          Assert.assertFalse(settings.getConfiguration().getType() instanceof UnknownConfigurationType);
+          Assert.assertFalse(new _FunctionTypes._return_P0_E0<String>() {
+            public String invoke() {
+              StringWriter writer = new StringWriter();
+              Document resultDocument = new Document(element);
+              try {
+                JDOMUtil.writeDocument(resultDocument, writer);
+                return writer.toString();
+              } catch (IOException e) {
+                return e.getMessage();
+              }
+            }
+          }.invoke(), settings.getConfiguration().getType() instanceof UnknownConfigurationType);
         } catch (InvalidDataException e) {
           Assert.fail(e.getMessage());
         }

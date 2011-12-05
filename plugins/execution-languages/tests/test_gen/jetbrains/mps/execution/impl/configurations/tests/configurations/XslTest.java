@@ -15,6 +15,7 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
 import jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager;
+import java.util.List;
 import org.jdom.JDOMException;
 import javax.xml.transform.TransformerException;
 
@@ -47,9 +48,10 @@ public class XslTest {
       Transformer transformer = TransformerFactory.newInstance().newTransformer(new StreamSource(RunConfigurationsStateManager.class.getResourceAsStream(xslName)));
       transformer.transform(source, result);
 
-      Element root = new Element("root");
-      root.addContent(result.getResult());
-      return root;
+      List transformResult = result.getResult();
+      if (transformResult.size() == 1) {
+        return (Element) transformResult.get(0);
+      }
     } catch (IOException e) {
       if (log.isErrorEnabled()) {
         log.error("", e);

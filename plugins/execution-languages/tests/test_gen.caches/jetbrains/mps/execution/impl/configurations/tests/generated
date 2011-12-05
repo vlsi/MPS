@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-17h2rsacukt5aqivjg1ys0q6sm7mjkn">
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="8ktekg1dslhj74s7hg8toxh4cll4il7" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-dws7etjaxfyli8wfzciicvjczkauj7a" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-9ezmxahqv9o32rcfs8xqm5e308r39dm" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-9dt3ktfqpcfhdzkh53vxwsib9yanh4y" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-a5wh25odjfbwxrmcf96nngys8ray5ac" />
   <common hash="3rrmbb325lphla8xr4ql5vs6xi05m3">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
