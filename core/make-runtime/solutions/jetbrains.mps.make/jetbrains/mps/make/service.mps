@@ -906,7 +906,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2298333944697014174" resolveInfo="myScrName" />
                       </node>
                       <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2298333944697013893">
-                        <property name="value" nameId="tpee.1070475926801" value=" failed" />
+                        <property name="value" nameId="tpee.1070475926801" value=" not started: invalid make script" />
                       </node>
                     </node>
                   </node>
@@ -925,13 +925,8 @@
                             <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="cfml.~MessageKind" resolveInfo="MessageKind" />
                             <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="cfml.~MessageKind%dERROR" resolveInfo="ERROR" />
                           </node>
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2298333944697013901">
-                            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2298333944697013902">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2298333944697013889" resolveInfo="msg" />
-                            </node>
-                            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2298333944697013903">
-                              <property name="value" nameId="tpee.1070475926801" value=". Invalid script." />
-                            </node>
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2298333944697013902">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2298333944697013889" resolveInfo="msg" />
                           </node>
                         </node>
                       </node>
@@ -943,6 +938,37 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2298333944697013759" resolveInfo="displayInfo" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2298333944697013906">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2298333944697013889" resolveInfo="msg" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="7319558157292976227">
+                  <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="7319558157292976228">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7319558157292976239">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7319558157292976241">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7319558157292976240">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2298333944697014190" resolveInfo="myMessageHandler" />
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7319558157292976245">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cfml.~IMessageHandler%dhandle(jetbrains%dmps%dmessages%dIMessage)%cvoid" resolveInfo="handle" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7319558157292976246">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7319558157292976230" resolveInfo="err" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7319558157292976230">
+                    <property name="name" nameId="tpck.1169194664001" value="err" />
+                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7319558157292976232">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cfml.~IMessage" resolveInfo="IMessage" />
+                    </node>
+                  </node>
+                  <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7319558157292976234">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7319558157292976233">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2298333944697013880" resolveInfo="scr" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7319558157292976238">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i9so.5012541157864944184" resolveInfo="validationErrors" />
                     </node>
                   </node>
                 </node>

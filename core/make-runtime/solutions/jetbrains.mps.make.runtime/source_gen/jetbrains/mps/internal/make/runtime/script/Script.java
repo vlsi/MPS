@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.resources.IResource;
@@ -64,15 +65,12 @@ public class Script implements IScript {
   public void validate() {
     ListSequence.fromList(errors).clear();
     if (startingTarget != null && !(targetRange.hasTarget(startingTarget))) {
-      LOG.error("unknown starting target: " + startingTarget);
       error(startingTarget, "unknown starting target: " + startingTarget);
     }
     if (!(targetRange.hasTarget(finalTarget))) {
-      LOG.error("unknown final target: " + finalTarget);
       error(finalTarget, "unknown final target: " + finalTarget);
     }
     if (targetRange.hasCycles()) {
-      LOG.error("cycle(s) detected: " + targetRange.cycles());
       error(this, "cycle(s) detected: " + targetRange.cycles());
     }
     if (startingTarget != null && !(Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).select(new ISelector<ITarget, ITarget.Name>() {
@@ -80,7 +78,6 @@ public class Script implements IScript {
         return t.getName();
       }
     }).contains(startingTarget))) {
-      LOG.error("invalid starting target: " + startingTarget);
       error(this, "invalid starting target: " + startingTarget);
     }
     validated = true;
@@ -92,6 +89,10 @@ public class Script implements IScript {
 
   public boolean isValid() {
     return validated && ListSequence.fromList(errors).isEmpty();
+  }
+
+  public Iterable<IMessage> validationErrors() {
+    return ListSequence.fromList(errors).ofType(IMessage.class);
   }
 
   public Iterable<ITarget> allTargets() {
@@ -117,7 +118,13 @@ public class Script implements IScript {
     return trg;
   }
 
+  @Override
+  public String toString() {
+    return "Script<" + finalTarget + ">";
+  }
+
   private void error(Object o, String message) {
+    LOG.debug(message);
     ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 

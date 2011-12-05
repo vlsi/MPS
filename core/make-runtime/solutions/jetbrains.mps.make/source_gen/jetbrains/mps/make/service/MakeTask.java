@@ -27,6 +27,7 @@ import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate;
 import java.util.Iterator;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -173,9 +174,12 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       IScript scr = scit.next();
 
       if (!(scr.isValid())) {
-        String msg = myScrName + " failed";
-        myMessageHandler.handle(new Message(MessageKind.ERROR, msg + ". Invalid script."));
+        String msg = myScrName + " not started: invalid make script";
+        myMessageHandler.handle(new Message(MessageKind.ERROR, msg));
         displayInfo(msg);
+        for (IMessage err : scr.validationErrors()) {
+          myMessageHandler.handle(err);
+        }
         this.myResult = new IResult.FAILURE(null);
         break;
       }
