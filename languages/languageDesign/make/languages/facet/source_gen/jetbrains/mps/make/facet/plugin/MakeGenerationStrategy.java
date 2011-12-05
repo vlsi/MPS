@@ -35,6 +35,9 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
   }
 
   public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext context) {
+    if (sm == null) {
+      return null;
+    }
     if (!(sm.isGeneratable())) {
       return null;
     }
