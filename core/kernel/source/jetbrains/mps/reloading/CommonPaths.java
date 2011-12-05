@@ -45,7 +45,7 @@ public class CommonPaths {
       }
     }, types);
     for (ClassType type : types) {
-      if(type == ClassType.CORE) {
+      if (type == ClassType.CORE) {
         addCoreJars(result);
       } else if (type == ClassType.EDITOR) {
         addEditorJars(result);
@@ -62,6 +62,10 @@ public class CommonPaths {
 
   public static List<String> getJDKPath() {
     return itemToPath(getJDKClassPath());
+  }
+
+  public static String getToolsJar() {
+    return PathManager.getHomePath() + File.separator + "lib" + File.separator + "tools.jar";
   }
 
   public static String getBaseMPSPath() {
