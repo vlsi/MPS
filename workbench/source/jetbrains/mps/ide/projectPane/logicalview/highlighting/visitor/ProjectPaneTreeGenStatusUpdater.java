@@ -113,6 +113,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   }
 
   private boolean generationRequired(IModule module, IOperationContext context) {
+    if (module == null) return false;
     for (SModelDescriptor md : module.getOwnModelDescriptors()) {
       boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md, context);
       if (required) return true;
