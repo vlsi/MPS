@@ -9,6 +9,8 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class InvalidScript implements IScript {
   private Iterable<ValidationError> errors;
@@ -46,5 +48,9 @@ public class InvalidScript implements IScript {
 
   public boolean isValid() {
     return false;
+  }
+
+  public Iterable<IMessage> validationErrors() {
+    return Sequence.fromIterable(errors).ofType(IMessage.class);
   }
 }
