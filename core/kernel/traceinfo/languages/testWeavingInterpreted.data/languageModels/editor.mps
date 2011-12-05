@@ -7,7 +7,6 @@
   <import index="a2l1" modelUID="r:edfc9800-75a5-4d91-810d-ab5fa36bac5b(jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
-  <import index="c5w2" modelUID="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)" version="1" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6186432342008533349">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="a2l1.6186432342008533347" resolveInfo="ChildConceptWeaveEachMany" />
@@ -82,7 +81,7 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="6186432342008486066" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="6186432342008486068" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="6186432342008329131">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="c5w2.6186432342008329118" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="a2l1.6186432342008329118" />
           <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="6186432342008329132" />
         </node>
       </node>
@@ -93,7 +92,7 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="6186432342008486070" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="6186432342008486072" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="6186432342008329137">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="c5w2.6186432342008329119" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="a2l1.6186432342008329119" />
           <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="6186432342008329138" />
         </node>
       </node>
@@ -104,7 +103,7 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="6186432342008537261" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="6186432342008537262" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="6186432342008537263">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="c5w2.6186432342008533358" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="a2l1.6186432342008533358" />
           <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="6186432342008537264" />
         </node>
       </node>
@@ -115,7 +114,7 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="6186432342008537266" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="6186432342008537267" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="6186432342008537268">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="c5w2.6186432342008533359" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="a2l1.6186432342008533359" />
           <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="6186432342008537269" />
         </node>
       </node>

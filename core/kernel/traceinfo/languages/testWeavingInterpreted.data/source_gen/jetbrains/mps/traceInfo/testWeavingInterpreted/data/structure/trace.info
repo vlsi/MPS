@@ -121,42 +121,82 @@
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="159" startPosition="69" endLine="160" endPosition="63" />
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="163" startPosition="66" endLine="164" endPosition="197" />
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="167" startPosition="52" endLine="168" endPosition="46" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="26" startPosition="0" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="26" startPosition="0" endLine="29" endPosition="3">
+      <varInfo nodeId="6186432342008318668" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="node" />
+      <varInfo nodeId="6186432342008318668" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="98" startPosition="0" endLine="102" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="node" />
+      <varInfo nodeId="6186432342008318668" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="106" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="114" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="118" startPosition="0" endLine="122" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="node" />
+      <varInfo nodeId="6186432342008318668" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="134" startPosition="0" endLine="138" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="138" startPosition="0" endLine="142" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="node" />
+      <varInfo nodeId="6186432342008318668" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
     <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="154" startPosition="0" endLine="158" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="158" startPosition="0" endLine="162" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="162" startPosition="0" endLine="166" endPosition="0" />
-    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="166" startPosition="0" endLine="170" endPosition="0" />
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="154" startPosition="0" endLine="158" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="158" startPosition="0" endLine="162" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="node" />
+      <varInfo nodeId="6186432342008318668" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="162" startPosition="0" endLine="166" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="init" />
+      <varInfo nodeId="6186432342008318668" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="166" startPosition="0" endLine="170" endPosition="0">
+      <varInfo nodeId="6186432342008318668" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="15" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.RootConcept" />
   </root>
   <root nodeId="6186432342008329114">
@@ -214,22 +254,42 @@
     <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="75" startPosition="69" endLine="76" endPosition="73" />
     <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="79" startPosition="76" endLine="80" endPosition="217" />
     <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="83" startPosition="62" endLine="84" endPosition="56" />
-    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="6186432342008329114" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="6186432342008329114" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="6186432342008329114" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="6186432342008329114" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="6186432342008329114" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="6186432342008329114" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="6186432342008329114" varName="node" />
+      <varInfo nodeId="6186432342008329114" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="6186432342008329114" varName="init" />
+      <varInfo nodeId="6186432342008329114" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="6186432342008329114" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveEach" />
   </root>
   <root nodeId="6186432342008329116">
@@ -287,22 +347,42 @@
     <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="75" startPosition="69" endLine="76" endPosition="69" />
     <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="79" startPosition="72" endLine="80" endPosition="209" />
     <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="83" startPosition="58" endLine="84" endPosition="52" />
-    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="6186432342008329116" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="6186432342008329116" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="6186432342008329116" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="6186432342008329116" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="6186432342008329116" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="6186432342008329116" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="6186432342008329116" varName="node" />
+      <varInfo nodeId="6186432342008329116" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="6186432342008329116" varName="init" />
+      <varInfo nodeId="6186432342008329116" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="6186432342008329116" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeave" />
   </root>
   <root nodeId="6186432342008533337">
@@ -360,22 +440,42 @@
     <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="75" startPosition="69" endLine="76" endPosition="73" />
     <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="79" startPosition="76" endLine="80" endPosition="217" />
     <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="83" startPosition="62" endLine="84" endPosition="56" />
-    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="6186432342008533337" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="6186432342008533337" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="6186432342008533337" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="6186432342008533337" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="6186432342008533337" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="6186432342008533337" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="6186432342008533337" varName="node" />
+      <varInfo nodeId="6186432342008533337" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="6186432342008533337" varName="init" />
+      <varInfo nodeId="6186432342008533337" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="6186432342008533337" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveMany" />
   </root>
   <root nodeId="6186432342008533347">
@@ -433,22 +533,42 @@
     <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="75" startPosition="69" endLine="76" endPosition="77" />
     <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="79" startPosition="80" endLine="80" endPosition="225" />
     <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="83" startPosition="66" endLine="84" endPosition="60" />
-    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="6186432342008533347" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="6186432342008533347" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="6186432342008533347" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="6186432342008533347" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="6186432342008533347" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="6186432342008533347" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="6186432342008533347" varName="node" />
+      <varInfo nodeId="6186432342008533347" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="6186432342008533347" varName="init" />
+      <varInfo nodeId="6186432342008533347" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="6186432342008533347" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveEachMany" />
   </root>
 </debugInfo>
