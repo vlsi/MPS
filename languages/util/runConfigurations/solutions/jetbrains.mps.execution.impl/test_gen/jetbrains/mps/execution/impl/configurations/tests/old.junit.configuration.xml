@@ -1,4 +1,4 @@
-<root>
+<root attr="attr">
   <configuration default="false" name="Test old" type="JUnit" factoryName="JUnit">
     <MyState>
       <option name="myJavaRunParameters">
