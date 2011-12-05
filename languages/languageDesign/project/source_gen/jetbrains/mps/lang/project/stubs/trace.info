@@ -34,8 +34,13 @@
       <varInfo nodeId="8382013213871428285" varName="longName" />
       <varInfo nodeId="8382013213871428307" varName="modelId" />
     </scopeInfo>
-    <scopeInfo nodeId="8382013213871428218" fileName="ProjectStubs.java" startLine="29" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="8382013213871428252" fileName="ProjectStubs.java" startLine="40" startPosition="122" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="8382013213871428218" fileName="ProjectStubs.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="8382013213871428218" varName="module" />
+      <varInfo nodeId="8382013213871428218" varName="root" />
+    </scopeInfo>
+    <scopeInfo nodeId="8382013213871428252" fileName="ProjectStubs.java" startLine="40" startPosition="122" endLine="46" endPosition="0">
+      <varInfo nodeId="8382013213871428252" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="8382013213871428281" fileName="ProjectStubs.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="8382013213871428324" varName="module" />
       <varInfo nodeId="8382013213871443234" varName="moduleWithModel" />
