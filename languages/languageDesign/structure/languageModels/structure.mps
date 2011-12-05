@@ -43,6 +43,7 @@
     <node type="tpce.ConceptDeclaration" typeId="1071489090640" id="1083243159079">
       <property name="iconPath" nameId="1160488491229" value="${language_descriptor}/icons/primitiveTD.png" />
       <property name="name" nameId="tpck.1169194664001" value="PrimitiveDataTypeDeclaration" />
+      <property name="rootable" nameId="1096454100552" value="true" />
       <link role="extends" roleId="1071489389519" targetNodeId="1082978164218" resolveInfo="DataTypeDeclaration" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="1082978164219" id="1084197782722">
