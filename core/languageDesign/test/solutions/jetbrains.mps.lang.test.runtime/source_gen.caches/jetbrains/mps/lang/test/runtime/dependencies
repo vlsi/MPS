@@ -165,6 +165,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.TestMain" />
+    <classNode dependClassName="jetbrains.mps.util.CachesUtil" />
     <classNode dependClassName="org.junit.internal.builders.JUnit4Builder" />
     <classNode dependClassName="org.junit.runner.Request" />
     <classNode dependClassName="org.junit.runner.Runner" />

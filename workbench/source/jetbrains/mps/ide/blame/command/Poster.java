@@ -43,7 +43,12 @@ public class Poster {
         setTimeouts(client);
         Response r = Command.login(client, query);
         if (r.isSuccess()) {
-          r = Command.postIssue(client, query.getIssue(), query.getDescription());
+          r = Command.postIssue(client, query.getIssueTitle(), query.getDescription(), query.isHidden(), query.getFiles());
+          String subsystem = query.getSubsystem();
+          String id = r.getIssueId();
+          if (r.isSuccess() && subsystem != null && id != null) {
+            Command.setIssueSubsystem(client, id, subsystem);
+          }
         }
         return r;
       }

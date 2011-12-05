@@ -41,7 +41,7 @@ import jetbrains.mps.cache.CachesManager;
   }
 
   private void processNode(SNode node, boolean put) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
       SNode classifier = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
       if (put) {
         this.putClassifier(classifier);

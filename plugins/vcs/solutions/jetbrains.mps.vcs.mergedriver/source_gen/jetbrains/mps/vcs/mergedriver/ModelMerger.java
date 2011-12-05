@@ -4,12 +4,12 @@ package jetbrains.mps.vcs.mergedriver;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.smodel.SModelFqName;
 import java.io.File;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.ModelUtils;
 import java.io.IOException;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.vcs.diff.merge.MergeContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -18,9 +18,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.OutputStream;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vcs.VcsHelperUtil;
+import java.io.InputStream;
+import java.io.FileInputStream;
+import jetbrains.mps.util.ReadUtil;
 
 /*package*/ class ModelMerger extends SimpleMerger {
   protected static Log log = LogFactory.getLog(ModelMerger.class);
+
+  private SModelFqName myModelFqName;
 
   /*package*/ ModelMerger() {
   }
@@ -43,6 +49,7 @@ import jetbrains.mps.util.FileUtil;
         if (baseModel == null) {
           throw new Exception("Could not read base model");
         }
+        myModelFqName = baseModel.getSModelFqName();
         localModel = ModelUtils.readModel(localFile);
         if (localModel == null) {
           throw new Exception("Could not read local model");
@@ -57,7 +64,7 @@ import jetbrains.mps.util.FileUtil;
         if (log.isErrorEnabled()) {
           log.error("Exception while reading models", e);
         }
-        return super.mergeFiles(baseFile, localFile, latestFile);
+        return backupAndMergeSimply(baseFile, localFile, latestFile);
       }
 
       SModelFqName modelFqName = baseModel.getSModelFqName();
@@ -70,13 +77,13 @@ import jetbrains.mps.util.FileUtil;
         if (log.isErrorEnabled()) {
           log.error(String.format("%s: Conflicting model persistence versions", modelFqName));
         }
-        return super.mergeFiles(baseFile, localFile, latestFile);
+        return backupAndMergeSimply(baseFile, localFile, latestFile);
       }
       if (!(roleIdsHandler.isConsistent())) {
         if (log.isErrorEnabled()) {
           log.error(String.format("%s: Inconsistent structure ids or import versions", modelFqName));
         }
-        return super.mergeFiles(baseFile, localFile, latestFile);
+        return backupAndMergeSimply(baseFile, localFile, latestFile);
       }
 
       try {
@@ -113,6 +120,7 @@ import jetbrains.mps.util.FileUtil;
             try {
               out = getResultStream(localFile);
               out.write(bytes);
+              backup(baseFile, localFile, latestFile);
               return MERGED;
             } catch (IOException e) {
               e.printStackTrace();
@@ -130,13 +138,37 @@ import jetbrains.mps.util.FileUtil;
         if (log.isErrorEnabled()) {
           log.error("Exception while merging", e);
         }
-        return super.mergeFiles(baseFile, localFile, latestFile);
+        return backupAndMergeSimply(baseFile, localFile, latestFile);
       }
 
-      return super.mergeFiles(baseFile, localFile, latestFile);
+      return backupAndMergeSimply(baseFile, localFile, latestFile);
     } catch (IOException e) {
       e.printStackTrace();
       return FATAL_ERROR;
+    }
+  }
+
+  private int backupAndMergeSimply(File baseFile, File localFile, File latestFile) throws IOException {
+    backup(baseFile, localFile, latestFile);
+    return super.mergeFiles(baseFile, localFile, latestFile);
+  }
+
+  private void backup(File baseFile, File localFile, File latestFile) throws IOException {
+    File zipModel = VcsHelperUtil.zipModel(new byte[][]{readFile(baseFile), readFile(localFile), readFile(latestFile)}, myModelFqName);
+    if (zipModel != null) {
+      if (log.isInfoEnabled()) {
+        log.info("Saved merge backup to " + zipModel);
+      }
+    }
+  }
+
+  private static byte[] readFile(File file) throws IOException {
+    InputStream is = null;
+    try {
+      is = new FileInputStream(file);
+      return ReadUtil.read(is);
+    } finally {
+      FileUtil.closeFileSafe(is);
     }
   }
 }

@@ -350,7 +350,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MovePageDown extends EditorCellAction {
+  public static class MovePageDown extends NavigationAction {
     public boolean canExecute(EditorContext context) {
       return true;
     }
@@ -360,7 +360,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class SelectUp extends EditorCellAction {
+  public static class SelectUp extends NavigationAction {
     public boolean canExecute(EditorContext context) {
       return findTarget(context.getNodeEditorComponent().getSelectionManager()) != null;
     }
@@ -406,7 +406,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class SelectDown extends EditorCellAction {
+  public static class SelectDown extends NavigationAction {
     public boolean canExecute(EditorContext context) {
       return context.getNodeEditorComponent().getSelectionManager().getSelectionStackSize() > 1;
     }
@@ -416,7 +416,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class SideSelect extends EditorCellAction {
+  public static class SideSelect extends NavigationAction {
     private CellSide mySide;
 
     protected SideSelect(CellSide side) {

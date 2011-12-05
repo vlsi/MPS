@@ -200,7 +200,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
         Object generator = constructor.newInstance(whatToGenerate, this);
 
-        Method method = generatorClass.getMethod("work");
+        Method method = generatorClass.getMethod("workFromAnt");
         method.invoke(generator);
 
       } catch (Throwable t) {

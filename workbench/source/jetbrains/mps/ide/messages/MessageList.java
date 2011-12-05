@@ -229,7 +229,7 @@ abstract class MessageList implements IMessageList {
       }
 
       public boolean tryNavigate(int index) {
-        Message msg = ((Message) myModel.getElementAt(index));
+        IMessage msg = ((IMessage) myModel.getElementAt(index));
         if (msg.getHintObject() == null) return false;
         myList.setSelectedIndex(index);
         myList.ensureIndexIsVisible(index);
@@ -332,9 +332,9 @@ abstract class MessageList implements IMessageList {
       public void mouseMoved(MouseEvent e) {
         int index = myList.locationToIndex(e.getPoint());
 
-        Message item = null;
+        IMessage item = null;
         if (index != -1) {
-          item = (Message) myModel.getElementAt(index);
+          item = (IMessage) myModel.getElementAt(index);
         }
 
         if (item != null && item.getHintObject() != null && myAutoscrollToSourceAction.isSelected(null)) {
@@ -373,7 +373,7 @@ abstract class MessageList implements IMessageList {
         protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           StringBuilder sb = new StringBuilder();
           for (Object o : myList.getSelectedValues()) {
-            sb.append(((Message) o).getText());
+            sb.append(((IMessage) o).getText());
             sb.append("\n");
           }
           CopyPasteManagerEx.getInstance().setContents(new StringSelection(sb.toString()));
@@ -402,7 +402,7 @@ abstract class MessageList implements IMessageList {
       final Object[] messages = myList.getSelectedValues();
       boolean containsError = false;
       for (Object message : messages) {
-        if (((Message) message).getKind() == MessageKind.ERROR) {
+        if (((IMessage) message).getKind() == MessageKind.ERROR) {
           containsError = true;
           break;
         }
@@ -423,7 +423,7 @@ abstract class MessageList implements IMessageList {
     if (myList.getSelectedIndices().length == 1) {
       Throwable exc = null;
       for (Object message : myList.getSelectedValues()) {
-        exc = ((Message) message).getException();
+        exc = ((IMessage) message).getException();
       }
       if (exc != null) {
         final Throwable toShow = exc;
@@ -460,7 +460,7 @@ abstract class MessageList implements IMessageList {
     boolean first = true;
     for (Object msg : msgs) {
       if (!(msg instanceof Message)) continue;
-      Message message = (Message) msg;
+      IMessage message = (IMessage) msg;
       if (first) {
         dialog.setIssueTitle(message.getText());
         first = false;
@@ -507,12 +507,12 @@ abstract class MessageList implements IMessageList {
   private String getHelpUrlForCurrentMessage() {
     if (myList.getSelectedValues().length != 1) return null;
 
-    Message message = (Message) (myList.getSelectedValue());
+    IMessage message = (IMessage) (myList.getSelectedValue());
     return message.getHelpUrl();
   }
 
   private void openCurrentMessageNodeIfPossible() {
-    final Message selectedMessage = (Message) myList.getSelectedValue();
+    final IMessage selectedMessage = (IMessage) myList.getSelectedValue();
     if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
 
     /* temp hack: write action instead of read, TODO remove lock*/

@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -39,20 +40,27 @@ public class GenerationPartitioningUtil {
   private static final Logger LOG = Logger.getLogger(GenerationPartitioningUtil.class);
 
   public static List<TemplateModule> getTemplateModules(SModel inputModel) {
+    return getTemplateModules(inputModel, null);
+  }
+
+  public static List<TemplateModule> getTemplateModules(SModel inputModel, @Nullable Collection<String> additionalLanguages) {
     Queue<String> queue = new LinkedList<String>(ModelContentUtil.getUsedLanguageNamespaces(inputModel, false));
+    if (additionalLanguages != null) {
+      queue.addAll(additionalLanguages);
+    }
     Set<String> processed = new HashSet<String>(queue);
     List<TemplateModule> result = new ArrayList<TemplateModule>();
 
     while (!queue.isEmpty()) {
       String next = queue.remove();
       LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(next);
-      if(language == null) {
+      if (language == null) {
         LOG.error("couldn't find language for namespace `" + next + "'");
         continue;
       }
 
       Collection<TemplateModule> generators = language.getGenerators();
-      if(generators == null) {
+      if (generators == null) {
         continue;
       }
 

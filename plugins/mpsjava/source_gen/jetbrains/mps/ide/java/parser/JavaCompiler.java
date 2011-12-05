@@ -427,6 +427,8 @@ public class JavaCompiler {
             ListSequence.fromList(SLinkOperations.getTargets(commentLine, "commentPart", true)).addElement(commentText);
             ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).insertElement(pos++, commentLine);
           }
+        } else {
+          LOG.warning("cannot find a place to import comment from " + new String(cud.getMainTypeName()) + ":\n" + new String(content, linestart, Math.abs(comment[1]) - linestart));
         }
       }
     }

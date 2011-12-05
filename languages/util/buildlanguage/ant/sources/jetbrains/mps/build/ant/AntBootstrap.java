@@ -17,6 +17,7 @@ package jetbrains.mps.build.ant;
 
 import com.intellij.ide.ClassloaderUtil;
 import com.intellij.util.lang.UrlClassLoader;
+import jetbrains.mps.util.CachesUtil;
 
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -25,10 +26,11 @@ import java.util.List;
 
 public class AntBootstrap {
   public static void main(String[] args) {
+    CachesUtil.setupCaches();
 //    System.setProperty(ClassloaderUtil.PROPERTY_IGNORE_CLASSPATH, ".*trove4j.*trove4j.*\\.jar");
     System.setProperty("mps.vfs.useIoFile", "true");
-    UrlClassLoader newClassLoader = ClassloaderUtil.initClassloader(new ArrayList<URL>());
     try {
+      UrlClassLoader newClassLoader = ClassloaderUtil.initClassloader(new ArrayList<URL>());
       Class clazz = newClassLoader.loadClass(args[0]);
 
       Method mainMethod = clazz.getDeclaredMethod("main", String[].class);
@@ -38,6 +40,8 @@ public class AntBootstrap {
       mainMethod.invoke(null, (Object)passedArgs);
     } catch (Exception e) {
       e.printStackTrace(System.err);
+    } finally {
+      CachesUtil.cleanupCaches();
     }
     System.exit(1);
   }

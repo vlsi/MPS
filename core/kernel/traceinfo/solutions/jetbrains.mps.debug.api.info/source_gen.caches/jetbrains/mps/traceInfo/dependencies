@@ -29,6 +29,7 @@
     <classNode dependClassName="jetbrains.mps.traceInfo.UnitPositionInfo" />
     <classNode dependClassName="org.jdom.DataConversionException" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.DebugInfoRoot" file="DebugInfoRoot.java">

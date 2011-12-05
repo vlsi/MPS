@@ -49,6 +49,7 @@ import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
+import jetbrains.mps.util.CachesUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -107,6 +108,15 @@ public abstract class MpsWorker {
     }
   }
 
+  public void workFromAnt() {
+    try {
+      CachesUtil.setupCaches();
+      work();
+    } finally {
+      CachesUtil.cleanupCaches();
+    }
+  }
+
   public void work() {
     setupEnvironment();
 
@@ -117,9 +127,13 @@ public abstract class MpsWorker {
 
     if (go.hasAnythingToGenerate()) {
       reload();
-      if (go.getProjects().isEmpty()) {loadPlugins();}
+      if (go.getProjects().isEmpty()) {
+        loadPlugins();
+      }
       executeTask(project, go);
-      if (go.getProjects().isEmpty()) {disposePlugins();}
+      if (go.getProjects().isEmpty()) {
+        disposePlugins();
+      }
     } else {
 //      error("Could not find anything to generate.");
     }

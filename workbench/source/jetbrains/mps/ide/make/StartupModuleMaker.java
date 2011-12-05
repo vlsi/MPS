@@ -21,8 +21,12 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -45,7 +49,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
       public void run() {
         ClassLoaderManager.getInstance().updateClassPath();
 
-        ModuleMaker maker = new ModuleMaker();
+        ModuleMaker maker = new ModuleMaker(new MessageHandler(), MessageKind.ERROR);
         maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator[0]);
       }
     });
@@ -62,5 +66,21 @@ public class StartupModuleMaker extends AbstractProjectComponent {
     });
 
     indicator[0].popState();
+  }
+
+    private class MessageHandler implements IMessageHandler {
+      private MessagesViewTool mvt;
+
+      public MessageHandler() {
+        this.mvt = myProject.getComponent(MessagesViewTool.class);
+      }
+
+      public void clear() {
+        this.mvt.clear();
+      }
+
+      public void handle(IMessage message) {
+        this.mvt.add(message);
+      }
   }
 }
