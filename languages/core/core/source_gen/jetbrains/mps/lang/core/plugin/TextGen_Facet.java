@@ -303,11 +303,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
                     sModel.value = gres.status().getOutputModel();
-                    for (SNode root : Sequence.fromIterable(sModel.value.roots()).where(new IWhereFilter<SNode>() {
-                      public boolean accept(SNode rt) {
-                        return rt.getName() != null;
-                      }
-                    })) {
+                    for (SNode root : sModel.value.roots()) {
                       TextGenerationResult tgr = TextGenerationUtil.generateText(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), root);
                       errors.value |= tgr.hasErrors();
                       if (errors.value) {
@@ -322,6 +318,10 @@ public class TextGen_Facet extends IFacet.Stub {
                         root.getName() + "." + ext :
                         root.getName()
                       ));
+                      if (fname == null) {
+                        fname = "<null> [" + root.getSNodeId() + "]";
+                        monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("No file name for the root node [" + root.getSNodeId() + "]")));
+                      }
                       MapSequence.fromMap(texts).put(fname, tgr.getResult());
                     }
                   }
