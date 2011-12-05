@@ -116,6 +116,10 @@ public class MoveNodes extends BaseLoggableRefactoring {
     }
   }
 
+  public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
+    return (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel().getSModel());
+  }
+
   public void doWhenDone(final RefactoringContext refactoringContext) {
     // todo: open target nodes 
   }

@@ -922,6 +922,13 @@
     <node role="keystroke" roleId="tp1h.6895093993902236375" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="3068114543317961934">
       <property name="keycode" nameId="tp4k.1207318242774" value="VK_F6" />
     </node>
+    <node role="modelsToGenerateBlock" roleId="tp1h.616550569928923871" type="tp1h.ModelsToGenerateClause" typeId="tp1h.1682834381185132063" id="979664332030845303">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="979664332030845304">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="979664332030845308">
+          <node role="expression" roleId="tpee.1068580123156" type="tp1h.ModelsToGenerateByDefault" typeId="tp1h.4347648036456711197" id="979664332030845309" />
+        </node>
+      </node>
+    </node>
   </root>
   <root id="7012097027058828343">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7012097027058828344" />
