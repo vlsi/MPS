@@ -57,6 +57,10 @@ public class CommonPaths {
     return itemToPath(getJDKClassPath());
   }
 
+  public static String getToolsJar() {
+    return PathManager.getHomePath() + File.separator + "lib" + File.separator + "tools.jar";
+  }
+
 
   //------classpaths : JDK--------
 

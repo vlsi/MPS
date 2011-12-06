@@ -14,6 +14,8 @@ import org.jdom.transform.JDOMResult;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
+import java.util.List;
+import junit.framework.Assert;
 import org.jdom.JDOMException;
 import javax.xml.transform.TransformerException;
 
@@ -24,7 +26,7 @@ public class XslTest {
   }
 
   public static void main(String[] args) {
-    Element element = readAndTransform("old.junit.configuration.xml");
+    Element element = readAndTransform("old.java.configuration.xml", "../java.transform.xml");
     if (element != null) {
       StringWriter writer = new StringWriter();
       Document resultDocument = new Document(element);
@@ -36,19 +38,19 @@ public class XslTest {
     }
   }
 
-  public static Element readAndTransform(String resourceName) {
+  public static Element readAndTransform(String resourceName, String xslFile) {
     try {
       Document document = JDOMUtil.loadDocument(XslTest.class.getResourceAsStream(resourceName));
 
       JDOMSource source = new JDOMSource(document);
       JDOMResult result = new JDOMResult();
 
-      Transformer transformer = TransformerFactory.newInstance().newTransformer(new StreamSource(XslTest.class.getResourceAsStream("../junit.transform.xml")));
+      Transformer transformer = TransformerFactory.newInstance().newTransformer(new StreamSource(XslTest.class.getResourceAsStream(xslFile)));
       transformer.transform(source, result);
 
-      Element root = new Element("root");
-      root.addContent(result.getResult());
-      return root;
+      List resultList = result.getResult();
+      Assert.assertEquals(1, resultList.size());
+      return ((Element) resultList.get(0));
     } catch (IOException e) {
       if (log.isErrorEnabled()) {
         log.error("", e);
