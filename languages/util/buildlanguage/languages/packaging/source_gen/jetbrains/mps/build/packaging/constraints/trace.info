@@ -229,9 +229,9 @@
     <nodeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Delete_Constraints#()V" />
     <nodeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/constraints/CanBeAChildContext;)Z" />
-    <nodeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="41" startPosition="62" endLine="45" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217861873988" fileName="Delete_Constraints.java" startLine="41" startPosition="62" endLine="45" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_ycrh01_a0a0a#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1217861873988" fileName="Delete_Constraints.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_ycrh01_a0a0a#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
     <scopeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="17" startPosition="31" endLine="18" endPosition="60" />
     <scopeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="22" startPosition="43" endLine="23" endPosition="16" />
@@ -242,14 +242,14 @@
       <varInfo nodeId="1213107435807" varName="_context" />
       <varInfo nodeId="1213107435807" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="41" startPosition="62" endLine="45" endPosition="6" />
+    <scopeInfo nodeId="1217861873988" fileName="Delete_Constraints.java" startLine="41" startPosition="62" endLine="45" endPosition="6" />
     <scopeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
       <varInfo nodeId="1213107435807" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="1213107435807" varName="a" />
-      <varInfo nodeId="1213107435807" varName="b" />
+    <scopeInfo nodeId="1217861873988" fileName="Delete_Constraints.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1217861873988" varName="a" />
+      <varInfo nodeId="1217861873988" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="1213107435807" fileName="Delete_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1213107435807" varName="checkingNodeContext" />
@@ -420,6 +420,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1224178310365" fileName="Antcall_Constraints.java" startLine="28" startPosition="0" endLine="83" endPosition="0" />
     <unitInfo nodeId="1224178310365" fileName="Antcall_Constraints.java" startLine="78" startPosition="19" endLine="22" endPosition="0" />
+    <unitInfo nodeId="1224178310365" fileName="Antcall_Constraints.java" startLine="22" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints" />
     <unitInfo nodeId="1224178310365" fileName="Antcall_Constraints.java" startLine="32" startPosition="44" endLine="56" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$1" />
     <unitInfo nodeId="1224178310365" fileName="Antcall_Constraints.java" startLine="41" startPosition="19" endLine="54" endPosition="9" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$2" />
     <unitInfo nodeId="1224178310365" fileName="Antcall_Constraints.java" startLine="57" startPosition="34" endLine="80" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$2" />

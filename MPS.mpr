@@ -99,13 +99,17 @@
       <modulePath path="${project}/core/findUsages-runtime/runtime.msd" folder="core" />
       <modulePath path="${project}/core/generator/solutions/jetbrains.mps.generator.msd" folder="core" />
       <modulePath path="${project}/core/generator/solutions/traceInfo/jetbrains.mps.traceInfo.test.msd" folder="traceInfo" />
+      <modulePath path="${project}/core/generator/solutions/traceInfo/util/cache.msd" folder="traceInfo" />
       <modulePath path="${project}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" folder="core.kernel" />
       <modulePath path="${project}/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" folder="core.kernel" />
       <modulePath path="${project}/core/kernel/patternRuntime/runtime.msd" folder="core.kernel" />
       <modulePath path="${project}/core/kernel/resources/jetbrains.mps.smodel.resources.msd" folder="core.kernel" />
       <modulePath path="${project}/core/kernel/smodelRuntime/smodelRuntime.msd" folder="core.kernel" />
       <modulePath path="${project}/core/kernel/stubUtils/stubUtils.msd" folder="core" />
+      <modulePath path="${project}/core/kernel/traceinfo/languages/testWeavingGenerated.data/testWeavingGenerated.data.mpl" folder="traceInfo" />
+      <modulePath path="${project}/core/kernel/traceinfo/languages/testWeavingInterpreted.data/testWeavingInterpreted.data.mpl" folder="traceInfo" />
       <modulePath path="${project}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="traceInfo" />
+      <modulePath path="${project}/core/kernel/traceinfo/solutions/jetbrains.mps.traceInfo.testWeaving/testWeaving.msd" folder="traceInfo" />
       <modulePath path="${project}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" folder="core.make" />
       <modulePath path="${project}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" folder="core.make" />
       <modulePath path="${project}/core/plugin-runtime/jetbrains.mps.plugin.runtime.msd" folder="core.language-design" />
