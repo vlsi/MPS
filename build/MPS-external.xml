@@ -54,12 +54,8 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/cvsIntegration" />
     <mkdir dir="${deploy.dir}/MPS/plugins/git4idea" />
     <mkdir dir="${deploy.dir}/MPS/plugins/svn4idea" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp" />
@@ -371,33 +367,15 @@
       <zipfileset dir="${mps_home}/plugins/debugger-java/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/debugger-java/classes" prefix="" />
     </jar>
-    <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp">
-      <fileset dir="${base_dir}/plugins/debugger-java-customViewers/collections/classes_gen" />
+    <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp">
+      <fileset dir="${base_dir}/plugins/debugger-java-customViewers/classes_gen" />
     </copy>
-    <copy file="${base_dir}/plugins/debugger-java-customViewers/collections/source_gen/jetbrains/mps/baseLanguage/collections/customViewers/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp/META-INF/plugin.xml" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp/META-INF" />
-    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp" excludes="" />
+    <copy file="${base_dir}/plugins/debugger-java-customViewers/source_gen/jetbrains/mps/debugger/java/customViewers/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp/META-INF/plugin.xml" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp/META-INF" />
+    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp" excludes="" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp" />
-    <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp">
-      <fileset dir="${base_dir}/plugins/debugger-java-customViewers/smodel/classes_gen" />
-    </copy>
-    <copy file="${base_dir}/plugins/debugger-java-customViewers/smodel/source_gen/jetbrains/mps/lang/smodel/customViewers/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp/META-INF/plugin.xml" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp/META-INF" />
-    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp" excludes="" />
-    </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp" />
-    <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp">
-      <fileset dir="${base_dir}/plugins/debugger-java-customViewers/tuples/classes_gen" />
-    </copy>
-    <copy file="${base_dir}/plugins/debugger-java-customViewers/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/customViewers/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp/META-INF/plugin.xml" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp/META-INF" />
-    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp" excludes="" />
-    </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp" />
     <copy file="${base_dir}/plugins/debugger-java-languages/plugin/source_gen/jetbrains/mps/debugger/java/languages/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/META-INF/plugin.xml" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/META-INF" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.customViewers" />
@@ -680,9 +658,7 @@
     <delete dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-boot.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />
-    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.tmp" />
-    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.tmp" />
-    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.build.execution.jar.tmp" />
