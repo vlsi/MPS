@@ -438,38 +438,10 @@ public class JUnitConfigEditor extends JPanel {
     });
   }
 
-  private void addNodeValue(final String nodeName) {
-    // also some legacy botva, remove it after 2.0 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        ITestNodeWrapper testCase = TestUtils.getTestCase(nodeName);
-        if (testCase == null) {
-          return;
-        }
-        ListSequence.fromList(myThis.getNodes()).addElement(testCase);
-        myThis.myTestCases_d0.addItem(testCase);
-      }
-    });
-  }
-
-  private void addMethodValue(final String nodeName, final String methodName) {
-    // here we have some legacy botva which should be removed after 2.0 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        ITestNodeWrapper testMethod = TestUtils.getTestMethod(nodeName, methodName);
-        if (testMethod == null) {
-          return;
-        }
-        ListSequence.fromList(myThis.getMethods()).addElement(testMethod);
-        myThis.myTestMethods_e0.addItem(testMethod);
-      }
-    });
-  }
-
-  public void apply(JUnitTests_Configuration config) {
+  public void apply(JUnitSettings_Configuration config) {
     myThis.apply((Object) config, new _FunctionTypes._void_P6_E0<Object, Integer, ClonableList<String>, ClonableList<String>, String, String>() {
       public void invoke(Object c, Integer configurationIndex, ClonableList<String> testMethods, ClonableList<String> testCases, String model, String module) {
-        myThis.applyInternal((JUnitTests_Configuration) c, configurationIndex, testMethods, testCases, model, module);
+        myThis.applyInternal((JUnitSettings_Configuration) c, configurationIndex, testMethods, testCases, model, module);
         return;
       }
     });
@@ -527,7 +499,7 @@ public class JUnitConfigEditor extends JPanel {
     });
   }
 
-  private void applyInternal(JUnitTests_Configuration configuration, int configurationIndex, ClonableList<String> testMethods, ClonableList<String> testCases, String model, String module) {
+  private void applyInternal(JUnitSettings_Configuration configuration, int configurationIndex, ClonableList<String> testMethods, ClonableList<String> testCases, String model, String module) {
     if (configurationIndex >= 0) {
       configuration.setRunType(JUnitRunTypes2.values()[configurationIndex]);
     }
@@ -538,7 +510,7 @@ public class JUnitConfigEditor extends JPanel {
     configuration.setModule(module);
   }
 
-  public void reset(final JUnitTests_Configuration configuration) {
+  public void reset(final JUnitSettings_Configuration configuration) {
     if (configuration.getRunType() != null) {
       myThis.getButtons()[configuration.getRunType().ordinal()].setSelected(true);
     } else {

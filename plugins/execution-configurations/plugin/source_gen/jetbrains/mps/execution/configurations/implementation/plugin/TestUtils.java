@@ -33,7 +33,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 
 public class TestUtils {
   @Deprecated
@@ -247,7 +247,7 @@ __switch__:
     });
   }
 
-  public static Iterable<ITestNodeWrapper> getProjectTests(@NotNull final MPSProject project) {
+  public static Iterable<ITestNodeWrapper> getProjectTests(@NotNull final Project project) {
     return Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<IModule>() {
       public Iterable<IModule> iterable() {
         return project.getModules();
