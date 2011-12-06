@@ -24,6 +24,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Pair;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -81,11 +82,15 @@ public class CoercionManager {
         }
         CoercionMatcher coercionMatcher = new CoercionMatcher(pattern);
         boolean success = mySubTyping.searchInSuperTypes(subtype, coercionMatcher, null, isWeak, null);
-        SNode result;
-        if (!success) {
-          result = null;
-        } else {
-          result = coercionMatcher.getResult();
+        SNode result = null;
+        if (success) {
+          List<SNode> nodes = coercionMatcher.getResults();
+          if (nodes.size() > 1) {
+            nodes = mySubTyping.eliminateSuperTypes(nodes);
+          }
+          if (!nodes.isEmpty()) {
+            result = nodes.get(0);
+          }
         }
 
         //writing to the cache
@@ -110,7 +115,7 @@ public class CoercionManager {
 
   private static class CoercionMatcher implements INodeMatcher {
     private final IMatchingPattern myPattern;
-    private SNode myResult;
+    private List<SNode> myResults = new LinkedList<SNode>();
 
     public CoercionMatcher(IMatchingPattern pattern) {
       myPattern = pattern;
@@ -119,13 +124,13 @@ public class CoercionManager {
     public boolean matchesWith(SNode nodeToMatch) {
       boolean b = myPattern.match(nodeToMatch);
       if (b) {
-        myResult = nodeToMatch;
+        myResults.add(nodeToMatch);
       }
       return b;
     }
 
-    public SNode getResult() {
-      return myResult;
+    public List<SNode> getResults() {
+      return myResults;
     }
 
     public IMatchingPattern getMatchingPattern() {
