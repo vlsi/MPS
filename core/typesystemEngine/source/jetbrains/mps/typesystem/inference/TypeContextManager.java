@@ -42,6 +42,7 @@ public class TypeContextManager implements CoreComponent {
 
   private final Object myLock = new Object();
   private Set<SModelDescriptor> myListeningForModels = new THashSet<SModelDescriptor>();
+  //todo SNodePointers
   private Map<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts = new THashMap<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
   private boolean myComputeInNormalMode = false;
   private ThreadLocal<Stack<Object>> myResolveStack = new ThreadLocal<Stack<Object>>();
