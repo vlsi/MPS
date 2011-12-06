@@ -9,7 +9,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 
 public class Plugin_ProjectPlugin extends BaseProjectPlugin {
   public Plugin_ProjectPlugin() {
@@ -24,11 +23,5 @@ public class Plugin_ProjectPlugin extends BaseProjectPlugin {
       plugin.init(mpsProject);
     }
     return res;
-  }
-
-  public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
-    List<BaseProjectPrefsComponent> components = ListSequence.fromList(new ArrayList<BaseProjectPrefsComponent>());
-    ListSequence.fromList(components).addElement(new JUnitTestActionOptions_PreferencesComponent(project));
-    return components;
   }
 }
