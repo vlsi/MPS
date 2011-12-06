@@ -44,10 +44,15 @@ public class LanguageRegistry implements CoreComponent {
 
   private final List<LanguageRegistryListener> myLanguageListeners = new CopyOnWriteArrayList<LanguageRegistryListener>();
 
+  private static volatile boolean ourCompilePassed = false;
   private static LanguageRegistry INSTANCE;
 
   public static LanguageRegistry getInstance() {
     return INSTANCE;
+  }
+
+  public static void compilePassed(){
+    ourCompilePassed = true;
   }
 
   public LanguageRegistry(MPSModuleRepository repository, ClassLoaderManager loaderManager, ConceptRegistry registry) {
@@ -210,6 +215,7 @@ public class LanguageRegistry implements CoreComponent {
    *   Collection is valid until the end of the current read action.
    */
   public Collection<LanguageRuntime> getAvailableLanguages() {
+    checkCompiled();
     ModelAccess.assertLegalRead();
 
     return myLanguages == null ? null : myLanguages.values();
@@ -217,6 +223,7 @@ public class LanguageRegistry implements CoreComponent {
 
   @Nullable
   public LanguageRuntime getLanguage(String namespace) {
+    checkCompiled();
 //    ModelAccess.assertLegalRead();
 
     return myLanguages.get(namespace);
@@ -224,6 +231,7 @@ public class LanguageRegistry implements CoreComponent {
 
   @Nullable
   public LanguageRuntime getLanguage(SNode node) {
+    checkCompiled();
     if (node == null) {
       return null;
     }
@@ -233,6 +241,11 @@ public class LanguageRegistry implements CoreComponent {
   }
 
   public LanguageRuntime getLanguage(Language language) {
+    checkCompiled();
     return getLanguage(language.getModuleFqName());
+  }
+
+  private static void checkCompiled() {
+    if (!ourCompilePassed) throw new RuntimeException("can't use language registry until compilation is passed");
   }
 }

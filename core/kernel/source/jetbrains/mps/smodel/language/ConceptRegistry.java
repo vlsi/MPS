@@ -57,10 +57,19 @@ public class ConceptRegistry implements CoreComponent {
   public ConceptRegistry() {
   }
 
+  private static volatile boolean ourCompilePassed = false;
   private static ConceptRegistry INSTANCE;
 
   public static ConceptRegistry getInstance() {
     return INSTANCE;
+  }
+
+  private static void checkCompiled() {
+    if (!ourCompilePassed) throw new RuntimeException("can't use concept registry until compilation is passed");
+  }
+
+  public static void compilePassed(){
+    ourCompilePassed = true;
   }
 
   @Override
@@ -91,6 +100,8 @@ public class ConceptRegistry implements CoreComponent {
 
   @NotNull
   public ConceptDescriptor getConceptDescriptor(@Nullable String fqName) {
+    checkCompiled();
+
     ConceptDescriptor descriptor = conceptDescriptors.get(fqName);
 
     if (descriptor != null) {
@@ -128,6 +139,8 @@ public class ConceptRegistry implements CoreComponent {
 
   @NotNull
   public BehaviorDescriptor getBehaviorDescriptor(@Nullable String fqName) {
+    checkCompiled();
+
     BehaviorDescriptor descriptor = behaviorDescriptors.get(fqName);
 
     if (descriptor != null) {
@@ -164,6 +177,8 @@ public class ConceptRegistry implements CoreComponent {
   }
 
   public BehaviorDescriptor getBehaviorDescriptorForInstanceNode(@Nullable SNode node) {
+    checkCompiled();
+
     if (node == null) {
       // todo: more clearly logic
       return BehaviorAspectInterpreted.getInstance().getDescriptor(null);
@@ -174,6 +189,8 @@ public class ConceptRegistry implements CoreComponent {
 
   @NotNull
   public ConstraintsDescriptor getConstraintsDescriptor(@Nullable String fqName) {
+    checkCompiled();
+
     ConstraintsDescriptor descriptor = constraintsDescriptors.get(fqName);
 
     if (descriptor != null) {
