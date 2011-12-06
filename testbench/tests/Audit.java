@@ -79,7 +79,6 @@ public class Audit {
     for (ModuleHandle moduleHandle : moduleHandles) {
       files.add(moduleHandle.getFile());
     }
-    MPSTypesystem.getInstance().init();
     HELPER.load(files);
   }
 
