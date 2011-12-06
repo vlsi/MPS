@@ -75,7 +75,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ListSequence.fromList(myEvaluationContext.getClassPath()).union(ListSequence.fromList(CommonPaths.getJDKPath())).visitAll(new IVisitor<String>() {
+        ListSequence.fromList(myEvaluationContext.getClassPath()).union(ListSequence.fromList(((List<String>) CommonPaths.getJDKPath()))).visitAll(new IVisitor<String>() {
           public void visit(String it) {
             myAuxModule.addStubPath(it);
           }

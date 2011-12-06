@@ -111,7 +111,9 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
     @Override
     public Object clone() throws CloneNotSupportedException {
       Remote_Configuration.MyState state = new Remote_Configuration.MyState();
-      state.mySettings = mySettings;
+      if (mySettings != null) {
+        state.mySettings = mySettings.clone();
+      }
       return state;
     }
   }
