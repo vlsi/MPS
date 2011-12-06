@@ -14,7 +14,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.FailedBTestCase_Test;
 import java.util.List;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.baseLanguage.unitTest.execution.plugin.Junit_Command;
+import jetbrains.mps.execution.configurations.implementation.plugin.Junit_Command;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.execution.api.commands.OutputRedirector;

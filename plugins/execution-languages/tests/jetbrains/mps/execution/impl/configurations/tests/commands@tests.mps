@@ -24,8 +24,8 @@
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="gaen" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.execution(MPS.Workbench/com.intellij.execution@java_stub)" version="-1" />
   <import index="gxty" modelUID="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)" version="-1" />
-  <import index="stp4" modelUID="r:9de23b94-426b-42c2-bb32-6e9e1b3d0990(jetbrains.mps.baseLanguage.unitTest.execution.plugin)" version="1" />
   <import index="go48" modelUID="r:fc6b4266-fe93-4e02-bc36-aebff4c903c3(jetbrains.mps.baseLanguage.execution.api)" version="4" />
+  <import index="ic9i" modelUID="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="rzqf" modelUID="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)" version="0" implicit="yes" />
@@ -88,12 +88,12 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7120092006645143075">
                 <property name="name" nameId="tpck.1169194664001" value="process" />
                 <node role="type" roleId="tpee.5680397130376446158" type="rzqf.CommandProcessType" typeId="rzqf.612376536074296995" id="7120092006645143076">
-                  <link role="commandDeclaration" roleId="rzqf.612376536074296996" targetNodeId="stp4.1885484277888307885" resolveInfo="junit" />
+                  <link role="commandDeclaration" roleId="rzqf.612376536074296996" targetNodeId="ic9i.6062668769034012406" resolveInfo="junit" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="rzqf.CommandBuilderExpression" typeId="rzqf.856705193941281780" id="7120092006645143077">
-                  <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="stp4.1885484277888307924" resolveInfo="junit" />
+                  <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="ic9i.6062668769034012445" resolveInfo="junit" />
                   <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="7120092006645143078">
-                    <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="stp4.1885484277888307925" resolveInfo="tests" />
+                    <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="ic9i.6062668769034012446" resolveInfo="tests" />
                     <node role="value" roleId="rzqf.856705193941281766" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7120092006645143174">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7120092006645143165" resolveInfo="allTests" />
                     </node>

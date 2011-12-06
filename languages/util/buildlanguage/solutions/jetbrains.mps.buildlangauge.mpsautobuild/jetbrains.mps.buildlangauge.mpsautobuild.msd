@@ -5,14 +5,11 @@
   </models>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">80515883-e659-4200-a66e-c8a0d7f5a17b(jetbrains.mps.baseLanguage.execution)</dependency>
-    <dependency reexport="false">e04d3a11-f04d-45f8-b901-888de58d97e9(jetbrains.mps.baseLanguage.unitTest.execution)</dependency>
-    <dependency reexport="false">1c728d45-3e68-410d-9169-54b2650e2d23(jetbrains.mps.build.execution)</dependency>
     <dependency reexport="false">50240497-028c-45fc-a657-4fa2488251db(jetbrains.mps.debugger.api.languages.plugin)</dependency>
     <dependency reexport="false">754e95cf-5780-40da-99c6-8f6584d9c260(jetbrains.mps.debugger.java.customViewers.plugin)</dependency>
     <dependency reexport="false">6862df80-d13f-4553-9827-397603773647(jetbrains.mps.debugger.java.languages)</dependency>
+    <dependency reexport="false">bf659d6c-5638-4ea1-972b-4d492b5a91f2(jetbrains.mps.execution.configurations.implementation.plugin)</dependency>
     <dependency reexport="false">2fe588b4-688c-48ba-b903-0b7dc3d30070(jetbrains.mps.execution.languages)</dependency>
-    <dependency reexport="false">0a7070d4-a215-46a9-a94b-845ffbcfa0d4(jetbrains.mps.mps.execution)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguage>
