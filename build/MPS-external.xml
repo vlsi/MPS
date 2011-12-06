@@ -418,7 +418,7 @@
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar.tmp" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.execution.util" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.execution.startup" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.execution" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin" />
     <copy file="${base_dir}/plugins/execution-languages/plugin/source_gen/jetbrains/mps/execution/languages/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/META-INF/plugin.xml" />
