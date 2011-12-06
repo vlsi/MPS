@@ -10,14 +10,6 @@ import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.ExecutionException;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: User
- * * Date: 16.04.2010
- * * Time: 17:59:46
- * * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractDebugSessionCreator {
   private static Logger LOG = Logger.getLogger(AbstractDebugSessionCreator.class);
 

@@ -14,14 +14,6 @@ import com.sun.jdi.ThreadReference;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InternalException;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 18.12.2009
- * * Time: 19:23:23
- * * To change this template use File | Settings | File Templates.
- */
 public class SuspendManager {
   private static final Logger LOG = Logger.getLogger(SuspendManager.class);
 

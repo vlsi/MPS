@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b0u9etudjm8ni681medyhhf11qj6rn2">
+<dependencies version="2" modelHash="8pn11g9cd1c65v0oulvt17ke99zrjxi">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8v4hxza7bmp1nvq5u0wr3wgsvpu2yde" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="4592mc0c92ee86m4hdnk27h6ntxlxqu" />
@@ -46,7 +46,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RequestManager.java" />
   </source>
-  <source id="2891782949125167704" name="VMEventsProcessorManagerComponent" hash="-7yic74yh9estck2yygu2w68gfbuq3ht">
+  <source id="2891782949125167704" name="VMEventsProcessorManagerComponent" hash="-1r9jysv4fie0iw1e1egwuan5h5sbpbi">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -62,7 +62,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="VmCreator.java" />
   </source>
-  <source id="2891782949125170518" name="DebugProcessListener" hash="-9og26kvgf5i415470tddmq05zn88a8i">
+  <source id="2891782949125170518" name="DebugProcessListener" hash="7dwvghj3lmh4i6o0kear449az8byjp">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="DebugProcessListener.java" />
   </source>
@@ -74,7 +74,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DebugSession.java" />
   </source>
-  <source id="2891782949125171059" name="SuspendContext" hash="bi93hlhlbg2j7sia9elsi5p9kot0bt0">
+  <source id="2891782949125171059" name="SuspendContext" hash="-eo3c20liuzqmtuaptqv0ct4ogij0mij">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -82,7 +82,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SuspendContext.java" />
   </source>
-  <source id="2891782949125171334" name="SuspendManager" hash="-bqlklvc6s7cueyko82gtryohm9ze0pg">
+  <source id="2891782949125171334" name="SuspendManager" hash="2iby54oh1e0kjqv28goi2kjb6xw0fdg">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -90,7 +90,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SuspendManager.java" />
   </source>
-  <source id="2891782949125171958" name="RunFailedException" hash="7hrzftyuqcctwk83aafhapmqjq8amsh">
+  <source id="2891782949125171958" name="RunFailedException" hash="-ayd8bc8kwbufwkdl504raa5g37xdc9d">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RunFailedException.java" />
@@ -103,7 +103,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DebugProcessMulticaster.java" />
   </source>
-  <source id="2891782949125145715" name="SuspendContextCommand" hash="-1d5protmygklhjt0ixl0xwd4ojakmaw">
+  <source id="2891782949125145715" name="SuspendContextCommand" hash="esjffo0z2uf2j2ejmhd0xenptmw7xjv">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />

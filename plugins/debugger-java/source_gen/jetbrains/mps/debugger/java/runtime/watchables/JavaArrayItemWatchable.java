@@ -12,14 +12,6 @@ import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 13.04.2010
- * * Time: 18:39:04
- * * To change this template use File | Settings | File Templates.
- */
 public class JavaArrayItemWatchable extends JavaWatchable implements IWatchable {
   private final ArrayReference myArray;
   private final int myIndex;

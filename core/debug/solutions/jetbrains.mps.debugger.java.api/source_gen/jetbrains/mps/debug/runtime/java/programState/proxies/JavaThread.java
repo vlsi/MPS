@@ -15,14 +15,6 @@ import com.sun.jdi.IncompatibleThreadStateException;
 import java.util.Collections;
 import jetbrains.mps.debug.integration.ui.icons.Icons;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 09.04.2010
- * * Time: 17:15:46
- * * To change this template use File | Settings | File Templates.
- */
 public class JavaThread extends ProxyForJava implements IThread {
   private static final Logger LOG = Logger.getLogger(JavaThread.class);
 

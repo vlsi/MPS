@@ -14,13 +14,6 @@ import java.util.HashSet;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import com.intellij.openapi.project.Project;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * Date: 16.04.2010
- * * Time: 20:24:44
- * * To change this template use File | Settings | File Templates.
- */
 public class VMEventsProcessorManagerComponent implements ProjectComponent {
   private final Map<DebugVMEventsProcessor, DebugSession> myEventProcessorToSessionMap = new HashMap<DebugVMEventsProcessor, DebugSession>(1);
   private final DebugProcessListener myListener = new VMEventsProcessorManagerComponent.MyDebugProcessesMulticaster();

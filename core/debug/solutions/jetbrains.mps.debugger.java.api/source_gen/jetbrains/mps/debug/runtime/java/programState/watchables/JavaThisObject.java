@@ -17,14 +17,6 @@ import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 09.04.2010
- * * Time: 19:05:54
- * * To change this template use File | Settings | File Templates.
- */
 public class JavaThisObject extends JavaWatchable implements IWatchable {
   private static Logger LOG = Logger.getLogger(JavaThisObject.class);
 

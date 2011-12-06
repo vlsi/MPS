@@ -26,14 +26,6 @@ import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.util.NameUtil;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 19.06.2010
- * * Time: 16:51:12
- * * To change this template use File | Settings | File Templates.
- */
 /*package*/ class JavaObjectValue extends JavaValue {
   public JavaObjectValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value, classFQname, threadReference);

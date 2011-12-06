@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2891782949125146377">
-    <unitInfo nodeId="2891782949125146377" fileName="Requestor.java" startLine="6" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.requests.Requestor" />
+    <unitInfo nodeId="2891782949125146377" fileName="Requestor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.requests.Requestor" />
   </root>
   <root nodeId="2891782949125170507">
     <nodeInfo nodeId="2891782949125170510" fileName="ClassPrepareRequestor.java" startLine="8" startPosition="58" endLine="9" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClassPrepare#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Lcom/sun/jdi/ReferenceType;)V" />

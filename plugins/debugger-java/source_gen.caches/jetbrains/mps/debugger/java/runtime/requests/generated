@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-azowp8pobruhcx6u8x8xzd37dbstwzr">
+<dependencies version="2" modelHash="-9cf0mbsv3ioxhdn1no4inn664dk7hpo">
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
-  <common hash="-4ko74k12xnabpwhcu3ujs0kkjxa54g7" />
-  <source id="2891782949125146377" name="Requestor" hash="64bieuzw0f6jfmjx7n5kx156fd7asju">
+  <common hash="ckbtd167arxnizrjvvaji3bourrvz6h" />
+  <source id="2891782949125146377" name="Requestor" hash="-2jjinzpqo0wja3hxmuxot760u07hko8">
     <file name="Requestor.java" />
   </source>
   <source id="2891782949125170507" name="ClassPrepareRequestor" hash="8pxyogki29dtr09marfc5b3d22603lb">

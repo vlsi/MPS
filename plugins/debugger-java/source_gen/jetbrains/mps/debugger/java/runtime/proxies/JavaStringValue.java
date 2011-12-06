@@ -6,14 +6,6 @@ import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.StringReference;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 02.07.2010
- * * Time: 15:55:06
- * * To change this template use File | Settings | File Templates.
- */
 /*package*/ class JavaStringValue extends JavaObjectValue {
   public JavaStringValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value, classFQname, threadReference);

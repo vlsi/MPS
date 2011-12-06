@@ -9,14 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import javax.swing.Icon;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 19.06.2010
- * * Time: 17:13:42
- * * To change this template use File | Settings | File Templates.
- */
 public abstract class CustomJavaWatchable implements IWatchable {
   private JavaValue myCachedValue;
   private String myVisibleName;
