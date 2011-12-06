@@ -17,7 +17,6 @@
   <import index="v38v" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.ui(MPS.Workbench/jetbrains.mps.ide.ui@java_stub)" version="-1" />
   <import index="1qcs" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.actionSystem(MPS.Workbench/com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="7lwv" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.navigation(MPS.Workbench/jetbrains.mps.ide.navigation@java_stub)" version="-1" />
-  <import index="ic9i" modelUID="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin)" version="3" />
   <import index="vehe" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.project(MPS.Workbench/com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="xkfd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.util(MPS.Workbench/com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="fylj" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi(MPS.Workbench/com.intellij.openapi@java_stub)" version="-1" />
@@ -78,107 +77,105 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432719038">
       <property name="name" nameId="tpck.1169194664001" value="TestMethodTreeNode" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.tree" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="tree" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432719197">
       <property name="name" nameId="tpck.1169194664001" value="TestTree" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.tree" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="tree" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432720185">
       <property name="name" nameId="tpck.1169194664001" value="TestNameMap" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.tree" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="tree" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432720360">
       <property name="name" nameId="tpck.1169194664001" value="TestToolbarPanel" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.view.component" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="view.component" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432720920">
       <property name="name" nameId="tpck.1169194664001" value="StatisticsRowRenderer" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.table" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="table" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432721745">
       <property name="name" nameId="tpck.1169194664001" value="UnitTestViewComponent" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.view" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="view" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432722606">
       <property name="name" nameId="tpck.1169194664001" value="TestOutputComponent" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.view.component" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="view.component" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432723662">
       <property name="name" nameId="tpck.1169194664001" value="ProgressLine" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.view.component" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="view.component" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432724070">
       <property name="name" nameId="tpck.1169194664001" value="FailedTestOccurenceNavigator" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.view.navigator" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="view.navigator" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432724144">
       <property name="name" nameId="tpck.1169194664001" value="TestCaseTreeNode" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.tree" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="tree" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432724266">
       <property name="name" nameId="tpck.1169194664001" value="BaseTestOccurenceNavigator" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.view.navigator" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="view.navigator" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432724550">
       <property name="name" nameId="tpck.1169194664001" value="StatisticsTableModel" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.table" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="table" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432725117">
       <property name="name" nameId="tpck.1169194664001" value="TotalRow" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.table.row" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="table.row" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432725137">
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="BaseTestTreeNode" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.tree" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="tree" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432725200">
       <property name="name" nameId="tpck.1169194664001" value="TestTreeIconAnimator" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.tree" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="tree" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432725495">
       <property name="name" nameId="tpck.1169194664001" value="TestMethodRow" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.table.row" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="table.row" />
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="3575782568432725808">
       <property name="name" nameId="tpck.1169194664001" value="TestStatisticsRow" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.table.row" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="table.row" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432725854">
       <property name="name" nameId="tpck.1169194664001" value="TestContainerRow" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.table.row" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="table.row" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432726137">
       <property name="name" nameId="tpck.1169194664001" value="TestCaseRow" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.table.row" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="table.row" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432726186">
       <property name="name" nameId="tpck.1169194664001" value="UnitTestRunner" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.runner" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="runner" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432726811">
       <property name="name" nameId="tpck.1169194664001" value="UnitTestProcessHandler" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.runner" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="runner" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432727054">
       <property name="name" nameId="tpck.1169194664001" value="TestTreeSelectionListener" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.listener" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="listener" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432727194">
       <property name="name" nameId="tpck.1169194664001" value="TestTreeRootMouseListener" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.tool.listener" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="listener" />
     </node>
     <node type="tpee.EnumClass" typeId="tpee.1083245097125" id="3575782568432727278">
       <property name="name" nameId="tpck.1169194664001" value="TestState" />
       <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432727351">
       <property name="name" nameId="tpck.1169194664001" value="UnitTestExecutionController" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit" />
     </node>
   </roots>
   <root id="3575782568432718845">
