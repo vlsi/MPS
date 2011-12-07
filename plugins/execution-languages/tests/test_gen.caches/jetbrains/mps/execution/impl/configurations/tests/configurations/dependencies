@@ -7,14 +7,19 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.StringWriter" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager" />
     <classNode dependClassName="jetbrains.mps.execution.impl.configurations.tests.configurations.XslTest" />
+    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
@@ -25,6 +30,7 @@
     <classNode dependClassName="java.io.StringWriter" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.xml.transform.Transformer" />
     <classNode dependClassName="javax.xml.transform.TransformerException" />
     <classNode dependClassName="javax.xml.transform.TransformerFactory" />

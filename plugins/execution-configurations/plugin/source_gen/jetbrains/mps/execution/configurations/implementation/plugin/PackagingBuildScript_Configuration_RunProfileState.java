@@ -13,6 +13,14 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.io.File;
+import jetbrains.mps.baseLanguage.execution.api.Java_Command;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.reloading.CommonPaths;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.build.packaging.plugin.GenerateBuildUtil;
 import com.intellij.execution.ui.ConsoleView;
@@ -45,11 +53,27 @@ public class PackagingBuildScript_Configuration_RunProfileState implements RunPr
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
+    String options = myRunConfiguration.getSettings().getAntOptions();
+    final Wrappers._boolean compile = new Wrappers._boolean();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        compile.value = SPropertyOperations.getBoolean(SNodeOperations.cast(myRunConfiguration.getNode().getNode(), "jetbrains.mps.build.packaging.structure.Layout"), "compile");
+      }
+    });
+    if (compile.value) {
+      if (!(new File(Java_Command.getJdkHome() + File.separator + "lib" + File.separator + "tools.jar").exists())) {
+        options = ((StringUtils.isEmpty(options) ?
+          "" :
+          options + " "
+        )) + "-lib" + " " + CommonPaths.getToolsJar();
+      }
+    }
+
     {
       ProcessHandler _processHandler = new Ant_Command().setAntLocation_String((myRunConfiguration.getSettings().getUseOtherAntLocation() ?
         myRunConfiguration.getSettings().getOtherAntLocation() :
         null
-      )).setOptions_String(myRunConfiguration.getSettings().getAntOptions()).createProcess(GenerateBuildUtil.getGeneratedFilePath(myRunConfiguration.getConfiguration()));
+      )).setOptions_String(options).createProcess(GenerateBuildUtil.getGeneratedFilePath(myRunConfiguration.getConfiguration()));
       final ConsoleView _consoleView = ConsoleCreator.createConsoleView(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
