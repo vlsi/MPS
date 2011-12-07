@@ -13,6 +13,7 @@ public abstract class BaseDiffModelTreeAction extends BaseAction {
   public BaseDiffModelTreeAction(String text, Icon icon) {
     super(text, null, icon);
     setExecuteOutsideCommand(true);
+    setDisableOnNoProject(false);
   }
 
   @Override

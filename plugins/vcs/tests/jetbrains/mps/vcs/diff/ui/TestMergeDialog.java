@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
+import com.intellij.idea.IdeaTestApplication;
 import com.intellij.mock.MockProject;
-import com.intellij.openapi.command.impl.DummyProject;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.IconLoader;
@@ -24,12 +24,8 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ProjectScope;
-import jetbrains.mps.project.StandaloneMPSContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -40,12 +36,12 @@ import jetbrains.mps.vcs.integration.ModelDiffTool.ReadException;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.JDOMException;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
 
 public class TestMergeDialog {
   private static EditorManager ourEditorManager = new EditorManager();
@@ -55,9 +51,16 @@ public class TestMergeDialog {
       if (interfaceClass == EditorManager.class) {
         return (T) ourEditorManager;
       }
+      if (interfaceClass == MPSProject.class) {
+        return (T) ourMPSProject;
+      }
+      if (interfaceClass == BookmarkManager.class) {
+        return (T) new BookmarkManager(ourProject, null);
+      }
       return null;
     }
   };
+  private static MPSProject ourMPSProject = new MPSProject(ourProject);
 
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(TestMode.NO_TEST);
@@ -67,7 +70,7 @@ public class TestMergeDialog {
     final SModel models[] = new SModel[3];
 
     String resultFile;
-    if (args.length == 2) {
+    if (args.length == 2 || args.length == 1) {
       try {
         final SModel[] zipped = ModelUtils.loadZippedModels(new File(args[0]), VcsMergeVersion.values());
         models[0] = zipped[0];
@@ -77,26 +80,41 @@ public class TestMergeDialog {
         return;
       }
 
-      resultFile = args[1];
-    } else if (args.length == 4) {
+      if (args.length == 1) {
+        resultFile = File.createTempFile("mpstmd", "").getAbsolutePath();
+      } else {
+        resultFile = args[1];
+      }
+    } else if (args.length == 4 || args.length == 3) {
       models[0] = ModelUtils.readModel(args[0]);
       models[1] = ModelUtils.readModel(args[1]);
       models[2] = ModelUtils.readModel(args[2]);
 
-      resultFile = args[3];
+      if (args.length == 3) {
+        resultFile = File.createTempFile("", "").getAbsolutePath();
+      } else {
+        resultFile = args[3];
+      }
     } else {
-      System.err.println("There must be 2 or 4 parameters");
+      System.err.println("There must be 1-4 parameters");
       return;
     }
     final String finalResultFile = resultFile;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
+        MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
           public MergeModelsDialog compute() {
             return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(ourProject, "Local Version", "Merge Result", "Remote Version"));
             // Local Version, Merge Result, Remote Version
           }
         });
+        try {
+          Field field = dialog.getClass().getDeclaredField("myMergeTree");
+          field.setAccessible(true);
+          IdeaTestApplication.getInstance(null).setDataProvider((DiffModelTree) field.get(dialog));
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
         dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         dialog.showDialog();
 
