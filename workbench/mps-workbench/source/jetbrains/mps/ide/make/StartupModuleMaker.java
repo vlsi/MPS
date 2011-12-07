@@ -34,8 +34,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 
 import java.util.LinkedHashSet;
 
@@ -56,9 +54,6 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
           ModuleMaker maker = new ModuleMaker(new MessageHandler(), MessageKind.ERROR);
           maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), monitor.subTask(9));
-
-          LanguageRegistry.compilePassed();
-          ConceptRegistry.compilePassed();
         }
       });
 

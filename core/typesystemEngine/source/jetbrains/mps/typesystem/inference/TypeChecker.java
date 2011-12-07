@@ -88,13 +88,14 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     mySubtypingManagerTracer = new SubtypingManager_Tracer(this);
   }
 
-  private volatile boolean myInitialized = false;
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
 
-  public synchronized void checkInitialized() {
-    if (myInitialized) return;
-    myInitialized = true;
-
+    INSTANCE = this;
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         Collection<LanguageRuntime> availableLanguages = myLanguageRegistry.getAvailableLanguages();
         if (availableLanguages != null) {
@@ -105,15 +106,6 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
         myLanguageRegistry.addRegistryListener(TypeChecker.this);
       }
     });
-  }
-
-
-  public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
-    }
-
-    INSTANCE = this;
   }
 
   public void dispose() {
@@ -179,8 +171,6 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   public RulesManager getRulesManager() {
-    checkInitialized();
-
     return myRulesManager;
   }
 
