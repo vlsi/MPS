@@ -28,7 +28,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 5:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractRule", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractRule"}, new String[]{"isWeak"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractRule", "jetbrains.mps.baseLanguage.structure.IMethodLike"}, new String[]{"isWeak"}, new String[]{});
       case 7:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
       case 8:
