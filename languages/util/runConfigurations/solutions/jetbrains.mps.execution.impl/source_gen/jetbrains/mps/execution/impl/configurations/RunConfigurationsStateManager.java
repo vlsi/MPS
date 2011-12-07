@@ -185,7 +185,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
       transformer.transform(source, result);
       List transformResult = result.getResult();
       if (transformResult.size() == 1) {
-        transformResult.get(0);
+        return (Element) transformResult.get(0);
       }
     } catch (TransformerException e) {
       if (log.isErrorEnabled()) {
