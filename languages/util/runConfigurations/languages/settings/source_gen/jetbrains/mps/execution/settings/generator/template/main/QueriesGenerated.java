@@ -413,7 +413,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_9164571165378485912(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode configurationType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), true);
-    return (configurationType != null) && eq_x583g4_a0a1a39(SNodeOperations.getModel(SLinkOperations.getTarget(configurationType, "persistentConfiguration", false)), _context.getOriginalInputModel());
+    return (configurationType != null) && eq_x583g4_a0a1a39(SNodeOperations.getModel(SLinkOperations.getTarget(configurationType, "persistentConfiguration", false)), _context.getInputModel());
   }
 
   public static boolean ifMacro_Condition_3131153648913159012(final IOperationContext operationContext, final IfMacroContext _context) {
