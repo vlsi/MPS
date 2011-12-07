@@ -10,12 +10,16 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.errors.MessageStatus;
 import java.awt.Color;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
-import java.awt.Graphics;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import java.awt.Graphics;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Rectangle;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
+import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -38,9 +42,11 @@ import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 
 public class ChangeEditorMessage extends EditorMessageWithTarget {
+  private static final String NAME_PROPERTY = "name";
+
   private ModelChange myChange;
   private ChangeEditorMessage.ConflictChecker myConflictsChecker;
 
@@ -71,14 +77,22 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     return true;
   }
 
-  @Override
-  public void paint(Graphics graphics, EditorComponent component, EditorCell cell) {
+  private boolean isDirectCell(EditorCell cell) {
+    if (cell == null) {
+      return false;
+    }
     boolean targetIsNode = myMessageTarget.getTarget() == MessageTargetEnum.NODE;
-    boolean shouldPaintSelection = (targetIsNode ?
-      getNode() == cell.getSNode() :
-      !(cell instanceof EditorCell_Collection)
-    );
-    if (shouldPaintSelection) {
+    // <node> 
+    if (targetIsNode) {
+      return getNode() == cell.getSNode();
+    } else {
+      return !(cell instanceof EditorCell_Collection) && isNameCell(cell) == (myMessageTarget.getTarget() == MessageTargetEnum.PROPERTY && NAME_PROPERTY.equals(myMessageTarget.getRole()));
+    }
+  }
+
+  @Override
+  public void paint(Graphics graphics, EditorComponent editor, EditorCell cell) {
+    if (isDirectCell(cell)) {
       cell.paintSelection(graphics, getColor(), false);
       repaintConflictedMessages(graphics, cell);
     } else {
@@ -93,6 +107,28 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
         graphics.drawRect(bounds.x + 1, bounds.y + 1, bounds.width - 2, bounds.height - 2);
       }
     }
+  }
+
+  @Override
+  public EditorCell getCell(EditorComponent editor) {
+    EditorCell cell = super.getCell(editor);
+    if (check_myu41h_a0b0g(cell) && !(isDirectCell(cell))) {
+      SNode node = getNode();
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+        return CellFinder.getCellForProperty(editor, node, NAME_PROPERTY);
+      }
+    }
+    return cell;
+  }
+
+  @Override
+  public boolean acceptCell(EditorCell cell, EditorComponent component) {
+    return isNameCell(cell) && !(isDirectCell(cell)) && check_myu41h_a0a0a7(super.getCell(component)) || super.acceptCell(cell, component);
+  }
+
+  private boolean isNameCell(EditorCell cell) {
+    PropertyAccessor pa = as_myu41h_a0a0a8(check_myu41h_a0a0a8((as_myu41h_a0a0a0a0a8(cell, EditorCell_Property.class))), PropertyAccessor.class);
+    return getNode() == check_myu41h_a0a1a8(pa) && NAME_PROPERTY.equals(check_myu41h_a0a0b0i(pa));
   }
 
   private void repaintConflictedMessages(Graphics graphics, EditorCell cell) {
@@ -339,6 +375,55 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     SNode node = editedModel.getNodeById(id);
     ListSequence.fromList(messages).addElement(new ChangeEditorMessage(node, messageTarget, owner, change, conflictChecker));
     return messages;
+  }
+
+  private static boolean check_myu41h_a0b0g(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.isBigCell();
+    }
+    return false;
+  }
+
+  private static boolean check_myu41h_a0a0a7(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.isBigCell();
+    }
+    return false;
+  }
+
+  private static ModelAccessor check_myu41h_a0a0a8(EditorCell_Property checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelAccessor();
+    }
+    return null;
+  }
+
+  private static SNode check_myu41h_a0a1a8(PropertyAccessor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNode();
+    }
+    return null;
+  }
+
+  private static String check_myu41h_a0a0b0i(PropertyAccessor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getPropertyName();
+    }
+    return null;
+  }
+
+  private static <T> T as_myu41h_a0a0a8(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_myu41h_a0a0a0a0a8(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 
   public static interface ConflictChecker {
