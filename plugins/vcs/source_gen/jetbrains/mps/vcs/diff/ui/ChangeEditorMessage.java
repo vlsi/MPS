@@ -26,6 +26,10 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -78,12 +82,11 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   private boolean isDirectCell(EditorCell cell) {
+    // Return true if and only if this cell should be painted, not only set in frame 
     if (cell == null) {
       return false;
     }
-    boolean targetIsNode = myMessageTarget.getTarget() == MessageTargetEnum.NODE;
-    // <node> 
-    if (targetIsNode) {
+    if (myMessageTarget.getTarget() == MessageTargetEnum.NODE) {
       return getNode() == cell.getSNode();
     } else {
       return !(cell instanceof EditorCell_Collection) && isNameCell(cell) == (myMessageTarget.getTarget() == MessageTargetEnum.PROPERTY && NAME_PROPERTY.equals(myMessageTarget.getRole()));
@@ -99,7 +102,10 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       if (myMessageTarget.getTarget() == MessageTargetEnum.DELETED_CHILD) {
         drawDeletedChild(graphics, cell);
       } else {
-        Rectangle bounds = cell.getBounds();
+        Rectangle bounds = (isIndirectRoot(editor) ?
+          getFirstPseudoLineBounds(editor) :
+          cell.getBounds()
+        );
         graphics.setColor(ChangeColors.get((isConflicted() ?
           ChangeType.CONFLICTED :
           ChangeType.CHANGE
@@ -206,12 +212,113 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
   }
 
-  public Bounds getBounds(EditorComponent component) {
+  private boolean isIndirectRoot(EditorComponent editor) {
+    return !(isDirectCell(getCell(editor))) && getNode().getParent() == null && !(editor instanceof InspectorEditorComponent);
+  }
+
+  private Rectangle getFirstPseudoLineBounds(EditorComponent editor) {
+    Iterable<EditorCell> leafCells = new _FunctionTypes._return_P1_E0<Iterable<EditorCell>, EditorCell>() {
+      public Iterable<EditorCell> invoke(final EditorCell cell) {
+        return new Iterable<EditorCell>() {
+          public Iterator<EditorCell> iterator() {
+            return new YieldingIterator<EditorCell>() {
+              private int __CP__ = 0;
+              private EditorCell _4_child;
+              private Iterator<EditorCell> _4_child_it;
+              private EditorCell _7__yield_myu41h_a0a0a0a0a0a41;
+              private Iterator<EditorCell> _7__yield_myu41h_a0a0a0a0a0a41_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 4:
+                      this._4_child_it = Sequence.fromIterable((EditorCell_Collection) cell).iterator();
+                    case 5:
+                      if (!(this._4_child_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._4_child = this._4_child_it.next();
+                      this.__CP__ = 6;
+                      break;
+                    case 7:
+                      this._7__yield_myu41h_a0a0a0a0a0a41_it = Sequence.fromIterable(invoke(_4_child)).iterator();
+                    case 8:
+                      if (!(this._7__yield_myu41h_a0a0a0a0a0a41_it.hasNext())) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this._7__yield_myu41h_a0a0a0a0a0a41 = this._7__yield_myu41h_a0a0a0a0a0a41_it.next();
+                      this.__CP__ = 9;
+                      break;
+                    case 2:
+                      if (cell instanceof EditorCell_Collection) {
+                        this.__CP__ = 3;
+                        break;
+                      }
+                      this.__CP__ = 11;
+                      break;
+                    case 10:
+                      this.__CP__ = 8;
+                      this.yield(_7__yield_myu41h_a0a0a0a0a0a41);
+                      return true;
+                    case 12:
+                      this.__CP__ = 1;
+                      this.yield(cell);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 3:
+                      this.__CP__ = 4;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      break;
+                    case 9:
+                      this.__CP__ = 10;
+                      break;
+                    case 11:
+                      this.__CP__ = 12;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while (true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    }.invoke(editor.getRootCell());
+    Rectangle bounds = Sequence.fromIterable(leafCells).first().getBounds();
+    for (EditorCell leaf : Sequence.fromIterable(leafCells).skip(1)) {
+      if (leaf.getBounds().y == bounds.y) {
+        bounds.add(leaf.getBounds());
+      } else {
+        break;
+      }
+    }
+    return bounds;
+  }
+
+  public Bounds getBounds(EditorComponent editor) {
     if (myMessageTarget.getTarget() != MessageTargetEnum.DELETED_CHILD) {
-      return getBoundsSuper(component);
+      if (isIndirectRoot(editor)) {
+        Rectangle r = getFirstPseudoLineBounds(editor);
+        return new Bounds(r.y, r.y + r.height);
+      } else {
+        return getBoundsSuper(editor);
+      }
     } else {
       DeletedNodeMessageTarget cmt = ((DeletedNodeMessageTarget) myMessageTarget);
-      EditorCell cell = getCell(component);
+      EditorCell cell = getCell(editor);
       if (cell == null) {
         return new Bounds(-1, -1);
       }
@@ -219,7 +326,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
         if (hasChildrenWithDifferentNode(cell)) {
           return getBoundsForChild((EditorCell_Collection) cell, cmt.getNextChildIndex());
         } else {
-          return getBoundsSuper(component);
+          return getBoundsSuper(editor);
         }
       } else {
         int y = (int) cell.getBounds().getMinY();
