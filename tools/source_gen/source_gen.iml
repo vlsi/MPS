@@ -372,6 +372,33 @@
     <content url="file://$MODULE_DIR$/../../languages/util/runConfigurations/languages/util/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/runConfigurations/languages/util/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../languages/util/ui/languages/gwt/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/languages/gwt/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/util/ui/languages/internal/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/languages/internal/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/util/ui/languages/meta/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/languages/meta/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/util/ui/languages/swing/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/languages/swing/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/util/ui/languages/swt/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/languages/swt/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/util/ui/languages/testdata/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/languages/testdata/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/util/ui/languages/ui/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/languages/ui/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/util/ui/solutions/jetbrains.mps.ui.unittest/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/solutions/jetbrains.mps.ui.unittest/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/util/ui/solutions/ui.sandbox/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/solutions/ui.sandbox/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../languages/util/uiLanguage/solutions/jetbrains.mps.uiLanguage.samples/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/uiLanguage/solutions/jetbrains.mps.uiLanguage.samples/source_gen" isTestSource="false" />
     </content>
