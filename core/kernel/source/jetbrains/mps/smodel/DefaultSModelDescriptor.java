@@ -43,7 +43,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
-    protected ModelLoadResult doLoad(ModelLoadingState state,@Nullable SModel current) {
+    protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current) {
       if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult(null, ModelLoadingState.NOT_LOADED);
       if (state == ModelLoadingState.ROOTS_LOADED) {
         ModelLoadResult result = load(ModelLoadingState.ROOTS_LOADED);
@@ -54,11 +54,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       if (state == ModelLoadingState.FULLY_LOADED) {
         SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
         updateDiskTimestamp();
-        if (current==null) return new ModelLoadResult(fullModel,ModelLoadingState.FULLY_LOADED);
+        if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
         current.setModelDescriptor(null);   //not to send events on changes
         new ModelLoader(current, fullModel).update();
         current.setModelDescriptor(DefaultSModelDescriptor.this);  //enable events
-        return new ModelLoadResult(current,ModelLoadingState.FULLY_LOADED);
+        return new ModelLoadResult(current, ModelLoadingState.FULLY_LOADED);
       }
       throw new UnsupportedOperationException();
     }
@@ -103,7 +103,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     myMetadata = d.getMetadata();
   }
 
-  public UpdateableModel getUpdateableModel(){
+  public UpdateableModel getUpdateableModel() {
     return myModel;
   }
 
@@ -116,6 +116,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     synchronized (myModel) {
       ModelLoadingState oldState = myModel.getState();
       SModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+      System.out.printf("model loaded"+this.getSModelReference().getLongName()+"\n");
+      if (res == null) return null; // this is when we are in recursion
       res.setModelDescriptor(this);
       if (oldState != myModel.getState()) {
         fireModelStateChanged(oldState, myModel.getState());
@@ -265,7 +267,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public SModelHeader getSModelHeader() {
-    SModel model = getSModel();
+    SModel model = getCurrentModelInternal();
     if (model == null) return myHeader;
     return model.getSModelHeader();
   }
@@ -352,7 +354,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   protected void reload() {
-    DescriptorLoadResult dr = null;
+    DescriptorLoadResult dr;
     try {
       dr = getSource().loadDescriptor(getModule(), getSModelReference().getSModelFqName());
     } catch (ModelReadException e) {
@@ -368,7 +370,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     if (getUpdateableModel().getState() == ModelLoadingState.NOT_LOADED) return;
 
     ModelLoadResult result = load(getUpdateableModel().getState());
-    replaceModel(result.getModel(), getUpdateableModel().getState());
+    replaceModel(result.getModel(), result.getState());
   }
 
   public boolean checkAndResolveConflictOnSave() {
