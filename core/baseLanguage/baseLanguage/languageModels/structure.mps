@@ -1125,6 +1125,9 @@
       <property name="name" nameId="tpck.1169194664001" value="UnsignedRightShiftAssignmentExpression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="4957392803029437192" resolveInfo="OperationAssignmentExpression" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="931799110490809722">
+      <property name="name" nameId="tpck.1169194664001" value="ISkipsReturn" />
+    </node>
   </roots>
   <root id="1068498886294">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107215415034">
@@ -4280,5 +4283,6 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
+  <root id="931799110490809722" />
 </model>
 

@@ -10,6 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -23,7 +24,7 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
     boolean checkReturns = false;
     SNode parent = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (!(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(BaseMethodDeclaration_Behavior.call_isReturnsVoid_1234359555698(nodeToCheck)) && (SLinkOperations.getTarget(nodeToCheck, "body", true) != null)) {
+      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(BaseMethodDeclaration_Behavior.call_isReturnsVoid_1234359555698(nodeToCheck)) && (SLinkOperations.getTarget(nodeToCheck, "body", true) != null) && ListSequence.fromList(SNodeOperations.getDescendants(nodeToCheck, "jetbrains.mps.baseLanguage.structure.ISkipsReturn", false, new String[]{})).isEmpty()) {
         if (!(BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(nodeToCheck))) {
           checkReturns = true;
         }
