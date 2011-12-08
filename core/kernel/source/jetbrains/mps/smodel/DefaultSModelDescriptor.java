@@ -25,9 +25,12 @@ import jetbrains.mps.smodel.descriptor.Refactorable;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoader;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.smodel.loading.UpdateableModel;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -37,6 +40,27 @@ import java.util.Map;
 
 public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor, Refactorable, MetadataContainer {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
+
+  private final UpdateableModel myModel = new UpdateableModel(this) {
+    protected ModelLoadResult doLoad(ModelLoadingState state, SModel current) {
+      if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult(null, ModelLoadingState.NOT_LOADED);
+      if (state == ModelLoadingState.ROOTS_LOADED) {
+        ModelLoadResult result = load(ModelLoadingState.ROOTS_LOADED);
+        tryFixingVersion(result.getModel().getSModelHeader());
+        updateDiskTimestamp();
+        return result;
+      }
+      if (state == ModelLoadingState.FULLY_LOADED) {
+        SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
+        updateDiskTimestamp();
+        current.setModelDescriptor(null);
+        new ModelLoader(current, fullModel).update();
+        current.setModelDescriptor(DefaultSModelDescriptor.this);
+        return new ModelLoadResult(current,ModelLoadingState.FULLY_LOADED);
+      }
+      throw new UnsupportedOperationException();
+    }
+  };
 
   private Map<String, String> myMetadata;
   private SModelHeader myHeader;
@@ -48,10 +72,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   private boolean myChanged = false;
 
-  private final Object myFullLoadSync = new Object();
   private IModule myModule;
 
-  private boolean myIsLoading = false;
 
   {
     this.addModelCommandListener(new SModelCommandListener() {
@@ -79,39 +101,18 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     myMetadata = d.getMetadata();
   }
 
-  protected ModelLoadResult initialLoad() {
-    ModelLoadResult result = load(ModelLoadingState.ROOTS_LOADED);
-    tryFixingVersion(result.getModel().getSModelHeader());
-    updateDiskTimestamp();
-    return result;
+  public UpdateableModel getUpdateableModel(){
+    return myModel;
   }
 
-  //updates model with loading state == ROOTS_LOADED
-  public void enforceFullLoad() {
-    synchronized (myFullLoadSync) {
-      if (myIsLoading) return;
-      if (getLoadingState() == ModelLoadingState.FULLY_LOADED) return;
-
-      runModelLoading(
-        new Computable<ModelLoadResult>() {
-          public ModelLoadResult compute() {
-            SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
-            updateDiskTimestamp();
-
-            myIsLoading = true;
-
-            mySModel.setModelDescriptor(null);
-            new ModelLoader(mySModel, fullModel).update();
-            mySModel.setModelDescriptor(DefaultSModelDescriptor.this);
-
-            setLoadingState(ModelLoadingState.FULLY_LOADED);
-            fireModelStateChanged(ModelLoadingState.ROOTS_LOADED, ModelLoadingState.FULLY_LOADED);
-            myIsLoading = false;
-
-            return null;
-          }
-        }
-      );
+  public final SModel getSModel() {
+    synchronized (myModel) {
+      ModelLoadingState oldState = myModel.getState();
+      SModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+      if (oldState != myModel.getState()) {
+        fireModelStateChanged(oldState, myModel.getState());
+      }
+      return res;
     }
   }
 
@@ -162,19 +163,19 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   public void save() {
     ModelAccess.assertLegalWrite();
 
-    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
+    if (getUpdateableModel().getState() == ModelLoadingState.NOT_LOADED) return;
 
     //we must be in command since model save might change model by adding model/language imports
     //if (!mySModel.isLoading()) LOG.assertInCommand();
 
-    LOG.info("Saving model " + mySModel.getSModelFqName());
+    LOG.info("Saving model " + getSModel().getSModelFqName());
 
     if (!checkAndResolveConflictOnSave()) return;
 
     setChanged(false);
     boolean reload = getSource().saveModel(this);
     if (reload) {
-      ModelLoadResult res = getSource().loadSModel(myModule, this, getLoadingState());
+      ModelLoadResult res = getSource().loadSModel(myModule, this, getUpdateableModel().getState());
       updateDiskTimestamp();
       replaceModel(res.getModel(), res.getState());
     }
@@ -190,7 +191,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   @Override
   public void replaceModel(SModel newModel, ModelLoadingState state) {
-    if (newModel == mySModel) return;
+    if (newModel == getSModel()) return;
     myStructureModificationLog = null;
     setChanged(false);
     super.replaceModel(newModel, state);
@@ -248,11 +249,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public SModelHeader getSModelHeader() {
-    SModel model = mySModel;
-    if (model != null) {
-      return model.getSModelHeader();
-    }
-    return myHeader;
+    SModel model = getSModel();
+    if (model == null) return myHeader;
+    return model.getSModelHeader();
   }
 
   public Map<String, String> getMetaData() {
@@ -350,10 +349,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
     updateDiskTimestamp();
 
-    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
+    if (getUpdateableModel().getState() == ModelLoadingState.NOT_LOADED) return;
 
-    ModelLoadResult result = load(getLoadingState());
-    replaceModel(result.getModel(), getLoadingState());
+    ModelLoadResult result = load(getUpdateableModel().getState());
+    replaceModel(result.getModel(), getUpdateableModel().getState());
   }
 
   public boolean checkAndResolveConflictOnSave() {

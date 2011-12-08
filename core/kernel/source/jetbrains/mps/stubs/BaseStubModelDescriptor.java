@@ -19,13 +19,15 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource implements Cloneable {
   private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
   private IModule myModule;
+  private SModel mySModel;
 
   public BaseStubModelDescriptor(SModelReference modelReference, @Nullable ModelDataSource source, IModule module) {
     this(modelReference, true, source, module);
@@ -47,15 +49,19 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   //------------common descriptor stuff-------------------
 
-  protected void setLoadingState(ModelLoadingState state) {
-    assert state != ModelLoadingState.ROOTS_LOADED : "this state can't be used for stub models for now";
-    super.setLoadingState(state);
+
+  @Override
+  public SModel getSModel() {
+    if (mySModel == null) {
+      mySModel = createModel();
+    }
+    return mySModel;
   }
 
-  protected ModelLoadResult initialLoad() {
+  protected SModel createModel() {
     SModel model = getSource().loadSModel(myModule, this, ModelLoadingState.FULLY_LOADED).getModel();
     updateDiskTimestamp();
-    return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    return model;
   }
 
 
@@ -83,6 +89,6 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
     }
     ModelLoadResult result = getSource().loadSModel(myModule, this, ModelLoadingState.FULLY_LOADED);
     updateDiskTimestamp();
-    replaceModel(result.getModel(), getLoadingState());
+    replaceModel(result.getModel(), getUpdateableModel().getState());
   }
 }

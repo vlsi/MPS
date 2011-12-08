@@ -18,7 +18,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.smodel.loading.UpdateableModel;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -47,8 +48,6 @@ public interface SModelDescriptor {
   String getStereotype();
 
   //------
-
-  ModelLoadingState getLoadingState();
 
   boolean isRegistered();
 

@@ -25,6 +25,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -262,6 +263,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   public static class ProjectStructureSModelDescriptor extends BaseSModelDescriptor {
     private final IModule myModule;
     private final ProjectStructureModule myProjectStructureModule;
+    private SModel mySModel;
 
     private ProjectStructureSModelDescriptor(SModelReference ref, IModule module, @NotNull ProjectStructureModule projectStructureModule) {
       super(ref, false);
@@ -269,7 +271,15 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       myProjectStructureModule = projectStructureModule;
     }
 
-    protected ModelLoadResult initialLoad() {
+    @Override
+    public synchronized SModel getSModel() {
+      if (mySModel == null) {
+        mySModel = createModel();
+      }
+      return mySModel;
+    }
+
+    protected ProjectStructureSModel createModel() {
       ProjectStructureSModel model = new ProjectStructureSModel(getSModelReference());
       final ModuleDescriptor moduleDescriptor = myModule.getModuleDescriptor();
       IFile file = myModule.getDescriptorFile();
@@ -300,7 +310,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
           }
         }.convert();
       }
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+      return model;
     }
 
     private void dropModel() {
@@ -308,7 +318,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       final SModel oldSModel = mySModel;
       oldSModel.setModelDescriptor(null);
       mySModel = null;
-      setLoadingState(ModelLoadingState.NOT_LOADED);
 
       Runnable modelReplacedNotifier = new Runnable() {
         public void run() {

@@ -27,28 +27,31 @@ public class ProjectModels {
     SModelFqName fqName = new SModelFqName("projectModel" + ourProjectModelDescriptorCount++, SModelStereotype.INTERNAL);
 
     SModelReference ref = new SModelReference(fqName, SModelId.generate());
-    return new MyBaseSModelDescriptor(ref,canFireEvents);
+    return new MyBaseSModelDescriptor(ref, canFireEvents);
   }
 
   public static boolean isProjectModel(@NotNull SModelReference reference) {
     return SModelStereotype.INTERNAL.equals(reference.getStereotype());
   }
 
-  private static class MyBaseSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor{
+  private static class MyBaseSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor {
     private final boolean myCanFireEvents;
+    private SModel myModel;
 
     public MyBaseSModelDescriptor(SModelReference ref, boolean canFireEvents) {
       super(ref, false);
       myCanFireEvents = canFireEvents;
     }
 
-    protected ModelLoadResult initialLoad() {
-      SModel model = new SModel(this.getSModelReference()){
+    @Override
+    public synchronized SModel getSModel() {
+      if (myModel != null) return myModel;
+      myModel = new SModel(this.getSModelReference()) {
         protected boolean canFireEvent() {
           return myCanFireEvents;
         }
       };
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+      return myModel;
     }
 
     public long lastChangeTime() {

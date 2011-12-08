@@ -22,7 +22,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.CollectionUtil;
@@ -30,7 +29,6 @@ import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -170,6 +168,7 @@ public class TestModule extends AbstractModule {
   class TestSModelDescriptor extends BaseSModelDescriptor {
     private final String myLongName;
     private final SModel myToCopy;
+    private SModel mySModel;
 
     private TestSModelDescriptor(SModelFqName fqName, String longName, SModel toCopy) {
       super(new SModelReference(fqName, SModelId.generate()), false);
@@ -183,19 +182,20 @@ public class TestModule extends AbstractModule {
     }
 
     @Override
-    protected ModelLoadResult initialLoad() {
+    public synchronized SModel getSModel() {
+      if (mySModel != null) return mySModel;
       Document document = ModelPersistence.saveModel(myToCopy);
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
-      SModel result;
       String modelContent = JDOMUtil.asString(document);
       try {
-        result = ModelPersistence.readModel(modelContent, false);
+        mySModel = ModelPersistence.readModel(modelContent, false);
       } catch (ModelReadException e) {
-        result = new StubModel(SModelReference.fromString(myLongName), e);
+        mySModel = new StubModel(SModelReference.fromString(myLongName), e);
       }
-      return new ModelLoadResult(result, ModelLoadingState.FULLY_LOADED);
+      return mySModel;
     }
+
 
     @Override
     public SModelDescriptor resolveModel(SModelReference reference) {

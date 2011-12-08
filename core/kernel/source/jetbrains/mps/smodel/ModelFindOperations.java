@@ -19,6 +19,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.Collections;

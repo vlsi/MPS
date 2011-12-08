@@ -23,6 +23,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 
@@ -239,14 +241,17 @@ public class TransientModelsModule extends AbstractModule {
   public class TransientSModelDescriptor extends BaseSModelDescriptor {
     private final String myLongName;
     private boolean wasUnloaded = false;
+    private SModel mySModel;
 
     private TransientSModelDescriptor(SModelFqName fqName, String longName) {
       super(new SModelReference(fqName, SModelId.generate()), false);
       myLongName = longName;
     }
 
-    protected ModelLoadResult initialLoad() {
-      TransientSModel model;
+    @Override
+    public synchronized SModel getSModel() {
+      if (mySModel!=null) return mySModel;
+
       if (wasUnloaded) {
         LOG.debug("Re-loading " + getSModelReference());
 
@@ -255,14 +260,14 @@ public class TransientModelsModule extends AbstractModule {
           throw new IllegalStateException("no swap space");
         }
 
-        model = swap.restoreFromSwap(getSModelReference());
-        if (model == null) {
+        mySModel = swap.restoreFromSwap(getSModelReference());
+        if (mySModel == null) {
           throw new IllegalStateException("lost swapped out model");
         }
       } else {
-        model = new TransientSModel(getSModelReference());
+        mySModel = new TransientSModel(getSModelReference());
       }
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+      return mySModel;
     }
 
     private boolean unloadModel() {
@@ -276,7 +281,7 @@ public class TransientModelsModule extends AbstractModule {
 
         dropModel();
 
-        this.wasUnloaded = true;
+        wasUnloaded = true;
       }
       return false;
     }
@@ -285,9 +290,8 @@ public class TransientModelsModule extends AbstractModule {
       if (mySModel != null) {
         LOG.debug("Dropped " + getSModelReference());
 
-        this.mySModel = null;
+        mySModel = null;
         fireModelReplaced();
-        setLoadingState(ModelLoadingState.NOT_LOADED);
       }
     }
 
@@ -300,16 +304,9 @@ public class TransientModelsModule extends AbstractModule {
     public SModelDescriptor resolveModel(SModelReference reference) {
       if (reference.getLongName().equals(myLongName)) {
         SModelDescriptor descriptor = myModels.get(reference.getSModelFqName());
-        if (descriptor != null) {
-          return descriptor;
-        }
+        if (descriptor != null) return descriptor;
       }
       return super.resolveModel(reference);
     }
-
-    public void loadModel() {
-
-    }
-
   }
 }

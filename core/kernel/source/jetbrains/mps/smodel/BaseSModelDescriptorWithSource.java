@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.descriptor.source.ChangeListener;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescriptor {
