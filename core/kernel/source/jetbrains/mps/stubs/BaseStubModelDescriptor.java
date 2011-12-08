@@ -54,6 +54,8 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   public synchronized SModel getSModel() {
     if (mySModel == null) {
       mySModel = createModel();
+      mySModel.setModelDescriptor(this);
+      fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return mySModel;
   }

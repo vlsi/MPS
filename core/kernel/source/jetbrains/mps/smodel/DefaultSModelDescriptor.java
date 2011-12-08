@@ -55,9 +55,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
         SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
         updateDiskTimestamp();
         if (current==null) return new ModelLoadResult(fullModel,ModelLoadingState.FULLY_LOADED);
-        current.setModelDescriptor(null);
+        current.setModelDescriptor(null);   //not to send events on changes
         new ModelLoader(current, fullModel).update();
-        current.setModelDescriptor(DefaultSModelDescriptor.this);
+        current.setModelDescriptor(DefaultSModelDescriptor.this);  //enable events
         return new ModelLoadResult(current,ModelLoadingState.FULLY_LOADED);
       }
       throw new UnsupportedOperationException();
@@ -116,6 +116,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     synchronized (myModel) {
       ModelLoadingState oldState = myModel.getState();
       SModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+      res.setModelDescriptor(this);
       if (oldState != myModel.getState()) {
         fireModelStateChanged(oldState, myModel.getState());
       }

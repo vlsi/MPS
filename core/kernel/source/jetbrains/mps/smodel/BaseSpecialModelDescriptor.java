@@ -28,6 +28,8 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
   public final synchronized SModel getSModel() {
     if (mySModel == null) {
       mySModel = createModel();
+      mySModel.setModelDescriptor(this);
+      fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return mySModel;
   }
