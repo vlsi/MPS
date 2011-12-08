@@ -12,6 +12,8 @@ import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDecla
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -38,7 +40,7 @@ public class typeof_ExtensionMethodCall_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = extensionMethodCall;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "5744862332973319668", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_5744862332973319659), (SNode) Type_Behavior.call_getLooseType_5744862332972792015(methodApplicableType), true, false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_5744862332973319659), (SNode) Type_Behavior.call_getLooseType_5744862332972792015(methodApplicableType, SetSequence.fromSet(new HashSet<SNode>())), true, false, _info_12389875345);
     }
     // --- following piece of cake is identical for any method call --- 
     //  no more when_concrete 
