@@ -60,7 +60,7 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
   protected Set<T> get(@NotNull final Pair<String, String> key) {
     Set<T> result = myRulesCache.get(key);
     if(result != null) {
-  //    return result;
+      return result;
     }
 
     String c1 = key.o1;
