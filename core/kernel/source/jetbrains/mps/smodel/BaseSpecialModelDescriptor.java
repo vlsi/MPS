@@ -31,6 +31,11 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor{
     return mySModel;
   }
 
+  @Override
+  protected SModel getCurrentModelInternal() {
+    return mySModel;
+  }
+
   protected abstract SModel createModel();
 
 }

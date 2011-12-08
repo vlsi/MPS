@@ -116,9 +116,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     }
   }
 
-  public void refresh() {
-    if (getUpdateableModel().getState() == ModelLoadingState.NOT_LOADED) return;
-    super.refresh();
+  protected SModel getCurrentModelInternal() {
+    //this will not load model to next levels
+    return myModel.getModel(ModelLoadingState.NOT_LOADED);
   }
 
   public boolean isReadOnly() {

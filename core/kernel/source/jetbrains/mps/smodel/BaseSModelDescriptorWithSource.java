@@ -73,7 +73,13 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     return mySource.getTimestamp() != mySourceTimestamp;
   }
 
-  public void replaceModel(@NotNull SModel newModel, ModelLoadingState loadingState) {
+
+  //this method should be called only with a fully loaded model as parameter
+  public void replaceModel(@NotNull SModel newModel) {
+    replaceModel(newModel, ModelLoadingState.FULLY_LOADED);
+  }
+
+  public void replaceModel(SModel newModel, ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
     if (newModel == mySModel) return;
     final SModel oldSModel = mySModel;
@@ -81,7 +87,11 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
       oldSModel.setModelDescriptor(null);
     }
     mySModel = newModel;
-    mySModel.setModelDescriptor(this);
+    setLoadingState(state);
+
+    if (mySModel != null) {
+      mySModel.setModelDescriptor(this);
+    }
     MPSModuleRepository.getInstance().invalidateCaches();
     Runnable modelReplacedNotifier = new Runnable() {
       public void run() {

@@ -44,52 +44,19 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   public void dispose() {
     ModelAccess.assertLegalWrite();
-    synchronized (myModel) {
-      SModel smodel = myModel.getModel(myModel.getState());
-      if (smodel != null) {
-        fireBeforeModelDisposed(smodel);
-        smodel.dispose();
-      }
+    SModel smodel = getCurrentModelInternal();
+    if (smodel != null) {
+      fireBeforeModelDisposed(smodel);
+      smodel.dispose();
     }
     clearListeners();
   }
 
-  //this method should be called only with a fully loaded model as parameter
-  public void replaceModel(@NotNull SModel newModel) {
-    replaceModel(newModel, ModelLoadingState.FULLY_LOADED);
-  }
-
-  public void replaceModel(SModel newModel, ModelLoadingState state) {
-    ModelAccess.assertLegalWrite();
-    if (newModel == mySModel) return;
-    final SModel oldSModel = mySModel;
-    if (oldSModel != null) {
-      oldSModel.setModelDescriptor(null);
-    }
-    mySModel = newModel;
-    setLoadingState(state);
-
-    if (mySModel != null) {
-      mySModel.setModelDescriptor(this);
-    }
-    MPSModuleRepository.getInstance().invalidateCaches();
-    Runnable modelReplacedNotifier = new Runnable() {
-      public void run() {
-        fireModelReplaced();
-        if (oldSModel != null) {
-          oldSModel.dispose();
-        }
-      }
-    };
-    if (ModelAccess.instance().isInEDT()) {
-      modelReplacedNotifier.run();
-    } else {
-      ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
-    }
-  }
-
   public void refresh() {
     ModelAccess.assertLegalWrite();
+
+    SModel smodel = getCurrentModelInternal();
+    if (smodel == null) return;
 
     getSModel().clearAdaptersAndUserObjects();
     getSModel().refreshRefactoringHistory();
@@ -135,6 +102,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
     return null;
   }
+
+  protected abstract SModel getCurrentModelInternal();
 
   protected void checkModelDuplication() {
     SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);

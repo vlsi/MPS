@@ -51,21 +51,24 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
 
 
   @Override
-  public SModel getSModel() {
+  public synchronized SModel getSModel() {
     if (mySModel == null) {
       mySModel = createModel();
     }
     return mySModel;
   }
 
-  protected SModel createModel() {
+  private SModel createModel() {
     SModel model = getSource().loadSModel(myModule, this, ModelLoadingState.FULLY_LOADED).getModel();
     updateDiskTimestamp();
     return model;
   }
 
-
-  //----------------------
+  @Override
+  protected SModel getCurrentModelInternal() {
+    return mySModel;
+  }
+//----------------------
 
   /**
    * This method should be called either in EDT, inside WriteAction or in any other thread
