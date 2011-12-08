@@ -5612,7 +5612,7 @@
     <nodeInfo nodeId="6993184913940255390" fileName="ChangeEditorMessage.java" startLine="209" startPosition="0" endLine="210" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6993184913940255397" fileName="ChangeEditorMessage.java" startLine="210" startPosition="76" endLine="211" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6993184913940255424" fileName="ChangeEditorMessage.java" startLine="211" startPosition="91" endLine="212" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5867320353744003213" fileName="ChangeEditorMessage.java" startLine="215" startPosition="58" endLine="216" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5867320353744003213" fileName="ChangeEditorMessage.java" startLine="215" startPosition="58" endLine="216" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5867320353744002956" fileName="ChangeEditorMessage.java" startLine="224" startPosition="55" endLine="225" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="5867320353744002956" fileName="ChangeEditorMessage.java" startLine="225" startPosition="37" endLine="226" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_4_child" />
     <nodeInfo nodeId="5867320353744002956" fileName="ChangeEditorMessage.java" startLine="226" startPosition="42" endLine="227" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_4_child_it" />
@@ -5736,7 +5736,9 @@
     <nodeInfo nodeId="2995253988750731223" fileName="ChangeEditorMessage.java" startLine="511" startPosition="5" endLine="512" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2995253988750731230" fileName="ChangeEditorMessage.java" startLine="516" startPosition="36" endLine="517" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2995253988750731230" fileName="ChangeEditorMessage.java" startLine="518" startPosition="5" endLine="519" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8950331023925442285" fileName="ChangeEditorMessage.java" startLine="536" startPosition="43" endLine="537" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isChangeConflicted#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="5437174442716190746" fileName="ChangeEditorMessage.java" startLine="523" startPosition="36" endLine="524" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5437174442716190746" fileName="ChangeEditorMessage.java" startLine="525" startPosition="5" endLine="526" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8950331023925442285" fileName="ChangeEditorMessage.java" startLine="543" startPosition="43" endLine="544" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isChangeConflicted#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
     <nodeInfo nodeId="2574970789914154813" fileName="ChangeEditorMessage.java" startLine="91" startPosition="10" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6993184913940256743" fileName="ChangeEditorMessage.java" startLine="167" startPosition="16" endLine="169" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6993184913940256750" fileName="ChangeEditorMessage.java" startLine="170" startPosition="14" endLine="172" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5764,6 +5766,7 @@
     <nodeInfo nodeId="2995253988750731197" fileName="ChangeEditorMessage.java" startLine="501" startPosition="91" endLine="504" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2995253988750731223" fileName="ChangeEditorMessage.java" startLine="508" startPosition="80" endLine="511" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2995253988750731230" fileName="ChangeEditorMessage.java" startLine="515" startPosition="82" endLine="518" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5437174442716190746" fileName="ChangeEditorMessage.java" startLine="522" startPosition="116" endLine="525" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8401260027345476315" fileName="ChangeEditorMessage.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConflicted#()Z" />
     <nodeInfo nodeId="5743590290452044300" fileName="ChangeEditorMessage.java" startLine="68" startPosition="27" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8401260027345527122" fileName="ChangeEditorMessage.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
@@ -5785,8 +5788,8 @@
     <nodeInfo nodeId="6608786863704941793" fileName="ChangeEditorMessage.java" startLine="451" startPosition="8" endLine="455" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6608786863704941823" fileName="ChangeEditorMessage.java" startLine="457" startPosition="0" endLine="461" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6608786863704941841" fileName="ChangeEditorMessage.java" startLine="461" startPosition="8" endLine="465" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2995253988750731195" fileName="ChangeEditorMessage.java" startLine="522" startPosition="66" endLine="526" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2995253988750731199" fileName="ChangeEditorMessage.java" startLine="529" startPosition="70" endLine="533" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2995253988750731195" fileName="ChangeEditorMessage.java" startLine="529" startPosition="66" endLine="533" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2995253988750731199" fileName="ChangeEditorMessage.java" startLine="536" startPosition="70" endLine="540" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8950331023925550658" fileName="ChangeEditorMessage.java" startLine="56" startPosition="0" endLine="61" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeEditorMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/errors/messageTargets/MessageTarget;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljetbrains/mps/vcs/diff/changes/ModelChange;Ljetbrains/mps/vcs/diff/ui/ChangeEditorMessage/ConflictChecker;)V" />
     <nodeInfo nodeId="903473793367328539" fileName="ChangeEditorMessage.java" startLine="78" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBackground#()Z" />
     <nodeInfo nodeId="2574970789914154796" fileName="ChangeEditorMessage.java" startLine="88" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -5811,8 +5814,9 @@
     <nodeInfo nodeId="2995253988750731197" fileName="ChangeEditorMessage.java" startLine="500" startPosition="0" endLine="507" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_myu41h_a0a0a8#(Ljetbrains/mps/nodeEditor/cells/EditorCell_Property;)Ljetbrains/mps/nodeEditor/cells/ModelAccessor;" />
     <nodeInfo nodeId="2995253988750731223" fileName="ChangeEditorMessage.java" startLine="507" startPosition="0" endLine="514" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_myu41h_a0a1a8#(Ljetbrains/mps/nodeEditor/cells/PropertyAccessor;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2995253988750731230" fileName="ChangeEditorMessage.java" startLine="514" startPosition="0" endLine="521" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_myu41h_a0a0b0i#(Ljetbrains/mps/nodeEditor/cells/PropertyAccessor;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2995253988750731195" fileName="ChangeEditorMessage.java" startLine="521" startPosition="0" endLine="528" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_myu41h_a0a0a8#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="2995253988750731199" fileName="ChangeEditorMessage.java" startLine="528" startPosition="0" endLine="535" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_myu41h_a0a0a0a0a8#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="5437174442716190746" fileName="ChangeEditorMessage.java" startLine="521" startPosition="0" endLine="528" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_myu41h_a0a0a0n#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/vcs/diff/ui/ChangeEditorMessage;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2995253988750731195" fileName="ChangeEditorMessage.java" startLine="528" startPosition="0" endLine="535" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_myu41h_a0a0a8#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="2995253988750731199" fileName="ChangeEditorMessage.java" startLine="535" startPosition="0" endLine="542" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_myu41h_a0a0a0a0a8#(Ljava/lang/Object;Ljava/lang/Class;)null" />
     <nodeInfo nodeId="8401260027345476326" fileName="ChangeEditorMessage.java" startLine="66" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" />
     <nodeInfo nodeId="9197789345835563624" fileName="ChangeEditorMessage.java" startLine="396" startPosition="30" endLine="404" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="6993184913940254965" fileName="ChangeEditorMessage.java" startLine="104" startPosition="12" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5872,7 +5876,7 @@
     <scopeInfo nodeId="6993184913940256751" fileName="ChangeEditorMessage.java" startLine="170" startPosition="16" endLine="171" endPosition="59" />
     <scopeInfo nodeId="6993184913940255544" fileName="ChangeEditorMessage.java" startLine="183" startPosition="71" endLine="184" endPosition="54" />
     <scopeInfo nodeId="6993184913940255564" fileName="ChangeEditorMessage.java" startLine="185" startPosition="12" endLine="186" endPosition="102" />
-    <scopeInfo nodeId="5867320353744003212" fileName="ChangeEditorMessage.java" startLine="215" startPosition="58" endLine="216" endPosition="126" />
+    <scopeInfo nodeId="5867320353744003212" fileName="ChangeEditorMessage.java" startLine="215" startPosition="58" endLine="216" endPosition="142" />
     <scopeInfo nodeId="5867320353744002963" fileName="ChangeEditorMessage.java" startLine="239" startPosition="27" endLine="240" endPosition="104" />
     <scopeInfo nodeId="5867320353744002966" fileName="ChangeEditorMessage.java" startLine="249" startPosition="27" endLine="250" endPosition="114" />
     <scopeInfo nodeId="5867320353744002956" fileName="ChangeEditorMessage.java" startLine="289" startPosition="28" endLine="290" endPosition="37" />
@@ -5900,7 +5904,8 @@
     <scopeInfo nodeId="2995253988750731197" fileName="ChangeEditorMessage.java" startLine="502" startPosition="36" endLine="503" endPosition="50" />
     <scopeInfo nodeId="2995253988750731223" fileName="ChangeEditorMessage.java" startLine="509" startPosition="36" endLine="510" endPosition="41" />
     <scopeInfo nodeId="2995253988750731230" fileName="ChangeEditorMessage.java" startLine="516" startPosition="36" endLine="517" endPosition="49" />
-    <scopeInfo nodeId="8950331023925442285" fileName="ChangeEditorMessage.java" startLine="536" startPosition="43" endLine="537" endPosition="58">
+    <scopeInfo nodeId="5437174442716190746" fileName="ChangeEditorMessage.java" startLine="523" startPosition="36" endLine="524" endPosition="43" />
+    <scopeInfo nodeId="8950331023925442285" fileName="ChangeEditorMessage.java" startLine="543" startPosition="43" endLine="544" endPosition="58">
       <varInfo nodeId="8950331023925469296" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="903473793367315423" fileName="ChangeEditorMessage.java" startLine="98" startPosition="29" endLine="100" endPosition="48" />
@@ -5957,8 +5962,9 @@
     <scopeInfo nodeId="2995253988750731197" fileName="ChangeEditorMessage.java" startLine="501" startPosition="91" endLine="505" endPosition="16" />
     <scopeInfo nodeId="2995253988750731223" fileName="ChangeEditorMessage.java" startLine="508" startPosition="80" endLine="512" endPosition="16" />
     <scopeInfo nodeId="2995253988750731230" fileName="ChangeEditorMessage.java" startLine="515" startPosition="82" endLine="519" endPosition="16" />
-    <scopeInfo nodeId="2995253988750731195" fileName="ChangeEditorMessage.java" startLine="522" startPosition="66" endLine="526" endPosition="6" />
-    <scopeInfo nodeId="2995253988750731199" fileName="ChangeEditorMessage.java" startLine="529" startPosition="70" endLine="533" endPosition="6" />
+    <scopeInfo nodeId="5437174442716190746" fileName="ChangeEditorMessage.java" startLine="522" startPosition="116" endLine="526" endPosition="16" />
+    <scopeInfo nodeId="2995253988750731195" fileName="ChangeEditorMessage.java" startLine="529" startPosition="66" endLine="533" endPosition="6" />
+    <scopeInfo nodeId="2995253988750731199" fileName="ChangeEditorMessage.java" startLine="536" startPosition="70" endLine="540" endPosition="6" />
     <scopeInfo nodeId="8950331023925550658" fileName="ChangeEditorMessage.java" startLine="56" startPosition="0" endLine="61" endPosition="3">
       <varInfo nodeId="8950331023925550681" varName="node" />
       <varInfo nodeId="8950331023925550687" varName="conflictChecker" />
@@ -6006,8 +6012,9 @@
     <scopeInfo nodeId="2995253988750731197" fileName="ChangeEditorMessage.java" startLine="500" startPosition="0" endLine="507" endPosition="0" />
     <scopeInfo nodeId="2995253988750731223" fileName="ChangeEditorMessage.java" startLine="507" startPosition="0" endLine="514" endPosition="0" />
     <scopeInfo nodeId="2995253988750731230" fileName="ChangeEditorMessage.java" startLine="514" startPosition="0" endLine="521" endPosition="0" />
-    <scopeInfo nodeId="2995253988750731195" fileName="ChangeEditorMessage.java" startLine="521" startPosition="0" endLine="528" endPosition="0" />
-    <scopeInfo nodeId="2995253988750731199" fileName="ChangeEditorMessage.java" startLine="528" startPosition="0" endLine="535" endPosition="0" />
+    <scopeInfo nodeId="5437174442716190746" fileName="ChangeEditorMessage.java" startLine="521" startPosition="0" endLine="528" endPosition="0" />
+    <scopeInfo nodeId="2995253988750731195" fileName="ChangeEditorMessage.java" startLine="528" startPosition="0" endLine="535" endPosition="0" />
+    <scopeInfo nodeId="2995253988750731199" fileName="ChangeEditorMessage.java" startLine="535" startPosition="0" endLine="542" endPosition="0" />
     <scopeInfo nodeId="8401260027345476326" fileName="ChangeEditorMessage.java" startLine="66" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="1317516399976554655" fileName="ChangeEditorMessage.java" startLine="119" startPosition="53" endLine="127" endPosition="16">
       <varInfo nodeId="1317516399976554678" varName="cell" />
@@ -6145,13 +6152,13 @@
     <scopeInfo nodeId="5867320353743983172" fileName="ChangeEditorMessage.java" startLine="218" startPosition="0" endLine="310" endPosition="0">
       <varInfo nodeId="5867320353744000860" varName="editor" />
     </scopeInfo>
-    <unitInfo nodeId="3521790172251285591" fileName="ChangeEditorMessage.java" startLine="536" startPosition="0" endLine="539" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage$ConflictChecker" />
+    <unitInfo nodeId="3521790172251285591" fileName="ChangeEditorMessage.java" startLine="543" startPosition="0" endLine="546" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage$ConflictChecker" />
     <unitInfo nodeId="6993184913940275184" fileName="ChangeEditorMessage.java" startLine="145" startPosition="121" endLine="149" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage$2" />
     <unitInfo nodeId="903473793367315843" fileName="ChangeEditorMessage.java" startLine="378" startPosition="84" endLine="382" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage$1" />
     <unitInfo nodeId="5867320353744002956" fileName="ChangeEditorMessage.java" startLine="224" startPosition="23" endLine="295" endPosition="13" unitName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage$5" />
     <unitInfo nodeId="5867320353744002956" fileName="ChangeEditorMessage.java" startLine="222" startPosition="19" endLine="297" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage$4" />
     <unitInfo nodeId="5867320353744002956" fileName="ChangeEditorMessage.java" startLine="220" startPosition="41" endLine="299" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage$3" />
-    <unitInfo nodeId="8401260027345469827" fileName="ChangeEditorMessage.java" startLine="51" startPosition="0" endLine="540" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" />
+    <unitInfo nodeId="8401260027345469827" fileName="ChangeEditorMessage.java" startLine="51" startPosition="0" endLine="547" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" />
   </root>
   <root nodeId="8755562548669444442">
     <nodeInfo nodeId="8755562548669444442" fileName="Bounds.java" startLine="9" startPosition="19" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
