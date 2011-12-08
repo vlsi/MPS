@@ -1129,6 +1129,9 @@
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1023687332192347378">
       <property name="name" nameId="tpck.1169194664001" value="IVariableReference" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8412076637103718467">
+      <property name="name" nameId="tpck.1169194664001" value="ISkipsReturn" />
+    </node>
   </roots>
   <root id="1068498886294">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107215415034">
@@ -4288,5 +4291,6 @@
     </node>
   </root>
   <root id="1023687332192347378" />
+  <root id="8412076637103718467" />
 </model>
 
