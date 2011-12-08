@@ -31,6 +31,8 @@ public interface SModelDescriptor {
    */
   SModel getSModel();
 
+  ModelLoadingState getLoadingState();
+
   IModule getModule();
 
   //------

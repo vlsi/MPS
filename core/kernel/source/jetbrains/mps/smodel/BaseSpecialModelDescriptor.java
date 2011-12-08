@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor{
+public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
   protected SModel mySModel;
 
   protected BaseSpecialModelDescriptor(@NotNull SModelReference modelReference, boolean checkDup) {
@@ -29,6 +30,10 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor{
       mySModel = createModel();
     }
     return mySModel;
+  }
+
+  public final ModelLoadingState getLoadingState() {
+    return mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED;
   }
 
   @Override

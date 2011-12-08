@@ -105,6 +105,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return myModel;
   }
 
+  @Override
+  public ModelLoadingState getLoadingState() {
+    return myModel.getState();
+  }
+
   public final SModel getSModel() {
     synchronized (myModel) {
       ModelLoadingState oldState = myModel.getState();
