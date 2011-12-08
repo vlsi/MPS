@@ -106,7 +106,7 @@ public class MergeConflictsBuilder {
       SNode node = myBaseModel.getNodeById(nodeId);
       while (node != null) {
         if (SNodeOperations.getParent(node) == null) {
-          DeleteRootChange conflicting = MapSequence.fromMap(deleteRootChanges).get(nodeId);
+          DeleteRootChange conflicting = MapSequence.fromMap(deleteRootChanges).get(node.getSNodeId());
           if (conflicting != null) {
             addConflict(change, conflicting);
           }

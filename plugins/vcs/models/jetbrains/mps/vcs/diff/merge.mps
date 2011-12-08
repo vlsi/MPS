@@ -627,8 +627,15 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="btf5.6359197607515894913" resolveInfo="DeleteRootChange" />
                         </node>
                         <node role="initializer" roleId="tpee.1068431790190" type="tp2q.MapElement" typeId="tp2q.1197932370469" id="4124845871897264652">
-                          <node role="key" roleId="tp2q.1197932525128" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4124845871897264653">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897264592" resolveInfo="nodeId" />
+                          <node role="key" roleId="tp2q.1197932525128" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5437174442716114343">
+                            <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="5437174442716114341">
+                              <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5437174442716114336">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897264630" resolveInfo="node" />
+                              </node>
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5437174442716114347">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNode%dgetSNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getSNodeId" />
+                            </node>
                           </node>
                           <node role="map" roleId="tp2q.1197932505799" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4124845871897264654">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="991773733294051602" resolveInfo="deleteRootChanges" />
