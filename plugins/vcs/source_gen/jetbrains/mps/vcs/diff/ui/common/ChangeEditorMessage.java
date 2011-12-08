@@ -213,7 +213,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   private boolean isIndirectRoot(EditorComponent editor) {
-    return !(isDirectCell(getCell(editor))) && getNode().getParent() == null && !(editor instanceof InspectorEditorComponent);
+    return !(isDirectCell(getCell(editor))) && check_myu41h_a0a0a0n(getNode(), this) == null && !(editor instanceof InspectorEditorComponent);
   }
 
   private Rectangle getFirstPseudoLineBounds(EditorComponent editor) {
@@ -515,6 +515,13 @@ __switch__:
   private static String check_myu41h_a0a0b0i(PropertyAccessor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getPropertyName();
+    }
+    return null;
+  }
+
+  private static SNode check_myu41h_a0a0a0n(SNode checkedDotOperand, ChangeEditorMessage checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getParent();
     }
     return null;
   }
