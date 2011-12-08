@@ -33,6 +33,12 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
   }
 
   @Test
+  public void test_addAllWithIndex() throws Throwable {
+    this.initTest("${mps_home}/MPS.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
+    this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_addAllWithIndex", true);
+  }
+
+  @Test
   public void test_addFirst() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_addFirst", true);
@@ -122,6 +128,23 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       List<SNode> addition = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null), SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null));
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addSequence(ListSequence.fromList(addition));
       Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).containsSequence(ListSequence.fromList(addition)));
+    }
+
+    public void test_addAllWithIndex() throws Exception {
+      this.addNodeById("2282909602806268543");
+      this.addNodeById("2282909602806423211");
+      SNode startNode = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
+      SNode endNode = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addElement(startNode);
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addElement(endNode);
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).contains(startNode));
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).contains(endNode));
+
+      List<SNode> addition = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null), SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null));
+      SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true).addAll(1, addition);
+      Assert.assertEquals(4, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).count());
+      Assert.assertEquals(1, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).indexOf(ListSequence.fromList(addition).getElement(0)));
+      Assert.assertEquals(2, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).indexOf(ListSequence.fromList(addition).getElement(1)));
     }
 
     public void test_addFirst() throws Exception {

@@ -76,6 +76,22 @@ import java.util.Collection;
   }
 
   @Override
+  public boolean addAll(int index, Collection<? extends SNode> c) {
+    SNode anchorNode = (index > 0 ?
+      get(index - 1) :
+      null
+    );
+    for (SNode nextNode : c) {
+      if (nextNode == null) {
+        continue;
+      }
+      insertAfter(nextNode, anchorNode);
+      anchorNode = nextNode;
+    }
+    return super.addAll(index, c);
+  }
+
+  @Override
   public void clear() {
     for (SNode nextNode : this) {
       removeReference(nextNode);
