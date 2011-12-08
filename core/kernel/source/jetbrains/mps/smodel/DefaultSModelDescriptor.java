@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
 import java.util.List;
@@ -42,7 +43,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
-    protected ModelLoadResult doLoad(ModelLoadingState state, SModel current) {
+    protected ModelLoadResult doLoad(ModelLoadingState state,@Nullable SModel current) {
       if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult(null, ModelLoadingState.NOT_LOADED);
       if (state == ModelLoadingState.ROOTS_LOADED) {
         ModelLoadResult result = load(ModelLoadingState.ROOTS_LOADED);
@@ -53,6 +54,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       if (state == ModelLoadingState.FULLY_LOADED) {
         SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
         updateDiskTimestamp();
+        if (current==null) return new ModelLoadResult(fullModel,ModelLoadingState.FULLY_LOADED);
         current.setModelDescriptor(null);
         new ModelLoader(current, fullModel).update();
         current.setModelDescriptor(DefaultSModelDescriptor.this);

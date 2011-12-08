@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.Nullable;
 
 /*
  * This class consists of 2 methods
@@ -59,13 +60,15 @@ public abstract class UpdateableModel {
         });
       }
     });
-    myModel.setModelDescriptor(null);
+    if (myModel != null) {
+      myModel.setModelDescriptor(null);
+    }
     myModel = res.getModel();
     myModel.setModelDescriptor(myDescriptor);
     myState = res.getState();
   }
 
-  protected abstract ModelLoadResult doLoad(ModelLoadingState state, SModel current);
+  protected abstract ModelLoadResult doLoad(ModelLoadingState state,@Nullable SModel current);
 
   public synchronized void replaceWith(SModel newModel, ModelLoadingState state) {
     myModel = newModel;
