@@ -90,8 +90,13 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
       updateDiskTimestamp();
       return;
     }
-    ModelLoadResult result = getSource().loadSModel(myModule, this, ModelLoadingState.FULLY_LOADED);
+    ModelLoadingState state = ModelLoadingState.FULLY_LOADED;
+    final ModelLoadResult result = getSource().loadSModel(myModule, this, state);
     updateDiskTimestamp();
-    replaceModel(result.getModel(), getUpdateableModel().getState());
+    replaceModel(new Runnable() {
+      public void run() {
+        mySModel = result.getModel();
+      }
+    });
   }
 }

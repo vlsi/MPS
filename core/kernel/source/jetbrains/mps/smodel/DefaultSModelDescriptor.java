@@ -194,12 +194,15 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return !isDoNotGenerate() && !isReadOnly() && SModelStereotype.isUserModel(this);
   }
 
-  @Override
-  public void replaceModel(SModel newModel, ModelLoadingState state) {
-    if (newModel == getSModel()) return;
+  public void replaceModel(final SModel newModel, final ModelLoadingState state) {
+    if (newModel == getCurrentModelInternal()) return;
     myStructureModificationLog = null;
     setChanged(false);
-    super.replaceModel(newModel, state);
+    super.replaceModel(new Runnable() {
+      public void run() {
+        myModel.replaceWith(newModel, state);
+      }
+    });
   }
 
   public String getModelHash() {

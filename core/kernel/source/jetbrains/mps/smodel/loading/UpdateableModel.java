@@ -66,4 +66,9 @@ public abstract class UpdateableModel {
   }
 
   protected abstract ModelLoadResult doLoad(ModelLoadingState state, SModel current);
+
+  public synchronized void replaceWith(SModel newModel, ModelLoadingState state) {
+    myModel = newModel;
+    myState = state;
+  }
 }

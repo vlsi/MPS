@@ -5,6 +5,8 @@ package jetbrains.mps.makeTest.test;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 public abstract class ChangeModel {
   private SModel myModel;
@@ -17,6 +19,6 @@ public abstract class ChangeModel {
   }
 
   public void rollback(SModel model) {
-    ((DefaultSModelDescriptor) model.getModelDescriptor()).replaceModel(this.myModel);
+    ((DefaultSModelDescriptor) model.getModelDescriptor()).replaceModel(new ModelLoadResult(this.myModel, ModelLoadingState.FULLY_LOADED));
   }
 }
