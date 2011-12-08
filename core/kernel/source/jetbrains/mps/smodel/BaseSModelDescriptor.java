@@ -17,12 +17,9 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.ProjectStructureModule.ProjectStructureSModel;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.loading.UpdateableModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -33,7 +30,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
   private boolean myRegistered;
-
   protected SModelReference myModelReference;
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
@@ -41,12 +37,22 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected BaseSModelDescriptor(@NotNull SModelReference modelReference, boolean checkDup) {
     myModelReference = modelReference;
-
     if (checkDup) {
       checkModelDuplication();
     }
   }
 
+  public void dispose() {
+    ModelAccess.assertLegalWrite();
+    synchronized (myModel) {
+      SModel smodel = myModel.getModel(myModel.getState());
+      if (smodel != null) {
+        fireBeforeModelDisposed(smodel);
+        smodel.dispose();
+      }
+    }
+    clearListeners();
+  }
 
   //this method should be called only with a fully loaded model as parameter
   public void replaceModel(@NotNull SModel newModel) {
@@ -85,22 +91,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public void refresh() {
     ModelAccess.assertLegalWrite();
 
-    if (getUpdateableModel().getState() == ModelLoadingState.NOT_LOADED) return;
-
-    mySModel.clearAdaptersAndUserObjects();
-    mySModel.refreshRefactoringHistory();
-  }
-
-  public void dispose() {
-    ModelAccess.assertLegalWrite();
-    synchronized (myModel){
-      SModel smodel = myModel.getModel(myModel.getState());
-      if (smodel!=null){
-        fireBeforeModelDisposed(smodel);
-        smodel.dispose();
-      }
-    }
-    clearListeners();
+    getSModel().clearAdaptersAndUserObjects();
+    getSModel().refreshRefactoringHistory();
   }
 
   @Override

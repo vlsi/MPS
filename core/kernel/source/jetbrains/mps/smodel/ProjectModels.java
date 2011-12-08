@@ -34,24 +34,20 @@ public class ProjectModels {
     return SModelStereotype.INTERNAL.equals(reference.getStereotype());
   }
 
-  private static class MyBaseSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor {
+  private static class MyBaseSModelDescriptor extends BaseSpecialModelDescriptor implements EditableSModelDescriptor {
     private final boolean myCanFireEvents;
-    private SModel myModel;
 
     public MyBaseSModelDescriptor(SModelReference ref, boolean canFireEvents) {
       super(ref, false);
       myCanFireEvents = canFireEvents;
     }
 
-    @Override
-    public synchronized SModel getSModel() {
-      if (myModel != null) return myModel;
-      myModel = new SModel(this.getSModelReference()) {
+    protected SModel createModel() {
+      return new SModel(this.getSModelReference()) {
         protected boolean canFireEvent() {
           return myCanFireEvents;
         }
       };
-      return myModel;
     }
 
     public long lastChangeTime() {

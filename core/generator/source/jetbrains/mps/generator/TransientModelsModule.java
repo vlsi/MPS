@@ -23,8 +23,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 
@@ -238,36 +236,29 @@ public class TransientModelsModule extends AbstractModule {
     }
   }
 
-  public class TransientSModelDescriptor extends BaseSModelDescriptor {
+  public class TransientSModelDescriptor extends BaseSpecialModelDescriptor {
     private final String myLongName;
     private boolean wasUnloaded = false;
-    private SModel mySModel;
 
     private TransientSModelDescriptor(SModelFqName fqName, String longName) {
       super(new SModelReference(fqName, SModelId.generate()), false);
       myLongName = longName;
     }
 
-    @Override
-    public synchronized SModel getSModel() {
-      if (mySModel!=null) return mySModel;
-
+    protected SModel createModel() {
       if (wasUnloaded) {
         LOG.debug("Re-loading " + getSModelReference());
 
         TransientSwapSpace swap = myComponent.getTransientSwapSpace();
-        if (swap == null) {
-          throw new IllegalStateException("no swap space");
-        }
+        if (swap == null) throw new IllegalStateException("no swap space");
 
-        mySModel = swap.restoreFromSwap(getSModelReference());
-        if (mySModel == null) {
-          throw new IllegalStateException("lost swapped out model");
-        }
+        SModel m = swap.restoreFromSwap(getSModelReference());
+        if (m != null) return m;
+
+        throw new IllegalStateException("lost swapped out model");
       } else {
-        mySModel = new TransientSModel(getSModelReference());
+        return new TransientSModel(getSModelReference());
       }
-      return mySModel;
     }
 
     private boolean unloadModel() {

@@ -176,23 +176,14 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     return "component: Language Descriptor Models Provider";
   }
 
-  public class LanguageModelDescriptor extends BaseSModelDescriptor {
+  public class LanguageModelDescriptor extends BaseSpecialModelDescriptor {
     private final Language myModule;
     private String myHash;
-    private SModel mySModel;
 
     private LanguageModelDescriptor(SModelReference ref, Language module) {
       super(ref, false);
       myModule = module;
       myHash = null;
-    }
-
-    @Override
-    public SModel getSModel() {
-      if (mySModel!=null){
-        mySModel = createModel();
-      }
-      return mySModel;
     }
 
     protected SModel createModel() {

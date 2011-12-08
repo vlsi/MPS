@@ -260,23 +260,14 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
   }
 
-  public static class ProjectStructureSModelDescriptor extends BaseSModelDescriptor {
+  public static class ProjectStructureSModelDescriptor extends BaseSpecialModelDescriptor {
     private final IModule myModule;
     private final ProjectStructureModule myProjectStructureModule;
-    private SModel mySModel;
 
     private ProjectStructureSModelDescriptor(SModelReference ref, IModule module, @NotNull ProjectStructureModule projectStructureModule) {
       super(ref, false);
       myModule = module;
       myProjectStructureModule = projectStructureModule;
-    }
-
-    @Override
-    public synchronized SModel getSModel() {
-      if (mySModel == null) {
-        mySModel = createModel();
-      }
-      return mySModel;
     }
 
     protected ProjectStructureSModel createModel() {

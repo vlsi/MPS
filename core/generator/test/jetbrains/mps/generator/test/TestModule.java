@@ -165,10 +165,9 @@ public class TestModule extends AbstractModule {
     }
   }
 
-  class TestSModelDescriptor extends BaseSModelDescriptor {
+  class TestSModelDescriptor extends BaseSpecialModelDescriptor {
     private final String myLongName;
     private final SModel myToCopy;
-    private SModel mySModel;
 
     private TestSModelDescriptor(SModelFqName fqName, String longName, SModel toCopy) {
       super(new SModelReference(fqName, SModelId.generate()), false);
@@ -181,21 +180,17 @@ public class TestModule extends AbstractModule {
       return TestModule.this;
     }
 
-    @Override
-    public synchronized SModel getSModel() {
-      if (mySModel != null) return mySModel;
+    public SModel createModel() {
       Document document = ModelPersistence.saveModel(myToCopy);
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
       String modelContent = JDOMUtil.asString(document);
       try {
-        mySModel = ModelPersistence.readModel(modelContent, false);
+        return ModelPersistence.readModel(modelContent, false);
       } catch (ModelReadException e) {
-        mySModel = new StubModel(SModelReference.fromString(myLongName), e);
+        return new StubModel(SModelReference.fromString(myLongName), e);
       }
-      return mySModel;
     }
-
 
     @Override
     public SModelDescriptor resolveModel(SModelReference reference) {

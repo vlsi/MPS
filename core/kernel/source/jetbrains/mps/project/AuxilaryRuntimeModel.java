@@ -67,17 +67,13 @@ public class AuxilaryRuntimeModel implements ModelOwner, CoreComponent {
     INSTANCE = null;
   }
 
-  private static class AuxModelDescriptor extends BaseSModelDescriptor {
-    private volatile SModel myModel;
-
+  private static class AuxModelDescriptor extends BaseSpecialModelDescriptor {
     public AuxModelDescriptor() {
       super(AuxilaryRuntimeModel.MY_MODEL_REFERENCE, false);
     }
 
-    @Override
-    public synchronized SModel getSModel() {
-      if (myModel != null) return myModel;
-      myModel = new SModel(getSModelReference()) {
+    protected SModel createModel() {
+      return new SModel(getSModelReference()) {
         protected void performUndoableAction(SNodeUndoableAction action) {
           if (!UndoHelper.getInstance().needRegisterUndo(this)) return;
           UndoHelper.getInstance().addUndoableAction(action);
@@ -87,7 +83,6 @@ public class AuxilaryRuntimeModel implements ModelOwner, CoreComponent {
           return false;
         }
       };
-      return myModel;
     }
   }
 }
