@@ -116,7 +116,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     synchronized (myModel) {
       ModelLoadingState oldState = myModel.getState();
       SModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
-      System.out.printf("model loaded"+this.getSModelReference().getLongName()+"\n");
       if (res == null) return null; // this is when we are in recursion
       res.setModelDescriptor(this);
       if (oldState != myModel.getState()) {
