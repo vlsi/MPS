@@ -7,11 +7,13 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.*;
+import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.vfs.VirtualFileEvent;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import com.intellij.openapi.vcs.merge.MergeProvider;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.AbstractVcs;
+import com.intellij.openapi.vfs.VirtualFileAdapter;
 
 public class GeneratedFileConflictResolving extends AbstractProjectComponent {
   private ProjectLevelVcsManager myVcsManager;
@@ -58,46 +60,6 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
 
   private class MyFileListener extends VirtualFileAdapter {
     public MyFileListener() {
-    }
-
-    @Override
-    public void beforeFileMovement(VirtualFileMoveEvent event) {
-      super.beforeFileMovement(event);    //TODO
-    }
-
-    @Override
-    public void propertyChanged(VirtualFilePropertyEvent event) {
-      super.propertyChanged(event);    //TODO
-    }
-
-    @Override
-    public void fileCreated(VirtualFileEvent event) {
-      super.fileCreated(event);    //TODO
-    }
-
-    @Override
-    public void fileDeleted(VirtualFileEvent event) {
-      super.fileDeleted(event);    //TODO
-    }
-
-    @Override
-    public void fileMoved(VirtualFileMoveEvent event) {
-      super.fileMoved(event);    //TODO
-    }
-
-    @Override
-    public void fileCopied(VirtualFileCopyEvent event) {
-      super.fileCopied(event);    //TODO
-    }
-
-    @Override
-    public void beforePropertyChange(VirtualFilePropertyEvent event) {
-      super.beforePropertyChange(event);    //TODO
-    }
-
-    @Override
-    public void beforeContentsChange(VirtualFileEvent event) {
-      super.beforeContentsChange(event);    //TODO
     }
 
     @Override
