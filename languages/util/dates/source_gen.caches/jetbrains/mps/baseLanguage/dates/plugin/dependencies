@@ -18,7 +18,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dates.plugin.DateLangGroup_ActionGroup" file="DateLangGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />

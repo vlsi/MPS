@@ -10,7 +10,7 @@
     <unitInfo nodeId="1219056224639" fileName="QueryExecutor.java" startLine="6" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QueryExecutor" />
   </root>
   <root nodeId="1219321230528">
-    <nodeInfo nodeId="1219321230528" fileName="FindInstancesByCondition_Action.java" startLine="19" startPosition="70" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="1219321230528" fileName="FindInstancesByCondition_Action.java" startLine="19" startPosition="65" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1219321230528" fileName="FindInstancesByCondition_Action.java" startLine="20" startPosition="40" endLine="21" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1219321230528" fileName="FindInstancesByCondition_Action.java" startLine="23" startPosition="44" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1219321230528" fileName="FindInstancesByCondition_Action.java" startLine="24" startPosition="51" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -516,7 +516,7 @@
     <unitInfo nodeId="7003329281689298749" fileName="ReplaceDialog.java" startLine="50" startPosition="42" endLine="55" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$8" />
   </root>
   <root nodeId="1219749269092">
-    <nodeInfo nodeId="1219749269092" fileName="ReplacementQueryAction_Action.java" startLine="20" startPosition="68" endLine="21" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="1219749269092" fileName="ReplacementQueryAction_Action.java" startLine="20" startPosition="63" endLine="21" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1219749269092" fileName="ReplacementQueryAction_Action.java" startLine="21" startPosition="40" endLine="22" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1219749269092" fileName="ReplacementQueryAction_Action.java" startLine="24" startPosition="42" endLine="25" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1219749269092" fileName="ReplacementQueryAction_Action.java" startLine="25" startPosition="53" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

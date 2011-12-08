@@ -21,8 +21,8 @@ import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.workbench.action.MPSActions;
@@ -79,7 +79,7 @@ public abstract class BaseApplicationPlugin {
     //todo with this method, we can use Idea's ActionStubs
   }
 
-  public void addParameterizedAction(GeneratedAction action, Object... params) {
+  public void addParameterizedAction(BaseAction action, Object... params) {
     addAction(action);
 
     String shortId = action.getClass().getName();
@@ -88,7 +88,7 @@ public abstract class BaseApplicationPlugin {
     }
   }
 
-  protected void addAction(GeneratedAction action) {
+  protected void addAction(BaseAction action) {
     myActionManager.registerAction(action.getActionId(), action, getId());
   }
 

@@ -15,7 +15,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.CopyThisDown_Action" file="CopyThisDown_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.Default_KeymapChanges" file="Default_KeymapChanges.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
@@ -77,7 +77,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action" file="DeleteToWordEnd_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -94,7 +94,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.Delete_Action" file="Delete_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -111,7 +111,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.EditMenuActions_ActionGroup" file="EditMenuActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -220,7 +220,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.Escape_Action" file="Escape_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -235,7 +235,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.ExtractComponent_Action" file="ExtractComponent_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -255,7 +255,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.Home_Action" file="Home_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -272,7 +272,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.InsertBefore_Action" file="InsertBefore_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -288,7 +288,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.Insert_Action" file="Insert_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -306,7 +306,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.LocalEnd_Action" file="LocalEnd_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -323,7 +323,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.LocalHome_Action" file="LocalHome_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -340,7 +340,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.Mac_KeymapChanges" file="Mac_KeymapChanges.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
@@ -365,7 +365,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.MoveElementsDown_Action" file="MoveElementsDown_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -381,7 +381,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.MoveElementsUp_Action" file="MoveElementsUp_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -397,7 +397,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.MoveLeft_Action" file="MoveLeft_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -415,7 +415,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.MoveRight_Action" file="MoveRight_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -433,7 +433,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.MoveUp_Action" file="MoveUp_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -451,7 +451,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.RootEnd_Action" file="RootEnd_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -468,7 +468,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.RootHome_Action" file="RootHome_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -485,7 +485,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.SelectDown_Action" file="SelectDown_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -502,7 +502,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.SelectLeft_Action" file="SelectLeft_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -520,7 +520,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.SelectLocalEnd_Action" file="SelectLocalEnd_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -539,7 +539,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.SelectLocalHome_Action" file="SelectLocalHome_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -558,7 +558,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.SelectNext_Action" file="SelectNext_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -575,7 +575,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.SelectPrevious_Action" file="SelectPrevious_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -592,7 +592,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.SelectRight_Action" file="SelectRight_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -610,7 +610,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.SelectUp_Action" file="SelectUp_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -627,7 +627,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.plugin" file="plugin.xml" />
 </dependenciesRoot>

@@ -7,7 +7,7 @@
   <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.FacetManifest" />
   <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.FacetManifest$1" />
   <root nodeId="1241450087965">
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="19" startPosition="84" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="19" startPosition="79" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="20" startPosition="40" endLine="21" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="23" startPosition="58" endLine="24" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="24" startPosition="47" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

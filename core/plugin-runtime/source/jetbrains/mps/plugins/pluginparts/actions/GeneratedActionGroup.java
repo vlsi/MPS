@@ -22,6 +22,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.MPSActions;
 
@@ -36,7 +37,7 @@ public abstract class GeneratedActionGroup extends BaseGroup {
   }
 
   @Deprecated
-  protected void addParameterizedAction(GeneratedAction action, PluginId id, Object... params) {
+  protected void addParameterizedAction(BaseAction action, PluginId id, Object... params) {
     if (!isStrict()){
       add(action);
       return;

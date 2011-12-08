@@ -48,7 +48,7 @@
     <classNode dependClassName="jetbrains.mps.testbench.suite.plugin.TestCollector" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.plugin.Suite_ApplicationPlugin" file="Suite_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />

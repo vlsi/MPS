@@ -3,7 +3,7 @@
   <unitInfo fileName="Dates_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.plugin.Dates_ApplicationPlugin" />
   <unitInfo fileName="Dates_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.plugin.Dates_ProjectPlugin" />
   <root nodeId="1213192856943">
-    <nodeInfo nodeId="1213192856943" fileName="ConvertDateTimeOperations_Action.java" startLine="21" startPosition="71" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="1213192856943" fileName="ConvertDateTimeOperations_Action.java" startLine="21" startPosition="66" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1213192856943" fileName="ConvertDateTimeOperations_Action.java" startLine="22" startPosition="40" endLine="23" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1213192856943" fileName="ConvertDateTimeOperations_Action.java" startLine="25" startPosition="45" endLine="26" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1213192856943" fileName="ConvertDateTimeOperations_Action.java" startLine="26" startPosition="52" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
+@Deprecated
 public abstract class GeneratedAction extends BaseAction {
   public GeneratedAction() {
   }

@@ -469,8 +469,8 @@
     </node>
   </roots>
   <root id="1203086899006">
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7329423411587598088">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zpav.~GeneratedAction" resolveInfo="GeneratedAction" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4817301917461530469">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xwf0.~BaseAction" resolveInfo="BaseAction" />
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1205857751486">
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -7339,7 +7339,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8540716876878811470">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8540716876878811471">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nmwl.~BaseApplicationPlugin%daddAction(jetbrains%dmps%dplugins%dpluginparts%dactions%dGeneratedAction)%cvoid" resolveInfo="addAction" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nmwl.~BaseApplicationPlugin%daddAction(jetbrains%dmps%dworkbench%daction%dBaseAction)%cvoid" resolveInfo="addAction" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8540716876878811472">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8540716876878811473">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1203093789051" resolveInfo="GeneratedAction_Template" />
@@ -10070,7 +10070,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4109043866296271126">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4109043866296271127">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4109043866296271128">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zpav.~GeneratedActionGroup%daddParameterizedAction(jetbrains%dmps%dplugins%dpluginparts%dactions%dGeneratedAction,com%dintellij%dopenapi%dextensions%dPluginId,java%dlang%dObject%d%d%d)%cvoid" resolveInfo="addParameterizedAction" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zpav.~GeneratedActionGroup%daddParameterizedAction(jetbrains%dmps%dworkbench%daction%dBaseAction,com%dintellij%dopenapi%dextensions%dPluginId,java%dlang%dObject%d%d%d)%cvoid" resolveInfo="addParameterizedAction" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4109043866296271129">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4109043866296271130">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1203093789051" resolveInfo="GeneratedAction_Template" />

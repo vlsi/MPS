@@ -108,7 +108,7 @@
     <unitInfo nodeId="7157723551789059564" fileName="Behavior_TabDescriptor.java" startLine="20" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_TabDescriptor" />
   </root>
   <root nodeId="7562825466847533959">
-    <nodeInfo nodeId="7562825466847533959" fileName="OverrideBehaviorMethod_Action.java" startLine="25" startPosition="68" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="7562825466847533959" fileName="OverrideBehaviorMethod_Action.java" startLine="25" startPosition="63" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="7562825466847533959" fileName="OverrideBehaviorMethod_Action.java" startLine="26" startPosition="40" endLine="27" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7562825466847533959" fileName="OverrideBehaviorMethod_Action.java" startLine="29" startPosition="42" endLine="30" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7562825466847533959" fileName="OverrideBehaviorMethod_Action.java" startLine="30" startPosition="51" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -201,7 +201,7 @@
     <unitInfo nodeId="7562825466847533959" fileName="OverrideBehaviorMethod_Action.java" startLine="25" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.OverrideBehaviorMethod_Action" />
   </root>
   <root nodeId="7562825466847536367">
-    <nodeInfo nodeId="7562825466847536367" fileName="ImplementBehaviorMethod_Action.java" startLine="25" startPosition="69" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="7562825466847536367" fileName="ImplementBehaviorMethod_Action.java" startLine="25" startPosition="64" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="7562825466847536367" fileName="ImplementBehaviorMethod_Action.java" startLine="26" startPosition="40" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7562825466847536367" fileName="ImplementBehaviorMethod_Action.java" startLine="29" startPosition="43" endLine="30" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7562825466847536367" fileName="ImplementBehaviorMethod_Action.java" startLine="30" startPosition="52" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

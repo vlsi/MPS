@@ -25,8 +25,12 @@
     <scopeInfo nodeId="9034802358628762692" fileName="TroveCustomContainers_CustomApplicationPlugin.java" startLine="36" startPosition="50" endLine="37" endPosition="68" />
     <scopeInfo nodeId="9034802358628762705" fileName="TroveCustomContainers_CustomApplicationPlugin.java" startLine="41" startPosition="50" endLine="42" endPosition="70" />
     <scopeInfo nodeId="9034802358628762643" fileName="TroveCustomContainers_CustomApplicationPlugin.java" startLine="18" startPosition="96" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="9034802358628762689" fileName="TroveCustomContainers_CustomApplicationPlugin.java" startLine="35" startPosition="89" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="9034802358628762702" fileName="TroveCustomContainers_CustomApplicationPlugin.java" startLine="40" startPosition="92" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="9034802358628762689" fileName="TroveCustomContainers_CustomApplicationPlugin.java" startLine="35" startPosition="89" endLine="39" endPosition="0">
+      <varInfo nodeId="9034802358628762689" varName="cl" />
+    </scopeInfo>
+    <scopeInfo nodeId="9034802358628762702" fileName="TroveCustomContainers_CustomApplicationPlugin.java" startLine="40" startPosition="92" endLine="44" endPosition="0">
+      <varInfo nodeId="9034802358628762702" varName="cl" />
+    </scopeInfo>
     <scopeInfo nodeId="9034802358628762651" fileName="TroveCustomContainers_CustomApplicationPlugin.java" startLine="24" startPosition="35" endLine="32" endPosition="19">
       <varInfo nodeId="9034802358628762660" varName="desc" />
       <varInfo nodeId="9034802358628762668" varName="mdl" />
