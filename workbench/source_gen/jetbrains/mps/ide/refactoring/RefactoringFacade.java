@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.Project;
@@ -42,6 +41,7 @@ import jetbrains.mps.findUsages.UsagesList;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 

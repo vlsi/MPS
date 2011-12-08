@@ -32,13 +32,13 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.DefaultGenerationParametersProvider;
 import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -428,7 +428,7 @@ public class Generate_Facet extends IFacet.Stub {
                       if (smd instanceof DefaultSModelDescriptor) {
                         ModelAccess.instance().runReadAction(new Runnable() {
                           public void run() {
-                            smd.getUpdateableModel().getModel(ModelLoadingState.FULLY_LOADED);
+                            ((DefaultSModelDescriptor) smd).getUpdateableModel().getModel(ModelLoadingState.FULLY_LOADED);
                           }
                         });
                       }

@@ -7,10 +7,9 @@ import java.util.List;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-
+import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
