@@ -165,7 +165,7 @@ public class CellExplorerView extends BaseProjectTool {
 
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-      if (myCurrentEditor == null) {
+      if (myCurrentEditor == null || myCurrentEditor.getRootCell() == null) {
         return new TextTreeNode("No editor selected") {
           {
             setIcon(Icons.CELL_EXPLORER_ICON);
