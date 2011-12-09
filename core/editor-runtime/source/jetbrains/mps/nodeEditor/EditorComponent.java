@@ -635,6 +635,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myOwner;
   }
 
+  public JComponent getEditorComponent() {
+    return this;
+  }
+
   public void moveCurrentUp() {
     Selection selection = getSelectionManager().getSelection();
     if (selection instanceof SingularSelection || selection instanceof NodeRangeSelection) {
