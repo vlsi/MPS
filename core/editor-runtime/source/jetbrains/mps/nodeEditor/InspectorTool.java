@@ -57,11 +57,11 @@ public class InspectorTool extends BaseProjectTool {
 
   public void initComponent() {
     super.initComponent();
-    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
+    myComponent = new MyPanel();
+    StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(new Runnable() {
       public void run() {
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            myComponent = new MyPanel();
             myInspectorComponent = new InspectorEditorComponent();
             myComponent.add(myInspectorComponent.getExternalComponent(), BorderLayout.CENTER);
             myMessagePanel.setNode(null);

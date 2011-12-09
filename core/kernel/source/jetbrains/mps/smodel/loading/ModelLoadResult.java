@@ -13,23 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.loading;
 
-/**
- * TODO replace with boolean
- */
-public enum ModelLoadingState {
-  NOT_LOADED("not loaded"),
-  ROOTS_LOADED("partially loaded"),
-  FULLY_LOADED("fully loaded");
+import jetbrains.mps.smodel.SModel;
+import org.jetbrains.annotations.NotNull;
 
-  private String myPres;
+public class ModelLoadResult {
+  private ModelLoadingState state;
+  private SModel model;
 
-  ModelLoadingState(String pres) {
-    myPres = pres;
+  public ModelLoadResult(@NotNull SModel model, ModelLoadingState state) {
+    this.model = model;
+    this.state = state;
   }
 
-  public String toString() {
-    return this.myPres;
+  public ModelLoadingState getState() {
+    return state;
+  }
+
+  public void setState(ModelLoadingState state) {
+    this.state = state;
+  }
+
+  public SModel getModel() {
+    return model;
   }
 }

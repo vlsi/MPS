@@ -30,7 +30,6 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.dependency.LanguageDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
@@ -38,6 +37,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeNode;
+import java.util.LinkedList;
 
 public abstract class ProjectTreeFindHelper {
   public ProjectModuleTreeNode findMostSuitableModuleTreeNode(final @NotNull IModule module) {
@@ -77,11 +77,11 @@ public abstract class ProjectTreeFindHelper {
   }
 
   protected SModelTreeNode findModelTreeNodeInModule(final @NotNull SModelDescriptor model, @NotNull ProjectModuleTreeNode moduleNode) {
-    return (SModelTreeNode) findTreeNode(moduleNode, new ModelInModuleCondition(), new NodeForModelCondition(model));
+    return (SModelTreeNode) findTreeNode(moduleNode, new ModelInModuleCondition(model), new NodeForModelCondition(model));
   }
 
   protected SModelTreeNode findModelTreeNodeAnywhere(@NotNull SModelDescriptor model, @NotNull MPSTreeNode parentNode) {
-    return (SModelTreeNode) findTreeNode(parentNode, new ModelEverywhereCondition(), new NodeForModelCondition(model));
+    return (SModelTreeNode) findTreeNode(parentNode, new ModelEverywhereCondition(model), new NodeForModelCondition(model));
   }
 
   public MPSTreeNodeEx findMostSuitableSNodeTreeNode(@NotNull SNode node) {
@@ -94,21 +94,34 @@ public abstract class ProjectTreeFindHelper {
   }
 
   //todo rewrite using findTreeNode
-  protected MPSTreeNodeEx findSNodeTreeNodeInParent(@NotNull SNode node, @NotNull MPSTreeNode parent) {
-    if (!parent.isInitialized() && !parent.hasInfiniteSubtree()) parent.init();
-    if (parent instanceof SNodeTreeNode) {
-      SNodeTreeNode parentSNodeTreeNode = (SNodeTreeNode) parent;
-      if (node == parentSNodeTreeNode.getSNode()) {
-        return parentSNodeTreeNode;
-      }
+  protected MPSTreeNodeEx findSNodeTreeNodeInParent(@NotNull SNode node, @NotNull final SModelTreeNode parent) {
+    LinkedList<SNode> ancestors = new LinkedList<SNode>();
+    SNode current = node;
+    while (current != null) {
+      ancestors.addFirst(current);
+      current = current.getParent();
     }
-    for (MPSTreeNode childNode : parent) {
-      MPSTreeNodeEx foundNode = findSNodeTreeNodeInParent(node, childNode);
-      if (foundNode != null) {
-        return foundNode;
+
+    MPSTreeNode currentTreeNode = parent;
+    for (final SNode anc : ancestors) {
+      final MPSTreeNode finalCurrentTreeNode = currentTreeNode;
+      if (!currentTreeNode.isInitialized() && !currentTreeNode.hasInfiniteSubtree()) currentTreeNode.init();
+
+      currentTreeNode = findTreeNode(finalCurrentTreeNode,
+        new Condition<MPSTreeNode>() {
+          public boolean met(MPSTreeNode object) {
+            return object == finalCurrentTreeNode;
+          }
+        }, new Condition<MPSTreeNode>() {
+        public boolean met(MPSTreeNode tNode) {
+          return (tNode instanceof SNodeTreeNode) && (((SNodeTreeNode) tNode).getSNode() == anc);
+        }
       }
+      );
+      if (currentTreeNode == null) return null;
     }
-    return null;
+
+    return (MPSTreeNodeEx) currentTreeNode;
   }
 
   protected MPSTreeNode findTreeNode(MPSTreeNode root, Condition<MPSTreeNode> descendCondition, Condition<MPSTreeNode> resultCondition) {
@@ -177,12 +190,20 @@ public abstract class ProjectTreeFindHelper {
   }
 
   private static class ModelInModuleCondition extends ModelEverywhereCondition {
+    private ModelInModuleCondition(SModelDescriptor model) {
+      super(model);
+    }
+
     public boolean met(MPSTreeNode node) {
       if (!super.met(node)) return false;
 
       if (node instanceof SModelTreeNode) {
         SModelTreeNode modelNode = (SModelTreeNode) node;
-        if (modelNode.hasModelsUnder()) return true;
+        if (!modelNode.hasModelsUnder()) return false;
+
+        String outerName = modelNode.getSModelDescriptor().getLongName();
+        String innerName = myModel.getLongName();
+        return innerName.startsWith(outerName + ".");
       }
 
       boolean descent = false;
@@ -206,9 +227,22 @@ public abstract class ProjectTreeFindHelper {
   }
 
   private static class ModelEverywhereCondition implements Condition<MPSTreeNode> {
+    protected SModelDescriptor myModel;
+
+    public ModelEverywhereCondition(SModelDescriptor model) {
+      myModel = model;
+    }
+
     public boolean met(MPSTreeNode node) {
       if (node instanceof SNodeTreeNode) return false;
-      if (node instanceof SModelTreeNode) return true;
+      if (node instanceof SModelTreeNode) {
+        SModelTreeNode modelNode = (SModelTreeNode) node;
+        if (!modelNode.hasModelsUnder()) return false;
+
+        String outerName = modelNode.getSModelDescriptor().getLongName();
+        String innerName = myModel.getLongName();
+        return innerName.startsWith(outerName + ".");
+      }
       if (!node.isInitialized() && !node.hasInfiniteSubtree()) {
         node.init();
         return true;

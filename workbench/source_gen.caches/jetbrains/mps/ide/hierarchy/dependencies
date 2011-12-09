@@ -165,6 +165,7 @@
     <classNode dependClassName="jetbrains.mps.util.annotation.DisposableCommand" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
   </dependency>

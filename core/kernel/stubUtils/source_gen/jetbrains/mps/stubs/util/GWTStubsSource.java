@@ -4,10 +4,10 @@ package jetbrains.mps.stubs.util;
 
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -42,7 +42,7 @@ public class GWTStubsSource extends StubModelDataSource {
     this.root = root;
   }
 
-  public BaseSModelDescriptor.ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
+  public ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
     model.addLanguage(lang);
@@ -95,7 +95,7 @@ public class GWTStubsSource extends StubModelDataSource {
     }
     SNodeOperations.deleteNode(sample);
 
-    return new BaseSModelDescriptor.ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 
   public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName name) {

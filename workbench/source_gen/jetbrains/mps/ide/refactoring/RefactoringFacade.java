@@ -41,7 +41,7 @@ import jetbrains.mps.findUsages.UsagesList;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 

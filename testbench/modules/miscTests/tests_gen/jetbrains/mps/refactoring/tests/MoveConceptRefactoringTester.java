@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.Arrays;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 public class MoveConceptRefactoringTester implements IRefactoringTester {
   public MoveConceptRefactoringTester() {
