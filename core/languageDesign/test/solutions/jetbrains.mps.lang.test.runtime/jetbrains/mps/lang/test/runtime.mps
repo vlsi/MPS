@@ -2634,8 +2634,8 @@
           <node role="body" roleId="tpee.1164879758292" type="tpee.StatementList" typeId="tpee.1068580123136" id="1216388444239">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6873339767926728624">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5702001293385790844">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~CachesUtil%dsetupCaches()%cvoid" resolveInfo="setupCaches" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~CachesUtil" resolveInfo="CachesUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~CachesUtil%dsetupCaches()%cvoid" resolveInfo="setupCaches" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2725622238978072138">
@@ -2674,12 +2674,6 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~System%derr" resolveInfo="err" />
                     </node>
                   </node>
-                </node>
-              </node>
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6873339767926728628">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6873339767926728630">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~CachesUtil%dcleanupCaches()%cvoid" resolveInfo="cleanupCaches" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~CachesUtil" resolveInfo="CachesUtil" />
                 </node>
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1216388444254">
@@ -2771,12 +2765,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6873339767926728636">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6873339767926728637">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~CachesUtil%dcleanupCaches()%cvoid" resolveInfo="cleanupCaches" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~CachesUtil" resolveInfo="CachesUtil" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1217507846675">

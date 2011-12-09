@@ -18,6 +18,7 @@ package jetbrains.mps.build.ant;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.idea.IdeaTestApplication;
 import com.intellij.openapi.application.PathMacros;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
@@ -80,6 +81,7 @@ public abstract class MpsWorker {
   private final AntLogger myLogger;
   private MpsWorker.MyMessageHandlerAppender myMessageHandler = new MyMessageHandlerAppender();
   private final List<BaseApplicationPlugin> myPlugins = new ArrayList<BaseApplicationPlugin>();
+  private final boolean myDoNotSave;
 
   private MpsWorker() {
     this(null, (AntLogger) null);
@@ -94,8 +96,13 @@ public abstract class MpsWorker {
   }
 
   public MpsWorker(WhatToDo whatToDo, AntLogger logger) {
+    this(whatToDo, logger, true);
+  }
+
+  public MpsWorker(WhatToDo whatToDo, AntLogger logger, boolean doNotSave) {
     myWhatToDo = whatToDo;
     myLogger = logger;
+    myDoNotSave = doNotSave;
   }
 
   public void workFromMain() {
@@ -105,15 +112,6 @@ public abstract class MpsWorker {
     } catch (Throwable e) {
       log(e);
       System.exit(1);
-    }
-  }
-
-  public void workFromAnt() {
-    try {
-      CachesUtil.setupCaches();
-      work();
-    } finally {
-      CachesUtil.cleanupCaches();
     }
   }
 
@@ -190,7 +188,7 @@ public abstract class MpsWorker {
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     try {
-      configureMPS("jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make");
+      configureMPS(myDoNotSave, "jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make");
     } catch (Exception ex) {
       throw new RuntimeException(ex);
     }
@@ -201,7 +199,7 @@ public abstract class MpsWorker {
     reload();
   }
 
-  public static void configureMPS(String... plugins) {
+  public static void configureMPS(boolean doNotSave, String... plugins) {
     String mpsInternal = System.getProperty("mps.internal");
     System.setProperty("idea.is.internal", mpsInternal == null ? "false" : mpsInternal);
     System.setProperty("idea.no.jre.check", "true");
@@ -222,12 +220,19 @@ public abstract class MpsWorker {
     // Value of this property is comma-separated list of plugin IDs intended to load by platform
     System.setProperty("idea.load.plugins.id", StringUtils.join(plugins, ","));
 
+    CachesUtil.setupCaches();
+
     try {
       IdeaTestApplication.getInstance(null);
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
 
+    if (doNotSave) {
+      // do not want to save
+      // if we press ctrl+c in a specific moment we can get an exception in ComponentManagerImpl.doSave
+      ApplicationManagerEx.getApplicationEx().doNotSave();
+    }
   }
 
   protected void make() {

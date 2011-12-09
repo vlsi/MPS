@@ -16,32 +16,53 @@
 package jetbrains.mps.build.ant;
 
 import com.intellij.ide.ClassloaderUtil;
-import com.intellij.util.lang.UrlClassLoader;
-import jetbrains.mps.util.CachesUtil;
+import jetbrains.mps.Launcher;
 
 import java.lang.reflect.Method;
 import java.net.URL;
-import java.util.ArrayList;
+import java.net.URLClassLoader;
 import java.util.List;
 
 public class AntBootstrap {
-  public static void main(String[] args) {
-    CachesUtil.setupCaches();
-//    System.setProperty(ClassloaderUtil.PROPERTY_IGNORE_CLASSPATH, ".*trove4j.*trove4j.*\\.jar");
-    System.setProperty("mps.vfs.useIoFile", "true");
-    try {
-      UrlClassLoader newClassLoader = ClassloaderUtil.initClassloader(new ArrayList<URL>());
-      Class clazz = newClassLoader.loadClass(args[0]);
+  private volatile ClassLoader myClassLoader;
 
-      Method mainMethod = clazz.getDeclaredMethod("main", String[].class);
+  public void init(ClassLoader parent) throws Throwable {
+    System.setProperty("mps.vfs.useIoFile", "true");
+
+    List<URL> classpath = Launcher.getAdditionalMPSClasspath();
+    ClassloaderUtil.addParentClasspath(classpath);
+    ClassloaderUtil.addIDEALibraries(classpath);
+    ClassloaderUtil.addAdditionalClassPath(classpath);
+    ClassloaderUtil.filterClassPath(classpath);
+
+    myClassLoader = new URLClassLoader(classpath.toArray(new URL[classpath.size()]), parent);
+  }
+
+  public Class<?> loadClass(String name) throws ClassNotFoundException {
+    if (myClassLoader == null) {
+      return null;
+    }
+    return myClassLoader.loadClass(name);
+  }
+
+  public static void main(String[] args) {
+    AntBootstrap antBootstrap = new AntBootstrap();
+    try {
+      antBootstrap.init(null);
+
+      String className = args[0];
+      String methodName = args[1];
+
+      String[] passedArgs = new String[args.length - 2];
+      System.arraycopy(args, 2, passedArgs, 0, passedArgs.length);
+
+      Class clazz = antBootstrap.myClassLoader.loadClass(className);
+
+      Method mainMethod = clazz.getDeclaredMethod(methodName, String[].class);
       mainMethod.setAccessible(true);
-      String[] passedArgs = new String[args.length - 1];
-      System.arraycopy(args, 1, passedArgs, 0, passedArgs.length);
-      mainMethod.invoke(null, (Object)passedArgs);
-    } catch (Exception e) {
-      e.printStackTrace(System.err);
-    } finally {
-      CachesUtil.cleanupCaches();
+      mainMethod.invoke(null, (Object) passedArgs);
+    } catch (Throwable t) {
+      t.printStackTrace(System.err);
     }
     System.exit(1);
   }

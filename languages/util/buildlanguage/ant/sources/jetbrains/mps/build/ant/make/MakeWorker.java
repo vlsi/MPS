@@ -36,7 +36,7 @@ import java.util.Set;
 public class MakeWorker extends MpsWorker {
 
   public static void main(String[] args) {
-    MakeWorker generator = new MakeWorker(WhatToDo.fromDumpInFile(new File(args[0])), new LogLogger());
+    MakeWorker generator = new MakeWorker(WhatToDo.fromDumpInFile(new File(args[0])), new LogLogger(), true);
     generator.workFromMain();
   }
 
@@ -44,8 +44,8 @@ public class MakeWorker extends MpsWorker {
     super(whatToDo, component);
   }
 
-  public MakeWorker(WhatToDo whatToDo, AntLogger logger) {
-    super(whatToDo, logger);
+  public MakeWorker(WhatToDo whatToDo, AntLogger logger, boolean doNotSave) {
+    super(whatToDo, logger, doNotSave);
   }
 
   @Override

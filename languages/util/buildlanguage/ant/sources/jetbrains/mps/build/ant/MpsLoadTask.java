@@ -23,6 +23,7 @@ import org.apache.tools.ant.types.EnumeratedAttribute;
 import org.apache.tools.ant.types.FileSet;
 import org.apache.tools.ant.types.resources.FileResource;
 import org.apache.tools.ant.util.JavaEnvUtils;
+import org.apache.tools.ant.util.optional.NoExitSecurityManager;
 
 import java.io.*;
 import java.lang.reflect.Constructor;
@@ -130,7 +131,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   @Override
   public void execute() throws BuildException {
     checkMpsHome();
-    Set<File> classPaths = calculateClassPath();
+    List<File> classPaths = calculateClassPath();
 
     if (myUsePropertiesAsMacro) {
       Hashtable properties = getProject().getProperties();
@@ -160,6 +161,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       commandLine.add(currentClassPathString + sb.toString());
       commandLine.add(AntBootstrap.class.getCanonicalName());
       commandLine.add(getWorkerClass().getCanonicalName());
+      commandLine.add("main");
       dumpPropertiesToWhatToDo();
       try {
         commandLine.add(myWhatToDo.dumpToTmpFile().getAbsolutePath());
@@ -191,20 +193,35 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
 
       URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), ProjectComponent.class.getClassLoader());
       try {
+        Class antBootstrapClass = classLoader.loadClass(AntBootstrap.class.getCanonicalName());
+        Object antBootstrap = antBootstrapClass.newInstance();
 
-        Class<?> whatToGenerateClass = classLoader.loadClass(WhatToDo.class.getCanonicalName());
-        Object whatToGenerate = whatToGenerateClass.newInstance();
-        myWhatToDo.cloneTo(whatToGenerate);
+        try {
+          // ideas ClassloaderUtil sometimes uses System.exit and we do not want that
+          System.setSecurityManager(new NoExitSecurityManager());
+          antBootstrapClass.getMethod("init", ClassLoader.class).invoke(antBootstrap, ProjectComponent.class.getClassLoader());
 
-        Class<?> generatorClass = classLoader.loadClass(getWorkerClass().getCanonicalName());
-        Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
-        Object generator = constructor.newInstance(whatToGenerate, this);
+          // setup what to do
+          Class<?> whatToGenerateClass = (Class<?>) antBootstrapClass.getMethod("loadClass", String.class).invoke(antBootstrap, WhatToDo.class.getCanonicalName());
+          Object whatToGenerate = whatToGenerateClass.newInstance();
+          myWhatToDo.cloneTo(whatToGenerate);
 
-        Method method = generatorClass.getMethod("workFromAnt");
-        method.invoke(generator);
+          // setup worker class
+          Class<?> generatorClass = (Class<?>) antBootstrapClass.getMethod("loadClass", String.class).invoke(antBootstrap, getWorkerClass().getCanonicalName());
+          Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
+          Object generator = constructor.newInstance(whatToGenerate, this);
+
+          // invoke!
+          Method method = generatorClass.getMethod("work");
+          method.invoke(generator);
+
+        } finally {
+          System.setSecurityManager(null);
+        }
 
       } catch (Throwable t) {
-        throw new BuildException(t.getMessage() + "\n" + "Used class path: " + classPathUrls.toString());
+        t.printStackTrace();
+        throw new BuildException(t.getMessage() + "\n" + "Used bootstrap class path: " + classPathUrls.toString());
       }
     }
   }
@@ -272,46 +289,54 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     outputBuildNumber();
   }
 
-  private Set<File> calculateClassPath() {
-    File[] pathsToLook;
-    if (new File(myMpsHome.getAbsolutePath() + File.separator + "classes").exists()) {
-      pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "workbench" + File.separator + "classes"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "ant"),
-//        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "uiLanguage"),
-//        new File(myMpsHome.getAbsolutePath() + File.separator + "core" + File.separator + "kernel" + File.separator + "xmlQuery" + File.separator + "runtime"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "workbench" + File.separator + "typesystemUi" + File.separator + "classes"),
-//        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "gtext"),
-//        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "builders"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "apiclasses")};
+  private List<File> calculateClassPath() {
+    String home = myMpsHome.getAbsolutePath();
+
+    // bootstrap stuff
+    List<File> bootstrapPath = new ArrayList<File>();
+
+    // our task
+    bootstrapPath.add(new File(home + File.separator + "languages" + File.separator + "generate.ant.task.jar"));
+
+    // mps startup (Launcher + CachesUtil)
+    if (new File(home + File.separator + "MPS.mpr").exists()) {
+      bootstrapPath.add(new File(home + File.separator + "startup" + File.separator + "classes"));
     } else {
-      pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "languages" + File.separator + "generate.ant.task.jar"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "plugin"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "plugins")};
+      bootstrapPath.add(new File(home + File.separator + "lib" + File.separator + "mpsboot.jar"));
     }
 
-    Set<File> classPaths = new LinkedHashSet<File>();
+    // stuff required for mps startup
+    // same as in mps.sh/mps.bat
+    bootstrapPath.add(new File(home + File.separator + "lib" + File.separator + "boot.jar"));
+    bootstrapPath.add(new File(home + File.separator + "lib" + File.separator + "bootstrap.jar"));
+    bootstrapPath.add(new File(home + File.separator + "lib" + File.separator + "util.jar"));
+    bootstrapPath.add(new File(home + File.separator + "lib" + File.separator + "jdom.jar"));
+    bootstrapPath.add(new File(home + File.separator + "lib" + File.separator + "log4j.jar"));
+    bootstrapPath.add(new File(home + File.separator + "lib" + File.separator + "extensions.jar"));
+    bootstrapPath.add(new File(home + File.separator + "lib" + File.separator + "trove4j.jar"));
+
+    List<File> classPaths = new ArrayList<File>();
+    classPaths.addAll(bootstrapPath);
+
+    // plugins
+    // in unit test mode plugins cant load their classes by themselves
+    File[] pathsToLook = new File[]{new File(home + File.separator + "plugin"), new File(home + File.separator + "plugins")};
     for (File path : pathsToLook) {
-      if (!path.exists() || (!path.isDirectory() && !path.getAbsolutePath().endsWith(".jar"))) {
+      if (!(path.exists()) || (!(path.isDirectory()) && !(path.getAbsolutePath().endsWith(".jar")))) {
         throw new BuildException(myMpsHome + " is invalid MPS home path: path " + path + " does not exist or is not a directory or a jar file.");
-      } else if (!path.isDirectory()) {
+      } else if (!(path.isDirectory())) {
         classPaths.add(path.getAbsoluteFile());
       } else {
         gatherAllClassesAndJarsUnder(path, classPaths);
       }
     }
-    File mpsClasses = new File(myMpsHome + File.separator + "classes");
-    if (mpsClasses.exists()) {
-      classPaths.add(mpsClasses);
-    }
+
     return classPaths;
   }
 
   protected abstract Class<? extends MpsWorker> getWorkerClass();
 
-  private void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
+  private void gatherAllClassesAndJarsUnder(File dir, Collection<File> result) {
     if (dir.getName().equals("classes") || dir.getName().equals("classes_gen") || dir.getName().equals("apiclasses")) {
       result.add(dir);
       return;

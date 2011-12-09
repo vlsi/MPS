@@ -38,7 +38,7 @@ public class Launcher {
     Bootstrap.main(args, "jetbrains.mps.MPSMainImpl", "start", getAdditionalMPSClasspath());
   }
 
-  private static List<URL> getAdditionalMPSClasspath() {
+  public static List<URL> getAdditionalMPSClasspath() {
     List<URL> result = new ArrayList<URL>();
     String homePath = PathManager.getHomePath();
     try {
