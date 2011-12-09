@@ -28,7 +28,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class ApplicationPluginManager implements ApplicationComponent {
+public class ApplicationPluginManager implements ApplicationComponent, IRegistryManager {
   private static final Logger LOG = Logger.getLogger(ApplicationPluginManager.class);
 
   private List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
@@ -40,6 +40,11 @@ public class ApplicationPluginManager implements ApplicationComponent {
       if (p.getId() == id) return p;
     }
     return null;
+  }
+
+  @Override
+  public IActionsRegistry getActionsRegistry(PluginId id) {
+    return getPlugin(id);
   }
 
   public void loadPlugins() {

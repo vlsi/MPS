@@ -20,8 +20,8 @@ import com.intellij.openapi.actionSystem.ActionStub;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
-import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
+import jetbrains.mps.plugins.applicationplugins.IActionsRegistry;
+import jetbrains.mps.plugins.applicationplugins.IRegistryManager;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.MPSActions;
@@ -51,8 +51,8 @@ public abstract class GeneratedActionGroup extends BaseGroup {
     }
 
     add(action);
-    BaseApplicationPlugin plugin = ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getPlugin(id);
-    plugin.addParameterizedAction(action, params);
+    IActionsRegistry actionsRegistry = ApplicationManager.getApplication().getComponent(IRegistryManager.class).getActionsRegistry(id);
+    actionsRegistry.addParameterizedAction(action, params);
   }
 
   protected void addAction(ActionStub creator) {

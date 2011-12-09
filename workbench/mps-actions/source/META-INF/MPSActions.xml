@@ -1,0 +1,12 @@
+<components>
+
+  <application-components>
+
+    <component>
+      <interface-class>jetbrains.mps.plugins.applicationplugins.IRegistryManager</interface-class>
+      <implementation-class>jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager</implementation-class>
+    </component>
+
+  </application-components>
+
+</components>

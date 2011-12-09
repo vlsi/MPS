@@ -614,6 +614,7 @@
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="PicoContainer" level="project" />
+    <orderEntry type="module" module-name="mps-actions" />
   </component>
 </module>
 

@@ -13,34 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.plugins.pluginparts.custom;
+package jetbrains.mps.plugins.applicationplugins;
 
-import jetbrains.mps.logging.Logger;
+import com.intellij.openapi.extensions.PluginId;
 
-public abstract class BaseCustomApplicationPlugin {
-  private static final Logger LOG = Logger.getLogger(BaseCustomProjectPlugin.class);
+/**
+ * Created by IntelliJ IDEA.
+ * User: fyodor
+ * Date: 12/9/11
+ * Time: 2:31 PM
+ * To change this template use File | Settings | File Templates.
+ */
+public interface IRegistryManager{
 
-  public void init() {
-    try {
-      doInit();
-    } catch (Throwable t) {
-      LOG.error(t);
-    }
-  }
+  IActionsRegistry getActionsRegistry (PluginId id);
 
-  public void dispose() {
-    try {
-      doDispose();
-    } catch (Throwable t) {
-      LOG.error(t);
-    }
-  }
-
-  public void doInit() {
-
-  }
-
-  public void doDispose() {
-
-  }
 }

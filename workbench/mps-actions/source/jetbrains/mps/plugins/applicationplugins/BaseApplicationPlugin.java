@@ -30,7 +30,7 @@ import jetbrains.mps.workbench.action.MPSActions;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseApplicationPlugin {
+public abstract class BaseApplicationPlugin implements IActionsRegistry {
   private ActionManagerEx myActionManager = ActionManagerEx.getInstanceEx();
 
   private List<BaseCustomApplicationPlugin> myCustomParts;
@@ -79,6 +79,7 @@ public abstract class BaseApplicationPlugin {
     //todo with this method, we can use Idea's ActionStubs
   }
 
+  @Override
   public void addParameterizedAction(BaseAction action, Object... params) {
     addAction(action);
 
