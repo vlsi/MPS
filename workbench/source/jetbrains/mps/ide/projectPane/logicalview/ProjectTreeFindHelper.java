@@ -95,7 +95,7 @@ public abstract class ProjectTreeFindHelper {
   }
 
   //todo rewrite using findTreeNode
-  protected MPSTreeNodeEx findSNodeTreeNodeInParent(@NotNull SNode node, @NotNull final SModelTreeNode parent) {
+  protected MPSTreeNodeEx findSNodeTreeNodeInParent(@NotNull final SNode node, @NotNull final SModelTreeNode parent) {
     LinkedList<SNode> ancestors = new LinkedList<SNode>();
     SNode current = node;
     while (current != null) {
@@ -111,7 +111,10 @@ public abstract class ProjectTreeFindHelper {
       currentTreeNode = findTreeNode(finalCurrentTreeNode,
         new Condition<MPSTreeNode>() {
           public boolean met(MPSTreeNode object) {
-            return object == finalCurrentTreeNode || object instanceof PackageNode;
+            if (object == finalCurrentTreeNode) return true;
+            if (!(object instanceof PackageNode)) return false;
+            String pack = ((PackageNode) object).getFullPackage();
+            return node.getPersistentProperty(SNodeUtil.property_BaseConcept_virtualPackage).startsWith(pack);
           }
         }, new Condition<MPSTreeNode>() {
         public boolean met(MPSTreeNode tNode) {
