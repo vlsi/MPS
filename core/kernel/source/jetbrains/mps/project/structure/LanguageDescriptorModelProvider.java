@@ -19,7 +19,10 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.ProjectStructureModule.ProjectStructureSModel;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
@@ -173,7 +176,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     return "component: Language Descriptor Models Provider";
   }
 
-  public class LanguageModelDescriptor extends BaseSModelDescriptor {
+  public class LanguageModelDescriptor extends BaseSpecialModelDescriptor {
     private final Language myModule;
     private String myHash;
 
@@ -183,14 +186,14 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       myHash = null;
     }
 
-    protected ModelLoadResult initialLoad() {
+    protected SModel createModel() {
       SModel model = new SModel(getSModelReference()) {
         protected boolean canFireEvent() {
           return false;
         }
       };
       model.addEngagedOnGenerationLanguage(BootstrapLanguages.DESCRIPTOR);
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+      return model;
     }
 
     @Override

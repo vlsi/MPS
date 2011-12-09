@@ -24,6 +24,7 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterator;

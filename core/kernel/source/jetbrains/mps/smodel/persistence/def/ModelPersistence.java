@@ -19,8 +19,9 @@ import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
@@ -43,7 +44,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
 import java.io.*;
 import java.util.HashMap;
 import java.util.List;

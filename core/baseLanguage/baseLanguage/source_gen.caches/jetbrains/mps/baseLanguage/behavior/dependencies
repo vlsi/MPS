@@ -1995,6 +1995,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.behavior.ISkipsReturn_BehaviorDescriptor" file="ISkipsReturn_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior" file="IStatementListContainer_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />

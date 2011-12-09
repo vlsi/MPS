@@ -56,6 +56,7 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   public boolean isValid() {
+    if (myProject.isDisposed()) return false;
     return getModule() != null;
   }
 

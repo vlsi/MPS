@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence.def.v7;
 
-import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
-import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelReader;

@@ -23,6 +23,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
@@ -125,13 +126,9 @@ public class SModel {
 
   //---------incremental load--------
 
-  //todo try to remove as many usages as possible
-
-  void enforceFullLoad() {
+  protected void enforceFullLoad() {
     if (!(myModelDescriptor instanceof DefaultSModelDescriptor)) return;
-    DefaultSModelDescriptor dmd = (DefaultSModelDescriptor) myModelDescriptor;
-    if (dmd.getLoadingState() == ModelLoadingState.FULLY_LOADED) return;
-    dmd.enforceFullLoad();
+    ((DefaultSModelDescriptor) myModelDescriptor).getUpdateableModel().getModel(ModelLoadingState.FULLY_LOADED);
   }
 
   //---------roots manipulation--------

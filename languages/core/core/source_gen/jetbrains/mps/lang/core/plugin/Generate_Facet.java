@@ -38,6 +38,7 @@ import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -427,8 +428,7 @@ public class Generate_Facet extends IFacet.Stub {
                       if (smd instanceof DefaultSModelDescriptor) {
                         ModelAccess.instance().runReadAction(new Runnable() {
                           public void run() {
-                            smd.getSModel();
-                            ((DefaultSModelDescriptor) smd).enforceFullLoad();
+                            ((DefaultSModelDescriptor) smd).getUpdateableModel().getModel(ModelLoadingState.FULLY_LOADED);
                           }
                         });
                       }

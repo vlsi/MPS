@@ -8,8 +8,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -43,7 +44,7 @@ public class PasteNode_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModelDescriptor && PasteNode_Action.this.canPasteNodes(_params);
+    return ((Editor) MapSequence.fromMap(_params).get("editor")).getCurrentEditorComponent().getEditorComponent().isFocusOwner() && ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModelDescriptor && PasteNode_Action.this.canPasteNodes(_params);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -65,6 +66,10 @@ public class PasteNode_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    MapSequence.fromMap(_params).put("editor", event.getData(MPSDataKeys.MPS_EDITOR));
+    if (MapSequence.fromMap(_params).get("editor") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;

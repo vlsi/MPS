@@ -31,6 +31,7 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;

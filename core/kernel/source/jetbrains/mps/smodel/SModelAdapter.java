@@ -16,9 +16,8 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Comparator;
 
 /**
  * @author Kostik

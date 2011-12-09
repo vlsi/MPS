@@ -26,6 +26,7 @@ import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
@@ -39,9 +40,9 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
       public List<String> compute() {
         final SModelDescriptor modelDescriptor = node.getSModelDescriptor();
         if (modelDescriptor == null) return Collections.emptyList();
-        if (modelDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) Collections.emptyList();
+        if (modelDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) return Collections.emptyList();
         IOperationContext context = node.getOperationContext();
-        if (!context.isValid()) Collections.emptyList();
+        if (!context.isValid()) return Collections.emptyList();
         final IScope scope = context.getScope();
 
         return new ModelValidator(modelDescriptor.getSModel()).validate(scope);

@@ -19,6 +19,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.Collections;
@@ -34,7 +35,7 @@ public class ModelFindOperations {
     myModelDescriptor = descriptor;
     ModelDataSource source = descriptor instanceof BaseSModelDescriptorWithSource ? ((BaseSModelDescriptorWithSource) myModelDescriptor).getSource() : null;
     myDataSource = source instanceof RegularModelDataSource ? (RegularModelDataSource) source : null;
-    myNeedSearchForStrings = myModelDescriptor.getLoadingState() != ModelLoadingState.FULLY_LOADED;
+    myNeedSearchForStrings = (myModelDescriptor instanceof DefaultSModelDescriptor) && ((DefaultSModelDescriptor) myModelDescriptor).getUpdateableModel().getState() != ModelLoadingState.FULLY_LOADED;
     if (!myNeedSearchForStrings && myModelDescriptor instanceof EditableSModelDescriptor) {
       myNeedSearchForStrings = !((EditableSModelDescriptor) myModelDescriptor).isChanged();
     }
@@ -108,9 +109,10 @@ public class ModelFindOperations {
     if (myModelDescriptor instanceof EditableSModelDescriptor) {
       changed = ((EditableSModelDescriptor) myModelDescriptor).isChanged();
     }
-    boolean atLeastRootsLoaded = myModelDescriptor.getLoadingState().compareTo(ModelLoadingState.ROOTS_LOADED) >= 0;
-    if (atLeastRootsLoaded && !changed && !descendantsKnownInModel.isEmpty())
+
+    if (!myNeedSearchForStrings && !changed && !descendantsKnownInModel.isEmpty())
       return descendantsKnownInModel;
+
     if (myNeedSearchForStrings && !myDataSource.containsString(myModelDescriptor, node.getId()))
       return descendantsKnownInModel;
 

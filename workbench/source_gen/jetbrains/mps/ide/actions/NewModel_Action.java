@@ -25,6 +25,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.StereotypeProvider;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import jetbrains.mps.smodel.Generator;
+import org.apache.commons.lang.StringUtils;
 
 public class NewModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -165,6 +167,16 @@ public class NewModel_Action extends BaseAction {
   }
 
   protected String getNamespace(final Map<String, Object> _params) {
+    if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
+      Generator gen = (Generator) ((IModule) MapSequence.fromMap(_params).get("module"));
+      String name = gen.getName();
+      String genNamespace = gen.getSourceLanguage().getModuleFqName() + ".generator";
+
+      if (StringUtils.isEmpty(name)) {
+        return genNamespace;
+      }
+      return genNamespace + "." + name;
+    }
     return ((IModule) MapSequence.fromMap(_params).get("module")).getModuleFqName();
   }
 }

@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel.descriptor.source;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
-import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;

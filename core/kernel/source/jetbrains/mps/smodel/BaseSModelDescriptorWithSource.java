@@ -18,6 +18,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.descriptor.source.ChangeListener;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescriptor {
@@ -28,7 +30,6 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
       processChanged(monitor);
     }
   };
-
 
   protected BaseSModelDescriptorWithSource(@NotNull SModelReference modelReference, @NotNull ModelDataSource source, boolean checkDup) {
     super(modelReference, checkDup);
@@ -72,15 +73,19 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     return mySource.getTimestamp() != mySourceTimestamp;
   }
 
-  public void replaceModel(@NotNull SModel newModel, ModelLoadingState loadingState) {
+  protected synchronized void replaceModel(Runnable replacer) {
     ModelAccess.assertLegalWrite();
-    if (newModel == mySModel) return;
-    final SModel oldSModel = mySModel;
+    final SModel oldSModel = getCurrentModelInternal();
     if (oldSModel != null) {
       oldSModel.setModelDescriptor(null);
     }
-    mySModel = newModel;
-    mySModel.setModelDescriptor(this);
+
+    replacer.run();
+
+    SModel newModel = getCurrentModelInternal();
+    if (newModel != null) {
+      newModel.setModelDescriptor(this);
+    }
     MPSModuleRepository.getInstance().invalidateCaches();
     Runnable modelReplacedNotifier = new Runnable() {
       public void run() {
