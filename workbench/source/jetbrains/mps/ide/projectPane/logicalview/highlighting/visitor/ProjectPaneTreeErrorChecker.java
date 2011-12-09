@@ -41,7 +41,7 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
         if (modelDescriptor == null) return Collections.emptyList();
         if (modelDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) return Collections.emptyList();
         IOperationContext context = node.getOperationContext();
-        if (!context.isValid()) Collections.emptyList();
+        if (!context.isValid()) return Collections.emptyList();
         final IScope scope = context.getScope();
 
         return new ModelValidator(modelDescriptor.getSModel()).validate(scope);
