@@ -13,7 +13,8 @@ import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public class ToggleBreakpoint_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,15 +44,15 @@ public class ToggleBreakpoint_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("selectedCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    MapSequence.fromMap(_params).put("selectedCell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
     if (MapSequence.fromMap(_params).get("selectedCell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }

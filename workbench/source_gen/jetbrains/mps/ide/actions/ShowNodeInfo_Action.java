@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import java.awt.Point;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import javax.swing.SwingUtilities;
@@ -44,19 +44,19 @@ public class ShowNodeInfo_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editor", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    MapSequence.fromMap(_params).put("editor", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
     if (MapSequence.fromMap(_params).get("editor") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
+    MapSequence.fromMap(_params).put("cell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
     if (MapSequence.fromMap(_params).get("cell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }

@@ -58,7 +58,7 @@ public class AddModuleToProject_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("modules") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }

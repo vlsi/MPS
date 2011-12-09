@@ -11,6 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -55,7 +56,7 @@ public class RemoveMPSClasspathDependencies_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }

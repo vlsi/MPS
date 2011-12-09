@@ -11,6 +11,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.dependencyViewer.Scope;
@@ -50,12 +52,12 @@ public class AnalyzeDependencies_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("myModels", event.getData(MPSDataKeys.MODELS));
+    MapSequence.fromMap(_params).put("myModels", event.getData(MPSCommonDataKeys.MODELS));
     MapSequence.fromMap(_params).put("myModules", event.getData(MPSDataKeys.MODULES));
-    MapSequence.fromMap(_params).put("myMPSProject", event.getData(MPSDataKeys.MPS_PROJECT));
-    MapSequence.fromMap(_params).put("myEditorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    MapSequence.fromMap(_params).put("myModel", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    MapSequence.fromMap(_params).put("myProject", event.getData(MPSDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("myMPSProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    MapSequence.fromMap(_params).put("myEditorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    MapSequence.fromMap(_params).put("myModel", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
+    MapSequence.fromMap(_params).put("myProject", event.getData(PlatformDataKeys.PROJECT));
     return true;
   }
 

@@ -11,7 +11,8 @@ import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public class Escape_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -49,11 +50,11 @@ public class Escape_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("isModalContext", event.getData(MPSDataKeys.IS_MODAL_CONTEXT));
+    MapSequence.fromMap(_params).put("isModalContext", event.getData(PlatformDataKeys.IS_MODAL_CONTEXT));
     if (MapSequence.fromMap(_params).get("isModalContext") == null) {
       return false;
     }

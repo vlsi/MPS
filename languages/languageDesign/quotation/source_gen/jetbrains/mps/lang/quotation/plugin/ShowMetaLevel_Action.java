@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import javax.swing.JOptionPane;
 import java.awt.Component;
@@ -52,7 +52,7 @@ public class ShowMetaLevel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("currentNode") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("component", event.getData(MPSDataKeys.CONTEXT_COMPONENT));
+    MapSequence.fromMap(_params).put("component", event.getData(PlatformDataKeys.CONTEXT_COMPONENT));
     if (MapSequence.fromMap(_params).get("component") == null) {
       return false;
     }

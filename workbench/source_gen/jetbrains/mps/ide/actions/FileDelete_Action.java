@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public class FileDelete_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -41,11 +41,11 @@ public class FileDelete_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("selectedFile", event.getData(MPSDataKeys.VIRTUAL_FILE));
+    MapSequence.fromMap(_params).put("selectedFile", event.getData(PlatformDataKeys.VIRTUAL_FILE));
     if (MapSequence.fromMap(_params).get("selectedFile") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("deleteProvider", event.getData(MPSDataKeys.DELETE_ELEMENT_PROVIDER));
+    MapSequence.fromMap(_params).put("deleteProvider", event.getData(PlatformDataKeys.DELETE_ELEMENT_PROVIDER));
     if (MapSequence.fromMap(_params).get("deleteProvider") == null) {
       return false;
     }

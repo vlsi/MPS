@@ -17,7 +17,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 
 public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
@@ -64,11 +65,11 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("virtualFiles", event.getData(MPSDataKeys.VIRTUAL_FILE_ARRAY));
+    MapSequence.fromMap(_params).put("virtualFiles", event.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY));
     if (MapSequence.fromMap(_params).get("virtualFiles") == null) {
       return false;
     }

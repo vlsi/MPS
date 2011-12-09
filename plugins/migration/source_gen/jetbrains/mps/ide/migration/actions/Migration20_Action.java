@@ -15,7 +15,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.migration20.MigrationState;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.migration20.MigrationHelper;
-import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 public class Migration20_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -49,11 +50,11 @@ public class Migration20_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }

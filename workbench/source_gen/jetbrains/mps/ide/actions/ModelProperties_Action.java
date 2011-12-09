@@ -50,11 +50,11 @@ public class ModelProperties_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
@@ -62,7 +62,7 @@ public class ModelProperties_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("size") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("place", event.getData(MPSDataKeys.PLACE));
+    MapSequence.fromMap(_params).put("place", event.getData(MPSCommonDataKeys.PLACE));
     if (MapSequence.fromMap(_params).get("place") == null) {
       return false;
     }

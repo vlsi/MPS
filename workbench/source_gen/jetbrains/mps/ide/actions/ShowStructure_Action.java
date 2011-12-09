@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.ide.structureView.StructureView;
@@ -44,15 +44,15 @@ public class ShowStructure_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("fileEditor", event.getData(MPSDataKeys.FILE_EDITOR));
+    MapSequence.fromMap(_params).put("fileEditor", event.getData(PlatformDataKeys.FILE_EDITOR));
     if (MapSequence.fromMap(_params).get("fileEditor") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("file", event.getData(MPSDataKeys.VIRTUAL_FILE));
+    MapSequence.fromMap(_params).put("file", event.getData(PlatformDataKeys.VIRTUAL_FILE));
     if (MapSequence.fromMap(_params).get("file") == null) {
       return false;
     }

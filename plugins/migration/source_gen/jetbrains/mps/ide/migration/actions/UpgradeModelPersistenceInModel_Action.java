@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.migration.persistence.PersistenceUpdater;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.awt.Frame;
@@ -40,11 +40,11 @@ public class UpgradeModelPersistenceInModel_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mainFrame", event.getData(MPSDataKeys.FRAME));
+    MapSequence.fromMap(_params).put("mainFrame", event.getData(MPSCommonDataKeys.FRAME));
     if (MapSequence.fromMap(_params).get("mainFrame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSDataKeys.MODEL));
+    MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSCommonDataKeys.MODEL));
     if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
       return false;
     }
