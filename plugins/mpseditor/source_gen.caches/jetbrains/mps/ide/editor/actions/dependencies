@@ -147,11 +147,19 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.editor.actions.EditorEdit_ActionGroup" file="EditorEdit_ActionGroup.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.Editor_ApplicationPlugin" file="Editor_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.Edit_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.Backspace_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.CopyThisDown_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.Default_KeymapChanges" />
@@ -160,6 +168,7 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.Delete_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditMenuActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorEdit_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.End_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.Escape_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.ExtractComponent_Action" />

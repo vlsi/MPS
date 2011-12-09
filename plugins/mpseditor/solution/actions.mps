@@ -35,7 +35,7 @@
   <roots>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6273762573614482316">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.ide.editor" />
-      <property name="name" nameId="tp4k.5023285075122009367" value="MPS Editing Framework" />
+      <property name="name" nameId="tpck.1169194664001" value="MPS Editing Framework" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="Provides basic MPS editing functionality" />
       <property name="version" nameId="tp4k.5023285075122009369" value="2.0" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
@@ -227,12 +227,15 @@
       <property name="name" nameId="tpck.1169194664001" value="SelectRight" />
       <property name="caption" nameId="tp4k.1205250923097" value="Right with Selection" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8803599447441611816">
+      <property name="name" nameId="tpck.1169194664001" value="EditorEdit" />
+    </node>
   </roots>
   <root id="6273762573614482316" />
   <root id="4362199797783336764">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4362199797783336767">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991235731" resolveInfo="Edit" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1207910902706" resolveInfo="custom" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="8803599447441611816" resolveInfo="EditorEdit" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="8803599447441611825" resolveInfo="custom" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="4362199797783345378">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4362199797783345681">
@@ -5038,6 +5041,20 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="8803599447441611816">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8803599447441611820">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="8803599447441611821">
+        <property name="name" nameId="tpck.1169194664001" value="toplevel" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="8803599447441611823" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="8803599447441611825">
+        <property name="name" nameId="tpck.1169194664001" value="custom" />
+      </node>
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8803599447441622928">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1215010709295" resolveInfo="IDEAEdit" />
     </node>
   </root>
 </model>

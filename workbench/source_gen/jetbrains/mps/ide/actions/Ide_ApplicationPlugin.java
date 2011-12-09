@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.ide.editor.actions.EditorEdit_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -197,7 +198,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(AnalyzeModule_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_analyze);
     insertGroupIntoAnother(Bookmarks_ActionGroup.ID, "EditMenu", null);
     insertGroupIntoAnother(Build_ActionGroup.ID, "BuildMenu", null);
-    insertGroupIntoAnother(Edit_ActionGroup.ID, "EditMenu", null);
+    insertGroupIntoAnother(Edit_ActionGroup.ID, EditorEdit_ActionGroup.ID, EditorEdit_ActionGroup.LABEL_ID_toplevel);
     insertGroupIntoAnother(Folding_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_folding);
     insertGroupIntoAnother(Goto_ActionGroup.ID, "GoToMenu", null);
     insertGroupIntoAnother(GoToEditorPopupAddition_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_goto);
