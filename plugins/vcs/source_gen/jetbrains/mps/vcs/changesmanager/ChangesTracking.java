@@ -107,12 +107,12 @@ public class ChangesTracking {
   /*package*/ void scheduleFullUpdate() {
     myQueue.addTask(new Runnable() {
       public void run() {
-        update();
+        update(false);
       }
     });
   }
 
-  private void update() {
+  private void update(boolean force) {
     myQueue.assertSoftlyIsCommandThread();
     if (!(myDifference.isEnabled())) {
       return;
@@ -133,7 +133,7 @@ public class ChangesTracking {
 
     final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
     FileStatus status = myProject.getComponent(VcsFileStatusProvider.class).getFileStatus(modelVFile);
-    if (FileStatus.NOT_CHANGED == status) {
+    if (FileStatus.NOT_CHANGED == status && !(force)) {
       return;
     }
     if (BaseVersionUtil.isAddedFileStatus(status)) {
@@ -238,30 +238,35 @@ public class ChangesTracking {
       }
     }).toListSequence();
     if (myDifference.getChangeSet() == null) {
-      return;
-    }
-    myQueue.runTask(new Runnable() {
-      public void run() {
-        if (myDifference.getChangeSet() == null) {
-          return;
+      myQueue.runTask(new Runnable() {
+        public void run() {
+          update(true);
         }
-        if (ListSequence.fromList(ancestors).any(new IWhereFilter<SNodeId>() {
-          public boolean accept(SNodeId a) {
-            return myAddedNodesToChanges.containsKey(a);
+      });
+    } else {
+      myQueue.runTask(new Runnable() {
+        public void run() {
+          if (myDifference.getChangeSet() == null) {
+            return;
           }
-        })) {
-          // ignore 
-        } else {
-          myDifference.getBroadcaster().changeUpdateStarted();
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              task.invoke();
+          if (ListSequence.fromList(ancestors).any(new IWhereFilter<SNodeId>() {
+            public boolean accept(SNodeId a) {
+              return myAddedNodesToChanges.containsKey(a);
             }
-          });
-          myDifference.getBroadcaster().changeUpdateFinished();
+          })) {
+            // ignore 
+          } else {
+            myDifference.getBroadcaster().changeUpdateStarted();
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                task.invoke();
+              }
+            });
+            myDifference.getBroadcaster().changeUpdateFinished();
+          }
         }
-      }
-    });
+      });
+    }
   }
 
   private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc) {
