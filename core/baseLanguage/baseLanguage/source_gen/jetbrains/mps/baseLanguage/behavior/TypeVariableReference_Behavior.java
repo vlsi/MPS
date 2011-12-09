@@ -5,8 +5,10 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.annotations.NotNull;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -33,10 +35,13 @@ public class TypeVariableReference_Behavior {
     return new TypeVariableReference_Behavior.QuotationClass_6i211a_a0b0c().createNode();
   }
 
-  public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode) {
-    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true) != null)) {
+  public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypeVariableReferences) {
+    SNode bound = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true);
+    if ((bound != null) && !(SetSequence.fromSet(visitedTypeVariableReferences).contains(thisNode))) {
+      SetSequence.fromSet(visitedTypeVariableReferences).addElement(thisNode);
       SNode upperBoundType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
-      SLinkOperations.setTarget(upperBoundType, "bound", Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true)), true);
+      SLinkOperations.setTarget(upperBoundType, "bound", Type_Behavior.call_getLooseType_5744862332972792015(bound, visitedTypeVariableReferences), true);
+      SetSequence.fromSet(visitedTypeVariableReferences).removeElement(thisNode);
       return upperBoundType;
     } else {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null);

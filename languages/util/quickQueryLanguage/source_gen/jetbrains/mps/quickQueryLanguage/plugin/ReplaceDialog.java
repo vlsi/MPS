@@ -40,6 +40,7 @@ public class ReplaceDialog extends BaseDialog {
   private SNode myNode;
   private JPanel myPanel = new JPanel(new BorderLayout());
   private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
+  private boolean myDisposed = false;
 
   public ReplaceDialog(final IOperationContext context, final Language language) {
     super(ProjectHelper.toMainFrame(context.getProject()), "Modify Instances by condition");
@@ -152,6 +153,10 @@ public class ReplaceDialog extends BaseDialog {
   @Override
   public void dispose() {
     super.dispose();
+    if (myDisposed) {
+      return;
+    }
+    myDisposed = true;
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         myEditor.disposeEditor();

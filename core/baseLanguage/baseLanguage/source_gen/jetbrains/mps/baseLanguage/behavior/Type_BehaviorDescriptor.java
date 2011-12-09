@@ -6,6 +6,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import org.jetbrains.annotations.NotNull;
+import java.util.Set;
 import jetbrains.mps.smodel.SModel;
 
 public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IType_BehaviorDescriptor {
@@ -64,8 +66,8 @@ public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return Type_Behavior.virtual_getUnboxedType_1213877337320(thisNode);
   }
 
-  public SNode virtual_getLooseType_5744862332972792015(SNode thisNode) {
-    return Type_Behavior.virtual_getLooseType_5744862332972792015(thisNode);
+  public SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
+    return Type_Behavior.virtual_getLooseType_5744862332972792015(thisNode, visitedTypes);
   }
 
   public SNode virtual_getJavaType_1213877337345(SNode thisNode) {
