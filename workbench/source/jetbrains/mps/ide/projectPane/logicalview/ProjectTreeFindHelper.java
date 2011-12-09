@@ -26,6 +26,7 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.IModule;
@@ -94,7 +95,7 @@ public abstract class ProjectTreeFindHelper {
   }
 
   //todo rewrite using findTreeNode
-  protected MPSTreeNodeEx findSNodeTreeNodeInParent(@NotNull SNode node, @NotNull final SModelTreeNode parent) {
+  protected MPSTreeNodeEx findSNodeTreeNodeInParent(@NotNull final SNode node, @NotNull final SModelTreeNode parent) {
     LinkedList<SNode> ancestors = new LinkedList<SNode>();
     SNode current = node;
     while (current != null) {
@@ -110,7 +111,10 @@ public abstract class ProjectTreeFindHelper {
       currentTreeNode = findTreeNode(finalCurrentTreeNode,
         new Condition<MPSTreeNode>() {
           public boolean met(MPSTreeNode object) {
-            return object == finalCurrentTreeNode;
+            if (object == finalCurrentTreeNode) return true;
+            if (!(object instanceof PackageNode)) return false;
+            String pack = ((PackageNode) object).getFullPackage();
+            return node.getPersistentProperty(SNodeUtil.property_BaseConcept_virtualPackage).startsWith(pack);
           }
         }, new Condition<MPSTreeNode>() {
         public boolean met(MPSTreeNode tNode) {
