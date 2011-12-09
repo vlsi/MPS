@@ -181,6 +181,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/test_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/source_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/test_gen" />
+    <path path="${base_dir}/languages/util/extensionMethod/source_gen" />
+    <path path="${base_dir}/languages/util/extensionMethod/test_gen" />
     <path path="${base_dir}/core/baseLanguage/javadoc/source_gen" />
     <path path="${base_dir}/core/baseLanguage/javadoc/test_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/source_gen" />
@@ -273,10 +275,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.execution.util_tjc.src">
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/test_gen" />
-  </path>
-  <path id="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.src">
-    <path path="${base_dir}/languages/util/extensionMethod/source_gen" />
-    <path path="${base_dir}/languages/util/extensionMethod/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.jdk7_tjc.src">
     <path path="${base_dir}/core/baseLanguage/jdk7/languages/jdk7/source_gen" />
@@ -628,6 +626,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -687,6 +686,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
@@ -800,6 +800,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -936,6 +937,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -1072,6 +1074,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -1208,6 +1211,7 @@
     <path path="${base_dir}/languages/util/contracts/languages/contracts/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -1345,6 +1349,7 @@
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -1493,6 +1498,7 @@
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -1680,6 +1686,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -1723,142 +1730,6 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
-    <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
-    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-workbench/classes" />
-    <path path="${base_dir}/workbench/typesystemUi/classes" />
-    <path refid="common.classpath" />
-  </path>
-  <path id="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths">
-    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
-    <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/core/actions-runtime/classes" />
-    <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/classifiers/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/closures/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug/classes" />
-    <path path="${base_dir}/core/editor-runtime/classes" />
-    <path path="${base_dir}/core/findUsages-runtime/classes" />
-    <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
-    <path path="${base_dir}/core/intentions-runtime/classes" />
-    <path path="${base_dir}/core/kernel/classes" />
-    <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
-    <path path="${base_dir}/core/refactoring-runtime/classes" />
-    <path path="${base_dir}/core/runtime/classes" />
-    <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/editor/editor-api/classes" />
-    <path path="${base_dir}/editor/typesystemIntegration/classes" />
-    <path path="${base_dir}/languages/core/core/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/dataFlow/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/findUsages/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/make/languages/facet/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/make/languages/script/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/structure/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/test/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/textGen/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/traceable/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
-    <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
-    <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
-    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
-    <path path="${base_dir}/languages/util/gtext/classes_gen" />
-    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
-    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
-    <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
-    <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
-    <path path="${base_dir}/languages/util/ypath/classes_gen" />
-    <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="${base_dir}/lib/annotations.jar" />
-    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
-    <path path="${base_dir}/lib/ant/lib/ant.jar" />
-    <path path="${base_dir}/lib/asm.jar" />
-    <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
-    <path path="${base_dir}/lib/commons-lang-2.4.jar" />
-    <path path="${base_dir}/lib/commons-logging-1.1.jar" />
-    <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
-    <path path="${base_dir}/lib/ecj.jar" />
-    <path path="${base_dir}/lib/execution-api.jar" />
-    <path path="${base_dir}/lib/extensions.jar" />
-    <path path="${base_dir}/lib/guava-r06.jar" />
-    <path path="${base_dir}/lib/jdom.jar" />
-    <path path="${base_dir}/lib/junit-4.8.2.jar" />
-    <path path="${base_dir}/lib/log4j.jar" />
-    <path path="${base_dir}/lib/picocontainer.jar" />
-    <path path="${base_dir}/lib/platform-api.jar" />
-    <path path="${base_dir}/lib/platform.jar" />
-    <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1955,6 +1826,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -2090,6 +1962,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -2225,6 +2098,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -2383,6 +2257,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -2527,6 +2402,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -2662,6 +2538,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -2828,6 +2705,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -2964,6 +2842,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -3103,6 +2982,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -3239,6 +3119,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -3376,6 +3257,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -3511,6 +3393,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -3647,6 +3530,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -3782,6 +3666,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -3924,6 +3809,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -4061,6 +3947,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -4198,6 +4085,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -4334,6 +4222,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -4479,6 +4368,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -4616,6 +4506,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -4763,6 +4654,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -4902,6 +4794,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -5039,6 +4932,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -5175,6 +5069,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -5313,6 +5208,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -5449,6 +5345,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -5593,6 +5490,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -5728,6 +5626,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -5865,6 +5764,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -6001,6 +5901,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -6137,6 +6038,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -6272,6 +6174,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -6408,6 +6311,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -6543,6 +6447,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -6679,6 +6584,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -6814,6 +6720,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -6949,6 +6856,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -7085,6 +6993,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -7271,6 +7180,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -7407,6 +7317,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -7544,6 +7455,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -7683,6 +7595,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -7821,6 +7734,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -7957,6 +7871,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -8106,6 +8021,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -8258,6 +8174,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -8394,6 +8311,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -8532,6 +8450,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -8668,6 +8587,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -8807,6 +8727,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -8943,6 +8864,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -9079,6 +9001,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -9236,6 +9159,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -9373,6 +9297,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -9509,6 +9434,7 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -9561,7 +9487,7 @@
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.execution.startup_tjc,compile.cycle.jetbrains.mps.baseLanguage.execution.util_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.runtime_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.gentest_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.debugger.api.lang_tjc,compile.cycle.jetbrains.mps.debugger.java.customViewers_tjc,compile.cycle.jetbrains.mps.debugger.java.evaluation_tjc,compile.cycle.jetbrains.mps.debugger.java.privateMembers_tjc,compile.cycle.jetbrains.mps.execution.commands_tjc,compile.cycle.jetbrains.mps.execution.common_tjc,compile.cycle.jetbrains.mps.execution.configurations_tjc,compile.cycle.jetbrains.mps.execution.configurations.deprecated_tjc,compile.cycle.jetbrains.mps.execution.lib_tjc,compile.cycle.jetbrains.mps.execution.migration_tjc,compile.cycle.jetbrains.mps.execution.settings_tjc,compile.cycle.jetbrains.mps.execution.util_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.script_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.internal_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlSchema_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.jetbrains.mps.ypath.runtime_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.execution.startup_tjc,compile.cycle.jetbrains.mps.baseLanguage.execution.util_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.runtime_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.gentest_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.debugger.api.lang_tjc,compile.cycle.jetbrains.mps.debugger.java.customViewers_tjc,compile.cycle.jetbrains.mps.debugger.java.evaluation_tjc,compile.cycle.jetbrains.mps.debugger.java.privateMembers_tjc,compile.cycle.jetbrains.mps.execution.commands_tjc,compile.cycle.jetbrains.mps.execution.common_tjc,compile.cycle.jetbrains.mps.execution.configurations_tjc,compile.cycle.jetbrains.mps.execution.configurations.deprecated_tjc,compile.cycle.jetbrains.mps.execution.lib_tjc,compile.cycle.jetbrains.mps.execution.migration_tjc,compile.cycle.jetbrains.mps.execution.settings_tjc,compile.cycle.jetbrains.mps.execution.util_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.script_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.internal_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlSchema_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.jetbrains.mps.ypath.runtime_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.jetbrains.mps.analyzers_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -9601,6 +9527,8 @@
     <mkdir dir="${base_dir}/core/baseLanguage/collections/test_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/collections/languages/trove/source_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/collections/languages/trove/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/extensionMethod/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/extensionMethod/test_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/javadoc/source_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/javadoc/test_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/tuples/languages/tuples/source_gen" />
@@ -9669,6 +9597,7 @@
     <mkdir dir="${jetbrains.mps.baseLanguage.closures.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.collections.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.collections.trove.classes}" />
+    <mkdir dir="${jetbrains.mps.baseLanguage.extensionMethods.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.javadoc.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.tuples.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
@@ -9729,6 +9658,10 @@
     <copy todir="${jetbrains.mps.baseLanguage.collections.trove.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/collections/languages/trove/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/collections/languages/trove/test_gen" />
+    </copy>
+    <copy todir="${jetbrains.mps.baseLanguage.extensionMethods.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/extensionMethod/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/extensionMethod/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguage.javadoc.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/javadoc/source_gen" />
@@ -9890,6 +9823,12 @@
       <src>
         <path path="${base_dir}/core/baseLanguage/collections/languages/trove/source_gen" />
         <path path="${base_dir}/core/baseLanguage/collections/languages/trove/test_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.extensionMethods.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/languages/util/extensionMethod/source_gen" />
+        <path path="${base_dir}/languages/util/extensionMethod/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.javadoc.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
@@ -10250,29 +10189,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.execution.util_tjc">
-    <property name="classes.dump" value="${jetbrains.mps.baseLanguage.extensionMethods.classes}.tmp" />
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/util/extensionMethod/source_gen" />
-    <mkdir dir="${base_dir}/languages/util/extensionMethod/test_gen" />
-    <mkdir dir="${classes.dump}" />
-    <mkdir dir="${jetbrains.mps.baseLanguage.extensionMethods.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
-      <src refid="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.src" />
-    </javac>
-    <copy todir="${jetbrains.mps.baseLanguage.extensionMethods.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/extensionMethod/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/extensionMethod/test_gen" />
-    </copy>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.extensionMethods.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/languages/util/extensionMethod/source_gen" />
-        <path path="${base_dir}/languages/util/extensionMethod/test_gen" />
-      </src>
-    </javac>
-    <delete dir="${classes.dump}" />
-  </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.execution.util_tjc">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.jdk7.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/core/baseLanguage/jdk7/languages/jdk7/source_gen" />
@@ -11741,6 +11658,7 @@
     <delete dir="${jetbrains.mps.baseLanguage.closures.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.collections.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.collections.trove.classes}" />
+    <delete dir="${jetbrains.mps.baseLanguage.extensionMethods.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.javadoc.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.tuples.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
@@ -11779,7 +11697,6 @@
     <delete dir="${jetbrains.mps.baseLanguage.datesInternal.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.execution.startup.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.execution.util.classes}" />
-    <delete dir="${jetbrains.mps.baseLanguage.extensionMethods.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.jdk7.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.logging.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.math.classes}" />
