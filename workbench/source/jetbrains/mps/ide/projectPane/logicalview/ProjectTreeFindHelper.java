@@ -105,7 +105,9 @@ public abstract class ProjectTreeFindHelper {
     MPSTreeNode currentTreeNode = parent;
     for (final SNode anc : ancestors) {
       final MPSTreeNode finalCurrentTreeNode = currentTreeNode;
-      currentTreeNode = findTreeNode(currentTreeNode,
+      if (!currentTreeNode.isInitialized() && !currentTreeNode.hasInfiniteSubtree()) currentTreeNode.init();
+
+      currentTreeNode = findTreeNode(finalCurrentTreeNode,
         new Condition<MPSTreeNode>() {
           public boolean met(MPSTreeNode object) {
             return object == finalCurrentTreeNode;
