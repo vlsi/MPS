@@ -26,6 +26,7 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.IModule;
@@ -110,7 +111,7 @@ public abstract class ProjectTreeFindHelper {
       currentTreeNode = findTreeNode(finalCurrentTreeNode,
         new Condition<MPSTreeNode>() {
           public boolean met(MPSTreeNode object) {
-            return object == finalCurrentTreeNode;
+            return object == finalCurrentTreeNode || object instanceof PackageNode;
           }
         }, new Condition<MPSTreeNode>() {
         public boolean met(MPSTreeNode tNode) {
