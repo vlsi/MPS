@@ -104,10 +104,11 @@ public abstract class ProjectTreeFindHelper {
 
     MPSTreeNode currentTreeNode = parent;
     for (final SNode anc : ancestors) {
-      currentTreeNode = findTreeNode(parent,
+      final MPSTreeNode finalCurrentTreeNode = currentTreeNode;
+      currentTreeNode = findTreeNode(currentTreeNode,
         new Condition<MPSTreeNode>() {
           public boolean met(MPSTreeNode object) {
-            return object == parent;
+            return object == finalCurrentTreeNode;
           }
         }, new Condition<MPSTreeNode>() {
         public boolean met(MPSTreeNode tNode) {
