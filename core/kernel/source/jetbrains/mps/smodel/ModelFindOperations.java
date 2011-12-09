@@ -35,10 +35,13 @@ public class ModelFindOperations {
     myModelDescriptor = descriptor;
     ModelDataSource source = descriptor instanceof BaseSModelDescriptorWithSource ? ((BaseSModelDescriptorWithSource) myModelDescriptor).getSource() : null;
     myDataSource = source instanceof RegularModelDataSource ? (RegularModelDataSource) source : null;
-    myNeedSearchForStrings = (myModelDescriptor instanceof DefaultSModelDescriptor) && ((DefaultSModelDescriptor) myModelDescriptor).getUpdateableModel().getState() != ModelLoadingState.FULLY_LOADED;
-    if (!myNeedSearchForStrings && myModelDescriptor instanceof EditableSModelDescriptor) {
-      myNeedSearchForStrings = !((EditableSModelDescriptor) myModelDescriptor).isChanged();
-    }
+    myNeedSearchForStrings =
+      (myModelDescriptor instanceof DefaultSModelDescriptor) &&
+        ((DefaultSModelDescriptor) myModelDescriptor).getUpdateableModel().getState() != ModelLoadingState.FULLY_LOADED &&
+        !(
+          myModelDescriptor instanceof EditableSModelDescriptor &&
+            ((EditableSModelDescriptor) myModelDescriptor).isChanged()
+        );
   }
 
   public Set<SReference> findUsages(Set<SNode> nodes) {
