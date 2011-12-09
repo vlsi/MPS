@@ -55,8 +55,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private IFile myModelFile;
   private boolean myChanged = false;
 
-  private final Object myFullLoadSync = new Object();
-
   {
     this.addModelCommandListener(new SModelCommandListener() {
       public void eventsHappenedInCommand(List<SModelEvent> events) {
@@ -92,7 +90,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   //updates model with loading state == ROOTS_LOADED
   public void enforceFullLoad() {
-    synchronized (myFullLoadSync) {
+    synchronized (myLoadingLock) {
       if (mySModel.isLoading()) return;
       if (getLoadingState() == ModelLoadingState.FULLY_LOADED) return;
 
