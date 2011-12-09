@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 package jetbrains.mps.newTypesystem.state;
- 
-import com.intellij.openapi.util.Pair;
+
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.TypesUtil;
@@ -25,8 +24,11 @@ import jetbrains.mps.newTypesystem.relations.ComparableRelation;
 import jetbrains.mps.newTypesystem.relations.SubTypingRelation;
 import jetbrains.mps.newTypesystem.state.blocks.*;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.ManyToManyMap;
+import jetbrains.mps.util.Pair;
 
+import javax.management.relation.Relation;
 import java.util.*;
 
 public class Inequalities {
@@ -36,6 +38,7 @@ public class Inequalities {
   private Set<SNode> myNodesInc = new THashSet<SNode>();
   private Set<SNode> mySolvableLeft = new THashSet<SNode>();
   private Set<SNode> mySolvableRight = new THashSet<SNode>();
+  private boolean mySolveOnlyRight = false;
 
   private static final ComparableRelation comparableRelation = new ComparableRelation();
   private static final SubTypingRelation subTypingRelation = new SubTypingRelation();
@@ -194,9 +197,11 @@ public class Inequalities {
     if (nodes.isEmpty()) return false;
     for (Block block : myState.getBlocks(BlockKind.WHEN_CONCRETE)) {
       SNode node = myState.getRepresentative(((WhenConcreteBlock) block).getArgument());
-      if (nodes.contains(node) && myInputsToOutputsInc.getBySecond(node).isEmpty()) {
-        if (solveRelationsForNode(node)) {
-          return true;
+      for (SNode var : TypesUtil.getVariables(node, myState)) {
+        if (nodes.contains(var) && myInputsToOutputsInc.getBySecond(var).isEmpty()) {
+          if (solveRelationsForNode(var)) {
+            return true;
+          }
         }
       }
     }
@@ -217,7 +222,9 @@ public class Inequalities {
     if (myNodesInc.size() == 0) {
       return false;
     }
+    mySolveOnlyRight = true;
     if (chooseVarAndSolve(mySolvableRight)) return true;
+    mySolveOnlyRight = false;
     if (chooseVarAndSolve(mySolvableLeft)) return true;
     if (lastChance(inequalities)) return true;
     return false;
@@ -281,10 +288,10 @@ public class Inequalities {
     assert TypesUtil.isVariable(node);
     Set<SNode> rightTypes = new LinkedHashSet<SNode>();
     Set<SNode> leftTypes = new LinkedHashSet<SNode>();
-
-    //collectNodesInRelation(node, leftTypes, rightTypes, blocks, typesToBlocks);
     collectNodesTransitive(node, leftTypes, false, typesToBlocks, relation, new HashSet<SNode>());
-    collectNodesTransitive(node, rightTypes, true, typesToBlocks, relation, new HashSet<SNode>());
+    if (!mySolveOnlyRight) {
+      collectNodesTransitive(node, rightTypes, true, typesToBlocks, relation, new HashSet<SNode>());
+    }
     return relation.solve(node, leftTypes, rightTypes, myState, typesToBlocks);
   }
 
