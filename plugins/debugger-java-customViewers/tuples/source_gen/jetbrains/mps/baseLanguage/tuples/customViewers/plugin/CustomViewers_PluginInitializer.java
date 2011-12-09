@@ -4,10 +4,9 @@ package jetbrains.mps.baseLanguage.tuples.customViewers.plugin;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginLibrariesContributor;
-import jetbrains.mps.plugins.PluginUtil;
+import jetbrains.mps.plugins.PluginFactoriesRegistry;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
-import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -15,13 +14,9 @@ public class CustomViewers_PluginInitializer implements ApplicationComponent {
   private final PluginLibrariesContributor myContributor = new PluginLibrariesContributor("jetbrains.mps.baseLanguage.tuples.customViewers.plugin.CustomViewers_PluginInitializer", "libraries");
 
   public CustomViewers_PluginInitializer() {
-    PluginUtil.addPluginContributor(new PluginContributor() {
+    PluginFactoriesRegistry.registerPluginFactory(new PluginContributor() {
       public BaseApplicationPlugin createApplicationPlugin() {
         return new CustomViewers_ApplicationPlugin();
-      }
-
-      public BaseProjectPlugin createProjectPlugin() {
-        return new CustomViewers_ProjectPlugin();
       }
     });
   }

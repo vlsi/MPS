@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.plugin;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginLibrariesContributor;
-import jetbrains.mps.plugins.PluginUtil;
+import jetbrains.mps.plugins.PluginFactoriesRegistry;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
@@ -15,7 +15,7 @@ public class Execution_PluginInitializer implements ApplicationComponent {
   private final PluginLibrariesContributor myContributor = new PluginLibrariesContributor("jetbrains.mps.baseLanguage.unitTest.execution.plugin.Execution_PluginInitializer", "libraries");
 
   public Execution_PluginInitializer() {
-    PluginUtil.addPluginContributor(new PluginContributor() {
+    PluginFactoriesRegistry.registerPluginFactory(new PluginContributor() {
       public BaseApplicationPlugin createApplicationPlugin() {
         return new Execution_ApplicationPlugin();
       }

@@ -23,18 +23,13 @@
   <dependency className="jetbrains.mps.baseLanguage.tuples.customViewers.plugin.CustomViewers_PluginInitializer" file="CustomViewers_PluginInitializer.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.customViewers.plugin.CustomViewers_ApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.customViewers.plugin.CustomViewers_ProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginContributor" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginFactoriesRegistry" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginLibrariesContributor" />
-    <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
     <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.customViewers.plugin.CustomViewers_ProjectPlugin" file="CustomViewers_ProjectPlugin.java">
-    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.customViewers.plugin.IndexedTupleViewer_WrapperFactory" file="IndexedTupleViewer_WrapperFactory.java">
     <classNode dependClassName="com.sun.jdi.Value" />

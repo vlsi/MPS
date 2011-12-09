@@ -4,10 +4,9 @@ package jetbrains.mps.execution.languages.plugin;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginLibrariesContributor;
-import jetbrains.mps.plugins.PluginUtil;
+import jetbrains.mps.plugins.PluginFactoriesRegistry;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
-import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -15,13 +14,9 @@ public class Languages_PluginInitializer implements ApplicationComponent {
   private final PluginLibrariesContributor myContributor = new PluginLibrariesContributor("jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer", "libraries");
 
   public Languages_PluginInitializer() {
-    PluginUtil.addPluginContributor(new PluginContributor() {
+    PluginFactoriesRegistry.registerPluginFactory(new PluginContributor() {
       public BaseApplicationPlugin createApplicationPlugin() {
         return new Languages_ApplicationPlugin();
-      }
-
-      public BaseProjectPlugin createProjectPlugin() {
-        return new Languages_ProjectPlugin();
       }
     });
   }

@@ -4,7 +4,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginLibrariesContributor;
-import jetbrains.mps.plugins.PluginUtil;
+import jetbrains.mps.plugins.PluginFactoriesRegistry;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
@@ -15,7 +15,7 @@ public class Modelchecker_PluginInitializer implements ApplicationComponent {
   private final PluginLibrariesContributor myContributor = new PluginLibrariesContributor("jetbrains.mps.ide.modelchecker.actions.Modelchecker_PluginInitializer", "libraries");
 
   public Modelchecker_PluginInitializer() {
-    PluginUtil.addPluginContributor(new PluginContributor() {
+    PluginFactoriesRegistry.registerPluginFactory(new PluginContributor() {
       public BaseApplicationPlugin createApplicationPlugin() {
         return new Modelchecker_ApplicationPlugin();
       }

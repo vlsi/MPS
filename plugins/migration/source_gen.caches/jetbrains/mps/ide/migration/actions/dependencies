@@ -301,18 +301,13 @@
   <dependency className="jetbrains.mps.ide.migration.actions.Migration_PluginInitializer" file="Migration_PluginInitializer.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.migration.actions.Migration_ApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.actions.Migration_ProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginContributor" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginFactoriesRegistry" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginLibrariesContributor" />
-    <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
     <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.migration.actions.Migration_ProjectPlugin" file="Migration_ProjectPlugin.java">
-    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.actions.Migrations20_ActionGroup" file="Migrations20_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
