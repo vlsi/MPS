@@ -14,6 +14,7 @@ public class RefactoringAdditions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
+      RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ConvertAnonymousClass_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.RenameMethod_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.MakeFieldFinal_Action");

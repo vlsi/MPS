@@ -827,7 +827,6 @@
       <property name="name" nameId="tpck.1169194664001" value="targetModel" />
       <node role="chooser" roleId="tp1h.5497648299878741978" type="tp1h.MPSParameterChooser" typeId="tp1h.5497648299878742011" id="3068114543317961954">
         <property name="title" nameId="tp1h.6647259624309067737" value="choose target model" />
-        <node role="paramType" roleId="tp1h.4413749148913695157" type="tp1h.ModelMPSParameterType" typeId="tp1h.4413749148913695137" id="3068114543317974102" />
         <node role="filterBlock" roleId="tp1h.5497648299878742028" type="tp1h.FilterParameterClause" typeId="tp1h.5497648299878742016" id="3068114543317961957">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3068114543317961958">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3068114543317961959">
@@ -854,6 +853,7 @@
             </node>
           </node>
         </node>
+        <node role="paramType" roleId="tp1h.4413749148913695157" type="tp1h.ModelMPSParameterType" typeId="tp1h.4413749148913695137" id="4366542054834703064" />
       </node>
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3795717784226477783">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />

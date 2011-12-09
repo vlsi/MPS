@@ -22,7 +22,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.RenameMethodDialog;
+import jetbrains.mps.ide.refactoring.RenameMethodDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
@@ -94,10 +94,10 @@ public class RenameMethod_Action extends GeneratedAction {
       } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("target")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         oldName = SPropertyOperations.getString(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("target")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name");
       }
-      RenameMethodDialog d = new RenameMethodDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), oldName, "method", ListSequence.fromList(overridingList.value).isNotEmpty());
+      RenameMethodDialog d = new RenameMethodDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), oldName, ListSequence.fromList(overridingList.value).isNotEmpty());
       d.show();
 
-      String newName = d.getNewName();
+      String newName = d.getName();
       if (newName == null) {
         return;
       }

@@ -32,6 +32,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ChangeMethodSignature_Action());
     addAction(new CommentLine_Action());
     addAction(new CommentStatements_Action());
+    addAction(new ConvertAnonymousClass_Action());
     addAction(new ExtractMethod_Action());
     addAction(new GoToInheritedClassifier_Action());
     addAction(new GoToOverridenMethod_Action());
@@ -43,6 +44,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new IntroduceVariable_Action());
     addAction(new MakeFieldFinal_Action());
     addAction(new MakeFieldStatic_Action());
+    addAction(new MoveStaticField_Action());
     addAction(new OverrideMethod_Action());
     addAction(new RenameMethod_Action());
     addAction(new RenameVariable_Action());

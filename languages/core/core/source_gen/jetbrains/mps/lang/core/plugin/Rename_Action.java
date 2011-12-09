@@ -11,7 +11,6 @@ import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.core.scripts.RenameUtil;
-import jetbrains.mps.ide.ThreadUtils;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
@@ -39,17 +38,9 @@ public class Rename_Action extends GeneratedAction {
     if (!(RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings" + "." + "Rename"), ((SNode) MapSequence.fromMap(_params).get("target"))))) {
       return false;
     }
-    // is applicable is running is EDT? 
     if (!(RenameUtil.canBeRenamed(((SNode) MapSequence.fromMap(_params).get("target"))))) {
-      new Thread(new Runnable() {
-        public void run() {
-          ThreadUtils.runInUIThreadAndWait(new Runnable() {
-            public void run() {
-              JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Nodes with getter for the \"name\" property can't be renamed", "Node can't be renamed", JOptionPane.INFORMATION_MESSAGE);
-            }
-          });
-        }
-      }).start();
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Nodes with getter for the \"name\" property can't be renamed", "Node can't be renamed", JOptionPane.INFORMATION_MESSAGE);
+
       return false;
     }
     return true;

@@ -68,97 +68,92 @@
     <nodeInfo nodeId="418677511065471994" fileName="MoveStaticMethod_destination_Settings.java" startLine="14" startPosition="82" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="418677511065471994" fileName="MoveStaticMethod_destination_Settings.java" startLine="15" startPosition="34" endLine="16" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="19" startPosition="29" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="18" startPosition="29" endLine="19" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="418677511065471998" fileName="MoveStaticMethod_destination_Settings.java" startLine="19" startPosition="42" endLine="20" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="20" startPosition="46" endLine="21" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="19" startPosition="46" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="24" startPosition="39" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="23" startPosition="39" endLine="24" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="27" startPosition="32" endLine="28" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="28" startPosition="32" endLine="29" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="32" startPosition="47" endLine="33" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="36" startPosition="52" endLine="37" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="418677511065472010" fileName="MoveStaticMethod.java" startLine="40" startPosition="68" endLine="41" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="418677511065472017" fileName="MoveStaticMethod.java" startLine="42" startPosition="25" endLine="43" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418677511065472029" fileName="MoveStaticMethod.java" startLine="45" startPosition="27" endLine="46" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418677511065472036" fileName="MoveStaticMethod.java" startLine="49" startPosition="5" endLine="50" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="418677511065472049" fileName="MoveStaticMethod.java" startLine="53" startPosition="69" endLine="54" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418677511065472042" fileName="MoveStaticMethod.java" startLine="57" startPosition="86" endLine="58" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="61" startPosition="46" endLine="62" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="31" startPosition="47" endLine="32" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="35" startPosition="52" endLine="36" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="418677511065472017" fileName="MoveStaticMethod.java" startLine="39" startPosition="68" endLine="40" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418677511065472029" fileName="MoveStaticMethod.java" startLine="42" startPosition="25" endLine="43" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834738479" fileName="MoveStaticMethod.java" startLine="45" startPosition="7" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="418677511065472049" fileName="MoveStaticMethod.java" startLine="49" startPosition="69" endLine="50" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418677511065472042" fileName="MoveStaticMethod.java" startLine="53" startPosition="86" endLine="54" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="57" startPosition="46" endLine="58" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="9" startPosition="68" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveStaticMethod_Target#()V" />
     <nodeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="25" startPosition="52" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
     <nodeInfo nodeId="418677511065471994" fileName="MoveStaticMethod_destination_Settings.java" startLine="13" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveStaticMethod_destination_Settings#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
     <nodeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allowMultipleTargets#()Z" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="17" startPosition="55" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveStaticMethod#()V" />
     <nodeInfo nodeId="418677511065471994" fileName="MoveStaticMethod_destination_Settings.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="18" startPosition="55" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveStaticMethod#()V" />
     <nodeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
-    <nodeInfo nodeId="418677511065472027" fileName="MoveStaticMethod.java" startLine="44" startPosition="59" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getKeyStroke_static#()Ljava/lang/String;" />
-    <nodeInfo nodeId="418677511065472026" fileName="MoveStaticMethod.java" startLine="43" startPosition="179" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="418677511065472027" fileName="MoveStaticMethod.java" startLine="41" startPosition="57" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getKeyStroke_static#()Ljava/lang/String;" />
+    <nodeInfo nodeId="418677511065472026" fileName="MoveStaticMethod.java" startLine="40" startPosition="177" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="418677511065472015" fileName="MoveStaticMethod.java" startLine="41" startPosition="210" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="39" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
+    <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="38" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
     <scopeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="10" startPosition="36" endLine="10" endPosition="36" />
     <scopeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="13" startPosition="52" endLine="14" endPosition="46" />
     <scopeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" />
     <scopeInfo nodeId="418677511065471997" fileName="MoveStaticMethod_destination_Settings.java" startLine="19" startPosition="42" endLine="20" endPosition="272" />
     <scopeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="122" />
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="24" startPosition="39" endLine="25" endPosition="32" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="23" startPosition="39" endLine="24" endPosition="32" />
     <scopeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" />
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="28" startPosition="32" endLine="29" endPosition="33" />
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="32" startPosition="47" endLine="33" endPosition="27" />
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="36" startPosition="52" endLine="37" endPosition="41" />
-    <scopeInfo nodeId="418677511065472028" fileName="MoveStaticMethod.java" startLine="45" startPosition="27" endLine="46" endPosition="284" />
-    <scopeInfo nodeId="418677511065471955" fileName="MoveStaticMethod.java" startLine="53" startPosition="69" endLine="54" endPosition="96" />
-    <scopeInfo nodeId="418677511065472041" fileName="MoveStaticMethod.java" startLine="57" startPosition="86" endLine="58" endPosition="99" />
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="61" startPosition="46" endLine="62" endPosition="43" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="27" startPosition="32" endLine="28" endPosition="33" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="31" startPosition="47" endLine="32" endPosition="27" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="35" startPosition="52" endLine="36" endPosition="41" />
+    <scopeInfo nodeId="418677511065472028" fileName="MoveStaticMethod.java" startLine="42" startPosition="25" endLine="43" endPosition="282" />
+    <scopeInfo nodeId="418677511065471955" fileName="MoveStaticMethod.java" startLine="49" startPosition="69" endLine="50" endPosition="96" />
+    <scopeInfo nodeId="418677511065472041" fileName="MoveStaticMethod.java" startLine="53" startPosition="86" endLine="54" endPosition="99" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="57" startPosition="46" endLine="58" endPosition="43" />
     <scopeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="9" startPosition="68" endLine="11" endPosition="3" />
     <scopeInfo nodeId="418677511065471994" fileName="MoveStaticMethod_destination_Settings.java" startLine="14" startPosition="82" endLine="16" endPosition="40" />
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="19" startPosition="29" endLine="21" endPosition="43" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="18" startPosition="29" endLine="20" endPosition="43" />
     <scopeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="418677511065471994" fileName="MoveStaticMethod_destination_Settings.java" startLine="13" startPosition="0" endLine="17" endPosition="3">
       <varInfo nodeId="418677511065471994" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="17" startPosition="55" endLine="21" endPosition="3" />
     <scopeInfo nodeId="418677511065471994" fileName="MoveStaticMethod_destination_Settings.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="418677511065471994" varName="entity" />
     </scopeInfo>
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="18" startPosition="55" endLine="22" endPosition="3" />
     <scopeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="418677511065471956" varName="entity" />
     </scopeInfo>
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="418677511065472027" fileName="MoveStaticMethod.java" startLine="44" startPosition="59" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="418677511065472027" fileName="MoveStaticMethod.java" startLine="41" startPosition="57" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="418677511065471952" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="418677511065471952" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="418677511065471952" varName="refactoringContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="418677511065472016" fileName="MoveStaticMethod.java" startLine="42" startPosition="25" endLine="48" endPosition="9" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="418677511065471956" varName="entity" />
     </scopeInfo>
-    <scopeInfo nodeId="418677511065472008" fileName="MoveStaticMethod.java" startLine="40" startPosition="68" endLine="50" endPosition="26">
-      <varInfo nodeId="418677511065472011" varName="hasDestination" />
-    </scopeInfo>
-    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="39" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="418677511065472008" fileName="MoveStaticMethod.java" startLine="39" startPosition="68" endLine="46" endPosition="16" />
+    <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="38" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="418677511065471952" varName="refactoringContext" />
     </scopeInfo>
-    <unitInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod" />
-    <unitInfo nodeId="418677511065472027" fileName="MoveStaticMethod.java" startLine="44" startPosition="47" endLine="48" endPosition="7" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod$1" />
+    <unitInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="17" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod" />
+    <unitInfo nodeId="418677511065472027" fileName="MoveStaticMethod.java" startLine="41" startPosition="45" endLine="45" endPosition="5" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod$1" />
     <unitInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod_Target" />
     <unitInfo nodeId="418677511065471994" fileName="MoveStaticMethod_destination_Settings.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod_destination_Settings" />
   </root>
@@ -258,97 +253,93 @@
     <nodeInfo nodeId="5142438244426854966" fileName="MoveStaticField_destination_Settings.java" startLine="14" startPosition="81" endLine="15" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5142438244426854966" fileName="MoveStaticField_destination_Settings.java" startLine="15" startPosition="39" endLine="16" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="19" startPosition="28" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="18" startPosition="28" endLine="19" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5142438244426854973" fileName="MoveStaticField_destination_Settings.java" startLine="19" startPosition="42" endLine="20" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="20" startPosition="46" endLine="21" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="19" startPosition="46" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="24" startPosition="39" endLine="25" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="23" startPosition="39" endLine="24" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="27" startPosition="32" endLine="28" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="28" startPosition="32" endLine="29" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="32" startPosition="47" endLine="33" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="36" startPosition="52" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5142438244426863063" fileName="MoveStaticField.java" startLine="40" startPosition="68" endLine="41" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5142438244426863070" fileName="MoveStaticField.java" startLine="42" startPosition="25" endLine="43" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5142438244426863082" fileName="MoveStaticField.java" startLine="45" startPosition="27" endLine="46" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5142438244426863089" fileName="MoveStaticField.java" startLine="49" startPosition="5" endLine="50" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5142438244426872857" fileName="MoveStaticField.java" startLine="53" startPosition="69" endLine="54" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5142438244426872853" fileName="MoveStaticField.java" startLine="57" startPosition="86" endLine="58" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="61" startPosition="46" endLine="62" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="31" startPosition="47" endLine="32" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="35" startPosition="52" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5142438244426863070" fileName="MoveStaticField.java" startLine="39" startPosition="68" endLine="40" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5142438244426863082" fileName="MoveStaticField.java" startLine="42" startPosition="25" endLine="43" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834738482" fileName="MoveStaticField.java" startLine="45" startPosition="7" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5142438244426863089" fileName="MoveStaticField.java" startLine="46" startPosition="0" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5142438244426872857" fileName="MoveStaticField.java" startLine="50" startPosition="69" endLine="51" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5142438244426872853" fileName="MoveStaticField.java" startLine="54" startPosition="86" endLine="55" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="58" startPosition="46" endLine="59" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="9" startPosition="67" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveStaticField_Target#()V" />
     <nodeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="25" startPosition="52" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
     <nodeInfo nodeId="5142438244426854966" fileName="MoveStaticField_destination_Settings.java" startLine="13" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveStaticField_destination_Settings#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
     <nodeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allowMultipleTargets#()Z" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="17" startPosition="54" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveStaticField#()V" />
     <nodeInfo nodeId="5142438244426854966" fileName="MoveStaticField_destination_Settings.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="18" startPosition="54" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveStaticField#()V" />
     <nodeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
-    <nodeInfo nodeId="5142438244426863080" fileName="MoveStaticField.java" startLine="44" startPosition="59" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getKeyStroke_static#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5142438244426863079" fileName="MoveStaticField.java" startLine="43" startPosition="178" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="5142438244426863080" fileName="MoveStaticField.java" startLine="41" startPosition="57" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getKeyStroke_static#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5142438244426863079" fileName="MoveStaticField.java" startLine="40" startPosition="176" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5142438244426863068" fileName="MoveStaticField.java" startLine="41" startPosition="208" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="39" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
+    <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="38" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
     <scopeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="10" startPosition="35" endLine="10" endPosition="35" />
     <scopeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="13" startPosition="52" endLine="14" endPosition="46" />
     <scopeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" />
     <scopeInfo nodeId="5142438244426854972" fileName="MoveStaticField_destination_Settings.java" startLine="19" startPosition="42" endLine="20" endPosition="269" />
     <scopeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="121" />
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="24" startPosition="39" endLine="25" endPosition="31" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="23" startPosition="39" endLine="24" endPosition="31" />
     <scopeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" />
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="28" startPosition="32" endLine="29" endPosition="33" />
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="32" startPosition="47" endLine="33" endPosition="27" />
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="36" startPosition="52" endLine="37" endPosition="40" />
-    <scopeInfo nodeId="5142438244426863081" fileName="MoveStaticField.java" startLine="45" startPosition="27" endLine="46" endPosition="277" />
-    <scopeInfo nodeId="5142438244426791435" fileName="MoveStaticField.java" startLine="53" startPosition="69" endLine="54" endPosition="95" />
-    <scopeInfo nodeId="5142438244426872852" fileName="MoveStaticField.java" startLine="57" startPosition="86" endLine="58" endPosition="98" />
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="61" startPosition="46" endLine="62" endPosition="43" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="27" startPosition="32" endLine="28" endPosition="33" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="31" startPosition="47" endLine="32" endPosition="27" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="35" startPosition="52" endLine="36" endPosition="40" />
+    <scopeInfo nodeId="5142438244426863081" fileName="MoveStaticField.java" startLine="42" startPosition="25" endLine="43" endPosition="275" />
+    <scopeInfo nodeId="5142438244426791435" fileName="MoveStaticField.java" startLine="50" startPosition="69" endLine="51" endPosition="95" />
+    <scopeInfo nodeId="5142438244426872852" fileName="MoveStaticField.java" startLine="54" startPosition="86" endLine="55" endPosition="98" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="58" startPosition="46" endLine="59" endPosition="43" />
     <scopeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="9" startPosition="67" endLine="11" endPosition="3" />
     <scopeInfo nodeId="5142438244426854966" fileName="MoveStaticField_destination_Settings.java" startLine="14" startPosition="81" endLine="16" endPosition="40" />
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="19" startPosition="28" endLine="21" endPosition="43" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="18" startPosition="28" endLine="20" endPosition="43" />
     <scopeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="5142438244426854966" fileName="MoveStaticField_destination_Settings.java" startLine="13" startPosition="0" endLine="17" endPosition="3">
       <varInfo nodeId="5142438244426854966" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="17" startPosition="54" endLine="21" endPosition="3" />
     <scopeInfo nodeId="5142438244426854966" fileName="MoveStaticField_destination_Settings.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="5142438244426854966" varName="entity" />
     </scopeInfo>
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="18" startPosition="54" endLine="22" endPosition="3" />
     <scopeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="5142438244426854472" varName="entity" />
     </scopeInfo>
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5142438244426863080" fileName="MoveStaticField.java" startLine="44" startPosition="59" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="5142438244426863080" fileName="MoveStaticField.java" startLine="41" startPosition="57" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="5142438244426791432" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="5142438244426791432" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="5142438244426863069" fileName="MoveStaticField.java" startLine="42" startPosition="25" endLine="48" endPosition="9" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="5142438244426854472" varName="entity" />
     </scopeInfo>
-    <scopeInfo nodeId="5142438244426863061" fileName="MoveStaticField.java" startLine="40" startPosition="68" endLine="50" endPosition="26">
-      <varInfo nodeId="5142438244426863064" varName="hasDestination" />
-    </scopeInfo>
-    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="39" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="5142438244426863061" fileName="MoveStaticField.java" startLine="39" startPosition="68" endLine="47" endPosition="16" />
+    <scopeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="38" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="5142438244426791432" varName="refactoringContext" />
     </scopeInfo>
-    <unitInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField" />
-    <unitInfo nodeId="5142438244426863080" fileName="MoveStaticField.java" startLine="44" startPosition="47" endLine="48" endPosition="7" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField$1" />
+    <unitInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="17" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField" />
+    <unitInfo nodeId="5142438244426863080" fileName="MoveStaticField.java" startLine="41" startPosition="45" endLine="45" endPosition="5" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField$1" />
     <unitInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField_Target" />
     <unitInfo nodeId="5142438244426854966" fileName="MoveStaticField_destination_Settings.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField_destination_Settings" />
   </root>
@@ -450,8 +441,8 @@
     <nodeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="23" startPosition="42" endLine="24" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="27" startPosition="39" endLine="28" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4413749148913391051" fileName="RenameMethod_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4413749148913391051" fileName="RenameMethod_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="338" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="338" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="31" startPosition="32" endLine="32" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="35" startPosition="47" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="39" startPosition="52" endLine="40" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -485,7 +476,7 @@
     <scopeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="21" startPosition="58" endLine="22" endPosition="16" />
     <scopeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" />
     <scopeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="27" startPosition="39" endLine="28" endPosition="27" />
-    <scopeInfo nodeId="4413749148913389809" fileName="RenameMethod_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="222" />
+    <scopeInfo nodeId="4413749148913389809" fileName="RenameMethod_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="338" />
     <scopeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="31" startPosition="32" endLine="32" endPosition="33" />
     <scopeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="35" startPosition="47" endLine="36" endPosition="24" />
     <scopeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="39" startPosition="52" endLine="40" endPosition="37" />
@@ -504,7 +495,7 @@
       <varInfo nodeId="7874812549549771310" varName="entity" />
     </scopeInfo>
     <scopeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="21" startPosition="51" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="222" />
+    <scopeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="338" />
     <scopeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />

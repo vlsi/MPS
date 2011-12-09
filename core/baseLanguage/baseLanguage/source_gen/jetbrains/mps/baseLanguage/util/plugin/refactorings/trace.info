@@ -1081,46 +1081,6 @@
     <unitInfo nodeId="7425580205971833206" fileName="BaseChooseNodeDialog.java" startLine="38" startPosition="31" endLine="42" endPosition="3" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.BaseChooseNodeDialog$1" />
     <unitInfo nodeId="7425580205971833416" fileName="BaseChooseNodeDialog.java" startLine="91" startPosition="64" endLine="95" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.BaseChooseNodeDialog$2" />
   </root>
-  <root nodeId="759258373983325702">
-    <nodeInfo nodeId="759258373983325725" fileName="RenameMethodDialog.java" startLine="12" startPosition="54" endLine="13" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverridingCheckBox" />
-    <nodeInfo nodeId="759258373983325733" fileName="RenameMethodDialog.java" startLine="13" startPosition="41" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsOverriding" />
-    <nodeInfo nodeId="6637315361769894690" fileName="RenameMethodDialog.java" startLine="14" startPosition="33" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverridingEnabled" />
-    <nodeInfo nodeId="759258373983325719" fileName="RenameMethodDialog.java" startLine="17" startPosition="108" endLine="18" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6637315361769894698" fileName="RenameMethodDialog.java" startLine="18" startPosition="38" endLine="19" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983325737" fileName="RenameMethodDialog.java" startLine="22" startPosition="34" endLine="23" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983338450" fileName="RenameMethodDialog.java" startLine="26" startPosition="43" endLine="27" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6637315361769859819" fileName="RenameMethodDialog.java" startLine="27" startPosition="29" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6637315361769894710" fileName="RenameMethodDialog.java" startLine="28" startPosition="63" endLine="29" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8847539102234122992" fileName="RenameMethodDialog.java" startLine="29" startPosition="57" endLine="30" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7727878092218493693" fileName="RenameMethodDialog.java" startLine="30" startPosition="52" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7727878092218493705" fileName="RenameMethodDialog.java" startLine="31" startPosition="16" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7727878092218493755" fileName="RenameMethodDialog.java" startLine="32" startPosition="16" endLine="33" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983338466" fileName="RenameMethodDialog.java" startLine="33" startPosition="38" endLine="34" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983338489" fileName="RenameMethodDialog.java" startLine="34" startPosition="51" endLine="35" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983338481" fileName="RenameMethodDialog.java" startLine="35" startPosition="41" endLine="36" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="759258373983325746" fileName="RenameMethodDialog.java" startLine="39" startPosition="40" endLine="40" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983328599" fileName="RenameMethodDialog.java" startLine="40" startPosition="55" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983325704" fileName="RenameMethodDialog.java" startLine="16" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameMethodDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="759258373983325729" fileName="RenameMethodDialog.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverriding#()Z" />
-    <nodeInfo nodeId="759258373983325741" fileName="RenameMethodDialog.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
-    <nodeInfo nodeId="759258373983338444" fileName="RenameMethodDialog.java" startLine="25" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNorthPanel#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="759258373983325732" fileName="RenameMethodDialog.java" startLine="22" startPosition="34" endLine="23" endPosition="26" />
-    <scopeInfo nodeId="759258373983325707" fileName="RenameMethodDialog.java" startLine="17" startPosition="108" endLine="19" endPosition="51" />
-    <scopeInfo nodeId="759258373983325744" fileName="RenameMethodDialog.java" startLine="39" startPosition="40" endLine="41" endPosition="32" />
-    <scopeInfo nodeId="759258373983325704" fileName="RenameMethodDialog.java" startLine="16" startPosition="0" endLine="20" endPosition="3">
-      <varInfo nodeId="6637315361769894694" varName="myOverridingEnabled" />
-      <varInfo nodeId="759258373983325716" varName="nodeName" />
-      <varInfo nodeId="759258373983325713" varName="oldName" />
-      <varInfo nodeId="759258373983325710" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="759258373983325729" fileName="RenameMethodDialog.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="759258373983325741" fileName="RenameMethodDialog.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="759258373983338447" fileName="RenameMethodDialog.java" startLine="26" startPosition="43" endLine="36" endPosition="19">
-      <varInfo nodeId="8847539102234122993" varName="c" />
-    </scopeInfo>
-    <scopeInfo nodeId="759258373983338444" fileName="RenameMethodDialog.java" startLine="25" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="759258373983325702" fileName="RenameMethodDialog.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.RenameMethodDialog" />
-  </root>
   <root nodeId="7782234301060366093">
     <nodeInfo nodeId="7782234301060371588" fileName="MethodDuplicatesProcessor.java" startLine="15" startPosition="90" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
     <nodeInfo nodeId="7782234301060371600" fileName="MethodDuplicatesProcessor.java" startLine="18" startPosition="59" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1161,6 +1121,7 @@
       <varInfo nodeId="7782234301060415237" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="7782234301060403243" fileName="VariableDuplicatesProcessor.java" startLine="16" startPosition="43" endLine="15" endPosition="0" />
+    <unitInfo nodeId="7782234301060403220" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.VariableDuplicatesProcessor" />
   </root>
   <root nodeId="8184320397304927312">
     <nodeInfo nodeId="8184320397304989933" fileName="ConvertAnonymousRefactoring.java" startLine="30" startPosition="42" endLine="31" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ROLES_NOT_TO_COPY" />

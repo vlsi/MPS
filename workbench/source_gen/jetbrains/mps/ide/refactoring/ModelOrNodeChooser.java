@@ -6,9 +6,10 @@ import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
@@ -22,7 +23,7 @@ public class ModelOrNodeChooser extends JBScrollPane {
     }
   };
 
-  public ModelOrNodeChooser(Project project, final SModelDescriptor model) {
+  private ModelOrNodeChooser(Project project, final Object initialValue) {
     super();
     this.myTree = new ProjectTree(project);
     this.setViewportView(this.myTree);
@@ -31,11 +32,15 @@ public class ModelOrNodeChooser extends JBScrollPane {
         ModelOrNodeChooser.this.myTree.rebuildNow();
         ModelOrNodeChooser.this.myTree.runWithoutExpansion(new Runnable() {
           public void run() {
-            MPSTreeNode treeNode = ModelOrNodeChooser.this.myHelper.findMostSuitableModelTreeNode(model);
+            MPSTreeNode treeNode = null;
+            if (initialValue instanceof SNode) {
+              treeNode = ModelOrNodeChooser.this.myHelper.findMostSuitableSNodeTreeNode(((SNode) initialValue));
+            } else if (initialValue instanceof SModelDescriptor) {
+              treeNode = ModelOrNodeChooser.this.myHelper.findMostSuitableModelTreeNode(((SModelDescriptor) initialValue));
+            }
             if (treeNode == null) {
               return;
             }
-
             ModelOrNodeChooser.this.myTree.selectNode(treeNode);
           }
         });
@@ -56,5 +61,13 @@ public class ModelOrNodeChooser extends JBScrollPane {
       }
     });
     return result.value;
+  }
+
+  public static ModelOrNodeChooser createChooser(Project project, SNode node) {
+    return new ModelOrNodeChooser(project, node);
+  }
+
+  public static ModelOrNodeChooser createChooser(Project project, SModelDescriptor model) {
+    return new ModelOrNodeChooser(project, model);
   }
 }

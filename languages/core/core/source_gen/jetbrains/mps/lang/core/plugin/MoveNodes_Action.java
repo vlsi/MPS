@@ -22,6 +22,7 @@ import jetbrains.mps.ide.refactoring.MoveNodesDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
@@ -83,7 +84,11 @@ public class MoveNodes_Action extends GeneratedAction {
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          newNode.value = MoveNodesDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SModel) SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first())).getModelDescriptor());
+          newNode.value = MoveNodesDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SModel) SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first())).getModelDescriptor(), new MoveNodesDialog.ModelFilter("Choose Node or Model") {
+            public boolean check(Object selectedObject, SModelDescriptor model) {
+              return selectedObject instanceof SNode || selectedObject instanceof SModelDescriptor;
+            }
+          });
         }
       });
       if (newNode.value == null) {
