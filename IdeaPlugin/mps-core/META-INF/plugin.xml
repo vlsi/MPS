@@ -36,6 +36,7 @@
     <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
     <xi:include href="../classes/META-INF/MPSActions.xml" xpointer="xpointer(/components/*)"/>
     <xi:include href="../classes/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
+    <xi:include href="../classes/META-INF/MPSEditorActions.xml" xpointer="xpointer(/components/*)"/>
 
     <project-components>
         <component>

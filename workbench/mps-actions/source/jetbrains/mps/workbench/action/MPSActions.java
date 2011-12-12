@@ -75,6 +75,11 @@ public class MPSActions {
   }
 
   private static void removeGroupsFromGroup(ActionGroup group, List<BaseGroup> groups) {
+    if ("com.intellij.util.xml.tree.actions.AddDomElementActionGroup".equals(group.getClass().getName())) {
+        // workaround for a bug in IDEA XML plugin
+        // TODO: remove the workaround
+        return;
+    }
     AnAction[] children = group.getChildren(null);
     for (AnAction child : children) {
       if (child instanceof ActionGroup) {

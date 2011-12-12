@@ -47,6 +47,7 @@
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/mpseditor">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpseditor/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpseditor/source" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../workbench/mps-actions">
       <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-actions/source" isTestSource="false" />

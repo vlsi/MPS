@@ -4,7 +4,7 @@
 
     <component>
       <interface-class>jetbrains.mps.plugins.applicationplugins.IRegistryManager</interface-class>
-      <implementation-class>jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager</implementation-class>
+      <implementation-class>jetbrains.mps.plugins.applicationplugins.BaseApplicationPluginManager</implementation-class>
     </component>
 
   </application-components>
