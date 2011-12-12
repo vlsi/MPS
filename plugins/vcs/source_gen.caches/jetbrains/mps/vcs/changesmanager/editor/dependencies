@@ -151,6 +151,7 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.event.FocusEvent" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JLayeredPane" />
     <classNode dependClassName="javax.swing.SwingUtilities" />

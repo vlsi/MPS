@@ -42,7 +42,7 @@ import java.awt.event.FocusEvent;
     myToolbar.setTargetComponent(myPainter.getEditorComponent());
     toolbarPanel.add(myToolbar.getComponent(), BorderLayout.WEST);
     add(toolbarPanel, BorderLayout.NORTH);
-    myToolbar.getComponent().setBorder(new ColoredSideBorder(Color.BLACK, Color.BLACK, (myChangeGroup.getChangeType() != ChangeType.ADD ?
+    myToolbar.getComponent().setBorder(new ColoredSideBorder(Color.BLACK, Color.BLACK, (myChangeGroup. getChangeType() != ChangeType.ADD ?
       null :
       Color.BLACK
     ), Color.BLACK, 1));
@@ -66,6 +66,11 @@ import java.awt.event.FocusEvent;
     myPainter.setGroupHighlighted(myChangeGroup, true);
     myToolbar.updateActionsImmediately();
     setSize(getPreferredSize());
+    int overflow = ((int) getBounds().getMaxX()) - layeredPane.getWidth();
+    if (overflow > 0) {
+      // panel is too wide, need to move it 
+      setLocation(Math.max(0, getX() - overflow), getY());
+    }
     layeredPane.validate();
     layeredPane.repaint(getBounds());
 

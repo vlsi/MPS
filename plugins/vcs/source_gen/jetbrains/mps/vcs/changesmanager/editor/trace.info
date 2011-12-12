@@ -298,65 +298,71 @@
     <nodeInfo nodeId="204834724131529721" fileName="PopupPanel.java" startLine="65" startPosition="0" endLine="66" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="204834724131529727" fileName="PopupPanel.java" startLine="66" startPosition="55" endLine="67" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2837442331563679340" fileName="PopupPanel.java" startLine="67" startPosition="41" endLine="68" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7604564562223660517" fileName="PopupPanel.java" startLine="68" startPosition="32" endLine="69" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6684289465613691521" fileName="PopupPanel.java" startLine="69" startPosition="27" endLine="70" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="204834724131521232" fileName="PopupPanel.java" startLine="70" startPosition="37" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2837442331563679302" fileName="PopupPanel.java" startLine="71" startPosition="0" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2837442331563746377" fileName="PopupPanel.java" startLine="75" startPosition="31" endLine="76" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2837442331563746390" fileName="PopupPanel.java" startLine="76" startPosition="47" endLine="77" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2837442331563746405" fileName="PopupPanel.java" startLine="80" startPosition="34" endLine="81" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2837442331563746398" fileName="PopupPanel.java" startLine="81" startPosition="50" endLine="82" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2837442331563679309" fileName="PopupPanel.java" startLine="85" startPosition="30" endLine="86" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="731460841273166558" fileName="PopupPanel.java" startLine="86" startPosition="22" endLine="87" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2837442331563748732" fileName="PopupPanel.java" startLine="87" startPosition="71" endLine="88" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="731460841273166549" fileName="PopupPanel.java" startLine="88" startPosition="29" endLine="89" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="731460841273166553" fileName="PopupPanel.java" startLine="89" startPosition="27" endLine="90" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2837442331563679282" fileName="PopupPanel.java" startLine="90" startPosition="37" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2837442331563679267" fileName="PopupPanel.java" startLine="91" startPosition="0" endLine="92" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2837442331563679273" fileName="PopupPanel.java" startLine="92" startPosition="56" endLine="93" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2837442331563679311" fileName="PopupPanel.java" startLine="101" startPosition="48" endLine="102" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2837442331563679337" fileName="PopupPanel.java" startLine="111" startPosition="45" endLine="112" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2837442331563679247" fileName="PopupPanel.java" startLine="96" startPosition="54" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMouseListener#()V" />
-    <nodeInfo nodeId="2837442331563679321" fileName="PopupPanel.java" startLine="106" startPosition="54" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFocusListener#()V" />
+    <nodeInfo nodeId="52085229094018761" fileName="PopupPanel.java" startLine="68" startPosition="32" endLine="69" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="52085229094018721" fileName="PopupPanel.java" startLine="70" startPosition="23" endLine="71" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="52085229094018799" fileName="PopupPanel.java" startLine="71" startPosition="44" endLine="72" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7604564562223660517" fileName="PopupPanel.java" startLine="73" startPosition="5" endLine="74" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6684289465613691521" fileName="PopupPanel.java" startLine="74" startPosition="27" endLine="75" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="204834724131521232" fileName="PopupPanel.java" startLine="75" startPosition="37" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2837442331563679302" fileName="PopupPanel.java" startLine="76" startPosition="0" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2837442331563746377" fileName="PopupPanel.java" startLine="80" startPosition="31" endLine="81" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2837442331563746390" fileName="PopupPanel.java" startLine="81" startPosition="47" endLine="82" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2837442331563746405" fileName="PopupPanel.java" startLine="85" startPosition="34" endLine="86" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2837442331563746398" fileName="PopupPanel.java" startLine="86" startPosition="50" endLine="87" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2837442331563679309" fileName="PopupPanel.java" startLine="90" startPosition="30" endLine="91" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="731460841273166558" fileName="PopupPanel.java" startLine="91" startPosition="22" endLine="92" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2837442331563748732" fileName="PopupPanel.java" startLine="92" startPosition="71" endLine="93" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="731460841273166549" fileName="PopupPanel.java" startLine="93" startPosition="29" endLine="94" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="731460841273166553" fileName="PopupPanel.java" startLine="94" startPosition="27" endLine="95" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2837442331563679282" fileName="PopupPanel.java" startLine="95" startPosition="37" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2837442331563679267" fileName="PopupPanel.java" startLine="96" startPosition="0" endLine="97" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2837442331563679273" fileName="PopupPanel.java" startLine="97" startPosition="56" endLine="98" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2837442331563679311" fileName="PopupPanel.java" startLine="106" startPosition="48" endLine="107" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2837442331563679337" fileName="PopupPanel.java" startLine="116" startPosition="45" endLine="117" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2837442331563679247" fileName="PopupPanel.java" startLine="101" startPosition="54" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMouseListener#()V" />
+    <nodeInfo nodeId="2837442331563679321" fileName="PopupPanel.java" startLine="111" startPosition="54" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFocusListener#()V" />
     <nodeInfo nodeId="5109148457513120328" fileName="PopupPanel.java" startLine="44" startPosition="42" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4477049948824827100" fileName="PopupPanel.java" startLine="49" startPosition="0" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3110655250282849316" fileName="PopupPanel.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeGroup#()Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
-    <nodeInfo nodeId="2837442331563678934" fileName="PopupPanel.java" startLine="74" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListeners#()V" />
-    <nodeInfo nodeId="2837442331563678938" fileName="PopupPanel.java" startLine="79" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListeners#()V" />
-    <nodeInfo nodeId="2837442331563679253" fileName="PopupPanel.java" startLine="99" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="2837442331563679327" fileName="PopupPanel.java" startLine="109" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="focusLost#(Ljava/awt/event/FocusEvent;)V" />
-    <nodeInfo nodeId="2837442331563679263" fileName="PopupPanel.java" startLine="84" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="2837442331563679283" fileName="PopupPanel.java" startLine="59" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(II)V" />
+    <nodeInfo nodeId="52085229094015861" fileName="PopupPanel.java" startLine="69" startPosition="74" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2837442331563678934" fileName="PopupPanel.java" startLine="79" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListeners#()V" />
+    <nodeInfo nodeId="2837442331563678938" fileName="PopupPanel.java" startLine="84" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListeners#()V" />
+    <nodeInfo nodeId="2837442331563679253" fileName="PopupPanel.java" startLine="104" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="2837442331563679327" fileName="PopupPanel.java" startLine="114" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="focusLost#(Ljava/awt/event/FocusEvent;)V" />
+    <nodeInfo nodeId="2837442331563679263" fileName="PopupPanel.java" startLine="89" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="2837442331563679283" fileName="PopupPanel.java" startLine="59" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(II)V" />
     <nodeInfo nodeId="2881457021876857498" fileName="PopupPanel.java" startLine="31" startPosition="0" endLine="54" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PopupPanel#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
-    <scopeInfo nodeId="2837442331563679250" fileName="PopupPanel.java" startLine="97" startPosition="30" endLine="97" endPosition="30" />
-    <scopeInfo nodeId="2837442331563679324" fileName="PopupPanel.java" startLine="107" startPosition="30" endLine="107" endPosition="30" />
+    <scopeInfo nodeId="2837442331563679250" fileName="PopupPanel.java" startLine="102" startPosition="30" endLine="102" endPosition="30" />
+    <scopeInfo nodeId="2837442331563679324" fileName="PopupPanel.java" startLine="112" startPosition="30" endLine="112" endPosition="30" />
     <scopeInfo nodeId="3110655250282849319" fileName="PopupPanel.java" startLine="56" startPosition="44" endLine="57" endPosition="25" />
-    <scopeInfo nodeId="2837442331563679258" fileName="PopupPanel.java" startLine="101" startPosition="48" endLine="102" endPosition="16" />
-    <scopeInfo nodeId="2837442331563679332" fileName="PopupPanel.java" startLine="111" startPosition="45" endLine="112" endPosition="16" />
+    <scopeInfo nodeId="2837442331563679258" fileName="PopupPanel.java" startLine="106" startPosition="48" endLine="107" endPosition="16" />
+    <scopeInfo nodeId="2837442331563679332" fileName="PopupPanel.java" startLine="116" startPosition="45" endLine="117" endPosition="16" />
     <scopeInfo nodeId="4477049948824827101" fileName="PopupPanel.java" startLine="50" startPosition="58" endLine="52" endPosition="59">
       <varInfo nodeId="4477049948824848375" varName="baseEditor" />
     </scopeInfo>
-    <scopeInfo nodeId="2837442331563678936" fileName="PopupPanel.java" startLine="75" startPosition="31" endLine="77" endPosition="47" />
-    <scopeInfo nodeId="2837442331563678940" fileName="PopupPanel.java" startLine="80" startPosition="34" endLine="82" endPosition="50" />
-    <scopeInfo nodeId="2837442331563679247" fileName="PopupPanel.java" startLine="96" startPosition="54" endLine="98" endPosition="5" />
-    <scopeInfo nodeId="2837442331563679321" fileName="PopupPanel.java" startLine="106" startPosition="54" endLine="108" endPosition="5" />
+    <scopeInfo nodeId="52085229094015862" fileName="PopupPanel.java" startLine="70" startPosition="23" endLine="72" endPosition="58" />
+    <scopeInfo nodeId="2837442331563678936" fileName="PopupPanel.java" startLine="80" startPosition="31" endLine="82" endPosition="47" />
+    <scopeInfo nodeId="2837442331563678940" fileName="PopupPanel.java" startLine="85" startPosition="34" endLine="87" endPosition="50" />
+    <scopeInfo nodeId="2837442331563679247" fileName="PopupPanel.java" startLine="101" startPosition="54" endLine="103" endPosition="5" />
+    <scopeInfo nodeId="2837442331563679321" fileName="PopupPanel.java" startLine="111" startPosition="54" endLine="113" endPosition="5" />
     <scopeInfo nodeId="3110655250282849316" fileName="PopupPanel.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="2837442331563678934" fileName="PopupPanel.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="2837442331563678938" fileName="PopupPanel.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="2837442331563679253" fileName="PopupPanel.java" startLine="99" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="2837442331563678934" fileName="PopupPanel.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="2837442331563678938" fileName="PopupPanel.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="2837442331563679253" fileName="PopupPanel.java" startLine="104" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="2837442331563679256" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2837442331563679327" fileName="PopupPanel.java" startLine="109" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="2837442331563679327" fileName="PopupPanel.java" startLine="114" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="2837442331563679330" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2837442331563679265" fileName="PopupPanel.java" startLine="85" startPosition="30" endLine="93" endPosition="28">
+    <scopeInfo nodeId="2837442331563679265" fileName="PopupPanel.java" startLine="90" startPosition="30" endLine="98" endPosition="28">
       <varInfo nodeId="731460841273166559" varName="layeredPane" />
     </scopeInfo>
-    <scopeInfo nodeId="2837442331563679263" fileName="PopupPanel.java" startLine="84" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="2837442331563679285" fileName="PopupPanel.java" startLine="60" startPosition="34" endLine="72" endPosition="19">
+    <scopeInfo nodeId="2837442331563679263" fileName="PopupPanel.java" startLine="89" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="2837442331563679285" fileName="PopupPanel.java" startLine="60" startPosition="34" endLine="77" endPosition="19">
       <varInfo nodeId="2486616746024237137" varName="layeredPane" />
+      <varInfo nodeId="52085229094018762" varName="overflow" />
     </scopeInfo>
-    <scopeInfo nodeId="2837442331563679283" fileName="PopupPanel.java" startLine="59" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="2837442331563679283" fileName="PopupPanel.java" startLine="59" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="2837442331563679290" varName="x" />
       <varInfo nodeId="2837442331563679293" varName="y" />
     </scopeInfo>
@@ -367,9 +373,9 @@
       <varInfo nodeId="2881457021876857835" varName="group" />
       <varInfo nodeId="2881457021876857522" varName="painter" />
     </scopeInfo>
-    <unitInfo nodeId="2881457021876857496" fileName="PopupPanel.java" startLine="24" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.PopupPanel" />
-    <unitInfo nodeId="2837442331563679319" fileName="PopupPanel.java" startLine="106" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.PopupPanel$MyFocusListener" />
-    <unitInfo nodeId="2837442331563679245" fileName="PopupPanel.java" startLine="96" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.PopupPanel$MyMouseListener" />
+    <unitInfo nodeId="2881457021876857496" fileName="PopupPanel.java" startLine="24" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.PopupPanel" />
+    <unitInfo nodeId="2837442331563679319" fileName="PopupPanel.java" startLine="111" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.PopupPanel$MyFocusListener" />
+    <unitInfo nodeId="2837442331563679245" fileName="PopupPanel.java" startLine="101" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.PopupPanel$MyMouseListener" />
   </root>
   <root nodeId="4477049948824855836">
     <nodeInfo nodeId="1455391539105549287" fileName="BaseVersionEditorComponent.java" startLine="30" startPosition="95" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScrollPane" />
