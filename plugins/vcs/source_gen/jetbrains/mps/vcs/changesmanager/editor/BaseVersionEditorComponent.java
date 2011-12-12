@@ -32,7 +32,6 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
   public BaseVersionEditorComponent(IOperationContext operationContext, ChangeGroup changeGroup) {
     super(operationContext);
-    // TODO better operation context 
     final SModel baseModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
     SNode baseRoot = baseModel.getNodeById(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
     editNode(baseRoot);
