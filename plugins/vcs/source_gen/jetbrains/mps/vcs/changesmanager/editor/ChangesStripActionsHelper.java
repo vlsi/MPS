@@ -19,6 +19,17 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
+import jetbrains.mps.vcs.diff.changes.ChangeType;
+import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.vcs.diff.changes.NodeChange;
+import java.util.Collections;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 
 public class ChangesStripActionsHelper {
   private ChangesStripActionsHelper() {
@@ -26,9 +37,7 @@ public class ChangesStripActionsHelper {
 
   @Nullable
   private static ChangeGroup getNeighbourChangeGroup(@NotNull EditorContext editorContext, boolean next) {
-    EditorComponent editorComponent = editorContext.getNodeEditorComponent();
-    EditorHighlighter highlighter = check_ikrecr_a0b0a(editorContext.getOperationContext().getComponent(EditorHighlighterFactory.class), editorComponent);
-    return check_ikrecr_a2a0(check_ikrecr_a0c0a(highlighter), editorContext, next);
+    return check_ikrecr_a0a0(getPainter(editorContext), editorContext, next);
   }
 
   public static boolean isNeighbourGroupAvailable(@NotNull EditorContext editorContext, boolean next) {
@@ -41,10 +50,9 @@ public class ChangesStripActionsHelper {
       return;
     }
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
-    EditorHighlighter highlighter = check_ikrecr_a0d0c(editorContext.getOperationContext().getComponent(EditorHighlighterFactory.class), editorComponent);
     goToY(editorComponent, (int) group.getBounds(true).end());
     goToY(editorComponent, (int) group.getBounds(true).start());
-    check_ikrecr_a0g0c(highlighter).showPopupForGroup(group);
+    check_ikrecr_a5a2(getPainter(editorContext), group);
   }
 
   private static void goToY(EditorComponent editorComponent, int y) {
@@ -54,11 +62,24 @@ public class ChangesStripActionsHelper {
     }
   }
 
-  public static void rollbackChanges(@NotNull EditorContext editorContext) {
+  @Nullable
+  private static EditorHighlighter getHighlighter(EditorContext editorContext) {
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
-    EditorHighlighter highlighter = check_ikrecr_a0b0e(editorContext.getOperationContext().getComponent(EditorHighlighterFactory.class), editorComponent);
-    final ChangeStripsPainter painter = check_ikrecr_a0c0e(highlighter);
-    final List<ModelChange> changes = check_ikrecr_a0d0e(check_ikrecr_a0a3a4(painter));
+    return check_ikrecr_a1a4(editorContext.getOperationContext().getComponent(EditorHighlighterFactory.class), editorComponent);
+  }
+
+  @Nullable
+  private static ChangeStripsPainter getPainter(EditorContext editorContext) {
+    return check_ikrecr_a0a5(getHighlighter(editorContext));
+  }
+
+  @Nullable
+  private static ChangeGroup getCurrentChangeGroup(@NotNull EditorContext editorContext) {
+    return check_ikrecr_a0a6(getPainter(editorContext));
+  }
+
+  public static void rollbackChanges(@NotNull final EditorContext editorContext) {
+    final List<ModelChange> changes = check_ikrecr_a0a0h(getCurrentChangeGroup(editorContext));
     if (changes == null) {
       return;
     }
@@ -82,122 +103,196 @@ public class ChangesStripActionsHelper {
           }
         });
         nc.restoreIds(true);
-        painter.showPopupForGroup(null);
+        check_ikrecr_a6a0c0h(getPainter(editorContext));
       }
     });
   }
 
   public static Bounds getCurrentChangeGroupPositionAndHidePopup(@NotNull EditorContext editorContext) {
-    EditorComponent editorComponent = editorContext.getNodeEditorComponent();
-    EditorHighlighter highlighter = check_ikrecr_a0b0f(editorContext.getOperationContext().getComponent(EditorHighlighterFactory.class), editorComponent);
-    ChangeStripsPainter painter = check_ikrecr_a0c0f(highlighter);
-    ChangeGroup cg = check_ikrecr_a0d0f(painter);
-    check_ikrecr_a4a5(painter);
-    return check_ikrecr_a5a5(cg);
+    ChangeGroup cg = getCurrentChangeGroup(editorContext);
+    check_ikrecr_a1a8(ChangesStripActionsHelper.getPainter(editorContext));
+    return check_ikrecr_a2a8(cg);
   }
 
-  private static EditorHighlighter check_ikrecr_a0b0a(EditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
+  public static boolean areOldNodesAvailable(@NotNull EditorContext editorContext) {
+    ChangeGroup cg = getCurrentChangeGroup(editorContext);
+    return cg != null && cg.getChangeType() != ChangeType.ADD;
+  }
+
+  public static void copyOldNodes(@NotNull EditorContext editorContext) {
+    ChangeGroup changeGroup = getCurrentChangeGroup(editorContext);
+    assert changeGroup != null;
+
+    final SModel oldModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
+    DiffTemporaryModule.createModuleForModel(oldModel, "old", editorContext.getOperationContext().getProject());
+
+    // compute paths to root 
+    Iterable<SNode> baseNodes = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, SNode>() {
+      public Iterable<SNode> translate(ModelChange ch) {
+        if (ch instanceof NodeChange) {
+          return Sequence.<SNode>singleton(oldModel.getNodeById(((NodeChange) ch).getAffectedNodeId()));
+        } else if (ch instanceof NodeGroupChange) {
+          NodeGroupChange ngc = (NodeGroupChange) ch;
+          List<SNode> changeChildren = oldModel.getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole());
+          return ListSequence.fromList(changeChildren).page(ngc.getBegin(), ngc.getEnd());
+        } else {
+          return Sequence.fromIterable(Collections.<SNode>emptyList());
+        }
+      }
+    });
+    List<List<SNode>> paths = Sequence.fromIterable(baseNodes).select(new ISelector<SNode, List<SNode>>() {
+      public List<SNode> select(SNode n) {
+        return (List<SNode>) ListSequence.fromList(SNodeOperations.getAncestors(n, null, true)).reversedList();
+      }
+    }).toListSequence();
+
+    // find common path 
+    final Wrappers._T<List<SNode>> commonPath = new Wrappers._T<List<SNode>>(ListSequence.fromList(paths).getElement(0));
+    for (List<SNode> pathToRoot : ListSequence.fromList(paths)) {
+      for (int i = 0; i < Math.min(ListSequence.fromList(commonPath.value).count(), ListSequence.fromList(pathToRoot).count()); i++) {
+        if (ListSequence.fromList(commonPath.value).getElement(i) != ListSequence.fromList(pathToRoot).getElement(i)) {
+          commonPath.value = ListSequence.fromList(commonPath.value).take(i).toListSequence();
+          break;
+        }
+      }
+      if (ListSequence.fromList(pathToRoot).count() < ListSequence.fromList(commonPath.value).count()) {
+        commonPath.value = ListSequence.fromList(commonPath.value).take(ListSequence.fromList(pathToRoot).count()).toListSequence();
+      }
+    }
+    assert !(ListSequence.fromList(commonPath.value).isEmpty());
+
+    // by default, copy common ancestor 
+    SNode commonNode = ListSequence.fromList(commonPath.value).last();
+    List<SNode> nodesToCopy = Sequence.fromIterable(Sequence.<SNode>singleton(commonNode)).toListSequence();
+
+    if (ListSequence.fromList(paths).all(new IWhereFilter<List<SNode>>() {
+      public boolean accept(List<SNode> p) {
+        return ListSequence.fromList(p).count() > ListSequence.fromList(commonPath.value).count();
+      }
+    })) {
+      Iterable<SNode> children = ListSequence.fromList(paths).select(new ISelector<List<SNode>, SNode>() {
+        public SNode select(List<SNode> p) {
+          return ListSequence.fromList(p).getElement(ListSequence.fromList(commonPath.value).count());
+        }
+      });
+      Iterable<String> roles = Sequence.fromIterable(children).select(new ISelector<SNode, String>() {
+        public String select(SNode c) {
+          return SNodeOperations.getContainingLinkRole(c);
+        }
+      });
+      final String commonRole = Sequence.fromIterable(roles).first();
+      if (Sequence.fromIterable(roles).all(new IWhereFilter<String>() {
+        public boolean accept(String r) {
+          return eq_ikrecr_a0a0a0a0a0d0t0k(r, commonRole);
+        }
+      })) {
+        Iterable<Integer> indices = Sequence.fromIterable(children).select(new ISelector<SNode, Integer>() {
+          public Integer select(SNode c) {
+            return SNodeOperations.getIndexInParent(c);
+          }
+        }).distinct();
+        int min = Sequence.fromIterable(indices).reduceLeft(new ILeftCombinator<Integer, Integer>() {
+          public Integer combine(Integer a, Integer b) {
+            return Math.min(a, b);
+          }
+        });
+        int max = Sequence.fromIterable(indices).reduceLeft(new ILeftCombinator<Integer, Integer>() {
+          public Integer combine(Integer a, Integer b) {
+            return Math.max(a, b);
+          }
+        });
+        ListSequence.fromList(nodesToCopy).clear();
+        for (int i = min; i <= max; i++) {
+          ListSequence.fromList(nodesToCopy).addElement(commonNode.getChildren(commonRole).get(i));
+        }
+      }
+    }
+
+    CopyPasteUtil.copyNodesToClipboard(nodesToCopy);
+    check_ikrecr_a22a01(getPainter(editorContext));
+  }
+
+  private static ChangeGroup check_ikrecr_a0a0(ChangeStripsPainter checkedDotOperand, EditorContext editorContext, boolean next) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getHighlighter(editorComponent);
+      return checkedDotOperand.getNeighbourChangeGroup(check_ikrecr_a0a0a0(editorContext), next);
     }
     return null;
   }
 
-  private static ChangeGroup check_ikrecr_a2a0(ChangeStripsPainter checkedDotOperand, EditorContext editorContext, boolean next) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getNeighbourChangeGroup(check_ikrecr_a0a2a0(editorContext), next);
-    }
-    return null;
-  }
-
-  private static EditorCell check_ikrecr_a0a2a0(EditorContext checkedDotOperand) {
+  private static EditorCell check_ikrecr_a0a0a0(EditorContext checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getContextCell();
     }
     return null;
   }
 
-  private static ChangeStripsPainter check_ikrecr_a0c0a(EditorHighlighter checkedDotOperand) {
+  private static void check_ikrecr_a5a2(ChangeStripsPainter checkedDotOperand, ChangeGroup group) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getStripsPainter();
+      checkedDotOperand.showPopupForGroup(group);
     }
-    return null;
+
   }
 
-  private static EditorHighlighter check_ikrecr_a0d0c(EditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getHighlighter(editorComponent);
-    }
-    return null;
-  }
-
-  private static ChangeStripsPainter check_ikrecr_a0g0c(EditorHighlighter checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getStripsPainter();
-    }
-    return null;
-  }
-
-  private static EditorHighlighter check_ikrecr_a0b0e(EditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
+  private static EditorHighlighter check_ikrecr_a1a4(EditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getHighlighter(editorComponent);
     }
     return null;
   }
 
-  private static ChangeStripsPainter check_ikrecr_a0c0e(EditorHighlighter checkedDotOperand) {
+  private static ChangeStripsPainter check_ikrecr_a0a5(EditorHighlighter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStripsPainter();
     }
     return null;
   }
 
-  private static List<ModelChange> check_ikrecr_a0d0e(ChangeGroup checkedDotOperand) {
+  private static ChangeGroup check_ikrecr_a0a6(ChangeStripsPainter checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getCurrentChangeGroup();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_ikrecr_a0a0h(ChangeGroup checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getChanges();
     }
     return null;
   }
 
-  private static ChangeGroup check_ikrecr_a0a3a4(ChangeStripsPainter checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getCurrentChangeGroup();
-    }
-    return null;
-  }
-
-  private static EditorHighlighter check_ikrecr_a0b0f(EditorHighlighterFactory checkedDotOperand, EditorComponent editorComponent) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getHighlighter(editorComponent);
-    }
-    return null;
-  }
-
-  private static ChangeStripsPainter check_ikrecr_a0c0f(EditorHighlighter checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getStripsPainter();
-    }
-    return null;
-  }
-
-  private static ChangeGroup check_ikrecr_a0d0f(ChangeStripsPainter checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getCurrentChangeGroup();
-    }
-    return null;
-  }
-
-  private static void check_ikrecr_a4a5(ChangeStripsPainter checkedDotOperand) {
+  private static void check_ikrecr_a6a0c0h(ChangeStripsPainter checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.showPopupForGroup(null);
     }
 
   }
 
-  private static Bounds check_ikrecr_a5a5(ChangeGroup checkedDotOperand) {
+  private static void check_ikrecr_a1a8(ChangeStripsPainter checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.showPopupForGroup(null);
+    }
+
+  }
+
+  private static Bounds check_ikrecr_a2a8(ChangeGroup checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getBounds(true);
     }
     return null;
+  }
+
+  private static void check_ikrecr_a22a01(ChangeStripsPainter checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.showPopupForGroup(null);
+    }
+
+  }
+
+  private static boolean eq_ikrecr_a0a0a0a0a0d0t0k(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

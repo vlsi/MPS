@@ -197,6 +197,12 @@
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
     </node>
+    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1108966977729618931">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="name" nameId="tpck.1169194664001" value="CopyOldNodes" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Copy Old Code" />
+      <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+    </node>
   </roots>
   <root id="6763225944573363022">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6763225944573363023">
@@ -2742,6 +2748,9 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5128886932763344172">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="6214954779304802836" resolveInfo="ShowDiffFromChanges" />
       </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4869914698124846898">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1108966977729618931" resolveInfo="CopyOldNodes" />
+      </node>
     </node>
   </root>
   <root id="5059587158025290631">
@@ -2906,6 +2915,48 @@
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6214954779304826201">
       <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/diff.png" />
+    </node>
+  </root>
+  <root id="1108966977729618931">
+    <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1108966977729618932">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1108966977729618933">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1108966977729618939">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1108966977729618941">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lsse.1108966977729575745" resolveInfo="copyOldNodes" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lsse.2052504288806109972" resolveInfo="ChangesStripActionsHelper" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1108966977729618942">
+              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1108966977729618943" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1108966977729618944">
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="1108966977729618937" resolveInfo="editorContext" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="1108966977729618934">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/ideSolution/icons/menu-copy.png" />
+    </node>
+    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1108966977729618937">
+      <property name="name" nameId="tpck.1169194664001" value="editorContext" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="kt54.~MPSDataKeys%dEDITOR_CONTEXT" resolveInfo="EDITOR_CONTEXT" />
+      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="1108966977729618938" />
+    </node>
+    <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="1108966977729618945">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1108966977729618946">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1108966977729618947">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1108966977729618957">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lsse.1108966977729618949" resolveInfo="areOldNodesAvailable" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lsse.2052504288806109972" resolveInfo="ChangesStripActionsHelper" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1108966977729618958">
+              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1108966977729618959" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1108966977729618960">
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="1108966977729618937" resolveInfo="editorContext" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>
