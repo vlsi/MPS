@@ -42,7 +42,7 @@ public class PartitioningHelper {
     // no multiple input models
     SModel inputModel = models.get(0).getSModel();
 
-    GenerationPlan plan = new GenerationPlan(inputModel, scope);
+    GenerationPlan plan = new GenerationPlan(inputModel, null);
 
 
     Map<MappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<MappingPriorityRule, TemplateModule>();

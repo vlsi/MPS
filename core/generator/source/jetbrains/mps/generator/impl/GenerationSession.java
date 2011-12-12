@@ -91,8 +91,13 @@ public class GenerationSession {
     }
 
     // create a plan
+    GenerationParametersProvider parametersProvider = myGenerationOptions.getParametersProvider();
     ttrace.push("analyzing dependencies", false);
-    myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel(), GlobalScope.getInstance());
+    Collection<String> additionalLanguages =
+      parametersProvider instanceof GenerationParametersProviderEx
+        ? ((GenerationParametersProviderEx)parametersProvider).getAdditionalLanguages(myOriginalInputModel)
+        : null;
+    myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel(), additionalLanguages);
     if (!checkGenerationPlan(myGenerationPlan)) {
       if (myGenerationOptions.isStrictMode()) {
         throw new GenerationCanceledException();
@@ -102,7 +107,6 @@ public class GenerationSession {
     monitor.start("", 1 + myGenerationPlan.getStepCount());
     try {
       // generation parameters
-      GenerationParametersProvider parametersProvider = myGenerationOptions.getParametersProvider();
       if (parametersProvider != null) {
         myParameters = parametersProvider.getParameters(myOriginalInputModel);
       } else {
