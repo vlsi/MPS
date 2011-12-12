@@ -10,7 +10,7 @@
   <unitInfo fileName="ControlClosureLiteral_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlClosureLiteral_BehaviorDescriptor" />
   <unitInfo fileName="FunctionMethodDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="FunctionType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_BehaviorDescriptor" />
-  <unitInfo fileName="InvokeExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeExpression_BehaviorDescriptor" />
+  <unitInfo fileName="InvokeExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeExpression_BehaviorDescriptor" />
   <unitInfo fileName="InvokeFunctionExpression_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionExpression_BehaviorDescriptor" />
   <unitInfo fileName="InvokeFunctionOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionOperation_BehaviorDescriptor" />
   <unitInfo fileName="PairOfInts_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.PairOfInts_BehaviorDescriptor" />
@@ -20,6 +20,20 @@
   <unitInfo fileName="UnrestrictedFunctionType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedFunctionType_BehaviorDescriptor" />
   <unitInfo fileName="YieldAllStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.YieldAllStatement_BehaviorDescriptor" />
   <unitInfo fileName="YieldStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.YieldStatement_BehaviorDescriptor" />
+  <root nodeId="1196771128252883567">
+    <nodeInfo nodeId="1196771128252884578" fileName="InvokeExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196771128252883567" fileName="InvokeExpression_Behavior.java" startLine="7" startPosition="40" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1196771128252883567" fileName="InvokeExpression_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="1196771128252883569" fileName="InvokeExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1196771128252883572" fileName="InvokeExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="1196771128252883567" fileName="InvokeExpression_Behavior.java" startLine="7" startPosition="40" endLine="10" endPosition="0">
+      <varInfo nodeId="1196771128252883567" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196771128252883567" fileName="InvokeExpression_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="1196771128252883567" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1196771128252883567" fileName="InvokeExpression_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeExpression_Behavior" />
+  </root>
   <root nodeId="1213877338503">
     <nodeInfo nodeId="1213877338503" fileName="ClosureLiteral_Behavior.java" startLine="24" startPosition="38" endLine="25" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1229718192182" />
     <nodeInfo nodeId="1213877338503" fileName="ClosureLiteral_Behavior.java" startLine="25" startPosition="129" endLine="26" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3262277503800835449" />

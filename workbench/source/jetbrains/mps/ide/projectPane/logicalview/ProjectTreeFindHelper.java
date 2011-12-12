@@ -114,7 +114,8 @@ public abstract class ProjectTreeFindHelper {
             if (object == finalCurrentTreeNode) return true;
             if (!(object instanceof PackageNode)) return false;
             String pack = ((PackageNode) object).getFullPackage();
-            return node.getPersistentProperty(SNodeUtil.property_BaseConcept_virtualPackage).startsWith(pack);
+            String vp = node.getContainingRoot().getPersistentProperty(SNodeUtil.property_BaseConcept_virtualPackage);
+            return vp != null && vp.startsWith(pack);
           }
         }, new Condition<MPSTreeNode>() {
         public boolean met(MPSTreeNode tNode) {

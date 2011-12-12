@@ -46,10 +46,10 @@ public class GenerationPlan {
   private final String myInputName;
   private TemplateSwitchGraph myTemplateSwitchGraph;
 
-  public GenerationPlan(@NotNull SModel inputModel, IScope scope) {
+  public GenerationPlan(@NotNull SModel inputModel, Collection<String> additionalLanguages) {
     myInputName = inputModel.getLongName();
     try {
-      myGenerators = GenerationPartitioningUtil.getTemplateModules(inputModel);
+      myGenerators = GenerationPartitioningUtil.getTemplateModules(inputModel, additionalLanguages);
 
       initTemplateModels();
 //      for (Generator generator : generators) {
