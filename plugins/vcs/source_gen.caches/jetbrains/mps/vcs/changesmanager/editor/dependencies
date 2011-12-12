@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.vcs.changesmanager.editor.BaseVersionEditorComponent" file="BaseVersionEditorComponent.java">
+    <classNode dependClassName="java.awt.Rectangle" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.JScrollPane" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessageFactory" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter" file="ChangeStripsPainter.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Cursor" />
@@ -125,16 +150,18 @@
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.BorderFactory" />
-    <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JLayeredPane" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.BaseVersionEditorComponent" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseGroup" />
     <classNode extendsClassName="java.awt.event.FocusAdapter" />
     <classNode extendsClassName="java.awt.event.MouseAdapter" />
     <classNode extendsClassName="javax.swing.JPanel" />
+    <classNode extendsClassName="jetbrains.mps.smodel.ModelOwner" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.StripsChangeGroupLayout" file="StripsChangeGroupLayout.java">
     <classNode dependClassName="java.util.List" />
