@@ -22,7 +22,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighter" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.PopupToolbar" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.PopupPanel" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.StripsChangeGroupLayout" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
@@ -115,18 +115,26 @@
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.workbench.highlighter.EditorComponentCreateListener" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.editor.PopupToolbar" file="PopupToolbar.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.editor.PopupPanel" file="PopupPanel.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
+    <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.awt.event.FocusEvent" />
+    <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.BorderFactory" />
-    <classNode dependClassName="javax.swing.event.PopupMenuEvent" />
-    <classNode dependClassName="javax.swing.event.PopupMenuListener" />
+    <classNode dependClassName="javax.swing.JLabel" />
+    <classNode dependClassName="javax.swing.JLayeredPane" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseGroup" />
-    <classNode extendsClassName="javax.swing.JPopupMenu" />
+    <classNode extendsClassName="java.awt.event.FocusAdapter" />
+    <classNode extendsClassName="java.awt.event.MouseAdapter" />
+    <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.StripsChangeGroupLayout" file="StripsChangeGroupLayout.java">
     <classNode dependClassName="java.util.List" />

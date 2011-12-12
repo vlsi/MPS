@@ -40,7 +40,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private EditorHighlighter myEditorHighlighter;
   private ChangeGroupLayout myChangeGroupLayout;
   private ChangeGroup myGroupUnderMouse;
-  private PopupToolbar myPopupToolbar = null;
+  private PopupPanel myPopupToolbar = null;
 
   public ChangeStripsPainter(@NotNull EditorHighlighter editorHighlighter) {
     super(editorHighlighter.getLeftEditorHighlighter());
@@ -192,7 +192,11 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public void mousePressed(MouseEvent event) {
-    check_h84zmo_a0a11(myPopupToolbar);
+    if (event.getID() != MouseEvent.MOUSE_CLICKED) {
+      return;
+    }
+    check_h84zmo_a1a11(myPopupToolbar);
+    getEditorComponent().requestFocus();
     if (event.getButton() == MouseEvent.BUTTON1) {
       ChangeGroup changeGroup = findMessageGroupUnder(event.getPoint());
       if (changeGroup != null) {
@@ -209,8 +213,8 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     if (cell != null) {
       getEditorComponent().changeSelection(cell);
     }
-    myPopupToolbar = new PopupToolbar(this, changeGroup);
-    myPopupToolbar.show(getEditorComponent(), foldingLineX, y);
+    myPopupToolbar = new PopupPanel(this, changeGroup);
+    myPopupToolbar.show(0, y);
   }
 
   /*package*/ void popupClosed() {
@@ -251,23 +255,23 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     }
   }
 
-  private static void check_h84zmo_a0a11(PopupToolbar checkedDotOperand) {
+  private static void check_h84zmo_a1a11(PopupPanel checkedDotOperand) {
     if (null != checkedDotOperand) {
-      checkedDotOperand.setVisible(false);
+      checkedDotOperand.dispose();
     }
 
   }
 
-  private static ChangeGroup check_h84zmo_a0a51(PopupToolbar checkedDotOperand) {
+  private static ChangeGroup check_h84zmo_a0a51(PopupPanel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getChangeGroup();
     }
     return null;
   }
 
-  private static void check_h84zmo_a0a61(PopupToolbar checkedDotOperand) {
+  private static void check_h84zmo_a0a61(PopupPanel checkedDotOperand) {
     if (null != checkedDotOperand) {
-      checkedDotOperand.setVisible(false);
+      checkedDotOperand.dispose();
     }
 
   }
