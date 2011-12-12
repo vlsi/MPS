@@ -19,6 +19,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.awt.Rectangle;
+import javax.swing.BorderFactory;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -34,6 +36,8 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
     final SModel baseModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
     SNode baseRoot = baseModel.getNodeById(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
     editNode(baseRoot);
+
+    setBackground(CARET_ROW_COLOR);
 
     Iterable<ChangeEditorMessage> messages = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
       public Iterable<ChangeEditorMessage> translate(ModelChange ch) {
@@ -59,8 +63,12 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
       }
     });
     Rectangle viewRect = new Rectangle(0, (int) verticalBounds.start(), (int) cellsRect.getMaxX(), verticalBounds.length());
+    viewRect.y -= 1;
+    viewRect.width += 5;
+    viewRect.height += 4;
 
     myScrollPane = new JScrollPane(this, JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+    myScrollPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
     myScrollPane.setPreferredSize(viewRect.getSize());
     myScrollPane.getViewport().setViewPosition(viewRect.getLocation());
   }

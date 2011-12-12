@@ -11,7 +11,7 @@ import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.workbench.action.BaseGroup;
-import javax.swing.BorderFactory;
+import com.intellij.ui.ColoredSideBorder;
 import java.awt.Color;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import javax.swing.JLayeredPane;
@@ -42,7 +42,10 @@ import java.awt.event.FocusEvent;
     myToolbar.setTargetComponent(myPainter.getEditorComponent());
     toolbarPanel.add(myToolbar.getComponent(), BorderLayout.WEST);
     add(toolbarPanel, BorderLayout.NORTH);
-    myToolbar.getComponent().setBorder(BorderFactory.createLineBorder(Color.BLACK));
+    myToolbar.getComponent().setBorder(new ColoredSideBorder(Color.BLACK, Color.BLACK, (myChangeGroup.getChangeType() != ChangeType.ADD ?
+      null :
+      Color.BLACK
+    ), Color.BLACK, 1));
 
     if (myChangeGroup.getChangeType() != ChangeType.ADD) {
       BaseVersionEditorComponent baseEditor = new BaseVersionEditorComponent(myEditor.getOperationContext(), myChangeGroup);
