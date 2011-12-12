@@ -21916,7 +21916,7 @@
     <nodeInfo nodeId="3174433877137858344" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="39" startPosition="51" endLine="40" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8620077627875160498" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="41" startPosition="15" endLine="42" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8101436443850399659" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="44" startPosition="141" endLine="45" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8101436443850399694" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="48" startPosition="53" endLine="49" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8101436443850399694" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="48" startPosition="53" endLine="49" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8101436443850399677" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="52" startPosition="19" endLine="53" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8101436443850399677" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="53" startPosition="72" endLine="54" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8101436443850399677" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="54" startPosition="68" endLine="55" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -21946,7 +21946,7 @@
     <scopeInfo nodeId="8620077627875074983" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="21" startPosition="57" endLine="21" endPosition="57" />
     <scopeInfo nodeId="8620077627875160472" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="32" startPosition="52" endLine="33" endPosition="180" />
     <scopeInfo nodeId="8101436443850399630" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="44" startPosition="141" endLine="45" endPosition="142" />
-    <scopeInfo nodeId="8101436443850399693" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="48" startPosition="53" endLine="49" endPosition="118" />
+    <scopeInfo nodeId="8101436443850399693" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="48" startPosition="53" endLine="49" endPosition="229" />
     <scopeInfo nodeId="8620077627875074983" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="66" startPosition="46" endLine="67" endPosition="67" />
     <scopeInfo nodeId="8620077627875074983" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="77" startPosition="30" endLine="78" endPosition="17" />
     <scopeInfo nodeId="8620077627875074983" fileName="check_UnusedPrivateMethods_NonTypesystemRule.java" startLine="20" startPosition="138" endLine="22" endPosition="3" />
