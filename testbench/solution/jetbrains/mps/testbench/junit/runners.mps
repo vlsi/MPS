@@ -39,8 +39,6 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
-  <import index="odqr" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit.runners.model(MPS.Workbench/org.junit.runners.model@java_stub)" version="-1" implicit="yes" />
-  <import index="72e0" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit.runners(MPS.Workbench/org.junit.runners@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="935017990628671485">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
@@ -717,7 +715,7 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="935017990628671595">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="935017990628671596">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="aj7d.~Suite%d&lt;init&gt;(java%dlang%dClass,org%djunit%drunners%dmodel%dRunnerBuilder)" resolveInfo="Suite" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="aj7d.~Suite%d&lt;init&gt;(java%dlang%dClass,java%dutil%dList)" resolveInfo="Suite" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="935017990628671597">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="935017990628671592" resolveInfo="klass" />
           </node>
@@ -863,8 +861,8 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="935017990628671648">
         <property name="name" nameId="tpck.1169194664001" value="klass" />
         <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="935017990628671649">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995951" resolveInfo="MPSProjectITestsSuite.TestClass" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1177037029514816105">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ik6s.~TestClass" resolveInfo="TestClass" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="935017990628671650">
@@ -917,8 +915,8 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="935017990628671668">
         <property name="name" nameId="tpck.1169194664001" value="testClass" />
         <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8608756464815224826">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995951" resolveInfo="MPSProjectITestsSuite.TestClass" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1177037029514816104">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ik6s.~TestClass" resolveInfo="TestClass" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="935017990628671670">
@@ -937,9 +935,9 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="935017990628671668" resolveInfo="testClass" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="935017990628671677">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="odqr.~TestClass%dgetAnnotatedMethods(java%dlang%dClass)%cjava%dutil%dList" resolveInfo="getAnnotatedMethods" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="935017990628671678">
-                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="72e0.~Parameterized$Parameters" resolveInfo="Parameterized.Parameters" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ik6s.~TestClass%dgetAnnotatedMethods(java%dlang%dClass)%cjava%dutil%dList" resolveInfo="getAnnotatedMethods" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="1177037029514816108">
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="aj7d.~Parameterized$Parameters" resolveInfo="Parameterized.Parameters" />
                 </node>
               </node>
             </node>
@@ -1017,7 +1015,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="935017990628671668" resolveInfo="testClass" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="935017990628671708">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="odqr.~TestClass%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ik6s.~TestClass%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
                   </node>
                 </node>
               </node>
@@ -4765,7 +4763,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7906452883299946830" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7906452883299946831">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="7906452883299946838">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="aj7d.~Suite%d&lt;init&gt;(java%dlang%dClass,org%djunit%drunners%dmodel%dRunnerBuilder)" resolveInfo="Suite" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="aj7d.~Suite%d&lt;init&gt;(java%dlang%dClass,java%dutil%dList)" resolveInfo="Suite" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7906452883299946839">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7906452883299946833" resolveInfo="klass" />
           </node>
@@ -4826,8 +4824,8 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7906452883299946860">
         <property name="name" nameId="tpck.1169194664001" value="klass" />
         <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7906452883299946861">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995951" resolveInfo="MPSProjectITestsSuite.TestClass" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1177037029514816103">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ik6s.~TestClass" resolveInfo="TestClass" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7906452883299946862">
@@ -4875,8 +4873,8 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7906452883299946880">
         <property name="name" nameId="tpck.1169194664001" value="testClass" />
         <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7906452883299946881">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995951" resolveInfo="MPSProjectITestsSuite.TestClass" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1177037029514816102">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ik6s.~TestClass" resolveInfo="TestClass" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7906452883299946882">
@@ -4893,7 +4891,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7906452883299946880" resolveInfo="testClass" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7906452883299946889">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="odqr.~TestClass%dgetAnnotatedMethods(java%dlang%dClass)%cjava%dutil%dList" resolveInfo="getAnnotatedMethods" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ik6s.~TestClass%dgetAnnotatedMethods(java%dlang%dClass)%cjava%dutil%dList" resolveInfo="getAnnotatedMethods" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="7906452883299946959">
                   <link role="classifier" roleId="tpee.1116615189566" targetNodeId="7906452883299946922" resolveInfo="ParameterizedSuite.SuiteClasses" />
                 </node>
@@ -4969,7 +4967,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7906452883299946880" resolveInfo="testClass" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7906452883299946920">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="odqr.~TestClass%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ik6s.~TestClass%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
                   </node>
                 </node>
               </node>
@@ -5912,8 +5910,8 @@
       <property name="name" nameId="tpck.1169194664001" value="getModuleUUID" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5503298173333995972">
         <property name="name" nameId="tpck.1169194664001" value="klass" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5503298173333995974">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995951" resolveInfo="MPSProjectITestsSuite.TestClass" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3956824087989865905">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ik6s.~TestClass" resolveInfo="TestClass" />
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="5503298173333997439" />
@@ -5931,7 +5929,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5503298173333995972" resolveInfo="klass" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333996338">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="odqr.~TestClass%dgetJavaClass()%cjava%dlang%dClass" resolveInfo="getJavaClass" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ik6s.~TestClass%dgetJavaClass()%cjava%dlang%dClass" resolveInfo="getJavaClass" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333996339">
@@ -5979,8 +5977,8 @@
       <property name="name" nameId="tpck.1169194664001" value="getModelLongName" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5503298173333997475">
         <property name="name" nameId="tpck.1169194664001" value="klass" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5503298173333997476">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995951" resolveInfo="MPSProjectITestsSuite.TestClass" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3956824087989865906">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ik6s.~TestClass" resolveInfo="TestClass" />
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="5503298173333997477" />
@@ -5998,7 +5996,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5503298173333997475" resolveInfo="klass" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333997486">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="odqr.~TestClass%dgetJavaClass()%cjava%dlang%dClass" resolveInfo="getJavaClass" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ik6s.~TestClass%dgetJavaClass()%cjava%dlang%dClass" resolveInfo="getJavaClass" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333997487">
@@ -6045,8 +6043,8 @@
       <property name="name" nameId="tpck.1169194664001" value="getTestClassName" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5503298173333997447">
         <property name="name" nameId="tpck.1169194664001" value="klass" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5503298173333997448">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995951" resolveInfo="MPSProjectITestsSuite.TestClass" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3956824087989865907">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ik6s.~TestClass" resolveInfo="TestClass" />
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="5503298173333997449" />
@@ -6064,7 +6062,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5503298173333997447" resolveInfo="klass" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333997458">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="odqr.~TestClass%dgetJavaClass()%cjava%dlang%dClass" resolveInfo="getJavaClass" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ik6s.~TestClass%dgetJavaClass()%cjava%dlang%dClass" resolveInfo="getJavaClass" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333997459">
