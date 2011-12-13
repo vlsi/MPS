@@ -27,23 +27,23 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-public class PluginLibContributor implements LibraryContributor, ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(PluginLibContributor.class);
+public class PluginLibrariesContributor implements LibraryContributor, ApplicationComponent {
+  private static final Logger LOG = Logger.getLogger(PluginLibrariesContributor.class);
 
   public Set<String> getLibraries() {
-    final LanguageLibrary[] libExts = LanguageLibrary.EP_LANGUAGE_LIBS.getExtensions();
-    Set<String> res = new HashSet<String>();
-    for (final LanguageLibrary lib : libExts) {
+    final LanguageLibrary[] libraries = LanguageLibrary.EP_LANGUAGE_LIBS.getExtensions();
+    Set<String> result = new HashSet<String>();
+    for (final LanguageLibrary library : libraries) {
       try {
-        PluginId pluginId = lib.getPluginDescriptor().getPluginId();
+        PluginId pluginId = library.getPluginDescriptor().getPluginId();
         final String pluginPath = PluginManager.getPlugin(pluginId).getPath().getCanonicalPath();
-        assert lib.dir != null : "lib dir should be non-empty: plugin=" + pluginId.getIdString();
-        res.add(pluginPath + lib.dir);
+        assert library.dir != null : "library dir should be non-empty: plugin=" + pluginId.getIdString();
+        result.add(pluginPath + library.dir);
       } catch (Throwable t) {
         LOG.error("Error instantiating language library", t);
       }
     }
-    return res;
+    return result;
   }
 
   public void initComponent() {
@@ -61,6 +61,6 @@ public class PluginLibContributor implements LibraryContributor, ApplicationComp
 
   @NotNull
   public String getComponentName() {
-    return PluginLibContributor.class.getSimpleName();
+    return PluginLibrariesContributor.class.getSimpleName();
   }
 }
