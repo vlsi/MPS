@@ -43,7 +43,7 @@ public class ClonableList<T> extends AbstractList<T> implements Cloneable {
     return ListSequence.fromList(this.myData).setElement(index, object);
   }
 
-  protected ClonableList<T> clone() throws CloneNotSupportedException {
+  public ClonableList<T> clone() throws CloneNotSupportedException {
     ClonableList<T> result = ((ClonableList<T>) super.clone());
     result.myData = ListSequence.fromListWithValues(new ArrayList<T>(), this.myData);
     return result;

@@ -14,9 +14,12 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.baseLanguage.unitTest.execution.settings.ClonableList;
+import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes2;
 import java.util.List;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.project.ProjectHelper;
+import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -75,6 +78,26 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     }
   }
 
+  public String getModel() {
+    return myState.myModel;
+  }
+
+  public String getModule() {
+    return myState.myModule;
+  }
+
+  public ClonableList<String> getTestCases() {
+    return myState.myTestCases;
+  }
+
+  public ClonableList<String> getTestMethods() {
+    return myState.myTestMethods;
+  }
+
+  public JUnitRunTypes2 getRunType() {
+    return myState.myRunType;
+  }
+
   public JUnitSettings_Configuration getJUnitSettings() {
     return myJUnitSettings;
   }
@@ -83,8 +106,51 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     return myJavaRunParameters;
   }
 
+  public void setModel(String value) {
+    myState.myModel = value;
+  }
+
+  public void setModule(String value) {
+    myState.myModule = value;
+  }
+
+  public void setTestCases(ClonableList<String> value) {
+    myState.myTestCases = value;
+  }
+
+  public void setTestMethods(ClonableList<String> value) {
+    myState.myTestMethods = value;
+  }
+
+  public void setRunType(JUnitRunTypes2 value) {
+    myState.myRunType = value;
+  }
+
   public List<SNodePointer> getTestsToMake() {
     return this.getJUnitSettings().getTestsToMake(ProjectHelper.toMPSProject(this.getProject()));
+  }
+
+  public void migrate() {
+    if (StringUtils.isNotEmpty(this.getModel())) {
+      this.getJUnitSettings().setModel(this.getModel());
+      this.setModel(null);
+    }
+    if (StringUtils.isNotEmpty(this.getModule())) {
+      this.getJUnitSettings().setModule(this.getModule());
+      this.setModule(null);
+    }
+    if (this.getTestCases() != null && !(this.getTestCases().isEmpty())) {
+      this.getJUnitSettings().getTestCases().addAll(this.getTestCases());
+      this.setTestCases(null);
+    }
+    if (this.getTestMethods() != null && !(this.getTestMethods().isEmpty())) {
+      this.getJUnitSettings().getTestMethods().addAll(this.getTestMethods());
+      this.setTestMethods(null);
+    }
+    if (this.getRunType() != null) {
+      this.getJUnitSettings().setRunType(this.getRunType());
+      this.setRunType(null);
+    }
   }
 
   @Override
@@ -138,12 +204,27 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
 
   public class MyState {
+    public String myModel;
+    public String myModule;
+    public ClonableList<String> myTestCases = new ClonableList<String>();
+    public ClonableList<String> myTestMethods = new ClonableList<String>();
+    public JUnitRunTypes2 myRunType;
+
     public MyState() {
     }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
       JUnitTests_Configuration.MyState state = new JUnitTests_Configuration.MyState();
+      state.myModel = myModel;
+      state.myModule = myModule;
+      if (myTestCases != null) {
+        state.myTestCases = myTestCases.clone();
+      }
+      if (myTestMethods != null) {
+        state.myTestMethods = myTestMethods.clone();
+      }
+      state.myRunType = myRunType;
       return state;
     }
   }

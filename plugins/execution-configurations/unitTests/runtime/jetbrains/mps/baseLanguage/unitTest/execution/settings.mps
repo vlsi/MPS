@@ -5184,7 +5184,7 @@
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6062668769034854956">
       <property name="name" nameId="tpck.1169194664001" value="clone" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="6062668769034854957" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4503513239970477002" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6062668769034854958">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6062668769034854845" resolveInfo="ClonableList" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="6062668769034854959">
