@@ -14,4 +14,5 @@
 <application-components><component><implementation-class>jetbrains.mps.debugger.java.customViewers.plugin.Plugin_PluginInitializer</implementation-class>
 </component>
 </application-components>
+
 </idea-plugin>
