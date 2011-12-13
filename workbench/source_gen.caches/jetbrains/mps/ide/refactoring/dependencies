@@ -49,11 +49,22 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="com.intellij.ui.components.JBScrollPane" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.refactoring.ModelOrNodeChooserDialog" file="ModelOrNodeChooserDialog.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.refactoring.RefactoringBundle" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="javax.swing.JOptionPane" />
+    <classNode dependClassName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.ide.refactoring.RefactoringDialog" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.MoveNodeDialog" file="MoveNodeDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.MoveNodesDialog" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
@@ -61,7 +72,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.ide.refactoring.Filter" />
-    <classNode extendsClassName="jetbrains.mps.ide.refactoring.NodeChooserDialog" />
+    <classNode extendsClassName="jetbrains.mps.ide.refactoring.ModelOrNodeChooserDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.MoveNodesDialog" file="MoveNodesDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -73,7 +84,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.ide.refactoring.Filter" />
-    <classNode extendsClassName="jetbrains.mps.ide.refactoring.NodeChooserDialog" />
+    <classNode extendsClassName="jetbrains.mps.ide.refactoring.ModelOrNodeChooserDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.MoveUpDialog" file="MoveUpDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -90,17 +101,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.ide.refactoring.RefactoringDialog" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.refactoring.NodeChooserDialog" file="NodeChooserDialog.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.refactoring.RefactoringBundle" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JOptionPane" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.ide.refactoring.RefactoringDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.NodeHierarchyChooser" file="NodeHierarchyChooser.java">

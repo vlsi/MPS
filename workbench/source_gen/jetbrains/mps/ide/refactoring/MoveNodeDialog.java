@@ -5,25 +5,31 @@ package jetbrains.mps.ide.refactoring;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
+import javax.swing.JOptionPane;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import jetbrains.mps.smodel.SModelDescriptor;
 
-public class MoveNodeDialog extends NodeChooserDialog {
-  private SNode myNode;
+public class MoveNodeDialog extends ModelOrNodeChooserDialog {
+  private SNode myNodeToMove;
   private MoveNodeDialog.NodeFilter myNodeFilter;
+  private SNode mySelectedObject;
 
   public MoveNodeDialog(@NotNull Project project, SNode node) {
     super(project);
-    this.myNode = node;
+    this.myNodeToMove = node;
     init();
     setTitle(MoveNodesDialog.REFACTORING_NAME + " " + "node");
   }
 
   protected void doRefactoringAction() {
     Object selectedObject = this.myPanel.getSelectedObject();
-    if (myNodeFilter == null || myNodeFilter.checkForObject(selectedObject, this.myNode, this.myNode.getModel().getModelDescriptor(), this.myPanel)) {
-      this.mySelectedObject = selectedObject;
+    if (!(selectedObject instanceof SNode)) {
+      JOptionPane.showMessageDialog(this.myPanel, "Choose node", "Node can't be moved", JOptionPane.INFORMATION_MESSAGE);
+      return;
+    }
+    if (myNodeFilter == null || myNodeFilter.checkForObject(((SNode) selectedObject), this.myNodeToMove, this.myNodeToMove.getModel().getModelDescriptor(), this.myPanel)) {
+      this.mySelectedObject = ((SNode) selectedObject);
       this.dispose();
     }
   }
@@ -34,25 +40,25 @@ public class MoveNodeDialog extends NodeChooserDialog {
 
   @Nullable
   protected JComponent createCenterPanel() {
-    this.myPanel = ModelOrNodeChooser.createChooser(myProject, myNode);
+    this.myPanel = ModelOrNodeChooser.createChooser(myProject, myNodeToMove);
 
     return this.myPanel;
   }
 
-  public static Object getSelectedObject(@NotNull Project project, SNode node) {
+  public static SNode getSelectedObject(@NotNull Project project, SNode node) {
     MoveNodeDialog dialog = new MoveNodeDialog(project, node);
     dialog.show();
     return dialog.mySelectedObject;
   }
 
-  public static Object getSelectedObject(@NotNull Project project, SNode node, MoveNodeDialog.NodeFilter filter) {
+  public static SNode getSelectedObject(@NotNull Project project, SNode node, MoveNodeDialog.NodeFilter filter) {
     MoveNodeDialog dialog = new MoveNodeDialog(project, node);
     dialog.setFilter(filter);
     dialog.show();
     return dialog.mySelectedObject;
   }
 
-  public static abstract class NodeFilter extends NodeChooserDialog.Filter {
+  public static abstract class NodeFilter extends ModelOrNodeChooserDialog.Filter {
     public NodeFilter() {
     }
 
@@ -60,14 +66,14 @@ public class MoveNodeDialog extends NodeChooserDialog {
       super(errorMessage);
     }
 
-    public boolean checkForObject(Object selectedObject, SNode node, SModelDescriptor model, JComponent component) {
-      if (!(check(selectedObject, node, model))) {
-        showError("Node can't be moved", component);
+    public abstract boolean check(SNode selectedObject, SNode nodeToMove, SModelDescriptor modelOfSelectedNode);
+
+    private boolean checkForObject(SNode selectedObject, SNode nodeToMove, SModelDescriptor modelOfSelectedNode, JComponent component) {
+      if (!(check(selectedObject, nodeToMove, modelOfSelectedNode))) {
+        showError("Nodes can't be moved", component);
         return false;
       }
       return true;
     }
-
-    public abstract boolean check(Object selectedObject, SNode node, SModelDescriptor model);
   }
 }

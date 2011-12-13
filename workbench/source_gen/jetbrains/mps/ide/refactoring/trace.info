@@ -1232,126 +1232,130 @@
     <unitInfo nodeId="7643363697480570243" fileName="RefactoringDialog.java" startLine="49" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RefactoringDialog$RefactorAction" />
   </root>
   <root nodeId="4366542054834736924">
-    <nodeInfo nodeId="8565847165892031530" fileName="NodeChooserDialog.java" startLine="11" startPosition="67" endLine="12" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFACTORING_NAME" />
-    <nodeInfo nodeId="4366542054834737881" fileName="NodeChooserDialog.java" startLine="13" startPosition="0" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="4366542054834737884" fileName="NodeChooserDialog.java" startLine="14" startPosition="30" endLine="15" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedObject" />
-    <nodeInfo nodeId="4366542054834737887" fileName="NodeChooserDialog.java" startLine="15" startPosition="36" endLine="16" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="4366542054834737855" fileName="NodeChooserDialog.java" startLine="18" startPosition="54" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4366542054834737864" fileName="NodeChooserDialog.java" startLine="19" startPosition="25" endLine="20" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834703094" fileName="NodeChooserDialog.java" startLine="23" startPosition="33" endLine="24" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="errorMessage" />
-    <nodeInfo nodeId="4366542054834703127" fileName="NodeChooserDialog.java" startLine="26" startPosition="43" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8537071608806061066" fileName="NodeChooserDialog.java" startLine="33" startPosition="63" endLine="34" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834703202" fileName="NodeChooserDialog.java" startLine="29" startPosition="0" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Filter#()V" />
-    <nodeInfo nodeId="4366542054834703083" fileName="NodeChooserDialog.java" startLine="25" startPosition="0" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Filter#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4366542054834737846" fileName="NodeChooserDialog.java" startLine="17" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="4366542054834737968" fileName="NodeChooserDialog.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showError#(Ljava/lang/String;Ljavax/swing/JComponent;)V" />
-    <scopeInfo nodeId="4366542054834703205" fileName="NodeChooserDialog.java" startLine="30" startPosition="24" endLine="30" endPosition="24" />
-    <scopeInfo nodeId="4366542054834703086" fileName="NodeChooserDialog.java" startLine="26" startPosition="43" endLine="27" endPosition="39" />
-    <scopeInfo nodeId="4366542054834737971" fileName="NodeChooserDialog.java" startLine="33" startPosition="63" endLine="34" endPosition="101" />
-    <scopeInfo nodeId="4366542054834737854" fileName="NodeChooserDialog.java" startLine="18" startPosition="54" endLine="20" endPosition="29" />
-    <scopeInfo nodeId="4366542054834703202" fileName="NodeChooserDialog.java" startLine="29" startPosition="0" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="4366542054834703083" fileName="NodeChooserDialog.java" startLine="25" startPosition="0" endLine="28" endPosition="5">
+    <nodeInfo nodeId="8565847165892031530" fileName="ModelOrNodeChooserDialog.java" startLine="11" startPosition="74" endLine="12" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFACTORING_NAME" />
+    <nodeInfo nodeId="4366542054834737881" fileName="ModelOrNodeChooserDialog.java" startLine="13" startPosition="0" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="4366542054834737887" fileName="ModelOrNodeChooserDialog.java" startLine="14" startPosition="30" endLine="15" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="4366542054834737855" fileName="ModelOrNodeChooserDialog.java" startLine="17" startPosition="61" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4366542054834737864" fileName="ModelOrNodeChooserDialog.java" startLine="18" startPosition="25" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834703094" fileName="ModelOrNodeChooserDialog.java" startLine="22" startPosition="33" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="errorMessage" />
+    <nodeInfo nodeId="4366542054834703127" fileName="ModelOrNodeChooserDialog.java" startLine="25" startPosition="43" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8537071608806061066" fileName="ModelOrNodeChooserDialog.java" startLine="32" startPosition="66" endLine="33" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834703202" fileName="ModelOrNodeChooserDialog.java" startLine="28" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Filter#()V" />
+    <nodeInfo nodeId="4366542054834703083" fileName="ModelOrNodeChooserDialog.java" startLine="24" startPosition="0" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Filter#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4366542054834737846" fileName="ModelOrNodeChooserDialog.java" startLine="16" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelOrNodeChooserDialog#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="4366542054834737968" fileName="ModelOrNodeChooserDialog.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showError#(Ljava/lang/String;Ljavax/swing/JComponent;)V" />
+    <scopeInfo nodeId="4366542054834703205" fileName="ModelOrNodeChooserDialog.java" startLine="29" startPosition="24" endLine="29" endPosition="24" />
+    <scopeInfo nodeId="4366542054834703086" fileName="ModelOrNodeChooserDialog.java" startLine="25" startPosition="43" endLine="26" endPosition="39" />
+    <scopeInfo nodeId="4366542054834737971" fileName="ModelOrNodeChooserDialog.java" startLine="32" startPosition="66" endLine="33" endPosition="101" />
+    <scopeInfo nodeId="4366542054834737854" fileName="ModelOrNodeChooserDialog.java" startLine="17" startPosition="61" endLine="19" endPosition="29" />
+    <scopeInfo nodeId="4366542054834703202" fileName="ModelOrNodeChooserDialog.java" startLine="28" startPosition="0" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="4366542054834703083" fileName="ModelOrNodeChooserDialog.java" startLine="24" startPosition="0" endLine="27" endPosition="5">
       <varInfo nodeId="4366542054834703125" varName="errorMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834737846" fileName="NodeChooserDialog.java" startLine="17" startPosition="0" endLine="21" endPosition="3">
+    <scopeInfo nodeId="4366542054834737846" fileName="ModelOrNodeChooserDialog.java" startLine="16" startPosition="0" endLine="20" endPosition="3">
       <varInfo nodeId="4366542054834737847" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834737968" fileName="NodeChooserDialog.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="4366542054834737968" fileName="ModelOrNodeChooserDialog.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1395403571594583985" varName="component" />
       <varInfo nodeId="4366542054834738204" varName="title" />
     </scopeInfo>
-    <unitInfo nodeId="4366542054834736924" fileName="NodeChooserDialog.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.refactoring.NodeChooserDialog" />
-    <unitInfo nodeId="4366542054834703081" fileName="NodeChooserDialog.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.refactoring.NodeChooserDialog$Filter" />
+    <unitInfo nodeId="4366542054834736924" fileName="ModelOrNodeChooserDialog.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.refactoring.ModelOrNodeChooserDialog" />
+    <unitInfo nodeId="4366542054834703081" fileName="ModelOrNodeChooserDialog.java" startLine="22" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ide.refactoring.ModelOrNodeChooserDialog$Filter" />
   </root>
   <root nodeId="4366542054834738086">
-    <nodeInfo nodeId="4366542054834738135" fileName="MoveNodeDialog.java" startLine="12" startPosition="55" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="4366542054834738199" fileName="MoveNodeDialog.java" startLine="13" startPosition="23" endLine="14" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeFilter" />
-    <nodeInfo nodeId="4366542054834738118" fileName="MoveNodeDialog.java" startLine="16" startPosition="63" endLine="17" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4366542054834738120" fileName="MoveNodeDialog.java" startLine="17" startPosition="19" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834738126" fileName="MoveNodeDialog.java" startLine="18" startPosition="23" endLine="19" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834738128" fileName="MoveNodeDialog.java" startLine="19" startPosition="11" endLine="20" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834738226" fileName="MoveNodeDialog.java" startLine="23" startPosition="40" endLine="24" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4366542054834738236" fileName="MoveNodeDialog.java" startLine="25" startPosition="150" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834738242" fileName="MoveNodeDialog.java" startLine="26" startPosition="45" endLine="27" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834738265" fileName="MoveNodeDialog.java" startLine="31" startPosition="59" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834739360" fileName="MoveNodeDialog.java" startLine="36" startPosition="44" endLine="37" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834739359" fileName="MoveNodeDialog.java" startLine="37" startPosition="71" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4366542054834738221" fileName="MoveNodeDialog.java" startLine="38" startPosition="0" endLine="39" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366542054834738288" fileName="MoveNodeDialog.java" startLine="42" startPosition="80" endLine="43" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4366542054834738295" fileName="MoveNodeDialog.java" startLine="43" startPosition="62" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834738299" fileName="MoveNodeDialog.java" startLine="44" startPosition="18" endLine="45" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366542054834738314" fileName="MoveNodeDialog.java" startLine="48" startPosition="114" endLine="49" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4366542054834738321" fileName="MoveNodeDialog.java" startLine="49" startPosition="62" endLine="50" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834738326" fileName="MoveNodeDialog.java" startLine="50" startPosition="29" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834738330" fileName="MoveNodeDialog.java" startLine="51" startPosition="18" endLine="52" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366542054834738159" fileName="MoveNodeDialog.java" startLine="59" startPosition="44" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4366542054834738170" fileName="MoveNodeDialog.java" startLine="64" startPosition="50" endLine="65" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834738172" fileName="MoveNodeDialog.java" startLine="65" startPosition="52" endLine="66" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366542054834738174" fileName="MoveNodeDialog.java" startLine="67" startPosition="7" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366542054834738146" fileName="MoveNodeDialog.java" startLine="55" startPosition="76" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeFilter#()V" />
-    <nodeInfo nodeId="4366542054834738182" fileName="MoveNodeDialog.java" startLine="70" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#(Ljava/lang/Object;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="4366542054834738150" fileName="MoveNodeDialog.java" startLine="58" startPosition="0" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeFilter#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4366542054834738234" fileName="MoveNodeDialog.java" startLine="24" startPosition="61" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4366542054834738261" fileName="MoveNodeDialog.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFilter#(Ljetbrains/mps/ide/refactoring/MoveNodeDialog/NodeFilter;)V" />
-    <nodeInfo nodeId="4366542054834738164" fileName="MoveNodeDialog.java" startLine="63" startPosition="116" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4366542054834738109" fileName="MoveNodeDialog.java" startLine="15" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveNodeDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4366542054834738280" fileName="MoveNodeDialog.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedObject#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="4366542054834738097" fileName="MoveNodeDialog.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="4366542054834738304" fileName="MoveNodeDialog.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedObject#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/ide/refactoring/MoveNodeDialog/NodeFilter;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="4366542054834738093" fileName="MoveNodeDialog.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
-    <nodeInfo nodeId="4366542054834738161" fileName="MoveNodeDialog.java" startLine="62" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkForObject#(Ljava/lang/Object;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModelDescriptor;Ljavax/swing/JComponent;)Z" />
-    <scopeInfo nodeId="4366542054834738149" fileName="MoveNodeDialog.java" startLine="56" startPosition="25" endLine="56" endPosition="25" />
-    <scopeInfo nodeId="4366542054834738264" fileName="MoveNodeDialog.java" startLine="31" startPosition="59" endLine="32" endPosition="31" />
-    <scopeInfo nodeId="4366542054834738153" fileName="MoveNodeDialog.java" startLine="59" startPosition="44" endLine="60" endPosition="26" />
-    <scopeInfo nodeId="4366542054834738235" fileName="MoveNodeDialog.java" startLine="25" startPosition="150" endLine="27" endPosition="21" />
-    <scopeInfo nodeId="4366542054834738146" fileName="MoveNodeDialog.java" startLine="55" startPosition="76" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="4366542054834738169" fileName="MoveNodeDialog.java" startLine="64" startPosition="50" endLine="66" endPosition="21" />
-    <scopeInfo nodeId="4366542054834738182" fileName="MoveNodeDialog.java" startLine="70" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="4366542054834738502" varName="model" />
-      <varInfo nodeId="4366542054834738187" varName="node" />
+    <nodeInfo nodeId="4366542054834738135" fileName="MoveNodeDialog.java" startLine="13" startPosition="62" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeToMove" />
+    <nodeInfo nodeId="4366542054834738199" fileName="MoveNodeDialog.java" startLine="14" startPosition="29" endLine="15" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeFilter" />
+    <nodeInfo nodeId="6418423027234827992" fileName="MoveNodeDialog.java" startLine="15" startPosition="49" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedObject" />
+    <nodeInfo nodeId="4366542054834738118" fileName="MoveNodeDialog.java" startLine="18" startPosition="63" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4366542054834738120" fileName="MoveNodeDialog.java" startLine="19" startPosition="19" endLine="20" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834738126" fileName="MoveNodeDialog.java" startLine="20" startPosition="29" endLine="21" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834738128" fileName="MoveNodeDialog.java" startLine="21" startPosition="11" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834738226" fileName="MoveNodeDialog.java" startLine="25" startPosition="40" endLine="26" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3765758600795126428" fileName="MoveNodeDialog.java" startLine="27" startPosition="45" endLine="28" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="762769426721307430" fileName="MoveNodeDialog.java" startLine="28" startPosition="121" endLine="29" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6418423027234827998" fileName="MoveNodeDialog.java" startLine="31" startPosition="172" endLine="32" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834738242" fileName="MoveNodeDialog.java" startLine="32" startPosition="55" endLine="33" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834738265" fileName="MoveNodeDialog.java" startLine="37" startPosition="59" endLine="38" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834739360" fileName="MoveNodeDialog.java" startLine="42" startPosition="44" endLine="43" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834739359" fileName="MoveNodeDialog.java" startLine="43" startPosition="77" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4366542054834738221" fileName="MoveNodeDialog.java" startLine="44" startPosition="0" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4366542054834738288" fileName="MoveNodeDialog.java" startLine="48" startPosition="79" endLine="49" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4366542054834738295" fileName="MoveNodeDialog.java" startLine="49" startPosition="62" endLine="50" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834738299" fileName="MoveNodeDialog.java" startLine="50" startPosition="18" endLine="51" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4366542054834738314" fileName="MoveNodeDialog.java" startLine="54" startPosition="113" endLine="55" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4366542054834738321" fileName="MoveNodeDialog.java" startLine="55" startPosition="62" endLine="56" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834738326" fileName="MoveNodeDialog.java" startLine="56" startPosition="29" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834738330" fileName="MoveNodeDialog.java" startLine="57" startPosition="18" endLine="58" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4366542054834738159" fileName="MoveNodeDialog.java" startLine="65" startPosition="44" endLine="66" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3765758600795126456" fileName="MoveNodeDialog.java" startLine="72" startPosition="70" endLine="73" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3765758600795126460" fileName="MoveNodeDialog.java" startLine="73" startPosition="53" endLine="74" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3765758600795126462" fileName="MoveNodeDialog.java" startLine="75" startPosition="7" endLine="76" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4366542054834738146" fileName="MoveNodeDialog.java" startLine="61" startPosition="83" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeFilter#()V" />
+    <nodeInfo nodeId="4366542054834738182" fileName="MoveNodeDialog.java" startLine="68" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="4366542054834738150" fileName="MoveNodeDialog.java" startLine="64" startPosition="0" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeFilter#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3765758600795125979" fileName="MoveNodeDialog.java" startLine="26" startPosition="61" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4366542054834738234" fileName="MoveNodeDialog.java" startLine="30" startPosition="5" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4366542054834738261" fileName="MoveNodeDialog.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFilter#(Ljetbrains/mps/ide/refactoring/MoveNodeDialog/NodeFilter;)V" />
+    <nodeInfo nodeId="3765758600795126450" fileName="MoveNodeDialog.java" startLine="71" startPosition="136" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4366542054834738109" fileName="MoveNodeDialog.java" startLine="17" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveNodeDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4366542054834738280" fileName="MoveNodeDialog.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedObject#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4366542054834738097" fileName="MoveNodeDialog.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="4366542054834738304" fileName="MoveNodeDialog.java" startLine="53" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedObject#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/ide/refactoring/MoveNodeDialog/NodeFilter;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3765758600795126447" fileName="MoveNodeDialog.java" startLine="70" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkForObject#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModelDescriptor;Ljavax/swing/JComponent;)Z" />
+    <nodeInfo nodeId="4366542054834738093" fileName="MoveNodeDialog.java" startLine="24" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <scopeInfo nodeId="4366542054834738149" fileName="MoveNodeDialog.java" startLine="62" startPosition="25" endLine="62" endPosition="25" />
+    <scopeInfo nodeId="4366542054834738264" fileName="MoveNodeDialog.java" startLine="37" startPosition="59" endLine="38" endPosition="31" />
+    <scopeInfo nodeId="4366542054834738153" fileName="MoveNodeDialog.java" startLine="65" startPosition="44" endLine="66" endPosition="26" />
+    <scopeInfo nodeId="3765758600795125980" fileName="MoveNodeDialog.java" startLine="27" startPosition="45" endLine="29" endPosition="13" />
+    <scopeInfo nodeId="4366542054834738235" fileName="MoveNodeDialog.java" startLine="31" startPosition="172" endLine="33" endPosition="21" />
+    <scopeInfo nodeId="4366542054834738146" fileName="MoveNodeDialog.java" startLine="61" startPosition="83" endLine="63" endPosition="5" />
+    <scopeInfo nodeId="4366542054834738182" fileName="MoveNodeDialog.java" startLine="68" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="4366542054834738502" varName="modelOfSelectedNode" />
+      <varInfo nodeId="4366542054834738187" varName="nodeToMove" />
       <varInfo nodeId="4366542054834738185" varName="selectedObject" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834738101" fileName="MoveNodeDialog.java" startLine="36" startPosition="44" endLine="39" endPosition="24" />
-    <scopeInfo nodeId="4366542054834738287" fileName="MoveNodeDialog.java" startLine="42" startPosition="80" endLine="45" endPosition="35">
+    <scopeInfo nodeId="3765758600795126455" fileName="MoveNodeDialog.java" startLine="72" startPosition="70" endLine="74" endPosition="21" />
+    <scopeInfo nodeId="4366542054834738101" fileName="MoveNodeDialog.java" startLine="42" startPosition="44" endLine="45" endPosition="24" />
+    <scopeInfo nodeId="4366542054834738287" fileName="MoveNodeDialog.java" startLine="48" startPosition="79" endLine="51" endPosition="35">
       <varInfo nodeId="4366542054834738289" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834738150" fileName="MoveNodeDialog.java" startLine="58" startPosition="0" endLine="61" endPosition="5">
+    <scopeInfo nodeId="4366542054834738150" fileName="MoveNodeDialog.java" startLine="64" startPosition="0" endLine="67" endPosition="5">
       <varInfo nodeId="4366542054834738154" varName="errorMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834738117" fileName="MoveNodeDialog.java" startLine="16" startPosition="63" endLine="20" endPosition="62" />
-    <scopeInfo nodeId="4366542054834738261" fileName="MoveNodeDialog.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="4366542054834738117" fileName="MoveNodeDialog.java" startLine="18" startPosition="63" endLine="22" endPosition="62" />
+    <scopeInfo nodeId="4366542054834738261" fileName="MoveNodeDialog.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="4366542054834738271" varName="filter" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834738313" fileName="MoveNodeDialog.java" startLine="48" startPosition="114" endLine="52" endPosition="35">
+    <scopeInfo nodeId="4366542054834738313" fileName="MoveNodeDialog.java" startLine="54" startPosition="113" endLine="58" endPosition="35">
       <varInfo nodeId="4366542054834738315" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834738096" fileName="MoveNodeDialog.java" startLine="23" startPosition="40" endLine="28" endPosition="5">
-      <varInfo nodeId="4366542054834738227" varName="selectedObject" />
-    </scopeInfo>
-    <scopeInfo nodeId="4366542054834738163" fileName="MoveNodeDialog.java" startLine="63" startPosition="116" endLine="68" endPosition="18" />
-    <scopeInfo nodeId="4366542054834738109" fileName="MoveNodeDialog.java" startLine="15" startPosition="0" endLine="21" endPosition="3">
+    <scopeInfo nodeId="3765758600795126449" fileName="MoveNodeDialog.java" startLine="71" startPosition="136" endLine="76" endPosition="18" />
+    <scopeInfo nodeId="4366542054834738109" fileName="MoveNodeDialog.java" startLine="17" startPosition="0" endLine="23" endPosition="3">
       <varInfo nodeId="4366542054834738113" varName="node" />
       <varInfo nodeId="4366542054834738110" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834738280" fileName="MoveNodeDialog.java" startLine="41" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="4366542054834738280" fileName="MoveNodeDialog.java" startLine="47" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="4366542054834738284" varName="node" />
       <varInfo nodeId="4366542054834738281" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834738097" fileName="MoveNodeDialog.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="4366542054834738304" fileName="MoveNodeDialog.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="4366542054834738097" fileName="MoveNodeDialog.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="4366542054834738304" fileName="MoveNodeDialog.java" startLine="53" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="4366542054834738310" varName="filter" />
       <varInfo nodeId="4366542054834738308" varName="node" />
       <varInfo nodeId="4366542054834738305" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834738093" fileName="MoveNodeDialog.java" startLine="22" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="4366542054834738161" fileName="MoveNodeDialog.java" startLine="62" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="1395403571594586451" varName="component" />
-      <varInfo nodeId="4366542054834738499" varName="model" />
-      <varInfo nodeId="4366542054834738178" varName="node" />
-      <varInfo nodeId="4366542054834738176" varName="selectedObject" />
+    <scopeInfo nodeId="3765758600795126447" fileName="MoveNodeDialog.java" startLine="70" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="3765758600795126468" varName="component" />
+      <varInfo nodeId="3765758600795126466" varName="modelOfSelectedNode" />
+      <varInfo nodeId="3765758600795126473" varName="nodeToMove" />
+      <varInfo nodeId="3765758600795126464" varName="selectedObject" />
     </scopeInfo>
-    <unitInfo nodeId="4366542054834738086" fileName="MoveNodeDialog.java" startLine="12" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.refactoring.MoveNodeDialog" />
-    <unitInfo nodeId="4366542054834738144" fileName="MoveNodeDialog.java" startLine="55" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.refactoring.MoveNodeDialog$NodeFilter" />
+    <scopeInfo nodeId="4366542054834738096" fileName="MoveNodeDialog.java" startLine="25" startPosition="40" endLine="34" endPosition="5">
+      <varInfo nodeId="4366542054834738227" varName="selectedObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="4366542054834738093" fileName="MoveNodeDialog.java" startLine="24" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="4366542054834738086" fileName="MoveNodeDialog.java" startLine="13" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.refactoring.MoveNodeDialog" />
+    <unitInfo nodeId="4366542054834738144" fileName="MoveNodeDialog.java" startLine="61" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.refactoring.MoveNodeDialog$NodeFilter" />
   </root>
   <root nodeId="4500982759921350339">
     <nodeInfo nodeId="8847539102234122971" fileName="StringChooserDialog.java" startLine="18" startPosition="60" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
@@ -1695,92 +1699,93 @@
     <unitInfo nodeId="759258373983325702" fileName="RenameMethodDialog.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RenameMethodDialog" />
   </root>
   <root nodeId="8416108457267537956">
-    <nodeInfo nodeId="8416108457267542658" fileName="MoveNodesDialog.java" startLine="11" startPosition="56" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="8416108457267542658" fileName="MoveNodesDialog.java" startLine="11" startPosition="63" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="4366542054834738019" fileName="MoveNodesDialog.java" startLine="12" startPosition="35" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFilter" />
-    <nodeInfo nodeId="4366542054834737902" fileName="MoveNodesDialog.java" startLine="15" startPosition="76" endLine="16" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8416108457267542666" fileName="MoveNodesDialog.java" startLine="16" startPosition="19" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8416108457267542663" fileName="MoveNodesDialog.java" startLine="17" startPosition="25" endLine="18" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8565847165892031536" fileName="MoveNodesDialog.java" startLine="18" startPosition="11" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4946201340714972409" fileName="MoveNodesDialog.java" startLine="22" startPosition="40" endLine="23" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4366542054834703158" fileName="MoveNodesDialog.java" startLine="24" startPosition="98" endLine="25" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834703164" fileName="MoveNodesDialog.java" startLine="25" startPosition="45" endLine="26" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7574867372430661411" fileName="MoveNodesDialog.java" startLine="27" startPosition="5" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4366542054834737827" fileName="MoveNodesDialog.java" startLine="32" startPosition="44" endLine="33" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8565847165892011021" fileName="MoveNodesDialog.java" startLine="33" startPosition="72" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366542054834738066" fileName="MoveNodesDialog.java" startLine="37" startPosition="61" endLine="38" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8416108457267545199" fileName="MoveNodesDialog.java" startLine="41" startPosition="92" endLine="42" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8416108457267592632" fileName="MoveNodesDialog.java" startLine="42" startPosition="65" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8416108457267592640" fileName="MoveNodesDialog.java" startLine="43" startPosition="18" endLine="44" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366542054834711380" fileName="MoveNodesDialog.java" startLine="47" startPosition="128" endLine="48" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4366542054834711400" fileName="MoveNodesDialog.java" startLine="48" startPosition="65" endLine="49" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834711387" fileName="MoveNodesDialog.java" startLine="49" startPosition="29" endLine="50" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834711391" fileName="MoveNodesDialog.java" startLine="50" startPosition="18" endLine="51" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366542054834738047" fileName="MoveNodesDialog.java" startLine="58" startPosition="45" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4366542054834738049" fileName="MoveNodesDialog.java" startLine="65" startPosition="44" endLine="66" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834738053" fileName="MoveNodesDialog.java" startLine="66" startPosition="53" endLine="67" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366542054834738057" fileName="MoveNodesDialog.java" startLine="68" startPosition="7" endLine="69" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366542054834737984" fileName="MoveNodesDialog.java" startLine="54" startPosition="77" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelFilter#()V" />
-    <nodeInfo nodeId="4366542054834738005" fileName="MoveNodesDialog.java" startLine="61" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#(Ljava/lang/Object;Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="4366542054834737989" fileName="MoveNodesDialog.java" startLine="57" startPosition="0" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelFilter#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4366542054834703141" fileName="MoveNodesDialog.java" startLine="23" startPosition="61" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4366542054834738060" fileName="MoveNodesDialog.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFilter#(Ljetbrains/mps/ide/refactoring/MoveNodesDialog/ModelFilter;)V" />
-    <nodeInfo nodeId="4366542054834738032" fileName="MoveNodesDialog.java" startLine="64" startPosition="104" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8416108457267537958" fileName="MoveNodesDialog.java" startLine="14" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveNodesDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;)V" />
-    <nodeInfo nodeId="8416108457267538115" fileName="MoveNodesDialog.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="8416108457267545182" fileName="MoveNodesDialog.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedObject#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="4366542054834711372" fileName="MoveNodesDialog.java" startLine="46" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedObject#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/ide/refactoring/MoveNodesDialog/ModelFilter;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="4366542054834738023" fileName="MoveNodesDialog.java" startLine="63" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkForObject#(Ljava/lang/Object;Ljetbrains/mps/smodel/SModelDescriptor;Ljavax/swing/JComponent;)Z" />
-    <nodeInfo nodeId="8416108457267538111" fileName="MoveNodesDialog.java" startLine="21" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
-    <scopeInfo nodeId="4366542054834737987" fileName="MoveNodesDialog.java" startLine="55" startPosition="26" endLine="55" endPosition="26" />
-    <scopeInfo nodeId="4366542054834738063" fileName="MoveNodesDialog.java" startLine="37" startPosition="61" endLine="38" endPosition="27" />
-    <scopeInfo nodeId="4366542054834737992" fileName="MoveNodesDialog.java" startLine="58" startPosition="45" endLine="59" endPosition="26" />
-    <scopeInfo nodeId="4366542054834703142" fileName="MoveNodesDialog.java" startLine="24" startPosition="98" endLine="26" endPosition="21" />
-    <scopeInfo nodeId="8416108457267538119" fileName="MoveNodesDialog.java" startLine="32" startPosition="44" endLine="34" endPosition="24" />
-    <scopeInfo nodeId="4366542054834737984" fileName="MoveNodesDialog.java" startLine="54" startPosition="77" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="4366542054834738005" fileName="MoveNodesDialog.java" startLine="61" startPosition="0" endLine="63" endPosition="0">
+    <nodeInfo nodeId="4366542054834737884" fileName="MoveNodesDialog.java" startLine="13" startPosition="47" endLine="14" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedObject" />
+    <nodeInfo nodeId="4366542054834737902" fileName="MoveNodesDialog.java" startLine="16" startPosition="76" endLine="17" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8416108457267542666" fileName="MoveNodesDialog.java" startLine="17" startPosition="19" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8416108457267542663" fileName="MoveNodesDialog.java" startLine="18" startPosition="25" endLine="19" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8565847165892031536" fileName="MoveNodesDialog.java" startLine="19" startPosition="11" endLine="20" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4946201340714972409" fileName="MoveNodesDialog.java" startLine="23" startPosition="40" endLine="24" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4366542054834703158" fileName="MoveNodesDialog.java" startLine="25" startPosition="98" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834703164" fileName="MoveNodesDialog.java" startLine="26" startPosition="45" endLine="27" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7574867372430661411" fileName="MoveNodesDialog.java" startLine="28" startPosition="5" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4366542054834737827" fileName="MoveNodesDialog.java" startLine="33" startPosition="44" endLine="34" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8565847165892011021" fileName="MoveNodesDialog.java" startLine="34" startPosition="72" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4366542054834738066" fileName="MoveNodesDialog.java" startLine="38" startPosition="61" endLine="39" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8416108457267545199" fileName="MoveNodesDialog.java" startLine="42" startPosition="92" endLine="43" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8416108457267592632" fileName="MoveNodesDialog.java" startLine="43" startPosition="65" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8416108457267592640" fileName="MoveNodesDialog.java" startLine="44" startPosition="18" endLine="45" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4366542054834711380" fileName="MoveNodesDialog.java" startLine="48" startPosition="128" endLine="49" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4366542054834711400" fileName="MoveNodesDialog.java" startLine="49" startPosition="65" endLine="50" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834711387" fileName="MoveNodesDialog.java" startLine="50" startPosition="29" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834711391" fileName="MoveNodesDialog.java" startLine="51" startPosition="18" endLine="52" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4366542054834738047" fileName="MoveNodesDialog.java" startLine="59" startPosition="45" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4366542054834738049" fileName="MoveNodesDialog.java" startLine="66" startPosition="44" endLine="67" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834738053" fileName="MoveNodesDialog.java" startLine="67" startPosition="53" endLine="68" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4366542054834738057" fileName="MoveNodesDialog.java" startLine="69" startPosition="7" endLine="70" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4366542054834737984" fileName="MoveNodesDialog.java" startLine="55" startPosition="84" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelFilter#()V" />
+    <nodeInfo nodeId="4366542054834738005" fileName="MoveNodesDialog.java" startLine="62" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#(Ljava/lang/Object;Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="4366542054834737989" fileName="MoveNodesDialog.java" startLine="58" startPosition="0" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelFilter#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4366542054834703141" fileName="MoveNodesDialog.java" startLine="24" startPosition="61" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4366542054834738060" fileName="MoveNodesDialog.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFilter#(Ljetbrains/mps/ide/refactoring/MoveNodesDialog/ModelFilter;)V" />
+    <nodeInfo nodeId="4366542054834738032" fileName="MoveNodesDialog.java" startLine="65" startPosition="105" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8416108457267537958" fileName="MoveNodesDialog.java" startLine="15" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveNodesDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;)V" />
+    <nodeInfo nodeId="8416108457267538115" fileName="MoveNodesDialog.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="8416108457267545182" fileName="MoveNodesDialog.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedObject#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="4366542054834711372" fileName="MoveNodesDialog.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedObject#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/ide/refactoring/MoveNodesDialog/ModelFilter;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="4366542054834738023" fileName="MoveNodesDialog.java" startLine="64" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkForObject#(Ljava/lang/Object;Ljetbrains/mps/smodel/SModelDescriptor;Ljavax/swing/JComponent;)Z" />
+    <nodeInfo nodeId="8416108457267538111" fileName="MoveNodesDialog.java" startLine="22" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <scopeInfo nodeId="4366542054834737987" fileName="MoveNodesDialog.java" startLine="56" startPosition="26" endLine="56" endPosition="26" />
+    <scopeInfo nodeId="4366542054834738063" fileName="MoveNodesDialog.java" startLine="38" startPosition="61" endLine="39" endPosition="27" />
+    <scopeInfo nodeId="4366542054834737992" fileName="MoveNodesDialog.java" startLine="59" startPosition="45" endLine="60" endPosition="26" />
+    <scopeInfo nodeId="4366542054834703142" fileName="MoveNodesDialog.java" startLine="25" startPosition="98" endLine="27" endPosition="21" />
+    <scopeInfo nodeId="8416108457267538119" fileName="MoveNodesDialog.java" startLine="33" startPosition="44" endLine="35" endPosition="24" />
+    <scopeInfo nodeId="4366542054834737984" fileName="MoveNodesDialog.java" startLine="55" startPosition="84" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="4366542054834738005" fileName="MoveNodesDialog.java" startLine="62" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="4366542054834738015" varName="model" />
       <varInfo nodeId="4366542054834738013" varName="selectedObject" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834738034" fileName="MoveNodesDialog.java" startLine="65" startPosition="44" endLine="67" endPosition="21" />
-    <scopeInfo nodeId="8416108457267545185" fileName="MoveNodesDialog.java" startLine="41" startPosition="92" endLine="44" endPosition="35">
+    <scopeInfo nodeId="4366542054834738034" fileName="MoveNodesDialog.java" startLine="66" startPosition="44" endLine="68" endPosition="21" />
+    <scopeInfo nodeId="8416108457267545185" fileName="MoveNodesDialog.java" startLine="42" startPosition="92" endLine="45" endPosition="35">
       <varInfo nodeId="8416108457267545200" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834737989" fileName="MoveNodesDialog.java" startLine="57" startPosition="0" endLine="60" endPosition="5">
+    <scopeInfo nodeId="4366542054834737989" fileName="MoveNodesDialog.java" startLine="58" startPosition="0" endLine="61" endPosition="5">
       <varInfo nodeId="4366542054834737993" varName="errorMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="8416108457267537961" fileName="MoveNodesDialog.java" startLine="15" startPosition="76" endLine="19" endPosition="47" />
-    <scopeInfo nodeId="4366542054834738060" fileName="MoveNodesDialog.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="8416108457267537961" fileName="MoveNodesDialog.java" startLine="16" startPosition="76" endLine="20" endPosition="47" />
+    <scopeInfo nodeId="4366542054834738060" fileName="MoveNodesDialog.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="4366542054834738064" varName="filter" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834711379" fileName="MoveNodesDialog.java" startLine="47" startPosition="128" endLine="51" endPosition="35">
+    <scopeInfo nodeId="4366542054834711379" fileName="MoveNodesDialog.java" startLine="48" startPosition="128" endLine="52" endPosition="35">
       <varInfo nodeId="4366542054834711381" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834738026" fileName="MoveNodesDialog.java" startLine="64" startPosition="104" endLine="69" endPosition="18" />
-    <scopeInfo nodeId="8416108457267537958" fileName="MoveNodesDialog.java" startLine="14" startPosition="0" endLine="20" endPosition="3">
+    <scopeInfo nodeId="4366542054834738026" fileName="MoveNodesDialog.java" startLine="65" startPosition="105" endLine="70" endPosition="18" />
+    <scopeInfo nodeId="8416108457267537958" fileName="MoveNodesDialog.java" startLine="15" startPosition="0" endLine="21" endPosition="3">
       <varInfo nodeId="7574867372430712087" varName="model" />
       <varInfo nodeId="8416108457267538122" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8416108457267538114" fileName="MoveNodesDialog.java" startLine="22" startPosition="40" endLine="28" endPosition="0">
+    <scopeInfo nodeId="8416108457267538114" fileName="MoveNodesDialog.java" startLine="23" startPosition="40" endLine="29" endPosition="0">
       <varInfo nodeId="4946201340714972410" varName="selectedObject" />
     </scopeInfo>
-    <scopeInfo nodeId="8416108457267538115" fileName="MoveNodesDialog.java" startLine="30" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8416108457267545182" fileName="MoveNodesDialog.java" startLine="40" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="8416108457267538115" fileName="MoveNodesDialog.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="8416108457267545182" fileName="MoveNodesDialog.java" startLine="41" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="7574867372430714586" varName="model" />
       <varInfo nodeId="8416108457267545193" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834711372" fileName="MoveNodesDialog.java" startLine="46" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="4366542054834711372" fileName="MoveNodesDialog.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="4366542054834711396" varName="filter" />
       <varInfo nodeId="4366542054834711376" varName="model" />
       <varInfo nodeId="4366542054834711373" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4366542054834738023" fileName="MoveNodesDialog.java" startLine="63" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="4366542054834738023" fileName="MoveNodesDialog.java" startLine="64" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="1395403571594586465" varName="component" />
       <varInfo nodeId="4366542054834738029" varName="model" />
       <varInfo nodeId="4366542054834738027" varName="selectedObject" />
     </scopeInfo>
-    <scopeInfo nodeId="8416108457267538111" fileName="MoveNodesDialog.java" startLine="21" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="8416108457267537956" fileName="MoveNodesDialog.java" startLine="11" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.refactoring.MoveNodesDialog" />
-    <unitInfo nodeId="4366542054834737976" fileName="MoveNodesDialog.java" startLine="54" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.refactoring.MoveNodesDialog$ModelFilter" />
+    <scopeInfo nodeId="8416108457267538111" fileName="MoveNodesDialog.java" startLine="22" startPosition="0" endLine="31" endPosition="0" />
+    <unitInfo nodeId="8416108457267537956" fileName="MoveNodesDialog.java" startLine="11" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.refactoring.MoveNodesDialog" />
+    <unitInfo nodeId="4366542054834737976" fileName="MoveNodesDialog.java" startLine="55" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.refactoring.MoveNodesDialog$ModelFilter" />
   </root>
   <root nodeId="8847539102233959343">
     <nodeInfo nodeId="8860531876471687717" fileName="RenameDialog.java" startLine="9" startPosition="55" endLine="10" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFACTORING_NAME" />

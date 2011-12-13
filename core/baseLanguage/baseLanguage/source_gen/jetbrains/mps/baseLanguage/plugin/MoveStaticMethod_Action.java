@@ -22,18 +22,18 @@ import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 
-public class MoveStaticField_Action extends GeneratedAction {
+public class MoveStaticMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(MoveStaticField_Action.class);
+  private static Logger LOG = Logger.getLogger(MoveStaticMethod_Action.class);
 
-  public MoveStaticField_Action() {
-    super("Move Static Field", "", ICON);
+  public MoveStaticMethod_Action() {
+    super("Move Static Method", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings" + "." + "MoveStaticField"), ((SNode) MapSequence.fromMap(_params).get("target")));
+    return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings" + "." + "MoveStaticMethod"), ((SNode) MapSequence.fromMap(_params).get("target")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -43,7 +43,7 @@ public class MoveStaticField_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "MoveStaticField", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "MoveStaticMethod", t);
       this.disable(event.getPresentation());
     }
   }
@@ -55,7 +55,7 @@ public class MoveStaticField_Action extends GeneratedAction {
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
           node = null;
         }
       }
@@ -73,19 +73,17 @@ public class MoveStaticField_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNode whereToMove;
-      whereToMove = MoveNodeDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
-        public boolean check(SNode selectedObject, SNode nodeToMove, SModelDescriptor modelOfSelectedObject) {
-          return SNodeOperations.isInstanceOf(selectedObject, "jetbrains.mps.baseLanguage.structure.Classifier") && !(ListSequence.fromList(SNodeOperations.getAncestors(nodeToMove, null, false)).contains(selectedObject));
+      SNode whereToMove = MoveNodeDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
+        public boolean check(SNode selectedObject, SNode nodeToMove, SModelDescriptor modelOfSelectedNode) {
+          return SNodeOperations.isInstanceOf(selectedObject, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(ListSequence.fromList(SNodeOperations.getAncestors(nodeToMove, null, false)).contains(selectedObject));
         }
       });
-
       if (whereToMove == null) {
         return;
       }
-      new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MoveStaticField", Arrays.asList("destination"), Arrays.asList(whereToMove), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+      new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod", Arrays.asList("destination"), Arrays.asList(whereToMove), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "MoveStaticField", t);
+      LOG.error("User's action execute method failed. Action:" + "MoveStaticMethod", t);
     }
   }
 }

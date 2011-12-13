@@ -45,6 +45,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new MakeFieldFinal_Action());
     addAction(new MakeFieldStatic_Action());
     addAction(new MoveStaticField_Action());
+    addAction(new MoveStaticMethod_Action());
     addAction(new OverrideMethod_Action());
     addAction(new RenameMethod_Action());
     addAction(new RenameVariable_Action());

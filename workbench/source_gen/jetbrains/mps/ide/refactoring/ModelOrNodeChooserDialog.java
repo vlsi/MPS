@@ -8,14 +8,13 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
-public abstract class NodeChooserDialog extends RefactoringDialog {
+public abstract class ModelOrNodeChooserDialog extends RefactoringDialog {
   protected static String REFACTORING_NAME = RefactoringBundle.message("move.title");
 
   protected Project myProject;
-  protected Object mySelectedObject;
   protected ModelOrNodeChooser myPanel;
 
-  public NodeChooserDialog(@NotNull Project project) {
+  public ModelOrNodeChooserDialog(@NotNull Project project) {
     super(project, true);
     this.myProject = project;
   }
@@ -30,7 +29,7 @@ public abstract class NodeChooserDialog extends RefactoringDialog {
     protected Filter() {
     }
 
-    public void showError(String title, JComponent component) {
+    protected void showError(String title, JComponent component) {
       JOptionPane.showMessageDialog(component, errorMessage, title, JOptionPane.INFORMATION_MESSAGE);
     }
   }

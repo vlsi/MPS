@@ -8,9 +8,10 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 
-public class MoveNodesDialog extends NodeChooserDialog {
+public class MoveNodesDialog extends ModelOrNodeChooserDialog {
   private SModelDescriptor myModel;
   private MoveNodesDialog.ModelFilter myFilter;
+  protected Object mySelectedObject;
 
   public MoveNodesDialog(@NotNull Project project, SModelDescriptor model) {
     super(project);
@@ -51,7 +52,7 @@ public class MoveNodesDialog extends NodeChooserDialog {
     return dialog.mySelectedObject;
   }
 
-  public static abstract class ModelFilter extends NodeChooserDialog.Filter {
+  public static abstract class ModelFilter extends ModelOrNodeChooserDialog.Filter {
     public ModelFilter() {
     }
 
@@ -61,7 +62,7 @@ public class MoveNodesDialog extends NodeChooserDialog {
 
     public abstract boolean check(Object selectedObject, SModelDescriptor model);
 
-    public boolean checkForObject(Object selectedObject, SModelDescriptor model, JComponent component) {
+    private boolean checkForObject(Object selectedObject, SModelDescriptor model, JComponent component) {
       if (!(check(selectedObject, model))) {
         showError("Nodes can't be moved", component);
         return false;

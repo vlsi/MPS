@@ -10,13 +10,13 @@ import java.util.Map;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.lang.core.scripts.RenameUtil;
-import javax.swing.JOptionPane;
-import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.lang.core.scripts.RenameUtil;
+import javax.swing.JOptionPane;
+import java.awt.Frame;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
@@ -36,11 +36,6 @@ public class Rename_Action extends GeneratedAction {
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings" + "." + "Rename"), ((SNode) MapSequence.fromMap(_params).get("target"))))) {
-      return false;
-    }
-    if (!(RenameUtil.canBeRenamed(((SNode) MapSequence.fromMap(_params).get("target"))))) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Nodes with getter for the \"name\" property can't be renamed", "Node can't be renamed", JOptionPane.INFORMATION_MESSAGE);
-
       return false;
     }
     return true;
@@ -88,6 +83,11 @@ public class Rename_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      if (!(RenameUtil.canBeRenamed(((SNode) MapSequence.fromMap(_params).get("target"))))) {
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Nodes with getter for the \"name\" property can't be renamed", "Node can't be renamed", JOptionPane.INFORMATION_MESSAGE);
+        return;
+      }
+
       String newName = Rename_Action.this.init(_params);
       if (newName == null) {
         return;

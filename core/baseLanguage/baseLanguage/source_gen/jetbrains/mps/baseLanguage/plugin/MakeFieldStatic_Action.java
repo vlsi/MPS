@@ -23,7 +23,7 @@ public class MakeFieldStatic_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(MakeFieldStatic_Action.class);
 
   public MakeFieldStatic_Action() {
-    super("MakeFieldStatic", "", ICON);
+    super("Make Field Static", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
