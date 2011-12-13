@@ -6,8 +6,8 @@ import jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter;
 import java.awt.Color;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -41,12 +41,14 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private ChangeGroupLayout myChangeGroupLayout;
   private ChangeGroup myGroupUnderMouse;
   private PopupPanel myPopupToolbar = null;
+  private ChangeGroupMessages myGroupMessages;
 
   public ChangeStripsPainter(@NotNull EditorHighlighter editorHighlighter) {
     super(editorHighlighter.getLeftEditorHighlighter());
     myEditorHighlighter = editorHighlighter;
     myChangeGroupLayout = new StripsChangeGroupLayout(myEditorHighlighter);
-    ChangeGroupMessages.startMaintaining(myChangeGroupLayout, true);
+    myGroupMessages = new ChangeGroupMessages(myChangeGroupLayout, true);
+    myGroupMessages.startMaintaining();
   }
 
   @NotNull
@@ -253,6 +255,12 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     if (group != null) {
       showPopupForGroup(group, (int) group.getBounds(true).start());
     }
+  }
+
+  @Override
+  public void dispose() {
+    myGroupMessages.dispose();
+    super.dispose();
   }
 
   private static void check_h84zmo_a1a11(PopupPanel checkedDotOperand) {

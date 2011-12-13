@@ -174,6 +174,7 @@ public class EditorHighlighter implements EditorMessageOwner {
             getHighlightManager().clearForOwner(EditorHighlighter.this);
             if (myStripsPainter != null) {
               getLeftEditorHighlighter().removeFoldingAreaPainter(myStripsPainter);
+              myStripsPainter.dispose();
             }
           } finally {
             if (myCurrentDifference != null) {

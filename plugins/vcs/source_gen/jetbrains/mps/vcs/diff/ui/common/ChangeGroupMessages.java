@@ -15,7 +15,7 @@ public class ChangeGroupMessages implements EditorMessageOwner {
   private boolean myLeft;
   private MessagesGutter myGutter;
 
-  private ChangeGroupMessages(ChangeGroupLayout layout, boolean left) {
+  public ChangeGroupMessages(ChangeGroupLayout layout, boolean left) {
     myLayout = layout;
     myLeft = left;
     myGutter = ((left ?
@@ -32,6 +32,10 @@ public class ChangeGroupMessages implements EditorMessageOwner {
     });
   }
 
+  public void dispose() {
+    myGutter.removeMessages(this);
+  }
+
   public void rebuildGutterMessages() {
     myGutter.removeMessages(this);
     ListSequence.fromList(myLayout.getChangeGroups()).visitAll(new IVisitor<ChangeGroup>() {
@@ -41,13 +45,9 @@ public class ChangeGroupMessages implements EditorMessageOwner {
     });
   }
 
-  public static void startMaintaining(ChangeGroupLayout layout, boolean left) {
-    new ChangeGroupMessages(layout, left).startMaintaining();
-  }
-
   public static void startMaintaining(ChangeGroupLayout layout) {
-    startMaintaining(layout, false);
-    startMaintaining(layout, true);
+    new ChangeGroupMessages(layout, false).startMaintaining();
+    new ChangeGroupMessages(layout, true).startMaintaining();
   }
 
   private class MyChangeGroupMessage implements SimpleEditorMessage {
