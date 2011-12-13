@@ -32,7 +32,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected volatile SModel mySModel = null;
   private volatile ModelLoadingState myLoadingState = ModelLoadingState.NOT_LOADED;
-  private final Object myLoadingLock = new Object();
+  protected final Object myLoadingLock = new Object();
 
   protected SModelReference myModelReference;
   protected IModelRootManager myModelRootManager;
@@ -242,16 +242,19 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   public void replaceModel(SModel newModel, ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
-    if (newModel == mySModel) return;
-    final SModel oldSModel = mySModel;
-    if (oldSModel != null) {
-      oldSModel.setModelDescriptor(null);
-    }
-    mySModel = newModel;
-    setLoadingState(state);
+    final SModel oldSModel;
+    synchronized (myLoadingLock) {
+      if (newModel == mySModel) return;
+      oldSModel = mySModel;
+      if (oldSModel != null) {
+        oldSModel.setModelDescriptor(null);
+      }
+      mySModel = newModel;
+      setLoadingState(state);
 
-    if (mySModel != null) {
-      mySModel.setModelDescriptor(this);
+      if (mySModel != null) {
+        mySModel.setModelDescriptor(this);
+      }
     }
     MPSModuleRepository.getInstance().invalidateCaches();
     Runnable modelReplacedNotifier = new Runnable() {
