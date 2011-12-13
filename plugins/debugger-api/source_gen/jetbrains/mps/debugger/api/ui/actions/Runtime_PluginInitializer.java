@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class Runtime_PluginInitializer implements ApplicationComponent {
-
   public Runtime_PluginInitializer() {
     PluginUtil.addPluginContributor(new PluginContributor() {
       public BaseApplicationPlugin createApplicationPlugin() {

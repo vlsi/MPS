@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class Mpsdevkit_PluginInitializer implements ApplicationComponent {
-
   public Mpsdevkit_PluginInitializer() {
     PluginUtil.addPluginContributor(new PluginContributor() {
       public BaseApplicationPlugin createApplicationPlugin() {

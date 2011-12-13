@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class Modelchecker_PluginInitializer implements ApplicationComponent {
-
   public Modelchecker_PluginInitializer() {
     PluginUtil.addPluginContributor(new PluginContributor() {
       public BaseApplicationPlugin createApplicationPlugin() {
