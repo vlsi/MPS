@@ -31,7 +31,7 @@ public class NullPsiDocumentManager extends PsiDocumentManager {
   }
 
   @Override
-  public boolean cancelAndRunWhenAllCommitted(@NonNls @NotNull Object key, @NotNull Runnable action) {
+  public boolean performWhenAllCommitted(@NotNull Runnable action) {
     return false;
   }
 
