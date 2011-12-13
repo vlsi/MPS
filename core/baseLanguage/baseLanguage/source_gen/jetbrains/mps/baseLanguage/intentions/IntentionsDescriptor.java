@@ -80,6 +80,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new ReplaceForEachLoopWithIndexedLoop_Intention(), "1199627182107");
     add(new ReplaceForLoopWithWhileLoop_Intention(), "1199623693658");
     add(new SpecifyClass_Intention(), "1230290102486");
+    add(new SplitIf_Intention(), "5155195849735077874");
     add(new SplitIntoDeclarationAndAssignment_Intention(), "1195647309293");
     add(new SplitStringIntoConcatenation_Intention(), "1195647385815");
     add(new SuroundWithTryCatch_Intention(), "3366354716707825944");

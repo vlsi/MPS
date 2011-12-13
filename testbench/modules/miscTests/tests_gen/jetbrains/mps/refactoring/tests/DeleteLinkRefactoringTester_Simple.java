@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SReference;
 
 public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {

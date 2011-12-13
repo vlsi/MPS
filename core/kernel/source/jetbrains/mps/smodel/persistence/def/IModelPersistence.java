@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
-import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 
 import java.util.List;

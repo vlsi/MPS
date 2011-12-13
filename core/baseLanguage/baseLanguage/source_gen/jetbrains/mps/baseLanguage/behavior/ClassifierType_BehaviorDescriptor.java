@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import org.jetbrains.annotations.NotNull;
+import java.util.Set;
 
 public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public ClassifierType_BehaviorDescriptor() {
@@ -53,8 +55,8 @@ public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor {
     return ClassifierType_Behavior.virtual_isReifiable_2817265908000464118(thisNode);
   }
 
-  public SNode virtual_getLooseType_5744862332972792015(SNode thisNode) {
-    return ClassifierType_Behavior.virtual_getLooseType_5744862332972792015(thisNode);
+  public SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
+    return ClassifierType_Behavior.virtual_getLooseType_5744862332972792015(thisNode, visitedTypes);
   }
 
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {

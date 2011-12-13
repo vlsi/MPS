@@ -71,8 +71,8 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
           Pair<String, String> newKey =
             new Pair<String, String>(conceptDeclaration1, conceptDeclaration2);
           result = myRules.get(newKey);
-          if (result != null) {
-            if (conceptDeclaration1 != key.o1 || conceptDeclaration2 != key.o2) {
+          if (result != null && !result.isEmpty()) {
+            if (!conceptDeclaration1.equals(key.o1) || !conceptDeclaration2.equals(key.o2)) {
               myRules.putIfAbsent(key, result);
             }
             // synchronized collection (result) requires external synchronization for iteration/clone

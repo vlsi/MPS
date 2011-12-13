@@ -19,7 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,11 +29,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
-  protected volatile SModel mySModel = null;
   private boolean myRegistered;
-  private volatile ModelLoadingState myLoadingState = ModelLoadingState.NOT_LOADED;
-  private final Object myLoadingLock = new Object();
-
   protected SModelReference myModelReference;
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
@@ -41,46 +37,29 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected BaseSModelDescriptor(@NotNull SModelReference modelReference, boolean checkDup) {
     myModelReference = modelReference;
-
     if (checkDup) {
       checkModelDuplication();
     }
   }
 
-  public final SModel getSModel() {
-    ModelLoadingState oldState;
-
-    SModel model = mySModel;
-    if (myLoadingState != ModelLoadingState.NOT_LOADED && model != null) return model;
-
-    synchronized (myLoadingLock) {
-      if (myLoadingState != ModelLoadingState.NOT_LOADED) return mySModel;
-
-      oldState = myLoadingState;
-      ModelLoadResult result = runModelLoading(new Computable<ModelLoadResult>() {
-        public ModelLoadResult compute() {
-          return initialLoad();
-        }
-      });
-      mySModel = result.model;
-      mySModel.setModelDescriptor(this);
-      myLoadingState = result.state;
+  public void dispose() {
+    ModelAccess.assertLegalWrite();
+    SModel smodel = getCurrentModelInternal();
+    if (smodel != null) {
+      fireBeforeModelDisposed(smodel);
+      smodel.dispose();
     }
-
-    if (oldState != myLoadingState) {
-      fireModelStateChanged(oldState, myLoadingState);
-    }
-    return mySModel;
+    clearListeners();
   }
 
-  protected abstract ModelLoadResult initialLoad();
+  public void refresh() {
+    ModelAccess.assertLegalWrite();
 
-  protected ModelLoadResult runModelLoading(final Computable<ModelLoadResult> comp) {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
-      public ModelLoadResult compute() {
-        return UndoHelper.getInstance().runNonUndoableAction(comp);
-      }
-    });
+    SModel smodel = getCurrentModelInternal();
+    if (smodel == null) return;
+
+    getSModel().clearAdaptersAndUserObjects();
+    getSModel().refreshRefactoringHistory();
   }
 
   @Override
@@ -91,44 +70,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Override
   public String getModelHash() {
     return null;
-  }
-
-  public static class ModelLoadResult {
-    private ModelLoadingState state;
-    private SModel model;
-
-    public ModelLoadResult(@NotNull SModel model, ModelLoadingState state) {
-      this.model = model;
-      this.state = state;
-    }
-
-    public ModelLoadingState getState() {
-      return state;
-    }
-
-    public void setState(ModelLoadingState state) {
-      this.state = state;
-    }
-
-    public SModel getModel() {
-      return model;
-    }
-  }
-
-  public void refresh() {
-    ModelAccess.assertLegalWrite();
-    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
-
-    mySModel.clearAdaptersAndUserObjects();
-    mySModel.refreshRefactoringHistory();
-  }
-
-  public ModelLoadingState getLoadingState() {
-    return myLoadingState;
-  }
-
-  protected void setLoadingState(ModelLoadingState state) {
-    myLoadingState = state;
   }
 
   public boolean isRegistered() {
@@ -162,22 +103,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return null;
   }
 
+  protected abstract SModel getCurrentModelInternal();
+
   protected void checkModelDuplication() {
     SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
     if (anotherModel != null) {
       String message = "Model already registered: " + myModelReference + "\n";
       LOG.error(message);
     }
-  }
-
-  @Override
-  public void dispose() {
-    ModelAccess.assertLegalWrite();
-    if (mySModel != null) {
-      fireBeforeModelDisposed(mySModel);
-      mySModel.dispose();
-    }
-    clearListeners();
   }
 
   public void addModelListener(@NotNull SModelListener listener) {
@@ -208,40 +141,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private void clearListeners() {
     myModelListeners.clear();
     myModelCommandListeners.clear();
-  }
-
-  //this method should be called only with a fully loaded model as parameter
-  public void replaceModel(@NotNull SModel newModel) {
-    replaceModel(newModel, ModelLoadingState.FULLY_LOADED);
-  }
-
-  public void replaceModel(SModel newModel, ModelLoadingState state) {
-    ModelAccess.assertLegalWrite();
-    if (newModel == mySModel) return;
-    final SModel oldSModel = mySModel;
-    if (oldSModel != null) {
-      oldSModel.setModelDescriptor(null);
-    }
-    mySModel = newModel;
-    setLoadingState(state);
-
-    if (mySModel != null) {
-      mySModel.setModelDescriptor(this);
-    }
-    MPSModuleRepository.getInstance().invalidateCaches();
-    Runnable modelReplacedNotifier = new Runnable() {
-      public void run() {
-        fireModelReplaced();
-        if (oldSModel != null) {
-          oldSModel.dispose();
-        }
-      }
-    };
-    if (ModelAccess.instance().isInEDT()) {
-      modelReplacedNotifier.run();
-    } else {
-      ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
-    }
   }
 
   // Not SModel-specific listener notifications

@@ -123,7 +123,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     if (dataId.equals(MPSDataKeys.NAMESPACE.getName())) {
       NamespaceTextNode selectedNamespaceNode = getSelectedTreeNode(NamespaceTextNode.class);
       if (selectedNamespaceNode != null) {
-        return selectedNamespaceNode.getName();
+        return selectedNamespaceNode.getNamespace();
       }
       return null;
     }

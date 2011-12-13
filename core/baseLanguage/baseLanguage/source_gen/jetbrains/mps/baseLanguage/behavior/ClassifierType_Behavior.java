@@ -17,10 +17,11 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import org.jetbrains.annotations.NotNull;
+import java.util.Set;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -179,11 +180,11 @@ public class ClassifierType_Behavior {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count();
   }
 
-  public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode) {
+  public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
     SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(classifierType, "classifier", SLinkOperations.getTarget(thisNode, "classifier", false), false);
     for (SNode typeParam : SLinkOperations.getTargets(thisNode, "parameter", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).addElement(Type_Behavior.call_getLooseType_5744862332972792015(typeParam));
+      ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).addElement(Type_Behavior.call_getLooseType_5744862332972792015(typeParam, visitedTypes));
     }
     return classifierType;
   }

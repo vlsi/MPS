@@ -17,6 +17,7 @@ package jetbrains.mps.ide.projectPane.logicalview;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 public abstract class SimpleModelListener extends SModelAdapter {
   private MPSTreeNode myTreeNode;

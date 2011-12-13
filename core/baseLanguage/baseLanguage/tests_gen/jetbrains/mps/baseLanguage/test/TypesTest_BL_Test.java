@@ -54,6 +54,12 @@ public class TypesTest_BL_Test extends BaseTransformationTest {
     this.runTest("jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody", "testArrays", true);
   }
 
+  @Test
+  public void testRules() throws Throwable {
+    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.runTest("jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody", "testRules", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void testBinaryOp() throws Exception {
@@ -89,6 +95,11 @@ public class TypesTest_BL_Test extends BaseTransformationTest {
     public void testArrays() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("5684597377559872289"), "jetbrains.mps.lang.test.structure.NodeOperation");
       BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("5684597377559872257"));
+    }
+
+    public void testRules() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("8239324132726812091"), "jetbrains.mps.lang.test.structure.NodeOperation");
+      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("8239324132726812043"));
     }
   }
 }
