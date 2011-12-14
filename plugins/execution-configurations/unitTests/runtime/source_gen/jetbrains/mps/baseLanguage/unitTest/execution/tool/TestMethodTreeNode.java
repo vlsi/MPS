@@ -18,15 +18,15 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
   public TestMethodTreeNode(@NotNull IOperationContext operationContext, @NotNull ITestNodeWrapper testMethod) {
     super(operationContext);
     this.testMethod = testMethod;
-    this.setNodeIdentifier(this.testMethod.getNodePointer().getNodeId().toString());
-    this.setText(this.testMethod.getName());
+    setNodeIdentifier(this.testMethod.getNodePointer().getNodeId().toString());
+    setText(this.testMethod.getName());
   }
 
   public String getClassName() {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ITestNodeWrapper testCase = TestMethodTreeNode.this.testMethod.getTestCase();
+        ITestNodeWrapper testCase = testMethod.getTestCase();
         if (testCase != null) {
           className.value = testCase.getFqName();
         }
@@ -39,7 +39,7 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
     final Wrappers._T<String> methodName = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        methodName.value = TestMethodTreeNode.this.testMethod.getName();
+        methodName.value = testMethod.getName();
       }
     });
     return methodName.value;
@@ -67,6 +67,6 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
 
   @Override
   public Object getUserObject() {
-    return this.testMethod;
+    return testMethod;
   }
 }

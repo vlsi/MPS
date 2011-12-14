@@ -9,11 +9,11 @@ public class TestCaseRow extends TestContainerRow {
 
   public TestCaseRow(ITestNodeWrapper testCase) {
     super(testCase.getFqName(), testCase.getNodePointer().getModelReference().getLongName());
-    this.myTestCaseName = testCase.getFqName();
+    myTestCaseName = testCase.getFqName();
   }
 
   public boolean matches(String testCase, String testMethod) {
-    return testCase == null || eq_f4t6f0_a0a0a0(testCase, this.myTestCaseName);
+    return testCase == null || eq_f4t6f0_a0a0a0(testCase, myTestCaseName);
   }
 
   private static boolean eq_f4t6f0_a0a0a0(Object a, Object b) {

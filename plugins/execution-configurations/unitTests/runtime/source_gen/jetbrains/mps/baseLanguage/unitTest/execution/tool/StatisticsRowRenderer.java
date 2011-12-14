@@ -33,48 +33,48 @@ public class StatisticsRowRenderer implements TableCellRenderer {
 
   public StatisticsRowRenderer() {
 
-    this.myTextPanel = new JPanel(new BorderLayout());
-    this.myText = new JLabel();
-    this.myTextPanel.add(this.myText, BorderLayout.WEST);
-    this.myAdvancedText = new JLabel();
-    this.myAdvancedText.setForeground(Color.GRAY);
-    this.myTextPanel.add(this.myAdvancedText, BorderLayout.CENTER);
-    this.mySimpleField = new JLabel("", SwingConstants.RIGHT);
+    myTextPanel = new JPanel(new BorderLayout());
+    myText = new JLabel();
+    myTextPanel.add(myText, BorderLayout.WEST);
+    myAdvancedText = new JLabel();
+    myAdvancedText.setForeground(Color.GRAY);
+    myTextPanel.add(myAdvancedText, BorderLayout.CENTER);
+    mySimpleField = new JLabel("", SwingConstants.RIGHT);
 
     // container states 
 
-    this.mySuccess = new JLabel("", SwingConstants.RIGHT);
-    Font font = this.mySuccess.getFont();
+    mySuccess = new JLabel("", SwingConstants.RIGHT);
+    Font font = mySuccess.getFont();
     Font boldFont = new Font(font.getName(), Font.BOLD, font.getSize());
-    this.mySuccess.setForeground(new Color(0, 127, 0));
-    this.mySuccess.setFont(boldFont);
+    mySuccess.setForeground(new Color(0, 127, 0));
+    mySuccess.setFont(boldFont);
 
-    this.myFailure = new JLabel("", SwingConstants.RIGHT);
-    this.myFailure.setForeground(Color.RED);
-    this.myFailure.setFont(boldFont);
+    myFailure = new JLabel("", SwingConstants.RIGHT);
+    myFailure.setForeground(Color.RED);
+    myFailure.setFont(boldFont);
 
-    this.myError = new JLabel("", SwingConstants.RIGHT);
-    this.myError.setForeground(Color.RED);
-    this.myError.setFont(boldFont);
+    myError = new JLabel("", SwingConstants.RIGHT);
+    myError.setForeground(Color.RED);
+    myError.setFont(boldFont);
 
-    this.myStatePanel = new JPanel(new GridLayout(1, 3));
-    this.myStatePanel.add(this.mySuccess, BorderLayout.WEST);
-    this.myStatePanel.add(this.myFailure, BorderLayout.CENTER);
-    this.myStatePanel.add(this.myError, BorderLayout.EAST);
+    myStatePanel = new JPanel(new GridLayout(1, 3));
+    myStatePanel.add(mySuccess, BorderLayout.WEST);
+    myStatePanel.add(myFailure, BorderLayout.CENTER);
+    myStatePanel.add(myError, BorderLayout.EAST);
 
     // single test states 
 
-    this.myAloneSuccess = new JLabel("Passed", SwingConstants.RIGHT);
-    this.myAloneSuccess.setForeground(new Color(0, 127, 0));
-    this.myAloneSuccess.setFont(boldFont);
+    myAloneSuccess = new JLabel("Passed", SwingConstants.RIGHT);
+    myAloneSuccess.setForeground(new Color(0, 127, 0));
+    myAloneSuccess.setFont(boldFont);
 
-    this.myAloneFailure = new JLabel("Failed", SwingConstants.RIGHT);
-    this.myAloneFailure.setForeground(Color.RED);
-    this.myAloneFailure.setFont(boldFont);
+    myAloneFailure = new JLabel("Failed", SwingConstants.RIGHT);
+    myAloneFailure.setForeground(Color.RED);
+    myAloneFailure.setFont(boldFont);
 
-    this.myAloneError = new JLabel("Error", SwingConstants.RIGHT);
-    this.myAloneError.setForeground(Color.RED);
-    this.myAloneError.setFont(boldFont);
+    myAloneError = new JLabel("Error", SwingConstants.RIGHT);
+    myAloneError.setForeground(Color.RED);
+    myAloneError.setFont(boldFont);
   }
 
   public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
@@ -90,34 +90,34 @@ public class StatisticsRowRenderer implements TableCellRenderer {
         if (!(container)) {
           text = INDENT + text;
         }
-        this.myText.setText(text);
+        myText.setText(text);
         String additionalText = rowValue.getAdditionalText();
         if (additionalText != null) {
-          this.myAdvancedText.setText(" (" + additionalText + ")");
+          myAdvancedText.setText(" (" + additionalText + ")");
         } else {
-          this.myAdvancedText.setText("");
+          myAdvancedText.setText("");
         }
-        result = this.myTextPanel;
-        adjustFont = this.myText;
+        result = myTextPanel;
+        adjustFont = myText;
         break;
       case 1:
         // Time elapsed 
-        result = this.setTime(rowValue.getElapsedTime());
+        result = setTime(rowValue.getElapsedTime());
         adjustFont = result;
         break;
       case 2:
         // Usage Delta 
-        result = this.setMemoryUsage(rowValue.getUsageDelta());
+        result = setMemoryUsage(rowValue.getUsageDelta());
         adjustFont = result;
         break;
       case 3:
         // Usage Before 
-        result = this.setMemoryUsage(rowValue.getUsageBefore());
+        result = setMemoryUsage(rowValue.getUsageBefore());
         adjustFont = result;
         break;
       case 4:
         // Usage After 
-        result = this.setMemoryUsage(rowValue.getUsageAfter());
+        result = setMemoryUsage(rowValue.getUsageAfter());
         adjustFont = result;
         break;
       case 5:
@@ -126,32 +126,32 @@ public class StatisticsRowRenderer implements TableCellRenderer {
         int f = rowValue.getFailed();
         int e = rowValue.getErrored();
         if (container) {
-          this.mySuccess.setText((s > 0 ?
+          mySuccess.setText((s > 0 ?
             ("P:" + s) :
             ""
           ));
-          this.myFailure.setText((f > 0 ?
+          myFailure.setText((f > 0 ?
             ("F:" + f) :
             ""
           ));
-          this.myError.setText((e > 0 ?
+          myError.setText((e > 0 ?
             ("E:" + e) :
             ""
           ));
-          result = this.myStatePanel;
+          result = myStatePanel;
         } else if ((s + f + e) >= 1) {
           if (s > 0) {
-            result = this.myAloneSuccess;
+            result = myAloneSuccess;
           }
           if (f > 0) {
-            result = this.myAloneFailure;
+            result = myAloneFailure;
           }
           if (e > 0) {
-            result = this.myAloneError;
+            result = myAloneError;
           }
         } else {
-          this.mySimpleField.setText("");
-          result = this.mySimpleField;
+          mySimpleField.setText("");
+          result = mySimpleField;
         }
         keepForeground = true;
         break;
@@ -191,13 +191,13 @@ public class StatisticsRowRenderer implements TableCellRenderer {
     if (time >= 0) {
       text = String.format("%.3f s", time / 1000.0);
     }
-    this.mySimpleField.setText(text);
-    return this.mySimpleField;
+    mySimpleField.setText(text);
+    return mySimpleField;
   }
 
   private JLabel setMemoryUsage(long usage) {
     String s = String.format("%d Kb", usage / 1024);
-    this.mySimpleField.setText(s);
-    return this.mySimpleField;
+    mySimpleField.setText(s);
+    return mySimpleField;
   }
 }

@@ -25,13 +25,13 @@ public enum TestState {
   TestState(String iconName) {
     Language language = Language.getLanguageFor(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")).getModelDescriptor());
     String pathToIcon = MacrosUtil.expandPath(MacrosFactory.LANGUAGE_DESCRIPTOR + "/icons/states/" + iconName, language.getModuleFqName());
-    this.myIcon = IconManager.loadIcon(pathToIcon, true);
+    myIcon = IconManager.loadIcon(pathToIcon, true);
   }
 
   public Icon getIcon() {
-    if (this.equals(TestState.IN_PROGRESS)) {
+    if (equals(TestState.IN_PROGRESS)) {
       return TestTreeIconAnimator.getCurrentFrame();
     }
-    return this.myIcon;
+    return myIcon;
   }
 }

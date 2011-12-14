@@ -25,46 +25,46 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
 
   public TestTreeIconAnimator(TestTree testTree) {
     Disposer.register(testTree, this);
-    this.myTestTree = testTree;
+    myTestTree = testTree;
   }
 
   public void init(TestRunState state) {
-    this.myState = state;
-    this.myAlarm = new Alarm();
+    myState = state;
+    myAlarm = new Alarm();
   }
 
   public void run() {
-    String methodName = this.myState.getCurrentMethod();
+    String methodName = myState.getCurrentMethod();
     if (methodName != null) {
       final long time = System.currentTimeMillis();
-      if (time - this.myLastInvocationTime >= FRAME_TIME) {
-        this.myLastInvocationTime = time;
-        String className = this.myState.getCurrentClass();
-        TestMethodTreeNode methodTreeNode = this.myTestTree.get(className, methodName);
-        this.updateTreeNode(methodTreeNode);
-        TestCaseTreeNode testTreeNode = this.myTestTree.get(className);
-        this.updateTreeNode(testTreeNode);
+      if (time - myLastInvocationTime >= FRAME_TIME) {
+        myLastInvocationTime = time;
+        String className = myState.getCurrentClass();
+        TestMethodTreeNode methodTreeNode = myTestTree.get(className, methodName);
+        updateTreeNode(methodTreeNode);
+        TestCaseTreeNode testTreeNode = myTestTree.get(className);
+        updateTreeNode(testTreeNode);
       }
     }
-    this.scheduleRepaint();
+    scheduleRepaint();
   }
 
   public void scheduleRepaint() {
-    if (this.myAlarm == null) {
+    if (myAlarm == null) {
       return;
     }
-    this.myAlarm.cancelAllRequests();
-    if (this.myState.getCurrentMethod() != null) {
-      this.myAlarm.addRequest(this, FRAME_TIME);
+    myAlarm.cancelAllRequests();
+    if (myState.getCurrentMethod() != null) {
+      myAlarm.addRequest(this, FRAME_TIME);
     }
   }
 
   public void stopMovie() {
-    this.cancelAlarm();
+    cancelAlarm();
   }
 
   public void dispose() {
-    this.cancelAlarm();
+    cancelAlarm();
   }
 
   private void updateTreeNode(@Nullable final BaseTestTreeNode node) {
@@ -79,9 +79,9 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
   }
 
   private void cancelAlarm() {
-    if (this.myAlarm != null) {
-      this.myAlarm.cancelAllRequests();
-      this.myAlarm = null;
+    if (myAlarm != null) {
+      myAlarm.cancelAllRequests();
+      myAlarm = null;
     }
   }
 

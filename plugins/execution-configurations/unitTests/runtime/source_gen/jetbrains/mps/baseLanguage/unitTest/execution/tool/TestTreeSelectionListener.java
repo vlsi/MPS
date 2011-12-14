@@ -13,8 +13,8 @@ public class TestTreeSelectionListener implements TreeSelectionListener {
   private TestOutputComponent outputComponent;
 
   public TestTreeSelectionListener(TestTree tree, StatisticsTableModel statistics, TestOutputComponent outputComponent) {
-    this.treeSelectionModel = tree.getSelectionModel();
-    this.statisticsModel = statistics;
+    treeSelectionModel = tree.getSelectionModel();
+    statisticsModel = statistics;
     this.outputComponent = outputComponent;
   }
 
@@ -22,7 +22,7 @@ public class TestTreeSelectionListener implements TreeSelectionListener {
     if (event.getNewLeadSelectionPath() == null) {
       return;
     }
-    TreePath path = this.treeSelectionModel.getSelectionPath();
+    TreePath path = treeSelectionModel.getSelectionPath();
     if (path == null) {
       return;
     }
@@ -37,7 +37,7 @@ public class TestTreeSelectionListener implements TreeSelectionListener {
       className = n.getClassName();
       methodName = n.getMethodName();
     }
-    this.outputComponent.filter(className, methodName);
-    this.statisticsModel.setFilter(className, methodName);
+    outputComponent.filter(className, methodName);
+    statisticsModel.setFilter(className, methodName);
   }
 }

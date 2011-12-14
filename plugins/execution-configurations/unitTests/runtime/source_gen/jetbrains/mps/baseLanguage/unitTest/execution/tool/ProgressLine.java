@@ -26,28 +26,28 @@ public class ProgressLine extends JPanel implements TestView {
 
   public ProgressLine(TestRunState testState) {
     super(new GridLayout(1, 2));
-    this.myState = testState;
-    this.add(this.myStateLabel);
+    myState = testState;
+    add(myStateLabel);
     final JPanel progress = new JPanel(new GridBagLayout());
-    progress.add(this.myProgressBar, new GridBagConstraints(0, 0, 0, 0, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(2, 0, 0, 2), 0, 0));
-    this.myProgressBar.setColor(ColorProgressBar.GREEN);
-    this.add(progress);
-    this.myTestsBuilt = true;
-    this.init();
+    progress.add(myProgressBar, new GridBagConstraints(0, 0, 0, 0, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(2, 0, 0, 2), 0, 0));
+    myProgressBar.setColor(ColorProgressBar.GREEN);
+    add(progress);
+    myTestsBuilt = true;
+    init();
   }
 
   public void update() {
-    if (this.myState.getAvailableText() != null || ProcessOutputTypes.SYSTEM.equals(this.myState.getKey())) {
+    if (myState.getAvailableText() != null || ProcessOutputTypes.SYSTEM.equals(myState.getKey())) {
       return;
     }
-    final int defectedTests = this.myState.getDefectTests();
-    final int totalTests = this.myState.getTotalTests();
-    final int complitedTests = this.myState.getCompletedTests();
-    final String testName = this.myState.getCurrentMethod();
+    final int defectedTests = myState.getDefectTests();
+    final int totalTests = myState.getTotalTests();
+    final int complitedTests = myState.getCompletedTests();
+    final String testName = myState.getCurrentMethod();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        ProgressLine.this.updateProgressBar(defectedTests, totalTests, complitedTests);
-        ProgressLine.this.updateLabel(defectedTests, totalTests, complitedTests, testName);
+        updateProgressBar(defectedTests, totalTests, complitedTests);
+        updateLabel(defectedTests, totalTests, complitedTests, testName);
       }
     });
   }
@@ -57,12 +57,12 @@ public class ProgressLine extends JPanel implements TestView {
 
   private void updateProgressBar(int defected, int total, int complited) {
     if (defected > 0) {
-      this.myProgressBar.setColor(ColorProgressBar.RED);
-    } else if (this.myState.isTerminated() && !(total == complited)) {
-      this.myProgressBar.setColor(ColorProgressBar.YELLOW);
+      myProgressBar.setColor(ColorProgressBar.RED);
+    } else if (myState.isTerminated() && !(total == complited)) {
+      myProgressBar.setColor(ColorProgressBar.YELLOW);
     }
     if (total != 0) {
-      this.myProgressBar.setFraction((double) complited / (double) total);
+      myProgressBar.setFraction((double) complited / (double) total);
     }
   }
 
@@ -71,7 +71,7 @@ public class ProgressLine extends JPanel implements TestView {
     if (total == complited || testName == null) {
       sb.append(" Done: " + complited + " of " + total + " ");
       testName = "";
-    } else if (this.myState.isTerminated()) {
+    } else if (myState.isTerminated()) {
       sb.append(" Terminated: " + complited + " of " + total + " ");
       testName = "";
     }
@@ -80,7 +80,7 @@ public class ProgressLine extends JPanel implements TestView {
     } else if (sb.length() == 0) {
       sb.append(" Running: " + complited + " of " + total);
     }
-    this.myStateLabel.setText(sb + "  " + testName);
+    myStateLabel.setText(sb + "  " + testName);
   }
 
   public ProcessListener getProcessListener() {
@@ -89,10 +89,10 @@ public class ProgressLine extends JPanel implements TestView {
       public void processTerminated(ProcessEvent p0) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            if (!(ProgressLine.this.myTestsBuilt) && ProgressLine.this.myProgressBar.getFraction() == 0.0) {
-              ProgressLine.this.myProgressBar.setColor(ColorProgressBar.RED);
-              ProgressLine.this.myProgressBar.setFraction(1.0);
-              ProgressLine.this.myStateLabel.setText("Failed to start");
+            if (!(myTestsBuilt) && myProgressBar.getFraction() == 0.0) {
+              myProgressBar.setColor(ColorProgressBar.RED);
+              myProgressBar.setFraction(1.0);
+              myStateLabel.setText("Failed to start");
             }
           }
         });

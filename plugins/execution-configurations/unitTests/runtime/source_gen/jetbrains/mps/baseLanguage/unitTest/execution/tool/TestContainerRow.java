@@ -12,21 +12,21 @@ public abstract class TestContainerRow implements TestStatisticsRow {
   private List<TestStatisticsRow> myRows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
 
   public TestContainerRow(String text, String additionalText) {
-    this.myText = text;
-    this.myAdditionalText = additionalText;
+    myText = text;
+    myAdditionalText = additionalText;
   }
 
   public String getText() {
-    return this.myText;
+    return myText;
   }
 
   public String getAdditionalText() {
-    return this.myAdditionalText;
+    return myAdditionalText;
   }
 
   public long getElapsedTime() {
     long elapsedTime = 0;
-    for (TestStatisticsRow row : ListSequence.fromList(this.myRows)) {
+    for (TestStatisticsRow row : ListSequence.fromList(myRows)) {
       long methodTime = row.getElapsedTime();
       if (methodTime >= 0) {
         elapsedTime = elapsedTime + methodTime;
@@ -37,7 +37,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public long getUsageBefore() {
     long usageBefore = -1;
-    TestStatisticsRow row = ListSequence.fromList(this.myRows).first();
+    TestStatisticsRow row = ListSequence.fromList(myRows).first();
     if (row != null) {
       long methodUsageBefore = row.getUsageBefore();
       if (methodUsageBefore >= 0) {
@@ -49,7 +49,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public long getUsageAfter() {
     long usageAfter = -1;
-    TestStatisticsRow row = ListSequence.fromList(this.myRows).last();
+    TestStatisticsRow row = ListSequence.fromList(myRows).last();
     if (row != null) {
       long methodUsageAfter = row.getUsageAfter();
       if (methodUsageAfter >= 0) {
@@ -60,8 +60,8 @@ public abstract class TestContainerRow implements TestStatisticsRow {
   }
 
   public long getUsageDelta() {
-    long usageBefore = this.getUsageBefore();
-    long usageAfter = this.getUsageAfter();
+    long usageBefore = getUsageBefore();
+    long usageAfter = getUsageAfter();
     long usageDelta = -1;
     if (usageAfter >= 0 && usageBefore >= 0) {
       usageDelta = usageAfter - usageBefore;
@@ -71,7 +71,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public int getSuccessful() {
     int count = 0;
-    for (TestStatisticsRow row : ListSequence.fromList(this.myRows)) {
+    for (TestStatisticsRow row : ListSequence.fromList(myRows)) {
       count = count + row.getSuccessful();
     }
     return count;
@@ -79,7 +79,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public int getErrored() {
     int count = 0;
-    for (TestStatisticsRow row : ListSequence.fromList(this.myRows)) {
+    for (TestStatisticsRow row : ListSequence.fromList(myRows)) {
       count = count + row.getErrored();
     }
     return count;
@@ -87,13 +87,13 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public int getFailed() {
     int count = 0;
-    for (TestStatisticsRow row : ListSequence.fromList(this.myRows)) {
+    for (TestStatisticsRow row : ListSequence.fromList(myRows)) {
       count = count + row.getFailed();
     }
     return count;
   }
 
   public void addRow(TestStatisticsRow row) {
-    ListSequence.fromList(this.myRows).addElement(row);
+    ListSequence.fromList(myRows).addElement(row);
   }
 }

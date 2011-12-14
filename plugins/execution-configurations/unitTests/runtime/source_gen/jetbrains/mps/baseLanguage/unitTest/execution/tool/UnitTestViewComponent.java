@@ -64,36 +64,36 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
   public UnitTestViewComponent(Project project, @NotNull IOperationContext context, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
-    this.myProject = project;
-    this.myTestState = testRunState;
-    StatisticsTableModel statisticsModel = new StatisticsTableModel(this.myTestState);
+    myProject = project;
+    myTestState = testRunState;
+    StatisticsTableModel statisticsModel = new StatisticsTableModel(myTestState);
 
-    this.myTreeComponent = new TestTree(this.myTestState, context, this);
-    this.myTestNavigator = new FailedTestOccurenceNavigator(this.myTreeComponent);
-    this.myActionToolComponent = new TestToolbarPanel(this.myTreeComponent, this.myTestNavigator);
+    myTreeComponent = new TestTree(myTestState, context, this);
+    myTestNavigator = new FailedTestOccurenceNavigator(myTreeComponent);
+    myActionToolComponent = new TestToolbarPanel(myTreeComponent, myTestNavigator);
 
-    JComponent leftPanel = this.createTreeComponent(myActionToolComponent, myTreeComponent);
+    JComponent leftPanel = createTreeComponent(myActionToolComponent, myTreeComponent);
 
-    this.myProgressLineComponent = new ProgressLine(this.myTestState);
-    this.myProgressLineComponent.setMinimumSize(new Dimension(0, this.myProgressLineComponent.getMinimumSize().height));
-    this.myOutputComponent = new TestOutputComponent(this.myProject, this, console, this.myTestState);
-    this.myTreeComponent.addTreeSelectionListener(new TestTreeSelectionListener(this.myTreeComponent, statisticsModel, this.myOutputComponent));
-    this.myTreeComponent.addMouseListener(new TestTreeRootMouseListener(this.myTreeComponent, statisticsModel, this.myOutputComponent));
+    myProgressLineComponent = new ProgressLine(myTestState);
+    myProgressLineComponent.setMinimumSize(new Dimension(0, myProgressLineComponent.getMinimumSize().height));
+    myOutputComponent = new TestOutputComponent(myProject, this, console, myTestState);
+    myTreeComponent.addTreeSelectionListener(new TestTreeSelectionListener(myTreeComponent, statisticsModel, myOutputComponent));
+    myTreeComponent.addMouseListener(new TestTreeRootMouseListener(myTreeComponent, statisticsModel, myOutputComponent));
 
-    JPanel rightPanel = this.createOutputComponent(console, myProgressLineComponent, myOutputComponent.getComponent(), statisticsModel);
+    JPanel rightPanel = createOutputComponent(console, myProgressLineComponent, myOutputComponent.getComponent(), statisticsModel);
 
     Splitter splitter = new Splitter(false);
     initSplitterProportion(splitter, 0.2f, "tree");
     splitter.setFirstComponent(leftPanel);
     splitter.setSecondComponent(rightPanel);
-    this.setLayout(new BorderLayout());
+    setLayout(new BorderLayout());
 
-    this.add(splitter, BorderLayout.CENTER);
+    add(splitter, BorderLayout.CENTER);
 
-    this.myTestState.addView(this.myTreeComponent);
-    this.myTestState.addView(this.myProgressLineComponent);
-    this.myTestState.addView(this.myOutputComponent);
-    this.addCloseListener(closeListener);
+    myTestState.addView(myTreeComponent);
+    myTestState.addView(myProgressLineComponent);
+    myTestState.addView(myOutputComponent);
+    addCloseListener(closeListener);
   }
 
   public UnitTestViewComponent(Project project, IOperationContext context, ConsoleViewImpl console, UnitTestExecutionController model) {
@@ -131,21 +131,21 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   }
 
   public ProcessListener getProcessListener() {
-    return this.myProgressLineComponent.getProcessListener();
+    return myProgressLineComponent.getProcessListener();
   }
 
   public void dispose() {
-    this.myOutputComponent.dispose();
-    this.myTreeComponent.dispose();
-    this.invokeCloseListeners();
+    myOutputComponent.dispose();
+    myTreeComponent.dispose();
+    invokeCloseListeners();
   }
 
   public void addCloseListener(_FunctionTypes._void_P0_E0 listener) {
-    ListSequence.fromList(this.myListeners).addElement(listener);
+    ListSequence.fromList(myListeners).addElement(listener);
   }
 
   public void invokeCloseListeners() {
-    for (_FunctionTypes._void_P0_E0 listener : ListSequence.fromList(this.myListeners)) {
+    for (_FunctionTypes._void_P0_E0 listener : ListSequence.fromList(myListeners)) {
       listener.invoke();
     }
   }
@@ -153,13 +153,13 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private JPanel createOutputComponent(ConsoleView console, JComponent progressLine, JComponent testOutput, StatisticsTableModel statisticsModel) {
     JPanel rightPanel = new JPanel(new GridBagLayout());
 
-    JComponent stackTraceActions = this.createActionsToolbar(console);
+    JComponent stackTraceActions = createActionsToolbar(console);
     stackTraceActions.setMaximumSize(new Dimension(rightPanel.getWidth(), stackTraceActions.getMaximumSize().height));
 
     Splitter outputStatisticSplitter = new Splitter(false);
     initSplitterProportion(outputStatisticSplitter, 0.5f, "statistic");
     outputStatisticSplitter.setFirstComponent(testOutput);
-    JComponent statistics = this.createStatisticsComponent(statisticsModel);
+    JComponent statistics = createStatisticsComponent(statisticsModel);
     outputStatisticSplitter.setSecondComponent(statistics);
 
 
@@ -227,11 +227,11 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     @Nullable
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(Location.LOCATION)) {
-        MPSTreeNode currentNode = UnitTestViewComponent.this.myTreeComponent.getCurrentNode();
+        MPSTreeNode currentNode = myTreeComponent.getCurrentNode();
         if (currentNode == null) {
           return null;
         }
-        return new MPSLocation(UnitTestViewComponent.this.myProject, ((ITestNodeWrapper) currentNode.getUserObject()).getNode());
+        return new MPSLocation(myProject, ((ITestNodeWrapper) currentNode.getUserObject()).getNode());
       }
       return null;
     }

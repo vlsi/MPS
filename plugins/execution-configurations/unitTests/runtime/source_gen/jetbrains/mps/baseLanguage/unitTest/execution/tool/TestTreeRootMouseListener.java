@@ -11,17 +11,17 @@ public class TestTreeRootMouseListener extends MouseAdapter {
   private TestTree treeComponent;
 
   public TestTreeRootMouseListener(TestTree tree, StatisticsTableModel statistics, TestOutputComponent outputComponent) {
-    this.statisticsModel = statistics;
+    statisticsModel = statistics;
     this.outputComponent = outputComponent;
-    this.treeComponent = tree;
+    treeComponent = tree;
   }
 
   public void mouseClicked(MouseEvent event) {
-    if (this.treeComponent.getPathForLocation(event.getX(), event.getY()) != null) {
+    if (treeComponent.getPathForLocation(event.getX(), event.getY()) != null) {
       return;
     }
-    this.outputComponent.filter(null, null);
-    this.statisticsModel.setFilter(null, null);
-    this.treeComponent.clearSelection();
+    outputComponent.filter(null, null);
+    statisticsModel.setFilter(null, null);
+    treeComponent.clearSelection();
   }
 }

@@ -33,12 +33,12 @@ public class TestTree extends MPSTree implements TestView, Disposable {
 
   public TestTree(TestRunState state, @NotNull IOperationContext context, Disposable disposable) {
     Disposer.register(disposable, this);
-    this.myState = state;
-    this.myOperationContext = context;
-    this.myMap = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
-    this.isAllTree = !(UnitTestOptions.isHidePased());
-    this.myAnimator = new TestTreeIconAnimator(this);
-    this.myAnimator.init(state);
+    myState = state;
+    myOperationContext = context;
+    myMap = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
+    isAllTree = !(UnitTestOptions.isHidePased());
+    myAnimator = new TestTreeIconAnimator(this);
+    myAnimator.init(state);
   }
 
   private void updateState(TestMethodTreeNode methodNode, TestCaseTreeNode testCaseNode, TestState testState) {
@@ -58,64 +58,64 @@ public class TestTree extends MPSTree implements TestView, Disposable {
   }
 
   public void update() {
-    if (this.myState.getAvailableText() != null) {
+    if (myState.getAvailableText() != null) {
       return;
     }
-    String loseTest = this.myState.getLostClass();
-    String loseMethod = this.myState.getLostMethod();
-    String test = this.myState.getCurrentClass();
-    String method = this.myState.getCurrentMethod();
+    String loseTest = myState.getLostClass();
+    String loseMethod = myState.getLostMethod();
+    String test = myState.getCurrentClass();
+    String method = myState.getCurrentMethod();
     final Wrappers._T<TestMethodTreeNode> methodNode = new Wrappers._T<TestMethodTreeNode>();
     if (loseTest != null && loseMethod != null) {
-      methodNode.value = this.get(loseTest, loseMethod);
-      TestCaseTreeNode testCaseNode = this.get(loseTest);
+      methodNode.value = get(loseTest, loseMethod);
+      TestCaseTreeNode testCaseNode = get(loseTest);
       if (methodNode.value != null && testCaseNode != null) {
-        this.updateState(methodNode.value, testCaseNode, TestState.ERROR);
+        updateState(methodNode.value, testCaseNode, TestState.ERROR);
       }
     } else {
-      TestCaseTreeNode testCaseNode = this.get(test);
-      methodNode.value = this.get(test, method);
+      TestCaseTreeNode testCaseNode = get(test);
+      methodNode.value = get(test, method);
       if (methodNode.value != null && testCaseNode != null) {
-        if (this.myState.isTerminated()) {
-          this.updateState(methodNode.value, testCaseNode, TestState.TERMINATED);
-          this.myAnimator.stopMovie();
-        } else if (TestEvent.START_TEST_PREFIX.equals(this.myState.getToken())) {
-          this.updateState(methodNode.value, testCaseNode, TestState.IN_PROGRESS);
+        if (myState.isTerminated()) {
+          updateState(methodNode.value, testCaseNode, TestState.TERMINATED);
+          myAnimator.stopMovie();
+        } else if (TestEvent.START_TEST_PREFIX.equals(myState.getToken())) {
+          updateState(methodNode.value, testCaseNode, TestState.IN_PROGRESS);
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-              TestTree.this.myAnimator.scheduleRepaint();
+              myAnimator.scheduleRepaint();
             }
           });
           if (UnitTestOptions.isTrackRunning()) {
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                TestTree.this.setCurrentNode(methodNode.value);
+                setCurrentNode(methodNode.value);
               }
             });
           }
-        } else if (TestEvent.END_TEST_PREFIX.equals(this.myState.getToken())) {
+        } else if (TestEvent.END_TEST_PREFIX.equals(myState.getToken())) {
           if (TestState.IN_PROGRESS.equals(methodNode.value.getState())) {
-            this.updateState(methodNode.value, testCaseNode, TestState.PASSED);
+            updateState(methodNode.value, testCaseNode, TestState.PASSED);
           }
-        } else if (TestEvent.FAILURE_TEST_PREFIX.equals(this.myState.getToken())) {
-          this.updateState(methodNode.value, testCaseNode, TestState.FAILED);
-        } else if (TestEvent.ERROR_TEST_PREFIX.equals(this.myState.getToken())) {
+        } else if (TestEvent.FAILURE_TEST_PREFIX.equals(myState.getToken())) {
+          updateState(methodNode.value, testCaseNode, TestState.FAILED);
+        } else if (TestEvent.ERROR_TEST_PREFIX.equals(myState.getToken())) {
           methodNode.value.setState(TestState.ERROR);
-          this.updateState(methodNode.value, testCaseNode, TestState.ERROR);
+          updateState(methodNode.value, testCaseNode, TestState.ERROR);
         }
       }
     }
     if (isFailed(methodNode.value) && UnitTestOptions.isSelectFirstFailded()) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          TestTree.this.selectFirstDefectNode();
+          selectFirstDefectNode();
         }
       });
     }
     if (UnitTestOptions.isHidePased()) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          TestTree.this.hidePassed(true);
+          hidePassed(true);
         }
       });
     }
@@ -123,41 +123,41 @@ public class TestTree extends MPSTree implements TestView, Disposable {
 
   @Override
   public void dispose() {
-    if (!(this.isDisposed())) {
+    if (!(isDisposed())) {
       super.dispose();
     }
-    this.myAnimator.dispose();
+    myAnimator.dispose();
   }
 
   public void init() {
-    this.rebuildNow();
-    this.expandAll();
+    rebuildNow();
+    expandAll();
   }
 
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
-    this.setRootVisible(false);
+    setRootVisible(false);
     TestNameMap<TestCaseTreeNode, TestMethodTreeNode> temp = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
-    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(this.myState.getTestsMap()).keySet())) {
+    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myState.getTestsMap()).keySet())) {
       if (testCase == null) {
         continue;
       }
-      TestCaseTreeNode testCaseTreeNode = this.myMap.get(testCase.getFqName());
+      TestCaseTreeNode testCaseTreeNode = myMap.get(testCase.getFqName());
       if (testCaseTreeNode == null) {
-        testCaseTreeNode = new TestCaseTreeNode(this.myOperationContext, testCase);
+        testCaseTreeNode = new TestCaseTreeNode(myOperationContext, testCase);
       }
       testCaseTreeNode.removeAllChildren();
       boolean hasFailedTest = false;
-      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(this.myState.getTestsMap()).get(testCase))) {
-        TestMethodTreeNode oldMethodTreeNode = this.myMap.get(testCase.getFqName(), method.getName());
-        TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(this.myOperationContext, method);
+      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
+        TestMethodTreeNode oldMethodTreeNode = myMap.get(testCase.getFqName(), method.getName());
+        TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(myOperationContext, method);
         TestMethodTreeNode methodTreeNode = (oldMethodTreeNode == null ?
           newMethodTreeNode :
           oldMethodTreeNode
         );
         boolean isFailedMethod = isFailed(methodTreeNode);
         hasFailedTest = hasFailedTest || isFailedMethod;
-        if (this.isAllTree || isFailedMethod) {
+        if (isAllTree || isFailedMethod) {
           if (methodTreeNode == null) {
             continue;
           }
@@ -167,23 +167,23 @@ public class TestTree extends MPSTree implements TestView, Disposable {
           temp.put(testCase, method, methodTreeNode);
         }
       }
-      if (this.isAllTree || hasFailedTest) {
+      if (isAllTree || hasFailedTest) {
         root.add(testCaseTreeNode);
         temp.put(testCase, testCaseTreeNode);
       } else {
         temp.put(testCase, testCaseTreeNode);
       }
     }
-    this.myMap = temp;
+    myMap = temp;
     return root;
   }
 
   public boolean hasFailedTests() {
-    for (final ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(this.myState.getTestsMap()).keySet())) {
+    for (final ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myState.getTestsMap()).keySet())) {
       if (testCase == null) {
         continue;
       }
-      for (final ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(this.myState.getTestsMap()).get(testCase))) {
+      for (final ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
         final Wrappers._T<String> className = new Wrappers._T<String>();
         final Wrappers._T<String> methodName = new Wrappers._T<String>();
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -192,7 +192,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
             methodName.value = method.getName();
           }
         });
-        TestMethodTreeNode treeNode = this.myMap.get(className.value, methodName.value);
+        TestMethodTreeNode treeNode = myMap.get(className.value, methodName.value);
         if (method == null) {
           continue;
         }
@@ -205,19 +205,19 @@ public class TestTree extends MPSTree implements TestView, Disposable {
   }
 
   public void hidePassed(boolean hide) {
-    this.isAllTree = !(hide);
-    this.rebuildNow();
-    this.expandAll();
+    isAllTree = !(hide);
+    rebuildNow();
+    expandAll();
   }
 
   public void buildFailedTestTree() {
-    this.isAllTree = false;
-    this.rebuildNow();
+    isAllTree = false;
+    rebuildNow();
   }
 
   public List<String> getMethodName() {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
-    for (List<ITestNodeWrapper> values : MapSequence.fromMap(this.myState.getTestsMap()).values()) {
+    for (List<ITestNodeWrapper> values : MapSequence.fromMap(myState.getTestsMap()).values()) {
       for (ITestNodeWrapper value : values) {
         ListSequence.fromList(result).addElement(value.getName());
       }
@@ -226,16 +226,16 @@ public class TestTree extends MPSTree implements TestView, Disposable {
   }
 
   public TestCaseTreeNode get(String className) {
-    return this.myMap.get(className);
+    return myMap.get(className);
   }
 
   public TestMethodTreeNode get(String className, String methodName) {
-    return this.myMap.get(className, methodName);
+    return myMap.get(className, methodName);
   }
 
   public void selectFirstDefectNode() {
-    for (final ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(this.myState.getTestsMap()).keySet())) {
-      for (final ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(this.myState.getTestsMap()).get(testCase))) {
+    for (final ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myState.getTestsMap()).keySet())) {
+      for (final ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
         final Wrappers._T<String> className = new Wrappers._T<String>();
         final Wrappers._T<String> methodName = new Wrappers._T<String>();
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -244,9 +244,9 @@ public class TestTree extends MPSTree implements TestView, Disposable {
             methodName.value = method.getName();
           }
         });
-        TestMethodTreeNode testMethodTreeNode = this.myMap.get(className.value, methodName.value);
+        TestMethodTreeNode testMethodTreeNode = myMap.get(className.value, methodName.value);
         if (isFailed(testMethodTreeNode)) {
-          this.setCurrentNode(testMethodTreeNode);
+          setCurrentNode(testMethodTreeNode);
           return;
         }
       }

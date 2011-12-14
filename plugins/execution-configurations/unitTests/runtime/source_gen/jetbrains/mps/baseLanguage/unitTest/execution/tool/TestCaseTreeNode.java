@@ -19,17 +19,17 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
 
   public TestCaseTreeNode(@NotNull IOperationContext operationContext, @NotNull ITestNodeWrapper testCase) {
     super(operationContext);
-    this.myTestCase = testCase;
-    this.setNodeIdentifier(this.myTestCase.getNodePointer().getNodeId().toString());
-    this.setText(SPropertyOperations.getString(SNodeOperations.cast(this.myTestCase.getNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
-    this.setAdditionalText(this.myTestCase.getNodePointer().getModelReference().getLongName());
+    myTestCase = testCase;
+    setNodeIdentifier(myTestCase.getNodePointer().getNodeId().toString());
+    setText(SPropertyOperations.getString(SNodeOperations.cast(myTestCase.getNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
+    setAdditionalText(myTestCase.getNodePointer().getModelReference().getLongName());
   }
 
   public String getClassName() {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        className.value = TestCaseTreeNode.this.myTestCase.getFqName();
+        className.value = myTestCase.getFqName();
       }
     });
     return className.value;
@@ -41,7 +41,7 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
   }
 
   public void doubleClick() {
-    NavigationSupport.getInstance().openNode(getOperationContext(), this.myTestCase.getNode(), true, false);
+    NavigationSupport.getInstance().openNode(getOperationContext(), myTestCase.getNode(), true, false);
   }
 
   public int getToggleClickCount() {
@@ -50,6 +50,6 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
 
   @Override
   public Object getUserObject() {
-    return this.myTestCase;
+    return myTestCase;
   }
 }

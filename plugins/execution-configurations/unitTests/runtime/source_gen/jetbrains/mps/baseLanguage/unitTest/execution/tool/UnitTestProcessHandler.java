@@ -19,9 +19,9 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
 
   public UnitTestProcessHandler(TestEventsDispatcher dispartcher, Process process, String params) {
     super(process, params, Charset.defaultCharset());
-    this.myDispatcher = dispartcher;
+    myDispatcher = dispartcher;
 
-    this.addProcessListener(new ProcessAdapter() {
+    addProcessListener(new ProcessAdapter() {
       private final StringBuffer buffer = new StringBuffer();
 
       private String getLine(String text) {
@@ -48,14 +48,14 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
       }
 
       public void onTextAvailable(ProcessEvent event, Key k) {
-        if (this.isTerminatedEvent()) {
-          UnitTestProcessHandler.this.myDispatcher.onProcessTerminated(event.getText());
+        if (isTerminatedEvent()) {
+          myDispatcher.onProcessTerminated(event.getText());
         }
         boolean error = ProcessOutputTypes.STDERR.equals(k);
         boolean system = ProcessOutputTypes.SYSTEM.equals(k);
         String text = (error || system ?
           event.getText() :
-          this.getLine(event.getText())
+          getLine(event.getText())
         );
         if (text == null) {
           return;
@@ -64,12 +64,12 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
         TestEvent testEvent = TestEvent.parse(textTrimmed);
         if (testEvent != null) {
           myLastEvent = testEvent;
-          UnitTestProcessHandler.this.myDispatcher.onTestEvent(testEvent);
+          myDispatcher.onTestEvent(testEvent);
         } else {
           if (myLastEvent != null && (TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.ERROR_TEST_PREFIX.equals(myLastEvent.getToken()))) {
             k = ProcessOutputTypes.STDERR;
           }
-          UnitTestProcessHandler.this.myDispatcher.onSimpleTextAvailable(text, k);
+          myDispatcher.onSimpleTextAvailable(text, k);
         }
       }
     });

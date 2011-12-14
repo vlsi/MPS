@@ -25,35 +25,35 @@ public class TestToolbarPanel extends JPanel {
 
   public TestToolbarPanel(TestTree tree, FailedTestOccurenceNavigator navigator) {
     super(new BorderLayout());
-    this.myTree = tree;
-    this.myNavigator = navigator;
-    this.setLayout(new BorderLayout());
-    this.init();
+    myTree = tree;
+    myNavigator = navigator;
+    setLayout(new BorderLayout());
+    init();
   }
 
   private void init() {
     final DefaultActionGroup actionGroup = new DefaultActionGroup();
-    actionGroup.addAll(this.createHidePassedAction(), this.cteateTrackRunningAction());
+    actionGroup.addAll(createHidePassedAction(), cteateTrackRunningAction());
     actionGroup.addSeparator();
-    actionGroup.addAll(this.createCollapseAllAction(), this.createExpandAllAction());
+    actionGroup.addAll(createCollapseAllAction(), createExpandAllAction());
     actionGroup.addSeparator();
-    actionGroup.addAll(this.createNextOccurrenceAction(), this.createPreviousOccurrenceAction());
+    actionGroup.addAll(createNextOccurrenceAction(), createPreviousOccurrenceAction());
     actionGroup.addSeparator();
-    actionGroup.addAction(this.createSelectFirstFailedAction());
+    actionGroup.addAction(createSelectFirstFailedAction());
     ActionToolbar toolbarActions = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbarActions.setOrientation(SwingConstants.HORIZONTAL);
-    this.add(toolbarActions.getComponent(), BorderLayout.WEST);
+    add(toolbarActions.getComponent(), BorderLayout.WEST);
   }
 
   private ToggleAction createHidePassedAction() {
     return new ToggleAction("Hide Passed", "Hide passed tests", TestsUIUtil.loadIcon("hidePassed")) {
       {
-        this.setSelected(null, UnitTestOptions.isHidePased());
+        setSelected(null, UnitTestOptions.isHidePased());
       }
 
       public void setSelected(AnActionEvent event, boolean value) {
         UnitTestOptions.setHidePased(value);
-        TestToolbarPanel.this.myTree.hidePassed(value);
+        myTree.hidePassed(value);
       }
 
       public boolean isSelected(AnActionEvent p0) {
@@ -65,7 +65,7 @@ public class TestToolbarPanel extends JPanel {
   private ToggleAction cteateTrackRunningAction() {
     return new ToggleAction("Track Running Test", "Select currently running test in tree", TestsUIUtil.loadIcon("trackTests")) {
       {
-        this.setSelected(null, UnitTestOptions.isTrackRunning());
+        setSelected(null, UnitTestOptions.isTrackRunning());
       }
 
       public void setSelected(AnActionEvent event, boolean trackRunning) {
@@ -81,14 +81,14 @@ public class TestToolbarPanel extends JPanel {
   private AnAction createCollapseAllAction() {
     return new AnAction("Collapse All", "Collapse all test suites", Icons.COLLAPSE_ICON) {
       {
-        this.registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_COLLAPSE_ALL)), TestToolbarPanel.this.myTree);
+        registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_COLLAPSE_ALL)), myTree);
       }
 
       public void actionPerformed(AnActionEvent p0) {
-        MPSTreeNode root = TestToolbarPanel.this.myTree.getRootNode();
+        MPSTreeNode root = myTree.getRootNode();
         MPSTreeNode child = (MPSTreeNode) root.getFirstChild();
         while (child != null) {
-          TestToolbarPanel.this.myTree.collapseAll(child);
+          myTree.collapseAll(child);
           child = (MPSTreeNode) child.getNextSibling();
         }
       }
@@ -98,11 +98,11 @@ public class TestToolbarPanel extends JPanel {
   private AnAction createExpandAllAction() {
     return new AnAction("Expand All", "Expande all test suites", Icons.EXPAND_ICON) {
       {
-        this.registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_EXPAND_ALL)), TestToolbarPanel.this.myTree);
+        registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_EXPAND_ALL)), myTree);
       }
 
       public void actionPerformed(AnActionEvent p0) {
-        TestToolbarPanel.this.myTree.expandAll();
+        myTree.expandAll();
       }
     };
   }
@@ -110,12 +110,12 @@ public class TestToolbarPanel extends JPanel {
   private AnAction createNextOccurrenceAction() {
     return new AnAction("Next Failed Test", "Navigate to the next occurrence", Icons.NEXT_ICON) {
       {
-        this.registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_NEXT_OCCURENCE)), TestToolbarPanel.this.myTree);
+        registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_NEXT_OCCURENCE)), myTree);
       }
 
       public void actionPerformed(AnActionEvent p0) {
-        if (TestToolbarPanel.this.myNavigator.hasNextOccurence()) {
-          TestToolbarPanel.this.myNavigator.goNextOccurence();
+        if (myNavigator.hasNextOccurence()) {
+          myNavigator.goNextOccurence();
         }
       }
     };
@@ -124,12 +124,12 @@ public class TestToolbarPanel extends JPanel {
   private AnAction createPreviousOccurrenceAction() {
     return new AnAction("Previous Failed Test", "Navigate to the previous occurrence", Icons.PREVIOUS_ICON) {
       {
-        this.registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_PREVIOUS_OCCURENCE)), TestToolbarPanel.this.myTree);
+        registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_PREVIOUS_OCCURENCE)), myTree);
       }
 
       public void actionPerformed(AnActionEvent p0) {
-        if (TestToolbarPanel.this.myNavigator.hasPreviousOccurence()) {
-          TestToolbarPanel.this.myNavigator.goPreviousOccurence();
+        if (myNavigator.hasPreviousOccurence()) {
+          myNavigator.goPreviousOccurence();
         }
       }
     };
@@ -138,7 +138,7 @@ public class TestToolbarPanel extends JPanel {
   private ToggleAction createSelectFirstFailedAction() {
     return new ToggleAction("Select First Failed Test When Finished", "", TestsUIUtil.loadIcon("selectFirstDefect")) {
       {
-        this.setSelected(null, UnitTestOptions.isSelectFirstFailded());
+        setSelected(null, UnitTestOptions.isSelectFirstFailded());
       }
 
       public void setSelected(AnActionEvent event, boolean setectFirstFailed) {
@@ -154,8 +154,8 @@ public class TestToolbarPanel extends JPanel {
   private AnAction createRerunFailedTestAction() {
     return new AnAction("Rerun Failed Tests", "Rerun only tests that failed/crached after last run", TestsUIUtil.loadIcon("rerunFailedTests")) {
       public void actionPerformed(AnActionEvent p0) {
-        if (TestToolbarPanel.this.myTree.hasFailedTests()) {
-          TestToolbarPanel.this.myTree.buildFailedTestTree();
+        if (myTree.hasFailedTests()) {
+          myTree.buildFailedTestTree();
         }
       }
     };

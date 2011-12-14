@@ -11,7 +11,7 @@ public class FailedTestOccurenceNavigator extends BaseTestOccurenceNavigator {
   }
 
   public boolean hasAvailableOccurence(boolean next) {
-    DefaultMutableTreeNode node = this.testTree.getCurrentNode();
+    DefaultMutableTreeNode node = testTree.getCurrentNode();
     if (node == null) {
       return false;
     }

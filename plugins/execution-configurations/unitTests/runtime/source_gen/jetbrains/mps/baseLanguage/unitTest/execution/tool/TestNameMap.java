@@ -12,31 +12,31 @@ public class TestNameMap<C, M> {
   private Map<String, Map<String, M>> classToMethodToMethodTest;
 
   public TestNameMap() {
-    this.classToTestCase = MapSequence.fromMap(new HashMap<String, C>());
-    this.classToMethodToMethodTest = MapSequence.fromMap(new HashMap<String, Map<String, M>>());
+    classToTestCase = MapSequence.fromMap(new HashMap<String, C>());
+    classToMethodToMethodTest = MapSequence.fromMap(new HashMap<String, Map<String, M>>());
   }
 
   public void put(ITestNodeWrapper testCaseNode, C testCase) {
-    MapSequence.fromMap(this.classToTestCase).put(testCaseNode.getFqName(), testCase);
+    MapSequence.fromMap(classToTestCase).put(testCaseNode.getFqName(), testCase);
   }
 
   public C get(String testCaseName) {
-    return MapSequence.fromMap(this.classToTestCase).get(testCaseName);
+    return MapSequence.fromMap(classToTestCase).get(testCaseName);
   }
 
   public void put(ITestNodeWrapper testCaseNode, ITestNodeWrapper testMethodNode, M testMethod) {
     String testCaseName = testCaseNode.getFqName();
-    Map<String, M> testMethods = MapSequence.fromMap(this.classToMethodToMethodTest).get(testCaseName);
+    Map<String, M> testMethods = MapSequence.fromMap(classToMethodToMethodTest).get(testCaseName);
     if (testMethods == null) {
       testMethods = MapSequence.fromMap(new HashMap<String, M>());
-      MapSequence.fromMap(this.classToMethodToMethodTest).put(testCaseName, testMethods);
+      MapSequence.fromMap(classToMethodToMethodTest).put(testCaseName, testMethods);
     }
     MapSequence.fromMap(testMethods).put(testMethodNode.getName(), testMethod);
   }
 
   public M get(String testCaseName, String testMethodName) {
     M testMethod = null;
-    Map<String, M> testMethods = MapSequence.fromMap(this.classToMethodToMethodTest).get(testCaseName);
+    Map<String, M> testMethods = MapSequence.fromMap(classToMethodToMethodTest).get(testCaseName);
     if (testMethods != null) {
       testMethod = MapSequence.fromMap(testMethods).get(testMethodName);
     }
@@ -44,7 +44,7 @@ public class TestNameMap<C, M> {
   }
 
   public void clear() {
-    MapSequence.fromMap(this.classToTestCase).clear();
-    MapSequence.fromMap(this.classToMethodToMethodTest).clear();
+    MapSequence.fromMap(classToTestCase).clear();
+    MapSequence.fromMap(classToMethodToMethodTest).clear();
   }
 }

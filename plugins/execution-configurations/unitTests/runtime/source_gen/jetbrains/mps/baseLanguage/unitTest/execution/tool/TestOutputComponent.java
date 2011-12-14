@@ -55,7 +55,7 @@ public class TestOutputComponent implements TestView {
       final Key key = ProcessOutputTypes.STDERR;
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          TestOutputComponent.this.appendWithParameters(test, method, text, key);
+          appendWithParameters(test, method, text, key);
         }
       });
     } else if (myState.getAvailableText() != null) {
@@ -65,14 +65,14 @@ public class TestOutputComponent implements TestView {
       final String method = myState.getCurrentMethod();
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          TestOutputComponent.this.appendWithParameters(test, method, text, key);
+          appendWithParameters(test, method, text, key);
         }
       });
     }
   }
 
   public void init() {
-    this.clear();
+    clear();
   }
 
   public JComponent getComponent() {

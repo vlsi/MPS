@@ -16,9 +16,9 @@ public abstract class BaseTestTreeNode extends MPSTreeNode {
 
   @Override
   protected void doUpdatePresentation() {
-    Icon icon = this.state.getIcon();
+    Icon icon = state.getIcon();
     if (icon != null) {
-      this.setIcon(icon);
+      setIcon(icon);
     }
   }
 
@@ -32,6 +32,6 @@ public abstract class BaseTestTreeNode extends MPSTreeNode {
   }
 
   public TestState getState() {
-    return this.state;
+    return state;
   }
 }
