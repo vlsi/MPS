@@ -10,7 +10,6 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.SwingConstants;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.execution.testframework.TestsUIUtil;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -25,14 +24,12 @@ public class TestToolbarPanel extends JPanel {
   private TestTree tree;
   private FailedTestOccurenceNavigator navigator;
   private Project project;
-  private JUnitTestActionOptions_PreferencesComponent preferences;
 
   public TestToolbarPanel(Project project, TestTree tree, FailedTestOccurenceNavigator navigator) {
     super(new BorderLayout());
     this.project = project;
     this.tree = tree;
     this.navigator = navigator;
-    this.preferences = this.getPreferences();
     this.setLayout(new BorderLayout());
     this.init();
   }
@@ -51,23 +48,19 @@ public class TestToolbarPanel extends JPanel {
     this.add(toolbarActions.getComponent(), BorderLayout.WEST);
   }
 
-  private JUnitTestActionOptions_PreferencesComponent getPreferences() {
-    return this.project.getComponent(ProjectPluginManager.class).getPrefsComponent(JUnitTestActionOptions_PreferencesComponent.class);
-  }
-
   private ToggleAction createHidePassedAction() {
     return new ToggleAction("Hide Passed", "Hide passed tests", TestsUIUtil.loadIcon("hidePassed")) {
       {
-        this.setSelected(null, TestToolbarPanel.this.preferences.getStateObject().isHidePassed);
+        this.setSelected(null, UnitTestOptions.isHidePased());
       }
 
-      public void setSelected(AnActionEvent p0, boolean p1) {
-        TestToolbarPanel.this.preferences.getStateObject().isHidePassed = p1;
-        TestToolbarPanel.this.tree.hidePassed(p1);
+      public void setSelected(AnActionEvent event, boolean value) {
+        UnitTestOptions.setHidePased(value);
+        TestToolbarPanel.this.tree.hidePassed(value);
       }
 
       public boolean isSelected(AnActionEvent p0) {
-        return TestToolbarPanel.this.preferences.getStateObject().isHidePassed;
+        return UnitTestOptions.isHidePased();
       }
     };
   }
@@ -75,15 +68,15 @@ public class TestToolbarPanel extends JPanel {
   private ToggleAction cteateTrackRunningAction() {
     return new ToggleAction("Track Running Test", "Select currently running test in tree", TestsUIUtil.loadIcon("trackTests")) {
       {
-        this.setSelected(null, TestToolbarPanel.this.preferences.getStateObject().isTrackRunning);
+        this.setSelected(null, UnitTestOptions.isTrackRunning());
       }
 
-      public void setSelected(AnActionEvent p0, boolean p1) {
-        TestToolbarPanel.this.preferences.getStateObject().isTrackRunning = p1;
+      public void setSelected(AnActionEvent event, boolean trackRunning) {
+        UnitTestOptions.setTrackRunning(trackRunning);
       }
 
-      public boolean isSelected(AnActionEvent p0) {
-        return TestToolbarPanel.this.preferences.getStateObject().isTrackRunning;
+      public boolean isSelected(AnActionEvent event) {
+        return UnitTestOptions.isTrackRunning();
       }
     };
   }
@@ -148,15 +141,15 @@ public class TestToolbarPanel extends JPanel {
   private ToggleAction createSelectFirstFailedAction() {
     return new ToggleAction("Select First Failed Test When Finished", "", TestsUIUtil.loadIcon("selectFirstDefect")) {
       {
-        this.setSelected(null, TestToolbarPanel.this.preferences.getStateObject().isSelectFirstFailed);
+        this.setSelected(null, UnitTestOptions.isSelectFirstFailded());
       }
 
-      public void setSelected(AnActionEvent p0, boolean p1) {
-        TestToolbarPanel.this.preferences.getStateObject().isSelectFirstFailed = p1;
+      public void setSelected(AnActionEvent event, boolean setectFirstFailed) {
+        UnitTestOptions.setSelectFirstFailded(setectFirstFailed);
       }
 
-      public boolean isSelected(AnActionEvent p0) {
-        return TestToolbarPanel.this.preferences.getStateObject().isSelectFirstFailed;
+      public boolean isSelected(AnActionEvent event) {
+        return UnitTestOptions.isSelectFirstFailded();
       }
     };
   }

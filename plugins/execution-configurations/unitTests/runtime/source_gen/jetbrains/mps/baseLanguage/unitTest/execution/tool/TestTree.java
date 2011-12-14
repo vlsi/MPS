@@ -23,7 +23,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class TestTree extends MPSTree implements TestView, Disposable {
   private final Project myProject;
@@ -40,7 +39,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     this.myState = state;
     this.myOperationContext = context;
     this.myMap = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
-    this.isAllTree = !(this.getPreferences().getStateObject().isHidePassed);
+    this.isAllTree = !(UnitTestOptions.isHidePased());
     this.myAnimator = new TestTreeIconAnimator(this);
     this.myAnimator.init(state);
   }
@@ -90,7 +89,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
               TestTree.this.myAnimator.scheduleRepaint();
             }
           });
-          if (this.getPreferences().getStateObject().isTrackRunning) {
+          if (UnitTestOptions.isTrackRunning()) {
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
                 TestTree.this.setCurrentNode(methodNode.value);
@@ -109,14 +108,14 @@ public class TestTree extends MPSTree implements TestView, Disposable {
         }
       }
     }
-    if (isFailed(methodNode.value) && this.getPreferences().getStateObject().isSelectFirstFailed) {
+    if (isFailed(methodNode.value) && UnitTestOptions.isSelectFirstFailded()) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           TestTree.this.selectFirstDefectNode();
         }
       });
     }
-    if (this.getPreferences().getStateObject().isHidePassed) {
+    if (UnitTestOptions.isHidePased()) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           TestTree.this.hidePassed(true);
@@ -255,10 +254,6 @@ public class TestTree extends MPSTree implements TestView, Disposable {
         }
       }
     }
-  }
-
-  public JUnitTestActionOptions_PreferencesComponent getPreferences() {
-    return this.myProject.getComponent(ProjectPluginManager.class).getPrefsComponent(JUnitTestActionOptions_PreferencesComponent.class);
   }
 
   public static boolean isFailed(MPSTreeNode node) {

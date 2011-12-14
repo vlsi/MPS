@@ -52,7 +52,7 @@ import jetbrains.mps.plugins.pluginparts.runconfigs.MPSLocation;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
 public class UnitTestViewComponent extends JPanel implements Disposable {
-  private static final String SPLITTER_SIZE_PROPERTY = UnitTestViewComponent.class.getName() + ".splitter";
+  private static final String SPLITTER_SIZE_PROPERTY = UnitTestOptions.PREFIX + ".UnitTestViewComponent" + ".splitter";
 
   private final TestRunState myTestState;
   private final TestOutputComponent myOutputComponent;
