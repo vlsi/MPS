@@ -16,9 +16,9 @@
 package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.DataManager;
+import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
-import com.intellij.ide.util.gotoByName.temp.ItemProvider;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.workbench.MPSDataKeys;
 
@@ -33,7 +33,7 @@ public class ChooseByNamePanel extends ChooseByNamePopup {
   private JPanel myPanel;
   private boolean myCheckboxVisible = false;
 
-  ChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible, ItemProvider provider) {
+  ChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible, ChooseByNameItemProvider provider) {
     super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, provider, null, "", false, 0);
     myCheckboxVisible = checkboxVisible;
   }
