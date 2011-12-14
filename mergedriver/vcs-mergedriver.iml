@@ -4,8 +4,8 @@
     <output url="file://$MPS_HOME$/plugins/vcs/classes" />
     <output-test url="file://$MPS_HOME$/plugins/vcs/testclasses" />
     <exclude-output />
-    <content url="file://$MPS_HOME$/plugins/vcs/solutions/jetbrains.mps.vcs.mergedriver">
-      <sourceFolder url="file://$MPS_HOME$/plugins/vcs/solutions/jetbrains.mps.vcs.mergedriver/source_gen" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../plugins/vcs/solutions/jetbrains.mps.vcs.mergedriver">
+      <sourceFolder url="file://$MODULE_DIR$/../plugins/vcs/solutions/jetbrains.mps.vcs.mergedriver/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
