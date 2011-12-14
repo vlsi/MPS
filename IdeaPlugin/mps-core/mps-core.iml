@@ -71,6 +71,17 @@
     </orderEntry>
     <orderEntry type="jdk" jdkName="IDEA IC 10" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" scope="TEST">
+      <library name="Test-runtime">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/languages/languageDesign/jetbrains.mps.lang.test.runtime-src.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
 
