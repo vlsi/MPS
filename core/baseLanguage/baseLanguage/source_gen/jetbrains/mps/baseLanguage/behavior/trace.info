@@ -66,7 +66,6 @@
   <unitInfo fileName="TrimOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TrimOperation_BehaviorDescriptor" />
   <unitInfo fileName="SubstringExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SubstringExpression_BehaviorDescriptor" />
   <unitInfo fileName="StringBooleanOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StringBooleanOperation_BehaviorDescriptor" />
-  <unitInfo fileName="IsNotEmptyOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IsNotEmptyOperation_BehaviorDescriptor" />
   <unitInfo fileName="IsEmptyOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IsEmptyOperation_BehaviorDescriptor" />
   <unitInfo fileName="NPEEqualsExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.NPEEqualsExpression_BehaviorDescriptor" />
   <unitInfo fileName="NPENotEqualsExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.NPENotEqualsExpression_BehaviorDescriptor" />
@@ -141,6 +140,7 @@
   <unitInfo fileName="TextCommentPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TextCommentPart_BehaviorDescriptor" />
   <unitInfo fileName="AbstractUnaryNumberOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractUnaryNumberOperation_BehaviorDescriptor" />
   <unitInfo fileName="VarVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VarVariableReference_BehaviorDescriptor" />
+  <unitInfo fileName="IsNotEmptyOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IsNotEmptyOperation_BehaviorDescriptor" />
   <unitInfo fileName="CustomPropertyImplementation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CustomPropertyImplementation_BehaviorDescriptor" />
   <unitInfo fileName="DefaultPropertyImplementation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DefaultPropertyImplementation_BehaviorDescriptor" />
   <unitInfo fileName="AnnotationMethodDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationMethodDeclaration_BehaviorDescriptor" />
@@ -7440,6 +7440,16 @@
     <scopeInfo nodeId="2102329369853788156" fileName="VoidType_Behavior.java" startLine="29" startPosition="0" endLine="42" endPosition="0" />
     <unitInfo nodeId="2102329369853788156" fileName="VoidType_Behavior.java" startLine="26" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VoidType_Behavior$QuotationClass_s71av5_a0a0b" />
     <unitInfo nodeId="2102329369853775247" fileName="VoidType_Behavior.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VoidType_Behavior" />
+  </root>
+  <root nodeId="2254597628748958058">
+    <nodeInfo nodeId="2254597628748958065" fileName="IsNotEmptyOperation_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2254597628748958058" fileName="IsNotEmptyOperation_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2254597628748958058" fileName="IsNotEmptyOperation_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_operandCanBeNull_323410281720656291#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="2254597628748958060" fileName="IsNotEmptyOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="2254597628748958063" fileName="IsNotEmptyOperation_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="2254597628748958058" fileName="IsNotEmptyOperation_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="2254597628748958058" fileName="IsNotEmptyOperation_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
+    <unitInfo nodeId="2254597628748958058" fileName="IsNotEmptyOperation_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IsNotEmptyOperation_Behavior" />
   </root>
   <root nodeId="2496361171403550946">
     <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="15" startPosition="40" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2496361171403550949" />
