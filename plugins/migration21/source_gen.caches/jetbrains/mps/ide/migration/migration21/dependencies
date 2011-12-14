@@ -57,7 +57,6 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.migration21.Migration21_ApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration21.Migration21_ProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginContributor" />
-    <classNode dependClassName="jetbrains.mps.plugins.PluginLibrariesContributor" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
     <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />

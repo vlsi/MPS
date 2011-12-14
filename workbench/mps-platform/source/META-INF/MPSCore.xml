@@ -25,7 +25,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.library.contributor.PluginLibContributor</implementation-class>
+      <implementation-class>jetbrains.mps.library.contributor.PluginLibrariesContributor</implementation-class>
     </component>
 
     <component>

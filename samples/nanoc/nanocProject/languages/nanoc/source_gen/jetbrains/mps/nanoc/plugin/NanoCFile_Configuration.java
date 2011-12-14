@@ -34,7 +34,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  private static final Logger LOG = Logger.getLogger(NanoCFile_Configuration.class);
+  private static Logger LOG = Logger.getLogger(NanoCFile_Configuration.class);
 
   @NotNull
   private NanoCFile_Configuration.MyState myState = new NanoCFile_Configuration.MyState();
@@ -74,7 +74,11 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
     {
       Element fieldElement = element.getChild("myNode");
-      myNode.readExternal(fieldElement);
+      if (fieldElement != null) {
+        myNode.readExternal(fieldElement);
+      } else {
+        LOG.warning("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
+      }
     }
   }
 
@@ -91,7 +95,7 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
       clone.myNode = (Node_Configuration) myNode.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      NanoCFile_Configuration.LOG.error(ex);
+      LOG.error("", ex);
     }
     return clone;
   }
