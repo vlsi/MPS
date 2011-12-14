@@ -215,7 +215,6 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.IdeActions" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ToggleAction" />
     <classNode dependClassName="com.intellij.openapi.keymap.KeymapManager" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="javax.swing.SwingConstants" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.FailedTestOccurenceNavigator" />
@@ -226,7 +225,6 @@
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTree" file="TestTree.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

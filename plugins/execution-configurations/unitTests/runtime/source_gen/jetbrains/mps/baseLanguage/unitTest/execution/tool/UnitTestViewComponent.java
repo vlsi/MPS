@@ -68,9 +68,9 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     this.myTestState = testRunState;
     StatisticsTableModel statisticsModel = new StatisticsTableModel(this.myTestState);
 
-    this.myTreeComponent = new TestTree(this.myProject, this.myTestState, context, this);
+    this.myTreeComponent = new TestTree(this.myTestState, context, this);
     this.myTestNavigator = new FailedTestOccurenceNavigator(this.myTreeComponent);
-    this.myActionToolComponent = new TestToolbarPanel(this.myProject, this.myTreeComponent, this.myTestNavigator);
+    this.myActionToolComponent = new TestToolbarPanel(this.myTreeComponent, this.myTestNavigator);
 
     JComponent leftPanel = this.createTreeComponent(myActionToolComponent, myTreeComponent);
 

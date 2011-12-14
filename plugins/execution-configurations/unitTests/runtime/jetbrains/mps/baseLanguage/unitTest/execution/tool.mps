@@ -704,14 +704,6 @@
         </node>
       </node>
     </node>
-    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="3575782568432719264">
-      <property name="name" nameId="tpck.1169194664001" value="myProject" />
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3575782568432719265" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3575782568432719266">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vehe.~Project" resolveInfo="Project" />
-      </node>
-    </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="3575782568432719267">
       <property name="name" nameId="tpck.1169194664001" value="myOperationContext" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -754,6 +746,7 @@
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="3575782568432719283">
       <property name="name" nameId="tpck.1169194664001" value="myAnimator" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3575782568432719284" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3575782568432719285">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3575782568432725200" resolveInfo="TestTreeIconAnimator" />
@@ -769,19 +762,6 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719354" resolveInfo="disposable" />
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432719291" />
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3575782568432719292">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3575782568432719293">
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3575782568432719294">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719347" resolveInfo="project" />
-            </node>
-            <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432719295">
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432719296">
-                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432719264" resolveInfo="myProject" />
-              </node>
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432719297" />
-            </node>
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3575782568432719298">
@@ -882,12 +862,6 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3575782568432719345" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3575782568432719346" />
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3575782568432719347">
-        <property name="name" nameId="tpck.1169194664001" value="project" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3575782568432719348">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vehe.~Project" resolveInfo="Project" />
-        </node>
-      </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3575782568432719349">
         <property name="name" nameId="tpck.1169194664001" value="state" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3575782568432719350">
@@ -3157,24 +3131,19 @@
   </root>
   <root id="3575782568432720360">
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="3575782568432720361">
-      <property name="name" nameId="tpck.1169194664001" value="tree" />
+      <property name="name" nameId="tpck.1169194664001" value="myTree" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3575782568432720362" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3575782568432720363">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3575782568432719197" resolveInfo="TestTree" />
       </node>
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="3575782568432720364">
-      <property name="name" nameId="tpck.1169194664001" value="navigator" />
+      <property name="name" nameId="tpck.1169194664001" value="myNavigator" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3575782568432720365" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3575782568432720366">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3575782568432724070" resolveInfo="FailedTestOccurenceNavigator" />
-      </node>
-    </node>
-    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="3575782568432720367">
-      <property name="name" nameId="tpck.1169194664001" value="project" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3575782568432720368" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3575782568432720369">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vehe.~Project" resolveInfo="Project" />
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3575782568432720373">
@@ -3414,7 +3383,7 @@
                       <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720489">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720490">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720491">
-                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="tree" />
+                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="myTree" />
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720492">
                             <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -3617,7 +3586,7 @@
                         <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720594">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720595">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720596">
-                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="tree" />
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="myTree" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720597">
                               <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -3662,7 +3631,7 @@
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720613">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720614">
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720615">
-                                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="tree" />
+                                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="myTree" />
                               </node>
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720616">
                                 <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -3731,7 +3700,7 @@
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720640">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720641">
-                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="tree" />
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="myTree" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720642">
                               <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -3790,7 +3759,7 @@
                       <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720663">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720664">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720665">
-                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="tree" />
+                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="myTree" />
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720666">
                             <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -3834,7 +3803,7 @@
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720681">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720682">
-                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="tree" />
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="myTree" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720683">
                               <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -3898,7 +3867,7 @@
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720708">
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720709">
-                                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720364" resolveInfo="navigator" />
+                                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720364" resolveInfo="myNavigator" />
                               </node>
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720710">
                                 <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -3913,7 +3882,7 @@
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720713">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720714">
-                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720364" resolveInfo="navigator" />
+                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720364" resolveInfo="myNavigator" />
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720715">
                             <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -3954,7 +3923,7 @@
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720729">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720730">
-                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="tree" />
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="myTree" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720731">
                               <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -4018,7 +3987,7 @@
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720756">
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720757">
-                                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720364" resolveInfo="navigator" />
+                                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720364" resolveInfo="myNavigator" />
                               </node>
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720758">
                                 <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -4033,7 +4002,7 @@
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720761">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720762">
-                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720364" resolveInfo="navigator" />
+                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720364" resolveInfo="myNavigator" />
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720763">
                             <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -4074,7 +4043,7 @@
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720777">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720778">
-                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="tree" />
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="myTree" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720779">
                               <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -4231,7 +4200,7 @@
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720855">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720856">
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720857">
-                                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="tree" />
+                                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="myTree" />
                               </node>
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720858">
                                 <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -4246,7 +4215,7 @@
                       <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720860">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720861">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720862">
-                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="tree" />
+                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="myTree" />
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720863">
                             <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3575782568432720360" resolveInfo="TestToolbarPanel" />
@@ -4291,19 +4260,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3575782568432720877">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3575782568432720878">
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3575782568432720879">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432720913" resolveInfo="project" />
-            </node>
-            <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720880">
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720881">
-                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720367" resolveInfo="project" />
-              </node>
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720882" />
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3575782568432720883">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3575782568432720884">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3575782568432720885">
@@ -4311,7 +4267,7 @@
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720886">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720887">
-                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="tree" />
+                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720361" resolveInfo="myTree" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720888" />
             </node>
@@ -4324,7 +4280,7 @@
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432720892">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432720893">
-                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720364" resolveInfo="navigator" />
+                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432720364" resolveInfo="myNavigator" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720894" />
             </node>
@@ -4350,12 +4306,6 @@
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432720912" />
           </node>
-        </node>
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3575782568432720913">
-        <property name="name" nameId="tpck.1169194664001" value="project" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3575782568432720914">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vehe.~Project" resolveInfo="Project" />
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3575782568432720915">
@@ -6401,12 +6351,6 @@
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3575782568432721784">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3575782568432721785">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432719286" resolveInfo="TestTree" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432721786">
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432721787">
-                    <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432722088" resolveInfo="myProject" />
-                  </node>
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432721788" />
-                </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432721789">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432721790">
                     <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432722073" resolveInfo="myTestState" />
@@ -6453,12 +6397,6 @@
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3575782568432721809">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3575782568432721810">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432720870" resolveInfo="TestToolbarPanel" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432721811">
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432721812">
-                    <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432722088" resolveInfo="myProject" />
-                  </node>
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3575782568432721813" />
-                </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575782568432721814">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3575782568432721815">
                     <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="3575782568432722079" resolveInfo="myTreeComponent" />
