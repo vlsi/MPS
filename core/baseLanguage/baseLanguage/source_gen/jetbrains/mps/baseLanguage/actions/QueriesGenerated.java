@@ -1268,6 +1268,12 @@ __switch__:
                   for (SNode baseMethodDeclaration : IMemberContainer_Behavior.call_getMethodsToImplement_5418393554803775106(SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
                     ListSequence.fromList(methodsToImplement).addElement(SNodeOperations.cast(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
                   }
+                } else if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.baseLanguage.structure.Interface")) {
+                  methodsToImplement = ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
+                    public boolean accept(SNode it) {
+                      return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration"));
+                    }
+                  }).toListSequence();
                 }
                 for (SNode method : ListSequence.fromList(methodsToImplement)) {
                   SNode method_copy = SNodeOperations.copyNode(method);
