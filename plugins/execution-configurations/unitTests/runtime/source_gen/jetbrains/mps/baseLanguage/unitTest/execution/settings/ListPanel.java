@@ -38,6 +38,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.AbstractListModel;
 
 public class ListPanel extends JPanel {
@@ -80,7 +81,7 @@ public class ListPanel extends JPanel {
     AnAction add = new ListAddAction(this.myListComponent) {
       protected int doAdd(AnActionEvent p0) {
         List<SNode> nodesList = getCandidates();
-        final SNode resultNode = CommonChoosers.showDialogNodeChooser(ListPanel.this, nodesList);
+        final SNode resultNode = CommonChoosers.showDialogNodeChooser(ListPanel.this, (List<SNode>) nodesList);
         if (resultNode == null) {
           return -1;
         }
@@ -203,7 +204,7 @@ public class ListPanel extends JPanel {
       ListSequence.fromList(this.myCandidates).removeSequence(ListSequence.fromList(this.myValues));
       return ListSequence.fromList(this.myCandidates).select(new ISelector<ITestNodeWrapper, SNode>() {
         public SNode select(ITestNodeWrapper it) {
-          return it.getNode();
+          return SNodeOperations.cast(it.getNode(), "jetbrains.mps.lang.core.structure.INamedConcept");
         }
       }).toListSequence();
     }

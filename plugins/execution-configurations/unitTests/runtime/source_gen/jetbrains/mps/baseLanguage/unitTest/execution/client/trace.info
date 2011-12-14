@@ -522,7 +522,7 @@
     <nodeInfo nodeId="2024340988248532757" fileName="TestNodeWrapperFactory.java" startLine="99" startPosition="38" endLine="100" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248532764" fileName="TestNodeWrapperFactory.java" startLine="103" startPosition="29" endLine="104" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248532775" fileName="TestNodeWrapperFactory.java" startLine="111" startPosition="62" endLine="112" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532789" fileName="TestNodeWrapperFactory.java" startLine="116" startPosition="170" endLine="117" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532789" fileName="TestNodeWrapperFactory.java" startLine="116" startPosition="170" endLine="117" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248532797" fileName="TestNodeWrapperFactory.java" startLine="118" startPosition="7" endLine="119" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248532802" fileName="TestNodeWrapperFactory.java" startLine="122" startPosition="38" endLine="123" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248532809" fileName="TestNodeWrapperFactory.java" startLine="126" startPosition="29" endLine="127" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -618,7 +618,7 @@
     <scopeInfo nodeId="2024340988248532756" fileName="TestNodeWrapperFactory.java" startLine="99" startPosition="38" endLine="100" endPosition="121" />
     <scopeInfo nodeId="2024340988248532763" fileName="TestNodeWrapperFactory.java" startLine="103" startPosition="29" endLine="104" endPosition="19" />
     <scopeInfo nodeId="2024340988248532774" fileName="TestNodeWrapperFactory.java" startLine="111" startPosition="62" endLine="112" endPosition="41" />
-    <scopeInfo nodeId="2024340988248532788" fileName="TestNodeWrapperFactory.java" startLine="116" startPosition="170" endLine="117" endPosition="56" />
+    <scopeInfo nodeId="2024340988248532788" fileName="TestNodeWrapperFactory.java" startLine="116" startPosition="170" endLine="117" endPosition="131" />
     <scopeInfo nodeId="2024340988248532801" fileName="TestNodeWrapperFactory.java" startLine="122" startPosition="38" endLine="123" endPosition="108" />
     <scopeInfo nodeId="2024340988248532808" fileName="TestNodeWrapperFactory.java" startLine="126" startPosition="29" endLine="127" endPosition="18" />
     <scopeInfo nodeId="2024340988248532819" fileName="TestNodeWrapperFactory.java" startLine="134" startPosition="62" endLine="135" endPosition="43" />

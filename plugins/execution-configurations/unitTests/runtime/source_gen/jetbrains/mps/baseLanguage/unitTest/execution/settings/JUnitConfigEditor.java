@@ -439,15 +439,15 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   public void apply(JUnitSettings_Configuration config) {
-    myThis.apply((Object) config, new _FunctionTypes._void_P6_E0<Object, Integer, ClonableList<String>, ClonableList<String>, String, String>() {
-      public void invoke(Object c, Integer configurationIndex, ClonableList<String> testMethods, ClonableList<String> testCases, String model, String module) {
-        myThis.applyInternal((JUnitSettings_Configuration) c, configurationIndex, testMethods, testCases, model, module);
+    myThis.apply(config, new _FunctionTypes._void_P6_E0<JUnitSettings_Configuration, Integer, ClonableList<String>, ClonableList<String>, String, String>() {
+      public void invoke(JUnitSettings_Configuration c, Integer configurationIndex, ClonableList<String> testMethods, ClonableList<String> testCases, String model, String module) {
+        myThis.applyInternal(c, configurationIndex, testMethods, testCases, model, module);
         return;
       }
     });
   }
 
-  private void apply(final Object configuration, final _FunctionTypes._void_P6_E0<? super Object, ? super Integer, ? super ClonableList<String>, ? super ClonableList<String>, ? super String, ? super String> applyInternal) {
+  private void apply(final JUnitSettings_Configuration configuration, final _FunctionTypes._void_P6_E0<? super JUnitSettings_Configuration, ? super Integer, ? super ClonableList<String>, ? super ClonableList<String>, ? super String, ? super String> applyInternal) {
     // read our fields in UI thread 
     final List<ITestNodeWrapper> editorMethodList = myThis.getMethods();
     final List<ITestNodeWrapper> editorTestCasesList = myThis.getNodes();
@@ -488,10 +488,12 @@ public class JUnitConfigEditor extends JPanel {
           }
         });
 
+        final String modelFinal = model.value;
+        final String moduleFinal = module.value;
         // we neeed to set run config fields so we have to go into UI thread again 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            applyInternal.invoke(configuration, configTypeIndex, testMethods, testCases, model.value, module.value);
+            applyInternal.invoke(configuration, configTypeIndex, testMethods, testCases, modelFinal, moduleFinal);
           }
         });
 

@@ -179,7 +179,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_BehaviorDescriptor" file="ITestable_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.MessageHolder_BehaviorDescriptor" file="MessageHolder_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.Message_BehaviorDescriptor" file="Message_BehaviorDescriptor.java">

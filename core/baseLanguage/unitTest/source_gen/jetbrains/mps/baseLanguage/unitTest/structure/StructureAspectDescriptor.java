@@ -44,7 +44,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 13:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", null, true, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.ITestable"}, new String[]{}, new String[]{});
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.ITestable", null, true, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.ITestable", null, true, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 15:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.Message", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 16:

@@ -251,7 +251,11 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1172073500303" resolveInfo="Message" />
     </node>
   </root>
-  <root id="1215620452633" />
+  <root id="1215620452633">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1447276147532960367">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </root>
   <root id="1216130694486">
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1216130711762">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1215620452633" resolveInfo="ITestable" />
