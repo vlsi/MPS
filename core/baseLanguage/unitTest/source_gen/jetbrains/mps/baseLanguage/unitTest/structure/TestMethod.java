@@ -14,7 +14,6 @@ import jetbrains.mps.project.GlobalScope;
 public class TestMethod extends InstanceMethodDeclaration implements ITestMethod {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod";
   public static final String METHOD_NAME = "methodName";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
@@ -30,14 +29,6 @@ public class TestMethod extends InstanceMethodDeclaration implements ITestMethod
 
   public void setMethodName(String value) {
     this.setProperty(TestMethod.METHOD_NAME, value);
-  }
-
-  public String getName() {
-    return this.getProperty(TestMethod.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(TestMethod.NAME, value);
   }
 
   public String getShortDescription() {
