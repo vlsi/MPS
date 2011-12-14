@@ -10,11 +10,13 @@ import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -59,14 +61,14 @@ public class RenameConcept extends BaseLoggableRefactoring {
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    List<SModel> result = ListSequence.fromList(new LinkedList<SModel>());
+    Set<SModel> result = SetSequence.fromSetWithValues(new HashSet<SModel>(), (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel().getSModel()));
     Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
     if (sourceLanguage != null) {
       for (List<SModel> value : Sequence.fromIterable(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedProject(), sourceLanguage).values())) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(value));
+        SetSequence.fromSet(result).addSequence(ListSequence.fromList(value));
       }
     }
-    return result;
+    return SetSequence.fromSet(result).toListSequence();
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
