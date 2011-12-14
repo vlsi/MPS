@@ -4,7 +4,6 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import jetbrains.mps.logging.Logger;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -43,7 +42,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class Java_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  private static final Logger LOG = Logger.getLogger(Java_Configuration.class);
   protected static Log log = LogFactory.getLog(Java_Configuration.class);
 
   @NotNull
@@ -147,7 +145,9 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       clone.myRunParameters = (JavaRunParameters_Configuration) myRunParameters.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      Java_Configuration.LOG.error(ex);
+      if (log.isErrorEnabled()) {
+        log.error("", ex);
+      }
     }
     return clone;
   }

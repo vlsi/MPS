@@ -4,7 +4,8 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import jetbrains.mps.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
@@ -27,7 +28,7 @@ import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class MPSInstance_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  private static final Logger LOG = Logger.getLogger(MPSInstance_Configuration.class);
+  protected static Log log = LogFactory.getLog(MPSInstance_Configuration.class);
 
   @NotNull
   private MPSInstance_Configuration.MyState myState = new MPSInstance_Configuration.MyState();
@@ -109,7 +110,9 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
       clone.myState = (MPSInstance_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      MPSInstance_Configuration.LOG.error(ex);
+      if (log.isErrorEnabled()) {
+        log.error("", ex);
+      }
     }
     return clone;
   }

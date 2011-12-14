@@ -4,7 +4,8 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import jetbrains.mps.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
@@ -14,7 +15,7 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 
 public class AntSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  private static final Logger LOG = Logger.getLogger(AntSettings_Configuration.class);
+  protected static Log log = LogFactory.getLog(AntSettings_Configuration.class);
 
   @NotNull
   private AntSettings_Configuration.MyState myState = new AntSettings_Configuration.MyState();
@@ -71,7 +72,9 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
       clone.myState = (AntSettings_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      AntSettings_Configuration.LOG.error(ex);
+      if (log.isErrorEnabled()) {
+        log.error("", ex);
+      }
     }
     return clone;
   }
