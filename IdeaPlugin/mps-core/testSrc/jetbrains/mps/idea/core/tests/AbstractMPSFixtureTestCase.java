@@ -97,6 +97,12 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
         myFacet = addMPSFacet(myModule);
     }
 
+    @Override
+    protected void tearDown() throws Exception {
+        myFixture.tearDown();
+        super.tearDown();
+    }
+
     protected Module addModule(TestFixtureBuilder<IdeaProjectTestFixture> projectBuilder) {
         CustomJavaModuleFixtureBuilder moduleFixtureBuilder = projectBuilder.addModule(CustomJavaModuleFixtureBuilder.class);
         String moduleFolderName = "module" + getNextIndex();
