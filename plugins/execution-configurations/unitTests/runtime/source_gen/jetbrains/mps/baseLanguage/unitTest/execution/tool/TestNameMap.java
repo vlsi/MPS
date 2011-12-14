@@ -8,35 +8,33 @@ import java.util.HashMap;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
 public class TestNameMap<C, M> {
-  private Map<String, C> classToTestCase;
-  private Map<String, Map<String, M>> classToMethodToMethodTest;
+  private final Map<String, C> myClassToTestCase = MapSequence.fromMap(new HashMap<String, C>());
+  private final Map<String, Map<String, M>> myClassToMethodToMethodTest = MapSequence.fromMap(new HashMap<String, Map<String, M>>());
 
   public TestNameMap() {
-    classToTestCase = MapSequence.fromMap(new HashMap<String, C>());
-    classToMethodToMethodTest = MapSequence.fromMap(new HashMap<String, Map<String, M>>());
   }
 
   public void put(ITestNodeWrapper testCaseNode, C testCase) {
-    MapSequence.fromMap(classToTestCase).put(testCaseNode.getFqName(), testCase);
+    MapSequence.fromMap(myClassToTestCase).put(testCaseNode.getFqName(), testCase);
   }
 
   public C get(String testCaseName) {
-    return MapSequence.fromMap(classToTestCase).get(testCaseName);
+    return MapSequence.fromMap(myClassToTestCase).get(testCaseName);
   }
 
   public void put(ITestNodeWrapper testCaseNode, ITestNodeWrapper testMethodNode, M testMethod) {
     String testCaseName = testCaseNode.getFqName();
-    Map<String, M> testMethods = MapSequence.fromMap(classToMethodToMethodTest).get(testCaseName);
+    Map<String, M> testMethods = MapSequence.fromMap(myClassToMethodToMethodTest).get(testCaseName);
     if (testMethods == null) {
       testMethods = MapSequence.fromMap(new HashMap<String, M>());
-      MapSequence.fromMap(classToMethodToMethodTest).put(testCaseName, testMethods);
+      MapSequence.fromMap(myClassToMethodToMethodTest).put(testCaseName, testMethods);
     }
     MapSequence.fromMap(testMethods).put(testMethodNode.getName(), testMethod);
   }
 
   public M get(String testCaseName, String testMethodName) {
     M testMethod = null;
-    Map<String, M> testMethods = MapSequence.fromMap(classToMethodToMethodTest).get(testCaseName);
+    Map<String, M> testMethods = MapSequence.fromMap(myClassToMethodToMethodTest).get(testCaseName);
     if (testMethods != null) {
       testMethod = MapSequence.fromMap(testMethods).get(testMethodName);
     }
@@ -44,7 +42,7 @@ public class TestNameMap<C, M> {
   }
 
   public void clear() {
-    MapSequence.fromMap(classToTestCase).clear();
-    MapSequence.fromMap(classToMethodToMethodTest).clear();
+    MapSequence.fromMap(myClassToTestCase).clear();
+    MapSequence.fromMap(myClassToMethodToMethodTest).clear();
   }
 }

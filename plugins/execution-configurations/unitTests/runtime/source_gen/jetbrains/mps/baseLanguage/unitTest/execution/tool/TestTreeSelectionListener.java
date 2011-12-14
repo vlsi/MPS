@@ -8,21 +8,21 @@ import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
 
 public class TestTreeSelectionListener implements TreeSelectionListener {
-  private TreeSelectionModel treeSelectionModel;
-  private StatisticsTableModel statisticsModel;
-  private TestOutputComponent outputComponent;
+  private final TreeSelectionModel myFreeSelectionModel;
+  private final StatisticsTableModel myStatisticsModel;
+  private final TestOutputComponent myOutputComponent;
 
   public TestTreeSelectionListener(TestTree tree, StatisticsTableModel statistics, TestOutputComponent outputComponent) {
-    treeSelectionModel = tree.getSelectionModel();
-    statisticsModel = statistics;
-    this.outputComponent = outputComponent;
+    myFreeSelectionModel = tree.getSelectionModel();
+    myStatisticsModel = statistics;
+    myOutputComponent = outputComponent;
   }
 
   public void valueChanged(TreeSelectionEvent event) {
     if (event.getNewLeadSelectionPath() == null) {
       return;
     }
-    TreePath path = treeSelectionModel.getSelectionPath();
+    TreePath path = myFreeSelectionModel.getSelectionPath();
     if (path == null) {
       return;
     }
@@ -37,7 +37,7 @@ public class TestTreeSelectionListener implements TreeSelectionListener {
       className = n.getClassName();
       methodName = n.getMethodName();
     }
-    outputComponent.filter(className, methodName);
-    statisticsModel.setFilter(className, methodName);
+    myOutputComponent.filter(className, methodName);
+    myStatisticsModel.setFilter(className, methodName);
   }
 }

@@ -13,20 +13,20 @@ import jetbrains.mps.ide.navigation.NavigationSupport;
 
 public class TestMethodTreeNode extends BaseTestTreeNode {
   @NotNull
-  protected final ITestNodeWrapper testMethod;
+  protected final ITestNodeWrapper myTestMethod;
 
   public TestMethodTreeNode(@NotNull IOperationContext operationContext, @NotNull ITestNodeWrapper testMethod) {
     super(operationContext);
-    this.testMethod = testMethod;
-    setNodeIdentifier(this.testMethod.getNodePointer().getNodeId().toString());
-    setText(this.testMethod.getName());
+    myTestMethod = testMethod;
+    setNodeIdentifier(myTestMethod.getNodePointer().getNodeId().toString());
+    setText(myTestMethod.getName());
   }
 
   public String getClassName() {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ITestNodeWrapper testCase = testMethod.getTestCase();
+        ITestNodeWrapper testCase = myTestMethod.getTestCase();
         if (testCase != null) {
           className.value = testCase.getFqName();
         }
@@ -39,7 +39,7 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
     final Wrappers._T<String> methodName = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        methodName.value = testMethod.getName();
+        methodName.value = myTestMethod.getName();
       }
     });
     return methodName.value;
@@ -57,7 +57,7 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
   public void doubleClick() {
     Runnable nav = new Runnable() {
       public void run() {
-        NavigationSupport.getInstance().openNode(getOperationContext(), testMethod.getNode(), true, true);
+        NavigationSupport.getInstance().openNode(getOperationContext(), myTestMethod.getNode(), true, true);
       }
     };
     if (!(ModelAccess.instance().tryRead(nav))) {
@@ -67,6 +67,6 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
 
   @Override
   public Object getUserObject() {
-    return testMethod;
+    return myTestMethod;
   }
 }

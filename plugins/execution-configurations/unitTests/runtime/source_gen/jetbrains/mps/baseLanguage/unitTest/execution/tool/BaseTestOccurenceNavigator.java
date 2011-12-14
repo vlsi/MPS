@@ -10,13 +10,13 @@ import javax.swing.event.TreeSelectionEvent;
 import com.intellij.pom.Navigatable;
 
 public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, TreeSelectionListener {
-  protected TestTree testTree;
-  protected int selected = -1;
-  protected int count;
+  protected final TestTree myTestTree;
+  protected int mySelected = -1;
+  protected int myCount;
 
   public BaseTestOccurenceNavigator(TestTree tree) {
-    testTree = tree;
-    testTree.addTreeSelectionListener(this);
+    myTestTree = tree;
+    myTestTree.addTreeSelectionListener(this);
   }
 
   public abstract boolean hasAvailableOccurence(boolean next);
@@ -25,13 +25,13 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
 
   public void setNewSelectedIndex(boolean next) {
     boolean founded = false;
-    DefaultMutableTreeNode node = testTree.getCurrentNode();
+    DefaultMutableTreeNode node = myTestTree.getCurrentNode();
     do {
       MPSTreeNode temp = (MPSTreeNode) (next ?
         node.getNextNode() :
         node.getPreviousNode()
       );
-      selected = selected + (next ?
+      mySelected = mySelected + (next ?
         1 :
         -1
       );
@@ -54,14 +54,14 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
     setNewSelectedIndex(true);
     BaseTestOccurenceNavigator.TestNavigator navigator = new BaseTestOccurenceNavigator.TestNavigator();
     navigator.navigate(true);
-    return new OccurenceNavigator.OccurenceInfo(navigator, selected, count);
+    return new OccurenceNavigator.OccurenceInfo(navigator, mySelected, myCount);
   }
 
   public OccurenceNavigator.OccurenceInfo goPreviousOccurence() {
     setNewSelectedIndex(false);
     BaseTestOccurenceNavigator.TestNavigator navigator = new BaseTestOccurenceNavigator.TestNavigator();
     navigator.navigate(true);
-    return new OccurenceNavigator.OccurenceInfo(navigator, selected, count);
+    return new OccurenceNavigator.OccurenceInfo(navigator, mySelected, myCount);
   }
 
   public String getNextOccurenceActionName() {
@@ -73,14 +73,14 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
   }
 
   public void valueChanged(TreeSelectionEvent p0) {
-    if (testTree == null) {
+    if (myTestTree == null) {
       return;
     }
-    int[] result = testTree.getSelectionRows();
+    int[] result = myTestTree.getSelectionRows();
     if (result != null && result.length > 0) {
-      selected = result[0];
+      mySelected = result[0];
     }
-    count = testTree.getRowCount();
+    myCount = myTestTree.getRowCount();
   }
 
   public class TestNavigator implements Navigatable {
@@ -88,7 +88,7 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
     }
 
     public void navigate(boolean p0) {
-      testTree.setSelectionRows(new int[]{selected});
+      myTestTree.setSelectionRows(new int[]{mySelected});
     }
 
     public boolean canNavigate() {

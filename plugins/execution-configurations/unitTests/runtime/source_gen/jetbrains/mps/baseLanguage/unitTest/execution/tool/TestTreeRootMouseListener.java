@@ -6,22 +6,22 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class TestTreeRootMouseListener extends MouseAdapter {
-  private StatisticsTableModel statisticsModel;
-  private TestOutputComponent outputComponent;
-  private TestTree treeComponent;
+  private final StatisticsTableModel myStatisticsModel;
+  private final TestOutputComponent myOutputComponent;
+  private final TestTree myTreeComponent;
 
   public TestTreeRootMouseListener(TestTree tree, StatisticsTableModel statistics, TestOutputComponent outputComponent) {
-    statisticsModel = statistics;
-    this.outputComponent = outputComponent;
-    treeComponent = tree;
+    myStatisticsModel = statistics;
+    myOutputComponent = outputComponent;
+    myTreeComponent = tree;
   }
 
   public void mouseClicked(MouseEvent event) {
-    if (treeComponent.getPathForLocation(event.getX(), event.getY()) != null) {
+    if (myTreeComponent.getPathForLocation(event.getX(), event.getY()) != null) {
       return;
     }
-    outputComponent.filter(null, null);
-    statisticsModel.setFilter(null, null);
-    treeComponent.clearSelection();
+    myOutputComponent.filter(null, null);
+    myStatisticsModel.setFilter(null, null);
+    myTreeComponent.clearSelection();
   }
 }

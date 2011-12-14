@@ -8,7 +8,7 @@ import javax.swing.Icon;
 import jetbrains.mps.smodel.ModelAccess;
 
 public abstract class BaseTestTreeNode extends MPSTreeNode {
-  private TestState state = TestState.NOT_RAN;
+  private TestState myState = TestState.NOT_RAN;
 
   public BaseTestTreeNode(IOperationContext context) {
     super(context);
@@ -16,14 +16,14 @@ public abstract class BaseTestTreeNode extends MPSTreeNode {
 
   @Override
   protected void doUpdatePresentation() {
-    Icon icon = state.getIcon();
+    Icon icon = myState.getIcon();
     if (icon != null) {
       setIcon(icon);
     }
   }
 
   public void setState(TestState state) {
-    this.state = state;
+    myState = state;
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         renewPresentation();
@@ -32,6 +32,6 @@ public abstract class BaseTestTreeNode extends MPSTreeNode {
   }
 
   public TestState getState() {
-    return state;
+    return myState;
   }
 }
