@@ -103,6 +103,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_9132506094562634034(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_5041115067675810568(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905488(_context.getNode());
   }
@@ -380,7 +384,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5041115067675810374(final IOperationContext operationContext, final IfMacroContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "type", true), new QueriesGenerated.QuotationClass_x583g4_a1a0a0hd().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "type", true), new QueriesGenerated.QuotationClass_x583g4_a1a0a0id().createNode());
   }
 
   public static boolean ifMacro_Condition_5041115067675810429(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -413,7 +417,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_9164571165378485912(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode configurationType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), true);
-    return (configurationType != null) && eq_x583g4_a0a1a39(SNodeOperations.getModel(SLinkOperations.getTarget(configurationType, "persistentConfiguration", false)), _context.getInputModel());
+    return (configurationType != null) && eq_x583g4_a0a1a49(SNodeOperations.getModel(SLinkOperations.getTarget(configurationType, "persistentConfiguration", false)), _context.getInputModel());
   }
 
   public static boolean ifMacro_Condition_3131153648913159012(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -728,15 +732,15 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
   }
 
-  private static boolean eq_x583g4_a0a1a39(Object a, Object b) {
+  private static boolean eq_x583g4_a0a1a49(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  public static class QuotationClass_x583g4_a1a0a0hd {
-    public QuotationClass_x583g4_a1a0a0hd() {
+  public static class QuotationClass_x583g4_a1a0a0id {
+    public QuotationClass_x583g4_a1a0a0id() {
     }
 
     public SNode createNode() {

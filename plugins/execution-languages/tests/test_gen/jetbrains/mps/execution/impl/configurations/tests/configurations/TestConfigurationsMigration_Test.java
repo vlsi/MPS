@@ -70,6 +70,7 @@ public class TestConfigurationsMigration_Test extends BaseTransformationTest {
             }
           }.invoke(), settings.getConfiguration().getType() instanceof UnknownConfigurationType);
         } catch (InvalidDataException e) {
+          e.printStackTrace();
           Assert.fail(e.getMessage());
         }
       }

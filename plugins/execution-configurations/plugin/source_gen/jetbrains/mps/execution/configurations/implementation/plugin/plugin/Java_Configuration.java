@@ -5,6 +5,8 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.MultiConceptNode_Configuration;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -42,6 +44,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class Java_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(Java_Configuration.class);
+  protected static Log log = LogFactory.getLog(Java_Configuration.class);
 
   @NotNull
   private Java_Configuration.MyState myState = new Java_Configuration.MyState();
@@ -106,11 +109,21 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
     {
       Element fieldElement = element.getChild("myNode");
-      myNode.readExternal(fieldElement);
+      if (fieldElement != null) {
+        if (log.isWarnEnabled()) {
+          log.warn("Element " + "myNode" + "was null.");
+        }
+        myNode.readExternal(fieldElement);
+      }
     }
     {
       Element fieldElement = element.getChild("myRunParameters");
-      myRunParameters.readExternal(fieldElement);
+      if (fieldElement != null) {
+        if (log.isWarnEnabled()) {
+          log.warn("Element " + "myRunParameters" + "was null.");
+        }
+        myRunParameters.readExternal(fieldElement);
+      }
     }
   }
 
