@@ -110,19 +110,21 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     {
       Element fieldElement = element.getChild("myNode");
       if (fieldElement != null) {
-        if (log.isWarnEnabled()) {
-          log.warn("Element " + "myNode" + "was null.");
-        }
         myNode.readExternal(fieldElement);
+      } else {
+        if (log.isWarnEnabled()) {
+          log.warn("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
     {
       Element fieldElement = element.getChild("myRunParameters");
       if (fieldElement != null) {
-        if (log.isWarnEnabled()) {
-          log.warn("Element " + "myRunParameters" + "was null.");
-        }
         myRunParameters.readExternal(fieldElement);
+      } else {
+        if (log.isWarnEnabled()) {
+          log.warn("Element " + "myRunParameters" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
   }

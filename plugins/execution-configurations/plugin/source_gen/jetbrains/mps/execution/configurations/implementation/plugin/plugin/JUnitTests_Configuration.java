@@ -74,19 +74,21 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     {
       Element fieldElement = element.getChild("myJUnitSettings");
       if (fieldElement != null) {
-        if (log.isWarnEnabled()) {
-          log.warn("Element " + "myJUnitSettings" + "was null.");
-        }
         myJUnitSettings.readExternal(fieldElement);
+      } else {
+        if (log.isWarnEnabled()) {
+          log.warn("Element " + "myJUnitSettings" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
     {
       Element fieldElement = element.getChild("myJavaRunParameters");
       if (fieldElement != null) {
-        if (log.isWarnEnabled()) {
-          log.warn("Element " + "myJavaRunParameters" + "was null.");
-        }
         myJavaRunParameters.readExternal(fieldElement);
+      } else {
+        if (log.isWarnEnabled()) {
+          log.warn("Element " + "myJavaRunParameters" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
   }
