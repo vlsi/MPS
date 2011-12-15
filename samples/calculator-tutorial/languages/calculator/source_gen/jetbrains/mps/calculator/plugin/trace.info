@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Calculator_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.calculator.plugin.Calculator_ApplicationPlugin" />
-  <unitInfo fileName="Calculator_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.calculator.plugin.Calculator_ProjectPlugin" />
   <root nodeId="1241364911745">
     <nodeInfo nodeId="1241364911745" fileName="ExecuteCalculator_Action.java" startLine="18" startPosition="58" endLine="19" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1241364911745" fileName="ExecuteCalculator_Action.java" startLine="19" startPosition="40" endLine="20" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

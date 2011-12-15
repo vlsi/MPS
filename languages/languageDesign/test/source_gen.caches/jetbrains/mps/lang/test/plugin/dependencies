@@ -46,8 +46,5 @@
     <classNode dependClassName="jetbrains.mps.lang.test.plugin.RunTestInMPS_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.test.plugin.Test_ProjectPlugin" file="Test_ProjectPlugin.java">
-    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
-  </dependency>
 </dependenciesRoot>
 

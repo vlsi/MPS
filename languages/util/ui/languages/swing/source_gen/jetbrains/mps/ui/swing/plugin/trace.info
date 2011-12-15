@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Swing_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.swing.plugin.Swing_ApplicationPlugin" />
-  <unitInfo fileName="Swing_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.swing.plugin.Swing_ProjectPlugin" />
   <root nodeId="2441084687258581572">
     <nodeInfo nodeId="2441084687258581583" fileName="Variant_CustomApplicationPlugin.java" startLine="26" startPosition="41" endLine="27" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2441084687258585138" fileName="Variant_CustomApplicationPlugin.java" startLine="36" startPosition="31" endLine="37" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
