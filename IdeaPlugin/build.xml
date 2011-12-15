@@ -156,6 +156,7 @@
                 <!-- idea-workbench -->
                 <path path="${base_dir}/workbench/mps-platform/source"/>
                 <path path="${base_dir}/workbench/mps-platform/source_gen"/>
+                <path path="${base_dir}/workbench/mps-actions/source"/>
             </src>
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
@@ -164,6 +165,7 @@
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench_jar">
             <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/workbench/mps-actions/source" includes="**/*.png"/>
         </copy>
         <jar destfile="${dist.dir}/lib/mps-workbench.jar">
             <fileset dir="${build_dir}/mpsworkbench_jar"/>
@@ -190,6 +192,8 @@
                 <path path="${base_dir}/core/actions-runtime/source_gen"/>
                 <path path="${base_dir}/core/intentions-runtime/source"/>
                 <path path="${base_dir}/workbench/mps-editor/source"/>
+                <path path="${base_dir}/plugins/mpseditor/source"/>
+                <path path="${base_dir}/plugins/mpseditor/source_gen"/>
             </src>
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
@@ -204,6 +208,8 @@
             <fileset dir="${base_dir}/core/actions-runtime/source_gen" includes="**/*.png"/>
             <fileset dir="${base_dir}/core/intentions-runtime/source" includes="**/*.png"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/plugins/mpseditor/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/plugins/mpseditor/source_gen" includes="**/*.png"/>
         </copy>
         <jar destfile="${dist.dir}/lib/mps-editor.jar">
             <fileset dir="${build_dir}/mpseditor_jar"/>
@@ -264,9 +270,13 @@
             <src>
                 <!-- plugin tests -->
                 <path path="${base_dir}/IdeaPlugin/mps-core/testSrc"/>
+                <path path="${base_dir}/IdeaPlugin/mps-core/testSrc"/>
+                <path path="${base_dir}/plugins/mpseditor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
+                <path path="${base_dir}/plugins/mpseditor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
             </src>
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
+                <fileset dir="${dist.dir}/languages/languageDesign" includes="jetbrains.mps.lang.test.runtime.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac2>
