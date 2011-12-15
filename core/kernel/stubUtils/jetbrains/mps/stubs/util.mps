@@ -2673,7 +2673,7 @@
             <property name="name" nameId="tpck.1169194664001" value="mfq" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="4040479201457822583" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4040479201457822584">
-              <property name="value" nameId="tpee.1070475926801" value="MPS.Classpath" />
+              <property name="value" nameId="tpee.1070475926801" value="MPS.Workbench" />
             </node>
           </node>
         </node>
@@ -2681,12 +2681,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4040479201457822598">
             <property name="name" nameId="tpck.1169194664001" value="muid" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="4040479201457822599" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4040479201457822600">
-              <property name="value" nameId="tpee.1070475926801" value="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8784993504819492418">
+              <property name="value" nameId="tpee.1070475926801" value="&#9;86441d7a-e194-42da-81a5-2161ec62a379" />
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="3337801829813838505" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="3337801829813838506" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4040479201457822550">
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4040479201457822551">
