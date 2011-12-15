@@ -181,8 +181,8 @@
   </root>
   <root nodeId="1215696484420">
     <nodeInfo nodeId="2379153299285136289" fileName="BaseTransformationTest.java" startLine="19" startPosition="63" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATH_MACRO_PREFIX" />
-    <nodeInfo nodeId="7107617965856386025" fileName="BaseTransformationTest.java" startLine="21" startPosition="0" endLine="22" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunner" />
-    <nodeInfo nodeId="7943791300789147901" fileName="BaseTransformationTest.java" startLine="22" startPosition="44" endLine="23" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMyModel" />
+    <nodeInfo nodeId="7107617965856386025" fileName="BaseTransformationTest.java" startLine="21" startPosition="0" endLine="22" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunner" />
+    <nodeInfo nodeId="7943791300789147901" fileName="BaseTransformationTest.java" startLine="22" startPosition="77" endLine="23" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMyModel" />
     <nodeInfo nodeId="7943791300789148307" fileName="BaseTransformationTest.java" startLine="23" startPosition="37" endLine="24" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMyTransidentModel" />
     <nodeInfo nodeId="7943791300789148316" fileName="BaseTransformationTest.java" startLine="24" startPosition="47" endLine="25" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMyProject" />
     <nodeInfo nodeId="7943791300789158112" fileName="BaseTransformationTest.java" startLine="25" startPosition="30" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMyModelOwner" />

@@ -19,7 +19,7 @@ import java.lang.reflect.InvocationTargetException;
 public abstract class BaseTransformationTest extends TestCase {
   public static final String PATH_MACRO_PREFIX = "path.macro.";
 
-  private TransformationTestRunner myRunner;
+  private TransformationTestRunner myRunner = new TransformationTestRunner();
   private SModelDescriptor myMyModel;
   private SModelDescriptor myMyTransidentModel;
   private Project myMyProject;
