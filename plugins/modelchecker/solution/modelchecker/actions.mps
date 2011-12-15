@@ -1380,9 +1380,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2804217611681360881">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1453248744423272634" resolveInfo="node" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetContainingLinkOperation" typeId="tp25.5820409030208923287" id="2804217611681360888">
-                  <property name="right_transform_hint" value="true" />
-                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetContainingLinkOperation" typeId="tp25.5820409030208923287" id="2804217611681360888" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2804217611681358910">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1453248744423272640" resolveInfo="operationContext" />
