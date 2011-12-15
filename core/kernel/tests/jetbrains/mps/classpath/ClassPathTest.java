@@ -65,7 +65,7 @@ public class ClassPathTest extends BaseMPSTest {
   }
 
   /*
-    Tests that all solutions form mps.mpr have "don't load classes" enabled.
+    Tests that all solutions form mps.ipr have "don't load classes" enabled.
 
     If a solution containing MPS core code loads its classes, these classes
     will be loaded by two different classloaders - solution classloader and
