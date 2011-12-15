@@ -33,6 +33,7 @@ import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
 import com.intellij.testFramework.fixtures.*;
 import com.intellij.testFramework.fixtures.impl.JavaTestFixtureFactoryImpl;
 import com.intellij.util.PathUtil;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -86,7 +87,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
         // we can remove these lines and extend from JavaCodeInsightFixtureTestCase in IDEA 11.
         myProjectBuilder = IdeaTestFixtureFactory.getFixtureFactory().createFixtureBuilder();
         myFixture = JavaTestFixtureFactory.getFixtureFactory().createCodeInsightFixture(myProjectBuilder.getFixture());
-        JavaModuleFixtureBuilder moduleFixtureBuilder = myProjectBuilder.addModule(CustomJavaModuleFixtureBuilder.class);
+        final JavaModuleFixtureBuilder moduleFixtureBuilder = myProjectBuilder.addModule(CustomJavaModuleFixtureBuilder.class);
         moduleFixtureBuilder.addSourceContentRoot(myFixture.getTempDirPath());
         tuneFixture(moduleFixtureBuilder);
 
@@ -103,8 +104,9 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
         super.tearDown();
     }
 
-    protected Module addModule(TestFixtureBuilder<IdeaProjectTestFixture> projectBuilder) {
+    protected Module addModuleAndSetupFixture(TestFixtureBuilder<IdeaProjectTestFixture> projectBuilder) throws Exception {
         CustomJavaModuleFixtureBuilder moduleFixtureBuilder = projectBuilder.addModule(CustomJavaModuleFixtureBuilder.class);
+        moduleFixtureBuilder.getFixture().setUp();
         String moduleFolderName = "module" + getNextIndex();
         File moduleFolder = new File(myFixture.getTempDirPath() + File.separator + moduleFolderName);
         assertTrue(moduleFolder.mkdirs());

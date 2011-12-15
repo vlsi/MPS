@@ -24,11 +24,14 @@ import com.intellij.openapi.components.impl.ComponentManagerImpl;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.testFramework.TestLoggerFactory;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.openapi.editor.Editor;
@@ -39,8 +42,11 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.apache.log4j.BasicConfigurator;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -54,7 +60,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class EditorTests extends AbstractMPSFixtureTestCase {
 
-    private TestBody testBody;
+    private List<BaseTransformationTest> tests = new ArrayList<BaseTransformationTest>();
 
     @Override
     protected boolean runInDispatchThread() {
@@ -63,6 +69,7 @@ public class EditorTests extends AbstractMPSFixtureTestCase {
 
     @Override
     protected void invokeTestRunnable(Runnable runnable) throws Exception {
+        // superclass's method always starts this in the EDT
         runnable.run();
     }
 
@@ -73,7 +80,7 @@ public class EditorTests extends AbstractMPSFixtureTestCase {
             @Override
             public void run() {
                 try {
-                    EditorTests.super.setUp();    //To change body of overridden methods use File | Settings | File Templates.
+                    EditorTests.super.setUp();
                 } catch (Exception e) {
                     thrown[0] = e;
                 }
@@ -81,13 +88,12 @@ public class EditorTests extends AbstractMPSFixtureTestCase {
         });
         if (thrown[0] != null) throw thrown[0];
 
+        // this is to prevent exceptions in the project components that get "projectClosed" notifications
         ApplicationManagerEx.getApplicationEx().doNotSave();
 
         SModelRoot sModelRoot = myFacet.getSolution().getSModelRoots().get(0);
         final IFile modelFile = FileSystem.getInstance().getFileByPath(sModelRoot.getPath()+"/test.mps");
         final List<SNode> roots = new ArrayList<SNode>();
-
-        InspectorTool inspectorTool = myModule.getProject().getComponent(InspectorTool.class);
 
         ModelAccess.instance().runReadAction(new Runnable() {
             @Override
@@ -105,17 +111,26 @@ public class EditorTests extends AbstractMPSFixtureTestCase {
                     }
                 }
 
-                ProjectOperationContext context = new ProjectOperationContext(
-                        ProjectHelper.toMPSProject(myModule.getProject()));
+                for (SNode r: roots) {
+                    if ("EditorTestCase".equals(r.getConceptShortName())) {
+                        try {
+                            Class<?> cls = Class.forName(model.getLongName() + "." + r.getName() + "_Test");
+                            Method mth = cls.getMethod("test_" + r.getName());
+                            BaseTransformationTest btt = (BaseTransformationTest) cls.newInstance();
+                            btt.setTestRunner(new SimpleTransformationTestRunner(r, mth));
+                            tests.add(btt);
+                        }
+                        catch (Exception e) {
+                            thrown[0] = e;
+                        }
+                    }
+                }
 
-                new MPSEditorOpener(myModule.getProject()).openNode(
-                        roots.get(0), context, true, true);
 
-                testBody = new TestBody();
-                testBody.myModel = roots.get(0).getModel().getModelDescriptor();
-                testBody.myProject = ProjectHelper.toMPSProject(myModule.getProject());
-            }
+           }
         });
+        // restore test logger factory
+        Logger.setFactory(TestLoggerFactory.getInstance());
         if (thrown[0] != null) throw thrown[0];
     }
 
@@ -140,40 +155,80 @@ public class EditorTests extends AbstractMPSFixtureTestCase {
         }
     }
 
-    public void testFoo() throws Exception {
-        if (testBody != null) {
-            testBody.testMethodImpl();
-        }
-    }
 
     @Override
     protected void preConfigureFacet(final MPSFacetConfiguration configuration) {
-        super.preConfigureFacet(configuration);    //To change body of overridden methods use File | Settings | File Templates.
+        super.preConfigureFacet(configuration);
 
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
             @Override
             public void run() {
-                IFile main = FileSystem.getInstance().getFileByPath("/home/fyodor/Workstuff/MPS-git/MPS/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/selection/test.mps");
-                IFile models = FileSystem.getInstance().getFileByPath(myModule.getModuleFilePath()).getDescendant("models");
-                models.mkdirs();
-                IFileUtils.copyFileContent(main, models.getDescendant("test.mps"));
+                IFile modelFile = FileSystem.getInstance().getFileByPath(System.getProperty("idea.plugins.path") + "/tests/editorTests/models/test.mps");
+                IFile modelsDir = FileSystem.getInstance().getFileByPath(myModule.getModuleFilePath()).getDescendant("models");
+                modelsDir.mkdirs();
+                IFileUtils.copyFileContent(modelFile, modelsDir.getDescendant("test.mps"));
 
-                configuration.getState().setModelRootPaths(new String[]{models.getPath()});
+                configuration.getState().setModelRootPaths(new String[]{modelsDir.getPath()});
             }
         });
     }
 
-    public static class TestBody extends BaseEditorTestBody {
-      public TestBody() {
-      }
-
-      @Override
-      public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("9080919888312410799", "9080919888312410806");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectNext_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.End_Action");
-      }
+    public void test_AllEditorTests() throws Throwable {
+        for(BaseTransformationTest btt: tests) {
+            ((SimpleTransformationTestRunner)btt.getTestRunner()).doTest(btt);
+        }
     }
 
+    public class SimpleTransformationTestRunner extends TransformationTestRunner {
+
+        private SNode myRoot;
+        private Method myTestMethod;
+
+        public SimpleTransformationTestRunner (SNode root, Method testMethod) {
+            myRoot = root;
+            myTestMethod = testMethod;
+        }
+
+        public void doTest (BaseTransformationTest btt) throws Throwable {
+            try {
+                myTestMethod.invoke(btt);
+            } catch (InvocationTargetException e) {
+                throw e.getCause();
+            }
+        }
+
+        @Override
+        public void initTest(final BaseTransformationTest btt, @NotNull String projectName, String model) throws Exception {
+            ModelAccess.instance().runReadAction(new Runnable() {
+                @Override
+                public void run() {
+                    ProjectOperationContext context = new ProjectOperationContext(
+                            ProjectHelper.toMPSProject(myModule.getProject()));
+
+                    new MPSEditorOpener(myModule.getProject()).openNode(myRoot, context, true, true);
+
+                    btt.setMyModel(myRoot.getModel().getModelDescriptor());
+                    btt.setMyProject(ProjectHelper.toMPSProject(myModule.getProject()));
+                }
+            });
+        }
+
+        @Override
+        public void runTest(BaseTransformationTest btt, String className, String methodName, boolean runInCommand) throws Throwable {
+            try {
+                Class<?> cls = Class.forName(className);
+                Object obj = cls.newInstance();
+
+                cls.getField("myModel").set(obj, btt.getMyModel());
+                cls.getField("myProject").set(obj, btt.getMyProject());
+
+                Method mth = cls.getMethod(methodName);
+                mth.invoke(obj);
+            }
+            catch (InvocationTargetException e) {
+                throw e.getCause();
+            }
+        }
+
+    }
 }

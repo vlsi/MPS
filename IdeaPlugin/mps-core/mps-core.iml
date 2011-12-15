@@ -48,6 +48,8 @@
     <content url="file://$MODULE_DIR$/../../plugins/mpseditor">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpseditor/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpseditor/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpseditor/tests/jetbrains.mps.lang.editor.tests/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpseditor/tests/jetbrains.mps.lang.editor.tests/testSrc" isTestSource="true" />
     </content>
     <content url="file://$MODULE_DIR$/../../workbench/mps-actions">
       <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-actions/source" isTestSource="false" />
