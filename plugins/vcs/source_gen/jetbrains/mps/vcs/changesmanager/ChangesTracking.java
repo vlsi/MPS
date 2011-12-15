@@ -241,18 +241,11 @@ public class ChangesTracking {
         return a.getSNodeId();
       }
     }).toListSequence();
-    if (myDifference.getChangeSet() == null) {
-      myQueue.runTask(new Runnable() {
-        public void run() {
+    myQueue.runTask(new Runnable() {
+      public void run() {
+        if (myDifference.getChangeSet() == null) {
           update(true);
-        }
-      });
-    } else {
-      myQueue.runTask(new Runnable() {
-        public void run() {
-          if (myDifference.getChangeSet() == null) {
-            return;
-          }
+        } else {
           if (ListSequence.fromList(ancestors).any(new IWhereFilter<SNodeId>() {
             public boolean accept(SNodeId a) {
               return myAddedNodesToChanges.containsKey(a);
@@ -269,8 +262,8 @@ public class ChangesTracking {
             myDifference.getBroadcaster().changeUpdateFinished();
           }
         }
-      });
-    }
+      }
+    });
   }
 
   private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc, @Nullable List<SNodeId> lastNewChildrenIds) {
