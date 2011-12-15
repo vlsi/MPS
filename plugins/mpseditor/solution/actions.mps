@@ -23,6 +23,8 @@
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="1qcs" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.actionSystem(MPS.Workbench/com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="qfs8" modelUID="r:7d44d4a4-60dd-4688-a16e-e03a3d19147e(jetbrains.mps.ide.actionGroups)" version="-1" />
+  <import index="vw5k" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.editor(MPS.Workbench/jetbrains.mps.ide.editor@java_stub)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -31,7 +33,6 @@
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="vw5k" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.editor(MPS.Workbench/jetbrains.mps.ide.editor@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6273762573614482316">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.ide.editor" />
@@ -227,15 +228,12 @@
       <property name="name" nameId="tpck.1169194664001" value="SelectRight" />
       <property name="caption" nameId="tp4k.1205250923097" value="Right with Selection" />
     </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8803599447441611816">
-      <property name="name" nameId="tpck.1169194664001" value="EditorEdit" />
-    </node>
   </roots>
   <root id="6273762573614482316" />
   <root id="4362199797783336764">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4362199797783336767">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="8803599447441611816" resolveInfo="EditorEdit" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="8803599447441611825" resolveInfo="custom" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="qfs8.6266498169522102110" resolveInfo="EditorEdit" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="qfs8.6266498169522102114" resolveInfo="custom" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="4362199797783345378">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4362199797783345681">
@@ -5041,20 +5039,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </root>
-  <root id="8803599447441611816">
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8803599447441611820">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="8803599447441611821">
-        <property name="name" nameId="tpck.1169194664001" value="toplevel" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="8803599447441611823" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="8803599447441611825">
-        <property name="name" nameId="tpck.1169194664001" value="custom" />
-      </node>
-    </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8803599447441622928">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1215010709295" resolveInfo="IDEAEdit" />
     </node>
   </root>
 </model>

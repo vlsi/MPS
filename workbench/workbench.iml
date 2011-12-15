@@ -50,7 +50,6 @@
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="mps-actions" />
-    <orderEntry type="module" module-name="mpseditor" />
   </component>
 </module>
 

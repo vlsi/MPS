@@ -4,6 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.ide.actionGroups.IDE_Edit_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -53,13 +54,11 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
     // groups 
     addGroup(new EditMenuActions_ActionGroup());
     addGroup(new EditorActions_ActionGroup());
-    addGroup(new EditorEdit_ActionGroup());
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(EditMenuActions_ActionGroup.ID, EditorEdit_ActionGroup.ID, EditorEdit_ActionGroup.LABEL_ID_custom);
+    insertGroupIntoAnother(EditMenuActions_ActionGroup.ID, IDE_Edit_ActionGroup.ID, IDE_Edit_ActionGroup.LABEL_ID_custom);
     insertGroupIntoAnother(EditorActions_ActionGroup.ID, "EditorActions", null);
-    insertGroupIntoAnother(EditorEdit_ActionGroup.ID, "EditMenu", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
