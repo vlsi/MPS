@@ -23,7 +23,7 @@ public class ModelRoot {
   public static final String MANAGER = "manager";
 
   private String myPath;
-  private String myPrefix;
+  private String myPrefix = "";
   private ModelRootManager myManager;
 
   public String getPath() {
