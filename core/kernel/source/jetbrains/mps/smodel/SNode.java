@@ -1769,4 +1769,6 @@ public final class SNode {
     return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
+  // for debug MPS-14876 purposes
+  boolean hasChildren()  { return myFirstChild != null; }
 }
