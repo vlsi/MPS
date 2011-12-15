@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.actions;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginLibrariesContributor;
 import jetbrains.mps.plugins.PluginFactoriesRegistry;
-import jetbrains.mps.plugins.PluginContributor;
+import jetbrains.mps.plugins.AbstractPluginFactory;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -14,9 +14,13 @@ public class Java_PluginInitializer implements ApplicationComponent {
   private final PluginLibrariesContributor myContributor = new PluginLibrariesContributor("jetbrains.mps.ide.java.actions.Java_PluginInitializer", "libraries");
 
   public Java_PluginInitializer() {
-    PluginFactoriesRegistry.registerPluginFactory(new PluginContributor() {
-      public BaseApplicationPlugin createApplicationPlugin() {
-        return new Java_ApplicationPlugin();
+    PluginFactoriesRegistry.registerPluginFactory(new AbstractPluginFactory() {
+      @SuppressWarnings("unchecked")
+      public <T> T create(Class<T> klass) {
+        if (BaseApplicationPlugin.class == klass) {
+          return (T) new Java_ApplicationPlugin();
+        }
+        return null;
       }
     });
   }

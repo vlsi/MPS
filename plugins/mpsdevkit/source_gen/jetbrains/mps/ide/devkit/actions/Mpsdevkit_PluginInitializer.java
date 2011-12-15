@@ -5,7 +5,7 @@ package jetbrains.mps.ide.devkit.actions;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginLibrariesContributor;
 import jetbrains.mps.plugins.PluginFactoriesRegistry;
-import jetbrains.mps.plugins.PluginContributor;
+import jetbrains.mps.plugins.AbstractPluginFactory;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import org.jetbrains.annotations.NonNls;
@@ -15,13 +15,16 @@ public class Mpsdevkit_PluginInitializer implements ApplicationComponent {
   private final PluginLibrariesContributor myContributor = new PluginLibrariesContributor("jetbrains.mps.ide.devkit.actions.Mpsdevkit_PluginInitializer", "libraries");
 
   public Mpsdevkit_PluginInitializer() {
-    PluginFactoriesRegistry.registerPluginFactory(new PluginContributor() {
-      public BaseApplicationPlugin createApplicationPlugin() {
-        return new Mpsdevkit_ApplicationPlugin();
-      }
-
-      public BaseProjectPlugin createProjectPlugin() {
-        return new Mpsdevkit_ProjectPlugin();
+    PluginFactoriesRegistry.registerPluginFactory(new AbstractPluginFactory() {
+      @SuppressWarnings("unchecked")
+      public <T> T create(Class<T> klass) {
+        if (BaseApplicationPlugin.class == klass) {
+          return (T) new Mpsdevkit_ApplicationPlugin();
+        }
+        if (BaseProjectPlugin.class == klass) {
+          return (T) new Mpsdevkit_ProjectPlugin();
+        }
+        return null;
       }
     });
   }

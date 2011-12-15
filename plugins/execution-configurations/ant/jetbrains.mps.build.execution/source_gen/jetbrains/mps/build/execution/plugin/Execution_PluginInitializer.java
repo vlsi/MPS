@@ -5,7 +5,7 @@ package jetbrains.mps.build.execution.plugin;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginLibrariesContributor;
 import jetbrains.mps.plugins.PluginFactoriesRegistry;
-import jetbrains.mps.plugins.PluginContributor;
+import jetbrains.mps.plugins.AbstractPluginFactory;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import org.jetbrains.annotations.NonNls;
@@ -15,13 +15,16 @@ public class Execution_PluginInitializer implements ApplicationComponent {
   private final PluginLibrariesContributor myContributor = new PluginLibrariesContributor("jetbrains.mps.build.execution.plugin.Execution_PluginInitializer", "libraries");
 
   public Execution_PluginInitializer() {
-    PluginFactoriesRegistry.registerPluginFactory(new PluginContributor() {
-      public BaseApplicationPlugin createApplicationPlugin() {
-        return new Execution_ApplicationPlugin();
-      }
-
-      public BaseProjectPlugin createProjectPlugin() {
-        return new Execution_ProjectPlugin();
+    PluginFactoriesRegistry.registerPluginFactory(new AbstractPluginFactory() {
+      @SuppressWarnings("unchecked")
+      public <T> T create(Class<T> klass) {
+        if (BaseApplicationPlugin.class == klass) {
+          return (T) new Execution_ApplicationPlugin();
+        }
+        if (BaseProjectPlugin.class == klass) {
+          return (T) new Execution_ProjectPlugin();
+        }
+        return null;
       }
     });
   }

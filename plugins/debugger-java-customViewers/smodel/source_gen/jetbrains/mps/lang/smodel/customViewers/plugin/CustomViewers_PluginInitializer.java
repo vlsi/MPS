@@ -5,7 +5,7 @@ package jetbrains.mps.lang.smodel.customViewers.plugin;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginLibrariesContributor;
 import jetbrains.mps.plugins.PluginFactoriesRegistry;
-import jetbrains.mps.plugins.PluginContributor;
+import jetbrains.mps.plugins.AbstractPluginFactory;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -14,9 +14,13 @@ public class CustomViewers_PluginInitializer implements ApplicationComponent {
   private final PluginLibrariesContributor myContributor = new PluginLibrariesContributor("jetbrains.mps.lang.smodel.customViewers.plugin.CustomViewers_PluginInitializer", "libraries");
 
   public CustomViewers_PluginInitializer() {
-    PluginFactoriesRegistry.registerPluginFactory(new PluginContributor() {
-      public BaseApplicationPlugin createApplicationPlugin() {
-        return new CustomViewers_ApplicationPlugin();
+    PluginFactoriesRegistry.registerPluginFactory(new AbstractPluginFactory() {
+      @SuppressWarnings("unchecked")
+      public <T> T create(Class<T> klass) {
+        if (BaseApplicationPlugin.class == klass) {
+          return (T) new CustomViewers_ApplicationPlugin();
+        }
+        return null;
       }
     });
   }

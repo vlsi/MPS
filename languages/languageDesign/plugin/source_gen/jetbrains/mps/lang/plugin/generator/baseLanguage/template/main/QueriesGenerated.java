@@ -795,11 +795,11 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false), "map_PreferenceComponentClass");
   }
 
-  public static Object referenceMacro_GetReferent_9103483154709741394(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_7944367932918602450(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByMappingLabel("appPluginConstructor");
   }
 
-  public static Object referenceMacro_GetReferent_9103483154709741408(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_7944367932918602462(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByMappingLabel("projPluginConstructor");
   }
 
@@ -1080,7 +1080,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "initBlock", true) != null;
   }
 
-  public static boolean ifMacro_Condition_9103483154709741416(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_7944367932918602390(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.EditorTab")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration")).isNotEmpty();
   }
 

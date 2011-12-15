@@ -5,7 +5,7 @@ package jetbrains.mps.ide.migration.migration21;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginLibrariesContributor;
 import jetbrains.mps.plugins.PluginFactoriesRegistry;
-import jetbrains.mps.plugins.PluginContributor;
+import jetbrains.mps.plugins.AbstractPluginFactory;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -14,9 +14,13 @@ public class Migration21_PluginInitializer implements ApplicationComponent {
   private final PluginLibrariesContributor myContributor = new PluginLibrariesContributor("jetbrains.mps.ide.migration.migration21.Migration21_PluginInitializer", "libraries");
 
   public Migration21_PluginInitializer() {
-    PluginFactoriesRegistry.registerPluginFactory(new PluginContributor() {
-      public BaseApplicationPlugin createApplicationPlugin() {
-        return new Migration21_ApplicationPlugin();
+    PluginFactoriesRegistry.registerPluginFactory(new AbstractPluginFactory() {
+      @SuppressWarnings("unchecked")
+      public <T> T create(Class<T> klass) {
+        if (BaseApplicationPlugin.class == klass) {
+          return (T) new Migration21_ApplicationPlugin();
+        }
+        return null;
       }
     });
   }
