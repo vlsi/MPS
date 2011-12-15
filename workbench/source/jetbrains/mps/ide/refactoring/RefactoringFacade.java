@@ -34,6 +34,7 @@ import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
@@ -43,6 +44,7 @@ import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
@@ -174,6 +176,9 @@ public class RefactoringFacade {
             try {
               refactoring.refactor(refactoringContext);
               if (refactoring instanceof ILoggableRefactoring) {
+                if (!refactoringContext.isLocal()) {
+                  writeIntoLog(refactoringContext);
+                }
                 updateModels(refactoringContext);
               }
             } catch (Throwable t) {
@@ -260,7 +265,6 @@ public class RefactoringFacade {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
     if (!refactoringContext.isLocal()) {
-      writeIntoLog(refactoringContext);
       updateLoadedModels(refactoringContext);
     } else {
       UsagesList usages = refactoringContext.getUsages();
@@ -272,24 +276,29 @@ public class RefactoringFacade {
     }
   }
 
-  public static void updateLoadedModels(RefactoringContext refactoringContext) {
+  private static Set<SModelDescriptor> loadedModelsForUpdate(RefactoringContext refactoringContext) {
+    SModelRepository modelRepository = SModelRepository.getInstance();
     Map<SModelReference, Integer> dependencies = refactoringContext.getStructureModification().getDependencies();
-    for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
-      if (!SModelStereotype.isUserModel(anotherDescriptor)) continue;
-      if (anotherDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) continue;
-      SModel anotherModel = anotherDescriptor.getSModel();
+    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+    // the dependencies should be added manually: they should be loaded after refactoring but have no ImportElement for themselves
+    for (SModelReference ref : dependencies.keySet())  result.add(modelRepository.getModelDescriptor(ref));
 
-//      Set<SModelReference> dependenciesModels = SModelOperations.getDependenciesModelRefs(anotherModel);
-//      if (!dependenciesModels.contains(initialModelReference)) continue;
-//      updateModel(anotherModel, refactoringContext);
-      // suppose that all models were saved before refactoring started => ImportElements are up to date
-      for (ImportElement elem : SModelOperations.getAllImportElements(anotherModel)) {
-        Integer version = dependencies.get(elem.getModelReference());
-        if (version != null && elem.getUsedVersion() <= version) {
-          updateModel(anotherModel, refactoringContext);
+    for (SModelDescriptor descr : modelRepository.getModelDescriptors()) {
+      if (!SModelStereotype.isUserModel(descr) || descr.getLoadingState() == ModelLoadingState.NOT_LOADED) continue;
+      // we suppose that all models were saved before refactoring started => ImportElements are up to date
+      for (ImportElement elem : SModelOperations.getAllImportElements(descr.getSModel())) {
+        if (dependencies.containsKey(elem.getModelReference())) {
+          result.add(descr);
           break;
         }
       }
+    }
+    return result;
+  }
+
+  public static void updateLoadedModels(RefactoringContext refactoringContext) {
+    for (SModelDescriptor modelDescriptor : loadedModelsForUpdate(refactoringContext)) {
+      updateModel(modelDescriptor.getSModel(), refactoringContext);
     }
   }
 

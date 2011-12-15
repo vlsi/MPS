@@ -94,6 +94,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       if (mySModel.isLoading()) return;
       if (getLoadingState() == ModelLoadingState.FULLY_LOADED) return;
 
+      // debug MPS-14876 (doubling root children)
+      for (SNode node : mySModel.roots()) {
+        if (node.hasChildren()) {
+          throw new RuntimeException("enforcing full load for " + getLongName() + " from state " + getLoadingState() + " to already loaded model!");
+        }
+      }
+
       runModelLoading(
         new Computable<ModelLoadResult>() {
           public ModelLoadResult compute() {
