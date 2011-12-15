@@ -130,8 +130,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.reloading.ReloadListener" />
     <classNode dependClassName="jetbrains.mps.smodel.GlobalSModelEventsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
@@ -149,7 +147,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="com.intellij.openapi.vcs.FileStatusListener" />
-    <classNode extendsClassName="jetbrains.mps.reloading.ReloadAdapter" />
     <classNode extendsClassName="jetbrains.mps.smodel.SModelAdapter" />
     <classNode extendsClassName="jetbrains.mps.smodel.SModelRepositoryAdapter" />
   </dependency>

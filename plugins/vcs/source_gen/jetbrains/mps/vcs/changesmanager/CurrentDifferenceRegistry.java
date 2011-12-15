@@ -8,13 +8,11 @@ import java.util.Map;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.SModelRepositoryListener;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -28,13 +26,11 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 
 public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final SModelListener myGlobalModelListener = new CurrentDifferenceRegistry.MyGlobalSModelListener();
   private final Map<SModelReference, CurrentDifference> myCurrentDifferences = MapSequence.fromMap(new HashMap<SModelReference, CurrentDifference>());
-  private final ReloadListener myReloadListener = new CurrentDifferenceRegistry.MyReloadListener();
   private final SModelRepositoryListener myModelRepositoryListener = new CurrentDifferenceRegistry.MySModelRepositoryListener();
   private final SimpleCommandQueue myCommandQueue = new SimpleCommandQueue("ChangesManager command queue");
   private CurrentDifferenceBroadcaster myGlobalBroadcaster = new CurrentDifferenceBroadcaster(myCommandQueue);
@@ -45,7 +41,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   }
 
   public void projectOpened() {
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelListener);
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
@@ -54,7 +49,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   }
 
   public void projectClosed() {
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
     GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalModelListener);
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
@@ -176,16 +170,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
         updateModel(((EditableSModelDescriptor) md));
       }
       // TODO model can be unloaded 
-    }
-  }
-
-  private class MyReloadListener extends ReloadAdapter {
-    public MyReloadListener() {
-    }
-
-    @Override
-    public void onAfterReload() {
-      updateLoadedModels();
     }
   }
 
