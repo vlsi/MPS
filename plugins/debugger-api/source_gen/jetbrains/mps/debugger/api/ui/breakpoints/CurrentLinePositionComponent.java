@@ -16,6 +16,7 @@ import com.intellij.util.messages.MessageBusConnection;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.EditorUtil;
@@ -85,20 +86,30 @@ public class CurrentLinePositionComponent implements ProjectComponent {
     component.removeDebugSessionListener(myCurrentDebugSessionListener);
   }
 
-  private void detachPainter(AbstractDebugSession newDebugSession) {
+  @Nullable
+  private Runnable detachPainterRunnable(AbstractDebugSession session) {
     final CurrentLinePainter painter;
     synchronized (mySessionToContextPainterMap) {
-      painter = mySessionToContextPainterMap.get(newDebugSession);
-      mySessionToContextPainterMap.remove(newDebugSession);
+      painter = mySessionToContextPainterMap.get(session);
+      mySessionToContextPainterMap.remove(session);
     }
     if (painter != null) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
+      return new Runnable() {
         @Override
         public void run() {
           detachPainter(painter);
         }
-      });
+      };
     }
+    return null;
+  }
+
+  private void detachPainter(AbstractDebugSession newDebugSession) {
+    Runnable runnable = detachPainterRunnable(newDebugSession);
+    if (runnable == null) {
+      return;
+    }
+    ApplicationManager.getApplication().invokeLater(runnable);
   }
 
   private void detachPainter(@NotNull CurrentLinePainter painter) {
@@ -120,7 +131,8 @@ public class CurrentLinePositionComponent implements ProjectComponent {
     });
   }
 
-  private void attachPainter(AbstractDebugSession debugSession) {
+  @Nullable
+  private Runnable attachPainterRunnable(AbstractDebugSession debugSession) {
     IStackFrame stackFrame = debugSession.getUiState().getStackFrame();
     if (stackFrame != null) {
       ILocation location = stackFrame.getLocation();
@@ -131,16 +143,25 @@ public class CurrentLinePositionComponent implements ProjectComponent {
           //  we lock here, since we do not want to acquire read lock inside while having mySessionToContextPainterMap  
           synchronized (mySessionToContextPainterMap) {
             mySessionToContextPainterMap.put(debugSession, newPainter);
-            ApplicationManager.getApplication().invokeLater(new Runnable() {
+            return new Runnable() {
               @Override
               public void run() {
                 attachPainterAndOpenEditor(newPainter);
               }
-            });
+            };
           }
         }
       }
     }
+    return null;
+  }
+
+  private void attachPainter(AbstractDebugSession debugSession) {
+    Runnable runnable = attachPainterRunnable(debugSession);
+    if (runnable == null) {
+      return;
+    }
+    ApplicationManager.getApplication().invokeLater(runnable);
   }
 
   private void attachPainterAndOpenEditor(@NotNull final CurrentLinePainter painter) {
@@ -168,6 +189,23 @@ public class CurrentLinePositionComponent implements ProjectComponent {
         }
       }
     });
+  }
+
+  private void reAttachPainter(AbstractDebugSession session) {
+    final Runnable detachSession = detachPainterRunnable(session);
+    final Runnable attachSession = attachPainterRunnable(session);
+    if (detachSession != null || attachSession != null) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          if (detachSession != null) {
+            detachSession.run();
+          }
+          if (attachSession != null) {
+            attachSession.run();
+          }
+        }
+      });
+    }
   }
 
   private class MyCurrentDebugSessionListener implements DebugSessionManagerComponent.DebugSessionListener {
@@ -212,14 +250,12 @@ public class CurrentLinePositionComponent implements ProjectComponent {
 
     @Override
     public void stateChanged(AbstractDebugSession session) {
-      detachPainter(session);
-      attachPainter(session);
+      reAttachPainter(session);
     }
 
     @Override
     public void paused(AbstractDebugSession debugSession) {
-      detachPainter(debugSession);
-      attachPainter(debugSession);
+      reAttachPainter(debugSession);
     }
 
     @Override

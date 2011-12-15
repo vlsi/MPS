@@ -14,6 +14,7 @@
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
+      <property name="loadModules" nameId="tp4k.8842945788826116904" value="true" />
     </node>
   </roots>
   <root id="6863272677075182370">

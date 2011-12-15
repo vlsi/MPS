@@ -252,13 +252,13 @@
     <nodeInfo nodeId="1240470842553499344" fileName="BaseFieldWithButtonComponent.java" startLine="54" startPosition="85" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/awt/event/ActionListener;)V" />
     <nodeInfo nodeId="1240470842553499440" fileName="BaseFieldWithButtonComponent.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTextField#()Ljavax/swing/JTextField;" />
     <nodeInfo nodeId="1240470842553499447" fileName="BaseFieldWithButtonComponent.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDisposableComponent#()Lcom/intellij/openapi/Disposable;" />
-    <nodeInfo nodeId="1240470842553499241" fileName="BaseFieldWithButtonComponent.java" startLine="91" startPosition="63" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499306" fileName="BaseFieldWithButtonComponent.java" startLine="91" startPosition="63" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240470842553499276" fileName="BaseFieldWithButtonComponent.java" startLine="31" startPosition="57" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyReleased#(Ljava/awt/event/KeyEvent;)V" />
     <nodeInfo nodeId="1240470842553499338" fileName="BaseFieldWithButtonComponent.java" startLine="53" startPosition="29" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240470842553499266" fileName="BaseFieldWithButtonComponent.java" startLine="30" startPosition="65" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240470842553499290" fileName="BaseFieldWithButtonComponent.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="1240470842553499313" fileName="BaseFieldWithButtonComponent.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1240470842553499241" fileName="BaseFieldWithButtonComponent.java" startLine="90" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_bit6ym_a0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1240470842553499306" fileName="BaseFieldWithButtonComponent.java" startLine="90" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_bit6ym_a0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="1240470842553499421" fileName="BaseFieldWithButtonComponent.java" startLine="74" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
     <nodeInfo nodeId="1240470842553499255" fileName="BaseFieldWithButtonComponent.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addActionListener#(Ljava/awt/event/ActionListener;)V" />
     <nodeInfo nodeId="1240470842553499334" fileName="BaseFieldWithButtonComponent.java" startLine="52" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onChange#()V" />
@@ -282,7 +282,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1240470842553499440" fileName="BaseFieldWithButtonComponent.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
     <scopeInfo nodeId="1240470842553499447" fileName="BaseFieldWithButtonComponent.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1240470842553499241" fileName="BaseFieldWithButtonComponent.java" startLine="91" startPosition="63" endLine="95" endPosition="7" />
+    <scopeInfo nodeId="1240470842553499306" fileName="BaseFieldWithButtonComponent.java" startLine="91" startPosition="63" endLine="95" endPosition="7" />
     <scopeInfo nodeId="1240470842553499276" fileName="BaseFieldWithButtonComponent.java" startLine="31" startPosition="57" endLine="36" endPosition="0">
       <varInfo nodeId="1240470842553499279" varName="p0" />
     </scopeInfo>
@@ -294,9 +294,9 @@
       <varInfo nodeId="1240470842553499311" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="1240470842553499313" fileName="BaseFieldWithButtonComponent.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1240470842553499241" fileName="BaseFieldWithButtonComponent.java" startLine="90" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="1240470842553499241" varName="a" />
-      <varInfo nodeId="1240470842553499241" varName="b" />
+    <scopeInfo nodeId="1240470842553499306" fileName="BaseFieldWithButtonComponent.java" startLine="90" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1240470842553499306" varName="a" />
+      <varInfo nodeId="1240470842553499306" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="1240470842553499421" fileName="BaseFieldWithButtonComponent.java" startLine="74" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="1240470842553499255" fileName="BaseFieldWithButtonComponent.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
@@ -873,9 +873,7 @@
     <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="24" startPosition="0" endLine="29" endPosition="3" />
     <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="48" startPosition="25" endLine="53" endPosition="5">
-      <varInfo nodeId="1240470842553500411" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="48" startPosition="25" endLine="53" endPosition="5" />
     <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1240470842553500411" varName="newValue" />
     </scopeInfo>

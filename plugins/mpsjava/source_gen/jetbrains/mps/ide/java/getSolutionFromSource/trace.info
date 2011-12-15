@@ -226,7 +226,9 @@
     </scopeInfo>
     <scopeInfo nodeId="6998207564469065968" fileName="GetSolutionContentsFromSourceDialog.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="6998207564469065968" fileName="GetSolutionContentsFromSourceDialog.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="6998207564469065968" fileName="GetSolutionContentsFromSourceDialogContentPane.java" startLine="90" startPosition="25" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="6998207564469065968" fileName="GetSolutionContentsFromSourceDialogContentPane.java" startLine="90" startPosition="25" endLine="95" endPosition="5">
+      <varInfo nodeId="6998207564469065968" varName="binding" />
+    </scopeInfo>
     <scopeInfo nodeId="6998207564469065968" fileName="GetSolutionContentsFromSourceDialogContentPane.java" startLine="104" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="6998207564469065968" fileName="GetSolutionContentsFromSourceDialogContentPane.java" startLine="117" startPosition="0" endLine="123" endPosition="0" />
     <scopeInfo nodeId="6998207564469065968" fileName="GetSolutionContentsFromSourceDialogContentPane.java" startLine="143" startPosition="0" endLine="149" endPosition="0">

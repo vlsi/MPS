@@ -114,7 +114,7 @@ public enum TestNodeWrapperFactory {
 
     public boolean canWrap(@NotNull SNode node) {
       if (eq_kl7j79_a0a0b4(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-        return JUnit4TestWrapper.isJUnit4TestCase(node);
+        return JUnit4TestWrapper.isJUnit4TestCase(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       }
       return false;
     }

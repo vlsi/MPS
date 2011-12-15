@@ -49,6 +49,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new PersistentConfigurationIsObject_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new PersistentConfigurationIsPersistentConfiguration_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }

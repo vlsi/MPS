@@ -927,8 +927,8 @@
                           <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="8474643070100053896">
                             <link role="variable" roleId="tp2q.1153944258490" targetNodeId="8729722338759341978" resolveInfo="unit" />
                           </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8474643070100053897">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3263637656469698018" resolveInfo="getPattern" />
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="1447276147532809531">
+                            <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="u9e0.3147078024759753553" resolveInfo="pattern" />
                           </node>
                         </node>
                       </node>
@@ -963,12 +963,17 @@
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8474643070100053911">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dsubstring(int)%cjava%dlang%dString" resolveInfo="substring" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8474643070100053912">
-                              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8474643070100053913">
-                                <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="8474643070100053914">
-                                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="8729722338759341978" resolveInfo="unit" />
+                              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1447276147532809535">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8474643070100053913">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1447276147532809506">
+                                    <link role="variable" roleId="tp2q.1153944258490" targetNodeId="8729722338759341978" resolveInfo="unit" />
+                                  </node>
+                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="1447276147532809533">
+                                    <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="u9e0.3147078024759753553" resolveInfo="pattern" />
+                                  </node>
                                 </node>
-                                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8474643070100053915">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3147078024759753579" resolveInfo="patternLength" />
+                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1447276147532810221">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dlength()%cint" resolveInfo="length" />
                                 </node>
                               </node>
                               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8474643070100053916">

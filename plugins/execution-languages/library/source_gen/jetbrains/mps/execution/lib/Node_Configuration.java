@@ -4,7 +4,8 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import jetbrains.mps.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -20,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class Node_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  private static final Logger LOG = Logger.getLogger(Node_Configuration.class);
+  protected static Log log = LogFactory.getLog(Node_Configuration.class);
 
   @NotNull
   private Node_Configuration.MyState myState = new Node_Configuration.MyState();
@@ -120,7 +121,9 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
       clone.myState = (Node_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      Node_Configuration.LOG.error(ex);
+      if (log.isErrorEnabled()) {
+        log.error("", ex);
+      }
     }
     return clone;
   }
