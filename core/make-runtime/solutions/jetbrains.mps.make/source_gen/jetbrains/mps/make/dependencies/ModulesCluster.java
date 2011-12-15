@@ -196,7 +196,7 @@ __switch__:
     ModuleReference mr = mod.getModuleReference();
     ModulesCluster.ModuleDeps deps = MapSequence.fromMap(allDeps).get(mr);
     if (deps == null) {
-      deps = new ModulesCluster.ModuleDeps();
+      deps = new ModulesCluster.ModuleDeps(mr);
       MapSequence.fromMap(allDeps).put(mr, deps);
     }
     ListSequence.fromList(deps.required).addSequence(Sequence.fromIterable(required(mod)));
@@ -240,7 +240,9 @@ __switch__:
     private List<ModuleReference> dependent = ListSequence.fromList(new LinkedList<ModuleReference>());
     private List<ModuleReference> required = ListSequence.fromList(new LinkedList<ModuleReference>());
 
-    public ModuleDeps() {
+    public ModuleDeps(ModuleReference mr) {
+      ListSequence.fromList(dependent).addElement(mr);
+      ListSequence.fromList(required).addElement(mr);
     }
   }
 
