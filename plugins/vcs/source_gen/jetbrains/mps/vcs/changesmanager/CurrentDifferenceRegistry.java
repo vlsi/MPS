@@ -4,7 +4,6 @@ package jetbrains.mps.vcs.changesmanager;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import jetbrains.mps.smodel.event.SModelListener;
-import com.intellij.openapi.vcs.changes.ChangeListListener;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -15,7 +14,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
-import com.intellij.openapi.vcs.changes.ChangeListManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.SModelRepository;
@@ -28,32 +26,28 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.vcs.changes.ChangeListAdapter;
-import java.util.Collection;
-import com.intellij.openapi.vcs.changes.Change;
-import com.intellij.openapi.vcs.changes.ChangeList;
-import jetbrains.mps.vcs.MPSVcsManager;
+import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 
 public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final SModelListener myGlobalModelListener = new CurrentDifferenceRegistry.MyGlobalSModelListener();
-  private final ChangeListListener myChangeListListener = new CurrentDifferenceRegistry.MyChangeListListener();
   private final Map<SModelReference, CurrentDifference> myCurrentDifferences = MapSequence.fromMap(new HashMap<SModelReference, CurrentDifference>());
   private final ReloadListener myReloadListener = new CurrentDifferenceRegistry.MyReloadListener();
   private final SModelRepositoryListener myModelRepositoryListener = new CurrentDifferenceRegistry.MySModelRepositoryListener();
   private final SimpleCommandQueue myCommandQueue = new SimpleCommandQueue("ChangesManager command queue");
   private CurrentDifferenceBroadcaster myGlobalBroadcaster = new CurrentDifferenceBroadcaster(myCommandQueue);
+  private CurrentDifferenceRegistry.MyFileStatusListener myFileStatusListener = new CurrentDifferenceRegistry.MyFileStatusListener();
 
-  public CurrentDifferenceRegistry(@NotNull Project project, ProjectLevelVcsManager vcsManager, FileStatusManager fileStatusManager, ChangeListManager changeListManager) {
+  public CurrentDifferenceRegistry(@NotNull Project project, ProjectLevelVcsManager vcsManager, FileStatusManager fileStatusManager) {
     super(project);
   }
 
   public void projectOpened() {
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelListener);
-    ChangeListManager.getInstance(myProject).addChangeListListener(myChangeListListener);
+    FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
 
     updateLoadedModels();
@@ -62,7 +56,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   public void projectClosed() {
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
     GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalModelListener);
-    ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
+    FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
 
     synchronized (myCurrentDifferences) {
@@ -154,36 +148,16 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     return project.getComponent(CurrentDifferenceRegistry.class);
   }
 
-  private class MyChangeListListener extends ChangeListAdapter {
-    public MyChangeListListener() {
+  private class MyFileStatusListener implements FileStatusListener {
+    public MyFileStatusListener() {
     }
 
-    private void processChanges(Collection<Change> changes) {
-      for (Change change : Sequence.fromIterable(changes)) {
-        updateModel(change.getVirtualFile());
-      }
+    public void fileStatusesChanged() {
+      updateLoadedModels();
     }
 
-    @Override
-    public void changesAdded(Collection<Change> changes, ChangeList toList) {
-      processChanges(changes);
-    }
-
-    @Override
-    public void changesRemoved(Collection<Change> changes, ChangeList fromList) {
-      processChanges(changes);
-    }
-
-    @Override
-    public void changesMoved(Collection<Change> changes, ChangeList fromList, ChangeList toList) {
-      processChanges(changes);
-    }
-
-    @Override
-    public void unchangedFileStatusChanged() {
-      for (VirtualFile virtualFile : ListSequence.fromList(MPSVcsManager.getInstance(myProject).getUnversionedFilesFromChangeListManager())) {
-        updateModel(virtualFile);
-      }
+    public void fileStatusChanged(@NotNull VirtualFile vf) {
+      updateModel(vf);
     }
   }
 

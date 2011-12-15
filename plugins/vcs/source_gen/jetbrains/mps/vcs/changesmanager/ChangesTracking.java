@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import com.intellij.util.containers.BidirectionalMap;
 import java.util.List;
+import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -21,10 +22,9 @@ import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModel;
-import com.intellij.openapi.vcs.FileStatus;
-import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.ModelAccess;
@@ -63,6 +63,7 @@ public class ChangesTracking {
   private BidirectionalMultiMap<SNodeId, ModelChange> myNodesToChanges = new BidirectionalMultiMap<SNodeId, ModelChange>();
   private BidirectionalMap<SNodeId, ModelChange> myAddedNodesToChanges = new BidirectionalMap<SNodeId, ModelChange>();
   private List<SNodeId> myLastNewChildrenIds;
+  private FileStatus myStatusOnLastUpdate;
 
   public ChangesTracking(@NotNull Project project, @NotNull CurrentDifference difference) {
     myDifference = difference;
@@ -119,23 +120,26 @@ public class ChangesTracking {
     if (!(myDifference.isEnabled())) {
       return;
     }
-    myDifference.removeChangeSet();
 
     IFile modelFile = myModelDescriptor.getModelFile();
     if (modelFile == null || !(modelFile.exists())) {
       return;
     }
     VirtualFile modelVFile = VirtualFileUtils.getVirtualFile(modelFile);
-
     if (modelVFile == null || ProjectLevelVcsManager.getInstance(myProject).getVcsFor(modelVFile) == null) {
       return;
     }
-
-    final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
     FileStatus status = FileStatusManager.getInstance(myProject).getStatus(modelVFile);
+
+    if (myStatusOnLastUpdate == status && !(force)) {
+      return;
+    }
+    myDifference.removeChangeSet();
     if (FileStatus.NOT_CHANGED == status && !(force)) {
       return;
     }
+    myStatusOnLastUpdate = status;
+    final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
     if (BaseVersionUtil.isAddedFileStatus(status)) {
       baseVersionModel.value = new SModel(myModelDescriptor.getSModelReference());
     } else {

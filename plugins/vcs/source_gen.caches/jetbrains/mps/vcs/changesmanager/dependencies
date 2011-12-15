@@ -122,13 +122,8 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
-    <classNode dependClassName="com.intellij.openapi.vcs.changes.Change" />
-    <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeList" />
-    <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListListener" />
-    <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
@@ -145,7 +140,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepositoryListener" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelListener" />
-    <classNode dependClassName="jetbrains.mps.vcs.MPSVcsManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceBroadcaster" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener" />
@@ -154,7 +148,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
-    <classNode extendsClassName="com.intellij.openapi.vcs.changes.ChangeListAdapter" />
+    <classNode extendsClassName="com.intellij.openapi.vcs.FileStatusListener" />
     <classNode extendsClassName="jetbrains.mps.reloading.ReloadAdapter" />
     <classNode extendsClassName="jetbrains.mps.smodel.SModelAdapter" />
     <classNode extendsClassName="jetbrains.mps.smodel.SModelRepositoryAdapter" />
