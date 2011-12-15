@@ -15,6 +15,7 @@
     <orderEntry type="module" module-name="runConfigurations" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="library" name="Commons-lang" level="project" />
   </component>
 </module>
 
