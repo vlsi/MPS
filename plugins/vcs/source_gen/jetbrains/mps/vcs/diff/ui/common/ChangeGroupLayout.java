@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public abstract class ChangeGroupLayout {
   private ChangeEditorMessage.ConflictChecker myConflictChecker;
@@ -162,7 +163,7 @@ public abstract class ChangeGroupLayout {
       });
     }
     if (bounds == null || bounds.length() <= 0) {
-      int y = editorComponent.getRootCell().getY();
+      int y = check_cuq72k_a0a0c0a(check_cuq72k_a0a0a2a0(editorComponent));
       return new Bounds(y, y);
     } else {
       return bounds;
@@ -175,6 +176,20 @@ public abstract class ChangeGroupLayout {
       1
     );
     return (int) a.end() - tolerance < (int) b.start() || (int) b.end() - tolerance < (int) a.start();
+  }
+
+  private static int check_cuq72k_a0a0c0a(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getY();
+    }
+    return 0;
+  }
+
+  private static EditorCell check_cuq72k_a0a0a2a0(EditorComponent checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getRootCell();
+    }
+    return null;
   }
 
   private static List<ModelChange> check_cuq72k_a2a5(ChangeSet checkedDotOperand, ChangeGroupLayout checkedDotThisExpression) {
