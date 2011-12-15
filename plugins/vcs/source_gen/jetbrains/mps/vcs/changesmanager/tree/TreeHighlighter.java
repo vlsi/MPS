@@ -295,13 +295,17 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
 
     public void fileStatusesChanged() {
-      synchronized (myFeatureToNodes) {
-        for (Feature f : SetSequence.fromSet(myFeatureToNodes.keySet())) {
-          if (f instanceof ModelFeature) {
-            rehighlightFeatureAndDescendants(f);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          synchronized (myFeatureToNodes) {
+            for (Feature f : SetSequence.fromSet(myFeatureToNodes.keySet())) {
+              if (f instanceof ModelFeature) {
+                rehighlightFeatureAndDescendants(f);
+              }
+            }
           }
         }
-      }
+      });
     }
   }
 
