@@ -53,181 +53,182 @@
     <nodeInfo nodeId="1976796331003069931" fileName="ChangeSetBuilder.java" startLine="124" startPosition="43" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1976796331003069949" fileName="ChangeSetBuilder.java" startLine="127" startPosition="40" endLine="128" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1976796331003069956" fileName="ChangeSetBuilder.java" startLine="130" startPosition="12" endLine="131" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3557624462335404100" fileName="ChangeSetBuilder.java" startLine="136" startPosition="75" endLine="137" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3557624462335404109" fileName="ChangeSetBuilder.java" startLine="137" startPosition="62" endLine="138" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3557624462335404128" fileName="ChangeSetBuilder.java" startLine="140" startPosition="38" endLine="141" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3557624462335404146" fileName="ChangeSetBuilder.java" startLine="145" startPosition="38" endLine="146" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3557624462335404154" fileName="ChangeSetBuilder.java" startLine="148" startPosition="24" endLine="149" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3557624462335404163" fileName="ChangeSetBuilder.java" startLine="149" startPosition="113" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3557624462335404164" fileName="ChangeSetBuilder.java" startLine="150" startPosition="0" endLine="151" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3557624462335404166" fileName="ChangeSetBuilder.java" startLine="151" startPosition="52" endLine="152" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3557624462335404182" fileName="ChangeSetBuilder.java" startLine="153" startPosition="129" endLine="154" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3557624462335404190" fileName="ChangeSetBuilder.java" startLine="154" startPosition="60" endLine="155" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3557624462335404198" fileName="ChangeSetBuilder.java" startLine="155" startPosition="60" endLine="156" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3557624462335404220" fileName="ChangeSetBuilder.java" startLine="157" startPosition="5" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3557624462335404221" fileName="ChangeSetBuilder.java" startLine="158" startPosition="0" endLine="159" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3557624462335404223" fileName="ChangeSetBuilder.java" startLine="159" startPosition="36" endLine="160" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3557624462335404239" fileName="ChangeSetBuilder.java" startLine="162" startPosition="59" endLine="163" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1976796331003085452" fileName="ChangeSetBuilder.java" startLine="166" startPosition="38" endLine="167" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341758" fileName="ChangeSetBuilder.java" startLine="172" startPosition="248" endLine="173" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748341762" fileName="ChangeSetBuilder.java" startLine="173" startPosition="22" endLine="174" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748341766" fileName="ChangeSetBuilder.java" startLine="175" startPosition="5" endLine="176" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748341766" fileName="ChangeSetBuilder.java" startLine="176" startPosition="100" endLine="177" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341766" fileName="ChangeSetBuilder.java" startLine="177" startPosition="35" endLine="178" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341782" fileName="ChangeSetBuilder.java" startLine="181" startPosition="43" endLine="182" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341798" fileName="ChangeSetBuilder.java" startLine="186" startPosition="43" endLine="187" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341833" fileName="ChangeSetBuilder.java" startLine="196" startPosition="66" endLine="197" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341851" fileName="ChangeSetBuilder.java" startLine="203" startPosition="78" endLine="204" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341857" fileName="ChangeSetBuilder.java" startLine="206" startPosition="6" endLine="207" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341884" fileName="ChangeSetBuilder.java" startLine="212" startPosition="81" endLine="213" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341891" fileName="ChangeSetBuilder.java" startLine="215" startPosition="6" endLine="216" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341899" fileName="ChangeSetBuilder.java" startLine="219" startPosition="35" endLine="220" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341901" fileName="ChangeSetBuilder.java" startLine="220" startPosition="22" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4652592318748341907" fileName="ChangeSetBuilder.java" startLine="223" startPosition="57" endLine="224" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341919" fileName="ChangeSetBuilder.java" startLine="228" startPosition="57" endLine="229" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341931" fileName="ChangeSetBuilder.java" startLine="233" startPosition="57" endLine="234" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341938" fileName="ChangeSetBuilder.java" startLine="236" startPosition="7" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4652592318748341941" fileName="ChangeSetBuilder.java" startLine="238" startPosition="107" endLine="239" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341963" fileName="ChangeSetBuilder.java" startLine="241" startPosition="97" endLine="242" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1976796331003085429" fileName="ChangeSetBuilder.java" startLine="248" startPosition="38" endLine="249" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748342091" fileName="ChangeSetBuilder.java" startLine="252" startPosition="94" endLine="253" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748342098" fileName="ChangeSetBuilder.java" startLine="254" startPosition="5" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4652592318748342099" fileName="ChangeSetBuilder.java" startLine="255" startPosition="0" endLine="256" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748342101" fileName="ChangeSetBuilder.java" startLine="256" startPosition="23" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4652592318748342104" fileName="ChangeSetBuilder.java" startLine="258" startPosition="23" endLine="259" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2260496836771383766" fileName="ChangeSetBuilder.java" startLine="265" startPosition="41" endLine="266" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2260496836771412064" fileName="ChangeSetBuilder.java" startLine="268" startPosition="7" endLine="269" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2260496836771412078" fileName="ChangeSetBuilder.java" startLine="272" startPosition="44" endLine="273" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748342125" fileName="ChangeSetBuilder.java" startLine="276" startPosition="114" endLine="277" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748342133" fileName="ChangeSetBuilder.java" startLine="277" startPosition="78" endLine="278" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748342141" fileName="ChangeSetBuilder.java" startLine="278" startPosition="78" endLine="279" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748342165" fileName="ChangeSetBuilder.java" startLine="282" startPosition="154" endLine="283" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748342187" fileName="ChangeSetBuilder.java" startLine="286" startPosition="76" endLine="287" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748342200" fileName="ChangeSetBuilder.java" startLine="290" startPosition="98" endLine="291" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748342207" fileName="ChangeSetBuilder.java" startLine="291" startPosition="72" endLine="292" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2260496836771383781" fileName="ChangeSetBuilder.java" startLine="292" startPosition="32" endLine="293" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748342212" fileName="ChangeSetBuilder.java" startLine="293" startPosition="21" endLine="294" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3834754559947642561" fileName="ChangeSetBuilder.java" startLine="297" startPosition="60" endLine="298" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748342226" fileName="ChangeSetBuilder.java" startLine="298" startPosition="51" endLine="299" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748342232" fileName="ChangeSetBuilder.java" startLine="299" startPosition="17" endLine="300" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2260496836771383788" fileName="ChangeSetBuilder.java" startLine="300" startPosition="34" endLine="301" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748342236" fileName="ChangeSetBuilder.java" startLine="301" startPosition="58" endLine="302" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2260496836771383796" fileName="ChangeSetBuilder.java" startLine="302" startPosition="24" endLine="303" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2260496836771391011" fileName="ChangeSetBuilder.java" startLine="306" startPosition="69" endLine="307" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="311" startPosition="36" endLine="312" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="313" startPosition="5" endLine="314" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="318" startPosition="36" endLine="319" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="320" startPosition="5" endLine="321" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="325" startPosition="36" endLine="326" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="327" startPosition="5" endLine="328" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="332" startPosition="36" endLine="333" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="334" startPosition="5" endLine="335" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="339" startPosition="36" endLine="340" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="341" startPosition="5" endLine="342" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="346" startPosition="36" endLine="347" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="348" startPosition="5" endLine="349" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="353" startPosition="36" endLine="354" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="355" startPosition="5" endLine="356" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="360" startPosition="36" endLine="361" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="362" startPosition="5" endLine="363" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341243" fileName="ChangeSetBuilder.java" startLine="398" startPosition="50" endLine="399" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341232" fileName="ChangeSetBuilder.java" startLine="394" startPosition="71" endLine="396" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultPropertySupport#()V" />
+    <nodeInfo nodeId="2884874321705464554" fileName="ChangeSetBuilder.java" startLine="136" startPosition="76" endLine="137" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2884874321705447600" fileName="ChangeSetBuilder.java" startLine="142" startPosition="38" endLine="143" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2884874321705447618" fileName="ChangeSetBuilder.java" startLine="147" startPosition="38" endLine="148" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2884874321705464529" fileName="ChangeSetBuilder.java" startLine="150" startPosition="24" endLine="151" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2884874321705447626" fileName="ChangeSetBuilder.java" startLine="151" startPosition="107" endLine="152" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2884874321705447635" fileName="ChangeSetBuilder.java" startLine="152" startPosition="113" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2884874321705447636" fileName="ChangeSetBuilder.java" startLine="153" startPosition="0" endLine="154" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2884874321705447638" fileName="ChangeSetBuilder.java" startLine="154" startPosition="52" endLine="155" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2884874321705447654" fileName="ChangeSetBuilder.java" startLine="156" startPosition="129" endLine="157" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2884874321705447662" fileName="ChangeSetBuilder.java" startLine="157" startPosition="60" endLine="158" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2884874321705447670" fileName="ChangeSetBuilder.java" startLine="158" startPosition="60" endLine="159" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2884874321705447695" fileName="ChangeSetBuilder.java" startLine="160" startPosition="5" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2884874321705447696" fileName="ChangeSetBuilder.java" startLine="161" startPosition="0" endLine="162" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2884874321705447698" fileName="ChangeSetBuilder.java" startLine="162" startPosition="36" endLine="163" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2884874321705447714" fileName="ChangeSetBuilder.java" startLine="165" startPosition="59" endLine="166" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2884874321705447725" fileName="ChangeSetBuilder.java" startLine="169" startPosition="38" endLine="170" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341758" fileName="ChangeSetBuilder.java" startLine="175" startPosition="248" endLine="176" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748341762" fileName="ChangeSetBuilder.java" startLine="176" startPosition="22" endLine="177" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748341766" fileName="ChangeSetBuilder.java" startLine="178" startPosition="5" endLine="179" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748341766" fileName="ChangeSetBuilder.java" startLine="179" startPosition="100" endLine="180" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341766" fileName="ChangeSetBuilder.java" startLine="180" startPosition="35" endLine="181" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341782" fileName="ChangeSetBuilder.java" startLine="184" startPosition="43" endLine="185" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341798" fileName="ChangeSetBuilder.java" startLine="189" startPosition="43" endLine="190" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341833" fileName="ChangeSetBuilder.java" startLine="199" startPosition="66" endLine="200" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341851" fileName="ChangeSetBuilder.java" startLine="206" startPosition="78" endLine="207" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341857" fileName="ChangeSetBuilder.java" startLine="209" startPosition="6" endLine="210" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341884" fileName="ChangeSetBuilder.java" startLine="215" startPosition="81" endLine="216" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341891" fileName="ChangeSetBuilder.java" startLine="218" startPosition="6" endLine="219" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341899" fileName="ChangeSetBuilder.java" startLine="222" startPosition="35" endLine="223" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341901" fileName="ChangeSetBuilder.java" startLine="223" startPosition="22" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4652592318748341907" fileName="ChangeSetBuilder.java" startLine="226" startPosition="57" endLine="227" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341919" fileName="ChangeSetBuilder.java" startLine="231" startPosition="57" endLine="232" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341931" fileName="ChangeSetBuilder.java" startLine="236" startPosition="57" endLine="237" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341938" fileName="ChangeSetBuilder.java" startLine="239" startPosition="7" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4652592318748341941" fileName="ChangeSetBuilder.java" startLine="241" startPosition="107" endLine="242" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341963" fileName="ChangeSetBuilder.java" startLine="244" startPosition="97" endLine="245" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1976796331003085429" fileName="ChangeSetBuilder.java" startLine="251" startPosition="38" endLine="252" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748342091" fileName="ChangeSetBuilder.java" startLine="255" startPosition="94" endLine="256" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748342098" fileName="ChangeSetBuilder.java" startLine="257" startPosition="5" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4652592318748342099" fileName="ChangeSetBuilder.java" startLine="258" startPosition="0" endLine="259" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748342101" fileName="ChangeSetBuilder.java" startLine="259" startPosition="23" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4652592318748342104" fileName="ChangeSetBuilder.java" startLine="261" startPosition="23" endLine="262" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2260496836771383766" fileName="ChangeSetBuilder.java" startLine="268" startPosition="41" endLine="269" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2260496836771412064" fileName="ChangeSetBuilder.java" startLine="271" startPosition="7" endLine="272" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2260496836771412078" fileName="ChangeSetBuilder.java" startLine="275" startPosition="44" endLine="276" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748342125" fileName="ChangeSetBuilder.java" startLine="279" startPosition="114" endLine="280" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748342133" fileName="ChangeSetBuilder.java" startLine="280" startPosition="78" endLine="281" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748342141" fileName="ChangeSetBuilder.java" startLine="281" startPosition="78" endLine="282" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748342165" fileName="ChangeSetBuilder.java" startLine="285" startPosition="154" endLine="286" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748342187" fileName="ChangeSetBuilder.java" startLine="289" startPosition="76" endLine="290" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748342200" fileName="ChangeSetBuilder.java" startLine="293" startPosition="98" endLine="294" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748342207" fileName="ChangeSetBuilder.java" startLine="294" startPosition="72" endLine="295" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2260496836771383781" fileName="ChangeSetBuilder.java" startLine="295" startPosition="32" endLine="296" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748342212" fileName="ChangeSetBuilder.java" startLine="296" startPosition="21" endLine="297" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3834754559947642561" fileName="ChangeSetBuilder.java" startLine="300" startPosition="60" endLine="301" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748342226" fileName="ChangeSetBuilder.java" startLine="301" startPosition="51" endLine="302" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748342232" fileName="ChangeSetBuilder.java" startLine="302" startPosition="17" endLine="303" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2260496836771383788" fileName="ChangeSetBuilder.java" startLine="303" startPosition="34" endLine="304" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748342236" fileName="ChangeSetBuilder.java" startLine="304" startPosition="58" endLine="305" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2260496836771383796" fileName="ChangeSetBuilder.java" startLine="305" startPosition="24" endLine="306" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2260496836771391011" fileName="ChangeSetBuilder.java" startLine="309" startPosition="69" endLine="310" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="314" startPosition="36" endLine="315" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="316" startPosition="5" endLine="317" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="321" startPosition="36" endLine="322" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="323" startPosition="5" endLine="324" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="328" startPosition="36" endLine="329" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="330" startPosition="5" endLine="331" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="335" startPosition="36" endLine="336" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="337" startPosition="5" endLine="338" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="342" startPosition="36" endLine="343" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="344" startPosition="5" endLine="345" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="349" startPosition="36" endLine="350" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="351" startPosition="5" endLine="352" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="356" startPosition="36" endLine="357" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="358" startPosition="5" endLine="359" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="363" startPosition="36" endLine="364" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="365" startPosition="5" endLine="366" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341243" fileName="ChangeSetBuilder.java" startLine="401" startPosition="50" endLine="402" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341232" fileName="ChangeSetBuilder.java" startLine="397" startPosition="71" endLine="399" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultPropertySupport#()V" />
     <nodeInfo nodeId="4652592318748342246" fileName="ChangeSetBuilder.java" startLine="49" startPosition="0" endLine="52" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeSetBuilder#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;)V" />
     <nodeInfo nodeId="4652592318748341275" fileName="ChangeSetBuilder.java" startLine="62" startPosition="73" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2260496836771383859" fileName="ChangeSetBuilder.java" startLine="71" startPosition="71" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2260496836771383891" fileName="ChangeSetBuilder.java" startLine="78" startPosition="94" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4652592318748341416" fileName="ChangeSetBuilder.java" startLine="86" startPosition="74" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4652592318748341939" fileName="ChangeSetBuilder.java" startLine="237" startPosition="0" endLine="240" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341961" fileName="ChangeSetBuilder.java" startLine="240" startPosition="5" endLine="243" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748342087" fileName="ChangeSetBuilder.java" startLine="251" startPosition="7" endLine="254" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4652592318748342102" fileName="ChangeSetBuilder.java" startLine="257" startPosition="0" endLine="260" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="310" startPosition="76" endLine="313" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="317" startPosition="76" endLine="320" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="324" startPosition="85" endLine="327" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="331" startPosition="87" endLine="334" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="338" startPosition="75" endLine="341" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="345" startPosition="77" endLine="348" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="352" startPosition="86" endLine="355" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="359" startPosition="80" endLine="362" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341939" fileName="ChangeSetBuilder.java" startLine="240" startPosition="0" endLine="243" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341961" fileName="ChangeSetBuilder.java" startLine="243" startPosition="5" endLine="246" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748342087" fileName="ChangeSetBuilder.java" startLine="254" startPosition="7" endLine="257" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4652592318748342102" fileName="ChangeSetBuilder.java" startLine="260" startPosition="0" endLine="263" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="313" startPosition="76" endLine="316" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="320" startPosition="76" endLine="323" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="327" startPosition="85" endLine="330" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="334" startPosition="87" endLine="337" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="341" startPosition="75" endLine="344" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="348" startPosition="77" endLine="351" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="355" startPosition="86" endLine="358" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="362" startPosition="80" endLine="365" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2260496836771390794" fileName="ChangeSetBuilder.java" startLine="94" startPosition="57" endLine="98" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2260496836771390805" fileName="ChangeSetBuilder.java" startLine="98" startPosition="6" endLine="102" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2260496836771390847" fileName="ChangeSetBuilder.java" startLine="106" startPosition="72" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1976796331003069947" fileName="ChangeSetBuilder.java" startLine="126" startPosition="245" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3557624462335404126" fileName="ChangeSetBuilder.java" startLine="139" startPosition="102" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="3557624462335404144" fileName="ChangeSetBuilder.java" startLine="144" startPosition="102" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="3557624462335404237" fileName="ChangeSetBuilder.java" startLine="161" startPosition="101" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3557624462335404248" fileName="ChangeSetBuilder.java" startLine="165" startPosition="39" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4652592318748341780" fileName="ChangeSetBuilder.java" startLine="180" startPosition="126" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(null)Ljetbrains/mps/vcs/diff/changes/DependencyChange;" />
-    <nodeInfo nodeId="4652592318748341796" fileName="ChangeSetBuilder.java" startLine="185" startPosition="128" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(null)Ljetbrains/mps/vcs/diff/changes/DependencyChange;" />
-    <nodeInfo nodeId="4652592318748341831" fileName="ChangeSetBuilder.java" startLine="195" startPosition="155" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SModel/ImportElement;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="4652592318748341845" fileName="ChangeSetBuilder.java" startLine="202" startPosition="205" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SModelReference;Ljava/lang/Boolean;)Ljetbrains/mps/vcs/diff/changes/ImportedModelChange;" />
-    <nodeInfo nodeId="4652592318748341878" fileName="ChangeSetBuilder.java" startLine="211" startPosition="211" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/project/structure/modules/ModuleReference;Ljava/lang/Boolean;)Ljetbrains/mps/vcs/diff/changes/ModuleDependencyChange;" />
-    <nodeInfo nodeId="4652592318748341905" fileName="ChangeSetBuilder.java" startLine="222" startPosition="141" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="4652592318748341917" fileName="ChangeSetBuilder.java" startLine="227" startPosition="143" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="4652592318748341929" fileName="ChangeSetBuilder.java" startLine="232" startPosition="158" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="1976796331003085427" fileName="ChangeSetBuilder.java" startLine="247" startPosition="217" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="2260496836771383762" fileName="ChangeSetBuilder.java" startLine="264" startPosition="78" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
-    <nodeInfo nodeId="2260496836771412071" fileName="ChangeSetBuilder.java" startLine="271" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNewChanges#()Ljava/util/List;" />
-    <nodeInfo nodeId="4652592318748342152" fileName="ChangeSetBuilder.java" startLine="281" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddedAndDeleted#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
-    <nodeInfo nodeId="4652592318748342183" fileName="ChangeSetBuilder.java" startLine="285" startPosition="0" endLine="289" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="buildChangeSet#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/vcs/diff/ChangeSet;" />
-    <nodeInfo nodeId="2260496836771390996" fileName="ChangeSetBuilder.java" startLine="305" startPosition="0" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createBuilder#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljetbrains/mps/vcs/diff/ChangeSetBuilder;" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="366" startPosition="64" endLine="370" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="373" startPosition="66" endLine="377" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="380" startPosition="63" endLine="384" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="387" startPosition="65" endLine="391" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341237" fileName="ChangeSetBuilder.java" startLine="397" startPosition="0" endLine="401" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3557624462335402883" fileName="ChangeSetBuilder.java" startLine="135" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForNodeRole#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2884874321705447598" fileName="ChangeSetBuilder.java" startLine="141" startPosition="102" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="2884874321705447616" fileName="ChangeSetBuilder.java" startLine="146" startPosition="102" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="2884874321705447712" fileName="ChangeSetBuilder.java" startLine="164" startPosition="101" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2884874321705447723" fileName="ChangeSetBuilder.java" startLine="168" startPosition="39" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4652592318748341780" fileName="ChangeSetBuilder.java" startLine="183" startPosition="126" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(null)Ljetbrains/mps/vcs/diff/changes/DependencyChange;" />
+    <nodeInfo nodeId="4652592318748341796" fileName="ChangeSetBuilder.java" startLine="188" startPosition="128" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(null)Ljetbrains/mps/vcs/diff/changes/DependencyChange;" />
+    <nodeInfo nodeId="4652592318748341831" fileName="ChangeSetBuilder.java" startLine="198" startPosition="155" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SModel/ImportElement;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="4652592318748341845" fileName="ChangeSetBuilder.java" startLine="205" startPosition="205" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SModelReference;Ljava/lang/Boolean;)Ljetbrains/mps/vcs/diff/changes/ImportedModelChange;" />
+    <nodeInfo nodeId="4652592318748341878" fileName="ChangeSetBuilder.java" startLine="214" startPosition="211" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/project/structure/modules/ModuleReference;Ljava/lang/Boolean;)Ljetbrains/mps/vcs/diff/changes/ModuleDependencyChange;" />
+    <nodeInfo nodeId="4652592318748341905" fileName="ChangeSetBuilder.java" startLine="225" startPosition="141" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SModel;)Ljava/util/List;" />
+    <nodeInfo nodeId="4652592318748341917" fileName="ChangeSetBuilder.java" startLine="230" startPosition="143" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SModel;)Ljava/util/List;" />
+    <nodeInfo nodeId="4652592318748341929" fileName="ChangeSetBuilder.java" startLine="235" startPosition="158" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SModel;)Ljava/util/List;" />
+    <nodeInfo nodeId="1976796331003085427" fileName="ChangeSetBuilder.java" startLine="250" startPosition="217" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="2260496836771383762" fileName="ChangeSetBuilder.java" startLine="267" startPosition="78" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="2260496836771412071" fileName="ChangeSetBuilder.java" startLine="274" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNewChanges#()Ljava/util/List;" />
+    <nodeInfo nodeId="4652592318748342152" fileName="ChangeSetBuilder.java" startLine="284" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddedAndDeleted#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="4652592318748342183" fileName="ChangeSetBuilder.java" startLine="288" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="buildChangeSet#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/vcs/diff/ChangeSet;" />
+    <nodeInfo nodeId="2260496836771390996" fileName="ChangeSetBuilder.java" startLine="308" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createBuilder#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljetbrains/mps/vcs/diff/ChangeSetBuilder;" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="369" startPosition="64" endLine="373" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="376" startPosition="66" endLine="380" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="383" startPosition="63" endLine="387" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="390" startPosition="65" endLine="394" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341237" fileName="ChangeSetBuilder.java" startLine="400" startPosition="0" endLine="404" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="4652592318748342259" fileName="ChangeSetBuilder.java" startLine="53" startPosition="0" endLine="58" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeSetBuilder#(Ljetbrains/mps/vcs/diff/ChangeSetImpl;)V" />
-    <nodeInfo nodeId="3557624462335404118" fileName="ChangeSetBuilder.java" startLine="138" startPosition="56" endLine="143" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3557624462335404136" fileName="ChangeSetBuilder.java" startLine="143" startPosition="24" endLine="148" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3557624462335404179" fileName="ChangeSetBuilder.java" startLine="152" startPosition="126" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4652592318748341766" fileName="ChangeSetBuilder.java" startLine="174" startPosition="24" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4652592318748341773" fileName="ChangeSetBuilder.java" startLine="179" startPosition="5" endLine="184" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341789" fileName="ChangeSetBuilder.java" startLine="184" startPosition="8" endLine="189" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341820" fileName="ChangeSetBuilder.java" startLine="194" startPosition="62" endLine="199" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341839" fileName="ChangeSetBuilder.java" startLine="201" startPosition="6" endLine="206" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748341872" fileName="ChangeSetBuilder.java" startLine="210" startPosition="200" endLine="215" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748341902" fileName="ChangeSetBuilder.java" startLine="221" startPosition="0" endLine="226" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341914" fileName="ChangeSetBuilder.java" startLine="226" startPosition="7" endLine="231" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341926" fileName="ChangeSetBuilder.java" startLine="231" startPosition="7" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1976796331003085413" fileName="ChangeSetBuilder.java" startLine="246" startPosition="44" endLine="251" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2260496836771383755" fileName="ChangeSetBuilder.java" startLine="263" startPosition="24" endLine="268" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2884874321705447590" fileName="ChangeSetBuilder.java" startLine="140" startPosition="88" endLine="145" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2884874321705447608" fileName="ChangeSetBuilder.java" startLine="145" startPosition="24" endLine="150" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2884874321705447651" fileName="ChangeSetBuilder.java" startLine="155" startPosition="126" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4652592318748341766" fileName="ChangeSetBuilder.java" startLine="177" startPosition="24" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4652592318748341773" fileName="ChangeSetBuilder.java" startLine="182" startPosition="5" endLine="187" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341789" fileName="ChangeSetBuilder.java" startLine="187" startPosition="8" endLine="192" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341820" fileName="ChangeSetBuilder.java" startLine="197" startPosition="62" endLine="202" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341839" fileName="ChangeSetBuilder.java" startLine="204" startPosition="6" endLine="209" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748341872" fileName="ChangeSetBuilder.java" startLine="213" startPosition="200" endLine="218" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748341902" fileName="ChangeSetBuilder.java" startLine="224" startPosition="0" endLine="229" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341914" fileName="ChangeSetBuilder.java" startLine="229" startPosition="7" endLine="234" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341926" fileName="ChangeSetBuilder.java" startLine="234" startPosition="7" endLine="239" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1976796331003085413" fileName="ChangeSetBuilder.java" startLine="249" startPosition="44" endLine="254" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2260496836771383755" fileName="ChangeSetBuilder.java" startLine="266" startPosition="24" endLine="271" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2260496836771383849" fileName="ChangeSetBuilder.java" startLine="69" startPosition="84" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748342111" fileName="ChangeSetBuilder.java" startLine="275" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddedAndDeleted#(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="4652592318748342111" fileName="ChangeSetBuilder.java" startLine="278" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddedAndDeleted#(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
     <nodeInfo nodeId="2260496836771390839" fileName="ChangeSetBuilder.java" startLine="105" startPosition="10" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1976796331003069932" fileName="ChangeSetBuilder.java" startLine="125" startPosition="0" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4652592318748342196" fileName="ChangeSetBuilder.java" startLine="289" startPosition="0" endLine="296" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="buildChangeSet#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/vcs/diff/ChangeSet;" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="309" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a2a3#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="316" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a3a3#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="323" startPosition="0" endLine="330" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a0e0d#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="330" startPosition="0" endLine="337" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a0e0d_0#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="337" startPosition="0" endLine="344" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a4a3#(Ljetbrains/mps/smodel/SReference;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="344" startPosition="0" endLine="351" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a4a3_0#(Ljetbrains/mps/smodel/SReference;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="351" startPosition="0" endLine="358" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a0a4a3#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="358" startPosition="0" endLine="365" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_f0a0a2a0e0d#(Ljetbrains/mps/smodel/SReference;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="365" startPosition="0" endLine="372" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_nbyrtw_a0a0e0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="372" startPosition="0" endLine="379" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_nbyrtw_a0a0e0d_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="379" startPosition="0" endLine="386" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_nbyrtw_a0a4a3#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="386" startPosition="0" endLine="393" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_nbyrtw_a0b0a4a3#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4652592318748342196" fileName="ChangeSetBuilder.java" startLine="292" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="buildChangeSet#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/vcs/diff/ChangeSet;" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="312" startPosition="0" endLine="319" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a2a3#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="319" startPosition="0" endLine="326" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a3a3#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="326" startPosition="0" endLine="333" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a0e0d#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="333" startPosition="0" endLine="340" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a0e0d_0#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="340" startPosition="0" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a4a3#(Ljetbrains/mps/smodel/SReference;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="347" startPosition="0" endLine="354" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a4a3_0#(Ljetbrains/mps/smodel/SReference;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="354" startPosition="0" endLine="361" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_a0a0a4a3#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="361" startPosition="0" endLine="368" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_nbyrtw_f0a0a2a0e0d#(Ljetbrains/mps/smodel/SReference;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="368" startPosition="0" endLine="375" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_nbyrtw_a0a0e0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="375" startPosition="0" endLine="382" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_nbyrtw_a0a0e0d_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="382" startPosition="0" endLine="389" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_nbyrtw_a0a4a3#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="389" startPosition="0" endLine="396" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_nbyrtw_a0b0a4a3#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="4652592318748341245" fileName="ChangeSetBuilder.java" startLine="59" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForProperties#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4652592318748341358" fileName="ChangeSetBuilder.java" startLine="83" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForReferences#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4652592318748341816" fileName="ChangeSetBuilder.java" startLine="193" startPosition="184" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
-    <nodeInfo nodeId="3557624462335404232" fileName="ChangeSetBuilder.java" startLine="160" startPosition="80" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341810" fileName="ChangeSetBuilder.java" startLine="192" startPosition="34" endLine="201" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748341861" fileName="ChangeSetBuilder.java" startLine="209" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForDependencies#(Ljetbrains/mps/vcs/diff/changes/ModuleDependencyChange/DependencyType;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)V" />
-    <nodeInfo nodeId="2260496836771383737" fileName="ChangeSetBuilder.java" startLine="262" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="commit#()V" />
-    <nodeInfo nodeId="4652592318748342222" fileName="ChangeSetBuilder.java" startLine="296" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rebuildChangeSet#(Ljetbrains/mps/vcs/diff/ChangeSet;)V" />
+    <nodeInfo nodeId="4652592318748341816" fileName="ChangeSetBuilder.java" startLine="196" startPosition="184" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
+    <nodeInfo nodeId="2884874321705447707" fileName="ChangeSetBuilder.java" startLine="163" startPosition="80" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341810" fileName="ChangeSetBuilder.java" startLine="195" startPosition="34" endLine="204" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748341861" fileName="ChangeSetBuilder.java" startLine="212" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForDependencies#(Ljetbrains/mps/vcs/diff/changes/ModuleDependencyChange/DependencyType;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)V" />
+    <nodeInfo nodeId="2260496836771383737" fileName="ChangeSetBuilder.java" startLine="265" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="commit#()V" />
+    <nodeInfo nodeId="4652592318748342222" fileName="ChangeSetBuilder.java" startLine="299" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rebuildChangeSet#(Ljetbrains/mps/vcs/diff/ChangeSet;)V" />
     <nodeInfo nodeId="2260496836771390816" fileName="ChangeSetBuilder.java" startLine="102" startPosition="6" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1976796331003085275" fileName="ChangeSetBuilder.java" startLine="122" startPosition="10" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2260496836771383803" fileName="ChangeSetBuilder.java" startLine="67" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForProperty#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
     <nodeInfo nodeId="1976796331003071977" fileName="ChangeSetBuilder.java" startLine="117" startPosition="0" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748342078" fileName="ChangeSetBuilder.java" startLine="245" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Z)V" />
-    <nodeInfo nodeId="4652592318748341806" fileName="ChangeSetBuilder.java" startLine="191" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForImports#()V" />
-    <nodeInfo nodeId="4652592318748341744" fileName="ChangeSetBuilder.java" startLine="171" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildAddedAndDeletedDependencies#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P2_E0;)V" />
+    <nodeInfo nodeId="4652592318748342078" fileName="ChangeSetBuilder.java" startLine="248" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Z)V" />
+    <nodeInfo nodeId="4652592318748341806" fileName="ChangeSetBuilder.java" startLine="194" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForImports#()V" />
+    <nodeInfo nodeId="4652592318748341744" fileName="ChangeSetBuilder.java" startLine="174" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildAddedAndDeletedDependencies#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P2_E0;)V" />
     <nodeInfo nodeId="1976796331003069903" fileName="ChangeSetBuilder.java" startLine="114" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="2260496836771390713" fileName="ChangeSetBuilder.java" startLine="91" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForReference#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4652592318748341895" fileName="ChangeSetBuilder.java" startLine="218" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForMetadata#()V" />
-    <nodeInfo nodeId="3557624462335402883" fileName="ChangeSetBuilder.java" startLine="135" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForNodeRole#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
-    <scopeInfo nodeId="4652592318748341235" fileName="ChangeSetBuilder.java" startLine="395" startPosition="38" endLine="395" endPosition="38" />
+    <nodeInfo nodeId="4652592318748341895" fileName="ChangeSetBuilder.java" startLine="221" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForMetadata#()V" />
+    <nodeInfo nodeId="2884874321705447562" fileName="ChangeSetBuilder.java" startLine="139" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildForNodeRole#(Ljava/util/List;Ljava/util/List;)V" />
+    <scopeInfo nodeId="4652592318748341235" fileName="ChangeSetBuilder.java" startLine="398" startPosition="38" endLine="398" endPosition="38" />
     <scopeInfo nodeId="4652592318748342249" fileName="ChangeSetBuilder.java" startLine="50" startPosition="62" endLine="51" endPosition="48" />
     <scopeInfo nodeId="4652592318748341285" fileName="ChangeSetBuilder.java" startLine="63" startPosition="102" endLine="64" endPosition="47" />
     <scopeInfo nodeId="2260496836771383860" fileName="ChangeSetBuilder.java" startLine="72" startPosition="40" endLine="73" endPosition="82" />
@@ -238,39 +239,40 @@
     <scopeInfo nodeId="1976796331003085267" fileName="ChangeSetBuilder.java" startLine="120" startPosition="33" endLine="121" endPosition="110" />
     <scopeInfo nodeId="1976796331003069948" fileName="ChangeSetBuilder.java" startLine="127" startPosition="40" endLine="128" endPosition="59" />
     <scopeInfo nodeId="1976796331003069955" fileName="ChangeSetBuilder.java" startLine="130" startPosition="12" endLine="131" endPosition="49" />
-    <scopeInfo nodeId="3557624462335404127" fileName="ChangeSetBuilder.java" startLine="140" startPosition="38" endLine="141" endPosition="30" />
-    <scopeInfo nodeId="3557624462335404145" fileName="ChangeSetBuilder.java" startLine="145" startPosition="38" endLine="146" endPosition="30" />
-    <scopeInfo nodeId="3557624462335404238" fileName="ChangeSetBuilder.java" startLine="162" startPosition="59" endLine="163" endPosition="76" />
-    <scopeInfo nodeId="3557624462335404249" fileName="ChangeSetBuilder.java" startLine="166" startPosition="38" endLine="167" endPosition="72" />
-    <scopeInfo nodeId="4652592318748341781" fileName="ChangeSetBuilder.java" startLine="181" startPosition="43" endLine="182" endPosition="46" />
-    <scopeInfo nodeId="4652592318748341797" fileName="ChangeSetBuilder.java" startLine="186" startPosition="43" endLine="187" endPosition="45" />
-    <scopeInfo nodeId="4652592318748341832" fileName="ChangeSetBuilder.java" startLine="196" startPosition="66" endLine="197" endPosition="42" />
-    <scopeInfo nodeId="4652592318748341850" fileName="ChangeSetBuilder.java" startLine="203" startPosition="78" endLine="204" endPosition="65" />
-    <scopeInfo nodeId="4652592318748341883" fileName="ChangeSetBuilder.java" startLine="212" startPosition="81" endLine="213" endPosition="84" />
-    <scopeInfo nodeId="4652592318748341906" fileName="ChangeSetBuilder.java" startLine="223" startPosition="57" endLine="224" endPosition="41" />
-    <scopeInfo nodeId="4652592318748341918" fileName="ChangeSetBuilder.java" startLine="228" startPosition="57" endLine="229" endPosition="39" />
-    <scopeInfo nodeId="4652592318748341930" fileName="ChangeSetBuilder.java" startLine="233" startPosition="57" endLine="234" endPosition="52" />
-    <scopeInfo nodeId="4652592318748341940" fileName="ChangeSetBuilder.java" startLine="238" startPosition="107" endLine="239" endPosition="97" />
-    <scopeInfo nodeId="4652592318748341962" fileName="ChangeSetBuilder.java" startLine="241" startPosition="97" endLine="242" endPosition="90" />
-    <scopeInfo nodeId="1976796331003085428" fileName="ChangeSetBuilder.java" startLine="248" startPosition="38" endLine="249" endPosition="30" />
-    <scopeInfo nodeId="4652592318748342090" fileName="ChangeSetBuilder.java" startLine="252" startPosition="94" endLine="253" endPosition="83" />
-    <scopeInfo nodeId="4652592318748342103" fileName="ChangeSetBuilder.java" startLine="258" startPosition="23" endLine="259" endPosition="43" />
-    <scopeInfo nodeId="2260496836771383763" fileName="ChangeSetBuilder.java" startLine="265" startPosition="41" endLine="266" endPosition="28" />
-    <scopeInfo nodeId="2260496836771412074" fileName="ChangeSetBuilder.java" startLine="272" startPosition="44" endLine="273" endPosition="24" />
-    <scopeInfo nodeId="4652592318748342164" fileName="ChangeSetBuilder.java" startLine="282" startPosition="154" endLine="283" endPosition="100" />
-    <scopeInfo nodeId="4652592318748342186" fileName="ChangeSetBuilder.java" startLine="286" startPosition="76" endLine="287" endPosition="53" />
-    <scopeInfo nodeId="2260496836771390999" fileName="ChangeSetBuilder.java" startLine="306" startPosition="69" endLine="307" endPosition="59" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="311" startPosition="36" endLine="312" endPosition="49" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="318" startPosition="36" endLine="319" endPosition="49" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="325" startPosition="36" endLine="326" endPosition="58" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="332" startPosition="36" endLine="333" endPosition="58" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="339" startPosition="36" endLine="340" endPosition="48" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="346" startPosition="36" endLine="347" endPosition="48" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="353" startPosition="36" endLine="354" endPosition="58" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="360" startPosition="36" endLine="361" endPosition="48" />
-    <scopeInfo nodeId="4652592318748341242" fileName="ChangeSetBuilder.java" startLine="398" startPosition="50" endLine="399" endPosition="18" />
+    <scopeInfo nodeId="3557624462335402886" fileName="ChangeSetBuilder.java" startLine="136" startPosition="76" endLine="137" endPosition="75" />
+    <scopeInfo nodeId="2884874321705447599" fileName="ChangeSetBuilder.java" startLine="142" startPosition="38" endLine="143" endPosition="30" />
+    <scopeInfo nodeId="2884874321705447617" fileName="ChangeSetBuilder.java" startLine="147" startPosition="38" endLine="148" endPosition="30" />
+    <scopeInfo nodeId="2884874321705447713" fileName="ChangeSetBuilder.java" startLine="165" startPosition="59" endLine="166" endPosition="76" />
+    <scopeInfo nodeId="2884874321705447724" fileName="ChangeSetBuilder.java" startLine="169" startPosition="38" endLine="170" endPosition="72" />
+    <scopeInfo nodeId="4652592318748341781" fileName="ChangeSetBuilder.java" startLine="184" startPosition="43" endLine="185" endPosition="46" />
+    <scopeInfo nodeId="4652592318748341797" fileName="ChangeSetBuilder.java" startLine="189" startPosition="43" endLine="190" endPosition="45" />
+    <scopeInfo nodeId="4652592318748341832" fileName="ChangeSetBuilder.java" startLine="199" startPosition="66" endLine="200" endPosition="42" />
+    <scopeInfo nodeId="4652592318748341850" fileName="ChangeSetBuilder.java" startLine="206" startPosition="78" endLine="207" endPosition="65" />
+    <scopeInfo nodeId="4652592318748341883" fileName="ChangeSetBuilder.java" startLine="215" startPosition="81" endLine="216" endPosition="84" />
+    <scopeInfo nodeId="4652592318748341906" fileName="ChangeSetBuilder.java" startLine="226" startPosition="57" endLine="227" endPosition="41" />
+    <scopeInfo nodeId="4652592318748341918" fileName="ChangeSetBuilder.java" startLine="231" startPosition="57" endLine="232" endPosition="39" />
+    <scopeInfo nodeId="4652592318748341930" fileName="ChangeSetBuilder.java" startLine="236" startPosition="57" endLine="237" endPosition="52" />
+    <scopeInfo nodeId="4652592318748341940" fileName="ChangeSetBuilder.java" startLine="241" startPosition="107" endLine="242" endPosition="97" />
+    <scopeInfo nodeId="4652592318748341962" fileName="ChangeSetBuilder.java" startLine="244" startPosition="97" endLine="245" endPosition="90" />
+    <scopeInfo nodeId="1976796331003085428" fileName="ChangeSetBuilder.java" startLine="251" startPosition="38" endLine="252" endPosition="30" />
+    <scopeInfo nodeId="4652592318748342090" fileName="ChangeSetBuilder.java" startLine="255" startPosition="94" endLine="256" endPosition="83" />
+    <scopeInfo nodeId="4652592318748342103" fileName="ChangeSetBuilder.java" startLine="261" startPosition="23" endLine="262" endPosition="43" />
+    <scopeInfo nodeId="2260496836771383763" fileName="ChangeSetBuilder.java" startLine="268" startPosition="41" endLine="269" endPosition="28" />
+    <scopeInfo nodeId="2260496836771412074" fileName="ChangeSetBuilder.java" startLine="275" startPosition="44" endLine="276" endPosition="24" />
+    <scopeInfo nodeId="4652592318748342164" fileName="ChangeSetBuilder.java" startLine="285" startPosition="154" endLine="286" endPosition="100" />
+    <scopeInfo nodeId="4652592318748342186" fileName="ChangeSetBuilder.java" startLine="289" startPosition="76" endLine="290" endPosition="53" />
+    <scopeInfo nodeId="2260496836771390999" fileName="ChangeSetBuilder.java" startLine="309" startPosition="69" endLine="310" endPosition="59" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="314" startPosition="36" endLine="315" endPosition="49" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="321" startPosition="36" endLine="322" endPosition="49" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="328" startPosition="36" endLine="329" endPosition="58" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="335" startPosition="36" endLine="336" endPosition="58" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="342" startPosition="36" endLine="343" endPosition="48" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="349" startPosition="36" endLine="350" endPosition="48" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="356" startPosition="36" endLine="357" endPosition="58" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="363" startPosition="36" endLine="364" endPosition="48" />
+    <scopeInfo nodeId="4652592318748341242" fileName="ChangeSetBuilder.java" startLine="401" startPosition="50" endLine="402" endPosition="18" />
     <scopeInfo nodeId="2260496836771390856" fileName="ChangeSetBuilder.java" startLine="107" startPosition="100" endLine="109" endPosition="27" />
-    <scopeInfo nodeId="4652592318748341232" fileName="ChangeSetBuilder.java" startLine="394" startPosition="71" endLine="396" endPosition="5" />
+    <scopeInfo nodeId="4652592318748341232" fileName="ChangeSetBuilder.java" startLine="397" startPosition="71" endLine="399" endPosition="5" />
     <scopeInfo nodeId="4652592318748342246" fileName="ChangeSetBuilder.java" startLine="49" startPosition="0" endLine="52" endPosition="3">
       <varInfo nodeId="4652592318748342257" varName="newModel" />
       <varInfo nodeId="4652592318748342255" varName="oldModel" />
@@ -282,17 +284,17 @@
     <scopeInfo nodeId="4652592318748341416" fileName="ChangeSetBuilder.java" startLine="86" startPosition="74" endLine="89" endPosition="5">
       <varInfo nodeId="4652592318748341416" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="3557624462335404181" fileName="ChangeSetBuilder.java" startLine="153" startPosition="129" endLine="156" endPosition="207">
-      <varInfo nodeId="3557624462335404191" varName="newIndices" />
-      <varInfo nodeId="3557624462335404183" varName="oldIndices" />
+    <scopeInfo nodeId="2884874321705447653" fileName="ChangeSetBuilder.java" startLine="156" startPosition="129" endLine="159" endPosition="278">
+      <varInfo nodeId="2884874321705447663" varName="newIndices" />
+      <varInfo nodeId="2884874321705447655" varName="oldIndices" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341766" fileName="ChangeSetBuilder.java" startLine="175" startPosition="5" endLine="178" endPosition="37">
-      <varInfo nodeId="4652592318748341766" varName="_tmp_nbyrtw_c0g" />
+    <scopeInfo nodeId="4652592318748341766" fileName="ChangeSetBuilder.java" startLine="178" startPosition="5" endLine="181" endPosition="37">
+      <varInfo nodeId="4652592318748341766" varName="_tmp_nbyrtw_c0h" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748342087" fileName="ChangeSetBuilder.java" startLine="251" startPosition="7" endLine="254" endPosition="5">
+    <scopeInfo nodeId="4652592318748342087" fileName="ChangeSetBuilder.java" startLine="254" startPosition="7" endLine="257" endPosition="5">
       <varInfo nodeId="4652592318748342087" varName="rootId" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748342124" fileName="ChangeSetBuilder.java" startLine="276" startPosition="114" endLine="279" endPosition="186">
+    <scopeInfo nodeId="4652592318748342124" fileName="ChangeSetBuilder.java" startLine="279" startPosition="114" endLine="282" endPosition="186">
       <varInfo nodeId="4652592318748342134" varName="newSet" />
       <varInfo nodeId="4652592318748342126" varName="oldSet" />
     </scopeInfo>
@@ -302,77 +304,82 @@
     <scopeInfo nodeId="1976796331003069947" fileName="ChangeSetBuilder.java" startLine="126" startPosition="245" endLine="130" endPosition="0">
       <varInfo nodeId="1976796331003069947" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="3557624462335404126" fileName="ChangeSetBuilder.java" startLine="139" startPosition="102" endLine="143" endPosition="0">
-      <varInfo nodeId="3557624462335404126" varName="n" />
+    <scopeInfo nodeId="3557624462335402883" fileName="ChangeSetBuilder.java" startLine="135" startPosition="0" endLine="139" endPosition="0">
+      <varInfo nodeId="3557624462335404255" varName="newNode" />
+      <varInfo nodeId="3557624462335404097" varName="oldNode" />
+      <varInfo nodeId="3557624462335404270" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="3557624462335404144" fileName="ChangeSetBuilder.java" startLine="144" startPosition="102" endLine="148" endPosition="0">
-      <varInfo nodeId="3557624462335404144" varName="n" />
+    <scopeInfo nodeId="2884874321705447598" fileName="ChangeSetBuilder.java" startLine="141" startPosition="102" endLine="145" endPosition="0">
+      <varInfo nodeId="2884874321705447598" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="3557624462335404237" fileName="ChangeSetBuilder.java" startLine="161" startPosition="101" endLine="165" endPosition="0">
-      <varInfo nodeId="3557624462335404237" varName="in" />
+    <scopeInfo nodeId="2884874321705447616" fileName="ChangeSetBuilder.java" startLine="146" startPosition="102" endLine="150" endPosition="0">
+      <varInfo nodeId="2884874321705447616" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="3557624462335404248" fileName="ChangeSetBuilder.java" startLine="165" startPosition="39" endLine="169" endPosition="0">
-      <varInfo nodeId="3557624462335404248" varName="child" />
+    <scopeInfo nodeId="2884874321705447712" fileName="ChangeSetBuilder.java" startLine="164" startPosition="101" endLine="168" endPosition="0">
+      <varInfo nodeId="2884874321705447712" varName="in" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341780" fileName="ChangeSetBuilder.java" startLine="180" startPosition="126" endLine="184" endPosition="0">
+    <scopeInfo nodeId="2884874321705447723" fileName="ChangeSetBuilder.java" startLine="168" startPosition="39" endLine="172" endPosition="0">
+      <varInfo nodeId="2884874321705447723" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="4652592318748341780" fileName="ChangeSetBuilder.java" startLine="183" startPosition="126" endLine="187" endPosition="0">
       <varInfo nodeId="4652592318748341780" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341796" fileName="ChangeSetBuilder.java" startLine="185" startPosition="128" endLine="189" endPosition="0">
+    <scopeInfo nodeId="4652592318748341796" fileName="ChangeSetBuilder.java" startLine="188" startPosition="128" endLine="192" endPosition="0">
       <varInfo nodeId="4652592318748341796" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341831" fileName="ChangeSetBuilder.java" startLine="195" startPosition="155" endLine="199" endPosition="0">
+    <scopeInfo nodeId="4652592318748341831" fileName="ChangeSetBuilder.java" startLine="198" startPosition="155" endLine="202" endPosition="0">
       <varInfo nodeId="4652592318748341831" varName="ie" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341845" fileName="ChangeSetBuilder.java" startLine="202" startPosition="205" endLine="206" endPosition="0">
+    <scopeInfo nodeId="4652592318748341845" fileName="ChangeSetBuilder.java" startLine="205" startPosition="205" endLine="209" endPosition="0">
       <varInfo nodeId="4652592318748341845" varName="deleted" />
       <varInfo nodeId="4652592318748341845" varName="mr" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341878" fileName="ChangeSetBuilder.java" startLine="211" startPosition="211" endLine="215" endPosition="0">
+    <scopeInfo nodeId="4652592318748341878" fileName="ChangeSetBuilder.java" startLine="214" startPosition="211" endLine="218" endPosition="0">
       <varInfo nodeId="4652592318748341878" varName="deleted" />
       <varInfo nodeId="4652592318748341878" varName="mr" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341905" fileName="ChangeSetBuilder.java" startLine="222" startPosition="141" endLine="226" endPosition="0">
+    <scopeInfo nodeId="4652592318748341905" fileName="ChangeSetBuilder.java" startLine="225" startPosition="141" endLine="229" endPosition="0">
       <varInfo nodeId="4652592318748341905" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341917" fileName="ChangeSetBuilder.java" startLine="227" startPosition="143" endLine="231" endPosition="0">
+    <scopeInfo nodeId="4652592318748341917" fileName="ChangeSetBuilder.java" startLine="230" startPosition="143" endLine="234" endPosition="0">
       <varInfo nodeId="4652592318748341917" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341929" fileName="ChangeSetBuilder.java" startLine="232" startPosition="158" endLine="236" endPosition="0">
+    <scopeInfo nodeId="4652592318748341929" fileName="ChangeSetBuilder.java" startLine="235" startPosition="158" endLine="239" endPosition="0">
       <varInfo nodeId="4652592318748341929" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="1976796331003085427" fileName="ChangeSetBuilder.java" startLine="247" startPosition="217" endLine="251" endPosition="0">
+    <scopeInfo nodeId="1976796331003085427" fileName="ChangeSetBuilder.java" startLine="250" startPosition="217" endLine="254" endPosition="0">
       <varInfo nodeId="1976796331003085427" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="2260496836771383762" fileName="ChangeSetBuilder.java" startLine="264" startPosition="78" endLine="268" endPosition="0">
+    <scopeInfo nodeId="2260496836771383762" fileName="ChangeSetBuilder.java" startLine="267" startPosition="78" endLine="271" endPosition="0">
       <varInfo nodeId="2260496836771383762" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2260496836771412071" fileName="ChangeSetBuilder.java" startLine="271" startPosition="0" endLine="275" endPosition="0" />
-    <scopeInfo nodeId="4652592318748342152" fileName="ChangeSetBuilder.java" startLine="281" startPosition="0" endLine="285" endPosition="0">
+    <scopeInfo nodeId="2260496836771412071" fileName="ChangeSetBuilder.java" startLine="274" startPosition="0" endLine="278" endPosition="0" />
+    <scopeInfo nodeId="4652592318748342152" fileName="ChangeSetBuilder.java" startLine="284" startPosition="0" endLine="288" endPosition="0">
       <varInfo nodeId="4652592318748342153" varName="itemsExtractor" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748342183" fileName="ChangeSetBuilder.java" startLine="285" startPosition="0" endLine="289" endPosition="0">
+    <scopeInfo nodeId="4652592318748342183" fileName="ChangeSetBuilder.java" startLine="288" startPosition="0" endLine="292" endPosition="0">
       <varInfo nodeId="4652592318748342194" varName="newModel" />
       <varInfo nodeId="4652592318748342192" varName="oldModel" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748342199" fileName="ChangeSetBuilder.java" startLine="290" startPosition="98" endLine="294" endPosition="31">
+    <scopeInfo nodeId="4652592318748342199" fileName="ChangeSetBuilder.java" startLine="293" startPosition="98" endLine="297" endPosition="31">
       <varInfo nodeId="4652592318748342201" varName="builder" />
     </scopeInfo>
-    <scopeInfo nodeId="2260496836771390996" fileName="ChangeSetBuilder.java" startLine="305" startPosition="0" endLine="309" endPosition="0">
+    <scopeInfo nodeId="2260496836771390996" fileName="ChangeSetBuilder.java" startLine="308" startPosition="0" endLine="312" endPosition="0">
       <varInfo nodeId="2260496836771391001" varName="changeSet" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="310" startPosition="76" endLine="314" endPosition="16" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="317" startPosition="76" endLine="321" endPosition="16" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="324" startPosition="85" endLine="328" endPosition="16" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="331" startPosition="87" endLine="335" endPosition="16" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="338" startPosition="75" endLine="342" endPosition="16" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="345" startPosition="77" endLine="349" endPosition="16" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="352" startPosition="86" endLine="356" endPosition="16" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="359" startPosition="80" endLine="363" endPosition="16" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="366" startPosition="64" endLine="370" endPosition="6" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="373" startPosition="66" endLine="377" endPosition="6" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="380" startPosition="63" endLine="384" endPosition="6" />
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="387" startPosition="65" endLine="391" endPosition="6" />
-    <scopeInfo nodeId="4652592318748341237" fileName="ChangeSetBuilder.java" startLine="397" startPosition="0" endLine="401" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="313" startPosition="76" endLine="317" endPosition="16" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="320" startPosition="76" endLine="324" endPosition="16" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="327" startPosition="85" endLine="331" endPosition="16" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="334" startPosition="87" endLine="338" endPosition="16" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="341" startPosition="75" endLine="345" endPosition="16" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="348" startPosition="77" endLine="352" endPosition="16" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="355" startPosition="86" endLine="359" endPosition="16" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="362" startPosition="80" endLine="366" endPosition="16" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="369" startPosition="64" endLine="373" endPosition="6" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="376" startPosition="66" endLine="380" endPosition="6" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="383" startPosition="63" endLine="387" endPosition="6" />
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="390" startPosition="65" endLine="394" endPosition="6" />
+    <scopeInfo nodeId="4652592318748341237" fileName="ChangeSetBuilder.java" startLine="400" startPosition="0" endLine="404" endPosition="0">
       <varInfo nodeId="4652592318748341240" varName="string" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748342259" fileName="ChangeSetBuilder.java" startLine="53" startPosition="0" endLine="58" endPosition="3">
@@ -386,70 +393,70 @@
       <varInfo nodeId="4652592318748341372" varName="newReferences" />
       <varInfo nodeId="4652592318748341363" varName="oldReferences" />
     </scopeInfo>
-    <scopeInfo nodeId="3557624462335404179" fileName="ChangeSetBuilder.java" startLine="152" startPosition="126" endLine="157" endPosition="5">
-      <varInfo nodeId="3557624462335404179" varName="indices" />
+    <scopeInfo nodeId="2884874321705447651" fileName="ChangeSetBuilder.java" startLine="155" startPosition="126" endLine="160" endPosition="5">
+      <varInfo nodeId="2884874321705447651" varName="indices" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341819" fileName="ChangeSetBuilder.java" startLine="194" startPosition="62" endLine="199" endPosition="11" />
+    <scopeInfo nodeId="4652592318748341819" fileName="ChangeSetBuilder.java" startLine="197" startPosition="62" endLine="202" endPosition="11" />
     <scopeInfo nodeId="2260496836771390840" fileName="ChangeSetBuilder.java" startLine="105" startPosition="12" endLine="111" endPosition="184">
       <varInfo nodeId="2260496836771390842" varName="targetModel" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341871" fileName="ChangeSetBuilder.java" startLine="210" startPosition="200" endLine="216" endPosition="73">
+    <scopeInfo nodeId="4652592318748341871" fileName="ChangeSetBuilder.java" startLine="213" startPosition="200" endLine="219" endPosition="73">
       <varInfo nodeId="4652592318748341873" varName="changeCreator" />
     </scopeInfo>
-    <scopeInfo nodeId="2260496836771383740" fileName="ChangeSetBuilder.java" startLine="263" startPosition="24" endLine="269" endPosition="48" />
-    <scopeInfo nodeId="4652592318748342111" fileName="ChangeSetBuilder.java" startLine="275" startPosition="0" endLine="281" endPosition="0">
+    <scopeInfo nodeId="2260496836771383740" fileName="ChangeSetBuilder.java" startLine="266" startPosition="24" endLine="272" endPosition="48" />
+    <scopeInfo nodeId="4652592318748342111" fileName="ChangeSetBuilder.java" startLine="278" startPosition="0" endLine="284" endPosition="0">
       <varInfo nodeId="4652592318748342115" varName="newItems" />
       <varInfo nodeId="4652592318748342112" varName="oldItems" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748342225" fileName="ChangeSetBuilder.java" startLine="297" startPosition="60" endLine="303" endPosition="21">
+    <scopeInfo nodeId="4652592318748342225" fileName="ChangeSetBuilder.java" startLine="300" startPosition="60" endLine="306" endPosition="21">
       <varInfo nodeId="2260496836771383789" varName="builder" />
       <varInfo nodeId="3834754559947642562" varName="impl" />
     </scopeInfo>
     <scopeInfo nodeId="1976796331003069932" fileName="ChangeSetBuilder.java" startLine="125" startPosition="0" endLine="132" endPosition="7">
       <varInfo nodeId="1976796331003069932" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748342196" fileName="ChangeSetBuilder.java" startLine="289" startPosition="0" endLine="296" endPosition="0">
+    <scopeInfo nodeId="4652592318748342196" fileName="ChangeSetBuilder.java" startLine="292" startPosition="0" endLine="299" endPosition="0">
       <varInfo nodeId="4652592318748342218" varName="newModel" />
       <varInfo nodeId="4652592318748342216" varName="oldModel" />
       <varInfo nodeId="4652592318748342220" varName="withOpposite" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="309" startPosition="0" endLine="316" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="312" startPosition="0" endLine="319" endPosition="0">
       <varInfo nodeId="4652592318748341229" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="316" startPosition="0" endLine="323" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="319" startPosition="0" endLine="326" endPosition="0">
       <varInfo nodeId="4652592318748341229" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="323" startPosition="0" endLine="330" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="326" startPosition="0" endLine="333" endPosition="0">
       <varInfo nodeId="4652592318748341229" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="330" startPosition="0" endLine="337" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="333" startPosition="0" endLine="340" endPosition="0">
       <varInfo nodeId="4652592318748341229" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="337" startPosition="0" endLine="344" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="340" startPosition="0" endLine="347" endPosition="0">
       <varInfo nodeId="4652592318748341229" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="344" startPosition="0" endLine="351" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="347" startPosition="0" endLine="354" endPosition="0">
       <varInfo nodeId="4652592318748341229" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="351" startPosition="0" endLine="358" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="354" startPosition="0" endLine="361" endPosition="0">
       <varInfo nodeId="4652592318748341229" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="358" startPosition="0" endLine="365" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="361" startPosition="0" endLine="368" endPosition="0">
       <varInfo nodeId="4652592318748341229" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="365" startPosition="0" endLine="372" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="368" startPosition="0" endLine="375" endPosition="0">
       <varInfo nodeId="4652592318748341229" varName="a" />
       <varInfo nodeId="4652592318748341229" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="372" startPosition="0" endLine="379" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="375" startPosition="0" endLine="382" endPosition="0">
       <varInfo nodeId="4652592318748341229" varName="a" />
       <varInfo nodeId="4652592318748341229" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="379" startPosition="0" endLine="386" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="382" startPosition="0" endLine="389" endPosition="0">
       <varInfo nodeId="4652592318748341229" varName="a" />
       <varInfo nodeId="4652592318748341229" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="386" startPosition="0" endLine="393" endPosition="0">
+    <scopeInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="389" startPosition="0" endLine="396" endPosition="0">
       <varInfo nodeId="4652592318748341229" varName="a" />
       <varInfo nodeId="4652592318748341229" varName="b" />
     </scopeInfo>
@@ -461,15 +468,15 @@
       <varInfo nodeId="4652592318748341527" varName="newNode" />
       <varInfo nodeId="4652592318748341525" varName="oldNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341816" fileName="ChangeSetBuilder.java" startLine="193" startPosition="184" endLine="201" endPosition="0">
+    <scopeInfo nodeId="4652592318748341816" fileName="ChangeSetBuilder.java" startLine="196" startPosition="184" endLine="204" endPosition="0">
       <varInfo nodeId="4652592318748341816" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341861" fileName="ChangeSetBuilder.java" startLine="209" startPosition="0" endLine="218" endPosition="0">
+    <scopeInfo nodeId="4652592318748341861" fileName="ChangeSetBuilder.java" startLine="212" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="4652592318748341862" varName="dependencyType" />
       <varInfo nodeId="4652592318748341864" varName="referencesExtractor" />
     </scopeInfo>
-    <scopeInfo nodeId="2260496836771383737" fileName="ChangeSetBuilder.java" startLine="262" startPosition="0" endLine="271" endPosition="0" />
-    <scopeInfo nodeId="4652592318748342222" fileName="ChangeSetBuilder.java" startLine="296" startPosition="0" endLine="305" endPosition="0">
+    <scopeInfo nodeId="2260496836771383737" fileName="ChangeSetBuilder.java" startLine="265" startPosition="0" endLine="274" endPosition="0" />
+    <scopeInfo nodeId="4652592318748342222" fileName="ChangeSetBuilder.java" startLine="299" startPosition="0" endLine="308" endPosition="0">
       <varInfo nodeId="4652592318748342243" varName="changeSet" />
     </scopeInfo>
     <scopeInfo nodeId="1976796331003085276" fileName="ChangeSetBuilder.java" startLine="122" startPosition="12" endLine="132" endPosition="7" />
@@ -478,10 +485,10 @@
       <varInfo nodeId="2260496836771383874" varName="oldPresentableValue" />
       <varInfo nodeId="2260496836771383845" varName="propertySupport" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748342081" fileName="ChangeSetBuilder.java" startLine="246" startPosition="44" endLine="260" endPosition="5">
+    <scopeInfo nodeId="4652592318748342081" fileName="ChangeSetBuilder.java" startLine="249" startPosition="44" endLine="263" endPosition="5">
       <varInfo nodeId="1976796331003085414" varName="allRootIds" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341809" fileName="ChangeSetBuilder.java" startLine="192" startPosition="34" endLine="207" endPosition="77">
+    <scopeInfo nodeId="4652592318748341809" fileName="ChangeSetBuilder.java" startLine="195" startPosition="34" endLine="210" endPosition="77">
       <varInfo nodeId="4652592318748341840" varName="changeCreator" />
       <varInfo nodeId="4652592318748341811" varName="importedModelsExtractor" />
     </scopeInfo>
@@ -490,22 +497,22 @@
       <varInfo nodeId="2260496836771383914" varName="newNode" />
       <varInfo nodeId="2260496836771383912" varName="oldNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341757" fileName="ChangeSetBuilder.java" startLine="172" startPosition="248" endLine="189" endPosition="8">
+    <scopeInfo nodeId="4652592318748341757" fileName="ChangeSetBuilder.java" startLine="175" startPosition="248" endLine="192" endPosition="8">
       <varInfo nodeId="4652592318748341759" varName="added" />
       <varInfo nodeId="4652592318748341763" varName="deleted" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748342078" fileName="ChangeSetBuilder.java" startLine="245" startPosition="0" endLine="262" endPosition="0">
+    <scopeInfo nodeId="4652592318748342078" fileName="ChangeSetBuilder.java" startLine="248" startPosition="0" endLine="265" endPosition="0">
       <varInfo nodeId="4652592318748342109" varName="withOpposite" />
     </scopeInfo>
     <scopeInfo nodeId="1976796331003069906" fileName="ChangeSetBuilder.java" startLine="115" startPosition="78" endLine="133" endPosition="5" />
-    <scopeInfo nodeId="4652592318748341806" fileName="ChangeSetBuilder.java" startLine="191" startPosition="0" endLine="209" endPosition="0" />
+    <scopeInfo nodeId="4652592318748341806" fileName="ChangeSetBuilder.java" startLine="194" startPosition="0" endLine="212" endPosition="0" />
     <scopeInfo nodeId="2260496836771390716" fileName="ChangeSetBuilder.java" startLine="92" startPosition="76" endLine="112" endPosition="5">
       <varInfo nodeId="2260496836771390789" varName="newReference" />
       <varInfo nodeId="2260496836771390806" varName="newTargetId" />
       <varInfo nodeId="2260496836771390783" varName="oldReference" />
       <varInfo nodeId="2260496836771390795" varName="oldTargetId" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341744" fileName="ChangeSetBuilder.java" startLine="171" startPosition="0" endLine="191" endPosition="0">
+    <scopeInfo nodeId="4652592318748341744" fileName="ChangeSetBuilder.java" startLine="174" startPosition="0" endLine="194" endPosition="0">
       <varInfo nodeId="4652592318748341750" varName="changeCreator" />
       <varInfo nodeId="4652592318748341745" varName="referencesExtractor" />
     </scopeInfo>
@@ -518,40 +525,38 @@
       <varInfo nodeId="2260496836771390880" varName="oldNode" />
       <varInfo nodeId="2260496836771390884" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341898" fileName="ChangeSetBuilder.java" startLine="219" startPosition="35" endLine="243" endPosition="5" />
-    <scopeInfo nodeId="4652592318748341895" fileName="ChangeSetBuilder.java" startLine="218" startPosition="0" endLine="245" endPosition="0" />
-    <scopeInfo nodeId="3557624462335402886" fileName="ChangeSetBuilder.java" startLine="136" startPosition="75" endLine="169" endPosition="7">
-      <varInfo nodeId="3557624462335404224" varName="commonIndices" />
-      <varInfo nodeId="3557624462335404167" varName="differentIndices" />
-      <varInfo nodeId="3557624462335404155" varName="finder" />
-      <varInfo nodeId="3557624462335404110" varName="newChildren" />
-      <varInfo nodeId="3557624462335404137" varName="newIds" />
-      <varInfo nodeId="3557624462335404101" varName="oldChildren" />
-      <varInfo nodeId="3557624462335404119" varName="oldIds" />
+    <scopeInfo nodeId="4652592318748341898" fileName="ChangeSetBuilder.java" startLine="222" startPosition="35" endLine="246" endPosition="5" />
+    <scopeInfo nodeId="4652592318748341895" fileName="ChangeSetBuilder.java" startLine="221" startPosition="0" endLine="248" endPosition="0" />
+    <scopeInfo nodeId="2884874321705447571" fileName="ChangeSetBuilder.java" startLine="140" startPosition="88" endLine="172" endPosition="7">
+      <varInfo nodeId="2884874321705464530" varName="anyChild" />
+      <varInfo nodeId="2884874321705447699" varName="commonIndices" />
+      <varInfo nodeId="2884874321705447639" varName="differentIndices" />
+      <varInfo nodeId="2884874321705447627" varName="finder" />
+      <varInfo nodeId="2884874321705447609" varName="newIds" />
+      <varInfo nodeId="2884874321705447591" varName="oldIds" />
     </scopeInfo>
-    <scopeInfo nodeId="3557624462335402883" fileName="ChangeSetBuilder.java" startLine="135" startPosition="0" endLine="171" endPosition="0">
-      <varInfo nodeId="3557624462335404255" varName="newNode" />
-      <varInfo nodeId="3557624462335404097" varName="oldNode" />
-      <varInfo nodeId="3557624462335404270" varName="role" />
+    <scopeInfo nodeId="2884874321705447562" fileName="ChangeSetBuilder.java" startLine="139" startPosition="0" endLine="174" endPosition="0">
+      <varInfo nodeId="2884874321705447565" varName="newChildren" />
+      <varInfo nodeId="2884874321705447563" varName="oldChildren" />
     </scopeInfo>
-    <unitInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="44" startPosition="0" endLine="403" endPosition="0" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder" />
+    <unitInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="44" startPosition="0" endLine="406" endPosition="0" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder" />
     <unitInfo nodeId="1976796331003069947" fileName="ChangeSetBuilder.java" startLine="126" startPosition="217" endLine="130" endPosition="7" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$1" />
-    <unitInfo nodeId="4652592318748341878" fileName="ChangeSetBuilder.java" startLine="211" startPosition="129" endLine="215" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$10" />
-    <unitInfo nodeId="4652592318748341905" fileName="ChangeSetBuilder.java" startLine="222" startPosition="78" endLine="226" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$11" />
-    <unitInfo nodeId="4652592318748341917" fileName="ChangeSetBuilder.java" startLine="227" startPosition="80" endLine="231" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$12" />
-    <unitInfo nodeId="4652592318748341929" fileName="ChangeSetBuilder.java" startLine="232" startPosition="95" endLine="236" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$13" />
-    <unitInfo nodeId="1976796331003085427" fileName="ChangeSetBuilder.java" startLine="247" startPosition="188" endLine="251" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$14" />
-    <unitInfo nodeId="2260496836771383762" fileName="ChangeSetBuilder.java" startLine="264" startPosition="53" endLine="268" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$15" />
-    <unitInfo nodeId="3557624462335404126" fileName="ChangeSetBuilder.java" startLine="139" startPosition="73" endLine="143" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$2" />
-    <unitInfo nodeId="3557624462335404144" fileName="ChangeSetBuilder.java" startLine="144" startPosition="73" endLine="148" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$3" />
-    <unitInfo nodeId="3557624462335404237" fileName="ChangeSetBuilder.java" startLine="161" startPosition="52" endLine="165" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$4" />
-    <unitInfo nodeId="3557624462335404248" fileName="ChangeSetBuilder.java" startLine="165" startPosition="20" endLine="169" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$5" />
-    <unitInfo nodeId="4652592318748341780" fileName="ChangeSetBuilder.java" startLine="180" startPosition="92" endLine="184" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$6" />
-    <unitInfo nodeId="4652592318748341796" fileName="ChangeSetBuilder.java" startLine="185" startPosition="94" endLine="189" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$7" />
-    <unitInfo nodeId="4652592318748341816" fileName="ChangeSetBuilder.java" startLine="193" startPosition="116" endLine="201" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$8" />
-    <unitInfo nodeId="4652592318748341831" fileName="ChangeSetBuilder.java" startLine="195" startPosition="103" endLine="199" endPosition="9" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$9" />
-    <unitInfo nodeId="4652592318748341845" fileName="ChangeSetBuilder.java" startLine="202" startPosition="126" endLine="206" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$9" />
-    <unitInfo nodeId="4652592318748341230" fileName="ChangeSetBuilder.java" startLine="394" startPosition="0" endLine="402" endPosition="0" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$DefaultPropertySupport" />
+    <unitInfo nodeId="4652592318748341878" fileName="ChangeSetBuilder.java" startLine="214" startPosition="129" endLine="218" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$10" />
+    <unitInfo nodeId="4652592318748341905" fileName="ChangeSetBuilder.java" startLine="225" startPosition="78" endLine="229" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$11" />
+    <unitInfo nodeId="4652592318748341917" fileName="ChangeSetBuilder.java" startLine="230" startPosition="80" endLine="234" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$12" />
+    <unitInfo nodeId="4652592318748341929" fileName="ChangeSetBuilder.java" startLine="235" startPosition="95" endLine="239" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$13" />
+    <unitInfo nodeId="1976796331003085427" fileName="ChangeSetBuilder.java" startLine="250" startPosition="188" endLine="254" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$14" />
+    <unitInfo nodeId="2260496836771383762" fileName="ChangeSetBuilder.java" startLine="267" startPosition="53" endLine="271" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$15" />
+    <unitInfo nodeId="2884874321705447598" fileName="ChangeSetBuilder.java" startLine="141" startPosition="73" endLine="145" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$2" />
+    <unitInfo nodeId="2884874321705447616" fileName="ChangeSetBuilder.java" startLine="146" startPosition="73" endLine="150" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$3" />
+    <unitInfo nodeId="2884874321705447712" fileName="ChangeSetBuilder.java" startLine="164" startPosition="52" endLine="168" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$4" />
+    <unitInfo nodeId="2884874321705447723" fileName="ChangeSetBuilder.java" startLine="168" startPosition="20" endLine="172" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$5" />
+    <unitInfo nodeId="4652592318748341780" fileName="ChangeSetBuilder.java" startLine="183" startPosition="92" endLine="187" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$6" />
+    <unitInfo nodeId="4652592318748341796" fileName="ChangeSetBuilder.java" startLine="188" startPosition="94" endLine="192" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$7" />
+    <unitInfo nodeId="4652592318748341816" fileName="ChangeSetBuilder.java" startLine="196" startPosition="116" endLine="204" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$8" />
+    <unitInfo nodeId="4652592318748341831" fileName="ChangeSetBuilder.java" startLine="198" startPosition="103" endLine="202" endPosition="9" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$9" />
+    <unitInfo nodeId="4652592318748341845" fileName="ChangeSetBuilder.java" startLine="205" startPosition="126" endLine="209" endPosition="5" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$9" />
+    <unitInfo nodeId="4652592318748341230" fileName="ChangeSetBuilder.java" startLine="397" startPosition="0" endLine="405" endPosition="0" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$DefaultPropertySupport" />
   </root>
   <root nodeId="4707157387247628917">
     <nodeInfo nodeId="4707157387247628919" fileName="DiffBuilder.java" startLine="44" startPosition="26" endLine="45" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

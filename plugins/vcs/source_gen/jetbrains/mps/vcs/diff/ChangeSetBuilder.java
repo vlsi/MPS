@@ -133,9 +133,11 @@ public class ChangeSetBuilder {
     }
   }
 
-  public void buildForNodeRole(SNode oldNode, SNode newNode, String role) {
-    final List<SNode> oldChildren = oldNode.getChildren(role);
-    List<SNode> newChildren = newNode.getChildren(role);
+  private void buildForNodeRole(SNode oldNode, SNode newNode, String role) {
+    buildForNodeRole(oldNode.getChildren(role), newNode.getChildren(role));
+  }
+
+  public void buildForNodeRole(final List<SNode> oldChildren, List<SNode> newChildren) {
     List<SNodeId> oldIds = ListSequence.fromList(oldChildren).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getSNodeId();
@@ -146,6 +148,7 @@ public class ChangeSetBuilder {
         return n.getSNodeId();
       }
     }).toListSequence();
+    SNode anyChild = ListSequence.fromList(oldChildren).concat(ListSequence.fromList(newChildren)).first();
     LongestCommonSubsequenceFinder<SNodeId> finder = new LongestCommonSubsequenceFinder<SNodeId>(oldIds, newIds);
 
     // Finding insertings, deletings and replacings 
@@ -153,7 +156,7 @@ public class ChangeSetBuilder {
     for (Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>> indices : ListSequence.fromList(differentIndices)) {
       Tuples._2<Integer, Integer> oldIndices = indices._0();
       Tuples._2<Integer, Integer> newIndices = indices._1();
-      ListSequence.fromList(myNewChanges).addElement(new NodeGroupChange(myChangeSet, oldNode.getSNodeId(), role, (int) oldIndices._0(), (int) oldIndices._1(), (int) newIndices._0(), (int) newIndices._1()));
+      ListSequence.fromList(myNewChanges).addElement(new NodeGroupChange(myChangeSet, SNodeOperations.getParent(anyChild).getSNodeId(), SNodeOperations.getContainingLinkRole(anyChild), (int) oldIndices._0(), (int) oldIndices._1(), (int) newIndices._0(), (int) newIndices._1()));
     }
 
     // Finding changes for children 
@@ -173,9 +176,9 @@ public class ChangeSetBuilder {
     Iterable<D> added;
     Iterable<D> deleted;
     {
-      Tuples._2<Iterable<D>, Iterable<D>> _tmp_nbyrtw_c0g = getAddedAndDeleted(referencesExtractor);
-      added = _tmp_nbyrtw_c0g._0();
-      deleted = _tmp_nbyrtw_c0g._1();
+      Tuples._2<Iterable<D>, Iterable<D>> _tmp_nbyrtw_c0h = getAddedAndDeleted(referencesExtractor);
+      added = _tmp_nbyrtw_c0h._0();
+      deleted = _tmp_nbyrtw_c0h._1();
     }
     ListSequence.fromList(myNewChanges).addSequence(Sequence.fromIterable(added).select(new ISelector<D, DependencyChange>() {
       public DependencyChange select(D r) {
