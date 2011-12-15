@@ -13,9 +13,11 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.SModelRepositoryListener;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.FileStatusManager;
+import com.intellij.openapi.vcs.changes.ChangeListManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import com.intellij.openapi.vcs.changes.ChangeListManager;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -44,7 +46,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final SimpleCommandQueue myCommandQueue = new SimpleCommandQueue("ChangesManager command queue");
   private CurrentDifferenceBroadcaster myGlobalBroadcaster = new CurrentDifferenceBroadcaster(myCommandQueue);
 
-  public CurrentDifferenceRegistry(@NotNull Project project) {
+  public CurrentDifferenceRegistry(@NotNull Project project, ProjectLevelVcsManager vcsManager, FileStatusManager fileStatusManager, ChangeListManager changeListManager) {
     super(project);
   }
 
@@ -83,7 +85,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
         MapSequence.fromMap(myCurrentDifferences).get(modelRef).getChangesTracker().scheduleFullUpdate();
         return;
       }
-      CurrentDifference cd = new CurrentDifference(myProject, modelDescriptor);
+      CurrentDifference cd = new CurrentDifference(this, modelDescriptor);
       MapSequence.fromMap(myCurrentDifferences).put(modelRef, cd);
     }
   }
@@ -125,7 +127,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     synchronized (myCurrentDifferences) {
       SModelReference modelRef = modelDescriptor.getSModelReference();
       if (!(MapSequence.fromMap(myCurrentDifferences).containsKey(modelRef))) {
-        MapSequence.fromMap(myCurrentDifferences).put(modelRef, new CurrentDifference(myProject, modelDescriptor));
+        MapSequence.fromMap(myCurrentDifferences).put(modelRef, new CurrentDifference(this, modelDescriptor));
       }
       return MapSequence.fromMap(myCurrentDifferences).get(modelRef);
     }

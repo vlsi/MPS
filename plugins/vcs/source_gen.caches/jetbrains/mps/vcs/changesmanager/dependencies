@@ -21,8 +21,8 @@
   <dependency className="jetbrains.mps.vcs.changesmanager.ChangesTracking" file="ChangesTracking.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
+    <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
-    <classNode dependClassName="com.intellij.openapi.vcs.impl.VcsFileStatusProvider" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.util.containers.BidirectionalMap" />
     <classNode dependClassName="com.intellij.util.containers.BidirectionalMultiMap" />
@@ -79,7 +79,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.SModelAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifference" file="CurrentDifference.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -121,6 +120,8 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" file="CurrentDifferenceRegistry.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
+    <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.Change" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeList" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListListener" />

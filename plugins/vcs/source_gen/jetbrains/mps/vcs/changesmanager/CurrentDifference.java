@@ -5,7 +5,6 @@ package jetbrains.mps.vcs.changesmanager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -20,11 +19,10 @@ public class CurrentDifference {
   private CurrentDifferenceBroadcaster myBroadcaster;
   private boolean myEnabled = false;
 
-  public CurrentDifference(@NotNull Project project, @NotNull EditableSModelDescriptor modelDescriptor) {
-    CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(project);
+  public CurrentDifference(@NotNull CurrentDifferenceRegistry registry, @NotNull EditableSModelDescriptor modelDescriptor) {
     myCommandQueue = registry.getCommandQueue();
     myModelDescriptor = modelDescriptor;
-    myTracking = new ChangesTracking(project, this);
+    myTracking = new ChangesTracking(registry.getProject(), this);
     myBroadcaster = new CurrentDifferenceBroadcaster(myCommandQueue);
     myBroadcaster.addDifferenceListener(registry.getGlobalBroadcaster());
   }

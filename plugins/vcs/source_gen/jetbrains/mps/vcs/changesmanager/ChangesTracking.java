@@ -20,11 +20,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.vcs.FileStatus;
+import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.ModelAccess;
@@ -127,14 +127,12 @@ public class ChangesTracking {
     }
     VirtualFile modelVFile = VirtualFileUtils.getVirtualFile(modelFile);
 
-    assert myProject.getComponent(VcsFileStatusProvider.class) != null;
-
-    if (modelVFile == null || myProject.getComponent(ProjectLevelVcsManager.class).getVcsFor(modelVFile) == null) {
+    if (modelVFile == null || ProjectLevelVcsManager.getInstance(myProject).getVcsFor(modelVFile) == null) {
       return;
     }
 
     final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
-    FileStatus status = myProject.getComponent(VcsFileStatusProvider.class).getFileStatus(modelVFile);
+    FileStatus status = FileStatusManager.getInstance(myProject).getStatus(modelVFile);
     if (FileStatus.NOT_CHANGED == status && !(force)) {
       return;
     }
