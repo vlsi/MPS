@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.fileEditor.impl.LoadTextUtil;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
@@ -26,6 +27,7 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.text.CharArrayUtil;
+import com.intellij.xml.util.XmlUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.ProxyFindUsagesManager;
@@ -37,11 +39,14 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.jetbrains.annotations.NotNull;
 
+import java.nio.charset.Charset;
 import java.util.*;
 
 public class FastFindUsagesManager extends FindUsagesManager implements ApplicationComponent {
@@ -287,7 +292,8 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
   private static class MyFileTypeIdIndexer extends FileTypeIdIndexer {
     @NotNull
     public Map<IdIndexEntry, Integer> map(FileContent inputData) {
-      CharSequence data = inputData.getContentAsText();
+      byte[] content = inputData.getContent();
+      CharSequence data = LoadTextUtil.getTextByBinaryPresentation(content, FileUtil.DEFAULT_CHARSET);
       char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
       int len = data.length();
       if (charsArray == null) {

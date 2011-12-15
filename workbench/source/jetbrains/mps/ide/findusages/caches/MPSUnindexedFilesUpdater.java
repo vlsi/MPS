@@ -19,7 +19,6 @@ import com.intellij.ide.caches.CacheUpdater;
 import com.intellij.ide.caches.FileContent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.CollectingContentIterator;
 import com.intellij.openapi.roots.ContentIterator;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
@@ -45,7 +44,8 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
     return myIndex.getNumberOfPendingInvalidations();
   }
 
-  public VirtualFile[] queryNeededFiles() {
+  @Override
+  public VirtualFile[] queryNeededFiles(ProgressIndicator indicator) {
     final CollectingContentIterator finder = myIndex.createContentIterator();
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -78,7 +78,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
 
   private void iterateRecursively(final VirtualFile root, final ContentIterator processor, ProgressIndicator indicator) {
     if (root == null) return;
-    if (!CacheUtil.checkFile(root,myManager)) return;
+    if (!CacheUtil.checkFile(root, myManager)) return;
 
     if (indicator != null) {
       indicator.setText2(root.getPresentableUrl());

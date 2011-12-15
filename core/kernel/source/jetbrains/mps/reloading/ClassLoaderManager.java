@@ -87,7 +87,9 @@ public class ClassLoaderManager implements CoreComponent {
       RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(module.getModuleReference());
 
       if (bundle == null) {
-        LOG.error("Can't find a bundle " + module.getModuleReference().getModuleFqName(), new Throwable());
+        new Throwable().printStackTrace();
+        System.out.printf("Can't find a bundle " + module.getModuleReference().getModuleFqName());
+        
         return null;
       }
 

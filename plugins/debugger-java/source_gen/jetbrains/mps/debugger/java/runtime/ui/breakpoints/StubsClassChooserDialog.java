@@ -27,6 +27,11 @@ public abstract class StubsClassChooserDialog extends BaseDialog {
       protected boolean isValid(SNode node) {
         return StubsClassChooserDialog.this.isValid(node);
       }
+
+      @Override
+      public boolean willOpenEditor() {
+        return false;
+      }
     };
     myPanel = MpsPopupFactory.createPanelForNode(myModel, false);
     myPanel.invoke(new ChooseByNamePopupComponent.Callback() {

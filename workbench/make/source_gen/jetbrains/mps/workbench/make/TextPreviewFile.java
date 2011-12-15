@@ -46,11 +46,6 @@ public class TextPreviewFile extends StubVirtualFile {
     );
   }
 
-  @Override
-  public Icon getIcon() {
-    return Icons.GENERATED;
-  }
-
   @NotNull
   @Override
   public byte[] contentsToByteArray() throws IOException {

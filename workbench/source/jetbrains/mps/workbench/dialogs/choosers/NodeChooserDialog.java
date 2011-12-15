@@ -82,6 +82,10 @@ class NodeChooserDialog extends BaseDialog {
       public boolean loadInitialCheckBoxState() {
         return false;
       }
+
+      public boolean willOpenEditor() {
+        return false;
+      }
     };
 
     myChooser = MpsPopupFactory.createPanelForNode(goToNodeModel, false);
