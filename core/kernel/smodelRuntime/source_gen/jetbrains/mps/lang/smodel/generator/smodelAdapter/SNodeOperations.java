@@ -623,7 +623,7 @@ public class SNodeOperations {
       return null;
     }
     String genuineRole = SModelUtil.getGenuineLinkRole(referenceLinkDecl);
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, genuineRole, context);
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, genuineRole, referenceNode.getRoleLink(), context);
     if (status.isOk()) {
       return status.getSearchScope();
     }

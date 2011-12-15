@@ -24,12 +24,14 @@ public class ReferentConstraintContext implements ReferenceConstraintsContext {
   private SNode myEnclosingNode;
   private SNode myReferenceNode;
   private SNode myLinkTarget;
+  private SNode myContainingLink;
 
-  public ReferentConstraintContext(SModel model, SNode enclosingNode, SNode referenceNode, SNode linkTarget) {
+  public ReferentConstraintContext(SModel model, SNode enclosingNode, SNode referenceNode, SNode linkTarget, SNode containingLink) {
     myModel = model;
     myEnclosingNode = enclosingNode;
     myReferenceNode = referenceNode;
     myLinkTarget = linkTarget;
+    myContainingLink = containingLink;
   }
 
   public SModel getModel() {
@@ -46,5 +48,10 @@ public class ReferentConstraintContext implements ReferenceConstraintsContext {
 
   public SNode getLinkTarget() {
     return myLinkTarget;
+  }
+
+  @Override
+  public SNode getContainingLink() {
+    return myContainingLink;
   }
 }
