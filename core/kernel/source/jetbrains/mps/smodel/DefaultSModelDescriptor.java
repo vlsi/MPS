@@ -104,13 +104,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       runModelLoading(
         new Computable<ModelLoadResult>() {
           public ModelLoadResult compute() {
-            SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
-            fullModel.setLoading(true);
-
             try {
               mySModel.setLoading(true);
+              SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
+              fullModel.setLoading(true);
+
               new ModelLoader(mySModel, fullModel).update();
-              setLoadingState(ModelLoadingState.FULLY_LOADED);
+              myLoadingState = ModelLoadingState.FULLY_LOADED;
               fireModelStateChanged(ModelLoadingState.ROOTS_LOADED, ModelLoadingState.FULLY_LOADED);
             } finally {
               mySModel.setLoading(false);
@@ -158,23 +158,25 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 
-    IFile modelFile = getModelFile();
+    synchronized (myLoadingLock) {
+      IFile modelFile = getModelFile();
 
-    if (modelFile == null || !modelFile.exists()) {
-      SModelRepository.getInstance().deleteModel(this);
-      return;
+      if (modelFile == null || !modelFile.exists()) {
+        SModelRepository.getInstance().deleteModel(this);
+        return;
+      }
+
+      DescriptorLoadResult dr = ModelPersistence.loadDescriptor(modelFile);
+      myHeader = dr.getHeader();
+      myMetadata = dr.getMetadata();
+
+      if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
+
+      ModelLoadResult result = load(getLoadingState());
+      replaceModel(result.getModel(), result.getState());
+      updateLastChange();
+      LOG.assertLog(!needsReloading());
     }
-
-    DescriptorLoadResult dr = ModelPersistence.loadDescriptor(modelFile);
-    myHeader = dr.getHeader();
-    myMetadata = dr.getMetadata();
-
-    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
-
-    ModelLoadResult result = load(getLoadingState());
-    replaceModel(result.getModel(), getLoadingState());
-    updateLastChange();
-    LOG.assertLog(!needsReloading());
   }
 
   public int getPersistenceVersion() {
@@ -206,20 +208,23 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private void resolveDiskConflict() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myModelFile, mySModel);
-        if (needSave) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              updateDiskTimestamp();
-              save();
-            }
-          });
-        } else {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              reloadFromDisk();
-            }
-          });
+        final boolean needSave;
+        synchronized (myLoadingLock) {
+          needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myModelFile, mySModel);
+          if (needSave) {
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                updateDiskTimestamp();
+                save();
+              }
+            });
+          } else {
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                reloadFromDisk();
+              }
+            });
+          }
         }
       }
     }, ModalityState.NON_MODAL);
@@ -248,7 +253,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     setChanged(false);
     SModel newData = myModelRootManager.saveModel(this);
     if (newData != null) {
-      replaceModel(newData);
+      replaceModel(newData, ModelLoadingState.FULLY_LOADED);
     }
 
     updateDiskTimestamp();
@@ -332,11 +337,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public SModelHeader getSModelHeader() {
-    SModel model = mySModel;
-    if (model != null) {
-      return model.getSModelHeader();
+    synchronized (myLoadingLock) {
+      SModel model = mySModel;
+      if (model != null) {
+        return model.getSModelHeader();
+      }
+      return myHeader;
     }
-    return myHeader;
   }
 
   public Map<String, String> getMetaData() {

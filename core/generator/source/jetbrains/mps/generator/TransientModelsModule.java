@@ -284,7 +284,7 @@ public class TransientModelsModule extends AbstractModule {
 
         this.mySModel = null;
         fireModelReplaced();
-        setLoadingState(ModelLoadingState.NOT_LOADED);
+        myLoadingState = ModelLoadingState.NOT_LOADED;
       }
     }
 

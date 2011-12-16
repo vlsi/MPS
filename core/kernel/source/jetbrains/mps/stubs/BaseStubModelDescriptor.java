@@ -134,11 +134,6 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
   //------------common descriptor stuff-------------------
 
 
-  protected void setLoadingState(ModelLoadingState state) {
-    assert state != ModelLoadingState.ROOTS_LOADED : "this state can't be used for stub models for now";
-    super.setLoadingState(state);
-  }
-
   protected ModelLoadResult initialLoad() {
     SModel model = myModelRootManager.loadModel(this);
     try {

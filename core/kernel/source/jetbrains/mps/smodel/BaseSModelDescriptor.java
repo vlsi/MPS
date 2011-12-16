@@ -31,7 +31,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
   protected volatile SModel mySModel = null;
-  private volatile ModelLoadingState myLoadingState = ModelLoadingState.NOT_LOADED;
+  protected volatile ModelLoadingState myLoadingState = ModelLoadingState.NOT_LOADED;
   protected final Object myLoadingLock = new Object();
 
   protected SModelReference myModelReference;
@@ -67,12 +67,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       mySModel = result.model;
       mySModel.setModelDescriptor(this);
       myLoadingState = result.state;
-    }
 
-    if (oldState != myLoadingState) {
-      fireModelStateChanged(oldState, myLoadingState);
+      if (oldState != myLoadingState) {
+        fireModelStateChanged(oldState, myLoadingState);
+      }
+      return mySModel;
     }
-    return mySModel;
   }
 
   protected abstract ModelLoadResult initialLoad();
@@ -119,18 +119,16 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   public void refresh() {
     ModelAccess.assertLegalWrite();
-    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
+    synchronized (myLoadingLock) {
+      if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
-    mySModel.clearAdaptersAndUserObjects();
-    mySModel.refreshRefactoringHistory();
+      mySModel.clearAdaptersAndUserObjects();
+      mySModel.refreshRefactoringHistory();
+    }
   }
 
   public ModelLoadingState getLoadingState() {
     return myLoadingState;
-  }
-
-  protected void setLoadingState(ModelLoadingState state) {
-    myLoadingState = state;
   }
 
   public IModelRootManager getModelRootManager() {
@@ -198,9 +196,11 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Override
   public void dispose() {
     ModelAccess.assertLegalWrite();
-    if (mySModel != null) {
-      fireBeforeModelDisposed(mySModel);
-      mySModel.dispose();
+    synchronized (myLoadingLock) {
+      if (mySModel != null) {
+        fireBeforeModelDisposed(mySModel);
+        mySModel.dispose();
+      }
     }
     clearListeners();
   }
@@ -235,11 +235,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myModelCommandListeners.clear();
   }
 
-  //this method should be called only with a fully loaded model as parameter
-  public void replaceModel(@NotNull SModel newModel) {
-    replaceModel(newModel, ModelLoadingState.FULLY_LOADED);
-  }
-
   public void replaceModel(SModel newModel, ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
     final SModel oldSModel;
@@ -250,7 +245,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
         oldSModel.setModelDescriptor(null);
       }
       mySModel = newModel;
-      setLoadingState(state);
+      myLoadingState = state;
 
       if (mySModel != null) {
         mySModel.setModelDescriptor(this);

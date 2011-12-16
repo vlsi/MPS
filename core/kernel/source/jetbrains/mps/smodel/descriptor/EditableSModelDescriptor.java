@@ -51,8 +51,6 @@ public interface EditableSModelDescriptor extends SModelDescriptor, Refactorable
 
   boolean isPackaged();
 
-  void replaceModel(@NotNull SModel newModel);
-
   void setDoNotGenerate(boolean value);
 
   boolean isDoNotGenerate();

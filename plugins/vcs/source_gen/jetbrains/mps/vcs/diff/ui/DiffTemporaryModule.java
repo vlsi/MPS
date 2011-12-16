@@ -168,7 +168,7 @@ public class DiffTemporaryModule extends AbstractModule {
       myModule = module;
       mySModel = model;
       myEditable = editable;
-      setLoadingState(ModelLoadingState.FULLY_LOADED);
+      myLoadingState = ModelLoadingState.FULLY_LOADED;
     }
 
     protected BaseSModelDescriptor.ModelLoadResult initialLoad() {
