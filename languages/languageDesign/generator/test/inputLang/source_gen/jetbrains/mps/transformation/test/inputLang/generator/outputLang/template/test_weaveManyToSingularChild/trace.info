@@ -102,14 +102,20 @@
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="139" startPosition="209" endLine="140" endPosition="21" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="145" startPosition="100" endLine="146" endPosition="221" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="89" startPosition="68" endLine="91" endPosition="5" />
-    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="116" startPosition="142" endLine="118" endPosition="20" />
+    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="116" startPosition="142" endLine="118" endPosition="20">
+      <varInfo nodeId="1218738629621" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="122" startPosition="60" endLine="124" endPosition="5" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="35" startPosition="43" endLine="38" endPosition="94" />
-    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="149" startPosition="163" endLine="152" endPosition="51" />
+    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="149" startPosition="163" endLine="152" endPosition="51">
+      <varInfo nodeId="1218738629621" varName="tlist1" />
+    </scopeInfo>
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1218738629621" varName="generator" />
+    </scopeInfo>
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
@@ -127,12 +133,30 @@
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="138" startPosition="127" endLine="142" endPosition="18" />
-    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="144" startPosition="0" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="34" startPosition="0" endLine="39" endPosition="3" />
-    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="115" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="148" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="108" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="137" startPosition="0" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="144" startPosition="0" endLine="148" endPosition="0">
+      <varInfo nodeId="1218738629621" varName="context" />
+      <varInfo nodeId="1218738629621" varName="environment" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="34" startPosition="0" endLine="39" endPosition="3">
+      <varInfo nodeId="1218738629621" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="115" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="1218738629621" varName="context" />
+      <varInfo nodeId="1218738629621" varName="environment" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="148" startPosition="0" endLine="154" endPosition="0">
+      <varInfo nodeId="1218738629621" varName="context" />
+      <varInfo nodeId="1218738629621" varName="environment" />
+      <varInfo nodeId="1218738629621" varName="outputContextNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="108" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="1218738629621" varName="context" />
+      <varInfo nodeId="1218738629621" varName="environment" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="137" startPosition="0" endLine="144" endPosition="0">
+      <varInfo nodeId="1218738629621" varName="context" />
+      <varInfo nodeId="1218738629621" varName="environment" />
+    </scopeInfo>
     <unitInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="25" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain" />
     <unitInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="89" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain$RootMappingRule0" />
     <unitInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="122" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain$WeavingRule0" />
@@ -184,11 +208,21 @@
     <scopeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="56" startPosition="17" endLine="58" endPosition="82" />
     <scopeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="42" startPosition="15" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="40" startPosition="9" endLine="54" endPosition="33" />
+    <scopeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="40" startPosition="9" endLine="54" endPosition="33">
+      <varInfo nodeId="1218738789586" varName="tnode3" />
+    </scopeInfo>
     <scopeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="34" startPosition="11" endLine="55" endPosition="9" />
-    <scopeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="30" startPosition="9" endLine="61" endPosition="78" />
-    <scopeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="28" startPosition="158" endLine="65" endPosition="18" />
-    <scopeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="27" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="30" startPosition="9" endLine="61" endPosition="78">
+      <varInfo nodeId="1218738789586" varName="context1" />
+      <varInfo nodeId="1218738789586" varName="tnode2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="28" startPosition="158" endLine="65" endPosition="18">
+      <varInfo nodeId="1218738789586" varName="tlist1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="27" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1218738789586" varName="context" />
+      <varInfo nodeId="1218738789586" varName="environment" />
+    </scopeInfo>
     <unitInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="15" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Templatemap__outputNode" />
   </root>
   <root nodeId="1218738992784">
@@ -224,11 +258,26 @@
     <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="35" startPosition="15" endLine="37" endPosition="78" />
     <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="30" startPosition="9" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="46" startPosition="180" endLine="50" endPosition="50" />
-    <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="28" startPosition="154" endLine="39" endPosition="18" />
-    <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="27" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1218738992784" varName="context" />
+      <varInfo nodeId="1218738992784" varName="environment" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="46" startPosition="180" endLine="50" endPosition="50">
+      <varInfo nodeId="1218738992784" varName="tnodepart0" />
+      <varInfo nodeId="1218738992784" varName="weaveTf0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1218738992784" varName="context" />
+      <varInfo nodeId="1218738992784" varName="environment" />
+      <varInfo nodeId="1218738992784" varName="outputContextNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="28" startPosition="154" endLine="39" endPosition="18">
+      <varInfo nodeId="1218738992784" varName="tnode1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="27" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1218738992784" varName="context" />
+      <varInfo nodeId="1218738992784" varName="environment" />
+    </scopeInfo>
     <unitInfo nodeId="1218738992784" fileName="Templateweave__InputNode__A.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Templateweave__InputNode__A" />
   </root>
 </debugInfo>

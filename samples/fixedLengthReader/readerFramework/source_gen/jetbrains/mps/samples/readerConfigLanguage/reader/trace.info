@@ -10,9 +10,9 @@
       <varInfo nodeId="3515521059660696297" varName="targetClass" />
     </scopeInfo>
     <scopeInfo nodeId="3515521059660696300" fileName="ReaderStrategy.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="3515521059660696303" varName="start" />
-      <varInfo nodeId="3515521059660696307" varName="name" />
       <varInfo nodeId="3515521059660696305" varName="end" />
+      <varInfo nodeId="3515521059660696307" varName="name" />
+      <varInfo nodeId="3515521059660696303" varName="start" />
     </scopeInfo>
     <unitInfo nodeId="3515521059660696290" fileName="ReaderStrategy.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.reader.ReaderStrategy" />
   </root>

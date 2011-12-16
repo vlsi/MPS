@@ -32,15 +32,27 @@
     <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="42" startPosition="68" endLine="43" endPosition="39" />
     <scopeInfo nodeId="1157155146536632975" fileName="Record.java" startLine="46" startPosition="28" endLine="47" endPosition="76" />
     <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="8" startPosition="67" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1157155146536632949" varName="age" />
+      <varInfo nodeId="1157155146536632949" varName="name" />
+      <varInfo nodeId="1157155146536632949" varName="size" />
+    </scopeInfo>
+    <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1157155146536632949" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1157155146536632949" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1157155146536632949" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1157155146536632964" fileName="Record.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="40" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1157155146536632949" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="1157155146536632949" fileName="Record.java" startLine="8" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Record" />
   </root>
   <root nodeId="1238952260515">
@@ -188,7 +200,9 @@
     <scopeInfo nodeId="3340526992428338503" fileName="IndexedTuples_Test.java" startLine="155" startPosition="31" endLine="156" endPosition="21" />
     <scopeInfo nodeId="6395420914225306519" fileName="IndexedTuples_Test.java" startLine="171" startPosition="67" endLine="172" endPosition="31" />
     <scopeInfo nodeId="1238953768406" fileName="IndexedTuples_Test.java" startLine="208" startPosition="65" endLine="209" endPosition="51" />
-    <scopeInfo nodeId="1238953073445" fileName="IndexedTuples_Test.java" startLine="56" startPosition="5" endLine="58" endPosition="32" />
+    <scopeInfo nodeId="1238953073445" fileName="IndexedTuples_Test.java" startLine="56" startPosition="5" endLine="58" endPosition="32">
+      <varInfo nodeId="1238953073445" varName="_tmp_3wrel6_b0c0" />
+    </scopeInfo>
     <scopeInfo nodeId="429408675341322668" fileName="IndexedTuples_Test.java" startLine="184" startPosition="47" endLine="186" endPosition="54">
       <varInfo nodeId="429408675341322687" varName="pair" />
     </scopeInfo>
@@ -196,8 +210,12 @@
       <varInfo nodeId="1238952304221" varName="empty" />
       <varInfo nodeId="1238952432698" varName="emptyToo" />
     </scopeInfo>
-    <scopeInfo nodeId="1238953654863" fileName="IndexedTuples_Test.java" startLine="62" startPosition="5" endLine="65" endPosition="32" />
-    <scopeInfo nodeId="1238953142591" fileName="IndexedTuples_Test.java" startLine="74" startPosition="5" endLine="77" endPosition="34" />
+    <scopeInfo nodeId="1238953654863" fileName="IndexedTuples_Test.java" startLine="62" startPosition="5" endLine="65" endPosition="32">
+      <varInfo nodeId="1238953654863" varName="_tmp_3wrel6_e0c0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238953142591" fileName="IndexedTuples_Test.java" startLine="74" startPosition="5" endLine="77" endPosition="34">
+      <varInfo nodeId="1238953142591" varName="_tmp_3wrel6_c0d0" />
+    </scopeInfo>
     <scopeInfo nodeId="1238953806295" fileName="IndexedTuples_Test.java" startLine="83" startPosition="56" endLine="86" endPosition="45">
       <varInfo nodeId="1238953836182" varName="pair" />
     </scopeInfo>
@@ -214,7 +232,9 @@
     <scopeInfo nodeId="6395420914225306523" fileName="IndexedTuples_Test.java" startLine="170" startPosition="14" endLine="173" endPosition="5">
       <varInfo nodeId="6395420914225306532" varName="tt" />
     </scopeInfo>
-    <scopeInfo nodeId="974579920306757552" fileName="IndexedTuples_Test.java" startLine="102" startPosition="106" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="974579920306757552" fileName="IndexedTuples_Test.java" startLine="102" startPosition="106" endLine="106" endPosition="0">
+      <varInfo nodeId="974579920306757552" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="8209339320719820943" fileName="IndexedTuples_Test.java" startLine="141" startPosition="234" endLine="145" endPosition="0" />
     <scopeInfo nodeId="3340526992428338502" fileName="IndexedTuples_Test.java" startLine="154" startPosition="177" endLine="158" endPosition="0" />
     <scopeInfo nodeId="6272899139367862291" fileName="IndexedTuples_Test.java" startLine="162" startPosition="47" endLine="166" endPosition="30">
@@ -291,7 +311,7 @@
     <unitInfo nodeId="3340526992428338502" fileName="IndexedTuples_Test.java" startLine="154" startPosition="136" endLine="158" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test$4" />
   </root>
   <root nodeId="1239714501613">
-    <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="233" startPosition="27" endLine="233" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239720100329" fileName="NamedTuples_Test.java" startLine="233" startPosition="27" endLine="233" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6278501903477416711" fileName="NamedTuples_Test.java" startLine="23" startPosition="55" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6278501903477416709" fileName="NamedTuples_Test.java" startLine="25" startPosition="15" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239718507781" fileName="NamedTuples_Test.java" startLine="27" startPosition="5" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -395,14 +415,14 @@
     <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="214" startPosition="49" endLine="215" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="222" startPosition="28" endLine="223" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="223" startPosition="54" endLine="224" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="225" startPosition="27" endLine="226" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="226" startPosition="38" endLine="227" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="227" startPosition="57" endLine="228" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="229" startPosition="27" endLine="230" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="230" startPosition="38" endLine="231" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="231" startPosition="57" endLine="232" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="233" startPosition="27" endLine="234" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="234" startPosition="38" endLine="235" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1239720102562" fileName="NamedTuples_Test.java" startLine="225" startPosition="27" endLine="226" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239720102562" fileName="NamedTuples_Test.java" startLine="226" startPosition="38" endLine="227" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239720102562" fileName="NamedTuples_Test.java" startLine="227" startPosition="57" endLine="228" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239720114071" fileName="NamedTuples_Test.java" startLine="229" startPosition="27" endLine="230" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239720114071" fileName="NamedTuples_Test.java" startLine="230" startPosition="38" endLine="231" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239720114071" fileName="NamedTuples_Test.java" startLine="231" startPosition="57" endLine="232" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239720100329" fileName="NamedTuples_Test.java" startLine="233" startPosition="27" endLine="234" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239720100329" fileName="NamedTuples_Test.java" startLine="234" startPosition="38" endLine="235" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="236" startPosition="28" endLine="237" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="239" startPosition="31" endLine="240" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6278501903477416704" fileName="NamedTuples_Test.java" startLine="24" startPosition="35" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -446,7 +466,7 @@
     <nodeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="210" startPosition="62" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1239720095043" fileName="NamedTuples_Test.java" startLine="209" startPosition="39" endLine="246" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239720061720" fileName="NamedTuples_Test.java" startLine="208" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSequence#()Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="233" startPosition="27" endLine="233" endPosition="27" />
+    <scopeInfo nodeId="1239720100329" fileName="NamedTuples_Test.java" startLine="233" startPosition="27" endLine="233" endPosition="27" />
     <scopeInfo nodeId="6278501903477416705" fileName="NamedTuples_Test.java" startLine="25" startPosition="15" endLine="26" endPosition="13" />
     <scopeInfo nodeId="1240933105392" fileName="NamedTuples_Test.java" startLine="102" startPosition="38" endLine="103" endPosition="36" />
     <scopeInfo nodeId="8755343252890010280" fileName="NamedTuples_Test.java" startLine="147" startPosition="49" endLine="148" endPosition="28" />
@@ -468,21 +488,27 @@
       <varInfo nodeId="1157155146536637828" varName="r" />
     </scopeInfo>
     <scopeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="222" startPosition="28" endLine="224" endPosition="35" />
-    <scopeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="233" startPosition="27" endLine="235" endPosition="28" />
+    <scopeInfo nodeId="1239720100329" fileName="NamedTuples_Test.java" startLine="233" startPosition="27" endLine="235" endPosition="28" />
     <scopeInfo nodeId="1239719999843" fileName="NamedTuples_Test.java" startLine="51" startPosition="51" endLine="54" endPosition="43">
       <varInfo nodeId="1239720006877" varName="data" />
     </scopeInfo>
     <scopeInfo nodeId="1239722532678" fileName="NamedTuples_Test.java" startLine="65" startPosition="64" endLine="68" endPosition="42">
       <varInfo nodeId="1239722554918" varName="itpl" />
     </scopeInfo>
-    <scopeInfo nodeId="1239722643439" fileName="NamedTuples_Test.java" startLine="74" startPosition="5" endLine="77" endPosition="34" />
+    <scopeInfo nodeId="1239722643439" fileName="NamedTuples_Test.java" startLine="74" startPosition="5" endLine="77" endPosition="34">
+      <varInfo nodeId="1239722643439" varName="_tmp_w279bq_c0e0" />
+    </scopeInfo>
     <scopeInfo nodeId="8755343252890010279" fileName="NamedTuples_Test.java" startLine="146" startPosition="98" endLine="149" endPosition="5">
       <varInfo nodeId="8755343252890010282" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="225" startPosition="27" endLine="228" endPosition="34" />
-    <scopeInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="229" startPosition="27" endLine="232" endPosition="34" />
-    <scopeInfo nodeId="1239720139050" fileName="NamedTuples_Test.java" startLine="58" startPosition="44" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="1240933105391" fileName="NamedTuples_Test.java" startLine="101" startPosition="61" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="1239720102562" fileName="NamedTuples_Test.java" startLine="225" startPosition="27" endLine="228" endPosition="34" />
+    <scopeInfo nodeId="1239720114071" fileName="NamedTuples_Test.java" startLine="229" startPosition="27" endLine="232" endPosition="34" />
+    <scopeInfo nodeId="1239720139050" fileName="NamedTuples_Test.java" startLine="58" startPosition="44" endLine="62" endPosition="5">
+      <varInfo nodeId="1239720139050" varName="tpl" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240933105391" fileName="NamedTuples_Test.java" startLine="101" startPosition="61" endLine="105" endPosition="0">
+      <varInfo nodeId="1240933105391" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="4817470067537861873" fileName="NamedTuples_Test.java" startLine="155" startPosition="49" endLine="159" endPosition="44">
       <varInfo nodeId="4817470067537861883" varName="pair" />
     </scopeInfo>
@@ -493,8 +519,12 @@
     <scopeInfo nodeId="1839439077527302413" fileName="NamedTuples_Test.java" startLine="174" startPosition="45" endLine="178" endPosition="31">
       <varInfo nodeId="1839439077527302423" varName="pair" />
     </scopeInfo>
-    <scopeInfo nodeId="1241009587748" fileName="NamedTuples_Test.java" startLine="190" startPosition="134" endLine="194" endPosition="0" />
-    <scopeInfo nodeId="1241009714386" fileName="NamedTuples_Test.java" startLine="198" startPosition="146" endLine="202" endPosition="0" />
+    <scopeInfo nodeId="1241009587748" fileName="NamedTuples_Test.java" startLine="190" startPosition="134" endLine="194" endPosition="0">
+      <varInfo nodeId="1241009587748" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241009714386" fileName="NamedTuples_Test.java" startLine="198" startPosition="146" endLine="202" endPosition="0">
+      <varInfo nodeId="1241009714386" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1239719969664" fileName="NamedTuples_Test.java" startLine="204" startPosition="0" endLine="208" endPosition="0" />
     <scopeInfo nodeId="1239720051534" fileName="NamedTuples_Test.java" startLine="57" startPosition="56" endLine="62" endPosition="5">
       <varInfo nodeId="1239720135282" varName="seq" />
@@ -601,12 +631,21 @@
     <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="29" startPosition="23" endLine="30" endPosition="22" />
     <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="34" startPosition="58" endLine="35" endPosition="37" />
     <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="8" startPosition="57" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1239715318677" varName="bar" />
+      <varInfo nodeId="1239715318677" varName="foo" />
+    </scopeInfo>
+    <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1239715318677" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1239715318677" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1239715318677" fileName="Data.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1239715318677" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="1239715318677" fileName="Data.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Data" />
   </root>
   <root nodeId="1239977019775">
@@ -630,7 +669,9 @@
     <nodeInfo nodeId="1239977032461" fileName="GenericNamedTuples_Test.java" startLine="9" startPosition="55" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_pair#()V" />
     <nodeInfo nodeId="1239977136862" fileName="GenericNamedTuples_Test.java" startLine="18" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_pairToIndexedTuple#()V" />
     <scopeInfo nodeId="1240073848856" fileName="GenericNamedTuples_Test.java" startLine="32" startPosition="47" endLine="33" endPosition="46" />
-    <scopeInfo nodeId="1239977231412" fileName="GenericNamedTuples_Test.java" startLine="23" startPosition="5" endLine="26" endPosition="32" />
+    <scopeInfo nodeId="1239977231412" fileName="GenericNamedTuples_Test.java" startLine="23" startPosition="5" endLine="26" endPosition="32">
+      <varInfo nodeId="1239977231412" varName="_tmp_quuzte_d0b0" />
+    </scopeInfo>
     <scopeInfo nodeId="1240073848853" fileName="GenericNamedTuples_Test.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="1239977032463" fileName="GenericNamedTuples_Test.java" startLine="10" startPosition="44" endLine="16" endPosition="40">
       <varInfo nodeId="1239977080198" varName="pair" />
@@ -667,12 +708,21 @@
     <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="29" startPosition="21" endLine="30" endPosition="22" />
     <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="34" startPosition="48" endLine="35" endPosition="37" />
     <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="8" startPosition="53" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1239977036413" varName="first" />
+      <varInfo nodeId="1239977036413" varName="second" />
+    </scopeInfo>
+    <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1239977036413" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1239977036413" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1239977036413" fileName="Pair.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1239977036413" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="1239977036413" fileName="Pair.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Pair" />
   </root>
   <root nodeId="1240574537739">
@@ -692,10 +742,16 @@
     <scopeInfo nodeId="1240574537739" fileName="Bool.java" startLine="21" startPosition="27" endLine="22" endPosition="22" />
     <scopeInfo nodeId="1240574537739" fileName="Bool.java" startLine="26" startPosition="51" endLine="27" endPosition="37" />
     <scopeInfo nodeId="1240574537739" fileName="Bool.java" startLine="8" startPosition="50" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="1240574537739" fileName="Bool.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1240574537739" fileName="Bool.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1240574537739" fileName="Bool.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1240574537739" varName="isTrue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240574537739" fileName="Bool.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1240574537739" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1240574537739" fileName="Bool.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1240574537739" fileName="Bool.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1240574537739" fileName="Bool.java" startLine="24" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1240574537739" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="1240574537739" fileName="Bool.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Bool" />
   </root>
   <root nodeId="2682363017137682662">
@@ -706,7 +762,9 @@
     <nodeInfo nodeId="2682363017137682709" fileName="MPS14511_Test.java" startLine="16" startPosition="34" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2682363017137682709" fileName="MPS14511_Test.java" startLine="12" startPosition="45" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2682363017137682669" fileName="MPS14511_Test.java" startLine="9" startPosition="45" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_accessNamedTupleInOtherPkg#()V" />
-    <scopeInfo nodeId="2682363017137682709" fileName="MPS14511_Test.java" startLine="16" startPosition="0" endLine="17" endPosition="28" />
+    <scopeInfo nodeId="2682363017137682709" fileName="MPS14511_Test.java" startLine="16" startPosition="0" endLine="17" endPosition="28">
+      <varInfo nodeId="2682363017137682709" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="2682363017137682709" fileName="MPS14511_Test.java" startLine="16" startPosition="34" endLine="17" endPosition="28" />
     <scopeInfo nodeId="2682363017137682709" fileName="MPS14511_Test.java" startLine="13" startPosition="9" endLine="15" endPosition="20" />
     <scopeInfo nodeId="2682363017137682672" fileName="MPS14511_Test.java" startLine="10" startPosition="66" endLine="18" endPosition="5">
@@ -784,27 +842,55 @@
     <scopeInfo nodeId="3142843783245432638" fileName="ExtendedNamedTuples.java" startLine="8" startPosition="34" endLine="10" endPosition="3" />
     <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="50" startPosition="66" endLine="52" endPosition="64" />
     <scopeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="12" startPosition="66" endLine="15" endPosition="5" />
-    <scopeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="16" startPosition="0" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="16" startPosition="0" endLine="19" endPosition="5">
+      <varInfo nodeId="3142843783245432642" varName="num" />
+      <varInfo nodeId="3142843783245432642" varName="str" />
+    </scopeInfo>
     <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="45" startPosition="0" endLine="48" endPosition="5" />
     <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="87" startPosition="125" endLine="90" endPosition="18" />
     <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="93" startPosition="153" endLine="96" endPosition="18" />
-    <scopeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="3142843783245432642" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="3142843783245432642" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="49" startPosition="0" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="49" startPosition="0" endLine="53" endPosition="5">
+      <varInfo nodeId="7367153454745440808" varName="id" />
+      <varInfo nodeId="7367153454745440808" varName="num" />
+      <varInfo nodeId="7367153454745440808" varName="size" />
+      <varInfo nodeId="7367153454745440808" varName="str" />
+    </scopeInfo>
+    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="7367153454745440808" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="7367153454745440808" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="7367153454745440808" varName="id" />
+    </scopeInfo>
+    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="7367153454745440808" varName="size" />
+    </scopeInfo>
     <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="36" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="98" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="86" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="92" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="36" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="3142843783245432642" varName="from" />
+    </scopeInfo>
+    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="98" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="7367153454745440808" varName="from" />
+    </scopeInfo>
+    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="86" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="7367153454745440808" varName="from" />
+    </scopeInfo>
+    <scopeInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="92" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="7367153454745440808" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="3142843783245432636" fileName="ExtendedNamedTuples.java" startLine="8" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples" />
     <unitInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="43" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples$Bar" />
     <unitInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples$Foo" />
@@ -865,12 +951,18 @@
     <scopeInfo nodeId="6562295948842607167" fileName="Sample.java" startLine="30" startPosition="29" endLine="31" endPosition="38" />
     <scopeInfo nodeId="6562295948842609628" fileName="Sample.java" startLine="34" startPosition="20" endLine="35" endPosition="26" />
     <scopeInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="8" startPosition="71" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="6562295948842315074" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="6562295948842315074" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="6562295948842607164" fileName="Sample.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="6562295948842609625" fileName="Sample.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="24" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="6562295948842315074" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Sample" />
   </root>
   <root nodeId="7781156898616395636">
@@ -896,12 +988,21 @@
     <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="29" startPosition="22" endLine="30" endPosition="22" />
     <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="34" startPosition="63" endLine="35" endPosition="40" />
     <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="8" startPosition="62" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="7781156898616395636" varName="a" />
+      <varInfo nodeId="7781156898616395636" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="7781156898616395636" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="7781156898616395636" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="7781156898616395636" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.IntPair" />
   </root>
   <root nodeId="8209339320719679363">

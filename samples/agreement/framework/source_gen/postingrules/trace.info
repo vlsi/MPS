@@ -20,14 +20,14 @@
     <nodeInfo nodeId="6531435794299649911" fileName="AccountingTransaction.java" startLine="12" startPosition="44" endLine="13" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6531435794299649878" fileName="AccountingTransaction.java" startLine="8" startPosition="36" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AccountingTransaction#(Lmf/Money;Lpostingrules/Account;Lpostingrules/Account;Lmf/MfDate;)V" />
     <scopeInfo nodeId="6531435794299649889" fileName="AccountingTransaction.java" startLine="9" startPosition="85" endLine="13" endPosition="25">
-      <varInfo nodeId="6531435794299649905" varName="toEntry" />
       <varInfo nodeId="6531435794299649891" varName="fromEntry" />
+      <varInfo nodeId="6531435794299649905" varName="toEntry" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299649878" fileName="AccountingTransaction.java" startLine="8" startPosition="36" endLine="14" endPosition="3">
-      <varInfo nodeId="6531435794299649885" varName="to" />
       <varInfo nodeId="6531435794299649881" varName="amount" />
-      <varInfo nodeId="6531435794299649883" varName="from" />
       <varInfo nodeId="6531435794299649887" varName="date" />
+      <varInfo nodeId="6531435794299649883" varName="from" />
+      <varInfo nodeId="6531435794299649885" varName="to" />
     </scopeInfo>
     <unitInfo nodeId="6531435794299649876" fileName="AccountingTransaction.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="postingrules.AccountingTransaction" />
   </root>
@@ -61,8 +61,8 @@
     <scopeInfo nodeId="6531435794299651018" fileName="AgreementRegistry.java" startLine="18" startPosition="53" endLine="19" endPosition="53" />
     <scopeInfo nodeId="6531435794299650995" fileName="AgreementRegistry.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
     <scopeInfo nodeId="6531435794299650999" fileName="AgreementRegistry.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="6531435794299651002" varName="name" />
       <varInfo nodeId="6531435794299651004" varName="agreement" />
+      <varInfo nodeId="6531435794299651002" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299651013" fileName="AgreementRegistry.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="6531435794299651016" varName="name" />
@@ -80,9 +80,9 @@
     <scopeInfo nodeId="6531435794299651045" fileName="MonetaryEvent.java" startLine="11" startPosition="113" endLine="13" endPosition="27" />
     <scopeInfo nodeId="6531435794299651032" fileName="MonetaryEvent.java" startLine="10" startPosition="0" endLine="14" endPosition="3">
       <varInfo nodeId="6531435794299651035" varName="amount" />
-      <varInfo nodeId="6531435794299651041" varName="whenNoticed" />
       <varInfo nodeId="6531435794299651043" varName="customer" />
       <varInfo nodeId="6531435794299651037" varName="type" />
+      <varInfo nodeId="6531435794299651041" varName="whenNoticed" />
       <varInfo nodeId="6531435794299651039" varName="whenOccurred" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299651057" fileName="MonetaryEvent.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
@@ -283,14 +283,14 @@
     <scopeInfo nodeId="6531435794299651428" fileName="AccountingEvent.java" startLine="30" startPosition="0" endLine="35" endPosition="3">
       <varInfo nodeId="6531435794299651439" varName="adjustedEvent" />
       <varInfo nodeId="6531435794299651437" varName="subject" />
-      <varInfo nodeId="6531435794299651435" varName="whenNoticed" />
       <varInfo nodeId="6531435794299651431" varName="type" />
+      <varInfo nodeId="6531435794299651435" varName="whenNoticed" />
       <varInfo nodeId="6531435794299651433" varName="whenOccurred" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299651176" fileName="AccountingEvent.java" startLine="23" startPosition="0" endLine="29" endPosition="3">
       <varInfo nodeId="6531435794299651185" varName="subject" />
-      <varInfo nodeId="6531435794299651183" varName="whenNoticed" />
       <varInfo nodeId="6531435794299651179" varName="type" />
+      <varInfo nodeId="6531435794299651183" varName="whenNoticed" />
       <varInfo nodeId="6531435794299651181" varName="whenOccurred" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299651337" fileName="AccountingEvent.java" startLine="95" startPosition="25" endLine="101" endPosition="20" />
@@ -326,8 +326,8 @@
     <nodeInfo nodeId="6531435794299652201" fileName="TaxEvent.java" startLine="7" startPosition="45" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TaxEvent#(Lpostingrules/AccountingEvent;Lmf/Money;)V" />
     <scopeInfo nodeId="6531435794299652208" fileName="TaxEvent.java" startLine="8" startPosition="62" endLine="11" endPosition="80" />
     <scopeInfo nodeId="6531435794299652201" fileName="TaxEvent.java" startLine="7" startPosition="45" endLine="12" endPosition="3">
-      <varInfo nodeId="6531435794299652206" varName="taxableAmount" />
       <varInfo nodeId="6531435794299652204" varName="base" />
+      <varInfo nodeId="6531435794299652206" varName="taxableAmount" />
     </scopeInfo>
     <unitInfo nodeId="6531435794299652198" fileName="TaxEvent.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="postingrules.TaxEvent" />
   </root>
@@ -349,13 +349,13 @@
     <scopeInfo nodeId="6531435794299652786" fileName="Usage.java" startLine="16" startPosition="122" endLine="18" endPosition="27" />
     <scopeInfo nodeId="6531435794299652736" fileName="Usage.java" startLine="10" startPosition="0" endLine="14" endPosition="3">
       <varInfo nodeId="6531435794299652739" varName="amount" />
-      <varInfo nodeId="6531435794299652743" varName="whenNoticed" />
       <varInfo nodeId="6531435794299652745" varName="customer" />
+      <varInfo nodeId="6531435794299652743" varName="whenNoticed" />
       <varInfo nodeId="6531435794299652741" varName="whenOccurred" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299652773" fileName="Usage.java" startLine="15" startPosition="0" endLine="19" endPosition="3">
-      <varInfo nodeId="6531435794299652776" varName="amount" />
       <varInfo nodeId="6531435794299652784" varName="adjustedEvent" />
+      <varInfo nodeId="6531435794299652776" varName="amount" />
       <varInfo nodeId="6531435794299652782" varName="subject" />
       <varInfo nodeId="6531435794299652780" varName="whenNoticed" />
       <varInfo nodeId="6531435794299652778" varName="whenOccurred" />
@@ -421,9 +421,9 @@
       <varInfo nodeId="6531435794299653501" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299653549" fileName="ServiceAgreement.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="6531435794299653554" varName="value" />
       <varInfo nodeId="6531435794299653556" varName="effectiveDate" />
       <varInfo nodeId="6531435794299653552" varName="key" />
+      <varInfo nodeId="6531435794299653554" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299653568" fileName="ServiceAgreement.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="6531435794299653573" varName="at" />
@@ -433,9 +433,9 @@
       <varInfo nodeId="6531435794299653464" varName="eventType" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299653429" fileName="ServiceAgreement.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="6531435794299653434" varName="rule" />
-      <varInfo nodeId="6531435794299653432" varName="eventType" />
       <varInfo nodeId="6531435794299653436" varName="date" />
+      <varInfo nodeId="6531435794299653432" varName="eventType" />
+      <varInfo nodeId="6531435794299653434" varName="rule" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299653515" fileName="ServiceAgreement.java" startLine="43" startPosition="61" endLine="52" endPosition="5">
       <varInfo nodeId="6531435794299653517" varName="rules" />
@@ -459,8 +459,8 @@
       <varInfo nodeId="6531435794299653590" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299653603" fileName="PoorCapPR.java" startLine="13" startPosition="56" endLine="20" endPosition="6">
-      <varInfo nodeId="6531435794299653628" varName="reducedRate" />
       <varInfo nodeId="6531435794299653605" varName="amountUsed" />
+      <varInfo nodeId="6531435794299653628" varName="reducedRate" />
       <varInfo nodeId="6531435794299653614" varName="usageLimit" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299653598" fileName="PoorCapPR.java" startLine="12" startPosition="0" endLine="22" endPosition="0">
@@ -653,8 +653,8 @@
       <varInfo nodeId="6531435794299655270" varName="arg" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299655228" fileName="Adjustment.java" startLine="12" startPosition="0" endLine="17" endPosition="3">
-      <varInfo nodeId="6531435794299655231" varName="replacement" />
       <varInfo nodeId="6531435794299655233" varName="adjustedEvent" />
+      <varInfo nodeId="6531435794299655231" varName="replacement" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299655283" fileName="Adjustment.java" startLine="27" startPosition="43" endLine="32" endPosition="34" />
     <scopeInfo nodeId="6531435794299655278" fileName="Adjustment.java" startLine="26" startPosition="0" endLine="34" endPosition="0">
@@ -777,8 +777,8 @@
     <scopeInfo nodeId="6531435794299656589" fileName="AmountFormulaPR.java" startLine="10" startPosition="0" endLine="15" endPosition="3">
       <varInfo nodeId="6531435794299656594" varName="fixedFee" />
       <varInfo nodeId="6531435794299656598" varName="isTaxable" />
-      <varInfo nodeId="6531435794299656596" varName="type" />
       <varInfo nodeId="6531435794299656592" varName="multiplier" />
+      <varInfo nodeId="6531435794299656596" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299656616" fileName="AmountFormulaPR.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="6531435794299656619" varName="evt" />
@@ -877,8 +877,8 @@
     <scopeInfo nodeId="6531435794299656887" fileName="Account.java" startLine="88" startPosition="31" endLine="91" endPosition="7" />
     <scopeInfo nodeId="6531435794299656944" fileName="Account.java" startLine="110" startPosition="34" endLine="113" endPosition="7" />
     <scopeInfo nodeId="6531435794299656665" fileName="Account.java" startLine="20" startPosition="0" endLine="24" endPosition="3">
-      <varInfo nodeId="6531435794299656670" varName="type" />
       <varInfo nodeId="6531435794299656668" varName="currency" />
+      <varInfo nodeId="6531435794299656670" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299656742" fileName="Account.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="6531435794299656785" fileName="Account.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
@@ -890,8 +890,8 @@
     <scopeInfo nodeId="6531435794299656907" fileName="Account.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
     <scopeInfo nodeId="6531435794299656912" fileName="Account.java" startLine="103" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="6531435794299656914" varName="amount" />
-      <varInfo nodeId="6531435794299656916" varName="target" />
       <varInfo nodeId="6531435794299656918" varName="date" />
+      <varInfo nodeId="6531435794299656916" varName="target" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299656706" fileName="Account.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="6531435794299656708" varName="amount" />

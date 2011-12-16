@@ -8,7 +8,10 @@
     <scopeInfo nodeId="1216920970744" fileName="GenerationContextOp_GetOutputByLabelAndInput_DataFlow.java" startLine="12" startPosition="66" endLine="12" endPosition="66" />
     <scopeInfo nodeId="1216920970746" fileName="GenerationContextOp_GetOutputByLabelAndInput_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
     <scopeInfo nodeId="1216920970744" fileName="GenerationContextOp_GetOutputByLabelAndInput_DataFlow.java" startLine="11" startPosition="92" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1216920970744" fileName="GenerationContextOp_GetOutputByLabelAndInput_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1216920970744" fileName="GenerationContextOp_GetOutputByLabelAndInput_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1216920970744" varName="_context" />
+      <varInfo nodeId="1216920970744" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1216920970744" fileName="GenerationContextOp_GetOutputByLabelAndInput_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.dataFlow.GenerationContextOp_GetOutputByLabelAndInput_DataFlow" />
   </root>
   <root nodeId="1217887935348">
@@ -18,7 +21,10 @@
     <scopeInfo nodeId="1217887935348" fileName="GenerationContextOp_GetCopiedOutputByInput_DataFlow.java" startLine="12" startPosition="64" endLine="12" endPosition="64" />
     <scopeInfo nodeId="1217887935350" fileName="GenerationContextOp_GetCopiedOutputByInput_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
     <scopeInfo nodeId="1217887935348" fileName="GenerationContextOp_GetCopiedOutputByInput_DataFlow.java" startLine="11" startPosition="90" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1217887935348" fileName="GenerationContextOp_GetCopiedOutputByInput_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1217887935348" fileName="GenerationContextOp_GetCopiedOutputByInput_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1217887935348" varName="_context" />
+      <varInfo nodeId="1217887935348" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1217887935348" fileName="GenerationContextOp_GetCopiedOutputByInput_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.dataFlow.GenerationContextOp_GetCopiedOutputByInput_DataFlow" />
   </root>
   <root nodeId="1217891255806">
@@ -28,7 +34,10 @@
     <scopeInfo nodeId="1217891255806" fileName="GenerationContextOp_UserObjectAccessBase_DataFlow.java" startLine="12" startPosition="62" endLine="12" endPosition="62" />
     <scopeInfo nodeId="1217891255808" fileName="GenerationContextOp_UserObjectAccessBase_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="104" />
     <scopeInfo nodeId="1217891255806" fileName="GenerationContextOp_UserObjectAccessBase_DataFlow.java" startLine="11" startPosition="88" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1217891255806" fileName="GenerationContextOp_UserObjectAccessBase_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1217891255806" fileName="GenerationContextOp_UserObjectAccessBase_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1217891255806" varName="_context" />
+      <varInfo nodeId="1217891255806" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1217891255806" fileName="GenerationContextOp_UserObjectAccessBase_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.dataFlow.GenerationContextOp_UserObjectAccessBase_DataFlow" />
   </root>
   <root nodeId="1217960720469">
@@ -39,7 +48,10 @@
     <scopeInfo nodeId="1217960720469" fileName="GenerationContextOp_ShowMessageBase_DataFlow.java" startLine="12" startPosition="57" endLine="12" endPosition="57" />
     <scopeInfo nodeId="1217960720469" fileName="GenerationContextOp_ShowMessageBase_DataFlow.java" startLine="11" startPosition="83" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1217960720471" fileName="GenerationContextOp_ShowMessageBase_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="110" />
-    <scopeInfo nodeId="1217960720469" fileName="GenerationContextOp_ShowMessageBase_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1217960720469" fileName="GenerationContextOp_ShowMessageBase_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1217960720469" varName="_context" />
+      <varInfo nodeId="1217960720469" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1217960720469" fileName="GenerationContextOp_ShowMessageBase_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.dataFlow.GenerationContextOp_ShowMessageBase_DataFlow" />
   </root>
   <root nodeId="1218047912478">
@@ -50,7 +62,10 @@
     <scopeInfo nodeId="1218047912478" fileName="GenerationContextOp_CreateUniqueName_DataFlow.java" startLine="12" startPosition="58" endLine="12" endPosition="58" />
     <scopeInfo nodeId="1218047912478" fileName="GenerationContextOp_CreateUniqueName_DataFlow.java" startLine="11" startPosition="84" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1218047912480" fileName="GenerationContextOp_CreateUniqueName_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="108" />
-    <scopeInfo nodeId="1218047912478" fileName="GenerationContextOp_CreateUniqueName_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1218047912478" fileName="GenerationContextOp_CreateUniqueName_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1218047912478" varName="_context" />
+      <varInfo nodeId="1218047912478" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1218047912478" fileName="GenerationContextOp_CreateUniqueName_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.dataFlow.GenerationContextOp_CreateUniqueName_DataFlow" />
   </root>
   <root nodeId="1221157689278">
@@ -60,7 +75,10 @@
     <scopeInfo nodeId="1221157689278" fileName="GenerationContextOp_GetOutputListByLabelAndInput_DataFlow.java" startLine="12" startPosition="70" endLine="12" endPosition="70" />
     <scopeInfo nodeId="1221157689280" fileName="GenerationContextOp_GetOutputListByLabelAndInput_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
     <scopeInfo nodeId="1221157689278" fileName="GenerationContextOp_GetOutputListByLabelAndInput_DataFlow.java" startLine="11" startPosition="96" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1221157689278" fileName="GenerationContextOp_GetOutputListByLabelAndInput_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1221157689278" fileName="GenerationContextOp_GetOutputListByLabelAndInput_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1221157689278" varName="_context" />
+      <varInfo nodeId="1221157689278" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1221157689278" fileName="GenerationContextOp_GetOutputListByLabelAndInput_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.dataFlow.GenerationContextOp_GetOutputListByLabelAndInput_DataFlow" />
   </root>
   <root nodeId="1221219815354">
@@ -70,7 +88,10 @@
     <scopeInfo nodeId="1221219815354" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow.java" startLine="12" startPosition="83" endLine="12" endPosition="83" />
     <scopeInfo nodeId="1221219815356" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
     <scopeInfo nodeId="1221219815354" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow.java" startLine="11" startPosition="109" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1221219815354" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1221219815354" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1221219815354" varName="_context" />
+      <varInfo nodeId="1221219815354" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1221219815354" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.dataFlow.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow" />
   </root>
   <root nodeId="1229478234165">
@@ -80,7 +101,10 @@
     <scopeInfo nodeId="1229478234165" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow.java" startLine="12" startPosition="72" endLine="12" endPosition="72" />
     <scopeInfo nodeId="1229478234167" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="1229478234165" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow.java" startLine="11" startPosition="98" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1229478234165" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1229478234165" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1229478234165" varName="_context" />
+      <varInfo nodeId="1229478234165" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1229478234165" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.dataFlow.GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow" />
   </root>
 </debugInfo>

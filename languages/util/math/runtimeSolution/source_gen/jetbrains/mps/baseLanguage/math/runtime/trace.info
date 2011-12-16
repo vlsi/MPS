@@ -1406,7 +1406,10 @@
     <scopeInfo nodeId="877422884702861834" fileName="Matrix.java" startLine="369" startPosition="0" endLine="373" endPosition="0">
       <varInfo nodeId="877422884702861837" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="3840741013873810233" fileName="Matrix.java" startLine="374" startPosition="174" endLine="378" endPosition="0" />
+    <scopeInfo nodeId="3840741013873810233" fileName="Matrix.java" startLine="374" startPosition="174" endLine="378" endPosition="0">
+      <varInfo nodeId="3840741013873810233" varName="a" />
+      <varInfo nodeId="3840741013873810233" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="3840741013873810248" fileName="Matrix.java" startLine="380" startPosition="49" endLine="384" endPosition="8" />
     <scopeInfo nodeId="877422884702862187" fileName="Matrix.java" startLine="426" startPosition="16" endLine="430" endPosition="19" />
     <scopeInfo nodeId="877422884702862261" fileName="Matrix.java" startLine="436" startPosition="37" endLine="440" endPosition="11" />
@@ -1415,8 +1418,14 @@
     </scopeInfo>
     <scopeInfo nodeId="877422884702862052" fileName="Matrix.java" startLine="454" startPosition="16" endLine="458" endPosition="22" />
     <scopeInfo nodeId="877422884702863096" fileName="Matrix.java" startLine="609" startPosition="30" endLine="613" endPosition="36" />
-    <scopeInfo nodeId="3840741013873810277" fileName="Matrix.java" startLine="620" startPosition="96" endLine="624" endPosition="0" />
-    <scopeInfo nodeId="3840741013873810297" fileName="Matrix.java" startLine="649" startPosition="93" endLine="653" endPosition="0" />
+    <scopeInfo nodeId="3840741013873810277" fileName="Matrix.java" startLine="620" startPosition="96" endLine="624" endPosition="0">
+      <varInfo nodeId="3840741013873810277" varName="a" />
+      <varInfo nodeId="3840741013873810277" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3840741013873810297" fileName="Matrix.java" startLine="649" startPosition="93" endLine="653" endPosition="0">
+      <varInfo nodeId="3840741013873810297" varName="a" />
+      <varInfo nodeId="3840741013873810297" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="877422884702863321" fileName="Matrix.java" startLine="655" startPosition="0" endLine="659" endPosition="0" />
     <scopeInfo nodeId="877422884702863327" fileName="Matrix.java" startLine="659" startPosition="0" endLine="663" endPosition="0" />
     <scopeInfo nodeId="877422884702863360" fileName="Matrix.java" startLine="667" startPosition="43" endLine="671" endPosition="9" />
@@ -1425,8 +1434,14 @@
       <varInfo nodeId="877422884702863398" varName="j" />
       <varInfo nodeId="877422884702863400" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="3840741013873810316" fileName="Matrix.java" startLine="685" startPosition="101" endLine="689" endPosition="0" />
-    <scopeInfo nodeId="3840741013873810332" fileName="Matrix.java" startLine="693" startPosition="101" endLine="697" endPosition="0" />
+    <scopeInfo nodeId="3840741013873810316" fileName="Matrix.java" startLine="685" startPosition="101" endLine="689" endPosition="0">
+      <varInfo nodeId="3840741013873810316" varName="a" />
+      <varInfo nodeId="3840741013873810316" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3840741013873810332" fileName="Matrix.java" startLine="693" startPosition="101" endLine="697" endPosition="0">
+      <varInfo nodeId="3840741013873810332" varName="a" />
+      <varInfo nodeId="3840741013873810332" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="877422884702864453" fileName="Matrix.java" startLine="917" startPosition="42" endLine="921" endPosition="11" />
     <scopeInfo nodeId="877422884702864454" fileName="Matrix.java" startLine="917" startPosition="42" endLine="921" endPosition="11">
       <varInfo nodeId="877422884702864458" varName="j" />
@@ -1503,7 +1518,10 @@
     <scopeInfo nodeId="877422884702864899" fileName="Matrix.java" startLine="187" startPosition="34" endLine="194" endPosition="37" />
     <scopeInfo nodeId="877422884702864959" fileName="Matrix.java" startLine="222" startPosition="38" endLine="229" endPosition="37" />
     <scopeInfo nodeId="877422884702865098" fileName="Matrix.java" startLine="295" startPosition="35" endLine="302" endPosition="37" />
-    <scopeInfo nodeId="3840741013873810247" fileName="Matrix.java" startLine="379" startPosition="179" endLine="386" endPosition="0" />
+    <scopeInfo nodeId="3840741013873810247" fileName="Matrix.java" startLine="379" startPosition="179" endLine="386" endPosition="0">
+      <varInfo nodeId="3840741013873810247" varName="a" />
+      <varInfo nodeId="3840741013873810247" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="877422884702862118" fileName="Matrix.java" startLine="464" startPosition="35" endLine="471" endPosition="11" />
     <scopeInfo nodeId="877422884702862532" fileName="Matrix.java" startLine="544" startPosition="40" endLine="551" endPosition="9" />
     <scopeInfo nodeId="877422884702862533" fileName="Matrix.java" startLine="544" startPosition="40" endLine="551" endPosition="9">

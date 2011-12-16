@@ -27,14 +27,20 @@
     <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="19" startPosition="76" endLine="23" endPosition="0" />
     <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="7148319044498588900" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7148319044498588903" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="36" startPosition="52" endLine="40" endPosition="112">
       <varInfo nodeId="7148319044498603374" varName="call" />
     </scopeInfo>
     <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="7148319044498588900" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="17" startPosition="95" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="16" startPosition="91" endLine="47" endPosition="3" />
+    <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="16" startPosition="91" endLine="47" endPosition="3">
+      <varInfo nodeId="7148319044498588900" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="16" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.behavior.scripts.ConvertBehaviorMethodCallToLocal_MigrationScript" />
     <unitInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="19" startPosition="28" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.behavior.scripts.ConvertBehaviorMethodCallToLocal_MigrationScript$1" />
   </root>
