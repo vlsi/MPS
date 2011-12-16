@@ -2,8 +2,9 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.makeTest.test.ChangeModel" file="ChangeModel.java">
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.DefaultSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.makeTest.test.ChangeModelProcessor" file="ChangeModelProcessor.java">
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
