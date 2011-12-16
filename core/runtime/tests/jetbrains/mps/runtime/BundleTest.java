@@ -138,5 +138,10 @@ public class BundleTest {
       }
       return null;
     }
+
+    @Override
+    public String findLibrary(String name) {
+      return null;
+    }
   }
 }
