@@ -149,14 +149,17 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
+    ModelAccess.assertLegalRead();
     return new TypeCheckingContextNew(node, myTypeChecker);
   }
 
   public TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
+    ModelAccess.assertLegalRead();
     return new TypeCheckingContext_Tracer(node, myTypeChecker);
   }
 
   public TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner, boolean createIfAbsent) {
+    ModelAccess.assertLegalRead();
     if (node == null) return null;
     synchronized (myLock) {
       Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(new SNodePointer(node));
@@ -189,21 +192,17 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
+    ModelAccess.assertLegalRead();
     synchronized (myLock) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(new SNodePointer(node));
-          if (contextWithOwners != null) {
-            List<ITypeContextOwner> owners = contextWithOwners.o2;
-            owners.remove(owner);
-            if (owners.isEmpty()) {
-              contextWithOwners.o1.dispose();
-              myTypeCheckingContexts.remove(new SNodePointer(node));
-            }
-          }
+      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(new SNodePointer(node));
+      if (contextWithOwners != null) {
+        List<ITypeContextOwner> owners = contextWithOwners.o2;
+        owners.remove(owner);
+        if (owners.isEmpty()) {
+          contextWithOwners.o1.dispose();
+          myTypeCheckingContexts.remove(new SNodePointer(node));
         }
-      });
+      }
     }
   }
 
@@ -262,6 +261,7 @@ public class TypeContextManager implements CoreComponent {
 
   @Nullable
   public SNode getTypeOf(final SNode node, boolean generationMode, IPerformanceTracer tracer) {
+    ModelAccess.assertLegalRead();
     if (node == null) return null;
     ITypeContextOwner owner = new ITypeContextOwner() {
     };
