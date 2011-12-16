@@ -42,8 +42,8 @@ public class TypeContextManager implements CoreComponent {
 
   private final Object myLock = new Object();
   private Set<SModelDescriptor> myListeningForModels = new THashSet<SModelDescriptor>();
-  //todo SNodePointers
-  private Map<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts = new THashMap<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
+  private Map<SNodePointer, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
+    new THashMap<SNodePointer, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
   private boolean myComputeInNormalMode = false;
   private ThreadLocal<Stack<Object>> myResolveStack = new ThreadLocal<Stack<Object>>();
 
@@ -55,9 +55,9 @@ public class TypeContextManager implements CoreComponent {
   private SModelListener myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
     public void beforeModelDisposed(SModel sm) {
       synchronized (myLock) {
-        for (SNode node : new ArrayList<SNode>(myTypeCheckingContexts.keySet())) {
-          if (sm == node.getModel()) {
-            removeContextForNode(node);
+        for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
+          if (sm == nodePointer.getModel()) {
+            removeContextForNode(nodePointer);
           }
         }
       }
@@ -66,9 +66,9 @@ public class TypeContextManager implements CoreComponent {
     public void modelReplaced(SModelDescriptor md) {
       SModelReference modelRef = md.getSModelReference();
       synchronized (myLock) {
-        for (SNode node : new ArrayList<SNode>(myTypeCheckingContexts.keySet())) {
-          if (node.shouldHaveBeenDisposed() || modelRef == node.getModel().getSModelReference()) {
-            removeContextForNode(node);
+        for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
+          if (nodePointer.getNode() != null && nodePointer.getNode().shouldHaveBeenDisposed() || modelRef == nodePointer.getModel().getSModelReference()) {
+            removeContextForNode(nodePointer);
           }
         }
       }
@@ -159,7 +159,7 @@ public class TypeContextManager implements CoreComponent {
   public TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner, boolean createIfAbsent) {
     if (node == null) return null;
     synchronized (myLock) {
-      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(node);
+      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(new SNodePointer(node));
       if (contextWithOwners == null) {
         if (createIfAbsent) {
           TypeCheckingContext newTypeCheckingContext = createTypeCheckingContext(node);
@@ -173,7 +173,7 @@ public class TypeContextManager implements CoreComponent {
               LOG.warning("Type checking context for node " + node.getPresentation() + " has too much owners");
             }
           }
-          myTypeCheckingContexts.put(node, contextWithOwners);
+          myTypeCheckingContexts.put(new SNodePointer(node), contextWithOwners);
           return newTypeCheckingContext;
         } else {
           return null;
@@ -188,26 +188,31 @@ public class TypeContextManager implements CoreComponent {
     }
   }
 
-  public void removeOwnerForRootNodeContext(SNode node, ITypeContextOwner owner) {
+  public void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
     synchronized (myLock) {
-      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(node);
-      if (contextWithOwners != null) {
-        List<ITypeContextOwner> owners = contextWithOwners.o2;
-        owners.remove(owner);
-        if (owners.isEmpty()) {
-          contextWithOwners.o1.dispose();
-          myTypeCheckingContexts.remove(node);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(new SNodePointer(node));
+          if (contextWithOwners != null) {
+            List<ITypeContextOwner> owners = contextWithOwners.o2;
+            owners.remove(owner);
+            if (owners.isEmpty()) {
+              contextWithOwners.o1.dispose();
+              myTypeCheckingContexts.remove(new SNodePointer(node));
+            }
+          }
         }
-      }
+      });
     }
   }
 
-  public void removeContextForNode(SNode node) {
+  public void removeContextForNode(SNodePointer nodePointer) {
     synchronized (myLock) {
-      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(node);
+      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(nodePointer);
       if (contextWithOwners != null) {
         contextWithOwners.o1.dispose();
-        myTypeCheckingContexts.remove(node);
+        myTypeCheckingContexts.remove(nodePointer);
       }
     }
   }
