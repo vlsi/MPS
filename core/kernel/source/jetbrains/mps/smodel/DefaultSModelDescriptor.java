@@ -94,6 +94,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       if (mySModel.isLoading()) return;
       if (getLoadingState() == ModelLoadingState.FULLY_LOADED) return;
 
+      assert !myInsideLoad;
+
       // debug MPS-14876 (doubling root children)
       for (SNode node : mySModel.roots()) {
         if (node.hasChildren()) {

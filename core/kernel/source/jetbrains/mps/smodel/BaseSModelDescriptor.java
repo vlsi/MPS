@@ -36,6 +36,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected SModelReference myModelReference;
   protected IModelRootManager myModelRootManager;
+  protected boolean myInsideLoad = false;
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
   private List<SModelCommandListener> myModelCommandListeners = new CopyOnWriteArrayList<SModelCommandListener>();
@@ -57,6 +58,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
     synchronized (myLoadingLock) {
       if (myLoadingState != ModelLoadingState.NOT_LOADED) return mySModel;
+      if (myInsideLoad) {
+        LOG.error("getSModel inside of itself", new Throwable());
+      }
+      myInsideLoad = true;
 
       oldState = myLoadingState;
       ModelLoadResult result = runModelLoading(new Computable<ModelLoadResult>() {
@@ -71,6 +76,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       if (oldState != myLoadingState) {
         fireModelStateChanged(oldState, myLoadingState);
       }
+      myInsideLoad = false;
       return mySModel;
     }
   }
