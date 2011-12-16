@@ -47,7 +47,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       final INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsUtil.getSearchScopeProvider(concept, linkRole);
       SearchScopeStatus searchScopeStatus = component.runCheckingAction(new _FunctionTypes._return_P0_E0<SearchScopeStatus>() {
         public SearchScopeStatus invoke() {
-          return ModelConstraintsUtil.createSearchScope(scopeProvider, SNodeOperations.getModel(node), SNodeOperations.getParent(node), node, linkTarget, operationContext);
+          return ModelConstraintsUtil.createSearchScope(scopeProvider, SNodeOperations.getModel(node), SNodeOperations.getParent(node), node, linkTarget, SNodeOperations.getContainingLinkDeclaration(node), operationContext);
         }
       });
       if (searchScopeStatus.isError()) {

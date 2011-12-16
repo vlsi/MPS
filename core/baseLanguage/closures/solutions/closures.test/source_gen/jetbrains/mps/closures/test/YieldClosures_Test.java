@@ -1926,6 +1926,7 @@ __switch__:
     } catch (NoSuchElementException e) {
       //  ok 
     }
+
   }
 
   public void test_mps10640() throws Exception {

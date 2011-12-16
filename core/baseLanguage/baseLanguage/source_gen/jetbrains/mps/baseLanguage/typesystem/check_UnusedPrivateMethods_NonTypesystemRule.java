@@ -46,7 +46,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
                 }
                 if (!(ListSequence.fromList(SNodeOperations.getDescendants(topClassifier, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})).any(new IWhereFilter<SNode>() {
                   public boolean accept(SNode call) {
-                    return SLinkOperations.getTarget(call, "baseMethodDeclaration", false) == matchedNode_sl9v9q_a0a0;
+                    return SLinkOperations.getTarget(call, "baseMethodDeclaration", false) == matchedNode_sl9v9q_a0a0 && !(ListSequence.fromList(SNodeOperations.getAncestors(call, null, false)).contains(matchedNode_sl9v9q_a0a0));
                   }
                 }))) {
                   {

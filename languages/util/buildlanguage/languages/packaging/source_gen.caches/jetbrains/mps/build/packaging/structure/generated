@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="eihc6cr1bxjcplafw84yj1pkzydf6k0">
+<dependencies version="2" modelHash="195w2ka1kc5jugck71magw2hw5oeor1">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="auc6jui7deer5vkr9v1h1ws94bw74n1" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="aj3kofqak9dfnww4qcxie9dut9wbbk7" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d78hke4r6b9hefsdkynz6vbevip5ltn" />
@@ -276,7 +276,7 @@
   <source id="437343344536486293" name="Help" hash="-ye1nkwqvdmih63uinwa5qvrehlqpmg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="989489456094386109" name="PluginModule" hash="2nw74er66nws5jt351eff18a1txvbgc">
+  <source id="989489456094386109" name="PluginModule" hash="ei6cgpgrd0i6yahwdvemcsceu0gdfr5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="989489456094387696" name="IdeaInitializerReference" hash="9c8j36xi21ljbdyg5rhxajug37bcerc">

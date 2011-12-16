@@ -224,7 +224,14 @@ public class ChildSubstituteActionsHelper {
     final IOperationContext context) {
 
     // try to create referent-search-scope
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, smartReference, context);
+    SNode linkDeclaration = null;
+    if (currentChild != null) {
+      linkDeclaration = currentChild.getRoleLink();
+    }
+    if (linkDeclaration == null && childSetter instanceof DefaultChildNodeSetter) {
+      linkDeclaration = ((DefaultChildNodeSetter) childSetter).getLinkDeclaration();
+    }
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, smartReference, linkDeclaration, context);
     if (status.isError()) return null;
 
     // create smart actions

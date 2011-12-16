@@ -414,10 +414,9 @@
     <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/jetbrains.mps.execution.configurations.mps/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/jetbrains.mps.execution.configurations.mps/source_gen" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/plugin/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/plugin/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/execution/source_gen" />
     <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/runtime/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/runtime/source_gen" isTestSource="false" />
     </content>

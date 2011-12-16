@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClasspathStringCollector;
@@ -92,7 +93,11 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     if (node == null) {
       return null;
     }
-    return SPropertyOperations.getString(node, "name");
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+      return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+    } else {
+      throw new UnsupportedOperationException("Should override getName for not INamedConcept: " + SNodeOperations.getConceptDeclaration(node));
+    }
   }
 
   public String getFqName() {
@@ -102,7 +107,11 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
       if (node == null) {
         return null;
       }
-      return SPropertyOperations.getString(node, "name");
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+        return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+      } else {
+        throw new UnsupportedOperationException("Should override getFqName for not INamedConcept: " + SNodeOperations.getConceptDeclaration(node));
+      }
     }
     return testCase.getFqName() + "." + getName();
   }

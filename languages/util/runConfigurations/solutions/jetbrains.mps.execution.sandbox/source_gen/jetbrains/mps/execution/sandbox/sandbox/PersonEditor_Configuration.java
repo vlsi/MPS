@@ -4,7 +4,8 @@ package jetbrains.mps.execution.sandbox.sandbox;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import jetbrains.mps.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
@@ -14,7 +15,7 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 
 public class PersonEditor_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  private static final Logger LOG = Logger.getLogger(PersonEditor_Configuration.class);
+  protected static Log log = LogFactory.getLog(PersonEditor_Configuration.class);
 
   @NotNull
   private PersonEditor_Configuration.MyState myState = new PersonEditor_Configuration.MyState();
@@ -69,7 +70,9 @@ public class PersonEditor_Configuration implements IPersistentConfiguration, ITe
       clone.myState = (PersonEditor_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      PersonEditor_Configuration.LOG.error(ex);
+      if (log.isErrorEnabled()) {
+        log.error("", ex);
+      }
     }
     return clone;
   }
