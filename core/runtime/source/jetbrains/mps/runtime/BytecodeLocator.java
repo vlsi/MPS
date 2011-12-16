@@ -21,4 +21,6 @@ public interface BytecodeLocator {
   byte[] find(String fqName);
 
   URL findResource(String name);
+  
+  String findLibrary(String name);
 }

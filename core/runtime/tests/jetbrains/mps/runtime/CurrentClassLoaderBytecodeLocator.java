@@ -66,4 +66,9 @@ public class CurrentClassLoaderBytecodeLocator implements BytecodeLocator {
     return null;
   }
 
+  @Override
+  public String findLibrary(String name) {
+    return null;
+  }
+
 }

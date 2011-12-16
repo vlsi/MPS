@@ -226,6 +226,10 @@ public class ClassLoaderManager implements ApplicationComponent {
     }
   }
 
+  public RuntimeEnvironment<ModuleReference> getRuntimeEnvironment() {
+    return myRuntimeEnvironment;
+  }
+
   //---------------component stuff------------------
 
   public void initComponent() {
