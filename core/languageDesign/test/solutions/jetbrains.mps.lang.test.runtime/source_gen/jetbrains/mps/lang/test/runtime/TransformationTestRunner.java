@@ -28,7 +28,6 @@ public class TransformationTestRunner extends TestRunner {
       new TransformationTestRunner().executeTestsFromArguments(argv);
     } catch (Throwable t) {
       t.printStackTrace(System.err);
-      CachesUtil.cleanupCaches();
       System.exit(1);
     }
     TestMain.PROJECT_CONTAINER.clear();
@@ -41,7 +40,6 @@ public class TransformationTestRunner extends TestRunner {
     } catch (Exception e) {
       e.printStackTrace();
     }
-    CachesUtil.cleanupCaches();
     System.exit(0);
   }
 

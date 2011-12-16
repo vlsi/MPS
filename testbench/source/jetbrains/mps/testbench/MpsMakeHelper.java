@@ -122,7 +122,7 @@ public class MpsMakeHelper {
     toDo.updateLogLevel(2); // INFO
     toDo.putProperty("mps.home", System.getProperty("user.dir"));
 
-    MakeWorker worker = new MakeWorker(toDo, new LogLogger()) {
+    MakeWorker worker = new MakeWorker(toDo, new LogLogger(), false) {
       @Override
       protected void loadPlugins() {
       }

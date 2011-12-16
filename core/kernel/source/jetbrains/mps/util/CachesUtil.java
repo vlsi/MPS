@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.util;
 
+import com.intellij.openapi.util.ShutDownTracker;
 import com.intellij.util.SystemProperties;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -26,8 +25,7 @@ import java.util.List;
 public class CachesUtil {
   private static final String PROPERTY_SYSTEM_PATH = "idea.system.path";
   private static final String PROPERTY_CONFIG_PATH = "idea.config.path";
-  private static final List<File> TO_REMOVE = ListSequence.fromList(new ArrayList<File>());
-
+  private static final List<File> TO_REMOVE = new ArrayList<File>();
 
   public static void setupCaches() {
     // we need to check that caches dirs are writable
@@ -35,6 +33,17 @@ public class CachesUtil {
     // see PathManager class
     useTemporalFolderIfNotSet(PROPERTY_CONFIG_PATH);
     useTemporalFolderIfNotSet(PROPERTY_SYSTEM_PATH);
+
+      ShutDownTracker.getInstance().registerShutdownTask(new Runnable() {
+        @Override
+        public void run() {
+          // idea may use caches in its shutdown hooks, so we clean them on shutdown
+          // ShutDownTracker guarantees us (well, the current implementation is written this way)
+          // that hooks are executed in the reversed order
+          // so we are executed last
+          cleanupCaches();
+        }
+      });
   }
 
   private static void useTemporalFolderIfNotSet(String propertyName) {
@@ -62,16 +71,14 @@ public class CachesUtil {
     System.setProperty(propertyName, tmpDir.getAbsolutePath());
   }
 
-  public static void cleanupCaches() {
-    ListSequence.fromList(TO_REMOVE).visitAll(new IVisitor<File>() {
-      public void visit(File it) {
-        try {
-          FileUtil.delete(it);
-        } catch (Throwable t) {
-          t.printStackTrace();
-        }
+  private static void cleanupCaches() {
+    for (File it : TO_REMOVE) {
+      try {
+        FileUtil.delete(it);
+      } catch (Throwable t) {
+        t.printStackTrace();
       }
-    });
+    }
     TO_REMOVE.clear();
   }
 }
