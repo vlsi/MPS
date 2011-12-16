@@ -8,100 +8,100 @@
     <nodeInfo nodeId="1347577327951781527" fileName="RenameConcept_newName_Settings.java" startLine="17" startPosition="35" endLine="18" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="24" startPosition="26" endLine="25" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="25" startPosition="42" endLine="26" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="26" startPosition="26" endLine="27" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="27" startPosition="42" endLine="28" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="29" startPosition="39" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="33" startPosition="32" endLine="34" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="37" startPosition="47" endLine="38" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="41" startPosition="52" endLine="42" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8292108433549550607" fileName="RenameConcept.java" startLine="45" startPosition="68" endLine="46" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8292108433549550613" fileName="RenameConcept.java" startLine="48" startPosition="184" endLine="49" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8292108433549550618" fileName="RenameConcept.java" startLine="50" startPosition="7" endLine="51" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8292108433549550625" fileName="RenameConcept.java" startLine="52" startPosition="5" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781539" fileName="RenameConcept.java" startLine="56" startPosition="69" endLine="57" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1347577327951781554" fileName="RenameConcept.java" startLine="57" startPosition="173" endLine="58" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1347577327951781566" fileName="RenameConcept.java" startLine="61" startPosition="88" endLine="62" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1347577327951781573" fileName="RenameConcept.java" startLine="62" startPosition="74" endLine="63" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1347577327951781590" fileName="RenameConcept.java" startLine="65" startPosition="180" endLine="66" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1347577327951781605" fileName="RenameConcept.java" startLine="68" startPosition="5" endLine="69" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781619" fileName="RenameConcept.java" startLine="72" startPosition="86" endLine="73" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781628" fileName="RenameConcept.java" startLine="76" startPosition="92" endLine="77" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="80" startPosition="46" endLine="81" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="31" startPosition="39" endLine="32" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="35" startPosition="32" endLine="36" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="39" startPosition="47" endLine="40" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="43" startPosition="52" endLine="44" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8292108433549550607" fileName="RenameConcept.java" startLine="47" startPosition="68" endLine="48" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8292108433549550613" fileName="RenameConcept.java" startLine="50" startPosition="184" endLine="51" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8292108433549550618" fileName="RenameConcept.java" startLine="52" startPosition="7" endLine="53" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8292108433549550625" fileName="RenameConcept.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781539" fileName="RenameConcept.java" startLine="58" startPosition="69" endLine="59" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1347577327951781554" fileName="RenameConcept.java" startLine="59" startPosition="173" endLine="60" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8796840523411780646" fileName="RenameConcept.java" startLine="63" startPosition="88" endLine="64" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1347577327951781573" fileName="RenameConcept.java" startLine="64" startPosition="184" endLine="65" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1347577327951781590" fileName="RenameConcept.java" startLine="67" startPosition="180" endLine="68" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1347577327951781605" fileName="RenameConcept.java" startLine="70" startPosition="5" endLine="71" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781619" fileName="RenameConcept.java" startLine="74" startPosition="86" endLine="75" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781628" fileName="RenameConcept.java" startLine="78" startPosition="92" endLine="79" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="82" startPosition="46" endLine="83" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="9" startPosition="65" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameConcept_Target#()V" />
     <nodeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="25" startPosition="52" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8292108433549550611" fileName="RenameConcept.java" startLine="47" startPosition="74" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1347577327951781587" fileName="RenameConcept.java" startLine="64" startPosition="33" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8292108433549550611" fileName="RenameConcept.java" startLine="49" startPosition="74" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1347577327951781587" fileName="RenameConcept.java" startLine="66" startPosition="33" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1347577327951781523" fileName="RenameConcept_newName_Settings.java" startLine="11" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameConcept_newName_Settings#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
     <nodeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
     <nodeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allowMultipleTargets#()Z" />
     <nodeInfo nodeId="1347577327951781523" fileName="RenameConcept_newName_Settings.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInitialValue#()Ljava/lang/String;" />
     <nodeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="23" startPosition="60" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameConcept#()V" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getKeyStroke_static#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
-    <nodeInfo nodeId="1347577327951781585" fileName="RenameConcept.java" startLine="63" startPosition="139" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8292108433549550609" fileName="RenameConcept.java" startLine="46" startPosition="87" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="25" startPosition="60" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameConcept#()V" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getKeyStroke_static#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="1347577327951781585" fileName="RenameConcept.java" startLine="65" startPosition="139" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8292108433549550609" fileName="RenameConcept.java" startLine="48" startPosition="87" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="44" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
-    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="60" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelsToGenerate#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="46" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
+    <nodeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="62" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelsToGenerate#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljava/util/List;" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="10" startPosition="33" endLine="10" endPosition="33" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="13" startPosition="52" endLine="14" endPosition="46" />
     <scopeInfo nodeId="1347577327951781526" fileName="RenameConcept_newName_Settings.java" startLine="17" startPosition="35" endLine="18" endPosition="125" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="127" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="29" startPosition="39" endLine="30" endPosition="28" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="33" startPosition="32" endLine="34" endPosition="33" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="37" startPosition="47" endLine="38" endPosition="24" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="41" startPosition="52" endLine="42" endPosition="38" />
-    <scopeInfo nodeId="8292108433549550612" fileName="RenameConcept.java" startLine="48" startPosition="184" endLine="49" endPosition="21" />
-    <scopeInfo nodeId="1347577327951781589" fileName="RenameConcept.java" startLine="65" startPosition="180" endLine="66" endPosition="80" />
-    <scopeInfo nodeId="1347577327951781618" fileName="RenameConcept.java" startLine="72" startPosition="86" endLine="73" endPosition="275" />
-    <scopeInfo nodeId="1347577327951781627" fileName="RenameConcept.java" startLine="76" startPosition="92" endLine="77" endPosition="46" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="80" startPosition="46" endLine="81" endPosition="40" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="31" startPosition="39" endLine="32" endPosition="28" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="35" startPosition="32" endLine="36" endPosition="33" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="39" startPosition="47" endLine="40" endPosition="24" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="43" startPosition="52" endLine="44" endPosition="38" />
+    <scopeInfo nodeId="8292108433549550612" fileName="RenameConcept.java" startLine="50" startPosition="184" endLine="51" endPosition="21" />
+    <scopeInfo nodeId="1347577327951781589" fileName="RenameConcept.java" startLine="67" startPosition="180" endLine="68" endPosition="78" />
+    <scopeInfo nodeId="1347577327951781618" fileName="RenameConcept.java" startLine="74" startPosition="86" endLine="75" endPosition="275" />
+    <scopeInfo nodeId="1347577327951781627" fileName="RenameConcept.java" startLine="78" startPosition="92" endLine="79" endPosition="46" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="82" startPosition="46" endLine="83" endPosition="40" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="9" startPosition="65" endLine="11" endPosition="3" />
     <scopeInfo nodeId="1347577327951781523" fileName="RenameConcept_newName_Settings.java" startLine="12" startPosition="75" endLine="14" endPosition="40" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="24" startPosition="26" endLine="26" endPosition="44" />
-    <scopeInfo nodeId="1347577327951781520" fileName="RenameConcept.java" startLine="56" startPosition="69" endLine="58" endPosition="152">
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="26" startPosition="26" endLine="28" endPosition="44" />
+    <scopeInfo nodeId="1347577327951781520" fileName="RenameConcept.java" startLine="58" startPosition="69" endLine="60" endPosition="152">
       <varInfo nodeId="1347577327951781540" varName="newConceptName" />
     </scopeInfo>
-    <scopeInfo nodeId="1347577327951781586" fileName="RenameConcept.java" startLine="64" startPosition="33" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="1347577327951781587" fileName="RenameConcept.java" startLine="64" startPosition="33" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="1347577327951781586" fileName="RenameConcept.java" startLine="66" startPosition="33" endLine="69" endPosition="7" />
+    <scopeInfo nodeId="1347577327951781587" fileName="RenameConcept.java" startLine="66" startPosition="33" endLine="69" endPosition="7" />
     <scopeInfo nodeId="1347577327951781523" fileName="RenameConcept_newName_Settings.java" startLine="11" startPosition="0" endLine="15" endPosition="3" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="1347577327951781523" fileName="RenameConcept_newName_Settings.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="23" startPosition="60" endLine="27" endPosition="3" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="8292108433549550610" fileName="RenameConcept.java" startLine="47" startPosition="74" endLine="51" endPosition="106" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="55" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="25" startPosition="60" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="8292108433549550610" fileName="RenameConcept.java" startLine="49" startPosition="74" endLine="53" endPosition="106" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="57" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781534" fileName="RenameConcept.java" startLine="45" startPosition="68" endLine="53" endPosition="16" />
-    <scopeInfo nodeId="1347577327951781565" fileName="RenameConcept.java" startLine="61" startPosition="88" endLine="69" endPosition="18">
+    <scopeInfo nodeId="1347577327951781534" fileName="RenameConcept.java" startLine="47" startPosition="68" endLine="55" endPosition="16" />
+    <scopeInfo nodeId="1347577327951781565" fileName="RenameConcept.java" startLine="63" startPosition="88" endLine="71" endPosition="56">
       <varInfo nodeId="1347577327951781574" varName="sourceLanguage" />
-      <varInfo nodeId="1347577327951781567" varName="result" />
+      <varInfo nodeId="8796840523411780647" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="44" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="60" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="46" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="62" startPosition="0" endLine="73" endPosition="0" />
     <unitInfo nodeId="1347577327951781523" fileName="RenameConcept_newName_Settings.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameConcept_newName_Settings" />
     <unitInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameConcept_Target" />
-    <unitInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="23" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
+    <unitInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="25" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
   </root>
   <root nodeId="1347577327951781638">
     <nodeInfo nodeId="1347577327951781643" fileName="RenameLink_newName_Settings.java" startLine="9" startPosition="95" endLine="10" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactoringContext" />
