@@ -9,7 +9,6 @@
     <xi:include href="/META-INF/PlatformExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
     <xi:include href="/META-INF/VcsExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
     <xi:include href="/META-INF/LangExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
-    <xi:include href="/META-INF/MPSCoreExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
 
     <extensionPoint name="mps.NavigationProvider" interface="jetbrains.mps.ide.navigation.NavigationProvider"/>
     <extensionPoint name="mps.ModelValidator" interface="jetbrains.mps.ide.generator.ModelValidator"/>
@@ -21,7 +20,6 @@
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
-    <xi:include href="/META-INF/MPSCorePlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
     <xi:include href="/META-INF/MPSPlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
     <xi:include href="/META-INF/MPSVcsExtensions.xml" xpointer="xpointer(/extensions/*)"/>
 
@@ -116,7 +114,7 @@
     <syntaxHighlighter key="Devkit" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
     <syntaxHighlighter key="MPS Project" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
 
-    <editorTabTitleProvider implementation="jetbrains.mps.workbench.editors.EditorTabTitleProviderImpl"/>
+    <editorTabTitleProvider implementation="jetbrains.mps.ide.editor.tabs.EditorTabTitleProviderImpl"/>
 
     <fileIconProvider implementation="jetbrains.mps.workbench.editors.MPSIconProvider"/>
 

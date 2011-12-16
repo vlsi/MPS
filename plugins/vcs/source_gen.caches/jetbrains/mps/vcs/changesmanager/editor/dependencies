@@ -155,7 +155,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighter" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
-    <classNode extendsClassName="jetbrains.mps.workbench.highlighter.EditorComponentCreateListener" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.PopupPanel" file="PopupPanel.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />

@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.testbench;
 
+import jetbrains.mps.build.ant.Environment;
 import jetbrains.mps.build.ant.MpsWorker.LogLogger;
 import jetbrains.mps.build.ant.WhatToDo;
+import jetbrains.mps.build.ant.make.MakeEnvironment;
 import jetbrains.mps.build.ant.make.MakeWorker;
 import jetbrains.mps.testbench.util.FilesCollector;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern;
@@ -56,6 +58,16 @@ public class MpsMakeHelper {
   };
 
   private static final boolean DIRECT_MAKE = true;
+  private final Environment myEnvironment;
+
+  public MpsMakeHelper () {
+    this.myEnvironment = new MakeEnvironment();
+  }
+
+  public MpsMakeHelper (Environment environment) {
+    myEnvironment = environment;
+  }
+
 
   public void make() {
     if (DIRECT_MAKE) {
@@ -118,14 +130,7 @@ public class MpsMakeHelper {
     toDo.updateLogLevel(2); // INFO
     toDo.putProperty("mps.home", System.getProperty("user.dir"));
 
-    MakeWorker worker = new MakeWorker(toDo, new LogLogger()) {
-      @Override
-      protected void loadPlugins() {
-      }
-      @Override
-      protected void disposePlugins() {
-      }
-    };
+    MakeWorker worker = new MakeWorker(toDo, new LogLogger(), myEnvironment);
     worker.work();
 //    spawnWorkerAndWait(toDo);
   }

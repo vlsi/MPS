@@ -14,7 +14,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.library.LibraryManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -44,7 +43,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   private MPSModuleRepository myRepository;
   private ClassLoaderManager myClassLoaderManager;
 
-  public LanguagesKeymapManager(MPSCoreComponents coreComponents, LibraryManager libraryManager) {
+  public LanguagesKeymapManager(MPSCoreComponents coreComponents) {
     myRepository = coreComponents.getModuleRepository();
     myClassLoaderManager = coreComponents.getClassLoaderManager();
   }

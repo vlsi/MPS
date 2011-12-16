@@ -22,6 +22,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
 
 public class ModelDiffTool implements DiffTool {
@@ -73,7 +74,7 @@ public class ModelDiffTool implements DiffTool {
       }
     }
     try {
-      return ModelPersistence.readModel(new String(content.getBytes(), "UTF-8"), false);
+      return ModelPersistence.readModel(new String(content.getBytes(), FileUtil.DEFAULT_CHARSET), false);
     } catch (IOException ioe) {
       throw new ModelReadException("Couldn't read content: " + ioe.getMessage(), ioe);
     }

@@ -25,4 +25,10 @@ import javax.swing.*;
  */
 public class MPSIcons {
     public static final Icon MPS_ICON = IconLoader.findIcon("/icons/mps.png");
+    public static final Icon ADD_MODEL_ROOT_ICON = IconLoader.findIcon("/icons/addModelRoot.png");
+    public static final Icon SOURCES_TAB_ICON = IconLoader.findIcon("/icons/sourcesTab.png");
+    public static final Icon PATHS_TAB_ICON = IconLoader.findIcon("/icons/pathsTab.png");
+    public static final Icon LANGUAGES_TAB_ICON = IconLoader.findIcon("/icons/languagesTab.png");
+    public static Icon DEVKITS_TAB_ICON = IconLoader.findIcon("/icons/devkitsTab.png");
+    public static final Icon LANGUAGE_ICON = IconLoader.findIcon("/icons/language.png");
 }

@@ -25,7 +25,7 @@ public class TraceTool_Tool extends GeneratedTool {
 
   public void init(Project project) {
     super.init(project);
-    TraceTool_Tool.this.myPanel = new TypeSystemTracePanel();
+    TraceTool_Tool.this.myPanel = new TypeSystemTracePanel(TraceTool_Tool.this);
   }
 
   public void buildTrace(TypeCheckingContextNew t, final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {

@@ -23,10 +23,10 @@ public class SimpleWord_Behavior {
     SNode refConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.IConcreteWordUnit");
     for (SNode unit : ListSequence.fromList(SConceptOperations.getAllSubConcepts(refConcept, SNodeOperations.getModel(thisNode), scope))) {
       if (StringUtils.isNotEmpty(SConceptPropertyOperations.getString(unit, "pattern"))) {
-        int index = value.indexOf(IConcreteWordUnit_Behavior.call_getPattern_3263637656469698018(unit));
+        int index = value.indexOf(SConceptPropertyOperations.getString(unit, "pattern"));
         if (index != -1) {
           SNode endOfWord = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.SimpleWord", null);
-          String dummy = value.substring(index + IConcreteWordUnit_Behavior.call_patternLength_3147078024759753579(unit));
+          String dummy = value.substring(index + SConceptPropertyOperations.getString(unit, "pattern").length());
           if (StringUtils.isNotEmpty(dummy)) {
             SPropertyOperations.set(endOfWord, "word", dummy);
             SNodeOperations.insertNextSiblingChild(thisNode, endOfWord);

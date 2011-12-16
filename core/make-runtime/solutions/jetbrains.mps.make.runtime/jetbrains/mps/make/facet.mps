@@ -28,6 +28,9 @@
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="2192279360708028642">
       <property name="name" nameId="tpck.1169194664001" value="IFacetManifest" />
     </node>
+    <node type="tpee.Interface" typeId="tpee.1107796713796" id="7219266275016638568">
+      <property name="name" nameId="tpck.1169194664001" value="ITargetEx" />
+    </node>
   </roots>
   <root id="6168415856807657096">
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6168415856807657097">
@@ -878,6 +881,19 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5215469770656069681" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2192279360708028643" />
+  </root>
+  <root id="7219266275016638568">
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7219266275016638571">
+      <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="isOptional" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7219266275016638573" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7219266275016638574" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="7219266275016638575" />
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7219266275016638569" />
+    <node role="extendedInterface" roleId="tpee.1107797138135" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7219266275016638570">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6168415856807657134" resolveInfo="ITarget" />
+    </node>
   </root>
 </model>
 

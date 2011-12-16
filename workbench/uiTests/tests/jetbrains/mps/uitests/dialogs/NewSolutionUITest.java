@@ -16,10 +16,10 @@
 package jetbrains.mps.uitests.dialogs;
 
 import com.intellij.ide.DataManager;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.ide.newSolutionDialog.NewSolutionDialog;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.workbench.MPSDataKeys;
 import junit.extensions.jfcunit.eventdata.StringEventData;
 
 import javax.swing.JTextField;
@@ -28,8 +28,8 @@ import java.awt.Frame;
 import java.lang.reflect.InvocationTargetException;
 
 public class NewSolutionUITest extends NewDialogsUITestsBase {
-   public void testSolutionCreation() throws InvocationTargetException, InterruptedException {
-    Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
+  public void testSolutionCreation() throws InvocationTargetException, InterruptedException {
+    Frame frame = MPSCommonDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
     assertNotNull("Main frame not found", frame);
 
     final NewSolutionDialog dialog = new NewSolutionDialog(frame);

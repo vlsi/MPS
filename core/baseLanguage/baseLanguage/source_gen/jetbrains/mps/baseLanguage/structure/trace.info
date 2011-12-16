@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BaseLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseLanguage_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="513" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="517" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
+  <root nodeId="1023687332192347378">
+    <nodeInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="58" endLine="8" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IVariableReference" />
+  </root>
   <root nodeId="1068390468198">
     <nodeInfo nodeId="1068390468198" fileName="ClassConcept.java" startLine="14" startPosition="86" endLine="15" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1068390468198" fileName="ClassConcept.java" startLine="15" startPosition="91" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -853,7 +857,7 @@
     <unitInfo nodeId="1068498886294" fileName="AssignmentExpression.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
   </root>
   <root nodeId="1068498886296">
-    <nodeInfo nodeId="1068498886296" fileName="VariableReference.java" startLine="13" startPosition="76" endLine="14" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1068498886296" fileName="VariableReference.java" startLine="13" startPosition="96" endLine="14" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1068498886296" fileName="VariableReference.java" startLine="14" startPosition="96" endLine="15" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1068498886296" fileName="VariableReference.java" startLine="15" startPosition="68" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
     <nodeInfo nodeId="1068498886296" fileName="VariableReference.java" startLine="16" startPosition="45" endLine="17" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
@@ -11907,6 +11911,10 @@
       <varInfo nodeId="8064396509828172209" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="8064396509828172209" fileName="UnaryMinus.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.UnaryMinus" />
+  </root>
+  <root nodeId="8412076637103718467">
+    <nodeInfo nodeId="8412076637103718467" fileName="ISkipsReturn.java" startLine="7" startPosition="52" endLine="8" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="8412076637103718467" fileName="ISkipsReturn.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ISkipsReturn" />
   </root>
   <root nodeId="8972672481958095232">
     <nodeInfo nodeId="8972672481958095232" fileName="IControlFlowInterrupter.java" startLine="7" startPosition="63" endLine="8" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

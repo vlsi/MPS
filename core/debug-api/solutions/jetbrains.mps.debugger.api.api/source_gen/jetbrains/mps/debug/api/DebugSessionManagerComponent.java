@@ -17,14 +17,6 @@ import java.util.Set;
 import java.util.HashSet;
 import com.intellij.execution.ui.RunContentListener;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 08.02.2010
- * * Time: 19:01:48
- * * To change this template use File | Settings | File Templates.
- */
 public class DebugSessionManagerComponent implements ProjectComponent {
   private final Map<ProcessHandler, AbstractDebugSession> myProcessesToSessions = new HashMap<ProcessHandler, AbstractDebugSession>(1);
   private final List<DebugSessionManagerComponent.DebugSessionListener> myCurrentDebugSessionListeners = new ArrayList<DebugSessionManagerComponent.DebugSessionListener>();

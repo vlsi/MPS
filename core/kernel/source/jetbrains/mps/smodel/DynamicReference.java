@@ -78,6 +78,7 @@ public class DynamicReference extends SReferenceBase {
       referenceNode,
       referenceNodeConcept,
       getRole(), // "genuine" role here
+      referenceNode.getRoleLink(),
       new ReferenceResolvingContext(getModule()));
     if (status.isError()) {
       if (!silently) {

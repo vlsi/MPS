@@ -47,6 +47,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.ExpandVetoException;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
+import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
@@ -104,9 +105,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
         ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
         expandPath(new TreePath(progressNode.getPath()));
 
-        if (getGraphics().getClipBounds() != null) paint(getGraphics());
+        Graphics g = getGraphics();
+        if (g != null && g.getClipBounds() != null) paint(g);
       }
-
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

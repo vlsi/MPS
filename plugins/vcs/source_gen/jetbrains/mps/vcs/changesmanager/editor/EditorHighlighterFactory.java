@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;

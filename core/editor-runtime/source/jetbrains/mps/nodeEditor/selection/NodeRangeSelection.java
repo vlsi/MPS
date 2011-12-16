@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -177,7 +176,10 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (selectedCellsSize > 1) {
       editorContext.executeCommand(new Runnable() {
         public void run() {
-          new DeleteNodesHelper(getSelectedNodes(), editorContext.getOperationContext(), false).deleteNodes(false);
+          List<SNode> selectedNodes = getSelectedNodes();
+          for (SNode node : selectedNodes) {
+            node.delete();
+          }
         }
       });
     } else if (selectedCellsSize == 1) {

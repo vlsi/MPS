@@ -18,13 +18,11 @@ core/editor-runtime/classes
 core/actions-runtime/classes
 core/intentions-runtime/classes
 editor/typesystemIntegration/classes
+editor/editor-api/classes
 :workbench
 core/plugin-runtime/classes
-workbench/baseLanguageIndex/classes_gen
-core/baseLanguage/runConfigurations/runtime/classes
-core/languageDesign/test/classes_gen
+languages/languageDesign/test/classes_gen
 workbench/classes
-workbench/idea-workbench/classes
 workbench/mps-workbench/classes
 languages/util/runConfigurations/classes
 workbench/typesystemUi/classes
@@ -32,3 +30,6 @@ languages/util/uiLanguage/runtime/classes
 MPSPlugin/apiclasses
 core/debug/classes
 core/debug-api/classes
+workbench/mps-editor/classes
+workbench/baseLanguageIndex/classes_gen
+workbench/mps-platform/classes

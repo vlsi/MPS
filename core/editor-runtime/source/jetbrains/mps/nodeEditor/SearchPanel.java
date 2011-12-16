@@ -17,25 +17,16 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.util.Pair;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseNode;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.nodeEditor.cellLayout.PunctuationUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
-import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.search.AbstractSearchPanel;
-import jetbrains.mps.ide.search.SearchHistoryComponent;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
@@ -304,28 +295,29 @@ public class SearchPanel extends AbstractSearchPanel {
         return i1.compareTo(i2);
       }
     });
-    UsagesViewTool usagesViewTool = new UsagesViewTool(ProjectHelper.toIdeaProject(myEditor.getOperationContext().getProject()));
-    BaseNode baseNode = new BaseNode() {
-      public SearchResults doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor) {
-        monitor.start("", 1);
-        SearchResults<SNode> searchResults = new SearchResults<SNode>();
-        for (SearchPanelEditorMessage message : searchMessages) {
-          EditorCell cell = message.getCell(myEditor);
-          if (cell == null) continue;
-          SNode node = cell.getSNode();
-          searchResults.getSearchResults().add(new SearchResult<SNode>(node, "Search Panel"));
-        }
-        monitor.done();
-        return searchResults;
-      }
-    };
-    SearchQuery searchQuery = new SearchQuery(null) {
-      @NotNull
-      public String getCaption() {
-        return "Occurrences of '" + myText.getText() + "'";
-      }
-    };
-    usagesViewTool.findUsages(baseNode, searchQuery, false, false, false, null);
+    // TODO FIXME
+//    UsagesViewTool usagesViewTool = new UsagesViewTool(ProjectHelper.toIdeaProject(myEditor.getOperationContext().getProject()));
+//    BaseNode baseNode = new BaseNode() {
+//      public SearchResults doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor) {
+//        monitor.start("", 1);
+//        SearchResults<SNode> searchResults = new SearchResults<SNode>();
+//        for (SearchPanelEditorMessage message : searchMessages) {
+//          EditorCell cell = message.getCell(myEditor);
+//          if (cell == null) continue;
+//          SNode node = cell.getSNode();
+//          searchResults.getSearchResults().add(new SearchResult<SNode>(node, "Search Panel"));
+//        }
+//        monitor.done();
+//        return searchResults;
+//      }
+//    };
+//    SearchQuery searchQuery = new SearchQuery(null) {
+//      @NotNull
+//      public String getCaption() {
+//        return "Occurrences of '" + myText.getText() + "'";
+//      }
+//    };
+//    usagesViewTool.findUsages(baseNode, searchQuery, false, false, false, null);
   }
 
   public void deactivate() {

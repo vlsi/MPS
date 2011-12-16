@@ -47,7 +47,7 @@ import java.awt.Graphics;
 import javax.swing.SwingConstants;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
@@ -61,7 +61,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
 import java.awt.BasicStroke;
@@ -341,14 +341,14 @@ outer:
 
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSDataKeys.NODE.getName())) {
+    if (dataId.equals(MPSCommonDataKeys.NODE.getName())) {
       return ModelAccess.instance().runReadAction(new Computable<Object>() {
         public Object compute() {
           return getSelectedConcept();
         }
       });
     }
-    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+    if (dataId.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
       return myOperationContext;
     }
     return null;
@@ -399,7 +399,7 @@ outer:
             });
             projectPane.selectNode(node, false);
             if (e.getClickCount() == 2) {
-              myOperationContext.getComponent(MPSEditorOpener.class).editNode(node, myOperationContext);
+              NavigationSupport.getInstance().openNode(myOperationContext, node, true, true);
             }
           }
         }

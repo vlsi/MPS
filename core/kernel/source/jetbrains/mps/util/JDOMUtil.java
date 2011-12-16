@@ -33,7 +33,6 @@ import java.io.*;
 
 public class JDOMUtil {
   private static final Logger LOG = Logger.getLogger(JDOMUtil.class);
-  private static final String ENCODING = "UTF-8";
 
   private static SAXParserFactory factory = null;
 
@@ -49,7 +48,7 @@ public class JDOMUtil {
     InputStream in = null;
     try {
       in = file.openInputStream();
-      return saxBuilder.build(new InputStreamReader(in, ENCODING));
+      return saxBuilder.build(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
     } catch (JDOMException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getPath());
       throw e;
@@ -84,7 +83,7 @@ public class JDOMUtil {
     SAXBuilder saxBuilder = createBuilder();
     FileInputStream in = new FileInputStream(file);
     try {
-      return saxBuilder.build(new InputStreamReader(in, ENCODING));
+      return saxBuilder.build(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
     } catch (JDOMException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
       throw e;
@@ -98,7 +97,7 @@ public class JDOMUtil {
 
   public static Document loadDocument(InputStream stream) throws JDOMException, IOException {
     SAXBuilder saxBuilder = createBuilder();
-    return saxBuilder.build(new InputStreamReader(stream, ENCODING));
+    return saxBuilder.build(new InputStreamReader(stream, FileUtil.DEFAULT_CHARSET));
   }
 
   public static Document loadDocument(Reader reader) throws IOException, JDOMException {
@@ -169,14 +168,14 @@ public class JDOMUtil {
   }
 
   public static void writeDocument(Document document, OutputStream stream) throws IOException {
-    writeDocument(document, new OutputStreamWriter(stream, ENCODING));
+    writeDocument(document, new OutputStreamWriter(stream, FileUtil.DEFAULT_CHARSET));
   }
 
 
   public static byte[] printDocument(Document document) throws IOException {
     CharArrayWriter writer = new CharArrayWriter();
     writeDocument(document, writer);
-    return new String(writer.toCharArray()).getBytes(ENCODING);
+    return new String(writer.toCharArray()).getBytes(FileUtil.DEFAULT_CHARSET);
   }
 
   public static void writeDocument(Document document, Writer writer) throws IOException {

@@ -16,11 +16,11 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class GoToTypeErrorRuleUtil {
   private static Logger LOG = Logger.getLogger(GoToTypeErrorRuleUtil.class);
@@ -33,6 +33,8 @@ public class GoToTypeErrorRuleUtil {
   }
 
   public static void goToRuleById(IOperationContext context, Pair<String, String> ruleModelAndId) {
+    ModelAccess.assertLegalRead();
+
     String ruleModel = ruleModelAndId.o1;
     final String ruleID = ruleModelAndId.o2;
     SModelReference modelUID = SModelReference.fromString(ruleModel);
@@ -59,6 +61,6 @@ public class GoToTypeErrorRuleUtil {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
       return;
     }
-    context.getComponent(MPSEditorOpener.class).openNode(rule, context, false, true);
+    NavigationSupport.getInstance().openNode(context, rule, false, true);
   }
 }

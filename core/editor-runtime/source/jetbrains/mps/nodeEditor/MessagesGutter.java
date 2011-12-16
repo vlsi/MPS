@@ -392,8 +392,6 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     }
 
     public void paint(Graphics g) {
-      ((ApplicationImpl) ApplicationManager.getApplication()).editorPaintStart();
-
       final Rectangle bounds = getBounds();
 
       g.setColor(ButtonlessScrollBarUI.TRACK_BACKGROUND);
@@ -402,14 +400,9 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
       g.setColor(ButtonlessScrollBarUI.TRACK_BORDER);
       g.drawLine(0, 0, 0, bounds.height);
 
-      try {
-        Icon icon = getIcon();
-        if (icon != null) {
-          icon.paintIcon(this, g, (getWidth() - icon.getIconWidth()) / 2 + 1, (getHeight() - icon.getIconHeight()) / 2);
-        }
-      }
-      finally {
-        ((ApplicationImpl)ApplicationManager.getApplication()).editorPaintFinish();
+      Icon icon = getIcon();
+      if (icon != null) {
+        icon.paintIcon(this, g, (getWidth() - icon.getIconWidth()) / 2 + 1, (getHeight() - icon.getIconHeight()) / 2);
       }
     }
 

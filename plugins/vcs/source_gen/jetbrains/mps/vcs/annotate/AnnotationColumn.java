@@ -45,7 +45,7 @@ import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import jetbrains.mps.vcs.changesmanager.CurrentDifference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
@@ -349,7 +349,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   }
 
   private Iterable<Integer> getPseudoLinesForContent(@Nullable LineContent content) {
-    EditorCell cell = findCellForContent(content);
+    jetbrains.mps.openapi.editor.EditorCell cell = findCellForContent(content);
     if (cell == null) {
       return Sequence.fromIterable(Collections.<Integer>emptyList());
     }

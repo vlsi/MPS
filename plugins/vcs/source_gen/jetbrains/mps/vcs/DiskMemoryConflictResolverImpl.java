@@ -101,7 +101,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     if (modelFile.exists()) {
       com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
     }
-    File zipfile = MergeBackupUtil.chooseZipFileForModelFile(modelFile.getName());
+    File zipfile = MergeBackupUtil.chooseZipFileForModelFile(modelFile);
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);
     FileUtil.delete(tmp);

@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.SModel;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.ArrayList;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SModelDescriptor;
 
@@ -63,11 +63,11 @@ public class OldRefactoringAdapter implements IRefactoring {
 
   public void doWhenDone(final RefactoringContext refactoringContext) {
     if (myNodesToOpen != null && !(myNodesToOpen.isEmpty())) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
+      ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
+          IOperationContext context = refactoringContext.getCurrentOperationContext();
           for (SNode nodeToOpen : myNodesToOpen) {
-            IOperationContext context = refactoringContext.getCurrentOperationContext();
-            context.getComponent(MPSEditorOpener.class).editNode(nodeToOpen, context);
+            NavigationSupport.getInstance().openNode(context, nodeToOpen, true, true);
           }
         }
       });

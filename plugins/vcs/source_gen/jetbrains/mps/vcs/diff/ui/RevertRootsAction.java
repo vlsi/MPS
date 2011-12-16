@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public abstract class RevertRootsAction extends BaseAction {
   private ModelDifferenceDialog myModelDifferenceDialog;
@@ -26,7 +27,10 @@ public abstract class RevertRootsAction extends BaseAction {
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     Iterable<ModelChange> changes = Sequence.fromIterable(Sequence.fromArray(getRoots())).translate(new ITranslator2<SNodeId, ModelChange>() {
       public Iterable<ModelChange> translate(SNodeId r) {
-        return myModelDifferenceDialog.getChangesForRoot(r);
+        return (r == null ?
+          myModelDifferenceDialog.getMetadataChanges() :
+          myModelDifferenceDialog.getChangesForRoot(r)
+        );
       }
     });
     myModelDifferenceDialog.rollbackChanges(changes, new _FunctionTypes._void_P0_E0() {
@@ -43,10 +47,22 @@ public abstract class RevertRootsAction extends BaseAction {
     boolean enabled = getRoots().length != 0 && newModel.getModelDescriptor() instanceof EditableSModelDescriptor;
     event.getPresentation().setEnabled(enabled);
     event.getPresentation().setVisible(enabled);
-    event.getPresentation().setText("Revert Root" + ((getRoots().length != 1 ?
-      "s" :
-      ""
-    )));
+    String what = "Roots";
+    if (getRoots().length == 1) {
+      what = (getRoots()[0] == null ?
+        "Properties" :
+        "Root"
+      );
+    } else {
+      if (Sequence.fromIterable(Sequence.fromArray(getRoots())).any(new IWhereFilter<SNodeId>() {
+        public boolean accept(SNodeId r) {
+          return r == null;
+        }
+      })) {
+        what = "Roots and Properties";
+      }
+    }
+    event.getPresentation().setText("Revert " + what);
   }
 
   protected abstract void after();

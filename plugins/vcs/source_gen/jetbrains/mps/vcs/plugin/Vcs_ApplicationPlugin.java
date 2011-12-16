@@ -34,6 +34,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OldGoToPreviousChange_Action());
     addAction(new OldRollbackChanges_Action());
     addAction(new ReRunMergeFromBackup_Action());
+    addAction(new ReportModelMergeProblem_Action());
     addAction(new RollbackChanges_Action());
     addAction(new ShowDiffFromChanges_Action());
     addAction(new ShowDifferencesWithModelOnDisk_Action());
@@ -42,7 +43,8 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new AnnotateGroup_ActionGroup());
     addGroup(new ChangesStrip_ActionGroup());
     addGroup(new GoToVCS_ActionGroup());
-    addGroup(new InstallVcsAddons_ActionGroup());
+    addGroup(new MPSGlobalVcsGroup_ActionGroup());
+    addGroup(new MakeFromChangesView_ActionGroup());
     addGroup(new ModuleVcsActions_ActionGroup());
     addGroup(new OldChangesStrip_ActionGroup());
     addGroup(new ShowDiffWithCurrRev_ActionGroup());
@@ -53,12 +55,13 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(MakeFromChangesView_ActionGroup.ID, "ChangesViewPopupMenu", null);
     insertGroupIntoAnother(GoToVCS_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoVCS);
     insertGroupIntoAnother(VCSModelActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_mpsvcs);
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_diff);
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_diff);
     insertGroupIntoAnother(ModuleVcsActions_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_ideavcs);
     insertGroupIntoAnother(AnnotateGroup_ActionGroup.ID, EditorLeftPanelMenu_ActionGroup.ID, null);
-    insertGroupIntoAnother(InstallVcsAddons_ActionGroup.ID, "VcsGlobalGroup", null);
+    insertGroupIntoAnother(MPSGlobalVcsGroup_ActionGroup.ID, "VcsGlobalGroup", null);
   }
 }

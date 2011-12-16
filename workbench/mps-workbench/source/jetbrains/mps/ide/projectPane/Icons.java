@@ -15,27 +15,19 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.fileTypes.FileIcons;
+import jetbrains.mps.ide.icons.IdeIcons;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-public class Icons {
+public class Icons extends IdeIcons {
 
   // nodes: modelStub.png, libraryModels.png, moduleSkeleton.png, mps.png, projectProperties.png, script1.png, script2.png, script3.png, view.png
   // other: addFavoritesList.png, closedFolder.png, closedFolder_glamour.png, menu-replace.png, openedFolder.png, openedFolder_glamour.png
 
-  public static final Icon DEFAULT_ICON = new ImageIcon(Icons.class.getResource("nodes/default.png"));
-  public static final Icon DEFAULT_ROOT_ICON = new ImageIcon(Icons.class.getResource("nodes/defaultRootNode.png"));
-  public static final Icon UNKNOWN_ICON = new ImageIcon(Icons.class.getResource("nodes/unknown.png"));
-  public static final Icon DEFAULT_NODE_ICON = new ImageIcon(Icons.class.getResource("nodes/defaultNode.png"));
-  public static final Icon MODEL_ICON = FileIcons.MODEL_ICON;
-  public static final Icon LANGUAGE_ICON = new ImageIcon(Icons.class.getResource("nodes/language.png"));
-  public static final Icon PROJECT_LANGUAGE_ICON = FileIcons.PROJECT_LANGUAGE_ICON;
   public static final Icon JAVA_ICON = new ImageIcon(Icons.class.getResource("nodes/java.png"));
   public static final Icon TEXT_ICON = new ImageIcon(Icons.class.getResource("nodes/text.png"));
   public static final Icon LIB_ICON = new ImageIcon(Icons.class.getResource("nodes/ppLib.png"));
-  public static final Icon PROJECT_ICON = FileIcons.PROJECT_ICON;
   public static final Icon LOGICAL_VIEW_ICON = new ImageIcon(Icons.class.getResource("other/logical_view.png"));
   public static final Icon PROJECT_LANGUAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/projectLanguages.png"));
   public static final Icon PROJECT_MODELS_ICON = new ImageIcon(Icons.class.getResource("nodes/projectModels.png"));
@@ -43,7 +35,6 @@ public class Icons {
   public static final Icon LANGUAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/languages.png"));
   public static final Icon EDITORS_ICON = new ImageIcon(Icons.class.getResource("nodes/editors.png"));
   public static final Icon GENERATORS_ICON = new ImageIcon(Icons.class.getResource("nodes/generators.png"));
-  public static final Icon GENERATOR_ICON = new ImageIcon(Icons.class.getResource("nodes/generator.png"));
   public static final Icon MODULE_DEPENDENCIES_ICON = new ImageIcon(Icons.class.getResource("nodes/moduleDependencies.png"));
   public static final Icon TRANSIENT_MODELS_ICON = new ImageIcon(Icons.class.getResource("nodes/transientModels.png"));
 
@@ -59,23 +50,6 @@ public class Icons {
   public static final Icon MESSAGE_VIEW_ICON = new ImageIcon(Icons.class.getResource("nodes/messageView.png"));
   public static final Icon HISTORY_VIEW_ICON = new ImageIcon(Icons.class.getResource("nodes/historyView.png"));
 
-  public static final Icon STRUCTURE_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/structureModel.png"));
-  public static final Icon EDITOR_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/editorModel.png"));
-  public static final Icon ACTIONS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/actionsModel.png"));
-  public static final Icon TEMPLATES_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/templatesModel.png"));
-  public static final Icon TYPESYSTEM_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/typesystemModel.png"));
-  public static final Icon INTENTIONS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/intentionsModel.png"));
-  public static final Icon FIND_USAGES_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/findUsagesModel.png"));
-  public static final Icon PLUGIN_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/pluginModel.png"));
-  public static final Icon BEHAVIOR_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/behaviorModel.png"));
-  public static final Icon CONSTRAINTS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/constraintsModel.png"));
-  public static final Icon DATA_FLOW_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/dataFlowModel.png"));
-  public static final Icon TEST_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/testModel.png"));
-  public static final Icon REFACTORINGS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/refactoringsModel.png"));
-  public static final Icon STUBS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/stubsModel.png"));
-  public static final Icon TEXT_GEN_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/textGenModel.png"));
-  public static final Icon ACCESSORY_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/accessoryModel.png"));
-
   public static final Icon OPENED_FOLDER = new ImageIcon(Icons.class.getResource("fileSystem/icons/TreeOpened.png"));
   public static final Icon CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("fileSystem/icons/TreeClosed.png"));
   public static final Icon OPENED_FOLDER_GOTHIC = new ImageIcon(Icons.class.getResource("other/openedFolder_gothic.png"));
@@ -85,23 +59,11 @@ public class Icons {
 
   @Deprecated
   public static final Icon USAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/usages.png"));
-  public static final Icon CELL_EXPLORER_ICON = new ImageIcon(Icons.class.getResource("nodes/cellExplorer.png"));
-  public static final Icon CELLS_ICON = new ImageIcon(Icons.class.getResource("nodes/cells.png"));
-  public static final Icon CELL_CONSTANT_ICON = new ImageIcon(Icons.class.getResource("nodes/cellConst.png"));
-  public static final Icon CELL_DEFAULT_ICON = new ImageIcon(Icons.class.getResource("nodes/cellDefault.png"));
-  public static final Icon CELL_COMPONENT_ICON = new ImageIcon(Icons.class.getResource("nodes/cellComponent.png"));
-  public static final Icon CELL_ERROR_ICON = new ImageIcon(Icons.class.getResource("nodes/cellError.png"));
-  public static final Icon CELL_PROPERTY_ICON = new ImageIcon(Icons.class.getResource("nodes/cellProperty.png"));
-  public static final Icon CELL_KEY_MAP_ICON = new ImageIcon(Icons.class.getResource("nodes/cellKeyMap.png"));
-  public static final Icon CELL_ACTION_KEY_ICON = new ImageIcon(Icons.class.getResource("nodes/cellActionKey.png"));
-  public static final Icon CELL_TREE_ICON = new ImageIcon(Icons.class.getResource("nodes/cellTree.png"));
 
   public static final Icon DERIVATION_NODE_ICON = new ImageIcon(Icons.class.getResource("nodes/gadget.png"));
   public static final Icon INFER_FOUND_ICON = new ImageIcon(Icons.class.getResource("nodes/inferFound.png"));
   public static final Icon INFER_FAILED_ICON = new ImageIcon(Icons.class.getResource("nodes/inferFailed.png"));
   public static final Icon INFER_QUESTION_ICON = new ImageIcon(Icons.class.getResource("nodes/inferQuestion.png"));
-
-  public static final Icon INSPECTOR_ICON = new ImageIcon(Icons.class.getResource("nodes/inspector.png"));
 
   public static final Icon DELETE_ICON = new ImageIcon(Icons.class.getResource("other/cancel.png"));
   public static final Icon FIND_ICON = new ImageIcon(Icons.class.getResource("other/find.png"));
@@ -110,10 +72,6 @@ public class Icons {
 
   public static final Icon DISCARD_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/discardAll.png"));
   public static final Icon SELECT_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/selectAll.png"));
-
-  public static final Icon SOLUTION_ICON = FileIcons.SOLUTION_ICON;
-
-  public static final Icon DEVKIT_ICON = FileIcons.DEVKIT_ICON;
 
   public static final Icon CFG_END_ICON = new ImageIcon(Icons.class.getResource("nodes/cfgEnd.png"));
 

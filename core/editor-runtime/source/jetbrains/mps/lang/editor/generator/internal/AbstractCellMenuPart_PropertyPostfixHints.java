@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
-import jetbrains.mps.ide.ChooseItemComponent;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -29,6 +28,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.PatternUtil;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -138,7 +138,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     }
 
     private Pattern getItemPattern(String text) {
-      final StringBuilder exactItemPatternBuilder = ChooseItemComponent.getExactItemPatternBuilder(text, true);
+      final StringBuilder exactItemPatternBuilder = PatternUtil.getExactItemPatternBuilder(text, true);
       final String itemPattern = exactItemPatternBuilder.append(".*").toString();
       return Pattern.compile(itemPattern);
     }

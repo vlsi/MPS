@@ -16,41 +16,69 @@
 <project name="IDEA-plugin-compile" default="compile" basedir=".">
 
     <property name="base_dir" value=".."/>
-    <property name="artifacts" value="${base_dir}/IdeaPlugin/mps-core/lib"/>
-    <property name="build_dir" value="${base_dir}/IdeaPlugin/build"/>
+    <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
+    <property name="build_dir" value="${build.home}/build_dir/"/>
+    <property name="artifacts" value="${build.home}/artifacts"/>
+    <property name="dist.dir" value="${build.home}/dist"/>
+    <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
     <property file="build.properties"/>
     <property name="ideaPath" value="${home.idea_ce}"/>
 
     <path id="javac2.classpath">
-        <pathelement location="${ideaPath}/lib/javac2.jar"/>
-        <pathelement location="${ideaPath}/lib/jdom.jar"/>
-        <pathelement location="${ideaPath}/lib/asm.jar"/>
-        <pathelement location="${ideaPath}/lib/asm-commons.jar"/>
-        <pathelement location="${ideaPath}/lib/jgoodies-forms.jar"/>
+        <fileset dir="${ideaPath}/lib">
+            <include name="javac2.jar"/>
+            <include name="jdom.jar"/>
+            <include name="asm.jar"/>
+            <include name="asm-commons.jar"/>
+            <include name="jgoodies-forms.jar"/>
+        </fileset>
     </path>
     <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
 
     <path id="mps.core.libraries">
-        <path path="${home.idea_ce}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar"/>
-        <path path="${home.idea_ce}/lib/guava-r09.jar"/>
-        <path path="${home.idea_ce}/lib/jdom.jar"/>
-        <path path="${home.idea_ce}/lib/log4j.jar"/>
-        <path path="${home.idea_ce}/lib/trove4j.jar"/>
-        <path path="${home.idea_ce}/lib/xstream.jar"/>
-        <path path="${home.idea_ce}/lib/annotations.jar"/>
-        <path path="${home.idea_ce}/lib/commons-lang-2.4.jar"/>
-        <path path="${home.idea_ce}/lib/commons-logging-1.1.1.jar"/>
-        <path path="${base_dir}/lib/asm.jar"/>
-        <path path="${base_dir}/lib/diffutils-1.2.1.jar"/>
+        <fileset dir="${ideaPath}/lib">
+            <include name="org.eclipse.jdt.core_3.5.2.v_981_R35x.jar"/>
+            <include name="guava-r09.jar"/>
+            <include name="jdom.jar"/>
+            <include name="log4j.jar"/>
+            <include name="trove4j.jar"/>
+            <include name="xstream.jar"/>
+            <include name="annotations.jar"/>
+            <include name="commons-lang-2.4.jar"/>
+            <include name="commons-logging-1.1.1.jar"/>
+        </fileset>
+        <fileset dir="${base_dir}/lib">
+            <include name="asm.jar"/>
+            <include name="diffutils-1.2.1.jar"/>
+        </fileset>
     </path>
 
-    <target name="clean">
-        <delete dir="${artifacts}"/>
-        <delete dir="${build_dir}"/>
+    <target name="prepare">
+        <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
+        <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
+        <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
+            <resources>
+                <file file="${base_dir}/lib/asm.jar"/>
+                <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
+            </resources>
+        </copy>
+        <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
+        <!-- TODO build languages -->
     </target>
 
-    <target name="compile">
-        <mkdir dir="${artifacts}"/>
+    <target name="clean">
+        <delete dir="${build.home}"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="${dist.dir}"/>
+        <mkdir dir="${dist.dir}/lib"/>
+        <mkdir dir="${dist.dir}/languages"/>
+        <touch file="${dist.dir}/build.number"/>
+
+        <copy includeemptydirs="false" todir="${dist.dir}/languages">
+            <fileset dir="${base_dir}/IdeaPlugin/mps-core/languages" erroronmissingdir="false"/>
+        </copy>
 
         <!-- MPS Core -->
         <mkdir dir="${build_dir}/mpscore_jar"/>
@@ -60,7 +88,6 @@
             <compilerarg value="-Xlint:none"/>
             <src>
                 <path path="${base_dir}/core/baseLanguage/collections/runtime/source_gen"/>
-                <path path="${base_dir}/core/baseLanguage/closures/runtime/source"/>
                 <path path="${base_dir}/core/baseLanguage/closures/runtime/source_gen"/>
                 <path path="${base_dir}/core/baseLanguage/tuples/runtime/source_gen"/>
 
@@ -103,7 +130,7 @@
                 <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen"/>
             </src>
         </javac>
-        <jar destfile="${artifacts}/mps-core.jar">
+        <jar destfile="${dist.dir}/lib/mps-core.jar">
             <fileset dir="${build_dir}/mpscore_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -112,27 +139,12 @@
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
-        <copy todir="${artifacts}" flatten="true">
+        <copy todir="${dist.dir}/lib" flatten="true">
             <resources>
                 <file file="${base_dir}/lib/asm.jar"/>
                 <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
             </resources>
         </copy>
-
-        <!-- MPS Core sources -->
-        <mkdir dir="${build_dir}/mpscore-src_jar"/>
-        <copy includeemptydirs="false" todir="${build_dir}/mpscore-src_jar">
-            <fileset dir="${base_dir}/core/kernel/source" includes="**/*.java"/>
-        </copy>
-        <jar destfile="${artifacts}/mps-core-src.jar">
-            <fileset dir="${build_dir}/mpscore-src_jar"/>
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
-                <attribute name="Implementation-Title" value="MPS Core modeling framework"/>
-                <attribute name="Implementation-Version" value="1.0"/>
-            </manifest>
-        </jar>
 
         <!-- IDEA workbench -->
         <mkdir dir="${build_dir}/mpsworkbench_jar"/>
@@ -142,18 +154,18 @@
             <compilerarg value="-Xlint:none"/>
             <src>
                 <!-- idea-workbench -->
-                <path path="${base_dir}/workbench/idea-workbench/source"/>
+                <path path="${base_dir}/workbench/mps-platform/source"/>
+                <path path="${base_dir}/workbench/mps-platform/source_gen"/>
             </src>
             <classpath>
-                <fileset dir="${artifacts}" includes="*.jar"/>
+                <fileset dir="${dist.dir}/lib" includes="*.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench_jar">
-            <fileset dir="${base_dir}/workbench/idea-workbench/source" includes="META-INF/*"/>
-            <fileset dir="${base_dir}/workbench/idea-workbench/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
         </copy>
-        <jar destfile="${artifacts}/mps-workbench.jar">
+        <jar destfile="${dist.dir}/lib/mps-workbench.jar">
             <fileset dir="${build_dir}/mpsworkbench_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -163,20 +175,169 @@
             </manifest>
         </jar>
 
-        <!-- IDEA workbench sources -->
-        <mkdir dir="${build_dir}/mpsworkbench-src_jar"/>
-        <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench-src_jar">
-            <fileset dir="${base_dir}/workbench/idea-workbench/source" includes="**/*.java"/>
+        <!-- IDEA editor -->
+        <mkdir dir="${build_dir}/mpseditor_jar"/>
+        <javac destdir="${build_dir}/mpseditor_jar" fork="true"
+               memorymaximumsize="1024m"
+               includeantruntime="false">
+            <compilerarg value="-Xlint:none"/>
+            <src>
+                <!-- editor-api -->
+                <path path="${base_dir}/editor/editor-api/source"/>
+                <path path="${base_dir}/core/editor-runtime/source"/>
+                <path path="${base_dir}/core/editor-runtime/source_gen"/>
+                <path path="${base_dir}/core/actions-runtime/source"/>
+                <path path="${base_dir}/core/actions-runtime/source_gen"/>
+                <path path="${base_dir}/core/intentions-runtime/source"/>
+                <path path="${base_dir}/workbench/mps-editor/source"/>
+            </src>
+            <classpath>
+                <fileset dir="${dist.dir}/lib" includes="*.jar"/>
+                <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+            </classpath>
+        </javac>
+        <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar">
+            <fileset dir="${base_dir}/editor/editor-api/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/core/editor-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/core/editor-runtime/source_gen" includes="**/*.png"/>
+            <fileset dir="${base_dir}/core/actions-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/core/actions-runtime/source_gen" includes="**/*.png"/>
+            <fileset dir="${base_dir}/core/intentions-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/workbench/mps-editor/source" includes="**/*.png"/>
         </copy>
-        <jar destfile="${artifacts}/mps-workbench-src.jar">
-            <fileset dir="${build_dir}/mpsworkbench-src_jar"/>
+        <jar destfile="${dist.dir}/lib/mps-editor.jar">
+            <fileset dir="${build_dir}/mpseditor_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
-                <attribute name="Implementation-Title" value="IDEA Workbench integration package sources"/>
+                <attribute name="Implementation-Title" value="MPS Editor integration package"/>
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
 
+        <!-- MPS plugin -->
+        <mkdir dir="${build_dir}/mpsplugin_jar"/>
+        <javac2 destdir="${build_dir}/mpsplugin_jar" fork="true"
+                memorymaximumsize="1024m"
+                includeantruntime="false">
+            <compilerarg value="-Xlint:none"/>
+            <src>
+                <!-- plugin -->
+                <path path="${base_dir}/IdeaPlugin/mps-core/src"/>
+            </src>
+            <classpath>
+                <fileset dir="${dist.dir}/lib" includes="*.jar"/>
+                <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+            </classpath>
+        </javac2>
+        <copy includeemptydirs="false" todir="${build_dir}/mpsplugin_jar">
+            <fileset dir="${base_dir}/IdeaPlugin/mps-core/src" includes="**/*.png, **/*.properties"/>
+            <fileset dir="${base_dir}/IdeaPlugin/mps-core/resources" includes="**/*.png, **/*.properties"/>
+            <fileset dir="${base_dir}/workbench/mps-platform/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/workbench/mps-editor/source" includes="META-INF/*"/>
+        </copy>
+        <copy file="${base_dir}/IdeaPlugin/mps-core/META-INF/plugin.xml"
+              tofile="${build_dir}/mpsplugin_jar/META-INF/plugin.xml">
+            <filterchain>
+                <tokenfilter>
+                    <replaceregex pattern="../classes/META-INF/" replace="" flags="gi"/>
+                </tokenfilter>
+            </filterchain>
+        </copy>
+        <jar destfile="${dist.dir}/lib/mps-plugin.jar">
+            <fileset dir="${build_dir}/mpsplugin_jar"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Plug-in for IDEA"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="compileTests" depends="compile">
+        <mkdir dir="${build_dir}/mpsplugintests_jar"/>
+        <javac2 destdir="${build_dir}/mpsplugintests_jar" fork="true"
+                memorymaximumsize="1024m"
+                includeantruntime="false">
+            <compilerarg value="-Xlint:none"/>
+            <src>
+                <!-- plugin tests -->
+                <path path="${base_dir}/IdeaPlugin/mps-core/testSrc"/>
+            </src>
+            <classpath>
+                <fileset dir="${dist.dir}/lib" includes="*.jar"/>
+                <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+            </classpath>
+        </javac2>
+        <jar destfile="${dist.dir}/lib/mps-plugin-tests.jar">
+            <fileset dir="${build_dir}/mpsplugintests_jar"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Plug-in for IDEA"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="runTests">
+        <delete dir="${plugins.sandbox.dir}"/>
+        <mkdir dir="${plugins.sandbox.dir}/plugins"/>
+        <copy todir="${plugins.sandbox.dir}/plugins/mps-core">
+            <fileset dir="${dist.dir}"/>
+        </copy>
+
+        <junit fork="true"
+               dir="."
+               haltonfailure="true"
+               showoutput="true"
+               enableTestListenerEvents="true">
+            <jvmarg value="-ea"/>
+            <jvmarg value="-Xss1024k"/>
+            <jvmarg value="-Xmx1024m"/>
+            <jvmarg value="-Xbootclasspath/a:${ideaPath}/lib/boot.jar"/>
+            <sysproperty key="idea.platform.prefix" value="Idea"/>
+            <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
+            <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
+            <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
+            <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core"/>
+            <sysproperty key="idea.home.path" value="${plugins.sandbox.dir}/test"/>
+            <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
+            <sysproperty key="file.encoding" value="UTF-8"/>
+            <classpath>
+                <fileset dir="${ideaPath}/lib">
+                    <include name="**/*.jar"/>
+                </fileset>
+                <fileset dir="${ideaPath}/plugins/junit/lib">
+                    <include name="junit-rt.jar"/>
+                </fileset>
+                <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
+                    <include name="*.jar"/>
+                </fileset>
+                <pathelement path="${java.class.path}"/>
+            </classpath>
+            <test name="jetbrains.mps.idea.core.tests.AllTests"/>
+        </junit>
+    </target>
+
+    <target name="zip" depends="compile, compileTests">
+        <zip file="${artifacts}/mps-core${plugin.prefix}-${plugin.version}.zip">
+            <zipfileset dir="${dist.dir}" prefix="mps-core${plugin.prefix}">
+                <exclude name="lib/*-tests.jar"/>
+            </zipfileset>
+        </zip>
+    </target>
+
+    <target name="install-plugin" depends="compile">
+        <property name="pluginPath" value="${home.idea_ce.plugins}"/>
+        <copy todir="${pluginPath}/mps-core">
+            <fileset dir="${dist.dir}"/>
+        </copy>
+    </target>
+
+    <target name="uninstall-plugin">
+        <property name="pluginPath" value="${home.idea_ce.plugins}"/>
+        <delete dir="${pluginPath}/mps-core"/>
     </target>
 </project>

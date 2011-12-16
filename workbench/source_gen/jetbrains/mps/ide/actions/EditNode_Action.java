@@ -11,11 +11,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class EditNode_Action extends GeneratedAction {
@@ -44,7 +44,7 @@ public class EditNode_Action extends GeneratedAction {
       return false;
     }
     {
-      List<SNode> nodes = event.getData(MPSDataKeys.NODES);
+      List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
       boolean error = false;
       if (nodes != null) {
       }
@@ -66,10 +66,9 @@ public class EditNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MPSEditorOpener opener = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(MPSEditorOpener.class);
       for (SNode node : ((List<SNode>) MapSequence.fromMap(_params).get("nodes"))) {
         if (node != null) {
-          opener.editNode(node, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+          NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), node, true, true);
         }
       }
     } catch (Throwable t) {

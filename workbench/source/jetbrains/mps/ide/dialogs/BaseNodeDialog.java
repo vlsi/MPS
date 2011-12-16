@@ -23,7 +23,6 @@ import com.intellij.openapi.ui.Splitter;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.util.JSplitPaneWithoutBorders;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -37,7 +36,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
-import javax.swing.JSplitPane;
 import java.awt.HeadlessException;
 
 public abstract class BaseNodeDialog extends BaseDialog {

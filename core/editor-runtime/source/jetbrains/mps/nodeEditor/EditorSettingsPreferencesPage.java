@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
@@ -284,9 +281,10 @@ class EditorSettingsPreferencesPage {
         mySettings.getState().setShowPlain(myTabPerNode.isSelected() || myAllTabs.isSelected());
         mySettings.getState().setShowGrayed(myAllTabs.isSelected());
         applyState();
-        for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-          p.getComponent(ProjectPluginManager.class).recreateTabbedEditors();
-        }
+// TODO FIXME
+//        for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+//          p.getComponent(ProjectPluginManager.class).recreateTabbedEditors();
+//        }
 
         mySettings.updateCachedValue();
 

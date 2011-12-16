@@ -1200,6 +1200,10 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.structure.ISkipsReturn" file="ISkipsReturn.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.structure.IStatementListContainer" file="IStatementListContainer.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
@@ -1228,6 +1232,10 @@
   <dependency className="jetbrains.mps.baseLanguage.structure.IVariableDeclaration" file="IVariableDeclaration.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.structure.IVariableReference" file="IVariableReference.java">
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.structure.IVisible" file="IVisible.java">
@@ -2441,6 +2449,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IVariableReference" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.TypeAnnotable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />

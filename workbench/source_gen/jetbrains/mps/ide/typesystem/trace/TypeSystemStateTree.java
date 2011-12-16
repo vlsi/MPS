@@ -28,10 +28,11 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.util.Pair;
 
@@ -170,7 +171,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
           if (node != null && node.isRegistered()) {
             group.add(new BaseAction("Go to node with type " + var) {
               public void doExecute(AnActionEvent e, Map<String, Object> _params) {
-                myOperationContext.getComponent(MPSEditorOpener.class).editNode(node, myOperationContext);
+                NavigationSupport.getInstance().openNode(myOperationContext, node, true, true);
               }
             });
           }
@@ -183,7 +184,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   @Nullable
   public Object getData(@NonNls String id) {
     TypeSystemStateTreeNode currentNode = (TypeSystemStateTreeNode) this.getCurrentNode();
-    if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+    if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
       return myOperationContext;
     }
     if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {

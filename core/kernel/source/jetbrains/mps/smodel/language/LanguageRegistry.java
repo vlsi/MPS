@@ -70,12 +70,15 @@ public class LanguageRegistry implements CoreComponent {
         notifyUnload(myLanguages.values(), true);
         myLanguageToNamespace.clear();
         myLanguages.clear();
+        myLanguages = null;
       }
     });
     INSTANCE = null;
   }
 
   public void loadLanguages() {
+    if (myLanguages != null) return;
+
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         myLanguageToNamespace = new HashMap<Language, String>();

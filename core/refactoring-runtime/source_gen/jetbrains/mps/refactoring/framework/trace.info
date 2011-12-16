@@ -602,8 +602,8 @@
     <nodeInfo nodeId="4792031542972811222" fileName="OldRefactoringAdapter.java" startLine="56" startPosition="5" endLine="57" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972811237" fileName="OldRefactoringAdapter.java" startLine="58" startPosition="59" endLine="59" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4792031542972811242" fileName="OldRefactoringAdapter.java" startLine="60" startPosition="5" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4792031542972811391" fileName="OldRefactoringAdapter.java" startLine="68" startPosition="50" endLine="69" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4792031542972811397" fileName="OldRefactoringAdapter.java" startLine="69" startPosition="88" endLine="70" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4792031542972811391" fileName="OldRefactoringAdapter.java" startLine="67" startPosition="27" endLine="68" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1071422968910417453" fileName="OldRefactoringAdapter.java" startLine="69" startPosition="50" endLine="70" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4792031542972811276" fileName="OldRefactoringAdapter.java" startLine="77" startPosition="80" endLine="78" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4792031542972811285" fileName="OldRefactoringAdapter.java" startLine="81" startPosition="43" endLine="82" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4792031542972811295" fileName="OldRefactoringAdapter.java" startLine="85" startPosition="38" endLine="86" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -623,13 +623,13 @@
     <nodeInfo nodeId="4792031542972811360" fileName="OldRefactoringAdapter.java" startLine="124" startPosition="12" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4792031542972811213" fileName="OldRefactoringAdapter.java" startLine="53" startPosition="107" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4792031542972811229" fileName="OldRefactoringAdapter.java" startLine="57" startPosition="50" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4792031542972811386" fileName="OldRefactoringAdapter.java" startLine="68" startPosition="86" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4792031542972811126" fileName="OldRefactoringAdapter.java" startLine="21" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OldRefactoringAdapter#(Ljetbrains/mps/refactoring/framework/AbstractLoggableRefactoring;)V" />
     <nodeInfo nodeId="4792031542972811136" fileName="OldRefactoringAdapter.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
     <nodeInfo nodeId="4792031542972811144" fileName="OldRefactoringAdapter.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
     <nodeInfo nodeId="4792031542972811152" fileName="OldRefactoringAdapter.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
     <nodeInfo nodeId="4792031542972811160" fileName="OldRefactoringAdapter.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
     <nodeInfo nodeId="4792031542972811167" fileName="OldRefactoringAdapter.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
-    <nodeInfo nodeId="4792031542972811386" fileName="OldRefactoringAdapter.java" startLine="67" startPosition="27" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4792031542972811270" fileName="OldRefactoringAdapter.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
     <nodeInfo nodeId="4792031542972811281" fileName="OldRefactoringAdapter.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringClassName#()Ljava/lang/String;" />
     <nodeInfo nodeId="4792031542972811291" fileName="OldRefactoringAdapter.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringClass#()Ljava/lang/Class;" />
@@ -638,8 +638,8 @@
     <nodeInfo nodeId="4792031542972811305" fileName="OldRefactoringAdapter.java" startLine="89" startPosition="91" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4792031542972811331" fileName="OldRefactoringAdapter.java" startLine="106" startPosition="12" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4792031542972811356" fileName="OldRefactoringAdapter.java" startLine="121" startPosition="12" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4792031542972811267" fileName="OldRefactoringAdapter.java" startLine="66" startPosition="70" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4792031542972811260" fileName="OldRefactoringAdapter.java" startLine="65" startPosition="62" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1071422968910417478" fileName="OldRefactoringAdapter.java" startLine="66" startPosition="58" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1071422968910417470" fileName="OldRefactoringAdapter.java" startLine="65" startPosition="62" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4792031542972811299" fileName="OldRefactoringAdapter.java" startLine="88" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createAdapterFor#(Ljetbrains/mps/refactoring/framework/AbstractLoggableRefactoring;)Ljetbrains/mps/refactoring/framework/IRefactoring;" />
     <nodeInfo nodeId="4792031542972811327" fileName="OldRefactoringAdapter.java" startLine="103" startPosition="54" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4792031542972811352" fileName="OldRefactoringAdapter.java" startLine="118" startPosition="43" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -657,6 +657,7 @@
     <scopeInfo nodeId="4792031542972811172" fileName="OldRefactoringAdapter.java" startLine="43" startPosition="62" endLine="44" endPosition="59" />
     <scopeInfo nodeId="4792031542972811217" fileName="OldRefactoringAdapter.java" startLine="54" startPosition="35" endLine="55" endPosition="37" />
     <scopeInfo nodeId="4792031542972811236" fileName="OldRefactoringAdapter.java" startLine="58" startPosition="59" endLine="59" endPosition="28" />
+    <scopeInfo nodeId="4792031542972811390" fileName="OldRefactoringAdapter.java" startLine="69" startPosition="50" endLine="70" endPosition="86" />
     <scopeInfo nodeId="4792031542972811275" fileName="OldRefactoringAdapter.java" startLine="77" startPosition="80" endLine="78" endPosition="65" />
     <scopeInfo nodeId="4792031542972811284" fileName="OldRefactoringAdapter.java" startLine="81" startPosition="43" endLine="82" endPosition="49" />
     <scopeInfo nodeId="4792031542972811294" fileName="OldRefactoringAdapter.java" startLine="85" startPosition="38" endLine="86" endPosition="39" />
@@ -670,12 +671,12 @@
     <scopeInfo nodeId="4792031542972811369" fileName="OldRefactoringAdapter.java" startLine="122" startPosition="48" endLine="123" endPosition="74" />
     <scopeInfo nodeId="4792031542972811361" fileName="OldRefactoringAdapter.java" startLine="124" startPosition="14" endLine="125" endPosition="66" />
     <scopeInfo nodeId="4792031542972811183" fileName="OldRefactoringAdapter.java" startLine="47" startPosition="69" endLine="49" endPosition="72" />
-    <scopeInfo nodeId="4792031542972811390" fileName="OldRefactoringAdapter.java" startLine="68" startPosition="50" endLine="70" endPosition="86">
-      <varInfo nodeId="4792031542972811392" varName="context" />
-    </scopeInfo>
     <scopeInfo nodeId="4792031542972811105" fileName="OldRefactoringAdapter.java" startLine="99" startPosition="0" endLine="101" endPosition="5" />
     <scopeInfo nodeId="4792031542972811229" fileName="OldRefactoringAdapter.java" startLine="57" startPosition="50" endLine="60" endPosition="5">
       <varInfo nodeId="4792031542972811233" varName="models" />
+    </scopeInfo>
+    <scopeInfo nodeId="4792031542972811386" fileName="OldRefactoringAdapter.java" startLine="68" startPosition="86" endLine="71" endPosition="11">
+      <varInfo nodeId="4792031542972811388" varName="nodeToOpen" />
     </scopeInfo>
     <scopeInfo nodeId="4792031542972811126" fileName="OldRefactoringAdapter.java" startLine="21" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="4792031542972811129" varName="oldRefactoring" />
@@ -687,9 +688,8 @@
     <scopeInfo nodeId="4792031542972811167" fileName="OldRefactoringAdapter.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="4792031542972811170" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4792031542972811385" fileName="OldRefactoringAdapter.java" startLine="67" startPosition="27" endLine="71" endPosition="11" />
-    <scopeInfo nodeId="4792031542972811386" fileName="OldRefactoringAdapter.java" startLine="67" startPosition="27" endLine="71" endPosition="11">
-      <varInfo nodeId="4792031542972811388" varName="nodeToOpen" />
+    <scopeInfo nodeId="1071422968910417479" fileName="OldRefactoringAdapter.java" startLine="67" startPosition="27" endLine="71" endPosition="11">
+      <varInfo nodeId="4792031542972811392" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="4792031542972811270" fileName="OldRefactoringAdapter.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="4792031542972811273" varName="refactoringContext" />
@@ -701,7 +701,7 @@
       <varInfo nodeId="4792031542972811181" varName="refactoringContext" />
     </scopeInfo>
     <scopeInfo nodeId="4792031542972811304" fileName="OldRefactoringAdapter.java" startLine="89" startPosition="91" endLine="94" endPosition="5" />
-    <scopeInfo nodeId="4792031542972811267" fileName="OldRefactoringAdapter.java" startLine="66" startPosition="70" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1071422968910417478" fileName="OldRefactoringAdapter.java" startLine="66" startPosition="58" endLine="73" endPosition="0" />
     <scopeInfo nodeId="4792031542972811259" fileName="OldRefactoringAdapter.java" startLine="65" startPosition="62" endLine="73" endPosition="9" />
     <scopeInfo nodeId="4792031542972811299" fileName="OldRefactoringAdapter.java" startLine="88" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="4792031542972811302" varName="oldRefactoring" />
@@ -724,7 +724,7 @@
       <varInfo nodeId="4792031542972811247" varName="refactoringContext" />
     </scopeInfo>
     <unitInfo nodeId="4792031542972804867" fileName="OldRefactoringAdapter.java" startLine="17" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.refactoring.framework.OldRefactoringAdapter" />
-    <unitInfo nodeId="4792031542972811266" fileName="OldRefactoringAdapter.java" startLine="66" startPosition="58" endLine="73" endPosition="7" unitName="jetbrains.mps.refactoring.framework.OldRefactoringAdapter$1" />
+    <unitInfo nodeId="1071422968910417478" fileName="OldRefactoringAdapter.java" startLine="66" startPosition="46" endLine="73" endPosition="7" unitName="jetbrains.mps.refactoring.framework.OldRefactoringAdapter$1" />
     <unitInfo nodeId="4792031542972811099" fileName="OldRefactoringAdapter.java" startLine="97" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.refactoring.framework.OldRefactoringAdapter$MyRefactoringTarget" />
   </root>
   <root nodeId="4792031542972809445">

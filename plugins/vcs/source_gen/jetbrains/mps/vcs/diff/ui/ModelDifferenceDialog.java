@@ -89,6 +89,7 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   private void fillRootToChange() {
     MapSequence.fromMap(myRootToChanges).clear();
+    ListSequence.fromList(myMetadataChanges).clear();
     for (ModelChange c : ListSequence.fromList(myChangeSet.getModelChanges())) {
       SNodeId id = c.getRootId();
       if (id == null) {
@@ -206,6 +207,10 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   public List<ModelChange> getChangesForRoot(SNodeId rootId) {
     return MapSequence.fromMap(myRootToChanges).get(rootId);
+  }
+
+  public List<ModelChange> getMetadataChanges() {
+    return myMetadataChanges;
   }
 
   @Override

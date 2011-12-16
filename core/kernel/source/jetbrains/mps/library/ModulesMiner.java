@@ -26,10 +26,7 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -236,6 +233,10 @@ public class ModulesMiner {
     }
 
     for (jetbrains.mps.project.structure.model.ModelRoot root : descriptor.getModelRoots()) {
+      if(root.getManager() != null && root.getManager() != LanguageID.JAVA_MANAGER) {
+        continue;
+      }
+
       excludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
     }
 
@@ -245,6 +246,10 @@ public class ModulesMiner {
     }
 
     for (ModelRoot entry : descriptor.getStubModelEntries()) {
+      if(entry.getManager() != LanguageID.JAVA_MANAGER) {
+        continue;
+      }
+
       excludes.add(FileSystem.getInstance().getFileByPath(entry.getPath()));
     }
   }

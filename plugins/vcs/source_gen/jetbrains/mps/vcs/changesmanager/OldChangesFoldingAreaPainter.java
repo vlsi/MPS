@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorCell;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Comparator;
@@ -249,7 +249,7 @@ public class OldChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     OldChangesFoldingAreaPainter.MessageGroup messageGroup = findMessageGroupUnder(event.getPoint());
     if (messageGroup != null) {
       setCurrentMessageGroup(messageGroup);
-      EditorCell cell = getEditorComponent().findCellWeak(event.getX(), event.getY());
+      jetbrains.mps.nodeEditor.cells.EditorCell cell = getEditorComponent().findCellWeak(event.getX(), event.getY());
       if (cell != null) {
         getEditorComponent().changeSelection(cell);
       }

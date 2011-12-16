@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +37,9 @@ public class CellAction_DeleteOnErrorReference extends EditorCellAction {
     } else {
       List<SNode> nodes = new ArrayList<SNode>();
       nodes.add(mySource);
-      new DeleteNodesHelper(nodes, context.getOperationContext(), false).deleteNodes(false);
+      for (SNode node : nodes) {
+        node.delete();
+      }
     }
   }
 }

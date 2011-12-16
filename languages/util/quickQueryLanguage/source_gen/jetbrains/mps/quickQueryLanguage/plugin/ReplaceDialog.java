@@ -40,6 +40,7 @@ public class ReplaceDialog extends BaseDialog {
   private SNode myNode;
   private JPanel myPanel = new JPanel(new BorderLayout());
   private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
+  private boolean myDisposed = false;
 
   public ReplaceDialog(final IOperationContext context, final Language language) {
     super(ProjectHelper.toMainFrame(context.getProject()), "Modify Instances by condition");
@@ -127,7 +128,6 @@ public class ReplaceDialog extends BaseDialog {
         ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
       }
     });
-    this.myEditor.disposeEditor();
     this.dispose();
   }
 
@@ -147,12 +147,16 @@ public class ReplaceDialog extends BaseDialog {
         }
       }
     });
-    project.getComponent(ProjectPluginManager.class).getTool(RunReplacement_Tool.class).addTab(searchQuery.value, query);
+    ProjectHelper.toIdeaProject(project).getComponent(ProjectPluginManager.class).getTool(RunReplacement_Tool.class).addTab(searchQuery.value, query);
   }
 
   @Override
   public void dispose() {
     super.dispose();
+    if (myDisposed) {
+      return;
+    }
+    myDisposed = true;
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         myEditor.disposeEditor();

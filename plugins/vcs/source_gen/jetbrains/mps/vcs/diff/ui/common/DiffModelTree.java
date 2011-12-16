@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -34,6 +34,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.ide.projectPane.Icons;
 
 public abstract class DiffModelTree extends MPSTree implements DataProvider {
   public static DataKey<Ref<SNodeId>> NODE_ID_DATAKEY = DataKey.create("MPS_SNodeId");
@@ -165,7 +166,7 @@ public abstract class DiffModelTree extends MPSTree implements DataProvider {
     @Override
     protected void doUpdatePresentation() {
       setText(Sequence.fromIterable(getModels()).first().getLongName());
-      setIcon(Icons.MODEL_ICON);
+      setIcon(IdeIcons.MODEL_ICON);
     }
   }
 

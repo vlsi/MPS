@@ -19,13 +19,15 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource implements Cloneable {
   private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
   private IModule myModule;
+  private SModel mySModel;
 
   public BaseStubModelDescriptor(SModelReference modelReference, @Nullable ModelDataSource source, IModule module) {
     this(modelReference, true, source, module);
@@ -47,19 +49,33 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   //------------common descriptor stuff-------------------
 
-  protected void setLoadingState(ModelLoadingState state) {
-    assert state != ModelLoadingState.ROOTS_LOADED : "this state can't be used for stub models for now";
-    super.setLoadingState(state);
+
+  @Override
+  public synchronized SModel getSModel() {
+    if (mySModel == null) {
+      mySModel = createModel();
+      mySModel.setModelDescriptor(this);
+      fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
+    }
+    return mySModel;
   }
 
-  protected ModelLoadResult initialLoad() {
+  private SModel createModel() {
     SModel model = getSource().loadSModel(myModule, this, ModelLoadingState.FULLY_LOADED).getModel();
     updateDiskTimestamp();
-    return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    return model;
   }
 
+  @Override
+  public ModelLoadingState getLoadingState() {
+    return mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED;
+  }
 
-  //----------------------
+  @Override
+  protected SModel getCurrentModelInternal() {
+    return mySModel;
+  }
+//----------------------
 
   /**
    * This method should be called either in EDT, inside WriteAction or in any other thread
@@ -81,8 +97,13 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
       updateDiskTimestamp();
       return;
     }
-    ModelLoadResult result = getSource().loadSModel(myModule, this, ModelLoadingState.FULLY_LOADED);
+    ModelLoadingState state = ModelLoadingState.FULLY_LOADED;
+    final ModelLoadResult result = getSource().loadSModel(myModule, this, state);
     updateDiskTimestamp();
-    replaceModel(result.getModel(), getLoadingState());
+    replaceModel(new Runnable() {
+      public void run() {
+        mySModel = result.getModel();
+      }
+    });
   }
 }

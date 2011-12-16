@@ -4033,6 +4033,60 @@ __switch__:
     return result;
   }
 
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_LocalInstanceMethodCall_5141531433272503949(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode dot = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+          SNode operation = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
+          ListSequence.fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "actualArgument", true)));
+          SLinkOperations.setTarget(operation, "baseMethodDeclaration", SLinkOperations.getTarget(_context.getSourceNode(), "baseMethodDeclaration", false), false);
+          ListSequence.fromList(SLinkOperations.getTargets(operation, "typeArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeArgument", true)));
+          ListSequence.fromList(SLinkOperations.getTargets(operation, "smodelAttribute", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "smodelAttribute", true)));
+          SLinkOperations.setTarget(dot, "operation", operation, true);
+          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), dot);
+        }
+
+        public String getMatchingText(String pattern) {
+          return ".";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_LocalInstanceFieldReference_6682205036352986040(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode dot = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+          SNode operation = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
+          SLinkOperations.setTarget(operation, "fieldDeclaration", SLinkOperations.getTarget(_context.getSourceNode(), "variableDeclaration", false), false);
+          ListSequence.fromList(SLinkOperations.getTargets(operation, "smodelAttribute", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "smodelAttribute", true)));
+          SLinkOperations.setTarget(dot, "operation", operation, true);
+          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), dot);
+        }
+
+        public String getMatchingText(String pattern) {
+          return ".";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
   public static void removeSideTransformActionsByCondition_1228923203001(final IOperationContext operationContext, final RemoveSideTransformActionByConditionContext _context) {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while (actions.hasNext()) {

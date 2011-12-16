@@ -23,8 +23,13 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.openapi.wm.ToolWindowId;
+import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.ui.SystemNotifications;
 import com.intellij.ui.content.Content;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -34,12 +39,15 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
+import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -68,6 +76,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   private static final String TABS = "tabs";
 
   private static final String DEFAULT_VIEW_OPTIONS = "default_view_options";
+  private static final String TOOL_WINDOW_ID = "Usages";
 
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
   private jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions myDefaultViewOptions = new jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions();
@@ -75,7 +84,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   //----CONSTRUCT STUFF----
 
   public UsagesViewTool(Project project) {
-    super(project, "Usages", 3, jetbrains.mps.ide.projectPane.Icons.FIND_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, TOOL_WINDOW_ID , 3, jetbrains.mps.ide.projectPane.Icons.FIND_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   protected UsagesView getUsagesView(int index) {
@@ -122,13 +131,15 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       public void run() {
         int resCount = searchResults.getSearchResults().size();
         if (resCount == 0) {
-          Messages.showInfoMessage(notFoundMsg, "Not found");
+          final ToolWindowManager manager = ToolWindowManager.getInstance(getProject());
+          manager.notifyByBalloon(TOOL_WINDOW_ID, MessageType.INFO, notFoundMsg, null, null);
         } else if (resCount == 1 && !showOne) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
               if (node != null) {
-                getProject().getComponent(MPSEditorOpener.class).openNode(node);
+                IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
+                NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
               }
             }
           });

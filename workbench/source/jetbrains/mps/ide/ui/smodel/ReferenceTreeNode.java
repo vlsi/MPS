@@ -18,13 +18,13 @@ package jetbrains.mps.ide.ui.smodel;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.ReferenceNodeActions_ActionGroup;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class ReferenceTreeNode extends TextTreeNode {
   private final SReference myRef;
@@ -40,8 +40,7 @@ public class ReferenceTreeNode extends TextTreeNode {
       public void run() {
         SNode target = myRef.getTargetNode();
         if (target == null) return;
-
-        getOperationContext().getComponent(MPSEditorOpener.class).openNode(target);
+        NavigationSupport.getInstance().openNode(getOperationContext(), target, true, !(target.isRoot()));
       }
     });
   }

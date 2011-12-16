@@ -12,6 +12,7 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Comparator" />
+    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.LinkedHashMap" />
@@ -31,11 +32,13 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IdeaInitializerReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Layout_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Module_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.PathHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Path_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.PluginModule_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Util" />
     <classNode dependClassName="jetbrains.mps.buildlanguage.behavior.PropertyReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
@@ -61,11 +64,13 @@
     <classNode dependClassName="jetbrains.mps.make.dependencies.StronglyConnectedModules" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.DevKit" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>

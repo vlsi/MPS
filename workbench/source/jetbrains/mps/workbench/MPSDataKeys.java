@@ -15,45 +15,19 @@
  */
 package jetbrains.mps.workbench;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DataKey;
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
 import javax.swing.tree.TreeNode;
-import java.awt.Frame;
 import java.util.List;
 
-public class MPSDataKeys extends MPSCommonDataKeys {
-  @Description(description = "current MPS project")
-  public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");
-
-  @Description(description = "selected node")
-  public static final DataKey<SNode> NODE = DataKey.create("MPS_SNode");
-  @Description(description = "selected nodes")
-  public static final DataKey<List<SNode>> NODES = DataKey.create("MPS_SNode_List");
-
-  @Description(description = "selected model")
-  public static final DataKey<SModelDescriptor> MODEL = DataKey.create("MPS_SModelDescriptor");
-  @Description(description = "context model")
-  public static final DataKey<SModelDescriptor> CONTEXT_MODEL = DataKey.create("MPS_Context_SModelDescriptor");
-  @Description(description = "selected models")
-  public static final DataKey<List<SModelDescriptor>> MODELS = DataKey.create("MPS_SModelDescriptor_List");
+public class MPSDataKeys extends MPSEditorDataKeys {
 
   @Description(description = "selected module")
   public static final DataKey<IModule> MODULE = DataKey.create("MPS_IModule");
-  @Description(description = "context module")
-  public static final DataKey<IModule> CONTEXT_MODULE = DataKey.create("MPS_Context_IModule");
   @Description(description = "selected modules")
   public static final DataKey<List<IModule>> MODULES = DataKey.create("MPS_IModule_List");
 
@@ -64,11 +38,6 @@ public class MPSDataKeys extends MPSCommonDataKeys {
 
   @Description(description = "selected namespace")
   public static final DataKey<String> NAMESPACE = DataKey.create("MPS_Namespace");
-
-  @Description(description = "operation context")
-  public static final DataKey<IOperationContext> OPERATION_CONTEXT = DataKey.create("MPS_IOperationContext");
-  @Description(description = "editor context")
-  public static final DataKey<EditorContext> EDITOR_CONTEXT = DataKey.create("MPS_EditorContext");
 
   @Description(description = "node selected in Logical View")
   public static final DataKey<TreeNode> LOGICAL_VIEW_NODE = DataKey.create("MPS_ProjetPaneNode");
@@ -82,19 +51,4 @@ public class MPSDataKeys extends MPSCommonDataKeys {
 
   @Description(description = "source node")
   public static final DataKey<SNode> SOURCE_NODE = DataKey.create("MPS_SourceNode");
-
-  @Description(description = "current editor cell")
-  public static final DataKey<EditorCell> EDITOR_CELL = DataKey.create("MPS_EditorCell");
-  @Description(description = "editor create actions")
-  public static final DataKey<ActionGroup> EDITOR_CREATE_GROUP = DataKey.create("MPS_EditorCreateGroup");
-  @Description(description = "current editor")
-  public static final DataKey<IEditor> MPS_EDITOR = DataKey.create("MPS_IEditor");
-  @Description(description = "main window's Frame")
-  public static final DataKey<Frame> FRAME = DataKey.create("MPS_Frame");
-  @Description(description = "scope")
-  public static final DataKey<IScope> SCOPE = DataKey.create("MPS_IScope");
-  @Description(description = "current editor component")
-  public static final DataKey<EditorComponent> EDITOR_COMPONENT = DataKey.create("MPS_EditorComponent");
-  @Description(description = "active place")
-  public static final DataKey<ActionPlace> PLACE = DataKey.create("MPS_Place");
 }

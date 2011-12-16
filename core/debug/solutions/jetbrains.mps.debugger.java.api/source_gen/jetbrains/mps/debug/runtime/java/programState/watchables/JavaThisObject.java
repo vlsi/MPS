@@ -8,7 +8,7 @@ import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.IValue;
-import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import com.sun.jdi.Location;
@@ -17,16 +17,8 @@ import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 09.04.2010
- * * Time: 19:05:54
- * * To change this template use File | Settings | File Templates.
- */
-public class JavaThisObject extends JavaBreakpointWatchable implements IWatchable {
-  private static Logger LOG = Logger.getLogger(JavaLocalVariable.class);
+public class JavaThisObject extends JavaWatchable implements IWatchable {
+  private static Logger LOG = Logger.getLogger(JavaThisObject.class);
 
   private final ObjectReference myThisObject;
   private final JavaStackFrame myStackFrame;
@@ -48,7 +40,7 @@ public class JavaThisObject extends JavaBreakpointWatchable implements IWatchabl
 
   @Override
   public IValue getValue() {
-    return AbstractValueUtil.getInstance().fromJDIValue(myThisObject, myClassFQName, myThreadReference);
+    return ValueUtil.getInstance().fromJDI(myThisObject, myClassFQName, myThreadReference);
   }
 
   @Override

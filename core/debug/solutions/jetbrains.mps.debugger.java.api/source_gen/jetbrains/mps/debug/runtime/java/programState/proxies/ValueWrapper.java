@@ -13,14 +13,6 @@ import java.util.ArrayList;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable;
 import com.sun.jdi.ThreadReference;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 19.06.2010
- * * Time: 16:43:53
- * * To change this template use File | Settings | File Templates.
- */
 public abstract class ValueWrapper extends JavaValue implements IValue {
   protected final JavaValue myWrappedValue;
   @NotNull
@@ -29,7 +21,7 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
   public ValueWrapper(JavaValue value) {
     super(value.getValue(), value.getClassFQName(), value.myThreadReference);
     myWrappedValue = value;
-    myValueProxy = MirrorUtil.getValueProxy(value.getValue(), value.myThreadReference);
+    myValueProxy = MirrorUtil.getInstance().getValueProxy(value.getValue(), value.myThreadReference);
   }
 
   @Override

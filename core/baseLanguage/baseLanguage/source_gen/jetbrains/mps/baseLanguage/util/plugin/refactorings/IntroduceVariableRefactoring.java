@@ -7,18 +7,17 @@ import java.util.List;
 import java.util.ArrayList;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.behavior.IInternalType_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -51,19 +50,19 @@ public abstract class IntroduceVariableRefactoring {
       return "Expression has no type";
     } else {
       this.myExpressionType = SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.Type");
-      Set<String> expectedNames = SetSequence.fromSet(new HashSet<String>());
+      List<String> expectedNames = ListSequence.fromList(new ArrayList<String>());
       String expectedVariableName = null;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression")) {
         expectedVariableName = Expression_Behavior.call_getVariableExpectedName_1213877519781(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Expression"));
       }
       if (expectedVariableName != null) {
-        SetSequence.fromSet(expectedNames).addElement(NameUtil.decapitalize(expectedVariableName));
+        ListSequence.fromList(expectedNames).addElement(NameUtil.decapitalize(expectedVariableName));
       }
       List<String> variableSuffixes = Type_Behavior.call_getVariableSuffixes_1213877337304(myExpressionType);
       if (variableSuffixes != null) {
-        SetSequence.fromSet(expectedNames).addSequence(ListSequence.fromList(variableSuffixes));
+        ListSequence.fromList(expectedNames).addSequence(ListSequence.fromList(variableSuffixes));
       }
-      this.myExpectedNames = SetSequence.fromSet(expectedNames).where(new IWhereFilter<String>() {
+      this.myExpectedNames = ListSequence.fromList(expectedNames).where(new IWhereFilter<String>() {
         public boolean accept(String it) {
           return it.matches("[a-zA-Z0-9_]*");
         }

@@ -19,8 +19,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.JComponent;
 

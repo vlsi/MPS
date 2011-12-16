@@ -20,15 +20,13 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.JBPopup;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -191,8 +189,8 @@ public class ShowImplementationComponent extends JPanel {
     public void actionPerformed(AnActionEvent e) {
       IOperationContext operationContext = myEditor.getEditor().getOperationContext();
       final SNode selectedNode = myItemToNode.get((String) myNodeChooser.getSelectedItem());
-      operationContext.getComponent(MPSEditorOpener.class).editNode(selectedNode, operationContext);
-      ProjectPane.getInstance(ProjectHelper.toIdeaProject(operationContext.getProject())).selectNode(selectedNode, false);
+      NavigationSupport.getInstance().openNode(operationContext, selectedNode, true, true);
+      NavigationSupport.getInstance().selectInTree(operationContext, selectedNode, false);
       if (myClosePopup) {
         myPopup.cancel();
       }

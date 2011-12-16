@@ -156,6 +156,8 @@ public abstract class TypeCheckingContext {
 
   public abstract void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError);
 
+  public abstract void whenConcrete(List<SNode> argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError);
+
   public abstract void whenConcrete(List<NodeInfo> arguments, Runnable r);
 
   public abstract void dispose();
@@ -205,6 +207,8 @@ public abstract class TypeCheckingContext {
   public abstract boolean messagesChanged(Object requesting);
 
   public abstract SNode getTypeDontCheck(SNode node);
+
+  public abstract SNode getExpandedNode(SNode node);
 
   public abstract List<IErrorReporter> getTypeMessagesDontCheck(SNode node);
 

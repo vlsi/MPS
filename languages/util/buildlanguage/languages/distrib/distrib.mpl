@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.build.distrib" uuid="02824ec0-c6a4-4517-a484-12d85172bbaa" generatorOutputPath="${language_descriptor}/source_gen" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.build.distrib" uuid="02824ec0-c6a4-4517-a484-12d85172bbaa" generatorOutputPath="${language_descriptor}/source_gen" compileInMPS="true" doNotGenerateAdapters="true">
   <models>
     <modelRoot path="${language_descriptor}/languageAccessories" />
     <modelRoot path="${language_descriptor}/languageModels" />
@@ -48,6 +48,7 @@
   </generators>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)</dependency>
     <dependency reexport="false">a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)</dependency>
   </dependencies>
   <usedLanguages>

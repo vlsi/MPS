@@ -37,7 +37,7 @@ public class IgnoreModuleInVcs_Action extends GeneratedAction {
           "Module" :
           "Modules"
         )));
-        boolean enabled = ListSequence.fromList(VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
+        boolean enabled = ListSequence.fromList(VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
         presentation.setEnabled(enabled);
         presentation.setVisible(enabled);
       }
@@ -66,7 +66,7 @@ public class IgnoreModuleInVcs_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
+      List<VirtualFile> unversionedFiles = VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
       IgnoreUnversionedDialog.ignoreSelectedFiles(((Project) MapSequence.fromMap(_params).get("project")), unversionedFiles);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

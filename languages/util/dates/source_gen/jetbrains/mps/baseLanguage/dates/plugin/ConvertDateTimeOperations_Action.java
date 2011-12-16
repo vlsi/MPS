@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
@@ -42,7 +42,7 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
       return false;
     }
     {
-      SModelDescriptor modelDescriptor = event.getData(MPSDataKeys.CONTEXT_MODEL);
+      SModelDescriptor modelDescriptor = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
       if (modelDescriptor == null) {
         return false;
       }

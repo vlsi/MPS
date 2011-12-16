@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 
 public class CreateNewBuildLanguageProject_Intention extends BaseIntention implements Intention {
   public CreateNewBuildLanguageProject_Intention() {
@@ -63,8 +63,7 @@ public class CreateNewBuildLanguageProject_Intention extends BaseIntention imple
     model.addRoot(project);
     SLinkOperations.setTarget(node, "project", project, false);
     SLinkOperations.setTarget(node, "targetDeclaration", SLinkOperations.getTarget(SLinkOperations.getTarget(project, "default", true), "targetDeclaration", false), false);
-    MPSEditorOpener opener = editorContext.getOperationContext().getProject().getComponent(MPSEditorOpener.class);
-    opener.openNode(project);
+    NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), project, true, !(project.isRoot()));
   }
 
   public String getLocationString() {

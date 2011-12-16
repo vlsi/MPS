@@ -14,8 +14,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CommentStatements_Action extends GeneratedAction {
@@ -49,7 +50,7 @@ public class CommentStatements_Action extends GeneratedAction {
       return false;
     }
     {
-      List<SNode> nodes = event.getData(MPSDataKeys.NODES);
+      List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
       boolean error = false;
       if (nodes != null) {
         for (SNode node : ListSequence.fromList(nodes)) {

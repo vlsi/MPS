@@ -19,7 +19,7 @@ import jetbrains.mps.util.Comparing;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 
 public class NewRootMappingRule_Intention extends BaseIntention implements Intention {
   public NewRootMappingRule_Intention() {
@@ -99,8 +99,7 @@ public class NewRootMappingRule_Intention extends BaseIntention implements Inten
     SLinkOperations.setTarget(rule, "applicableConcept", SLinkOperations.getTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))), "applicableConcept", false), false);
     SLinkOperations.setTarget(rule, "template", node, false);
     //  open in editor 
-    MPSEditorOpener opener = editorContext.getOperationContext().getComponent(MPSEditorOpener.class);
-    opener.editNode(rule, editorContext.getOperationContext());
+    NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), rule, true, true);
   }
 
   public String getLocationString() {

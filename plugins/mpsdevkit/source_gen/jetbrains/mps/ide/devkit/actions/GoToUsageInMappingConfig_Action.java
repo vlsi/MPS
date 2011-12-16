@@ -16,6 +16,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
@@ -75,7 +76,7 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.NODE);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
       }
       MapSequence.fromMap(_params).put("node", node);

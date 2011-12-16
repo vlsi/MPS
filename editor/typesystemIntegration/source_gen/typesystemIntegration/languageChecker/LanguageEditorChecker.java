@@ -27,7 +27,7 @@ import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
-import jetbrains.mps.ide.resolve.AutoResolver;
+import jetbrains.mps.ide.editor.AutoResolver;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -178,8 +178,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       // after model is replaced but before it is disposed (this can happen asyncronously) 
       return result;
     }
-
-    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myNodePointersToComponents).get(sNodePointer);
+    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myNodePointersToComponents).get(new SNodePointer(SNodeOperations.getContainingRoot(sNode)));
     if (errorsComponent == null) {
       errorsComponent = new LanguageErrorsComponent(sNode);
       MapSequence.fromMap(myNodePointersToComponents).put(sNodePointer, errorsComponent);

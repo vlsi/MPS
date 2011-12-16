@@ -11,8 +11,9 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.ide.editor.MPSEditorOpener;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -75,7 +76,7 @@ public class CreateMethodDeclaration_Intention extends BaseIntention implements 
       editorContext.selectWRTFocusPolicy(method);
     } else {
       IOperationContext operationContext = editorContext.getOperationContext();
-      IEditor editor = operationContext.getComponent(MPSEditorOpener.class).editNode(classifier, operationContext);
+      Editor editor = new MPSEditorOpener(ProjectHelper.toIdeaProject(operationContext.getProject())).editNode(classifier, operationContext);
       editor.getEditorContext().selectWRTFocusPolicy(method);
     }
   }

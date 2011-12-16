@@ -6,20 +6,20 @@ import jetbrains.mps.debug.api.programState.IWatchable;
 import com.sun.jdi.Field;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 
-public class JavaStaticField extends JavaBreakpointWatchable implements IWatchable {
+public class JavaStaticField extends JavaWatchable implements IWatchable {
   private final Field myField;
   private final JavaValue myCachedValue;
 
   public JavaStaticField(Field field, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myField = field;
-    myCachedValue = AbstractValueUtil.getInstance().fromJDIValue(field.declaringType().getValue(myField), myClassFQName, threadReference);
+    myCachedValue = ValueUtil.getInstance().fromJDI(field.declaringType().getValue(myField), myClassFQName, threadReference);
   }
 
   @Override

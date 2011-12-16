@@ -10,7 +10,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.editors.MPSEditorUtil;
+import jetbrains.mps.ide.editor.MPSEditorUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.editor.Document;
 

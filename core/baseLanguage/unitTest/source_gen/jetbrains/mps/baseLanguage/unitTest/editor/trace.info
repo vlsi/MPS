@@ -89,35 +89,92 @@
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="81" />
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="40" startPosition="81" endLine="41" endPosition="82" />
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="42" startPosition="109" endLine="43" endPosition="83" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="62" />
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="62">
+      <varInfo nodeId="1171931690895" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="71" startPosition="90" endLine="73" endPosition="74" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="97" startPosition="5" endLine="99" endPosition="81" />
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="97" startPosition="5" endLine="99" endPosition="81">
+      <varInfo nodeId="1171931690895" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="6283241156709760422" fileName="TestMethod_Editor.java" startLine="112" startPosition="111" endLine="114" endPosition="60">
       <varInfo nodeId="6283241156709766228" varName="nextSiblings" />
     </scopeInfo>
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="41" startPosition="82" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="58" startPosition="89" endLine="61" endPosition="22" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="64" startPosition="89" endLine="67" endPosition="22" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="81" startPosition="5" endLine="84" endPosition="62" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="104" startPosition="35" endLine="107" endPosition="105" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="29" startPosition="58" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="58" startPosition="89" endLine="61" endPosition="22">
+      <varInfo nodeId="1171931690895" varName="editorCell" />
+      <varInfo nodeId="1171931690895" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="64" startPosition="89" endLine="67" endPosition="22">
+      <varInfo nodeId="1171931690895" varName="editorCell" />
+      <varInfo nodeId="1171931690895" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="81" startPosition="5" endLine="84" endPosition="62">
+      <varInfo nodeId="1171931690895" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="104" startPosition="35" endLine="107" endPosition="105">
+      <varInfo nodeId="1171931690895" varName="manager" />
+      <varInfo nodeId="1171931690895" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="29" startPosition="58" endLine="33" endPosition="0">
+      <varInfo nodeId="1171931690895" varName="editorContext" />
+      <varInfo nodeId="1171931690895" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="50" startPosition="69" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="70" startPosition="88" endLine="75" endPosition="22" />
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="70" startPosition="88" endLine="75" endPosition="22">
+      <varInfo nodeId="1171931690895" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="95" startPosition="58" endLine="100" endPosition="5" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="111" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="57" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="63" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="111" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="1171931690895" varName="editorContext" />
+      <varInfo nodeId="1171931690895" varName="node" />
+      <varInfo nodeId="1171931690895" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="57" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="1171931690895" varName="editorContext" />
+      <varInfo nodeId="1171931690895" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1171931690895" varName="editorContext" />
+      <varInfo nodeId="1171931690895" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="79" startPosition="86" endLine="85" endPosition="5" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="48" startPosition="89" endLine="55" endPosition="22" />
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="48" startPosition="89" endLine="55" endPosition="22">
+      <varInfo nodeId="1171931690895" varName="editorCell" />
+      <varInfo nodeId="1171931690895" varName="provider" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="94" startPosition="26" endLine="101" endPosition="73" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="69" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="78" startPosition="88" endLine="87" endPosition="22" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="47" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="34" startPosition="89" endLine="45" endPosition="22" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="77" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="33" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="90" startPosition="88" endLine="109" endPosition="22" />
-    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="89" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="69" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1171931690895" varName="editorContext" />
+      <varInfo nodeId="1171931690895" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="78" startPosition="88" endLine="87" endPosition="22">
+      <varInfo nodeId="1171931690895" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="47" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="1171931690895" varName="editorContext" />
+      <varInfo nodeId="1171931690895" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="34" startPosition="89" endLine="45" endPosition="22">
+      <varInfo nodeId="1171931690895" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="77" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="1171931690895" varName="editorContext" />
+      <varInfo nodeId="1171931690895" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="33" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1171931690895" varName="editorContext" />
+      <varInfo nodeId="1171931690895" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="90" startPosition="88" endLine="109" endPosition="22">
+      <varInfo nodeId="1171931690895" varName="attributeConcept" />
+      <varInfo nodeId="1171931690895" varName="attributeKind" />
+      <varInfo nodeId="1171931690895" varName="editorCell" />
+      <varInfo nodeId="1171931690895" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="89" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="1171931690895" varName="editorContext" />
+      <varInfo nodeId="1171931690895" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="29" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.TestMethod_Editor" />
   </root>
   <root nodeId="1171931851749">
@@ -543,70 +600,193 @@
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="468" startPosition="89" endLine="469" endPosition="67" />
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="475" startPosition="34" endLine="476" endPosition="95" />
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="478" startPosition="131" endLine="479" endPosition="139" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="58" startPosition="5" endLine="60" endPosition="62" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="58" startPosition="5" endLine="60" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="106" startPosition="94" endLine="108" endPosition="74" />
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="114" startPosition="95" endLine="116" endPosition="74" />
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="122" startPosition="93" endLine="124" endPosition="74" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="133" startPosition="5" endLine="135" endPosition="62" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="133" startPosition="5" endLine="135" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="190" startPosition="87" endLine="192" endPosition="77" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="201" startPosition="5" endLine="203" endPosition="62" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="228" startPosition="5" endLine="230" endPosition="62" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="201" startPosition="5" endLine="203" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="228" startPosition="5" endLine="230" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="240" startPosition="26" endLine="242" endPosition="73" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="259" startPosition="5" endLine="261" endPosition="62" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="280" startPosition="5" endLine="282" endPosition="62" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="301" startPosition="5" endLine="303" endPosition="62" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="347" startPosition="66" endLine="349" endPosition="93" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="399" startPosition="66" endLine="401" endPosition="93" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="436" startPosition="7" endLine="438" endPosition="50" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="450" startPosition="66" endLine="452" endPosition="93" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="259" startPosition="5" endLine="261" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="280" startPosition="5" endLine="282" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="301" startPosition="5" endLine="303" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="347" startPosition="66" endLine="349" endPosition="93">
+      <varInfo nodeId="1171931851749" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="399" startPosition="66" endLine="401" endPosition="93">
+      <varInfo nodeId="1171931851749" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="436" startPosition="7" endLine="438" endPosition="50">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="450" startPosition="66" endLine="452" endPosition="93">
+      <varInfo nodeId="1171931851749" varName="listOwner" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="43" startPosition="82" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="93" startPosition="89" endLine="96" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="99" startPosition="90" endLine="102" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="144" startPosition="5" endLine="147" endPosition="62" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="156" startPosition="5" endLine="159" endPosition="62" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="168" startPosition="5" endLine="171" endPosition="51" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="180" startPosition="5" endLine="183" endPosition="62" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="245" startPosition="35" endLine="248" endPosition="105" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="266" startPosition="35" endLine="269" endPosition="105" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="287" startPosition="35" endLine="290" endPosition="105" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="308" startPosition="35" endLine="311" endPosition="105" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="93" startPosition="89" endLine="96" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+      <varInfo nodeId="1171931851749" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="99" startPosition="90" endLine="102" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+      <varInfo nodeId="1171931851749" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="144" startPosition="5" endLine="147" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="156" startPosition="5" endLine="159" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="168" startPosition="5" endLine="171" endPosition="51">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="180" startPosition="5" endLine="183" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="245" startPosition="35" endLine="248" endPosition="105">
+      <varInfo nodeId="1171931851749" varName="manager" />
+      <varInfo nodeId="1171931851749" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="266" startPosition="35" endLine="269" endPosition="105">
+      <varInfo nodeId="1171931851749" varName="manager" />
+      <varInfo nodeId="1171931851749" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="287" startPosition="35" endLine="290" endPosition="105">
+      <varInfo nodeId="1171931851749" varName="manager" />
+      <varInfo nodeId="1171931851749" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="308" startPosition="35" endLine="311" endPosition="105">
+      <varInfo nodeId="1171931851749" varName="manager" />
+      <varInfo nodeId="1171931851749" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="320" startPosition="26" endLine="323" endPosition="73" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="326" startPosition="35" endLine="329" endPosition="105" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="342" startPosition="86" endLine="345" endPosition="5" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="352" startPosition="86" endLine="355" endPosition="25" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="384" startPosition="7" endLine="387" endPosition="62" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="394" startPosition="80" endLine="397" endPosition="5" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="404" startPosition="86" endLine="407" endPosition="25" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="445" startPosition="81" endLine="448" endPosition="5" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="455" startPosition="86" endLine="458" endPosition="25" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="487" startPosition="7" endLine="490" endPosition="62" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="35" startPosition="57" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="326" startPosition="35" endLine="329" endPosition="105">
+      <varInfo nodeId="1171931851749" varName="manager" />
+      <varInfo nodeId="1171931851749" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="342" startPosition="86" endLine="345" endPosition="5">
+      <varInfo nodeId="1171931851749" varName="childRole" />
+      <varInfo nodeId="1171931851749" varName="context" />
+      <varInfo nodeId="1171931851749" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="352" startPosition="86" endLine="355" endPosition="25">
+      <varInfo nodeId="1171931851749" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="384" startPosition="7" endLine="387" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="394" startPosition="80" endLine="397" endPosition="5">
+      <varInfo nodeId="1171931851749" varName="childRole" />
+      <varInfo nodeId="1171931851749" varName="context" />
+      <varInfo nodeId="1171931851749" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="404" startPosition="86" endLine="407" endPosition="25">
+      <varInfo nodeId="1171931851749" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="445" startPosition="81" endLine="448" endPosition="5">
+      <varInfo nodeId="1171931851749" varName="childRole" />
+      <varInfo nodeId="1171931851749" varName="context" />
+      <varInfo nodeId="1171931851749" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="455" startPosition="86" endLine="458" endPosition="25">
+      <varInfo nodeId="1171931851749" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="487" startPosition="7" endLine="490" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="35" startPosition="57" endLine="39" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="258" startPosition="58" endLine="262" endPosition="5" />
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="279" startPosition="58" endLine="283" endPosition="5" />
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="300" startPosition="58" endLine="304" endPosition="5" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="333" startPosition="0" endLine="337" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="337" startPosition="0" endLine="341" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="358" startPosition="68" endLine="362" endPosition="23" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="364" startPosition="0" endLine="368" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="410" startPosition="68" endLine="414" endPosition="23" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="416" startPosition="0" endLine="420" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="461" startPosition="68" endLine="465" endPosition="23" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="467" startPosition="0" endLine="471" endPosition="0" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="333" startPosition="0" endLine="337" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+      <varInfo nodeId="1171931851749" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="337" startPosition="0" endLine="341" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+      <varInfo nodeId="1171931851749" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="358" startPosition="68" endLine="362" endPosition="23">
+      <varInfo nodeId="1171931851749" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="364" startPosition="0" endLine="368" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="410" startPosition="68" endLine="414" endPosition="23">
+      <varInfo nodeId="1171931851749" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="416" startPosition="0" endLine="420" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="461" startPosition="68" endLine="465" endPosition="23">
+      <varInfo nodeId="1171931851749" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="467" startPosition="0" endLine="471" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="56" startPosition="96" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="73" startPosition="5" endLine="78" endPosition="62" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="105" startPosition="88" endLine="110" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="113" startPosition="88" endLine="118" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="121" startPosition="88" endLine="126" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="189" startPosition="89" endLine="194" endPosition="22" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="73" startPosition="5" endLine="78" endPosition="62">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="105" startPosition="88" endLine="110" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="113" startPosition="88" endLine="118" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="121" startPosition="88" endLine="126" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="189" startPosition="89" endLine="194" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="199" startPosition="106" endLine="204" endPosition="5" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="213" startPosition="5" endLine="218" endPosition="70" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="213" startPosition="5" endLine="218" endPosition="70">
+      <varInfo nodeId="1171931851749" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="226" startPosition="106" endLine="231" endPosition="5" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="346" startPosition="0" endLine="351" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="398" startPosition="0" endLine="403" endPosition="0" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="346" startPosition="0" endLine="351" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="398" startPosition="0" endLine="403" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="434" startPosition="88" endLine="439" endPosition="7" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="449" startPosition="0" endLine="454" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="92" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="98" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="449" startPosition="0" endLine="454" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="92" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="98" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="130" startPosition="87" endLine="136" endPosition="5" />
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="142" startPosition="86" endLine="148" endPosition="5" />
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="154" startPosition="86" endLine="160" endPosition="5" />
@@ -615,67 +795,222 @@
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="257" startPosition="26" endLine="263" endPosition="73" />
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="278" startPosition="26" endLine="284" endPosition="73" />
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="299" startPosition="26" endLine="305" endPosition="73" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="351" startPosition="0" endLine="357" endPosition="0" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="351" startPosition="0" endLine="357" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="elementNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="382" startPosition="105" endLine="388" endPosition="7" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="403" startPosition="0" endLine="409" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="454" startPosition="0" endLine="460" endPosition="0" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="403" startPosition="0" endLine="409" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="454" startPosition="0" endLine="460" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="elementNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="485" startPosition="99" endLine="491" endPosition="7" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="357" startPosition="0" endLine="364" endPosition="0" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="357" startPosition="0" endLine="364" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="370" startPosition="96" endLine="377" endPosition="9" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="409" startPosition="0" endLine="416" endPosition="0" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="409" startPosition="0" endLine="416" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="422" startPosition="96" endLine="429" endPosition="9" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="460" startPosition="0" endLine="467" endPosition="0" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="460" startPosition="0" endLine="467" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="473" startPosition="96" endLine="480" endPosition="9" />
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="71" startPosition="96" endLine="79" endPosition="5" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="104" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="112" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="120" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="188" startPosition="0" endLine="196" endPosition="0" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="104" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="112" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="120" startPosition="0" endLine="128" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="188" startPosition="0" endLine="196" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="211" startPosition="106" endLine="219" endPosition="5" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="433" startPosition="93" endLine="441" endPosition="24" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="129" startPosition="89" endLine="138" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="141" startPosition="90" endLine="150" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="153" startPosition="90" endLine="162" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="165" startPosition="90" endLine="174" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="177" startPosition="90" endLine="186" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="197" startPosition="93" endLine="206" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="224" startPosition="93" endLine="233" endPosition="22" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="433" startPosition="93" endLine="441" endPosition="24">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="129" startPosition="89" endLine="138" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="141" startPosition="90" endLine="150" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="153" startPosition="90" endLine="162" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="165" startPosition="90" endLine="174" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="177" startPosition="90" endLine="186" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="197" startPosition="93" endLine="206" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+      <varInfo nodeId="1171931851749" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="224" startPosition="93" endLine="233" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+      <varInfo nodeId="1171931851749" varName="handler" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="369" startPosition="132" endLine="378" endPosition="7" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="381" startPosition="93" endLine="390" endPosition="24" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="381" startPosition="93" endLine="390" endPosition="24">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="421" startPosition="132" endLine="430" endPosition="7" />
     <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="472" startPosition="132" endLine="481" endPosition="7" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="484" startPosition="93" endLine="493" endPosition="24" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="432" startPosition="0" endLine="443" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="40" startPosition="89" endLine="52" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="55" startPosition="90" endLine="67" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="128" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="140" startPosition="0" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="152" startPosition="0" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="164" startPosition="0" endLine="176" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="176" startPosition="0" endLine="188" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="196" startPosition="0" endLine="208" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="209" startPosition="93" endLine="221" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="223" startPosition="0" endLine="235" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="368" startPosition="0" endLine="380" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="380" startPosition="0" endLine="392" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="420" startPosition="0" endLine="432" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="471" startPosition="0" endLine="483" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="483" startPosition="0" endLine="495" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="236" startPosition="87" endLine="250" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="39" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="54" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="208" startPosition="0" endLine="223" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="316" startPosition="88" endLine="331" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="235" startPosition="0" endLine="252" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="253" startPosition="89" endLine="271" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="274" startPosition="89" endLine="292" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="295" startPosition="89" endLine="313" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="315" startPosition="0" endLine="333" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="70" startPosition="91" endLine="90" endPosition="22" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="252" startPosition="0" endLine="273" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="273" startPosition="0" endLine="294" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="294" startPosition="0" endLine="315" endPosition="0" />
-    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="69" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="484" startPosition="93" endLine="493" endPosition="24">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="432" startPosition="0" endLine="443" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="40" startPosition="89" endLine="52" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="55" startPosition="90" endLine="67" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="128" startPosition="0" endLine="140" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="140" startPosition="0" endLine="152" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="152" startPosition="0" endLine="164" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="164" startPosition="0" endLine="176" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="176" startPosition="0" endLine="188" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="196" startPosition="0" endLine="208" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="209" startPosition="93" endLine="221" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+      <varInfo nodeId="1171931851749" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="223" startPosition="0" endLine="235" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="368" startPosition="0" endLine="380" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="elementCell" />
+      <varInfo nodeId="1171931851749" varName="elementNode" />
+      <varInfo nodeId="1171931851749" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="380" startPosition="0" endLine="392" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="420" startPosition="0" endLine="432" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="elementCell" />
+      <varInfo nodeId="1171931851749" varName="elementNode" />
+      <varInfo nodeId="1171931851749" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="471" startPosition="0" endLine="483" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="elementCell" />
+      <varInfo nodeId="1171931851749" varName="elementNode" />
+      <varInfo nodeId="1171931851749" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="483" startPosition="0" endLine="495" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="236" startPosition="87" endLine="250" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="attributeConcept" />
+      <varInfo nodeId="1171931851749" varName="attributeKind" />
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+      <varInfo nodeId="1171931851749" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="39" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="54" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="208" startPosition="0" endLine="223" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="316" startPosition="88" endLine="331" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="attributeConcept" />
+      <varInfo nodeId="1171931851749" varName="attributeKind" />
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+      <varInfo nodeId="1171931851749" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="235" startPosition="0" endLine="252" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="253" startPosition="89" endLine="271" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="attributeConcept" />
+      <varInfo nodeId="1171931851749" varName="attributeKind" />
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+      <varInfo nodeId="1171931851749" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="274" startPosition="89" endLine="292" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="attributeConcept" />
+      <varInfo nodeId="1171931851749" varName="attributeKind" />
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+      <varInfo nodeId="1171931851749" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="295" startPosition="89" endLine="313" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="attributeConcept" />
+      <varInfo nodeId="1171931851749" varName="attributeKind" />
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+      <varInfo nodeId="1171931851749" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="315" startPosition="0" endLine="333" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="70" startPosition="91" endLine="90" endPosition="22">
+      <varInfo nodeId="1171931851749" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="252" startPosition="0" endLine="273" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="273" startPosition="0" endLine="294" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="294" startPosition="0" endLine="315" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="69" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="1171931851749" varName="editorContext" />
+      <varInfo nodeId="1171931851749" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="35" startPosition="0" endLine="497" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.BTestCase_Editor" />
     <unitInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="394" startPosition="0" endLine="444" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.BTestCase_Editor$fieldListHandler_lq4ak4_c1g0" />
     <unitInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="445" startPosition="0" endLine="496" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.BTestCase_Editor$methodListHandler_lq4ak4_j1g0" />
@@ -741,28 +1076,76 @@
     <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="70" startPosition="89" endLine="71" endPosition="65" />
     <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="77" startPosition="34" endLine="78" endPosition="95" />
     <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="80" startPosition="131" endLine="81" endPosition="139" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="39" startPosition="5" endLine="41" endPosition="63" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="52" startPosition="66" endLine="54" endPosition="93" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="47" startPosition="83" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="57" startPosition="86" endLine="60" endPosition="25" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="89" startPosition="7" endLine="92" endPosition="62" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="23" startPosition="62" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="28" startPosition="89" endLine="32" endPosition="22" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="63" startPosition="68" endLine="67" endPosition="23" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="39" startPosition="5" endLine="41" endPosition="63">
+      <varInfo nodeId="1171931858963" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="52" startPosition="66" endLine="54" endPosition="93">
+      <varInfo nodeId="1171931858963" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="47" startPosition="83" endLine="50" endPosition="5">
+      <varInfo nodeId="1171931858963" varName="childRole" />
+      <varInfo nodeId="1171931858963" varName="context" />
+      <varInfo nodeId="1171931858963" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="57" startPosition="86" endLine="60" endPosition="25">
+      <varInfo nodeId="1171931858963" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="89" startPosition="7" endLine="92" endPosition="62">
+      <varInfo nodeId="1171931858963" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="23" startPosition="62" endLine="27" endPosition="0">
+      <varInfo nodeId="1171931858963" varName="editorContext" />
+      <varInfo nodeId="1171931858963" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="28" startPosition="89" endLine="32" endPosition="22">
+      <varInfo nodeId="1171931858963" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="63" startPosition="68" endLine="67" endPosition="23">
+      <varInfo nodeId="1171931858963" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1171931858963" varName="editorContext" />
+      <varInfo nodeId="1171931858963" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="37" startPosition="106" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="56" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="51" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1171931858963" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="56" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="1171931858963" varName="editorContext" />
+      <varInfo nodeId="1171931858963" varName="elementNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="87" startPosition="104" endLine="93" endPosition="7" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="27" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="62" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="27" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1171931858963" varName="editorContext" />
+      <varInfo nodeId="1171931858963" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="62" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1171931858963" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="75" startPosition="96" endLine="82" endPosition="9" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="35" startPosition="91" endLine="44" endPosition="22" />
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="35" startPosition="91" endLine="44" endPosition="22">
+      <varInfo nodeId="1171931858963" varName="editorCell" />
+      <varInfo nodeId="1171931858963" varName="handler" />
+    </scopeInfo>
     <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="74" startPosition="132" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="86" startPosition="91" endLine="95" endPosition="24" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="34" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="73" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="85" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="86" startPosition="91" endLine="95" endPosition="24">
+      <varInfo nodeId="1171931858963" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="34" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1171931858963" varName="editorContext" />
+      <varInfo nodeId="1171931858963" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="73" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="1171931858963" varName="editorContext" />
+      <varInfo nodeId="1171931858963" varName="elementCell" />
+      <varInfo nodeId="1171931858963" varName="elementNode" />
+      <varInfo nodeId="1171931858963" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="85" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1171931858963" varName="editorContext" />
+      <varInfo nodeId="1171931858963" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="23" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.TestMethodList_Editor" />
     <unitInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="47" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.TestMethodList_Editor$testMethodListHandler_bc5hcd_a0" />
   </root>
@@ -863,33 +1246,92 @@
     <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="80" />
     <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="82" />
     <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="32" startPosition="82" endLine="33" endPosition="81" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="40" startPosition="5" endLine="42" endPosition="51" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="50" startPosition="5" endLine="52" endPosition="60" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="61" startPosition="5" endLine="63" endPosition="60" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="72" startPosition="5" endLine="74" endPosition="56" />
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="40" startPosition="5" endLine="42" endPosition="51">
+      <varInfo nodeId="1171978123200" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="50" startPosition="5" endLine="52" endPosition="60">
+      <varInfo nodeId="1171978123200" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="61" startPosition="5" endLine="63" endPosition="60">
+      <varInfo nodeId="1171978123200" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="72" startPosition="5" endLine="74" endPosition="56">
+      <varInfo nodeId="1171978123200" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="84" startPosition="26" endLine="86" endPosition="73" />
     <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="101" startPosition="26" endLine="103" endPosition="73" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="89" startPosition="35" endLine="92" endPosition="105" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="106" startPosition="35" endLine="109" endPosition="105" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="20" startPosition="60" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="89" startPosition="35" endLine="92" endPosition="105">
+      <varInfo nodeId="1171978123200" varName="manager" />
+      <varInfo nodeId="1171978123200" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="106" startPosition="35" endLine="109" endPosition="105">
+      <varInfo nodeId="1171978123200" varName="manager" />
+      <varInfo nodeId="1171978123200" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="20" startPosition="60" endLine="24" endPosition="0">
+      <varInfo nodeId="1171978123200" varName="editorContext" />
+      <varInfo nodeId="1171978123200" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="39" startPosition="69" endLine="43" endPosition="5" />
     <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="48" startPosition="92" endLine="53" endPosition="5" />
     <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="59" startPosition="92" endLine="64" endPosition="5" />
     <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="70" startPosition="87" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="37" startPosition="89" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="47" startPosition="88" endLine="55" endPosition="22" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="58" startPosition="88" endLine="66" endPosition="22" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="69" startPosition="88" endLine="77" endPosition="22" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="25" startPosition="89" endLine="34" endPosition="22" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="36" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="46" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="57" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="68" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="24" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="80" startPosition="87" endLine="94" endPosition="22" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="97" startPosition="87" endLine="111" endPosition="22" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="79" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="96" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="37" startPosition="89" endLine="44" endPosition="22">
+      <varInfo nodeId="1171978123200" varName="editorCell" />
+      <varInfo nodeId="1171978123200" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="47" startPosition="88" endLine="55" endPosition="22">
+      <varInfo nodeId="1171978123200" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="58" startPosition="88" endLine="66" endPosition="22">
+      <varInfo nodeId="1171978123200" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="69" startPosition="88" endLine="77" endPosition="22">
+      <varInfo nodeId="1171978123200" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="25" startPosition="89" endLine="34" endPosition="22">
+      <varInfo nodeId="1171978123200" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="36" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1171978123200" varName="editorContext" />
+      <varInfo nodeId="1171978123200" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="46" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="1171978123200" varName="editorContext" />
+      <varInfo nodeId="1171978123200" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="57" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1171978123200" varName="editorContext" />
+      <varInfo nodeId="1171978123200" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="68" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="1171978123200" varName="editorContext" />
+      <varInfo nodeId="1171978123200" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="24" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1171978123200" varName="editorContext" />
+      <varInfo nodeId="1171978123200" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="80" startPosition="87" endLine="94" endPosition="22">
+      <varInfo nodeId="1171978123200" varName="attributeConcept" />
+      <varInfo nodeId="1171978123200" varName="attributeKind" />
+      <varInfo nodeId="1171978123200" varName="editorCell" />
+      <varInfo nodeId="1171978123200" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="97" startPosition="87" endLine="111" endPosition="22">
+      <varInfo nodeId="1171978123200" varName="attributeConcept" />
+      <varInfo nodeId="1171978123200" varName="attributeKind" />
+      <varInfo nodeId="1171978123200" varName="editorCell" />
+      <varInfo nodeId="1171978123200" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="79" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1171978123200" varName="editorContext" />
+      <varInfo nodeId="1171978123200" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="96" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="1171978123200" varName="editorContext" />
+      <varInfo nodeId="1171978123200" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1171978123200" fileName="AssertEquals_Editor.java" startLine="20" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.AssertEquals_Editor" />
   </root>
   <root nodeId="1171981034059">
@@ -957,25 +1399,66 @@
     <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="80" />
     <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="29" startPosition="80" endLine="30" endPosition="82" />
     <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="30" startPosition="82" endLine="31" endPosition="81" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="38" startPosition="5" endLine="40" endPosition="51" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="48" startPosition="5" endLine="50" endPosition="60" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="59" startPosition="5" endLine="61" endPosition="56" />
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="38" startPosition="5" endLine="40" endPosition="51">
+      <varInfo nodeId="1171981034059" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="48" startPosition="5" endLine="50" endPosition="60">
+      <varInfo nodeId="1171981034059" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="59" startPosition="5" endLine="61" endPosition="56">
+      <varInfo nodeId="1171981034059" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="71" startPosition="26" endLine="73" endPosition="73" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="76" startPosition="35" endLine="79" endPosition="105" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="20" startPosition="58" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="76" startPosition="35" endLine="79" endPosition="105">
+      <varInfo nodeId="1171981034059" varName="manager" />
+      <varInfo nodeId="1171981034059" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="20" startPosition="58" endLine="24" endPosition="0">
+      <varInfo nodeId="1171981034059" varName="editorContext" />
+      <varInfo nodeId="1171981034059" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="37" startPosition="69" endLine="41" endPosition="5" />
     <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="46" startPosition="97" endLine="51" endPosition="5" />
     <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="57" startPosition="87" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="25" startPosition="89" endLine="32" endPosition="22" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="35" startPosition="89" endLine="42" endPosition="22" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="45" startPosition="88" endLine="53" endPosition="22" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="56" startPosition="88" endLine="64" endPosition="22" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="34" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="55" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="67" startPosition="87" endLine="81" endPosition="22" />
-    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="66" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="25" startPosition="89" endLine="32" endPosition="22">
+      <varInfo nodeId="1171981034059" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="35" startPosition="89" endLine="42" endPosition="22">
+      <varInfo nodeId="1171981034059" varName="editorCell" />
+      <varInfo nodeId="1171981034059" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="45" startPosition="88" endLine="53" endPosition="22">
+      <varInfo nodeId="1171981034059" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="56" startPosition="88" endLine="64" endPosition="22">
+      <varInfo nodeId="1171981034059" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1171981034059" varName="editorContext" />
+      <varInfo nodeId="1171981034059" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1171981034059" varName="editorContext" />
+      <varInfo nodeId="1171981034059" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1171981034059" varName="editorContext" />
+      <varInfo nodeId="1171981034059" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="55" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1171981034059" varName="editorContext" />
+      <varInfo nodeId="1171981034059" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="67" startPosition="87" endLine="81" endPosition="22">
+      <varInfo nodeId="1171981034059" varName="attributeConcept" />
+      <varInfo nodeId="1171981034059" varName="attributeKind" />
+      <varInfo nodeId="1171981034059" varName="editorCell" />
+      <varInfo nodeId="1171981034059" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="66" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1171981034059" varName="editorContext" />
+      <varInfo nodeId="1171981034059" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1171981034059" fileName="AssertTrue_Editor.java" startLine="20" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.AssertTrue_Editor" />
   </root>
   <root nodeId="1171983868379">
@@ -1043,25 +1526,66 @@
     <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="80" />
     <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="29" startPosition="80" endLine="30" endPosition="82" />
     <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="30" startPosition="82" endLine="31" endPosition="81" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="38" startPosition="5" endLine="40" endPosition="51" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="48" startPosition="5" endLine="50" endPosition="60" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="59" startPosition="5" endLine="61" endPosition="56" />
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="38" startPosition="5" endLine="40" endPosition="51">
+      <varInfo nodeId="1171983868379" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="48" startPosition="5" endLine="50" endPosition="60">
+      <varInfo nodeId="1171983868379" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="59" startPosition="5" endLine="61" endPosition="56">
+      <varInfo nodeId="1171983868379" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="71" startPosition="26" endLine="73" endPosition="73" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="76" startPosition="35" endLine="79" endPosition="105" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="20" startPosition="59" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="76" startPosition="35" endLine="79" endPosition="105">
+      <varInfo nodeId="1171983868379" varName="manager" />
+      <varInfo nodeId="1171983868379" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="20" startPosition="59" endLine="24" endPosition="0">
+      <varInfo nodeId="1171983868379" varName="editorContext" />
+      <varInfo nodeId="1171983868379" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="37" startPosition="69" endLine="41" endPosition="5" />
     <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="46" startPosition="98" endLine="51" endPosition="5" />
     <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="57" startPosition="87" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="25" startPosition="89" endLine="32" endPosition="22" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="35" startPosition="89" endLine="42" endPosition="22" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="45" startPosition="88" endLine="53" endPosition="22" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="56" startPosition="88" endLine="64" endPosition="22" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="34" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="55" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="67" startPosition="87" endLine="81" endPosition="22" />
-    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="66" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="25" startPosition="89" endLine="32" endPosition="22">
+      <varInfo nodeId="1171983868379" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="35" startPosition="89" endLine="42" endPosition="22">
+      <varInfo nodeId="1171983868379" varName="editorCell" />
+      <varInfo nodeId="1171983868379" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="45" startPosition="88" endLine="53" endPosition="22">
+      <varInfo nodeId="1171983868379" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="56" startPosition="88" endLine="64" endPosition="22">
+      <varInfo nodeId="1171983868379" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1171983868379" varName="editorContext" />
+      <varInfo nodeId="1171983868379" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1171983868379" varName="editorContext" />
+      <varInfo nodeId="1171983868379" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1171983868379" varName="editorContext" />
+      <varInfo nodeId="1171983868379" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="55" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1171983868379" varName="editorContext" />
+      <varInfo nodeId="1171983868379" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="67" startPosition="87" endLine="81" endPosition="22">
+      <varInfo nodeId="1171983868379" varName="attributeConcept" />
+      <varInfo nodeId="1171983868379" varName="attributeKind" />
+      <varInfo nodeId="1171983868379" varName="editorCell" />
+      <varInfo nodeId="1171983868379" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="66" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1171983868379" varName="editorContext" />
+      <varInfo nodeId="1171983868379" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1171983868379" fileName="AssertFalse_Editor.java" startLine="20" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.AssertFalse_Editor" />
   </root>
   <root nodeId="1171985776104">
@@ -1162,33 +1686,92 @@
     <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="80" />
     <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="32" startPosition="80" endLine="33" endPosition="82" />
     <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="33" startPosition="82" endLine="34" endPosition="81" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="41" startPosition="5" endLine="43" endPosition="51" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="60" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="63" startPosition="5" endLine="65" endPosition="60" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="74" startPosition="5" endLine="76" endPosition="56" />
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="41" startPosition="5" endLine="43" endPosition="51">
+      <varInfo nodeId="1171985776104" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="60">
+      <varInfo nodeId="1171985776104" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="63" startPosition="5" endLine="65" endPosition="60">
+      <varInfo nodeId="1171985776104" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="74" startPosition="5" endLine="76" endPosition="56">
+      <varInfo nodeId="1171985776104" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="86" startPosition="26" endLine="88" endPosition="73" />
     <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="103" startPosition="26" endLine="105" endPosition="73" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="91" startPosition="35" endLine="94" endPosition="105" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="108" startPosition="35" endLine="111" endPosition="105" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="21" startPosition="58" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="91" startPosition="35" endLine="94" endPosition="105">
+      <varInfo nodeId="1171985776104" varName="manager" />
+      <varInfo nodeId="1171985776104" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="108" startPosition="35" endLine="111" endPosition="105">
+      <varInfo nodeId="1171985776104" varName="manager" />
+      <varInfo nodeId="1171985776104" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="21" startPosition="58" endLine="25" endPosition="0">
+      <varInfo nodeId="1171985776104" varName="editorContext" />
+      <varInfo nodeId="1171985776104" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="40" startPosition="69" endLine="44" endPosition="5" />
     <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="49" startPosition="92" endLine="54" endPosition="5" />
     <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="72" startPosition="87" endLine="77" endPosition="5" />
     <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="60" startPosition="88" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="38" startPosition="89" endLine="45" endPosition="22" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="48" startPosition="88" endLine="56" endPosition="22" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="71" startPosition="88" endLine="79" endPosition="22" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="26" startPosition="89" endLine="35" endPosition="22" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="59" startPosition="88" endLine="68" endPosition="22" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="37" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="47" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="70" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="25" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="82" startPosition="87" endLine="96" endPosition="22" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="99" startPosition="87" endLine="113" endPosition="22" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="81" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="98" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="38" startPosition="89" endLine="45" endPosition="22">
+      <varInfo nodeId="1171985776104" varName="editorCell" />
+      <varInfo nodeId="1171985776104" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="48" startPosition="88" endLine="56" endPosition="22">
+      <varInfo nodeId="1171985776104" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="71" startPosition="88" endLine="79" endPosition="22">
+      <varInfo nodeId="1171985776104" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="26" startPosition="89" endLine="35" endPosition="22">
+      <varInfo nodeId="1171985776104" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="59" startPosition="88" endLine="68" endPosition="22">
+      <varInfo nodeId="1171985776104" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="37" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1171985776104" varName="editorContext" />
+      <varInfo nodeId="1171985776104" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="47" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1171985776104" varName="editorContext" />
+      <varInfo nodeId="1171985776104" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="70" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="1171985776104" varName="editorContext" />
+      <varInfo nodeId="1171985776104" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="25" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1171985776104" varName="editorContext" />
+      <varInfo nodeId="1171985776104" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="58" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1171985776104" varName="editorContext" />
+      <varInfo nodeId="1171985776104" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="82" startPosition="87" endLine="96" endPosition="22">
+      <varInfo nodeId="1171985776104" varName="attributeConcept" />
+      <varInfo nodeId="1171985776104" varName="attributeKind" />
+      <varInfo nodeId="1171985776104" varName="editorCell" />
+      <varInfo nodeId="1171985776104" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="99" startPosition="87" endLine="113" endPosition="22">
+      <varInfo nodeId="1171985776104" varName="attributeConcept" />
+      <varInfo nodeId="1171985776104" varName="attributeKind" />
+      <varInfo nodeId="1171985776104" varName="editorCell" />
+      <varInfo nodeId="1171985776104" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="81" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="1171985776104" varName="editorContext" />
+      <varInfo nodeId="1171985776104" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="98" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="1171985776104" varName="editorContext" />
+      <varInfo nodeId="1171985776104" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1171985776104" fileName="AssertSame_Editor.java" startLine="21" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.AssertSame_Editor" />
   </root>
   <root nodeId="1172017252093">
@@ -1245,21 +1828,54 @@
     <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="26" startPosition="47" endLine="27" endPosition="80" />
     <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="27" startPosition="80" endLine="28" endPosition="79" />
     <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="80" />
-    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="36" startPosition="5" endLine="38" endPosition="60" />
-    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="47" startPosition="5" endLine="49" endPosition="56" />
+    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="36" startPosition="5" endLine="38" endPosition="60">
+      <varInfo nodeId="1172017252093" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="47" startPosition="5" endLine="49" endPosition="56">
+      <varInfo nodeId="1172017252093" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="59" startPosition="26" endLine="61" endPosition="73" />
-    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="64" startPosition="35" endLine="67" endPosition="105" />
-    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="19" startPosition="52" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="64" startPosition="35" endLine="67" endPosition="105">
+      <varInfo nodeId="1172017252093" varName="manager" />
+      <varInfo nodeId="1172017252093" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="19" startPosition="52" endLine="23" endPosition="0">
+      <varInfo nodeId="1172017252093" varName="editorContext" />
+      <varInfo nodeId="1172017252093" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="34" startPosition="90" endLine="39" endPosition="5" />
     <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="45" startPosition="87" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="24" startPosition="88" endLine="30" endPosition="22" />
-    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="33" startPosition="87" endLine="41" endPosition="22" />
-    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="44" startPosition="87" endLine="52" endPosition="22" />
-    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="23" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="32" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="43" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="55" startPosition="86" endLine="69" endPosition="22" />
-    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="54" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="24" startPosition="88" endLine="30" endPosition="22">
+      <varInfo nodeId="1172017252093" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="33" startPosition="87" endLine="41" endPosition="22">
+      <varInfo nodeId="1172017252093" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="44" startPosition="87" endLine="52" endPosition="22">
+      <varInfo nodeId="1172017252093" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="23" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1172017252093" varName="editorContext" />
+      <varInfo nodeId="1172017252093" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="32" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1172017252093" varName="editorContext" />
+      <varInfo nodeId="1172017252093" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="43" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1172017252093" varName="editorContext" />
+      <varInfo nodeId="1172017252093" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="55" startPosition="86" endLine="69" endPosition="22">
+      <varInfo nodeId="1172017252093" varName="attributeConcept" />
+      <varInfo nodeId="1172017252093" varName="attributeKind" />
+      <varInfo nodeId="1172017252093" varName="editorCell" />
+      <varInfo nodeId="1172017252093" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="54" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="1172017252093" varName="editorContext" />
+      <varInfo nodeId="1172017252093" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1172017252093" fileName="Fail_Editor.java" startLine="19" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.Fail_Editor" />
   </root>
   <root nodeId="1172028252153">
@@ -1339,29 +1955,77 @@
     <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="29" startPosition="80" endLine="30" endPosition="81" />
     <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="82" />
     <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="31" startPosition="82" endLine="32" endPosition="81" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="39" startPosition="5" endLine="41" endPosition="51" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="49" startPosition="5" endLine="51" endPosition="60" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="60" startPosition="5" endLine="62" endPosition="60" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="71" startPosition="5" endLine="73" endPosition="56" />
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="39" startPosition="5" endLine="41" endPosition="51">
+      <varInfo nodeId="1172028252153" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="49" startPosition="5" endLine="51" endPosition="60">
+      <varInfo nodeId="1172028252153" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="60" startPosition="5" endLine="62" endPosition="60">
+      <varInfo nodeId="1172028252153" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="71" startPosition="5" endLine="73" endPosition="56">
+      <varInfo nodeId="1172028252153" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="83" startPosition="26" endLine="85" endPosition="73" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="88" startPosition="35" endLine="91" endPosition="105" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="20" startPosition="60" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="88" startPosition="35" endLine="91" endPosition="105">
+      <varInfo nodeId="1172028252153" varName="manager" />
+      <varInfo nodeId="1172028252153" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="20" startPosition="60" endLine="24" endPosition="0">
+      <varInfo nodeId="1172028252153" varName="editorContext" />
+      <varInfo nodeId="1172028252153" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="38" startPosition="69" endLine="42" endPosition="5" />
     <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="47" startPosition="92" endLine="52" endPosition="5" />
     <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="58" startPosition="93" endLine="63" endPosition="5" />
     <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="69" startPosition="87" endLine="74" endPosition="5" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="36" startPosition="89" endLine="43" endPosition="22" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="25" startPosition="89" endLine="33" endPosition="22" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="46" startPosition="88" endLine="54" endPosition="22" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="57" startPosition="88" endLine="65" endPosition="22" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="68" startPosition="88" endLine="76" endPosition="22" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="35" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="24" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="45" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="56" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="67" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="79" startPosition="87" endLine="93" endPosition="22" />
-    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="78" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="36" startPosition="89" endLine="43" endPosition="22">
+      <varInfo nodeId="1172028252153" varName="editorCell" />
+      <varInfo nodeId="1172028252153" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="25" startPosition="89" endLine="33" endPosition="22">
+      <varInfo nodeId="1172028252153" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="46" startPosition="88" endLine="54" endPosition="22">
+      <varInfo nodeId="1172028252153" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="57" startPosition="88" endLine="65" endPosition="22">
+      <varInfo nodeId="1172028252153" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="68" startPosition="88" endLine="76" endPosition="22">
+      <varInfo nodeId="1172028252153" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="35" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1172028252153" varName="editorContext" />
+      <varInfo nodeId="1172028252153" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="24" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1172028252153" varName="editorContext" />
+      <varInfo nodeId="1172028252153" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="45" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1172028252153" varName="editorContext" />
+      <varInfo nodeId="1172028252153" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="56" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1172028252153" varName="editorContext" />
+      <varInfo nodeId="1172028252153" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="67" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1172028252153" varName="editorContext" />
+      <varInfo nodeId="1172028252153" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="79" startPosition="87" endLine="93" endPosition="22">
+      <varInfo nodeId="1172028252153" varName="attributeConcept" />
+      <varInfo nodeId="1172028252153" varName="attributeKind" />
+      <varInfo nodeId="1172028252153" varName="editorCell" />
+      <varInfo nodeId="1172028252153" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="78" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1172028252153" varName="editorContext" />
+      <varInfo nodeId="1172028252153" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1172028252153" fileName="AssertIsNull_Editor.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.AssertIsNull_Editor" />
   </root>
   <root nodeId="1172069897161">
@@ -1470,33 +2134,95 @@
     <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" />
     <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="30" startPosition="80" endLine="31" endPosition="80" />
     <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="81" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="39" startPosition="5" endLine="41" endPosition="60" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="50" startPosition="5" endLine="52" endPosition="60" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="61" startPosition="5" endLine="63" endPosition="56" />
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="39" startPosition="5" endLine="41" endPosition="60">
+      <varInfo nodeId="1172069897161" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="50" startPosition="5" endLine="52" endPosition="60">
+      <varInfo nodeId="1172069897161" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="61" startPosition="5" endLine="63" endPosition="56">
+      <varInfo nodeId="1172069897161" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="73" startPosition="26" endLine="75" endPosition="73" />
     <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="90" startPosition="26" endLine="92" endPosition="73" />
     <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="107" startPosition="26" endLine="109" endPosition="73" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="78" startPosition="35" endLine="81" endPosition="105" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="95" startPosition="35" endLine="98" endPosition="105" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="112" startPosition="35" endLine="115" endPosition="105" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="19" startPosition="60" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="78" startPosition="35" endLine="81" endPosition="105">
+      <varInfo nodeId="1172069897161" varName="manager" />
+      <varInfo nodeId="1172069897161" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="95" startPosition="35" endLine="98" endPosition="105">
+      <varInfo nodeId="1172069897161" varName="manager" />
+      <varInfo nodeId="1172069897161" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="112" startPosition="35" endLine="115" endPosition="105">
+      <varInfo nodeId="1172069897161" varName="manager" />
+      <varInfo nodeId="1172069897161" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="19" startPosition="60" endLine="23" endPosition="0">
+      <varInfo nodeId="1172069897161" varName="editorContext" />
+      <varInfo nodeId="1172069897161" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="37" startPosition="92" endLine="42" endPosition="5" />
     <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="48" startPosition="92" endLine="53" endPosition="5" />
     <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="59" startPosition="87" endLine="64" endPosition="5" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="36" startPosition="88" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="47" startPosition="88" endLine="55" endPosition="22" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="58" startPosition="88" endLine="66" endPosition="22" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="24" startPosition="89" endLine="33" endPosition="22" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="35" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="46" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="57" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="23" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="69" startPosition="87" endLine="83" endPosition="22" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="86" startPosition="87" endLine="100" endPosition="22" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="103" startPosition="87" endLine="117" endPosition="22" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="68" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="85" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="102" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="36" startPosition="88" endLine="44" endPosition="22">
+      <varInfo nodeId="1172069897161" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="47" startPosition="88" endLine="55" endPosition="22">
+      <varInfo nodeId="1172069897161" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="58" startPosition="88" endLine="66" endPosition="22">
+      <varInfo nodeId="1172069897161" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="24" startPosition="89" endLine="33" endPosition="22">
+      <varInfo nodeId="1172069897161" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="35" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1172069897161" varName="editorContext" />
+      <varInfo nodeId="1172069897161" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="46" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="1172069897161" varName="editorContext" />
+      <varInfo nodeId="1172069897161" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="57" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1172069897161" varName="editorContext" />
+      <varInfo nodeId="1172069897161" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="23" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1172069897161" varName="editorContext" />
+      <varInfo nodeId="1172069897161" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="69" startPosition="87" endLine="83" endPosition="22">
+      <varInfo nodeId="1172069897161" varName="attributeConcept" />
+      <varInfo nodeId="1172069897161" varName="attributeKind" />
+      <varInfo nodeId="1172069897161" varName="editorCell" />
+      <varInfo nodeId="1172069897161" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="86" startPosition="87" endLine="100" endPosition="22">
+      <varInfo nodeId="1172069897161" varName="attributeConcept" />
+      <varInfo nodeId="1172069897161" varName="attributeKind" />
+      <varInfo nodeId="1172069897161" varName="editorCell" />
+      <varInfo nodeId="1172069897161" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="103" startPosition="87" endLine="117" endPosition="22">
+      <varInfo nodeId="1172069897161" varName="attributeConcept" />
+      <varInfo nodeId="1172069897161" varName="attributeKind" />
+      <varInfo nodeId="1172069897161" varName="editorCell" />
+      <varInfo nodeId="1172069897161" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="68" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="1172069897161" varName="editorContext" />
+      <varInfo nodeId="1172069897161" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="85" startPosition="0" endLine="102" endPosition="0">
+      <varInfo nodeId="1172069897161" varName="editorContext" />
+      <varInfo nodeId="1172069897161" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="102" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="1172069897161" varName="editorContext" />
+      <varInfo nodeId="1172069897161" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1172069897161" fileName="AssertThrows_Editor.java" startLine="19" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.AssertThrows_Editor" />
   </root>
   <root nodeId="1172073551602">
@@ -1540,14 +2266,38 @@
     <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="80" />
     <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="30" startPosition="87" endLine="31" endPosition="47" />
     <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="40" startPosition="26" endLine="42" endPosition="73" />
-    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="45" startPosition="35" endLine="48" endPosition="105" />
-    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="16" startPosition="55" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="29" startPosition="88" endLine="33" endPosition="22" />
-    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="21" startPosition="89" endLine="26" endPosition="22" />
-    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="20" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="36" startPosition="87" endLine="50" endPosition="22" />
-    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="35" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="45" startPosition="35" endLine="48" endPosition="105">
+      <varInfo nodeId="1172073551602" varName="manager" />
+      <varInfo nodeId="1172073551602" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="16" startPosition="55" endLine="20" endPosition="0">
+      <varInfo nodeId="1172073551602" varName="editorContext" />
+      <varInfo nodeId="1172073551602" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="29" startPosition="88" endLine="33" endPosition="22">
+      <varInfo nodeId="1172073551602" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="21" startPosition="89" endLine="26" endPosition="22">
+      <varInfo nodeId="1172073551602" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="28" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1172073551602" varName="editorContext" />
+      <varInfo nodeId="1172073551602" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="20" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1172073551602" varName="editorContext" />
+      <varInfo nodeId="1172073551602" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="36" startPosition="87" endLine="50" endPosition="22">
+      <varInfo nodeId="1172073551602" varName="attributeConcept" />
+      <varInfo nodeId="1172073551602" varName="attributeKind" />
+      <varInfo nodeId="1172073551602" varName="editorCell" />
+      <varInfo nodeId="1172073551602" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="35" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1172073551602" varName="editorContext" />
+      <varInfo nodeId="1172073551602" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1172073551602" fileName="Message_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.Message_Editor" />
   </root>
   <root nodeId="5168467225194540178">
@@ -1600,18 +2350,50 @@
     <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="41" startPosition="49" endLine="42" endPosition="81" />
     <scopeInfo nodeId="5168467225194540200" fileName="MessageComponent.java" startLine="63" startPosition="111" endLine="64" endPosition="70" />
     <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="50" startPosition="26" endLine="52" endPosition="73" />
-    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="17" startPosition="60" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="17" startPosition="60" endLine="20" endPosition="3">
+      <varInfo nodeId="5168467225194540178" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="32" startPosition="48" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="55" startPosition="35" endLine="58" endPosition="105" />
-    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="39" startPosition="90" endLine="43" endPosition="22" />
-    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="30" startPosition="89" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="29" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="46" startPosition="88" endLine="60" endPosition="22" />
-    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="45" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="55" startPosition="35" endLine="58" endPosition="105">
+      <varInfo nodeId="5168467225194540178" varName="manager" />
+      <varInfo nodeId="5168467225194540178" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5168467225194540178" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="5168467225194540178" varName="editorContext" />
+      <varInfo nodeId="5168467225194540178" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="39" startPosition="90" endLine="43" endPosition="22">
+      <varInfo nodeId="5168467225194540178" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="5168467225194540178" varName="editorContext" />
+      <varInfo nodeId="5168467225194540178" varName="node" />
+      <varInfo nodeId="5168467225194540178" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="30" startPosition="89" endLine="36" endPosition="22">
+      <varInfo nodeId="5168467225194540178" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="5168467225194540178" varName="editorContext" />
+      <varInfo nodeId="5168467225194540178" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="29" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="5168467225194540178" varName="editorContext" />
+      <varInfo nodeId="5168467225194540178" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="46" startPosition="88" endLine="60" endPosition="22">
+      <varInfo nodeId="5168467225194540178" varName="attributeConcept" />
+      <varInfo nodeId="5168467225194540178" varName="attributeKind" />
+      <varInfo nodeId="5168467225194540178" varName="editorCell" />
+      <varInfo nodeId="5168467225194540178" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="45" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="5168467225194540178" varName="editorContext" />
+      <varInfo nodeId="5168467225194540178" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="5168467225194540178" fileName="MessageComponent.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.MessageComponent" />
   </root>
   <root nodeId="7080278351417106682">
@@ -1691,29 +2473,77 @@
     <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="29" startPosition="80" endLine="30" endPosition="81" />
     <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="82" />
     <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="31" startPosition="82" endLine="32" endPosition="81" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="39" startPosition="5" endLine="41" endPosition="51" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="49" startPosition="5" endLine="51" endPosition="60" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="60" startPosition="5" endLine="62" endPosition="60" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="71" startPosition="5" endLine="73" endPosition="56" />
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="39" startPosition="5" endLine="41" endPosition="51">
+      <varInfo nodeId="7080278351417106682" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="49" startPosition="5" endLine="51" endPosition="60">
+      <varInfo nodeId="7080278351417106682" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="60" startPosition="5" endLine="62" endPosition="60">
+      <varInfo nodeId="7080278351417106682" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="71" startPosition="5" endLine="73" endPosition="56">
+      <varInfo nodeId="7080278351417106682" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="83" startPosition="26" endLine="85" endPosition="73" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="88" startPosition="35" endLine="91" endPosition="105" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="20" startPosition="63" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="88" startPosition="35" endLine="91" endPosition="105">
+      <varInfo nodeId="7080278351417106682" varName="manager" />
+      <varInfo nodeId="7080278351417106682" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="20" startPosition="63" endLine="24" endPosition="0">
+      <varInfo nodeId="7080278351417106682" varName="editorContext" />
+      <varInfo nodeId="7080278351417106682" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="38" startPosition="69" endLine="42" endPosition="5" />
     <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="47" startPosition="92" endLine="52" endPosition="5" />
     <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="58" startPosition="97" endLine="63" endPosition="5" />
     <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="69" startPosition="87" endLine="74" endPosition="5" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="36" startPosition="89" endLine="43" endPosition="22" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="25" startPosition="89" endLine="33" endPosition="22" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="46" startPosition="88" endLine="54" endPosition="22" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="57" startPosition="88" endLine="65" endPosition="22" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="68" startPosition="88" endLine="76" endPosition="22" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="35" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="24" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="45" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="56" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="67" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="79" startPosition="87" endLine="93" endPosition="22" />
-    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="78" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="36" startPosition="89" endLine="43" endPosition="22">
+      <varInfo nodeId="7080278351417106682" varName="editorCell" />
+      <varInfo nodeId="7080278351417106682" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="25" startPosition="89" endLine="33" endPosition="22">
+      <varInfo nodeId="7080278351417106682" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="46" startPosition="88" endLine="54" endPosition="22">
+      <varInfo nodeId="7080278351417106682" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="57" startPosition="88" endLine="65" endPosition="22">
+      <varInfo nodeId="7080278351417106682" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="68" startPosition="88" endLine="76" endPosition="22">
+      <varInfo nodeId="7080278351417106682" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="35" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="7080278351417106682" varName="editorContext" />
+      <varInfo nodeId="7080278351417106682" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="24" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="7080278351417106682" varName="editorContext" />
+      <varInfo nodeId="7080278351417106682" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="45" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="7080278351417106682" varName="editorContext" />
+      <varInfo nodeId="7080278351417106682" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="56" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="7080278351417106682" varName="editorContext" />
+      <varInfo nodeId="7080278351417106682" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="67" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="7080278351417106682" varName="editorContext" />
+      <varInfo nodeId="7080278351417106682" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="79" startPosition="87" endLine="93" endPosition="22">
+      <varInfo nodeId="7080278351417106682" varName="attributeConcept" />
+      <varInfo nodeId="7080278351417106682" varName="attributeKind" />
+      <varInfo nodeId="7080278351417106682" varName="editorCell" />
+      <varInfo nodeId="7080278351417106682" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="78" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="7080278351417106682" varName="editorContext" />
+      <varInfo nodeId="7080278351417106682" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="7080278351417106682" fileName="AssertInNotNull_Editor.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.AssertInNotNull_Editor" />
   </root>
   <root nodeId="8243879142738615228">
@@ -1815,33 +2645,90 @@
     <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="45" startPosition="82" endLine="46" endPosition="81" />
     <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="82" />
     <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="88" startPosition="15" endLine="89" endPosition="65" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="39" startPosition="5" endLine="41" endPosition="62" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="61" startPosition="5" endLine="63" endPosition="62" />
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="39" startPosition="5" endLine="41" endPosition="62">
+      <varInfo nodeId="8243879142738615228" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="61" startPosition="5" endLine="63" endPosition="62">
+      <varInfo nodeId="8243879142738615228" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="70" startPosition="87" endLine="72" endPosition="77" />
     <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="107" startPosition="58" endLine="109" endPosition="74" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="51" startPosition="90" endLine="54" endPosition="22" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="83" startPosition="5" endLine="86" endPosition="62" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="94" startPosition="35" endLine="97" endPosition="105" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="113" startPosition="35" endLine="116" endPosition="105" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="23" startPosition="61" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="51" startPosition="90" endLine="54" endPosition="22">
+      <varInfo nodeId="8243879142738615228" varName="editorCell" />
+      <varInfo nodeId="8243879142738615228" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="83" startPosition="5" endLine="86" endPosition="62">
+      <varInfo nodeId="8243879142738615228" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="94" startPosition="35" endLine="97" endPosition="105">
+      <varInfo nodeId="8243879142738615228" varName="manager" />
+      <varInfo nodeId="8243879142738615228" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="113" startPosition="35" endLine="116" endPosition="105">
+      <varInfo nodeId="8243879142738615228" varName="manager" />
+      <varInfo nodeId="8243879142738615228" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="23" startPosition="61" endLine="27" endPosition="0">
+      <varInfo nodeId="8243879142738615228" varName="editorContext" />
+      <varInfo nodeId="8243879142738615228" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="106" startPosition="26" endLine="110" endPosition="73" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="28" startPosition="89" endLine="33" endPosition="22" />
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="28" startPosition="89" endLine="33" endPosition="22">
+      <varInfo nodeId="8243879142738615228" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="37" startPosition="96" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="69" startPosition="89" endLine="74" endPosition="22" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="50" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="69" startPosition="89" endLine="74" endPosition="22">
+      <varInfo nodeId="8243879142738615228" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="50" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="8243879142738615228" varName="editorContext" />
+      <varInfo nodeId="8243879142738615228" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="58" startPosition="87" endLine="64" endPosition="5" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="27" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="68" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="27" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="8243879142738615228" varName="editorContext" />
+      <varInfo nodeId="8243879142738615228" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="68" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="8243879142738615228" varName="editorContext" />
+      <varInfo nodeId="8243879142738615228" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="82" startPosition="58" endLine="90" endPosition="5" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="57" startPosition="89" endLine="66" endPosition="22" />
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="57" startPosition="89" endLine="66" endPosition="22">
+      <varInfo nodeId="8243879142738615228" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="81" startPosition="26" endLine="91" endPosition="73" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="36" startPosition="90" endLine="48" endPosition="22" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="56" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="35" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="102" startPosition="95" endLine="118" endPosition="22" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="101" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="77" startPosition="88" endLine="99" endPosition="22" />
-    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="76" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="36" startPosition="90" endLine="48" endPosition="22">
+      <varInfo nodeId="8243879142738615228" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="56" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="8243879142738615228" varName="editorContext" />
+      <varInfo nodeId="8243879142738615228" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="35" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="8243879142738615228" varName="editorContext" />
+      <varInfo nodeId="8243879142738615228" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="102" startPosition="95" endLine="118" endPosition="22">
+      <varInfo nodeId="8243879142738615228" varName="attributeConcept" />
+      <varInfo nodeId="8243879142738615228" varName="attributeKind" />
+      <varInfo nodeId="8243879142738615228" varName="editorCell" />
+      <varInfo nodeId="8243879142738615228" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="101" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="8243879142738615228" varName="editorContext" />
+      <varInfo nodeId="8243879142738615228" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="77" startPosition="88" endLine="99" endPosition="22">
+      <varInfo nodeId="8243879142738615228" varName="attributeConcept" />
+      <varInfo nodeId="8243879142738615228" varName="attributeKind" />
+      <varInfo nodeId="8243879142738615228" varName="editorCell" />
+      <varInfo nodeId="8243879142738615228" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="76" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="8243879142738615228" varName="editorContext" />
+      <varInfo nodeId="8243879142738615228" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="8243879142738615228" fileName="PrepareMethod_Editor.java" startLine="23" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.PrepareMethod_Editor" />
   </root>
 </debugInfo>

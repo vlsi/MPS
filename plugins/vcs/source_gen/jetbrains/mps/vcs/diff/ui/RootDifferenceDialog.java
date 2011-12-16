@@ -192,6 +192,10 @@ public class RootDifferenceDialog extends BaseDialog implements DataProvider {
     myNewEditor.unhighlightAllChanges();
     myOldEditor.unhighlightAllChanges();
 
+    if (myNewEditor.getEditedNode() == null) {
+      myNewEditor.editRoot(myModelDialog.getProject(), myRootId, myModelDialog.getChangeSet().getNewModel());
+    }
+
     myNewEditor.getMainEditor().rebuildEditorContent();
     myOldEditor.getMainEditor().rebuildEditorContent();
 

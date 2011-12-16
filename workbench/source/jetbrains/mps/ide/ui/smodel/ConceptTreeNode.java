@@ -16,15 +16,11 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class ConceptTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
@@ -71,14 +67,11 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
   }
 
   public void doubleClick() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode concept = getSNode();
         if (concept == null) return;
-        Project project = getOperationContext().getProject();
-        final IModule module = concept.getModel().getModelDescriptor().getModule();
-        if(module == null) return;
-        new MPSEditorOpener(ProjectHelper.toIdeaProject(project)).editNode(concept, new ModuleContext(module, project));
+        NavigationSupport.getInstance().openNode(getOperationContext(), concept, true, true);
       }
     });
   }

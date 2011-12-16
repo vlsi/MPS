@@ -117,7 +117,6 @@ public class ScriptBuilder {
         MapSequence.fromMap(facetsView).put(fn, fct);
       } else {
         String msg = "facet not found: " + fn;
-        LOG.error(msg);
         error(fn, msg);
       }
     }
@@ -136,7 +135,6 @@ public class ScriptBuilder {
     }
     for (ITarget.Name tn : SetSequence.fromSet(requestedTargets)) {
       if (!(tr.hasTarget(tn))) {
-        LOG.error("target not found: " + tn);
         error(tn, "target not found: " + tn);
       }
     }
@@ -192,7 +190,6 @@ public class ScriptBuilder {
       }
     };
     for (List<IFacet.Name> cyc : ListSequence.fromList(ga.findCycles())) {
-      LOG.error("found cycle: " + cyc);
       error(null, "found cycle: " + cyc);
     }
     return ga.topologicalSort();
@@ -203,7 +200,6 @@ public class ScriptBuilder {
       IFacet f = MapSequence.fromMap(facetsView).get(req);
       if (f == null) {
         String msg = "not found required facet: " + req;
-        LOG.error(msg);
         error(fct.getName(), msg);
       } else {
         ListSequence.fromList(required).addElement(f);
@@ -224,6 +220,7 @@ public class ScriptBuilder {
   }
 
   private void error(Object o, String message) {
+    LOG.debug(message);
     ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 

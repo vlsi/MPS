@@ -31,6 +31,7 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -160,7 +161,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public void addExtendedLanguage(ModuleReference langRef) {
     if (getExtendedLanguageRefs().contains(langRef)) return;
-    getModuleDescriptor().getExtendedLanguages().add(langRef);
+    LanguageDescriptor moduleDescriptor = getModuleDescriptor();
+    moduleDescriptor.getExtendedLanguages().add(langRef);
+    setModuleDescriptor(moduleDescriptor, true);
+    save();
   }
 
   public List<ModuleReference> getExtendedLanguageRefs() {
@@ -208,10 +212,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     dep.setModuleRef(BootstrapLanguages.CORE);
     dep.setReexport(true);
     result.add(dep);
-
-    for (Generator g : getGenerators()) {
-      result.addAll(g.getDependencies());
-    }
 
     return result;
   }

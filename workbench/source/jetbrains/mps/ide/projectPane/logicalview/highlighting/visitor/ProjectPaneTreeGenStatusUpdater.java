@@ -25,19 +25,30 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
 import javax.swing.tree.TreeNode;
+import java.util.List;
+import java.util.Set;
 
 public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
+
+  private ProjectModuleTreeNode getContainingModuleNode(TreeNode node) {
+    do {
+      node = node.getParent();
+      if (node ==null) return null;
+    } while (!(node instanceof ProjectModuleTreeNode));
+    return (ProjectModuleTreeNode) node;
+  }
+
   protected void visitModelNode(final SModelTreeNode modelNode) {
     if (!ProjectPane.isShowGenStatus()) return;
     Application application = ApplicationManager.getApplication();
@@ -48,10 +59,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     if (md.getModule() == null) return;
 
     TreeNode node = modelNode;
-    do {
-      node = node.getParent();
-    } while (!(node instanceof ProjectModuleTreeNode));
-    final ProjectModuleTreeNode moduleNode = ((ProjectModuleTreeNode) node);
+    final ProjectModuleTreeNode moduleNode = getContainingModuleNode(node);
 
     boolean wasChanged = md instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) md).isChanged();
 
@@ -64,6 +72,9 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     if (wasChanged) {
       updateNodeLater(modelNode, GenerationStatus.REQUIRED.getMessage());
       updateNodeLater(moduleNode, GenerationStatus.REQUIRED.getMessage());
+      if (moduleNode.getModule() instanceof Generator) {
+        updateNodeLater(getContainingModuleNode(moduleNode), GenerationStatus.REQUIRED.getMessage());
+      }
       return;
     }
 
@@ -76,12 +87,20 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
         return getGenerationStatus(modelNode);
       }
     });
+    updateModuleStatus(moduleNode);
+    if (moduleNode.getModule() instanceof Generator) {
+      updateModuleStatus(getContainingModuleNode(moduleNode));
+    }
+    updateNodeLater(modelNode, modelStatus.getMessage());
+  }
+
+  private void updateModuleStatus(final ProjectModuleTreeNode moduleNode) {
+    if (moduleNode == null) return;
     GenerationStatus moduleStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
       public GenerationStatus compute() {
         return generationRequired(moduleNode);
       }
     });
-    updateNodeLater(modelNode, modelStatus.getMessage());
     updateNodeLater(moduleNode, moduleStatus.getMessage());
   }
 
@@ -93,13 +112,24 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   }
 
+  private boolean generationRequired(IModule module, IOperationContext context) {
+    if (module == null) return false;
+    for (SModelDescriptor md : module.getOwnModelDescriptors()) {
+      boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md, context);
+      if (required) return true;
+    }
+    return false;
+  }
+
   private GenerationStatus generationRequired(ProjectModuleTreeNode node) {
     IModule module = node.getModule();
-    for (SModelDescriptor md : module.getOwnModelDescriptors()) {
-      boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md, new ProjectOperationContext(node.getOperationContext().getProject()));
-      if (required) return GenerationStatus.REQUIRED;
+    ProjectOperationContext context = new ProjectOperationContext(node.getOperationContext().getProject());
+    if (generationRequired(module, context)) return GenerationStatus.REQUIRED;
+    if (module instanceof Language) {
+      for (Generator generator : ((Language) module).getGenerators()) {
+        if (generationRequired(generator, context)) return GenerationStatus.REQUIRED;
+      }
     }
-
     return GenerationStatus.NOT_REQUIRED;
   }
 

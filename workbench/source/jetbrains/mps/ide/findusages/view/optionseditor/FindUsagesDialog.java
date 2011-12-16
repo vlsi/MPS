@@ -25,9 +25,12 @@ import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEdi
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
+import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -133,10 +136,16 @@ public class FindUsagesDialog extends BaseDialog {
     }
 
     public void goToFinder(final ReloadableFinder finder) {
-      SNode finderNode = finder.getNodeToNavigate();
-      if (finderNode == null) return;
-      FindUsagesDialog.this.onCancel();
-      myProject.getComponent(MPSEditorOpener.class).openNode(finderNode);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          SNode finderNode = finder.getNodeToNavigate();
+          if (finderNode == null) return;
+          FindUsagesDialog.this.onCancel();
+          IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
+          NavigationSupport.getInstance().openNode(context, finderNode, true, !(finderNode.isRoot()));
+        }
+      });
     }
   }
 }

@@ -19,6 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.AbstractClassLoader;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.*;
@@ -53,12 +54,12 @@ public class JavaCompiler {
       path = path + (path.endsWith(File.separator) ? "" : File.separatorChar);
     }
     String filePath = path + filename;
-    CompilationUnit compilationUnit = new CompilationUnit(((String) contents).toCharArray(), filePath, "UTF-8");
+    CompilationUnit compilationUnit = new CompilationUnit(((String) contents).toCharArray(), filePath, FileUtil.DEFAULT_CHARSET_NAME);
     myCompilationUnits.put(NameUtil.namespaceFromPath(filePath.substring(0, MPSExtentions.DOT_JAVAFILE.length())), compilationUnit);
   }
 
   public void addSource(String classFqName, String text) {
-    CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), NameUtil.pathFromNamespace(classFqName) + MPSExtentions.DOT_JAVAFILE, "UTF-8");
+    CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), NameUtil.pathFromNamespace(classFqName) + MPSExtentions.DOT_JAVAFILE, FileUtil.DEFAULT_CHARSET_NAME);
     myCompilationUnits.put(classFqName, compilationUnit);
   }
 
@@ -149,7 +150,7 @@ public class JavaCompiler {
       if (result.getErrors() != null) {
         for (CategorizedProblem e : result.getErrors()) {
           char[] fname = e.getOriginatingFileName();
-          LOG.error((fname == null ? "" : new String(fname)) + ":::" + e.getMessage());
+          LOG.error("Compilation error: "+(fname == null ? "" : new String(fname)) + ":::" + e.getMessage());
         }
       }
       for (ClassFile file : result.getClassFiles()) {

@@ -43,6 +43,7 @@ public class FindInstancesDialog extends BaseDialog {
   private EmbeddableEditor myEditor;
   private ScopeEditor myScope;
   private SNode myNode;
+  private boolean myDisposed = false;
   private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
 
   public FindInstancesDialog(final IOperationContext context, final IModule module) {
@@ -171,6 +172,10 @@ public class FindInstancesDialog extends BaseDialog {
   @Override
   public void dispose() {
     super.dispose();
+    if (myDisposed) {
+      return;
+    }
+    myDisposed = true;
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         myEditor.disposeEditor();

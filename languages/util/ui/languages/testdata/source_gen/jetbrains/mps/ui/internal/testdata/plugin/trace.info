@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Testdata_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.internal.testdata.plugin.Testdata_ProjectPlugin" />
   <unitInfo fileName="Testdata_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.internal.testdata.plugin.Testdata_ApplicationPlugin" />
+  <unitInfo fileName="Testdata_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.internal.testdata.plugin.Testdata_ProjectPlugin" />
   <root nodeId="6661832029303965031">
     <nodeInfo nodeId="6661832029303965032" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="8" startPosition="90" endLine="9" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="helper" />
     <nodeInfo nodeId="2462638993234459257" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="17" startPosition="64" endLine="18" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -29,8 +29,8 @@
     <scopeInfo nodeId="6661832029303965031" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="6661832029303965036" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="14" startPosition="24" endLine="26" endPosition="63" />
     <scopeInfo nodeId="6661832029303965031" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" />
-    <unitInfo nodeId="2462638993234459235" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="15" startPosition="62" endLine="25" endPosition="5" unitName="jetbrains.mps.ui.internal.testdata.plugin.EditorExtension_CustomApplicationPlugin$1" />
     <unitInfo nodeId="6661832029303965031" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.internal.testdata.plugin.EditorExtension_CustomApplicationPlugin" />
+    <unitInfo nodeId="2462638993234459235" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="15" startPosition="62" endLine="25" endPosition="5" unitName="jetbrains.mps.ui.internal.testdata.plugin.EditorExtension_CustomApplicationPlugin$1" />
   </root>
 </debugInfo>
 

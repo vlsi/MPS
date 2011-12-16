@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.findusages.view.icons;
 
+import jetbrains.mps.ide.icons.IdeIcons;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -27,7 +29,7 @@ public class Icons {
   public static final Icon AUTOSCROLL_ICON = new ImageIcon(Icons.class.getResource("autoscrollToSource.png"));
   public static final Icon PREVIOUS_ICON = new ImageIcon(Icons.class.getResource("prev.png"));
   public static final Icon NEXT_ICON = new ImageIcon(Icons.class.getResource("next.png"));
-  public static final Icon CLOSE_ICON = new ImageIcon(Icons.class.getResource("close.png"));
+  public static final Icon CLOSE_ICON = IdeIcons.CLOSE_ICON;
 
   public static final Icon NUM_ICON = new ImageIcon(Icons.class.getResource("showNumber.png"));
   public static final Icon INFO_ICON = new ImageIcon(Icons.class.getResource("showInfo.png"));

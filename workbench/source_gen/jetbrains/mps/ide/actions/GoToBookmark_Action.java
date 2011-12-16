@@ -11,7 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
+import jetbrains.mps.ide.bookmark.BookmarkManager;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class GoToBookmark_Action extends GeneratedAction {

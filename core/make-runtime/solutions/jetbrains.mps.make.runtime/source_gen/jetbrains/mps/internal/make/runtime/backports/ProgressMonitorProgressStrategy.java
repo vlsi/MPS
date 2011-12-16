@@ -4,13 +4,19 @@ package jetbrains.mps.internal.make.runtime.backports;
 
 import jetbrains.mps.internal.make.runtime.script.AbstractProgressStrategy;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.DequeSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
   private static final String TOTAL = "__TOTAL__";
   private static final int MAXWORK = 10000;
 
   private ProgressMonitor monitor;
+  private Deque<Tuples._2<ProgressMonitor, AbstractProgressStrategy.Work>> monitorWorkStack = DequeSequence.fromDeque(new LinkedList<Tuples._2<ProgressMonitor, AbstractProgressStrategy.Work>>());
   private boolean isInitialized;
   private int done;
 
@@ -24,6 +30,7 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
       monitor :
       new EmptyProgressMonitor()
     );
+    DequeSequence.fromDeque(monitorWorkStack).clear();
     this.done = 0;
     this.isInitialized = false;
   }
@@ -37,35 +44,45 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
 
   public ProgressMonitor getProgressMonitor() {
     initializeIfNeeded();
-    return monitor;
+    return (DequeSequence.fromDeque(monitorWorkStack).isEmpty() ?
+      monitor :
+      DequeSequence.fromDeque(monitorWorkStack).peekElement()._0()
+    );
   }
 
   protected void begunWork(AbstractProgressStrategy.Work wrk) {
     initializeIfNeeded();
-    monitor.subTask(0).start(wrk.name(), 1);
+    ProgressMonitor submon;
+    if (DequeSequence.fromDeque(monitorWorkStack).isEmpty()) {
+      submon = monitor.subTask((int) Math.floor(wrk.prevWorkRatio() * MAXWORK));
+    } else {
+      submon = DequeSequence.fromDeque(monitorWorkStack).peekElement()._0().subTask(wrk.prevWork());
+    }
+    submon.start(wrk.name(), wrk.workLeft());
+    DequeSequence.fromDeque(monitorWorkStack).pushElement(MultiTuple.<ProgressMonitor,AbstractProgressStrategy.Work>from(submon, wrk));
   }
 
   protected void advancedWork(AbstractProgressStrategy.Work wrk) {
-    if (wrk == lastProgress()) {
-      initializeIfNeeded();
-      int newDone = (int) (wrk.matchingOrTotal(TOTAL).doneRatio() * MAXWORK);
-      if (newDone > MAXWORK) {
-        newDone = MAXWORK;
-      }
-      if (newDone > done) {
-        monitor.advance(newDone - done);
-        done = newDone;
-      }
-      String newText = (wrk.comment() != null ?
-        wrk.name() + " " + wrk.comment() :
-        wrk.name()
-      );
-      monitor.subTask(0).start(newText, 1);
+    initializeIfNeeded();
+    if (wrk == DequeSequence.fromDeque(monitorWorkStack).peekElement()._1()) {
+      ProgressMonitor mon = DequeSequence.fromDeque(monitorWorkStack).peekElement()._0();
+      mon.advance(wrk.workDone());
+      mon.step(wrk.comment());
     }
   }
 
   protected void finishedWork(AbstractProgressStrategy.Work wrk) {
     initializeIfNeeded();
-    monitor.advance(0);
+    popMatchingMonitor(wrk).done();
+  }
+
+  private ProgressMonitor popMatchingMonitor(AbstractProgressStrategy.Work work) {
+    while (DequeSequence.fromDeque(monitorWorkStack).isNotEmpty()) {
+      if (DequeSequence.fromDeque(monitorWorkStack).peekElement()._1() == work) {
+        return DequeSequence.fromDeque(monitorWorkStack).popElement()._0();
+      }
+      DequeSequence.fromDeque(monitorWorkStack).popElement()._0().done();
+    }
+    return monitor;
   }
 }

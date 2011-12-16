@@ -10,12 +10,13 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
 import java.io.IOException;
@@ -46,7 +47,7 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.NODE);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
       }
       MapSequence.fromMap(_params).put("node", node);
@@ -65,7 +66,7 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.concept");
       SNode concept = SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
-      ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).editNode(concept, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), concept, true, true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToConceptDeclaration", t);

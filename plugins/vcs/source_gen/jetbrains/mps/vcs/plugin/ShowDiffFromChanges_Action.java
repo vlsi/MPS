@@ -69,7 +69,7 @@ public class ShowDiffFromChanges_Action extends GeneratedAction {
           final SModel model = editedNode.getModel();
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
-              VcsActionsHelper.showRootDifference((EditableSModelDescriptor) model.getModelDescriptor(), editedNode, ((Project) MapSequence.fromMap(_params).get("project")), bounds);
+              VcsActionsUtil.showRootDifference((EditableSModelDescriptor) model.getModelDescriptor(), editedNode, ((Project) MapSequence.fromMap(_params).get("project")), bounds);
             }
           });
         }

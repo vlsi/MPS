@@ -8,8 +8,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -23,11 +24,9 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.PasteEnv;
-import jetbrains.mps.ide.resolve.Resolver;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
@@ -45,7 +44,7 @@ public class PasteNode_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModelDescriptor && PasteNode_Action.this.canPasteNodes(_params);
+    return ((Editor) MapSequence.fromMap(_params).get("editor")).getCurrentEditorComponent().getEditorComponent().isFocusOwner() && ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModelDescriptor && PasteNode_Action.this.canPasteNodes(_params);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -66,8 +65,13 @@ public class PasteNode_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    MapSequence.fromMap(_params).put("editor", event.getData(MPSDataKeys.MPS_EDITOR));
+    if (MapSequence.fromMap(_params).get("editor") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("pack", event.getData(MPSDataKeys.VIRTUAL_PACKAGE));
@@ -86,17 +90,17 @@ public class PasteNode_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData(_params);
-      boolean successfull = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-      if (!(successfull)) {
-        return;
-      }
+      final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       final List<SNode> pasteNodes = pasteNodeData.getNodes();
       final Set<SReference> refsToResolve = pasteNodeData.getRequireResolveReferences();
       if (pasteNodes == null || pasteNodes.size() == 0) {
         return;
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
+          if (addImportsRunnable != null) {
+            addImportsRunnable.run();
+          }
           if (((SNode) MapSequence.fromMap(_params).get("node")) == null) {
             NodePaster paster = new NodePaster(pasteNodes);
             if (!(paster.canPasteAsRoots())) {
@@ -112,16 +116,16 @@ public class PasteNode_Action extends GeneratedAction {
           }
           Resolver.resolveReferences(refsToResolve, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
           // make sure editor will be open 
-          SNode root = pasteNodes.get(0).getContainingRoot();
+          final SNode root = pasteNodes.get(0).getContainingRoot();
           assert root != null;
-          ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).editNode(root, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          SwingUtilities.invokeLater(new Runnable() {
+          ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
-              ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectNode(pasteNodes.get(0), false);
+              NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, true, true);
+              NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, false);
             }
           });
         }
-      });
+      }, ((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "PasteNode", t);

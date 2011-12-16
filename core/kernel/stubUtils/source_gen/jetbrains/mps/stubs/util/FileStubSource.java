@@ -11,9 +11,9 @@ import java.util.Collections;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -57,7 +57,7 @@ public class FileStubSource extends FileBasedModelDataSource {
     return result;
   }
 
-  public BaseSModelDescriptor.ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
+  public ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(myFile);
     new ProjectStructureBuilder(moduleDesc, myFile, model) {
@@ -73,7 +73,7 @@ public class FileStubSource extends FileBasedModelDataSource {
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86ef8290-12bb-4ca7-947f-093788f263a9")).getModuleReference();
     model.addLanguage(lang);
     module.addUsedLanguage(lang);
-    return new BaseSModelDescriptor.ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 
   public boolean saveModel(SModelDescriptor descriptor) {

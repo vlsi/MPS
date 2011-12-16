@@ -23,13 +23,15 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.NodeEditor;
+import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.ide.editor.EditorOpenHandler;
+import jetbrains.mps.ide.editor.NodeEditor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
@@ -42,10 +44,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.workbench.editors.MPSEditorOpenHandler;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
-import jetbrains.mps.workbench.highlighter.EditorsHelper;
+import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -64,7 +63,7 @@ import java.util.*;
 public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
   private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
 
-  private MPSEditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
+  private EditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
 
   private final Object myPluginsLock = new Object();
   private List<BaseProjectPlugin> mySortedPlugins = new ArrayList<BaseProjectPlugin>();
@@ -74,13 +73,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private FileEditorManager myManager;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker, FileEditorManager manager, MPSEditorOpener editorOpener) {
+  public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker, FileEditorManager manager) {
     myProject = project;
     myManager = manager;
   }
 
   public void projectOpened() {
-
   }
 
   public void projectClosed() {
@@ -187,7 +185,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     myLoaded = false;
   }
 
-  public MPSEditorOpenHandler getEditorOpenHandler() {
+  public EditorOpenHandler getEditorOpenHandler() {
     return myTabsHandler;
   }
 
@@ -275,7 +273,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     });
   }
 
-  private class TabsMPSEditorOpenHandler implements MPSEditorOpenHandler {
+  private class TabsMPSEditorOpenHandler implements EditorOpenHandler {
     public SNode getBaseNode(IOperationContext context, SNode node) {
       for (EditorTabDescriptor d : getTabDescriptors()) {
         SNode baseNode = d.getBaseNode(node);
@@ -296,7 +294,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       return false;
     }
 
-    public IEditor open(IOperationContext context, final SNode node) {
+    public Editor open(IOperationContext context, final SNode node) {
       Set<EditorTabDescriptor> tabs = new HashSet<EditorTabDescriptor>();
 
       for (EditorTabDescriptor d : getTabDescriptors()) {

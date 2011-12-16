@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.IVariableReference_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -39,7 +40,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3391577739833458953(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "name");
+    return SPropertyOperations.getString(IVariableReference_Behavior.call_getVariable_1023687332192481693(_context.getNode()), "name");
   }
 
   public static Object referenceMacro_GetReferent_5665267283159127972(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -103,7 +104,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_3391577739833431906(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{});
+    return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.IVariableReference", false, new String[]{});
   }
 
   public static Iterable sourceNodesQuery_5837079428841717746(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -118,7 +119,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_3391577739833596041(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{});
+    return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.IVariableReference", false, new String[]{});
   }
 
   public static Iterable sourceNodesQuery_4741735385321357379(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

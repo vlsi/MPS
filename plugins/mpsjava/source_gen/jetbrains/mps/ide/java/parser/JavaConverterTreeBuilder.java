@@ -18,8 +18,10 @@ import org.eclipse.jdt.internal.compiler.ast.Expression;
 import org.eclipse.jdt.internal.compiler.ast.Literal;
 import org.eclipse.jdt.internal.compiler.impl.Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.eclipse.jdt.internal.compiler.ast.ASTNode;
+import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.util.NameUtil;
+import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
 import java.lang.reflect.Method;
@@ -28,7 +30,6 @@ import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.eclipse.jdt.internal.compiler.impl.ByteConstant;
 import org.eclipse.jdt.internal.compiler.impl.CharConstant;
-import jetbrains.mps.util.NameUtil;
 import org.eclipse.jdt.internal.compiler.impl.DoubleConstant;
 import org.eclipse.jdt.internal.compiler.impl.FloatConstant;
 import org.eclipse.jdt.internal.compiler.impl.IntConstant;
@@ -55,7 +56,6 @@ import org.eclipse.jdt.internal.compiler.ast.PostfixExpression;
 import org.eclipse.jdt.internal.compiler.ast.PrefixExpression;
 import org.eclipse.jdt.internal.compiler.ast.CastExpression;
 import org.eclipse.jdt.internal.compiler.ast.NameReference;
-import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
 import org.eclipse.jdt.internal.compiler.ast.SuperReference;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.eclipse.jdt.internal.compiler.ast.NormalAnnotation;
@@ -144,8 +144,15 @@ public class JavaConverterTreeBuilder {
 
   public SNode processExpressionRefl(Expression expression) {
     SNode result = null;
-    if (expression instanceof Literal && expression.constant != null && expression.constant != Constant.NotAConstant) {
-      result = SNodeOperations.cast(dispatchRefl("processConstant", expression.constant), "jetbrains.mps.baseLanguage.structure.Expression");
+    if (expression instanceof Literal && expression.constant != null) {
+      if (expression.constant != Constant.NotAConstant) {
+        result = SNodeOperations.cast(dispatchRefl("processConstant", expression.constant), "jetbrains.mps.baseLanguage.structure.Expression");
+      } else if (expression instanceof NullLiteral) {
+        result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.NullLiteral", null);
+      } else {
+        // import token as string constant even if it was an error in literal 
+        result = new JavaConverterTreeBuilder.QuotationClass_m30mvz_a0a1a0a0b0a().createNode(NameUtil.escapeString(new String(((Literal) expression).source())));
+      }
     }
     if ((result == null)) {
       result = SNodeOperations.cast(dispatchRefl("processExpression", expression), "jetbrains.mps.baseLanguage.structure.Expression");
@@ -1210,6 +1217,10 @@ public class JavaConverterTreeBuilder {
       SNode currentSwitchCase = null;
       for (Statement stmt : x.statements) {
         if (stmt instanceof CaseStatement) {
+          // advance end of previous case block 
+          if ((currentSwitchCase != null)) {
+            getBlock(currentSwitchCase)._3(stmt.sourceStart);
+          }
           CaseStatement caseStatement = (CaseStatement) stmt;
           if (caseStatement.constantExpression == null) {
             currentSwitchCase = SLinkOperations.getTarget(result, "defaultBlock", true);
@@ -1225,8 +1236,14 @@ public class JavaConverterTreeBuilder {
           }
         } else
         if ((currentSwitchCase != null)) {
+          // advance end of case block 
+          getBlock(currentSwitchCase)._3(stmt.sourceEnd);
           ListSequence.fromList(SLinkOperations.getTargets(currentSwitchCase, "statement", true)).addElement(processStatementRefl(stmt));
         }
+      }
+      // adjust end of last case block up to the end of switch statement 
+      if ((currentSwitchCase != null)) {
+        getBlock(currentSwitchCase)._3(x.sourceEnd);
       }
     }
     return result;
@@ -1410,6 +1427,9 @@ public class JavaConverterTreeBuilder {
         throw new JavaConverterException("Native methods not supported");
       }
       myCurrentMethod = method;
+      if (b.isSynchronized()) {
+        SPropertyOperations.set(method, "isSynchronized", "" + true);
+      }
       SNode methodBody = SLinkOperations.getTarget(method, "body", true);
       if ((methodBody == null)) {
         methodBody = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
@@ -1695,6 +1715,24 @@ public class JavaConverterTreeBuilder {
       }
     }
     return result;
+  }
+
+  public static class QuotationClass_m30mvz_a0a1a0a0b0a {
+    public QuotationClass_m30mvz_a0a1a0a0b0a() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setProperty("value", (String) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 
   public static class QuotationClass_m30mvz_a0c0b0nb {

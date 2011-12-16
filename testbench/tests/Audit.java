@@ -20,6 +20,7 @@ import jetbrains.mps.testbench.CheckProjectStructureHelper.Token;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
+import jetbrains.mps.typesystem.MPSTypesystem;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.junit.AfterClass;
@@ -78,7 +79,6 @@ public class Audit {
     for (ModuleHandle moduleHandle : moduleHandles) {
       files.add(moduleHandle.getFile());
     }
-
     HELPER.load(files);
   }
 

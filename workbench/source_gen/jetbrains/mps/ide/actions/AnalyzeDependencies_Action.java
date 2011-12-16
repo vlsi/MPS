@@ -20,10 +20,13 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class AnalyzeDependencies_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(AnalyzeDependencies_Action.class);
 
   public AnalyzeDependencies_Action() {
@@ -85,6 +88,17 @@ public class AnalyzeDependencies_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AnalyzeDependencies", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(AnalyzeDependencies_Action.class.getResourceAsStream("inspector.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for AnalyzeDependencies", e);
+      }
+      return null;
     }
   }
 

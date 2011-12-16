@@ -20,6 +20,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.SNodeId;
 import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -63,6 +66,17 @@ public class DiffEditor implements EditorMessageOwner {
     myTopComponent.add(title, BorderLayout.NORTH);
     myTopComponent.add(myMainEditorComponent.getExternalComponent(), BorderLayout.CENTER);
     myTopComponent.setPreferredSize(new Dimension());
+  }
+
+  public SNode getEditedNode() {
+    return getMainEditor().getEditedNode();
+  }
+
+  public void editRoot(@NotNull Project project, @NotNull SNodeId rootId, @NotNull SModel model) {
+    SNode root = model.getNodeById(rootId);
+    if (root != null && SNodeOperations.getParent(root) == null) {
+      getMainEditor().editNode(root, DiffTemporaryModule.getOperationContext(project, model));
+    }
   }
 
   public void inspect(SNode node) {

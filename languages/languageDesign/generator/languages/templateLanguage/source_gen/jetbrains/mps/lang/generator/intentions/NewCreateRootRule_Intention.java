@@ -19,7 +19,7 @@ import jetbrains.mps.util.Comparing;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 
 public class NewCreateRootRule_Intention extends BaseIntention implements Intention {
   public NewCreateRootRule_Intention() {
@@ -98,8 +98,7 @@ public class NewCreateRootRule_Intention extends BaseIntention implements Intent
     SNode rule = SNodeFactoryOperations.addNewChild(ListSequence.fromList(configs).first(), "createRootRule", "jetbrains.mps.lang.generator.structure.CreateRootRule");
     SLinkOperations.setTarget(rule, "templateNode", node, false);
     //  open in editor 
-    MPSEditorOpener opener = editorContext.getOperationContext().getComponent(MPSEditorOpener.class);
-    opener.editNode(rule, editorContext.getOperationContext());
+    NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), rule, true, true);
   }
 
   public String getLocationString() {

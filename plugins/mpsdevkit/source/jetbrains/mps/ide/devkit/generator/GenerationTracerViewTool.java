@@ -29,10 +29,10 @@ import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.tools.BaseProjectTool;
+import jetbrains.mps.ide.tools.CloseAction;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
-import jetbrains.mps.workbench.tools.CloseAction;
 
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;

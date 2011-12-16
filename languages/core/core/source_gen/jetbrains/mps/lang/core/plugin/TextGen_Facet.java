@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
+import jetbrains.mps.make.facet.ITargetEx;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.IGResource;
 import jetbrains.mps.make.script.IJob;
@@ -82,7 +83,7 @@ public class TextGen_Facet extends IFacet.Stub {
     return new TextGen_Facet.TargetProperties();
   }
 
-  public static class Target_textGen implements ITarget {
+  public static class Target_textGen implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IGResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -100,7 +101,7 @@ public class TextGen_Facet extends IFacet.Stub {
               monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (IResource resource : Sequence.fromIterable(input)) {
                 final GResource gres = (GResource) resource;
-                monitor.currentProgress().advanceWork("Writing", 50, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
+                monitor.currentProgress().advanceWork("Writing", 100, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
                 if (!(gres.status().isOk())) {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generation was not OK")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
@@ -181,7 +182,6 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
-                monitor.currentProgress().advanceWork("Writing", 50);
                 _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), Sequence.fromIterable(javaStreamHandler.delta()).concat(Sequence.fromIterable(retainedFilesDelta)).concat(Sequence.fromIterable(retainedCachesDelta)), gres.model()))));
               }
               monitor.currentProgress().finishWork("Writing");
@@ -214,6 +214,10 @@ public class TextGen_Facet extends IFacet.Stub {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean isOptional() {
+      return false;
     }
 
     public boolean requiresInput() {
@@ -276,7 +280,7 @@ public class TextGen_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_textGenToMemory implements ITarget {
+  public static class Target_textGenToMemory implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IGResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -299,11 +303,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
                     sModel.value = gres.status().getOutputModel();
-                    for (SNode root : Sequence.fromIterable(sModel.value.roots()).where(new IWhereFilter<SNode>() {
-                      public boolean accept(SNode rt) {
-                        return rt.getName() != null;
-                      }
-                    })) {
+                    for (SNode root : sModel.value.roots()) {
                       TextGenerationResult tgr = TextGenerationUtil.generateText(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), root);
                       errors.value |= tgr.hasErrors();
                       if (errors.value) {
@@ -318,6 +318,10 @@ public class TextGen_Facet extends IFacet.Stub {
                         root.getName() + "." + ext :
                         root.getName()
                       ));
+                      if (fname == null) {
+                        fname = "<null> [" + root.getSNodeId() + "]";
+                        monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("No file name for the root node [" + root.getSNodeId() + "]")));
+                      }
                       MapSequence.fromMap(texts).put(fname, tgr.getResult());
                     }
                   }
@@ -356,6 +360,10 @@ public class TextGen_Facet extends IFacet.Stub {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean isOptional() {
+      return false;
     }
 
     public boolean requiresInput() {

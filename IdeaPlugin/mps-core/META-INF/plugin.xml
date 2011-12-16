@@ -22,24 +22,30 @@
 
     <application-components>
         <component>
-          <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
+            <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
+        </component>
+        <component>
+            <implementation-class>jetbrains.mps.idea.core.make.NoMakeService</implementation-class>
+        </component>
+        <component>
+          <interface-class>jetbrains.mps.ide.navigation.NavigationSupport</interface-class>
+          <implementation-class>jetbrains.mps.idea.core.navigation.NavigationSupportImpl</implementation-class>
         </component>
     </application-components>
 
     <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
+    <xi:include href="../classes/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
 
     <project-components>
-      <component>
-        <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
-      </component>
+        <component>
+            <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
+        </component>
+        <component>
+            <implementation-class>jetbrains.mps.idea.core.make.MPSCompilerComponent</implementation-class>
+        </component>
     </project-components>
 
-    <extensionPoints>
-        <xi:include href="../classes/META-INF/MPSCoreExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
-    </extensionPoints>
-
     <extensions defaultExtensionNs="com.intellij">
-        <xi:include href="../classes/META-INF/MPSCorePlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
         <facetType implementation="jetbrains.mps.idea.core.facet.MPSFacetType"/>
         <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFacetTypeFrameworkSupportProvider"/>
         <mps.LanguageLibrary dir="/languages"/>
@@ -52,6 +58,14 @@
                 class="jetbrains.mps.idea.core.actions.TestRepository"
                 description="Test MPS model repository">
             <add-to-group group-id="ToolsMenu" relative-to-action="GenerateJavadoc" anchor="after"/>
+        </action>
+        <action id="jetbrains.mps.idea.core.actions.MarkModelRootAction"
+                class="jetbrains.mps.idea.core.actions.MarkModelRootAction">
+            <add-to-group group-id="MarkRootGroup"/>
+        </action>
+        <action id="jetbrains.mps.idea.core.actions.UnmarkModelRootAction"
+                class="jetbrains.mps.idea.core.actions.UnmarkModelRootAction">
+            <add-to-group group-id="MarkRootGroup"/>
         </action>
     </actions>
 </idea-plugin>

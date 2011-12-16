@@ -12,7 +12,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS-platform" />
-    <orderEntry type="module" module-name="idea-workbench" />
+    <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="uiTests" scope="TEST" />
@@ -28,10 +28,12 @@
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="typesystemIntegration" />
+    <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Commons-logging" level="project" />
+    <orderEntry type="library" name="Commons-lang" level="project" />
   </component>
 </module>
 

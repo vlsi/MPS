@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.resources.IResource;
@@ -22,7 +23,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.make.facet.ITargetEx;
 import jetbrains.mps.make.script.IFeedback;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.smodel.TimeOutRuntimeException;
 import jetbrains.mps.make.script.IConfigMonitor;
@@ -65,15 +68,12 @@ public class Script implements IScript {
   public void validate() {
     ListSequence.fromList(errors).clear();
     if (startingTarget != null && !(targetRange.hasTarget(startingTarget))) {
-      LOG.error("unknown starting target: " + startingTarget);
       error(startingTarget, "unknown starting target: " + startingTarget);
     }
     if (!(targetRange.hasTarget(finalTarget))) {
-      LOG.error("unknown final target: " + finalTarget);
       error(finalTarget, "unknown final target: " + finalTarget);
     }
     if (targetRange.hasCycles()) {
-      LOG.error("cycle(s) detected: " + targetRange.cycles());
       error(this, "cycle(s) detected: " + targetRange.cycles());
     }
     if (startingTarget != null && !(Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).select(new ISelector<ITarget, ITarget.Name>() {
@@ -81,7 +81,6 @@ public class Script implements IScript {
         return t.getName();
       }
     }).contains(startingTarget))) {
-      LOG.error("invalid starting target: " + startingTarget);
       error(this, "invalid starting target: " + startingTarget);
     }
     validated = true;
@@ -93,6 +92,10 @@ public class Script implements IScript {
 
   public boolean isValid() {
     return validated && ListSequence.fromList(errors).isEmpty();
+  }
+
+  public Iterable<IMessage> validationErrors() {
+    return ListSequence.fromList(errors).ofType(IMessage.class);
   }
 
   public Iterable<ITarget> allTargets() {
@@ -118,7 +121,13 @@ public class Script implements IScript {
     return trg;
   }
 
+  @Override
+  public String toString() {
+    return "Script<" + finalTarget + ">";
+  }
+
   private void error(Object o, String message) {
+    LOG.debug(message);
     ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 
@@ -227,7 +236,7 @@ __switch__:
   private void executeTargets(IScriptController ctl, final Iterable<ITarget> toExecute, final Iterable<? extends IResource> scriptInput, final Script.ParametersPool pool, final CompositeResult results) {
     ctl.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
       public void invoke(final IJobMonitor monit) {
-        String scriptName = "Script";
+        String scriptName = "__script__";
         int work = Sequence.fromIterable(toExecute).foldLeft(0, new ILeftCombinator<ITarget, Integer>() {
           public Integer combine(Integer s, ITarget it) {
             return s + ((it.requiresInput() || it.producesOutput() ?
@@ -238,6 +247,7 @@ __switch__:
         });
         monit.currentProgress().beginWork(scriptName, work, monit.currentProgress().workLeft());
 
+with_targets:
         for (final ITarget trg : Sequence.fromIterable(toExecute)) {
           LOG.debug("Executing " + trg.getName());
           try {
@@ -269,14 +279,21 @@ __switch__:
 
             if (trg.requiresInput()) {
               if (Sequence.fromIterable(input).isEmpty()) {
-                LOG.debug("No input. Stopping");
-                monit.reportFeedback(new IFeedback.ERROR("Error executing target " + trg.getName() + " : no input. Stopping"));
-                results.addResult(trg.getName(), new IResult.FAILURE(null));
-                return;
+                if (trg instanceof ITargetEx && ((ITargetEx) trg).isOptional()) {
+                  LOG.info("No input. Skipping optional target.");
+                  results.addResult(trg.getName(), new IResult.SUCCESS(null));
+                  continue with_targets;
+                } else {
+                  LOG.debug("No input. Stopping");
+                  monit.reportFeedback(new IFeedback.ERROR("Error executing target " + trg.getName() + " : no input. Stopping"));
+                  results.addResult(trg.getName(), new IResult.FAILURE(null));
+                  return;
+                }
               }
             }
 
-            monit.currentProgress().beginWork(trg.getName().toString(), 1000, (trg.requiresInput() || trg.producesOutput() ?
+            String workName = "__" + StringUtils.trim(trg.getName().toString()) + "__";
+            monit.currentProgress().beginWork(workName, 1000, (trg.requiresInput() || trg.producesOutput() ?
               1000 :
               10
             ));
@@ -308,7 +325,7 @@ __switch__:
               return;
             }
 
-            monit.currentProgress().finishWork(trg.getName().toString());
+            monit.currentProgress().finishWork(workName);
           } catch (TimeOutRuntimeException to) {
             LOG.debug("Timeout executing target " + trg.getName(), to);
             monit.reportFeedback(new IFeedback.ERROR("Target execution aborted " + trg.getName(), to));

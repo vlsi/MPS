@@ -1,0 +1,62 @@
+<components>
+  <actions>
+    <group id="MPS.MessagesView" popup="false"></group>
+  </actions>
+
+  <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.ide.project.WorkbenchPathMacros</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.undo.OnReloadingUndoCleaner</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.fileTypes.MPSFileTypesManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.findusages.FastFindUsagesManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.library.contributor.PluginLibrariesContributor</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.IdeaModelFileWatcherInitializer</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.messages.navigation.NavigationManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.save.ModelsSaver</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.tooltips.MPSToolTipManager</implementation-class>
+    </component>
+  </application-components>
+
+  <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.ide.messages.MessagesViewTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+  </project-components>
+
+  <extensionPoints>
+    <extensionPoint qualifiedName="com.intellij.mps.LanguageLibrary" beanClass="jetbrains.mps.LanguageLibrary"/>
+  </extensionPoints>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileTypeFactory implementation="jetbrains.mps.fileTypes.MPSFileTypeFactory"/>
+  </extensions>
+</components>

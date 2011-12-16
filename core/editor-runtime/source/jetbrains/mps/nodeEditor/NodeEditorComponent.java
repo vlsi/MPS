@@ -20,6 +20,7 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -29,7 +30,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
 
 import java.awt.event.HierarchyEvent;
 import java.awt.event.HierarchyListener;
@@ -110,7 +110,7 @@ public class NodeEditorComponent extends EditorComponent {
     myLastInspectedNode = toSelect;
     if (getInspector() == null) return;
 
-    FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(this).getData(MPSDataKeys.FILE_EDITOR.getName());
+    FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(this).getData(MPSCommonDataKeys.FILE_EDITOR.getName());
     getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor);
   }
 

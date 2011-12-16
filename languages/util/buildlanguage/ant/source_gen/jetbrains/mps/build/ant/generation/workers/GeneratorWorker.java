@@ -7,7 +7,7 @@ import jetbrains.mps.build.ant.WhatToDo;
 import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.build.ant.generation.GenerateTask;
-import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -17,28 +17,33 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.build.ant.util.ThreadUtils;
 import java.util.concurrent.ExecutionException;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
+import java.util.Map;
+import java.io.File;
+import java.util.List;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.build.ant.FileMPSProject;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.make.ModuleMaker;
+import java.util.HashSet;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.Collections;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.resources.IResource;
-import java.io.File;
 import jetbrains.mps.messages.IMessageHandler;
-import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.messages.IMessage;
 import java.util.Set;
-import java.util.HashSet;
-import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -47,6 +52,7 @@ import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 
 public class GeneratorWorker extends MpsWorker {
   private final GeneratorWorker.MyMessageHandler myMessageHandler = new GeneratorWorker.MyMessageHandler();
+  private boolean myTestFailed = false;
 
   public GeneratorWorker(WhatToDo whatToDo) {
     super(whatToDo);
@@ -70,12 +76,12 @@ public class GeneratorWorker extends MpsWorker {
 
   private void setGenerationProperties() {
     boolean strictMode = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.STRICT_MODE));
-    GenerationSettings.getInstance().setStrictMode(strictMode);
+    GenerationSettingsProvider.getInstance().getGenerationSettings().setStrictMode(strictMode);
     if (strictMode) {
       boolean parallelMode = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.PARALLEL_MODE));
-      GenerationSettings.getInstance().setParallelGenerator(parallelMode);
+      GenerationSettingsProvider.getInstance().getGenerationSettings().setParallelGenerator(parallelMode);
       if (parallelMode) {
-        GenerationSettings.getInstance().setNumberOfParallelThreads(8);
+        GenerationSettingsProvider.getInstance().getGenerationSettings().setNumberOfParallelThreads(8);
       }
       info("Generating in strict mode, parallel generation = " + ((parallelMode ?
         "on" :
@@ -123,10 +129,61 @@ public class GeneratorWorker extends MpsWorker {
       myErrors.add(e.toString());
     }
     ModelAccess.instance().flushEventQueue();
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
+  }
+
+  public void work() {
+    setupEnvironment();
+    boolean doneSomething = false;
+    //  for each project 
+    Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
+    for (File file : mpsProjects.keySet()) {
+      if (!(file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
+        continue;
       }
-    }, ModalityState.defaultModalityState());
+
+      FileMPSProject p = new FileMPSProject(file);
+      p.init(new FileMPSProject.ProjectDescriptor(file));
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().updateClassPath();
+          new ModuleMaker().make(new HashSet(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
+        }
+      });
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+        }
+      });
+      p.projectOpened();
+
+      info("Loaded project " + p);
+
+      executeTask(p, new MpsWorker.ObjectsToProcess(Collections.singleton(p), new HashSet<IModule>(), new HashSet<SModelDescriptor>()));
+
+      p.projectClosed();
+      disposeProject(p);
+      dispose();
+      doneSomething = true;
+    }
+
+    // the rest -- using dummy project 
+    LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
+    LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
+    collectFromModuleFiles(modules);
+    collectFromModelFiles(models);
+    MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, models);
+    if (go.hasAnythingToGenerate()) {
+      Project project = createDummyProject();
+      executeTask(project, go);
+      doneSomething = true;
+    }
+    if (!(doneSomething)) {
+      error("Could not find anything to generate.");
+      myTestFailed = true;
+    }
+
+    dispose();
+    showStatistic();
   }
 
   private Iterable<IModule> withGenerators(Iterable<IModule> modules) {

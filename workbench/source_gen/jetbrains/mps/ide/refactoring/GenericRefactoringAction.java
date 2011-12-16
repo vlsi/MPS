@@ -12,6 +12,7 @@ import java.util.Map;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -52,16 +53,16 @@ public class GenericRefactoringAction extends BaseAction {
     });
     boolean isOneTarget = !(myRefactoring.getRefactoringTarget().allowMultipleTargets());
     final RefactoringContext context = new RefactoringContext(myRefactoring);
-    context.setCurrentOperationContext(e.getData(MPSDataKeys.OPERATION_CONTEXT));
-    context.setSelectedNode(e.getData(MPSDataKeys.NODE));
+    context.setCurrentOperationContext(e.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
+    context.setSelectedNode(e.getData(MPSCommonDataKeys.NODE));
     context.setSelectedNodes(getNodes(e, isOneTarget));
-    context.setSelectedModel(e.getData(MPSDataKeys.CONTEXT_MODEL));
+    context.setSelectedModel(e.getData(MPSCommonDataKeys.CONTEXT_MODEL));
     context.setSelectedModels(getModels(e, isOneTarget));
     context.setSelectedModule(e.getData(MPSDataKeys.MODULE));
     context.setSelectedModules(getModules(e, isOneTarget));
     // noinspection ConstantConditions 
     context.setSelectedProject(ProjectHelper.toMPSProject(e.getData(PlatformDataKeys.PROJECT)));
-    context.setCurrentScope(e.getData(MPSDataKeys.SCOPE));
+    context.setCurrentScope(e.getData(MPSCommonDataKeys.SCOPE));
     new Thread() {
       public void run() {
         new RefactoringFacade().execute(myRefactoring, context);
@@ -100,12 +101,12 @@ public class GenericRefactoringAction extends BaseAction {
 
   @NotNull
   private List<SNode> getNodes(AnActionEvent e, boolean oneEntity) {
-    return getEntities(e, oneEntity, MPSDataKeys.NODE, MPSDataKeys.NODES);
+    return getEntities(e, oneEntity, MPSCommonDataKeys.NODE, MPSCommonDataKeys.NODES);
   }
 
   @NotNull
   private List<SModelDescriptor> getModels(AnActionEvent e, boolean oneEntity) {
-    return getEntities(e, oneEntity, MPSDataKeys.CONTEXT_MODEL, MPSDataKeys.MODELS);
+    return getEntities(e, oneEntity, MPSCommonDataKeys.CONTEXT_MODEL, MPSCommonDataKeys.MODELS);
   }
 
   @NotNull

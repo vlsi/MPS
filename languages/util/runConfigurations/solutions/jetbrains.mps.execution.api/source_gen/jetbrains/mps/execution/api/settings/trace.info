@@ -151,7 +151,9 @@
     <scopeInfo nodeId="7850891982542471853" fileName="SettingsEditorPanel.java" startLine="72" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="7850891982542472769" fileName="SettingsEditorPanel.java" startLine="77" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="7850891982542473010" fileName="SettingsEditorPanel.java" startLine="109" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="7850891982542386442" fileName="SettingsEditorPanel.java" startLine="114" startPosition="0" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="7850891982542386442" fileName="SettingsEditorPanel.java" startLine="114" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="7850891982542386442" varName="checkedDotOperand" />
+    </scopeInfo>
     <scopeInfo nodeId="7850891982542472789" fileName="SettingsEditorPanel.java" startLine="83" startPosition="27" endLine="91" endPosition="5" />
     <scopeInfo nodeId="7850891982542472786" fileName="SettingsEditorPanel.java" startLine="82" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="7850891982542386447" fileName="SettingsEditorPanel.java" startLine="47" startPosition="78" endLine="61" endPosition="15" />
@@ -221,8 +223,12 @@
     <scopeInfo nodeId="8669494666333596384" fileName="SettingsEditorDialog.java" startLine="30" startPosition="41" endLine="31" endPosition="18" />
     <scopeInfo nodeId="8669494666333596485" fileName="SettingsEditorDialog.java" startLine="37" startPosition="41" endLine="38" endPosition="18" />
     <scopeInfo nodeId="8669494666333599568" fileName="SettingsEditorDialog.java" startLine="45" startPosition="25" endLine="47" endPosition="30" />
-    <scopeInfo nodeId="8669494666333596383" fileName="SettingsEditorDialog.java" startLine="29" startPosition="120" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="8669494666333596484" fileName="SettingsEditorDialog.java" startLine="36" startPosition="124" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="8669494666333596383" fileName="SettingsEditorDialog.java" startLine="29" startPosition="120" endLine="33" endPosition="0">
+      <varInfo nodeId="8669494666333596383" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="8669494666333596484" fileName="SettingsEditorDialog.java" startLine="36" startPosition="124" endLine="40" endPosition="0">
+      <varInfo nodeId="8669494666333596484" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="8669494666333581725" fileName="SettingsEditorDialog.java" startLine="18" startPosition="79" endLine="24" endPosition="54" />
     <scopeInfo nodeId="8669494666333599565" fileName="SettingsEditorDialog.java" startLine="43" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="8669494666333581722" fileName="SettingsEditorDialog.java" startLine="17" startPosition="0" endLine="25" endPosition="3">

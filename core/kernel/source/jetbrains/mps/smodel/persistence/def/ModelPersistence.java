@@ -19,8 +19,9 @@ import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
@@ -43,7 +44,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
 import java.io.*;
 import java.util.HashMap;
 import java.util.List;
@@ -129,9 +129,6 @@ public class ModelPersistence {
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
 
       loadDescriptor(result, source);
-    } catch (UnsupportedEncodingException e) {
-      LOG.error(e);
-      throw new ModelReadException("UTF-8 is unsupported", e);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read descriptor from " + file.getPath() + ": " + e.getMessage(), e);
     } finally {
@@ -203,9 +200,6 @@ public class ModelPersistence {
       in = file.openInputStream();
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
       return readModel(header, source, state);
-    } catch (UnsupportedEncodingException e) {
-      LOG.error(e);
-      throw new ModelReadException("UTF-8 is not supported", e, header);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(),  e, header);
     } finally {

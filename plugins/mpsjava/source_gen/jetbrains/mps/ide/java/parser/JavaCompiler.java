@@ -220,7 +220,7 @@ public class JavaCompiler {
   }
 
   public void addSource(String classFqName, String text) {
-    CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), classFqName.replace(".", File.separator) + MPSExtentions.DOT_JAVAFILE, "UTF-8");
+    CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), classFqName.replace(".", File.separator) + MPSExtentions.DOT_JAVAFILE, FileUtil.DEFAULT_CHARSET_NAME);
     myCompilationUnits.put(classFqName, compilationUnit);
   }
 
@@ -427,6 +427,8 @@ public class JavaCompiler {
             ListSequence.fromList(SLinkOperations.getTargets(commentLine, "commentPart", true)).addElement(commentText);
             ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).insertElement(pos++, commentLine);
           }
+        } else {
+          LOG.warning("cannot find a place to import comment from " + new String(cud.getMainTypeName()) + ":\n" + new String(content, linestart, Math.abs(comment[1]) - linestart));
         }
       }
     }

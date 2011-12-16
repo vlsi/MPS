@@ -14,7 +14,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import javax.swing.ImageIcon;
@@ -60,7 +59,7 @@ public class CopyNode_Action extends GeneratedAction {
       return false;
     }
     {
-      List<SNode> nodes = event.getData(MPSDataKeys.NODES);
+      List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
       boolean error = false;
       if (nodes != null) {
       }

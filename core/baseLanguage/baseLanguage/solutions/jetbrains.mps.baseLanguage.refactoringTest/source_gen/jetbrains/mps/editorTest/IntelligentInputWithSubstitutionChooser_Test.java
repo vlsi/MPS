@@ -6,13 +6,16 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
 public class IntelligentInputWithSubstitutionChooser_Test extends BaseTransformationTest {
+  public IntelligentInputWithSubstitutionChooser_Test() {
+  }
+
   @Test
   public void test_IntelligentInputWithSubstitutionChooser() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
@@ -21,10 +24,13 @@ public class IntelligentInputWithSubstitutionChooser_Test extends BaseTransforma
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
+    public TestBody() {
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("3294454325389407451", "3294454325389407455");
-      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      final Editor editor = TestBody.this.initEditor("3294454325389407451", "3294454325389407455");
+      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "C");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
       BaseEditorTestBody.typeString(editorComponent, "olor.BLACK");

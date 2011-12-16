@@ -5,17 +5,15 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 
 public class NodeNavigationItem {
   private SNode myNode;
   private IOperationContext myContext;
-  private Project myProject;
 
   public NodeNavigationItem(SNode node, IOperationContext context, Project project) {
     myNode = node;
     myContext = context;
-    myProject = project;
   }
 
   public SNode getNode() {
@@ -23,6 +21,6 @@ public class NodeNavigationItem {
   }
 
   public void navigate() {
-    new MPSEditorOpener(myProject).openNode(myNode, myContext, true, true);
+    NavigationSupport.getInstance().openNode(myContext, myNode, true, true);
   }
 }

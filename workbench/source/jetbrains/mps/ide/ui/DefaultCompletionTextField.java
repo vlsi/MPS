@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui;
 
-import jetbrains.mps.ide.ChooseItemComponent;
+import jetbrains.mps.util.PatternUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ public class DefaultCompletionTextField extends CompletionTextField {
 
   public List<String> getProposals(String text) {
     List<String> result = new ArrayList<String>();
-    Pattern pattern = Pattern.compile(ChooseItemComponent.getExactItemPatternBuilder(text, true) + ".*");
+    Pattern pattern = Pattern.compile(PatternUtil.getExactItemPatternBuilder(text, true) + ".*");
     for (String possibleValue : myPossibleValues) {
       if (pattern.matcher(possibleValue).matches()) {
         result.add(possibleValue);

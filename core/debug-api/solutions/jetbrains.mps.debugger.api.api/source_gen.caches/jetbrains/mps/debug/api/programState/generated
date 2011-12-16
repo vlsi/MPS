@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-sz7dxqmg6pftkynuyhhdl91s9cegqt">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="c8w34ecdfwjr8bgl4l1u8jgdbwvii8c" />
+<dependencies version="2" modelHash="-3y498ck8891q2u2qs15nps65gc71lo3">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8v4hxza7bmp1nvq5u0wr3wgsvpu2yde" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="4592mc0c92ee86m4hdnk27h6ntxlxqu" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
-  <common hash="-4qnjkn69ume3bieleqoknx5itkpnen4" />
+  <common hash="2esde3plo2wvsomzxubn0zxeh5d45lj" />
   <source id="4474271214082913243" name="IThread" hash="dmwv2sx8be420iqiseh0tngler67ykl">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IThread.java" />
   </source>
-  <source id="4474271214082913347" name="NullLocation" hash="-6rdvhozvjcezk6uu7nqdustlad3blwh">
+  <source id="4474271214082913347" name="NullLocation" hash="-enux72mfyo9sfk0wqf5jgwi16aqqnji">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NullLocation.java" />
   </source>
-  <source id="4474271214082913394" name="WatchablesCategory" hash="-7tshzl3crlu1dt7t1hg11a5ygh4ev2q">
+  <source id="4474271214082913394" name="WatchablesCategory" hash="78qqoj8cigtar96cw8yjkf6d2om5e3k">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -23,20 +24,22 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="WatchablesCategory.java" />
   </source>
-  <source id="4474271214082914121" name="IStackFrame" hash="c12jzo8cxgzvlw79vmeg1ti8ivfmtu6">
+  <source id="4474271214082914121" name="IStackFrame" hash="-eqpw2dyffwzceqh7khq7mgf6wyjt6o2">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IStackFrame.java" />
   </source>
-  <source id="4474271214082914148" name="ILocation" hash="6eybpp2stjlzqgrudvmyy2nqybg7j59">
+  <source id="4474271214082914148" name="ILocation" hash="47nvl63pgpbzqvicttvg9wqxsegyq1s">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ILocation.java" />
   </source>
-  <source id="4474271214082915199" name="IValue" hash="1qr6i0mu0jvv4k45kqo6elsgdbnwpz2">
+  <source id="4474271214082915199" name="IValue" hash="-9ll3yqg7xykackhb723ih1rcbqijifa">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="IValue.java" />
   </source>
-  <source id="4474271214082916598" name="IWatchable" hash="-au409htov4b8lxfwh8j4ukuq9scr3ls">
+  <source id="4474271214082916598" name="IWatchable" hash="bgucdvhsru3wfw19on7f3j7a6yr6j9n">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IWatchable.java" />
   </source>

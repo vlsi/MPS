@@ -63,6 +63,7 @@
   <xi:include href="/componentSets/VCS.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/META-INF/MPSDebuggerComponents.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
@@ -97,15 +98,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.smodel.ModelValidationSettings</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.intentions.IntentionsManager</implementation-class>
     </component>
 
     <component>
@@ -113,24 +106,8 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.nodeEditor.CaretBlinker</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.ide.MPSAdapter</implementation-class>
-    </component>
-
-    <component>
       <interface-class>jetbrains.mps.ide.navigation.NavigationSupport</interface-class>
       <implementation-class>jetbrains.mps.ide.navigation.NavigationSupportImpl</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.nodeEditor.EditorSettings</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.editor.runtime.impl.EditorsFinderManager</implementation-class>
     </component>
 
     <component>
@@ -140,10 +117,6 @@
     <component>
       <implementation-class>jetbrains.mps.workbench.languagesFs.MPSLanguagesVirtualFileSystem
       </implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.workbench.editors.MPSFileNodeEditorProvider</implementation-class>
     </component>
 
     <component>
@@ -176,10 +149,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.tooltips.MPSToolTipManager</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ide.project.listener.AbstractModuleWorkbenchAdjuster</implementation-class>
     </component>
 
@@ -199,6 +168,13 @@
       <implementation-class>jetbrains.mps.workbench.make.GeneratedTextPreviewEditorProvider</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.plugins.projectplugins.EditorOpenHandlerImpl</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.workbench.structureview.NodeStructureViewProviderImpl</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -209,10 +185,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.ide.generator.TransientModelsComponent</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.workbench.structureview.StructureViewBuilderFactory</implementation-class>
     </component>
 
     <component>
@@ -285,7 +257,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.nodeEditor.bookmark.BookmarksTool</implementation-class>
+      <implementation-class>jetbrains.mps.ide.bookmark.BookmarksTool</implementation-class>
       <skipForDummyProject/>
     </component>
 
@@ -304,11 +276,12 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.editors.MPSEditorOpener</implementation-class>
+      <implementation-class>jetbrains.mps.ide.bookmark.BookmarkManager</implementation-class>
+      <skipForDummyProject/>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.nodeEditor.bookmark.BookmarkManager</implementation-class>
+      <implementation-class>jetbrains.mps.ide.bookmark.BookmarksUIComponent</implementation-class>
       <skipForDummyProject/>
     </component>
 
@@ -329,14 +302,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.nodeEditor.Highlighter</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.nodeEditor.EditorManager</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.plugins.projectplugins.ProjectPluginManager</implementation-class>
     </component>
 
@@ -346,7 +311,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.editors.MPSEditorWarningsManager</implementation-class>
+      <implementation-class>jetbrains.mps.ide.editor.warningPanel.MPSEditorWarningsManager</implementation-class>
     </component>
 
     <component>
@@ -356,22 +321,6 @@
     <component>
       <implementation-class>jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool
       </implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.ide.dependency.DependencyViewer</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.nodeEditor.cellExplorer.CellExplorerView</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.ide.search.SearchHistoryComponent</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.nodeEditor.InspectorTool</implementation-class>
     </component>
 
     <component>

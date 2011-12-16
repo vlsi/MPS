@@ -16,13 +16,21 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
+import java.util.List;
+import jetbrains.mps.util.Mapper;
+import jetbrains.mps.traceInfo.DebugInfoRoot;
+import java.util.Set;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.ArrayList;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
+import jetbrains.mps.traceInfo.ScopePositionInfo;
 
 public class TraceInfoUtil {
   public TraceInfoUtil() {
   }
 
   @Nullable
-  private static <T> T findInDebugInfo(@NotNull String className, @NotNull final Mapper2<? super DebugInfo, ? super SModelDescriptor, ? extends T> nodeGetter) {
+  public static <T> T findInDebugInfo(@NotNull String className, @NotNull final Mapper2<? super DebugInfo, ? super SModelDescriptor, ? extends T> nodeGetter) {
     int lastDot = className.lastIndexOf(".");
     String pkg = ((lastDot == -1 ?
       "" :
@@ -133,5 +141,56 @@ public class TraceInfoUtil {
       return unitForNode.getUnitName();
     }
     return null;
+  }
+
+  @Nullable
+  public static <T extends PositionInfo> List<SNode> getAllNodes(@NotNull String className, final String file, final int position, final Mapper<DebugInfoRoot, ? extends Set<T>> positionsGetter) {
+    return findInDebugInfo(className, new Mapper2<DebugInfo, SModelDescriptor, List<SNode>>() {
+      public List<SNode> value(DebugInfo result, SModelDescriptor descriptor) {
+        List<T> infoForPosition = result.getInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
+          public Set<T> invoke(DebugInfoRoot root) {
+            return positionsGetter.value(root);
+          }
+        });
+        List<SNode> nodes = new ArrayList<SNode>();
+        if (infoForPosition.isEmpty()) {
+          return null;
+        }
+        for (T info : infoForPosition) {
+          nodes.add(descriptor.getSModel().getNodeById(info.getNodeId()));
+        }
+        return nodes;
+      }
+    });
+  }
+
+  @Nullable
+  public static List<SNode> getAllTraceableNodes(@NotNull String className, final String file, final int position) {
+    return TraceInfoUtil.getAllNodes(className, file, position, new Mapper<DebugInfoRoot, Set<TraceablePositionInfo>>() {
+      @Override
+      public Set<TraceablePositionInfo> value(DebugInfoRoot key) {
+        return key.getPositions();
+      }
+    });
+  }
+
+  @Nullable
+  public static List<SNode> getAllScopeNodes(@NotNull String className, final String file, final int position) {
+    return TraceInfoUtil.getAllNodes(className, file, position, new Mapper<DebugInfoRoot, Set<ScopePositionInfo>>() {
+      @Override
+      public Set<ScopePositionInfo> value(DebugInfoRoot key) {
+        return key.getScopePositions();
+      }
+    });
+  }
+
+  @Nullable
+  public static List<SNode> getAllUnitNodes(@NotNull String className, final String file, final int position) {
+    return TraceInfoUtil.getAllNodes(className, file, position, new Mapper<DebugInfoRoot, Set<UnitPositionInfo>>() {
+      @Override
+      public Set<UnitPositionInfo> value(DebugInfoRoot key) {
+        return key.getUnitPositions();
+      }
+    });
   }
 }

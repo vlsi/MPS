@@ -5,6 +5,7 @@ package jetbrains.mps.ide.dependencyViewer;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
@@ -12,7 +13,7 @@ import jetbrains.mps.ide.findusages.model.CategoryKind;
 import java.util.Collections;
 import javax.swing.Icon;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -25,7 +26,9 @@ public class ReferencesView extends UsagesView {
     super(project, new ViewOptions(false, false, false, false, false, false));
     setCustomNodeRepresentator(new ReferencesView.MyNodeRepresentator());
     myComponent = component;
-    getTreeComponent().getTree().setSelectionRow(0);
+    UsagesTree usagesTree = getTreeComponent().getTree();
+    usagesTree.setSelectionRow(0);
+    usagesTree.setShowPopupMenu(false);
   }
 
   public void close() {
@@ -49,7 +52,7 @@ public class ReferencesView extends UsagesView {
     }
 
     public Icon getResultsIcon() {
-      return Icons.DEFAULT_ICON;
+      return IdeIcons.DEFAULT_ICON;
     }
 
     public String getResultsText(TextOptions options) {

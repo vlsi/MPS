@@ -4,6 +4,7 @@ package jetbrains.mps.ide.typesystem.trace;
 
 import javax.swing.JPanel;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.ide.tools.BaseTool;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.SwingUtilities;
@@ -14,7 +15,7 @@ import java.awt.Color;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import com.intellij.openapi.ui.Splitter;
+import javax.swing.JSplitPane;
 import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.newTypesystem.state.State;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -31,8 +32,9 @@ public class TypeSystemTracePanel extends JPanel {
   private TypeSystemStateTree myStateTree;
   private JPanel myButtons;
   private EditorComponent myEditorComponent;
+  private BaseTool myTool;
 
-  public TypeSystemTracePanel() {
+  public TypeSystemTracePanel(BaseTool tool) {
     this.setLayout(new BorderLayout());
     myButtons = new JPanel(new BorderLayout());
     this.setMinimumSize(new Dimension(700, 700));
@@ -42,7 +44,7 @@ public class TypeSystemTracePanel extends JPanel {
         myButtons.add(buttonsPanel, BorderLayout.WEST);
       }
     });
-
+    myTool = tool;
   }
 
   public Color getBackground() {
@@ -56,15 +58,17 @@ public class TypeSystemTracePanel extends JPanel {
     myEditorComponent = editorComponent;
     myTraceTree = new TypeSystemTraceTree(operationContext, t, node, this, editorComponent);
     myStateTree = new TypeSystemStateTree(operationContext, myTraceTree.getState(), editorComponent);
-    Splitter splitter = new Splitter(false, 0.6f);
+    JSplitPane splitPane = new JSplitPane();
     JBScrollPane traceScrollPane = new JBScrollPane(myTraceTree);
     traceScrollPane.setPreferredSize(new Dimension(400, 900));
     JBScrollPane stateScrollPane = new JBScrollPane(myStateTree);
     stateScrollPane.setPreferredSize(new Dimension(400, 900));
-    splitter.setFirstComponent(traceScrollPane);
-    splitter.setSecondComponent(stateScrollPane);
+    splitPane.setDividerLocation(0.65);
+    splitPane.setResizeWeight(0.65);
+    splitPane.setLeftComponent(traceScrollPane);
+    splitPane.setRightComponent(stateScrollPane);
     this.removeAll();
-    this.add(splitter);
+    this.add(splitPane);
     this.add(myButtons, BorderLayout.NORTH);
     this.setVisible(true);
   }
@@ -154,8 +158,13 @@ public class TypeSystemTracePanel extends JPanel {
         myTraceTree.goToNextError();
       }
     };
+    BaseAction closeAction = new BaseAction("Close", "Close type system trace tool", Icons.CLOSE) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+        myTool.setAvailable(false);
+      }
+    };
 
-    return ActionUtils.groupFromActions(showApplyRuleAction, showGenerationModeAction, showTraceForSelectedNode, showTypesExpansion, showBlockDependencies, refreshAction, nextErrorAction);
+    return ActionUtils.groupFromActions(closeAction, showApplyRuleAction, showGenerationModeAction, showTraceForSelectedNode, showTypesExpansion, showBlockDependencies, refreshAction, nextErrorAction);
   }
 
   public void refresh(final boolean checkRoot) {

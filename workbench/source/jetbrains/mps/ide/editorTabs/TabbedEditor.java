@@ -19,14 +19,12 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.ShadowAction;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.BaseNodeEditor;
-import jetbrains.mps.ide.MPSEditorState;
+import jetbrains.mps.ide.editor.BaseNodeEditor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabComponentFactory;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
@@ -34,6 +32,7 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateGroupsBuilder;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
@@ -122,6 +121,11 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
 
   public List<SNodePointer> getAllEditedNodes() {
     return myTabsComponent.getAllEditedNodes();
+  }
+
+  @Override
+  public boolean isTabbed() {
+    return true;
   }
 
   @Override
@@ -222,16 +226,17 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     }
   }
 
-  public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
+  @Override
+  public EditorState saveState(boolean full) {
     TabbedEditorState state = new TabbedEditorState();
     state.myCurrentNode = getCurrentlyEditedNode();
 
-    BaseEditorState superState = (BaseEditorState) super.saveState(level);
+    BaseEditorState superState = (BaseEditorState) super.saveState(full);
     state.refCopyFrom(superState);
     return state;
   }
 
-  public void loadState(@NotNull final MPSEditorState state) {
+  public void loadState(@NotNull final EditorState state) {
     super.loadState(state);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -249,7 +254,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     });
   }
 
-  public static class TabbedEditorState extends BaseEditorState implements MPSEditorState {
+  public static class TabbedEditorState extends BaseEditorState implements EditorState {
     private static final String NODE = "node";
     private static final String NODE_ID = "nodeId";
     private static final String MODEL_ID = "modelId";

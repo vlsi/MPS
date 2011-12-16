@@ -16,7 +16,7 @@
 package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -92,7 +92,7 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
     if (parameterObject instanceof SNode) {
       return NodeIconUtil.getIcon((SNode) parameterObject, isReferentPresentation());
     }
-    return Icons.DEFAULT_ICON;
+    return IdeIcons.DEFAULT_ICON;
   }
 
   protected abstract List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext);
