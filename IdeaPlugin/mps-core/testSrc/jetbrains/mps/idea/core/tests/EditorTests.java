@@ -16,40 +16,31 @@
 
 package jetbrains.mps.idea.core.tests;
 
-import com.intellij.ide.impl.ProjectUtil;
-import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.impl.ComponentManagerImpl;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.testFramework.TestLoggerFactory;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
-import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.InspectorTool;
-import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
-import org.apache.log4j.BasicConfigurator;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * Created by IntelliJ IDEA.
@@ -163,10 +154,34 @@ public class EditorTests extends AbstractMPSFixtureTestCase {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
             @Override
             public void run() {
-                IFile modelFile = FileSystem.getInstance().getFileByPath(System.getProperty("idea.plugins.path") + "/tests/editorTests/models/test.mps");
                 IFile modelsDir = FileSystem.getInstance().getFileByPath(myModule.getModuleFilePath()).getDescendant("models");
                 modelsDir.mkdirs();
-                IFileUtils.copyFileContent(modelFile, modelsDir.getDescendant("test.mps"));
+                IFile tests = modelsDir.getDescendant("test.mps");
+                IFile modelFile = FileSystem.getInstance().getFileByPath(System.getProperty("idea.plugins.path") + "/tests/editorTests/models/test.mps");
+                if (modelFile.exists()) {
+                    IFileUtils.copyFileContent(modelFile, tests);
+                }
+                else {
+                    InputStream is = null;
+                    OutputStream os = null;
+                    try {
+                        is = new BufferedInputStream(EditorTests.class.getResourceAsStream("test.mps"));
+                        os = new BufferedOutputStream(tests.openOutputStream());
+                        int c;
+                        while ((c = is.read()) >= 0) {
+                            os.write(c);
+                        }
+                    }
+                    catch (IOException e) { }
+                    finally {
+                        if (is != null) try{
+                                            is.close();
+                                        } catch (IOException ignore) {}
+                        if (os != null) try{
+                                            os.close();
+                                        } catch (IOException ignore) {}
+                    }
+                }
 
                 configuration.getState().setModelRootPaths(new String[]{modelsDir.getPath()});
             }
@@ -199,16 +214,21 @@ public class EditorTests extends AbstractMPSFixtureTestCase {
 
         @Override
         public void initTest(final BaseTransformationTest btt, @NotNull String projectName, String model) throws Exception {
-            ModelAccess.instance().runReadAction(new Runnable() {
+            UIUtil.invokeAndWaitIfNeeded(new Runnable() {
                 @Override
                 public void run() {
-                    ProjectOperationContext context = new ProjectOperationContext(
-                            ProjectHelper.toMPSProject(myModule.getProject()));
+                    ModelAccess.instance().runReadAction(new Runnable() {
+                        @Override
+                        public void run() {
+                            final ProjectOperationContext context = new ProjectOperationContext(
+                                    ProjectHelper.toMPSProject(myModule.getProject()));
 
-                    new MPSEditorOpener(myModule.getProject()).openNode(myRoot, context, true, true);
+                            new MPSEditorOpener(myModule.getProject()).openNode(myRoot, context, true, true);
 
-                    btt.setMyModel(myRoot.getModel().getModelDescriptor());
-                    btt.setMyProject(ProjectHelper.toMPSProject(myModule.getProject()));
+                            btt.setMyModel(myRoot.getModel().getModelDescriptor());
+                            btt.setMyProject(ProjectHelper.toMPSProject(myModule.getProject()));
+                        }
+                    });
                 }
             });
         }

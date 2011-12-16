@@ -23,6 +23,7 @@
     <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
     <property file="build.properties"/>
     <property name="ideaPath" value="${home.idea_ce}"/>
+    <property name="javac.debug" value="true"/>
 
     <path id="javac2.classpath">
         <fileset dir="${ideaPath}/lib">
@@ -84,7 +85,8 @@
         <mkdir dir="${build_dir}/mpscore_jar"/>
         <javac classpathref="mps.core.libraries" destdir="${build_dir}/mpscore_jar" fork="true"
                memorymaximumsize="1024m"
-               includeantruntime="false">
+               includeantruntime="false"
+               debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
                 <path path="${base_dir}/core/baseLanguage/collections/runtime/source_gen"/>
@@ -150,7 +152,8 @@
         <mkdir dir="${build_dir}/mpsworkbench_jar"/>
         <javac destdir="${build_dir}/mpsworkbench_jar" fork="true"
                memorymaximumsize="1024m"
-               includeantruntime="false">
+               includeantruntime="false"
+               debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
                 <!-- idea-workbench -->
@@ -181,7 +184,8 @@
         <mkdir dir="${build_dir}/mpseditor_jar"/>
         <javac destdir="${build_dir}/mpseditor_jar" fork="true"
                memorymaximumsize="1024m"
-               includeantruntime="false">
+               includeantruntime="false"
+               debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
                 <!-- editor-api -->
@@ -225,7 +229,8 @@
         <mkdir dir="${build_dir}/mpsplugin_jar"/>
         <javac2 destdir="${build_dir}/mpsplugin_jar" fork="true"
                 memorymaximumsize="1024m"
-                includeantruntime="false">
+                includeantruntime="false"
+                debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
                 <!-- plugin -->
@@ -240,7 +245,9 @@
             <fileset dir="${base_dir}/IdeaPlugin/mps-core/src" includes="**/*.png, **/*.properties"/>
             <fileset dir="${base_dir}/IdeaPlugin/mps-core/resources" includes="**/*.png, **/*.properties"/>
             <fileset dir="${base_dir}/workbench/mps-platform/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/workbench/mps-actions/source" includes="META-INF/*"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/plugins/mpseditor/source" includes="META-INF/*"/>
         </copy>
         <copy file="${base_dir}/IdeaPlugin/mps-core/META-INF/plugin.xml"
               tofile="${build_dir}/mpsplugin_jar/META-INF/plugin.xml">
@@ -265,7 +272,8 @@
         <mkdir dir="${build_dir}/mpsplugintests_jar"/>
         <javac2 destdir="${build_dir}/mpsplugintests_jar" fork="true"
                 memorymaximumsize="1024m"
-                includeantruntime="false">
+                includeantruntime="false"
+                debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
                 <!-- plugin tests -->
@@ -280,6 +288,8 @@
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac2>
+        <copy todir="${build_dir}/mpsplugintests_jar/jetbrains/mps/idea/core/tests"
+              file="${base_dir}/IdeaPlugin/tests/editorTests/models/test.mps"/>
         <jar destfile="${dist.dir}/lib/mps-plugin-tests.jar">
             <fileset dir="${build_dir}/mpsplugintests_jar"/>
             <manifest>
@@ -302,11 +312,12 @@
                dir="."
                haltonfailure="true"
                showoutput="true"
-               enableTestListenerEvents="true">
+               enableTestListenerEvents="false">
             <jvmarg value="-ea"/>
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1024m"/>
             <jvmarg value="-Xbootclasspath/a:${ideaPath}/lib/boot.jar"/>
+            <formatter type="xml"/>
             <sysproperty key="idea.platform.prefix" value="Idea"/>
             <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
             <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
@@ -324,6 +335,9 @@
                 </fileset>
                 <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
                     <include name="*.jar"/>
+                </fileset>
+                <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/languages/languageDesign">
+                    <include name="jetbrains.mps.lang.test.runtime.jar"/>
                 </fileset>
                 <pathelement path="${java.class.path}"/>
             </classpath>

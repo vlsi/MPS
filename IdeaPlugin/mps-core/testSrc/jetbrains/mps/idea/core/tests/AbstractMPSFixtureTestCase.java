@@ -100,6 +100,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
 
     @Override
     protected void tearDown() throws Exception {
+        if(!ModelAccess.instance().isInEDT()) ModelAccess.instance().flushEventQueue();
         myFixture.tearDown();
         super.tearDown();
     }
