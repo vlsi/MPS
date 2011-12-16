@@ -4,7 +4,8 @@ package jetbrains.mps.debugger.java.runtime.configurations.remote;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import jetbrains.mps.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
@@ -25,7 +26,7 @@ import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class Remote_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  private static final Logger LOG = Logger.getLogger(Remote_Configuration.class);
+  protected static Log log = LogFactory.getLog(Remote_Configuration.class);
 
   @NotNull
   private Remote_Configuration.MyState myState = new Remote_Configuration.MyState();
@@ -66,7 +67,9 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
       clone.myState = (Remote_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      Remote_Configuration.LOG.error(ex);
+      if (log.isErrorEnabled()) {
+        log.error("", ex);
+      }
     }
     return clone;
   }

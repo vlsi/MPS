@@ -48,6 +48,11 @@ public class LoopLabelReference_Constraints extends BaseConstraintsDescriptor {
                 ListSequence.fromList(labels).addElement(SLinkOperations.getTarget(loop, "loopLabel", true));
               }
             }
+            for (SNode switchStatement : SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)) {
+              if ((SLinkOperations.getTarget(switchStatement, "switchLabel", true) != null)) {
+                ListSequence.fromList(labels).addElement(SLinkOperations.getTarget(switchStatement, "switchLabel", true));
+              }
+            }
             return labels;
           }
 
