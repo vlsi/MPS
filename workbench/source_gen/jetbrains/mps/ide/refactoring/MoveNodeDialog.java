@@ -20,6 +20,8 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
     this.myNodeToMove = node;
     init();
     setTitle(MoveNodesDialog.REFACTORING_NAME + " " + "node");
+    setHorizontalStretch(1.5f);
+    setVerticalStretch(2.0f);
   }
 
   protected void doRefactoringAction() {

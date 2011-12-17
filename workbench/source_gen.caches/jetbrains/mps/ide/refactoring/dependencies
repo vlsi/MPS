@@ -350,6 +350,28 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.refactoring.SModelReferenceDialog" file="SModelReferenceDialog.java">
+    <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />
+    <classNode dependClassName="com.intellij.navigation.NavigationItem" />
+    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.matcher.ChooseByNamePanel" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.models.BaseModelItem" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.models.BaseModelModel" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.ide.refactoring.RefactoringDialog" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.StringChooserDialog" file="StringChooserDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.util.ui.UIUtil" />
