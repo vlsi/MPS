@@ -1959,8 +1959,8 @@
                       </node>
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5797068448049411379">
                         <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5797068448049411380">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zw69.~CommonChoosers%dshowSimpleNodeChooser(java%dutil%dList,jetbrains%dmps%dworkbench%ddialogs%dchoosers%dCommonChoosers$ChooserCallback)%cvoid" resolveInfo="showSimpleNodeChooser" />
                           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zw69.~CommonChoosers" resolveInfo="CommonChoosers" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zw69.~CommonChoosers%dshowSimpleNodeChooser(java%dutil%dList,jetbrains%dmps%dworkbench%ddialogs%dchoosers%dCommonChoosers$ChooserCallback,boolean)%cvoid" resolveInfo="showSimpleNodeChooser" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5797068448049411381">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5797068448049411324" resolveInfo="nodes" />
                           </node>
@@ -12244,6 +12244,9 @@
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5797068448049415924">
       <property name="name" nameId="tpck.1169194664001" value="calculateNodeIdentifier" />
+      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="4917878842629965795">
+        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="68ai.~NotNull" resolveInfo="NotNull" />
+      </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5797068448049415925" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5797068448049415926">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
@@ -12319,9 +12322,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="4917878842629965795">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="68ai.~NotNull" resolveInfo="NotNull" />
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5797068448049415949">

@@ -55,10 +55,10 @@
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="qvxb" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.vcs.versionBrowser(MPS.Workbench/com.intellij.openapi.vcs.versionBrowser@java_stub)" version="-1" />
   <import index="2mtq" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.vcs.changes.ui(MPS.Workbench/com.intellij.openapi.vcs.changes.ui@java_stub)" version="-1" />
-  <import index="lcr" modelUID="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)" version="-1" />
-  <import index="hdhb" modelUID="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)" version="-1" />
   <import index="9r3n" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.highlighter(MPS.Editor/jetbrains.mps.nodeEditor.highlighter@java_stub)" version="-1" />
   <import index="srng" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" version="-1" />
+  <import index="hdhb" modelUID="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)" version="-1" />
+  <import index="lcr" modelUID="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -441,7 +441,7 @@
                       <link role="variable" roleId="tp2q.1153944258490" targetNodeId="5838713064222200839" resolveInfo="rev" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5838713064222200832">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsFileRevision%dgetRevisionNumber()%ccom%dintellij%dopenapi%dvcs%dhistory%dVcsRevisionNumber" resolveInfo="getRevisionNumber" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsRevisionDescription%dgetRevisionNumber()%ccom%dintellij%dopenapi%dvcs%dhistory%dVcsRevisionNumber" resolveInfo="getRevisionNumber" />
                     </node>
                   </node>
                   <node role="map" roleId="tp2q.1197932505799" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5838713064222200823">
@@ -954,7 +954,7 @@
                     <link role="variable" roleId="tp2q.1153944258490" targetNodeId="3494966540336933410" resolveInfo="revision" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3494966540336933431">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsFileRevision%dgetAuthor()%cjava%dlang%dString" resolveInfo="getAuthor" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsRevisionDescription%dgetAuthor()%cjava%dlang%dString" resolveInfo="getAuthor" />
                   </node>
                 </node>
               </node>
@@ -1224,8 +1224,8 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="775786118952884849">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s2xb.~MessageBusConnection%dsubscribe(com%dintellij%dutil%dmessages%dTopic,java%dlang%dObject)%cvoid" resolveInfo="subscribe" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="775786118952885724">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="9r3n.~EditorComponentCreateListener" resolveInfo="EditorComponentCreateListener" />
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9r3n.~EditorComponentCreateListener%dEDITOR_COMPONENT_CREATION" resolveInfo="EDITOR_COMPONENT_CREATION" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="9r3n.~EditorComponentCreateListener" resolveInfo="EditorComponentCreateListener" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8655110686424977089">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8655110686424977090">
@@ -3979,7 +3979,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5838713064222200901">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsFileRevision%dgetRevisionDate()%cjava%dutil%dDate" resolveInfo="getRevisionDate" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsRevisionDescription%dgetRevisionDate()%cjava%dutil%dDate" resolveInfo="getRevisionDate" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5838713064222200906">
@@ -3994,7 +3994,7 @@
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5838713064222200915">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsFileRevision%dgetRevisionDate()%cjava%dutil%dDate" resolveInfo="getRevisionDate" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsRevisionDescription%dgetRevisionDate()%cjava%dutil%dDate" resolveInfo="getRevisionDate" />
                       </node>
                     </node>
                   </node>
@@ -5451,6 +5451,9 @@
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="775786118952886429">
       <property name="name" nameId="tpck.1169194664001" value="MyEditorComponentCreateListener" />
       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5660856942024707348">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9r3n.~EditorComponentCreateListener" resolveInfo="EditorComponentCreateListener" />
+      </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="775786118952886431" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="775786118952885766">
         <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -5505,9 +5508,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5660856942024707348">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9r3n.~EditorComponentCreateListener" resolveInfo="EditorComponentCreateListener" />
       </node>
       <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="775786118952886433">
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="775786118952886434" />
@@ -7137,7 +7137,7 @@
                       <link role="variable" roleId="tp2q.1153944258490" targetNodeId="5838713064222208591" resolveInfo="rev" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5838713064222208599">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsFileRevision%dgetRevisionNumber()%ccom%dintellij%dopenapi%dvcs%dhistory%dVcsRevisionNumber" resolveInfo="getRevisionNumber" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsRevisionDescription%dgetRevisionNumber()%ccom%dintellij%dopenapi%dvcs%dhistory%dVcsRevisionNumber" resolveInfo="getRevisionNumber" />
                     </node>
                   </node>
                   <node role="map" roleId="tp2q.1197932505799" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5838713064222208621">
@@ -7216,7 +7216,7 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5838713064222208564">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsFileRevision%dgetRevisionDate()%cjava%dutil%dDate" resolveInfo="getRevisionDate" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsRevisionDescription%dgetRevisionDate()%cjava%dutil%dDate" resolveInfo="getRevisionDate" />
                           </node>
                         </node>
                       </node>
@@ -7259,7 +7259,7 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5838713064222208550">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsFileRevision%dgetRevisionDate()%cjava%dutil%dDate" resolveInfo="getRevisionDate" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsRevisionDescription%dgetRevisionDate()%cjava%dutil%dDate" resolveInfo="getRevisionDate" />
                           </node>
                         </node>
                       </node>
@@ -8078,7 +8078,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7744421503924675018" resolveInfo="revision" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7744421503924675039">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsFileRevision%dgetRevisionNumber()%ccom%dintellij%dopenapi%dvcs%dhistory%dVcsRevisionNumber" resolveInfo="getRevisionNumber" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsRevisionDescription%dgetRevisionNumber()%ccom%dintellij%dopenapi%dvcs%dhistory%dVcsRevisionNumber" resolveInfo="getRevisionNumber" />
               </node>
             </node>
           </node>
@@ -8471,7 +8471,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7744421503924771585" resolveInfo="revision" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7744421503924771676">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsFileRevision%dgetRevisionDate()%cjava%dutil%dDate" resolveInfo="getRevisionDate" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsRevisionDescription%dgetRevisionDate()%cjava%dutil%dDate" resolveInfo="getRevisionDate" />
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7744421503924771677">
@@ -8481,7 +8481,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7744421503924585256" resolveInfo="myRevision" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7744421503924771680">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsFileRevision%dgetRevisionDate()%cjava%dutil%dDate" resolveInfo="getRevisionDate" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsRevisionDescription%dgetRevisionDate()%cjava%dutil%dDate" resolveInfo="getRevisionDate" />
                           </node>
                         </node>
                       </node>
@@ -8682,7 +8682,7 @@
                       <link role="variable" roleId="tp2q.1153944258490" targetNodeId="7744421503924771363" resolveInfo="rev" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7744421503924771371">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsFileRevision%dgetRevisionNumber()%ccom%dintellij%dopenapi%dvcs%dhistory%dVcsRevisionNumber" resolveInfo="getRevisionNumber" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t4zp.~VcsRevisionDescription%dgetRevisionNumber()%ccom%dintellij%dopenapi%dvcs%dhistory%dVcsRevisionNumber" resolveInfo="getRevisionNumber" />
                     </node>
                   </node>
                   <node role="map" roleId="tp2q.1197932505799" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7744421503924771406">

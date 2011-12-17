@@ -174,11 +174,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8128243960970298614">
             <property name="name" nameId="tpck.1169194664001" value="runManagerImpl" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8128243960970298615">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hie0.~RunManagerImpl" resolveInfo="RunManagerImpl" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8wsf.~RunManagerImpl" resolveInfo="RunManagerImpl" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8128243960970298616">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hie0.~RunManagerImpl%dgetInstanceImpl(com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dexecution%dimpl%dRunManagerImpl" resolveInfo="getInstanceImpl" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hie0.~RunManagerImpl" resolveInfo="RunManagerImpl" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8wsf.~RunManagerImpl%dgetInstanceImpl(com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dexecution%dimpl%dRunManagerImpl" resolveInfo="getInstanceImpl" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8wsf.~RunManagerImpl" resolveInfo="RunManagerImpl" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8128243960970298617">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970298606" resolveInfo="project" />
               </node>
@@ -191,7 +191,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970298614" resolveInfo="runManagerImpl" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8128243960970298621">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hie0.~RunManagerImpl%dinitializeConfigurationTypes(com%dintellij%dexecution%dconfigurations%dConfigurationType[])%cvoid" resolveInfo="initializeConfigurationTypes" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8wsf.~RunManagerImpl%dinitializeConfigurationTypes(com%dintellij%dexecution%dconfigurations%dConfigurationType[])%cvoid" resolveInfo="initializeConfigurationTypes" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8128243960970298622">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zr3i.5145867626676112949" resolveInfo="getConfigurationTypes" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zr3i.5145867626676099642" resolveInfo="RunConfigurationsStateManager" />
@@ -242,24 +242,6 @@
                   </node>
                 </node>
                 <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertFalse" typeId="tpe3.1171983834376" id="8128243960970298642">
-                  <node role="condition" roleId="tpe3.1171983854940" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="8128243960970298643">
-                    <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8128243960970298644">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lye4.~UnknownConfigurationType" resolveInfo="UnknownConfigurationType" />
-                    </node>
-                    <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8128243960970298645">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8128243960970298646">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8128243960970298647">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970298628" resolveInfo="settings" />
-                        </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8128243960970298648">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8wsf.~RunnerAndConfigurationSettingsImpl%dgetConfiguration()%ccom%dintellij%dexecution%dconfigurations%dRunConfiguration" resolveInfo="getConfiguration" />
-                        </node>
-                      </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8128243960970298649">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lye4.~RunConfiguration%dgetType()%ccom%dintellij%dexecution%dconfigurations%dConfigurationType" resolveInfo="getType" />
-                      </node>
-                    </node>
-                  </node>
                   <node role="message" roleId="tpe3.1172075534298" type="tpe3.Message" typeId="tpe3.1172073500303" id="3716835087797048415">
                     <node role="message" roleId="tpe3.1172073511101" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3716835087797048469">
                       <node role="operand" roleId="tpee.1197027771414" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="3716835087797048416">
@@ -342,6 +324,24 @@
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp2c.InvokeFunctionOperation" typeId="tp2c.1225797177491" id="3716835087797048473" />
+                    </node>
+                  </node>
+                  <node role="condition" roleId="tpe3.1171983854940" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="8128243960970298643">
+                    <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8128243960970298644">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lye4.~UnknownConfigurationType" resolveInfo="UnknownConfigurationType" />
+                    </node>
+                    <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8128243960970298645">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8128243960970298646">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8128243960970298647">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970298628" resolveInfo="settings" />
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8128243960970298648">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8wsf.~RunnerAndConfigurationSettingsImpl%dgetConfiguration()%ccom%dintellij%dexecution%dconfigurations%dRunConfiguration" resolveInfo="getConfiguration" />
+                        </node>
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8128243960970298649">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lye4.~RunConfiguration%dgetType()%ccom%dintellij%dexecution%dconfigurations%dConfigurationType" resolveInfo="getType" />
+                      </node>
                     </node>
                   </node>
                 </node>
