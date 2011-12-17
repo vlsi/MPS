@@ -44,6 +44,7 @@
   <import index="k128" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.tools(MPS.Workbench/jetbrains.mps.ide.tools@java_stub)" version="-1" />
   <import index="on5u" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.actions(MPS.Workbench/jetbrains.mps.ide.actions@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="sn11" modelUID="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="8q6x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(java.awt.event@java_stub)" version="-1" implicit="yes" />
   <import index="ekr1" modelUID="r:72d64ad3-3ff4-48cf-ad25-2f545520d9c5(jetbrains.mps.ide.hierarchy.icons)" version="-1" implicit="yes" />
@@ -1959,8 +1960,8 @@
                       </node>
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5797068448049411379">
                         <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5797068448049411380">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zw69.~CommonChoosers%dshowSimpleNodeChooser(java%dutil%dList,jetbrains%dmps%dworkbench%ddialogs%dchoosers%dCommonChoosers$ChooserCallback)%cvoid" resolveInfo="showSimpleNodeChooser" />
                           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zw69.~CommonChoosers" resolveInfo="CommonChoosers" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zw69.~CommonChoosers%dshowSimpleNodeChooser(java%dutil%dList,jetbrains%dmps%dworkbench%ddialogs%dchoosers%dCommonChoosers$ChooserCallback,boolean)%cvoid" resolveInfo="showSimpleNodeChooser" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5797068448049411381">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5797068448049411324" resolveInfo="nodes" />
                           </node>
@@ -2020,6 +2021,9 @@
                                 </node>
                               </node>
                             </node>
+                          </node>
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2476363345240051591">
+                            <property name="value" nameId="tpee.1068580123138" value="false" />
                           </node>
                         </node>
                       </node>
@@ -12147,10 +12151,10 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5797068448049415795">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5797068448049415796">
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~MPSTreeNode%dsetIcon(javax%dswing%dIcon)%cvoid" resolveInfo="setIcon" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5797068448049415797">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="amqn.~IconManager%dgetIconFor(jetbrains%dmps%dsmodel%dSNode)%cjavax%dswing%dIcon" resolveInfo="getIconFor" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="amqn.~IconManager" resolveInfo="IconManager" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5797068448049415798">
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2476363345240161377">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="sn11.2434140849679604371" resolveInfo="IconManager" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sn11.2434140849679604466" resolveInfo="getIconFor" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2476363345240161378">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5797068448049415785" resolveInfo="node" />
               </node>
             </node>
@@ -12244,6 +12248,9 @@
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5797068448049415924">
       <property name="name" nameId="tpck.1169194664001" value="calculateNodeIdentifier" />
+      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="4917878842629965795">
+        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="68ai.~NotNull" resolveInfo="NotNull" />
+      </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5797068448049415925" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5797068448049415926">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
@@ -12319,9 +12326,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="4917878842629965795">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="68ai.~NotNull" resolveInfo="NotNull" />
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5797068448049415949">

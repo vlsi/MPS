@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.baseLanguage.logging" uuid="760a0a8c-eabb-4521-8bfd-65db761a9ba3" compileInMPS="true" doNotGenerateAdapters="true">
   <models>
+    <modelRoot path="${mps_home}/lib/commons-logging-1.1.1.jar" />
     <modelRoot path="${language_descriptor}/languageModels" />
-    <modelRoot path="${mps_home}/lib/commons-logging-1.1.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
   </models>
   <accessoryModels />
   <generators>
     <generator generatorUID="webr.logging#1167240554582" uuid="d95e286a-03bd-41d2-a04d-9db8f070e89c">
       <models>
+        <modelRoot path="${mps_home}/lib/commons-logging-1.1.1.jar" />
         <modelRoot path="${language_descriptor}/generators/baseLanguage/templates" />
-        <modelRoot path="${mps_home}/lib/commons-logging-1.1.jar">
-          <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-        </modelRoot>
       </models>
       <external-templates>
         <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
       </external-templates>
       <dependencies>
-        <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
         <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
+        <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
@@ -44,12 +40,12 @@
     </generator>
   </generators>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/lib/commons-logging-1.1.jar">
+    <stubModelEntry path="${mps_home}/lib/commons-logging-1.1.1.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>
   <runtimeStubModels>
-    <stubModelEntry path="${mps_home}/lib/commons-logging-1.1.jar">
+    <stubModelEntry path="${mps_home}/lib/commons-logging-1.1.1.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </runtimeStubModels>

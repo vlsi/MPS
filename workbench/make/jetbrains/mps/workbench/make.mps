@@ -6021,24 +6021,6 @@
         </node>
       </node>
     </node>
-    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8646201780575230897">
-      <property name="name" nameId="tpck.1169194664001" value="getIcon" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8646201780575230898" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8646201780575230899">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
-      </node>
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8646201780575230900">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8646201780575230904">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8646201780575230905">
-            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="8646201780575198590" resolveInfo="Icons" />
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8646201780575198596" resolveInfo="GENERATED" />
-          </node>
-        </node>
-      </node>
-      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="8646201780575230901">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
-      </node>
-    </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3104941470048621779">
       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="contentsToByteArray" />
@@ -7125,7 +7107,7 @@
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5428926715065512512">
                     <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="792724054878921786">
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lq3.~Messages" resolveInfo="Messages" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~Messages%dshowDialog(com%dintellij%dopenapi%dproject%dProject,java%dlang%dString,java%dlang%dString,java%dlang%dString[],int,int,javax%dswing%dIcon)%cint" resolveInfo="showDialog" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~Messages%dshowDialog(com%dintellij%dopenapi%dproject%dProject,java%dlang%dString,java%dlang%dString,java%dlang%dString[],int,javax%dswing%dIcon)%cint" resolveInfo="showDialog" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="388827843786255340">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8iu6.~ProjectHelper%dtoIdeaProject(jetbrains%dmps%dproject%dProject)%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="toIdeaProject" />
                         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8iu6.~ProjectHelper" resolveInfo="ProjectHelper" />
@@ -7158,9 +7140,6 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="792724054878921718" resolveInfo="options" />
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="792724054878921799">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="792724054878921767" resolveInfo="defopt" />
-                      </node>
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="792724054878921800">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="792724054878921767" resolveInfo="defopt" />
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="792724054878921801">

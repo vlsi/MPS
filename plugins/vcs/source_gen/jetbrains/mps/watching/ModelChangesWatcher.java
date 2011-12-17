@@ -31,7 +31,6 @@ import java.util.Arrays;
 import jetbrains.mps.library.LibraryManager;
 import java.io.File;
 import com.intellij.openapi.util.io.FileUtil;
-import java.io.IOException;
 import jetbrains.mps.util.Computable;
 import java.util.List;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
@@ -182,12 +181,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
   private boolean isUnderSignificantRoots(File file) {
     for (VirtualFile f : getSignificantRoots()) {
-      try {
-        if (FileUtil.isAncestor(VirtualFileUtils.toFile(f), file, false)) {
-          return true;
-        }
-      } catch (IOException e) {
-        LOG.error(e);
+      if (FileUtil.isAncestor(VirtualFileUtils.toFile(f), file, false)) {
+        return true;
       }
     }
     return false;

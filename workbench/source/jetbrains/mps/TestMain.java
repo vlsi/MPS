@@ -197,7 +197,7 @@ public class TestMain {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         try {
-          project[0] = projectManager.loadAndOpenProject(filePath, false);
+          project[0] = projectManager.loadAndOpenProject(filePath);
         } catch (IOException e) {
           throw new RuntimeException(e);
         } catch (JDOMException e) {

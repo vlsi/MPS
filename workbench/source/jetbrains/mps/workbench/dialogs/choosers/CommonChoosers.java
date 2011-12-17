@@ -117,7 +117,7 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
-  public static void showSimpleNodeChooser(final List<SNode> nodes, final ChooserCallback<SNode> callback) {
+  public static void showSimpleNodeChooser(final List<SNode> nodes, final ChooserCallback<SNode> callback, final boolean willOpenEditor) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
@@ -132,6 +132,11 @@ public class CommonChoosers {
 
       public SNode[] find(IScope scope) {
         return nodes.toArray(new SNode[nodes.size()]);
+      }
+
+      @Override
+      public boolean willOpenEditor() {
+        return willOpenEditor;
       }
     };
 
@@ -209,6 +214,11 @@ public class CommonChoosers {
 
       public ModuleReference[] find(IScope scope) {
         return (ModuleReference[]) modules.toArray();
+      }
+
+      @Override
+      public boolean willOpenEditor() {
+        return false;
       }
     };
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel);

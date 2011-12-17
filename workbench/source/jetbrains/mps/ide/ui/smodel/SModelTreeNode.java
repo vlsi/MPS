@@ -92,7 +92,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myLabel = label;
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
-    setUserObject(modelDescriptor);
+    setUserObject(modelDescriptor.getLongName());
     if (myModelDescriptor != null) {
       setNodeIdentifier(myModelDescriptor.toString());
     } else {
@@ -448,9 +448,4 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       treeModel.insertNodeInto(nodeToInsert, targetNode, index);
     }
   }
-
-  public Object getUserObject() {
-    return myModelDescriptor;
-  }
-
 }

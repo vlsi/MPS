@@ -440,7 +440,7 @@
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zfwc.~LocalFileSystem" resolveInfo="LocalFileSystem" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1254816451016269899">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ymmt.~NewVirtualFileSystem%dfindFileByPath(java%dlang%dString)%ccom%dintellij%dopenapi%dvfs%dVirtualFile" resolveInfo="findFileByPath" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zfwc.~VirtualFileSystem%dfindFileByPath(java%dlang%dString)%ccom%dintellij%dopenapi%dvfs%dVirtualFile" resolveInfo="findFileByPath" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1254816451016269900">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="a9qh.~PathManager%dgetHomePath()%cjava%dlang%dString" resolveInfo="getHomePath" />
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="a9qh.~PathManager" resolveInfo="PathManager" />

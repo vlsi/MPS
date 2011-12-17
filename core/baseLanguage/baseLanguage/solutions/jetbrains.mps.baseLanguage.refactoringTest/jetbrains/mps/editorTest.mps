@@ -331,7 +331,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Memento" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="418758558327350365">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.ipr" />
     </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3727822333335494274">
       <property name="name" nameId="tpck.1169194664001" value="NodeAfterSubstitutionHasNoErrorCell" />
@@ -931,9 +931,6 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertTrue" typeId="tpe3.1171981022339" id="1230058635771">
         <node role="condition" roleId="tpe3.1171981057159" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230058635772">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230058635773">
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230058635777">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
-            </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="4576065551632861159">
               <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="4576065551632861160">
                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4576065551632861163">
@@ -946,6 +943,9 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230058635777">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
             </node>
           </node>
           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230058635778">

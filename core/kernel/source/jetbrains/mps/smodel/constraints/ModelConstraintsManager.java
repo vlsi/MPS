@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import com.google.common.collect.ImmutableMap;
+import com.google.gwt.thirdparty.guava.common.collect.ImmutableMap;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;

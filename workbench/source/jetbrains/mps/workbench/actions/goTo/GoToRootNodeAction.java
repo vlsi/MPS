@@ -63,6 +63,10 @@ public class GoToRootNodeAction extends BaseAction {
           }
           return nodes.toArray(new SNode[0]);
         }
+
+        public boolean willOpenEditor() {
+          return true;
+        }
       };
       popup = MpsPopupFactory.createNodePopup(project, baseNodeModel);
     } else {

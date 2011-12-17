@@ -41,7 +41,7 @@ public class FilePanePasteProvider implements PasteProvider {
 
   @Nullable
   private CopyPasteFilesData getData(DataContext dataContext) {
-    Transferable content = CopyPasteManagerEx.getInstanceEx().getSystemClipboardContents();
+    Transferable content = CopyPasteManagerEx.getInstanceEx().getContents();
     if (content == null) return null;
 
     CopyPasteFilesData files = null;

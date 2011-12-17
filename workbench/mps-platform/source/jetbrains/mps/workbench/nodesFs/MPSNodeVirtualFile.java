@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.workbench.nodesFs;
 
-import com.intellij.openapi.vfs.DeprecatedVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
@@ -33,7 +32,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
+public class MPSNodeVirtualFile extends VirtualFile {
   private static final byte[] CONTENTS = new byte[0];
   private static final Logger LOG = Logger.getLogger(MPSNodeVirtualFile.class);
 

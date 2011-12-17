@@ -14,14 +14,14 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class UnusedVariableDeclaration_Test extends BaseTransformationTest {
   @Test
   public void test_UnusedVariableDeclaration() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test$TestBody", "test_UnusedVariableDeclaration", true);
   }
 
   @Test
-  public void test_TypesCheck5684597377559856228() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
-    this.runTest("jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test$TestBody", "test_TypesCheck5684597377559856228", true);
+  public void test_TypesCheck1216889859700() throws Throwable {
+    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.runTest("jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test$TestBody", "test_TypesCheck1216889859700", true);
   }
 
   @MPSLaunch
@@ -30,9 +30,9 @@ public class UnusedVariableDeclaration_Test extends BaseTransformationTest {
       this.addNodeById("1217271587025");
     }
 
-    public void test_TypesCheck5684597377559856228() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("5684597377559856228"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("1216889573145"));
+    public void test_TypesCheck1216889859700() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("1216889859700"), "jetbrains.mps.lang.test.structure.NodeOperation");
+      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("1216889573147"));
     }
   }
 }

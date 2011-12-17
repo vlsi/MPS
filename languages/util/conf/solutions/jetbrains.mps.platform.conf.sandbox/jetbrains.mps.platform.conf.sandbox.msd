@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.platform.conf.sandbox" uuid="cbcd3c3c-107b-4f03-8578-e11f87477262" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/" />
     <modelRoot path="${mps_home}/core/kernel/source">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </modelRoot>
+    <modelRoot path="${solution_descriptor}/" />
     <modelRoot path="${mps_home}/lib/platform.jar">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </modelRoot>
@@ -25,6 +25,7 @@
   </stubModelEntries>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
     <dependency reexport="false">cbcd3c3c-107b-4f03-8578-e11f87477262(jetbrains.mps.platform.conf.sandbox)</dependency>
   </dependencies>
   <usedLanguages>

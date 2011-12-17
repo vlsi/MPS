@@ -47,7 +47,7 @@
       <property name="name" nameId="tpck.1169194664001" value="CompleteEmptyCell" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="458414629082786299">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.ipr" />
     </node>
   </roots>
   <root id="6170050146384276051">
@@ -194,7 +194,7 @@
           <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285888" resolveInfo="s_0" />
         </node>
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="6170050146384285902">
-          <link role="event" roleId="2qyu.763922957008729159" targetNodeId="6170050146384285887" resolveInfo="e_2" />
+          <link role="event" roleId="2qyu.763922957008729159" targetNodeId="6170050146384285887" resolveInfo="anotherColumn" />
         </node>
       </node>
     </node>
@@ -313,7 +313,7 @@
           </node>
         </node>
         <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="6170050146384285912">
-          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285908" resolveInfo="s_1" />
+          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285908" resolveInfo="anotherRow" />
         </node>
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="6170050146384285913">
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="6170050146384285904" resolveInfo="e_0" />
@@ -322,7 +322,7 @@
       <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="6170050146384285914">
         <property name="condition" nameId="2qyu.763922957008729153" value="true" />
         <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="6170050146384285915">
-          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285908" resolveInfo="s_1" />
+          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285908" resolveInfo="anotherRow" />
         </node>
         <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="6170050146384285916">
           <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285909" resolveInfo="s_2" />

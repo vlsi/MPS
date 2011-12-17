@@ -42,6 +42,15 @@
     <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="Diff-utils" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../languages/util/gwtsupport/tools/gwt21/gwt-dev.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

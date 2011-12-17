@@ -1194,7 +1194,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7705742079275757923">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7705742079275757924">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zfwc.~VfsUtil" resolveInfo="VfsUtil" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zfwc.~VfsUtil%disAncestor(com%dintellij%dopenapi%dvfs%dVirtualFile,com%dintellij%dopenapi%dvfs%dVirtualFile,boolean)%cboolean" resolveInfo="isAncestor" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zfwc.~VfsUtil%disAncestor(java%dio%dFile,java%dio%dFile,boolean)%cboolean" resolveInfo="isAncestor" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7705742079275757925">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7705742079275757912" resolveInfo="baseDir" />
                 </node>

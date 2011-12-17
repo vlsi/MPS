@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.workbench.actions.goTo.matcher;
 
+import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
-import com.intellij.ide.util.gotoByName.temp.IdeaItemProvider;
-import com.intellij.ide.util.gotoByName.temp.ItemProvider;
+import com.intellij.ide.util.gotoByName.DefaultChooseByNameItemProvider;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
@@ -26,15 +26,15 @@ public abstract class MpsPopupFactory {
   private static final FakePsiContext CONTEXT = new FakePsiContext();
 
   public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m) {
-    return ChooseByNamePopup.createPopup(p, m, nodeProvider(), CONTEXT);
+    return ChooseByNamePopup.createPopup(p, m, nodeProvider());
   }
 
   public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m, String initialText) {
-    return ChooseByNamePopup.createPopup(p, m, nodeProvider(), CONTEXT, initialText);
+    return ChooseByNamePopup.createPopup(p, m, nodeProvider(), initialText);
   }
 
   public static ChooseByNamePopup createPackagePopup(Project p, ChooseByNameModel m) {
-    return ChooseByNamePopup.createPopup(p, m, packageProvider(), CONTEXT);
+    return ChooseByNamePopup.createPopup(p, m, packageProvider());
   }
 
   public static ChooseByNamePanel createPanelForNode(ChooseByNameModel model, boolean checkboxVisible) {
@@ -45,11 +45,11 @@ public abstract class MpsPopupFactory {
     return new ChooseByNamePanel(model, checkboxVisible, packageProvider());
   }
 
-  private static ItemProvider nodeProvider() {
-    return new CompositeItemProvider(new MPSNodeItemProvider(CONTEXT), new IdeaItemProvider(CONTEXT));
+  private static ChooseByNameItemProvider nodeProvider() {
+    return new CompositeItemProvider(new MPSNodeItemProvider(CONTEXT), new DefaultChooseByNameItemProvider(CONTEXT));
   }
 
-  private static ItemProvider packageProvider() {
-    return new CompositeItemProvider(new IdeaItemProvider(CONTEXT), new MPSPackageItemProvider(CONTEXT));
+  private static ChooseByNameItemProvider packageProvider() {
+    return new CompositeItemProvider(new DefaultChooseByNameItemProvider(CONTEXT), new MPSPackageItemProvider(CONTEXT));
   }
 }

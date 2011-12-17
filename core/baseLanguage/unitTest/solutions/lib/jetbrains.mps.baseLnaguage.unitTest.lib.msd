@@ -26,7 +26,7 @@
     <modelRoot path="${solution_descriptor}/lib/jmock-2.5.1/objenesis-1.0.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/lib/junit-4.8.2.jar">
+    <modelRoot path="${mps_home}/lib/junit-4.10.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
   </models>
@@ -55,7 +55,7 @@
     <stubModelEntry path="${solution_descriptor}/lib/jmock-2.5.1/objenesis-1.0.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
-    <stubModelEntry path="${mps_home}/lib/junit-4.8.2.jar">
+    <stubModelEntry path="${mps_home}/lib/junit-4.10.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>

@@ -16,9 +16,9 @@
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.file.exclude.ProjectFileExclusionManagerImpl;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.impl.ExcludedFileIndex;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.actions.FolderActions_ActionGroup;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -66,7 +66,7 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     for (VirtualFile f : sortedFiles) {
       if (f.exists()) {
         if (!FileTypeManager.getInstance().isFileIgnored(f.getName()) &&
-          !ExcludedFileIndex.getInstance(myProject).isExcludedFile(f) &&
+          !ProjectFileExclusionManagerImpl.getInstance(myProject).isExcluded(f) &&
           f.isDirectory()) {
           this.add(createNode(myProject, f));
         }
@@ -75,7 +75,7 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     for (VirtualFile f : sortedFiles) {
       if (f.exists()) {
         if (!FileTypeManager.getInstance().isFileIgnored(f.getName()) &&
-          !ExcludedFileIndex.getInstance(myProject).isExcludedFile(f) &&
+          !ProjectFileExclusionManagerImpl.getInstance(myProject).isExcluded(f) &&
           !f.isDirectory()) {
 
           this.add(createNode(myProject, f));

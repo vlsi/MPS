@@ -20,9 +20,16 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
-import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
 public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget {
@@ -36,13 +43,33 @@ public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget
   }
 
   public boolean canSelect(SelectInContext context) {
-    return getNode(context) != null;
+    return getNode(context) != null || getModel(context)!=null || getModule(context)!=null;
   }
 
   protected void doSelectIn(SelectInContext context, boolean requestFocus) {
-    SNode toSelect = getNode(context);
-    if (toSelect == null) return;
-    ProjectPane.getInstance(myProject).selectNode(toSelect, requestFocus);
+    if (getNode(context) != null) {
+      ProjectPane.getInstance(myProject).selectNode(getNode(context), requestFocus);
+    } else if (getModel(context)!=null) {
+      ProjectPane.getInstance(myProject).selectModel(getModel(context), requestFocus);
+    }else if (getModule(context)!=null) {
+      ProjectPane.getInstance(myProject).selectModule(getModule(context), requestFocus);
+    }
+  }
+
+  private SModelDescriptor getModel(SelectInContext context) {
+    VirtualFile virtualFile = context.getVirtualFile();
+    if (!MPSFileTypesManager.instance().isModelFile(virtualFile)) return null;
+
+    IFile modelFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+    return SModelRepository.getInstance().findModel(modelFile);
+  }
+
+  private IModule getModule(SelectInContext context) {
+    VirtualFile virtualFile = context.getVirtualFile();
+    if (!MPSFileTypesManager.instance().isModuleFile(virtualFile)) return null;
+
+    IFile moduleFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+    return MPSModuleRepository.getInstance().getModuleByFile(moduleFile);
   }
 
   private SNode getNode(SelectInContext context) {
@@ -54,7 +81,7 @@ public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget
     if (editors.length != 0) {
       FileEditor editor = editors[0];
       if (!(editor instanceof MPSFileNodeEditor)) return null;
-      EditorComponent editorComponent = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent();
+      jetbrains.mps.openapi.editor.EditorComponent editorComponent = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent();
       if (editorComponent == null) return null;
       return mySelectRoot ? editorComponent.getEditedNode() : editorComponent.getSelectedNode();
     } else {

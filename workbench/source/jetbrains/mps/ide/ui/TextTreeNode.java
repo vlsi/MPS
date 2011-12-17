@@ -26,5 +26,6 @@ public class TextTreeNode extends MPSTreeNode {
     super(context);
     setText(text);
     setNodeIdentifier(text.replaceAll(MPSTree.TREE_PATH_SEPARATOR, " "));
+    setUserObject(text);
   }
 }
