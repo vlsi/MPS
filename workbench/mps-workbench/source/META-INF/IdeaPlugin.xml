@@ -36,6 +36,9 @@
     <applicationService serviceInterface="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"
                         serviceImplementation="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"/>
 
+    <applicationService serviceInterface="com.intellij.ui.mac.MacMessages"
+                        serviceImplementation="com.intellij.ui.mac.MacMessagesImpl"/>
+
     <projectService serviceInterface="com.intellij.openapi.roots.ProjectFileIndex"
                     serviceImplementation="com.intellij.openapi.roots.impl.ProjectFileIndexImpl"/>
     <projectService serviceInterface="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"
