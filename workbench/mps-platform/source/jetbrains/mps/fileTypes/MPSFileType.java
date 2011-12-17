@@ -54,7 +54,7 @@ public class MPSFileType implements FileType {
   }
 
   public boolean isBinary() {
-    return true;
+    return false;
   }
 
   public boolean isReadOnly() {
