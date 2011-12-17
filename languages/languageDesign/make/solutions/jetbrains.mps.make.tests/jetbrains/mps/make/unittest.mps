@@ -19,15 +19,11 @@
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="fel2" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.jmock.api(jetbrains.mps.baseLanguage.unitTest.libs/org.jmock.api@java_stub)" version="-1" />
   <import index="ff4b" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" version="-1" />
-  <import index="8vib" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit(MPS.Workbench/org.junit@java_stub)" version="-1" />
-  <import index="631q" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.hamcrest(MPS.Workbench/org.hamcrest@java_stub)" version="-1" />
-  <import index="z1tn" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit.runner(MPS.Workbench/org.junit.runner@java_stub)" version="-1" />
-  <import index="8oam" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit.runner.notification(MPS.Workbench/org.junit.runner.notification@java_stub)" version="-1" />
   <import index="ajxo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" version="-1" />
-  <import index="mkq5" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.hamcrest(jetbrains.mps.baseLanguage.unitTest.libs/org.hamcrest@java_stub)" version="-1" />
   <import index="qjxg" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" version="-1" />
-  <import index="vzhb" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner.notification(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner.notification@java_stub)" version="-1" />
+  <import index="mkq5" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.hamcrest(jetbrains.mps.baseLanguage.unitTest.libs/org.hamcrest@java_stub)" version="-1" />
   <import index="u67u" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" version="-1" />
+  <import index="vzhb" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner.notification(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner.notification@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -11912,8 +11908,8 @@
                                       <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="5434802673308782365">
                                         <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="5434802673308782366">
                                           <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mkq5.~BaseMatcher%d&lt;init&gt;()" resolveInfo="BaseMatcher" />
                                           <link role="classifier" roleId="tpee.1170346070688" targetNodeId="mkq5.~BaseMatcher" resolveInfo="BaseMatcher" />
+                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mkq5.~BaseMatcher%d&lt;init&gt;()" resolveInfo="BaseMatcher" />
                                           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5434802673308782367" />
                                           <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5434802673308782368">
                                             <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -14298,8 +14294,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="u67u.~Result" resolveInfo="Result" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2383991756720160919">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u67u.~JUnitCore%drunClasses(java%dlang%dClass%d%d%d)%corg%djunit%drunner%dResult" resolveInfo="runClasses" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="u67u.~JUnitCore" resolveInfo="JUnitCore" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u67u.~JUnitCore%drunClasses(java%dlang%dClass%d%d%d)%corg%djunit%drunner%dResult" resolveInfo="runClasses" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="2383991756720160920">
                 <link role="classifier" roleId="tpee.1116615189566" targetNodeId="8963054271157682179" resolveInfo="ScriptBuilder_Test" />
               </node>

@@ -19,13 +19,10 @@
   <import index="fel2" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.jmock.api(org.jmock.api@java_stub)" version="-1" />
   <import index="xqpa" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(java.lang.reflect@java_stub)" version="-1" />
   <import index="4fvo" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.jmock.integration.junit4(org.jmock.integration.junit4@java_stub)" version="-1" />
-  <import index="631q" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.hamcrest(MPS.Workbench/org.hamcrest@java_stub)" version="-1" />
   <import index="ff4b" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" version="-1" />
-  <import index="8vib" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit(MPS.Workbench/org.junit@java_stub)" version="-1" />
-  <import index="z1tn" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit.runner(MPS.Workbench/org.junit.runner@java_stub)" version="-1" />
-  <import index="mkq5" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.hamcrest(jetbrains.mps.baseLanguage.unitTest.libs/org.hamcrest@java_stub)" version="-1" />
-  <import index="qjxg" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" version="-1" />
   <import index="u67u" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" version="-1" />
+  <import index="qjxg" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" version="-1" />
+  <import index="mkq5" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.hamcrest(jetbrains.mps.baseLanguage.unitTest.libs/org.hamcrest@java_stub)" version="-1" />
   <import index="vvvw" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -1150,8 +1147,8 @@
                                       <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="5646063728432371815">
                                         <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="5646063728432371816">
                                           <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mkq5.~BaseMatcher%d&lt;init&gt;()" resolveInfo="BaseMatcher" />
                                           <link role="classifier" roleId="tpee.1170346070688" targetNodeId="mkq5.~BaseMatcher" resolveInfo="BaseMatcher" />
+                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mkq5.~BaseMatcher%d&lt;init&gt;()" resolveInfo="BaseMatcher" />
                                           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5646063728432371817" />
                                           <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5646063728432371818">
                                             <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -1380,8 +1377,8 @@
                                     <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="2551169102353644898">
                                       <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="2551169102353644899">
                                         <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                                        <link role="classifier" roleId="tpee.1170346070688" targetNodeId="mkq5.~BaseMatcher" resolveInfo="BaseMatcher" />
                                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mkq5.~BaseMatcher%d&lt;init&gt;()" resolveInfo="BaseMatcher" />
+                                        <link role="classifier" roleId="tpee.1170346070688" targetNodeId="mkq5.~BaseMatcher" resolveInfo="BaseMatcher" />
                                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2551169102353644900" />
                                         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2551169102353644901">
                                           <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -1898,8 +1895,8 @@
                                       <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="5646063728432375784">
                                         <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="5646063728432375785">
                                           <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                                          <link role="classifier" roleId="tpee.1170346070688" targetNodeId="mkq5.~BaseMatcher" resolveInfo="BaseMatcher" />
                                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mkq5.~BaseMatcher%d&lt;init&gt;()" resolveInfo="BaseMatcher" />
+                                          <link role="classifier" roleId="tpee.1170346070688" targetNodeId="mkq5.~BaseMatcher" resolveInfo="BaseMatcher" />
                                           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5646063728432375786" />
                                           <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5646063728432375787">
                                             <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -2158,8 +2155,8 @@
                                     <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="2551169102353647711">
                                       <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="2551169102353647712">
                                         <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                                        <link role="classifier" roleId="tpee.1170346070688" targetNodeId="mkq5.~BaseMatcher" resolveInfo="BaseMatcher" />
                                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mkq5.~BaseMatcher%d&lt;init&gt;()" resolveInfo="BaseMatcher" />
+                                        <link role="classifier" roleId="tpee.1170346070688" targetNodeId="mkq5.~BaseMatcher" resolveInfo="BaseMatcher" />
                                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2551169102353647713" />
                                         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2551169102353647714">
                                           <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -4098,8 +4095,8 @@
                                     <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="9173367572764337044">
                                       <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="9173367572764337045">
                                         <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mkq5.~BaseMatcher%d&lt;init&gt;()" resolveInfo="BaseMatcher" />
                                         <link role="classifier" roleId="tpee.1170346070688" targetNodeId="mkq5.~BaseMatcher" resolveInfo="BaseMatcher" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mkq5.~BaseMatcher%d&lt;init&gt;()" resolveInfo="BaseMatcher" />
                                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9173367572764337046" />
                                         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="9173367572764337047">
                                           <property name="isAbstract" nameId="tpee.1178608670077" value="false" />

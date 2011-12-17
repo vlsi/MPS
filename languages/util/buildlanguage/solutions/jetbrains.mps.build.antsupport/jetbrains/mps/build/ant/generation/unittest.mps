@@ -12,8 +12,6 @@
   <import index="lgzw" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" version="-1" />
   <import index="zwkq" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(MPS.Core/org.jdom@java_stub)" version="-1" />
-  <import index="z1tn" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit.runner(MPS.Workbench/org.junit.runner@java_stub)" version="-1" />
-  <import index="8oam" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit.runner.notification(MPS.Workbench/org.junit.runner.notification@java_stub)" version="-1" />
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="to5d" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" version="-1" />
   <import index="jhs5" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom.output(MPS.Core/org.jdom.output@java_stub)" version="-1" />
@@ -1088,10 +1086,10 @@
     </node>
   </root>
   <root id="8688590116724765629">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8688590116724766031" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8608756464815197938">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vzhb.~RunListener" resolveInfo="RunListener" />
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8688590116724766031" />
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="8688590116724766033">
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="START_TEST_PREFIX" />
@@ -1496,8 +1494,8 @@
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8688590116724766191">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8688590116724766192">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u67u.~Request%daClass(java%dlang%dClass)%corg%djunit%drunner%dRequest" resolveInfo="aClass" />
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="u67u.~Request" resolveInfo="Request" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u67u.~Request%daClass(java%dlang%dClass)%corg%djunit%drunner%dRequest" resolveInfo="aClass" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8688590116724766193">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8688590116724766182" resolveInfo="testClass" />
                             </node>
@@ -1505,8 +1503,8 @@
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8688590116724766194">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u67u.~Request%dfilterWith(org%djunit%drunner%dDescription)%corg%djunit%drunner%dRequest" resolveInfo="filterWith" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8688590116724766195">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u67u.~Description%dcreateTestDescription(java%dlang%dClass,java%dlang%dString,java%dlang%dannotation%dAnnotation%d%d%d)%corg%djunit%drunner%dDescription" resolveInfo="createTestDescription" />
                               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="u67u.~Description" resolveInfo="Description" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u67u.~Description%dcreateTestDescription(java%dlang%dClass,java%dlang%dString,java%dlang%dannotation%dAnnotation%d%d%d)%corg%djunit%drunner%dDescription" resolveInfo="createTestDescription" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8688590116724766196">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8688590116724766182" resolveInfo="testClass" />
                               </node>
@@ -1559,8 +1557,8 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8688590116724766213">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8688590116724766214">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u67u.~Request%daClass(java%dlang%dClass)%corg%djunit%drunner%dRequest" resolveInfo="aClass" />
                         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="u67u.~Request" resolveInfo="Request" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u67u.~Request%daClass(java%dlang%dClass)%corg%djunit%drunner%dRequest" resolveInfo="aClass" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8688590116724766215">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8688590116724766203" resolveInfo="testClass" />
                         </node>
