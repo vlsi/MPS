@@ -6,7 +6,7 @@ import org.junit.runners.model.Statement;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.TestMain;
-import org.junit.internal.runners.model.MultipleFailureException;
+import org.junit.runners.model.MultipleFailureException;
 
 public class DisposeMPSStatement extends Statement {
   private Statement myPrev;

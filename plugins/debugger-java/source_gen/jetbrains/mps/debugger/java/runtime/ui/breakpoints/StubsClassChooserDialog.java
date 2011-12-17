@@ -28,7 +28,6 @@ public abstract class StubsClassChooserDialog extends BaseDialog {
         return StubsClassChooserDialog.this.isValid(node);
       }
 
-      @Override
       public boolean willOpenEditor() {
         return false;
       }

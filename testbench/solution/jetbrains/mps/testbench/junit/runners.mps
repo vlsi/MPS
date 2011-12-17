@@ -5259,8 +5259,8 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5503298173333911375">
         <property name="name" nameId="tpck.1169194664001" value="klass" />
         <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5503298173333911376">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995951" resolveInfo="MPSProjectITestsSuite.TestClass" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8627764026638252940">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ik6s.~TestClass" resolveInfo="TestClass" />
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5503298173333995903" />
@@ -5414,8 +5414,8 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5503298173334018388">
         <property name="name" nameId="tpck.1169194664001" value="klass" />
         <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5503298173334018389">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995951" resolveInfo="MPSProjectITestsSuite.TestClass" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8627764026638248090">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ik6s.~TestClass" resolveInfo="TestClass" />
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp2q.ListType" typeId="tp2q.1151688443754" id="5503298173334018268">
@@ -5657,8 +5657,8 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5503298173333996423">
         <property name="name" nameId="tpck.1169194664001" value="klass" />
         <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5503298173333996424">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995951" resolveInfo="MPSProjectITestsSuite.TestClass" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8627764026638252939">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ik6s.~TestClass" resolveInfo="TestClass" />
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp2q.ListType" typeId="tp2q.1151688443754" id="5503298173333996420">
@@ -6140,7 +6140,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5503298173333910471" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5503298173333910472">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="5503298173333910801">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="aj7d.~Suite%d&lt;init&gt;(java%dlang%dClass,org%djunit%drunners%dmodel%dRunnerBuilder)" resolveInfo="Suite" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="aj7d.~Suite%d&lt;init&gt;(java%dlang%dClass,java%dutil%dList)" resolveInfo="Suite" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5503298173333911366">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5503298173333910822" resolveInfo="klass" />
           </node>

@@ -190,7 +190,7 @@ public class UpgradeTraceInfoGeneration_MigrationScript extends BaseMigrationScr
     public QuotationClass_eean50_a0a0a0c0a0e0a0a0b0a() {
     }
 
-    public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11) {
+    public SNode createNode(Object parameter_9, Object parameter_10) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -198,29 +198,34 @@ public class UpgradeTraceInfoGeneration_MigrationScript extends BaseMigrationScr
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
-        quotedNode1_5.setReferent("declaration", (SNode) parameter_10);
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
+          quotedNode1_6.setReferent("conceptDeclaration", (SNode) parameter_9);
+          quotedNode_1.addChild("conceptsToCreateBreakpoint", quotedNode1_6);
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_7 = quotedNode_3;
           {
-            quotedNode_4 = (SNode) parameter_9;
-            SNode quotedNode1_7;
+            quotedNode_4 = (SNode) parameter_10;
+            SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
-              quotedNode1_7 = quotedNode_4;
+              quotedNode1_8 = quotedNode_4;
             }
-            if (quotedNode1_7 != null) {
-              quotedNode_2.addChild("body", HUtil.copyIfNecessary(quotedNode1_7));
+            if (quotedNode1_8 != null) {
+              quotedNode_3.addChild("body", HUtil.copyIfNecessary(quotedNode1_8));
             }
           }
           quotedNode_1.addChild("createBreakpoint", quotedNode1_6);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_3;
           quotedNode1_8.setReferent("conceptDeclaration", (SNode) parameter_11);
           quotedNode_1.addChild("conceptsToCreateBreakpoint", quotedNode1_8);
