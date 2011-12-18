@@ -24,6 +24,13 @@
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="runtime" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="Tuples-runtime" />
+    <orderEntry type="module" module-name="mps-platform" />
+    <orderEntry type="module" module-name="mps-workbench" />
+    <orderEntry type="module" module-name="baseLanguage-search" />
+    <orderEntry type="module" module-name="typesystemEngine" />
   </component>
 </module>
 
