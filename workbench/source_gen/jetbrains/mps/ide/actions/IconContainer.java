@@ -7,4 +7,5 @@ import javax.swing.ImageIcon;
 
 public class IconContainer {
   protected static Icon ICON_a0a1a0d = new ImageIcon(IconContainer.class.getResource("sortAlpha.png"));
+  protected static Icon ICON_a2 = new ImageIcon(IconContainer.class.getResource("transientModels.png"));
 }
