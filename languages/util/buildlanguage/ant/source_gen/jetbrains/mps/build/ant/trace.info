@@ -859,6 +859,10 @@
       <varInfo nodeId="4003657351907888028" varName="modules" />
     </scopeInfo>
     <unitInfo nodeId="4003657351907888740" fileName="MpsWorker.java" startLine="252" startPosition="17" endLine="47" endPosition="0" />
+    <unitInfo nodeId="4003657351907886909" fileName="MpsWorker.java" startLine="47" startPosition="0" endLine="495" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker" />
+    <unitInfo nodeId="8638838189258332414" fileName="MpsWorker.java" startLine="118" startPosition="41" endLine="122" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$1" />
+    <unitInfo nodeId="4003657351907887444" fileName="MpsWorker.java" startLine="134" startPosition="46" endLine="140" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$2" />
+    <unitInfo nodeId="4003657351907887458" fileName="MpsWorker.java" startLine="144" startPosition="46" endLine="148" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$3" />
     <unitInfo nodeId="4003657351907888070" fileName="MpsWorker.java" startLine="238" startPosition="68" endLine="242" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$4" />
     <unitInfo nodeId="4003657351907888089" fileName="MpsWorker.java" startLine="246" startPosition="61" endLine="254" endPosition="7" unitName="jetbrains.mps.build.ant.MpsWorker$5" />
     <unitInfo nodeId="4003657351907886942" fileName="MpsWorker.java" startLine="409" startPosition="0" endLine="412" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$AntLogger" />
@@ -869,131 +873,124 @@
     <unitInfo nodeId="4003657351907886969" fileName="MpsWorker.java" startLine="425" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$SystemOutLogger" />
   </root>
   <root nodeId="4003657351907888741">
-    <nodeInfo nodeId="626776451987883410" fileName="AntBootstrap.java" startLine="17" startPosition="27" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoader" />
-    <nodeInfo nodeId="626776451987883346" fileName="AntBootstrap.java" startLine="23" startPosition="57" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="626776451987883350" fileName="AntBootstrap.java" startLine="24" startPosition="52" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="626776451987883357" fileName="AntBootstrap.java" startLine="25" startPosition="47" endLine="26" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="626776451987883361" fileName="AntBootstrap.java" startLine="26" startPosition="50" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="626776451987883365" fileName="AntBootstrap.java" startLine="27" startPosition="48" endLine="28" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="626776451987883369" fileName="AntBootstrap.java" startLine="28" startPosition="54" endLine="29" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="626776451987883373" fileName="AntBootstrap.java" startLine="29" startPosition="47" endLine="30" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="626776451987883402" fileName="AntBootstrap.java" startLine="34" startPosition="32" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="626776451987883404" fileName="AntBootstrap.java" startLine="36" startPosition="5" endLine="37" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="626776451987883420" fileName="AntBootstrap.java" startLine="40" startPosition="42" endLine="41" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="626776451987884875" fileName="AntBootstrap.java" startLine="42" startPosition="9" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="626776451987883441" fileName="AntBootstrap.java" startLine="43" startPosition="30" endLine="44" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="626776451987883447" fileName="AntBootstrap.java" startLine="44" startPosition="33" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="626776451987883453" fileName="AntBootstrap.java" startLine="45" startPosition="34" endLine="46" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="626776451987883466" fileName="AntBootstrap.java" startLine="46" startPosition="56" endLine="47" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="626776451987883475" fileName="AntBootstrap.java" startLine="47" startPosition="66" endLine="48" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="626776451987883484" fileName="AntBootstrap.java" startLine="48" startPosition="68" endLine="49" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="626776451987883491" fileName="AntBootstrap.java" startLine="49" startPosition="62" endLine="50" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="626776451987883496" fileName="AntBootstrap.java" startLine="50" startPosition="37" endLine="51" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="626776451987883428" fileName="AntBootstrap.java" startLine="52" startPosition="27" endLine="53" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="626776451987883504" fileName="AntBootstrap.java" startLine="54" startPosition="5" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5637866526586399046" fileName="AntBootstrap.java" startLine="58" startPosition="55" endLine="59" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5637866526586399053" fileName="AntBootstrap.java" startLine="59" startPosition="44" endLine="60" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5637866526586403027" fileName="AntBootstrap.java" startLine="61" startPosition="9" endLine="62" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5637866526586399106" fileName="AntBootstrap.java" startLine="63" startPosition="29" endLine="64" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5637866526586403034" fileName="AntBootstrap.java" startLine="64" startPosition="95" endLine="65" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5637866526586399113" fileName="AntBootstrap.java" startLine="68" startPosition="5" endLine="69" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5637866526586399126" fileName="AntBootstrap.java" startLine="72" startPosition="110" endLine="73" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5637866526586399145" fileName="AntBootstrap.java" startLine="74" startPosition="32" endLine="75" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5637866526586399154" fileName="AntBootstrap.java" startLine="76" startPosition="5" endLine="77" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5637866526586399173" fileName="AntBootstrap.java" startLine="78" startPosition="26" endLine="79" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5637866526586405336" fileName="AntBootstrap.java" startLine="80" startPosition="5" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1631042080099031308" fileName="AntBootstrap.java" startLine="81" startPosition="0" endLine="82" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1631042080099031324" fileName="AntBootstrap.java" startLine="82" startPosition="141" endLine="83" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5637866526586405328" fileName="AntBootstrap.java" startLine="83" startPosition="75" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5637866526586399182" fileName="AntBootstrap.java" startLine="84" startPosition="0" endLine="85" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5637866526586399184" fileName="AntBootstrap.java" startLine="85" startPosition="12" endLine="86" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5637866526586403040" fileName="AntBootstrap.java" startLine="86" startPosition="109" endLine="87" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5637866526586399204" fileName="AntBootstrap.java" startLine="87" startPosition="77" endLine="88" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5637866526586403048" fileName="AntBootstrap.java" startLine="88" startPosition="113" endLine="89" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5637866526586399236" fileName="AntBootstrap.java" startLine="92" startPosition="118" endLine="93" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5637866526586399238" fileName="AntBootstrap.java" startLine="93" startPosition="77" endLine="94" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5637866526586399263" fileName="AntBootstrap.java" startLine="96" startPosition="11" endLine="97" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5637866526586399271" fileName="AntBootstrap.java" startLine="98" startPosition="12" endLine="99" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5637866526586399283" fileName="AntBootstrap.java" startLine="100" startPosition="35" endLine="101" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5637866526586399284" fileName="AntBootstrap.java" startLine="102" startPosition="11" endLine="103" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5637866526586399296" fileName="AntBootstrap.java" startLine="104" startPosition="34" endLine="105" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5637866526586399311" fileName="AntBootstrap.java" startLine="105" startPosition="48" endLine="106" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5637866526586399316" fileName="AntBootstrap.java" startLine="108" startPosition="35" endLine="109" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907888743" fileName="AntBootstrap.java" startLine="19" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AntBootstrap#()V" />
-    <nodeInfo nodeId="626776451987883397" fileName="AntBootstrap.java" startLine="33" startPosition="72" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5637866526586399140" fileName="AntBootstrap.java" startLine="73" startPosition="104" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5637866526586399168" fileName="AntBootstrap.java" startLine="77" startPosition="91" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5637866526586399277" fileName="AntBootstrap.java" startLine="99" startPosition="36" endLine="102" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5637866526586399101" fileName="AntBootstrap.java" startLine="62" startPosition="44" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5637866526586399291" fileName="AntBootstrap.java" startLine="103" startPosition="44" endLine="107" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="626776451987883390" fileName="AntBootstrap.java" startLine="32" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadClass#(Ljava/lang/String;)Ljava/lang/Class;" />
-    <nodeInfo nodeId="5637866526586399058" fileName="AntBootstrap.java" startLine="60" startPosition="48" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="626776451987883340" fileName="AntBootstrap.java" startLine="22" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljava/lang/ClassLoader;)V" />
-    <nodeInfo nodeId="5637866526586403004" fileName="AntBootstrap.java" startLine="97" startPosition="47" endLine="108" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="626776451987883425" fileName="AntBootstrap.java" startLine="41" startPosition="51" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5637866526586399041" fileName="AntBootstrap.java" startLine="57" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAdditionalMPSClasspath#()Ljava/util/List;" />
-    <nodeInfo nodeId="5637866526586399257" fileName="AntBootstrap.java" startLine="95" startPosition="23" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="626776451987883413" fileName="AntBootstrap.java" startLine="39" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5637866526586399252" fileName="AntBootstrap.java" startLine="94" startPosition="112" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5637866526586399115" fileName="AntBootstrap.java" startLine="71" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addMPSBootstrapJars#(Ljava/util/List;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5637866526586399225" fileName="AntBootstrap.java" startLine="91" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addMPSBootstrapClassFolders#(Ljava/util/List;Ljava/lang/String;)V" />
-    <scopeInfo nodeId="4003657351907888746" fileName="AntBootstrap.java" startLine="20" startPosition="25" endLine="20" endPosition="25" />
-    <scopeInfo nodeId="5637866526586399059" fileName="AntBootstrap.java" startLine="67" startPosition="0" endLine="67" endPosition="39">
+    <nodeInfo nodeId="626776451987883410" fileName="AntBootstrap.java" startLine="16" startPosition="27" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoader" />
+    <nodeInfo nodeId="626776451987883346" fileName="AntBootstrap.java" startLine="22" startPosition="57" endLine="23" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8104398649374075029" fileName="AntBootstrap.java" startLine="23" startPosition="52" endLine="24" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="626776451987883402" fileName="AntBootstrap.java" startLine="28" startPosition="32" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="626776451987883404" fileName="AntBootstrap.java" startLine="30" startPosition="5" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="626776451987883420" fileName="AntBootstrap.java" startLine="34" startPosition="42" endLine="35" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="626776451987884875" fileName="AntBootstrap.java" startLine="36" startPosition="9" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="626776451987883441" fileName="AntBootstrap.java" startLine="37" startPosition="30" endLine="38" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="626776451987883447" fileName="AntBootstrap.java" startLine="38" startPosition="33" endLine="39" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="626776451987883453" fileName="AntBootstrap.java" startLine="39" startPosition="34" endLine="40" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="626776451987883466" fileName="AntBootstrap.java" startLine="40" startPosition="56" endLine="41" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="626776451987883475" fileName="AntBootstrap.java" startLine="41" startPosition="66" endLine="42" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="626776451987883484" fileName="AntBootstrap.java" startLine="42" startPosition="68" endLine="43" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="626776451987883491" fileName="AntBootstrap.java" startLine="43" startPosition="62" endLine="44" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="626776451987883496" fileName="AntBootstrap.java" startLine="44" startPosition="37" endLine="45" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="626776451987883428" fileName="AntBootstrap.java" startLine="46" startPosition="27" endLine="47" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="626776451987883504" fileName="AntBootstrap.java" startLine="48" startPosition="5" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5637866526586399046" fileName="AntBootstrap.java" startLine="52" startPosition="55" endLine="53" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637866526586399053" fileName="AntBootstrap.java" startLine="53" startPosition="44" endLine="54" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637866526586403027" fileName="AntBootstrap.java" startLine="55" startPosition="9" endLine="56" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5637866526586399106" fileName="AntBootstrap.java" startLine="57" startPosition="29" endLine="58" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5637866526586403034" fileName="AntBootstrap.java" startLine="58" startPosition="95" endLine="59" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5637866526586399113" fileName="AntBootstrap.java" startLine="62" startPosition="5" endLine="63" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5637866526586399126" fileName="AntBootstrap.java" startLine="66" startPosition="110" endLine="67" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637866526586399145" fileName="AntBootstrap.java" startLine="68" startPosition="32" endLine="69" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5637866526586399154" fileName="AntBootstrap.java" startLine="70" startPosition="5" endLine="71" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637866526586399173" fileName="AntBootstrap.java" startLine="72" startPosition="26" endLine="73" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5637866526586405336" fileName="AntBootstrap.java" startLine="74" startPosition="5" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1631042080099031308" fileName="AntBootstrap.java" startLine="75" startPosition="0" endLine="76" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1631042080099031324" fileName="AntBootstrap.java" startLine="76" startPosition="141" endLine="77" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637866526586405328" fileName="AntBootstrap.java" startLine="77" startPosition="75" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5637866526586399182" fileName="AntBootstrap.java" startLine="78" startPosition="0" endLine="79" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5637866526586399184" fileName="AntBootstrap.java" startLine="79" startPosition="12" endLine="80" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637866526586403040" fileName="AntBootstrap.java" startLine="80" startPosition="109" endLine="81" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5637866526586399204" fileName="AntBootstrap.java" startLine="81" startPosition="77" endLine="82" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637866526586403048" fileName="AntBootstrap.java" startLine="82" startPosition="113" endLine="83" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5637866526586399236" fileName="AntBootstrap.java" startLine="86" startPosition="118" endLine="87" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5637866526586399238" fileName="AntBootstrap.java" startLine="87" startPosition="77" endLine="88" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637866526586399263" fileName="AntBootstrap.java" startLine="90" startPosition="11" endLine="91" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637866526586399271" fileName="AntBootstrap.java" startLine="92" startPosition="12" endLine="93" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637866526586399283" fileName="AntBootstrap.java" startLine="94" startPosition="35" endLine="95" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5637866526586399284" fileName="AntBootstrap.java" startLine="96" startPosition="11" endLine="97" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637866526586399296" fileName="AntBootstrap.java" startLine="98" startPosition="34" endLine="99" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637866526586399311" fileName="AntBootstrap.java" startLine="99" startPosition="48" endLine="100" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5637866526586399316" fileName="AntBootstrap.java" startLine="102" startPosition="35" endLine="103" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907888743" fileName="AntBootstrap.java" startLine="18" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AntBootstrap#()V" />
+    <nodeInfo nodeId="626776451987883397" fileName="AntBootstrap.java" startLine="27" startPosition="72" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5637866526586399140" fileName="AntBootstrap.java" startLine="67" startPosition="104" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5637866526586399168" fileName="AntBootstrap.java" startLine="71" startPosition="91" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5637866526586399277" fileName="AntBootstrap.java" startLine="93" startPosition="36" endLine="96" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5637866526586399101" fileName="AntBootstrap.java" startLine="56" startPosition="44" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5637866526586399291" fileName="AntBootstrap.java" startLine="97" startPosition="44" endLine="101" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="626776451987883340" fileName="AntBootstrap.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljava/lang/ClassLoader;)V" />
+    <nodeInfo nodeId="626776451987883390" fileName="AntBootstrap.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadClass#(Ljava/lang/String;)Ljava/lang/Class;" />
+    <nodeInfo nodeId="5637866526586399058" fileName="AntBootstrap.java" startLine="54" startPosition="48" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5637866526586403004" fileName="AntBootstrap.java" startLine="91" startPosition="47" endLine="102" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="626776451987883425" fileName="AntBootstrap.java" startLine="35" startPosition="51" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5637866526586399041" fileName="AntBootstrap.java" startLine="51" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAdditionalMPSClasspath#()Ljava/util/List;" />
+    <nodeInfo nodeId="5637866526586399257" fileName="AntBootstrap.java" startLine="89" startPosition="23" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="626776451987883413" fileName="AntBootstrap.java" startLine="33" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5637866526586399252" fileName="AntBootstrap.java" startLine="88" startPosition="112" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5637866526586399115" fileName="AntBootstrap.java" startLine="65" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addMPSBootstrapJars#(Ljava/util/List;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5637866526586399225" fileName="AntBootstrap.java" startLine="85" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addMPSBootstrapClassFolders#(Ljava/util/List;Ljava/lang/String;)V" />
+    <scopeInfo nodeId="4003657351907888746" fileName="AntBootstrap.java" startLine="19" startPosition="25" endLine="19" endPosition="25" />
+    <scopeInfo nodeId="5637866526586399059" fileName="AntBootstrap.java" startLine="61" startPosition="0" endLine="61" endPosition="39">
       <varInfo nodeId="5637866526586399061" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5637866526586399060" fileName="AntBootstrap.java" startLine="67" startPosition="39" endLine="67" endPosition="39" />
-    <scopeInfo nodeId="5637866526586399258" fileName="AntBootstrap.java" startLine="110" startPosition="0" endLine="110" endPosition="46">
+    <scopeInfo nodeId="5637866526586399060" fileName="AntBootstrap.java" startLine="61" startPosition="39" endLine="61" endPosition="39" />
+    <scopeInfo nodeId="5637866526586399258" fileName="AntBootstrap.java" startLine="104" startPosition="0" endLine="104" endPosition="46">
       <varInfo nodeId="5637866526586399260" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="5637866526586399259" fileName="AntBootstrap.java" startLine="110" startPosition="46" endLine="110" endPosition="46" />
-    <scopeInfo nodeId="626776451987883401" fileName="AntBootstrap.java" startLine="34" startPosition="32" endLine="35" endPosition="18" />
-    <scopeInfo nodeId="626776451987883426" fileName="AntBootstrap.java" startLine="52" startPosition="0" endLine="53" endPosition="36">
+    <scopeInfo nodeId="5637866526586399259" fileName="AntBootstrap.java" startLine="104" startPosition="46" endLine="104" endPosition="46" />
+    <scopeInfo nodeId="626776451987883401" fileName="AntBootstrap.java" startLine="28" startPosition="32" endLine="29" endPosition="18" />
+    <scopeInfo nodeId="626776451987883426" fileName="AntBootstrap.java" startLine="46" startPosition="0" endLine="47" endPosition="36">
       <varInfo nodeId="626776451987883433" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="626776451987883427" fileName="AntBootstrap.java" startLine="52" startPosition="27" endLine="53" endPosition="36" />
-    <scopeInfo nodeId="5637866526586399144" fileName="AntBootstrap.java" startLine="74" startPosition="32" endLine="75" endPosition="50" />
-    <scopeInfo nodeId="5637866526586399172" fileName="AntBootstrap.java" startLine="78" startPosition="26" endLine="79" endPosition="44" />
-    <scopeInfo nodeId="5637866526586399282" fileName="AntBootstrap.java" startLine="100" startPosition="35" endLine="101" endPosition="21" />
-    <scopeInfo nodeId="4003657351907888743" fileName="AntBootstrap.java" startLine="19" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="5637866526586399105" fileName="AntBootstrap.java" startLine="63" startPosition="29" endLine="65" endPosition="54" />
-    <scopeInfo nodeId="5637866526586399295" fileName="AntBootstrap.java" startLine="104" startPosition="34" endLine="106" endPosition="31">
+    <scopeInfo nodeId="626776451987883427" fileName="AntBootstrap.java" startLine="46" startPosition="27" endLine="47" endPosition="36" />
+    <scopeInfo nodeId="5637866526586399144" fileName="AntBootstrap.java" startLine="68" startPosition="32" endLine="69" endPosition="50" />
+    <scopeInfo nodeId="5637866526586399172" fileName="AntBootstrap.java" startLine="72" startPosition="26" endLine="73" endPosition="44" />
+    <scopeInfo nodeId="5637866526586399282" fileName="AntBootstrap.java" startLine="94" startPosition="35" endLine="95" endPosition="21" />
+    <scopeInfo nodeId="4003657351907888743" fileName="AntBootstrap.java" startLine="18" startPosition="0" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="626776451987883345" fileName="AntBootstrap.java" startLine="22" startPosition="57" endLine="24" endPosition="89" />
+    <scopeInfo nodeId="5637866526586399105" fileName="AntBootstrap.java" startLine="57" startPosition="29" endLine="59" endPosition="54" />
+    <scopeInfo nodeId="5637866526586399295" fileName="AntBootstrap.java" startLine="98" startPosition="34" endLine="100" endPosition="31">
       <varInfo nodeId="5637866526586399297" varName="url" />
     </scopeInfo>
-    <scopeInfo nodeId="626776451987883396" fileName="AntBootstrap.java" startLine="33" startPosition="72" endLine="37" endPosition="41" />
-    <scopeInfo nodeId="5637866526586399063" fileName="AntBootstrap.java" startLine="61" startPosition="9" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="626776451987883345" fileName="AntBootstrap.java" startLine="23" startPosition="57" endLine="30" endPosition="93">
-      <varInfo nodeId="626776451987883351" varName="classpath" />
+    <scopeInfo nodeId="626776451987883396" fileName="AntBootstrap.java" startLine="27" startPosition="72" endLine="31" endPosition="41" />
+    <scopeInfo nodeId="626776451987883340" fileName="AntBootstrap.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="626776451987883343" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="626776451987883390" fileName="AntBootstrap.java" startLine="32" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="5637866526586399063" fileName="AntBootstrap.java" startLine="55" startPosition="9" endLine="60" endPosition="7" />
+    <scopeInfo nodeId="626776451987883390" fileName="AntBootstrap.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="626776451987883394" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="626776451987883435" fileName="AntBootstrap.java" startLine="42" startPosition="9" endLine="51" endPosition="51">
+    <scopeInfo nodeId="626776451987883435" fileName="AntBootstrap.java" startLine="36" startPosition="9" endLine="45" endPosition="51">
       <varInfo nodeId="626776451987883442" varName="className" />
       <varInfo nodeId="626776451987883476" varName="clazz" />
       <varInfo nodeId="626776451987883485" varName="mainMethod" />
       <varInfo nodeId="626776451987883448" varName="methodName" />
       <varInfo nodeId="626776451987883454" varName="passedArgs" />
     </scopeInfo>
-    <scopeInfo nodeId="5637866526586403006" fileName="AntBootstrap.java" startLine="98" startPosition="12" endLine="107" endPosition="11">
+    <scopeInfo nodeId="5637866526586403006" fileName="AntBootstrap.java" startLine="92" startPosition="12" endLine="101" endPosition="11">
       <varInfo nodeId="5637866526586399285" varName="dir" />
       <varInfo nodeId="5637866526586399272" varName="nl" />
     </scopeInfo>
-    <scopeInfo nodeId="626776451987883340" fileName="AntBootstrap.java" startLine="22" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="626776451987883343" varName="parent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5637866526586399045" fileName="AntBootstrap.java" startLine="58" startPosition="55" endLine="69" endPosition="18">
+    <scopeInfo nodeId="5637866526586399045" fileName="AntBootstrap.java" startLine="52" startPosition="55" endLine="63" endPosition="18">
       <varInfo nodeId="5637866526586399054" varName="homePath" />
       <varInfo nodeId="5637866526586399047" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5637866526586399262" fileName="AntBootstrap.java" startLine="96" startPosition="11" endLine="109" endPosition="19">
+    <scopeInfo nodeId="5637866526586399262" fileName="AntBootstrap.java" startLine="90" startPosition="11" endLine="103" endPosition="19">
       <varInfo nodeId="5637866526586399264" varName="sc" />
     </scopeInfo>
-    <scopeInfo nodeId="5637866526586399041" fileName="AntBootstrap.java" startLine="57" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="626776451987883419" fileName="AntBootstrap.java" startLine="40" startPosition="42" endLine="55" endPosition="19">
+    <scopeInfo nodeId="5637866526586399041" fileName="AntBootstrap.java" startLine="51" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="626776451987883419" fileName="AntBootstrap.java" startLine="34" startPosition="42" endLine="49" endPosition="19">
       <varInfo nodeId="626776451987883421" varName="antBootstrap" />
     </scopeInfo>
-    <scopeInfo nodeId="5637866526586399256" fileName="AntBootstrap.java" startLine="95" startPosition="23" endLine="111" endPosition="7" />
-    <scopeInfo nodeId="5637866526586399125" fileName="AntBootstrap.java" startLine="72" startPosition="110" endLine="89" endPosition="79">
+    <scopeInfo nodeId="5637866526586399256" fileName="AntBootstrap.java" startLine="89" startPosition="23" endLine="105" endPosition="7" />
+    <scopeInfo nodeId="5637866526586399125" fileName="AntBootstrap.java" startLine="66" startPosition="110" endLine="83" endPosition="79">
       <varInfo nodeId="5637866526586399185" varName="baseLanguageFolder" />
       <varInfo nodeId="5637866526586399127" varName="ideaPatchJar" />
       <varInfo nodeId="5637866526586399205" varName="languageDesignFolder" />
@@ -1001,21 +998,21 @@
       <varInfo nodeId="1631042080099031309" varName="selfRoot" />
       <varInfo nodeId="1631042080099031325" varName="selfRootUrl" />
     </scopeInfo>
-    <scopeInfo nodeId="626776451987883413" fileName="AntBootstrap.java" startLine="39" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="626776451987883413" fileName="AntBootstrap.java" startLine="33" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="626776451987883416" varName="args" />
     </scopeInfo>
-    <scopeInfo nodeId="5637866526586399115" fileName="AntBootstrap.java" startLine="71" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="5637866526586399115" fileName="AntBootstrap.java" startLine="65" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="5637866526586399118" varName="classPath" />
       <varInfo nodeId="5637866526586399121" varName="homePath" />
     </scopeInfo>
-    <scopeInfo nodeId="5637866526586399235" fileName="AntBootstrap.java" startLine="92" startPosition="118" endLine="112" endPosition="5">
+    <scopeInfo nodeId="5637866526586399235" fileName="AntBootstrap.java" startLine="86" startPosition="118" endLine="106" endPosition="5">
       <varInfo nodeId="5637866526586399239" varName="acp" />
     </scopeInfo>
-    <scopeInfo nodeId="5637866526586399225" fileName="AntBootstrap.java" startLine="91" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="5637866526586399225" fileName="AntBootstrap.java" startLine="85" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="5637866526586399228" varName="classPath" />
       <varInfo nodeId="5637866526586399231" varName="homePath" />
     </scopeInfo>
-    <unitInfo nodeId="4003657351907888741" fileName="AntBootstrap.java" startLine="17" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.build.ant.AntBootstrap" />
+    <unitInfo nodeId="4003657351907888741" fileName="AntBootstrap.java" startLine="16" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.build.ant.AntBootstrap" />
   </root>
   <root nodeId="4003657351907888830">
     <nodeInfo nodeId="4003657351907888833" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="7" startPosition="81" endLine="8" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBuildServerMessageFormat" />
