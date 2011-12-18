@@ -610,6 +610,11 @@ public abstract class AbstractModule implements IModule {
     public URL findResource(String name) {
       return getClassPathItem().getResource(name);
     }
+
+    @Override
+    public String findLibrary(String name) {
+      return null;
+    }
   }
 
   @Override

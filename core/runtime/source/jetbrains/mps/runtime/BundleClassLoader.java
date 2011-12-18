@@ -115,6 +115,15 @@ public class BundleClassLoader<T> extends BaseClassLoader {
     return new IterableToEnumWrapper<URL>(result);
   }
 
+  @Override
+  protected String findLibrary(String name) {
+    String libraryPath = myBundle.getLocator().findLibrary(name);
+    if (libraryPath != null) {
+      return libraryPath;
+    }
+    return super.findLibrary(name);
+  }
+
   public void dispose() {
     super.dispose();
     myClassesCache.clear();
