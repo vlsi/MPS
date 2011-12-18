@@ -3572,8 +3572,8 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
-        <runtime jar="/lib/commons-logging-1.1.jar" />
-        <library jar="/lib/commons-logging-1.1.jar" />
+        <runtime jar="/lib/commons-logging-1.1.1.jar" />
+        <library jar="/lib/commons-logging-1.1.1.jar" />
         <sources jar="jetbrains.mps.baseLanguage.logging-src.jar" descriptor="logging.mpl" />
       </module>
     </echoxml>
@@ -3754,7 +3754,7 @@
         <library jar="jmock-junit3-2.5.1.jar" />
         <library jar="jmock-junit4-2.5.1.jar" />
         <library jar="objenesis-1.0.jar" />
-        <library jar="/lib/junit-4.8.2.jar" />
+        <library jar="/lib/junit-4.10.jar" />
         <sources jar="jetbrains.mps.baseLanguage.unitTest.libs-src.jar" descriptor="jetbrains.mps.baseLnaguage.unitTest.lib.msd" />
       </module>
     </echoxml>
@@ -6241,7 +6241,7 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
-        <runtime jar="/lib/guava-r06.jar" />
+        <runtime jar="/lib/guava-r09.jar" />
         <runtime jar="jetbrains.mps.lang.structure-runtime.jar" />
         <library jar="jetbrains.mps.lang.structure.jar" />
         <sources jar="jetbrains.mps.lang.structure-src.jar" descriptor="languageDescriptor.mpl" />

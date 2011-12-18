@@ -50,13 +50,13 @@ public class TypesTest_BL_Test extends BaseTransformationTest {
 
   @Test
   public void testArrays() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody", "testArrays", true);
   }
 
   @Test
   public void testRules() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody", "testRules", true);
   }
 

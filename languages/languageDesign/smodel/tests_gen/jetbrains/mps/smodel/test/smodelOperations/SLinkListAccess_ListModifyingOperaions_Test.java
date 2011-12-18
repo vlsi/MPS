@@ -34,7 +34,7 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
 
   @Test
   public void test_addAllWithIndex() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
+    this.initTest("${mps_home}/MPS.ipr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_addAllWithIndex", true);
   }
 
