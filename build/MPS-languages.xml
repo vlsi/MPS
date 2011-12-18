@@ -10817,6 +10817,7 @@
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
         <library jar="/lib/ant/lib/ant-launcher.jar" />
+        <library jar="/lib/ant/lib/ant-nodeps.jar" />
         <library jar="/lib/ant/lib/ant.jar" />
         <sources jar="jetbrains.mps.build.generictasks-src.jar" descriptor="generictasks.mpl" />
       </module>
@@ -11370,8 +11371,8 @@
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
         <library jar="jetbrains.mps.build.antsupport.jar" />
-        <library jar="/lib/diffutils-1.2.1.jar" />
         <library jar="/lib/bootstrap.jar" />
+        <library jar="/lib/diffutils-1.2.1.jar" />
         <sources jar="jetbrains.mps.build.antsupport-src.jar" descriptor="jetbrains.mps.build.antsupport.msd" />
       </module>
     </echoxml>
