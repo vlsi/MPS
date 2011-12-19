@@ -715,7 +715,7 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.2230400082818031588" resolveInfo="ConvertAnonymousToStaticTest" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707831057">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.4946830740863806270" resolveInfo="ConvertAnonymousWithTypeVariablesComplexTest" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.9160497614871931685" resolveInfo="ConvertAnonymousWithTypeParameters" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707831058">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.3145818413496050321" resolveInfo="ConvertAnonymousWithLocalVariablesTest" />
@@ -1798,7 +1798,7 @@
       <property name="moduleID" nameId="pop3.1280144168199506910" value="dc080be0-da6e-4885-aed0-7d999c120619" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8565053360342429748">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="mql5.6186432342008539165" resolveInfo="Test" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="mql5.6186432342008539165" resolveInfo="TestWeaving" />
     </node>
   </root>
 </model>
