@@ -23,12 +23,15 @@ public class StatusBarInstaller_CustomProjectPlugin extends BaseCustomProjectPlu
       return;
     }
 
-
-    TransientModelsWidget widget = new TransientModelsWidget(myStatusBar);
+    TransientModelsWidget widget = new TransientModelsWidget(StatusBarInstaller_CustomProjectPlugin.this.myStatusBar);
+    ListSequence.fromList(StatusBarInstaller_CustomProjectPlugin.this.myWidgets).addElement(widget);
     StatusBarInstaller_CustomProjectPlugin.this.myStatusBar.addWidget(widget);
   }
 
   public void doDispose(MPSProject project) {
+    for (StatusBarWidget widget : ListSequence.fromList(StatusBarInstaller_CustomProjectPlugin.this.myWidgets)) {
+      StatusBarInstaller_CustomProjectPlugin.this.myStatusBar.removeWidget(widget.ID());
+    }
     StatusBarInstaller_CustomProjectPlugin.this.myStatusBar = null;
   }
 }
