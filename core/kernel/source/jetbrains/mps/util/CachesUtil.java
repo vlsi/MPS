@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import com.intellij.openapi.util.ShutDownTracker;
-import com.intellij.util.SystemProperties;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,23 +24,13 @@ public class CachesUtil {
   private static final String PROPERTY_CONFIG_PATH = "idea.config.path";
   private static final List<File> TO_REMOVE = new ArrayList<File>();
 
+
   public static void setupCaches() {
     // we need to check that caches dirs are writable
     // idea does not have the necessary api, so, alas, doing checks by ourselves
     // see PathManager class
     useTemporalFolderIfNotSet(PROPERTY_CONFIG_PATH);
     useTemporalFolderIfNotSet(PROPERTY_SYSTEM_PATH);
-
-      ShutDownTracker.getInstance().registerShutdownTask(new Runnable() {
-        @Override
-        public void run() {
-          // idea may use caches in its shutdown hooks, so we clean them on shutdown
-          // ShutDownTracker guarantees us (well, the current implementation is written this way)
-          // that hooks are executed in the reversed order
-          // so we are executed last
-          cleanupCaches();
-        }
-      });
   }
 
   private static void useTemporalFolderIfNotSet(String propertyName) {
@@ -53,7 +40,7 @@ public class CachesUtil {
         path = path.substring(1, path.length() - 1);
       }
       if (path.startsWith("~/") || path.startsWith("~\\")) {
-        path = SystemProperties.getUserHome() + path.substring(1);
+        path = System.getProperty("user.home") + path.substring(1);
       }
       path = new File(path).getAbsolutePath();
 
@@ -71,7 +58,7 @@ public class CachesUtil {
     System.setProperty(propertyName, tmpDir.getAbsolutePath());
   }
 
-  private static void cleanupCaches() {
+  public static void cleanupCaches() {
     for (File it : TO_REMOVE) {
       try {
         FileUtil.delete(it);

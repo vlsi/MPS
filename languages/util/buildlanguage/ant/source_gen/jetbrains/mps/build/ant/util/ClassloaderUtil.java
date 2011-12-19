@@ -54,7 +54,7 @@ public class ClassloaderUtil {
     return Logger.getLogger("ClassloaderUtil");
   }
 
-  public static UrlClassLoader initClassloader(final List<URL> classpathElements, ClassLoader parentClassloader) {
+  public static UrlClassLoader initClassloader(final List<URL> classpathElements) {
     PathManager.loadProperties();
     try {
       ClassloaderUtil.addParentClasspath(classpathElements);
@@ -70,7 +70,7 @@ public class ClassloaderUtil {
     ClassloaderUtil.filterClassPath(classpathElements);
     UrlClassLoader newClassLoader = null;
     try {
-      newClassLoader = new UrlClassLoader(classpathElements, parentClassloader, true, true);
+      newClassLoader = new UrlClassLoader(classpathElements, null, true, true);
       //  prepare plugins 
       Thread.currentThread().setContextClassLoader(newClassLoader);
     } catch (Exception e) {
