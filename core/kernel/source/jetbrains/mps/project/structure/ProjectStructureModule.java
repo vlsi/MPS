@@ -312,7 +312,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
       final SModel oldSModel = mySModel;
       oldSModel.setModelDescriptor(null);
       mySModel = null;
-      setLoadingState(ModelLoadingState.NOT_LOADED);
+      myLoadingState = ModelLoadingState.NOT_LOADED;
 
       Runnable modelReplacedNotifier = new Runnable() {
         public void run() {
