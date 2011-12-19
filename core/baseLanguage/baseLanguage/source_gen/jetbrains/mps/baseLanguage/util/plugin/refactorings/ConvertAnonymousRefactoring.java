@@ -146,7 +146,7 @@ public class ConvertAnonymousRefactoring {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constructorDeclaration, "body", true), "statement", true)).insertElement(0, invocation);
     }
     for (SNode fieldDeclaration : SetSequence.fromSet(MapSequence.fromMap(this.myInnerConstructorParameters).keySet())) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constructorDeclaration, "body", true), "statement", true)).addElement(new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0b0i().createNode(MapSequence.fromMap(this.myInnerConstructorParameters).get(fieldDeclaration), fieldDeclaration));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constructorDeclaration, "body", true), "statement", true)).addElement(new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0b0i().createNode(MapSequence.fromMap(this.myInnerConstructorParameters).get(fieldDeclaration), SNodeOperations.getParent(constructorDeclaration), fieldDeclaration));
     }
   }
 
@@ -177,7 +177,7 @@ public class ConvertAnonymousRefactoring {
   private void addFieldsToInnerClass(SNode innerClass) {
     ListSequence.fromList(SLinkOperations.getTargets(innerClass, "field", true)).addSequence(Sequence.fromIterable(MapSequence.fromMap(this.myInnerFields).values()));
     for (SNode varReference : Sequence.fromIterable(this.getExternalReferences(innerClass))) {
-      SNodeOperations.replaceWithAnother(varReference, new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0b0m().createNode(MapSequence.fromMap(this.myInnerFields).get(SLinkOperations.getTarget(varReference, "variableDeclaration", false))));
+      SNodeOperations.replaceWithAnother(varReference, new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0b0m().createNode(innerClass, MapSequence.fromMap(this.myInnerFields).get(SLinkOperations.getTarget(varReference, "variableDeclaration", false))));
     }
   }
 
@@ -366,7 +366,7 @@ public class ConvertAnonymousRefactoring {
     public QuotationClass_qy1soj_a0a0a0b0i() {
     }
 
-    public SNode createNode(Object parameter_13, Object parameter_14) {
+    public SNode createNode(Object parameter_13, Object parameter_14, Object parameter_15) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -393,12 +393,13 @@ public class ConvertAnonymousRefactoring {
             {
               quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_11 = quotedNode_5;
+              quotedNode1_11.setReferent("classConcept", (SNode) parameter_14);
               quotedNode_4.addChild("operand", quotedNode1_11);
             }
             {
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_12 = quotedNode_6;
-              quotedNode1_12.setReferent("fieldDeclaration", (SNode) parameter_14);
+              quotedNode1_12.setReferent("fieldDeclaration", (SNode) parameter_15);
               quotedNode_4.addChild("operation", quotedNode1_12);
             }
             quotedNode_2.addChild("lValue", quotedNode1_10);
@@ -415,7 +416,7 @@ public class ConvertAnonymousRefactoring {
     public QuotationClass_qy1soj_a0a0a0b0m() {
     }
 
-    public SNode createNode(Object parameter_7) {
+    public SNode createNode(Object parameter_7, Object parameter_8) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -427,12 +428,13 @@ public class ConvertAnonymousRefactoring {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
+          quotedNode1_5.setReferent("classConcept", (SNode) parameter_7);
           quotedNode_1.addChild("operand", quotedNode1_5);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
-          quotedNode1_6.setReferent("fieldDeclaration", (SNode) parameter_7);
+          quotedNode1_6.setReferent("fieldDeclaration", (SNode) parameter_8);
           quotedNode_1.addChild("operation", quotedNode1_6);
         }
         result = quotedNode1_4;
