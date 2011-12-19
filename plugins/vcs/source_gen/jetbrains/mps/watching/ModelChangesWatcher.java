@@ -83,8 +83,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
           if (myReloadSession != null) {
             doReload();
           }
-          myTimer.suspend();
         }
+        myTimer.suspend();
       }
     };
     myTimer.setTakeInitialDelay(true);
@@ -105,13 +105,13 @@ public class ModelChangesWatcher implements ApplicationComponent {
           return;
         }
       }
-      myTimer.resume();
     }
+    myTimer.resume();
   }
 
   public void suspendTasksProcessing() {
+    myTimer.suspend();
     synchronized (myLock) {
-      myTimer.suspend();
       myBans++;
     }
   }
@@ -270,6 +270,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
       if (application.isDisposeInProgress() || application.isDisposed()) {
         return;
       }
+      boolean resume = false;
       synchronized (myLock) {
         if (myReloadSession == null) {
           myReloadSession = new ReloadSession(getReloadListeners());
@@ -291,8 +292,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
           processAfterEvent(path, event, myReloadSession);
         }
         if (myBans == 0) {
-          myTimer.resume();
+          resume = true;
         }
+      }
+      if (resume){
+        myTimer.resume();
       }
     }
 
