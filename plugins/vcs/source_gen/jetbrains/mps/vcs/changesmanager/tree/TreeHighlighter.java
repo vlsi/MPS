@@ -192,8 +192,8 @@ public class TreeHighlighter implements TreeMessageOwner {
           SModelReference modelRef = feature.getModelReference();
           for (Feature anotherFeature : SetSequence.fromSet(myFeatureToNodes.keySet())) {
             if (modelRef.equals(anotherFeature.getModelReference())) {
-              if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Object>() {
-                public boolean accept(Object a) {
+              if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
+                public boolean accept(Feature a) {
                   return feature.equals(a);
                 }
               })) {
@@ -246,11 +246,10 @@ public class TreeHighlighter implements TreeMessageOwner {
   @Nullable
   private static FileStatus getModelFileStatus(@NotNull EditableSModelDescriptor emd, @NotNull Project project) {
     VirtualFile vf = VirtualFileUtils.getVirtualFile(emd.getModelFile());
-    if (vf != null) {
-      FileStatus modelStatus = FileStatusManager.getInstance(project).getStatus(vf);
-      return modelStatus;
-    }
-    return null;
+    return (vf == null ?
+      null :
+      FileStatusManager.getInstance(project).getStatus(vf)
+    );
   }
 
   private class MyTreeNodeListener implements MPSTreeNodeListener {
