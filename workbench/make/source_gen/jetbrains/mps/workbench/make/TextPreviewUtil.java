@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.resources.FResource;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.concurrent.ExecutionException;
 
 public class TextPreviewUtil {
@@ -55,6 +56,7 @@ public class TextPreviewUtil {
                 FileEditorManager.getInstance(context.getProject()).openTextEditor(new OpenFileDescriptor(context.getProject(), tfile), true);
               }
             });
+            ProjectPane.getInstance(context.getProject()).rebuildTree();
           }
         } catch (InterruptedException ignore) {
         } catch (ExecutionException ignore) {
