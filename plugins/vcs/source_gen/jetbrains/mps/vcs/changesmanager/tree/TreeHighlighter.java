@@ -237,7 +237,11 @@ public class TreeHighlighter implements TreeMessageOwner {
   private TreeMessage getMessage(@NotNull ModelFeature modelFeature) {
     SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelFeature.getModelReference());
     if (md instanceof EditableSModelDescriptor) {
-      return getMessage(getModelFileStatus((EditableSModelDescriptor) md, myRegistry.getProject()));
+      FileStatus status = getModelFileStatus((EditableSModelDescriptor) md, myRegistry.getProject());
+      return (status == null ?
+        null :
+        getMessage(status)
+      );
     } else {
       return null;
     }
