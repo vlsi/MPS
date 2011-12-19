@@ -10,6 +10,7 @@ import com.intellij.util.containers.BidirectionalMultiMap;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import com.intellij.util.containers.BidirectionalMap;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.List;
 import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
@@ -49,6 +50,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 
 public class ChangesTracking {
@@ -62,7 +64,7 @@ public class ChangesTracking {
   private boolean myDisposed = false;
   private BidirectionalMultiMap<SNodeId, ModelChange> myNodesToChanges = new BidirectionalMultiMap<SNodeId, ModelChange>();
   private BidirectionalMap<SNodeId, ModelChange> myAddedNodesToChanges = new BidirectionalMap<SNodeId, ModelChange>();
-  private List<SNodeId> myLastNewChildrenIds;
+  private Tuples._2<SNodeId, List<SNodeId>> myLastParentAndNewChildrenIds;
   private FileStatus myStatusOnLastUpdate;
 
   public ChangesTracking(@NotNull Project project, @NotNull CurrentDifference difference) {
@@ -92,7 +94,7 @@ public class ChangesTracking {
     if (change instanceof AddRootChange) {
       MapSequence.fromMap(myAddedNodesToChanges).put(change.getRootId(), change);
     } else if (change instanceof NodeGroupChange) {
-      for (SNodeId i : Sequence.fromIterable(getNodeIdsForNodeGroupChange((NodeGroupChange) change, myLastNewChildrenIds))) {
+      for (SNodeId i : Sequence.fromIterable(getNodeIdsForNodeGroupChange((NodeGroupChange) change, myLastParentAndNewChildrenIds))) {
         MapSequence.fromMap(myAddedNodesToChanges).put(i, change);
       }
     }
@@ -101,7 +103,7 @@ public class ChangesTracking {
   private void buildCaches() {
     myNodesToChanges.clear();
     myAddedNodesToChanges.clear();
-    myLastNewChildrenIds = null;
+    myLastParentAndNewChildrenIds = null;
     for (ModelChange ch : ListSequence.fromList(myDifference.getChangeSet().getModelChanges())) {
       updateCacheForChange(ch);
     }
@@ -266,16 +268,19 @@ public class ChangesTracking {
     });
   }
 
-  private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc, @Nullable List<SNodeId> lastNewChildrenIds) {
-    if (lastNewChildrenIds == null) {
+  private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc, @Nullable Tuples._2<SNodeId, List<SNodeId>> lastParentAndNewChildrenIds) {
+    List<SNodeId> childrenIds;
+    if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a0(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
       List<SNode> children = ngc.getChangeSet().getNewModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole());
-      lastNewChildrenIds = ListSequence.fromList(children).select(new ISelector<SNode, SNodeId>() {
+      childrenIds = ListSequence.fromList(children).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
           return n.getSNodeId();
         }
       }).toListSequence();
+    } else {
+      childrenIds = lastParentAndNewChildrenIds._1();
     }
-    return ListSequence.fromList(lastNewChildrenIds).page(ngc.getResultBegin(), ngc.getResultEnd());
+    return ListSequence.fromList(childrenIds).page(ngc.getResultBegin(), ngc.getResultEnd());
   }
 
   @Nullable
@@ -295,6 +300,13 @@ public class ChangesTracking {
       return checkedDotOperand.getOldModel();
     }
     return null;
+  }
+
+  private static boolean neq_5iuzi5_a0a1a0(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 
   private class MyModelListener extends SModelAdapter {
@@ -370,11 +382,11 @@ public class ChangesTracking {
             // node is already deleted, no need to build diff for it 
             return;
           }
-          myLastNewChildrenIds = ListSequence.fromList(childrenRightAfterEvent).select(new ISelector<SNode, SNodeId>() {
+          myLastParentAndNewChildrenIds = MultiTuple.<SNodeId,List<SNodeId>>from(parentId, ListSequence.fromList(childrenRightAfterEvent).select(new ISelector<SNode, SNodeId>() {
             public SNodeId select(SNode n) {
               return n.getSNodeId();
             }
-          }).toListSequence();
+          }).toListSequence());
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
               b.buildForNodeRole(getOldNode(parentId).getChildren(role), childrenRightAfterEvent);
