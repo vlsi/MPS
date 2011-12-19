@@ -36400,7 +36400,18 @@
                           </node>
                         </node>
                         <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="637963823610839352">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="637963823610839351" />
+                          <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="637963823610839351">
+                            <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="8184320397304927312" resolveInfo="ConvertAnonymousRefactoring" />
+                            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="9160497614872210296">
+                              <property name="linkRole" nameId="tpck.1757699476691236116" value="classConcept" />
+                              <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9160497614872210378">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="9160497614872210379">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8184320397305047566" resolveInfo="constructorDeclaration" />
+                                </node>
+                                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="9160497614872210380" />
+                              </node>
+                            </node>
+                          </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="637963823610839495">
                             <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="8184320397304932497" resolveInfo="myInnerFields" />
                             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="637963823610840343">
@@ -36700,7 +36711,15 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="8184320397305019648">
                   <node role="replacementNode" roleId="tp25.1140131861877" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="8184320397305021394">
                     <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8184320397305021650">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="8184320397305021565" />
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="8184320397305021565">
+                        <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="8184320397304927312" resolveInfo="ConvertAnonymousRefactoring" />
+                        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="9160497614872180407">
+                          <property name="linkRole" nameId="tpck.1757699476691236116" value="classConcept" />
+                          <node role="expression" roleId="tp3r.1196350785111" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="9160497614872180411">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8184320397304986751" resolveInfo="innerClass" />
+                          </node>
+                        </node>
+                      </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="8184320397305021738">
                         <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="8184320397304932497" resolveInfo="myInnerFields" />
                         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="8184320397305021823">
