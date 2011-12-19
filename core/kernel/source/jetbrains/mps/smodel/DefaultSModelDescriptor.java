@@ -339,13 +339,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public SModelHeader getSModelHeader() {
-    synchronized (myLoadingLock) {
-      SModel model = mySModel;
-      if (model != null) {
-        return model.getSModelHeader();
-      }
-      return myHeader;
+    SModel model = mySModel;
+    if (model != null) {
+      return model.getSModelHeader();
     }
+    return myHeader;
   }
 
   public Map<String, String> getMetaData() {
