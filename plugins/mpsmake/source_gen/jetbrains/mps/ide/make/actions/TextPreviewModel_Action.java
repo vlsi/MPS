@@ -82,7 +82,7 @@ public class TextPreviewModel_Action extends GeneratedAction {
     SModelDescriptor md = null;
     if (((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")) != null) {
       md = ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel"));
-    } else if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() > 0) {
+    } else if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")) != null && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() > 0) {
       md = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0);
     }
     return md;
