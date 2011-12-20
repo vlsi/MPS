@@ -28,7 +28,6 @@ languages/util/runConfigurations/classes
 workbench/typesystemUi/classes
 languages/util/uiLanguage/runtime/classes
 MPSPlugin/apiclasses
-core/debug/classes
 core/debug-api/classes
 workbench/mps-editor/classes
 workbench/baseLanguageIndex/classes_gen
