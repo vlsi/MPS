@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="705y4no4t1oglj6n5sz95em2btyyfkv">
+<dependencies version="2" modelHash="-bqgzg6pvulgp677ex9aof9yk22e6y5x">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.codeHighlighting(MPS.Classpath/com.intellij.codeHighlighting@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide(MPS.Classpath/com.intellij.ide@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.structureView(MPS.Classpath/com.intellij.ide.structureView@java_stub)" />
@@ -57,7 +57,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-7vcmpavwf9ea155yro6is5d3t2ttmm" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="dxpmcmw8ohkpqxzxdrioybecb4ufy6g" />
   <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="bllkxjrj2t4xu16suixw80hxc1q4dzq" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-6w6z82f2txxwn2glt2oqii8i3mczaq5" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="chorrw76u6o4syk4njppm6kbegernwa" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-8h3fz2txuftple5no6tuuqf8wtsf12" />
   <dep model="r:01d327ba-040c-402c-a2b6-8832116588df(jetbrains.mps.lang.plugin.plugin)" hash="7gfdmf2mgaygymp2gj53m2o7eg8e2nu" />
   <dep model="r:0dff1723-c756-41af-8aa7-4cfea375b0ba(jetbrains.mps.make.facet.generator.template.main@generator)" hash="-2sq5bbgnf6joj6d1gj9golcs1sralc4" />
@@ -271,7 +271,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="UIQueryRelayStrategy.java" />
   </source>
-  <source id="1313226109833150087" name="TextPreviewUtil" hash="-jjsued2q4zbjm7dfi11filoaroa2eq" dependsOnNodes="true">
+  <source id="1313226109833150087" name="TextPreviewUtil" hash="-79qzy928zjdvfjtqpl116haqs7v8m8e" dependsOnNodes="true">
     <dep root="2956674153315665518" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.codeHighlighting(MPS.Classpath/com.intellij.codeHighlighting@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide(MPS.Classpath/com.intellij.ide@java_stub)" />

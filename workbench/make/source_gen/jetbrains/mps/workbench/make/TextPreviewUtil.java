@@ -56,7 +56,7 @@ public class TextPreviewUtil {
                 FileEditorManager.getInstance(context.getProject()).openTextEditor(new OpenFileDescriptor(context.getProject(), tfile), true);
               }
             });
-            ProjectPane.getInstance(context.getProject()).rebuildTree();
+            ProjectPane.getInstance(context.getProject()).rebuild();
           }
         } catch (InterruptedException ignore) {
         } catch (ExecutionException ignore) {

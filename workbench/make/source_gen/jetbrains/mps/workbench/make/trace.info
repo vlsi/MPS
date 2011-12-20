@@ -552,7 +552,7 @@
     <nodeInfo nodeId="8610665572788515929" fileName="TextPreviewUtil.java" startLine="51" startPosition="0" endLine="52" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="914579014970970212" fileName="TextPreviewUtil.java" startLine="52" startPosition="238" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8610665572788515953" fileName="TextPreviewUtil.java" startLine="55" startPosition="33" endLine="56" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5315783505354334493" fileName="TextPreviewUtil.java" startLine="58" startPosition="15" endLine="59" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5315783505354334493" fileName="TextPreviewUtil.java" startLine="58" startPosition="15" endLine="59" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1313226109833150089" fileName="TextPreviewUtil.java" startLine="30" startPosition="30" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPreviewUtil#()V" />
     <nodeInfo nodeId="3257444691069125372" fileName="TextPreviewUtil.java" startLine="37" startPosition="82" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
     <nodeInfo nodeId="914579014971018371" fileName="TextPreviewUtil.java" startLine="54" startPosition="55" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -579,7 +579,7 @@
       <varInfo nodeId="3257444691069125373" varName="query" />
     </scopeInfo>
     <scopeInfo nodeId="914579014971018371" fileName="TextPreviewUtil.java" startLine="54" startPosition="55" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515917" fileName="TextPreviewUtil.java" startLine="49" startPosition="37" endLine="59" endPosition="72">
+    <scopeInfo nodeId="8610665572788515917" fileName="TextPreviewUtil.java" startLine="49" startPosition="37" endLine="59" endPosition="68">
       <varInfo nodeId="8610665572788515919" varName="fres" />
       <varInfo nodeId="8610665572788515930" varName="tfile" />
     </scopeInfo>

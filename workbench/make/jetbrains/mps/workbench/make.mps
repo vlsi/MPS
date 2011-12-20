@@ -7493,7 +7493,7 @@
                                       </node>
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5315783505354337881">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="c4x8.~ProjectPane%drebuildTree()%cvoid" resolveInfo="rebuildTree" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="c4x8.~ProjectPane%drebuild()%cvoid" resolveInfo="rebuild" />
                                     </node>
                                   </node>
                                 </node>
