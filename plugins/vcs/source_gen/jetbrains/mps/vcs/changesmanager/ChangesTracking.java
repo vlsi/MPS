@@ -137,10 +137,10 @@ public class ChangesTracking {
       return;
     }
     myDifference.removeChangeSet();
+    myStatusOnLastUpdate = status;
     if (FileStatus.NOT_CHANGED == status && !(force)) {
       return;
     }
-    myStatusOnLastUpdate = status;
     final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
     if (BaseVersionUtil.isAddedFileStatus(status)) {
       baseVersionModel.value = new SModel(myModelDescriptor.getSModelReference());

@@ -166,6 +166,7 @@ public class CommonChangesManagerTest {
     if (ListSequence.fromList(exceptions).isNotEmpty()) {
       throw ListSequence.fromList(exceptions).first();
     }
+    myChangeListManager.ensureUpToDate(false);
 
     waitForChangesManager();
     Assert.assertNull(myUtilDiff.getChangeSet());
