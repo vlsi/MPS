@@ -6,11 +6,17 @@ import com.intellij.openapi.wm.StatusBarWidget;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.wm.StatusBar;
 import javax.swing.Icon;
+import jetbrains.mps.make.IMakeNotificationListener;
+import jetbrains.mps.make.IMakeService;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.util.Consumer;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import javax.swing.UIManager;
+import jetbrains.mps.make.MakeNotification;
+import com.intellij.openapi.application.ApplicationManager;
+import javax.swing.JLabel;
+import com.intellij.ui.LightColors;
 
 public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.IconPresentation {
   public static final String WIDGET_ID = "TransientModelsWidget";
@@ -18,12 +24,14 @@ public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.I
   @NotNull
   private final StatusBar myStatusBar;
   private final Icon myIcon = IconContainer.ICON_a1;
+  private final IMakeNotificationListener myMakeNotificationListener = new TransientModelsWidget.MyMakeNotificationListener();
 
   public TransientModelsWidget(StatusBar bar) {
     myStatusBar = bar;
   }
 
   public void install(@NotNull StatusBar bar) {
+    IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
   }
 
   @Nullable
@@ -51,6 +59,7 @@ public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.I
   }
 
   public void dispose() {
+    IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
   }
 
   @NotNull
@@ -68,5 +77,35 @@ public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.I
 
   public boolean isSaveTransientModels() {
     return GenerationSettings.getInstance().isSaveTransientModels();
+  }
+
+  private class MyMakeNotificationListener implements IMakeNotificationListener {
+    public MyMakeNotificationListener() {
+    }
+
+    public void handleNotification(MakeNotification notification) {
+      if (!(isSaveTransientModels())) {
+        return;
+      }
+      if (notification.getKind() == MakeNotification.Kind.SESSION_OPENED) {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            myStatusBar.fireNotificationPopup(new JLabel("Saving transient models is enabled."), LightColors.YELLOW);
+          }
+        });
+      }
+    }
+
+    public void scriptAboutToStart(MakeNotification notification) {
+    }
+
+    public void scriptFinished(MakeNotification notification) {
+    }
+
+    public void sessionOpened(MakeNotification notification) {
+    }
+
+    public void sessionClosed(MakeNotification notification) {
+    }
   }
 }
