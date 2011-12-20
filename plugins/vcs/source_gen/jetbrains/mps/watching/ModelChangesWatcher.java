@@ -295,7 +295,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
           resume = true;
         }
       }
-      if (resume){
+      if (resume) {
         myTimer.resume();
       }
     }
