@@ -4,7 +4,10 @@ package jetbrains.mps.vcs.changesmanager;
 
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
+import com.intellij.openapi.vcs.changes.ChangeListManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
@@ -20,19 +23,21 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import com.intellij.openapi.vcs.AbstractVcs;
+import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.changes.Change;
-import com.intellij.openapi.vcs.changes.ChangeListManager;
-import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import java.util.Arrays;
+import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import jetbrains.mps.vcs.concrete.GitUtils;
 import java.util.List;
+import com.intellij.openapi.vcs.VcsException;
+import java.util.ArrayList;
+import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.vcs.diff.ChangeSet;
-import com.intellij.openapi.vcs.AbstractVcs;
 
 public class CommonChangesManagerTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testConflicts");
@@ -41,6 +46,7 @@ public class CommonChangesManagerTest {
 
   private CurrentDifferenceRegistry myRegistry;
   private final Object myWaitLock = new Object();
+  private ChangeListManager myChangeListManager;
 
   public CommonChangesManagerTest() {
   }
@@ -66,13 +72,20 @@ public class CommonChangesManagerTest {
     }
   }
 
+  private void waitForEDT() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+      }
+    }, ModalityState.NON_MODAL);
+  }
+
   private CurrentDifference getCurrentDifference(String shortName) {
     return myRegistry.getCurrentDifference((EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("ru.geevee.fugue." + shortName)));
   }
 
   @Test
   public void doTest() {
-    TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, new TestMain.ProjectRunnable() {
+    boolean result = TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, new TestMain.ProjectRunnable() {
       public boolean execute(Project project) {
         try {
           com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
@@ -92,32 +105,62 @@ public class CommonChangesManagerTest {
           util.setEnabled(true);
           waitForChangesManager();
 
-          Assert.assertFalse(ListSequence.fromList(check_orwzer_a0a71a0a3a0a2(html.getChangeSet())).isEmpty());
-          Assert.assertFalse(ListSequence.fromList(check_orwzer_a0a81a0a3a0a2(ui.getChangeSet())).isEmpty());
+          Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a71a0a3a0a0d(html.getChangeSet())).isNotEmpty());
+          Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a81a0a3a0a0d(ui.getChangeSet())).isNotEmpty());
           Assert.assertNull(util.getChangeSet());
 
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          ModelAccess.instance().runCommandInEDT(new Runnable() {
             public void run() {
               SModel model = util.getModelDescriptor().getSModel();
               SNode root = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
                 public boolean accept(SNode r) {
-                  return "SearchPanel".equals(SPropertyOperations.getString(r, "name"));
+                  return "ImageLoader".equals(SPropertyOperations.getString(r, "name"));
                 }
               });
-              SPropertyOperations.set(root, "name", "SearchPanelModified");
-              SNodeOperations.deleteNode(SLinkOperations.getTarget(root, "superclass", true));
+              SPropertyOperations.set(root, "name", "ImageLoaderModified");
               ListSequence.fromList(SLinkOperations.getTargets(root, "field", true)).clear();
             }
-          });
-          waitForChangesManager();
-          Assert.assertFalse(ListSequence.fromList(check_orwzer_a0a32a0a3a0a2(util.getChangeSet())).isEmpty());
+          }, project);
+          ModelAccess.instance().flushEventQueue();
 
+          waitForChangesManager();
+          Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a52a0a3a0a0d(util.getChangeSet())).isNotEmpty());
+
+          ModelAccess.instance().runCommandInEDT(new Runnable() {
+            public void run() {
+              util.getModelDescriptor().save();
+            }
+          }, project);
+          ModelAccess.instance().flushEventQueue();
+
+          AbstractVcs gitVcs = AllVcses.getInstance(ideaProject).getByName("Git");
+          assert gitVcs != null;
+
+          myChangeListManager = ChangeListManager.getInstance(ideaProject);
+          myChangeListManager.ensureUpToDate(false);
           VirtualFile utilVFile = VirtualFileUtils.getVirtualFile(util.getModelDescriptor().getModelFile());
-          Change change = ChangeListManager.getInstance(ideaProject).getChange(utilVFile);
+          Change change = myChangeListManager.getChange(utilVFile);
           assert change != null;
-          CheckinEnvironment checkinEnvironment = check_orwzer_a0cb0a0d0a0c(ProjectLevelVcsManager.getInstance(ideaProject).getVcsFor(utilVFile));
-          assert checkinEnvironment != null;
-          checkinEnvironment.commit(Arrays.asList(change), "dumb commit");
+          gitVcs.getCheckinEnvironment().commit(Arrays.asList(change), "dumb commit");
+          VcsDirtyScopeManager.getInstance(ideaProject).fileDirty(utilVFile);
+          myChangeListManager.ensureUpToDate(false);
+
+          waitForChangesManager();
+          Assert.assertNull(util.getChangeSet());
+
+          GitUtils.uncommmit(ideaProject, ideaProject.getBaseDir());
+          utilVFile.refresh(false, false);
+          VcsDirtyScopeManager.getInstance(ideaProject).fileDirty(utilVFile);
+          myChangeListManager.ensureUpToDate(false);
+
+          waitForChangesManager();
+          Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a05a0a3a0a0d(util.getChangeSet())).isNotEmpty());
+
+          List<VcsException> exceptions = ListSequence.fromList(new ArrayList<VcsException>());
+          gitVcs.getRollbackEnvironment().rollbackChanges(Arrays.asList(myChangeListManager.getChange(utilVFile)), exceptions, RollbackProgressListener.EMPTY);
+          if (ListSequence.fromList(exceptions).isNotEmpty()) {
+            throw ListSequence.fromList(exceptions).first();
+          }
 
           waitForChangesManager();
           Assert.assertNull(util.getChangeSet());
@@ -129,32 +172,33 @@ public class CommonChangesManagerTest {
         }
       }
     }, "jetbrains.mps.vcs", "Git4Idea", "jetbrains.mps.ide.make");
+    Assert.assertTrue(result);
   }
 
-  private static List<ModelChange> check_orwzer_a0a71a0a3a0a2(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a71a0a3a0a0d(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a81a0a3a0a2(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a81a0a3a0a0d(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a32a0a3a0a2(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a52a0a3a0a0d(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static CheckinEnvironment check_orwzer_a0cb0a0d0a0c(AbstractVcs checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a05a0a3a0a0d(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getCheckinEnvironment();
+      return checkedDotOperand.getModelChanges();
     }
     return null;
   }
