@@ -32,6 +32,7 @@ public class StatusBarInstaller_CustomProjectPlugin extends BaseCustomProjectPlu
     for (StatusBarWidget widget : ListSequence.fromList(StatusBarInstaller_CustomProjectPlugin.this.myWidgets)) {
       StatusBarInstaller_CustomProjectPlugin.this.myStatusBar.removeWidget(widget.ID());
     }
+    ListSequence.fromList(StatusBarInstaller_CustomProjectPlugin.this.myWidgets).clear();
     StatusBarInstaller_CustomProjectPlugin.this.myStatusBar = null;
   }
 }
