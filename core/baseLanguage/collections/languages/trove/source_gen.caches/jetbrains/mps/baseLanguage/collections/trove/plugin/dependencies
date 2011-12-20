@@ -23,8 +23,5 @@
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.trove.plugin.Trove_ProjectPlugin" file="Trove_ProjectPlugin.java">
-    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
-  </dependency>
 </dependenciesRoot>
 

@@ -18,12 +18,58 @@ package jetbrains.mps.plugins;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
-public class PluginContributor {
+public class PluginContributor extends AbstractPluginFactory {
+  public PluginContributor() {
+  }
+
   public BaseProjectPlugin createProjectPlugin(){
     return null;
   }
 
   public BaseApplicationPlugin createApplicationPlugin(){
     return null;
+  }
+
+  @Override
+  @SuppressWarnings("unchecked")
+  public <T> T create(Class<T> klass) {
+    if (BaseProjectPlugin.class == klass) {
+      return (T) createProjectPlugin();
+    }
+    else if (BaseApplicationPlugin.class == klass) {
+      return (T) createApplicationPlugin();
+    }
+    throw new IllegalArgumentException("Can't create instance: "+klass);
+  }
+
+  public static PluginContributor adapt (AbstractPluginFactory factory) {
+    if (factory instanceof PluginContributor) {
+      return (PluginContributor) factory;
+    }
+    return new AbstractPluginFactoryAdapter(factory);
+  }
+
+  private static class AbstractPluginFactoryAdapter extends PluginContributor {
+
+    private final AbstractPluginFactory myFactory;
+
+    public AbstractPluginFactoryAdapter(AbstractPluginFactory factory) {
+      myFactory = factory;
+    }
+
+    @Override
+    public BaseProjectPlugin createProjectPlugin() {
+      return create(BaseProjectPlugin.class);
+    }
+
+    @Override
+    public BaseApplicationPlugin createApplicationPlugin() {
+      return create(BaseApplicationPlugin.class);
+    }
+
+    @Override
+    public <T> T create(Class<T> klass) {
+      return myFactory.create(klass);
+    }
   }
 }

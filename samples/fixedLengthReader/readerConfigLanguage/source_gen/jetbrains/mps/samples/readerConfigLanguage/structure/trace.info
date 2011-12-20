@@ -73,27 +73,52 @@
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="96" startPosition="69" endLine="97" endPosition="71" />
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="100" startPosition="74" endLine="101" endPosition="204" />
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="104" startPosition="60" endLine="105" endPosition="54" />
-    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="1116534870455" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1116534870455" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1116534870455" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1116534870455" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1116534870455" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="1116534870455" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="1116534870455" varName="node" />
+      <varInfo nodeId="1116534870455" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1116534870455" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="1116534870455" varName="node" />
+      <varInfo nodeId="1116534870455" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="1116534870455" varName="init" />
+      <varInfo nodeId="1116534870455" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="103" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="1116534870455" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration" />
   </root>
   <root nodeId="1116534914096">
@@ -181,31 +206,60 @@
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="114" startPosition="69" endLine="115" endPosition="59" />
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="118" startPosition="62" endLine="119" endPosition="180" />
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="122" startPosition="48" endLine="123" endPosition="42" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
+      <varInfo nodeId="1116534914096" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1116534914096" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1116534914096" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1116534914096" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1116534914096" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1116534914096" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1116534914096" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="89" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="1116534914096" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1116534914096" varName="node" />
+      <varInfo nodeId="1116534914096" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
     <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="109" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="1116534914096" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="113" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="1116534914096" varName="node" />
+      <varInfo nodeId="1116534914096" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="1116534914096" varName="init" />
+      <varInfo nodeId="1116534914096" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="121" startPosition="0" endLine="125" endPosition="0">
+      <varInfo nodeId="1116534914096" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1116534914096" fileName="Mapping.java" startLine="15" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.structure.Mapping" />
   </root>
   <root nodeId="1116534962441">
@@ -277,26 +331,50 @@
     <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="93" startPosition="69" endLine="94" endPosition="57" />
     <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="97" startPosition="60" endLine="98" endPosition="176" />
     <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="101" startPosition="46" endLine="102" endPosition="40" />
-    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+      <varInfo nodeId="1116534962441" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1116534962441" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1116534962441" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1116534962441" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1116534962441" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1116534962441" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="1116534962441" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="1116534962441" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1116534962441" varName="node" />
+      <varInfo nodeId="1116534962441" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="1116534962441" varName="init" />
+      <varInfo nodeId="1116534962441" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116534962441" fileName="Field.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="1116534962441" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1116534962441" fileName="Field.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.structure.Field" />
   </root>
 </debugInfo>

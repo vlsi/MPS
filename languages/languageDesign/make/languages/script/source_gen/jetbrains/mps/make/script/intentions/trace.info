@@ -34,8 +34,14 @@
     <scopeInfo nodeId="8626841540115943120" fileName="Option_makeDefault_Intention.java" startLine="39" startPosition="76" endLine="44" endPosition="7">
       <varInfo nodeId="8626841540116025442" varName="makeDefault" />
     </scopeInfo>
-    <scopeInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="38" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="8626841540115943116" varName="editorContext" />
+      <varInfo nodeId="8626841540115943116" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="8626841540115943116" varName="editorContext" />
+      <varInfo nodeId="8626841540115943116" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="12" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.make.script.intentions.Option_makeDefault_Intention" />
   </root>
 </debugInfo>

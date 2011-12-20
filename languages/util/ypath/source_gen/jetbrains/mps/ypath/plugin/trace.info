@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Ypath_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ypath.plugin.Ypath_ApplicationPlugin" />
-  <unitInfo fileName="Ypath_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.plugin.Ypath_ProjectPlugin" />
   <root nodeId="1216917978220">
     <nodeInfo nodeId="1216918074000" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="11" startPosition="24" endLine="12" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1216918094368" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

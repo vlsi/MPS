@@ -28,7 +28,9 @@
     <scopeInfo nodeId="2588298302277788538" fileName="QueriesGenerated.java" startLine="28" startPosition="152" endLine="30" endPosition="231">
       <varInfo nodeId="2588298302277920394" varName="ruc" />
     </scopeInfo>
-    <scopeInfo nodeId="8022472963610891783" fileName="QueriesGenerated.java" startLine="298" startPosition="208" endLine="302" endPosition="0" />
+    <scopeInfo nodeId="8022472963610891783" fileName="QueriesGenerated.java" startLine="298" startPosition="208" endLine="302" endPosition="0">
+      <varInfo nodeId="8022472963610891783" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="7048923897763033471" fileName="QueriesGenerated.java" startLine="53" startPosition="152" endLine="58" endPosition="18">
       <varInfo nodeId="7048923897763033473" varName="result" />
     </scopeInfo>

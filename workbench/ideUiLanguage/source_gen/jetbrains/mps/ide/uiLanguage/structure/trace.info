@@ -110,38 +110,74 @@
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="145" startPosition="69" endLine="146" endPosition="61" />
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="149" startPosition="64" endLine="150" endPosition="170" />
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="153" startPosition="50" endLine="154" endPosition="44" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="28" startPosition="0" endLine="31" endPosition="3" />
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="28" startPosition="0" endLine="31" endPosition="3">
+      <varInfo nodeId="1203592595174" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="node" />
+      <varInfo nodeId="1203592595174" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="116" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="120" startPosition="0" endLine="124" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="124" startPosition="0" endLine="128" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="node" />
+      <varInfo nodeId="1203592595174" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="128" startPosition="0" endLine="132" endPosition="0" />
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="132" startPosition="0" endLine="136" endPosition="0" />
     <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="140" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="144" startPosition="0" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="148" startPosition="0" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="152" startPosition="0" endLine="156" endPosition="0" />
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="140" startPosition="0" endLine="144" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="144" startPosition="0" endLine="148" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="node" />
+      <varInfo nodeId="1203592595174" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="148" startPosition="0" endLine="152" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="init" />
+      <varInfo nodeId="1203592595174" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="152" startPosition="0" endLine="156" endPosition="0">
+      <varInfo nodeId="1203592595174" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="16" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.IDEDialog" />
   </root>
   <root nodeId="1203592642690">
@@ -176,15 +212,28 @@
     <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="42" startPosition="43" endLine="43" endPosition="50" />
     <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="46" startPosition="70" endLine="47" endPosition="182" />
     <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="50" startPosition="56" endLine="51" endPosition="50" />
-    <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="1203592642690" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1203592642690" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1203592642690" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1203592642690" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1203592642690" varName="init" />
+      <varInfo nodeId="1203592642690" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1203592642690" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton" />
   </root>
   <root nodeId="1203606241544">
@@ -198,9 +247,16 @@
     <scopeInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="14" startPosition="46" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="18" startPosition="78" endLine="19" endPosition="198" />
     <scopeInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="22" startPosition="64" endLine="23" endPosition="58" />
-    <scopeInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1203606241544" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1203606241544" varName="init" />
+      <varInfo nodeId="1203606241544" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1203606241544" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression" />
   </root>
   <root nodeId="1203607523033">
@@ -221,11 +277,20 @@
     <scopeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="23" startPosition="45" endLine="24" endPosition="59" />
     <scopeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="27" startPosition="76" endLine="28" endPosition="194" />
     <scopeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="31" startPosition="62" endLine="32" endPosition="56" />
-    <scopeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="1203607523033" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1203607523033" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1203607523033" varName="init" />
+      <varInfo nodeId="1203607523033" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1203607523033" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" />
   </root>
   <root nodeId="1203610466731">
@@ -239,9 +304,16 @@
     <scopeInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="14" startPosition="39" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="18" startPosition="71" endLine="19" endPosition="184" />
     <scopeInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="22" startPosition="57" endLine="23" endPosition="51" />
-    <scopeInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1203610466731" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1203610466731" varName="init" />
+      <varInfo nodeId="1203610466731" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1203610466731" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.DialogExpression" />
   </root>
   <root nodeId="1226850367300">
@@ -283,17 +355,32 @@
     <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="50" startPosition="36" endLine="51" endPosition="60" />
     <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="54" startPosition="71" endLine="55" endPosition="184" />
     <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="58" startPosition="57" endLine="59" endPosition="51" />
-    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="1226850367300" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1226850367300" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1226850367300" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1226850367300" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1226850367300" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="1226850367300" varName="init" />
+      <varInfo nodeId="1226850367300" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1226850367300" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.DialogDimensions" />
   </root>
   <root nodeId="3734045384532546729">
@@ -314,11 +401,20 @@
     <scopeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="24" startPosition="45" endLine="25" endPosition="58" />
     <scopeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="28" startPosition="75" endLine="29" endPosition="192" />
     <scopeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="32" startPosition="61" endLine="33" endPosition="55" />
-    <scopeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="3734045384532546729" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="3734045384532546729" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="3734045384532546729" varName="init" />
+      <varInfo nodeId="3734045384532546729" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="3734045384532546729" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement" />
   </root>
   <root nodeId="3734045384532546800">
@@ -332,9 +428,16 @@
     <scopeInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="14" startPosition="45" endLine="15" endPosition="16" />
     <scopeInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="18" startPosition="77" endLine="19" endPosition="196" />
     <scopeInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="22" startPosition="63" endLine="23" endPosition="57" />
-    <scopeInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="3734045384532546800" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="3734045384532546800" varName="init" />
+      <varInfo nodeId="3734045384532546800" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="3734045384532546800" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement" />
   </root>
 </debugInfo>

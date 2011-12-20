@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Ui_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.plugin.Ui_ApplicationPlugin" />
-  <unitInfo fileName="Ui_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.plugin.Ui_ProjectPlugin" />
   <root nodeId="8117382572454923102">
     <nodeInfo nodeId="8117382572454923263" fileName="Variants.java" startLine="16" startPosition="23" endLine="17" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGS" />
     <nodeInfo nodeId="8117382572454923274" fileName="Variants.java" startLine="17" startPosition="161" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />

@@ -178,8 +178,8 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
         assertEquals(generatorOutputPath, myFacet.getSolution().getGeneratorOutputPath());
     }
 
-    public void testAddRemoveDependencies() throws InterruptedException {
-        final Module module2 = addModule(myProjectBuilder);
+    public void testAddRemoveDependencies() throws Exception {
+        final Module module2 = addModuleAndSetupFixture(myProjectBuilder);
         MPSFacet mpsFacet2 = addMPSFacet(module2);
 
         ApplicationManager.getApplication().runWriteAction(new Runnable() {

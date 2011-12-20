@@ -8,7 +8,10 @@
     <scopeInfo nodeId="1207048012942" fileName="EmitCodeForStatement_DataFlow.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
     <scopeInfo nodeId="1207048012944" fileName="EmitCodeForStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="104" />
     <scopeInfo nodeId="1207048012942" fileName="EmitCodeForStatement_DataFlow.java" startLine="11" startPosition="68" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1207048012942" fileName="EmitCodeForStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1207048012942" fileName="EmitCodeForStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1207048012942" varName="_context" />
+      <varInfo nodeId="1207048012942" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207048012942" fileName="EmitCodeForStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.dataFlow.EmitCodeForStatement_DataFlow" />
   </root>
   <root nodeId="1207048173150">
@@ -18,7 +21,10 @@
     <scopeInfo nodeId="1207048173150" fileName="EmitMayBeUnreachable_DataFlow.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
     <scopeInfo nodeId="1207048173152" fileName="EmitMayBeUnreachable_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="110" />
     <scopeInfo nodeId="1207048173150" fileName="EmitMayBeUnreachable_DataFlow.java" startLine="11" startPosition="68" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1207048173150" fileName="EmitMayBeUnreachable_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1207048173150" fileName="EmitMayBeUnreachable_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1207048173150" varName="_context" />
+      <varInfo nodeId="1207048173150" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207048173150" fileName="EmitMayBeUnreachable_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.dataFlow.EmitMayBeUnreachable_DataFlow" />
   </root>
   <root nodeId="1207048192521">
@@ -28,7 +34,10 @@
     <scopeInfo nodeId="1207048192521" fileName="BaseEmitVariableStatement_DataFlow.java" startLine="12" startPosition="47" endLine="12" endPosition="47" />
     <scopeInfo nodeId="1207048192523" fileName="BaseEmitVariableStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" />
     <scopeInfo nodeId="1207048192521" fileName="BaseEmitVariableStatement_DataFlow.java" startLine="11" startPosition="73" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1207048192521" fileName="BaseEmitVariableStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1207048192521" fileName="BaseEmitVariableStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1207048192521" varName="_context" />
+      <varInfo nodeId="1207048192521" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207048192521" fileName="BaseEmitVariableStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.dataFlow.BaseEmitVariableStatement_DataFlow" />
   </root>
   <root nodeId="1207048243596">
@@ -38,7 +47,10 @@
     <scopeInfo nodeId="1207048243596" fileName="BaseEmitJumpStatement_DataFlow.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1207048243598" fileName="BaseEmitJumpStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="103" />
     <scopeInfo nodeId="1207048243596" fileName="BaseEmitJumpStatement_DataFlow.java" startLine="11" startPosition="69" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1207048243596" fileName="BaseEmitJumpStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1207048243596" fileName="BaseEmitJumpStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1207048243596" varName="_context" />
+      <varInfo nodeId="1207048243596" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207048243596" fileName="BaseEmitJumpStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.dataFlow.BaseEmitJumpStatement_DataFlow" />
   </root>
   <root nodeId="1207048273258">
@@ -48,7 +60,10 @@
     <scopeInfo nodeId="1207048273258" fileName="RelativePosition_DataFlow.java" startLine="12" startPosition="38" endLine="12" endPosition="38" />
     <scopeInfo nodeId="1207048273260" fileName="RelativePosition_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="1207048273258" fileName="RelativePosition_DataFlow.java" startLine="11" startPosition="64" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1207048273258" fileName="RelativePosition_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1207048273258" fileName="RelativePosition_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1207048273258" varName="_context" />
+      <varInfo nodeId="1207048273258" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207048273258" fileName="RelativePosition_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.dataFlow.RelativePosition_DataFlow" />
   </root>
 </debugInfo>

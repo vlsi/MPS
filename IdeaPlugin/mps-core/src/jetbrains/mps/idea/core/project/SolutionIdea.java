@@ -20,6 +20,7 @@ import com.intellij.ProjectTopics;
 import com.intellij.facet.Facet;
 import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetManagerAdapter;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.roots.ModuleRootEvent;
 import com.intellij.openapi.roots.ModuleRootListener;
@@ -69,6 +70,9 @@ public class SolutionIdea extends Solution {
                     ModelAccess.instance().runWriteInEDT(new Runnable() {
                         @Override
                         public void run() {
+                            // this is to prevent a delayed write to be executed after the module has already been disposed
+                            // TODO: find a better solution
+                            if (myModule.isDisposed()) return;
                             setModuleDescriptor(getModuleDescriptor(), false);
                         }
                     });

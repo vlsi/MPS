@@ -9,7 +9,10 @@
     <scopeInfo nodeId="3196918548954111907" fileName="ExtractStatementListExpression_DataFlow.java" startLine="12" startPosition="52" endLine="12" endPosition="52" />
     <scopeInfo nodeId="3196918548954111907" fileName="ExtractStatementListExpression_DataFlow.java" startLine="11" startPosition="78" endLine="13" endPosition="3" />
     <scopeInfo nodeId="3196918548954111909" fileName="ExtractStatementListExpression_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="106" />
-    <scopeInfo nodeId="3196918548954111907" fileName="ExtractStatementListExpression_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="3196918548954111907" fileName="ExtractStatementListExpression_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="3196918548954111907" varName="_context" />
+      <varInfo nodeId="3196918548954111907" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="3196918548954111907" fileName="ExtractStatementListExpression_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.dataFlow.ExtractStatementListExpression_DataFlow" />
   </root>
   <root nodeId="3196918548954111925">
@@ -19,7 +22,10 @@
     <scopeInfo nodeId="3196918548954111925" fileName="ExtractStatementListInnerExpression_DataFlow.java" startLine="12" startPosition="57" endLine="12" endPosition="57" />
     <scopeInfo nodeId="3196918548954111927" fileName="ExtractStatementListInnerExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" />
     <scopeInfo nodeId="3196918548954111925" fileName="ExtractStatementListInnerExpression_DataFlow.java" startLine="11" startPosition="83" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="3196918548954111925" fileName="ExtractStatementListInnerExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="3196918548954111925" fileName="ExtractStatementListInnerExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="3196918548954111925" varName="_context" />
+      <varInfo nodeId="3196918548954111925" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="3196918548954111925" fileName="ExtractStatementListInnerExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.dataFlow.ExtractStatementListInnerExpression_DataFlow" />
   </root>
   <root nodeId="3421461530438560062">
@@ -57,7 +63,10 @@
       <varInfo nodeId="3421461530438560066" varName="methods" />
       <varInfo nodeId="3421461530438560074" varName="vars" />
     </scopeInfo>
-    <scopeInfo nodeId="3421461530438560062" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="20" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="3421461530438560062" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="20" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="3421461530438560062" varName="_context" />
+      <varInfo nodeId="3421461530438560062" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="3421461530438560062" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="17" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.dataFlow.InternalAnonymousClassCreator_DataFlow" />
   </root>
 </debugInfo>
