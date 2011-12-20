@@ -8,8 +8,6 @@ import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 
 public class Ide_ProjectPlugin extends BaseProjectPlugin {
@@ -21,17 +19,6 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
     ListSequence.fromList(tools).addElement(new AnalyzeDependencies_Tool(project));
     ListSequence.fromList(tools).addElement(new ModuleDependenies_Tool(project));
     return tools;
-  }
-
-  public List<BaseCustomProjectPlugin> initCustomParts(Project project) {
-    List<BaseCustomProjectPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomProjectPlugin>());
-    MPSProject mpsProject = project.getComponent(MPSProject.class);
-    {
-      BaseCustomProjectPlugin plugin = new StatusBarInstaller_CustomProjectPlugin();
-      ListSequence.fromList(res).addElement(plugin);
-      plugin.init(mpsProject);
-    }
-    return res;
   }
 
   public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {

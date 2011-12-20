@@ -1757,12 +1757,9 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.AnalyzeDependencies_Tool" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModuleDependenies_Tool" />
     <classNode dependClassName="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StatusBarInstaller_CustomProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ImplementMethodStrategy" file="ImplementMethodStrategy.java">
@@ -3355,23 +3352,6 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.actions.StatusBarHelper" file="StatusBarHelper.java">
-    <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
-    <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.actions.StatusBarInstaller_CustomProjectPlugin" file="StatusBarInstaller_CustomProjectPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
-    <classNode dependClassName="com.intellij.openapi.wm.StatusBarWidget" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StatusBarHelper" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.TransientModelsWidget" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.actions.StratergyAddMethodDialog" file="StratergyAddMethodDialog.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -3459,20 +3439,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.actions.TransientModelsWidget" file="TransientModelsWidget.java">
-    <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
-    <classNode dependClassName="com.intellij.util.Consumer" />
-    <classNode dependClassName="java.awt.event.MouseEvent" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.UIManager" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.IconContainer" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.openapi.wm.IconPresentation" />
-    <classNode extendsClassName="com.intellij.openapi.wm.StatusBarWidget" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.TransientModulesActions_ActionGroup" file="TransientModulesActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
