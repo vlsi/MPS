@@ -4,7 +4,6 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.make.actions.generate.SaveTransientModelsAction;
 
 public class SaveTransientModels_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(SaveTransientModels_ActionGroup.class);

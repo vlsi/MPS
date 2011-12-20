@@ -6,10 +6,10 @@ import com.intellij.openapi.wm.StatusBarWidget;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.wm.StatusBar;
 import javax.swing.Icon;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.util.Consumer;
 import java.awt.event.MouseEvent;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import javax.swing.UIManager;
 
 public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.IconPresentation {
@@ -17,11 +17,9 @@ public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.I
 
   @NotNull
   private final StatusBar myStatusBar;
-  private boolean mySaveTransientModels;
-  private final Icon myIcon = IconContainer.ICON_a2;
+  private final Icon myIcon = IconContainer.ICON_a1;
 
   public TransientModelsWidget(StatusBar bar) {
-    mySaveTransientModels = GenerationSettings.getInstance().isSaveTransientModels();
     myStatusBar = bar;
   }
 
@@ -30,7 +28,7 @@ public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.I
 
   @Nullable
   public String getTooltipText() {
-    if (mySaveTransientModels) {
+    if (isSaveTransientModels()) {
       return "Stop saving transient models.";
     }
     return "Save transient models.";
@@ -42,7 +40,6 @@ public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.I
       public void consume(MouseEvent e) {
         boolean saveTransientModels = GenerationSettings.getInstance().isSaveTransientModels();
         GenerationSettings.getInstance().setSaveTransientModels(!(saveTransientModels));
-        mySaveTransientModels = GenerationSettings.getInstance().isSaveTransientModels();
         myStatusBar.updateWidget(ID());
       }
     };
@@ -58,7 +55,7 @@ public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.I
 
   @NotNull
   public Icon getIcon() {
-    if (mySaveTransientModels) {
+    if (isSaveTransientModels()) {
       return myIcon;
     }
     return UIManager.getLookAndFeel().getDisabledIcon(myStatusBar.getComponent(), myIcon);
@@ -67,5 +64,9 @@ public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.I
   @NotNull
   public String ID() {
     return WIDGET_ID;
+  }
+
+  public boolean isSaveTransientModels() {
+    return GenerationSettings.getInstance().isSaveTransientModels();
   }
 }
