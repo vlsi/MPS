@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="4346819404427339851">
+    <nodeInfo nodeId="4346819404427345646" fileName="GitUtils.java" startLine="15" startPosition="90" endLine="16" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4346819404427345637" fileName="GitUtils.java" startLine="16" startPosition="82" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4346819404427345664" fileName="GitUtils.java" startLine="17" startPosition="40" endLine="18" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4346819404427339853" fileName="GitUtils.java" startLine="11" startPosition="23" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GitUtils#()V" />
+    <nodeInfo nodeId="4346819404427342446" fileName="GitUtils.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="uncommmit#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vfs/VirtualFile;)V" />
+    <scopeInfo nodeId="4346819404427339856" fileName="GitUtils.java" startLine="12" startPosition="22" endLine="12" endPosition="22" />
+    <scopeInfo nodeId="4346819404427339853" fileName="GitUtils.java" startLine="11" startPosition="23" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="4346819404427342449" fileName="GitUtils.java" startLine="15" startPosition="90" endLine="18" endPosition="12">
+      <varInfo nodeId="4346819404427345647" varName="h" />
+    </scopeInfo>
+    <scopeInfo nodeId="4346819404427342446" fileName="GitUtils.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="4346819404427342450" varName="gitRoot" />
+      <varInfo nodeId="4346819404427342453" varName="project" />
+    </scopeInfo>
+    <unitInfo nodeId="4346819404427339851" fileName="GitUtils.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.vcs.concrete.GitUtils" />
+  </root>
+</debugInfo>
+
