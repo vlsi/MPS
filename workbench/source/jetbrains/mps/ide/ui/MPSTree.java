@@ -582,9 +582,11 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public void fireTreeCreated(@NotNull Project project) {
-    MPSTreeCreationHandler[] handlers = Extensions.getExtensions(MPSTreeCreationHandler.EP_NAME, project);
-    for (MPSTreeCreationHandler handler : handlers) {
-      handler.treeCreated(this);
+    if (!project.isDefault()) {
+      MPSTreeCreationHandler[] handlers = Extensions.getExtensions(MPSTreeCreationHandler.EP_NAME, project);
+      for (MPSTreeCreationHandler handler : handlers) {
+        handler.treeCreated(this);
+      }
     }
   }
 
