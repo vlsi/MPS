@@ -14,6 +14,14 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.junit.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.vcs.diff.ChangeSet;
@@ -51,9 +59,11 @@ public class CommonChangesManagerTest {
   }
 
   private CurrentDifference getCurrentDifference(String shortName) {
-    EditableSModelDescriptor htmlmd = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("ru.geevee.fugue." + shortName));
-    waitForChangesManager();
-    return myRegistry.getCurrentDifference(htmlmd);
+    return myRegistry.getCurrentDifference(getModel(shortName));
+  }
+
+  private EditableSModelDescriptor getModel(String shortName) {
+    return (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("ru.geevee.fugue." + shortName));
   }
 
   @Test
@@ -67,16 +77,36 @@ public class CommonChangesManagerTest {
           CurrentDifference html = getCurrentDifference("html");
           CurrentDifference ui = getCurrentDifference("ui");
           CurrentDifference util = getCurrentDifference("util");
+
           Assert.assertNull(html.getChangeSet());
           Assert.assertNull(ui.getChangeSet());
           Assert.assertNull(util.getChangeSet());
+
           html.setEnabled(true);
           ui.setEnabled(true);
           util.setEnabled(true);
           waitForChangesManager();
-          Assert.assertFalse(ListSequence.fromList(check_orwzer_a0a31a0a3a0a2(html.getChangeSet())).isEmpty());
-          Assert.assertFalse(ListSequence.fromList(check_orwzer_a0a41a0a3a0a2(ui.getChangeSet())).isEmpty());
+
+          Assert.assertFalse(ListSequence.fromList(check_orwzer_a0a61a0a3a0a3(html.getChangeSet())).isEmpty());
+          Assert.assertFalse(ListSequence.fromList(check_orwzer_a0a71a0a3a0a3(ui.getChangeSet())).isEmpty());
           Assert.assertNull(util.getChangeSet());
+
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              SModel model = getModel("util").getSModel();
+              SNode root = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
+                public boolean accept(SNode r) {
+                  return "SearchPanel".equals(SPropertyOperations.getString(r, "name"));
+                }
+              });
+              SPropertyOperations.set(root, "name", "SearchPanelModified");
+              SNodeOperations.deleteNode(SLinkOperations.getTarget(root, "superclass", true));
+              ListSequence.fromList(SLinkOperations.getTargets(root, "field", true)).clear();
+            }
+          });
+          waitForChangesManager();
+          Assert.assertFalse(ListSequence.fromList(check_orwzer_a0a22a0a3a0a3(util.getChangeSet())).isEmpty());
+
           return true;
         } catch (Throwable e) {
           e.printStackTrace();
@@ -86,14 +116,21 @@ public class CommonChangesManagerTest {
     }, "jetbrains.mps.vcs", "Git4Idea", "jetbrains.mps.ide.make");
   }
 
-  private static List<ModelChange> check_orwzer_a0a31a0a3a0a2(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a61a0a3a0a3(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a41a0a3a0a2(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a71a0a3a0a3(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_orwzer_a0a22a0a3a0a3(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
