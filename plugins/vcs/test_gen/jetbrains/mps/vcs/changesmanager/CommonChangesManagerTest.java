@@ -5,13 +5,13 @@ package jetbrains.mps.vcs.changesmanager;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFqName;
 import org.junit.Test;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelFqName;
 import org.junit.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -50,19 +50,33 @@ public class CommonChangesManagerTest {
     }
   }
 
+  private CurrentDifference getCurrentDifference(String shortName) {
+    EditableSModelDescriptor htmlmd = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("ru.geevee.fugue." + shortName));
+    waitForChangesManager();
+    return myRegistry.getCurrentDifference(htmlmd);
+  }
+
   @Test
   public void doTest() {
     TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, new TestMain.ProjectRunnable() {
       public boolean execute(Project project) {
         try {
           myRegistry = CurrentDifferenceRegistry.getInstance(ProjectHelper.toIdeaProject(project));
-          EditableSModelDescriptor htmlmd = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("ru.geevee.fugue.html"));
           waitForChangesManager();
-          CurrentDifference cd = myRegistry.getCurrentDifference(htmlmd);
-          Assert.assertNull(cd.getChangeSet());
-          cd.setEnabled(true);
+
+          CurrentDifference html = getCurrentDifference("html");
+          CurrentDifference ui = getCurrentDifference("ui");
+          CurrentDifference util = getCurrentDifference("util");
+          Assert.assertNull(html.getChangeSet());
+          Assert.assertNull(ui.getChangeSet());
+          Assert.assertNull(util.getChangeSet());
+          html.setEnabled(true);
+          ui.setEnabled(true);
+          util.setEnabled(true);
           waitForChangesManager();
-          Assert.assertFalse(ListSequence.fromList(check_orwzer_a0a7a0a3a0a1(cd.getChangeSet())).isEmpty());
+          Assert.assertFalse(ListSequence.fromList(check_orwzer_a0a31a0a3a0a2(html.getChangeSet())).isEmpty());
+          Assert.assertFalse(ListSequence.fromList(check_orwzer_a0a41a0a3a0a2(ui.getChangeSet())).isEmpty());
+          Assert.assertNull(util.getChangeSet());
           return true;
         } catch (Throwable e) {
           e.printStackTrace();
@@ -72,7 +86,14 @@ public class CommonChangesManagerTest {
     }, "jetbrains.mps.vcs", "Git4Idea", "jetbrains.mps.ide.make");
   }
 
-  private static List<ModelChange> check_orwzer_a0a7a0a3a0a1(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a31a0a3a0a2(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_orwzer_a0a41a0a3a0a2(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
