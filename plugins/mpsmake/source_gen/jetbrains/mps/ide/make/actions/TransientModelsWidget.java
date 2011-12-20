@@ -13,10 +13,23 @@ import com.intellij.util.Consumer;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import javax.swing.UIManager;
+import com.intellij.openapi.ui.popup.Balloon;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.ui.LightColors;
+import com.intellij.ui.HyperlinkAdapter;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.SwingUtilities;
+import java.awt.Component;
+import java.awt.Point;
+import com.intellij.ui.awt.RelativePoint;
+import javax.swing.JRootPane;
+import java.awt.Container;
+import java.awt.Rectangle;
+import com.intellij.util.ui.UIUtil;
+import java.awt.Dimension;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.make.MakeNotification;
 import com.intellij.openapi.application.ApplicationManager;
-import javax.swing.JLabel;
-import com.intellij.ui.LightColors;
 
 public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.IconPresentation {
   public static final String WIDGET_ID = "TransientModelsWidget";
@@ -79,6 +92,34 @@ public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.I
     return GenerationSettings.getInstance().isSaveTransientModels();
   }
 
+  private void showBaloon() {
+    final Balloon balloon = JBPopupFactory.getInstance().createHtmlTextBalloonBuilder("Saving transient models if enabled.", null, LightColors.YELLOW, new HyperlinkAdapter() {
+      protected void hyperlinkActivated(HyperlinkEvent p0) {
+        // activated! 
+      }
+    }).createBalloon();
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        Component comp = myStatusBar.getComponent();
+        if (comp.isShowing()) {
+          int offset = comp.getHeight() * 3 / 2;
+          Point point = new Point(comp.getWidth() - offset, comp.getHeight() - offset);
+          balloon.show(new RelativePoint(comp, point), Balloon.Position.above);
+        } else {
+          final JRootPane rootPane = SwingUtilities.getRootPane(comp);
+          if (rootPane != null && rootPane.isShowing()) {
+            final Container contentPane = rootPane.getContentPane();
+            final Rectangle bounds = contentPane.getBounds();
+            final Point target = UIUtil.getCenterPoint(bounds, new Dimension(1, 1));
+            target.y = bounds.height - 3;
+            balloon.show(new RelativePoint(contentPane, target), Balloon.Position.above);
+          }
+        }
+      }
+    });
+    Disposer.register(this, balloon);
+  }
+
   private class MyMakeNotificationListener implements IMakeNotificationListener {
     public MyMakeNotificationListener() {
     }
@@ -90,7 +131,8 @@ public class TransientModelsWidget implements StatusBarWidget, StatusBarWidget.I
       if (notification.getKind() == MakeNotification.Kind.SESSION_OPENED) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            myStatusBar.fireNotificationPopup(new JLabel("Saving transient models is enabled."), LightColors.YELLOW);
+            // <node> 
+            showBaloon();
           }
         });
       }
