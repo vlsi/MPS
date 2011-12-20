@@ -1280,6 +1280,10 @@
       <property name="name" nameId="tpck.1169194664001" value="TransientModelsWidget" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="StatusBar" />
     </node>
+    <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="7951552742315452793">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Integration" />
+      <property name="name" nameId="tpck.1169194664001" value="MPSSaveTransientModelsMainToolBarGroup" />
+    </node>
   </roots>
   <root id="1204991218714">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148419636">
@@ -33765,6 +33769,12 @@
         </node>
       </node>
     </node>
+  </root>
+  <root id="7951552742315452793">
+    <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7951552742315665814">
+      <property name="value" nameId="tpee.1070475926801" value="SaveTransientModelsMainToolBarGroup" />
+    </node>
+    <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="7951552742315452795" />
   </root>
 </model>
 
