@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.Arrays;
@@ -34,18 +35,18 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
     });
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);
     refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
-    final SModelDescriptor[] targetStructureModelDescriptor = new SModelDescriptor[]{null};
+    final SModelReference[] targetStructureModelReference = new SModelReference[]{null};
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
-        targetStructureModelDescriptor[0] = testRefactoringTargetLanguage.getStructureModelDescriptor();
+        targetStructureModelReference[0] = testRefactoringTargetLanguage.getStructureModelDescriptor().getSModelReference();
         SModel model = structureModelDescriptor.getSModel();
         SNode concept = SModelOperations.getRootByName(model, conceptName);
         refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedNode(concept);
         refactoringContext.setSelectedNodes(Arrays.asList(concept));
         refactoringContext.setSelectedModel(structureModelDescriptor);
-        refactoringContext.setParameter("targetModel", targetStructureModelDescriptor[0]);
+        refactoringContext.setParameter("targetModel", targetStructureModelReference[0]);
       }
     });
     new RefactoringTestFacade().doExecuteInTest(refactoringContext);
@@ -61,7 +62,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
                 return;
               }
               SModel sModel = sandbox1.getSModel();
-              result[0] = sModel.rootsIterator().next().getConceptFqName().equals(targetStructureModelDescriptor[0].getSModelReference().getSModelFqName() + "." + conceptName);
+              result[0] = sModel.rootsIterator().next().getConceptFqName().equals(targetStructureModelReference[0].getSModelFqName() + "." + conceptName);
             } catch (Throwable t) {
               t.printStackTrace();
               result[0] = false;
