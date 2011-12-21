@@ -110,13 +110,21 @@
     </scopeInfo>
     <scopeInfo nodeId="2114063490211303973" fileName="ChildSubstituteActionsUtil.java" startLine="155" startPosition="29" endLine="157" endPosition="21" />
     <scopeInfo nodeId="2263578067951145171" fileName="ChildSubstituteActionsUtil.java" startLine="69" startPosition="191" endLine="72" endPosition="9" />
-    <scopeInfo nodeId="2114063490211304383" fileName="ChildSubstituteActionsUtil.java" startLine="79" startPosition="76" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="8875053940362052276" fileName="ChildSubstituteActionsUtil.java" startLine="100" startPosition="256" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="8875053940362052276" fileName="ChildSubstituteActionsUtil.java" startLine="104" startPosition="45" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="2114063490211304383" fileName="ChildSubstituteActionsUtil.java" startLine="79" startPosition="76" endLine="83" endPosition="0">
+      <varInfo nodeId="2114063490211304383" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8875053940362052276" fileName="ChildSubstituteActionsUtil.java" startLine="100" startPosition="256" endLine="104" endPosition="0">
+      <varInfo nodeId="8875053940362052276" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8875053940362052276" fileName="ChildSubstituteActionsUtil.java" startLine="104" startPosition="45" endLine="108" endPosition="0">
+      <varInfo nodeId="8875053940362052276" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="8875053940361539737" fileName="ChildSubstituteActionsUtil.java" startLine="110" startPosition="107" endLine="114" endPosition="9">
       <varInfo nodeId="8875053940361539819" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="3129492436284095621" fileName="ChildSubstituteActionsUtil.java" startLine="139" startPosition="261" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="3129492436284095621" fileName="ChildSubstituteActionsUtil.java" startLine="139" startPosition="261" endLine="143" endPosition="0">
+      <varInfo nodeId="3129492436284095621" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2114063490211317336" fileName="ChildSubstituteActionsUtil.java" startLine="45" startPosition="114" endLine="50" endPosition="42">
       <varInfo nodeId="2114063490211317338" varName="concreteChildConcept" />
     </scopeInfo>
@@ -137,7 +145,9 @@
     <scopeInfo nodeId="8875053940361530069" fileName="ChildSubstituteActionsUtil.java" startLine="86" startPosition="195" endLine="94" endPosition="5">
       <varInfo nodeId="8875053940361531087" varName="methodName" />
     </scopeInfo>
-    <scopeInfo nodeId="8875053940362052058" fileName="ChildSubstituteActionsUtil.java" startLine="118" startPosition="28" endLine="126" endPosition="5" />
+    <scopeInfo nodeId="8875053940362052058" fileName="ChildSubstituteActionsUtil.java" startLine="118" startPosition="28" endLine="126" endPosition="5">
+      <varInfo nodeId="8875053940362052058" varName="removeByCondition" />
+    </scopeInfo>
     <scopeInfo nodeId="2263578067951145157" fileName="ChildSubstituteActionsUtil.java" startLine="64" startPosition="90" endLine="73" endPosition="7">
       <varInfo nodeId="2263578067951145159" varName="applicableConcept" />
     </scopeInfo>
@@ -149,7 +159,9 @@
       <varInfo nodeId="3129492436284095559" varName="actionsModelDescr" />
       <varInfo nodeId="3129492436284095570" varName="sModel" />
     </scopeInfo>
-    <scopeInfo nodeId="2263578067951145153" fileName="ChildSubstituteActionsUtil.java" startLine="63" startPosition="71" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="2263578067951145153" fileName="ChildSubstituteActionsUtil.java" startLine="63" startPosition="71" endLine="74" endPosition="5">
+      <varInfo nodeId="2263578067951145153" varName="actionsBuilder" />
+    </scopeInfo>
     <scopeInfo nodeId="8875053940361530066" fileName="ChildSubstituteActionsUtil.java" startLine="85" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="8875053940361530076" varName="builder" />
       <varInfo nodeId="8875053940361530085" varName="childConcept" />
@@ -158,7 +170,9 @@
       <varInfo nodeId="8875053940361530082" varName="currentChild" />
       <varInfo nodeId="8875053940361530079" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3129492436284095550" fileName="ChildSubstituteActionsUtil.java" startLine="132" startPosition="48" endLine="144" endPosition="5" />
+    <scopeInfo nodeId="3129492436284095550" fileName="ChildSubstituteActionsUtil.java" startLine="132" startPosition="48" endLine="144" endPosition="5">
+      <varInfo nodeId="3129492436284095550" varName="language" />
+    </scopeInfo>
     <scopeInfo nodeId="2114063490211303916" fileName="ChildSubstituteActionsUtil.java" startLine="148" startPosition="180" endLine="160" endPosition="16">
       <varInfo nodeId="2114063490211304084" varName="precondition" />
     </scopeInfo>
@@ -252,8 +266,12 @@
     </scopeInfo>
     <scopeInfo nodeId="580018013244124600" fileName="NodeFactoryUtil.java" startLine="51" startPosition="27" endLine="52" endPosition="19" />
     <scopeInfo nodeId="580018013243964803" fileName="NodeFactoryUtil.java" startLine="24" startPosition="0" endLine="26" endPosition="3" />
-    <scopeInfo nodeId="580018013244136488" fileName="NodeFactoryUtil.java" startLine="34" startPosition="165" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="580018013244136490" fileName="NodeFactoryUtil.java" startLine="38" startPosition="40" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="580018013244136488" fileName="NodeFactoryUtil.java" startLine="34" startPosition="165" endLine="38" endPosition="0">
+      <varInfo nodeId="580018013244136488" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="580018013244136490" fileName="NodeFactoryUtil.java" startLine="38" startPosition="40" endLine="42" endPosition="0">
+      <varInfo nodeId="580018013244136490" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="580018013244120215" fileName="NodeFactoryUtil.java" startLine="45" startPosition="129" endLine="53" endPosition="5" />
     <scopeInfo nodeId="580018013244120212" fileName="NodeFactoryUtil.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="580018013244120226" varName="enclosingNode" />
@@ -379,12 +397,24 @@
       <varInfo nodeId="580018013244305201" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="580018013244305203" fileName="SideTransformUtil.java" startLine="153" startPosition="27" endLine="155" endPosition="37" />
-    <scopeInfo nodeId="580018013244306383" fileName="SideTransformUtil.java" startLine="97" startPosition="30" endLine="100" endPosition="5" />
-    <scopeInfo nodeId="580018013244312031" fileName="SideTransformUtil.java" startLine="48" startPosition="151" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="605492362669088159" fileName="SideTransformUtil.java" startLine="64" startPosition="277" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="605492362669088168" fileName="SideTransformUtil.java" startLine="68" startPosition="42" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="580018013244306308" fileName="SideTransformUtil.java" startLine="84" startPosition="232" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="580018013244306308" fileName="SideTransformUtil.java" startLine="88" startPosition="47" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="580018013244306383" fileName="SideTransformUtil.java" startLine="97" startPosition="30" endLine="100" endPosition="5">
+      <varInfo nodeId="580018013244306383" varName="removeByCondition" />
+    </scopeInfo>
+    <scopeInfo nodeId="580018013244312031" fileName="SideTransformUtil.java" startLine="48" startPosition="151" endLine="52" endPosition="0">
+      <varInfo nodeId="580018013244312031" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="605492362669088159" fileName="SideTransformUtil.java" startLine="64" startPosition="277" endLine="68" endPosition="0">
+      <varInfo nodeId="605492362669088159" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="605492362669088168" fileName="SideTransformUtil.java" startLine="68" startPosition="42" endLine="72" endPosition="0">
+      <varInfo nodeId="605492362669088168" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="580018013244306308" fileName="SideTransformUtil.java" startLine="84" startPosition="232" endLine="88" endPosition="0">
+      <varInfo nodeId="580018013244306308" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="580018013244306308" fileName="SideTransformUtil.java" startLine="88" startPosition="47" endLine="92" endPosition="0">
+      <varInfo nodeId="580018013244306308" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="580018013244304310" fileName="SideTransformUtil.java" startLine="131" startPosition="31" endLine="136" endPosition="7" />
     <scopeInfo nodeId="580018013244305268" fileName="SideTransformUtil.java" startLine="142" startPosition="152" endLine="147" endPosition="5" />
     <scopeInfo nodeId="580018013244305190" fileName="SideTransformUtil.java" startLine="150" startPosition="127" endLine="156" endPosition="5" />
@@ -407,12 +437,16 @@
       <varInfo nodeId="580018013244305340" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="580018013244306248" fileName="SideTransformUtil.java" startLine="83" startPosition="122" endLine="94" endPosition="122" />
-    <scopeInfo nodeId="580018013244306245" fileName="SideTransformUtil.java" startLine="82" startPosition="0" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="580018013244306245" fileName="SideTransformUtil.java" startLine="82" startPosition="0" endLine="95" endPosition="5">
+      <varInfo nodeId="580018013244306245" varName="actionBuilder" />
+    </scopeInfo>
     <scopeInfo nodeId="580018013244304415" fileName="SideTransformUtil.java" startLine="58" startPosition="136" endLine="72" endPosition="10">
       <varInfo nodeId="580018013244304425" varName="actionsModelDescriptor" />
       <varInfo nodeId="580018013244304456" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="580018013244304412" fileName="SideTransformUtil.java" startLine="57" startPosition="83" endLine="73" endPosition="5" />
+    <scopeInfo nodeId="580018013244304412" fileName="SideTransformUtil.java" startLine="57" startPosition="83" endLine="73" endPosition="5">
+      <varInfo nodeId="580018013244304412" varName="language" />
+    </scopeInfo>
     <scopeInfo nodeId="580018013244146969" fileName="SideTransformUtil.java" startLine="116" startPosition="136" endLine="139" endPosition="16">
       <varInfo nodeId="580018013244304303" varName="precondition" />
     </scopeInfo>

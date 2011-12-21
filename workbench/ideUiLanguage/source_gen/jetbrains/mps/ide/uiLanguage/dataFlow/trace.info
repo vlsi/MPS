@@ -9,7 +9,10 @@
     <scopeInfo nodeId="1238416230625" fileName="ReportErrorExpression_DataFlow.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1238416230625" fileName="ReportErrorExpression_DataFlow.java" startLine="11" startPosition="69" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1238416230627" fileName="ReportErrorExpression_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="36" />
-    <scopeInfo nodeId="1238416230625" fileName="ReportErrorExpression_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1238416230625" fileName="ReportErrorExpression_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1238416230625" varName="_context" />
+      <varInfo nodeId="1238416230625" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1238416230625" fileName="ReportErrorExpression_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.dataFlow.ReportErrorExpression_DataFlow" />
   </root>
   <root nodeId="3734045384532546748">
@@ -20,7 +23,10 @@
     <scopeInfo nodeId="3734045384532546748" fileName="ReportErrorStatement_DataFlow.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
     <scopeInfo nodeId="3734045384532546748" fileName="ReportErrorStatement_DataFlow.java" startLine="11" startPosition="68" endLine="13" endPosition="3" />
     <scopeInfo nodeId="3734045384532546752" fileName="ReportErrorStatement_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="36" />
-    <scopeInfo nodeId="3734045384532546748" fileName="ReportErrorStatement_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="3734045384532546748" fileName="ReportErrorStatement_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="3734045384532546748" varName="_context" />
+      <varInfo nodeId="3734045384532546748" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="3734045384532546748" fileName="ReportErrorStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.dataFlow.ReportErrorStatement_DataFlow" />
   </root>
 </debugInfo>

@@ -26,6 +26,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.concurrent.ExecutionException;
 
 public class TextPreviewUtil {
@@ -58,6 +59,7 @@ public class TextPreviewUtil {
                 FileEditorManager.getInstance(p).openTextEditor(new OpenFileDescriptor(p, tfile), true);
               }
             });
+            ProjectPane.getInstance(context.getProject()).rebuildTree();
           }
         } catch (InterruptedException ignore) {
         } catch (ExecutionException ignore) {

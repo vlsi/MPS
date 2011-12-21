@@ -282,6 +282,11 @@ public class Generator extends AbstractModule {
       public URL findResource(String name) {
         return null;
       }
+
+      @Override
+      public String findLibrary(String name) {
+        return null;
+      }
     };
   }
 

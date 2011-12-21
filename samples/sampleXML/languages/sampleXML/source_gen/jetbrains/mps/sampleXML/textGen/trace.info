@@ -9,8 +9,12 @@
     <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="41" />
     <scopeInfo nodeId="1237981101372" fileName="Document_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="41" />
     <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="17" />
-    <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="8" startPosition="52" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="8" startPosition="52" endLine="12" endPosition="0">
+      <varInfo nodeId="1236699935298" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="1236699935298" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.sampleXML.textGen.Document_TextGen" />
   </root>
   <root nodeId="1236700479964">
@@ -71,6 +75,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="16" startPosition="38" endLine="32" endPosition="0">
       <varInfo nodeId="1236700593595" varName="node" />
+      <varInfo nodeId="1236700479964" varName="textGen" />
     </scopeInfo>
     <scopeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="33" startPosition="85" endLine="53" endPosition="18">
       <varInfo nodeId="1236700642860" varName="first" />
@@ -78,6 +83,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="32" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="1236700623868" varName="element" />
+      <varInfo nodeId="1236700479964" varName="textGen" />
     </scopeInfo>
     <unitInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.sampleXML.textGen.ElementCreator" />
   </root>

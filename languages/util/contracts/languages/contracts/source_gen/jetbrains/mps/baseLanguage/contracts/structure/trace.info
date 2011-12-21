@@ -13,9 +13,16 @@
     <scopeInfo nodeId="2203155934614032172" fileName="ResultExpression.java" startLine="14" startPosition="39" endLine="15" endPosition="16" />
     <scopeInfo nodeId="2203155934614032172" fileName="ResultExpression.java" startLine="18" startPosition="71" endLine="19" endPosition="192" />
     <scopeInfo nodeId="2203155934614032172" fileName="ResultExpression.java" startLine="22" startPosition="57" endLine="23" endPosition="51" />
-    <scopeInfo nodeId="2203155934614032172" fileName="ResultExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="2203155934614032172" fileName="ResultExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="2203155934614032172" fileName="ResultExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="2203155934614032172" fileName="ResultExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="2203155934614032172" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2203155934614032172" fileName="ResultExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="2203155934614032172" varName="init" />
+      <varInfo nodeId="2203155934614032172" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="2203155934614032172" fileName="ResultExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="2203155934614032172" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="2203155934614032172" fileName="ResultExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.ResultExpression" />
   </root>
   <root nodeId="2203155934615032373">
@@ -29,9 +36,16 @@
     <scopeInfo nodeId="2203155934615032373" fileName="Postcondition.java" startLine="13" startPosition="36" endLine="14" endPosition="16" />
     <scopeInfo nodeId="2203155934615032373" fileName="Postcondition.java" startLine="17" startPosition="68" endLine="18" endPosition="186" />
     <scopeInfo nodeId="2203155934615032373" fileName="Postcondition.java" startLine="21" startPosition="54" endLine="22" endPosition="48" />
-    <scopeInfo nodeId="2203155934615032373" fileName="Postcondition.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="2203155934615032373" fileName="Postcondition.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="2203155934615032373" fileName="Postcondition.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="2203155934615032373" fileName="Postcondition.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="2203155934615032373" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2203155934615032373" fileName="Postcondition.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="2203155934615032373" varName="init" />
+      <varInfo nodeId="2203155934615032373" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="2203155934615032373" fileName="Postcondition.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="2203155934615032373" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="2203155934615032373" fileName="Postcondition.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.Postcondition" />
   </root>
   <root nodeId="2329648364425265319">
@@ -45,9 +59,16 @@
     <scopeInfo nodeId="2329648364425265319" fileName="ContractThisExpression.java" startLine="14" startPosition="45" endLine="15" endPosition="16" />
     <scopeInfo nodeId="2329648364425265319" fileName="ContractThisExpression.java" startLine="18" startPosition="77" endLine="19" endPosition="204" />
     <scopeInfo nodeId="2329648364425265319" fileName="ContractThisExpression.java" startLine="22" startPosition="63" endLine="23" endPosition="57" />
-    <scopeInfo nodeId="2329648364425265319" fileName="ContractThisExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="2329648364425265319" fileName="ContractThisExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="2329648364425265319" fileName="ContractThisExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="2329648364425265319" fileName="ContractThisExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="2329648364425265319" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2329648364425265319" fileName="ContractThisExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="2329648364425265319" varName="init" />
+      <varInfo nodeId="2329648364425265319" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="2329648364425265319" fileName="ContractThisExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="2329648364425265319" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="2329648364425265319" fileName="ContractThisExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression" />
   </root>
   <root nodeId="332248429538005856">
@@ -77,14 +98,26 @@
     <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="37" startPosition="63" endLine="38" endPosition="61" />
     <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="41" startPosition="71" endLine="42" endPosition="192" />
     <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="45" startPosition="57" endLine="46" endPosition="51" />
-    <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="332248429538005856" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="332248429538005856" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="332248429538005856" varName="node" />
+      <varInfo nodeId="332248429538005856" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="332248429538005856" varName="init" />
+      <varInfo nodeId="332248429538005856" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="332248429538005856" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.MethodConditions" />
   </root>
   <root nodeId="332248429538005857">
@@ -95,8 +128,13 @@
     <nodeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPreconditionLink#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
     <scopeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="10" startPosition="101" endLine="11" endPosition="83" />
     <scopeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="14" startPosition="88" endLine="15" endPosition="101" />
-    <scopeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="332248429538005857" varName="source" />
+      <varInfo nodeId="332248429538005857" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="332248429538005857" varName="source" />
+    </scopeInfo>
     <unitInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.PreconditionLink_AnnotationLink" />
   </root>
   <root nodeId="332248429538012435">
@@ -110,9 +148,16 @@
     <scopeInfo nodeId="332248429538012435" fileName="Precondition.java" startLine="13" startPosition="35" endLine="14" endPosition="16" />
     <scopeInfo nodeId="332248429538012435" fileName="Precondition.java" startLine="17" startPosition="67" endLine="18" endPosition="184" />
     <scopeInfo nodeId="332248429538012435" fileName="Precondition.java" startLine="21" startPosition="53" endLine="22" endPosition="47" />
-    <scopeInfo nodeId="332248429538012435" fileName="Precondition.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="332248429538012435" fileName="Precondition.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="332248429538012435" fileName="Precondition.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="332248429538012435" fileName="Precondition.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="332248429538012435" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="332248429538012435" fileName="Precondition.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="332248429538012435" varName="init" />
+      <varInfo nodeId="332248429538012435" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="332248429538012435" fileName="Precondition.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="332248429538012435" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="332248429538012435" fileName="Precondition.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.Precondition" />
   </root>
   <root nodeId="8892289062514160035">
@@ -133,11 +178,20 @@
     <scopeInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="24" startPosition="46" endLine="25" endPosition="47" />
     <scopeInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="28" startPosition="64" endLine="29" endPosition="178" />
     <scopeInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="32" startPosition="50" endLine="33" endPosition="44" />
-    <scopeInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="8892289062514160035" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="8892289062514160035" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="8892289062514160035" varName="init" />
+      <varInfo nodeId="8892289062514160035" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="8892289062514160035" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="8892289062514160035" fileName="Condition.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.Condition" />
   </root>
 </debugInfo>

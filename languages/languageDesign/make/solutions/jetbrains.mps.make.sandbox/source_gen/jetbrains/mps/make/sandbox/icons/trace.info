@@ -10,7 +10,7 @@
     <unitInfo nodeId="3564595993453230683" fileName="Foo.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.make.sandbox.icons.Foo" />
   </root>
   <root nodeId="4176072814906255307">
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="16" startPosition="57" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="16" startPosition="52" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="17" startPosition="45" endLine="18" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="20" startPosition="31" endLine="21" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="21" startPosition="29" endLine="22" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -49,21 +49,36 @@
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="57" startPosition="32" endLine="58" endPosition="58" />
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="20" startPosition="31" endLine="23" endPosition="41" />
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="29" startPosition="27" endLine="32" endPosition="7" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="46" startPosition="0" endLine="49" endPosition="7" />
+    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="46" startPosition="0" endLine="49" endPosition="7">
+      <varInfo nodeId="4176072814906255307" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" />
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="56" startPosition="29" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="44" />
+    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="44">
+      <varInfo nodeId="4176072814906255307" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="29" startPosition="27" endLine="33" endPosition="44" />
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="37" startPosition="95" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="56" startPosition="0" endLine="60" endPosition="18" />
+    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="56" startPosition="0" endLine="60" endPosition="18">
+      <varInfo nodeId="4176072814906255307" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="56" startPosition="29" endLine="60" endPosition="18" />
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="19" startPosition="0" endLine="24" endPosition="3" />
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="44" startPosition="96" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="4176072814906255307" varName="_params" />
+      <varInfo nodeId="4176072814906255307" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="26" startPosition="89" endLine="34" endPosition="5" />
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="53" startPosition="33" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="43" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="43" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="4176072814906255307" varName="_params" />
+      <varInfo nodeId="4176072814906255307" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="4176072814906255307" varName="_params" />
+      <varInfo nodeId="4176072814906255307" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="52" startPosition="0" endLine="63" endPosition="0" />
     <unitInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.make.sandbox.icons.DummyAction_Action" />
   </root>

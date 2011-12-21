@@ -2139,7 +2139,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1201435446113(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return FunctionTypeUtil.unbound(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))));
+    return FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
   }
 
   public static SNode sourceNodeQuery_1203251634844(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2163,7 +2163,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1201019303193(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "type", true);
+    return FunctionTypeUtil.unbound(SLinkOperations.getTarget(_context.getNode(), "type", true));
   }
 
   public static SNode sourceNodeQuery_1201359394958(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2219,7 +2219,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1201863520535(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
+    return FunctionTypeUtil.unbound(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))));
   }
 
   public static SNode sourceNodeQuery_1202817864202(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

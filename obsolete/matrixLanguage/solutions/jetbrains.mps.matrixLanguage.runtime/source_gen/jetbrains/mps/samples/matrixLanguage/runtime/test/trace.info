@@ -48,24 +48,24 @@
       <varInfo nodeId="1209982729574" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="1209984795520" fileName="MatrixTest_Test.java" startLine="26" startPosition="62" endLine="29" endPosition="55">
-      <varInfo nodeId="1209984833108" varName="result" />
       <varInfo nodeId="1209984818564" varName="m" />
+      <varInfo nodeId="1209984833108" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1209986019326" fileName="MatrixTest_Test.java" startLine="32" startPosition="54" endLine="35" endPosition="50">
       <varInfo nodeId="1209986155002" varName="d" />
       <varInfo nodeId="1209986103647" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="1209998882760" fileName="MatrixTest_Test.java" startLine="43" startPosition="55" endLine="46" endPosition="50">
-      <varInfo nodeId="1209998917639" varName="t" />
       <varInfo nodeId="1209998882762" varName="m" />
+      <varInfo nodeId="1209998917639" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="1210002752507" fileName="MatrixTest_Test.java" startLine="49" startPosition="60" endLine="52" endPosition="59">
-      <varInfo nodeId="1210002810263" varName="t" />
       <varInfo nodeId="1210002787764" varName="m" />
+      <varInfo nodeId="1210002810263" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="1210242075073" fileName="MatrixTest_Test.java" startLine="55" startPosition="52" endLine="59" endPosition="43">
-      <varInfo nodeId="1210242090507" varName="m" />
       <varInfo nodeId="1210242112041" varName="i" />
+      <varInfo nodeId="1210242090507" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="1209982076238" fileName="MatrixTest_Test.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="1209996084279" fileName="MatrixTest_Test.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />

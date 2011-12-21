@@ -44,14 +44,26 @@
     <scopeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1236698667106" fileName="SetWithIndent_Intention.java" startLine="33" startPosition="85" endLine="37" endPosition="18" />
     <scopeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="40" startPosition="84" endLine="44" endPosition="16" />
-    <scopeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1236698667104" varName="editorContext" />
+      <varInfo nodeId="1236698667104" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="1236698667108" fileName="SetWithIndent_Intention.java" startLine="51" startPosition="76" endLine="57" endPosition="5">
       <varInfo nodeId="1237466368074" varName="indent" />
     </scopeInfo>
-    <scopeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="39" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="50" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="32" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1236698667104" varName="editorContext" />
+      <varInfo nodeId="1236698667104" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1236698667104" varName="editorContext" />
+      <varInfo nodeId="1236698667104" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="50" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1236698667104" varName="editorContext" />
+      <varInfo nodeId="1236698667104" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.textGen.intentions.SetWithIndent_Intention" />
   </root>
   <root nodeId="1237984182824">
@@ -87,8 +99,14 @@
     <scopeInfo nodeId="1237984182826" fileName="AddRemoveSeparator_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
     <scopeInfo nodeId="1237984182828" fileName="AddRemoveSeparator_Intention.java" startLine="38" startPosition="76" endLine="42" endPosition="114" />
     <scopeInfo nodeId="1237984182824" fileName="AddRemoveSeparator_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1237984182824" fileName="AddRemoveSeparator_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1237984182824" fileName="AddRemoveSeparator_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1237984182824" fileName="AddRemoveSeparator_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1237984182824" varName="editorContext" />
+      <varInfo nodeId="1237984182824" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1237984182824" fileName="AddRemoveSeparator_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1237984182824" varName="editorContext" />
+      <varInfo nodeId="1237984182824" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1237984182824" fileName="AddRemoveSeparator_Intention.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.textGen.intentions.AddRemoveSeparator_Intention" />
   </root>
   <root nodeId="590757823759470534">
@@ -120,9 +138,15 @@
     <scopeInfo nodeId="590757823759470534" fileName="SetUniqueNameInFile_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="590757823759470534" fileName="SetUniqueNameInFile_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="590757823759470536" fileName="SetUniqueNameInFile_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
-    <scopeInfo nodeId="590757823759470534" fileName="SetUniqueNameInFile_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="590757823759470534" fileName="SetUniqueNameInFile_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="590757823759470534" varName="editorContext" />
+      <varInfo nodeId="590757823759470534" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="590757823759470534" fileName="SetUniqueNameInFile_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="590757823759470534" fileName="SetUniqueNameInFile_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="590757823759470534" fileName="SetUniqueNameInFile_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="590757823759470534" varName="editorContext" />
+      <varInfo nodeId="590757823759470534" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="590757823759470534" fileName="SetUniqueNameInFile_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.textGen.intentions.SetUniqueNameInFile_Intention" />
   </root>
 </debugInfo>

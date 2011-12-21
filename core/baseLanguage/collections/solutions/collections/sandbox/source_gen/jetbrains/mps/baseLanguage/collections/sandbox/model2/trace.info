@@ -59,19 +59,21 @@
     <scopeInfo nodeId="1164651417153" fileName="FindUserUtil.java" startLine="10" startPosition="48" endLine="12" endPosition="39">
       <varInfo nodeId="1164651496570" varName="user" />
     </scopeInfo>
-    <scopeInfo nodeId="1224754248219" fileName="FindUserUtil.java" startLine="17" startPosition="94" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1224754248219" fileName="FindUserUtil.java" startLine="17" startPosition="94" endLine="21" endPosition="0">
+      <varInfo nodeId="1224754248219" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1164651417151" fileName="FindUserUtil.java" startLine="9" startPosition="32" endLine="14" endPosition="0">
       <varInfo nodeId="1164651428514" varName="arags" />
     </scopeInfo>
     <scopeInfo nodeId="1164651109608" fileName="FindUserUtil.java" startLine="15" startPosition="69" endLine="22" endPosition="55">
-      <varInfo nodeId="1164651211231" varName="matchedUsers" />
       <varInfo nodeId="1164651148035" varName="allUsers" />
+      <varInfo nodeId="1164651211231" varName="matchedUsers" />
     </scopeInfo>
     <scopeInfo nodeId="1164651109606" fileName="FindUserUtil.java" startLine="14" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1164651133750" varName="identity" />
     </scopeInfo>
-    <unitInfo nodeId="1224754248219" fileName="FindUserUtil.java" startLine="17" startPosition="72" endLine="21" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.sandbox.model2.FindUserUtil$1" />
     <unitInfo nodeId="1164651095574" fileName="FindUserUtil.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.sandbox.model2.FindUserUtil" />
+    <unitInfo nodeId="1224754248219" fileName="FindUserUtil.java" startLine="17" startPosition="72" endLine="21" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.sandbox.model2.FindUserUtil$1" />
   </root>
 </debugInfo>
 

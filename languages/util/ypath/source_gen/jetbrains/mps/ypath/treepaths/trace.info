@@ -81,23 +81,57 @@
     <scopeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="9" startPosition="50" endLine="11" endPosition="3" />
     <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="35" startPosition="0" endLine="37" endPosition="5" />
     <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="53" startPosition="0" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="74" startPosition="43" endLine="77" endPosition="50" />
-    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="82" startPosition="43" endLine="85" endPosition="39" />
-    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="104" startPosition="43" endLine="107" endPosition="50" />
-    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="112" startPosition="43" endLine="115" endPosition="39" />
-    <scopeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1180688328449" fileName="FileTreePath.java" startLine="21" startPosition="31" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1180688328452" fileName="FileTreePath.java" startLine="27" startPosition="33" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="74" startPosition="43" endLine="77" endPosition="50">
+      <varInfo nodeId="1180688395937" varName="actualValue" />
+      <varInfo nodeId="1180688395937" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="82" startPosition="43" endLine="85" endPosition="39">
+      <varInfo nodeId="1180688395937" varName="actualValue" />
+      <varInfo nodeId="1180688395937" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="104" startPosition="43" endLine="107" endPosition="50">
+      <varInfo nodeId="1180688453545" varName="actualValue" />
+      <varInfo nodeId="1180688453545" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="112" startPosition="43" endLine="115" endPosition="39">
+      <varInfo nodeId="1180688453545" varName="actualValue" />
+      <varInfo nodeId="1180688453545" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="1180688328445" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1180688328445" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688328449" fileName="FileTreePath.java" startLine="21" startPosition="31" endLine="25" endPosition="0">
+      <varInfo nodeId="1180688328449" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688328452" fileName="FileTreePath.java" startLine="27" startPosition="33" endLine="31" endPosition="0">
+      <varInfo nodeId="1180688328452" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1180688366351" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="43" startPosition="47" endLine="47" endPosition="22" />
-    <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1180688380126" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="61" startPosition="47" endLine="65" endPosition="22" />
-    <scopeInfo nodeId="1180688395938" fileName="FileTreePath.java" startLine="92" startPosition="33" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="73" startPosition="32" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="81" startPosition="32" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="103" startPosition="32" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="111" startPosition="32" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="1180688395938" fileName="FileTreePath.java" startLine="92" startPosition="33" endLine="96" endPosition="0">
+      <varInfo nodeId="1180688395938" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="73" startPosition="32" endLine="79" endPosition="0">
+      <varInfo nodeId="1180688395937" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="81" startPosition="32" endLine="87" endPosition="0">
+      <varInfo nodeId="1180688395937" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="103" startPosition="32" endLine="109" endPosition="0">
+      <varInfo nodeId="1180688453545" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="111" startPosition="32" endLine="117" endPosition="0">
+      <varInfo nodeId="1180688453545" varName="n" />
+    </scopeInfo>
     <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="60" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="72" startPosition="31" endLine="79" endPosition="10" />
@@ -109,11 +143,21 @@
       <varInfo nodeId="1180688501063" varName="indexOfLastDot" />
       <varInfo nodeId="1180688621968" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="1180688453546" fileName="FileTreePath.java" startLine="122" startPosition="33" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="70" startPosition="69" endLine="89" endPosition="36" />
-    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="100" startPosition="69" endLine="119" endPosition="36" />
-    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="69" startPosition="50" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="99" startPosition="47" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="1180688453546" fileName="FileTreePath.java" startLine="122" startPosition="33" endLine="132" endPosition="0">
+      <varInfo nodeId="1180688453546" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="70" startPosition="69" endLine="89" endPosition="36">
+      <varInfo nodeId="1180688395937" varName="filter" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="100" startPosition="69" endLine="119" endPosition="36">
+      <varInfo nodeId="1180688453545" varName="filter" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="69" startPosition="50" endLine="91" endPosition="0">
+      <varInfo nodeId="1180688395937" varName="matchValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="99" startPosition="47" endLine="121" endPosition="0">
+      <varInfo nodeId="1180688453545" varName="matchValue" />
+    </scopeInfo>
     <unitInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="9" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.ypath.treepaths.FileTreePath" />
     <unitInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="73" startPosition="21" endLine="79" endPosition="9" unitName="jetbrains.mps.ypath.treepaths.FileTreePath$1" />
     <unitInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="103" startPosition="21" endLine="109" endPosition="9" unitName="jetbrains.mps.ypath.treepaths.FileTreePath$1" />
@@ -184,20 +228,34 @@
     <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="44" startPosition="0" endLine="46" endPosition="5" />
     <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="62" startPosition="0" endLine="64" endPosition="5" />
     <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="80" startPosition="0" endLine="82" endPosition="5" />
-    <scopeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1180689174641" fileName="ClassPathItemTreePath.java" startLine="26" startPosition="31" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1180689174637" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1180689174637" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180689174641" fileName="ClassPathItemTreePath.java" startLine="26" startPosition="31" endLine="30" endPosition="0">
+      <varInfo nodeId="1180689174641" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1180689381286" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="52" startPosition="57" endLine="56" endPosition="22" />
-    <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1180689378234" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="70" startPosition="57" endLine="74" endPosition="22" />
-    <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1180689407660" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="88" startPosition="57" endLine="92" endPosition="22" />
     <scopeInfo nodeId="1180689174646" fileName="ClassPathItemTreePath.java" startLine="33" startPosition="74" endLine="38" endPosition="7" />
     <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="51" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="69" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="87" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="1180689174644" fileName="ClassPathItemTreePath.java" startLine="32" startPosition="33" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1180689174644" fileName="ClassPathItemTreePath.java" startLine="32" startPosition="33" endLine="40" endPosition="0">
+      <varInfo nodeId="1180689174644" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="14" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ypath.treepaths.ClassPathItemTreePath" />
     <unitInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="42" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ypath.treepaths.ClassPathItemTreePath$COMPOSITE_NodeKindTrigger" />
     <unitInfo nodeId="1180689174644" fileName="ClassPathItemTreePath.java" startLine="32" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ypath.treepaths.ClassPathItemTreePath$Children" />

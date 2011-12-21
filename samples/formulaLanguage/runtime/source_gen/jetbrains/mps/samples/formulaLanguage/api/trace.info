@@ -12,8 +12,8 @@
     <nodeInfo nodeId="8307544070813664770" fileName="MultiplyOperation.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
     <scopeInfo nodeId="8307544070813664761" fileName="MultiplyOperation.java" startLine="10" startPosition="89" endLine="12" endPosition="34" />
     <scopeInfo nodeId="8307544070813664775" fileName="MultiplyOperation.java" startLine="15" startPosition="38" endLine="18" endPosition="23">
-      <varInfo nodeId="8307544070813664784" varName="num2" />
       <varInfo nodeId="8307544070813664777" varName="num1" />
+      <varInfo nodeId="8307544070813664784" varName="num2" />
     </scopeInfo>
     <scopeInfo nodeId="8307544070813664752" fileName="MultiplyOperation.java" startLine="9" startPosition="0" endLine="13" endPosition="3">
       <varInfo nodeId="8307544070813664755" varName="leftOperand" />

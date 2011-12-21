@@ -53,9 +53,9 @@
     <scopeInfo nodeId="6374450524837363865" fileName="PostingRule_Formula.java" startLine="19" startPosition="56" endLine="20" endPosition="35" />
     <scopeInfo nodeId="6374450524837363852" fileName="PostingRule_Formula.java" startLine="14" startPosition="100" endLine="16" endPosition="26" />
     <scopeInfo nodeId="6374450524837363842" fileName="PostingRule_Formula.java" startLine="13" startPosition="0" endLine="17" endPosition="3">
-      <varInfo nodeId="6374450524837363847" varName="isTaxable" />
       <varInfo nodeId="6374450524837363845" varName="accountType" />
       <varInfo nodeId="6374450524837363849" varName="function" />
+      <varInfo nodeId="6374450524837363847" varName="isTaxable" />
     </scopeInfo>
     <scopeInfo nodeId="6374450524837363860" fileName="PostingRule_Formula.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="6374450524837363863" varName="evt" />
