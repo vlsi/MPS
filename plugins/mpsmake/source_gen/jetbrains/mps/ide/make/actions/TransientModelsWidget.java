@@ -11,6 +11,9 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.util.Consumer;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.ide.generator.GenerationSettings;
+import java.awt.Dimension;
+import java.awt.Point;
+import com.intellij.ui.awt.RelativePoint;
 import javax.swing.UIManager;
 import javax.swing.JComponent;
 
@@ -45,6 +48,12 @@ import javax.swing.JComponent;
           boolean saveTransientModels = GenerationSettings.getInstance().isSaveTransientModels();
           GenerationSettings.getInstance().setSaveTransientModels(!(saveTransientModels));
           update();
+        } else if (e.isPopupTrigger()) {
+          WidgetSettingsPanel panel = new WidgetSettingsPanel();
+          Dimension dimension = panel.getPreferredSize();
+          Point point = new Point(0, 0);
+          point = new Point(point.x - dimension.width, point.y - dimension.height);
+          panel.showComponent(new RelativePoint(e.getComponent(), point));
         }
       }
     };
