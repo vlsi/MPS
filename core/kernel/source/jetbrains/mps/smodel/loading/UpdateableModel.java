@@ -26,19 +26,24 @@ import org.jetbrains.annotations.Nullable;
  * This class consists of 2 methods
  * getModel(state) returns model loaded up to the given state or further
  * getState() returns the state to which the model is loaded
- * Ass all calls are synchronized and sequential, we can guarantee that getState() will return a real state of a model
+ *
+ * The aim of the class
+ * When we have model write-access, all model changes are made in single thread, so there will not be any threading problems
+ * The only problem appears when there are no write-actions and at least two concurring reads. In this case, the only thing
+ * that can change model is loading/replacing.
+ * This class has an aim to synchronize all loading processes
  */
 public abstract class UpdateableModel {
   private final SModelDescriptor myDescriptor;
 
-  private ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
+  private volatile ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
   private SModel myModel = null;
 
   public UpdateableModel(SModelDescriptor descriptor) {
     myDescriptor = descriptor;
   }
 
-  public final synchronized ModelLoadingState getState() {
+  public final ModelLoadingState getState() {
     return myState;
   }
 
