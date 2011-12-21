@@ -297,6 +297,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SaveTransientModels.Actions" />
       <property name="name" nameId="tpck.1169194664001" value="ShowStatusBarIcon" />
     </node>
+    <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="5285857027227911398">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="SaveTransientModels.Actions" />
+      <property name="name" nameId="tpck.1169194664001" value="MPSSaveTransientModelsSettings" />
+    </node>
   </roots>
   <root id="5882989260841555164" />
   <root id="5332171957773708940">
@@ -7789,7 +7793,7 @@
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4543050974046321287">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1215011911267" resolveInfo="IDEAView" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="5285857027227911398" resolveInfo="MPSSaveTransientModelsSettings" />
     </node>
   </root>
   <root id="4543050974046269964">
@@ -7940,6 +7944,12 @@
         </node>
       </node>
     </node>
+  </root>
+  <root id="5285857027227911398">
+    <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5285857027227911401">
+      <property name="value" nameId="tpee.1070475926801" value="SaveTransientModelsSettings" />
+    </node>
+    <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="5285857027227911400" />
   </root>
 </model>
 
