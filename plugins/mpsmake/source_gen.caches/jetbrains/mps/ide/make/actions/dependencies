@@ -646,6 +646,7 @@
     <classNode extendsClassName="jetbrains.mps.make.IMakeNotificationListener" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.TransientModelsNotificationComponent_CustomProjectPlugin" file="TransientModelsNotificationComponent_CustomProjectPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.StatusBarHelper" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsWidgetInstaller" />

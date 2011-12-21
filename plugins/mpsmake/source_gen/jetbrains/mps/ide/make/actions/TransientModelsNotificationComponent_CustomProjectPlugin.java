@@ -4,6 +4,7 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.util.Disposer;
 
 public class TransientModelsNotificationComponent_CustomProjectPlugin extends BaseCustomProjectPlugin {
   private TransientModelBallonDisplayer myBalloonDisplayer = new TransientModelBallonDisplayer();
@@ -19,6 +20,6 @@ public class TransientModelsNotificationComponent_CustomProjectPlugin extends Ba
 
   public void doDispose(MPSProject project) {
     TransientModelsNotificationComponent_CustomProjectPlugin.this.myWidgetInstaller.dispose();
-    TransientModelsNotificationComponent_CustomProjectPlugin.this.myBalloonDisplayer.dispose();
+    Disposer.dispose(TransientModelsNotificationComponent_CustomProjectPlugin.this.myBalloonDisplayer);
   }
 }
