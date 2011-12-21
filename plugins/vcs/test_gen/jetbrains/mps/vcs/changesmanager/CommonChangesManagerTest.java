@@ -8,13 +8,15 @@ import jetbrains.mps.project.Project;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.smodel.SReference;
 import org.junit.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
@@ -29,10 +31,14 @@ import java.util.Arrays;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.vcs.concrete.GitUtils;
+import java.io.IOException;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import java.util.List;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
 import org.junit.Test;
+import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.vcs.diff.ChangeSet;
@@ -44,6 +50,7 @@ public class CommonChangesManagerTest {
 
   private CurrentDifferenceRegistry myRegistry;
   private Project myProject;
+  private boolean myWaitCompleted;
   private final Object myWaitLock = new Object();
   private ChangeListManager myChangeListManager;
   private CurrentDifference myHtmlDiff;
@@ -56,17 +63,10 @@ public class CommonChangesManagerTest {
   public CommonChangesManagerTest() {
   }
 
-  private void waitForChangesManager() {
-    final Wrappers._boolean finished = new Wrappers._boolean(false);
-    myRegistry.getCommandQueue().addTask(new Runnable() {
-      public void run() {
-        synchronized (myWaitLock) {
-          finished.value = true;
-          myWaitLock.notify();
-        }
-      }
-    });
-    while (!(finished.value)) {
+  private void waitForSomething(Runnable waitScheduling) {
+    myWaitCompleted = false;
+    waitScheduling.run();
+    while (!(myWaitCompleted)) {
       synchronized (myWaitLock) {
         try {
           myWaitLock.wait();
@@ -75,6 +75,39 @@ public class CommonChangesManagerTest {
         }
       }
     }
+  }
+
+  private void waitCompleted() {
+    synchronized (myWaitLock) {
+      myWaitCompleted = true;
+      myWaitLock.notify();
+    }
+  }
+
+  private void waitForChangesManager() {
+    waitForSomething(new Runnable() {
+      public void run() {
+        myRegistry.getCommandQueue().addTask(new Runnable() {
+          public void run() {
+            waitCompleted();
+          }
+        });
+      }
+    });
+  }
+
+  private void waitForModelReplaced(final EditableSModelDescriptor modelDescriptor) {
+    waitForSomething(new Runnable() {
+      public void run() {
+        modelDescriptor.addModelListener(new SModelAdapter() {
+          @Override
+          public void modelReplaced(SModelDescriptor descriptor) {
+            descriptor.removeModelListener(this);
+            waitCompleted();
+          }
+        });
+      }
+    });
   }
 
   private CurrentDifference getCurrentDifference(String shortName) {
@@ -96,6 +129,8 @@ public class CommonChangesManagerTest {
     myChangeListManager = ChangeListManager.getInstance(myIdeaProject);
 
     myUtilVirtualFile = VirtualFileUtils.getVirtualFile(myUtilDiff.getModelDescriptor().getModelFile());
+
+    SReference.disableLogging();
   }
 
   private void checkAndEnable() {
@@ -108,8 +143,8 @@ public class CommonChangesManagerTest {
     myUtilDiff.setEnabled(true);
     waitForChangesManager();
 
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a9a3(myHtmlDiff.getChangeSet())).isNotEmpty());
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a01a3(myUiDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a9a6(myHtmlDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a01a6(myUiDiff.getChangeSet())).isNotEmpty());
     Assert.assertNull(myUtilDiff.getChangeSet());
   }
 
@@ -129,7 +164,7 @@ public class CommonChangesManagerTest {
     ModelAccess.instance().flushEventQueue();
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a4a4(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a4a7(myUtilDiff.getChangeSet())).isNotEmpty());
   }
 
   private void saveAndCommit() {
@@ -157,7 +192,19 @@ public class CommonChangesManagerTest {
     myChangeListManager.ensureUpToDate(false);
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a6(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a9(myUtilDiff.getChangeSet())).isNotEmpty());
+  }
+
+  private void modifyExternally() throws IOException, ModelReadException {
+    int changesBefore = ListSequence.fromList(myUtilDiff.getChangeSet().getModelChanges()).count();
+    SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getModelFile(), false);
+    SNode node = (SNode) new SNode(modelContent, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SPropertyOperations.set(node, "name", "NewRoot");
+    SModelOperations.addRootNode(modelContent, node);
+    myUtilVirtualFile.setBinaryContent(ModelPersistence.modelToString(modelContent).getBytes(FileUtil.DEFAULT_CHARSET));
+    waitForModelReplaced(myUtilDiff.getModelDescriptor());
+    waitForChangesManager();
+    Assert.assertEquals(changesBefore + 1, ListSequence.fromList(myUtilDiff.getChangeSet().getModelChanges()).count());
   }
 
   private void rollback() throws VcsException {
@@ -174,6 +221,7 @@ public class CommonChangesManagerTest {
 
   @Test
   public void doTest() {
+    ModelChangesWatcher.setForceProcessingEnabled(true);
     boolean result = TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, new TestMain.ProjectRunnable() {
       public boolean execute(Project project) {
         try {
@@ -184,6 +232,7 @@ public class CommonChangesManagerTest {
           modifyModel();
           saveAndCommit();
           uncommit();
+          modifyExternally();
           rollback();
 
           return true;
@@ -196,28 +245,28 @@ public class CommonChangesManagerTest {
     Assert.assertTrue(result);
   }
 
-  private static List<ModelChange> check_orwzer_a0a9a3(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a9a6(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a01a3(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a01a6(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a4a4(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a4a7(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a5a6(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a5a9(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
