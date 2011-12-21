@@ -52,6 +52,7 @@ import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ChangesTracking {
   protected static Log log = LogFactory.getLog(ChangesTracking.class);
@@ -132,6 +133,10 @@ public class ChangesTracking {
       return;
     }
     FileStatus status = FileStatusManager.getInstance(myProject).getStatus(modelVFile);
+
+    if (myDifference.getChangeSet() != null && myDifference.getChangeSet().getNewModel() != myModelDescriptor.getSModel()) {
+      force = true;
+    }
 
     if (myStatusOnLastUpdate == status && !(force)) {
       return;
@@ -446,6 +451,11 @@ public class ChangesTracking {
           });
         }
       }, event.getRoot());
+    }
+
+    @Override
+    public void modelReplaced(SModelDescriptor descriptor) {
+      scheduleFullUpdate();
     }
   }
 }
