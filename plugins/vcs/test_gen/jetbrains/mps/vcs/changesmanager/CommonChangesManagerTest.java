@@ -157,7 +157,11 @@ public class CommonChangesManagerTest {
             return "ImageLoader".equals(SPropertyOperations.getString(r, "name"));
           }
         });
-        SPropertyOperations.set(root, "name", "ImageLoaderModified");
+        SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(root, "method", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode m) {
+            return "getImageAttempts".equals(SPropertyOperations.getString(m, "name"));
+          }
+        }), "name", "getImageAttempts2");
         ListSequence.fromList(SLinkOperations.getTargets(root, "field", true)).clear();
       }
     }, myProject);
