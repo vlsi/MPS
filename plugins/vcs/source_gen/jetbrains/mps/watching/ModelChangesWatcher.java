@@ -42,6 +42,7 @@ import com.intellij.openapi.application.Application;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
+  private static boolean ourForceProcessingEnabled = false;
 
   private final MessageBus myBus;
   private final ProjectManager myProjectManager;
@@ -124,20 +125,20 @@ public class ModelChangesWatcher implements ApplicationComponent {
   }
 
   public void initComponent() {
-    if (MPSCore.getInstance().isTestMode()) {
+    if (MPSCore.getInstance().isTestMode() && !(ourForceProcessingEnabled)) {
       return;
     }
     myConnection = myBus.connect();
     myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myBusListener);
     myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
-    myMakeService.addListener(this.myMakeListener);
+    myMakeService.addListener(myMakeListener);
   }
 
   public void disposeComponent() {
-    if (MPSCore.getInstance().isTestMode()) {
+    if (MPSCore.getInstance().isTestMode() && !(ourForceProcessingEnabled)) {
       return;
     }
-    myMakeService.removeListener(this.myMakeListener);
+    myMakeService.removeListener(myMakeListener);
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
     myConnection.disconnect();
   }
@@ -224,6 +225,10 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
   public static ModelChangesWatcher instance() {
     return ApplicationManager.getApplication().getComponent(ModelChangesWatcher.class);
+  }
+
+  public static void setForceProcessingEnabled(boolean value) {
+    ourForceProcessingEnabled = value;
   }
 
   private class BulkFileChangesListener implements BulkFileListener {
