@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.smodel.loading;
 
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,7 +34,7 @@ public abstract class UpdateableModel {
   private final SModelDescriptor myDescriptor;
 
   private volatile ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
-  private SModel myModel = null;
+  private volatile SModel myModel = null;
 
   public UpdateableModel(SModelDescriptor descriptor) {
     myDescriptor = descriptor;
@@ -47,8 +44,14 @@ public abstract class UpdateableModel {
     return myState;
   }
 
-  public final synchronized SModel getModel(ModelLoadingState state) {
-    ensureLoadedTo(state);
+  public final SModel getModel(ModelLoadingState state) {
+    if (!ModelAccess.instance().canWrite()){
+      synchronized (this){
+        ensureLoadedTo(state);
+      }
+    } else{
+      ensureLoadedTo(state);
+    }
     return myModel;
   }
 
@@ -75,7 +78,17 @@ public abstract class UpdateableModel {
 
   protected abstract ModelLoadResult doLoad(ModelLoadingState state,@Nullable SModel current);
 
-  public synchronized void replaceWith(SModel newModel, ModelLoadingState state) {
+  public void replaceWith(SModel newModel, ModelLoadingState state) {
+    if (!ModelAccess.instance().canWrite()){
+      synchronized (this){
+        doReplace(newModel, state);
+      }
+    } else{
+      doReplace(newModel, state);
+    }
+  }
+
+  private void doReplace(SModel newModel, ModelLoadingState state) {
     myModel = newModel;
     myState = state;
   }
