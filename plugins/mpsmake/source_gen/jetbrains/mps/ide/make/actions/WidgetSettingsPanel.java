@@ -5,6 +5,7 @@ package jetbrains.mps.ide.make.actions;
 import javax.swing.JPanel;
 import javax.swing.JCheckBox;
 import java.awt.GridBagLayout;
+import javax.swing.border.EmptyBorder;
 import jetbrains.mps.ide.common.LayoutUtil;
 import com.intellij.ui.awt.RelativePoint;
 import com.intellij.openapi.ui.popup.JBPopup;
@@ -19,6 +20,9 @@ import com.intellij.openapi.util.Computable;
     super(new GridBagLayout());
     myShowPopupBox = new JCheckBox("Display popup on generation", SaveTransientModelsPreferences.isShowPopup());
     myShowStatusBarIcon = new JCheckBox("Show status bar icon", SaveTransientModelsPreferences.isShowStatusBarIcon());
+
+    myShowPopupBox.setBorder(new EmptyBorder(2, 3, 0, 4));
+    myShowStatusBarIcon.setBorder(new EmptyBorder(0, 2, 0, 4));
 
     add(myShowPopupBox, LayoutUtil.createFieldConstraints(1));
     add(myShowStatusBarIcon, LayoutUtil.createFieldConstraints(2));

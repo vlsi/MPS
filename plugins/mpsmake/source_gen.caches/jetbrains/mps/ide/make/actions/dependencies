@@ -709,6 +709,7 @@
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="javax.swing.JCheckBox" />
+    <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.SaveTransientModelsPreferences" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsWidgetInstaller" />

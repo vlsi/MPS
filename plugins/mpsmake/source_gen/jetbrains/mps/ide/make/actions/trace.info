@@ -1494,39 +1494,42 @@
     <unitInfo nodeId="721478377485341721" fileName="TransientModelsWidgetInstaller.java" startLine="7" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelsWidgetInstaller" />
   </root>
   <root nodeId="821918482060440369">
-    <nodeInfo nodeId="821918482060600845" fileName="WidgetSettingsPanel.java" startLine="14" startPosition="54" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myShowPopupBox" />
-    <nodeInfo nodeId="3353462584644960408" fileName="WidgetSettingsPanel.java" startLine="15" startPosition="41" endLine="16" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myShowStatusBarIcon" />
-    <nodeInfo nodeId="3353462584644965628" fileName="WidgetSettingsPanel.java" startLine="18" startPosition="32" endLine="19" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="821918482060600849" fileName="WidgetSettingsPanel.java" startLine="19" startPosition="31" endLine="20" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3353462584644965610" fileName="WidgetSettingsPanel.java" startLine="20" startPosition="112" endLine="21" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3353462584644965626" fileName="WidgetSettingsPanel.java" startLine="21" startPosition="118" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="821918482060587715" fileName="WidgetSettingsPanel.java" startLine="22" startPosition="0" endLine="23" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3353462584644965623" fileName="WidgetSettingsPanel.java" startLine="23" startPosition="62" endLine="24" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="821918482060600841" fileName="WidgetSettingsPanel.java" startLine="29" startPosition="32" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="821918482060600843" fileName="WidgetSettingsPanel.java" startLine="30" startPosition="18" endLine="31" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="821918482060600873" fileName="WidgetSettingsPanel.java" startLine="33" startPosition="21" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="821918482060600861" fileName="WidgetSettingsPanel.java" startLine="37" startPosition="26" endLine="38" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3353462584644996731" fileName="WidgetSettingsPanel.java" startLine="38" startPosition="77" endLine="39" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3353462584644996741" fileName="WidgetSettingsPanel.java" startLine="39" startPosition="86" endLine="40" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="821918482060600821" fileName="WidgetSettingsPanel.java" startLine="28" startPosition="179" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="821918482060594607" fileName="WidgetSettingsPanel.java" startLine="27" startPosition="50" endLine="33" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="821918482060600854" fileName="WidgetSettingsPanel.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onClose#()V" />
-    <nodeInfo nodeId="821918482060440371" fileName="WidgetSettingsPanel.java" startLine="17" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WidgetSettingsPanel#()V" />
-    <nodeInfo nodeId="821918482060594601" fileName="WidgetSettingsPanel.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showComponent#(Lcom/intellij/ui/awt/RelativePoint;)V" />
-    <scopeInfo nodeId="821918482060600824" fileName="WidgetSettingsPanel.java" startLine="29" startPosition="32" endLine="31" endPosition="28" />
-    <scopeInfo nodeId="821918482060600857" fileName="WidgetSettingsPanel.java" startLine="37" startPosition="26" endLine="40" endPosition="59" />
-    <scopeInfo nodeId="821918482060600821" fileName="WidgetSettingsPanel.java" startLine="28" startPosition="179" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="821918482060440374" fileName="WidgetSettingsPanel.java" startLine="18" startPosition="32" endLine="24" endPosition="67" />
-    <scopeInfo nodeId="821918482060600854" fileName="WidgetSettingsPanel.java" startLine="36" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="821918482060594604" fileName="WidgetSettingsPanel.java" startLine="27" startPosition="50" endLine="34" endPosition="22">
+    <nodeInfo nodeId="821918482060600845" fileName="WidgetSettingsPanel.java" startLine="15" startPosition="54" endLine="16" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myShowPopupBox" />
+    <nodeInfo nodeId="3353462584644960408" fileName="WidgetSettingsPanel.java" startLine="16" startPosition="41" endLine="17" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myShowStatusBarIcon" />
+    <nodeInfo nodeId="3353462584644965628" fileName="WidgetSettingsPanel.java" startLine="19" startPosition="32" endLine="20" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="821918482060600849" fileName="WidgetSettingsPanel.java" startLine="20" startPosition="31" endLine="21" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3353462584644965610" fileName="WidgetSettingsPanel.java" startLine="21" startPosition="112" endLine="22" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3353462584644965626" fileName="WidgetSettingsPanel.java" startLine="22" startPosition="118" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3354109888307491340" fileName="WidgetSettingsPanel.java" startLine="23" startPosition="0" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3354109888307496959" fileName="WidgetSettingsPanel.java" startLine="24" startPosition="58" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3354109888307413102" fileName="WidgetSettingsPanel.java" startLine="25" startPosition="63" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="821918482060587715" fileName="WidgetSettingsPanel.java" startLine="26" startPosition="0" endLine="27" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3353462584644965623" fileName="WidgetSettingsPanel.java" startLine="27" startPosition="62" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="821918482060600841" fileName="WidgetSettingsPanel.java" startLine="33" startPosition="32" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="821918482060600843" fileName="WidgetSettingsPanel.java" startLine="34" startPosition="18" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="821918482060600873" fileName="WidgetSettingsPanel.java" startLine="37" startPosition="21" endLine="38" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="821918482060600861" fileName="WidgetSettingsPanel.java" startLine="41" startPosition="26" endLine="42" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3353462584644996731" fileName="WidgetSettingsPanel.java" startLine="42" startPosition="77" endLine="43" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3353462584644996741" fileName="WidgetSettingsPanel.java" startLine="43" startPosition="86" endLine="44" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="821918482060600821" fileName="WidgetSettingsPanel.java" startLine="32" startPosition="179" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="821918482060594607" fileName="WidgetSettingsPanel.java" startLine="31" startPosition="50" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="821918482060600854" fileName="WidgetSettingsPanel.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onClose#()V" />
+    <nodeInfo nodeId="821918482060594601" fileName="WidgetSettingsPanel.java" startLine="30" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showComponent#(Lcom/intellij/ui/awt/RelativePoint;)V" />
+    <nodeInfo nodeId="821918482060440371" fileName="WidgetSettingsPanel.java" startLine="18" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WidgetSettingsPanel#()V" />
+    <scopeInfo nodeId="821918482060600824" fileName="WidgetSettingsPanel.java" startLine="33" startPosition="32" endLine="35" endPosition="28" />
+    <scopeInfo nodeId="821918482060600857" fileName="WidgetSettingsPanel.java" startLine="41" startPosition="26" endLine="44" endPosition="59" />
+    <scopeInfo nodeId="821918482060600821" fileName="WidgetSettingsPanel.java" startLine="32" startPosition="179" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="821918482060600854" fileName="WidgetSettingsPanel.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="821918482060594604" fileName="WidgetSettingsPanel.java" startLine="31" startPosition="50" endLine="38" endPosition="22">
       <varInfo nodeId="821918482060594608" varName="popup" />
     </scopeInfo>
-    <scopeInfo nodeId="821918482060440371" fileName="WidgetSettingsPanel.java" startLine="17" startPosition="0" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="821918482060594601" fileName="WidgetSettingsPanel.java" startLine="26" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="821918482060440374" fileName="WidgetSettingsPanel.java" startLine="19" startPosition="32" endLine="28" endPosition="67" />
+    <scopeInfo nodeId="821918482060594601" fileName="WidgetSettingsPanel.java" startLine="30" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="821918482060594605" varName="point" />
     </scopeInfo>
-    <unitInfo nodeId="821918482060440369" fileName="WidgetSettingsPanel.java" startLine="14" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ide.make.actions.WidgetSettingsPanel" />
-    <unitInfo nodeId="821918482060600819" fileName="WidgetSettingsPanel.java" startLine="28" startPosition="156" endLine="33" endPosition="5" unitName="jetbrains.mps.ide.make.actions.WidgetSettingsPanel$1" />
+    <scopeInfo nodeId="821918482060440371" fileName="WidgetSettingsPanel.java" startLine="18" startPosition="0" endLine="29" endPosition="3" />
+    <unitInfo nodeId="821918482060440369" fileName="WidgetSettingsPanel.java" startLine="15" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.ide.make.actions.WidgetSettingsPanel" />
+    <unitInfo nodeId="821918482060600819" fileName="WidgetSettingsPanel.java" startLine="32" startPosition="156" endLine="37" endPosition="5" unitName="jetbrains.mps.ide.make.actions.WidgetSettingsPanel$1" />
   </root>
   <root nodeId="8610665572788514618">
     <nodeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="19" startPosition="64" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
