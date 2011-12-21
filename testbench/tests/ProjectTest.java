@@ -154,10 +154,12 @@ public class ProjectTest {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         mpsProject.dispose();
+        ModelAccess.instance().flushEventQueue();
         IdeEventQueue.getInstance().flushQueue();
         System.gc();
       }
     });
+    HELPER.dispose();
   }
 
 

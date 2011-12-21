@@ -8,11 +8,11 @@ import java.util.List;
 import com.intellij.util.PathUtil;
 import java.io.File;
 import com.intellij.openapi.application.PathMacros;
+import jetbrains.mps.TestMain;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
@@ -106,9 +106,13 @@ public class ProjectTestHelper {
     }
   }
 
+  public void dispose() {
+    TestMain.disposeMPS();
+  }
+
   private void init() {
     BasicConfigurator.configure();
-    Logger.getRootLogger().setLevel(Level.INFO);
+    Logger.getRootLogger().setLevel(Level.ERROR);
     Testbench.initLogging();
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
