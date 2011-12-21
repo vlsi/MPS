@@ -82,10 +82,6 @@
     </node>
   </roots>
   <root id="1347577327951781517">
-    <node role="field" roleId="tp1h.6895093993902236377" type="tp1h.RefactoringField" typeId="tp1h.6895093993902311010" id="8292108433549550603">
-      <property name="name" nameId="tpck.1169194664001" value="myNewName" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8292108433549550605" />
-    </node>
     <node role="parameter" roleId="tp1h.6895093993902236376" type="tp1h.RefactoringParameter" typeId="tp1h.6895093993902311012" id="1347577327951781522">
       <property name="name" nameId="tpck.1169194664001" value="newName" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3795717784226477787" />
@@ -100,8 +96,8 @@
             <property name="name" nameId="tpck.1169194664001" value="newConceptName" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1347577327951781541" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1347577327951781542">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="8292108433549550634">
-                <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="8292108433549550603" resolveInfo="myNewName" />
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="5855915326595180110">
+                <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="1347577327951781522" resolveInfo="newName" />
               </node>
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1347577327951781544">
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1347577327951781545">
@@ -131,46 +127,12 @@
               <node role="operand" roleId="tpee.1197027771414" type="tp1h.RefactoringContext_ConceptFunctionParameter" typeId="tp1h.7953996722066256458" id="1347577327951781557" />
               <node role="operation" roleId="tpee.1197027833540" type="tp1h.NodeOperation" typeId="tp1h.7953996722066252915" id="1347577327951781558" />
             </node>
-            <node role="newFeatureName" roleId="tp1h.3302086321379400333" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="8292108433549550635">
-              <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="8292108433549550603" resolveInfo="myNewName" />
+            <node role="newFeatureName" roleId="tp1h.3302086321379400333" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="5855915326595180111">
+              <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="1347577327951781522" resolveInfo="newName" />
             </node>
             <node role="newConceptFQName" roleId="tp1h.3302086321379400332" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1347577327951781560">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1347577327951781540" resolveInfo="newConceptName" />
             </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="initBlock" roleId="tp1h.5497648299878741976" type="tp1h.InitClause" typeId="tp1h.5497648299878741970" id="1347577327951781533">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1347577327951781534">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8292108433549550607">
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8292108433549550608">
-            <property name="text" nameId="tpee.6329021646629104958" value="myNewName can be pre-set in context to skip chooser dialog - temporary solution" />
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8292108433549550609">
-          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8292108433549550610">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8292108433549550618">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="8292108433549550619">
-                <node role="rValue" roleId="tpee.1068498886297" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="8292108433549550620">
-                  <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="1347577327951781522" resolveInfo="newName" />
-                </node>
-                <node role="lValue" roleId="tpee.1068498886295" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="8292108433549550621">
-                  <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="8292108433549550603" resolveInfo="myNewName" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="8292108433549550622">
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="8292108433549550623" />
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="8292108433549550624">
-              <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="8292108433549550603" resolveInfo="myNewName" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8292108433549550625">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8292108433549550626">
-            <property name="value" nameId="tpee.1068580123138" value="true" />
           </node>
         </node>
       </node>
@@ -297,10 +259,6 @@
     </node>
   </root>
   <root id="1347577327951781638">
-    <node role="field" roleId="tp1h.6895093993902236377" type="tp1h.RefactoringField" typeId="tp1h.6895093993902311010" id="8292108433549524282">
-      <property name="name" nameId="tpck.1169194664001" value="myNewName" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8292108433549524284" />
-    </node>
     <node role="parameter" roleId="tp1h.6895093993902236376" type="tp1h.RefactoringParameter" typeId="tp1h.6895093993902311012" id="1347577327951781642">
       <property name="name" nameId="tpck.1169194664001" value="newName" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3795717784226477788" />
@@ -374,43 +332,9 @@
             <node role="newConceptFQName" roleId="tp1h.3302086321379400332" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1347577327951781691">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1347577327951781672" resolveInfo="newLinkName" />
             </node>
-            <node role="newFeatureName" roleId="tp1h.3302086321379400333" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="8292108433549550602">
-              <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="8292108433549524282" resolveInfo="myNewName" />
+            <node role="newFeatureName" roleId="tp1h.3302086321379400333" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="5855915326595180112">
+              <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="1347577327951781642" resolveInfo="newName" />
             </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="initBlock" roleId="tp1h.5497648299878741976" type="tp1h.InitClause" typeId="tp1h.5497648299878741970" id="1347577327951781654">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1347577327951781655">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8292108433549528138">
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8292108433549528139">
-            <property name="text" nameId="tpee.6329021646629104958" value="myNewName can be pre-set in context to skip chooser dialog - temporary solution" />
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8292108433549528140">
-          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8292108433549528141">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8292108433549528149">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="8292108433549528150">
-                <node role="rValue" roleId="tpee.1068498886297" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="8292108433549528159">
-                  <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="1347577327951781642" resolveInfo="newName" />
-                </node>
-                <node role="lValue" roleId="tpee.1068498886295" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="8292108433549528158">
-                  <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="8292108433549524282" resolveInfo="myNewName" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="8292108433549528153">
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="8292108433549528154" />
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="8292108433549528155">
-              <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="8292108433549524282" resolveInfo="myNewName" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8292108433549528156">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8292108433549528157">
-            <property name="value" nameId="tpee.1068580123138" value="true" />
           </node>
         </node>
       </node>
@@ -548,10 +472,6 @@
     </node>
   </root>
   <root id="1347577327951781764">
-    <node role="field" roleId="tp1h.6895093993902236377" type="tp1h.RefactoringField" typeId="tp1h.6895093993902311010" id="2165772098013756965">
-      <property name="name" nameId="tpck.1169194664001" value="myNewName" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2165772098013777084" />
-    </node>
     <node role="parameter" roleId="tp1h.6895093993902236376" type="tp1h.RefactoringParameter" typeId="tp1h.6895093993902311012" id="1347577327951781778">
       <property name="name" nameId="tpck.1169194664001" value="newName" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3795717784226477789" />
@@ -625,43 +545,9 @@
             <node role="newConceptFQName" roleId="tp1h.3302086321379400332" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7845864677499819238">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1347577327951781808" resolveInfo="newPropName" />
             </node>
-            <node role="newFeatureName" roleId="tp1h.3302086321379400333" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="7845864677499844396">
-              <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="2165772098013756965" resolveInfo="myNewName" />
+            <node role="newFeatureName" roleId="tp1h.3302086321379400333" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="5855915326595180113">
+              <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="1347577327951781778" resolveInfo="newName" />
             </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="initBlock" roleId="tp1h.5497648299878741976" type="tp1h.InitClause" typeId="tp1h.5497648299878741970" id="1347577327951781790">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1347577327951781791">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8292108433549521602">
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8292108433549521603">
-            <property name="text" nameId="tpee.6329021646629104958" value="myNewName can be pre-set in context to skip chooser dialog - temporary solution" />
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7845864677499819173">
-          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="7845864677499819174">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7845864677499819222">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7845864677499819224">
-                <node role="rValue" roleId="tpee.1068498886297" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="7845864677499819227">
-                  <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="1347577327951781778" resolveInfo="newName" />
-                </node>
-                <node role="lValue" roleId="tpee.1068498886295" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="7845864677499819223">
-                  <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="2165772098013756965" resolveInfo="myNewName" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="7845864677499819178">
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7845864677499819181" />
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="7845864677499819177">
-              <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="2165772098013756965" resolveInfo="myNewName" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7845864677499819229">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7845864677499819231">
-            <property name="value" nameId="tpee.1068580123138" value="true" />
           </node>
         </node>
       </node>
@@ -832,36 +718,6 @@
       <property name="name" nameId="tpck.1169194664001" value="targetModel" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3795717784226477783">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
-      </node>
-      <node role="chooser" roleId="tp1h.5497648299878741978" type="tp1h.MPSParameterChooser" typeId="tp1h.5497648299878742011" id="3068114543317961954">
-        <property name="title" nameId="tp1h.6647259624309067737" value="choose target model" />
-        <node role="paramType" roleId="tp1h.4413749148913695157" type="tp1h.ModelMPSParameterType" typeId="tp1h.4413749148913695137" id="4366542054834703064" />
-        <node role="filterBlock" roleId="tp1h.5497648299878742028" type="tp1h.FilterParameterClause" typeId="tp1h.5497648299878742016" id="3068114543317961957">
-          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3068114543317961958">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3068114543317961959">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="3068114543317961960">
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="3068114543317961961">
-                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="cu2c.~LanguageAspect" resolveInfo="LanguageAspect" />
-                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="cu2c.~LanguageAspect%dSTRUCTURE" resolveInfo="STRUCTURE" />
-                </node>
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3068114543317961962">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetModelAspect(jetbrains%dmps%dsmodel%dSModelDescriptor)%cjetbrains%dmps%dsmodel%dLanguageAspect" resolveInfo="getModelAspect" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~Language" resolveInfo="Language" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="961079310149315257">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="961079310149315256">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dSModelRepository" resolveInfo="getInstance" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~SModelRepository" resolveInfo="SModelRepository" />
-                    </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="961079310149315261">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(jetbrains%dmps%dsmodel%dSModelReference)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tp1h.ConceptFunctionParameter_RefactoringParameter" typeId="tp1h.5497648299878742024" id="961079310149315262" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="target" roleId="tp1h.6895093993902310998" type="tp1h.NodeTarget" typeId="tp1h.6895093993902310764" id="3068114543317961951">

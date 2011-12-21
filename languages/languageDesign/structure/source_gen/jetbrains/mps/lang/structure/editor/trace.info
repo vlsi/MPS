@@ -8934,8 +8934,8 @@
     <nodeInfo nodeId="2754395556039700608" fileName="CommitUtil.java" startLine="50" startPosition="62" endLine="51" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2165772098013539715" fileName="CommitUtil.java" startLine="51" startPosition="64" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2165772098013717950" fileName="CommitUtil.java" startLine="52" startPosition="0" endLine="53" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2165772098013717939" fileName="CommitUtil.java" startLine="53" startPosition="69" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2165772098013717937" fileName="CommitUtil.java" startLine="54" startPosition="58" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2165772098013717939" fileName="CommitUtil.java" startLine="53" startPosition="69" endLine="54" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2165772098013717937" fileName="CommitUtil.java" startLine="54" startPosition="56" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4846444759635186144" fileName="CommitUtil.java" startLine="57" startPosition="25" endLine="58" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2754395556039700639" fileName="CommitUtil.java" startLine="58" startPosition="55" endLine="59" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2165772098013617348" fileName="CommitUtil.java" startLine="64" startPosition="122" endLine="65" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -112,17 +112,6 @@ public class MoveNodes extends BaseLoggableRefactoring {
     }
   }
 
-  public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    List<SModel> result = (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel().getSModel());
-    if (((Object) refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
-      SModel model = ((SModelDescriptor) ((Object) refactoringContext.getParameter("target"))).getSModel();
-      if (model != null && !(ListSequence.fromList(result).contains(model))) {
-        ListSequence.fromList(result).addElement(model);
-      }
-    }
-    return result;
-  }
-
   public void doWhenDone(final RefactoringContext refactoringContext) {
     // todo: open target nodes 
   }

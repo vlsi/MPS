@@ -26,7 +26,6 @@ import jetbrains.mps.project.GlobalScope;
 public class RenameLink extends BaseLoggableRefactoring {
   public RenameLink() {
     this.addTransientParameter("newName");
-    this.addTransientParameter("myNewName");
   }
 
   public String getUserFriendlyName() {
@@ -45,18 +44,10 @@ public class RenameLink extends BaseLoggableRefactoring {
     return new RenameLink_Target();
   }
 
-  public boolean init(final RefactoringContext refactoringContext) {
-    // myNewName can be pre-set in context to skip chooser dialog - temporary solution 
-    if (((String) refactoringContext.getParameter("myNewName")) == null) {
-      refactoringContext.setParameter("myNewName", ((String) refactoringContext.getParameter("newName")));
-    }
-    return true;
-  }
-
   public void refactor(final RefactoringContext refactoringContext) {
     SNode concept = SNodeOperations.getAncestor(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     String newLinkName = SNodeOperations.getModel(concept).getSModelFqName() + "." + SPropertyOperations.getString(concept, "name");
-    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newLinkName, ((String) refactoringContext.getParameter("myNewName")));
+    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newLinkName, ((String) refactoringContext.getParameter("newName")));
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {

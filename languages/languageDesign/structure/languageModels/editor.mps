@@ -3097,7 +3097,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2165772098013717945">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="176a.~RefactoringContext%dsetParameter(java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="setParameter" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2165772098013717946">
-                <property name="value" nameId="tpee.1070475926801" value="myNewName" />
+                <property name="value" nameId="tpee.1070475926801" value="newName" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2165772098013717948">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2165772098013717934" resolveInfo="newName" />
