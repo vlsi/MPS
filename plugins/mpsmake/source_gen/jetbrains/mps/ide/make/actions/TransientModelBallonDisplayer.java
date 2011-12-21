@@ -6,6 +6,8 @@ import com.intellij.openapi.Disposable;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.make.IMakeService;
+import com.intellij.openapi.project.ProjectManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.ui.popup.Balloon;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.LightColors;
@@ -24,10 +26,13 @@ import com.intellij.openapi.wm.StatusBar;
 import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.ProjectManagerAdapter;
+import com.intellij.openapi.project.Project;
 
 public class TransientModelBallonDisplayer implements Disposable {
   private final IMakeNotificationListener myMakeNotificationListener = new TransientModelBallonDisplayer.MyMakeNotificationListener();
   private final MPSProject myProject;
+  private final TransientModelBallonDisplayer.MyProjectManagerAdapter myProjectManagerAdapter = new TransientModelBallonDisplayer.MyProjectManagerAdapter();
 
   public TransientModelBallonDisplayer(MPSProject project) {
     myProject = project;
@@ -35,10 +40,12 @@ public class TransientModelBallonDisplayer implements Disposable {
 
   public void init() {
     IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
+    ProjectManager.getInstance().addProjectManagerListener(ProjectHelper.toIdeaProject(myProject), this.myProjectManagerAdapter);
   }
 
   public void dispose() {
     IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
+    ProjectManager.getInstance().removeProjectManagerListener(ProjectHelper.toIdeaProject(myProject), myProjectManagerAdapter);
   }
 
   private void showBaloon() {
@@ -122,6 +129,19 @@ public class TransientModelBallonDisplayer implements Disposable {
     }
 
     public void sessionClosed(MakeNotification notification) {
+    }
+  }
+
+  private class MyProjectManagerAdapter extends ProjectManagerAdapter {
+    public MyProjectManagerAdapter() {
+    }
+
+    @Override
+    public void projectClosing(Project project) {
+      if (project == ProjectHelper.toIdeaProject(myProject)) {
+        // plugins dispose method is not invoked when project is closed and we really need to dispose 
+        Disposer.dispose(TransientModelBallonDisplayer.this);
+      }
     }
   }
 }

@@ -1302,142 +1302,158 @@
     <unitInfo nodeId="6613699149169331514" fileName="CustomIconWrapper.java" startLine="26" startPosition="25" endLine="31" endPosition="5" unitName="jetbrains.mps.ide.make.actions.CustomIconWrapper$1" />
   </root>
   <root nodeId="721478377485341571">
-    <nodeInfo nodeId="1275835579956644855" fileName="TransientModelBallonDisplayer.java" startLine="28" startPosition="66" endLine="29" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMakeNotificationListener" />
-    <nodeInfo nodeId="2022241925975928749" fileName="TransientModelBallonDisplayer.java" startLine="29" startPosition="134" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="2022241925975929612" fileName="TransientModelBallonDisplayer.java" startLine="32" startPosition="60" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8060841067251607702" fileName="TransientModelBallonDisplayer.java" startLine="36" startPosition="22" endLine="37" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="721478377485348917" fileName="TransientModelBallonDisplayer.java" startLine="40" startPosition="25" endLine="41" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="721478377485341581" fileName="TransientModelBallonDisplayer.java" startLine="44" startPosition="29" endLine="45" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="721478377485341620" fileName="TransientModelBallonDisplayer.java" startLine="47" startPosition="25" endLine="48" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6204683942016234925" fileName="TransientModelBallonDisplayer.java" startLine="49" startPosition="57" endLine="50" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2022241925975927783" fileName="TransientModelBallonDisplayer.java" startLine="51" startPosition="16" endLine="52" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6204683942016234949" fileName="TransientModelBallonDisplayer.java" startLine="53" startPosition="59" endLine="54" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2022241925975927719" fileName="TransientModelBallonDisplayer.java" startLine="55" startPosition="18" endLine="56" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2022241925975927733" fileName="TransientModelBallonDisplayer.java" startLine="57" startPosition="59" endLine="58" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2022241925975927739" fileName="TransientModelBallonDisplayer.java" startLine="58" startPosition="70" endLine="59" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2022241925975927745" fileName="TransientModelBallonDisplayer.java" startLine="59" startPosition="63" endLine="60" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2022241925975927754" fileName="TransientModelBallonDisplayer.java" startLine="60" startPosition="86" endLine="61" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2022241925975927764" fileName="TransientModelBallonDisplayer.java" startLine="61" startPosition="43" endLine="62" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="721478377485341717" fileName="TransientModelBallonDisplayer.java" startLine="67" startPosition="7" endLine="68" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6204683942016226528" fileName="TransientModelBallonDisplayer.java" startLine="71" startPosition="70" endLine="72" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6204683942016226535" fileName="TransientModelBallonDisplayer.java" startLine="72" startPosition="43" endLine="73" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6204683942016226549" fileName="TransientModelBallonDisplayer.java" startLine="73" startPosition="91" endLine="74" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="78" startPosition="36" endLine="79" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="80" startPosition="5" endLine="81" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="85" startPosition="36" endLine="86" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="87" startPosition="5" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="92" startPosition="36" endLine="93" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="94" startPosition="5" endLine="95" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1275835579956644876" fileName="TransientModelBallonDisplayer.java" startLine="103" startPosition="123" endLine="104" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5081063074759191015" fileName="TransientModelBallonDisplayer.java" startLine="108" startPosition="29" endLine="109" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1275835579956689896" fileName="TransientModelBallonDisplayer.java" startLine="98" startPosition="81" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMakeNotificationListener#()V" />
-    <nodeInfo nodeId="721478377485341573" fileName="TransientModelBallonDisplayer.java" startLine="31" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransientModelBallonDisplayer#(Ljetbrains/mps/project/MPSProject;)V" />
-    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="77" startPosition="96" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="84" startPosition="117" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="91" startPosition="87" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1275835579956644874" fileName="TransientModelBallonDisplayer.java" startLine="102" startPosition="67" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1275835579956644908" fileName="TransientModelBallonDisplayer.java" startLine="114" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptAboutToStart#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="1275835579956644914" fileName="TransientModelBallonDisplayer.java" startLine="117" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptFinished#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="1275835579956644920" fileName="TransientModelBallonDisplayer.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="1275835579956644926" fileName="TransientModelBallonDisplayer.java" startLine="123" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="721478377485348908" fileName="TransientModelBallonDisplayer.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="721478377485348913" fileName="TransientModelBallonDisplayer.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="1275835579956644894" fileName="TransientModelBallonDisplayer.java" startLine="107" startPosition="72" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1275835579956644886" fileName="TransientModelBallonDisplayer.java" startLine="106" startPosition="75" endLine="111" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6204683942016226520" fileName="TransientModelBallonDisplayer.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showForComponent#(Ljava/awt/Component;Lcom/intellij/openapi/ui/popup/Balloon;)V" />
-    <nodeInfo nodeId="2022241925975927724" fileName="TransientModelBallonDisplayer.java" startLine="56" startPosition="77" endLine="63" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_45eojt_a0a0a0a0a1a2#(Ljetbrains/mps/ide/make/actions/TransientModelsWidget;)Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_45eojt_a0a0a0a0a0b0c#(Ljetbrains/mps/ide/make/actions/TransientModelsWidgetInstaller;)Ljetbrains/mps/ide/make/actions/TransientModelsWidget;" />
-    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="90" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_45eojt_a0a0a1a0a0a0b0c#(Lcom/intellij/openapi/wm/StatusBar;)Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1275835579956644879" fileName="TransientModelBallonDisplayer.java" startLine="105" startPosition="7" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6204683942016234954" fileName="TransientModelBallonDisplayer.java" startLine="55" startPosition="16" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6204683942016234931" fileName="TransientModelBallonDisplayer.java" startLine="52" startPosition="92" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1275835579956644868" fileName="TransientModelBallonDisplayer.java" startLine="101" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleNotification#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="2022241925975927717" fileName="TransientModelBallonDisplayer.java" startLine="51" startPosition="14" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="721478377485341624" fileName="TransientModelBallonDisplayer.java" startLine="48" startPosition="131" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="721478377485341616" fileName="TransientModelBallonDisplayer.java" startLine="46" startPosition="47" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="721478377485341611" fileName="TransientModelBallonDisplayer.java" startLine="45" startPosition="243" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="721478377485341577" fileName="TransientModelBallonDisplayer.java" startLine="43" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showBaloon#()V" />
-    <scopeInfo nodeId="1275835579956689897" fileName="TransientModelBallonDisplayer.java" startLine="99" startPosition="41" endLine="99" endPosition="41" />
-    <scopeInfo nodeId="1275835579956644913" fileName="TransientModelBallonDisplayer.java" startLine="115" startPosition="67" endLine="115" endPosition="67" />
-    <scopeInfo nodeId="1275835579956644919" fileName="TransientModelBallonDisplayer.java" startLine="118" startPosition="63" endLine="118" endPosition="63" />
-    <scopeInfo nodeId="1275835579956644925" fileName="TransientModelBallonDisplayer.java" startLine="121" startPosition="62" endLine="121" endPosition="62" />
-    <scopeInfo nodeId="1275835579956644931" fileName="TransientModelBallonDisplayer.java" startLine="124" startPosition="62" endLine="124" endPosition="62" />
-    <scopeInfo nodeId="721478377485341576" fileName="TransientModelBallonDisplayer.java" startLine="32" startPosition="60" endLine="33" endPosition="24" />
-    <scopeInfo nodeId="721478377485348911" fileName="TransientModelBallonDisplayer.java" startLine="36" startPosition="22" endLine="37" endPosition="72" />
-    <scopeInfo nodeId="721478377485348916" fileName="TransientModelBallonDisplayer.java" startLine="40" startPosition="25" endLine="41" endPosition="75" />
-    <scopeInfo nodeId="721478377485341684" fileName="TransientModelBallonDisplayer.java" startLine="49" startPosition="57" endLine="50" endPosition="47" />
-    <scopeInfo nodeId="6204683942016234932" fileName="TransientModelBallonDisplayer.java" startLine="53" startPosition="59" endLine="54" endPosition="49" />
-    <scopeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="78" startPosition="36" endLine="79" endPosition="46" />
-    <scopeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="85" startPosition="36" endLine="86" endPosition="43" />
-    <scopeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="92" startPosition="36" endLine="93" endPosition="46" />
-    <scopeInfo nodeId="1275835579956644875" fileName="TransientModelBallonDisplayer.java" startLine="103" startPosition="123" endLine="104" endPosition="15" />
-    <scopeInfo nodeId="1275835579956644897" fileName="TransientModelBallonDisplayer.java" startLine="108" startPosition="29" endLine="109" endPosition="25" />
-    <scopeInfo nodeId="1275835579956689896" fileName="TransientModelBallonDisplayer.java" startLine="98" startPosition="81" endLine="100" endPosition="5" />
-    <scopeInfo nodeId="721478377485341573" fileName="TransientModelBallonDisplayer.java" startLine="31" startPosition="0" endLine="34" endPosition="3">
+    <nodeInfo nodeId="1275835579956644855" fileName="TransientModelBallonDisplayer.java" startLine="32" startPosition="66" endLine="33" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMakeNotificationListener" />
+    <nodeInfo nodeId="2022241925975928749" fileName="TransientModelBallonDisplayer.java" startLine="33" startPosition="134" endLine="34" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="8106397947991421148" fileName="TransientModelBallonDisplayer.java" startLine="34" startPosition="37" endLine="35" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectManagerAdapter" />
+    <nodeInfo nodeId="2022241925975929612" fileName="TransientModelBallonDisplayer.java" startLine="37" startPosition="60" endLine="38" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8060841067251607702" fileName="TransientModelBallonDisplayer.java" startLine="41" startPosition="22" endLine="42" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8106397947991409159" fileName="TransientModelBallonDisplayer.java" startLine="42" startPosition="72" endLine="43" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="721478377485348917" fileName="TransientModelBallonDisplayer.java" startLine="46" startPosition="25" endLine="47" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8106397947991421157" fileName="TransientModelBallonDisplayer.java" startLine="47" startPosition="75" endLine="48" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="721478377485341581" fileName="TransientModelBallonDisplayer.java" startLine="51" startPosition="29" endLine="52" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="721478377485341620" fileName="TransientModelBallonDisplayer.java" startLine="54" startPosition="25" endLine="55" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6204683942016234925" fileName="TransientModelBallonDisplayer.java" startLine="56" startPosition="57" endLine="57" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2022241925975927783" fileName="TransientModelBallonDisplayer.java" startLine="58" startPosition="16" endLine="59" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6204683942016234949" fileName="TransientModelBallonDisplayer.java" startLine="60" startPosition="59" endLine="61" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2022241925975927719" fileName="TransientModelBallonDisplayer.java" startLine="62" startPosition="18" endLine="63" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2022241925975927733" fileName="TransientModelBallonDisplayer.java" startLine="64" startPosition="59" endLine="65" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2022241925975927739" fileName="TransientModelBallonDisplayer.java" startLine="65" startPosition="70" endLine="66" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2022241925975927745" fileName="TransientModelBallonDisplayer.java" startLine="66" startPosition="63" endLine="67" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2022241925975927754" fileName="TransientModelBallonDisplayer.java" startLine="67" startPosition="86" endLine="68" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2022241925975927764" fileName="TransientModelBallonDisplayer.java" startLine="68" startPosition="43" endLine="69" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="721478377485341717" fileName="TransientModelBallonDisplayer.java" startLine="74" startPosition="7" endLine="75" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6204683942016226528" fileName="TransientModelBallonDisplayer.java" startLine="78" startPosition="70" endLine="79" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6204683942016226535" fileName="TransientModelBallonDisplayer.java" startLine="79" startPosition="43" endLine="80" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6204683942016226549" fileName="TransientModelBallonDisplayer.java" startLine="80" startPosition="91" endLine="81" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="85" startPosition="36" endLine="86" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="87" startPosition="5" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="92" startPosition="36" endLine="93" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="94" startPosition="5" endLine="95" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="99" startPosition="36" endLine="100" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="101" startPosition="5" endLine="102" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1275835579956644876" fileName="TransientModelBallonDisplayer.java" startLine="110" startPosition="123" endLine="111" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5081063074759191015" fileName="TransientModelBallonDisplayer.java" startLine="115" startPosition="29" endLine="116" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8106397947991421136" fileName="TransientModelBallonDisplayer.java" startLine="141" startPosition="62" endLine="142" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8106397947991420789" fileName="TransientModelBallonDisplayer.java" startLine="142" startPosition="102" endLine="143" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1275835579956689896" fileName="TransientModelBallonDisplayer.java" startLine="105" startPosition="81" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMakeNotificationListener#()V" />
+    <nodeInfo nodeId="8106397947991421143" fileName="TransientModelBallonDisplayer.java" startLine="135" startPosition="71" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyProjectManagerAdapter#()V" />
+    <nodeInfo nodeId="721478377485341573" fileName="TransientModelBallonDisplayer.java" startLine="36" startPosition="0" endLine="39" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransientModelBallonDisplayer#(Ljetbrains/mps/project/MPSProject;)V" />
+    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="84" startPosition="96" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="91" startPosition="117" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="98" startPosition="87" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1275835579956644874" fileName="TransientModelBallonDisplayer.java" startLine="109" startPosition="67" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1275835579956644908" fileName="TransientModelBallonDisplayer.java" startLine="121" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptAboutToStart#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="1275835579956644914" fileName="TransientModelBallonDisplayer.java" startLine="124" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptFinished#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="1275835579956644920" fileName="TransientModelBallonDisplayer.java" startLine="127" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="1275835579956644926" fileName="TransientModelBallonDisplayer.java" startLine="130" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="1275835579956644894" fileName="TransientModelBallonDisplayer.java" startLine="114" startPosition="72" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8106397947991420780" fileName="TransientModelBallonDisplayer.java" startLine="140" startPosition="49" endLine="144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="721478377485348908" fileName="TransientModelBallonDisplayer.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="721478377485348913" fileName="TransientModelBallonDisplayer.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="1275835579956644886" fileName="TransientModelBallonDisplayer.java" startLine="113" startPosition="75" endLine="118" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6204683942016226520" fileName="TransientModelBallonDisplayer.java" startLine="77" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showForComponent#(Ljava/awt/Component;Lcom/intellij/openapi/ui/popup/Balloon;)V" />
+    <nodeInfo nodeId="2022241925975927724" fileName="TransientModelBallonDisplayer.java" startLine="63" startPosition="77" endLine="70" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_45eojt_a0a0a0a0a1a2#(Ljetbrains/mps/ide/make/actions/TransientModelsWidget;)Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="90" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_45eojt_a0a0a0a0a0b0c#(Ljetbrains/mps/ide/make/actions/TransientModelsWidgetInstaller;)Ljetbrains/mps/ide/make/actions/TransientModelsWidget;" />
+    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="97" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_45eojt_a0a0a1a0a0a0b0c#(Lcom/intellij/openapi/wm/StatusBar;)Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="1275835579956644879" fileName="TransientModelBallonDisplayer.java" startLine="112" startPosition="7" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8106397947991420770" fileName="TransientModelBallonDisplayer.java" startLine="138" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosing#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="6204683942016234954" fileName="TransientModelBallonDisplayer.java" startLine="62" startPosition="16" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6204683942016234931" fileName="TransientModelBallonDisplayer.java" startLine="59" startPosition="92" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1275835579956644868" fileName="TransientModelBallonDisplayer.java" startLine="108" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleNotification#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="2022241925975927717" fileName="TransientModelBallonDisplayer.java" startLine="58" startPosition="14" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="721478377485341624" fileName="TransientModelBallonDisplayer.java" startLine="55" startPosition="131" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="721478377485341616" fileName="TransientModelBallonDisplayer.java" startLine="53" startPosition="47" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="721478377485341611" fileName="TransientModelBallonDisplayer.java" startLine="52" startPosition="243" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="721478377485341577" fileName="TransientModelBallonDisplayer.java" startLine="50" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showBaloon#()V" />
+    <scopeInfo nodeId="1275835579956689897" fileName="TransientModelBallonDisplayer.java" startLine="106" startPosition="41" endLine="106" endPosition="41" />
+    <scopeInfo nodeId="1275835579956644913" fileName="TransientModelBallonDisplayer.java" startLine="122" startPosition="67" endLine="122" endPosition="67" />
+    <scopeInfo nodeId="1275835579956644919" fileName="TransientModelBallonDisplayer.java" startLine="125" startPosition="63" endLine="125" endPosition="63" />
+    <scopeInfo nodeId="1275835579956644925" fileName="TransientModelBallonDisplayer.java" startLine="128" startPosition="62" endLine="128" endPosition="62" />
+    <scopeInfo nodeId="1275835579956644931" fileName="TransientModelBallonDisplayer.java" startLine="131" startPosition="62" endLine="131" endPosition="62" />
+    <scopeInfo nodeId="8106397947991421144" fileName="TransientModelBallonDisplayer.java" startLine="136" startPosition="38" endLine="136" endPosition="38" />
+    <scopeInfo nodeId="721478377485341576" fileName="TransientModelBallonDisplayer.java" startLine="37" startPosition="60" endLine="38" endPosition="24" />
+    <scopeInfo nodeId="721478377485341684" fileName="TransientModelBallonDisplayer.java" startLine="56" startPosition="57" endLine="57" endPosition="47" />
+    <scopeInfo nodeId="6204683942016234932" fileName="TransientModelBallonDisplayer.java" startLine="60" startPosition="59" endLine="61" endPosition="49" />
+    <scopeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="85" startPosition="36" endLine="86" endPosition="46" />
+    <scopeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="92" startPosition="36" endLine="93" endPosition="43" />
+    <scopeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="99" startPosition="36" endLine="100" endPosition="46" />
+    <scopeInfo nodeId="1275835579956644875" fileName="TransientModelBallonDisplayer.java" startLine="110" startPosition="123" endLine="111" endPosition="15" />
+    <scopeInfo nodeId="1275835579956644897" fileName="TransientModelBallonDisplayer.java" startLine="115" startPosition="29" endLine="116" endPosition="25" />
+    <scopeInfo nodeId="721478377485348911" fileName="TransientModelBallonDisplayer.java" startLine="41" startPosition="22" endLine="43" endPosition="129" />
+    <scopeInfo nodeId="721478377485348916" fileName="TransientModelBallonDisplayer.java" startLine="46" startPosition="25" endLine="48" endPosition="127" />
+    <scopeInfo nodeId="1275835579956689896" fileName="TransientModelBallonDisplayer.java" startLine="105" startPosition="81" endLine="107" endPosition="5" />
+    <scopeInfo nodeId="8106397947991421143" fileName="TransientModelBallonDisplayer.java" startLine="135" startPosition="71" endLine="137" endPosition="5" />
+    <scopeInfo nodeId="8106397947991420782" fileName="TransientModelBallonDisplayer.java" startLine="141" startPosition="62" endLine="143" endPosition="61" />
+    <scopeInfo nodeId="721478377485341573" fileName="TransientModelBallonDisplayer.java" startLine="36" startPosition="0" endLine="39" endPosition="3">
       <varInfo nodeId="2022241925975928747" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6204683942016226524" fileName="TransientModelBallonDisplayer.java" startLine="71" startPosition="70" endLine="74" endPosition="77">
+    <scopeInfo nodeId="6204683942016226524" fileName="TransientModelBallonDisplayer.java" startLine="78" startPosition="70" endLine="81" endPosition="77">
       <varInfo nodeId="6204683942016226517" varName="offset" />
       <varInfo nodeId="6204683942016226518" varName="point" />
     </scopeInfo>
-    <scopeInfo nodeId="1275835579956644908" fileName="TransientModelBallonDisplayer.java" startLine="114" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="1275835579956644908" fileName="TransientModelBallonDisplayer.java" startLine="121" startPosition="0" endLine="124" endPosition="0">
       <varInfo nodeId="1275835579956644909" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="1275835579956644914" fileName="TransientModelBallonDisplayer.java" startLine="117" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="1275835579956644914" fileName="TransientModelBallonDisplayer.java" startLine="124" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="1275835579956644915" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="1275835579956644920" fileName="TransientModelBallonDisplayer.java" startLine="120" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="1275835579956644920" fileName="TransientModelBallonDisplayer.java" startLine="127" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="1275835579956644923" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="1275835579956644926" fileName="TransientModelBallonDisplayer.java" startLine="123" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="1275835579956644926" fileName="TransientModelBallonDisplayer.java" startLine="130" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="1275835579956644929" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="721478377485348908" fileName="TransientModelBallonDisplayer.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="721478377485348913" fileName="TransientModelBallonDisplayer.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="77" startPosition="96" endLine="81" endPosition="16" />
-    <scopeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="84" startPosition="117" endLine="88" endPosition="16" />
-    <scopeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="91" startPosition="87" endLine="95" endPosition="16" />
-    <scopeInfo nodeId="1275835579956644894" fileName="TransientModelBallonDisplayer.java" startLine="107" startPosition="72" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="2022241925975927732" fileName="TransientModelBallonDisplayer.java" startLine="57" startPosition="59" endLine="62" endPosition="91">
+    <scopeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="84" startPosition="96" endLine="88" endPosition="16" />
+    <scopeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="91" startPosition="117" endLine="95" endPosition="16" />
+    <scopeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="98" startPosition="87" endLine="102" endPosition="16" />
+    <scopeInfo nodeId="1275835579956644894" fileName="TransientModelBallonDisplayer.java" startLine="114" startPosition="72" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="8106397947991420775" fileName="TransientModelBallonDisplayer.java" startLine="140" startPosition="49" endLine="144" endPosition="7" />
+    <scopeInfo nodeId="721478377485348908" fileName="TransientModelBallonDisplayer.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="721478377485348913" fileName="TransientModelBallonDisplayer.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="2022241925975927732" fileName="TransientModelBallonDisplayer.java" startLine="64" startPosition="59" endLine="69" endPosition="91">
       <varInfo nodeId="2022241925975927740" varName="bounds" />
       <varInfo nodeId="2022241925975927734" varName="contentPane" />
       <varInfo nodeId="2022241925975927746" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="1275835579956644885" fileName="TransientModelBallonDisplayer.java" startLine="106" startPosition="75" endLine="111" endPosition="11" />
-    <scopeInfo nodeId="6204683942016226520" fileName="TransientModelBallonDisplayer.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="1275835579956644885" fileName="TransientModelBallonDisplayer.java" startLine="113" startPosition="75" endLine="118" endPosition="11" />
+    <scopeInfo nodeId="6204683942016226520" fileName="TransientModelBallonDisplayer.java" startLine="77" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="6204683942016226563" varName="ballon" />
       <varInfo nodeId="6204683942016226519" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="76" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="83" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="721478377485342361" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="83" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="721478377485342358" fileName="TransientModelBallonDisplayer.java" startLine="90" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="721478377485342358" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="90" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="97" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="2022241925975929623" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="6204683942016234955" fileName="TransientModelBallonDisplayer.java" startLine="55" startPosition="18" endLine="63" endPosition="13">
+    <scopeInfo nodeId="6204683942016234955" fileName="TransientModelBallonDisplayer.java" startLine="62" startPosition="18" endLine="70" endPosition="13">
       <varInfo nodeId="2022241925975927720" varName="rootPane" />
     </scopeInfo>
-    <scopeInfo nodeId="1275835579956644873" fileName="TransientModelBallonDisplayer.java" startLine="102" startPosition="67" endLine="112" endPosition="7" />
-    <scopeInfo nodeId="2022241925975927718" fileName="TransientModelBallonDisplayer.java" startLine="51" startPosition="16" endLine="64" endPosition="11" />
-    <scopeInfo nodeId="1275835579956644868" fileName="TransientModelBallonDisplayer.java" startLine="101" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="8106397947991420770" fileName="TransientModelBallonDisplayer.java" startLine="138" startPosition="0" endLine="146" endPosition="0">
+      <varInfo nodeId="8106397947991420773" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="1275835579956644873" fileName="TransientModelBallonDisplayer.java" startLine="109" startPosition="67" endLine="119" endPosition="7" />
+    <scopeInfo nodeId="2022241925975927718" fileName="TransientModelBallonDisplayer.java" startLine="58" startPosition="16" endLine="71" endPosition="11" />
+    <scopeInfo nodeId="1275835579956644868" fileName="TransientModelBallonDisplayer.java" startLine="108" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="1275835579956644869" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="721478377485341619" fileName="TransientModelBallonDisplayer.java" startLine="47" startPosition="25" endLine="65" endPosition="9">
+    <scopeInfo nodeId="721478377485341619" fileName="TransientModelBallonDisplayer.java" startLine="54" startPosition="25" endLine="72" endPosition="9">
       <varInfo nodeId="721478377485341621" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="721478377485341616" fileName="TransientModelBallonDisplayer.java" startLine="46" startPosition="47" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="721478377485341580" fileName="TransientModelBallonDisplayer.java" startLine="44" startPosition="29" endLine="68" endPosition="37">
+    <scopeInfo nodeId="721478377485341616" fileName="TransientModelBallonDisplayer.java" startLine="53" startPosition="47" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="721478377485341580" fileName="TransientModelBallonDisplayer.java" startLine="51" startPosition="29" endLine="75" endPosition="37">
       <varInfo nodeId="721478377485341582" varName="balloon" />
     </scopeInfo>
-    <scopeInfo nodeId="721478377485341577" fileName="TransientModelBallonDisplayer.java" startLine="43" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="721478377485341571" fileName="TransientModelBallonDisplayer.java" startLine="28" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer" />
-    <unitInfo nodeId="1275835579956644892" fileName="TransientModelBallonDisplayer.java" startLine="107" startPosition="60" endLine="111" endPosition="9" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer$1" />
-    <unitInfo nodeId="721478377485341615" fileName="TransientModelBallonDisplayer.java" startLine="46" startPosition="35" endLine="67" endPosition="5" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer$1" />
-    <unitInfo nodeId="1275835579956689892" fileName="TransientModelBallonDisplayer.java" startLine="98" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer$MyMakeNotificationListener" />
+    <scopeInfo nodeId="721478377485341577" fileName="TransientModelBallonDisplayer.java" startLine="50" startPosition="0" endLine="77" endPosition="0" />
+    <unitInfo nodeId="721478377485341571" fileName="TransientModelBallonDisplayer.java" startLine="32" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer" />
+    <unitInfo nodeId="1275835579956644892" fileName="TransientModelBallonDisplayer.java" startLine="114" startPosition="60" endLine="118" endPosition="9" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer$1" />
+    <unitInfo nodeId="721478377485341615" fileName="TransientModelBallonDisplayer.java" startLine="53" startPosition="35" endLine="74" endPosition="5" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer$1" />
+    <unitInfo nodeId="1275835579956689892" fileName="TransientModelBallonDisplayer.java" startLine="105" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer$MyMakeNotificationListener" />
+    <unitInfo nodeId="8106397947991421139" fileName="TransientModelBallonDisplayer.java" startLine="135" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer$MyProjectManagerAdapter" />
   </root>
   <root nodeId="721478377485341721">
     <nodeInfo nodeId="721478377485342317" fileName="TransientModelsWidgetInstaller.java" startLine="7" startPosition="45" endLine="8" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
