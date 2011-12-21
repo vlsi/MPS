@@ -6,5 +6,5 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class IconContainer {
-  protected static Icon ICON_a1 = new ImageIcon(IconContainer.class.getResource("transientModels.png"));
+  protected static Icon ICON_a2 = new ImageIcon(IconContainer.class.getResource("transientModels.png"));
 }

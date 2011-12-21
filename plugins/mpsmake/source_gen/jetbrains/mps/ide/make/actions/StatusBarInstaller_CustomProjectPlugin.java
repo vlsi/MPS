@@ -23,7 +23,9 @@ public class StatusBarInstaller_CustomProjectPlugin extends BaseCustomProjectPlu
       return;
     }
 
-    ListSequence.fromList(StatusBarInstaller_CustomProjectPlugin.this.myWidgets).addElement(new TransientModelsWidget(StatusBarInstaller_CustomProjectPlugin.this.myStatusBar));
+    if (SaveTransientModelsPreferences.isShowStatusBarIcon()) {
+      ListSequence.fromList(StatusBarInstaller_CustomProjectPlugin.this.myWidgets).addElement(new TransientModelsWidget(project, StatusBarInstaller_CustomProjectPlugin.this.myStatusBar));
+    }
 
     for (StatusBarWidget widget : ListSequence.fromList(StatusBarInstaller_CustomProjectPlugin.this.myWidgets)) {
       StatusBarInstaller_CustomProjectPlugin.this.myStatusBar.addWidget(widget);

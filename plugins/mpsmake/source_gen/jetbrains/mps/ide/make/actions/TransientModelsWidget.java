@@ -6,6 +6,7 @@ import com.intellij.openapi.wm.StatusBarWidget;
 import com.intellij.openapi.wm.CustomStatusBarWidget;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.wm.StatusBar;
+import jetbrains.mps.project.MPSProject;
 import javax.swing.Icon;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeService;
@@ -30,9 +31,6 @@ import com.intellij.util.ui.UIUtil;
 import java.awt.Dimension;
 import com.intellij.openapi.util.Disposer;
 import javax.swing.JComponent;
-import java.awt.event.MouseAdapter;
-import java.awt.Graphics;
-import java.awt.Insets;
 import jetbrains.mps.make.MakeNotification;
 import com.intellij.openapi.application.ApplicationManager;
 
@@ -41,12 +39,14 @@ public class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWi
 
   @NotNull
   private final StatusBar myStatusBar;
-  private final Icon myIcon = IconContainer.ICON_a1;
+  private final MPSProject myProject;
+  private final Icon myIcon = IconContainer.ICON_a2;
   private final IMakeNotificationListener myMakeNotificationListener = new TransientModelsWidget.MyMakeNotificationListener();
-  private TransientModelsWidget.IconWrapperWithBlackJackAndHookers myComponent;
+  private IconWrapperWithBlackJackAndHookers myComponent;
 
-  public TransientModelsWidget(StatusBar bar) {
+  public TransientModelsWidget(MPSProject project, StatusBar bar) {
     myStatusBar = bar;
+    myProject = project;
   }
 
   public void install(@NotNull StatusBar bar) {
@@ -102,11 +102,12 @@ public class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWi
   }
 
   private void showBaloon() {
-    final Balloon balloon = JBPopupFactory.getInstance().createHtmlTextBalloonBuilder("Saving transient models is on.", null, LightColors.YELLOW, new HyperlinkAdapter() {
-      protected void hyperlinkActivated(HyperlinkEvent p0) {
-        // activated! 
+    final Balloon balloon;
+    balloon = JBPopupFactory.getInstance().createHtmlTextBalloonBuilder("Saving transient models is on." + "<br>" + "<a href=\"\">Disable popup...</a>", null, LightColors.YELLOW, new HyperlinkAdapter() {
+      protected void hyperlinkActivated(HyperlinkEvent event) {
+        SaveTransientModelsPreferences.setShowPopup(false);
       }
-    }).createBalloon();
+    }).setHideOnAction(true).createBalloon();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         Component component = myComponent;
@@ -130,58 +131,8 @@ public class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWi
   }
 
   public JComponent getComponent() {
-    this.myComponent = new TransientModelsWidget.IconWrapperWithBlackJackAndHookers(this);
+    this.myComponent = new IconWrapperWithBlackJackAndHookers(this);
     return this.myComponent;
-  }
-
-  public static class IconWrapperWithBlackJackAndHookers extends JComponent {
-    private Icon myIcon;
-    private final StatusBarWidget.IconPresentation myPresentation;
-
-    public IconWrapperWithBlackJackAndHookers(StatusBarWidget.IconPresentation presentation) {
-      myPresentation = presentation;
-      myIcon = myPresentation.getIcon();
-
-      putClientProperty(UIUtil.CENTER_TOOLTIP, Boolean.TRUE);
-      setToolTipText(myPresentation.getTooltipText());
-      addMouseListener(new MouseAdapter() {
-        @Override
-        public void mousePressed(final MouseEvent e) {
-          myPresentation.getClickConsumer().consume(e);
-        }
-      });
-      setOpaque(false);
-    }
-
-    public void update() {
-      myIcon = myPresentation.getIcon();
-    }
-
-    @Override
-    protected void paintComponent(Graphics graphics) {
-      final Rectangle bounds = getBounds();
-      final Insets insets = getInsets();
-      if (myIcon != null) {
-        final int iconWidth = myIcon.getIconWidth();
-        final int iconHeight = myIcon.getIconHeight();
-        myIcon.paintIcon(this, graphics, insets.left + (bounds.width - insets.left - insets.right - iconWidth) / 2, insets.top + (bounds.height - insets.top - insets.bottom - iconHeight) / 2);
-      }
-    }
-
-    @Override
-    public String getToolTipText() {
-      return myPresentation.getTooltipText();
-    }
-
-    @Override
-    public Dimension getMinimumSize() {
-      return new Dimension(24, 18);
-    }
-
-    @Override
-    public Dimension getPreferredSize() {
-      return getMinimumSize();
-    }
   }
 
   private class MyMakeNotificationListener implements IMakeNotificationListener {
@@ -189,7 +140,7 @@ public class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWi
     }
 
     public void handleNotification(MakeNotification notification) {
-      if (!(isSaveTransientModels())) {
+      if (!(isSaveTransientModels()) || !(SaveTransientModelsPreferences.isShowPopup())) {
         return;
       }
       if (notification.getKind() == MakeNotification.Kind.SESSION_OPENED) {
