@@ -29,8 +29,8 @@
       <varInfo nodeId="1175882263393" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1169048613423" fileName="XmlDemo.java" startLine="17" startPosition="9" endLine="28" endPosition="7">
-      <varInfo nodeId="1169048639111" varName="is" />
       <varInfo nodeId="1169048628465" varName="doc" />
+      <varInfo nodeId="1169048639111" varName="is" />
     </scopeInfo>
     <scopeInfo nodeId="1169047415376" fileName="XmlDemo.java" startLine="15" startPosition="42" endLine="30" endPosition="5">
       <varInfo nodeId="1169048035393" varName="INPUT" />

@@ -38,7 +38,8 @@ public class INodeReferentSearchScopeProviderWrapper implements ReferenceScopePr
       _context.getModel(),
       _context.getEnclosingNode(),
       _context.getReferenceNode(),
-      _context.getLinkTarget()
+      _context.getLinkTarget(),
+      _context.getContainingLink()
     );
     return inner.createNodeReferentSearchScope(operationContext, context);
   }
@@ -56,6 +57,7 @@ public class INodeReferentSearchScopeProviderWrapper implements ReferenceScopePr
       _context.getReferenceNode(),
       _context.getLinkTarget(),
       _context.getParameterNode(),
+      _context.getContainingLink(),
       _context.getVisible(),
       _context.getSmartReference(),
       _context.getInEditor()

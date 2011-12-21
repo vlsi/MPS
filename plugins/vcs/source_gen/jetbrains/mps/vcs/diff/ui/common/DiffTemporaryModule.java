@@ -26,9 +26,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.vfs.IFile;
 
@@ -155,7 +154,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
   }
 
-  public static class DiffSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor {
+  public static class DiffSModelDescriptor extends BaseSpecialModelDescriptor implements EditableSModelDescriptor {
     private IModule myModule;
     private boolean myEditable;
 
@@ -164,11 +163,6 @@ public class DiffTemporaryModule extends AbstractModule {
       myModule = module;
       mySModel = model;
       myEditable = editable;
-      setLoadingState(ModelLoadingState.FULLY_LOADED);
-    }
-
-    protected BaseSModelDescriptor.ModelLoadResult initialLoad() {
-      throw new UnsupportedOperationException();
     }
 
     @Override
@@ -211,6 +205,10 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     public void save() {
+      throw new UnsupportedOperationException();
+    }
+
+    protected SModel createModel() {
       throw new UnsupportedOperationException();
     }
   }

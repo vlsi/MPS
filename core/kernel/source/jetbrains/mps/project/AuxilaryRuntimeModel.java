@@ -17,6 +17,8 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 /**
  * Igor Alshannikov
@@ -65,13 +67,13 @@ public class AuxilaryRuntimeModel implements ModelOwner, CoreComponent {
     INSTANCE = null;
   }
 
-  private static class AuxModelDescriptor extends BaseSModelDescriptor {
+  private static class AuxModelDescriptor extends BaseSpecialModelDescriptor {
     public AuxModelDescriptor() {
       super(AuxilaryRuntimeModel.MY_MODEL_REFERENCE, false);
     }
 
-    protected ModelLoadResult initialLoad() {
-      SModel model = new SModel(getSModelReference()) {
+    protected SModel createModel() {
+      return new SModel(getSModelReference()) {
         protected void performUndoableAction(SNodeUndoableAction action) {
           if (!UndoHelper.getInstance().needRegisterUndo(this)) return;
           UndoHelper.getInstance().addUndoableAction(action);
@@ -81,13 +83,6 @@ public class AuxilaryRuntimeModel implements ModelOwner, CoreComponent {
           return false;
         }
       };
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
-    }
-
-
-    @Override
-    protected void setLoadingState(ModelLoadingState state) {
-      throw new UnsupportedOperationException();
     }
   }
 }

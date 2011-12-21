@@ -35,7 +35,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.editor.ConstraintFunction_ReferentSearchScope_Factory_Editor" file="ConstraintFunction_ReferentSearchScope_Factory_Editor.java">
+  <dependency className="jetbrains.mps.lang.constraints.editor.ConstraintFunction_ReferentSearchScope_AbstractBase_Editor" file="ConstraintFunction_ReferentSearchScope_AbstractBase_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ConceptFunction_Component" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />

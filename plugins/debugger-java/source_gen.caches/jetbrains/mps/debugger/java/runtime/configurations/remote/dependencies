@@ -59,7 +59,8 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.remote.Remote_Configuration_Factory" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.remote.Remote_Configuration_RunProfileState" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -106,7 +107,7 @@
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.JavaStackTraceFilter" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.JavaStackTraceFilter" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />

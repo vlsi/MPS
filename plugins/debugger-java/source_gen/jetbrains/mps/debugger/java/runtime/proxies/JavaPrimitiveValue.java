@@ -12,14 +12,6 @@ import javax.swing.Icon;
 import jetbrains.mps.debug.integration.ui.icons.Icons;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 19.06.2010
- * * Time: 16:56:49
- * * To change this template use File | Settings | File Templates.
- */
 /*package*/ class JavaPrimitiveValue extends JavaValue {
   public JavaPrimitiveValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value, classFQname, threadReference);

@@ -31,6 +31,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
@@ -40,9 +41,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.ModuleUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.make.dependencies.graph.Graph" />
     <classNode extendsClassName="jetbrains.mps.make.dependencies.graph.IVertex" />

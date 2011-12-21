@@ -26,6 +26,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
@@ -1197,7 +1199,15 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return leftOperandType;
+      {
+        IMatchingPattern pattern_r12mo3_a0a7 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.PrimitiveType");
+        SNode coercedNode_r12mo3_a0a7 = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftOperandType, pattern_r12mo3_a0a7);
+        if (coercedNode_r12mo3_a0a7 != null) {
+          return coercedNode_r12mo3_a0a7;
+        } else {
+          return leftOperandType;
+        }
+      }
     }
 
     public static class QuotationClass_3ist9o_a0a0a0a2 {

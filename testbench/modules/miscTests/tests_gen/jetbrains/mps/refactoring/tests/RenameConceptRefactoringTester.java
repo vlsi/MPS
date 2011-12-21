@@ -17,7 +17,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 public class RenameConceptRefactoringTester implements IRefactoringTester {
   private static final String STRMD = "strmd";

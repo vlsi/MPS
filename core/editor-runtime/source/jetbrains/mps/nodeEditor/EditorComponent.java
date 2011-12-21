@@ -635,6 +635,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myOwner;
   }
 
+  public JComponent getEditorComponent() {
+    return this;
+  }
+
   public void moveCurrentUp() {
     Selection selection = getSelectionManager().getSelection();
     if (selection instanceof SingularSelection || selection instanceof NodeRangeSelection) {
@@ -2109,7 +2113,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected void disposeTypeCheckingContext() {
-    TypeContextManager.getInstance().removeOwnerForRootNodeContext(getNodeForTypechecking(), this);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        TypeContextManager.getInstance().removeOwnerForRootNodeContext(getNodeForTypechecking(), EditorComponent.this);
+      }
+    });
   }
 
   protected SNode getNodeForTypechecking() {
@@ -3120,7 +3129,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     public boolean isPastePossible(DataContext dataContext) {
-      return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      //this write action is needed because inside of it we can be waiting for buffer, which leads to MPS-14851
+      return ModelAccess.instance().runWriteAction(new Computable<Boolean>() {
         public Boolean compute() {
           if (isDisposed() || isInvalid() || isReadOnly()) {
             return false;

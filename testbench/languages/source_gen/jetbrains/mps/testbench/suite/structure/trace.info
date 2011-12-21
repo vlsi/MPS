@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Suite_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.Suite_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="Suite_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.Suite_Language" />
   <root nodeId="1280144168199506908">
     <nodeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="14" startPosition="68" endLine="15" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="15" startPosition="93" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODULE_F_Q_NAME" />
@@ -64,24 +64,46 @@
     <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="83" startPosition="69" endLine="84" endPosition="63" />
     <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="87" startPosition="66" endLine="88" endPosition="175" />
     <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="91" startPosition="52" endLine="92" endPosition="46" />
-    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="1280144168199506908" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1280144168199506908" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1280144168199506908" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1280144168199506908" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1280144168199506908" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1280144168199506908" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1280144168199506908" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1280144168199506908" varName="node" />
+      <varInfo nodeId="1280144168199506908" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="1280144168199506908" varName="init" />
+      <varInfo nodeId="1280144168199506908" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="1280144168199506908" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.SolutionRef" />
   </root>
   <root nodeId="1280144168199509923">
@@ -166,29 +188,56 @@
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="105" startPosition="69" endLine="106" endPosition="63" />
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="109" startPosition="66" endLine="110" endPosition="175" />
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="113" startPosition="52" endLine="114" endPosition="46" />
-    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+      <varInfo nodeId="4504141816188599477" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="4504141816188599477" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4504141816188599477" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="4504141816188599477" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="4504141816188599477" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="4504141816188599477" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="4504141816188599477" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="4504141816188599477" varName="node" />
+      <varInfo nodeId="4504141816188599477" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
     <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="4504141816188599477" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="4504141816188599477" varName="node" />
+      <varInfo nodeId="4504141816188599477" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="108" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="4504141816188599477" varName="init" />
+      <varInfo nodeId="4504141816188599477" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="112" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="4504141816188599477" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="4504141816188599477" fileName="ModuleSuite.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.ModuleSuite" />
   </root>
   <root nodeId="4504141816188599479">
@@ -253,24 +302,46 @@
     <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="84" startPosition="69" endLine="85" endPosition="63" />
     <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="88" startPosition="66" endLine="89" endPosition="175" />
     <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="92" startPosition="52" endLine="93" endPosition="46" />
-    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="4504141816188599479" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="4504141816188599479" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="4504141816188599479" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="4504141816188599479" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="4504141816188599479" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="4504141816188599479" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="4504141816188599479" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="4504141816188599479" varName="node" />
+      <varInfo nodeId="4504141816188599479" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="4504141816188599479" varName="init" />
+      <varInfo nodeId="4504141816188599479" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="4504141816188599479" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="4504141816188599479" fileName="TestCaseRef.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.TestCaseRef" />
   </root>
   <root nodeId="4504141816188599480">
@@ -335,24 +406,46 @@
     <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="84" startPosition="69" endLine="85" endPosition="69" />
     <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="88" startPosition="72" endLine="89" endPosition="187" />
     <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="92" startPosition="58" endLine="93" endPosition="52" />
-    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="4504141816188599480" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="4504141816188599480" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="4504141816188599480" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="4504141816188599480" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="4504141816188599480" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="4504141816188599480" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="4504141816188599480" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="4504141816188599480" varName="node" />
+      <varInfo nodeId="4504141816188599480" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="4504141816188599480" varName="init" />
+      <varInfo nodeId="4504141816188599480" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="4504141816188599480" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="4504141816188599480" fileName="JUnit4TestCaseRef.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef" />
   </root>
   <root nodeId="4504141816188599481">
@@ -417,24 +510,46 @@
     <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="84" startPosition="69" endLine="85" endPosition="69" />
     <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="88" startPosition="72" endLine="89" endPosition="187" />
     <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="92" startPosition="58" endLine="93" endPosition="52" />
-    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="4504141816188599481" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="4504141816188599481" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="4504141816188599481" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="4504141816188599481" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="4504141816188599481" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="4504141816188599481" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="4504141816188599481" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="4504141816188599481" varName="node" />
+      <varInfo nodeId="4504141816188599481" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="4504141816188599481" varName="init" />
+      <varInfo nodeId="4504141816188599481" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="4504141816188599481" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="4504141816188599481" fileName="JUnit3TestCaseRef.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef" />
   </root>
   <root nodeId="4504141816188599482">
@@ -443,7 +558,9 @@
     <nodeInfo nodeId="4504141816188599482" fileName="ITestRef.java" startLine="10" startPosition="0" endLine="11" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMuted#()Z" />
     <nodeInfo nodeId="4504141816188599482" fileName="ITestRef.java" startLine="11" startPosition="28" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMuted#(Z)V" />
     <scopeInfo nodeId="4504141816188599482" fileName="ITestRef.java" startLine="10" startPosition="0" endLine="11" endPosition="28" />
-    <scopeInfo nodeId="4504141816188599482" fileName="ITestRef.java" startLine="11" startPosition="28" endLine="12" endPosition="38" />
+    <scopeInfo nodeId="4504141816188599482" fileName="ITestRef.java" startLine="11" startPosition="28" endLine="12" endPosition="38">
+      <varInfo nodeId="4504141816188599482" varName="value" />
+    </scopeInfo>
     <unitInfo nodeId="4504141816188599482" fileName="ITestRef.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.ITestRef" />
   </root>
 </debugInfo>

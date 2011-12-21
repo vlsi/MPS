@@ -139,40 +139,48 @@
     <unitInfo nodeId="3432969378036013783" fileName="DebugConnectionSettings.java" startLine="8" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.debug.runtime.settings.DebugConnectionSettings" />
   </root>
   <root nodeId="3432969378036013784">
-    <nodeInfo nodeId="3432969378036013787" fileName="RemoteConnectionSettings.java" startLine="6" startPosition="71" endLine="7" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuspend" />
+    <nodeInfo nodeId="3432969378036013787" fileName="RemoteConnectionSettings.java" startLine="6" startPosition="92" endLine="7" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuspend" />
     <nodeInfo nodeId="3432969378036013799" fileName="RemoteConnectionSettings.java" startLine="9" startPosition="62" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3432969378036013806" fileName="RemoteConnectionSettings.java" startLine="13" startPosition="37" endLine="14" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3432969378036013828" fileName="RemoteConnectionSettings.java" startLine="18" startPosition="33" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036013835" fileName="RemoteConnectionSettings.java" startLine="23" startPosition="30" endLine="24" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036013844" fileName="RemoteConnectionSettings.java" startLine="27" startPosition="43" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036013815" fileName="RemoteConnectionSettings.java" startLine="31" startPosition="75" endLine="32" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2596130676084594146" fileName="RemoteConnectionSettings.java" startLine="32" startPosition="77" endLine="33" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2596130676084594155" fileName="RemoteConnectionSettings.java" startLine="33" startPosition="105" endLine="34" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2596130676084594138" fileName="RemoteConnectionSettings.java" startLine="34" startPosition="47" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036013815" fileName="RemoteConnectionSettings.java" startLine="38" startPosition="75" endLine="39" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036013791" fileName="RemoteConnectionSettings.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoteConnectionSettings#(Ljava/lang/String;I)V" />
     <nodeInfo nodeId="3432969378036013802" fileName="RemoteConnectionSettings.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoteConnectionSettings#()V" />
     <nodeInfo nodeId="3432969378036013838" fileName="RemoteConnectionSettings.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSuspend#(Z)V" />
-    <nodeInfo nodeId="3432969378036013807" fileName="RemoteConnectionSettings.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClientCommandLine#(ZI)Ljava/lang/String;" />
+    <nodeInfo nodeId="3432969378036013807" fileName="RemoteConnectionSettings.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClientCommandLine#(ZI)Ljava/lang/String;" />
     <nodeInfo nodeId="3432969378036013824" fileName="RemoteConnectionSettings.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isServerMode#()Z" />
     <nodeInfo nodeId="3432969378036013831" fileName="RemoteConnectionSettings.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSuspend#()Z" />
+    <nodeInfo nodeId="2596130676084594130" fileName="RemoteConnectionSettings.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljetbrains/mps/debug/runtime/settings/RemoteConnectionSettings;" />
     <scopeInfo nodeId="3432969378036013798" fileName="RemoteConnectionSettings.java" startLine="9" startPosition="62" endLine="10" endPosition="26" />
     <scopeInfo nodeId="3432969378036013805" fileName="RemoteConnectionSettings.java" startLine="13" startPosition="37" endLine="14" endPosition="12" />
     <scopeInfo nodeId="3432969378036013827" fileName="RemoteConnectionSettings.java" startLine="18" startPosition="33" endLine="19" endPosition="17" />
     <scopeInfo nodeId="3432969378036013834" fileName="RemoteConnectionSettings.java" startLine="23" startPosition="30" endLine="24" endPosition="21" />
     <scopeInfo nodeId="3432969378036013843" fileName="RemoteConnectionSettings.java" startLine="27" startPosition="43" endLine="28" endPosition="24" />
-    <scopeInfo nodeId="3432969378036013814" fileName="RemoteConnectionSettings.java" startLine="31" startPosition="75" endLine="32" endPosition="112" />
+    <scopeInfo nodeId="3432969378036013814" fileName="RemoteConnectionSettings.java" startLine="38" startPosition="75" endLine="39" endPosition="112" />
     <scopeInfo nodeId="3432969378036013791" fileName="RemoteConnectionSettings.java" startLine="8" startPosition="0" endLine="11" endPosition="3">
       <varInfo nodeId="3432969378036013794" varName="hostName" />
       <varInfo nodeId="3432969378036013796" varName="port" />
     </scopeInfo>
     <scopeInfo nodeId="3432969378036013802" fileName="RemoteConnectionSettings.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="2596130676084594134" fileName="RemoteConnectionSettings.java" startLine="32" startPosition="77" endLine="35" endPosition="30">
+      <varInfo nodeId="2596130676084594147" varName="connectionSettings" />
+    </scopeInfo>
     <scopeInfo nodeId="3432969378036013838" fileName="RemoteConnectionSettings.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="3432969378036013841" varName="suspend" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036013807" fileName="RemoteConnectionSettings.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="3432969378036013807" fileName="RemoteConnectionSettings.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="3432969378036013812" varName="port" />
       <varInfo nodeId="3432969378036013810" varName="useSockets" />
     </scopeInfo>
     <scopeInfo nodeId="3432969378036013824" fileName="RemoteConnectionSettings.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="3432969378036013831" fileName="RemoteConnectionSettings.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
-    <unitInfo nodeId="3432969378036013784" fileName="RemoteConnectionSettings.java" startLine="6" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings" />
+    <scopeInfo nodeId="2596130676084594130" fileName="RemoteConnectionSettings.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="3432969378036013784" fileName="RemoteConnectionSettings.java" startLine="6" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings" />
   </root>
   <root nodeId="3432969378036017435">
     <nodeInfo nodeId="3432969378036017444" fileName="LocalConnectionSettings.java" startLine="9" startPosition="54" endLine="10" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

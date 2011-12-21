@@ -41,13 +41,19 @@
     <scopeInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="5219429592916136228" varName="editorContext" />
+      <varInfo nodeId="5219429592916136228" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="5219429592916136232" fileName="ConvertToBeanBuilder_Intention.java" startLine="38" startPosition="76" endLine="48" endPosition="75">
       <varInfo nodeId="5219429592916229039" varName="builder" />
       <varInfo nodeId="5219429592916229030" varName="creator" />
     </scopeInfo>
-    <scopeInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="37" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="37" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="5219429592916136228" varName="editorContext" />
+      <varInfo nodeId="5219429592916136228" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="14" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.intentions.ConvertToBeanBuilder_Intention" />
   </root>
   <root nodeId="5219429592916269568">
@@ -79,9 +85,15 @@
     <scopeInfo nodeId="5219429592916269568" fileName="ChangeRoot_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="5219429592916269568" fileName="ChangeRoot_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="5219429592916269570" fileName="ChangeRoot_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
-    <scopeInfo nodeId="5219429592916269568" fileName="ChangeRoot_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="5219429592916269568" fileName="ChangeRoot_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="5219429592916269568" varName="editorContext" />
+      <varInfo nodeId="5219429592916269568" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5219429592916269568" fileName="ChangeRoot_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="5219429592916269568" fileName="ChangeRoot_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5219429592916269568" fileName="ChangeRoot_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="5219429592916269568" varName="editorContext" />
+      <varInfo nodeId="5219429592916269568" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="5219429592916269568" fileName="ChangeRoot_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.intentions.ChangeRoot_Intention" />
   </root>
   <root nodeId="5219429592916269604">
@@ -113,9 +125,15 @@
     <scopeInfo nodeId="5219429592916269604" fileName="ChangeLeaf_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="5219429592916269604" fileName="ChangeLeaf_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="5219429592916269606" fileName="ChangeLeaf_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
-    <scopeInfo nodeId="5219429592916269604" fileName="ChangeLeaf_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="5219429592916269604" fileName="ChangeLeaf_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="5219429592916269604" varName="editorContext" />
+      <varInfo nodeId="5219429592916269604" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5219429592916269604" fileName="ChangeLeaf_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="5219429592916269604" fileName="ChangeLeaf_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5219429592916269604" fileName="ChangeLeaf_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="5219429592916269604" varName="editorContext" />
+      <varInfo nodeId="5219429592916269604" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="5219429592916269604" fileName="ChangeLeaf_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.intentions.ChangeLeaf_Intention" />
   </root>
   <root nodeId="5219429592916269641">
@@ -147,9 +165,15 @@
     <scopeInfo nodeId="5219429592916269641" fileName="ChangeAbstract_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="5219429592916269641" fileName="ChangeAbstract_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="5219429592916269643" fileName="ChangeAbstract_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
-    <scopeInfo nodeId="5219429592916269641" fileName="ChangeAbstract_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="5219429592916269641" fileName="ChangeAbstract_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="5219429592916269641" varName="editorContext" />
+      <varInfo nodeId="5219429592916269641" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5219429592916269641" fileName="ChangeAbstract_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="5219429592916269641" fileName="ChangeAbstract_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5219429592916269641" fileName="ChangeAbstract_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="5219429592916269641" varName="editorContext" />
+      <varInfo nodeId="5219429592916269641" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="5219429592916269641" fileName="ChangeAbstract_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.intentions.ChangeAbstract_Intention" />
   </root>
 </debugInfo>

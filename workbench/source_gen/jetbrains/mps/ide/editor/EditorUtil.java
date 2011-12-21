@@ -24,6 +24,7 @@ public class EditorUtil {
   public static EditorComponent scrollToNode(@NotNull SNode node, @Nullable EditorComponent component, FileEditorManager manager) {
     EditorComponent inspector = EditorUtil.findInspector(manager);
     if (inspector != null && component != null) {
+      boolean searchInInspector = false;
       SNode currentTargetNode = node;
       while (currentTargetNode != null) {
         EditorCell cell = component.findNodeCell(currentTargetNode);
@@ -32,13 +33,14 @@ public class EditorUtil {
             //  so we are probably in inspector... 
             //  we need to select to find a node in inspector 
             component.changeSelection(cell);
+            searchInInspector = true;
           }
           break;
         }
         currentTargetNode = currentTargetNode.getParent();
       }
       currentTargetNode = node;
-      while (currentTargetNode != null) {
+      while (currentTargetNode != null && searchInInspector) {
         EditorCell cellInInspector = inspector.findNodeCell(currentTargetNode);
         if (cellInInspector != null) {
           inspector.scrollToCell(cellInInspector);

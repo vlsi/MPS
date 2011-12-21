@@ -89,32 +89,62 @@
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="118" startPosition="69" endLine="119" endPosition="62" />
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="122" startPosition="65" endLine="123" endPosition="168" />
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="126" startPosition="51" endLine="127" endPosition="45" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
+      <varInfo nodeId="1241362555920" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1241362555920" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1241362555920" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1241362555920" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1241362555920" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1241362555920" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="1241362555920" varName="node" />
+      <varInfo nodeId="1241362555920" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1241362555920" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="1241362555920" varName="node" />
+      <varInfo nodeId="1241362555920" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
     <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="125" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="113" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="1241362555920" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="1241362555920" varName="node" />
+      <varInfo nodeId="1241362555920" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="121" startPosition="0" endLine="125" endPosition="0">
+      <varInfo nodeId="1241362555920" varName="init" />
+      <varInfo nodeId="1241362555920" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241362555920" fileName="Calculator.java" startLine="125" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="1241362555920" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1241362555920" fileName="Calculator.java" startLine="16" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.calculator.structure.Calculator" />
   </root>
   <root nodeId="1241362608529">
@@ -172,22 +202,42 @@
     <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="75" startPosition="69" endLine="76" endPosition="62" />
     <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="79" startPosition="65" endLine="80" endPosition="168" />
     <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="83" startPosition="51" endLine="84" endPosition="45" />
-    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="1241362608529" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1241362608529" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1241362608529" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1241362608529" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1241362608529" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="1241362608529" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1241362608529" varName="node" />
+      <varInfo nodeId="1241362608529" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1241362608529" varName="init" />
+      <varInfo nodeId="1241362608529" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241362608529" fileName="InputField.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1241362608529" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1241362608529" fileName="InputField.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.calculator.structure.InputField" />
   </root>
   <root nodeId="1241362815640">
@@ -208,11 +258,20 @@
     <scopeInfo nodeId="1241362815640" fileName="OutputField.java" startLine="24" startPosition="46" endLine="25" endPosition="49" />
     <scopeInfo nodeId="1241362815640" fileName="OutputField.java" startLine="28" startPosition="66" endLine="29" endPosition="170" />
     <scopeInfo nodeId="1241362815640" fileName="OutputField.java" startLine="32" startPosition="52" endLine="33" endPosition="46" />
-    <scopeInfo nodeId="1241362815640" fileName="OutputField.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="1241362815640" fileName="OutputField.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="1241362815640" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1241362815640" fileName="OutputField.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1241362815640" fileName="OutputField.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1241362815640" fileName="OutputField.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1241362815640" fileName="OutputField.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1241362815640" fileName="OutputField.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1241362815640" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241362815640" fileName="OutputField.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1241362815640" varName="init" />
+      <varInfo nodeId="1241362815640" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241362815640" fileName="OutputField.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1241362815640" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1241362815640" fileName="OutputField.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.calculator.structure.OutputField" />
   </root>
   <root nodeId="1241363083334">
@@ -233,11 +292,20 @@
     <scopeInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="23" startPosition="41" endLine="24" endPosition="55" />
     <scopeInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="27" startPosition="74" endLine="28" endPosition="186" />
     <scopeInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="31" startPosition="60" endLine="32" endPosition="54" />
-    <scopeInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="1241363083334" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1241363083334" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1241363083334" varName="init" />
+      <varInfo nodeId="1241363083334" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1241363083334" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1241363083334" fileName="InputFieldReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.calculator.structure.InputFieldReference" />
   </root>
 </debugInfo>

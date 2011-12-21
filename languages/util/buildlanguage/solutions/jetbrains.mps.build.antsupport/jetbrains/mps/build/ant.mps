@@ -1213,7 +1213,7 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1117107720588671549">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ThisConstructorInvocation" typeId="tpee.1178893518978" id="1117107720588671550">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4003657351907887108" resolveInfo="MpsWorker" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1117107720588671474" resolveInfo="MpsWorker" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1117107720588671551">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1117107720588671545" resolveInfo="whatToDo" />
           </node>
@@ -4090,8 +4090,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d4yz.6740693110299850048" resolveInfo="UrlClassLoader" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4003657351907888761">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1s52.~ClassloaderUtil%dinitClassloader(java%dutil%dList)%ccom%dintellij%dutil%dlang%dUrlClassLoader" resolveInfo="initClassloader" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="d4yz.1631042080099030756" resolveInfo="ClassloaderUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d4yz.1631042080099030860" resolveInfo="initClassloader" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4003657351907888762">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4003657351907888763">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
@@ -14912,7 +14912,7 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8911572761289377576">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8911572761289377569" resolveInfo="projFile" />
                   </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8911572761289377578">
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1357804172819646060">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8638838189258376508" resolveInfo="projectElement" />
                   </node>
                 </node>
@@ -16783,8 +16783,8 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8401097797601018022">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8401097797601018023">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8638838189258374790" resolveInfo="FileMPSProject" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8401097797601018024">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1117107720588641659" resolveInfo="projectFile" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1357804172819645762">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8401097797600990516" resolveInfo="projectFile" />
                 </node>
               </node>
             </node>

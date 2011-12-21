@@ -17,14 +17,6 @@ import java.util.Collections;
 import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.request.EventRequest;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 18.12.2009
- * * Time: 18:42:00
- * * To change this template use File | Settings | File Templates.
- */
 public abstract class SuspendContext {
   private static final Logger LOG = Logger.getLogger(SuspendContext.class);
 

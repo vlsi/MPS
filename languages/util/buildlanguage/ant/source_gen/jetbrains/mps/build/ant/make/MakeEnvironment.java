@@ -56,7 +56,7 @@ public class MakeEnvironment extends Environment {
   }
 
   public jetbrains.mps.project.Project loadProject(File projectFile) {
-    jetbrains.mps.project.Project project = null;
+    jetbrains.mps.project.Project project;
     try {
       Class<?> cls = Class.forName("jetbrains.mps.TestMain");
       Method meth = cls.getMethod("loadProject", File.class);

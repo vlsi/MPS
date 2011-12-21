@@ -7,14 +7,6 @@ import jetbrains.mps.logging.Logger;
 import com.sun.jdi.Location;
 import com.sun.jdi.AbsentInformationException;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 09.04.2010
- * * Time: 17:39:13
- * * To change this template use File | Settings | File Templates.
- */
 public class JavaLocation extends ProxyForJava implements ILocation {
   private static Logger LOG = Logger.getLogger(JavaLocation.class);
 

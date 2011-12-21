@@ -18,8 +18,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1957929848381761288" fileName="Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="2492830749281989375" fileName="Test.java" startLine="21" startPosition="36" endLine="26" endPosition="14">
-      <varInfo nodeId="2492830749281989387" varName="lp" />
       <varInfo nodeId="2492830749281990808" varName="label" />
+      <varInfo nodeId="2492830749281989387" varName="lp" />
     </scopeInfo>
     <scopeInfo nodeId="2492830749281986401" fileName="Test.java" startLine="20" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="1957929848381708039" fileName="Test.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.gwt.client.sandbox.Test" />

@@ -22,30 +22,25 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.idea.core.MPSBundle;
+import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.UUID;
 
 /**
  * evgeny, 10/26/11
  */
 public class MPSFacet extends Facet<MPSFacetConfiguration> {
-
     private Solution mySolution;
 
     public MPSFacet(@NotNull FacetType facetType, @NotNull Module module, @NotNull String name, @NotNull MPSFacetConfiguration configuration, Facet underlyingFacet) {
         super(facetType, module, name, configuration, underlyingFacet);
+        configuration.setFacet(this);
     }
 
     @Override
@@ -56,40 +51,50 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
                 ModelAccess.instance().runWriteAction(new Runnable() {
                     @Override
                     public void run() {
-                        IFile imlFile = FileSystem.getInstance().getFileByPath(getModule().getModuleFilePath());
-                        SolutionDescriptor dsd = new SolutionDescriptor();
-                        dsd.setUUID(UUID.randomUUID().toString());
-                        dsd.setNamespace(getModule().getName());
-                        dsd.getUsedLanguages().add(BootstrapLanguages.BASE_LANGUAGE);
+                        SolutionDescriptor solutionDescriptor = getConfiguration().getState().getSolutionDescriptor();
+                        Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
+                        com.intellij.openapi.project.Project project = getModule().getProject();
+                        Project mpsProject = ProjectHelper.toMPSProject(project);
 
-                        // model root
-                        IFile models = imlFile.getParent().getDescendant("models");
-                        ModelRoot modelRoot = new ModelRoot();
-                        modelRoot.setPath(models.getPath());
-                        dsd.getModelRoots().add(modelRoot);
+                        MPSModuleRepository repository = MPSModuleRepository.getInstance();
+                        if (repository.existsModule(solutionDescriptor.getModuleReference())) {
+                            MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
+                            return;
+                        }
 
-                        Project project = ProjectHelper.toMPSProject(getModule().getProject());
-                        mySolution = Solution.newInstance(new ModulesMiner.ModuleHandle(imlFile, dsd), project);
-
-                        MessagesViewTool.log(getModule().getProject(), MessageKind.INFORMATION, "module loaded: " + mySolution.getModuleFqName());
+                        repository.addModule(mySolution = solution, mpsProject);
+                        MessagesViewTool.log(project, MessageKind.INFORMATION, MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleFqName()));
                     }
                 });
-
             }
         });
     }
-
 
     @Override
     public void disposeFacet() {
         ModelAccess.instance().runWriteAction(new Runnable() {
             @Override
             public void run() {
-                MessagesViewTool.log(getModule().getProject(), MessageKind.INFORMATION, "module unloaded: " + mySolution.getModuleFqName());
+                MessagesViewTool.log(getModule().getProject(), MessageKind.INFORMATION, MPSBundle.message("facet.module.unloaded", mySolution.getModuleFqName()));
                 MPSModuleRepository.getInstance().removeModule(mySolution);
                 mySolution = null;
             }
         });
+    }
+
+    public boolean wasInitialized() {
+        return mySolution != null;
+    }
+
+    public void setConfiguration(final MPSConfigurationBean configurationBean) {
+        if (wasInitialized()) {
+            ModelAccess.instance().runWriteInEDT(new Runnable() {
+                @Override
+                public void run() {
+                    mySolution.setSolutionDescriptor(configurationBean.getSolutionDescriptor(), false);
+                }
+            });
+        }
     }
 
     public Solution getSolution() {

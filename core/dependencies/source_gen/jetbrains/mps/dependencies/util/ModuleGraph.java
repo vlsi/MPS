@@ -13,10 +13,11 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.smodel.Language;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.dependencies.graph.IVertex;
@@ -31,7 +32,9 @@ public class ModuleGraph extends Graph<ModuleGraph.ModuleVertex> {
       public Set<IModule> invoke(IModule m) {
         Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
         SetSequence.fromSet(modules).addSequence(Sequence.fromIterable(ModuleUtil.getDependencies(m)));
-        SetSequence.fromSet(modules).addSequence(Sequence.fromIterable(ModuleUtil.getUsedLanguages(m)));
+        for (Language used : Sequence.fromIterable(ModuleUtil.getUsedLanguages(m))) {
+          SetSequence.fromSet(modules).addElement(used);
+        }
         SetSequence.fromSet(modules).removeElement(m);
         return modules;
       }
@@ -64,7 +67,7 @@ public class ModuleGraph extends Graph<ModuleGraph.ModuleVertex> {
     if (start == null || finish == null) {
       return ListSequence.fromList(new ArrayList<IModule>());
     }
-    List<ModuleGraph.ModuleVertex> path = ListSequence.fromList(new LinkedList());
+    List<ModuleGraph.ModuleVertex> path = new LinkedList<ModuleGraph.ModuleVertex>();
     ListSequence.fromList(path).addElement(start);
     Set<ModuleGraph.ModuleVertex> visited = SetSequence.fromSet(new HashSet<ModuleGraph.ModuleVertex>());
     SetSequence.fromSet(visited).addElement(start);

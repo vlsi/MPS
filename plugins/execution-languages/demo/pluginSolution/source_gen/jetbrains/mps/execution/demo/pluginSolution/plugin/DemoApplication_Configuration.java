@@ -4,9 +4,10 @@ package jetbrains.mps.execution.demo.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.Node_Configuration;
 import jetbrains.mps.smodel.ModelAccess;
@@ -37,8 +38,8 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  private static final Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
-  private static final Icon ICON = new ImageIcon(Demo_Kind.class.getResource("run.png"));
+  private static final Icon ICON = new ImageIcon(DemoApplication_Configuration.class.getResource("run.png"));
+  protected static Log log = LogFactory.getLog(DemoApplication_Configuration.class);
 
   @NotNull
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
@@ -78,7 +79,13 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
     {
       Element fieldElement = element.getChild("node");
-      myNode.readExternal(fieldElement);
+      if (fieldElement != null) {
+        myNode.readExternal(fieldElement);
+      } else {
+        if (log.isWarnEnabled()) {
+          log.warn("Element " + "node" + " in " + this.getClass().getName() + " was null.");
+        }
+      }
     }
   }
 
@@ -95,7 +102,9 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       clone.myNode = (Node_Configuration) myNode.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      DemoApplication_Configuration.LOG.error(ex);
+      if (log.isErrorEnabled()) {
+        log.error("", ex);
+      }
     }
     return clone;
   }

@@ -67,44 +67,24 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.BaseTransformationTest" file="BaseTransformationTest.java">
     <classNode dependClassName="com.intellij.idea.LoggerFactory" />
-    <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
-    <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationManagerEx" />
     <classNode dependClassName="com.intellij.openapi.diagnostic.Logger" />
-    <classNode dependClassName="com.intellij.openapi.project.ex.ProjectManagerEx" />
-    <classNode dependClassName="com.intellij.util.PathUtil" />
-    <classNode dependClassName="java.awt.Toolkit" />
-    <classNode dependClassName="java.awt.datatransfer.StringSelection" />
-    <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
     <classNode dependClassName="java.lang.NoSuchMethodException" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.TestMain" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.generator.impl.CloneUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.kernel.model.TemporaryModelOwner" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ProjectModels" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="junit.framework.Assert" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
@@ -155,24 +135,41 @@
     <classNode dependClassName="junit.framework.Assert" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TransformationTestRunner" file="TransformationTestRunner.java">
-    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.openapi.application.impl.ApplicationImpl" />
+    <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
+    <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.project.ex.ProjectManagerEx" />
+    <classNode dependClassName="com.intellij.util.PathUtil" />
+    <classNode dependClassName="java.awt.Toolkit" />
+    <classNode dependClassName="java.awt.datatransfer.StringSelection" />
+    <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.IllegalAccessException" />
+    <classNode dependClassName="java.lang.NoSuchMethodException" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.TestMain" />
-    <classNode dependClassName="jetbrains.mps.util.CachesUtil" />
-    <classNode dependClassName="org.junit.internal.builders.JUnit4Builder" />
-    <classNode dependClassName="org.junit.runner.Request" />
-    <classNode dependClassName="org.junit.runner.Runner" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner" />
-    <classNode extendsClassName="org.junit.internal.requests.ClassRequest" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TypeSystemCheckUtil" file="TypeSystemCheckUtil.java">
     <classNode dependClassName="java.lang.String" />

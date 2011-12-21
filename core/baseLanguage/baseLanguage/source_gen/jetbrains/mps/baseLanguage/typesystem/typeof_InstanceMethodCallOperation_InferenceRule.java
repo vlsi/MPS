@@ -49,7 +49,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
         final SNode IT = typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338);
         typeCheckingContext.whenConcrete(IT, new Runnable() {
           public void run() {
-            if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(IT), "jetbrains.mps.baseLanguage.structure.ClassifierType") && ClassifierType_Behavior.call_isRawType_702942408396828337(SNodeOperations.cast(typeCheckingContext.getRepresentative(IT), "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+            if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(IT), "jetbrains.mps.baseLanguage.structure.ClassifierType") && ClassifierType_Behavior.call_isRawType_702942408396828337(SNodeOperations.cast(typeCheckingContext.getExpandedNode(IT), "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
               RulesFunctions_BaseLanguage.inference_InstanceMethodCallOperation(typeCheckingContext, imco, Type_Behavior.call_getErasure_702942408396803226(returnType), typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), methodClassifier);
             } else {
               RulesFunctions_BaseLanguage.inference_InstanceMethodCallOperation(typeCheckingContext, imco, returnType, typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), methodClassifier);

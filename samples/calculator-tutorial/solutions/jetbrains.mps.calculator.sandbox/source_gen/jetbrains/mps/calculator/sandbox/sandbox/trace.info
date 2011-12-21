@@ -40,7 +40,9 @@
     <nodeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="47" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#()V" />
     <nodeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="13" startPosition="38" endLine="26" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="listener" />
     <nodeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="30" startPosition="0" endLine="46" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="mySalary#()V" />
-    <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="54" startPosition="0" endLine="54" endPosition="39" />
+    <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="54" startPosition="0" endLine="54" endPosition="39">
+      <varInfo nodeId="1241366278147" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="54" startPosition="39" endLine="54" endPosition="39" />
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="15" startPosition="48" endLine="16" endPosition="15" />
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="19" startPosition="48" endLine="20" endPosition="15" />
@@ -50,19 +52,30 @@
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="51" startPosition="9" endLine="53" endPosition="53" />
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="33" startPosition="36" endLine="36" endPosition="22" />
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="36" startPosition="22" endLine="39" endPosition="22" />
-    <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="14" startPosition="62" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="14" startPosition="62" endLine="18" endPosition="0">
+      <varInfo nodeId="1241366278147" varName="p0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="1241366278147" varName="p0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1241366278147" varName="p0" />
+    </scopeInfo>
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="60" startPosition="47" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="59" startPosition="42" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="48" startPosition="24" endLine="56" endPosition="53" />
-    <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="58" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="48" startPosition="24" endLine="56" endPosition="53">
+      <varInfo nodeId="1241366278147" varName="i_a" />
+      <varInfo nodeId="1241366278147" varName="i_b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="58" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1241366278147" varName="args" />
+    </scopeInfo>
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="47" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="31" startPosition="21" endLine="45" endPosition="21" />
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="30" startPosition="0" endLine="46" endPosition="3" />
+    <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary" />
     <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="60" startPosition="35" endLine="64" endPosition="5" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary$1" />
     <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="14" startPosition="42" endLine="26" endPosition="3" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary$2" />
-    <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary" />
   </root>
 </debugInfo>
 

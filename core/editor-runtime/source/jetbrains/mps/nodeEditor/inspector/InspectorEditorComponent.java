@@ -89,10 +89,6 @@ public class InspectorEditorComponent extends EditorComponent {
     return super.getExternalComponent();
   }
 
-  public EditorComponent getEditorComponent() {
-    return this;
-  }
-
   public EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditedNode().isDeleted()) {
       return new EditorCell_Constant(getEditorContext(), null, "<no inspect info>");

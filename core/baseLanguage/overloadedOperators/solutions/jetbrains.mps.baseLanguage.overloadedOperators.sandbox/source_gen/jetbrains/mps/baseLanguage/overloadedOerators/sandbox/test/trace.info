@@ -23,8 +23,8 @@
     <scopeInfo nodeId="4226637275972869669" fileName="Complex.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="4226637275972869678" fileName="Complex.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="4226637275972869633" fileName="Complex.java" startLine="12" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="4226637275972869637" varName="r" />
       <varInfo nodeId="4226637275972869639" varName="i" />
+      <varInfo nodeId="4226637275972869637" varName="r" />
     </scopeInfo>
     <unitInfo nodeId="4226637275972869608" fileName="Complex.java" startLine="6" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.Complex" />
   </root>
@@ -51,11 +51,11 @@
     <scopeInfo nodeId="4888428037514423987" fileName="TestComplex.java" startLine="23" startPosition="93" endLine="24" endPosition="0" />
     <scopeInfo nodeId="4226637275972869616" fileName="TestComplex.java" startLine="6" startPosition="26" endLine="8" endPosition="3" />
     <scopeInfo nodeId="4226637275972870387" fileName="TestComplex.java" startLine="10" startPosition="42" endLine="27" endPosition="63">
-      <varInfo nodeId="162210779026732168" varName="d" />
-      <varInfo nodeId="4888428037514421012" varName="str" />
+      <varInfo nodeId="4226637275972870395" varName="a" />
       <varInfo nodeId="4226637275972873358" varName="b" />
       <varInfo nodeId="162210779026732156" varName="c" />
-      <varInfo nodeId="4226637275972870395" varName="a" />
+      <varInfo nodeId="162210779026732168" varName="d" />
+      <varInfo nodeId="4888428037514421012" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="4226637275972870384" fileName="TestComplex.java" startLine="9" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="4226637275972870388" varName="args" />
@@ -101,11 +101,26 @@
     <scopeInfo nodeId="2673276898228773419" fileName="ComplexOperators.java" startLine="34" startPosition="82" endLine="37" endPosition="15">
       <varInfo nodeId="2673276898228773428" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="9" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="15" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="21" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="27" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="9" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="4226637275972869620" varName="left" />
+      <varInfo nodeId="4226637275972869620" varName="right" />
+    </scopeInfo>
+    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="15" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="4226637275972869620" varName="left" />
+      <varInfo nodeId="4226637275972869620" varName="right" />
+    </scopeInfo>
+    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="4226637275972869620" varName="left" />
+      <varInfo nodeId="4226637275972869620" varName="right" />
+    </scopeInfo>
+    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="4226637275972869620" varName="left" />
+      <varInfo nodeId="4226637275972869620" varName="right" />
+    </scopeInfo>
+    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="4226637275972869620" varName="left" />
+      <varInfo nodeId="4226637275972869620" varName="right" />
+    </scopeInfo>
     <unitInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="6" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.ComplexOperators" />
   </root>
   <root nodeId="4888428037514503250">
@@ -115,7 +130,10 @@
     <scopeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="7" startPosition="28" endLine="7" endPosition="28" />
     <scopeInfo nodeId="4888428037514503274" fileName="StringOperators.java" startLine="10" startPosition="107" endLine="11" endPosition="32" />
     <scopeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="6" startPosition="30" endLine="8" endPosition="3" />
-    <scopeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="4888428037514503250" varName="left" />
+      <varInfo nodeId="4888428037514503250" varName="right" />
+    </scopeInfo>
     <unitInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.StringOperators" />
   </root>
   <root nodeId="6517886960437939909">

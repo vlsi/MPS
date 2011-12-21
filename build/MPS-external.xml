@@ -54,17 +54,36 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/cvsIntegration" />
     <mkdir dir="${deploy.dir}/MPS/plugins/git4idea" />
     <mkdir dir="${deploy.dir}/MPS/plugins/svn4idea" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-languages/languages" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-languages/lib" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-languages/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-languages" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/languages" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/migration" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/languages" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins" />
     <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples" />
     <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp" />
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage" />
     <mkdir dir="${deploy.dir}/MPS/languages/languageDesign" />
     <mkdir dir="${deploy.dir}/MPS/languages/devkits" />
-    <mkdir dir="${deploy.dir}/MPS/languages/debug" />
     <mkdir dir="${deploy.dir}/MPS/languages/execution" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/ui" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/editor" />
@@ -80,6 +99,7 @@
     <mkdir dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
   </target>
   <target name="do.the.job" depends="folders.create">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
     <copy todir="${deploy.dir}/MPS/bin">
       <fileset dir="${mps_home}/bin" excludes="**/*.hprof, " />
     </copy>
@@ -227,9 +247,6 @@
       <fileset dir="${mps_home}/core/plugin-runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/core/baseLanguage/runConfigurations/runtime/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/languages/languageDesign/test/classes_gen" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
@@ -336,22 +353,85 @@
     <copy todir="${deploy.dir}/MPS/plugins/svn4idea">
       <fileset dir="${mps_home}/plugins/svn4idea" excludes="**/*.zip, " />
     </copy>
-    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections.customViewers" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodel.customViewers" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.customViewers" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.evaluation" />
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/debugger-api/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/debugger-api/classes" prefix="" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-java.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/debugger-java/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/classes" prefix="" />
+    </jar>
+    <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp">
+      <fileset dir="${base_dir}/plugins/debugger-java-customViewers/classes_gen" />
+    </copy>
+    <copy file="${base_dir}/plugins/debugger-java-customViewers/source_gen/jetbrains/mps/debugger/java/customViewers/plugin/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp/META-INF/plugin.xml" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp/META-INF" />
+    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp" excludes="" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp" />
+    <copy file="${base_dir}/plugins/debugger-java-languages/plugin/source_gen/jetbrains/mps/debugger/java/languages/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/META-INF/plugin.xml" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/META-INF" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.customViewers" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.evaluation" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.privateMembers" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-languages/languages" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.languages" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-languages/lib" />
-    <copy file="${mps_home}/plugins/debugger-java-languages/plugin/source_gen/jetbrains/mps/debugger/java/languages/plugin.xml" tofile="${deploy.dir}/MPS/plugins/debugger-java-languages/META-INF/plugin.xml" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-languages/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-languages" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.build.execution" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages" />
+    <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp">
+      <fileset dir="${base_dir}/plugins/debugger-java-languages/plugin/classes_gen" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp" excludes="" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages" />
+    <copy file="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.languages.plugin/source_gen/jetbrains/mps/debugger/api/languages/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/META-INF/plugin.xml" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/META-INF" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.lang" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/languages" />
+    <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp">
+      <fileset dir="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.languages.plugin/classes_gen" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp" excludes="" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin" />
+    <copy file="${base_dir}/plugins/execution-configurations/plugin/source_gen/jetbrains/mps/execution/configurations/implementation/plugin/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/META-INF/plugin.xml" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/META-INF" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.execution.util" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.execution.startup" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.execution" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.migration" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/migration" />
+    <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar.tmp">
+      <fileset dir="${base_dir}/plugins/execution-configurations/plugin/classes_gen" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar.tmp" excludes="" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin" />
+    <copy file="${base_dir}/plugins/execution-languages/plugin/source_gen/jetbrains/mps/execution/languages/plugin/plugin.xml" tofile="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/META-INF/plugin.xml" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/META-INF" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.commands" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations.deprecated" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/languages" />
+    <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp">
+      <fileset dir="${base_dir}/plugins/execution-languages/plugin/classes_gen" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp" excludes="" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins" />
     <copy todir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples">
       <fileset dir="${mps_home}/samples" />
@@ -372,11 +452,8 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.javadoc" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.logging" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.libs" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations.deprecated" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runConfigurations.runtime" />
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.actions" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.behavior" />
@@ -415,17 +492,10 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.devkit.language-design" />
     <antcall target="MPS-languages.pack.jetbrains.mps.devkit.bootstrap-languages" />
     <mkdir dir="${deploy.dir}/MPS/languages/devkits" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.lang" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.api" />
-    <mkdir dir="${deploy.dir}/MPS/languages/debug" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.api" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.commands" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.common" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.settings" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.util" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib.startup" />
     <mkdir dir="${deploy.dir}/MPS/languages/execution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated" />
     <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage" />
@@ -542,6 +612,11 @@
     <delete dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-boot.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp" />
   </target>
   <target name="pack.branding_b1a">

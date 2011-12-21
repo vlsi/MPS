@@ -56,9 +56,13 @@ public class BundleClassLoader<T> extends BaseClassLoader {
     RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
     for (T dep : re.getAllDependencies(myBundle)) {
       if (dep.equals(myBundle.getId())) continue;
-      if (re.get(dep).hasClass(name)) {
+
+      RBundle<T> bundle = re.get(dep);
+      if (bundle == null) continue;
+
+      if (bundle.hasClass(name)) {
         try {
-          return Class.forName(name, false, re.get(dep).getClassLoader());
+          return Class.forName(name, false, bundle.getClassLoader());
         } catch (ClassNotFoundException e) {
           throw new RuntimeException(e);
         }
@@ -98,6 +102,15 @@ public class BundleClassLoader<T> extends BaseClassLoader {
     }
 
     return new IterableToEnumWrapper<URL>(result);
+  }
+
+  @Override
+  protected String findLibrary(String name) {
+    String libraryPath = myBundle.getLocator().findLibrary(name);
+    if (libraryPath != null) {
+      return libraryPath;
+    }
+    return super.findLibrary(name);
   }
 
   public void dispose() {

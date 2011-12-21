@@ -19,4 +19,8 @@ public class IdeaInitializerDescriptor_Behavior {
   public static String call_getGeneratesFileExtension_4015626213814118724(SNode thisNode) {
     return "xml";
   }
+
+  public static String getLibrariesResourceName_7967031338862798704() {
+    return "libraries";
+  }
 }

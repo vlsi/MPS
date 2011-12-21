@@ -15,14 +15,6 @@ import jetbrains.mps.debug.integration.ui.icons.Icons;
 import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 19.06.2010
- * * Time: 16:47:53
- * * To change this template use File | Settings | File Templates.
- */
 /*package*/ class JavaArrayValue extends JavaValue {
   private static final int MAX_ARRAY_VALUES = 100;
 

@@ -34,7 +34,9 @@
     </application-components>
 
     <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
+    <xi:include href="../classes/META-INF/MPSActions.xml" xpointer="xpointer(/components/*)"/>
     <xi:include href="../classes/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
+    <xi:include href="../classes/META-INF/MPSEditorActions.xml" xpointer="xpointer(/components/*)"/>
 
     <project-components>
         <component>
@@ -58,6 +60,14 @@
                 class="jetbrains.mps.idea.core.actions.TestRepository"
                 description="Test MPS model repository">
             <add-to-group group-id="ToolsMenu" relative-to-action="GenerateJavadoc" anchor="after"/>
+        </action>
+        <action id="jetbrains.mps.idea.core.actions.MarkModelRootAction"
+                class="jetbrains.mps.idea.core.actions.MarkModelRootAction">
+            <add-to-group group-id="MarkRootGroup"/>
+        </action>
+        <action id="jetbrains.mps.idea.core.actions.UnmarkModelRootAction"
+                class="jetbrains.mps.idea.core.actions.UnmarkModelRootAction">
+            <add-to-group group-id="MarkRootGroup"/>
         </action>
     </actions>
 </idea-plugin>

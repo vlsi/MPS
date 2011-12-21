@@ -193,12 +193,12 @@ public class DataFlowUtil {
   @CheckingMethod
   public static void checkUnusedVariables(final TypeCheckingContext typeCheckingContext, @NotNull SNode statementList, Program program) {
     Set<SNode> usedVariables = DataFlow.getUsedVariables(program, statementList);
-    for (SNode var : SNodeOperations.getDescendants(statementList, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})) {
+    for (SNode var : SNodeOperations.getDescendants(statementList, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration", false, new String[]{})) {
       if (program.getInstructionsFor(var).isEmpty()) {
         continue;
       }
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause")) && SNodeOperations.getAncestor(var, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null) {
-        if (SLinkOperations.getTarget(var, "initializer", true) == null && !(SetSequence.fromSet(usedVariables).contains(var))) {
+        if ((!(SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) || SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "initializer", true) == null) && !(SetSequence.fromSet(usedVariables).contains(var))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8937659523942275424", null, errorTarget);

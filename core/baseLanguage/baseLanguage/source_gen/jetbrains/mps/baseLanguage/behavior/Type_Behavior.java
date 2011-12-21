@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import java.util.Set;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -17,10 +18,10 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -43,7 +44,7 @@ public class Type_Behavior {
   private static Class[] PARAMETERS_1220438914705 = {SNode.class, SNode.class};
   private static Class[] PARAMETERS_3359611512358152580 = {SNode.class};
   private static Class[] PARAMETERS_3508583411997314206 = {SNode.class};
-  private static Class[] PARAMETERS_5744862332972792015 = {SNode.class};
+  private static Class[] PARAMETERS_5744862332972792015 = {SNode.class, Set.class};
   private static Class[] PARAMETERS_8847328628797633411 = {SNode.class};
 
   public static void init(SNode thisNode) {
@@ -154,10 +155,10 @@ public class Type_Behavior {
     return false;
   }
 
-  public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode) {
+  public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
     SNode looseType = SNodeOperations.copyNode(thisNode);
     for (SNode varRef : SNodeOperations.getDescendants(looseType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})) {
-      SNodeOperations.replaceWithAnother(varRef, Type_Behavior.call_getLooseType_5744862332972792015(varRef));
+      SNodeOperations.replaceWithAnother(varRef, Type_Behavior.call_getLooseType_5744862332972792015(varRef, visitedTypes));
     }
     return looseType;
   }
@@ -246,9 +247,9 @@ public class Type_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_hasMissingParameters_3508583411997314206", PARAMETERS_3508583411997314206);
   }
 
-  public static SNode call_getLooseType_5744862332972792015(SNode thisNode) {
+  public static SNode call_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getLooseType_5744862332972792015", PARAMETERS_5744862332972792015);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getLooseType_5744862332972792015", PARAMETERS_5744862332972792015, visitedTypes);
   }
 
   public static String call_jniSignature_8847328628797633411(SNode thisNode) {
@@ -320,8 +321,8 @@ public class Type_Behavior {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_hasMissingParameters_3508583411997314206", PARAMETERS_3508583411997314206);
   }
 
-  public static SNode callSuper_getLooseType_5744862332972792015(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getLooseType_5744862332972792015", PARAMETERS_5744862332972792015);
+  public static SNode callSuper_getLooseType_5744862332972792015(SNode thisNode, String callerConceptFqName, @NotNull Set<SNode> visitedTypes) {
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getLooseType_5744862332972792015", PARAMETERS_5744862332972792015, visitedTypes);
   }
 
   public static String callSuper_jniSignature_8847328628797633411(SNode thisNode, String callerConceptFqName) {

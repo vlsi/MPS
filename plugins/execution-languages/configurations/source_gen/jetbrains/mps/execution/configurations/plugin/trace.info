@@ -33,12 +33,23 @@
     <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="24" startPosition="40" endLine="28" endPosition="6" />
-    <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="2401501559171392649" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="23" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="35" startPosition="43" endLine="42" endPosition="16" />
-    <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="34" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="2401501559171392649" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="23" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="2401501559171392649" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="35" startPosition="43" endLine="42" endPosition="16">
+      <varInfo nodeId="2401501559171392649" varName="list" />
+      <varInfo nodeId="2401501559171392649" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="2401501559171392649" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2401501559171392649" fileName="Run_Configuration_TabDescriptor.java" startLine="12" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.Run_Configuration_TabDescriptor" />
   </root>
   <root nodeId="2401501559171392650">
@@ -87,9 +98,13 @@
     <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="30" startPosition="40" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="2401501559171392650" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1048802521465114254" fileName="Executor_TabDescriptor.java" startLine="57" startPosition="214" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1048802521465114254" fileName="Executor_TabDescriptor.java" startLine="57" startPosition="214" endLine="61" endPosition="0">
+      <varInfo nodeId="1048802521465114254" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2228878981387189760" fileName="Executor_TabDescriptor.java" startLine="65" startPosition="127" endLine="69" endPosition="0" />
     <scopeInfo nodeId="1048802521465095299" fileName="Executor_TabDescriptor.java" startLine="72" startPosition="66" endLine="76" endPosition="20">
       <varInfo nodeId="1048802521465100173" varName="executor" />
@@ -98,12 +113,26 @@
     <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="55" startPosition="36" endLine="61" endPosition="7">
       <varInfo nodeId="1048802521465131486" varName="nodeFinal" />
     </scopeInfo>
-    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="29" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="41" startPosition="43" endLine="48" endPosition="16" />
-    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="71" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="63" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="54" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="40" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="2401501559171392650" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="41" startPosition="43" endLine="48" endPosition="16">
+      <varInfo nodeId="2401501559171392650" varName="list" />
+      <varInfo nodeId="2401501559171392650" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="71" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="2401501559171392650" varName="concept" />
+      <varInfo nodeId="2401501559171392650" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="63" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="2401501559171392650" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="54" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="2401501559171392650" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="40" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="2401501559171392650" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2401501559171392650" fileName="Executor_TabDescriptor.java" startLine="18" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.Executor_TabDescriptor" />
     <unitInfo nodeId="1048802521465114254" fileName="Executor_TabDescriptor.java" startLine="57" startPosition="191" endLine="61" endPosition="5" unitName="jetbrains.mps.execution.configurations.plugin.Executor_TabDescriptor$1" />
     <unitInfo nodeId="2228878981387189760" fileName="Executor_TabDescriptor.java" startLine="65" startPosition="106" endLine="69" endPosition="5" unitName="jetbrains.mps.execution.configurations.plugin.Executor_TabDescriptor$2" />
@@ -135,10 +164,16 @@
     <scopeInfo nodeId="247026320694134524" fileName="Make_BeforeTask.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
     <scopeInfo nodeId="247026320694134524" fileName="Make_BeforeTask.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="247026320694134524" fileName="Make_BeforeTask.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="3191465790742144485" fileName="Make_BeforeTask.java" startLine="41" startPosition="108" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="247026320694134524" fileName="Make_BeforeTask.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="3191465790742144485" fileName="Make_BeforeTask.java" startLine="41" startPosition="108" endLine="45" endPosition="0">
+      <varInfo nodeId="3191465790742144485" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="247026320694134524" fileName="Make_BeforeTask.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="247026320694134524" varName="nodes" />
+    </scopeInfo>
     <scopeInfo nodeId="247026320694134524" fileName="Make_BeforeTask.java" startLine="40" startPosition="45" endLine="45" endPosition="27" />
-    <scopeInfo nodeId="247026320694134524" fileName="Make_BeforeTask.java" startLine="39" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="247026320694134524" fileName="Make_BeforeTask.java" startLine="39" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="247026320694134524" varName="project" />
+    </scopeInfo>
     <unitInfo nodeId="247026320694134524" fileName="Make_BeforeTask.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.Make_BeforeTask" />
     <unitInfo nodeId="3191465790742144485" fileName="Make_BeforeTask.java" startLine="41" startPosition="85" endLine="45" endPosition="7" unitName="jetbrains.mps.execution.configurations.plugin.Make_BeforeTask$1" />
     <unitInfo nodeId="247026320694134524" fileName="Make_BeforeTask.java" startLine="29" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.Make_BeforeTask$Make_BeforeTask_RunTask" />
@@ -168,8 +203,12 @@
     <scopeInfo nodeId="259833884788814900" fileName="MakeNodePointers_BeforeTask.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
     <scopeInfo nodeId="259833884788814900" fileName="MakeNodePointers_BeforeTask.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="259833884788814900" fileName="MakeNodePointers_BeforeTask.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="259833884788814900" fileName="MakeNodePointers_BeforeTask.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="259833884788814900" fileName="MakeNodePointers_BeforeTask.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="259833884788814900" fileName="MakeNodePointers_BeforeTask.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="259833884788814900" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="259833884788814900" fileName="MakeNodePointers_BeforeTask.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="259833884788814900" varName="nodePointers" />
+    </scopeInfo>
     <unitInfo nodeId="259833884788814900" fileName="MakeNodePointers_BeforeTask.java" startLine="12" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.MakeNodePointers_BeforeTask" />
     <unitInfo nodeId="259833884788814900" fileName="MakeNodePointers_BeforeTask.java" startLine="27" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.MakeNodePointers_BeforeTask$MakeNodePointers_BeforeTask_RunTask" />
   </root>

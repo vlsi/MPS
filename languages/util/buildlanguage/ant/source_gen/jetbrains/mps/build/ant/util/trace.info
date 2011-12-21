@@ -957,104 +957,110 @@
     <nodeInfo nodeId="5198178184416573464" fileName="Timed.java" startLine="21" startPosition="43" endLine="22" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAccessCount" />
     <nodeInfo nodeId="5198178184416573466" fileName="Timed.java" startLine="22" startPosition="32" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myT" />
     <nodeInfo nodeId="5198178184416573469" fileName="Timed.java" startLine="23" startPosition="18" endLine="24" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPolled" />
-    <nodeInfo nodeId="5198178184416573490" fileName="Timed.java" startLine="26" startPosition="25" endLine="27" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5198178184416573494" fileName="Timed.java" startLine="27" startPosition="25" endLine="28" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416573512" fileName="Timed.java" startLine="28" startPosition="15" endLine="29" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416573522" fileName="Timed.java" startLine="33" startPosition="22" endLine="34" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416573528" fileName="Timed.java" startLine="34" startPosition="44" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416573536" fileName="Timed.java" startLine="39" startPosition="33" endLine="40" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416573541" fileName="Timed.java" startLine="40" startPosition="31" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416573549" fileName="Timed.java" startLine="44" startPosition="32" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5198178184416573554" fileName="Timed.java" startLine="48" startPosition="42" endLine="49" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5198178184416573580" fileName="Timed.java" startLine="51" startPosition="26" endLine="52" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="8638838189258399794" fileName="Timed.java" startLine="55" startPosition="91" endLine="56" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416573599" fileName="Timed.java" startLine="57" startPosition="16" endLine="58" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416573613" fileName="Timed.java" startLine="64" startPosition="10" endLine="65" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5198178184416573645" fileName="Timed.java" startLine="68" startPosition="13" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416573637" fileName="Timed.java" startLine="70" startPosition="31" endLine="71" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416573597" fileName="Timed.java" startLine="57" startPosition="14" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5198178184416573575" fileName="Timed.java" startLine="50" startPosition="36" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5198178184416573518" fileName="Timed.java" startLine="32" startPosition="31" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5198178184416573545" fileName="Timed.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLocked#()Z" />
-    <nodeInfo nodeId="5198178184416573532" fileName="Timed.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
-    <nodeInfo nodeId="5198178184416573584" fileName="Timed.java" startLine="54" startPosition="28" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5198178184416573634" fileName="Timed.java" startLine="67" startPosition="25" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5198178184416573486" fileName="Timed.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="5198178184416573514" fileName="Timed.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="poll#()V" />
-    <nodeInfo nodeId="5198178184416573581" fileName="Timed.java" startLine="53" startPosition="7" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="5198178184416573630" fileName="Timed.java" startLine="66" startPosition="51" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5198178184416573623" fileName="Timed.java" startLine="65" startPosition="141" endLine="74" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416573570" fileName="Timed.java" startLine="49" startPosition="95" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5198178184416573551" fileName="Timed.java" startLine="47" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="disposeTimed#()V" />
-    <scopeInfo nodeId="5198178184416573548" fileName="Timed.java" startLine="44" startPosition="32" endLine="45" endPosition="17" />
-    <scopeInfo nodeId="5198178184416573579" fileName="Timed.java" startLine="51" startPosition="26" endLine="52" endPosition="17" />
-    <scopeInfo nodeId="5198178184416573607" fileName="Timed.java" startLine="55" startPosition="91" endLine="56" endPosition="26" />
-    <scopeInfo nodeId="5198178184416573598" fileName="Timed.java" startLine="57" startPosition="16" endLine="58" endPosition="63" />
-    <scopeInfo nodeId="5198178184416573644" fileName="Timed.java" startLine="68" startPosition="13" endLine="69" endPosition="31" />
-    <scopeInfo nodeId="5198178184416573635" fileName="Timed.java" startLine="70" startPosition="0" endLine="71" endPosition="29">
+    <nodeInfo nodeId="5198178184416573490" fileName="Timed.java" startLine="29" startPosition="25" endLine="30" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5198178184416573494" fileName="Timed.java" startLine="30" startPosition="25" endLine="31" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416573512" fileName="Timed.java" startLine="31" startPosition="15" endLine="32" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416573522" fileName="Timed.java" startLine="36" startPosition="22" endLine="37" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416573528" fileName="Timed.java" startLine="37" startPosition="44" endLine="38" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416573536" fileName="Timed.java" startLine="42" startPosition="33" endLine="43" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416573541" fileName="Timed.java" startLine="43" startPosition="31" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416573549" fileName="Timed.java" startLine="47" startPosition="32" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5198178184416573554" fileName="Timed.java" startLine="51" startPosition="42" endLine="52" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5198178184416573580" fileName="Timed.java" startLine="54" startPosition="26" endLine="55" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8638838189258399794" fileName="Timed.java" startLine="58" startPosition="91" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416573599" fileName="Timed.java" startLine="60" startPosition="16" endLine="61" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416573613" fileName="Timed.java" startLine="67" startPosition="10" endLine="68" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5198178184416573645" fileName="Timed.java" startLine="71" startPosition="13" endLine="72" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416573637" fileName="Timed.java" startLine="73" startPosition="31" endLine="74" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1985651486980520379" fileName="Timed.java" startLine="25" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Timed#()V" />
+    <nodeInfo nodeId="5198178184416573597" fileName="Timed.java" startLine="60" startPosition="14" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5198178184416573575" fileName="Timed.java" startLine="53" startPosition="36" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5198178184416573518" fileName="Timed.java" startLine="35" startPosition="31" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5198178184416573545" fileName="Timed.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLocked#()Z" />
+    <nodeInfo nodeId="5198178184416573532" fileName="Timed.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
+    <nodeInfo nodeId="5198178184416573584" fileName="Timed.java" startLine="57" startPosition="28" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5198178184416573634" fileName="Timed.java" startLine="70" startPosition="25" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5198178184416573486" fileName="Timed.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="5198178184416573514" fileName="Timed.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="poll#()V" />
+    <nodeInfo nodeId="5198178184416573581" fileName="Timed.java" startLine="56" startPosition="7" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="5198178184416573630" fileName="Timed.java" startLine="69" startPosition="51" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5198178184416573623" fileName="Timed.java" startLine="68" startPosition="141" endLine="77" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416573570" fileName="Timed.java" startLine="52" startPosition="95" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5198178184416573551" fileName="Timed.java" startLine="50" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="disposeTimed#()V" />
+    <scopeInfo nodeId="1985651486980520381" fileName="Timed.java" startLine="26" startPosition="18" endLine="26" endPosition="18" />
+    <scopeInfo nodeId="5198178184416573548" fileName="Timed.java" startLine="47" startPosition="32" endLine="48" endPosition="17" />
+    <scopeInfo nodeId="5198178184416573579" fileName="Timed.java" startLine="54" startPosition="26" endLine="55" endPosition="17" />
+    <scopeInfo nodeId="5198178184416573607" fileName="Timed.java" startLine="58" startPosition="91" endLine="59" endPosition="26" />
+    <scopeInfo nodeId="5198178184416573598" fileName="Timed.java" startLine="60" startPosition="16" endLine="61" endPosition="63" />
+    <scopeInfo nodeId="5198178184416573644" fileName="Timed.java" startLine="71" startPosition="13" endLine="72" endPosition="31" />
+    <scopeInfo nodeId="5198178184416573635" fileName="Timed.java" startLine="73" startPosition="0" endLine="74" endPosition="29">
       <varInfo nodeId="5198178184416573642" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5198178184416573636" fileName="Timed.java" startLine="70" startPosition="31" endLine="71" endPosition="29" />
-    <scopeInfo nodeId="5198178184416573521" fileName="Timed.java" startLine="33" startPosition="22" endLine="35" endPosition="22" />
-    <scopeInfo nodeId="5198178184416573535" fileName="Timed.java" startLine="39" startPosition="33" endLine="41" endPosition="21" />
-    <scopeInfo nodeId="5198178184416573489" fileName="Timed.java" startLine="26" startPosition="25" endLine="29" endPosition="13">
+    <scopeInfo nodeId="5198178184416573636" fileName="Timed.java" startLine="73" startPosition="31" endLine="74" endPosition="29" />
+    <scopeInfo nodeId="1985651486980520379" fileName="Timed.java" startLine="25" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="5198178184416573521" fileName="Timed.java" startLine="36" startPosition="22" endLine="38" endPosition="22" />
+    <scopeInfo nodeId="5198178184416573535" fileName="Timed.java" startLine="42" startPosition="33" endLine="44" endPosition="21" />
+    <scopeInfo nodeId="5198178184416573489" fileName="Timed.java" startLine="29" startPosition="25" endLine="32" endPosition="13">
       <varInfo nodeId="5198178184416573491" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="5198178184416573517" fileName="Timed.java" startLine="32" startPosition="31" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="5198178184416573545" fileName="Timed.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="5198178184416573532" fileName="Timed.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="5198178184416573583" fileName="Timed.java" startLine="54" startPosition="28" endLine="59" endPosition="9" />
-    <scopeInfo nodeId="5198178184416573633" fileName="Timed.java" startLine="67" startPosition="25" endLine="72" endPosition="9" />
-    <scopeInfo nodeId="5198178184416573486" fileName="Timed.java" startLine="25" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="5198178184416573514" fileName="Timed.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="5198178184416573630" fileName="Timed.java" startLine="66" startPosition="51" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="5198178184416573574" fileName="Timed.java" startLine="50" startPosition="36" endLine="60" endPosition="7" />
-    <scopeInfo nodeId="5198178184416573612" fileName="Timed.java" startLine="64" startPosition="10" endLine="74" endPosition="33">
+    <scopeInfo nodeId="5198178184416573517" fileName="Timed.java" startLine="35" startPosition="31" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="5198178184416573545" fileName="Timed.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="5198178184416573532" fileName="Timed.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="5198178184416573583" fileName="Timed.java" startLine="57" startPosition="28" endLine="62" endPosition="9" />
+    <scopeInfo nodeId="5198178184416573633" fileName="Timed.java" startLine="70" startPosition="25" endLine="75" endPosition="9" />
+    <scopeInfo nodeId="5198178184416573486" fileName="Timed.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="5198178184416573514" fileName="Timed.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="5198178184416573630" fileName="Timed.java" startLine="69" startPosition="51" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="5198178184416573574" fileName="Timed.java" startLine="53" startPosition="36" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="5198178184416573612" fileName="Timed.java" startLine="67" startPosition="10" endLine="77" endPosition="33">
       <varInfo nodeId="5198178184416573614" varName="service" />
     </scopeInfo>
-    <scopeInfo nodeId="5198178184416573570" fileName="Timed.java" startLine="49" startPosition="95" endLine="61" endPosition="5">
+    <scopeInfo nodeId="5198178184416573570" fileName="Timed.java" startLine="52" startPosition="95" endLine="64" endPosition="5">
       <varInfo nodeId="5198178184416573572" varName="timed" />
     </scopeInfo>
-    <scopeInfo nodeId="5198178184416573553" fileName="Timed.java" startLine="48" startPosition="42" endLine="61" endPosition="5">
+    <scopeInfo nodeId="5198178184416573553" fileName="Timed.java" startLine="51" startPosition="42" endLine="64" endPosition="5">
       <varInfo nodeId="5198178184416573555" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="5198178184416573551" fileName="Timed.java" startLine="47" startPosition="0" endLine="63" endPosition="0" />
-    <unitInfo nodeId="5198178184416573444" fileName="Timed.java" startLine="12" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.build.ant.util.Timed" />
-    <unitInfo nodeId="5198178184416573629" fileName="Timed.java" startLine="66" startPosition="39" endLine="74" endPosition="5" unitName="jetbrains.mps.build.ant.util.Timed$1" />
+    <scopeInfo nodeId="5198178184416573551" fileName="Timed.java" startLine="50" startPosition="0" endLine="66" endPosition="0" />
+    <unitInfo nodeId="5198178184416573444" fileName="Timed.java" startLine="12" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.ant.util.Timed" />
+    <unitInfo nodeId="5198178184416573629" fileName="Timed.java" startLine="69" startPosition="39" endLine="77" endPosition="5" unitName="jetbrains.mps.build.ant.util.Timed$1" />
   </root>
   <root nodeId="5198178184416574646">
     <nodeInfo nodeId="5198178184416574651" fileName="TimedComputable.java" startLine="8" startPosition="59" endLine="9" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAcquireCount" />
-    <nodeInfo nodeId="5198178184416574667" fileName="TimedComputable.java" startLine="11" startPosition="22" endLine="12" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416574670" fileName="TimedComputable.java" startLine="12" startPosition="20" endLine="13" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416574678" fileName="TimedComputable.java" startLine="14" startPosition="22" endLine="15" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416574682" fileName="TimedComputable.java" startLine="16" startPosition="5" endLine="17" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416574684" fileName="TimedComputable.java" startLine="17" startPosition="11" endLine="18" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5198178184416574690" fileName="TimedComputable.java" startLine="21" startPosition="29" endLine="22" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5198178184416574696" fileName="TimedComputable.java" startLine="25" startPosition="25" endLine="26" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416574699" fileName="TimedComputable.java" startLine="26" startPosition="21" endLine="27" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="5198178184416574707" fileName="TimedComputable.java" startLine="30" startPosition="25" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="5198178184416574711" fileName="TimedComputable.java" startLine="31" startPosition="31" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416574717" fileName="TimedComputable.java" startLine="35" startPosition="32" endLine="36" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5198178184416574673" fileName="TimedComputable.java" startLine="13" startPosition="21" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5198178184416574721" fileName="TimedComputable.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calc#()null" />
-    <nodeInfo nodeId="5198178184416574686" fileName="TimedComputable.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIfCached#()null" />
-    <nodeInfo nodeId="5198178184416574713" fileName="TimedComputable.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLocked#()Z" />
-    <nodeInfo nodeId="5198178184416574692" fileName="TimedComputable.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="release#()V" />
-    <nodeInfo nodeId="5198178184416574703" fileName="TimedComputable.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="5198178184416574663" fileName="TimedComputable.java" startLine="10" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acquire#()null" />
-    <scopeInfo nodeId="5198178184416574677" fileName="TimedComputable.java" startLine="14" startPosition="22" endLine="15" endPosition="19" />
-    <scopeInfo nodeId="5198178184416574689" fileName="TimedComputable.java" startLine="21" startPosition="29" endLine="22" endPosition="15" />
-    <scopeInfo nodeId="5198178184416574716" fileName="TimedComputable.java" startLine="35" startPosition="32" endLine="36" endPosition="31" />
-    <scopeInfo nodeId="5198178184416574695" fileName="TimedComputable.java" startLine="25" startPosition="25" endLine="27" endPosition="31" />
-    <scopeInfo nodeId="5198178184416574706" fileName="TimedComputable.java" startLine="30" startPosition="25" endLine="32" endPosition="20" />
-    <scopeInfo nodeId="5198178184416574721" fileName="TimedComputable.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="5198178184416574686" fileName="TimedComputable.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="5198178184416574713" fileName="TimedComputable.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="5198178184416574692" fileName="TimedComputable.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="5198178184416574703" fileName="TimedComputable.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="5198178184416574666" fileName="TimedComputable.java" startLine="11" startPosition="22" endLine="18" endPosition="15" />
-    <scopeInfo nodeId="5198178184416574663" fileName="TimedComputable.java" startLine="10" startPosition="0" endLine="20" endPosition="0" />
-    <unitInfo nodeId="5198178184416574646" fileName="TimedComputable.java" startLine="7" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.ant.util.TimedComputable" />
+    <nodeInfo nodeId="5198178184416574667" fileName="TimedComputable.java" startLine="14" startPosition="22" endLine="15" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416574670" fileName="TimedComputable.java" startLine="15" startPosition="20" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416574678" fileName="TimedComputable.java" startLine="17" startPosition="22" endLine="18" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416574682" fileName="TimedComputable.java" startLine="19" startPosition="5" endLine="20" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416574684" fileName="TimedComputable.java" startLine="20" startPosition="11" endLine="21" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5198178184416574690" fileName="TimedComputable.java" startLine="24" startPosition="29" endLine="25" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5198178184416574696" fileName="TimedComputable.java" startLine="28" startPosition="25" endLine="29" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416574699" fileName="TimedComputable.java" startLine="29" startPosition="21" endLine="30" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="5198178184416574707" fileName="TimedComputable.java" startLine="33" startPosition="25" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="5198178184416574711" fileName="TimedComputable.java" startLine="34" startPosition="31" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416574717" fileName="TimedComputable.java" startLine="38" startPosition="32" endLine="39" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1985651486980520383" fileName="TimedComputable.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TimedComputable#()V" />
+    <nodeInfo nodeId="5198178184416574673" fileName="TimedComputable.java" startLine="16" startPosition="21" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5198178184416574721" fileName="TimedComputable.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calc#()null" />
+    <nodeInfo nodeId="5198178184416574686" fileName="TimedComputable.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIfCached#()null" />
+    <nodeInfo nodeId="5198178184416574713" fileName="TimedComputable.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLocked#()Z" />
+    <nodeInfo nodeId="5198178184416574692" fileName="TimedComputable.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="release#()V" />
+    <nodeInfo nodeId="5198178184416574703" fileName="TimedComputable.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="5198178184416574663" fileName="TimedComputable.java" startLine="13" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acquire#()null" />
+    <scopeInfo nodeId="1985651486980520385" fileName="TimedComputable.java" startLine="11" startPosition="28" endLine="11" endPosition="28" />
+    <scopeInfo nodeId="5198178184416574677" fileName="TimedComputable.java" startLine="17" startPosition="22" endLine="18" endPosition="19" />
+    <scopeInfo nodeId="5198178184416574689" fileName="TimedComputable.java" startLine="24" startPosition="29" endLine="25" endPosition="15" />
+    <scopeInfo nodeId="5198178184416574716" fileName="TimedComputable.java" startLine="38" startPosition="32" endLine="39" endPosition="31" />
+    <scopeInfo nodeId="1985651486980520383" fileName="TimedComputable.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="5198178184416574695" fileName="TimedComputable.java" startLine="28" startPosition="25" endLine="30" endPosition="31" />
+    <scopeInfo nodeId="5198178184416574706" fileName="TimedComputable.java" startLine="33" startPosition="25" endLine="35" endPosition="20" />
+    <scopeInfo nodeId="5198178184416574721" fileName="TimedComputable.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5198178184416574686" fileName="TimedComputable.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="5198178184416574713" fileName="TimedComputable.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="5198178184416574692" fileName="TimedComputable.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="5198178184416574703" fileName="TimedComputable.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5198178184416574666" fileName="TimedComputable.java" startLine="14" startPosition="22" endLine="21" endPosition="15" />
+    <scopeInfo nodeId="5198178184416574663" fileName="TimedComputable.java" startLine="13" startPosition="0" endLine="23" endPosition="0" />
+    <unitInfo nodeId="5198178184416574646" fileName="TimedComputable.java" startLine="7" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.ant.util.TimedComputable" />
   </root>
   <root nodeId="5198178184416574735">
     <nodeInfo nodeId="5198178184416574766" fileName="ConcurrencyUtil.java" startLine="36" startPosition="38" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -24,7 +24,6 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.execution.runners.RestartAction;
 import com.intellij.openapi.actionSystem.ActionManager;
-import jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import com.intellij.execution.ui.actions.CloseAction;
 import javax.swing.JComponent;
@@ -93,7 +92,8 @@ public class DebuggerToolContentBuilder implements Disposable {
     RestartAction restartAction = new RestartAction(myExecutor, myRunner, myExecutionResult.getProcessHandler(), IconLoader.getIcon("/actions/refreshUsages.png"), contentDescriptor, myEnvironment);
     restartAction.registerShortcut(ui.getComponent());
     actionGroup.add(restartAction);
-    actionGroup.add(ActionManager.getInstance().getAction(DebugTool_ActionGroup.ID));
+    // todo 
+    actionGroup.add(ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup"));
     actionGroup.addAll(myExecutionResult.getActions());
     actionGroup.addSeparator();
     actionGroup.add(ui.getOptions().getLayoutActions());

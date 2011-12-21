@@ -594,6 +594,32 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LinkedListCreator_8972923409032189329(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode creator = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", null);
+            SNodeFactoryOperations.setNewChild(creator, "elementType", "jetbrains.mps.baseLanguage.structure.Type");
+            return creator;
+          }
+
+          public String getMatchingText(String pattern) {
+            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator"), "alias") + "<";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    return result;
+  }
+
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1197932848431(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     final SNode mapType;
@@ -916,7 +942,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setTarget(_context.getSourceNode(), "comparator", new QueriesGenerated.QuotationClass_x583g4_a2a0a0a0a0a1a0a1a08().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true))), true);
+          return SLinkOperations.setTarget(_context.getSourceNode(), "comparator", new QueriesGenerated.QuotationClass_x583g4_a2a0a0a0a0a1a0a1a18().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true))), true);
         }
 
         public String getMatchingText(String pattern) {
@@ -935,8 +961,8 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a2a0a0a0a0a1a0a1a08 {
-    public QuotationClass_x583g4_a2a0a0a0a0a1a0a1a08() {
+  public static class QuotationClass_x583g4_a2a0a0a0a0a1a0a1a18 {
+    public QuotationClass_x583g4_a2a0a0a0a0a1a0a1a18() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14) {

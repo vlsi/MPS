@@ -59,11 +59,21 @@
     <scopeInfo nodeId="8511931774175302755" fileName="NullSequence_Test.java" startLine="82" startPosition="71" endLine="83" endPosition="31" />
     <scopeInfo nodeId="8511931774175302738" fileName="NullSequence_Test.java" startLine="86" startPosition="70" endLine="87" endPosition="31" />
     <scopeInfo nodeId="1225731159908" fileName="NullSequence_Test.java" startLine="70" startPosition="37" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="1225731168633" fileName="NullSequence_Test.java" startLine="70" startPosition="37" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="1228857666960" fileName="NullSequence_Test.java" startLine="77" startPosition="21" endLine="80" endPosition="5" />
-    <scopeInfo nodeId="8511931774175302753" fileName="NullSequence_Test.java" startLine="81" startPosition="26" endLine="84" endPosition="5" />
-    <scopeInfo nodeId="8511931774175302736" fileName="NullSequence_Test.java" startLine="85" startPosition="25" endLine="88" endPosition="5" />
-    <scopeInfo nodeId="1207741449244" fileName="NullSequence_Test.java" startLine="46" startPosition="109" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1225731168633" fileName="NullSequence_Test.java" startLine="70" startPosition="37" endLine="72" endPosition="7">
+      <varInfo nodeId="1225731168633" varName="foo" />
+    </scopeInfo>
+    <scopeInfo nodeId="1228857666960" fileName="NullSequence_Test.java" startLine="77" startPosition="21" endLine="80" endPosition="5">
+      <varInfo nodeId="1228857666960" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="8511931774175302753" fileName="NullSequence_Test.java" startLine="81" startPosition="26" endLine="84" endPosition="5">
+      <varInfo nodeId="8511931774175302753" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="8511931774175302736" fileName="NullSequence_Test.java" startLine="85" startPosition="25" endLine="88" endPosition="5">
+      <varInfo nodeId="8511931774175302736" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1207741449244" fileName="NullSequence_Test.java" startLine="46" startPosition="109" endLine="50" endPosition="0">
+      <varInfo nodeId="1207741449244" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1225731147877" fileName="NullSequence_Test.java" startLine="69" startPosition="47" endLine="73" endPosition="5" />
     <scopeInfo nodeId="1207739262787" fileName="NullSequence_Test.java" startLine="33" startPosition="37" endLine="39" endPosition="93">
       <varInfo nodeId="1207739227113" varName="input" />
@@ -71,8 +81,8 @@
     <scopeInfo nodeId="1225731147875" fileName="NullSequence_Test.java" startLine="68" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1207739208838" fileName="NullSequence_Test.java" startLine="32" startPosition="61" endLine="40" endPosition="5" />
     <scopeInfo nodeId="1207741362784" fileName="NullSequence_Test.java" startLine="44" startPosition="37" endLine="52" endPosition="69">
-      <varInfo nodeId="1207741307110" varName="nullSeq" />
       <varInfo nodeId="1207741259618" varName="input" />
+      <varInfo nodeId="1207741307110" varName="nullSeq" />
     </scopeInfo>
     <scopeInfo nodeId="1207743172789" fileName="NullSequence_Test.java" startLine="57" startPosition="37" endLine="65" endPosition="70">
       <varInfo nodeId="1207742923616" varName="nullList" />
@@ -85,8 +95,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1207739208836" fileName="NullSequence_Test.java" startLine="31" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="1228857666953" fileName="NullSequence_Test.java" startLine="76" startPosition="49" endLine="88" endPosition="5">
-      <varInfo nodeId="8511931774175302748" varName="iarr" />
       <varInfo nodeId="1228857666955" varName="arr" />
+      <varInfo nodeId="8511931774175302748" varName="iarr" />
       <varInfo nodeId="8511931774175302729" varName="oarr" />
     </scopeInfo>
     <scopeInfo nodeId="1207738915595" fileName="NullSequence_Test.java" startLine="16" startPosition="52" endLine="29" endPosition="5" />
@@ -94,23 +104,23 @@
     <scopeInfo nodeId="1207742900748" fileName="NullSequence_Test.java" startLine="55" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="1228857666951" fileName="NullSequence_Test.java" startLine="75" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="1207738915593" fileName="NullSequence_Test.java" startLine="15" startPosition="50" endLine="31" endPosition="0" />
-    <unitInfo nodeId="1207741449244" fileName="NullSequence_Test.java" startLine="46" startPosition="76" endLine="50" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullSequence_Test$1" />
     <unitInfo nodeId="1207738853400" fileName="NullSequence_Test.java" startLine="15" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullSequence_Test" />
+    <unitInfo nodeId="1207741449244" fileName="NullSequence_Test.java" startLine="46" startPosition="76" endLine="50" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullSequence_Test$1" />
   </root>
   <root nodeId="1207742095107">
-    <nodeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="47" startPosition="29" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="97" startPosition="29" endLine="97" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="176" startPosition="29" endLine="176" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1207743956452" fileName="NullValues_Test.java" startLine="47" startPosition="29" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7556115255731757630" fileName="NullValues_Test.java" startLine="97" startPosition="29" endLine="97" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7556115255731760292" fileName="NullValues_Test.java" startLine="176" startPosition="29" endLine="176" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1207743649434" fileName="NullValues_Test.java" startLine="21" startPosition="38" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1207750514513" fileName="NullValues_Test.java" startLine="24" startPosition="43" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="32" startPosition="54" endLine="33" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="40" startPosition="30" endLine="41" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="41" startPosition="56" endLine="42" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="43" startPosition="29" endLine="44" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="44" startPosition="40" endLine="45" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="45" startPosition="51" endLine="46" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="47" startPosition="29" endLine="48" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="48" startPosition="40" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1207743962524" fileName="NullValues_Test.java" startLine="43" startPosition="29" endLine="44" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207743962524" fileName="NullValues_Test.java" startLine="44" startPosition="40" endLine="45" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207743962524" fileName="NullValues_Test.java" startLine="45" startPosition="51" endLine="46" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1207743956452" fileName="NullValues_Test.java" startLine="47" startPosition="29" endLine="48" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207743956452" fileName="NullValues_Test.java" startLine="48" startPosition="40" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="50" startPosition="30" endLine="51" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="53" startPosition="33" endLine="54" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7556115255731757385" fileName="NullValues_Test.java" startLine="61" startPosition="12" endLine="62" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -120,14 +130,14 @@
     <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="78" startPosition="54" endLine="79" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="86" startPosition="30" endLine="87" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="87" startPosition="56" endLine="88" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="89" startPosition="29" endLine="90" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="90" startPosition="40" endLine="91" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="91" startPosition="51" endLine="92" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="93" startPosition="29" endLine="94" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="94" startPosition="40" endLine="95" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="95" startPosition="51" endLine="96" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="97" startPosition="29" endLine="98" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="98" startPosition="40" endLine="99" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7556115255731757631" fileName="NullValues_Test.java" startLine="89" startPosition="29" endLine="90" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7556115255731757631" fileName="NullValues_Test.java" startLine="90" startPosition="40" endLine="91" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7556115255731757631" fileName="NullValues_Test.java" startLine="91" startPosition="51" endLine="92" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7556115255731757635" fileName="NullValues_Test.java" startLine="93" startPosition="29" endLine="94" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7556115255731757635" fileName="NullValues_Test.java" startLine="94" startPosition="40" endLine="95" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7556115255731757635" fileName="NullValues_Test.java" startLine="95" startPosition="51" endLine="96" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7556115255731757630" fileName="NullValues_Test.java" startLine="97" startPosition="29" endLine="98" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7556115255731757630" fileName="NullValues_Test.java" startLine="98" startPosition="40" endLine="99" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="100" startPosition="30" endLine="101" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="103" startPosition="33" endLine="104" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7556115255731757650" fileName="NullValues_Test.java" startLine="110" startPosition="9" endLine="111" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -161,17 +171,17 @@
     <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="153" startPosition="54" endLine="154" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="161" startPosition="30" endLine="162" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="162" startPosition="56" endLine="163" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="164" startPosition="29" endLine="165" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="165" startPosition="40" endLine="166" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="166" startPosition="51" endLine="167" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="168" startPosition="29" endLine="169" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="169" startPosition="40" endLine="170" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="170" startPosition="51" endLine="171" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="172" startPosition="29" endLine="173" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="173" startPosition="40" endLine="174" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="174" startPosition="46" endLine="175" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="176" startPosition="29" endLine="177" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="177" startPosition="40" endLine="178" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7556115255731760293" fileName="NullValues_Test.java" startLine="164" startPosition="29" endLine="165" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7556115255731760293" fileName="NullValues_Test.java" startLine="165" startPosition="40" endLine="166" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7556115255731760293" fileName="NullValues_Test.java" startLine="166" startPosition="51" endLine="167" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4650868106319805241" fileName="NullValues_Test.java" startLine="168" startPosition="29" endLine="169" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4650868106319805241" fileName="NullValues_Test.java" startLine="169" startPosition="40" endLine="170" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4650868106319805241" fileName="NullValues_Test.java" startLine="170" startPosition="51" endLine="171" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7556115255731760313" fileName="NullValues_Test.java" startLine="172" startPosition="29" endLine="173" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7556115255731760313" fileName="NullValues_Test.java" startLine="173" startPosition="40" endLine="174" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7556115255731760313" fileName="NullValues_Test.java" startLine="174" startPosition="46" endLine="175" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7556115255731760292" fileName="NullValues_Test.java" startLine="176" startPosition="29" endLine="177" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7556115255731760292" fileName="NullValues_Test.java" startLine="177" startPosition="40" endLine="178" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="179" startPosition="30" endLine="180" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="182" startPosition="33" endLine="183" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1241099383060" fileName="NullValues_Test.java" startLine="194" startPosition="38" endLine="195" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -241,9 +251,9 @@
     <nodeInfo nodeId="1207744018414" fileName="NullValues_Test.java" startLine="119" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullElements#()V" />
     <nodeInfo nodeId="1207743634282" fileName="NullValues_Test.java" startLine="20" startPosition="50" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1207742102352" fileName="NullValues_Test.java" startLine="19" startPosition="48" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullValues#()V" />
-    <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="47" startPosition="29" endLine="47" endPosition="29" />
-    <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="97" startPosition="29" endLine="97" endPosition="29" />
-    <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="176" startPosition="29" endLine="176" endPosition="29" />
+    <scopeInfo nodeId="1207743956452" fileName="NullValues_Test.java" startLine="47" startPosition="29" endLine="47" endPosition="29" />
+    <scopeInfo nodeId="7556115255731757630" fileName="NullValues_Test.java" startLine="97" startPosition="29" endLine="97" endPosition="29" />
+    <scopeInfo nodeId="7556115255731760292" fileName="NullValues_Test.java" startLine="176" startPosition="29" endLine="176" endPosition="29" />
     <scopeInfo nodeId="1207743926768" fileName="NullValues_Test.java" startLine="24" startPosition="43" endLine="25" endPosition="32" />
     <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="50" startPosition="30" endLine="51" endPosition="39" />
     <scopeInfo nodeId="7556115255731757474" fileName="NullValues_Test.java" startLine="64" startPosition="43" endLine="65" endPosition="32" />
@@ -252,31 +262,39 @@
     <scopeInfo nodeId="7556115255731757687" fileName="NullValues_Test.java" startLine="113" startPosition="43" endLine="114" endPosition="28" />
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="179" startPosition="30" endLine="180" endPosition="39" />
     <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="40" startPosition="30" endLine="42" endPosition="37" />
-    <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="47" startPosition="29" endLine="49" endPosition="30" />
+    <scopeInfo nodeId="1207743956452" fileName="NullValues_Test.java" startLine="47" startPosition="29" endLine="49" endPosition="30" />
     <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="86" startPosition="30" endLine="88" endPosition="37" />
-    <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="97" startPosition="29" endLine="99" endPosition="30" />
+    <scopeInfo nodeId="7556115255731757630" fileName="NullValues_Test.java" startLine="97" startPosition="29" endLine="99" endPosition="30" />
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="161" startPosition="30" endLine="163" endPosition="37" />
-    <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="176" startPosition="29" endLine="178" endPosition="30" />
-    <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="43" startPosition="29" endLine="46" endPosition="36" />
-    <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="89" startPosition="29" endLine="92" endPosition="36" />
-    <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="93" startPosition="29" endLine="96" endPosition="36" />
-    <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="164" startPosition="29" endLine="167" endPosition="36" />
-    <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="168" startPosition="29" endLine="171" endPosition="36" />
-    <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="172" startPosition="29" endLine="175" endPosition="36" />
-    <scopeInfo nodeId="1207743926767" fileName="NullValues_Test.java" startLine="23" startPosition="123" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7556115255731757471" fileName="NullValues_Test.java" startLine="63" startPosition="108" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="7556115255731757514" fileName="NullValues_Test.java" startLine="69" startPosition="91" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="7556115255731757686" fileName="NullValues_Test.java" startLine="112" startPosition="93" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="7556115255731760292" fileName="NullValues_Test.java" startLine="176" startPosition="29" endLine="178" endPosition="30" />
+    <scopeInfo nodeId="1207743962524" fileName="NullValues_Test.java" startLine="43" startPosition="29" endLine="46" endPosition="36" />
+    <scopeInfo nodeId="7556115255731757631" fileName="NullValues_Test.java" startLine="89" startPosition="29" endLine="92" endPosition="36" />
+    <scopeInfo nodeId="7556115255731757635" fileName="NullValues_Test.java" startLine="93" startPosition="29" endLine="96" endPosition="36" />
+    <scopeInfo nodeId="7556115255731760293" fileName="NullValues_Test.java" startLine="164" startPosition="29" endLine="167" endPosition="36" />
+    <scopeInfo nodeId="4650868106319805241" fileName="NullValues_Test.java" startLine="168" startPosition="29" endLine="171" endPosition="36" />
+    <scopeInfo nodeId="7556115255731760313" fileName="NullValues_Test.java" startLine="172" startPosition="29" endLine="175" endPosition="36" />
+    <scopeInfo nodeId="1207743926767" fileName="NullValues_Test.java" startLine="23" startPosition="123" endLine="27" endPosition="0">
+      <varInfo nodeId="1207743926767" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7556115255731757471" fileName="NullValues_Test.java" startLine="63" startPosition="108" endLine="67" endPosition="0">
+      <varInfo nodeId="7556115255731757471" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7556115255731757514" fileName="NullValues_Test.java" startLine="69" startPosition="91" endLine="73" endPosition="0">
+      <varInfo nodeId="7556115255731757514" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7556115255731757686" fileName="NullValues_Test.java" startLine="112" startPosition="93" endLine="116" endPosition="0">
+      <varInfo nodeId="7556115255731757686" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1207747260317" fileName="NullValues_Test.java" startLine="217" startPosition="57" endLine="224" endPosition="57" />
     <scopeInfo nodeId="1241099383059" fileName="NullValues_Test.java" startLine="194" startPosition="38" endLine="203" endPosition="68">
       <varInfo nodeId="1241099383069" varName="arr" />
-      <varInfo nodeId="1241099383061" varName="listWithNulls" />
       <varInfo nodeId="1241347573934" varName="dlist" />
+      <varInfo nodeId="1241099383061" varName="listWithNulls" />
     </scopeInfo>
     <scopeInfo nodeId="1571838961923397784" fileName="NullValues_Test.java" startLine="204" startPosition="12" endLine="213" endPosition="74">
       <varInfo nodeId="1571838961923397797" varName="arr" />
-      <varInfo nodeId="1571838961923397789" varName="listWithNulls" />
       <varInfo nodeId="1571838961923397823" varName="dlist" />
+      <varInfo nodeId="1571838961923397789" varName="listWithNulls" />
     </scopeInfo>
     <scopeInfo nodeId="1207747260314" fileName="NullValues_Test.java" startLine="216" startPosition="0" endLine="226" endPosition="0">
       <varInfo nodeId="1207747276469" varName="emptyList" />
@@ -300,11 +318,15 @@
     <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="29" startPosition="62" endLine="58" endPosition="12" />
     <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="77" startPosition="49" endLine="106" endPosition="16" />
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="155" startPosition="0" endLine="185" endPosition="0" />
-    <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="28" startPosition="129" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="28" startPosition="129" endLine="60" endPosition="0">
+      <varInfo nodeId="1207743956451" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="76" startPosition="42" endLine="108" endPosition="0" />
     <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="75" startPosition="62" endLine="108" endPosition="12" />
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="152" startPosition="49" endLine="185" endPosition="16" />
-    <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="74" startPosition="115" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="74" startPosition="115" endLine="110" endPosition="0">
+      <varInfo nodeId="7556115255731757627" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="151" startPosition="42" endLine="187" endPosition="0" />
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="150" startPosition="45" endLine="187" endPosition="12" />
     <scopeInfo nodeId="1207743634284" fileName="NullValues_Test.java" startLine="21" startPosition="38" endLine="60" endPosition="10">
@@ -313,8 +335,8 @@
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="149" startPosition="103" endLine="189" endPosition="0" />
     <scopeInfo nodeId="7556115255731757383" fileName="NullValues_Test.java" startLine="61" startPosition="12" endLine="116" endPosition="10">
       <varInfo nodeId="7556115255731757386" varName="input" />
-      <varInfo nodeId="7556115255731757621" varName="seqOfNulls2" />
       <varInfo nodeId="7556115255731757465" varName="seqOfNulls" />
+      <varInfo nodeId="7556115255731757621" varName="seqOfNulls2" />
     </scopeInfo>
     <scopeInfo nodeId="7556115255731760071" fileName="NullValues_Test.java" startLine="133" startPosition="12" endLine="189" endPosition="19">
       <varInfo nodeId="7556115255731760075" varName="list5" />
@@ -324,20 +346,20 @@
     <scopeInfo nodeId="1207744018414" fileName="NullValues_Test.java" startLine="119" startPosition="0" endLine="192" endPosition="0" />
     <scopeInfo nodeId="1207742102354" fileName="NullValues_Test.java" startLine="20" startPosition="50" endLine="117" endPosition="5" />
     <scopeInfo nodeId="1207742102352" fileName="NullValues_Test.java" startLine="19" startPosition="48" endLine="119" endPosition="0" />
-    <unitInfo nodeId="1207743926767" fileName="NullValues_Test.java" startLine="23" startPosition="92" endLine="27" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$1" />
-    <unitInfo nodeId="7556115255731757471" fileName="NullValues_Test.java" startLine="63" startPosition="77" endLine="67" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$3" />
-    <unitInfo nodeId="7556115255731757514" fileName="NullValues_Test.java" startLine="69" startPosition="66" endLine="73" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$4" />
-    <unitInfo nodeId="7556115255731757686" fileName="NullValues_Test.java" startLine="112" startPosition="68" endLine="116" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$6" />
-    <unitInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="32" startPosition="25" endLine="56" endPosition="15" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$4" />
-    <unitInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="30" startPosition="21" endLine="58" endPosition="11" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$3" />
-    <unitInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="78" startPosition="25" endLine="106" endPosition="15" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$7" />
-    <unitInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="28" startPosition="95" endLine="60" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$2" />
-    <unitInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="76" startPosition="21" endLine="108" endPosition="11" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$6" />
-    <unitInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="153" startPosition="25" endLine="185" endPosition="15" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$9" />
-    <unitInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="74" startPosition="81" endLine="110" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$5" />
-    <unitInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="151" startPosition="21" endLine="187" endPosition="11" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$8" />
-    <unitInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="149" startPosition="74" endLine="189" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$7" />
     <unitInfo nodeId="1207742095107" fileName="NullValues_Test.java" startLine="19" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test" />
+    <unitInfo nodeId="1207743926767" fileName="NullValues_Test.java" startLine="23" startPosition="92" endLine="27" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$1" />
+    <unitInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="28" startPosition="95" endLine="60" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$2" />
+    <unitInfo nodeId="7556115255731757471" fileName="NullValues_Test.java" startLine="63" startPosition="77" endLine="67" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$3" />
+    <unitInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="30" startPosition="21" endLine="58" endPosition="11" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$3" />
+    <unitInfo nodeId="7556115255731757514" fileName="NullValues_Test.java" startLine="69" startPosition="66" endLine="73" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$4" />
+    <unitInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="32" startPosition="25" endLine="56" endPosition="15" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$4" />
+    <unitInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="74" startPosition="81" endLine="110" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$5" />
+    <unitInfo nodeId="7556115255731757686" fileName="NullValues_Test.java" startLine="112" startPosition="68" endLine="116" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$6" />
+    <unitInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="76" startPosition="21" endLine="108" endPosition="11" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$6" />
+    <unitInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="78" startPosition="25" endLine="106" endPosition="15" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$7" />
+    <unitInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="149" startPosition="74" endLine="189" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$7" />
+    <unitInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="151" startPosition="21" endLine="187" endPosition="11" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$8" />
+    <unitInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="153" startPosition="25" endLine="185" endPosition="15" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$9" />
   </root>
   <root nodeId="1207745701534">
     <nodeInfo nodeId="1207745717595" fileName="NullEmpty_Test.java" startLine="18" startPosition="35" endLine="19" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -360,12 +382,12 @@
     <nodeInfo nodeId="3001698940945661440" fileName="NullEmpty_Test.java" startLine="29" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullAddAll#()V" />
     <nodeInfo nodeId="1207745709956" fileName="NullEmpty_Test.java" startLine="16" startPosition="47" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullFirstLast#()V" />
     <scopeInfo nodeId="1207745737812" fileName="NullEmpty_Test.java" startLine="18" startPosition="35" endLine="26" endPosition="73">
-      <varInfo nodeId="1207745717596" varName="emptySeq" />
       <varInfo nodeId="1207745768909" varName="emptyList" />
+      <varInfo nodeId="1207745717596" varName="emptySeq" />
     </scopeInfo>
     <scopeInfo nodeId="3001698940945661442" fileName="NullEmpty_Test.java" startLine="30" startPosition="50" endLine="38" endPosition="58">
-      <varInfo nodeId="8635043343165704653" varName="nullSet" />
       <varInfo nodeId="8635043343165704637" varName="nullList" />
+      <varInfo nodeId="8635043343165704653" varName="nullSet" />
       <varInfo nodeId="3001698940945661444" varName="test" />
       <varInfo nodeId="3001698940945661495" varName="test2" />
     </scopeInfo>

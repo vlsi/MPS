@@ -2139,7 +2139,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1201435446113(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return FunctionTypeUtil.unbound(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))));
+    return FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
   }
 
   public static SNode sourceNodeQuery_1203251634844(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2163,7 +2163,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1201019303193(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "type", true);
+    return FunctionTypeUtil.unbound(SLinkOperations.getTarget(_context.getNode(), "type", true));
   }
 
   public static SNode sourceNodeQuery_1201359394958(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2219,7 +2219,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1201863520535(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
+    return FunctionTypeUtil.unbound(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))));
   }
 
   public static SNode sourceNodeQuery_1202817864202(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -4172,6 +4172,25 @@ public class QueriesGenerated {
         if (idx < ListSequence.fromList(args).count()) {
           SNode arg = ListSequence.fromList(args).getElement(idx);
           FunctionTypeUtil.prepAdaptations(_context, TypeDerivable_Behavior.call_deriveType_1213877435747(ac, arg), arg);
+        }
+        idx++;
+      }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_5312455269846195467(final IOperationContext operationContext, final MappingScriptContext _context) {
+    List<SNode> emcs = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall");
+    for (SNode emc : emcs) {
+      List<SNode> args = SLinkOperations.getTargets(emc, "actualArgument", true);
+      List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(emc, "baseMethodDeclaration", false), "parameter", true);
+      if ((SLinkOperations.getTarget(emc, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
+        _context.showInformationMessage(emc, "Actual arguments count != parameter declarations count");
+      }
+      int idx = 0;
+      for (SNode pdecl : pdecls) {
+        if (idx < ListSequence.fromList(args).count()) {
+          SNode arg = ListSequence.fromList(args).getElement(idx);
+          FunctionTypeUtil.prepAdaptations(_context, TypeDerivable_Behavior.call_deriveType_1213877435747(emc, arg), arg);
         }
         idx++;
       }

@@ -27,9 +27,12 @@ import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
@@ -73,7 +76,7 @@ public class TextGenerator {
 
     generateFiles(status, outputNodeContents);
     generateCaches(status);
-    return true;
+    return myTextGenProblems.isEmpty();
   }
 
   private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, Object> outputNodeContents) {
@@ -220,6 +223,12 @@ public class TextGenerator {
   private void generateFiles(GenerationStatus status, Map<SNode, Object> outputNodeContents) {
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       String name = getFileName(outputRootNode);
+      if (name == null) {
+        Message m = new Message(MessageKind.ERROR, "Can't create file with no name. Root node ["+outputRootNode.getSNodeId()+"] in model "+outputRootNode.getModel().getSModelFqName());
+        m.setHintObject(new SNodePointer(outputRootNode));
+        myTextGenProblems.add(m);
+        continue;
+      }
       Object contents = outputNodeContents.get(outputRootNode);
       if (contents instanceof String) {
         myStreamHandler.saveStream(name, (String) contents, false);

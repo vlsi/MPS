@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -22,10 +23,12 @@ public class typeof_operationConcept_parameter_InferenceRule extends AbstractInf
   public void applyRule(final SNode concept_parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode typeRule = SNodeOperations.getAncestor(concept_parameter, "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", false, false);
     if ((typeRule != null)) {
-      {
-        SNode _nodeToCheck_1029348928467 = concept_parameter;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083449677", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083449688", true), (SNode) new typeof_operationConcept_parameter_InferenceRule.QuotationClass_v9qm53_a0a0a1a0().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(typeRule, "operationConcept", true), "concept", false), typeCheckingContext), _info_12389875345);
+      for (SNode opConcept : ListSequence.fromList(SLinkOperations.getTargets(typeRule, "operationConcept", true))) {
+        {
+          SNode _nodeToCheck_1029348928467 = concept_parameter;
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "2888402081996299036", 0, null);
+          typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "2888402081996299038", true), (SNode) new typeof_operationConcept_parameter_InferenceRule.QuotationClass_v9qm53_a0a0a0a1a0().createNode(SLinkOperations.getTarget(opConcept, "concept", false), typeCheckingContext), false, true, _info_12389875345);
+        }
       }
     }
   }
@@ -45,8 +48,8 @@ public class typeof_operationConcept_parameter_InferenceRule extends AbstractInf
     return true;
   }
 
-  public static class QuotationClass_v9qm53_a0a0a1a0 {
-    public QuotationClass_v9qm53_a0a0a1a0() {
+  public static class QuotationClass_v9qm53_a0a0a0a1a0 {
+    public QuotationClass_v9qm53_a0a0a0a1a0() {
     }
 
     public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {

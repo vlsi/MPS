@@ -961,7 +961,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="5150359874269134893" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7390982340086719836">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7390982340086719837">
             <property name="name" nameId="tpck.1169194664001" value="errorsComponent" />
@@ -969,11 +968,19 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wsw7.7390982340086718486" resolveInfo="LanguageErrorsComponent" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tp2q.MapElement" typeId="tp2q.1197932370469" id="7390982340086719839">
-              <node role="key" roleId="tp2q.1197932525128" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5150359874269134892">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5150359874269134865" resolveInfo="sNodePointer" />
-              </node>
               <node role="map" roleId="tp2q.1197932505799" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7390982340086719841">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7390982340086719462" resolveInfo="myNodePointersToComponents" />
+              </node>
+              <node role="key" roleId="tp2q.1197932525128" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="617146245871695506">
+                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="617146245871695508">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="617146245871695500">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="617146245871695501">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5150359874269134850" resolveInfo="sNode" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetContainingRootOperation" typeId="tp25.1171310072040" id="617146245871695502" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

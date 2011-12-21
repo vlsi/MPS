@@ -10,19 +10,26 @@ import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.integration.ModelMergeTool;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.MPSExtentions;
+import org.jetbrains.annotations.NotNull;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.util.io.ZipUtil;
 import com.intellij.openapi.application.PathManager;
 import java.io.FilenameFilter;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.UnzipUtil;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class MergeBackupUtil {
   protected static Log log = LogFactory.getLog(MergeBackupUtil.class);
@@ -40,7 +47,23 @@ public class MergeBackupUtil {
     writeContentsToFile(contents[ModelMergeTool.ORIGINAL], file, tmp, MergeVersion.BASE.getSuffix());
     writeContentsToFile(contents[ModelMergeTool.CURRENT], file, tmp, MergeVersion.MINE.getSuffix());
     writeContentsToFile(contents[ModelMergeTool.LAST_REVISION], file, tmp, MergeVersion.REPOSITORY.getSuffix());
-    File zipfile = chooseZipFileForModelFile(file.getName());
+    File zipfile = chooseZipFileForModelFile(VirtualFileUtils.toIFile(file));
+    zipfile.getParentFile().mkdirs();
+    FileUtil.zip(tmp, zipfile);
+    FileUtil.delete(tmp);
+    return zipfile;
+  }
+
+  public static File zipModel(String[] contents, @Nullable SModelFqName modelFqName) throws IOException {
+    String shortFileName = "unknown.mps";
+    if (modelFqName != null) {
+      shortFileName = NameUtil.shortNameFromLongName(modelFqName.getLongName()) + MPSExtentions.DOT_MODEL;
+    }
+    File tmp = FileUtil.createTmpDir();
+    writeContentsToFile(contents[ModelMergeTool.ORIGINAL], shortFileName, tmp, MergeVersion.BASE.getSuffix());
+    writeContentsToFile(contents[ModelMergeTool.CURRENT], shortFileName, tmp, MergeVersion.MINE.getSuffix());
+    writeContentsToFile(contents[ModelMergeTool.LAST_REVISION], shortFileName, tmp, MergeVersion.REPOSITORY.getSuffix());
+    File zipfile = chooseZipFileForModelLongName("unknown.mps", check_fhutfy_b0a6a2(modelFqName));
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);
     FileUtil.delete(tmp);
@@ -52,8 +75,12 @@ public class MergeBackupUtil {
     FileUtil.writeFile(file, contents);
   }
 
-  public static File chooseZipFileForModelFile(String modelFileName) {
-    String prefix = getMergeBackupDirPath() + File.separator + modelFileName;
+  public static File chooseZipFileForModelLongName(@NotNull String defaultFileName, @Nullable String modelLongName) {
+    String fileName = defaultFileName;
+    if (modelLongName != null) {
+      fileName = modelLongName + MPSExtentions.DOT_MODEL;
+    }
+    String prefix = getMergeBackupDirPath() + File.separator + fileName;
     prefix = prefix + "." + new SimpleDateFormat("yyyy-MM-dd_HH-mm").format(new Date());
     File zipfile = new File(prefix + ".zip");
     int i = 0;
@@ -62,6 +89,10 @@ public class MergeBackupUtil {
       i++;
     }
     return zipfile;
+  }
+
+  public static File chooseZipFileForModelFile(IFile file) {
+    return chooseZipFileForModelLongName(file.getName(), check_fhutfy_b0a0f(SModelRepository.getInstance().findModel(file)));
   }
 
   public static void packMergeResult(File file, String fileName, String resultContent) {
@@ -146,5 +177,19 @@ public class MergeBackupUtil {
         return f.getName();
       }
     }, false);
+  }
+
+  private static String check_fhutfy_b0a6a2(SModelFqName checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getLongName();
+    }
+    return null;
+  }
+
+  private static String check_fhutfy_b0a0f(EditableSModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getLongName();
+    }
+    return null;
   }
 }

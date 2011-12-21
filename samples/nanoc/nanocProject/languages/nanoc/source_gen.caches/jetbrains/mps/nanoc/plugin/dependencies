@@ -150,8 +150,8 @@
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
     <classNode dependClassName="jetbrains.mps.execution.lib.Node_Configuration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.ui.MainNodeChooser" />
     <classNode dependClassName="jetbrains.mps.nanoc.plugin.NanoCFile_Configuration" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />

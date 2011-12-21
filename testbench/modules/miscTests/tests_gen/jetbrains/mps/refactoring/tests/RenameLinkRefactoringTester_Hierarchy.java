@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester {
   public RenameLinkRefactoringTester_Hierarchy() {

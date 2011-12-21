@@ -20,11 +20,20 @@
     <scopeInfo nodeId="1111784210516" fileName="Formula.java" startLine="23" startPosition="46" endLine="24" endPosition="45" />
     <scopeInfo nodeId="1111784210516" fileName="Formula.java" startLine="27" startPosition="62" endLine="28" endPosition="175" />
     <scopeInfo nodeId="1111784210516" fileName="Formula.java" startLine="31" startPosition="48" endLine="32" endPosition="42" />
-    <scopeInfo nodeId="1111784210516" fileName="Formula.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1111784210516" fileName="Formula.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="1111784210516" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1111784210516" fileName="Formula.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1111784210516" fileName="Formula.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1111784210516" fileName="Formula.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1111784210516" fileName="Formula.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1111784210516" fileName="Formula.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1111784210516" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784210516" fileName="Formula.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1111784210516" varName="init" />
+      <varInfo nodeId="1111784210516" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784210516" fileName="Formula.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1111784210516" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1111784210516" fileName="Formula.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.Formula" />
   </root>
   <root nodeId="1111784312737">
@@ -38,9 +47,16 @@
     <scopeInfo nodeId="1111784312737" fileName="Expression.java" startLine="14" startPosition="33" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1111784312737" fileName="Expression.java" startLine="18" startPosition="65" endLine="19" endPosition="181" />
     <scopeInfo nodeId="1111784312737" fileName="Expression.java" startLine="22" startPosition="51" endLine="23" endPosition="45" />
-    <scopeInfo nodeId="1111784312737" fileName="Expression.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1111784312737" fileName="Expression.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1111784312737" fileName="Expression.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1111784312737" fileName="Expression.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1111784312737" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784312737" fileName="Expression.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1111784312737" varName="init" />
+      <varInfo nodeId="1111784312737" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784312737" fileName="Expression.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1111784312737" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1111784312737" fileName="Expression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.Expression" />
   </root>
   <root nodeId="1111784331004">
@@ -54,9 +70,16 @@
     <scopeInfo nodeId="1111784331004" fileName="Function.java" startLine="13" startPosition="31" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1111784331004" fileName="Function.java" startLine="17" startPosition="63" endLine="18" endPosition="177" />
     <scopeInfo nodeId="1111784331004" fileName="Function.java" startLine="21" startPosition="49" endLine="22" endPosition="43" />
-    <scopeInfo nodeId="1111784331004" fileName="Function.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1111784331004" fileName="Function.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1111784331004" fileName="Function.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1111784331004" fileName="Function.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1111784331004" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784331004" fileName="Function.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1111784331004" varName="init" />
+      <varInfo nodeId="1111784331004" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784331004" fileName="Function.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1111784331004" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1111784331004" fileName="Function.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.Function" />
   </root>
   <root nodeId="1111784391790">
@@ -70,9 +93,16 @@
     <scopeInfo nodeId="1111784391790" fileName="Reference.java" startLine="13" startPosition="32" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1111784391790" fileName="Reference.java" startLine="17" startPosition="64" endLine="18" endPosition="179" />
     <scopeInfo nodeId="1111784391790" fileName="Reference.java" startLine="21" startPosition="50" endLine="22" endPosition="44" />
-    <scopeInfo nodeId="1111784391790" fileName="Reference.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1111784391790" fileName="Reference.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1111784391790" fileName="Reference.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1111784391790" fileName="Reference.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1111784391790" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784391790" fileName="Reference.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1111784391790" varName="init" />
+      <varInfo nodeId="1111784391790" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784391790" fileName="Reference.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1111784391790" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1111784391790" fileName="Reference.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.Reference" />
   </root>
   <root nodeId="1111784519527">
@@ -86,9 +116,16 @@
     <scopeInfo nodeId="1111784519527" fileName="Constant.java" startLine="13" startPosition="31" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1111784519527" fileName="Constant.java" startLine="17" startPosition="63" endLine="18" endPosition="177" />
     <scopeInfo nodeId="1111784519527" fileName="Constant.java" startLine="21" startPosition="49" endLine="22" endPosition="43" />
-    <scopeInfo nodeId="1111784519527" fileName="Constant.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1111784519527" fileName="Constant.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1111784519527" fileName="Constant.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1111784519527" fileName="Constant.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1111784519527" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784519527" fileName="Constant.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1111784519527" varName="init" />
+      <varInfo nodeId="1111784519527" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784519527" fileName="Constant.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1111784519527" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1111784519527" fileName="Constant.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.Constant" />
   </root>
   <root nodeId="1111784562907">
@@ -116,13 +153,24 @@
     <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="31" startPosition="48" endLine="32" endPosition="50" />
     <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="35" startPosition="64" endLine="36" endPosition="179" />
     <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="39" startPosition="50" endLine="40" endPosition="44" />
-    <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="1111784562907" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1111784562907" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1111784562907" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1111784562907" varName="init" />
+      <varInfo nodeId="1111784562907" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784562907" fileName="Operation.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1111784562907" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1111784562907" fileName="Operation.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.Operation" />
   </root>
   <root nodeId="1111784858617">
@@ -143,11 +191,20 @@
     <scopeInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="22" startPosition="35" endLine="23" endPosition="58" />
     <scopeInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="26" startPosition="70" endLine="27" endPosition="191" />
     <scopeInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="30" startPosition="56" endLine="31" endPosition="50" />
-    <scopeInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1111784858617" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1111784858617" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1111784858617" varName="init" />
+      <varInfo nodeId="1111784858617" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1111784858617" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1111784858617" fileName="IntegerConstant.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant" />
   </root>
   <root nodeId="1111784926012">
@@ -168,11 +225,20 @@
     <scopeInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="22" startPosition="38" endLine="23" endPosition="57" />
     <scopeInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="26" startPosition="76" endLine="27" endPosition="203" />
     <scopeInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="30" startPosition="62" endLine="31" endPosition="56" />
-    <scopeInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1111784926012" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1111784926012" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1111784926012" varName="init" />
+      <varInfo nodeId="1111784926012" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1111784926012" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1111784926012" fileName="FloatingPointConstant.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant" />
   </root>
   <root nodeId="1111785030296">
@@ -207,15 +273,28 @@
     <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="40" startPosition="48" endLine="41" endPosition="52" />
     <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="44" startPosition="65" endLine="45" endPosition="181" />
     <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="48" startPosition="51" endLine="49" endPosition="45" />
-    <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="1111785030296" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1111785030296" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1111785030296" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1111785030296" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1111785030296" varName="init" />
+      <varInfo nodeId="1111785030296" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1111785030296" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1111785030296" fileName="IfFunction.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.IfFunction" />
   </root>
   <root nodeId="1111786301085">
@@ -229,9 +308,16 @@
     <scopeInfo nodeId="1111786301085" fileName="PlusOperation.java" startLine="13" startPosition="36" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1111786301085" fileName="PlusOperation.java" startLine="17" startPosition="68" endLine="18" endPosition="187" />
     <scopeInfo nodeId="1111786301085" fileName="PlusOperation.java" startLine="21" startPosition="54" endLine="22" endPosition="48" />
-    <scopeInfo nodeId="1111786301085" fileName="PlusOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1111786301085" fileName="PlusOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1111786301085" fileName="PlusOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1111786301085" fileName="PlusOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1111786301085" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111786301085" fileName="PlusOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1111786301085" varName="init" />
+      <varInfo nodeId="1111786301085" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111786301085" fileName="PlusOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1111786301085" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1111786301085" fileName="PlusOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.PlusOperation" />
   </root>
   <root nodeId="1111786398794">
@@ -245,9 +331,16 @@
     <scopeInfo nodeId="1111786398794" fileName="MinusOperation.java" startLine="13" startPosition="37" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1111786398794" fileName="MinusOperation.java" startLine="17" startPosition="69" endLine="18" endPosition="189" />
     <scopeInfo nodeId="1111786398794" fileName="MinusOperation.java" startLine="21" startPosition="55" endLine="22" endPosition="49" />
-    <scopeInfo nodeId="1111786398794" fileName="MinusOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1111786398794" fileName="MinusOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1111786398794" fileName="MinusOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1111786398794" fileName="MinusOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1111786398794" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111786398794" fileName="MinusOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1111786398794" varName="init" />
+      <varInfo nodeId="1111786398794" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1111786398794" fileName="MinusOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1111786398794" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1111786398794" fileName="MinusOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.MinusOperation" />
   </root>
   <root nodeId="1112037354393">
@@ -261,9 +354,16 @@
     <scopeInfo nodeId="1112037354393" fileName="LessThanOperation.java" startLine="13" startPosition="40" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1112037354393" fileName="LessThanOperation.java" startLine="17" startPosition="72" endLine="18" endPosition="195" />
     <scopeInfo nodeId="1112037354393" fileName="LessThanOperation.java" startLine="21" startPosition="58" endLine="22" endPosition="52" />
-    <scopeInfo nodeId="1112037354393" fileName="LessThanOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1112037354393" fileName="LessThanOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1112037354393" fileName="LessThanOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1112037354393" fileName="LessThanOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1112037354393" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1112037354393" fileName="LessThanOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1112037354393" varName="init" />
+      <varInfo nodeId="1112037354393" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1112037354393" fileName="LessThanOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1112037354393" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1112037354393" fileName="LessThanOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation" />
   </root>
   <root nodeId="1112384225757">
@@ -277,9 +377,16 @@
     <scopeInfo nodeId="1112384225757" fileName="MultOperation.java" startLine="13" startPosition="36" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1112384225757" fileName="MultOperation.java" startLine="17" startPosition="68" endLine="18" endPosition="187" />
     <scopeInfo nodeId="1112384225757" fileName="MultOperation.java" startLine="21" startPosition="54" endLine="22" endPosition="48" />
-    <scopeInfo nodeId="1112384225757" fileName="MultOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1112384225757" fileName="MultOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1112384225757" fileName="MultOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1112384225757" fileName="MultOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1112384225757" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1112384225757" fileName="MultOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1112384225757" varName="init" />
+      <varInfo nodeId="1112384225757" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1112384225757" fileName="MultOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1112384225757" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1112384225757" fileName="MultOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.MultOperation" />
   </root>
   <root nodeId="1112406908640">
@@ -293,9 +400,16 @@
     <scopeInfo nodeId="1112406908640" fileName="GreaterThanOperation.java" startLine="13" startPosition="43" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1112406908640" fileName="GreaterThanOperation.java" startLine="17" startPosition="75" endLine="18" endPosition="201" />
     <scopeInfo nodeId="1112406908640" fileName="GreaterThanOperation.java" startLine="21" startPosition="61" endLine="22" endPosition="55" />
-    <scopeInfo nodeId="1112406908640" fileName="GreaterThanOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1112406908640" fileName="GreaterThanOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1112406908640" fileName="GreaterThanOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1112406908640" fileName="GreaterThanOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1112406908640" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1112406908640" fileName="GreaterThanOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1112406908640" varName="init" />
+      <varInfo nodeId="1112406908640" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1112406908640" fileName="GreaterThanOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1112406908640" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1112406908640" fileName="GreaterThanOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation" />
   </root>
   <root nodeId="1113256863281">
@@ -308,8 +422,12 @@
     <nodeInfo nodeId="1113256863281" fileName="_FPNumber_PropertySupport.java" startLine="7" startPosition="64" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <scopeInfo nodeId="1113256863281" fileName="_FPNumber_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
     <scopeInfo nodeId="1113256863281" fileName="_FPNumber_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="1113256863281" fileName="_FPNumber_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="53" />
-    <scopeInfo nodeId="1113256863281" fileName="_FPNumber_PropertySupport.java" startLine="7" startPosition="64" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1113256863281" fileName="_FPNumber_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="53">
+      <varInfo nodeId="1113256863281" varName="testValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1113256863281" fileName="_FPNumber_PropertySupport.java" startLine="7" startPosition="64" endLine="17" endPosition="0">
+      <varInfo nodeId="1113256863281" varName="value" />
+    </scopeInfo>
     <unitInfo nodeId="1113256863281" fileName="_FPNumber_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure._FPNumber_PropertySupport" />
   </root>
   <root nodeId="1133954660098">
@@ -330,11 +448,20 @@
     <scopeInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="22" startPosition="38" endLine="23" endPosition="50" />
     <scopeInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="26" startPosition="69" endLine="27" endPosition="189" />
     <scopeInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="30" startPosition="55" endLine="31" endPosition="49" />
-    <scopeInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1133954660098" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1133954660098" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1133954660098" varName="init" />
+      <varInfo nodeId="1133954660098" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1133954660098" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1133954660098" fileName="StringConstant.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.StringConstant" />
   </root>
   <root nodeId="1133955930134">
@@ -348,9 +475,16 @@
     <scopeInfo nodeId="1133955930134" fileName="AndOperation.java" startLine="13" startPosition="35" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1133955930134" fileName="AndOperation.java" startLine="17" startPosition="67" endLine="18" endPosition="185" />
     <scopeInfo nodeId="1133955930134" fileName="AndOperation.java" startLine="21" startPosition="53" endLine="22" endPosition="47" />
-    <scopeInfo nodeId="1133955930134" fileName="AndOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1133955930134" fileName="AndOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1133955930134" fileName="AndOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1133955930134" fileName="AndOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1133955930134" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1133955930134" fileName="AndOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1133955930134" varName="init" />
+      <varInfo nodeId="1133955930134" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1133955930134" fileName="AndOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1133955930134" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1133955930134" fileName="AndOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.AndOperation" />
   </root>
   <root nodeId="1133955954502">
@@ -364,9 +498,16 @@
     <scopeInfo nodeId="1133955954502" fileName="OrOperation.java" startLine="13" startPosition="34" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1133955954502" fileName="OrOperation.java" startLine="17" startPosition="66" endLine="18" endPosition="183" />
     <scopeInfo nodeId="1133955954502" fileName="OrOperation.java" startLine="21" startPosition="52" endLine="22" endPosition="46" />
-    <scopeInfo nodeId="1133955954502" fileName="OrOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1133955954502" fileName="OrOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1133955954502" fileName="OrOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1133955954502" fileName="OrOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1133955954502" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1133955954502" fileName="OrOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1133955954502" varName="init" />
+      <varInfo nodeId="1133955954502" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1133955954502" fileName="OrOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1133955954502" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1133955954502" fileName="OrOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.OrOperation" />
   </root>
   <root nodeId="1134035290224">
@@ -380,9 +521,16 @@
     <scopeInfo nodeId="1134035290224" fileName="EqualsOperation.java" startLine="13" startPosition="38" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1134035290224" fileName="EqualsOperation.java" startLine="17" startPosition="70" endLine="18" endPosition="191" />
     <scopeInfo nodeId="1134035290224" fileName="EqualsOperation.java" startLine="21" startPosition="56" endLine="22" endPosition="50" />
-    <scopeInfo nodeId="1134035290224" fileName="EqualsOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1134035290224" fileName="EqualsOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1134035290224" fileName="EqualsOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1134035290224" fileName="EqualsOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1134035290224" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1134035290224" fileName="EqualsOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1134035290224" varName="init" />
+      <varInfo nodeId="1134035290224" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1134035290224" fileName="EqualsOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1134035290224" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1134035290224" fileName="EqualsOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation" />
   </root>
   <root nodeId="1134036005562">
@@ -403,11 +551,20 @@
     <scopeInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="22" startPosition="46" endLine="23" endPosition="61" />
     <scopeInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="26" startPosition="78" endLine="27" endPosition="207" />
     <scopeInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="30" startPosition="64" endLine="31" endPosition="58" />
-    <scopeInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1134036005562" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1134036005562" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1134036005562" varName="init" />
+      <varInfo nodeId="1134036005562" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1134036005562" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1134036005562" fileName="ParenthisizedExpression.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression" />
   </root>
   <root nodeId="1142518741440">
@@ -421,9 +578,16 @@
     <scopeInfo nodeId="1142518741440" fileName="NullConstant.java" startLine="13" startPosition="35" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1142518741440" fileName="NullConstant.java" startLine="17" startPosition="67" endLine="18" endPosition="185" />
     <scopeInfo nodeId="1142518741440" fileName="NullConstant.java" startLine="21" startPosition="53" endLine="22" endPosition="47" />
-    <scopeInfo nodeId="1142518741440" fileName="NullConstant.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1142518741440" fileName="NullConstant.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1142518741440" fileName="NullConstant.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1142518741440" fileName="NullConstant.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1142518741440" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1142518741440" fileName="NullConstant.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1142518741440" varName="init" />
+      <varInfo nodeId="1142518741440" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1142518741440" fileName="NullConstant.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1142518741440" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1142518741440" fileName="NullConstant.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.NullConstant" />
   </root>
   <root nodeId="1142519786507">
@@ -437,9 +601,16 @@
     <scopeInfo nodeId="1142519786507" fileName="IsNullOperation.java" startLine="13" startPosition="38" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1142519786507" fileName="IsNullOperation.java" startLine="17" startPosition="70" endLine="18" endPosition="191" />
     <scopeInfo nodeId="1142519786507" fileName="IsNullOperation.java" startLine="21" startPosition="56" endLine="22" endPosition="50" />
-    <scopeInfo nodeId="1142519786507" fileName="IsNullOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1142519786507" fileName="IsNullOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1142519786507" fileName="IsNullOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1142519786507" fileName="IsNullOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1142519786507" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1142519786507" fileName="IsNullOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1142519786507" varName="init" />
+      <varInfo nodeId="1142519786507" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1142519786507" fileName="IsNullOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1142519786507" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1142519786507" fileName="IsNullOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation" />
   </root>
   <root nodeId="1142529677703">
@@ -453,9 +624,16 @@
     <scopeInfo nodeId="1142529677703" fileName="NotOperation.java" startLine="13" startPosition="35" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1142529677703" fileName="NotOperation.java" startLine="17" startPosition="67" endLine="18" endPosition="185" />
     <scopeInfo nodeId="1142529677703" fileName="NotOperation.java" startLine="21" startPosition="53" endLine="22" endPosition="47" />
-    <scopeInfo nodeId="1142529677703" fileName="NotOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1142529677703" fileName="NotOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1142529677703" fileName="NotOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1142529677703" fileName="NotOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1142529677703" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1142529677703" fileName="NotOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1142529677703" varName="init" />
+      <varInfo nodeId="1142529677703" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1142529677703" fileName="NotOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1142529677703" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1142529677703" fileName="NotOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.NotOperation" />
   </root>
 </debugInfo>

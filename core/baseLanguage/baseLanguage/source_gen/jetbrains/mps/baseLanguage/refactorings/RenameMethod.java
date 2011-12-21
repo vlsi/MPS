@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
@@ -56,10 +57,14 @@ public class RenameMethod extends BaseRefactoring {
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SNode method = RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
-    return (((Boolean) refactoringContext.getParameter("refactorOverriding")) == null || !(((Boolean) refactoringContext.getParameter("refactorOverriding"))) ?
-      FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder") :
-      FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder")
-    );
+    if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
+      return FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder", "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
+    } else {
+      return (((Boolean) refactoringContext.getParameter("refactorOverriding")) != null || !(((Boolean) refactoringContext.getParameter("refactorOverriding"))) ?
+        FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder") :
+        FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder")
+      );
+    }
   }
 
   public static String getKeyStroke_static() {

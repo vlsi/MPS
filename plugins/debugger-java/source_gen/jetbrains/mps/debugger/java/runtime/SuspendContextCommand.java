@@ -5,14 +5,6 @@ package jetbrains.mps.debugger.java.runtime;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import org.jetbrains.annotations.NotNull;
 
-
-/**
- * * Created by IntelliJ IDEA.
- * * User: Cyril.Konopko
- * * Date: 04.02.2010
- * * Time: 13:44:02
- * * To change this template use File | Settings | File Templates.
- */
 public abstract class SuspendContextCommand extends DebuggerCommand {
   private final SuspendContext mySuspendContext;
 

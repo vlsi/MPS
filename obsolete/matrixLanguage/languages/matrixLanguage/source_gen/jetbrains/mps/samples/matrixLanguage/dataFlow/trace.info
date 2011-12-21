@@ -14,7 +14,10 @@
     <scopeInfo nodeId="1210243746762" fileName="ForEachMatrixElement_DataFlow.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
     <scopeInfo nodeId="1210243746762" fileName="ForEachMatrixElement_DataFlow.java" startLine="11" startPosition="68" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1210243746764" fileName="ForEachMatrixElement_DataFlow.java" startLine="15" startPosition="102" endLine="22" endPosition="95" />
-    <scopeInfo nodeId="1210243746762" fileName="ForEachMatrixElement_DataFlow.java" startLine="14" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1210243746762" fileName="ForEachMatrixElement_DataFlow.java" startLine="14" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1210243746762" varName="_context" />
+      <varInfo nodeId="1210243746762" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1210243746762" fileName="ForEachMatrixElement_DataFlow.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.dataFlow.ForEachMatrixElement_DataFlow" />
   </root>
   <root nodeId="1210244204423">
@@ -24,7 +27,10 @@
     <scopeInfo nodeId="1210244204423" fileName="DeterminantExpression_DataFlow.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1210244204425" fileName="DeterminantExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="104" />
     <scopeInfo nodeId="1210244204423" fileName="DeterminantExpression_DataFlow.java" startLine="11" startPosition="69" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1210244204423" fileName="DeterminantExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1210244204423" fileName="DeterminantExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1210244204423" varName="_context" />
+      <varInfo nodeId="1210244204423" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1210244204423" fileName="DeterminantExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.dataFlow.DeterminantExpression_DataFlow" />
   </root>
   <root nodeId="1210244268396">
@@ -34,7 +40,10 @@
     <scopeInfo nodeId="1210244268396" fileName="TransposeExpression_DataFlow.java" startLine="12" startPosition="41" endLine="12" endPosition="41" />
     <scopeInfo nodeId="1210244268398" fileName="TransposeExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="103" />
     <scopeInfo nodeId="1210244268396" fileName="TransposeExpression_DataFlow.java" startLine="11" startPosition="67" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1210244268396" fileName="TransposeExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1210244268396" fileName="TransposeExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1210244268396" varName="_context" />
+      <varInfo nodeId="1210244268396" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1210244268396" fileName="TransposeExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.dataFlow.TransposeExpression_DataFlow" />
   </root>
   <root nodeId="1210244322011">
@@ -49,7 +58,10 @@
     <scopeInfo nodeId="1215194725954" fileName="MatrixLiteral_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1215194725958" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="1210244322011" fileName="MatrixLiteral_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1210244322011" fileName="MatrixLiteral_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1210244322011" varName="_context" />
+      <varInfo nodeId="1210244322011" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1210244322011" fileName="MatrixLiteral_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.dataFlow.MatrixLiteral_DataFlow" />
   </root>
   <root nodeId="1210244363227">
@@ -64,7 +76,10 @@
     <scopeInfo nodeId="1215194979256" fileName="MatrixRow_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1215194979260" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="1210244363227" fileName="MatrixRow_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1210244363227" fileName="MatrixRow_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1210244363227" varName="_context" />
+      <varInfo nodeId="1210244363227" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1210244363227" fileName="MatrixRow_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.dataFlow.MatrixRow_DataFlow" />
   </root>
 </debugInfo>

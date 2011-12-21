@@ -107,7 +107,7 @@ import org.jetbrains.annotations.NotNull;
 
   @Override
   public char getCheckBoxMnemonic() {
-    return 0;
+    return (char) 0;
   }
 
   @Override

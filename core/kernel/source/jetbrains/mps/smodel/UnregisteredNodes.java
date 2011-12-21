@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.PairMap;
 
-class UnregisteredNodes {
+public class UnregisteredNodes {
   private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
   private static UnregisteredNodes ourInstance;
 
@@ -50,7 +50,7 @@ class UnregisteredNodes {
     });
   }
 
-  void clear() {
+  public void clear() {
     synchronized (myLock) {
       myMap.clear();
     }

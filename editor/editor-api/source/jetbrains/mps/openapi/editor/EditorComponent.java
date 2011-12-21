@@ -20,10 +20,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.JComponent;
+
 /**
  * evgeny, 11/17/11
  */
 public interface EditorComponent {
+  JComponent getEditorComponent();
 
   SNode getEditedNode();
 

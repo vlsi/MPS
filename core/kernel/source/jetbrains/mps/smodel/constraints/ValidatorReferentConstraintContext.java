@@ -21,7 +21,7 @@ public class ValidatorReferentConstraintContext extends ReferentConstraintContex
   private SNode myParameterNode;
 
   public ValidatorReferentConstraintContext(ReferentConstraintContext context, SNode parameterNode) {
-    super(context.getModel(), context.getEnclosingNode(), context.getReferenceNode(), context.getLinkTarget());
+    super(context.getModel(), context.getEnclosingNode(), context.getReferenceNode(), context.getLinkTarget(), context.getContainingLink());
     myParameterNode = parameterNode;
   }
 

@@ -17,6 +17,7 @@ package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.editor.Document;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.MementoPersistence;
@@ -33,6 +34,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -41,6 +43,8 @@ import java.awt.Color;
 import java.util.List;
 
 public abstract class BaseNodeEditor implements Editor {
+  private static Logger LOG = Logger.getLogger(BaseNodeEditor.class);
+
   private EditorComponent myEditorComponent;
   private JComponent myComponent = new EditorPanel();
   private IOperationContext myContext;
@@ -158,14 +162,36 @@ public abstract class BaseNodeEditor implements Editor {
   public void loadState(@NotNull EditorState state) {
     if (!(state instanceof BaseEditorState)) return;
 
-    BaseEditorState s = (BaseEditorState) state;
+    final BaseEditorState s = (BaseEditorState) state;
     if (s.myMemento != null) {
       getEditorContext().setMemento(s.myMemento);
     }
     if (s.myInspectorMemento != null) {
-      NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
+      final NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
       if (editorComponent != null) {
-        editorComponent.getInspector().getEditorContext().setMemento(s.myInspectorMemento);
+        if (editorComponent.getInspector() != null) {
+          editorComponent.getInspector().getEditorContext().setMemento(s.myInspectorMemento);
+        }
+        else {
+          SwingUtilities.invokeLater(new Runnable() {
+            int tries = 0;
+            @Override
+            public void run() {
+              EditorComponent inspector = editorComponent.getInspector();
+              if (inspector != null) {
+                inspector.getEditorContext().setMemento(s.myInspectorMemento);
+              }
+              else if ((tries++) < 3) {
+                try {
+                  Thread.sleep(tries*500);
+                } catch (InterruptedException ignore) {}
+                SwingUtilities.invokeLater(this);
+              } else {
+                LOG.error("couln't restore inspector state: no inspector tool");
+              }
+            }
+          });
+        }
       }
     }
   }

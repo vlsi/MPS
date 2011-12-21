@@ -16,18 +16,26 @@
 
 package jetbrains.mps.idea.core.facet;
 
+import com.intellij.facet.Facet;
 import com.intellij.facet.FacetConfiguration;
 import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.facet.ui.FacetEditorTab;
 import com.intellij.facet.ui.FacetValidatorsManager;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
+import com.intellij.util.PathUtil;
 import com.intellij.util.xmlb.XmlSerializerUtil;
+import jetbrains.mps.idea.core.facet.ui.MPSFacetCommonTabUI;
 import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
@@ -35,8 +43,11 @@ import javax.swing.*;
  * evgeny, 10/26/11
  */
 public class MPSFacetConfiguration implements FacetConfiguration, PersistentStateComponent<MPSConfigurationBean> {
-
-    private MPSConfigurationBean configurationBean = new MPSConfigurationBean();
+    private static final String FILE_SEPARATOR = "/";
+    @NonNls
+    private static final String SOURCE_GEN = "source_gen";
+    private MPSConfigurationBean myConfigurationBean = new MPSConfigurationBean();
+    private MPSFacet myMpsFacet;
 
     public void readExternal(Element element) throws InvalidDataException {
         // ignore
@@ -47,20 +58,47 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
     }
 
     public MPSConfigurationBean getState() {
-        return configurationBean;
+        return myConfigurationBean;
     }
 
     public void loadState(MPSConfigurationBean state) {
-        XmlSerializerUtil.copyBean(state, configurationBean);
+        XmlSerializerUtil.copyBean(state, myConfigurationBean);
     }
 
     public FacetEditorTab[] createEditorTabs(FacetEditorContext facetEditorContext, FacetValidatorsManager facetValidatorsManager) {
-        return new FacetEditorTab[]{ new MPSFacetCommonTab() };
+        return new FacetEditorTab[]{new MPSFacetCommonTab(facetEditorContext)};
     }
 
-    public class MPSFacetCommonTab extends FacetEditorTab {
+    public void setFacet(MPSFacet mpsFacet) {
+        myMpsFacet = mpsFacet;
+        setConfigurationDefaults();
+    }
 
-        private MPSFacetCommonTabUI form;
+    private void setConfigurationDefaults() {
+        if (myConfigurationBean.getGeneratorOutputPath() == null) {
+            String moduleDirPath = PathUtil.getParentPath(myMpsFacet.getModule().getModuleFilePath());
+            if (moduleDirPath != null) {
+                myConfigurationBean.setGeneratorOutputPath(moduleDirPath + FILE_SEPARATOR + SOURCE_GEN);
+                myConfigurationBean.setUseModuleSourceFolder(false);
+            }
+        }
+        if (myConfigurationBean.getUsedLanguages() == null) {
+            myConfigurationBean.setUsedLanguages(new String[]{BootstrapLanguages.BASE_LANGUAGE.toString()});
+        }
+    }
+
+    public MPSFacet getFacet() {
+        return myMpsFacet;
+    }
+
+    public class MPSFacetCommonTab extends FacetEditorTab implements Disposable {
+
+        private MPSFacetCommonTabUI myForm;
+        private FacetEditorContext myContext;
+
+        public MPSFacetCommonTab(FacetEditorContext context) {
+            myContext = context;
+        }
 
         @Override
         public Icon getIcon() {
@@ -73,31 +111,48 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
         }
 
         public JComponent createComponent() {
-            if (form == null) {
-                form = new MPSFacetCommonTabUI();
+            if (myForm == null) {
+                myForm = new MPSFacetCommonTabUI(myContext, this);
             }
-            return form.getRootPanel();
+            return myForm.getRootPanel();
         }
 
         public boolean isModified() {
-            return form != null && form.isModified(configurationBean);
+            return myForm != null && myForm.isModified(myConfigurationBean);
         }
 
         @Override
         public void apply() throws ConfigurationException {
-            if (form != null) {
-                form.getData(configurationBean);
+            if (myForm != null) {
+                myForm.getData(myConfigurationBean);
             }
         }
 
         public void reset() {
-            if (form != null) {
-                form.setData(configurationBean);
+            if (myForm != null) {
+                myForm.setData(myConfigurationBean);
             }
         }
 
         public void disposeUIResources() {
-            form = null;
+            Disposer.dispose(this);
+            myForm = null;
+        }
+
+        @Override
+        public void onFacetInitialized(@NotNull Facet facet) {
+            super.onFacetInitialized(facet);
+            MPSFacet mpsFacet = (MPSFacet) facet;
+            mpsFacet.setConfiguration(myConfigurationBean);
+        }
+
+        @Override
+        public void onTabEntering() {
+            myForm.onTabEntering();
+        }
+
+        @Override
+        public void dispose() {
         }
     }
 

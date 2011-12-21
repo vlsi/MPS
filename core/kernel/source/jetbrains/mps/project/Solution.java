@@ -48,7 +48,7 @@ public class Solution extends AbstractModule {
 
   // -------------------------------------------------------------------
 
-  private Solution() {
+  protected Solution() {
 
   }
 

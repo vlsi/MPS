@@ -22,7 +22,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.CollectionUtil;
@@ -30,7 +29,6 @@ import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -167,7 +165,7 @@ public class TestModule extends AbstractModule {
     }
   }
 
-  class TestSModelDescriptor extends BaseSModelDescriptor {
+  class TestSModelDescriptor extends BaseSpecialModelDescriptor {
     private final String myLongName;
     private final SModel myToCopy;
 
@@ -182,19 +180,16 @@ public class TestModule extends AbstractModule {
       return TestModule.this;
     }
 
-    @Override
-    protected ModelLoadResult initialLoad() {
+    public SModel createModel() {
       Document document = ModelPersistence.saveModel(myToCopy);
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
-      SModel result;
       String modelContent = JDOMUtil.asString(document);
       try {
-        result = ModelPersistence.readModel(modelContent, false);
+        return ModelPersistence.readModel(modelContent, false);
       } catch (ModelReadException e) {
-        result = new StubModel(SModelReference.fromString(myLongName), e);
+        return new StubModel(SModelReference.fromString(myLongName), e);
       }
-      return new ModelLoadResult(result, ModelLoadingState.FULLY_LOADED);
     }
 
     @Override

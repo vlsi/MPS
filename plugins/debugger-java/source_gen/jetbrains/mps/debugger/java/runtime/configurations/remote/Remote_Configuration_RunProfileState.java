@@ -16,7 +16,7 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
-import jetbrains.mps.execution.lib.JavaStackTraceFilter;
+import jetbrains.mps.ide.actions.JavaStackTraceFilter;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;

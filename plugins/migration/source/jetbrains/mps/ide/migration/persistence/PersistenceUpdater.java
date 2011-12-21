@@ -22,10 +22,10 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
-import sun.rmi.runtime.Log;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -44,7 +44,7 @@ public class PersistenceUpdater {
       IFile file = modelDescriptor.getModelFile();
       if (file != null && file.isReadOnly()) continue;
 
-      boolean wasInitialized = modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED;
+      boolean wasInitialized = modelDescriptor.getUpdateableModel().getState() != ModelLoadingState.NOT_LOADED;
       if (wasInitialized) {
         modelDescriptor.save();
       }

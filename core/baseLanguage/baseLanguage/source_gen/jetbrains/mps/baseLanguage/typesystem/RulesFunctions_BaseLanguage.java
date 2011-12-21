@@ -295,16 +295,16 @@ __switch__:
                   final SNode actualType = typeCheckingContext.typeOf(actual, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347108709", true);
                   typeCheckingContext.whenConcrete(actualType, new Runnable() {
                     public void run() {
-                      if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+                      if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
                         {
                           SNode _nodeToCheck_1029348928467 = actual;
                           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3056149436216248475", 0, null);
-                          typeCheckingContext.createGreaterThanInequality((SNode) matchedType, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getRepresentative(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), false, true, _info_12389875345);
+                          typeCheckingContext.createGreaterThanInequality((SNode) matchedType, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getExpandedNode(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), false, true, _info_12389875345);
                         }
                       } else {
                         SNode _nodeToCheck_1029348928467 = actual;
                         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3768281636845649755", 0, null);
-                        typeCheckingContext.createGreaterThanInequality((SNode) matchedType, (SNode) typeCheckingContext.getRepresentative(actualType), false, true, _info_12389875345);
+                        typeCheckingContext.createGreaterThanInequality((SNode) matchedType, (SNode) typeCheckingContext.getExpandedNode(actualType), false, true, _info_12389875345);
                       }
                     }
                   }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347102532", false, false);

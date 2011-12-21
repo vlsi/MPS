@@ -207,6 +207,10 @@ public class LanguageErrorsComponent {
     if (event.isRemoved()) {
       SetSequence.fromSet(myInvalidation).addElement(event.getChild());
     }
+    if (event.isAdded()) {
+      SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(event.getChild().getDescendants()));
+      SetSequence.fromSet(myInvalidNodes).addElement(event.getChild());
+    }
   }
 
   public void processEvent(SModelReferenceEvent event) {

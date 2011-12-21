@@ -178,6 +178,12 @@
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="tpe8.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
       </node>
     </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2978993595262531947">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp1t.2978993595262518683" resolveInfo="ConstraintFunctionParameter_enclosingLink" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="2978993595262531949">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="tpe8.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
+      </node>
+    </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1205760483211">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp1t.1148934636683" resolveInfo="ConceptParameter_ReferentSearchScope_enclosingNode" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1205760544997">

@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelDescriptor;
 
-/*package*/ class StubRefUtil {
+public class StubRefUtil {
   private static boolean isReferenceToJavaStub(@NotNull SReference reference) {
     return reference.getTargetNodeId() instanceof SNodeId.Foreign && check_4tnolf_a0a0a(check_4tnolf_a0a0a0(reference.getTargetSModelReference()), SModelStereotype.STUB_SUFFIX);
   }
@@ -62,7 +62,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
     return isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "classConcept")), targetModel, SNodeId.fromString(classId)) && isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "staticMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
   }
 
-  /*package*/ static boolean isClassifierType(SNode classifierType, @NotNull SModelReference targetModel, @NotNull String classId) {
+  public static boolean isClassifierType(SNode classifierType, @NotNull SModelReference targetModel, @NotNull String classId) {
     return isReferenceTo(SNodeOperations.getReference(classifierType, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), targetModel, SNodeId.fromString(classId));
   }
 
@@ -70,7 +70,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
     return isReferenceToMethod(SNodeOperations.getReference(methodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), methodSignature);
   }
 
-  /*package*/ static boolean isInstanceMethodCall(SNode methodCallOperation, @NotNull SModelReference targetModel, @NotNull String methodId) {
+  public static boolean isInstanceMethodCall(SNode methodCallOperation, @NotNull SModelReference targetModel, @NotNull String methodId) {
     return isReferenceTo(SNodeOperations.getReference(methodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
   }
 
@@ -78,7 +78,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
     return isReferenceToMethod(SNodeOperations.getReference(creator, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), creatorSignature);
   }
 
-  /*package*/ static boolean isClassCreator(SNode creator, @NotNull SModelReference creatorModel, @NotNull String creatorId) {
+  public static boolean isClassCreator(SNode creator, @NotNull SModelReference creatorModel, @NotNull String creatorId) {
     return isReferenceTo(SNodeOperations.getReference(creator, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), creatorModel, SNodeId.fromString(creatorId));
   }
 
@@ -106,7 +106,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
     SNodeOperations.replaceWithAnother(oldNode, newNode);
   }
 
-  /*package*/ static void replaceRefs(SNode oldNode, SNode newNode) {
+  public static void replaceRefs(SNode oldNode, SNode newNode) {
     for (SReference newRef : ListSequence.fromList(newNode.getReferences())) {
       oldNode.removeReference(oldNode.getReference(newRef.getRole()));
       oldNode.addReference(new StaticReference(newRef.getRole(), oldNode, newRef.getTargetSModelReference(), newRef.getTargetNodeId(), newRef.getResolveInfo()));

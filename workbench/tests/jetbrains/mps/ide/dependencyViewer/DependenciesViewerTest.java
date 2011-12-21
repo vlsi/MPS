@@ -16,27 +16,17 @@
 package jetbrains.mps.ide.dependencyViewer;
 
 import jetbrains.mps.BaseMPSTest;
-import jetbrains.mps.ModelAssert;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.migration.persistence.PersistenceUpdater;
 import jetbrains.mps.ide.migration.persistence.TestOutputFilter;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
-import junit.framework.AssertionFailedError;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DependenciesViewerTest extends BaseMPSTest {

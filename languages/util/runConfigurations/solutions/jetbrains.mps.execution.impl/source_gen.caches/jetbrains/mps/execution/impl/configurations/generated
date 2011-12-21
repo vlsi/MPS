@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cs7rr5d67hc7ttftj1vxx6hil0cuxhd">
+<dependencies version="2" modelHash="32qjabgnwn1b0rmskgbzmci1wpi2pti">
   <dep model="f:java_stub#d95e286a-03bd-41d2-a04d-9db8f070e89c#org.apache.commons.logging(webr.logging#1167240554582/org.apache.commons.logging@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-68sllyg7p1fd6dgkrce6zowrtm9cm0d" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d78hke4r6b9hefsdkynz6vbevip5ltn" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="4592mc0c92ee86m4hdnk27h6ntxlxqu" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="90a2yqqwsbuerf4u3po1b2jxod6vyfj" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-4f29bsebzf4thz56vqxm63bzjl2mgg7" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
-  <common hash="4mi2r89afup6z7nn9g5e1ee4ewln5jj" />
-  <source id="5145867626676099642" name="RunConfigurationsStateManager" hash="4fw2zwuealcytea0rlxgtumk1y8guot">
+  <common hash="-9nj6er573kgufp2tq7io3adgchzob7p" />
+  <source id="5145867626676099642" name="RunConfigurationsStateManager" hash="4nyomsx134cjqitr8621pixz0d0o6u4">
     <dep model="f:java_stub#d95e286a-03bd-41d2-a04d-9db8f070e89c#org.apache.commons.logging(webr.logging#1167240554582/org.apache.commons.logging@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -20,10 +20,10 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RunConfigurationsStateManager.java" />
   </source>
-  <source id="5252685582976599883" name="java.transform" hash="-eo51tzz5xteg3klwi2bmmh5fhtg6yy7">
+  <source id="5252685582976599883" name="java.transform" hash="avpnw1bqvisuzrs9r01bg5hmhrvi5i8">
     <file name="java.transform.xml" />
   </source>
-  <source id="2356551895168237695" name="junit.transform" hash="98inulh0gs55nc23gfgrhsnkrh305vq">
+  <source id="2356551895168237695" name="junit.transform" hash="-5iqv11ogjnxjm361usa4nlqe6jdgl04">
     <file name="junit.transform.xml" />
   </source>
 </dependencies>

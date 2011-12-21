@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debugger.java.runtime.DebugSession;
+import jetbrains.mps.debug.api.SessionChangeAdapter;
 import org.jetbrains.annotations.NotNull;
 import java.awt.BorderLayout;
 import org.jetbrains.annotations.Nullable;
@@ -20,7 +21,6 @@ import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.debug.api.SessionChangeAdapter;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public abstract class EvaluationUi extends JPanel {
@@ -31,7 +31,7 @@ public abstract class EvaluationUi extends JPanel {
   protected final EvaluationTree myTree;
   private EvaluationUi.IErrorTextListener myErrorListener;
   private final boolean myAutoUpdate;
-  private final EvaluationUi.MySessionChangeAdapter mySessionChangeAdapter = new EvaluationUi.MySessionChangeAdapter();
+  private final SessionChangeAdapter mySessionChangeAdapter = new EvaluationUi.MySessionChangeAdapter();
 
   public EvaluationUi(@NotNull DebugSession session, boolean autoUpdate) {
     super(new BorderLayout());

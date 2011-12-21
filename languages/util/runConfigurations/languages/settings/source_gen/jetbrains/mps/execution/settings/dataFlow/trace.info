@@ -9,7 +9,10 @@
     <scopeInfo nodeId="946964771156067208" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="12" startPosition="55" endLine="12" endPosition="55" />
     <scopeInfo nodeId="946964771156067208" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="11" startPosition="81" endLine="13" endPosition="3" />
     <scopeInfo nodeId="946964771156067210" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="36" />
-    <scopeInfo nodeId="946964771156067208" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="946964771156067208" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="946964771156067208" varName="_context" />
+      <varInfo nodeId="946964771156067208" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="946964771156067208" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.execution.settings.dataFlow.ReportConfigurationErrorStatement_DataFlow" />
   </root>
 </debugInfo>

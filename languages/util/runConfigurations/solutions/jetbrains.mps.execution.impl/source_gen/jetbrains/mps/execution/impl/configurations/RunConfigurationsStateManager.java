@@ -199,22 +199,23 @@ public class RunConfigurationsStateManager implements ProjectComponent {
   }
 
   private static Element migrateConfigurations(Element state, String string) throws TransformerFactoryConfigurationError {
-    Element migratedState = new Element("root");
     JDOMSource source = new JDOMSource(state);
     JDOMResult result = new JDOMResult();
 
     try {
       Transformer transformer = TransformerFactory.newInstance().newTransformer(new StreamSource(RunConfigurationsStateManager.class.getResourceAsStream(string)));
       transformer.transform(source, result);
-      migratedState.addContent(result.getResult());
+      List transformResult = result.getResult();
+      if (transformResult.size() == 1) {
+        return (Element) transformResult.get(0);
+      }
     } catch (TransformerException e) {
       if (log.isErrorEnabled()) {
         log.error("Cant transform", e);
       }
-      migratedState.addContent(state);
     }
 
-    return migratedState;
+    return state;
   }
 
   public static RunConfigurationsStateManager getInstance(Project project) {

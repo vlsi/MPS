@@ -30,9 +30,7 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.vcs.SourceRevision;
 import jetbrains.mps.logging.Logger;
-import org.jdom.Document;
 import org.jdom.Element;
-import org.jdom.input.SAXBuilder;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -44,8 +42,8 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
+import java.io.File;
 import java.io.PrintWriter;
-import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,12 +62,16 @@ public class BlameDialog extends BaseDialog {
   private JRadioButton myRegisteredRadio;
   private JRadioButton myAnonymousRadio;
   private JTextField myTitleField;
+  private JCheckBox myHiddenCheckBox;
+  private JPanel myExceptionContainer;
 
   private boolean myIsCancelled = true;
   private Response myResult;
   private Project myProject;
 
   private List<Throwable> myEx = new ArrayList<Throwable>();
+  private List<File> myFilesToAttach = new ArrayList<File>();
+  private String mySubsystem = null;
 
   public BlameDialog(Project project, Dialog dialog) {
     super(dialog, CAPTION);
@@ -85,6 +87,7 @@ public class BlameDialog extends BaseDialog {
 
   public void addEx(Throwable ex) {
     myEx.add(ex);
+    myExceptionContainer.setVisible(true);
     String text = myException.getText();
     if (text != null && text.length() > 0) {
       myException.setText(text + "\n\n" + ex2str(ex));
@@ -101,8 +104,23 @@ public class BlameDialog extends BaseDialog {
     myDescription.setText(message);
   }
 
+  public void addFile(@NotNull File file) {
+    if (file.exists()) {
+      myFilesToAttach.add(file);
+    }
+  }
+
+  public void setIssueHidden(boolean hidden) {
+    myHiddenCheckBox.setSelected(hidden);
+  }
+
+  public void setSubsystem(String subsystem) {
+    mySubsystem = subsystem;
+  }
+
   private void init() {
     setModal(true);
+    myExceptionContainer.setVisible(false);
 
     myAnonymousRadio.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
@@ -130,7 +148,7 @@ public class BlameDialog extends BaseDialog {
   }
 
   private Query createQuery() {
-    return myAnonymousRadio.isSelected() || myUsername.getText().isEmpty() ? Query.ANONYMOUS : new Query(myUsername.getText(), myPassword.getText());
+    return myAnonymousRadio.isSelected() || myUsername.getText().isEmpty() ? Query.ANONYMOUS : new Query(myUsername.getText(), new String(myPassword.getPassword()));
   }
 
   private String ex2str(Throwable e) {
@@ -205,17 +223,20 @@ public class BlameDialog extends BaseDialog {
 
     Poster poster = new Poster(myProject);
     Query query = createQuery();
-    query.setIssue(title);
+    query.setIssueTitle(title);
     query.setDescription(description.toString());
+    query.setFiles(myFilesToAttach.toArray(new File[myFilesToAttach.size()]));
+    query.setHidden(myHiddenCheckBox.isSelected());
+    query.setSubsystem(mySubsystem);
     myResult = poster.send(query);
 
     if (!myResult.isSuccess()) {
       String message = myResult.getMessage();
       String response = myResult.getResponseString();
       if (response != null && !response.equals("")) {
-        Element responseXML = responseXML();
-        if (responseXML != null && "error".equalsIgnoreCase(responseXML.getName())) {
-          message += ". " + responseXML.getText();
+        Element responseXml = myResult.getResponseXml();
+        if (responseXml != null && "error".equalsIgnoreCase(responseXml.getName())) {
+          message += ". " + responseXml.getText();
         } else {
           message += ". " + response;
         }
@@ -231,28 +252,10 @@ public class BlameDialog extends BaseDialog {
     dispose();
   }
 
-  private Element responseXML() {
-    String responseString = myResult.getResponseString();
-    if (responseString == null || responseString.isEmpty()) {
-      return null;
-    }
-    SAXBuilder saxBuilder = new SAXBuilder();
-    Document document = null;
-    try {
-      document = saxBuilder.build(new StringReader(responseString));
-    } catch (Exception e) {
-      LOG.error("Can't open created issue", e);
-      return null;
-    }
-    return document.getRootElement();
-  }
-
   private void openIssueInBrowser() {
-    final String ID = "id";
-    Element responseXML = responseXML();
-    if (responseXML != null) {
-      String issueId = responseXML.getAttribute(ID).getValue();
-      BrowserUtil.launchBrowser(Command.ISSUE_BASE_URL + issueId);
+    String id = myResult.getIssueId();
+    if (id != null) {
+      BrowserUtil.launchBrowser(Command.ISSUE_BASE_URL + id);
     }
   }
 
@@ -331,11 +334,11 @@ public class BlameDialog extends BaseDialog {
     final Spacer spacer2 = new Spacer();
     panel1.add(spacer2, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
     final JPanel panel2 = new JPanel();
-    panel2.setLayout(new GridLayoutManager(6, 2, new Insets(0, 0, 0, 0), -1, -1));
+    panel2.setLayout(new GridLayoutManager(8, 2, new Insets(0, 0, 0, 0), -1, -1));
     myPanel.add(panel2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
     panel2.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Issue properties"));
     final JLabel label3 = new JLabel();
-    label3.setText("Optional Description:");
+    label3.setText("Description (what did you do,what happened instead of expected behavior):");
     panel2.add(label3, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     final Spacer spacer3 = new Spacer();
     panel2.add(spacer3, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
@@ -345,11 +348,6 @@ public class BlameDialog extends BaseDialog {
     myDescription.setEditable(true);
     myDescription.setText("");
     scrollPane1.setViewportView(myDescription);
-    final JScrollPane scrollPane2 = new JScrollPane();
-    panel2.add(scrollPane2, new GridConstraints(5, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(0, 220), null, 0, false));
-    myException = new JTextArea();
-    myException.setEditable(false);
-    scrollPane2.setViewportView(myException);
     myTitleField = new JTextField();
     panel2.add(myTitleField, new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
     final JLabel label4 = new JLabel();
@@ -357,11 +355,26 @@ public class BlameDialog extends BaseDialog {
     panel2.add(label4, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     final Spacer spacer4 = new Spacer();
     panel2.add(spacer4, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-    final JLabel label5 = new JLabel();
-    label5.setText("Exception:");
-    panel2.add(label5, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     final Spacer spacer5 = new Spacer();
     panel2.add(spacer5, new GridConstraints(4, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+    myHiddenCheckBox = new JCheckBox();
+    myHiddenCheckBox.setText("Visible only to MPS developers");
+    myHiddenCheckBox.setToolTipText("Select this if you want this bug report will be visible only to you and MPS developers ");
+    panel2.add(myHiddenCheckBox, new GridConstraints(7, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+    myExceptionContainer = new JPanel();
+    myExceptionContainer.setLayout(new GridLayoutManager(2, 2, new Insets(0, 0, 0, 0), -1, -1));
+    myExceptionContainer.setEnabled(true);
+    panel2.add(myExceptionContainer, new GridConstraints(6, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+    final JLabel label5 = new JLabel();
+    label5.setText("Exception:");
+    myExceptionContainer.add(label5, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+    final Spacer spacer6 = new Spacer();
+    myExceptionContainer.add(spacer6, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+    final JScrollPane scrollPane2 = new JScrollPane();
+    myExceptionContainer.add(scrollPane2, new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(0, 220), null, 0, false));
+    myException = new JTextArea();
+    myException.setEditable(false);
+    scrollPane2.setViewportView(myException);
     ButtonGroup buttonGroup;
     buttonGroup = new ButtonGroup();
     buttonGroup.add(myRegisteredRadio);

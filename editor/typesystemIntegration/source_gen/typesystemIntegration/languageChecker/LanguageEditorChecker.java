@@ -178,8 +178,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       // after model is replaced but before it is disposed (this can happen asyncronously) 
       return result;
     }
-
-    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myNodePointersToComponents).get(sNodePointer);
+    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myNodePointersToComponents).get(new SNodePointer(SNodeOperations.getContainingRoot(sNode)));
     if (errorsComponent == null) {
       errorsComponent = new LanguageErrorsComponent(sNode);
       MapSequence.fromMap(myNodePointersToComponents).put(sNodePointer, errorsComponent);

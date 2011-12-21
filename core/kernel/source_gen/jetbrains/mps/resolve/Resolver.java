@@ -80,7 +80,7 @@ public class Resolver {
     Boolean result = TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, linkDeclaration, operationContext);
+        SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, linkDeclaration, referenceNode.getRoleLink(), operationContext);
         if (status.isError()) {
           Resolver.LOG.error("Couldn't create referent search scope : " + status.getMessage());
           return false;

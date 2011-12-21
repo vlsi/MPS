@@ -7,11 +7,11 @@
   <language namespace="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language-engaged-on-generation namespace="3c6d6f72-fc0d-4d9d-8c5d-cb82e96c422b(jetbrains.mps.build.packaging.mps)" />
-  <import index="9uwc" modelUID="r:39f8f3bd-7095-4376-a1b8-ad6c8ea47e0b(jetbrains.mps.baseLanguage.collections.customViewers.plugin)" version="-1" />
-  <import index="tpsr" modelUID="r:00000000-0000-4000-0000-011c895904c7(jetbrains.mps.build.execution.plugin)" version="-1" />
-  <import index="lz2f" modelUID="r:72631c39-be3f-4f0e-bedf-97a99cf33059(jetbrains.mps.lang.smodel.customViewers.plugin)" version="-1" />
-  <import index="7mk9" modelUID="r:abbc5771-5c58-496b-9439-f0f55a94c716(jetbrains.mps.baseLanguage.tuples.customViewers.plugin)" version="-1" />
-  <import index="stp4" modelUID="r:9de23b94-426b-42c2-bb32-6e9e1b3d0990(jetbrains.mps.baseLanguage.unitTest.execution.plugin)" version="1" />
+  <import index="4dtg" modelUID="r:6ff1dacd-2ea5-47a0-9336-2eaecdee8a37(jetbrains.mps.execution.languages.plugin)" version="-1" />
+  <import index="k9d8" modelUID="r:e5b66eab-bae0-4889-9fd0-cc3e2a8efa70(jetbrains.mps.debugger.java.languages)" version="-1" />
+  <import index="mjd0" modelUID="r:066129d5-3ed4-4b2c-a29c-cffc17475f81(jetbrains.mps.debugger.api.languages.plugin)" version="-1" />
+  <import index="f0cp" modelUID="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)" version="-1" />
+  <import index="ic9i" modelUID="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)" version="3" />
   <import index="tps4" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="8" implicit="yes" />
   <import index="tpsk" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -53,10 +53,6 @@
     </node>
     <node type="tps4.Block" typeId="tps4.701559220729212645" id="8431776905956472865">
       <property name="name" nameId="tpck.1169194664001" value="core.baseLanguage" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="modules.core" />
-    </node>
-    <node type="tps4.Block" typeId="tps4.701559220729212645" id="8431776905956472896">
-      <property name="name" nameId="tpck.1169194664001" value="core.debug" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="modules.core" />
     </node>
     <node type="tps4.Block" typeId="tps4.701559220729212645" id="8431776905956472902">
@@ -1789,9 +1785,6 @@
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="8431776905956472862">
       <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472902" resolveInfo="core.devkits" />
     </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="8431776905956472863">
-      <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472896" resolveInfo="core.debug" />
-    </node>
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="8669189765730048454">
       <link role="block" roleId="tps4.701559220729212648" targetNodeId="2738111162319948310" resolveInfo="core.execution" />
     </node>
@@ -1837,39 +1830,14 @@
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472888">
         <property name="id" nameId="tps4.1222447189012" value="f61473f9-130f-42f6-b98d-6c438812c2f6" />
       </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472889">
-        <property name="id" nameId="tps4.1222447189012" value="f618e99a-2641-465c-bb54-31fe76f9e285" />
-      </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472890">
         <property name="id" nameId="tps4.1222447189012" value="83f155ff-422c-4b5a-a2f2-b459302dd215" />
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472892">
         <property name="id" nameId="tps4.1222447189012" value="a247e09e-2435-45ba-b8d2-07e93feba96a" />
       </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472894">
-        <property name="id" nameId="tps4.1222447189012" value="82c32a3b-4a54-4fc1-b551-7ff9f198d7c1" />
-      </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="3327950833828934353">
-        <property name="id" nameId="tps4.1222447189012" value="c2b4d111-b1a9-4476-8bfc-454cbf1a6e6c" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.runConfigurations.runtime" />
-      </node>
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8431776905956472895">
         <property name="name" nameId="tps4.1223641503366" value="baseLanguage" />
-      </node>
-    </node>
-  </root>
-  <root id="8431776905956472896">
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Folder" typeId="tps4.1203598512427" id="2520429355395831032">
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2520429355395831039">
-        <property name="id" nameId="tps4.1222447189012" value="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debug.apiLang" />
-      </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="5978697451487588432">
-        <property name="id" nameId="tps4.1222447189012" value="cf8c9de5-1b4a-4dc8-8e6d-847159af31dd" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.java.api" />
-      </node>
-      <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2520429355395831040">
-        <property name="name" nameId="tps4.1223641503366" value="debug" />
       </node>
     </node>
   </root>
@@ -2268,21 +2236,9 @@
   </root>
   <root id="2738111162319948310">
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Folder" typeId="tps4.1203598512427" id="2738111162319948320">
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2738111162319948324">
-        <property name="id" nameId="tps4.1222447189012" value="22e72e4c-0f69-46ce-8403-6750153aa615" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.runConfigurations" />
-      </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2738111162319948325">
         <property name="id" nameId="tps4.1222447189012" value="36c11d2d-1875-4a95-8bdb-70ea1ac63222" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.runConfigurations.runtime" />
-      </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2738111162319948326">
-        <property name="id" nameId="tps4.1222447189012" value="04b376d5-fc16-403b-a344-c68b30193c6a" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.runConfigurations.util" />
-      </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2738111162319948327">
-        <property name="id" nameId="tps4.1222447189012" value="f3347d8a-0e79-4f35-8ac9-1574f25c986f" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.run.commands" />
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2738111162319948328">
         <property name="id" nameId="tps4.1222447189012" value="73c1a490-99fa-4d0d-8292-b8985697c74b" />
@@ -2295,10 +2251,6 @@
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="4666195181811172917">
         <property name="id" nameId="tps4.1222447189012" value="4caf0310-491e-41f5-8a9b-2006b3a94898" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.util" />
-      </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="1585405235656481880">
-        <property name="id" nameId="tps4.1222447189012" value="5b247b59-8fd0-4475-a767-9e9ff6a9d01c" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.lib.startup" />
       </node>
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2738111162319948323">
         <property name="name" nameId="tps4.1223641503366" value="execution" />
@@ -2547,32 +2499,6 @@
               <property name="path" nameId="tps4.1220974398640" value="plugin-runtime" />
             </node>
             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4423212183691725355">
-              <property name="path" nameId="tps4.1220974398640" value="classes" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Copy" typeId="tps4.1204015075559" id="8340725549277608487">
-        <property name="name" nameId="tpck.1169194664001" value="" />
-        <property name="excludes" nameId="tps4.1204107538752" value="" />
-        <node role="sourcePath" roleId="tps4.1220974847213" type="tps4.Path" typeId="tps4.1220973916698" id="8340725549277608488">
-          <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="8340725549277608489">
-            <property name="name" nameId="tps4.1220976068141" value="mps_home" />
-          </node>
-          <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="8340725549277608490">
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8340725549277608491">
-              <property name="path" nameId="tps4.1220974398640" value="core" />
-            </node>
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8340725549277608492">
-              <property name="path" nameId="tps4.1220974398640" value="baseLanguage" />
-            </node>
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8340725549277608493">
-              <property name="path" nameId="tps4.1220974398640" value="runConfigurations" />
-            </node>
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8340725549277608494">
-              <property name="path" nameId="tps4.1220974398640" value="runtime" />
-            </node>
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8340725549277608495">
               <property name="path" nameId="tps4.1220974398640" value="classes" />
             </node>
           </node>
@@ -2994,149 +2920,138 @@
     </node>
   </root>
   <root id="938551967734106063">
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="6812315407669448084">
-      <property name="id" nameId="tps4.1222447189012" value="25891414-2b70-48c7-b1cc-8dc0c127d669" />
-      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.api.runtime" />
-      <node role="pluginXml" roleId="tps4.1278811218404598041" type="tps4.Path" typeId="tps4.1220973916698" id="6812315407669448085">
-        <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="6812315407669448088">
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Plugin" typeId="tps4.4159241239519649208" id="7491849358393015324">
+      <node role="sourcePath" roleId="tps4.4159241239519649209" type="tps4.Path" typeId="tps4.1220973916698" id="7491849358393015325">
+        <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="7491849358393015328">
           <property name="name" nameId="tps4.1220976068141" value="mps_home" />
         </node>
-        <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="6812315407669448087">
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="6812315407669448089">
+        <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="7491849358393015327">
+          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7491849358393015329">
             <property name="path" nameId="tps4.1220974398640" value="plugins" />
           </node>
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="6812315407669448091">
+          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7491849358393015331">
             <property name="path" nameId="tps4.1220974398640" value="debugger-api" />
           </node>
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="6812315407669448093">
-            <property name="path" nameId="tps4.1220974398640" value="META-INF" />
-          </node>
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="6812315407669448095">
-            <property name="path" nameId="tps4.1220974398640" value="plugin.xml" />
-          </node>
         </node>
       </node>
     </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="1278811218404416906">
-      <property name="id" nameId="tps4.1222447189012" value="fcffe3cf-3ebc-4d3d-989b-2f30533bc904" />
-      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.java.runtime" />
-      <node role="pluginXml" roleId="tps4.1278811218404598041" type="tps4.Path" typeId="tps4.1220973916698" id="1278811218404825818">
-        <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="1278811218404825821">
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Plugin" typeId="tps4.4159241239519649208" id="7491849358393015333">
+      <node role="sourcePath" roleId="tps4.4159241239519649209" type="tps4.Path" typeId="tps4.1220973916698" id="7491849358393015334">
+        <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="7491849358393015335">
           <property name="name" nameId="tps4.1220976068141" value="mps_home" />
         </node>
-        <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="1278811218404825820">
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="1278811218404825822">
+        <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="7491849358393015336">
+          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7491849358393015337">
             <property name="path" nameId="tps4.1220974398640" value="plugins" />
           </node>
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="1278811218404825824">
+          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7491849358393015340">
             <property name="path" nameId="tps4.1220974398640" value="debugger-java" />
           </node>
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="1278811218404825826">
-            <property name="path" nameId="tps4.1220974398640" value="META-INF" />
-          </node>
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="1278811218404825828">
-            <property name="path" nameId="tps4.1220974398640" value="plugin.xml" />
-          </node>
         </node>
       </node>
     </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="8608693476119263246">
-      <node role="pluginXml" roleId="tps4.989489456094387704" type="tps4.IdeaInitializerReference" typeId="tps4.989489456094387696" id="8608693476119263248">
-        <link role="ideaInitializer" roleId="tps4.989489456094387697" targetNodeId="9uwc.5494815557703847191" resolveInfo="Collections Custom Viewers" />
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="2929731761237872041">
+      <node role="pluginXmlReference" roleId="tps4.989489456094387704" type="tps4.IdeaInitializerReference" typeId="tps4.989489456094387696" id="2929731761237872043">
+        <link role="ideaInitializer" roleId="tps4.989489456094387697" targetNodeId="f0cp.5494815557703847191" resolveInfo="BaseLanguage Extensions Custom Viewers" />
       </node>
     </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="8608693476119263250">
-      <node role="pluginXml" roleId="tps4.989489456094387704" type="tps4.IdeaInitializerReference" typeId="tps4.989489456094387696" id="8608693476119263252">
-        <link role="ideaInitializer" roleId="tps4.989489456094387697" targetNodeId="lz2f.5494815557703847191" resolveInfo="SModel Custom Viewers" />
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="1535440318713600719">
+      <node role="pluginXmlReference" roleId="tps4.989489456094387704" type="tps4.IdeaInitializerReference" typeId="tps4.989489456094387696" id="1535440318713600721">
+        <link role="ideaInitializer" roleId="tps4.989489456094387697" targetNodeId="k9d8.203415309825224444" resolveInfo="Java Debugger Languages" />
       </node>
-    </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="8608693476119273311">
-      <node role="pluginXml" roleId="tps4.989489456094387704" type="tps4.IdeaInitializerReference" typeId="tps4.989489456094387696" id="8608693476119273313">
-        <link role="ideaInitializer" roleId="tps4.989489456094387697" targetNodeId="7mk9.5494815557703847191" resolveInfo="Tuples Custom Viewers" />
-      </node>
-    </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Folder" typeId="tps4.1203598512427" id="233928996047772014">
-      <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="233928996047772017">
-        <property name="name" nameId="tps4.1223641503366" value="debugger-java-languages" />
-      </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="233928996047772018">
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2520429355395831035">
-          <property name="id" nameId="tps4.1222447189012" value="7da4580f-9d75-4603-8162-51a896d78375" />
-        </node>
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2520429355395831037">
+      <node role="content" roleId="tps4.5610328873691243476" type="tps4.Folder" typeId="tps4.1203598512427" id="3670106543524146802">
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7967031338862727454">
           <property name="id" nameId="tps4.1222447189012" value="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.java.customViewers" />
         </node>
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2520429355395831038">
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7967031338862727455">
+          <property name="id" nameId="tps4.1222447189012" value="7da4580f-9d75-4603-8162-51a896d78375" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.java.evaluation" />
+        </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7967031338862727456">
           <property name="id" nameId="tps4.1222447189012" value="80208897-4572-437d-b50e-8f050cba9566" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.java.privateMembers" />
         </node>
-        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="233928996047772021">
+        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3670106543524146805">
           <property name="name" nameId="tps4.1223641503366" value="languages" />
         </node>
       </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="233928996047772023">
-        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="203415309825214104">
-          <property name="name" nameId="tps4.1223641503366" value="lib" />
-        </node>
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="203415309825329135">
-          <property name="id" nameId="tps4.1222447189012" value="6862df80-d13f-4553-9827-397603773647" />
-          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.java.languages" />
-        </node>
+    </node>
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="2162966196215566930">
+      <node role="pluginXmlReference" roleId="tps4.989489456094387704" type="tps4.IdeaInitializerReference" typeId="tps4.989489456094387696" id="2162966196215566932">
+        <link role="ideaInitializer" roleId="tps4.989489456094387697" targetNodeId="mjd0.2162966196215564401" resolveInfo="Debugger Api Languages" />
       </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="203415309825224440">
-        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="203415309825224443">
-          <property name="name" nameId="tps4.1223641503366" value="META-INF" />
+      <node role="content" roleId="tps4.5610328873691243476" type="tps4.Folder" typeId="tps4.1203598512427" id="3670106543524146808">
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2520429355395831039">
+          <property name="id" nameId="tps4.1222447189012" value="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debug.apiLang" />
         </node>
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.File" typeId="tps4.1203598322527" id="203415309825329129">
-          <node role="sourcePath" roleId="tps4.1220981955937" type="tps4.Path" typeId="tps4.1220973916698" id="203415309825329102">
-            <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="203415309825329105">
-              <property name="name" nameId="tps4.1220976068141" value="mps_home" />
-            </node>
-            <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="203415309825329104">
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="203415309825329107">
-                <property name="path" nameId="tps4.1220974398640" value="plugins" />
-              </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="203415309825329110">
-                <property name="path" nameId="tps4.1220974398640" value="debugger-java-languages" />
-              </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="203415309825329112">
-                <property name="path" nameId="tps4.1220974398640" value="plugin" />
-              </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="203415309825329114">
-                <property name="path" nameId="tps4.1220974398640" value="source_gen" />
-              </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="203415309825329116">
-                <property name="path" nameId="tps4.1220974398640" value="jetbrains" />
-              </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="203415309825329118">
-                <property name="path" nameId="tps4.1220974398640" value="mps" />
-              </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="203415309825329120">
-                <property name="path" nameId="tps4.1220974398640" value="debugger" />
-              </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="203415309825329122">
-                <property name="path" nameId="tps4.1220974398640" value="java" />
-              </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="203415309825329124">
-                <property name="path" nameId="tps4.1220974398640" value="languages" />
-              </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="203415309825329134">
-                <property name="path" nameId="tps4.1220974398640" value="plugin.xml" />
-              </node>
-            </node>
-          </node>
+        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3670106543524146811">
+          <property name="name" nameId="tps4.1223641503366" value="languages" />
         </node>
       </node>
     </node>
   </root>
   <root id="625155585696516556">
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="625155585696516557">
-      <node role="pluginXml" roleId="tps4.989489456094387704" type="tps4.IdeaInitializerReference" typeId="tps4.989489456094387696" id="625155585696516559">
-        <link role="ideaInitializer" roleId="tps4.989489456094387697" targetNodeId="tpsr.2555954362606370623" resolveInfo="Ant Execution" />
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="6062668769034024597">
+      <node role="content" roleId="tps4.5610328873691243476" type="tps4.Folder" typeId="tps4.1203598512427" id="3670106543524146813">
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2712129534618471817">
+          <property name="id" nameId="tps4.1222447189012" value="22250116-183c-4e90-8450-b6a13dd8998b" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.execution.api" />
+        </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2712129534619827028">
+          <property name="id" nameId="tps4.1222447189012" value="5b247b59-8fd0-4475-a767-9e9ff6a9d01c" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.lib.startup" />
+        </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2454311172622930823">
+          <property name="id" nameId="tps4.1222447189012" value="f618e99a-2641-465c-bb54-31fe76f9e285" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.unitTest.runtime" />
+        </node>
+        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3670106543524146816">
+          <property name="name" nameId="tps4.1223641503366" value="lib" />
+        </node>
+      </node>
+      <node role="content" roleId="tps4.5610328873691243476" type="tps4.Folder" typeId="tps4.1203598512427" id="3670106543524146818">
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8166483729924380446">
+          <property name="id" nameId="tps4.1222447189012" value="92f5dc44-466d-4972-9f92-b03994f153c4" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.migration" />
+        </node>
+        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3670106543524146821">
+          <property name="name" nameId="tps4.1223641503366" value="migration" />
+        </node>
+      </node>
+      <node role="pluginXmlReference" roleId="tps4.989489456094387704" type="tps4.IdeaInitializerReference" typeId="tps4.989489456094387696" id="6062668769034024600">
+        <link role="ideaInitializer" roleId="tps4.989489456094387697" targetNodeId="ic9i.6893245555985399815" resolveInfo="Execution Configurations" />
       </node>
     </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="1885484277888552693">
-      <node role="pluginXml" roleId="tps4.989489456094387704" type="tps4.IdeaInitializerReference" typeId="tps4.989489456094387696" id="1885484277888552695">
-        <link role="ideaInitializer" roleId="tps4.989489456094387697" targetNodeId="stp4.1885484277888300375" resolveInfo="JUnit Execution" />
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.PluginModule" typeId="tps4.989489456094386109" id="6863272677075289475">
+      <node role="content" roleId="tps4.5610328873691243476" type="tps4.Folder" typeId="tps4.1203598512427" id="3670106543524146829">
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2738111162319948326">
+          <property name="id" nameId="tps4.1222447189012" value="04b376d5-fc16-403b-a344-c68b30193c6a" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.runConfigurations.util" />
+        </node>
+        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3670106543524146832">
+          <property name="name" nameId="tps4.1223641503366" value="lib" />
+        </node>
+      </node>
+      <node role="content" roleId="tps4.5610328873691243476" type="tps4.Folder" typeId="tps4.1203598512427" id="3670106543524146823">
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2738111162319948327">
+          <property name="id" nameId="tps4.1222447189012" value="f3347d8a-0e79-4f35-8ac9-1574f25c986f" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.run.commands" />
+        </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472894">
+          <property name="id" nameId="tps4.1222447189012" value="82c32a3b-4a54-4fc1-b551-7ff9f198d7c1" />
+        </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2738111162319948324">
+          <property name="id" nameId="tps4.1222447189012" value="22e72e4c-0f69-46ce-8403-6750153aa615" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.runConfigurations" />
+        </node>
+        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3670106543524146827">
+          <property name="name" nameId="tps4.1223641503366" value="languages" />
+        </node>
+      </node>
+      <node role="pluginXmlReference" roleId="tps4.989489456094387704" type="tps4.IdeaInitializerReference" typeId="tps4.989489456094387696" id="6863272677075289477">
+        <link role="ideaInitializer" roleId="tps4.989489456094387697" targetNodeId="4dtg.6863272677075182370" resolveInfo="Execution Languages" />
       </node>
     </node>
   </root>

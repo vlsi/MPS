@@ -15,18 +15,18 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
-import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
-import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
+import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
+import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
+import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.*;
 
@@ -82,13 +82,18 @@ public class CellAction_PasteNode extends EditorCellAction {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         SModel oldModelProperties = pasteNodeData.getModelProperties();
+        final Runnable addImportsRunnable;
         if (oldModelProperties == null || !model.getLongName().equals(oldModelProperties.getLongName())) {  // check if copying to other model
-          boolean successfull = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), model, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context.getOperationContext());
-          if (!successfull) return;
+          addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), model, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context.getOperationContext());
+        } else {
+          addImportsRunnable = null;
         }
 
         ModelAccess.instance().runCommandInEDT(new Runnable() {
           public void run() {
+            if (addImportsRunnable != null) {
+              addImportsRunnable.run();
+            }
             SNode selectedNode = selectedNodePointer.getNode();
             assert !selectedNode.isDisposed();
             EditorCell selectedCell = pasteTargetCellInfo.findCell(editorComponent);

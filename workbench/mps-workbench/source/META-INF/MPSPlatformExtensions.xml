@@ -23,9 +23,10 @@
   <selectInTarget implementation="com.intellij.ide.impl.ProjectViewSelectInGroupTarget"/>
 
   <!--MPS Patch: console builder with our stacktrace filter-->
+  <!--todo? move java stacktrace filter to one of the execution plugins?-->
   <applicationService serviceInterface="com.intellij.execution.filters.TextConsoleBuilderFactory"
                       serviceImplementation="com.intellij.execution.filters.TextConsoleBuilderFactoryImpl"/>
-  <analyzeStacktraceFilter implementation="jetbrains.mps.execution.lib.JavaStackTraceFilter"/>
+  <analyzeStacktraceFilter implementation="jetbrains.mps.ide.actions.JavaStackTraceFilter"/>
   <!--MPS Patch End-->
 
   <applicationService serviceInterface="com.intellij.openapi.actionSystem.JBAwtEventQueue"

@@ -29,6 +29,8 @@
   <import index="vehe" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="4are" modelUID="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)" version="-1" />
   <import index="ljcu" modelUID="r:e60874cf-5ffd-4123-9760-5f88ff8e0a5a(jetbrains.mps.debugger.api.ui.icons)" version="-1" />
+  <import index="1l1h" modelUID="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" version="-1" />
+  <import index="rw00" modelUID="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
@@ -46,8 +48,8 @@
   </roots>
   <root id="2891782949125168912">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2891782949125168913" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125168914">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7pag.~AbstractDebugger" resolveInfo="AbstractDebugger" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084741939">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1l1h.4474271214082914772" resolveInfo="AbstractDebugger" />
     </node>
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125168915">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1bi5.~ApplicationComponent" resolveInfo="ApplicationComponent" />
@@ -72,20 +74,20 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2891782949125168924">
         <property name="name" nameId="tpck.1169194664001" value="debuggers" />
         <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125168925">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7pag.~Debuggers" resolveInfo="Debuggers" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084741940">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1l1h.4474271214082913032" resolveInfo="Debuggers" />
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2891782949125168926">
         <property name="name" nameId="tpck.1169194664001" value="breakpointsProviderManager" />
         <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125168927">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~BreakpointProvidersManager" resolveInfo="BreakpointProvidersManager" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084741941">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082916621" resolveInfo="BreakpointProvidersManager" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2891782949125168928">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="2891782949125168929">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~AbstractDebugger%d&lt;init&gt;(java%dlang%dString,jetbrains%dmps%ddebug%dapi%dDebuggers,jetbrains%dmps%ddebug%dapi%dbreakpoints%dBreakpointProvidersManager)" resolveInfo="AbstractDebugger" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.4474271214082914797" resolveInfo="AbstractDebugger" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2891782949125168930">
             <property name="value" nameId="tpee.1070475926801" value="Java" />
           </node>
@@ -103,8 +105,8 @@
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="createDebugSessionCreator" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2891782949125168934" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125168935">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7pag.~AbstractDebugSessionCreator" resolveInfo="AbstractDebugSessionCreator" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084741938">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1l1h.4474271214082913453" resolveInfo="AbstractDebugSessionCreator" />
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2891782949125168936">
         <property name="name" nameId="tpck.1169194664001" value="project" />
@@ -140,8 +142,8 @@
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="getBreakpointsProvider" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2891782949125168947" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125168948">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~IBreakpointsProvider" resolveInfo="IBreakpointsProvider" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084741942">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082912942" resolveInfo="IBreakpointsProvider" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2891782949125168949">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2891782949125168950">
@@ -162,14 +164,12 @@
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="getComponentName" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2891782949125168955" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125168956">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="2596130676084741943" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2891782949125168957">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2891782949125168958">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2891782949125168959">
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2891782949125168960">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~AbstractDebugger%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.4474271214082914851" resolveInfo="getName" />
             </node>
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2891782949125168961">
               <property name="value" nameId="tpee.1070475926801" value=" Debugger" />
@@ -193,7 +193,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2891782949125168967">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2891782949125168968">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="2891782949125168969">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~AbstractDebugger%dinit()%cvoid" resolveInfo="init" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.4474271214082914819" resolveInfo="init" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2891782949125168970">
@@ -299,7 +299,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2891782949125168983">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="2891782949125168984">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~AbstractDebugger%ddispose()%cvoid" resolveInfo="dispose" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.4474271214082914837" resolveInfo="dispose" />
           </node>
         </node>
       </node>
@@ -311,8 +311,8 @@
   <root id="2891782949125171999">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2891782949125172000" />
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172001">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~IBreakpointsProvider" resolveInfo="IBreakpointsProvider" />
-      <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172002">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082912942" resolveInfo="IBreakpointsProvider" />
+      <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084741944">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gcrp.2891782949125147777" resolveInfo="JavaBreakpoint" />
       </node>
       <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172003">
@@ -326,8 +326,8 @@
       <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2891782949125172005" />
       <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172006">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~IBreakpointPropertiesUi" resolveInfo="IBreakpointPropertiesUi" />
-        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172007">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082912939" resolveInfo="IBreakpointPropertiesUi" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084754198">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gcrp.2891782949125147777" resolveInfo="JavaBreakpoint" />
         </node>
       </node>
@@ -1055,8 +1055,8 @@
       <property name="name" nameId="tpck.1169194664001" value="myBreakpointsIconsCache" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172049">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Map" resolveInfo="Map" />
-        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172050">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~IBreakpoint" resolveInfo="IBreakpoint" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084754195">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082916537" resolveInfo="IBreakpoint" />
         </node>
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172051">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
@@ -1066,8 +1066,8 @@
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2891782949125172053">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2891782949125172054">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~HashMap%d&lt;init&gt;()" resolveInfo="HashMap" />
-          <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172055">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~IBreakpoint" resolveInfo="IBreakpoint" />
+          <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084754196">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082916537" resolveInfo="IBreakpoint" />
           </node>
           <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172056">
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
@@ -1079,8 +1079,8 @@
       <property name="isVolatile" nameId="tpee.1240249534625" value="false" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="myBreakpointListener" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172058">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~IBreakpointListener" resolveInfo="IBreakpointListener" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084754199">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082913209" resolveInfo="IBreakpointListener" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2891782949125172059" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2891782949125172060">
@@ -1088,8 +1088,8 @@
           <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="2891782949125172062">
             <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
             <property name="name" nameId="tpck.1169194664001" value="" />
-            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="i264.~IBreakpointListener" resolveInfo="IBreakpointListener" />
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="rw00.4474271214082913209" resolveInfo="IBreakpointListener" />
             <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2891782949125172063">
               <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
               <property name="isFinal" nameId="tpee.1181808852946" value="false" />
@@ -1140,8 +1140,8 @@
       <property name="isVolatile" nameId="tpee.1240249534625" value="false" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="myBreakpointsManagerListener" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172071">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7pag.~BreakpointManagerComponent$IBreakpointManagerListener" resolveInfo="BreakpointManagerComponent.IBreakpointManagerListener" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084754202">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1l1h.4474271214082915308" resolveInfo="BreakpointManagerComponent.IBreakpointManagerListener" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2891782949125172072" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2891782949125172073">
@@ -1149,8 +1149,8 @@
           <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="2891782949125172075">
             <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
             <property name="name" nameId="tpck.1169194664001" value="" />
-            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="7pag.~BreakpointManagerComponent$IBreakpointManagerListener" resolveInfo="BreakpointManagerComponent.IBreakpointManagerListener" />
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="1l1h.4474271214082915308" resolveInfo="BreakpointManagerComponent.IBreakpointManagerListener" />
             <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2891782949125172076">
               <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
               <property name="isFinal" nameId="tpee.1181808852946" value="false" />
@@ -1160,8 +1160,8 @@
               <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2891782949125172079">
                 <property name="name" nameId="tpck.1169194664001" value="breakpoint" />
                 <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172080">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~IBreakpoint" resolveInfo="IBreakpoint" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084754200">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082916537" resolveInfo="IBreakpoint" />
                 </node>
                 <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="2891782949125204931">
                   <link role="annotation" roleId="tpee.1188208074048" targetNodeId="68ai.~NotNull" resolveInfo="NotNull" />
@@ -1174,7 +1174,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172079" resolveInfo="breakpoint" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125204929">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~IBreakpoint%daddBreakpointListener(jetbrains%dmps%ddebug%dapi%dbreakpoints%dIBreakpointListener)%cvoid" resolveInfo="addBreakpointListener" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082916581" resolveInfo="addBreakpointListener" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2891782949125204930">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172057" resolveInfo="myBreakpointListener" />
                       </node>
@@ -1195,8 +1195,8 @@
               <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2891782949125172084">
                 <property name="name" nameId="tpck.1169194664001" value="breakpoint" />
                 <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172085">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~IBreakpoint" resolveInfo="IBreakpoint" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084754201">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082916537" resolveInfo="IBreakpoint" />
                 </node>
                 <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="2891782949125204944">
                   <link role="annotation" roleId="tpee.1188208074048" targetNodeId="68ai.~NotNull" resolveInfo="NotNull" />
@@ -1209,7 +1209,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172084" resolveInfo="breakpoint" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125204937">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~IBreakpoint%dremoveBreakpointListener(jetbrains%dmps%ddebug%dapi%dbreakpoints%dIBreakpointListener)%cvoid" resolveInfo="removeBreakpointListener" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082916588" resolveInfo="removeBreakpointListener" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2891782949125204938">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172057" resolveInfo="myBreakpointListener" />
                       </node>
@@ -1270,14 +1270,14 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2891782949125204947">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2891782949125204948">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2891782949125204949">
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7pag.~BreakpointManagerComponent" resolveInfo="BreakpointManagerComponent" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~BreakpointManagerComponent%dgetInstance(com%dintellij%dopenapi%dproject%dProject)%cjetbrains%dmps%ddebug%dapi%dBreakpointManagerComponent" resolveInfo="getInstance" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1l1h.4474271214082915303" resolveInfo="BreakpointManagerComponent" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.4474271214082915417" resolveInfo="getInstance" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2891782949125204950">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172095" resolveInfo="project" />
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125204951">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~BreakpointManagerComponent%daddChangeListener(jetbrains%dmps%ddebug%dapi%dBreakpointManagerComponent$IBreakpointManagerListener)%cvoid" resolveInfo="addChangeListener" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.4474271214082915883" resolveInfo="addChangeListener" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2891782949125204952">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172070" resolveInfo="myBreakpointsManagerListener" />
                       </node>
@@ -1324,14 +1324,14 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2891782949125204957">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2891782949125204958">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2891782949125204959">
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7pag.~BreakpointManagerComponent" resolveInfo="BreakpointManagerComponent" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~BreakpointManagerComponent%dgetInstance(com%dintellij%dopenapi%dproject%dProject)%cjetbrains%dmps%ddebug%dapi%dBreakpointManagerComponent" resolveInfo="getInstance" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1l1h.4474271214082915303" resolveInfo="BreakpointManagerComponent" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.4474271214082915417" resolveInfo="getInstance" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2891782949125204960">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172105" resolveInfo="project" />
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125204961">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~BreakpointManagerComponent%dremoveChangeListener(jetbrains%dmps%ddebug%dapi%dBreakpointManagerComponent$IBreakpointManagerListener)%cvoid" resolveInfo="removeChangeListener" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.4474271214082915897" resolveInfo="removeChangeListener" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2891782949125204962">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172070" resolveInfo="myBreakpointsManagerListener" />
                       </node>
@@ -1615,8 +1615,8 @@
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="createFromNode" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2891782949125172207" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172208">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~ILocationBreakpoint" resolveInfo="ILocationBreakpoint" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084754197">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082913201" resolveInfo="ILocationBreakpoint" />
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2891782949125172209">
         <property name="name" nameId="tpck.1169194664001" value="node" />
@@ -1721,7 +1721,7 @@
       <property name="name" nameId="tpck.1169194664001" value="createPropertiesEditor" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2891782949125172245" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172246">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~IBreakpointPropertiesUi" resolveInfo="IBreakpointPropertiesUi" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082912939" resolveInfo="IBreakpointPropertiesUi" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172247">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gcrp.2891782949125147777" resolveInfo="JavaBreakpoint" />
         </node>
@@ -1806,7 +1806,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172267" resolveInfo="javaBreakpoint" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172276">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~AbstractBreakpoint%daddBreakpointListener(jetbrains%dmps%ddebug%dapi%dbreakpoints%dIBreakpointListener)%cvoid" resolveInfo="addBreakpointListener" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082916414" resolveInfo="addBreakpointListener" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2891782949125172277">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172057" resolveInfo="myBreakpointListener" />
               </node>
@@ -1895,7 +1895,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172301" resolveInfo="breakpointInfo" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172310">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~BreakpointInfo%disValid()%cboolean" resolveInfo="isValid" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.4474271214082914334" resolveInfo="isValid" />
                         </node>
                       </node>
                     </node>
@@ -1916,16 +1916,16 @@
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2891782949125172318">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNodePointer%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="SNodePointer" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2891782949125172319">
-                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2891782949125172320">
-                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="7pag.~BreakpointInfo%dmyModelReference" resolveInfo="myModelReference" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2596130676084754367">
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1l1h.4474271214082914262" resolveInfo="myModelReference" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2891782949125172321">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172301" resolveInfo="breakpointInfo" />
                             </node>
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2891782949125172322">
-                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2891782949125172323">
-                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="7pag.~BreakpointInfo%dmyNodeId" resolveInfo="myNodeId" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2596130676084754368">
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1l1h.4474271214082914265" resolveInfo="myNodeId" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2891782949125172324">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172301" resolveInfo="breakpointInfo" />
@@ -2095,7 +2095,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172372" resolveInfo="lineBreakpointInfo" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172381">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~BreakpointInfo%disValid()%cboolean" resolveInfo="isValid" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.4474271214082914334" resolveInfo="isValid" />
                         </node>
                       </node>
                     </node>
@@ -2116,16 +2116,16 @@
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2891782949125172389">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNodePointer%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="SNodePointer" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2891782949125172390">
-                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2891782949125172391">
-                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="7pag.~BreakpointInfo%dmyModelReference" resolveInfo="myModelReference" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2596130676084754369">
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1l1h.4474271214082914262" resolveInfo="myModelReference" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2891782949125172392">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172372" resolveInfo="lineBreakpointInfo" />
                             </node>
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2891782949125172393">
-                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2891782949125172394">
-                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="7pag.~BreakpointInfo%dmyNodeId" resolveInfo="myNodeId" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2596130676084754370">
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1l1h.4474271214082914265" resolveInfo="myNodeId" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2891782949125172395">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172372" resolveInfo="lineBreakpointInfo" />
@@ -2211,7 +2211,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172416" resolveInfo="fieldBreakpointInfo" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172425">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~BreakpointInfo%disValid()%cboolean" resolveInfo="isValid" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.4474271214082914334" resolveInfo="isValid" />
                         </node>
                       </node>
                     </node>
@@ -2232,16 +2232,16 @@
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2891782949125172433">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNodePointer%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="SNodePointer" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2891782949125172434">
-                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2891782949125172435">
-                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="7pag.~BreakpointInfo%dmyModelReference" resolveInfo="myModelReference" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2596130676084754371">
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1l1h.4474271214082914262" resolveInfo="myModelReference" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2891782949125172436">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172416" resolveInfo="fieldBreakpointInfo" />
                             </node>
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2891782949125172437">
-                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2891782949125172438">
-                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="7pag.~BreakpointInfo%dmyNodeId" resolveInfo="myNodeId" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2596130676084754372">
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1l1h.4474271214082914265" resolveInfo="myNodeId" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2891782949125172439">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172416" resolveInfo="fieldBreakpointInfo" />
@@ -2464,13 +2464,13 @@
                             <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2891782949125172523">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172459" resolveInfo="breakpoint" />
                             </node>
-                            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172524">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~ILocationBreakpoint" resolveInfo="ILocationBreakpoint" />
+                            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084754374">
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082913201" resolveInfo="ILocationBreakpoint" />
                             </node>
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172525">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~ILocationBreakpoint%dgetLocation()%cjetbrains%dmps%ddebug%dapi%dbreakpoints%dBreakpointLocation" resolveInfo="getLocation" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082913204" resolveInfo="getLocation" />
                         </node>
                       </node>
                     </node>
@@ -2501,13 +2501,13 @@
                             <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2891782949125172537">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172459" resolveInfo="breakpoint" />
                             </node>
-                            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172538">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~ILocationBreakpoint" resolveInfo="ILocationBreakpoint" />
+                            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084754375">
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082913201" resolveInfo="ILocationBreakpoint" />
                             </node>
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172539">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~ILocationBreakpoint%dgetLocation()%cjetbrains%dmps%ddebug%dapi%dbreakpoints%dBreakpointLocation" resolveInfo="getLocation" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082913204" resolveInfo="getLocation" />
                         </node>
                       </node>
                     </node>
@@ -2538,13 +2538,13 @@
                             <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2891782949125172551">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172459" resolveInfo="breakpoint" />
                             </node>
-                            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125172552">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~ILocationBreakpoint" resolveInfo="ILocationBreakpoint" />
+                            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2596130676084754376">
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rw00.4474271214082913201" resolveInfo="ILocationBreakpoint" />
                             </node>
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172553">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~ILocationBreakpoint%dgetLocation()%cjetbrains%dmps%ddebug%dapi%dbreakpoints%dBreakpointLocation" resolveInfo="getLocation" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082913204" resolveInfo="getLocation" />
                         </node>
                       </node>
                     </node>
@@ -2728,7 +2728,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172608" resolveInfo="breakpoint" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172623">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~AbstractBreakpoint%disEnabled()%cboolean" resolveInfo="isEnabled" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082916390" resolveInfo="isEnabled" />
                     </node>
                   </node>
                   <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2891782949125172624">
@@ -2756,7 +2756,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172608" resolveInfo="breakpoint" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172633">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~AbstractBreakpoint%disValid()%cboolean" resolveInfo="isValid" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082916530" resolveInfo="isValid" />
                     </node>
                   </node>
                   <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2891782949125172634">
@@ -2766,7 +2766,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172608" resolveInfo="breakpoint" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172638">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~AbstractBreakpoint%disEnabled()%cboolean" resolveInfo="isEnabled" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082916390" resolveInfo="isEnabled" />
                         </node>
                       </node>
                       <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2891782949125172639">
@@ -2800,7 +2800,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172608" resolveInfo="breakpoint" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172649">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~AbstractBreakpoint%disValid()%cboolean" resolveInfo="isValid" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082916530" resolveInfo="isValid" />
                     </node>
                   </node>
                   <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2891782949125172650">
@@ -2810,7 +2810,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172608" resolveInfo="breakpoint" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172654">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~AbstractBreakpoint%disEnabled()%cboolean" resolveInfo="isEnabled" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082916390" resolveInfo="isEnabled" />
                         </node>
                       </node>
                       <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2891782949125172655">
@@ -2844,7 +2844,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172608" resolveInfo="breakpoint" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172665">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~AbstractBreakpoint%disValid()%cboolean" resolveInfo="isValid" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082916530" resolveInfo="isValid" />
                     </node>
                   </node>
                   <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2891782949125172666">
@@ -2854,7 +2854,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125172608" resolveInfo="breakpoint" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125172670">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~AbstractBreakpoint%disEnabled()%cboolean" resolveInfo="isEnabled" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082916390" resolveInfo="isEnabled" />
                         </node>
                       </node>
                       <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2891782949125172671">

@@ -23,6 +23,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation", new ContainsValueOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", new DowncastExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", new ForEachStatement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", new ForEachVariable_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", new ForEachVariableReference_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.GetElementOperation", new GetElementOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation", new GetIndexOfOperation_DataFlow());
@@ -41,6 +42,8 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression", new MapOperationExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", new MapRemoveOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.MultiForEachStatement", new MultiForEachStatement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable", new MultiForEachVariable_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference", new MultiForEachVariableReference_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.PageOperation", new PageOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.PushOperation", new PushOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.PutAllOperation", new PutAllOperation_DataFlow());
