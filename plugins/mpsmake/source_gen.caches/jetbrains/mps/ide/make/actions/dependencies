@@ -622,7 +622,7 @@
     <classNode dependClassName="com.intellij.openapi.ui.popup.Balloon" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopupFactory" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
-    <classNode dependClassName="com.intellij.ui.HyperlinkAdapter" />
+    <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
     <classNode dependClassName="com.intellij.ui.LightColors" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
     <classNode dependClassName="com.intellij.util.ui.UIUtil" />
@@ -635,13 +635,14 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JRootPane" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="javax.swing.event.HyperlinkEvent" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.SaveTransientModelsPreferences" />
+    <classNode dependClassName="jetbrains.mps.ide.make.actions.StatusBarHelper" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsWidget" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsWidgetInstaller" />
     <classNode dependClassName="jetbrains.mps.make.IMakeService" />
     <classNode dependClassName="jetbrains.mps.make.MakeNotification" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
     <classNode extendsClassName="jetbrains.mps.make.IMakeNotificationListener" />
   </dependency>
@@ -685,9 +686,12 @@
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopupFactory" />
     <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
+    <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="javax.swing.JCheckBox" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.SaveTransientModelsPreferences" />
+    <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsWidgetInstaller" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.plugin" file="plugin.xml" />

@@ -4,6 +4,8 @@ package jetbrains.mps.ide.make.actions;
 
 import javax.swing.JPanel;
 import javax.swing.JCheckBox;
+import java.awt.GridBagLayout;
+import jetbrains.mps.ide.common.LayoutUtil;
 import com.intellij.ui.awt.RelativePoint;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
@@ -11,10 +13,15 @@ import com.intellij.openapi.util.Computable;
 
 public class WidgetSettingsPanel extends JPanel {
   private final JCheckBox myShowPopupBox;
+  private final JCheckBox myShowStatusBarIcon;
 
   public WidgetSettingsPanel() {
-    myShowPopupBox = new JCheckBox("Show popup on generation", SaveTransientModelsPreferences.isShowPopup());
-    add(myShowPopupBox);
+    super(new GridBagLayout());
+    myShowPopupBox = new JCheckBox("Display popup on generation", SaveTransientModelsPreferences.isShowPopup());
+    myShowStatusBarIcon = new JCheckBox("Show status bar icon", SaveTransientModelsPreferences.isShowStatusBarIcon());
+
+    add(myShowPopupBox, LayoutUtil.createFieldConstraints(1));
+    add(myShowStatusBarIcon, LayoutUtil.createFieldConstraints(2));
   }
 
   public void showComponent(RelativePoint point) {
@@ -29,5 +36,7 @@ public class WidgetSettingsPanel extends JPanel {
 
   private void onClose() {
     SaveTransientModelsPreferences.setShowPopup(myShowPopupBox.isSelected());
+    SaveTransientModelsPreferences.setShowStatusBar(myShowStatusBarIcon.isSelected());
+    TransientModelsWidgetInstaller.getInstaller().update();
   }
 }

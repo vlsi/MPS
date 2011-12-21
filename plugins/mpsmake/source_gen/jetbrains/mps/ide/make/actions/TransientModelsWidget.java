@@ -27,6 +27,7 @@ import javax.swing.JComponent;
 
   public TransientModelsWidget(StatusBar bar) {
     myStatusBar = bar;
+    myComponent = new CustomIconWrapper(this);
   }
 
   public void install(@NotNull StatusBar bar) {
@@ -90,9 +91,6 @@ import javax.swing.JComponent;
   }
 
   public JComponent getComponent() {
-    if (myComponent == null) {
-      this.myComponent = new CustomIconWrapper(this);
-    }
     return this.myComponent;
   }
 }

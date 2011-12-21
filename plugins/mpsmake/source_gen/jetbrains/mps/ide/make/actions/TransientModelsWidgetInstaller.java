@@ -9,6 +9,7 @@ public class TransientModelsWidgetInstaller {
 
   private StatusBar myStatusBar;
   private TransientModelsWidget myWidget;
+  private boolean myInstalled = false;
 
   public TransientModelsWidgetInstaller() {
     INSTANCE = this;
@@ -17,25 +18,34 @@ public class TransientModelsWidgetInstaller {
   public void init(StatusBar bar) {
     myStatusBar = bar;
     myWidget = new TransientModelsWidget(bar);
-    if (SaveTransientModelsPreferences.isShowStatusBarIcon()) {
-      installWidget();
-    }
+    update();
   }
 
   public void dispose() {
     uninstallWidget();
   }
 
-  public void installWidget() {
+  private void installWidget() {
     myStatusBar.addWidget(myWidget);
+    myInstalled = true;
   }
 
-  public void uninstallWidget() {
+  private void uninstallWidget() {
     myStatusBar.removeWidget(myWidget.ID());
+    myInstalled = false;
   }
 
   public void updateWidget() {
     myWidget.update();
+  }
+
+  public void update() {
+    if (myInstalled && !(SaveTransientModelsPreferences.isShowStatusBarIcon())) {
+      uninstallWidget();
+    } else if (!(myInstalled) && SaveTransientModelsPreferences.isShowStatusBarIcon()) {
+      installWidget();
+    }
+    updateWidget();
   }
 
   public TransientModelsWidget getWidget() {

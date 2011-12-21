@@ -4,31 +4,33 @@ package jetbrains.mps.ide.make.actions;
 
 import com.intellij.openapi.Disposable;
 import jetbrains.mps.make.IMakeNotificationListener;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.make.IMakeService;
 import com.intellij.openapi.ui.popup.Balloon;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.LightColors;
-import com.intellij.ui.HyperlinkAdapter;
-import javax.swing.event.HyperlinkEvent;
 import javax.swing.SwingUtilities;
 import java.awt.Component;
-import java.awt.Point;
-import com.intellij.ui.awt.RelativePoint;
 import javax.swing.JRootPane;
 import java.awt.Container;
 import java.awt.Rectangle;
+import java.awt.Point;
 import com.intellij.util.ui.UIUtil;
 import java.awt.Dimension;
+import com.intellij.ui.awt.RelativePoint;
 import com.intellij.openapi.util.Disposer;
 import javax.swing.JComponent;
+import com.intellij.openapi.wm.StatusBar;
 import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import com.intellij.openapi.application.ApplicationManager;
 
 public class TransientModelBallonDisplayer implements Disposable {
   private final IMakeNotificationListener myMakeNotificationListener = new TransientModelBallonDisplayer.MyMakeNotificationListener();
+  private final MPSProject myProject;
 
-  public TransientModelBallonDisplayer() {
+  public TransientModelBallonDisplayer(MPSProject project) {
+    myProject = project;
   }
 
   public void init() {
@@ -40,27 +42,25 @@ public class TransientModelBallonDisplayer implements Disposable {
   }
 
   private void showBaloon() {
-    final Balloon balloon;
-    balloon = JBPopupFactory.getInstance().createHtmlTextBalloonBuilder("Saving transient models is on.", null, LightColors.YELLOW, new HyperlinkAdapter() {
-      protected void hyperlinkActivated(HyperlinkEvent event) {
-        SaveTransientModelsPreferences.setShowPopup(false);
-      }
-    }).setHideOnAction(true).createBalloon();
+    final Balloon balloon = JBPopupFactory.getInstance().createHtmlTextBalloonBuilder("Saving transient models is on", null, LightColors.YELLOW, null).setHideOnAction(true).setHideOnClickOutside(true).setHideOnKeyOutside(true).createBalloon();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        Component component = check_45eojt_a0a0a0a0a2a2(check_45eojt_a0a0a0a0a0c0c(TransientModelsWidgetInstaller.getInstaller()));
+        Component component = check_45eojt_a0a0a0a0a1a2(check_45eojt_a0a0a0a0a0b0c(TransientModelsWidgetInstaller.getInstaller()));
         if (component != null && component.isShowing()) {
-          int offset = component.getHeight() / 2;
-          Point point = new Point(component.getWidth() - offset, component.getHeight() - offset);
-          balloon.show(new RelativePoint(component, point), Balloon.Position.above);
+          showForComponent(component, balloon);
         } else {
-          final JRootPane rootPane = SwingUtilities.getRootPane(component);
-          if (rootPane != null && rootPane.isShowing()) {
-            final Container contentPane = rootPane.getContentPane();
-            final Rectangle bounds = contentPane.getBounds();
-            final Point target = UIUtil.getCenterPoint(bounds, new Dimension(1, 1));
-            target.y = bounds.height - 3;
-            balloon.show(new RelativePoint(contentPane, target), Balloon.Position.above);
+          component = check_45eojt_a0a0a1a0a0a0b0c(StatusBarHelper.getStatusBar(myProject));
+          if (component != null && component.isShowing()) {
+            showForComponent(component, balloon);
+          } else {
+            final JRootPane rootPane = SwingUtilities.getRootPane(component);
+            if (rootPane != null && rootPane.isShowing()) {
+              final Container contentPane = rootPane.getContentPane();
+              final Rectangle bounds = contentPane.getBounds();
+              final Point target = UIUtil.getCenterPoint(bounds, new Dimension(1, 1));
+              target.y = bounds.height - 3;
+              balloon.show(new RelativePoint(contentPane, target), Balloon.Position.above);
+            }
           }
         }
       }
@@ -68,16 +68,29 @@ public class TransientModelBallonDisplayer implements Disposable {
     Disposer.register(this, balloon);
   }
 
-  private static JComponent check_45eojt_a0a0a0a0a2a2(TransientModelsWidget checkedDotOperand) {
+  private void showForComponent(Component component, Balloon ballon) {
+    int offset = component.getHeight() / 2;
+    Point point = new Point(component.getWidth() - offset, component.getHeight() - offset);
+    ballon.show(new RelativePoint(component, point), Balloon.Position.above);
+  }
+
+  private static JComponent check_45eojt_a0a0a0a0a1a2(TransientModelsWidget checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();
     }
     return null;
   }
 
-  private static TransientModelsWidget check_45eojt_a0a0a0a0a0c0c(TransientModelsWidgetInstaller checkedDotOperand) {
+  private static TransientModelsWidget check_45eojt_a0a0a0a0a0b0c(TransientModelsWidgetInstaller checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getWidget();
+    }
+    return null;
+  }
+
+  private static JComponent check_45eojt_a0a0a1a0a0a0b0c(StatusBar checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getComponent();
     }
     return null;
   }

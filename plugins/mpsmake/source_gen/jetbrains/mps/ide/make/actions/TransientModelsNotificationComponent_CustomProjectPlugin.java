@@ -7,13 +7,14 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.util.Disposer;
 
 public class TransientModelsNotificationComponent_CustomProjectPlugin extends BaseCustomProjectPlugin {
-  private TransientModelBallonDisplayer myBalloonDisplayer = new TransientModelBallonDisplayer();
+  private TransientModelBallonDisplayer myBalloonDisplayer;
   private TransientModelsWidgetInstaller myWidgetInstaller = new TransientModelsWidgetInstaller();
 
   public TransientModelsNotificationComponent_CustomProjectPlugin() {
   }
 
   public void doInit(MPSProject project) {
+    TransientModelsNotificationComponent_CustomProjectPlugin.this.myBalloonDisplayer = new TransientModelBallonDisplayer(project);
     TransientModelsNotificationComponent_CustomProjectPlugin.this.myBalloonDisplayer.init();
     TransientModelsNotificationComponent_CustomProjectPlugin.this.myWidgetInstaller.init(StatusBarHelper.getStatusBar(project));
   }
