@@ -126,8 +126,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   protected SModel getCurrentModelInternal() {
-    //this will not load model to next levels
-    return myModel.getModel(ModelLoadingState.NOT_LOADED);
+    return myModel.getModel(null);
   }
 
   public boolean isReadOnly() {
@@ -204,6 +203,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public void replaceModel(final SModel newModel, final ModelLoadingState state) {
+    ModelAccess.assertLegalWrite();
+
     if (newModel == getCurrentModelInternal()) return;
     myStructureModificationLog = null;
     setChanged(false);
