@@ -259,7 +259,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1819416201368271609">
       <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="IconWrapperWithBlackJackAndHookers" />
+      <property name="name" nameId="tpck.1169194664001" value="CustomIconWrapper" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SaveTransientModels" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2073489372896363838">

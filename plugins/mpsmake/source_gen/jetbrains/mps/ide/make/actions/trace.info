@@ -4,54 +4,54 @@
   <unitInfo fileName="Make_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_ApplicationPlugin" />
   <unitInfo fileName="Make_ProjectPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_ProjectPlugin" />
   <root nodeId="1819416201368271609">
-    <nodeInfo nodeId="1819416201368271757" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="15" startPosition="68" endLine="16" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIcon" />
-    <nodeInfo nodeId="1819416201368271760" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="16" startPosition="22" endLine="17" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPresentation" />
-    <nodeInfo nodeId="1819416201368271615" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="19" startPosition="92" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1819416201368271619" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="20" startPosition="34" endLine="21" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1819416201368271625" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="21" startPosition="38" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1819416201368271626" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="22" startPosition="0" endLine="23" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1819416201368271630" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="23" startPosition="59" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1819416201368271646" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="27" startPosition="52" endLine="28" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1819416201368271654" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="30" startPosition="7" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1819416201368271664" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="34" startPosition="24" endLine="35" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1819416201368271676" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="39" startPosition="52" endLine="40" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1819416201368271680" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="40" startPosition="41" endLine="41" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1819416201368271689" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="42" startPosition="25" endLine="43" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1819416201368271695" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="43" startPosition="50" endLine="44" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1819416201368271701" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="44" startPosition="52" endLine="45" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1819416201368271752" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="50" startPosition="34" endLine="51" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1819416201368271660" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#()V" />
-    <nodeInfo nodeId="1819416201368271640" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="25" startPosition="41" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="1819416201368271684" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="41" startPosition="38" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1819416201368271748" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolTipText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1819416201368271635" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="24" startPosition="52" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1819416201368271670" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="37" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
-    <nodeInfo nodeId="1819416201368271611" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="18" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IconWrapperWithBlackJackAndHookers#(Lcom/intellij/openapi/wm/StatusBarWidget/IconPresentation;)V" />
-    <scopeInfo nodeId="1819416201368271645" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="27" startPosition="52" endLine="28" endPosition="53" />
-    <scopeInfo nodeId="1819416201368271663" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="34" startPosition="24" endLine="35" endPosition="38" />
-    <scopeInfo nodeId="1819416201368271751" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="50" startPosition="34" endLine="51" endPosition="43" />
-    <scopeInfo nodeId="1819416201368271688" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="42" startPosition="25" endLine="45" endPosition="190">
+    <nodeInfo nodeId="1819416201368271757" fileName="CustomIconWrapper.java" startLine="15" startPosition="51" endLine="16" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIcon" />
+    <nodeInfo nodeId="1819416201368271760" fileName="CustomIconWrapper.java" startLine="16" startPosition="22" endLine="17" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPresentation" />
+    <nodeInfo nodeId="1819416201368271615" fileName="CustomIconWrapper.java" startLine="19" startPosition="75" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1819416201368271619" fileName="CustomIconWrapper.java" startLine="20" startPosition="34" endLine="21" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1819416201368271625" fileName="CustomIconWrapper.java" startLine="21" startPosition="38" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1819416201368271626" fileName="CustomIconWrapper.java" startLine="22" startPosition="0" endLine="23" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1819416201368271630" fileName="CustomIconWrapper.java" startLine="23" startPosition="59" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1819416201368271646" fileName="CustomIconWrapper.java" startLine="27" startPosition="52" endLine="28" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1819416201368271654" fileName="CustomIconWrapper.java" startLine="30" startPosition="7" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1819416201368271664" fileName="CustomIconWrapper.java" startLine="34" startPosition="24" endLine="35" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1819416201368271676" fileName="CustomIconWrapper.java" startLine="39" startPosition="52" endLine="40" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1819416201368271680" fileName="CustomIconWrapper.java" startLine="40" startPosition="41" endLine="41" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1819416201368271689" fileName="CustomIconWrapper.java" startLine="42" startPosition="25" endLine="43" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1819416201368271695" fileName="CustomIconWrapper.java" startLine="43" startPosition="50" endLine="44" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1819416201368271701" fileName="CustomIconWrapper.java" startLine="44" startPosition="52" endLine="45" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1819416201368271752" fileName="CustomIconWrapper.java" startLine="50" startPosition="34" endLine="51" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1819416201368271660" fileName="CustomIconWrapper.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#()V" />
+    <nodeInfo nodeId="1819416201368271640" fileName="CustomIconWrapper.java" startLine="25" startPosition="41" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="1819416201368271684" fileName="CustomIconWrapper.java" startLine="41" startPosition="38" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1819416201368271748" fileName="CustomIconWrapper.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolTipText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1819416201368271635" fileName="CustomIconWrapper.java" startLine="24" startPosition="52" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1819416201368271670" fileName="CustomIconWrapper.java" startLine="37" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="1819416201368271611" fileName="CustomIconWrapper.java" startLine="18" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomIconWrapper#(Lcom/intellij/openapi/wm/StatusBarWidget/IconPresentation;)V" />
+    <scopeInfo nodeId="1819416201368271645" fileName="CustomIconWrapper.java" startLine="27" startPosition="52" endLine="28" endPosition="53" />
+    <scopeInfo nodeId="1819416201368271663" fileName="CustomIconWrapper.java" startLine="34" startPosition="24" endLine="35" endPosition="38" />
+    <scopeInfo nodeId="1819416201368271751" fileName="CustomIconWrapper.java" startLine="50" startPosition="34" endLine="51" endPosition="43" />
+    <scopeInfo nodeId="1819416201368271688" fileName="CustomIconWrapper.java" startLine="42" startPosition="25" endLine="45" endPosition="190">
       <varInfo nodeId="1819416201368271696" varName="iconHeight" />
       <varInfo nodeId="1819416201368271690" varName="iconWidth" />
     </scopeInfo>
-    <scopeInfo nodeId="1819416201368271660" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1819416201368271640" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="25" startPosition="41" endLine="30" endPosition="0">
+    <scopeInfo nodeId="1819416201368271660" fileName="CustomIconWrapper.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1819416201368271640" fileName="CustomIconWrapper.java" startLine="25" startPosition="41" endLine="30" endPosition="0">
       <varInfo nodeId="1819416201368271643" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1819416201368271748" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="48" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1819416201368271675" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="39" startPosition="52" endLine="46" endPosition="5">
+    <scopeInfo nodeId="1819416201368271748" fileName="CustomIconWrapper.java" startLine="48" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1819416201368271675" fileName="CustomIconWrapper.java" startLine="39" startPosition="52" endLine="46" endPosition="5">
       <varInfo nodeId="1819416201368271677" varName="bounds" />
       <varInfo nodeId="1819416201368271681" varName="insets" />
     </scopeInfo>
-    <scopeInfo nodeId="1819416201368271670" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="37" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1819416201368271670" fileName="CustomIconWrapper.java" startLine="37" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1819416201368271673" varName="graphics" />
     </scopeInfo>
-    <scopeInfo nodeId="1819416201368271614" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="19" startPosition="92" endLine="31" endPosition="21" />
-    <scopeInfo nodeId="1819416201368271611" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="18" startPosition="0" endLine="32" endPosition="3">
+    <scopeInfo nodeId="1819416201368271614" fileName="CustomIconWrapper.java" startLine="19" startPosition="75" endLine="31" endPosition="21" />
+    <scopeInfo nodeId="1819416201368271611" fileName="CustomIconWrapper.java" startLine="18" startPosition="0" endLine="32" endPosition="3">
       <varInfo nodeId="1819416201368271657" varName="presentation" />
     </scopeInfo>
-    <unitInfo nodeId="1819416201368271609" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ide.make.actions.IconWrapperWithBlackJackAndHookers" />
-    <unitInfo nodeId="1819416201368271639" fileName="IconWrapperWithBlackJackAndHookers.java" startLine="25" startPosition="25" endLine="30" endPosition="5" unitName="jetbrains.mps.ide.make.actions.IconWrapperWithBlackJackAndHookers$1" />
+    <unitInfo nodeId="1819416201368271609" fileName="CustomIconWrapper.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CustomIconWrapper" />
+    <unitInfo nodeId="1819416201368271639" fileName="CustomIconWrapper.java" startLine="25" startPosition="25" endLine="30" endPosition="5" unitName="jetbrains.mps.ide.make.actions.CustomIconWrapper$1" />
   </root>
   <root nodeId="2017614408232613001">
     <nodeInfo nodeId="2017614408232613001" fileName="ProjectCompileActions_ActionGroup.java" startLine="8" startPosition="77" endLine="9" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
