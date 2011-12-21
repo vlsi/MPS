@@ -82,6 +82,7 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention imple
     SPropertyOperations.set(method, "name", SPropertyOperations.getString(node, "name"));
     SPropertyOperations.set(method, "isFinal", "" + (SPropertyOperations.getBoolean(node, "isFinal")));
     ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)));
+    ListSequence.fromList(SLinkOperations.getTargets(method, "typeVariableDeclaration", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)));
     SNodeOperations.deleteNode(node);
   }
 
