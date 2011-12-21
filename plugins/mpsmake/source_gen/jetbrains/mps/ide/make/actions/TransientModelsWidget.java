@@ -6,7 +6,6 @@ import com.intellij.openapi.wm.StatusBarWidget;
 import com.intellij.openapi.wm.CustomStatusBarWidget;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.wm.StatusBar;
-import jetbrains.mps.project.MPSProject;
 import javax.swing.Icon;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeService;
@@ -39,14 +38,12 @@ public class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWi
 
   @NotNull
   private final StatusBar myStatusBar;
-  private final MPSProject myProject;
-  private final Icon myIcon = IconContainer.ICON_a2;
+  private final Icon myIcon = IconContainer.ICON_a1;
   private final IMakeNotificationListener myMakeNotificationListener = new TransientModelsWidget.MyMakeNotificationListener();
   private IconWrapperWithBlackJackAndHookers myComponent;
 
-  public TransientModelsWidget(MPSProject project, StatusBar bar) {
+  public TransientModelsWidget(StatusBar bar) {
     myStatusBar = bar;
-    myProject = project;
   }
 
   public void install(@NotNull StatusBar bar) {
