@@ -160,6 +160,7 @@ public class ProjectTest {
       }
     });
     // magic
+    ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         IdeEventQueue.getInstance().flushQueue();
