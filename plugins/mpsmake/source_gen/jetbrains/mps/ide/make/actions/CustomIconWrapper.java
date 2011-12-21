@@ -13,7 +13,7 @@ import java.awt.Rectangle;
 import java.awt.Insets;
 import java.awt.Dimension;
 
-public class CustomIconWrapper extends JComponent {
+/*package*/ class CustomIconWrapper extends JComponent {
   private Icon myIcon;
   private final StatusBarWidget.IconPresentation myPresentation;
 

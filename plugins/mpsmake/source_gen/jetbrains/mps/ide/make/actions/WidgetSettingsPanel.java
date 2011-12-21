@@ -11,7 +11,7 @@ import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.util.Computable;
 
-public class WidgetSettingsPanel extends JPanel {
+/*package*/ class WidgetSettingsPanel extends JPanel {
   private final JCheckBox myShowPopupBox;
   private final JCheckBox myShowStatusBarIcon;
 
