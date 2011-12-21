@@ -17,6 +17,7 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.IfJumpInstruction;
+import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -54,7 +55,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
       }
       NullableState varState = result.get(instruction).get(variable);
       SNode parent = SNodeOperations.getParent(source);
-      if (!(instruction instanceof IfJumpInstruction) && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression") && !(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"))) {
+      if (!(instruction instanceof IfJumpInstruction) && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression") && !(DotExpression_Behavior.call_allowsNullOperand_4585239809762176541(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")))) {
         SNode dot = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression");
         if (SLinkOperations.getTarget(dot, "operand", true) == source && !(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(dot, "operation", true))) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dot, "operation", true), "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"))) {
           if (NullableState.canBeNull(varState)) {

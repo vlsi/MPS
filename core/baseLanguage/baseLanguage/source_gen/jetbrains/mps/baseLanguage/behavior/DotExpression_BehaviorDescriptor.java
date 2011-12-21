@@ -13,6 +13,10 @@ public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescrip
     return DotExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }
 
+  public boolean virtual_allowsNullOperand_4585239809762176541(SNode thisNode) {
+    return DotExpression_Behavior.virtual_allowsNullOperand_4585239809762176541(thisNode);
+  }
+
   public boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return DotExpression_Behavior.virtual_isLValue_1213877519786(thisNode);
   }

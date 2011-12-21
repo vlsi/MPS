@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleAfterDotExpression extends DataFlowConstructor {
@@ -25,7 +26,7 @@ public class RuleAfterDotExpression extends DataFlowConstructor {
   }
 
   public void performActions(Program o, SNode node) {
-    if (!(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(node, "operation", true))) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"))) {
+    if (!(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(node, "operation", true))) && !(DotExpression_Behavior.call_allowsNullOperand_4585239809762176541(node))) {
       {
         Object object = SLinkOperations.getTarget(node, "operand", true);
         if (((Program) o).contains(object)) {
