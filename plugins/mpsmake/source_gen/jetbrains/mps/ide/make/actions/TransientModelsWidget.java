@@ -7,47 +7,26 @@ import com.intellij.openapi.wm.CustomStatusBarWidget;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.wm.StatusBar;
 import javax.swing.Icon;
-import jetbrains.mps.make.IMakeNotificationListener;
-import jetbrains.mps.make.IMakeService;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.util.Consumer;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import javax.swing.UIManager;
-import com.intellij.openapi.ui.popup.Balloon;
-import com.intellij.openapi.ui.popup.JBPopupFactory;
-import com.intellij.ui.LightColors;
-import com.intellij.ui.HyperlinkAdapter;
-import javax.swing.event.HyperlinkEvent;
-import javax.swing.SwingUtilities;
-import java.awt.Component;
-import java.awt.Point;
-import com.intellij.ui.awt.RelativePoint;
-import javax.swing.JRootPane;
-import java.awt.Container;
-import java.awt.Rectangle;
-import com.intellij.util.ui.UIUtil;
-import java.awt.Dimension;
-import com.intellij.openapi.util.Disposer;
 import javax.swing.JComponent;
-import jetbrains.mps.make.MakeNotification;
-import com.intellij.openapi.application.ApplicationManager;
 
-public class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWidget, StatusBarWidget.IconPresentation, StatusBarWidget.WidgetPresentation {
+/*package*/ class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWidget, StatusBarWidget.IconPresentation, StatusBarWidget.WidgetPresentation {
   public static final String WIDGET_ID = "TransientModelsWidget";
 
   @NotNull
   private final StatusBar myStatusBar;
   private final Icon myIcon = IconContainer.ICON_a1;
-  private final IMakeNotificationListener myMakeNotificationListener = new TransientModelsWidget.MyMakeNotificationListener();
-  private IconWrapperWithBlackJackAndHookers myComponent;
+  private CustomIconWrapper myComponent;
 
   public TransientModelsWidget(StatusBar bar) {
     myStatusBar = bar;
   }
 
   public void install(@NotNull StatusBar bar) {
-    IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
   }
 
   @Nullable
@@ -65,11 +44,15 @@ public class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWi
         if (!(e.isPopupTrigger()) && MouseEvent.BUTTON1 == e.getButton()) {
           boolean saveTransientModels = GenerationSettings.getInstance().isSaveTransientModels();
           GenerationSettings.getInstance().setSaveTransientModels(!(saveTransientModels));
-          myComponent.update();
-          myStatusBar.updateWidget(ID());
+          update();
         }
       }
     };
+  }
+
+  public void update() {
+    myComponent.update();
+    myStatusBar.updateWidget(ID());
   }
 
   @Nullable
@@ -78,7 +61,6 @@ public class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWi
   }
 
   public void dispose() {
-    IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
   }
 
   @NotNull
@@ -98,67 +80,10 @@ public class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWi
     return GenerationSettings.getInstance().isSaveTransientModels();
   }
 
-  private void showBaloon() {
-    final Balloon balloon;
-    balloon = JBPopupFactory.getInstance().createHtmlTextBalloonBuilder("Saving transient models is on." + "<br>" + "<a href=\"\">Disable popup...</a>", null, LightColors.YELLOW, new HyperlinkAdapter() {
-      protected void hyperlinkActivated(HyperlinkEvent event) {
-        SaveTransientModelsPreferences.setShowPopup(false);
-      }
-    }).setHideOnAction(true).createBalloon();
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        Component component = myComponent;
-        if (component.isShowing()) {
-          int offset = component.getHeight() / 2;
-          Point point = new Point(component.getWidth() - offset, component.getHeight() - offset);
-          balloon.show(new RelativePoint(component, point), Balloon.Position.above);
-        } else {
-          final JRootPane rootPane = SwingUtilities.getRootPane(component);
-          if (rootPane != null && rootPane.isShowing()) {
-            final Container contentPane = rootPane.getContentPane();
-            final Rectangle bounds = contentPane.getBounds();
-            final Point target = UIUtil.getCenterPoint(bounds, new Dimension(1, 1));
-            target.y = bounds.height - 3;
-            balloon.show(new RelativePoint(contentPane, target), Balloon.Position.above);
-          }
-        }
-      }
-    });
-    Disposer.register(this, balloon);
-  }
-
   public JComponent getComponent() {
-    this.myComponent = new IconWrapperWithBlackJackAndHookers(this);
+    if (myComponent == null) {
+      this.myComponent = new CustomIconWrapper(this);
+    }
     return this.myComponent;
-  }
-
-  private class MyMakeNotificationListener implements IMakeNotificationListener {
-    public MyMakeNotificationListener() {
-    }
-
-    public void handleNotification(MakeNotification notification) {
-      if (!(isSaveTransientModels()) || !(SaveTransientModelsPreferences.isShowPopup())) {
-        return;
-      }
-      if (notification.getKind() == MakeNotification.Kind.SESSION_OPENED) {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            showBaloon();
-          }
-        });
-      }
-    }
-
-    public void scriptAboutToStart(MakeNotification notification) {
-    }
-
-    public void scriptFinished(MakeNotification notification) {
-    }
-
-    public void sessionOpened(MakeNotification notification) {
-    }
-
-    public void sessionClosed(MakeNotification notification) {
-    }
   }
 }

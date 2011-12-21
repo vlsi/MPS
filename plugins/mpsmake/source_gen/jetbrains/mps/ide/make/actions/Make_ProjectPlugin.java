@@ -18,7 +18,7 @@ public class Make_ProjectPlugin extends BaseProjectPlugin {
     List<BaseCustomProjectPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomProjectPlugin>());
     MPSProject mpsProject = project.getComponent(MPSProject.class);
     {
-      BaseCustomProjectPlugin plugin = new StatusBarInstaller_CustomProjectPlugin();
+      BaseCustomProjectPlugin plugin = new TransientModelsNotificationComponent_CustomProjectPlugin();
       ListSequence.fromList(res).addElement(plugin);
       plugin.init(mpsProject);
     }

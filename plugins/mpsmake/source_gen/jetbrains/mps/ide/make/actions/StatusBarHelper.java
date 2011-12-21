@@ -7,7 +7,7 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 
-public class StatusBarHelper {
+/*package*/ class StatusBarHelper {
   public StatusBarHelper() {
   }
 

@@ -7,8 +7,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.wm.StatusBar;
 
 public class SaveTransientModelsAction extends ToggleAction {
   public SaveTransientModelsAction() {
@@ -31,13 +29,6 @@ public class SaveTransientModelsAction extends ToggleAction {
 
   public void setSelected(AnActionEvent e, boolean state) {
     GenerationSettings.getInstance().setSaveTransientModels(state);
-    check_gdgyw6_a1a2(StatusBarHelper.getStatusBar(e.getData(MPSDataKeys.MPS_PROJECT)), TransientModelsWidget.WIDGET_ID);
-  }
-
-  private static void check_gdgyw6_a1a2(StatusBar checkedDotOperand, String WIDGET_ID) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.updateWidget(TransientModelsWidget.WIDGET_ID);
-    }
-
+    TransientModelsWidgetInstaller.getInstaller().updateWidget();
   }
 }

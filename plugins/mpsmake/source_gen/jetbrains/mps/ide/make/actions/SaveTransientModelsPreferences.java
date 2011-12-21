@@ -4,7 +4,7 @@ package jetbrains.mps.ide.make.actions;
 
 import com.intellij.ide.util.PropertiesComponent;
 
-public class SaveTransientModelsPreferences {
+/*package*/ class SaveTransientModelsPreferences {
   private static String PREFIX = "jetbrains.mps.save.transient.models.preferences";
   private static String SHOW_POPUP = PREFIX + "." + "show.popup";
   private static String SHOW_STATUS_BAR_ICON = PREFIX + "." + "show.status.bar.icon";

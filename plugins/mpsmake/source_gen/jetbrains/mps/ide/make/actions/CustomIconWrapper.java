@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.Insets;
+import java.awt.Dimension;
 
 public class CustomIconWrapper extends JComponent {
   private Icon myIcon;
@@ -49,5 +50,15 @@ public class CustomIconWrapper extends JComponent {
   @Override
   public String getToolTipText() {
     return myPresentation.getTooltipText();
+  }
+
+  @Override
+  public Dimension getMinimumSize() {
+    return new Dimension(24, 18);
+  }
+
+  @Override
+  public Dimension getPreferredSize() {
+    return getMinimumSize();
   }
 }
