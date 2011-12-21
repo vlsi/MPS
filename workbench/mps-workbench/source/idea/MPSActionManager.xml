@@ -75,11 +75,6 @@
       <add-to-group group-id="ToolbarRunGroup" relative-to-action="RunConfiguration" anchor="before"/>
     </group>
 
-    <group id="SaveTransientModelsMainToolBarGroup">
-      <separator/>
-      <add-to-group group-id="MainToolBar" relative-to-action="RunConfiguration" anchor="after"/>
-    </group>
-
     <group id="SaveTransientModelsSettings">
       <add-to-group group-id="ViewMenu" relative-to-action="ViewToolButtons" anchor="after"/>
     </group>
