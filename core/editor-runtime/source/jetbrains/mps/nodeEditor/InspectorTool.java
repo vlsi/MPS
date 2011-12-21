@@ -74,6 +74,7 @@ public class InspectorTool extends BaseProjectTool {
   }
 
   public void disposeComponent() {
+    if (myInspectorComponent == null) return;
     myInspectorComponent.dispose();
   }
 
