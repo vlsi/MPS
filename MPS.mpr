@@ -288,7 +288,6 @@
       <modulePath path="${project}/plugins/migration21/solution/migration21.msd" folder="plugins" />
       <modulePath path="${project}/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
-      <modulePath path="${project}/plugins/mpseditor/jetbrains.mps.ide.editor.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpseditor/tests/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" folder="core.editor" />
       <modulePath path="${project}/plugins/mpsjava/solution/jetbrains.mps.ide.java.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/testsolution/testMaterial.msd" folder="plugins.mpsjava" />
@@ -341,6 +340,7 @@
       <modulePath path="${project}/workbench/ideSolution/jetbrains.mps.ide.msd" folder="workbench" />
       <modulePath path="${project}/workbench/ideUiLanguage/uiLanguage.mpl" folder="languages.ui" />
       <modulePath path="${project}/workbench/make/jetbrains.mps.workbench.make.msd" folder="workbench" />
+      <modulePath path="${project}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench" />
       <modulePath path="${project}/workbench/mps-platform/base.msd" folder="workbench" />
       <modulePath path="${project}/workbench/mps-workbench/mps.msd" folder="workbench" />
     </projectModules>
