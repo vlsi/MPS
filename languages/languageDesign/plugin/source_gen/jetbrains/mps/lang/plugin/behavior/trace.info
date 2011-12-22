@@ -405,18 +405,24 @@
     <unitInfo nodeId="1213877266887" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PersistentPropertyDeclaration_Behavior" />
   </root>
   <root nodeId="1213877276566">
-    <nodeInfo nodeId="1213877276570" fileName="GroupAnchor_Behavior.java" startLine="13" startPosition="65" endLine="14" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877276566" fileName="GroupAnchor_Behavior.java" startLine="9" startPosition="35" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1213877276566" fileName="GroupAnchor_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getId_1213877276567#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1213877276576" fileName="GroupAnchor_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="1213877276569" fileName="GroupAnchor_Behavior.java" startLine="13" startPosition="65" endLine="14" endPosition="87" />
-    <scopeInfo nodeId="1213877276566" fileName="GroupAnchor_Behavior.java" startLine="9" startPosition="35" endLine="12" endPosition="0">
+    <nodeInfo nodeId="1213877276570" fileName="GroupAnchor_Behavior.java" startLine="14" startPosition="65" endLine="15" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5495648829643890230" fileName="GroupAnchor_Behavior.java" startLine="18" startPosition="77" endLine="19" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877276566" fileName="GroupAnchor_Behavior.java" startLine="10" startPosition="35" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1213877276566" fileName="GroupAnchor_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getId_1213877276567#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1213877276566" fileName="GroupAnchor_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getActionId_5495648829643890225#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1213877276576" fileName="GroupAnchor_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="1213877276569" fileName="GroupAnchor_Behavior.java" startLine="14" startPosition="65" endLine="15" endPosition="87" />
+    <scopeInfo nodeId="5495648829643890228" fileName="GroupAnchor_Behavior.java" startLine="18" startPosition="77" endLine="19" endPosition="285" />
+    <scopeInfo nodeId="1213877276566" fileName="GroupAnchor_Behavior.java" startLine="10" startPosition="35" endLine="13" endPosition="0">
       <varInfo nodeId="1213877276566" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877276566" fileName="GroupAnchor_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+    <scopeInfo nodeId="1213877276566" fileName="GroupAnchor_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1213877276566" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877276566" fileName="GroupAnchor_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.GroupAnchor_Behavior" />
+    <scopeInfo nodeId="1213877276566" fileName="GroupAnchor_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1213877276566" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1213877276566" fileName="GroupAnchor_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.GroupAnchor_Behavior" />
   </root>
   <root nodeId="1213877278939">
     <nodeInfo nodeId="1213877278949" fileName="KeyMapKeystroke_Behavior.java" startLine="12" startPosition="72" endLine="13" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

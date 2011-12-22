@@ -1606,7 +1606,6 @@
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.actionGroups.IDE_Edit_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddLanguageImport_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddMissingImportsInProject_Action" />
@@ -1763,6 +1762,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.TraceActions_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.actions.TransientModulesActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.View_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.actions.IDE_Edit_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
