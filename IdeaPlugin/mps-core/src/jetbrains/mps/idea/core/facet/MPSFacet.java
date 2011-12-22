@@ -66,7 +66,6 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
                         MessagesViewTool.log(project, MessageKind.INFORMATION, MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleFqName()));
                     }
                 });
-
             }
         });
     }

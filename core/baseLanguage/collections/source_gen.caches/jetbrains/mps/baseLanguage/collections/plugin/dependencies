@@ -24,9 +24,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsLanguage" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.Collections_ProjectPlugin" file="Collections_ProjectPlugin.java">
-    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry" file="CustomContainersRegistry.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />

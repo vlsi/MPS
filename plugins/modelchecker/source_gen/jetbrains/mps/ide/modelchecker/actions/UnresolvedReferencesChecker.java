@@ -30,7 +30,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {
   }
 
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
     final IScope scope = model.getModelDescriptor().getModule().getScope();
     String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references...";
@@ -62,7 +62,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
                 SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
-                check_xiru3y_a1a0a5a0a5a2a5a0(check_xiru3y_a0b0a0f0a0f0c0f0a(operationContext), sm);
+                check_xiru3y_a1a0a5a0a5a2a5a0(check_xiru3y_a0b0a0f0a0f0c0f0a(model.getModelDescriptor()), sm);
                 return true;
               }
               return false;
@@ -96,7 +96,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     return null;
   }
 
-  private static IModule check_xiru3y_a0b0a0f0a0f0c0f0a(IOperationContext checkedDotOperand) {
+  private static IModule check_xiru3y_a0b0a0f0a0f0c0f0a(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

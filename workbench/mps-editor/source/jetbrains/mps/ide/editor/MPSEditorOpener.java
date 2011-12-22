@@ -17,8 +17,10 @@ package jetbrains.mps.ide.editor;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.FileEditorProvider;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFocusManager;
@@ -171,6 +173,7 @@ public class MPSEditorOpener {
     assert file.hasValidMPSNode() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodePointer: " + new SNodePointer(baseNode).getNode();
     // [--] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
+    file.putUserData(FileEditorProvider.KEY, ApplicationManager.getApplication().getComponent(MPSFileNodeEditorProvider.class));
     FileEditor fileEditor = editorManager.openFile(file, focus)[0];
 
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;

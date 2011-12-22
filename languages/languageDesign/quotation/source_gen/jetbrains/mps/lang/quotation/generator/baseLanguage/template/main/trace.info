@@ -73,18 +73,40 @@
     <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="84" startPosition="15" endLine="86" endPosition="78" />
     <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="42" startPosition="13" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="61" startPosition="55" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="61" startPosition="55" endLine="65" endPosition="0">
+      <varInfo nodeId="1196351886629" varName="context" />
+      <varInfo nodeId="1196351886629" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="95" startPosition="180" endLine="99" endPosition="50" />
-    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="94" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="40" startPosition="7" endLine="54" endPosition="31" />
+    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="1196351886629" varName="context" />
+      <varInfo nodeId="1196351886629" varName="environment" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="95" startPosition="180" endLine="99" endPosition="50">
+      <varInfo nodeId="1196351886629" varName="tnodepart0" />
+      <varInfo nodeId="1196351886629" varName="weaveTf0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="94" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="1196351886629" varName="context" />
+      <varInfo nodeId="1196351886629" varName="environment" />
+      <varInfo nodeId="1196351886629" varName="outputContextNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="40" startPosition="7" endLine="54" endPosition="31">
+      <varInfo nodeId="1196351886629" varName="tnode2" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="58" startPosition="13" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="56" startPosition="7" endLine="82" endPosition="31" />
+    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="56" startPosition="7" endLine="82" endPosition="31">
+      <varInfo nodeId="1196351886629" varName="tnode3" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="36" startPosition="9" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="34" startPosition="154" endLine="88" endPosition="18" />
-    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="33" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="34" startPosition="154" endLine="88" endPosition="18">
+      <varInfo nodeId="1196351886629" varName="tnode1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="33" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="1196351886629" varName="context" />
+      <varInfo nodeId="1196351886629" varName="environment" />
+    </scopeInfo>
     <unitInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotationModel__modelToCreate" />
     <unitInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="61" startPosition="34" endLine="73" endPosition="11" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotationModel__modelToCreate$1" />
   </root>
@@ -117,11 +139,26 @@
     <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="32" startPosition="15" endLine="34" endPosition="78" />
     <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="28" startPosition="9" endLine="31" endPosition="0" />
     <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="43" startPosition="180" endLine="47" endPosition="50" />
-    <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="26" startPosition="154" endLine="36" endPosition="18" />
-    <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="25" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1196351886651" varName="context" />
+      <varInfo nodeId="1196351886651" varName="environment" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="43" startPosition="180" endLine="47" endPosition="50">
+      <varInfo nodeId="1196351886651" varName="tnodepart0" />
+      <varInfo nodeId="1196351886651" varName="weaveTf0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1196351886651" varName="context" />
+      <varInfo nodeId="1196351886651" varName="environment" />
+      <varInfo nodeId="1196351886651" varName="outputContextNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="26" startPosition="154" endLine="36" endPosition="18">
+      <varInfo nodeId="1196351886651" varName="tnode1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="25" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1196351886651" varName="context" />
+      <varInfo nodeId="1196351886651" varName="environment" />
+    </scopeInfo>
     <unitInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="15" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotationModel__NullModel" />
   </root>
   <root nodeId="1196351886655">
@@ -176,24 +213,45 @@
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="62" startPosition="39" endLine="63" endPosition="40" />
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="67" startPosition="211" endLine="68" endPosition="20" />
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="72" startPosition="11" endLine="73" endPosition="84" />
-    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="74" startPosition="0" endLine="75" endPosition="39" />
+    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="74" startPosition="0" endLine="75" endPosition="39">
+      <varInfo nodeId="1196351886655" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="74" startPosition="45" endLine="75" endPosition="39" />
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="76" startPosition="17" endLine="77" endPosition="70" />
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="50" startPosition="64" endLine="52" endPosition="5" />
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
-    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="41" startPosition="197" endLine="44" endPosition="18" />
-    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="82" startPosition="143" endLine="85" endPosition="20" />
+    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="41" startPosition="197" endLine="44" endPosition="18">
+      <varInfo nodeId="1196351886655" varName="tlist1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1196351886655" varName="context" />
+      <varInfo nodeId="1196351886655" varName="environment" />
+      <varInfo nodeId="1196351886655" varName="templateSwitch" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="82" startPosition="143" endLine="85" endPosition="20">
+      <varInfo nodeId="1196351886655" varName="tlist1" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="81" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="40" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1196351886655" varName="context" />
+      <varInfo nodeId="1196351886655" varName="environment" />
+      <varInfo nodeId="1196351886655" varName="mappingLabel" />
+      <varInfo nodeId="1196351886655" varName="templateSwitch" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="81" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1196351886655" varName="context" />
+      <varInfo nodeId="1196351886655" varName="environment" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="66" startPosition="147" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="65" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="65" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="1196351886655" varName="context" />
+      <varInfo nodeId="1196351886655" varName="environment" />
+    </scopeInfo>
     <unitInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.SwitchQuotationModel__switch" />
     <unitInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="50" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.SwitchQuotationModel__switch$ReductionRule0" />
   </root>
@@ -217,12 +275,23 @@
     <scopeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="25" startPosition="43" endLine="26" endPosition="16" />
     <scopeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="29" startPosition="62" endLine="30" endPosition="34" />
     <scopeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="17" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="33" startPosition="197" endLine="36" endPosition="18" />
-    <scopeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="33" startPosition="197" endLine="36" endPosition="18">
+      <varInfo nodeId="1196351886667" varName="tlist1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1196351886667" varName="context" />
+      <varInfo nodeId="1196351886667" varName="environment" />
+      <varInfo nodeId="1196351886667" varName="templateSwitch" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1196351886667" varName="context" />
+      <varInfo nodeId="1196351886667" varName="environment" />
+      <varInfo nodeId="1196351886667" varName="mappingLabel" />
+      <varInfo nodeId="1196351886667" varName="templateSwitch" />
+    </scopeInfo>
     <unitInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.SwitchQuotation__switch" />
   </root>
   <root nodeId="1196351886669">
@@ -1126,50 +1195,80 @@
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="916" startPosition="27" endLine="918" endPosition="102" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="925" startPosition="23" endLine="927" endPosition="94" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="941" startPosition="15" endLine="943" endPosition="78" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="161" startPosition="27" endLine="164" endPosition="228" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="161" startPosition="27" endLine="164" endPosition="228">
+      <varInfo nodeId="1196351886669" varName="copySrcInput7" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="171" startPosition="31" endLine="174" endPosition="23" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="179" startPosition="17" endLine="182" endPosition="17" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="179" startPosition="17" endLine="182" endPosition="17">
+      <varInfo nodeId="1196351886669" varName="child8" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="243" startPosition="37" endLine="246" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="258" startPosition="37" endLine="261" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="316" startPosition="45" endLine="319" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="353" startPosition="49" endLine="356" endPosition="0" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="394" startPosition="29" endLine="397" endPosition="29" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="394" startPosition="29" endLine="397" endPosition="29">
+      <varInfo nodeId="1196351886669" varName="child25" />
+    </scopeInfo>
     <scopeInfo nodeId="937236280924643220" fileName="QueriesGenerated.java" startLine="395" startPosition="105" endLine="398" endPosition="7" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="443" startPosition="47" endLine="446" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="458" startPosition="47" endLine="461" endPosition="0" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="481" startPosition="35" endLine="484" endPosition="35" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="481" startPosition="35" endLine="484" endPosition="35">
+      <varInfo nodeId="1196351886669" varName="child32" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="494" startPosition="39" endLine="497" endPosition="31" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="502" startPosition="25" endLine="505" endPosition="25" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="502" startPosition="25" endLine="505" endPosition="25">
+      <varInfo nodeId="1196351886669" varName="child33" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="531" startPosition="41" endLine="534" endPosition="0" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="553" startPosition="29" endLine="556" endPosition="29" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="553" startPosition="29" endLine="556" endPosition="29">
+      <varInfo nodeId="1196351886669" varName="child37" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="698" startPosition="39" endLine="701" endPosition="31" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="706" startPosition="25" endLine="709" endPosition="25" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="706" startPosition="25" endLine="709" endPosition="25">
+      <varInfo nodeId="1196351886669" varName="child45" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="797" startPosition="35" endLine="800" endPosition="27" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="805" startPosition="21" endLine="808" endPosition="21" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="805" startPosition="21" endLine="808" endPosition="21">
+      <varInfo nodeId="1196351886669" varName="child51" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="813" startPosition="25" endLine="816" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="828" startPosition="25" endLine="831" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="852" startPosition="21" endLine="855" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="873" startPosition="25" endLine="876" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="888" startPosition="25" endLine="891" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="903" startPosition="25" endLine="906" endPosition="0" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="935" startPosition="9" endLine="938" endPosition="9" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="935" startPosition="9" endLine="938" endPosition="9">
+      <varInfo nodeId="1196351886669" varName="child59" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="115" startPosition="21" endLine="119" endPosition="0" />
     <scopeInfo nodeId="9181472308624882660" fileName="QueriesGenerated.java" startLine="316" startPosition="105" endLine="320" endPosition="7" />
     <scopeInfo nodeId="937236280924642926" fileName="QueriesGenerated.java" startLine="334" startPosition="63" endLine="338" endPosition="11" />
     <scopeInfo nodeId="937236280924643095" fileName="QueriesGenerated.java" startLine="362" startPosition="75" endLine="366" endPosition="17" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="543" startPosition="43" endLine="547" endPosition="35" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="599" startPosition="85" endLine="603" endPosition="0" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="599" startPosition="85" endLine="603" endPosition="0">
+      <varInfo nodeId="1196351886669" varName="context" />
+      <varInfo nodeId="1196351886669" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="603" startPosition="0" endLine="607" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="607" startPosition="0" endLine="611" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="631" startPosition="47" endLine="635" endPosition="0" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="650" startPosition="89" endLine="654" endPosition="0" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="650" startPosition="89" endLine="654" endPosition="0">
+      <varInfo nodeId="1196351886669" varName="context" />
+      <varInfo nodeId="1196351886669" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="654" startPosition="0" endLine="658" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="658" startPosition="0" endLine="662" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="720" startPosition="33" endLine="724" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="775" startPosition="35" endLine="779" endPosition="0" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="947" startPosition="0" endLine="951" endPosition="0" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="952" startPosition="180" endLine="956" endPosition="50" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="947" startPosition="0" endLine="951" endPosition="0">
+      <varInfo nodeId="1196351886669" varName="context" />
+      <varInfo nodeId="1196351886669" varName="environment" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="952" startPosition="180" endLine="956" endPosition="50">
+      <varInfo nodeId="1196351886669" varName="tnodepart0" />
+      <varInfo nodeId="1196351886669" varName="weaveTf0" />
+    </scopeInfo>
     <scopeInfo nodeId="937236280924643128" fileName="QueriesGenerated.java" startLine="372" startPosition="230" endLine="377" endPosition="72">
       <varInfo nodeId="937236280924643130" varName="referenceNode" />
     </scopeInfo>
@@ -1186,7 +1285,11 @@
     <scopeInfo nodeId="937236280924643094" fileName="QueriesGenerated.java" startLine="361" startPosition="47" endLine="367" endPosition="15">
       <varInfo nodeId="937236280924643115" varName="grandChild" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="951" startPosition="0" endLine="958" endPosition="0" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="951" startPosition="0" endLine="958" endPosition="0">
+      <varInfo nodeId="1196351886669" varName="context" />
+      <varInfo nodeId="1196351886669" varName="environment" />
+      <varInfo nodeId="1196351886669" varName="outputContextNode" />
+    </scopeInfo>
     <scopeInfo nodeId="937236280924643242" fileName="QueriesGenerated.java" startLine="43" startPosition="153" endLine="51" endPosition="20">
       <varInfo nodeId="937236280924643246" varName="uniqName" />
     </scopeInfo>
@@ -1200,24 +1303,61 @@
     <scopeInfo nodeId="9181472308624882636" fileName="QueriesGenerated.java" startLine="311" startPosition="155" endLine="322" endPosition="18">
       <varInfo nodeId="9181472308624882638" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="529" startPosition="56" endLine="541" endPosition="37" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="241" startPosition="31" endLine="254" endPosition="55" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="256" startPosition="31" endLine="269" endPosition="55" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="314" startPosition="39" endLine="327" endPosition="63" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="351" startPosition="43" endLine="364" endPosition="67" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="441" startPosition="41" endLine="454" endPosition="65" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="456" startPosition="41" endLine="469" endPosition="65" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="811" startPosition="19" endLine="824" endPosition="43" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="826" startPosition="19" endLine="839" endPosition="43" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="850" startPosition="15" endLine="863" endPosition="39" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="871" startPosition="19" endLine="884" endPosition="43" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="886" startPosition="19" endLine="899" endPosition="43" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="901" startPosition="19" endLine="914" endPosition="43" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="113" startPosition="15" endLine="127" endPosition="39" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="629" startPosition="41" endLine="643" endPosition="65" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="718" startPosition="27" endLine="732" endPosition="51" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="773" startPosition="29" endLine="787" endPosition="53" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="155" startPosition="25" endLine="170" endPosition="23" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="529" startPosition="56" endLine="541" endPosition="37">
+      <varInfo nodeId="1196351886669" varName="tnode36" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="241" startPosition="31" endLine="254" endPosition="55">
+      <varInfo nodeId="1196351886669" varName="tnode15" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="256" startPosition="31" endLine="269" endPosition="55">
+      <varInfo nodeId="1196351886669" varName="tnode16" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="314" startPosition="39" endLine="327" endPosition="63">
+      <varInfo nodeId="1196351886669" varName="tnode21" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="351" startPosition="43" endLine="364" endPosition="67">
+      <varInfo nodeId="1196351886669" varName="tnode24" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="441" startPosition="41" endLine="454" endPosition="65">
+      <varInfo nodeId="1196351886669" varName="tnode30" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="456" startPosition="41" endLine="469" endPosition="65">
+      <varInfo nodeId="1196351886669" varName="tnode31" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="811" startPosition="19" endLine="824" endPosition="43">
+      <varInfo nodeId="1196351886669" varName="tnode52" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="826" startPosition="19" endLine="839" endPosition="43">
+      <varInfo nodeId="1196351886669" varName="tnode53" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="850" startPosition="15" endLine="863" endPosition="39">
+      <varInfo nodeId="1196351886669" varName="tnode54" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="871" startPosition="19" endLine="884" endPosition="43">
+      <varInfo nodeId="1196351886669" varName="tnode56" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="886" startPosition="19" endLine="899" endPosition="43">
+      <varInfo nodeId="1196351886669" varName="tnode57" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="901" startPosition="19" endLine="914" endPosition="43">
+      <varInfo nodeId="1196351886669" varName="tnode58" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="113" startPosition="15" endLine="127" endPosition="39">
+      <varInfo nodeId="1196351886669" varName="tnode4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="629" startPosition="41" endLine="643" endPosition="65">
+      <varInfo nodeId="1196351886669" varName="tnode43" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="718" startPosition="27" endLine="732" endPosition="51">
+      <varInfo nodeId="1196351886669" varName="tnode47" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="773" startPosition="29" endLine="787" endPosition="53">
+      <varInfo nodeId="1196351886669" varName="tnode50" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="155" startPosition="25" endLine="170" endPosition="23">
+      <varInfo nodeId="1196351886669" varName="context6" />
+      <varInfo nodeId="1196351886669" varName="tlist7" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="596" startPosition="43" endLine="612" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="647" startPosition="47" endLine="663" endPosition="0" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="109" startPosition="17" endLine="128" endPosition="15" />
@@ -1240,21 +1380,41 @@
       <varInfo nodeId="937236280924643067" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="937236280924643061" fileName="QueriesGenerated.java" startLine="356" startPosition="119" endLine="380" endPosition="65" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="150" startPosition="51" endLine="175" endPosition="21" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="150" startPosition="51" endLine="175" endPosition="21">
+      <varInfo nodeId="1196351886669" varName="inputChanged6" />
+    </scopeInfo>
     <scopeInfo nodeId="937236280924643054" fileName="QueriesGenerated.java" startLine="355" startPosition="63" endLine="381" endPosition="11" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="594" startPosition="37" endLine="620" endPosition="61" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="645" startPosition="41" endLine="671" endPosition="65" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="149" startPosition="285" endLine="176" endPosition="19" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="521" startPosition="38" endLine="548" endPosition="33" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="594" startPosition="37" endLine="620" endPosition="61">
+      <varInfo nodeId="1196351886669" varName="tnode41" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="645" startPosition="41" endLine="671" endPosition="65">
+      <varInfo nodeId="1196351886669" varName="tnode44" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="149" startPosition="285" endLine="176" endPosition="19">
+      <varInfo nodeId="1196351886669" varName="itnode6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="521" startPosition="38" endLine="548" endPosition="33">
+      <varInfo nodeId="1196351886669" varName="inputChanged35" />
+    </scopeInfo>
     <scopeInfo nodeId="937236280924643047" fileName="QueriesGenerated.java" startLine="354" startPosition="35" endLine="382" endPosition="9" />
     <scopeInfo nodeId="937236280924643048" fileName="QueriesGenerated.java" startLine="354" startPosition="35" endLine="382" endPosition="9">
       <varInfo nodeId="937236280924643052" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="107" startPosition="11" endLine="136" endPosition="35" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="147" startPosition="21" endLine="176" endPosition="19" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="307" startPosition="35" endLine="336" endPosition="59" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="344" startPosition="39" endLine="373" endPosition="63" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="712" startPosition="23" endLine="741" endPosition="47" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="107" startPosition="11" endLine="136" endPosition="35">
+      <varInfo nodeId="1196351886669" varName="tnode3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="147" startPosition="21" endLine="176" endPosition="19">
+      <varInfo nodeId="1196351886669" varName="loopList6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="307" startPosition="35" endLine="336" endPosition="59">
+      <varInfo nodeId="1196351886669" varName="tnode20" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="344" startPosition="39" endLine="373" endPosition="63">
+      <varInfo nodeId="1196351886669" varName="tnode23" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="712" startPosition="23" endLine="741" endPosition="47">
+      <varInfo nodeId="1196351886669" varName="tnode46" />
+    </scopeInfo>
     <scopeInfo nodeId="937236280924643043" fileName="QueriesGenerated.java" startLine="353" startPosition="58" endLine="383" endPosition="7">
       <varInfo nodeId="937236280924643045" varName="node" />
     </scopeInfo>
@@ -1262,68 +1422,154 @@
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="236" startPosition="33" endLine="270" endPosition="31" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="340" startPosition="41" endLine="374" endPosition="39" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="436" startPosition="43" endLine="470" endPosition="41" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="516" startPosition="33" endLine="550" endPosition="108" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="762" startPosition="29" endLine="796" endPosition="27" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="145" startPosition="15" endLine="183" endPosition="39" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="516" startPosition="33" endLine="550" endPosition="108">
+      <varInfo nodeId="1196351886669" varName="switchInput35" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="762" startPosition="29" endLine="796" endPosition="27">
+      <varInfo nodeId="1196351886669" varName="context48" />
+      <varInfo nodeId="1196351886669" varName="tnode49" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="145" startPosition="15" endLine="183" endPosition="39">
+      <varInfo nodeId="1196351886669" varName="tlist6" />
+    </scopeInfo>
     <scopeInfo nodeId="937236280924643008" fileName="QueriesGenerated.java" startLine="347" startPosition="154" endLine="387" endPosition="18">
       <varInfo nodeId="937236280924643022" varName="frontier" />
       <varInfo nodeId="937236280924643033" varName="newFrontier" />
       <varInfo nodeId="937236280924643016" varName="result" />
       <varInfo nodeId="937236280924643010" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="434" startPosition="270" endLine="476" endPosition="111" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="514" startPosition="27" endLine="557" endPosition="51" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="434" startPosition="270" endLine="476" endPosition="111">
+      <varInfo nodeId="1196351886669" varName="tnode29" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="514" startPosition="27" endLine="557" endPosition="51">
+      <varInfo nodeId="1196351886669" varName="tlist35" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="140" startPosition="17" endLine="184" endPosition="15" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="234" startPosition="27" endLine="278" endPosition="51" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="338" startPosition="35" endLine="382" endPosition="59" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="757" startPosition="57" endLine="801" endPosition="25" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="756" startPosition="295" endLine="802" endPosition="23" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="431" startPosition="39" endLine="478" endPosition="0" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="234" startPosition="27" endLine="278" endPosition="51">
+      <varInfo nodeId="1196351886669" varName="tnode14" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="338" startPosition="35" endLine="382" endPosition="59">
+      <varInfo nodeId="1196351886669" varName="tnode22" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="757" startPosition="57" endLine="801" endPosition="25">
+      <varInfo nodeId="1196351886669" varName="inputChanged48" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="756" startPosition="295" endLine="802" endPosition="23">
+      <varInfo nodeId="1196351886669" varName="itnode48" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="431" startPosition="39" endLine="478" endPosition="0">
+      <varInfo nodeId="1196351886669" varName="context28" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="510" startPosition="29" endLine="558" endPosition="27" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="624" startPosition="43" endLine="672" endPosition="41" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="754" startPosition="25" endLine="802" endPosition="23" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="754" startPosition="25" endLine="802" endPosition="23">
+      <varInfo nodeId="1196351886669" varName="loopList48" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="867" startPosition="21" endLine="915" endPosition="19" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="230" startPosition="29" endLine="279" endPosition="27" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="138" startPosition="11" endLine="192" endPosition="35" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="429" startPosition="33" endLine="485" endPosition="57" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="752" startPosition="19" endLine="809" endPosition="43" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="508" startPosition="23" endLine="566" endPosition="47" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="622" startPosition="37" endLine="680" endPosition="61" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="865" startPosition="15" endLine="923" endPosition="39" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="228" startPosition="23" endLine="287" endPosition="47" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="138" startPosition="11" endLine="192" endPosition="35">
+      <varInfo nodeId="1196351886669" varName="tnode5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="429" startPosition="33" endLine="485" endPosition="57">
+      <varInfo nodeId="1196351886669" varName="tlist28" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="752" startPosition="19" endLine="809" endPosition="43">
+      <varInfo nodeId="1196351886669" varName="tlist48" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="508" startPosition="23" endLine="566" endPosition="47">
+      <varInfo nodeId="1196351886669" varName="tnode34" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="622" startPosition="37" endLine="680" endPosition="61">
+      <varInfo nodeId="1196351886669" varName="tnode42" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="865" startPosition="15" endLine="923" endPosition="39">
+      <varInfo nodeId="1196351886669" varName="tnode55" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="228" startPosition="23" endLine="287" endPosition="47">
+      <varInfo nodeId="1196351886669" varName="tnode13" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="425" startPosition="35" endLine="486" endPosition="33" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="419" startPosition="33" endLine="493" endPosition="31" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="419" startPosition="33" endLine="493" endPosition="31">
+      <varInfo nodeId="1196351886669" varName="context26" />
+      <varInfo nodeId="1196351886669" varName="tnode27" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="302" startPosition="37" endLine="383" endPosition="35" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="414" startPosition="61" endLine="498" endPosition="29" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="413" startPosition="303" endLine="499" endPosition="27" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="411" startPosition="29" endLine="499" endPosition="27" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="300" startPosition="256" endLine="389" endPosition="95" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="414" startPosition="61" endLine="498" endPosition="29">
+      <varInfo nodeId="1196351886669" varName="inputChanged26" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="413" startPosition="303" endLine="499" endPosition="27">
+      <varInfo nodeId="1196351886669" varName="itnode26" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="411" startPosition="29" endLine="499" endPosition="27">
+      <varInfo nodeId="1196351886669" varName="loopList26" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="300" startPosition="256" endLine="389" endPosition="95">
+      <varInfo nodeId="1196351886669" varName="tnode19" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="103" startPosition="13" endLine="193" endPosition="11" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="590" startPosition="39" endLine="681" endPosition="37" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="297" startPosition="33" endLine="391" endPosition="0" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="409" startPosition="23" endLine="506" endPosition="47" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="101" startPosition="7" endLine="201" endPosition="31" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="588" startPosition="33" endLine="689" endPosition="57" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="295" startPosition="27" endLine="398" endPosition="51" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="297" startPosition="33" endLine="391" endPosition="0">
+      <varInfo nodeId="1196351886669" varName="context18" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="409" startPosition="23" endLine="506" endPosition="47">
+      <varInfo nodeId="1196351886669" varName="tlist26" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="101" startPosition="7" endLine="201" endPosition="31">
+      <varInfo nodeId="1196351886669" varName="tnode2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="588" startPosition="33" endLine="689" endPosition="57">
+      <varInfo nodeId="1196351886669" varName="tnode40" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="295" startPosition="27" endLine="398" endPosition="51">
+      <varInfo nodeId="1196351886669" varName="tlist18" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="584" startPosition="35" endLine="690" endPosition="33" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="291" startPosition="29" endLine="399" endPosition="27" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="289" startPosition="23" endLine="407" endPosition="47" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="578" startPosition="33" endLine="697" endPosition="31" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="573" startPosition="61" endLine="702" endPosition="29" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="572" startPosition="303" endLine="703" endPosition="27" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="570" startPosition="29" endLine="703" endPosition="27" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="568" startPosition="23" endLine="710" endPosition="47" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="289" startPosition="23" endLine="407" endPosition="47">
+      <varInfo nodeId="1196351886669" varName="tnode17" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="578" startPosition="33" endLine="697" endPosition="31">
+      <varInfo nodeId="1196351886669" varName="context38" />
+      <varInfo nodeId="1196351886669" varName="tnode39" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="573" startPosition="61" endLine="702" endPosition="29">
+      <varInfo nodeId="1196351886669" varName="inputChanged38" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="572" startPosition="303" endLine="703" endPosition="27">
+      <varInfo nodeId="1196351886669" varName="itnode38" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="570" startPosition="29" endLine="703" endPosition="27">
+      <varInfo nodeId="1196351886669" varName="loopList38" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="568" startPosition="23" endLine="710" endPosition="47">
+      <varInfo nodeId="1196351886669" varName="tlist38" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="224" startPosition="25" endLine="742" endPosition="23" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="222" startPosition="19" endLine="750" endPosition="43" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="222" startPosition="19" endLine="750" endPosition="43">
+      <varInfo nodeId="1196351886669" varName="tnode12" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="217" startPosition="21" endLine="840" endPosition="19" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="215" startPosition="15" endLine="848" endPosition="39" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="215" startPosition="15" endLine="848" endPosition="39">
+      <varInfo nodeId="1196351886669" varName="tnode11" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="210" startPosition="17" endLine="924" endPosition="15" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="208" startPosition="215" endLine="930" endPosition="85" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="205" startPosition="13" endLine="932" endPosition="0" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="203" startPosition="7" endLine="939" endPosition="31" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="208" startPosition="215" endLine="930" endPosition="85">
+      <varInfo nodeId="1196351886669" varName="tnode10" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="205" startPosition="13" endLine="932" endPosition="0">
+      <varInfo nodeId="1196351886669" varName="context9" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="203" startPosition="7" endLine="939" endPosition="31">
+      <varInfo nodeId="1196351886669" varName="tlist9" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="96" startPosition="9" endLine="940" endPosition="7" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="94" startPosition="154" endLine="945" endPosition="18" />
-    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="93" startPosition="0" endLine="947" endPosition="0" />
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="94" startPosition="154" endLine="945" endPosition="18">
+      <varInfo nodeId="1196351886669" varName="tnode1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="93" startPosition="0" endLine="947" endPosition="0">
+      <varInfo nodeId="1196351886669" varName="context" />
+      <varInfo nodeId="1196351886669" varName="environment" />
+    </scopeInfo>
     <unitInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="27" startPosition="0" endLine="959" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__methodCall" />
     <unitInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="599" startPosition="64" endLine="611" endPosition="41" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__methodCall$1" />
     <unitInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="650" startPosition="68" endLine="662" endPosition="45" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__methodCall$2" />
@@ -3933,43 +4179,77 @@
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="247" startPosition="25" endLine="250" endPosition="0" />
     <scopeInfo nodeId="1196351887179" fileName="QueriesGenerated.java" startLine="259" startPosition="34" endLine="262" endPosition="7" />
     <scopeInfo nodeId="1196351887389" fileName="QueriesGenerated.java" startLine="277" startPosition="34" endLine="280" endPosition="7" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="278" startPosition="9" endLine="281" endPosition="9" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="278" startPosition="9" endLine="281" endPosition="9">
+      <varInfo nodeId="1196351886726" varName="child6" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351887541" fileName="QueriesGenerated.java" startLine="291" startPosition="34" endLine="294" endPosition="7" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="303" startPosition="25" endLine="306" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="334" startPosition="9" endLine="337" endPosition="9" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="334" startPosition="9" endLine="337" endPosition="9">
+      <varInfo nodeId="1196351886726" varName="child11" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="437" startPosition="45" endLine="440" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="458" startPosition="33" endLine="461" endPosition="33" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="458" startPosition="33" endLine="461" endPosition="33">
+      <varInfo nodeId="1196351886726" varName="child22" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351887037" fileName="QueriesGenerated.java" startLine="469" startPosition="73" endLine="472" endPosition="7" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="483" startPosition="37" endLine="486" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="566" startPosition="33" endLine="569" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="703" startPosition="35" endLine="706" endPosition="27" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="711" startPosition="21" endLine="714" endPosition="21" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="711" startPosition="21" endLine="714" endPosition="21">
+      <varInfo nodeId="1196351886726" varName="child36" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="818" startPosition="47" endLine="821" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="865" startPosition="35" endLine="868" endPosition="27" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="873" startPosition="21" endLine="876" endPosition="21" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="873" startPosition="21" endLine="876" endPosition="21">
+      <varInfo nodeId="1196351886726" varName="child46" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1068" startPosition="35" endLine="1071" endPosition="27" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1076" startPosition="21" endLine="1079" endPosition="21" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1076" startPosition="21" endLine="1079" endPosition="21">
+      <varInfo nodeId="1196351886726" varName="child59" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1183" startPosition="47" endLine="1186" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1230" startPosition="35" endLine="1233" endPosition="27" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1238" startPosition="21" endLine="1241" endPosition="21" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1238" startPosition="21" endLine="1241" endPosition="21">
+      <varInfo nodeId="1196351886726" varName="child69" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1273" startPosition="41" endLine="1276" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1291" startPosition="31" endLine="1294" endPosition="31" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1291" startPosition="31" endLine="1294" endPosition="31">
+      <varInfo nodeId="1196351886726" varName="child74" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1304" startPosition="35" endLine="1307" endPosition="27" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1312" startPosition="21" endLine="1315" endPosition="21" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1396" startPosition="21" endLine="1399" endPosition="21" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1512" startPosition="21" endLine="1515" endPosition="21" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1536" startPosition="9" endLine="1539" endPosition="9" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1312" startPosition="21" endLine="1315" endPosition="21">
+      <varInfo nodeId="1196351886726" varName="child75" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1396" startPosition="21" endLine="1399" endPosition="21">
+      <varInfo nodeId="1196351886726" varName="child81" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1512" startPosition="21" endLine="1515" endPosition="21">
+      <varInfo nodeId="1196351886726" varName="child89" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1536" startPosition="9" endLine="1539" endPosition="9">
+      <varInfo nodeId="1196351886726" varName="child90" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1634" startPosition="37" endLine="1637" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1689" startPosition="33" endLine="1692" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2224" startPosition="29" endLine="2227" endPosition="29" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2357" startPosition="29" endLine="2360" endPosition="29" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2224" startPosition="29" endLine="2227" endPosition="29">
+      <varInfo nodeId="1196351886726" varName="child132" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2357" startPosition="29" endLine="2360" endPosition="29">
+      <varInfo nodeId="1196351886726" varName="child141" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2380" startPosition="33" endLine="2383" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2445" startPosition="9" endLine="2448" endPosition="9" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2445" startPosition="9" endLine="2448" endPosition="9">
+      <varInfo nodeId="1196351886726" varName="child145" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2482" startPosition="33" endLine="2485" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2503" startPosition="37" endLine="2506" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2602" startPosition="33" endLine="2605" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2757" startPosition="29" endLine="2760" endPosition="29" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2799" startPosition="9" endLine="2802" endPosition="9" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2757" startPosition="29" endLine="2760" endPosition="29">
+      <varInfo nodeId="1196351886726" varName="child168" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2799" startPosition="9" endLine="2802" endPosition="9">
+      <varInfo nodeId="1196351886726" varName="child169" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351887056" fileName="QueriesGenerated.java" startLine="145" startPosition="145" endLine="149" endPosition="84">
       <varInfo nodeId="1238267011099" varName="method" />
       <varInfo nodeId="1196351887058" varName="parentTargetNode" />
@@ -3983,7 +4263,10 @@
     </scopeInfo>
     <scopeInfo nodeId="1196351887430" fileName="QueriesGenerated.java" startLine="213" startPosition="73" endLine="217" endPosition="7" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="217" startPosition="0" endLine="221" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="373" startPosition="75" endLine="377" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="373" startPosition="75" endLine="377" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="377" startPosition="0" endLine="381" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="381" startPosition="0" endLine="385" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="406" startPosition="37" endLine="410" endPosition="0" />
@@ -3994,7 +4277,10 @@
     <scopeInfo nodeId="1196351886996" fileName="QueriesGenerated.java" startLine="458" startPosition="37" endLine="462" endPosition="7">
       <varInfo nodeId="1237745793986" varName="attribute" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="541" startPosition="75" endLine="545" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="541" startPosition="75" endLine="545" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="545" startPosition="0" endLine="549" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="549" startPosition="0" endLine="553" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="625" startPosition="39" endLine="629" endPosition="0" />
@@ -4002,7 +4288,10 @@
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="664" startPosition="43" endLine="668" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="745" startPosition="39" endLine="749" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="768" startPosition="43" endLine="772" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="793" startPosition="89" endLine="797" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="793" startPosition="89" endLine="797" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="797" startPosition="0" endLine="801" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="801" startPosition="0" endLine="805" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="907" startPosition="39" endLine="911" endPosition="0" />
@@ -4012,65 +4301,116 @@
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1011" startPosition="51" endLine="1015" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1110" startPosition="39" endLine="1114" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1133" startPosition="43" endLine="1137" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1158" startPosition="89" endLine="1162" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1158" startPosition="89" endLine="1162" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1162" startPosition="0" endLine="1166" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1166" startPosition="0" endLine="1170" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1339" startPosition="79" endLine="1343" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1339" startPosition="79" endLine="1343" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1343" startPosition="0" endLine="1347" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1347" startPosition="0" endLine="1351" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1364" startPosition="37" endLine="1368" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1423" startPosition="79" endLine="1427" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1423" startPosition="79" endLine="1427" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1427" startPosition="0" endLine="1431" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1431" startPosition="0" endLine="1435" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1455" startPosition="41" endLine="1459" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1471" startPosition="41" endLine="1475" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1575" startPosition="75" endLine="1579" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1575" startPosition="75" endLine="1579" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1579" startPosition="0" endLine="1583" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1583" startPosition="0" endLine="1587" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1609" startPosition="79" endLine="1613" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1609" startPosition="79" endLine="1613" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1613" startPosition="0" endLine="1617" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1617" startPosition="0" endLine="1621" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1746" startPosition="41" endLine="1750" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1773" startPosition="87" endLine="1777" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1773" startPosition="87" endLine="1777" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1777" startPosition="0" endLine="1781" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1781" startPosition="0" endLine="1785" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1843" startPosition="75" endLine="1847" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1843" startPosition="75" endLine="1847" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1847" startPosition="0" endLine="1851" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1851" startPosition="0" endLine="1855" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1878" startPosition="79" endLine="1882" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1878" startPosition="79" endLine="1882" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1882" startPosition="0" endLine="1886" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1886" startPosition="0" endLine="1890" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1948" startPosition="87" endLine="1952" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1948" startPosition="87" endLine="1952" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1952" startPosition="0" endLine="1956" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1956" startPosition="0" endLine="1960" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1983" startPosition="91" endLine="1987" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1983" startPosition="91" endLine="1987" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1987" startPosition="0" endLine="1991" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1991" startPosition="0" endLine="1995" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2047" startPosition="45" endLine="2051" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2066" startPosition="87" endLine="2070" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2066" startPosition="87" endLine="2070" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2070" startPosition="0" endLine="2074" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2074" startPosition="0" endLine="2078" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2167" startPosition="87" endLine="2171" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2167" startPosition="87" endLine="2171" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2171" startPosition="0" endLine="2175" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2175" startPosition="0" endLine="2179" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2192" startPosition="45" endLine="2196" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2251" startPosition="87" endLine="2255" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2251" startPosition="87" endLine="2255" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2255" startPosition="0" endLine="2259" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2259" startPosition="0" endLine="2263" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2283" startPosition="49" endLine="2287" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2307" startPosition="53" endLine="2311" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2395" startPosition="33" endLine="2399" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2521" startPosition="79" endLine="2525" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2521" startPosition="79" endLine="2525" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2525" startPosition="0" endLine="2529" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2529" startPosition="0" endLine="2533" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2579" startPosition="29" endLine="2583" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2651" startPosition="87" endLine="2655" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2651" startPosition="87" endLine="2655" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="outputNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2655" startPosition="0" endLine="2659" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2659" startPosition="0" endLine="2663" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2683" startPosition="49" endLine="2687" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2707" startPosition="53" endLine="2711" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2811" startPosition="0" endLine="2815" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2816" startPosition="180" endLine="2820" endPosition="50" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2811" startPosition="0" endLine="2815" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="environment" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2816" startPosition="180" endLine="2820" endPosition="50">
+      <varInfo nodeId="1196351886726" varName="tnodepart0" />
+      <varInfo nodeId="1196351886726" varName="weaveTf0" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351887175" fileName="QueriesGenerated.java" startLine="258" startPosition="75" endLine="263" endPosition="5">
       <varInfo nodeId="1196351887177" varName="child" />
     </scopeInfo>
@@ -4119,7 +4459,11 @@
     <scopeInfo nodeId="1196351887024" fileName="QueriesGenerated.java" startLine="467" startPosition="149" endLine="474" endPosition="18">
       <varInfo nodeId="1196351887026" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2815" startPosition="0" endLine="2822" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2815" startPosition="0" endLine="2822" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="environment" />
+      <varInfo nodeId="1196351886726" varName="outputContextNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886814" fileName="QueriesGenerated.java" startLine="406" startPosition="36" endLine="415" endPosition="5">
       <varInfo nodeId="1196351886817" varName="property" />
     </scopeInfo>
@@ -4139,54 +4483,134 @@
       <varInfo nodeId="1196351887421" varName="antiquotation" />
       <varInfo nodeId="1196351887414" varName="quotation" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="435" startPosition="60" endLine="447" endPosition="41" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1271" startPosition="56" endLine="1283" endPosition="37" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="245" startPosition="19" endLine="258" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="301" startPosition="19" endLine="314" endPosition="43" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="435" startPosition="60" endLine="447" endPosition="41">
+      <varInfo nodeId="1196351886726" varName="tnode21" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1271" startPosition="56" endLine="1283" endPosition="37">
+      <varInfo nodeId="1196351886726" varName="tnode73" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="245" startPosition="19" endLine="258" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tnode5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="301" startPosition="19" endLine="314" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tnode10" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886803" fileName="QueriesGenerated.java" startLine="403" startPosition="149" endLine="416" endPosition="18">
       <varInfo nodeId="5176740929024541646" varName="propertyNames" />
       <varInfo nodeId="1196351886810" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="481" startPosition="31" endLine="494" endPosition="55" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="564" startPosition="27" endLine="577" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="816" startPosition="41" endLine="829" endPosition="65" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1181" startPosition="41" endLine="1194" endPosition="65" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1632" startPosition="31" endLine="1645" endPosition="55" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1687" startPosition="27" endLine="1700" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2378" startPosition="27" endLine="2391" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2480" startPosition="27" endLine="2493" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2501" startPosition="31" endLine="2514" endPosition="55" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2600" startPosition="27" endLine="2613" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="404" startPosition="31" endLine="418" endPosition="55" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="481" startPosition="31" endLine="494" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode24" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="564" startPosition="27" endLine="577" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode28" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="816" startPosition="41" endLine="829" endPosition="65">
+      <varInfo nodeId="1196351886726" varName="tnode45" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1181" startPosition="41" endLine="1194" endPosition="65">
+      <varInfo nodeId="1196351886726" varName="tnode68" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1632" startPosition="31" endLine="1645" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode99" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1687" startPosition="27" endLine="1700" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode102" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2378" startPosition="27" endLine="2391" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode143" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2480" startPosition="27" endLine="2493" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode151" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2501" startPosition="31" endLine="2514" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode153" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2600" startPosition="27" endLine="2613" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode158" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="404" startPosition="31" endLine="418" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode19" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886893" fileName="QueriesGenerated.java" startLine="434" startPosition="69" endLine="448" endPosition="62">
       <varInfo nodeId="1196351886908" varName="referenceNode" />
       <varInfo nodeId="1201801229678" varName="targetNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="623" startPosition="33" endLine="637" endPosition="57" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="646" startPosition="37" endLine="660" endPosition="61" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="662" startPosition="37" endLine="676" endPosition="61" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="743" startPosition="33" endLine="757" endPosition="57" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="766" startPosition="37" endLine="780" endPosition="61" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="905" startPosition="33" endLine="919" endPosition="57" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="936" startPosition="41" endLine="950" endPosition="65" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="952" startPosition="41" endLine="966" endPosition="65" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="976" startPosition="45" endLine="990" endPosition="69" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1009" startPosition="45" endLine="1023" endPosition="69" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1108" startPosition="33" endLine="1122" endPosition="57" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1131" startPosition="37" endLine="1145" endPosition="61" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1362" startPosition="31" endLine="1376" endPosition="55" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1453" startPosition="35" endLine="1467" endPosition="59" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1469" startPosition="35" endLine="1483" endPosition="59" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1744" startPosition="35" endLine="1758" endPosition="59" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2045" startPosition="39" endLine="2059" endPosition="63" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2190" startPosition="39" endLine="2204" endPosition="63" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2281" startPosition="43" endLine="2295" endPosition="67" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2305" startPosition="47" endLine="2319" endPosition="71" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2393" startPosition="27" endLine="2407" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2577" startPosition="23" endLine="2591" endPosition="47" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2681" startPosition="43" endLine="2695" endPosition="67" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2705" startPosition="47" endLine="2719" endPosition="71" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="464" startPosition="31" endLine="479" endPosition="55" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="623" startPosition="33" endLine="637" endPosition="57">
+      <varInfo nodeId="1196351886726" varName="tnode32" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="646" startPosition="37" endLine="660" endPosition="61">
+      <varInfo nodeId="1196351886726" varName="tnode34" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="662" startPosition="37" endLine="676" endPosition="61">
+      <varInfo nodeId="1196351886726" varName="tnode35" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="743" startPosition="33" endLine="757" endPosition="57">
+      <varInfo nodeId="1196351886726" varName="tnode40" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="766" startPosition="37" endLine="780" endPosition="61">
+      <varInfo nodeId="1196351886726" varName="tnode42" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="905" startPosition="33" endLine="919" endPosition="57">
+      <varInfo nodeId="1196351886726" varName="tnode50" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="936" startPosition="41" endLine="950" endPosition="65">
+      <varInfo nodeId="1196351886726" varName="tnode53" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="952" startPosition="41" endLine="966" endPosition="65">
+      <varInfo nodeId="1196351886726" varName="tnode54" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="976" startPosition="45" endLine="990" endPosition="69">
+      <varInfo nodeId="1196351886726" varName="tnode56" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1009" startPosition="45" endLine="1023" endPosition="69">
+      <varInfo nodeId="1196351886726" varName="tnode58" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1108" startPosition="33" endLine="1122" endPosition="57">
+      <varInfo nodeId="1196351886726" varName="tnode63" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1131" startPosition="37" endLine="1145" endPosition="61">
+      <varInfo nodeId="1196351886726" varName="tnode65" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1362" startPosition="31" endLine="1376" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode80" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1453" startPosition="35" endLine="1467" endPosition="59">
+      <varInfo nodeId="1196351886726" varName="tnode87" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1469" startPosition="35" endLine="1483" endPosition="59">
+      <varInfo nodeId="1196351886726" varName="tnode88" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1744" startPosition="35" endLine="1758" endPosition="59">
+      <varInfo nodeId="1196351886726" varName="tnode107" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2045" startPosition="39" endLine="2059" endPosition="63">
+      <varInfo nodeId="1196351886726" varName="tnode123" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2190" startPosition="39" endLine="2204" endPosition="63">
+      <varInfo nodeId="1196351886726" varName="tnode131" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2281" startPosition="43" endLine="2295" endPosition="67">
+      <varInfo nodeId="1196351886726" varName="tnode138" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2305" startPosition="47" endLine="2319" endPosition="71">
+      <varInfo nodeId="1196351886726" varName="tnode140" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2393" startPosition="27" endLine="2407" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode144" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2577" startPosition="23" endLine="2591" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode156" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2681" startPosition="43" endLine="2695" endPosition="67">
+      <varInfo nodeId="1196351886726" varName="tnode165" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2705" startPosition="47" endLine="2719" endPosition="71">
+      <varInfo nodeId="1196351886726" varName="tnode167" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="464" startPosition="31" endLine="479" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode23" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="370" startPosition="33" endLine="386" endPosition="0" />
     <scopeInfo nodeId="1196351886888" fileName="QueriesGenerated.java" startLine="433" startPosition="48" endLine="449" endPosition="5">
       <varInfo nodeId="1196351886891" varName="reference" />
@@ -4222,37 +4646,95 @@
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2299" startPosition="49" endLine="2320" endPosition="47" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2699" startPosition="49" endLine="2720" endPosition="47" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1266" startPosition="35" endLine="1288" endPosition="117" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="368" startPosition="27" endLine="394" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="536" startPosition="27" endLine="562" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="788" startPosition="41" endLine="814" endPosition="65" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1153" startPosition="41" endLine="1179" endPosition="65" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1334" startPosition="31" endLine="1360" endPosition="55" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1418" startPosition="31" endLine="1444" endPosition="55" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1570" startPosition="27" endLine="1596" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1604" startPosition="31" endLine="1630" endPosition="55" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1768" startPosition="39" endLine="1794" endPosition="63" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1838" startPosition="27" endLine="1864" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1873" startPosition="31" endLine="1899" endPosition="55" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1943" startPosition="39" endLine="1969" endPosition="63" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1978" startPosition="43" endLine="2004" endPosition="67" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2061" startPosition="39" endLine="2087" endPosition="63" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2162" startPosition="39" endLine="2188" endPosition="63" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2246" startPosition="39" endLine="2272" endPosition="63" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2516" startPosition="31" endLine="2542" endPosition="55" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2646" startPosition="39" endLine="2672" endPosition="63" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="427" startPosition="42" endLine="454" endPosition="37" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="238" startPosition="15" endLine="267" endPosition="39" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="294" startPosition="15" endLine="323" endPosition="39" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1680" startPosition="23" endLine="1709" endPosition="47" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2593" startPosition="23" endLine="2622" endPosition="47" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="968" startPosition="41" endLine="999" endPosition="65" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1001" startPosition="41" endLine="1032" endPosition="65" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1264" startPosition="29" endLine="1295" endPosition="53" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2297" startPosition="43" endLine="2328" endPosition="67" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2697" startPosition="43" endLine="2728" endPosition="67" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="368" startPosition="27" endLine="394" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode17" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="536" startPosition="27" endLine="562" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode27" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="788" startPosition="41" endLine="814" endPosition="65">
+      <varInfo nodeId="1196351886726" varName="tnode44" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1153" startPosition="41" endLine="1179" endPosition="65">
+      <varInfo nodeId="1196351886726" varName="tnode67" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1334" startPosition="31" endLine="1360" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode79" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1418" startPosition="31" endLine="1444" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode85" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1570" startPosition="27" endLine="1596" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode96" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1604" startPosition="31" endLine="1630" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode98" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1768" startPosition="39" endLine="1794" endPosition="63">
+      <varInfo nodeId="1196351886726" varName="tnode109" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1838" startPosition="27" endLine="1864" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode111" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1873" startPosition="31" endLine="1899" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode113" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1943" startPosition="39" endLine="1969" endPosition="63">
+      <varInfo nodeId="1196351886726" varName="tnode118" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1978" startPosition="43" endLine="2004" endPosition="67">
+      <varInfo nodeId="1196351886726" varName="tnode120" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2061" startPosition="39" endLine="2087" endPosition="63">
+      <varInfo nodeId="1196351886726" varName="tnode124" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2162" startPosition="39" endLine="2188" endPosition="63">
+      <varInfo nodeId="1196351886726" varName="tnode130" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2246" startPosition="39" endLine="2272" endPosition="63">
+      <varInfo nodeId="1196351886726" varName="tnode136" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2516" startPosition="31" endLine="2542" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode154" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2646" startPosition="39" endLine="2672" endPosition="63">
+      <varInfo nodeId="1196351886726" varName="tnode163" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="427" startPosition="42" endLine="454" endPosition="37">
+      <varInfo nodeId="1196351886726" varName="inputChanged20" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="238" startPosition="15" endLine="267" endPosition="39">
+      <varInfo nodeId="1196351886726" varName="tnode4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="294" startPosition="15" endLine="323" endPosition="39">
+      <varInfo nodeId="1196351886726" varName="tnode9" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1680" startPosition="23" endLine="1709" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode101" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2593" startPosition="23" endLine="2622" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode157" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="968" startPosition="41" endLine="999" endPosition="65">
+      <varInfo nodeId="1196351886726" varName="tnode55" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1001" startPosition="41" endLine="1032" endPosition="65">
+      <varInfo nodeId="1196351886726" varName="tnode57" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1264" startPosition="29" endLine="1295" endPosition="53">
+      <varInfo nodeId="1196351886726" varName="tlist72" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2297" startPosition="43" endLine="2328" endPosition="67">
+      <varInfo nodeId="1196351886726" varName="tnode139" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2697" startPosition="43" endLine="2728" endPosition="67">
+      <varInfo nodeId="1196351886726" varName="tnode166" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1868" startPosition="33" endLine="1900" endPosition="31" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1973" startPosition="45" endLine="2005" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="422" startPosition="37" endLine="455" endPosition="35" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="422" startPosition="37" endLine="455" endPosition="35">
+      <varInfo nodeId="1196351886726" varName="switchInput20" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1762" startPosition="41" endLine="1795" endPosition="39" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="234" startPosition="17" endLine="268" endPosition="15" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="290" startPosition="17" endLine="324" endPosition="15" />
@@ -4261,176 +4743,384 @@
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="641" startPosition="39" endLine="677" endPosition="37" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1260" startPosition="31" endLine="1296" endPosition="29" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1448" startPosition="37" endLine="1484" endPosition="35" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="232" startPosition="209" endLine="273" endPosition="56" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="288" startPosition="209" endLine="329" endPosition="56" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="420" startPosition="31" endLine="462" endPosition="55" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1866" startPosition="27" endLine="1908" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1971" startPosition="39" endLine="2013" endPosition="63" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1760" startPosition="35" endLine="1803" endPosition="59" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1674" startPosition="19" endLine="1718" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2372" startPosition="23" endLine="2416" endPosition="47" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="232" startPosition="209" endLine="273" endPosition="56">
+      <varInfo nodeId="1196351886726" varName="tnode3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="288" startPosition="209" endLine="329" endPosition="56">
+      <varInfo nodeId="1196351886726" varName="tnode8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="420" startPosition="31" endLine="462" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tlist20" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1866" startPosition="27" endLine="1908" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode112" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1971" startPosition="39" endLine="2013" endPosition="63">
+      <varInfo nodeId="1196351886726" varName="tnode119" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1760" startPosition="35" endLine="1803" endPosition="59">
+      <varInfo nodeId="1196351886726" varName="tnode108" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1674" startPosition="19" endLine="1718" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tnode100" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2372" startPosition="23" endLine="2416" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode142" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="230" startPosition="13" endLine="275" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="286" startPosition="13" endLine="331" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="639" startPosition="33" endLine="685" endPosition="57" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="639" startPosition="33" endLine="685" endPosition="57">
+      <varInfo nodeId="1196351886726" varName="tnode33" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="784" startPosition="43" endLine="830" endPosition="41" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1149" startPosition="43" endLine="1195" endPosition="41" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1446" startPosition="31" endLine="1492" endPosition="55" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1446" startPosition="31" endLine="1492" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode86" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1600" startPosition="33" endLine="1646" endPosition="31" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2497" startPosition="33" endLine="2543" endPosition="31" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="531" startPosition="29" endLine="578" endPosition="27" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1330" startPosition="33" endLine="1377" endPosition="31" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2041" startPosition="41" endLine="2088" endPosition="39" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2158" startPosition="41" endLine="2205" endPosition="39" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1254" startPosition="29" endLine="1303" endPosition="27" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1254" startPosition="29" endLine="1303" endPosition="27">
+      <varInfo nodeId="1196351886726" varName="context70" />
+      <varInfo nodeId="1196351886726" varName="tnode71" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2276" startPosition="45" endLine="2329" endPosition="43" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2676" startPosition="45" endLine="2729" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="228" startPosition="7" endLine="282" endPosition="31" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="284" startPosition="7" endLine="338" endPosition="31" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="782" startPosition="37" endLine="838" endPosition="61" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1147" startPosition="37" endLine="1203" endPosition="61" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1598" startPosition="27" endLine="1654" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2495" startPosition="27" endLine="2551" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="529" startPosition="23" endLine="586" endPosition="47" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1328" startPosition="27" endLine="1385" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2039" startPosition="35" endLine="2096" endPosition="59" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2156" startPosition="35" endLine="2213" endPosition="59" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1249" startPosition="57" endLine="1308" endPosition="25" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1248" startPosition="288" endLine="1309" endPosition="23" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="228" startPosition="7" endLine="282" endPosition="31">
+      <varInfo nodeId="1196351886726" varName="tlist2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="284" startPosition="7" endLine="338" endPosition="31">
+      <varInfo nodeId="1196351886726" varName="tlist7" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="782" startPosition="37" endLine="838" endPosition="61">
+      <varInfo nodeId="1196351886726" varName="tnode43" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1147" startPosition="37" endLine="1203" endPosition="61">
+      <varInfo nodeId="1196351886726" varName="tnode66" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1598" startPosition="27" endLine="1654" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode97" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2495" startPosition="27" endLine="2551" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode152" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="529" startPosition="23" endLine="586" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode26" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1328" startPosition="27" endLine="1385" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode78" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2039" startPosition="35" endLine="2096" endPosition="59">
+      <varInfo nodeId="1196351886726" varName="tnode122" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2156" startPosition="35" endLine="2213" endPosition="59">
+      <varInfo nodeId="1196351886726" varName="tnode129" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1249" startPosition="57" endLine="1308" endPosition="25">
+      <varInfo nodeId="1196351886726" varName="inputChanged70" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1248" startPosition="288" endLine="1309" endPosition="23">
+      <varInfo nodeId="1196351886726" varName="itnode70" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="525" startPosition="25" endLine="587" endPosition="23" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1324" startPosition="29" endLine="1386" endPosition="27" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2035" startPosition="37" endLine="2097" endPosition="35" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2152" startPosition="37" endLine="2214" endPosition="35" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1246" startPosition="25" endLine="1309" endPosition="23" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2274" startPosition="39" endLine="2337" endPosition="63" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2674" startPosition="39" endLine="2737" endPosition="63" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1246" startPosition="25" endLine="1309" endPosition="23">
+      <varInfo nodeId="1196351886726" varName="loopList70" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2274" startPosition="39" endLine="2337" endPosition="63">
+      <varInfo nodeId="1196351886726" varName="tnode137" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2674" startPosition="39" endLine="2737" endPosition="63">
+      <varInfo nodeId="1196351886726" varName="tnode164" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1740" startPosition="37" endLine="1804" endPosition="35" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="619" startPosition="35" endLine="686" endPosition="33" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1322" startPosition="234" endLine="1391" endPosition="70" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2150" startPosition="249" endLine="2219" endPosition="80" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="523" startPosition="19" endLine="595" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1244" startPosition="19" endLine="1316" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2033" startPosition="31" endLine="2105" endPosition="55" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1322" startPosition="234" endLine="1391" endPosition="70">
+      <varInfo nodeId="1196351886726" varName="tnode77" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2150" startPosition="249" endLine="2219" endPosition="80">
+      <varInfo nodeId="1196351886726" varName="tnode128" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="523" startPosition="19" endLine="595" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tnode25" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1244" startPosition="19" endLine="1316" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tlist70" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2033" startPosition="31" endLine="2105" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode121" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1320" startPosition="25" endLine="1393" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2148" startPosition="33" endLine="2221" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1738" startPosition="31" endLine="1812" endPosition="55" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1738" startPosition="31" endLine="1812" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode106" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1834" startPosition="29" endLine="1909" endPosition="27" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1939" startPosition="41" endLine="2014" endPosition="39" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="617" startPosition="29" endLine="694" endPosition="53" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="617" startPosition="29" endLine="694" endPosition="53">
+      <varInfo nodeId="1196351886726" varName="tnode31" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2475" startPosition="29" endLine="2552" endPosition="27" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="761" startPosition="39" endLine="839" endPosition="37" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1126" startPosition="39" endLine="1204" endPosition="37" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1414" startPosition="33" endLine="1493" endPosition="31" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1734" startPosition="33" endLine="1813" endPosition="31" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="613" startPosition="31" endLine="695" endPosition="29" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1318" startPosition="19" endLine="1400" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2146" startPosition="27" endLine="2228" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1832" startPosition="23" endLine="1917" endPosition="47" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1937" startPosition="35" endLine="2022" endPosition="59" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2473" startPosition="23" endLine="2560" endPosition="47" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="759" startPosition="33" endLine="847" endPosition="57" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1124" startPosition="33" endLine="1212" endPosition="57" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1412" startPosition="27" endLine="1501" endPosition="51" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1318" startPosition="19" endLine="1400" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tlist76" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2146" startPosition="27" endLine="2228" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tlist127" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1832" startPosition="23" endLine="1917" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode110" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1937" startPosition="35" endLine="2022" endPosition="59">
+      <varInfo nodeId="1196351886726" varName="tnode117" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2473" startPosition="23" endLine="2560" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode150" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="759" startPosition="33" endLine="847" endPosition="57">
+      <varInfo nodeId="1196351886726" varName="tnode41" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1124" startPosition="33" endLine="1212" endPosition="57">
+      <varInfo nodeId="1196351886726" varName="tnode64" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1412" startPosition="27" endLine="1501" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode84" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1566" startPosition="29" endLine="1655" endPosition="27" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1732" startPosition="27" endLine="1821" endPosition="51" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1732" startPosition="27" endLine="1821" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode105" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1933" startPosition="37" endLine="2023" endPosition="35" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2469" startPosition="25" endLine="2561" endPosition="23" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1408" startPosition="29" endLine="1502" endPosition="27" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1728" startPosition="29" endLine="1822" endPosition="27" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="607" startPosition="29" endLine="702" endPosition="27" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="607" startPosition="29" endLine="702" endPosition="27">
+      <varInfo nodeId="1196351886726" varName="context29" />
+      <varInfo nodeId="1196351886726" varName="tnode30" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2242" startPosition="41" endLine="2338" endPosition="39" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2642" startPosition="41" endLine="2738" endPosition="39" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="398" startPosition="33" endLine="495" endPosition="31" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1564" startPosition="23" endLine="1663" endPosition="47" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1931" startPosition="31" endLine="2031" endPosition="55" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1406" startPosition="234" endLine="1507" endPosition="70" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2467" startPosition="19" endLine="2569" endPosition="43" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1564" startPosition="23" endLine="1663" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode95" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1931" startPosition="31" endLine="2031" endPosition="55">
+      <varInfo nodeId="1196351886726" varName="tnode116" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1406" startPosition="234" endLine="1507" endPosition="70">
+      <varInfo nodeId="1196351886726" varName="tnode83" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2467" startPosition="19" endLine="2569" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tnode149" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="930" startPosition="43" endLine="1033" endPosition="41" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1560" startPosition="25" endLine="1664" endPosition="23" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1726" startPosition="23" endLine="1830" endPosition="47" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="602" startPosition="57" endLine="707" endPosition="25" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1726" startPosition="23" endLine="1830" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode104" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="602" startPosition="57" endLine="707" endPosition="25">
+      <varInfo nodeId="1196351886726" varName="inputChanged29" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1404" startPosition="25" endLine="1509" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2240" startPosition="35" endLine="2346" endPosition="59" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2640" startPosition="35" endLine="2746" endPosition="59" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="396" startPosition="27" endLine="503" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="601" startPosition="288" endLine="708" endPosition="23" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="599" startPosition="25" endLine="708" endPosition="23" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2240" startPosition="35" endLine="2346" endPosition="59">
+      <varInfo nodeId="1196351886726" varName="tnode135" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2640" startPosition="35" endLine="2746" endPosition="59">
+      <varInfo nodeId="1196351886726" varName="tnode162" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="396" startPosition="27" endLine="503" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode18" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="601" startPosition="288" endLine="708" endPosition="23">
+      <varInfo nodeId="1196351886726" varName="itnode29" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="599" startPosition="25" endLine="708" endPosition="23">
+      <varInfo nodeId="1196351886726" varName="loopList29" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="739" startPosition="35" endLine="848" endPosition="33" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1104" startPosition="35" endLine="1213" endPosition="33" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2236" startPosition="37" endLine="2347" endPosition="35" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2636" startPosition="37" endLine="2747" endPosition="35" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="928" startPosition="37" endLine="1041" endPosition="61" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1402" startPosition="19" endLine="1516" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1558" startPosition="19" endLine="1672" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="597" startPosition="19" endLine="715" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2234" startPosition="249" endLine="2352" endPosition="80" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2634" startPosition="249" endLine="2752" endPosition="80" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="737" startPosition="29" endLine="856" endPosition="53" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="928" startPosition="37" endLine="1041" endPosition="61">
+      <varInfo nodeId="1196351886726" varName="tnode52" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1402" startPosition="19" endLine="1516" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tlist82" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1558" startPosition="19" endLine="1672" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tnode94" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="597" startPosition="19" endLine="715" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tlist29" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2234" startPosition="249" endLine="2352" endPosition="80">
+      <varInfo nodeId="1196351886726" varName="tnode134" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2634" startPosition="249" endLine="2752" endPosition="80">
+      <varInfo nodeId="1196351886726" varName="tnode161" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="737" startPosition="29" endLine="856" endPosition="53">
+      <varInfo nodeId="1196351886726" varName="tnode39" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="923" startPosition="39" endLine="1042" endPosition="37" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1102" startPosition="29" endLine="1221" endPosition="53" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1102" startPosition="29" endLine="1221" endPosition="53">
+      <varInfo nodeId="1196351886726" varName="tnode62" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2232" startPosition="33" endLine="2354" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2632" startPosition="33" endLine="2754" endPosition="0" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="733" startPosition="31" endLine="857" endPosition="29" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1098" startPosition="31" endLine="1222" endPosition="29" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="921" startPosition="33" endLine="1050" endPosition="57" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2230" startPosition="27" endLine="2361" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2630" startPosition="27" endLine="2761" endPosition="51" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="921" startPosition="33" endLine="1050" endPosition="57">
+      <varInfo nodeId="1196351886726" varName="tnode51" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2230" startPosition="27" endLine="2361" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tlist133" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2630" startPosition="27" endLine="2761" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tlist160" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2626" startPosition="29" endLine="2762" endPosition="27" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="727" startPosition="29" endLine="864" endPosition="27" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1092" startPosition="29" endLine="1229" endPosition="27" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="727" startPosition="29" endLine="864" endPosition="27">
+      <varInfo nodeId="1196351886726" varName="context37" />
+      <varInfo nodeId="1196351886726" varName="tnode38" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1092" startPosition="29" endLine="1229" endPosition="27">
+      <varInfo nodeId="1196351886726" varName="context60" />
+      <varInfo nodeId="1196351886726" varName="tnode61" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="364" startPosition="29" endLine="504" endPosition="27" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2624" startPosition="23" endLine="2770" endPosition="47" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="722" startPosition="57" endLine="869" endPosition="25" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1087" startPosition="57" endLine="1234" endPosition="25" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="721" startPosition="288" endLine="870" endPosition="23" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1086" startPosition="288" endLine="1235" endPosition="23" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="362" startPosition="23" endLine="512" endPosition="47" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2624" startPosition="23" endLine="2770" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode159" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="722" startPosition="57" endLine="869" endPosition="25">
+      <varInfo nodeId="1196351886726" varName="inputChanged37" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1087" startPosition="57" endLine="1234" endPosition="25">
+      <varInfo nodeId="1196351886726" varName="inputChanged60" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="721" startPosition="288" endLine="870" endPosition="23">
+      <varInfo nodeId="1196351886726" varName="itnode37" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1086" startPosition="288" endLine="1235" endPosition="23">
+      <varInfo nodeId="1196351886726" varName="itnode60" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="362" startPosition="23" endLine="512" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode16" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="901" startPosition="35" endLine="1051" endPosition="33" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="719" startPosition="25" endLine="870" endPosition="23" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1084" startPosition="25" endLine="1235" endPosition="23" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="719" startPosition="25" endLine="870" endPosition="23">
+      <varInfo nodeId="1196351886726" varName="loopList37" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1084" startPosition="25" endLine="1235" endPosition="23">
+      <varInfo nodeId="1196351886726" varName="loopList60" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="358" startPosition="25" endLine="513" endPosition="23" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="717" startPosition="19" endLine="877" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="899" startPosition="29" endLine="1059" endPosition="53" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1082" startPosition="19" endLine="1242" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="356" startPosition="19" endLine="521" endPosition="43" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="717" startPosition="19" endLine="877" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tlist37" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="899" startPosition="29" endLine="1059" endPosition="53">
+      <varInfo nodeId="1196351886726" varName="tnode49" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1082" startPosition="19" endLine="1242" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tlist60" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="356" startPosition="19" endLine="521" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tnode15" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="895" startPosition="31" endLine="1060" endPosition="29" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="889" startPosition="29" endLine="1067" endPosition="27" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="889" startPosition="29" endLine="1067" endPosition="27">
+      <varInfo nodeId="1196351886726" varName="context47" />
+      <varInfo nodeId="1196351886726" varName="tnode48" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1927" startPosition="33" endLine="2106" endPosition="31" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="884" startPosition="57" endLine="1072" endPosition="25" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1925" startPosition="27" endLine="2114" endPosition="51" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="883" startPosition="288" endLine="1073" endPosition="23" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="881" startPosition="25" endLine="1073" endPosition="23" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="884" startPosition="57" endLine="1072" endPosition="25">
+      <varInfo nodeId="1196351886726" varName="inputChanged47" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1925" startPosition="27" endLine="2114" endPosition="51">
+      <varInfo nodeId="1196351886726" varName="tnode115" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="883" startPosition="288" endLine="1073" endPosition="23">
+      <varInfo nodeId="1196351886726" varName="itnode47" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="881" startPosition="25" endLine="1073" endPosition="23">
+      <varInfo nodeId="1196351886726" varName="loopList47" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1921" startPosition="29" endLine="2115" endPosition="27" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2573" startPosition="25" endLine="2771" endPosition="23" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="879" startPosition="19" endLine="1080" endPosition="43" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1919" startPosition="23" endLine="2123" endPosition="47" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2571" startPosition="19" endLine="2779" endPosition="43" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="879" startPosition="19" endLine="1080" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tlist47" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1919" startPosition="23" endLine="2123" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode114" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2571" startPosition="19" endLine="2779" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tnode155" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2142" startPosition="29" endLine="2362" endPosition="27" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2140" startPosition="23" endLine="2370" endPosition="47" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2140" startPosition="23" endLine="2370" endPosition="47">
+      <varInfo nodeId="1196351886726" varName="tnode126" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2136" startPosition="25" endLine="2417" endPosition="23" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2134" startPosition="19" endLine="2425" endPosition="43" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2134" startPosition="19" endLine="2425" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tnode125" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2463" startPosition="21" endLine="2780" endPosition="19" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2461" startPosition="15" endLine="2788" endPosition="39" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2461" startPosition="15" endLine="2788" endPosition="39">
+      <varInfo nodeId="1196351886726" varName="tnode148" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2457" startPosition="17" endLine="2789" endPosition="15" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2455" startPosition="209" endLine="2794" endPosition="60" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2455" startPosition="209" endLine="2794" endPosition="60">
+      <varInfo nodeId="1196351886726" varName="tnode147" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2453" startPosition="13" endLine="2796" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2451" startPosition="7" endLine="2803" endPosition="31" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2451" startPosition="7" endLine="2803" endPosition="31">
+      <varInfo nodeId="1196351886726" varName="tlist146" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1722" startPosition="25" endLine="2124" endPosition="23" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1720" startPosition="19" endLine="2132" endPosition="43" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1720" startPosition="19" endLine="2132" endPosition="43">
+      <varInfo nodeId="1196351886726" varName="tnode103" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1554" startPosition="21" endLine="2426" endPosition="19" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1552" startPosition="15" endLine="2434" endPosition="39" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1552" startPosition="15" endLine="2434" endPosition="39">
+      <varInfo nodeId="1196351886726" varName="tnode93" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1548" startPosition="17" endLine="2435" endPosition="15" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1546" startPosition="209" endLine="2440" endPosition="58" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1546" startPosition="209" endLine="2440" endPosition="58">
+      <varInfo nodeId="1196351886726" varName="tnode92" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1544" startPosition="13" endLine="2442" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1542" startPosition="7" endLine="2449" endPosition="31" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1542" startPosition="7" endLine="2449" endPosition="31">
+      <varInfo nodeId="1196351886726" varName="tlist91" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="352" startPosition="21" endLine="1517" endPosition="19" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="350" startPosition="15" endLine="1525" endPosition="39" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="350" startPosition="15" endLine="1525" endPosition="39">
+      <varInfo nodeId="1196351886726" varName="tnode14" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="346" startPosition="17" endLine="1526" endPosition="15" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="344" startPosition="209" endLine="1531" endPosition="58" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="344" startPosition="209" endLine="1531" endPosition="58">
+      <varInfo nodeId="1196351886726" varName="tnode13" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="342" startPosition="13" endLine="1533" endPosition="0" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="340" startPosition="7" endLine="1540" endPosition="31" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="340" startPosition="7" endLine="1540" endPosition="31">
+      <varInfo nodeId="1196351886726" varName="tlist12" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="224" startPosition="9" endLine="2804" endPosition="7" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="222" startPosition="154" endLine="2809" endPosition="18" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="221" startPosition="0" endLine="2811" endPosition="0" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="222" startPosition="154" endLine="2809" endPosition="18">
+      <varInfo nodeId="1196351886726" varName="tnode1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="221" startPosition="0" endLine="2811" endPosition="0">
+      <varInfo nodeId="1196351886726" varName="context" />
+      <varInfo nodeId="1196351886726" varName="environment" />
+    </scopeInfo>
     <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="27" startPosition="0" endLine="2823" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList" />
     <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="373" startPosition="54" endLine="385" endPosition="31" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$1" />
     <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1843" startPosition="54" endLine="1855" endPosition="31" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$10" />
@@ -4519,17 +5209,25 @@
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="92" startPosition="42" endLine="93" endPosition="64" />
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="96" startPosition="39" endLine="97" endPosition="40" />
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="103" startPosition="11" endLine="104" endPosition="84" />
-    <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="105" startPosition="0" endLine="106" endPosition="39" />
+    <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="105" startPosition="0" endLine="106" endPosition="39">
+      <varInfo nodeId="1196351887556" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="105" startPosition="45" endLine="106" endPosition="39" />
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="107" startPosition="17" endLine="108" endPosition="70" />
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="31" startPosition="43" endLine="33" endPosition="95" />
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="84" startPosition="64" endLine="86" endPosition="5" />
-    <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="113" startPosition="143" endLine="116" endPosition="20" />
-    <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="30" startPosition="0" endLine="34" endPosition="3" />
+    <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="113" startPosition="143" endLine="116" endPosition="20">
+      <varInfo nodeId="1196351887556" varName="tlist1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="30" startPosition="0" endLine="34" endPosition="3">
+      <varInfo nodeId="1196351887556" varName="model" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1196351887556" varName="generator" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
@@ -4541,9 +5239,15 @@
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="112" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="112" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="1196351887556" varName="context" />
+      <varInfo nodeId="1196351887556" varName="environment" />
+    </scopeInfo>
     <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="100" startPosition="147" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="99" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="99" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="1196351887556" varName="context" />
+      <varInfo nodeId="1196351887556" varName="environment" />
+    </scopeInfo>
     <unitInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mappingmain" />
     <unitInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="84" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mappingmain$ReductionRule0" />
   </root>

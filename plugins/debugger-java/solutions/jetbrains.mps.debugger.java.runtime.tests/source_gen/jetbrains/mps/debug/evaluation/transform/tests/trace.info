@@ -1720,30 +1720,30 @@
     <nodeInfo nodeId="3106132936047066030" fileName="TransformationUtil_Expressions_Test.java" startLine="1929" startPosition="401" endLine="1930" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3102837338445024010" fileName="TransformationUtil_Expressions_Test.java" startLine="1933" startPosition="24" endLine="1934" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3102837338445024013" fileName="TransformationUtil_Expressions_Test.java" startLine="1937" startPosition="27" endLine="1938" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1945" startPosition="51" endLine="1946" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1946" startPosition="28" endLine="1947" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1947" startPosition="69" endLine="1948" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1948" startPosition="34" endLine="1949" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1950" startPosition="9" endLine="1951" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1951" startPosition="174" endLine="1952" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1953" startPosition="11" endLine="1954" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1955" startPosition="39" endLine="1956" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1958" startPosition="11" endLine="1959" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1960" startPosition="9" endLine="1961" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1969" startPosition="51" endLine="1970" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1970" startPosition="28" endLine="1971" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1971" startPosition="69" endLine="1972" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1972" startPosition="34" endLine="1973" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1974" startPosition="9" endLine="1975" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1975" startPosition="172" endLine="1976" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1977" startPosition="11" endLine="1978" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1979" startPosition="39" endLine="1980" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1982" startPosition="11" endLine="1983" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1984" startPosition="9" endLine="1985" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1941" startPosition="57" endLine="1943" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_n7zrdh_a0a55a21a#()V" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1965" startPosition="57" endLine="1967" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_n7zrdh_a0a55a51a#()V" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1954" startPosition="58" endLine="1957" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1978" startPosition="58" endLine="1981" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1945" startPosition="51" endLine="1946" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1946" startPosition="28" endLine="1947" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1947" startPosition="69" endLine="1948" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1948" startPosition="34" endLine="1949" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1950" startPosition="9" endLine="1951" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1951" startPosition="174" endLine="1952" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1953" startPosition="11" endLine="1954" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1955" startPosition="39" endLine="1956" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1958" startPosition="11" endLine="1959" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1960" startPosition="9" endLine="1961" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1969" startPosition="51" endLine="1970" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1970" startPosition="28" endLine="1971" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1971" startPosition="69" endLine="1972" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1972" startPosition="34" endLine="1973" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1974" startPosition="9" endLine="1975" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1975" startPosition="172" endLine="1976" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1977" startPosition="11" endLine="1978" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1979" startPosition="39" endLine="1980" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1982" startPosition="11" endLine="1983" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1984" startPosition="9" endLine="1985" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1941" startPosition="57" endLine="1943" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_n7zrdh_a0a55a21a#()V" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1965" startPosition="57" endLine="1967" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_n7zrdh_a0a55a51a#()V" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1954" startPosition="58" endLine="1957" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1978" startPosition="58" endLine="1981" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1932" startPosition="0" endLine="1936" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1936" startPosition="0" endLine="1940" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
     <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="26" startPosition="81" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_lowLevelVariable#()V" />
@@ -1775,16 +1775,16 @@
     <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="182" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_notExpression#()V" />
     <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="188" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_classExpression#()V" />
     <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="194" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_classInternalExpression#()V" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1952" startPosition="45" endLine="1958" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1952" startPosition="45" endLine="1958" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1976" startPosition="45" endLine="1982" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1976" startPosition="45" endLine="1982" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1949" startPosition="34" endLine="1960" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1949" startPosition="34" endLine="1960" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1973" startPosition="34" endLine="1984" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1973" startPosition="34" endLine="1984" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1944" startPosition="0" endLine="1963" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1968" startPosition="0" endLine="1987" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1952" startPosition="45" endLine="1958" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1952" startPosition="45" endLine="1958" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1976" startPosition="45" endLine="1982" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1976" startPosition="45" endLine="1982" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1949" startPosition="34" endLine="1960" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1949" startPosition="34" endLine="1960" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1973" startPosition="34" endLine="1984" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1973" startPosition="34" endLine="1984" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1944" startPosition="0" endLine="1963" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1968" startPosition="0" endLine="1987" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="5543996881668550054" fileName="TransformationUtil_Expressions_Test.java" startLine="202" startPosition="53" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_lowLevelVariable#()V" />
     <nodeInfo nodeId="1454920206667908434" fileName="TransformationUtil_Expressions_Test.java" startLine="261" startPosition="0" endLine="320" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_variableInternal#()V" />
     <nodeInfo nodeId="5543996881668550063" fileName="TransformationUtil_Expressions_Test.java" startLine="320" startPosition="0" endLine="379" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_evaluatorsThisExpression#()V" />
@@ -1814,12 +1814,12 @@
     <nodeInfo nodeId="5543996881668550127" fileName="TransformationUtil_Expressions_Test.java" startLine="737" startPosition="0" endLine="801" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_localStaticField#()V" />
     <nodeInfo nodeId="607759879653655637" fileName="TransformationUtil_Expressions_Test.java" startLine="919" startPosition="0" endLine="983" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_localMethod#()V" />
     <nodeInfo nodeId="607759879653674966" fileName="TransformationUtil_Expressions_Test.java" startLine="1101" startPosition="0" endLine="1165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_staticLocalMethod#()V" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1942" startPosition="48" endLine="1942" endPosition="48" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1966" startPosition="48" endLine="1966" endPosition="48" />
+    <scopeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1942" startPosition="48" endLine="1942" endPosition="48" />
+    <scopeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1966" startPosition="48" endLine="1966" endPosition="48" />
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1933" startPosition="24" endLine="1934" endPosition="33" />
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1937" startPosition="27" endLine="1938" endPosition="36" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1955" startPosition="39" endLine="1956" endPosition="84" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1979" startPosition="39" endLine="1980" endPosition="84" />
+    <scopeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1955" startPosition="39" endLine="1956" endPosition="84" />
+    <scopeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1979" startPosition="39" endLine="1980" endPosition="84" />
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="28" startPosition="56" endLine="30" endPosition="143" />
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="34" startPosition="56" endLine="36" endPosition="143" />
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="40" startPosition="64" endLine="42" endPosition="151" />
@@ -1849,21 +1849,21 @@
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="184" startPosition="53" endLine="186" endPosition="140" />
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="190" startPosition="55" endLine="192" endPosition="142" />
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="196" startPosition="63" endLine="198" endPosition="150" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1941" startPosition="57" endLine="1943" endPosition="7" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1965" startPosition="57" endLine="1967" endPosition="7" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1954" startPosition="58" endLine="1957" endPosition="13">
-      <varInfo nodeId="5543996881668550053" varName="child" />
+    <scopeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1941" startPosition="57" endLine="1943" endPosition="7" />
+    <scopeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1965" startPosition="57" endLine="1967" endPosition="7" />
+    <scopeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1954" startPosition="58" endLine="1957" endPosition="13">
+      <varInfo nodeId="607759879653673818" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1978" startPosition="58" endLine="1981" endPosition="13">
-      <varInfo nodeId="5543996881668550053" varName="child" />
+    <scopeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1978" startPosition="58" endLine="1981" endPosition="13">
+      <varInfo nodeId="607759879653674990" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1932" startPosition="0" endLine="1936" endPosition="0" />
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1936" startPosition="0" endLine="1940" endPosition="0" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1953" startPosition="11" endLine="1957" endPosition="13">
-      <varInfo nodeId="5543996881668550053" varName="nodes" />
+    <scopeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1953" startPosition="11" endLine="1957" endPosition="13">
+      <varInfo nodeId="607759879653673818" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1977" startPosition="11" endLine="1981" endPosition="13">
-      <varInfo nodeId="5543996881668550053" varName="nodes" />
+    <scopeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1977" startPosition="11" endLine="1981" endPosition="13">
+      <varInfo nodeId="607759879653674990" varName="nodes" />
     </scopeInfo>
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="26" startPosition="81" endLine="32" endPosition="0" />
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
@@ -1894,33 +1894,33 @@
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="182" startPosition="0" endLine="188" endPosition="0" />
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="188" startPosition="0" endLine="194" endPosition="0" />
     <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="194" startPosition="0" endLine="200" endPosition="0" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1952" startPosition="45" endLine="1958" endPosition="11" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1976" startPosition="45" endLine="1982" endPosition="11" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1950" startPosition="9" endLine="1959" endPosition="33">
-      <varInfo nodeId="5543996881668550053" varName="quotedNode1_3" />
+    <scopeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1952" startPosition="45" endLine="1958" endPosition="11" />
+    <scopeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1976" startPosition="45" endLine="1982" endPosition="11" />
+    <scopeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1950" startPosition="9" endLine="1959" endPosition="33">
+      <varInfo nodeId="607759879653673818" varName="quotedNode1_3" />
     </scopeInfo>
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1974" startPosition="9" endLine="1983" endPosition="33">
-      <varInfo nodeId="5543996881668550053" varName="quotedNode1_3" />
+    <scopeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1974" startPosition="9" endLine="1983" endPosition="33">
+      <varInfo nodeId="607759879653674990" varName="quotedNode1_3" />
     </scopeInfo>
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1949" startPosition="34" endLine="1960" endPosition="9" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1973" startPosition="34" endLine="1984" endPosition="9" />
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1945" startPosition="51" endLine="1961" endPosition="22">
-      <varInfo nodeId="5543996881668550053" varName="_parameterValues_129834374" />
-      <varInfo nodeId="5543996881668550053" varName="quotedNode_1" />
-      <varInfo nodeId="5543996881668550053" varName="quotedNode_2" />
-      <varInfo nodeId="5543996881668550053" varName="result" />
+    <scopeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1949" startPosition="34" endLine="1960" endPosition="9" />
+    <scopeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1973" startPosition="34" endLine="1984" endPosition="9" />
+    <scopeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1945" startPosition="51" endLine="1961" endPosition="22">
+      <varInfo nodeId="607759879653673818" varName="_parameterValues_129834374" />
+      <varInfo nodeId="607759879653673818" varName="quotedNode_1" />
+      <varInfo nodeId="607759879653673818" varName="quotedNode_2" />
+      <varInfo nodeId="607759879653673818" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1969" startPosition="51" endLine="1985" endPosition="22">
-      <varInfo nodeId="5543996881668550053" varName="_parameterValues_129834374" />
-      <varInfo nodeId="5543996881668550053" varName="quotedNode_1" />
-      <varInfo nodeId="5543996881668550053" varName="quotedNode_2" />
-      <varInfo nodeId="5543996881668550053" varName="result" />
+    <scopeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1969" startPosition="51" endLine="1985" endPosition="22">
+      <varInfo nodeId="607759879653674990" varName="_parameterValues_129834374" />
+      <varInfo nodeId="607759879653674990" varName="quotedNode_1" />
+      <varInfo nodeId="607759879653674990" varName="quotedNode_2" />
+      <varInfo nodeId="607759879653674990" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1944" startPosition="0" endLine="1963" endPosition="0">
-      <varInfo nodeId="5543996881668550053" varName="parameter_4" />
+    <scopeInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1944" startPosition="0" endLine="1963" endPosition="0">
+      <varInfo nodeId="607759879653673818" varName="parameter_4" />
     </scopeInfo>
-    <scopeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1968" startPosition="0" endLine="1987" endPosition="0">
-      <varInfo nodeId="5543996881668550053" varName="parameter_4" />
+    <scopeInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1968" startPosition="0" endLine="1987" endPosition="0">
+      <varInfo nodeId="607759879653674990" varName="parameter_4" />
     </scopeInfo>
     <scopeInfo nodeId="5543996881668550054" fileName="TransformationUtil_Expressions_Test.java" startLine="203" startPosition="58" endLine="259" endPosition="21" />
     <scopeInfo nodeId="1454920206667908434" fileName="TransformationUtil_Expressions_Test.java" startLine="262" startPosition="58" endLine="318" endPosition="21" />
@@ -1996,8 +1996,8 @@
     <scopeInfo nodeId="607759879653674966" fileName="TransformationUtil_Expressions_Test.java" startLine="1101" startPosition="0" endLine="1165" endPosition="0" />
     <unitInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="25" startPosition="0" endLine="1990" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test" />
     <unitInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="201" startPosition="0" endLine="1989" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody" />
-    <unitInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1941" startPosition="0" endLine="1964" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test.TestBody$QuotationClass_n7zrdh_a0a55a21a" />
-    <unitInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="1965" startPosition="0" endLine="1988" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test.TestBody$QuotationClass_n7zrdh_a0a55a51a" />
+    <unitInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="1941" startPosition="0" endLine="1964" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test.TestBody$QuotationClass_n7zrdh_a0a55a21a" />
+    <unitInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="1965" startPosition="0" endLine="1988" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test.TestBody$QuotationClass_n7zrdh_a0a55a51a" />
   </root>
   <root nodeId="7696059916860905164">
     <nodeInfo nodeId="7696059916860905164" fileName="TransformationUtil_Complex_Test.java" startLine="20" startPosition="67" endLine="21" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

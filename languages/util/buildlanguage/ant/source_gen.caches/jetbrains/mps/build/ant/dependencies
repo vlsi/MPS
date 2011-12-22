@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.ant.AntBootstrap" file="AntBootstrap.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.ClassLoader" />
-    <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.reflect.Method" />
-    <classNode dependClassName="java.net.MalformedURLException" />
     <classNode dependClassName="java.net.URL" />
-    <classNode dependClassName="java.net.URLClassLoader" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Scanner" />
     <classNode dependClassName="jetbrains.mps.build.ant.util.ClassloaderUtil" />
-    <classNode dependClassName="jetbrains.mps.build.ant.util.PathManager" />
+    <classNode dependClassName="jetbrains.mps.build.ant.util.UrlClassLoader" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.Arg" file="Arg.java">
     <classNode dependClassName="java.lang.String" />
@@ -145,7 +137,6 @@
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.InputStreamReader" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -159,11 +150,12 @@
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="java.net.URLClassLoader" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Hashtable" />
     <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Scanner" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.ant.AntBootstrap" />
     <classNode dependClassName="jetbrains.mps.build.ant.Arg" />
     <classNode dependClassName="jetbrains.mps.build.ant.ExcludeNested" />
@@ -181,7 +173,6 @@
     <classNode dependClassName="org.apache.tools.ant.types.FileSet" />
     <classNode dependClassName="org.apache.tools.ant.types.resources.FileResource" />
     <classNode dependClassName="org.apache.tools.ant.util.JavaEnvUtils" />
-    <classNode dependClassName="org.apache.tools.ant.util.optional.NoExitSecurityManager" />
     <classNode extendsClassName="java.lang.Thread" />
     <classNode extendsClassName="org.apache.tools.ant.Task" />
     <classNode extendsClassName="org.apache.tools.ant.types.EnumeratedAttribute" />

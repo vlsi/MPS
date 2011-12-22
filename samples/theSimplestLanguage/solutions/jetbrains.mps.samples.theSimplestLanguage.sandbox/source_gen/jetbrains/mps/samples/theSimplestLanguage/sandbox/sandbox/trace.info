@@ -7,7 +7,9 @@
     <scopeInfo nodeId="1222955054650" fileName="Hello.java" startLine="7" startPosition="18" endLine="7" endPosition="18" />
     <scopeInfo nodeId="1222955054650" fileName="Hello.java" startLine="10" startPosition="42" endLine="11" endPosition="37" />
     <scopeInfo nodeId="1222955054650" fileName="Hello.java" startLine="6" startPosition="20" endLine="8" endPosition="3" />
-    <scopeInfo nodeId="1222955054650" fileName="Hello.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="1222955054650" fileName="Hello.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="1222955054650" varName="args" />
+    </scopeInfo>
     <unitInfo nodeId="1222955054650" fileName="Hello.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.samples.theSimplestLanguage.sandbox.sandbox.Hello" />
   </root>
 </debugInfo>

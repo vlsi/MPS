@@ -79,14 +79,16 @@ public class PluginUtil {
     }
   }
 
-  private static Collection<PluginContributor> myPluginContributors = new ArrayList();
-
   public static void addPluginContributor(PluginContributor contributor) {
-    myPluginContributors.add(contributor);
+    PluginFactoriesRegistry.registerPluginFactory(contributor);
   }
 
   public static Collection<PluginContributor> getPluginContributors() {
-    return myPluginContributors;
+    List<PluginContributor> pluginContributors = new ArrayList<PluginContributor>();
+    for (AbstractPluginFactory factory: PluginFactoriesRegistry.getPluginFactories()) {
+      pluginContributors.add(PluginContributor.adapt(factory));
+    }
+    return pluginContributors;
   }
 
   private static abstract class PluginCreator<T> {

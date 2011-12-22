@@ -96,15 +96,21 @@
     <scopeInfo nodeId="5822086619725755966" fileName="ContextUtil.java" startLine="70" startPosition="43" endLine="71" endPosition="76" />
     <scopeInfo nodeId="5822086619725755991" fileName="ContextUtil.java" startLine="77" startPosition="31" endLine="78" endPosition="143" />
     <scopeInfo nodeId="8835849473318892501" fileName="ContextUtil.java" startLine="14" startPosition="26" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="8835849473318892611" fileName="ContextUtil.java" startLine="24" startPosition="167" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="8835849473318892611" fileName="ContextUtil.java" startLine="24" startPosition="167" endLine="28" endPosition="0">
+      <varInfo nodeId="8835849473318892611" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="8835849473318892538" fileName="ContextUtil.java" startLine="30" startPosition="12" endLine="34" endPosition="7">
       <varInfo nodeId="8835849473318892703" varName="outclass" />
     </scopeInfo>
-    <scopeInfo nodeId="8835849473318893071" fileName="ContextUtil.java" startLine="45" startPosition="167" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="8835849473318893071" fileName="ContextUtil.java" startLine="45" startPosition="167" endLine="49" endPosition="0">
+      <varInfo nodeId="8835849473318893071" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="8835849473318892949" fileName="ContextUtil.java" startLine="51" startPosition="12" endLine="55" endPosition="7">
       <varInfo nodeId="8835849473318893092" varName="outclass" />
     </scopeInfo>
-    <scopeInfo nodeId="5822086619725755965" fileName="ContextUtil.java" startLine="69" startPosition="167" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="5822086619725755965" fileName="ContextUtil.java" startLine="69" startPosition="167" endLine="73" endPosition="0">
+      <varInfo nodeId="5822086619725755965" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="5822086619725755978" fileName="ContextUtil.java" startLine="75" startPosition="12" endLine="79" endPosition="7">
       <varInfo nodeId="5822086619725755980" varName="outclass" />
     </scopeInfo>

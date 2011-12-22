@@ -28,25 +28,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class ApplicationPluginManager implements ApplicationComponent {
+public class ApplicationPluginManager extends BaseApplicationPluginManager implements ApplicationComponent, IRegistryManager {
   private static final Logger LOG = Logger.getLogger(ApplicationPluginManager.class);
-
-  private List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
-
-  //-------
-
-  public BaseApplicationPlugin getPlugin(PluginId id) {
-    for (BaseApplicationPlugin p : mySortedPlugins) {
-      if (p.getId() == id) return p;
-    }
-    return null;
-  }
 
   public void loadPlugins() {
     mySortedPlugins = createPlugins();
 
     BaseApplicationPlugin idePlugin = null;
-
     for (BaseApplicationPlugin p : mySortedPlugins) {
       if (p.getClass().getName().equals(Ide_ApplicationPlugin.class.getName())) {
         idePlugin = p;
@@ -54,56 +42,22 @@ public class ApplicationPluginManager implements ApplicationComponent {
       }
     }
 
-    for (BaseApplicationPlugin plugin : mySortedPlugins) {
-      try {
-        plugin.createKeymaps();
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during pre-initialization ", t1);
-      }
-    }
+    super.loadPlugins();
 
-    for (BaseApplicationPlugin plugin : mySortedPlugins) {
-      try {
-        plugin.createGroups();
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during pre-initialization ", t1);
-      }
-    }
-
-    for (BaseApplicationPlugin plugin : mySortedPlugins) {
-      try {
-        plugin.adjustGroups();
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
-      }
-    }
-
-    for (BaseApplicationPlugin plugin : mySortedPlugins) {
-      try {
-        plugin.createCustomParts();
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
-      }
-    }
     if (idePlugin != null) {
       GroupAdjuster.adjustTopLevelGroups(idePlugin);
     }
     GroupAdjuster.refreshCustomizations();
   }
 
-  private List<BaseApplicationPlugin> createPlugins() {
+  protected List<BaseApplicationPlugin> createPlugins() {
     List<BaseApplicationPlugin> result = new ArrayList<BaseApplicationPlugin>();
 
     Set<IModule> modules = new HashSet<IModule>();
     modules.addAll(PluginUtil.collectPluginModules());
     result.addAll(PluginUtil.createPlugins(modules, new ApplicationPluginCreator()));
 
-    Collection<PluginContributor> pluginContributors = PluginUtil.getPluginContributors();
-    for (PluginContributor c : pluginContributors) {
-      BaseApplicationPlugin plugin = c.createApplicationPlugin();
-      if (plugin == null) continue;
-      result.add(plugin);
-    }
+    result.addAll(super.createPlugins());
 
     return result;
   }

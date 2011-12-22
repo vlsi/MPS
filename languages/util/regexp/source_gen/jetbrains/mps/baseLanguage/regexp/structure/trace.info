@@ -13,9 +13,16 @@
     <scopeInfo nodeId="1174482743037" fileName="Regexp.java" startLine="14" startPosition="29" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1174482743037" fileName="Regexp.java" startLine="18" startPosition="61" endLine="19" endPosition="169" />
     <scopeInfo nodeId="1174482743037" fileName="Regexp.java" startLine="22" startPosition="47" endLine="23" endPosition="41" />
-    <scopeInfo nodeId="1174482743037" fileName="Regexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1174482743037" fileName="Regexp.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174482743037" fileName="Regexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1174482743037" fileName="Regexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174482743037" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174482743037" fileName="Regexp.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1174482743037" varName="init" />
+      <varInfo nodeId="1174482743037" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174482743037" fileName="Regexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174482743037" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174482743037" fileName="Regexp.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.Regexp" />
   </root>
   <root nodeId="1174482753837">
@@ -36,11 +43,20 @@
     <scopeInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="22" startPosition="37" endLine="23" endPosition="54" />
     <scopeInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="26" startPosition="74" endLine="27" endPosition="195" />
     <scopeInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="30" startPosition="60" endLine="31" endPosition="54" />
-    <scopeInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174482753837" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174482753837" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1174482753837" varName="init" />
+      <varInfo nodeId="1174482753837" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1174482753837" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174482753837" fileName="StringLiteralRegexp.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp" />
   </root>
   <root nodeId="1174482769792">
@@ -54,9 +70,16 @@
     <scopeInfo nodeId="1174482769792" fileName="OrRegexp.java" startLine="13" startPosition="31" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174482769792" fileName="OrRegexp.java" startLine="17" startPosition="63" endLine="18" endPosition="173" />
     <scopeInfo nodeId="1174482769792" fileName="OrRegexp.java" startLine="21" startPosition="49" endLine="22" endPosition="43" />
-    <scopeInfo nodeId="1174482769792" fileName="OrRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174482769792" fileName="OrRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174482769792" fileName="OrRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174482769792" fileName="OrRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174482769792" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174482769792" fileName="OrRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174482769792" varName="init" />
+      <varInfo nodeId="1174482769792" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174482769792" fileName="OrRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174482769792" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174482769792" fileName="OrRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.OrRegexp" />
   </root>
   <root nodeId="1174482804200">
@@ -70,9 +93,16 @@
     <scopeInfo nodeId="1174482804200" fileName="PlusRegexp.java" startLine="13" startPosition="33" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174482804200" fileName="PlusRegexp.java" startLine="17" startPosition="65" endLine="18" endPosition="177" />
     <scopeInfo nodeId="1174482804200" fileName="PlusRegexp.java" startLine="21" startPosition="51" endLine="22" endPosition="45" />
-    <scopeInfo nodeId="1174482804200" fileName="PlusRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174482804200" fileName="PlusRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174482804200" fileName="PlusRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174482804200" fileName="PlusRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174482804200" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174482804200" fileName="PlusRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174482804200" varName="init" />
+      <varInfo nodeId="1174482804200" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174482804200" fileName="PlusRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174482804200" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174482804200" fileName="PlusRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" />
   </root>
   <root nodeId="1174482808826">
@@ -86,9 +116,16 @@
     <scopeInfo nodeId="1174482808826" fileName="StarRegexp.java" startLine="13" startPosition="33" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174482808826" fileName="StarRegexp.java" startLine="17" startPosition="65" endLine="18" endPosition="177" />
     <scopeInfo nodeId="1174482808826" fileName="StarRegexp.java" startLine="21" startPosition="51" endLine="22" endPosition="45" />
-    <scopeInfo nodeId="1174482808826" fileName="StarRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174482808826" fileName="StarRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174482808826" fileName="StarRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174482808826" fileName="StarRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174482808826" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174482808826" fileName="StarRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174482808826" varName="init" />
+      <varInfo nodeId="1174482808826" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174482808826" fileName="StarRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174482808826" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174482808826" fileName="StarRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" />
   </root>
   <root nodeId="1174483125581">
@@ -160,26 +197,50 @@
     <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="93" startPosition="69" endLine="94" endPosition="69" />
     <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="97" startPosition="72" endLine="98" endPosition="191" />
     <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="101" startPosition="58" endLine="102" endPosition="52" />
-    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+      <varInfo nodeId="1174483125581" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1174483125581" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1174483125581" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1174483125581" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1174483125581" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1174483125581" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="1174483125581" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="1174483125581" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1174483125581" varName="node" />
+      <varInfo nodeId="1174483125581" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="1174483125581" varName="init" />
+      <varInfo nodeId="1174483125581" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="1174483125581" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174483125581" fileName="RegexpDeclaration.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" />
   </root>
   <root nodeId="1174484562151">
@@ -193,9 +254,16 @@
     <scopeInfo nodeId="1174484562151" fileName="SeqRegexp.java" startLine="13" startPosition="32" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174484562151" fileName="SeqRegexp.java" startLine="17" startPosition="64" endLine="18" endPosition="175" />
     <scopeInfo nodeId="1174484562151" fileName="SeqRegexp.java" startLine="21" startPosition="50" endLine="22" endPosition="44" />
-    <scopeInfo nodeId="1174484562151" fileName="SeqRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174484562151" fileName="SeqRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174484562151" fileName="SeqRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174484562151" fileName="SeqRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174484562151" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174484562151" fileName="SeqRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174484562151" varName="init" />
+      <varInfo nodeId="1174484562151" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174484562151" fileName="SeqRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174484562151" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174484562151" fileName="SeqRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" />
   </root>
   <root nodeId="1174485167097">
@@ -223,13 +291,24 @@
     <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="31" startPosition="37" endLine="32" endPosition="45" />
     <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="35" startPosition="67" endLine="36" endPosition="181" />
     <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="39" startPosition="53" endLine="40" endPosition="47" />
-    <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="1174485167097" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1174485167097" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1174485167097" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1174485167097" varName="init" />
+      <varInfo nodeId="1174485167097" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1174485167097" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174485167097" fileName="BinaryRegexp.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp" />
   </root>
   <root nodeId="1174485235885">
@@ -250,11 +329,20 @@
     <scopeInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="22" startPosition="38" endLine="23" endPosition="45" />
     <scopeInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="26" startPosition="66" endLine="27" endPosition="179" />
     <scopeInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="30" startPosition="52" endLine="31" endPosition="46" />
-    <scopeInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174485235885" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174485235885" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1174485235885" varName="init" />
+      <varInfo nodeId="1174485235885" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1174485235885" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174485235885" fileName="UnaryRegexp.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp" />
   </root>
   <root nodeId="1174491169200">
@@ -275,11 +363,20 @@
     <scopeInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="22" startPosition="36" endLine="23" endPosition="44" />
     <scopeInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="26" startPosition="67" endLine="27" endPosition="181" />
     <scopeInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="30" startPosition="53" endLine="31" endPosition="47" />
-    <scopeInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174491169200" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174491169200" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1174491169200" varName="init" />
+      <varInfo nodeId="1174491169200" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1174491169200" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174491169200" fileName="ParensRegexp.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp" />
   </root>
   <root nodeId="1174510540317">
@@ -321,17 +418,32 @@
     <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="49" startPosition="38" endLine="50" endPosition="56" />
     <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="53" startPosition="77" endLine="54" endPosition="201" />
     <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="57" startPosition="63" endLine="58" endPosition="57" />
-    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="1174510540317" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1174510540317" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1174510540317" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1174510540317" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1174510540317" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1174510540317" varName="init" />
+      <varInfo nodeId="1174510540317" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1174510540317" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174510540317" fileName="InlineRegexpExpression.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression" />
   </root>
   <root nodeId="1174512414484">
@@ -403,26 +515,50 @@
     <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="94" startPosition="69" endLine="95" endPosition="72" />
     <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="98" startPosition="75" endLine="99" endPosition="197" />
     <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="102" startPosition="61" endLine="103" endPosition="55" />
-    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
+    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
+      <varInfo nodeId="1174512414484" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1174512414484" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1174512414484" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1174512414484" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1174512414484" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1174512414484" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1174512414484" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="89" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="1174512414484" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1174512414484" varName="node" />
+      <varInfo nodeId="1174512414484" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="1174512414484" varName="init" />
+      <varInfo nodeId="1174512414484" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="101" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="1174512414484" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174512414484" fileName="MatchRegexpStatement.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement" />
   </root>
   <root nodeId="1174552240608">
@@ -436,9 +572,16 @@
     <scopeInfo nodeId="1174552240608" fileName="QuestionRegexp.java" startLine="13" startPosition="37" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174552240608" fileName="QuestionRegexp.java" startLine="17" startPosition="69" endLine="18" endPosition="185" />
     <scopeInfo nodeId="1174552240608" fileName="QuestionRegexp.java" startLine="21" startPosition="55" endLine="22" endPosition="49" />
-    <scopeInfo nodeId="1174552240608" fileName="QuestionRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174552240608" fileName="QuestionRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174552240608" fileName="QuestionRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174552240608" fileName="QuestionRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174552240608" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174552240608" fileName="QuestionRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174552240608" varName="init" />
+      <varInfo nodeId="1174552240608" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174552240608" fileName="QuestionRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174552240608" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174552240608" fileName="QuestionRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp" />
   </root>
   <root nodeId="1174554186090">
@@ -505,25 +648,48 @@
     <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="85" startPosition="69" endLine="86" endPosition="69" />
     <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="89" startPosition="72" endLine="90" endPosition="191" />
     <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="93" startPosition="58" endLine="94" endPosition="52" />
-    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="20" startPosition="0" endLine="23" endPosition="3" />
+    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="20" startPosition="0" endLine="23" endPosition="3">
+      <varInfo nodeId="1174554186090" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1174554186090" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1174554186090" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1174554186090" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1174554186090" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1174554186090" varName="node" />
+      <varInfo nodeId="1174554186090" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="1174554186090" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="1174554186090" varName="node" />
+      <varInfo nodeId="1174554186090" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="1174554186090" varName="init" />
+      <varInfo nodeId="1174554186090" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1174554186090" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174554186090" fileName="SymbolClassRegexp.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp" />
   </root>
   <root nodeId="1174554211468">
@@ -537,9 +703,16 @@
     <scopeInfo nodeId="1174554211468" fileName="PositiveSymbolClassRegexp.java" startLine="13" startPosition="48" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174554211468" fileName="PositiveSymbolClassRegexp.java" startLine="17" startPosition="80" endLine="18" endPosition="207" />
     <scopeInfo nodeId="1174554211468" fileName="PositiveSymbolClassRegexp.java" startLine="21" startPosition="66" endLine="22" endPosition="60" />
-    <scopeInfo nodeId="1174554211468" fileName="PositiveSymbolClassRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174554211468" fileName="PositiveSymbolClassRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174554211468" fileName="PositiveSymbolClassRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174554211468" fileName="PositiveSymbolClassRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174554211468" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554211468" fileName="PositiveSymbolClassRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174554211468" varName="init" />
+      <varInfo nodeId="1174554211468" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554211468" fileName="PositiveSymbolClassRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174554211468" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174554211468" fileName="PositiveSymbolClassRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp" />
   </root>
   <root nodeId="1174554238051">
@@ -553,9 +726,16 @@
     <scopeInfo nodeId="1174554238051" fileName="NegativeSymbolClassRegexp.java" startLine="13" startPosition="48" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174554238051" fileName="NegativeSymbolClassRegexp.java" startLine="17" startPosition="80" endLine="18" endPosition="207" />
     <scopeInfo nodeId="1174554238051" fileName="NegativeSymbolClassRegexp.java" startLine="21" startPosition="66" endLine="22" endPosition="60" />
-    <scopeInfo nodeId="1174554238051" fileName="NegativeSymbolClassRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174554238051" fileName="NegativeSymbolClassRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174554238051" fileName="NegativeSymbolClassRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174554238051" fileName="NegativeSymbolClassRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174554238051" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554238051" fileName="NegativeSymbolClassRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174554238051" varName="init" />
+      <varInfo nodeId="1174554238051" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554238051" fileName="NegativeSymbolClassRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174554238051" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174554238051" fileName="NegativeSymbolClassRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp" />
   </root>
   <root nodeId="1174554386384">
@@ -620,24 +800,46 @@
     <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="84" startPosition="69" endLine="85" endPosition="84" />
     <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="88" startPosition="87" endLine="89" endPosition="221" />
     <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="92" startPosition="73" endLine="93" endPosition="67" />
-    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="1174554386384" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1174554386384" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1174554386384" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1174554386384" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1174554386384" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1174554386384" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1174554386384" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1174554386384" varName="node" />
+      <varInfo nodeId="1174554386384" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="1174554386384" varName="init" />
+      <varInfo nodeId="1174554386384" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1174554386384" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174554386384" fileName="PredefinedSymbolClassDeclaration.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration" />
   </root>
   <root nodeId="1174554406855">
@@ -711,27 +913,52 @@
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="96" startPosition="69" endLine="97" endPosition="75" />
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="100" startPosition="78" endLine="101" endPosition="203" />
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="104" startPosition="64" endLine="105" endPosition="58" />
-    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="1174554406855" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1174554406855" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1174554406855" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1174554406855" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1174554406855" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="1174554406855" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="1174554406855" varName="node" />
+      <varInfo nodeId="1174554406855" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1174554406855" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="1174554406855" varName="node" />
+      <varInfo nodeId="1174554406855" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="1174554406855" varName="init" />
+      <varInfo nodeId="1174554406855" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="103" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="1174554406855" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174554406855" fileName="PredefinedSymbolClasses.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses" />
   </root>
   <root nodeId="1174555732504">
@@ -752,11 +979,20 @@
     <scopeInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="22" startPosition="69" endLine="23" endPosition="70" />
     <scopeInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="26" startPosition="82" endLine="27" endPosition="211" />
     <scopeInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="30" startPosition="68" endLine="31" endPosition="62" />
-    <scopeInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174555732504" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174555732504" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1174555732504" varName="init" />
+      <varInfo nodeId="1174555732504" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1174555732504" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174555732504" fileName="PredefinedSymbolClassRegexp.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" />
   </root>
   <root nodeId="1174556813606">
@@ -770,9 +1006,16 @@
     <scopeInfo nodeId="1174556813606" fileName="DotRegexp.java" startLine="13" startPosition="32" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174556813606" fileName="DotRegexp.java" startLine="17" startPosition="64" endLine="18" endPosition="175" />
     <scopeInfo nodeId="1174556813606" fileName="DotRegexp.java" startLine="21" startPosition="50" endLine="22" endPosition="44" />
-    <scopeInfo nodeId="1174556813606" fileName="DotRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174556813606" fileName="DotRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174556813606" fileName="DotRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174556813606" fileName="DotRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174556813606" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174556813606" fileName="DotRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174556813606" varName="init" />
+      <varInfo nodeId="1174556813606" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174556813606" fileName="DotRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174556813606" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174556813606" fileName="DotRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.DotRegexp" />
   </root>
   <root nodeId="1174557861378">
@@ -823,20 +1066,38 @@
     <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="65" startPosition="69" endLine="66" endPosition="67" />
     <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="69" startPosition="70" endLine="70" endPosition="187" />
     <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="73" startPosition="56" endLine="74" endPosition="50" />
-    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="20" startPosition="0" endLine="23" endPosition="3" />
+    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="20" startPosition="0" endLine="23" endPosition="3">
+      <varInfo nodeId="1174557861378" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1174557861378" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1174557861378" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1174557861378" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1174557861378" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1174557861378" varName="node" />
+      <varInfo nodeId="1174557861378" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="1174557861378" varName="init" />
+      <varInfo nodeId="1174557861378" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="1174557861378" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174557861378" fileName="SymbolClassPart.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart" />
   </root>
   <root nodeId="1174557878319">
@@ -857,11 +1118,20 @@
     <scopeInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="22" startPosition="42" endLine="23" endPosition="64" />
     <scopeInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="26" startPosition="79" endLine="27" endPosition="205" />
     <scopeInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="30" startPosition="65" endLine="31" endPosition="59" />
-    <scopeInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174557878319" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174557878319" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1174557878319" varName="init" />
+      <varInfo nodeId="1174557878319" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1174557878319" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174557878319" fileName="CharacterSymbolClassPart.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" />
   </root>
   <root nodeId="1174558301835">
@@ -889,13 +1159,24 @@
     <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="31" startPosition="36" endLine="32" endPosition="57" />
     <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="35" startPosition="78" endLine="36" endPosition="203" />
     <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="39" startPosition="64" endLine="40" endPosition="58" />
-    <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="1174558301835" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1174558301835" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1174558301835" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1174558301835" varName="init" />
+      <varInfo nodeId="1174558301835" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1174558301835" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174558301835" fileName="IntervalSymbolClassPart.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart" />
   </root>
   <root nodeId="1174558792178">
@@ -916,11 +1197,20 @@
     <scopeInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="22" startPosition="69" endLine="23" endPosition="78" />
     <scopeInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="26" startPosition="91" endLine="27" endPosition="229" />
     <scopeInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="30" startPosition="77" endLine="31" endPosition="71" />
-    <scopeInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174558792178" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174558792178" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1174558792178" varName="init" />
+      <varInfo nodeId="1174558792178" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1174558792178" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174558792178" fileName="PredefinedSymbolClassSymbolClassPart.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" />
   </root>
   <root nodeId="1174564062919">
@@ -985,24 +1275,46 @@
     <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="84" startPosition="69" endLine="85" endPosition="69" />
     <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="88" startPosition="72" endLine="89" endPosition="191" />
     <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="92" startPosition="58" endLine="93" endPosition="52" />
-    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="1174564062919" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1174564062919" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1174564062919" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1174564062919" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1174564062919" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1174564062919" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1174564062919" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1174564062919" varName="node" />
+      <varInfo nodeId="1174564062919" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="1174564062919" varName="init" />
+      <varInfo nodeId="1174564062919" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1174564062919" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174564062919" fileName="MatchParensRegexp.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp" />
   </root>
   <root nodeId="1174565027678">
@@ -1023,11 +1335,20 @@
     <scopeInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="23" startPosition="48" endLine="24" endPosition="58" />
     <scopeInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="27" startPosition="77" endLine="28" endPosition="201" />
     <scopeInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="31" startPosition="63" endLine="32" endPosition="57" />
-    <scopeInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="1174565027678" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1174565027678" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1174565027678" varName="init" />
+      <varInfo nodeId="1174565027678" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1174565027678" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174565027678" fileName="MatchVariableReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" />
   </root>
   <root nodeId="1174653354106">
@@ -1036,7 +1357,9 @@
     <nodeInfo nodeId="1174653354106" fileName="RegexpUsingConstruction.java" startLine="10" startPosition="0" endLine="11" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRegexp#()Ljetbrains/mps/smodel/INodeAdapter;" />
     <nodeInfo nodeId="1174653354106" fileName="RegexpUsingConstruction.java" startLine="11" startPosition="38" endLine="12" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setRegexp#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
     <scopeInfo nodeId="1174653354106" fileName="RegexpUsingConstruction.java" startLine="10" startPosition="0" endLine="11" endPosition="38" />
-    <scopeInfo nodeId="1174653354106" fileName="RegexpUsingConstruction.java" startLine="11" startPosition="38" endLine="12" endPosition="47" />
+    <scopeInfo nodeId="1174653354106" fileName="RegexpUsingConstruction.java" startLine="11" startPosition="38" endLine="12" endPosition="47">
+      <varInfo nodeId="1174653354106" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1174653354106" fileName="RegexpUsingConstruction.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction" />
   </root>
   <root nodeId="1174655989549">
@@ -1108,26 +1431,50 @@
     <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="92" startPosition="69" endLine="93" endPosition="79" />
     <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="96" startPosition="82" endLine="97" endPosition="211" />
     <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="100" startPosition="68" endLine="101" endPosition="62" />
-    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="1174655989549" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1174655989549" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1174655989549" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1174655989549" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1174655989549" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1174655989549" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="1174655989549" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="1174655989549" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1174655989549" varName="node" />
+      <varInfo nodeId="1174655989549" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="1174655989549" varName="init" />
+      <varInfo nodeId="1174655989549" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="1174655989549" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174655989549" fileName="ReplaceWithRegexpExpression.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression" />
   </root>
   <root nodeId="1174656254036">
@@ -1141,9 +1488,16 @@
     <scopeInfo nodeId="1174656254036" fileName="ReplaceBlock.java" startLine="14" startPosition="35" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1174656254036" fileName="ReplaceBlock.java" startLine="18" startPosition="67" endLine="19" endPosition="181" />
     <scopeInfo nodeId="1174656254036" fileName="ReplaceBlock.java" startLine="22" startPosition="53" endLine="23" endPosition="47" />
-    <scopeInfo nodeId="1174656254036" fileName="ReplaceBlock.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1174656254036" fileName="ReplaceBlock.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174656254036" fileName="ReplaceBlock.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1174656254036" fileName="ReplaceBlock.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174656254036" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174656254036" fileName="ReplaceBlock.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1174656254036" varName="init" />
+      <varInfo nodeId="1174656254036" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174656254036" fileName="ReplaceBlock.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174656254036" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174656254036" fileName="ReplaceBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock" />
   </root>
   <root nodeId="1174660461415">
@@ -1157,9 +1511,16 @@
     <scopeInfo nodeId="1174660461415" fileName="LazyStarRegexp.java" startLine="13" startPosition="37" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174660461415" fileName="LazyStarRegexp.java" startLine="17" startPosition="69" endLine="18" endPosition="185" />
     <scopeInfo nodeId="1174660461415" fileName="LazyStarRegexp.java" startLine="21" startPosition="55" endLine="22" endPosition="49" />
-    <scopeInfo nodeId="1174660461415" fileName="LazyStarRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174660461415" fileName="LazyStarRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174660461415" fileName="LazyStarRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174660461415" fileName="LazyStarRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174660461415" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174660461415" fileName="LazyStarRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174660461415" varName="init" />
+      <varInfo nodeId="1174660461415" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174660461415" fileName="LazyStarRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174660461415" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174660461415" fileName="LazyStarRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp" />
   </root>
   <root nodeId="1174660505718">
@@ -1173,9 +1534,16 @@
     <scopeInfo nodeId="1174660505718" fileName="LazyPlusRegexp.java" startLine="13" startPosition="37" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174660505718" fileName="LazyPlusRegexp.java" startLine="17" startPosition="69" endLine="18" endPosition="185" />
     <scopeInfo nodeId="1174660505718" fileName="LazyPlusRegexp.java" startLine="21" startPosition="55" endLine="22" endPosition="49" />
-    <scopeInfo nodeId="1174660505718" fileName="LazyPlusRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174660505718" fileName="LazyPlusRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174660505718" fileName="LazyPlusRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174660505718" fileName="LazyPlusRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174660505718" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174660505718" fileName="LazyPlusRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174660505718" varName="init" />
+      <varInfo nodeId="1174660505718" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174660505718" fileName="LazyPlusRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174660505718" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174660505718" fileName="LazyPlusRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp" />
   </root>
   <root nodeId="1174660533095">
@@ -1189,9 +1557,16 @@
     <scopeInfo nodeId="1174660533095" fileName="LazyQuestionRegexp.java" startLine="13" startPosition="41" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174660533095" fileName="LazyQuestionRegexp.java" startLine="17" startPosition="73" endLine="18" endPosition="193" />
     <scopeInfo nodeId="1174660533095" fileName="LazyQuestionRegexp.java" startLine="21" startPosition="59" endLine="22" endPosition="53" />
-    <scopeInfo nodeId="1174660533095" fileName="LazyQuestionRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174660533095" fileName="LazyQuestionRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174660533095" fileName="LazyQuestionRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174660533095" fileName="LazyQuestionRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174660533095" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174660533095" fileName="LazyQuestionRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174660533095" varName="init" />
+      <varInfo nodeId="1174660533095" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174660533095" fileName="LazyQuestionRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174660533095" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174660533095" fileName="LazyQuestionRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp" />
   </root>
   <root nodeId="1174662351725">
@@ -1265,27 +1640,52 @@
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="96" startPosition="69" endLine="97" endPosition="59" />
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="100" startPosition="62" endLine="101" endPosition="171" />
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="104" startPosition="48" endLine="105" endPosition="42" />
-    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="1174662351725" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1174662351725" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1174662351725" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1174662351725" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1174662351725" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="1174662351725" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="1174662351725" varName="node" />
+      <varInfo nodeId="1174662351725" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1174662351725" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="1174662351725" varName="node" />
+      <varInfo nodeId="1174662351725" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="1174662351725" varName="init" />
+      <varInfo nodeId="1174662351725" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174662351725" fileName="Regexps.java" startLine="103" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="1174662351725" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174662351725" fileName="Regexps.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.Regexps" />
   </root>
   <root nodeId="1174662605354">
@@ -1306,11 +1706,20 @@
     <scopeInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="22" startPosition="49" endLine="23" endPosition="69" />
     <scopeInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="26" startPosition="87" endLine="27" endPosition="221" />
     <scopeInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="30" startPosition="73" endLine="31" endPosition="67" />
-    <scopeInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174662605354" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174662605354" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1174662605354" varName="init" />
+      <varInfo nodeId="1174662605354" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1174662605354" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174662605354" fileName="RegexpDeclarationReferenceRegexp.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp" />
   </root>
   <root nodeId="1174904166999">
@@ -1331,11 +1740,20 @@
     <scopeInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="22" startPosition="31" endLine="23" endPosition="51" />
     <scopeInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="26" startPosition="67" endLine="27" endPosition="181" />
     <scopeInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="30" startPosition="53" endLine="31" endPosition="47" />
-    <scopeInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174904166999" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174904166999" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1174904166999" varName="init" />
+      <varInfo nodeId="1174904166999" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1174904166999" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174904166999" fileName="NTimesRegexp.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp" />
   </root>
   <root nodeId="1174904442594">
@@ -1356,11 +1774,20 @@
     <scopeInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="22" startPosition="31" endLine="23" endPosition="58" />
     <scopeInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="26" startPosition="74" endLine="27" endPosition="195" />
     <scopeInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="30" startPosition="60" endLine="31" endPosition="54" />
-    <scopeInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174904442594" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174904442594" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1174904442594" varName="init" />
+      <varInfo nodeId="1174904442594" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1174904442594" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174904442594" fileName="AtLeastNTimesRegexp.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp" />
   </root>
   <root nodeId="1174904605806">
@@ -1388,13 +1815,24 @@
     <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="31" startPosition="31" endLine="32" endPosition="58" />
     <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="35" startPosition="74" endLine="36" endPosition="195" />
     <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="39" startPosition="60" endLine="40" endPosition="54" />
-    <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="1174904605806" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1174904605806" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1174904605806" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1174904605806" varName="init" />
+      <varInfo nodeId="1174904605806" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1174904605806" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174904605806" fileName="FromNToMTimesRegexp.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp" />
   </root>
   <root nodeId="1174906321267">
@@ -1408,9 +1846,16 @@
     <scopeInfo nodeId="1174906321267" fileName="PositiveLookAheadRegexp.java" startLine="13" startPosition="46" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174906321267" fileName="PositiveLookAheadRegexp.java" startLine="17" startPosition="78" endLine="18" endPosition="203" />
     <scopeInfo nodeId="1174906321267" fileName="PositiveLookAheadRegexp.java" startLine="21" startPosition="64" endLine="22" endPosition="58" />
-    <scopeInfo nodeId="1174906321267" fileName="PositiveLookAheadRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174906321267" fileName="PositiveLookAheadRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174906321267" fileName="PositiveLookAheadRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174906321267" fileName="PositiveLookAheadRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174906321267" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174906321267" fileName="PositiveLookAheadRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174906321267" varName="init" />
+      <varInfo nodeId="1174906321267" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174906321267" fileName="PositiveLookAheadRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174906321267" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174906321267" fileName="PositiveLookAheadRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp" />
   </root>
   <root nodeId="1174906468661">
@@ -1424,9 +1869,16 @@
     <scopeInfo nodeId="1174906468661" fileName="NegativeLookAheadRegexp.java" startLine="13" startPosition="46" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174906468661" fileName="NegativeLookAheadRegexp.java" startLine="17" startPosition="78" endLine="18" endPosition="203" />
     <scopeInfo nodeId="1174906468661" fileName="NegativeLookAheadRegexp.java" startLine="21" startPosition="64" endLine="22" endPosition="58" />
-    <scopeInfo nodeId="1174906468661" fileName="NegativeLookAheadRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174906468661" fileName="NegativeLookAheadRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174906468661" fileName="NegativeLookAheadRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174906468661" fileName="NegativeLookAheadRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174906468661" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174906468661" fileName="NegativeLookAheadRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174906468661" varName="init" />
+      <varInfo nodeId="1174906468661" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174906468661" fileName="NegativeLookAheadRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174906468661" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174906468661" fileName="NegativeLookAheadRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp" />
   </root>
   <root nodeId="1174906544517">
@@ -1447,11 +1899,20 @@
     <scopeInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="22" startPosition="38" endLine="23" endPosition="44" />
     <scopeInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="26" startPosition="65" endLine="27" endPosition="177" />
     <scopeInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="30" startPosition="51" endLine="31" endPosition="45" />
-    <scopeInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174906544517" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174906544517" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1174906544517" varName="init" />
+      <varInfo nodeId="1174906544517" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1174906544517" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174906544517" fileName="LookRegexp.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.LookRegexp" />
   </root>
   <root nodeId="1174906762287">
@@ -1465,9 +1926,16 @@
     <scopeInfo nodeId="1174906762287" fileName="PositiveLookBehindRegexp.java" startLine="13" startPosition="47" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174906762287" fileName="PositiveLookBehindRegexp.java" startLine="17" startPosition="79" endLine="18" endPosition="205" />
     <scopeInfo nodeId="1174906762287" fileName="PositiveLookBehindRegexp.java" startLine="21" startPosition="65" endLine="22" endPosition="59" />
-    <scopeInfo nodeId="1174906762287" fileName="PositiveLookBehindRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174906762287" fileName="PositiveLookBehindRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174906762287" fileName="PositiveLookBehindRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174906762287" fileName="PositiveLookBehindRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174906762287" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174906762287" fileName="PositiveLookBehindRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174906762287" varName="init" />
+      <varInfo nodeId="1174906762287" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174906762287" fileName="PositiveLookBehindRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174906762287" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174906762287" fileName="PositiveLookBehindRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp" />
   </root>
   <root nodeId="1174906790902">
@@ -1481,9 +1949,16 @@
     <scopeInfo nodeId="1174906790902" fileName="NegativeLookBehindRegexp.java" startLine="13" startPosition="47" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1174906790902" fileName="NegativeLookBehindRegexp.java" startLine="17" startPosition="79" endLine="18" endPosition="205" />
     <scopeInfo nodeId="1174906790902" fileName="NegativeLookBehindRegexp.java" startLine="21" startPosition="65" endLine="22" endPosition="59" />
-    <scopeInfo nodeId="1174906790902" fileName="NegativeLookBehindRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1174906790902" fileName="NegativeLookBehindRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1174906790902" fileName="NegativeLookBehindRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1174906790902" fileName="NegativeLookBehindRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1174906790902" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174906790902" fileName="NegativeLookBehindRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1174906790902" varName="init" />
+      <varInfo nodeId="1174906790902" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174906790902" fileName="NegativeLookBehindRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1174906790902" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174906790902" fileName="NegativeLookBehindRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp" />
   </root>
   <root nodeId="1174909099093">
@@ -1504,11 +1979,20 @@
     <scopeInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="22" startPosition="48" endLine="23" endPosition="64" />
     <scopeInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="26" startPosition="83" endLine="27" endPosition="213" />
     <scopeInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="30" startPosition="69" endLine="31" endPosition="63" />
-    <scopeInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174909099093" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174909099093" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1174909099093" varName="init" />
+      <varInfo nodeId="1174909099093" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1174909099093" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174909099093" fileName="MatchVariableReferenceRegexp.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp" />
   </root>
   <root nodeId="1174919147781">
@@ -1522,9 +2006,16 @@
     <scopeInfo nodeId="1174919147781" fileName="RegexpExpression.java" startLine="14" startPosition="39" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1174919147781" fileName="RegexpExpression.java" startLine="18" startPosition="71" endLine="19" endPosition="189" />
     <scopeInfo nodeId="1174919147781" fileName="RegexpExpression.java" startLine="22" startPosition="57" endLine="23" endPosition="51" />
-    <scopeInfo nodeId="1174919147781" fileName="RegexpExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1174919147781" fileName="RegexpExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1174919147781" fileName="RegexpExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1174919147781" fileName="RegexpExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1174919147781" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174919147781" fileName="RegexpExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1174919147781" varName="init" />
+      <varInfo nodeId="1174919147781" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1174919147781" fileName="RegexpExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1174919147781" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1174919147781" fileName="RegexpExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression" />
   </root>
   <root nodeId="1175154849582">
@@ -1596,26 +2087,50 @@
     <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="94" startPosition="69" endLine="95" endPosition="73" />
     <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="98" startPosition="76" endLine="99" endPosition="199" />
     <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="102" startPosition="62" endLine="103" endPosition="56" />
-    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
+    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
+      <varInfo nodeId="1175154849582" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1175154849582" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1175154849582" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1175154849582" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1175154849582" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1175154849582" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1175154849582" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="89" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="1175154849582" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1175154849582" varName="node" />
+      <varInfo nodeId="1175154849582" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="1175154849582" varName="init" />
+      <varInfo nodeId="1175154849582" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="101" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="1175154849582" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1175154849582" fileName="ForEachMatchStatement.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement" />
   </root>
   <root nodeId="1175161264766">
@@ -1629,9 +2144,16 @@
     <scopeInfo nodeId="1175161264766" fileName="LineStartRegexp.java" startLine="13" startPosition="38" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1175161264766" fileName="LineStartRegexp.java" startLine="17" startPosition="70" endLine="18" endPosition="187" />
     <scopeInfo nodeId="1175161264766" fileName="LineStartRegexp.java" startLine="21" startPosition="56" endLine="22" endPosition="50" />
-    <scopeInfo nodeId="1175161264766" fileName="LineStartRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1175161264766" fileName="LineStartRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1175161264766" fileName="LineStartRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1175161264766" fileName="LineStartRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1175161264766" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175161264766" fileName="LineStartRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1175161264766" varName="init" />
+      <varInfo nodeId="1175161264766" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175161264766" fileName="LineStartRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1175161264766" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1175161264766" fileName="LineStartRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp" />
   </root>
   <root nodeId="1175161300324">
@@ -1645,9 +2167,16 @@
     <scopeInfo nodeId="1175161300324" fileName="LineEndRegexp.java" startLine="13" startPosition="36" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1175161300324" fileName="LineEndRegexp.java" startLine="17" startPosition="68" endLine="18" endPosition="183" />
     <scopeInfo nodeId="1175161300324" fileName="LineEndRegexp.java" startLine="21" startPosition="54" endLine="22" endPosition="48" />
-    <scopeInfo nodeId="1175161300324" fileName="LineEndRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1175161300324" fileName="LineEndRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1175161300324" fileName="LineEndRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1175161300324" fileName="LineEndRegexp.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1175161300324" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175161300324" fileName="LineEndRegexp.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1175161300324" varName="init" />
+      <varInfo nodeId="1175161300324" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175161300324" fileName="LineEndRegexp.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1175161300324" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1175161300324" fileName="LineEndRegexp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp" />
   </root>
   <root nodeId="1175164405556">
@@ -1712,24 +2241,46 @@
     <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="83" startPosition="69" endLine="84" endPosition="67" />
     <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="87" startPosition="70" endLine="88" endPosition="187" />
     <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="91" startPosition="56" endLine="92" endPosition="50" />
-    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="1175164405556" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1175164405556" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1175164405556" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1175164405556" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1175164405556" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1175164405556" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1175164405556" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1175164405556" varName="node" />
+      <varInfo nodeId="1175164405556" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="1175164405556" varName="init" />
+      <varInfo nodeId="1175164405556" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="1175164405556" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1175164405556" fileName="SplitExpression.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SplitExpression" />
   </root>
   <root nodeId="1175169009571">
@@ -1801,26 +2352,50 @@
     <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="94" startPosition="69" endLine="95" endPosition="70" />
     <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="98" startPosition="73" endLine="99" endPosition="193" />
     <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="102" startPosition="59" endLine="103" endPosition="53" />
-    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
+    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
+      <varInfo nodeId="1175169009571" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1175169009571" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1175169009571" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1175169009571" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1175169009571" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1175169009571" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1175169009571" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="89" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="1175169009571" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1175169009571" varName="node" />
+      <varInfo nodeId="1175169009571" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="1175169009571" varName="init" />
+      <varInfo nodeId="1175169009571" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="101" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="1175169009571" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1175169009571" fileName="FindMatchStatement.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement" />
   </root>
   <root nodeId="1179357154354">
@@ -1885,24 +2460,46 @@
     <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="83" startPosition="69" endLine="84" endPosition="73" />
     <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="87" startPosition="76" endLine="88" endPosition="199" />
     <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="91" startPosition="62" endLine="92" endPosition="56" />
-    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="1179357154354" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1179357154354" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1179357154354" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1179357154354" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1179357154354" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1179357154354" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1179357154354" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1179357154354" varName="node" />
+      <varInfo nodeId="1179357154354" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="1179357154354" varName="init" />
+      <varInfo nodeId="1179357154354" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="1179357154354" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1179357154354" fileName="MatchRegexpExpression.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression" />
   </root>
   <root nodeId="1203415418648">
@@ -1923,11 +2520,20 @@
     <scopeInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="22" startPosition="37" endLine="23" endPosition="57" />
     <scopeInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="26" startPosition="77" endLine="27" endPosition="201" />
     <scopeInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="30" startPosition="63" endLine="31" endPosition="57" />
-    <scopeInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1203415418648" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1203415418648" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1203415418648" varName="init" />
+      <varInfo nodeId="1203415418648" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1203415418648" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1203415418648" fileName="UnicodeCharacterRegexp.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp" />
   </root>
   <root nodeId="1203415512996">
@@ -1940,8 +2546,12 @@
     <nodeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="7" startPosition="62" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <scopeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
     <scopeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="77" />
-    <scopeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="7" startPosition="62" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="77">
+      <varInfo nodeId="1203415512996" varName="testValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="7" startPosition="62" endLine="17" endPosition="0">
+      <varInfo nodeId="1203415512996" varName="value" />
+    </scopeInfo>
     <unitInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.FourHex_PropertySupport" />
   </root>
   <root nodeId="1220021842985">
@@ -1969,13 +2579,24 @@
     <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="31" startPosition="55" endLine="32" endPosition="60" />
     <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="35" startPosition="82" endLine="36" endPosition="211" />
     <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="39" startPosition="68" endLine="40" endPosition="62" />
-    <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="1220021842985" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1220021842985" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1220021842985" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1220021842985" varName="init" />
+      <varInfo nodeId="1220021842985" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1220021842985" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1220021842985" fileName="IntersectionSymbolClassPart.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart" />
   </root>
   <root nodeId="1220356640633">
@@ -2037,22 +2658,42 @@
     <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="75" startPosition="69" endLine="76" endPosition="66" />
     <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="79" startPosition="69" endLine="80" endPosition="185" />
     <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="83" startPosition="55" endLine="84" endPosition="49" />
-    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="1222256539755" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1222256539755" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1222256539755" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1222256539755" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1222256539755" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="1222256539755" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1222256539755" varName="node" />
+      <varInfo nodeId="1222256539755" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1222256539755" varName="init" />
+      <varInfo nodeId="1222256539755" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1222256539755" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1222256539755" fileName="SplitOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SplitOperation" />
   </root>
   <root nodeId="1222260469397">
@@ -2110,22 +2751,42 @@
     <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="75" startPosition="69" endLine="76" endPosition="72" />
     <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="79" startPosition="75" endLine="80" endPosition="197" />
     <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="83" startPosition="61" endLine="84" endPosition="55" />
-    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="1222260469397" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1222260469397" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1222260469397" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1222260469397" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1222260469397" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="1222260469397" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1222260469397" varName="node" />
+      <varInfo nodeId="1222260469397" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1222260469397" varName="init" />
+      <varInfo nodeId="1222260469397" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1222260469397" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1222260469397" fileName="MatchRegexpOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation" />
   </root>
   <root nodeId="1222260556146">
@@ -2190,24 +2851,46 @@
     <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="84" startPosition="69" endLine="85" endPosition="78" />
     <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="88" startPosition="81" endLine="89" endPosition="209" />
     <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="92" startPosition="67" endLine="93" endPosition="61" />
-    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="1222260556146" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1222260556146" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1222260556146" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1222260556146" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1222260556146" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1222260556146" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1222260556146" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1222260556146" varName="node" />
+      <varInfo nodeId="1222260556146" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="1222260556146" varName="init" />
+      <varInfo nodeId="1222260556146" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1222260556146" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1222260556146" fileName="ReplaceWithRegexpOperation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation" />
   </root>
   <root nodeId="3796137614137086346">
@@ -2309,35 +2992,68 @@
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="132" startPosition="69" endLine="133" endPosition="74" />
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="136" startPosition="77" endLine="137" endPosition="201" />
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="140" startPosition="63" endLine="141" endPosition="57" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="27" startPosition="0" endLine="30" endPosition="3" />
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="27" startPosition="0" endLine="30" endPosition="3">
+      <varInfo nodeId="3796137614137086346" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="111" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="node" />
+      <varInfo nodeId="3796137614137086346" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
     <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="127" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="139" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="127" startPosition="0" endLine="131" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="131" startPosition="0" endLine="135" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="node" />
+      <varInfo nodeId="3796137614137086346" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="135" startPosition="0" endLine="139" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="init" />
+      <varInfo nodeId="3796137614137086346" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="139" startPosition="0" endLine="143" endPosition="0">
+      <varInfo nodeId="3796137614137086346" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="3796137614137086346" fileName="ReplaceRegexpOperation.java" startLine="15" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" />
   </root>
   <root nodeId="3796137614137538892">
@@ -2358,11 +3074,20 @@
     <scopeInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="22" startPosition="37" endLine="23" endPosition="53" />
     <scopeInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="26" startPosition="73" endLine="27" endPosition="193" />
     <scopeInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="30" startPosition="59" endLine="31" endPosition="53" />
-    <scopeInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="3796137614137538892" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="3796137614137538892" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="3796137614137538892" varName="init" />
+      <varInfo nodeId="3796137614137538892" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="3796137614137538892" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="3796137614137538892" fileName="LiteralReplacement.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement" />
   </root>
   <root nodeId="3796137614137538894">
@@ -2383,11 +3108,20 @@
     <scopeInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="22" startPosition="48" endLine="23" endPosition="69" />
     <scopeInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="26" startPosition="88" endLine="27" endPosition="223" />
     <scopeInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="30" startPosition="74" endLine="31" endPosition="68" />
-    <scopeInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="3796137614137538894" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="3796137614137538894" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="3796137614137538894" varName="init" />
+      <varInfo nodeId="3796137614137538894" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="3796137614137538894" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="3796137614137538894" fileName="MatchVariableReferenceReplacement.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement" />
   </root>
   <root nodeId="3796137614137538898">
@@ -2401,9 +3135,16 @@
     <scopeInfo nodeId="3796137614137538898" fileName="Replacement.java" startLine="14" startPosition="34" endLine="15" endPosition="16" />
     <scopeInfo nodeId="3796137614137538898" fileName="Replacement.java" startLine="18" startPosition="66" endLine="19" endPosition="179" />
     <scopeInfo nodeId="3796137614137538898" fileName="Replacement.java" startLine="22" startPosition="52" endLine="23" endPosition="46" />
-    <scopeInfo nodeId="3796137614137538898" fileName="Replacement.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="3796137614137538898" fileName="Replacement.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="3796137614137538898" fileName="Replacement.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="3796137614137538898" fileName="Replacement.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="3796137614137538898" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137538898" fileName="Replacement.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="3796137614137538898" varName="init" />
+      <varInfo nodeId="3796137614137538898" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137538898" fileName="Replacement.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="3796137614137538898" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="3796137614137538898" fileName="Replacement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.Replacement" />
   </root>
   <root nodeId="6129327962763158517">
@@ -2468,24 +3209,46 @@
     <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="83" startPosition="69" endLine="84" endPosition="71" />
     <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="87" startPosition="74" endLine="88" endPosition="195" />
     <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="91" startPosition="60" endLine="92" endPosition="54" />
-    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="6129327962763158517" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="6129327962763158517" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="6129327962763158517" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="6129327962763158517" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="6129327962763158517" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="6129327962763158517" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="6129327962763158517" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="6129327962763158517" varName="node" />
+      <varInfo nodeId="6129327962763158517" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="6129327962763158517" varName="init" />
+      <varInfo nodeId="6129327962763158517" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="6129327962763158517" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="6129327962763158517" fileName="FindMatchExpression.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression" />
   </root>
   <root nodeId="7473568212391781030">
@@ -2498,8 +3261,12 @@
     <nodeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="7" startPosition="68" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <scopeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
     <scopeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="48" />
-    <scopeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="7" startPosition="68" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="48">
+      <varInfo nodeId="7473568212391781030" varName="testValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="7" startPosition="68" endLine="17" endPosition="0">
+      <varInfo nodeId="7473568212391781030" varName="value" />
+    </scopeInfo>
     <unitInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure._StringRegexp_PropertySupport" />
   </root>
 </debugInfo>

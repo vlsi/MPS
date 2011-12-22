@@ -46,7 +46,9 @@
     <scopeInfo nodeId="7117389278815443317" fileName="ContractsUtils.java" startLine="67" startPosition="136" endLine="68" endPosition="71" />
     <scopeInfo nodeId="1399727060253288562" fileName="ContractsUtils.java" startLine="20" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="8892289062514559983" fileName="ContractsUtils.java" startLine="26" startPosition="74" endLine="29" endPosition="7" />
-    <scopeInfo nodeId="8892289062514412783" fileName="ContractsUtils.java" startLine="36" startPosition="52" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="8892289062514412783" fileName="ContractsUtils.java" startLine="36" startPosition="52" endLine="39" endPosition="5">
+      <varInfo nodeId="8892289062514412783" varName="intMethod" />
+    </scopeInfo>
     <scopeInfo nodeId="1399727060253317017" fileName="ContractsUtils.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1399727060253317022" varName="method" />
     </scopeInfo>
@@ -59,7 +61,9 @@
     <scopeInfo nodeId="7193161318487124758" fileName="ContractsUtils.java" startLine="65" startPosition="119" endLine="69" endPosition="9">
       <varInfo nodeId="7117389278815443320" varName="instanceMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="8892289062514559979" fileName="ContractsUtils.java" startLine="25" startPosition="48" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="8892289062514559979" fileName="ContractsUtils.java" startLine="25" startPosition="48" endLine="30" endPosition="5">
+      <varInfo nodeId="8892289062514559979" varName="condition" />
+    </scopeInfo>
     <scopeInfo nodeId="8892289062514412765" fileName="ContractsUtils.java" startLine="34" startPosition="58" endLine="40" endPosition="22">
       <varInfo nodeId="8892289062514412773" varName="interfaceMethods" />
       <varInfo nodeId="8892289062514412778" varName="resultList" />
@@ -73,7 +77,9 @@
     <scopeInfo nodeId="8892289062514412762" fileName="ContractsUtils.java" startLine="33" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="8892289062514412767" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="7193161318487124696" fileName="ContractsUtils.java" startLine="62" startPosition="70" endLine="71" endPosition="5" />
+    <scopeInfo nodeId="7193161318487124696" fileName="ContractsUtils.java" startLine="62" startPosition="70" endLine="71" endPosition="5">
+      <varInfo nodeId="7193161318487124696" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8892289062514538588" fileName="ContractsUtils.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="8892289062514559953" varName="filter" />
       <varInfo nodeId="8892289062514559951" varName="method" />

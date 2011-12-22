@@ -218,14 +218,6 @@ public class NodeTypesComponent {
     return myTypeSystemComponent.getType(node);
   }
 
-  public void markUnchecked(SNode node) {
-    myTypeSystemComponent.markUnchecked(node);
-  }
-
-  public SNode getRawTypeFromContext(SNode node) {
-    return myTypeSystemComponent.getRawTypeFromContext(node);
-  }
-
   @NotNull
   public List<IErrorReporter> getErrors(SNode node) {
     Map<SNode, List<IErrorReporter>> nodesToErrorsMap = myTypeSystemComponent.getNodesToErrorsMap();

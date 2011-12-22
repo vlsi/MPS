@@ -45,9 +45,15 @@
       <varInfo nodeId="7654328074273773935" varName="checkedDot" />
     </scopeInfo>
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="32" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1038097819968653124" varName="editorContext" />
+      <varInfo nodeId="1038097819968653124" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1038097819968653128" fileName="MakeDotExpressionChecked_Intention.java" startLine="40" startPosition="76" endLine="51" endPosition="5" />
-    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="39" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="39" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1038097819968653124" varName="editorContext" />
+      <varInfo nodeId="1038097819968653124" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.intentions.MakeDotExpressionChecked_Intention" />
   </root>
 </debugInfo>
