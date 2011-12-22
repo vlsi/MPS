@@ -15632,6 +15632,146 @@
     <unitInfo nodeId="3205675194086686071" fileName="GroupAccessOperation_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GroupAccessOperation_Editor" />
     <unitInfo nodeId="3205675194086686077" fileName="GroupAccessOperation_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GroupAccessOperation_Editor$_Inline_sxst1w_a2a" />
   </root>
+  <root nodeId="3205778618063718749">
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="61" startPosition="58" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718749" fileName="IdeaConfigurationXml_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="25" startPosition="96" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="25" startPosition="96" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="26" startPosition="48" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="26" startPosition="48" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="27" startPosition="81" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="27" startPosition="81" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="30" startPosition="80" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="34" startPosition="88" endLine="35" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="35" startPosition="90" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="37" startPosition="5" endLine="38" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="38" startPosition="42" endLine="39" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="40" startPosition="5" endLine="41" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="41" startPosition="34" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="45" startPosition="88" endLine="46" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="46" startPosition="86" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="48" startPosition="5" endLine="49" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="49" startPosition="42" endLine="50" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="51" startPosition="5" endLine="52" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="52" startPosition="34" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="56" startPosition="87" endLine="57" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="57" startPosition="81" endLine="58" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="58" startPosition="32" endLine="59" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="59" startPosition="45" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="60" startPosition="26" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="61" startPosition="58" endLine="62" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="62" startPosition="73" endLine="63" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="63" startPosition="57" endLine="64" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="65" startPosition="35" endLine="66" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="66" startPosition="72" endLine="67" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="67" startPosition="78" endLine="68" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="69" startPosition="10" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="73" startPosition="88" endLine="74" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="74" startPosition="82" endLine="75" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="75" startPosition="29" endLine="76" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="76" startPosition="42" endLine="77" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="77" startPosition="26" endLine="78" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="78" startPosition="58" endLine="79" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="78" startPosition="58" endLine="79" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="79" startPosition="42" endLine="80" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="80" startPosition="73" endLine="81" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="81" startPosition="57" endLine="82" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="83" startPosition="35" endLine="84" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="84" startPosition="72" endLine="85" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="85" startPosition="78" endLine="86" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="87" startPosition="10" endLine="88" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="60" startPosition="26" endLine="62" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="77" startPosition="26" endLine="80" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718749" fileName="IdeaConfigurationXml_Editor.java" startLine="19" startPosition="68" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="36" startPosition="47" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="47" startPosition="47" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="35" startPosition="90" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="46" startPosition="86" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="64" startPosition="59" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="82" startPosition="59" endLine="88" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_hbx8re_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="33" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_hbx8re_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_hbx8re_c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="55" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_hbx8re_d0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="72" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_hbx8re_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="61" startPosition="58" endLine="61" endPosition="58" />
+    <scopeInfo nodeId="3205778618063718749" fileName="IdeaConfigurationXml_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" />
+    <scopeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="25" startPosition="96" endLine="26" endPosition="48" />
+    <scopeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="26" startPosition="48" endLine="27" endPosition="81" />
+    <scopeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="27" startPosition="81" endLine="28" endPosition="81" />
+    <scopeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="81" />
+    <scopeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" />
+    <scopeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="78" startPosition="58" endLine="79" endPosition="42" />
+    <scopeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="37" startPosition="5" endLine="39" endPosition="62">
+      <varInfo nodeId="3205778618063718848" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="48" startPosition="5" endLine="50" endPosition="62">
+      <varInfo nodeId="3205778618063718852" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="60" startPosition="26" endLine="62" endPosition="73" />
+    <scopeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="65" startPosition="35" endLine="68" endPosition="105">
+      <varInfo nodeId="3205778618063718846" varName="manager" />
+      <varInfo nodeId="3205778618063718846" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="77" startPosition="26" endLine="80" endPosition="73" />
+    <scopeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="83" startPosition="35" endLine="86" endPosition="105">
+      <varInfo nodeId="3205778618063718850" varName="manager" />
+      <varInfo nodeId="3205778618063718850" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718749" fileName="IdeaConfigurationXml_Editor.java" startLine="19" startPosition="68" endLine="23" endPosition="0">
+      <varInfo nodeId="3205778618063718749" varName="editorContext" />
+      <varInfo nodeId="3205778618063718749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="35" startPosition="90" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="46" startPosition="86" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="24" startPosition="89" endLine="31" endPosition="22">
+      <varInfo nodeId="3205778618063718844" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="34" startPosition="88" endLine="42" endPosition="22">
+      <varInfo nodeId="3205778618063718848" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="45" startPosition="88" endLine="53" endPosition="22">
+      <varInfo nodeId="3205778618063718852" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718844" fileName="IdeaConfigurationXml_Editor.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="3205778618063718844" varName="editorContext" />
+      <varInfo nodeId="3205778618063718844" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718848" fileName="IdeaConfigurationXml_Editor.java" startLine="33" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="3205778618063718848" varName="editorContext" />
+      <varInfo nodeId="3205778618063718848" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718852" fileName="IdeaConfigurationXml_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="3205778618063718852" varName="editorContext" />
+      <varInfo nodeId="3205778618063718852" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="56" startPosition="87" endLine="70" endPosition="22">
+      <varInfo nodeId="3205778618063718846" varName="attributeConcept" />
+      <varInfo nodeId="3205778618063718846" varName="attributeKind" />
+      <varInfo nodeId="3205778618063718846" varName="editorCell" />
+      <varInfo nodeId="3205778618063718846" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="73" startPosition="88" endLine="88" endPosition="22">
+      <varInfo nodeId="3205778618063718850" varName="attributeConcept" />
+      <varInfo nodeId="3205778618063718850" varName="attributeKind" />
+      <varInfo nodeId="3205778618063718850" varName="editorCell" />
+      <varInfo nodeId="3205778618063718850" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718846" fileName="IdeaConfigurationXml_Editor.java" startLine="55" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="3205778618063718846" varName="editorContext" />
+      <varInfo nodeId="3205778618063718846" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3205778618063718850" fileName="IdeaConfigurationXml_Editor.java" startLine="72" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="3205778618063718850" varName="editorContext" />
+      <varInfo nodeId="3205778618063718850" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="3205778618063718749" fileName="IdeaConfigurationXml_Editor.java" startLine="19" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.IdeaConfigurationXml_Editor" />
+  </root>
   <root nodeId="331224023792859665">
     <nodeInfo nodeId="331224023792859665" fileName="IdeaActionsDescriptor_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="331224023792859696" fileName="IdeaActionsDescriptor_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

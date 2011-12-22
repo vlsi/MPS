@@ -34,15 +34,6 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <roots>
-    <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6273762573614482316">
-      <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.ide.editor" />
-      <property name="name" nameId="tpck.1169194664001" value="MPS Editing Framework" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Provides basic MPS editing functionality" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="2.0" />
-      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
-      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
-    </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="4362199797783336764">
       <property name="name" nameId="tpck.1169194664001" value="EditMenuActions" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditMenuActions" />
@@ -234,26 +225,10 @@
       <property name="name" nameId="tpck.1169194664001" value="IDE_Edit" />
       <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
     </node>
-  </roots>
-  <root id="6273762573614482316">
-    <node role="actions" roleId="tp4k.331224023792859996" type="tp4k.IdeaActionsDescriptor" typeId="tp4k.331224023792854814" id="6789255557380374319">
-      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="6789255557380437061">
-        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="4362199797783336764" resolveInfo="EditMenuActions" />
-      </node>
-      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="6789255557380437063">
-        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="7791284463049069745" resolveInfo="EditorActions" />
-      </node>
-      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="5495648829643707075">
-        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="5495648829643707068" resolveInfo="IDE_Edit" />
-      </node>
-      <node role="keymapsRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="6789255557380437064">
-        <link role="keymap" roleId="tp4k.331224023792855167" targetNodeId="4362199797783345371" resolveInfo="Default" />
-      </node>
-      <node role="keymapsRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="6789255557380437066">
-        <link role="keymap" roleId="tp4k.331224023792855167" targetNodeId="4362199797783345372" resolveInfo="Mac" />
-      </node>
+    <node type="tp4k.IdeaConfigurationXml" typeId="tp4k.3205778618063718746" id="3205778618063801970">
+      <property name="name" nameId="tpck.1169194664001" value="MPSEditorActions" />
     </node>
-  </root>
+  </roots>
   <root id="4362199797783336764">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4362199797783336767">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="5495648829643707068" resolveInfo="IDE_Edit" />
@@ -5077,6 +5052,25 @@
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="5495648829643707073">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1215010709295" resolveInfo="IDEAEdit" />
+    </node>
+  </root>
+  <root id="3205778618063801970">
+    <node role="actions" roleId="tp4k.3205778618063718748" type="tp4k.IdeaActionsDescriptor" typeId="tp4k.331224023792854814" id="3205778618063801972">
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="3205778618063801973">
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="4362199797783336764" resolveInfo="EditMenuActions" />
+      </node>
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="3205778618063801974">
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="7791284463049069745" resolveInfo="EditorActions" />
+      </node>
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="3205778618063801975">
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="5495648829643707068" resolveInfo="IDE_Edit" />
+      </node>
+      <node role="keymapsRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="3205778618063801976">
+        <link role="keymap" roleId="tp4k.331224023792855167" targetNodeId="4362199797783345371" resolveInfo="Default" />
+      </node>
+      <node role="keymapsRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="3205778618063801977">
+        <link role="keymap" roleId="tp4k.331224023792855167" targetNodeId="4362199797783345372" resolveInfo="Mac" />
+      </node>
     </node>
   </root>
 </model>

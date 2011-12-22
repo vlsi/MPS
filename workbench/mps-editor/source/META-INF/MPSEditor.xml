@@ -31,11 +31,6 @@
     <component>
       <implementation-class>jetbrains.mps.intentions.IntentionsManager</implementation-class>
     </component>
-
-    <!-- FIXME remove -->
-    <component>
-      <implementation-class>jetbrains.mps.ide.editor.actions.Editor_PluginInitializer</implementation-class>
-    </component>
   </application-components>
 
   <project-components>
