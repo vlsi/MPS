@@ -12,7 +12,7 @@ public class ShowStatusBarIcon extends ToggleAction {
 
   public void setSelected(AnActionEvent event, boolean b) {
     SaveTransientModelsPreferences.setShowStatusBar(b);
-    TransientModelsWidgetInstaller.getInstaller().update();
+    TransientModelsWidgetInstaller.reloadWidgets();
   }
 
   public boolean isSelected(AnActionEvent event) {

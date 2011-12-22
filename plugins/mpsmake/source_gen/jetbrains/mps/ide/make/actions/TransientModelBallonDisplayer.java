@@ -33,9 +33,11 @@ public class TransientModelBallonDisplayer implements Disposable {
   private final IMakeNotificationListener myMakeNotificationListener = new TransientModelBallonDisplayer.MyMakeNotificationListener();
   private final MPSProject myProject;
   private final TransientModelBallonDisplayer.MyProjectManagerAdapter myProjectManagerAdapter = new TransientModelBallonDisplayer.MyProjectManagerAdapter();
+  private final TransientModelsWidgetInstaller myInstaller;
 
-  public TransientModelBallonDisplayer(MPSProject project) {
+  public TransientModelBallonDisplayer(MPSProject project, TransientModelsWidgetInstaller installer) {
     myProject = project;
+    myInstaller = installer;
   }
 
   public void init() {
@@ -52,7 +54,7 @@ public class TransientModelBallonDisplayer implements Disposable {
     final Balloon balloon = JBPopupFactory.getInstance().createHtmlTextBalloonBuilder("Saving transient models is on", null, LightColors.YELLOW, null).setHideOnAction(true).setHideOnClickOutside(true).setHideOnKeyOutside(true).createBalloon();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        Component component = check_45eojt_a0a0a0a0a1a2(check_45eojt_a0a0a0a0a0b0c(TransientModelsWidgetInstaller.getInstaller()));
+        Component component = check_45eojt_a0a0a0a0a1a2(check_45eojt_a0a0a0a0a0b0c(myInstaller));
         if (component != null && component.isShowing()) {
           showForComponent(component, balloon);
         } else {

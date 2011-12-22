@@ -41,6 +41,6 @@ import com.intellij.openapi.util.Computable;
   private void onClose() {
     SaveTransientModelsPreferences.setShowPopup(myShowPopupBox.isSelected());
     SaveTransientModelsPreferences.setShowStatusBar(myShowStatusBarIcon.isSelected());
-    TransientModelsWidgetInstaller.getInstaller().update();
+    TransientModelsWidgetInstaller.reloadWidgets();
   }
 }

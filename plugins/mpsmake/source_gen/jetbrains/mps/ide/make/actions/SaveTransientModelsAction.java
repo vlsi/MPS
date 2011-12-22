@@ -29,6 +29,6 @@ public class SaveTransientModelsAction extends ToggleAction {
 
   public void setSelected(AnActionEvent e, boolean state) {
     GenerationSettings.getInstance().setSaveTransientModels(state);
-    TransientModelsWidgetInstaller.getInstaller().updateWidget();
+    TransientModelsWidgetInstaller.updateWidgets();
   }
 }

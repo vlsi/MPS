@@ -48,7 +48,7 @@ import javax.swing.JComponent;
         if (!(e.isPopupTrigger()) && MouseEvent.BUTTON1 == e.getButton()) {
           boolean saveTransientModels = GenerationSettings.getInstance().isSaveTransientModels();
           GenerationSettings.getInstance().setSaveTransientModels(!(saveTransientModels));
-          update();
+          TransientModelsWidgetInstaller.updateWidgets();
         } else if (e.isPopupTrigger()) {
           WidgetSettingsPanel panel = new WidgetSettingsPanel();
           Dimension dimension = panel.getPreferredSize();

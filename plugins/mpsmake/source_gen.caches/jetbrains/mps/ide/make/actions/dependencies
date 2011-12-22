@@ -707,6 +707,7 @@
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.CustomIconWrapper" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.IconContainer" />
+    <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsWidgetInstaller" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.WidgetSettingsPanel" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -716,9 +717,16 @@
     <classNode extendsClassName="com.intellij.openapi.wm.WidgetPresentation" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.TransientModelsWidgetInstaller" file="TransientModelsWidgetInstaller.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.SaveTransientModelsPreferences" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsWidget" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.WidgetSettingsPanel" file="WidgetSettingsPanel.java">
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopup" />
