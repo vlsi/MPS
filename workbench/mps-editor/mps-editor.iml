@@ -17,6 +17,8 @@
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="library" name="Commons-lang" level="project" />
+    <orderEntry type="library" name="Commons-logging" level="project" />
+    <orderEntry type="module" module-name="collections-runtime" />
   </component>
 </module>
 

@@ -1,41 +1,44 @@
 <components>
   <actions>
+    <action id="jetbrains.mps.ide.editor.actions.Backspace_Action" class="jetbrains.mps.ide.editor.actions.Backspace_Action">
+      <keyboard-shortcut first-keystroke=" BACK_SPACE" keymap="$default"/>
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.CopyThisDown_Action" class="jetbrains.mps.ide.editor.actions.CopyThisDown_Action">
       <keyboard-shortcut first-keystroke="ctrl D" keymap="$default"/>
     </action>
     <action id="jetbrains.mps.ide.editor.actions.DeleteLine_Action" class="jetbrains.mps.ide.editor.actions.DeleteLine_Action">
       <keyboard-shortcut first-keystroke="ctrl Y" keymap="$default"/>
     </action>
-    <action id="jetbrains.mps.ide.editor.actions.ExtractComponent_Action" class="jetbrains.mps.ide.editor.actions.ExtractComponent_Action">
-      <keyboard-shortcut first-keystroke="ctrl alt C" keymap="$default"/>
-    </action>
-    <action id="jetbrains.mps.ide.editor.actions.Backspace_Action" class="jetbrains.mps.ide.editor.actions.Backspace_Action">
-      <keyboard-shortcut first-keystroke=" BACK_SPACE" keymap="$default"/>
-    </action>
-    <action id="jetbrains.mps.ide.editor.actions.Delete_Action" class="jetbrains.mps.ide.editor.actions.Delete_Action">
-      <keyboard-shortcut first-keystroke=" DELETE" keymap="$default"/>
-    </action>
     <action id="jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action" class="jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action">
       <keyboard-shortcut first-keystroke="ctrl DELETE" keymap="$default"/>
       <keyboard-shortcut first-keystroke="alt DELETE" keymap="Mac OS X"/>
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.Delete_Action" class="jetbrains.mps.ide.editor.actions.Delete_Action">
+      <keyboard-shortcut first-keystroke=" DELETE" keymap="$default"/>
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.End_Action" class="jetbrains.mps.ide.editor.actions.End_Action">
       <keyboard-shortcut first-keystroke=" END" keymap="$default"/>
-      <keyboard-shortcut first-keystroke=" END" second-keystroke="meta RIGHT" keymap="Mac OS X"/>
+      <keyboard-shortcut first-keystroke=" END" keymap="Mac OS X"/>
+      <keyboard-shortcut first-keystroke="meta RIGHT" keymap="Mac OS X"/>
     </action>
     <action id="jetbrains.mps.ide.editor.actions.Escape_Action" class="jetbrains.mps.ide.editor.actions.Escape_Action">
       <keyboard-shortcut first-keystroke=" ESCAPE" keymap="$default"/>
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.ExtractComponent_Action" class="jetbrains.mps.ide.editor.actions.ExtractComponent_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt C" keymap="$default"/>
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.Home_Action" class="jetbrains.mps.ide.editor.actions.Home_Action">
       <keyboard-shortcut first-keystroke=" HOME" keymap="$default"/>
-      <keyboard-shortcut first-keystroke=" HOME" second-keystroke="meta LEFT" keymap="Mac OS X"/>
+      <keyboard-shortcut first-keystroke=" HOME" keymap="Mac OS X"/>
+      <keyboard-shortcut first-keystroke="meta LEFT" keymap="Mac OS X"/>
+    </action>
+    <action id="jetbrains.mps.ide.editor.actions.InsertBefore_Action" class="jetbrains.mps.ide.editor.actions.InsertBefore_Action">
+      <keyboard-shortcut first-keystroke=" INSERT" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="shift ENTER" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="shift ENTER" keymap="Mac OS X"/>
     </action>
     <action id="jetbrains.mps.ide.editor.actions.Insert_Action" class="jetbrains.mps.ide.editor.actions.Insert_Action">
       <keyboard-shortcut first-keystroke=" ENTER" keymap="$default"/>
-    </action>
-    <action id="jetbrains.mps.ide.editor.actions.InsertBefore_Action" class="jetbrains.mps.ide.editor.actions.InsertBefore_Action">
-      <keyboard-shortcut first-keystroke=" INSERT" second-keystroke="shift ENTER" keymap="$default"/>
-      <keyboard-shortcut first-keystroke="shift ENTER" keymap="Mac OS X"/>
     </action>
     <action id="jetbrains.mps.ide.editor.actions.LocalEnd_Action" class="jetbrains.mps.ide.editor.actions.LocalEnd_Action">
       <keyboard-shortcut first-keystroke="ctrl RIGHT" keymap="$default"/>
@@ -70,8 +73,10 @@
       <keyboard-shortcut first-keystroke="ctrl HOME" keymap="$default"/>
     </action>
     <action id="jetbrains.mps.ide.editor.actions.SelectDown_Action" class="jetbrains.mps.ide.editor.actions.SelectDown_Action">
-      <keyboard-shortcut first-keystroke="ctrl DOWN" second-keystroke="ctrl shift W" keymap="$default"/>
-      <keyboard-shortcut first-keystroke="ctrl DOWN" second-keystroke="ctrl shift W" keymap="Mac OS X"/>
+      <keyboard-shortcut first-keystroke="ctrl DOWN" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="ctrl shift W" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="ctrl DOWN" keymap="Mac OS X"/>
+      <keyboard-shortcut first-keystroke="ctrl shift W" keymap="Mac OS X"/>
     </action>
     <action id="jetbrains.mps.ide.editor.actions.SelectLeft_Action" class="jetbrains.mps.ide.editor.actions.SelectLeft_Action">
       <keyboard-shortcut first-keystroke="shift LEFT" keymap="$default"/>
@@ -96,9 +101,12 @@
       <keyboard-shortcut first-keystroke="shift RIGHT" keymap="$default"/>
     </action>
     <action id="jetbrains.mps.ide.editor.actions.SelectUp_Action" class="jetbrains.mps.ide.editor.actions.SelectUp_Action">
-      <keyboard-shortcut first-keystroke="ctrl UP" second-keystroke="ctrl W" keymap="$default"/>
-      <keyboard-shortcut first-keystroke="ctrl UP" second-keystroke="ctrl W" keymap="Mac OS X"/>
+      <keyboard-shortcut first-keystroke="ctrl UP" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="ctrl W" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="ctrl UP" keymap="Mac OS X"/>
+      <keyboard-shortcut first-keystroke="ctrl W" keymap="Mac OS X"/>
     </action>
+    <group id="IDE_Edit_ActionGroupcustom"/>
     <group id="jetbrains.mps.ide.editor.actions.EditMenuActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.CopyThisDown_Action"/>
       <reference ref="jetbrains.mps.ide.editor.actions.DeleteLine_Action"/>
@@ -140,7 +148,7 @@
     <group id="jetbrains.mps.ide.editor.actions.IDE_Edit_ActionGroup">
       <group id="IDE_Edit_ActionGrouptoplevel"/>
       <separator/>
-      <group id="IDE_Edit_ActionGroupcustom"/>
+      <reference ref="IDE_Edit_ActionGroupcustom"/>
       <add-to-group group-id="EditMenu" anchor="last"/>
     </group>
   </actions>

@@ -5056,11 +5056,11 @@
   </root>
   <root id="3205778618063801970">
     <node role="actions" roleId="tp4k.3205778618063718748" type="tp4k.IdeaActionsDescriptor" typeId="tp4k.331224023792854814" id="3205778618063801972">
-      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="3205778618063801973">
-        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="4362199797783336764" resolveInfo="EditMenuActions" />
-      </node>
       <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="3205778618063801974">
         <link role="group" roleId="tp4k.331224023792854816" targetNodeId="7791284463049069745" resolveInfo="EditorActions" />
+      </node>
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="3205778618063801973">
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="4362199797783336764" resolveInfo="EditMenuActions" />
       </node>
       <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="3205778618063801975">
         <link role="group" roleId="tp4k.331224023792854816" targetNodeId="5495648829643707068" resolveInfo="IDE_Edit" />
