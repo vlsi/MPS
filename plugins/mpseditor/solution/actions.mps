@@ -230,17 +230,17 @@
     </node>
   </roots>
   <root id="6273762573614482316">
-    <node role="actions" roleId="tp4k.331224023792859996" type="tp4k.IdeaActionsDescriptor" typeId="tp4k.331224023792854814" id="331224023792962900">
-      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="331224023792962901">
+    <node role="actions" roleId="tp4k.331224023792859996" type="tp4k.IdeaActionsDescriptor" typeId="tp4k.331224023792854814" id="6789255557380374319">
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="6789255557380437061">
         <link role="group" roleId="tp4k.331224023792854816" targetNodeId="4362199797783336764" resolveInfo="EditMenuActions" />
       </node>
-      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="331224023792962903">
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="6789255557380437063">
         <link role="group" roleId="tp4k.331224023792854816" targetNodeId="7791284463049069745" resolveInfo="EditorActions" />
       </node>
-      <node role="keymapsKeymapRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="331224023792962904">
+      <node role="keymapsRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="6789255557380437064">
         <link role="keymap" roleId="tp4k.331224023792855167" targetNodeId="4362199797783345371" resolveInfo="Default" />
       </node>
-      <node role="keymapsKeymapRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="331224023792962906">
+      <node role="keymapsRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="6789255557380437066">
         <link role="keymap" roleId="tp4k.331224023792855167" targetNodeId="4362199797783345372" resolveInfo="Mac" />
       </node>
     </node>

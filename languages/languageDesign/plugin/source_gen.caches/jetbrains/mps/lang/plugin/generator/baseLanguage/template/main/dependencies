@@ -6,7 +6,9 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior" />
@@ -31,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.EditorTab_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.FileGeneratorDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GenerationListenerDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GroupAnchor_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResource_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior" />
