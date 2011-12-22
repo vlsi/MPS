@@ -512,6 +512,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResourceExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResource_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaActionsDescriptor_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaConfigurationXml_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaPluginDependency_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.InitBlock_BehaviorDescriptor" />
@@ -1131,6 +1132,16 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.behavior.IdeaConfigurationXml_BehaviorDescriptor" file="IdeaConfigurationXml_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior" file="IdeaInitializerDescriptor_Behavior.java">
