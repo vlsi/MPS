@@ -273,8 +273,8 @@
             <src>
                 <!-- plugin tests -->
                 <path path="${base_dir}/IdeaPlugin/mps-core/testSrc"/>
-                <!--<path path="${base_dir}/plugins/mpseditor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>-->
-                <!--<path path="${base_dir}/plugins/mpseditor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>-->
+                <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
+                <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
             </src>
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
