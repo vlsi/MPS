@@ -25,6 +25,7 @@ import com.intellij.openapi.ui.ShadowAction;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editor.BaseNodeEditor;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabComponentFactory;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
@@ -38,7 +39,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -209,7 +209,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
 
 
   public Object getData(@NonNls String dataId) {
-    if (MPSDataKeys.EDITOR_CREATE_GROUP.getName().equals(dataId)) return getCreateGroup();
+    if (MPSEditorDataKeys.EDITOR_CREATE_GROUP.getName().equals(dataId)) return getCreateGroup();
     return null;
   }
 

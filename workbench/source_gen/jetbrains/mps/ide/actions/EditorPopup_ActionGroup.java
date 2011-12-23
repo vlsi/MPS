@@ -11,6 +11,7 @@ import com.intellij.openapi.extensions.PluginId;
 public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup_ActionGroup";
+  public static final String LABEL_ID_new = ID + "new";
   public static final String LABEL_ID_showIn = ID + "showIn";
   public static final String LABEL_ID_structure = ID + "structure";
   public static final String LABEL_ID_paste = ID + "paste";
@@ -28,6 +29,13 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_new);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorPopup_ActionGroup.this.addAction(action);
+      }
+      EditorPopup_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_showIn);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
@@ -98,8 +106,6 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         EditorPopup_ActionGroup.this.addAction(action);
       }
-      EditorPopup_ActionGroup.this.addSeparator();
-      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CreateAspect_Action");
       EditorPopup_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_vcs);
