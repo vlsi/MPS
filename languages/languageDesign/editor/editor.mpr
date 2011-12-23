@@ -149,7 +149,7 @@
       <modulePath path="${project}/tests/table/jetbrains.mps.lang.editor.table.tests.msd" />
       <modulePath path="${mps_home}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="" />
       <modulePath path="${project}/tests/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" folder="" />
-      <modulePath path="${mps_home}/core/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="" />
+      <modulePath path="${mps_home}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="" />
       <modulePath path="${project}/editor.mpl" />
       <modulePath path="${project}/languages/table/table.mpl" folder="" />
       <modulePath path="${project}/languages/tableTests/tableTests.mpl" />

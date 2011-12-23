@@ -207,13 +207,13 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/core/editor-runtime/classes" />
+      <fileset dir="${mps_home}/editor/editor-runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/core/actions-runtime/classes" />
+      <fileset dir="${mps_home}/editor/actions-runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/core/intentions-runtime/classes" />
+      <fileset dir="${mps_home}/editor/intentions-runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
       <fileset dir="${mps_home}/editor/typesystemIntegration/classes" />

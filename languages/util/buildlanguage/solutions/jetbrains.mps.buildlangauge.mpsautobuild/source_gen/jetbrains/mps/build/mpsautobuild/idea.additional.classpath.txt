@@ -14,9 +14,9 @@ core/baseLanguage/tuples/runtime/classes
 core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen
 core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes
 :editor
-core/editor-runtime/classes
-core/actions-runtime/classes
-core/intentions-runtime/classes
+editor/editor-runtime/classes
+editor/actions-runtime/classes
+editor/intentions-runtime/classes
 editor/typesystemIntegration/classes
 editor/editor-api/classes
 :workbench

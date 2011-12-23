@@ -97,7 +97,7 @@
   </component>
   <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${mps_home}/core/actions-runtime/jetbrains.mps.actions.runtime.msd" folder="" />
+      <solutionPath path="${mps_home}/editor/actions-runtime/jetbrains.mps.actions.runtime.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />

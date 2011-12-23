@@ -188,11 +188,11 @@
             <src>
                 <!-- editor-api -->
                 <path path="${base_dir}/editor/editor-api/source"/>
-                <path path="${base_dir}/core/editor-runtime/source"/>
-                <path path="${base_dir}/core/editor-runtime/source_gen"/>
-                <path path="${base_dir}/core/actions-runtime/source"/>
-                <path path="${base_dir}/core/actions-runtime/source_gen"/>
-                <path path="${base_dir}/core/intentions-runtime/source"/>
+                <path path="${base_dir}/editor/editor-runtime/source"/>
+                <path path="${base_dir}/editor/editor-runtime/source_gen"/>
+                <path path="${base_dir}/editor/actions-runtime/source"/>
+                <path path="${base_dir}/editor/actions-runtime/source_gen"/>
+                <path path="${base_dir}/editor/intentions-runtime/source"/>
                 <path path="${base_dir}/workbench/mps-editor/source"/>
                 <path path="${base_dir}/workbench/mps-editor/source_gen"/>
             </src>
@@ -203,11 +203,11 @@
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar">
             <fileset dir="${base_dir}/editor/editor-api/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/editor-runtime/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/editor-runtime/source_gen" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/actions-runtime/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/actions-runtime/source_gen" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/intentions-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/editor-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/editor-runtime/source_gen" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/actions-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/actions-runtime/source_gen" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/intentions-runtime/source" includes="**/*.png"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source" includes="**/*.png"/>
         </copy>
         <jar destfile="${dist.dir}/lib/mps-editor.jar">
