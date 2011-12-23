@@ -126,6 +126,7 @@
       <modulePath path="${project}/languages/languageDesign/editor/languages/table/runtime/jetbrains.mps.table.runtime.msd" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/languages/table/table.mpl" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/languages/tableTests/tableTests.mpl" folder="core.editor" />
+      <modulePath path="${project}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/tests/table/jetbrains.mps.lang.editor.table.tests.msd" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/findUsages/findUsages.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/generator/languages/descriptor/descriptor.mpl" folder="core.language-design" />
@@ -288,7 +289,6 @@
       <modulePath path="${project}/plugins/migration21/solution/migration21.msd" folder="plugins" />
       <modulePath path="${project}/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
-      <modulePath path="${project}/plugins/mpseditor/tests/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" folder="core.editor" />
       <modulePath path="${project}/plugins/mpsjava/solution/jetbrains.mps.ide.java.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/testsolution/testMaterial.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" folder="plugins" />
