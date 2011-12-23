@@ -106,6 +106,18 @@
       <keyboard-shortcut first-keystroke="ctrl UP" keymap="Mac OS X"/>
       <keyboard-shortcut first-keystroke="ctrl W" keymap="Mac OS X"/>
     </action>
+    <group id="EditorPopup_ActionGroupnew"/>
+    <group id="EditorPopup_ActionGroupshowIn"/>
+    <group id="EditorPopup_ActionGroupstructure"/>
+    <group id="EditorPopup_ActionGrouppaste"/>
+    <group id="EditorPopup_ActionGroupfolding"/>
+    <group id="EditorPopup_ActionGroupgoto"/>
+    <group id="EditorPopup_ActionGroupintentions"/>
+    <group id="EditorPopup_ActionGroupgentrace"/>
+    <group id="EditorPopup_ActionGrouppreview"/>
+    <group id="EditorPopup_ActionGroupdebug"/>
+    <group id="EditorPopup_ActionGroupfind"/>
+    <group id="EditorPopup_ActionGroupvcs"/>
     <group id="IDE_Edit_ActionGrouptoplevel"/>
     <group id="IDE_Edit_ActionGroupcustom"/>
     <group id="jetbrains.mps.ide.editor.actions.EditMenuActions_ActionGroup">
@@ -145,6 +157,28 @@
       <reference ref="jetbrains.mps.ide.editor.actions.SelectRight_Action"/>
       <reference ref="jetbrains.mps.ide.editor.actions.SelectUp_Action"/>
       <add-to-group group-id="EditorActions" anchor="last"/>
+    </group>
+    <group id="jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup">
+      <reference ref="EditorPopup_ActionGroupnew"/>
+      <separator/>
+      <reference ref="EditorPopup_ActionGroupshowIn"/>
+      <reference ref="EditorPopup_ActionGroupstructure"/>
+      <separator/>
+      <reference ref="EditorPopup_ActionGrouppaste"/>
+      <separator/>
+      <reference ref="EditorPopup_ActionGroupfolding"/>
+      <separator/>
+      <reference ref="EditorPopup_ActionGroupgoto"/>
+      <reference ref="EditorPopup_ActionGroupintentions"/>
+      <separator/>
+      <reference ref="EditorPopup_ActionGroupgentrace"/>
+      <reference ref="EditorPopup_ActionGrouppreview"/>
+      <reference ref="EditorPopup_ActionGroupdebug"/>
+      <separator/>
+      <reference ref="EditorPopup_ActionGroupfind"/>
+      <separator/>
+      <reference ref="EditorPopup_ActionGroupvcs"/>
+      <separator/>
     </group>
     <group id="jetbrains.mps.ide.editor.actions.IDE_Edit_ActionGroup">
       <reference ref="IDE_Edit_ActionGrouptoplevel"/>

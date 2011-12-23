@@ -1010,7 +1010,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (!myPopupMenuEnabled) {
       return;
     }
-    BaseGroup baseGroup = ActionUtils.getGroup(EDITOR_POPUP_MENU_ACTIONS);
+    DefaultActionGroup baseGroup = ActionUtils.getDefaultGroup(EDITOR_POPUP_MENU_ACTIONS);
     if (baseGroup == null) return;
 
     baseGroup.setPopup(false);

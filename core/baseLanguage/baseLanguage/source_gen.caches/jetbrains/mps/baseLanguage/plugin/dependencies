@@ -104,7 +104,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Code_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Tools_ActionGroup" />

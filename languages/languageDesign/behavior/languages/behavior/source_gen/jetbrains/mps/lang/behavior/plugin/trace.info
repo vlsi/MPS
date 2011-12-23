@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Behavior_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_ApplicationPlugin" />
+  <unitInfo fileName="Behavior_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_ApplicationPlugin" />
   <unitInfo fileName="Behavior_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_ProjectPlugin" />
   <root nodeId="1910641662758447420">
     <nodeInfo nodeId="1910641662758447420" fileName="BehaviourPopup_ActionGroup.java" startLine="12" startPosition="70" endLine="13" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

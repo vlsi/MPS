@@ -47,7 +47,7 @@ public class Java_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newModel);
     insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, SolutionNewActions_ActionGroup.ID, SolutionNewActions_ActionGroup.LABEL_ID_newModel);
     insertGroupIntoAnother(ModelActions_ActionGroup.ID, jetbrains.mps.ide.actions.ModelActions_ActionGroup.ID, jetbrains.mps.ide.actions.ModelActions_ActionGroup.LABEL_ID_paste);
-    insertGroupIntoAnother(EditorPopup_ActionGroup.ID, jetbrains.mps.ide.actions.EditorPopup_ActionGroup.ID, jetbrains.mps.ide.actions.EditorPopup_ActionGroup.LABEL_ID_paste);
+    insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "EditorPopup_ActionGrouppaste", null);
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

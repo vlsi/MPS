@@ -48,7 +48,6 @@
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.mps.plugin.CreateAspect_Action" />
     <classNode dependClassName="jetbrains.mps.ide.mps.plugin.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.mps.plugin.EditorPopupEx_ActionGroup" />

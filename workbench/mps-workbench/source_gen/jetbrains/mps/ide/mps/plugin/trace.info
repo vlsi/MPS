@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Mps_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.mps.plugin.Mps_ApplicationPlugin" />
+  <unitInfo fileName="Mps_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.mps.plugin.Mps_ApplicationPlugin" />
   <root nodeId="5628057674877715993">
     <nodeInfo nodeId="5628057674877715993" fileName="CreateAspect_Action.java" startLine="24" startPosition="53" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5628057674877715993" fileName="CreateAspect_Action.java" startLine="25" startPosition="40" endLine="26" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />

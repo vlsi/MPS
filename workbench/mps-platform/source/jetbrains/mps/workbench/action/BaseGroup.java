@@ -99,7 +99,7 @@ public class BaseGroup extends DefaultActionGroup {
   }
 
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> condition) {
-    List actionList = Arrays.asList(getChildren(null));
+    List<AnAction> actionList = Arrays.asList(getChildren(null));
     addPlaceToActionList(actionList, place, condition);
   }
 
@@ -107,7 +107,7 @@ public class BaseGroup extends DefaultActionGroup {
 
   }
 
-  protected static void addPlaceToActionList(List<AnAction> actions, ActionPlace place, @Nullable Condition<BaseAction> condition) {
+  public static void addPlaceToActionList(List<AnAction> actions, ActionPlace place, @Nullable Condition<BaseAction> condition) {
     for (AnAction child : actions) {
       if (child instanceof BaseGroup) {
         ((BaseGroup) child).addPlace(place, condition);
