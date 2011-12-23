@@ -414,9 +414,10 @@
     <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/plugin/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/plugin/source_gen" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/jetbrains.mps.execution.configurations.mps/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/jetbrains.mps.execution.configurations.mps/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/execution/source_gen" />
     <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/runtime/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/runtime/source_gen" isTestSource="false" />
     </content>
@@ -549,6 +550,8 @@
     <orderEntry type="module" module-name="ant" />
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="module" module-name="typesystemIntegration" />
+    <orderEntry type="module" module-name="debug-api" />
+    <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="testbench" />
     <orderEntry type="module" module-name="analyzers" />
     <orderEntry type="module" module-name="baseLanguage-util" />
@@ -590,7 +593,6 @@
     </orderEntry>
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="library" name="Commons-lang" level="project" />
-    <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Ant" level="project" />
@@ -602,7 +604,7 @@
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="PicoContainer" level="project" />
-    <orderEntry type="module" module-name="debug-api" />
+    <orderEntry type="module" module-name="mps-actions" />
   </component>
 </module>
 

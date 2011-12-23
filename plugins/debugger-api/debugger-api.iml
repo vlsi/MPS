@@ -11,6 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="runConfigurations" exported="" />
@@ -26,7 +27,7 @@
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="mps-editor" />
-    <orderEntry type="module" module-name="debug-api" />
+    <orderEntry type="module" module-name="mps-actions" />
   </component>
 </module>
 
