@@ -21,11 +21,11 @@ import com.intellij.util.ui.UIUtil;
 import java.awt.Dimension;
 import com.intellij.ui.awt.RelativePoint;
 import com.intellij.openapi.util.Disposer;
+import jetbrains.mps.ide.generator.GenerationSettings;
+import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.JComponent;
 import com.intellij.openapi.wm.StatusBar;
 import jetbrains.mps.make.MakeNotification;
-import jetbrains.mps.ide.generator.GenerationSettings;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.project.Project;
 
@@ -50,7 +50,7 @@ public class TransientModelBallonDisplayer implements Disposable {
     ProjectManager.getInstance().removeProjectManagerListener(ProjectHelper.toIdeaProject(myProject), myProjectManagerAdapter);
   }
 
-  private void showBaloon() {
+  private void showBaloonInternal() {
     final Balloon balloon = JBPopupFactory.getInstance().createHtmlTextBalloonBuilder("Saving transient models is on", null, LightColors.YELLOW, null).setHideOnAction(true).setHideOnClickOutside(true).setHideOnKeyOutside(true).createBalloon();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -75,6 +75,17 @@ public class TransientModelBallonDisplayer implements Disposable {
       }
     });
     Disposer.register(this, balloon);
+  }
+
+  private void showBallon() {
+    if (!(GenerationSettings.getInstance().isSaveTransientModels()) || !(SaveTransientModelsPreferences.isShowPopup())) {
+      return;
+    }
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        showBaloonInternal();
+      }
+    });
   }
 
   private void showForComponent(Component component, Balloon ballon) {
@@ -105,19 +116,21 @@ public class TransientModelBallonDisplayer implements Disposable {
   }
 
   private class MyMakeNotificationListener implements IMakeNotificationListener {
+    private volatile boolean mySessionJustOpened;
+
     public MyMakeNotificationListener() {
     }
 
     public void handleNotification(MakeNotification notification) {
-      if (!(GenerationSettings.getInstance().isSaveTransientModels()) || !(SaveTransientModelsPreferences.isShowPopup())) {
-        return;
-      }
       if (notification.getKind() == MakeNotification.Kind.SESSION_OPENED) {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            showBaloon();
-          }
-        });
+        mySessionJustOpened = true;
+      } else if (notification.getKind() == MakeNotification.Kind.SCRIPT_ABOUT_TO_START) {
+        if (mySessionJustOpened) {
+          showBallon();
+          mySessionJustOpened = false;
+        }
+      } else if (notification.getKind() == MakeNotification.Kind.SESSION_CLOSED) {
+        mySessionJustOpened = false;
       }
     }
 
