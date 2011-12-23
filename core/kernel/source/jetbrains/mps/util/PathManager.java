@@ -101,7 +101,10 @@ public class PathManager {
         return Collections.unmodifiableCollection(paths);
       }
     }
-    return Collections.singleton(getHomePath() + File.separator + "core");
+    paths = new ArrayList<String>(2);
+    paths.add(getHomePath() + File.separator + "core");
+    paths.add(getHomePath() + File.separator + "editor");
+    return Collections.unmodifiableCollection(paths);
   }
 
   public static String getLanguagesPath() {
