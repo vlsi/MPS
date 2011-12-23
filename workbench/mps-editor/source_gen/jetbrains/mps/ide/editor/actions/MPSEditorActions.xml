@@ -106,6 +106,7 @@
       <keyboard-shortcut first-keystroke="ctrl UP" keymap="Mac OS X"/>
       <keyboard-shortcut first-keystroke="ctrl W" keymap="Mac OS X"/>
     </action>
+    <group id="IDE_Edit_ActionGrouptoplevel"/>
     <group id="IDE_Edit_ActionGroupcustom"/>
     <group id="jetbrains.mps.ide.editor.actions.EditMenuActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.CopyThisDown_Action"/>
@@ -146,7 +147,7 @@
       <add-to-group group-id="EditorActions" anchor="last"/>
     </group>
     <group id="jetbrains.mps.ide.editor.actions.IDE_Edit_ActionGroup">
-      <group id="IDE_Edit_ActionGrouptoplevel"/>
+      <reference ref="IDE_Edit_ActionGrouptoplevel"/>
       <separator/>
       <reference ref="IDE_Edit_ActionGroupcustom"/>
       <add-to-group group-id="EditMenu" anchor="last"/>
