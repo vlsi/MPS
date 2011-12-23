@@ -254,7 +254,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 118:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.KeyStrokeType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
       case 119:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"keymap"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"keymap", "isPluginXmlKeymap"}, new String[]{});
       case 120:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.KeymapRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"keymap"});
       case 121:

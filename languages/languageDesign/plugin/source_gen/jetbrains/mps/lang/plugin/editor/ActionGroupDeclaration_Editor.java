@@ -17,8 +17,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.InternalFlag;
 
 public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
@@ -45,8 +45,11 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_bepn0t_a0a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_bepn0t_b0a(editorContext, node));
+    if (renderingCondition_bepn0t_a0a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_bepn0t_a0a(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createConstant_bepn0t_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_bepn0t_c0a(editorContext, node));
     return editorCell;
   }
 
@@ -158,7 +161,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_bepn0t_a0_0");
     editorCell.addEditorCell(this.createConstant_bepn0t_a0a_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_bepn0t_b0a_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_bepn0t_b0a(editorContext, node));
     return editorCell;
   }
 
@@ -177,8 +180,15 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bepn0t_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "group");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(plugin.xml)");
     editorCell.setCellId("Constant_bepn0t_a0a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_bepn0t_b0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "group");
+    editorCell.setCellId("Constant_bepn0t_b0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -264,7 +274,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bepn0t_a1a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "register in plugin.xml:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "register via plugin.xml:");
     editorCell.setCellId("Constant_bepn0t_a1a_0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -287,7 +297,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_bepn0t_b0a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_bepn0t_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -380,7 +390,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_bepn0t_b0a_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_bepn0t_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isInternal");
     provider.setNoTargetText("<no isInternal>");
@@ -414,6 +424,10 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition_bepn0t_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isPluginXmlGroup");
   }
 
   private static boolean renderingCondition_bepn0t_a0b0(SNode node, EditorContext editorContext, IScope scope) {

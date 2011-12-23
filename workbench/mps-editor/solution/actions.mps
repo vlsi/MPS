@@ -47,10 +47,12 @@
     </node>
     <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="4362199797783345371">
       <property name="name" nameId="tpck.1169194664001" value="Default" />
+      <property name="isPluginXmlKeymap" nameId="tp4k.8646726056720906098" value="true" />
     </node>
     <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="4362199797783345372">
       <property name="name" nameId="tpck.1169194664001" value="Mac" />
       <property name="keymap" nameId="tp4k.1562714432501166281" value="Mac OS X" />
+      <property name="isPluginXmlKeymap" nameId="tp4k.8646726056720906098" value="true" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4362199797783345393">
       <property name="name" nameId="tpck.1169194664001" value="CopyThisDown" />
