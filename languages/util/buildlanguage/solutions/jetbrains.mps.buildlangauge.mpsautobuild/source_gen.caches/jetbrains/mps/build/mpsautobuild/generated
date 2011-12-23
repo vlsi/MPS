@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a6kc53qn92csxjf6nubvjtp0ndqg8um">
+<dependencies version="2" modelHash="-dpuijjylcjwiikgnbqaiorp6902irb">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="auc6jui7deer5vkr9v1h1ws94bw74n1" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="90a2yqqwsbuerf4u3po1b2jxod6vyfj" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8xy0ts8pxo14x2h465hshq4se632yz6" />
@@ -37,7 +37,7 @@
     <dep model="r:e4eacb3c-606c-4e9e-bd5e-ca89808d18ab(jetbrains.mps.build.packaging.mps.generator.template.main@generator)" />
     <file name="idea.additional.classpath.txt" />
   </common>
-  <source id="2235195415637073459" name="MPS" hash="azha3ggikpbroqicnydvt5am7cevpy5">
+  <source id="2235195415637073459" name="MPS" hash="-ehucdr6hpxpkaeelu1kaknv3fdvtsc4">
     <dep root="2235195415637076848" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -103,7 +103,7 @@
   <source id="2738111162319948310" name="core.execution" hash="9ur9egqb83y2nivknvigcmfm3yb2meh" />
   <source id="5358686142361317193" name="mps-test.jar" hash="5pprwtkmlpsybm9p9jlsu4sqw60et9i" />
   <source id="6108265972537541352" name="branding" hash="-1kuthe930uai2irp8qg0j16s3ygm5d4" />
-  <source id="5428983789737854526" name="mps-workbench.jar" hash="-5jm803j1uhkoc5rezg34q711tnlj7o5" />
+  <source id="5428983789737854526" name="mps-workbench.jar" hash="-2kfkqt30zwys4fa485bq485o8401ygx" />
   <source id="5428983789737854768" name="mps-editor.jar" hash="1vkf74l7i1aq4xwerf94hiumy5fpnkh" />
   <source id="2901107368280525965" name="redist" hash="-5y1micluv26ldpxuf61kxk1r7u4f6yx" />
   <source id="6700426045796013947" name="mps-platform.jar" hash="-x9dtjrxg79odo4luh00p017qw2dpy8" />
