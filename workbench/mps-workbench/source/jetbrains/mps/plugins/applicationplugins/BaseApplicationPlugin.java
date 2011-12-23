@@ -22,13 +22,13 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.workbench.action.MPSActions;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public abstract class BaseApplicationPlugin implements IActionsRegistry {
   private ActionManagerEx myActionManager = ActionManagerEx.getInstanceEx();
@@ -36,6 +36,7 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
   private List<BaseCustomApplicationPlugin> myCustomParts;
   private List<BaseGroup> myGroups = new ArrayList<BaseGroup>();
   private List<BaseKeymapChanges> myKeymapChanges = new ArrayList<BaseKeymapChanges>();
+  private Set<Pair<DefaultActionGroup, DefaultActionGroup>> myXmlGroups = new HashSet<Pair<DefaultActionGroup, DefaultActionGroup>>();
 
   //----------plugin id------------
 
@@ -66,6 +67,10 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
     if (gTo == null || gWhat == null) {
       return;
     }
+    if (!(gTo instanceof BaseGroup) && !(gWhat instanceof BaseGroup)) {
+      myXmlGroups.add(new Pair<DefaultActionGroup, DefaultActionGroup>(gTo, gWhat));
+    }
+
     if (labelName != null) {
       Constraints constraints = new Constraints(Anchor.AFTER, labelName);
       gTo.add(gWhat, constraints);
@@ -135,6 +140,9 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
     }
     myKeymapChanges.clear();
 
+    for (Pair<DefaultActionGroup, DefaultActionGroup> e : myXmlGroups) {
+      e.o1.remove(e.o2);
+    }
     MPSActions.getInstance().unregisterGroups(myGroups);
     myGroups.clear();
     MPSActions.getInstance().unregisterActions(getId());
