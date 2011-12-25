@@ -13,7 +13,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="debugger-api" />
     <orderEntry type="module" module-name="editor-runtime" />
-    <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="kernel" />

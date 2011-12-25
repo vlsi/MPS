@@ -551,7 +551,6 @@
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="module" module-name="typesystemIntegration" />
     <orderEntry type="module" module-name="debug-api" />
-    <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="testbench" />
     <orderEntry type="module" module-name="analyzers" />
     <orderEntry type="module" module-name="baseLanguage-util" />
@@ -605,6 +604,7 @@
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="PicoContainer" level="project" />
     <orderEntry type="module" module-name="mps-actions" />
+    <orderEntry type="module" module-name="debugger-java" />
   </component>
 </module>
 
