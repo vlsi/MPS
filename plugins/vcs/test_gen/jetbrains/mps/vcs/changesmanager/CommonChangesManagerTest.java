@@ -268,8 +268,6 @@ public class CommonChangesManagerTest {
         UndoManager.getInstance(myIdeaProject).undo(null);
       }
     });
-    // TODO should not wait 
-    waitForChangesManager();
   }
 
   private void runCommandAndWait(Runnable r) {
@@ -294,15 +292,17 @@ public class CommonChangesManagerTest {
           rollback();
 
           removeModifiedRoot();
+
+          return true;
         } catch (Throwable e) {
           e.printStackTrace();
           return false;
         }
-        waitForChangesManager();
-        return !(myRegistry.getCommandQueue().hadExceptions());
       }
     }, "jetbrains.mps.vcs", "Git4Idea", "jetbrains.mps.ide.make");
     Assert.assertTrue(result);
+
+    Assert.assertFalse(myRegistry.getCommandQueue().hadExceptions());
   }
 
   private static List<ModelChange> check_orwzer_a0a9a6(ChangeSet checkedDotOperand) {

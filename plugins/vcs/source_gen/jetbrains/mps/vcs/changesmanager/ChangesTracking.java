@@ -173,9 +173,13 @@ public class ChangesTracking {
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor.getSModel(), true);
-        myDifference.setChangeSet((ChangeSetImpl) changeSet);
-        buildCaches();
+        synchronized (ChangesTracking.this) {
+          if (!(myDisposed)) {
+            ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor.getSModel(), true);
+            myDifference.setChangeSet((ChangeSetImpl) changeSet);
+            buildCaches();
+          }
+        }
       }
     });
   }
@@ -268,7 +272,11 @@ public class ChangesTracking {
               myDifference.getBroadcaster().changeUpdateStarted();
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
-                  task.invoke();
+                  synchronized (ChangesTracking.this) {
+                    if (!(myDisposed)) {
+                      task.invoke();
+                    }
+                  }
                 }
               });
               myDifference.getBroadcaster().changeUpdateFinished();
