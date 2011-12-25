@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.event.SModelEvent;
 import com.intellij.util.containers.BidirectionalMap;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -21,14 +20,6 @@ public class EventConsumingMapping {
   private BidirectionalMap<SNodeId, SModelEvent> myAddedNodesToEvents = new BidirectionalMap<SNodeId, SModelEvent>();
 
   public EventConsumingMapping() {
-  }
-
-  private SModelEvent findConsumerEventForNode(SNode node) {
-    if (myAddedNodesToEvents.containsKey(node.getSNodeId())) {
-      return new SModelFileChangedEvent(null, null, null);
-    } else {
-      return null;
-    }
   }
 
   private void consumeAllForNode(SNode node) {
@@ -46,47 +37,45 @@ public class EventConsumingMapping {
 
   public synchronized void addEvent(SModelEvent event) {
     SNode affectedNode = null;
+    SNode addedNode = null;
     if (event instanceof SModelRootEvent) {
-      affectedNode = ((SModelRootEvent) event).getRoot();
+      SModelRootEvent re = (SModelRootEvent) event;
+      affectedNode = re.getRoot();
+      if (re.isAdded()) {
+        addedNode = affectedNode;
+      }
     } else if (event instanceof SModelChildEvent) {
-      affectedNode = ((SModelChildEvent) event).getParent();
+      SModelChildEvent ce = (SModelChildEvent) event;
+      affectedNode = ce.getParent();
+      if (ce.isAdded()) {
+        addedNode = ce.getChild();
+      }
     } else if (event instanceof SModelPropertyEvent) {
       affectedNode = ((SModelPropertyEvent) event).getNode();
     } else if (event instanceof SModelReferenceEvent) {
       affectedNode = ((SModelReferenceEvent) event).getReference().getSourceNode();
     }
-    assert affectedNode != null;
-    // TODO make compact 
-    if (event instanceof SModelRootEvent) {
-      SModelRootEvent rootEvent = (SModelRootEvent) event;
-      SNode root = rootEvent.getRoot();
-      assert findConsumerEventForNode(root) == null;
-      if (rootEvent.isRemoved()) {
-        consumeAllForNode(root);
-      }
-      myNodesToUnconsumedEvents.put(root.getSNodeId(), event);
-      myAddedNodesToEvents.put(root.getSNodeId(), event);
-    } else if (event instanceof SModelChildEvent) {
-      SModelChildEvent childEvent = (SModelChildEvent) event;
-      SNode parent = childEvent.getParent();
-      SNode child = childEvent.getChild();
-      if (findConsumerEventForNode(parent) == null) {
+    if (affectedNode == null) {
+      return;
+    }
+
+    if (!(myAddedNodesToEvents.containsKey(affectedNode.getSNodeId()))) {
+      if (event instanceof SModelRootEvent) {
+        SModelRootEvent rootEvent = (SModelRootEvent) event;
+        if (rootEvent.isRemoved()) {
+          consumeAllForNode(affectedNode);
+        }
+      } else if (event instanceof SModelChildEvent) {
+        SModelChildEvent childEvent = (SModelChildEvent) event;
+        SNode child = childEvent.getChild();
         if (childEvent.isRemoved()) {
           consumeAllForNode(child);
         }
-        myNodesToUnconsumedEvents.put(parent.getSNodeId(), event);
       }
-      myAddedNodesToEvents.put(child.getSNodeId(), event);
-    } else if (event instanceof SModelPropertyEvent) {
-      SNode node = ((SModelPropertyEvent) event).getNode();
-      if (findConsumerEventForNode(node) == null) {
-        myNodesToUnconsumedEvents.put(node.getSNodeId(), event);
-      }
-    } else if (event instanceof SModelReferenceEvent) {
-      SNode node = ((SModelReferenceEvent) event).getReference().getSourceNode();
-      if (findConsumerEventForNode(node) == null) {
-        myNodesToUnconsumedEvents.put(node.getSNodeId(), event);
-      }
+      myNodesToUnconsumedEvents.put(affectedNode.getSNodeId(), event);
+    }
+    if (addedNode != null) {
+      myAddedNodesToEvents.put(addedNode.getSNodeId(), event);
     }
   }
 
