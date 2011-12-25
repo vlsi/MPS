@@ -43,8 +43,8 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.command.undo.UndoManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.junit.Test;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.TestMain;
@@ -203,12 +203,16 @@ public class CommonChangesManagerTest {
     Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a9(myUtilDiff.getChangeSet())).isNotEmpty());
   }
 
+  private void createNewRoot(SModel modelContent) {
+    SNode root = (SNode) new SNode(modelContent, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SPropertyOperations.set(root, "name", "NewRoot");
+    SModelOperations.addRootNode(modelContent, root);
+  }
+
   private void modifyExternally() throws IOException, ModelReadException {
     int changesBefore = ListSequence.fromList(myUtilDiff.getChangeSet().getModelChanges()).count();
     SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getModelFile(), false);
-    SNode node = (SNode) new SNode(modelContent, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    SPropertyOperations.set(node, "name", "NewRoot");
-    SModelOperations.addRootNode(modelContent, node);
+    createNewRoot(modelContent);
     myUtilVirtualFile.setBinaryContent(ModelPersistence.modelToString(modelContent).getBytes(FileUtil.DEFAULT_CHARSET));
     waitForModelReplaced(myUtilDiff.getModelDescriptor());
     waitForChangesManager();
@@ -248,12 +252,30 @@ public class CommonChangesManagerTest {
     Assert.assertEquals(getChangeSetString(rebuiltChangeSet), getChangeSetString(changeSet));
   }
 
-  private void assertChangeSetIsCorrect(CurrentDifference currentDifference) {
+  private void waitAndCheck(CurrentDifference currentDifference) {
+    waitForChangesManager();
     assertChangeSetIsCorrect(currentDifference.getChangeSet());
   }
 
-  private void removeModifiedRoot() {
+  private void runCommandAndWait(Runnable r) {
+    ModelAccess.instance().runCommandInEDT(r, myProject);
+    ModelAccess.instance().flushEventQueue();
+  }
+
+  private void doSomethingAndUndo(Runnable r, CurrentDifference diff) {
+    runCommandAndWait(r);
+    waitAndCheck(diff);
+
     runCommandAndWait(new Runnable() {
+      public void run() {
+        UndoManager.getInstance(myIdeaProject).undo(null);
+      }
+    });
+    waitAndCheck(diff);
+  }
+
+  private void removeModifiedRoot() {
+    doSomethingAndUndo(new Runnable() {
       public void run() {
         SModel model = myUiDiff.getModelDescriptor().getSModel();
         SNode root = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
@@ -263,21 +285,16 @@ public class CommonChangesManagerTest {
         });
         SNodeOperations.deleteNode(root);
       }
-    });
-    waitForChangesManager();
-    assertChangeSetIsCorrect(myUiDiff);
-
-    runCommandAndWait(new Runnable() {
-      public void run() {
-        UndoManager.getInstance(myIdeaProject).undo(null);
-      }
-    });
-    assertChangeSetIsCorrect(myUiDiff);
+    }, myUiDiff);
   }
 
-  private void runCommandAndWait(Runnable r) {
-    ModelAccess.instance().runCommandInEDT(r, myProject);
-    ModelAccess.instance().flushEventQueue();
+  private void addRoot() {
+    doSomethingAndUndo(new Runnable() {
+      public void run() {
+        SModel model = myUiDiff.getModelDescriptor().getSModel();
+        createNewRoot(model);
+      }
+    }, myUiDiff);
   }
 
   @Test
@@ -297,6 +314,7 @@ public class CommonChangesManagerTest {
           rollback();
 
           removeModifiedRoot();
+          addRoot();
 
           return true;
         } catch (Throwable e) {
