@@ -1,77 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="8852407202145711369">
-    <nodeInfo nodeId="8852407202145711402" fileName="IdeaPluginBundle.java" startLine="19" startPosition="64" endLine="20" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoader" />
-    <nodeInfo nodeId="8852407202145711405" fileName="IdeaPluginBundle.java" startLine="20" startPosition="42" endLine="21" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPluginDescriptor" />
-    <nodeInfo nodeId="8852407202145711413" fileName="IdeaPluginBundle.java" startLine="23" startPosition="66" endLine="24" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8852407202145711425" fileName="IdeaPluginBundle.java" startLine="24" startPosition="139" endLine="25" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8852407202145711441" fileName="IdeaPluginBundle.java" startLine="30" startPosition="32" endLine="31" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8852407202145711445" fileName="IdeaPluginBundle.java" startLine="32" startPosition="5" endLine="33" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1450801699802245366" fileName="IdeaPluginBundle.java" startLine="37" startPosition="45" endLine="38" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1450801699802245398" fileName="IdeaPluginBundle.java" startLine="38" startPosition="90" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1450801699802245411" fileName="IdeaPluginBundle.java" startLine="41" startPosition="11" endLine="42" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1450801699802245522" fileName="IdeaPluginBundle.java" startLine="43" startPosition="31" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1450801699802245498" fileName="IdeaPluginBundle.java" startLine="46" startPosition="5" endLine="47" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852407202145711460" fileName="IdeaPluginBundle.java" startLine="51" startPosition="45" endLine="52" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3626406097153294708" fileName="IdeaPluginBundle.java" startLine="55" startPosition="53" endLine="56" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852407202145711383" fileName="IdeaPluginBundle.java" startLine="63" startPosition="44" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852407202145711392" fileName="IdeaPluginBundle.java" startLine="67" startPosition="39" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852407202145711397" fileName="IdeaPluginBundle.java" startLine="71" startPosition="44" endLine="72" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852407202145711372" fileName="IdeaPluginBundle.java" startLine="59" startPosition="71" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EmptyByteCodeLocator#()V" />
-    <nodeInfo nodeId="8852407202145711436" fileName="IdeaPluginBundle.java" startLine="29" startPosition="27" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8852407202145711409" fileName="IdeaPluginBundle.java" startLine="22" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IdeaPluginBundle#(Lcom/intellij/ide/plugins/IdeaPluginDescriptor;)V" />
-    <nodeInfo nodeId="3626406097153294703" fileName="IdeaPluginBundle.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPluginDescriptor#()Lcom/intellij/ide/plugins/IdeaPluginDescriptor;" />
-    <nodeInfo nodeId="8852407202145711377" fileName="IdeaPluginBundle.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findResource#(Ljava/lang/String;)Ljava/net/URL;" />
-    <nodeInfo nodeId="8852407202145711385" fileName="IdeaPluginBundle.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljava/lang/String;)[B" />
-    <nodeInfo nodeId="8852407202145711394" fileName="IdeaPluginBundle.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findLibrary#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1450801699802245511" fileName="IdeaPluginBundle.java" startLine="40" startPosition="56" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8852407202145711456" fileName="IdeaPluginBundle.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassLoader#()Ljetbrains/mps/runtime/BundleClassLoader;" />
-    <nodeInfo nodeId="1450801699802245406" fileName="IdeaPluginBundle.java" startLine="39" startPosition="63" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8852407202145711433" fileName="IdeaPluginBundle.java" startLine="27" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reload#()V" />
-    <nodeInfo nodeId="1450801699802224020" fileName="IdeaPluginBundle.java" startLine="35" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasClass#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="8852407202145711375" fileName="IdeaPluginBundle.java" startLine="60" startPosition="35" endLine="60" endPosition="35" />
-    <scopeInfo nodeId="8852407202145711440" fileName="IdeaPluginBundle.java" startLine="30" startPosition="32" endLine="31" endPosition="30" />
-    <scopeInfo nodeId="1450801699802245512" fileName="IdeaPluginBundle.java" startLine="41" startPosition="11" endLine="42" endPosition="115" />
-    <scopeInfo nodeId="1450801699802245514" fileName="IdeaPluginBundle.java" startLine="43" startPosition="0" endLine="44" endPosition="18">
+    <nodeInfo nodeId="8852407202145711402" fileName="IdeaPluginBundle.java" startLine="20" startPosition="64" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoader" />
+    <nodeInfo nodeId="8852407202145711405" fileName="IdeaPluginBundle.java" startLine="21" startPosition="42" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPluginDescriptor" />
+    <nodeInfo nodeId="6278136257390404723" fileName="IdeaPluginBundle.java" startLine="22" startPosition="56" endLine="23" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassPath" />
+    <nodeInfo nodeId="8852407202145711413" fileName="IdeaPluginBundle.java" startLine="25" startPosition="66" endLine="26" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8852407202145711425" fileName="IdeaPluginBundle.java" startLine="26" startPosition="139" endLine="27" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8852407202145711441" fileName="IdeaPluginBundle.java" startLine="32" startPosition="32" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8852407202145711445" fileName="IdeaPluginBundle.java" startLine="34" startPosition="5" endLine="35" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1450801699802245366" fileName="IdeaPluginBundle.java" startLine="40" startPosition="30" endLine="41" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1450801699802245398" fileName="IdeaPluginBundle.java" startLine="41" startPosition="92" endLine="42" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6278136257390404760" fileName="IdeaPluginBundle.java" startLine="44" startPosition="27" endLine="45" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1450801699802245411" fileName="IdeaPluginBundle.java" startLine="49" startPosition="13" endLine="50" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1450801699802245522" fileName="IdeaPluginBundle.java" startLine="51" startPosition="33" endLine="52" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6278136257390404743" fileName="IdeaPluginBundle.java" startLine="54" startPosition="7" endLine="55" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1450801699802245498" fileName="IdeaPluginBundle.java" startLine="56" startPosition="5" endLine="57" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852407202145711460" fileName="IdeaPluginBundle.java" startLine="61" startPosition="45" endLine="62" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3626406097153294708" fileName="IdeaPluginBundle.java" startLine="65" startPosition="53" endLine="66" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852407202145711383" fileName="IdeaPluginBundle.java" startLine="73" startPosition="44" endLine="74" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852407202145711392" fileName="IdeaPluginBundle.java" startLine="77" startPosition="39" endLine="78" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852407202145711397" fileName="IdeaPluginBundle.java" startLine="81" startPosition="44" endLine="82" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852407202145711372" fileName="IdeaPluginBundle.java" startLine="69" startPosition="71" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EmptyByteCodeLocator#()V" />
+    <nodeInfo nodeId="8852407202145711436" fileName="IdeaPluginBundle.java" startLine="31" startPosition="27" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8852407202145711409" fileName="IdeaPluginBundle.java" startLine="24" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IdeaPluginBundle#(Lcom/intellij/ide/plugins/IdeaPluginDescriptor;)V" />
+    <nodeInfo nodeId="6278136257390404758" fileName="IdeaPluginBundle.java" startLine="43" startPosition="49" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3626406097153294703" fileName="IdeaPluginBundle.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPluginDescriptor#()Lcom/intellij/ide/plugins/IdeaPluginDescriptor;" />
+    <nodeInfo nodeId="8852407202145711377" fileName="IdeaPluginBundle.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findResource#(Ljava/lang/String;)Ljava/net/URL;" />
+    <nodeInfo nodeId="8852407202145711385" fileName="IdeaPluginBundle.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljava/lang/String;)[B" />
+    <nodeInfo nodeId="8852407202145711394" fileName="IdeaPluginBundle.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findLibrary#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6278136257390404751" fileName="IdeaPluginBundle.java" startLine="42" startPosition="65" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1450801699802245511" fileName="IdeaPluginBundle.java" startLine="48" startPosition="58" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8852407202145711456" fileName="IdeaPluginBundle.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassLoader#()Ljetbrains/mps/runtime/BundleClassLoader;" />
+    <nodeInfo nodeId="1450801699802245406" fileName="IdeaPluginBundle.java" startLine="47" startPosition="9" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8852407202145711433" fileName="IdeaPluginBundle.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reload#()V" />
+    <nodeInfo nodeId="6278136257390404733" fileName="IdeaPluginBundle.java" startLine="39" startPosition="58" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1450801699802224020" fileName="IdeaPluginBundle.java" startLine="37" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasClass#(Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="8852407202145711375" fileName="IdeaPluginBundle.java" startLine="70" startPosition="35" endLine="70" endPosition="35" />
+    <scopeInfo nodeId="8852407202145711440" fileName="IdeaPluginBundle.java" startLine="32" startPosition="32" endLine="33" endPosition="30" />
+    <scopeInfo nodeId="6278136257390404759" fileName="IdeaPluginBundle.java" startLine="44" startPosition="27" endLine="45" endPosition="29" />
+    <scopeInfo nodeId="1450801699802245512" fileName="IdeaPluginBundle.java" startLine="49" startPosition="13" endLine="50" endPosition="117" />
+    <scopeInfo nodeId="1450801699802245514" fileName="IdeaPluginBundle.java" startLine="51" startPosition="0" endLine="52" endPosition="20">
       <varInfo nodeId="1450801699802245515" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1450801699802245517" fileName="IdeaPluginBundle.java" startLine="43" startPosition="31" endLine="44" endPosition="18" />
-    <scopeInfo nodeId="8852407202145711459" fileName="IdeaPluginBundle.java" startLine="51" startPosition="45" endLine="52" endPosition="25" />
-    <scopeInfo nodeId="3626406097153294706" fileName="IdeaPluginBundle.java" startLine="55" startPosition="53" endLine="56" endPosition="30" />
-    <scopeInfo nodeId="8852407202145711382" fileName="IdeaPluginBundle.java" startLine="63" startPosition="44" endLine="64" endPosition="18" />
-    <scopeInfo nodeId="8852407202145711391" fileName="IdeaPluginBundle.java" startLine="67" startPosition="39" endLine="68" endPosition="18" />
-    <scopeInfo nodeId="8852407202145711396" fileName="IdeaPluginBundle.java" startLine="71" startPosition="44" endLine="72" endPosition="18" />
-    <scopeInfo nodeId="8852407202145711412" fileName="IdeaPluginBundle.java" startLine="23" startPosition="66" endLine="25" endPosition="42" />
-    <scopeInfo nodeId="8852407202145711372" fileName="IdeaPluginBundle.java" startLine="59" startPosition="71" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="8852407202145711409" fileName="IdeaPluginBundle.java" startLine="22" startPosition="0" endLine="26" endPosition="3">
+    <scopeInfo nodeId="1450801699802245517" fileName="IdeaPluginBundle.java" startLine="51" startPosition="33" endLine="52" endPosition="20" />
+    <scopeInfo nodeId="8852407202145711459" fileName="IdeaPluginBundle.java" startLine="61" startPosition="45" endLine="62" endPosition="25" />
+    <scopeInfo nodeId="3626406097153294706" fileName="IdeaPluginBundle.java" startLine="65" startPosition="53" endLine="66" endPosition="30" />
+    <scopeInfo nodeId="8852407202145711382" fileName="IdeaPluginBundle.java" startLine="73" startPosition="44" endLine="74" endPosition="18" />
+    <scopeInfo nodeId="8852407202145711391" fileName="IdeaPluginBundle.java" startLine="77" startPosition="39" endLine="78" endPosition="18" />
+    <scopeInfo nodeId="8852407202145711396" fileName="IdeaPluginBundle.java" startLine="81" startPosition="44" endLine="82" endPosition="18" />
+    <scopeInfo nodeId="8852407202145711412" fileName="IdeaPluginBundle.java" startLine="25" startPosition="66" endLine="27" endPosition="42" />
+    <scopeInfo nodeId="8852407202145711372" fileName="IdeaPluginBundle.java" startLine="69" startPosition="71" endLine="71" endPosition="5" />
+    <scopeInfo nodeId="8852407202145711409" fileName="IdeaPluginBundle.java" startLine="24" startPosition="0" endLine="28" endPosition="3">
       <varInfo nodeId="8852407202145711429" varName="pluginDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="8852407202145711435" fileName="IdeaPluginBundle.java" startLine="29" startPosition="27" endLine="33" endPosition="108" />
-    <scopeInfo nodeId="3626406097153294703" fileName="IdeaPluginBundle.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="8852407202145711377" fileName="IdeaPluginBundle.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="8852407202145711435" fileName="IdeaPluginBundle.java" startLine="31" startPosition="27" endLine="35" endPosition="108" />
+    <scopeInfo nodeId="6278136257390404758" fileName="IdeaPluginBundle.java" startLine="43" startPosition="49" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="3626406097153294703" fileName="IdeaPluginBundle.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="8852407202145711377" fileName="IdeaPluginBundle.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="8852407202145711380" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="8852407202145711385" fileName="IdeaPluginBundle.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="8852407202145711385" fileName="IdeaPluginBundle.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="8852407202145711389" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="8852407202145711394" fileName="IdeaPluginBundle.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="8852407202145711394" fileName="IdeaPluginBundle.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="8852407202145711400" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="1450801699802245409" fileName="IdeaPluginBundle.java" startLine="40" startPosition="56" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="8852407202145711456" fileName="IdeaPluginBundle.java" startLine="49" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1450801699802245406" fileName="IdeaPluginBundle.java" startLine="39" startPosition="63" endLine="46" endPosition="5">
+    <scopeInfo nodeId="1450801699802245409" fileName="IdeaPluginBundle.java" startLine="48" startPosition="58" endLine="53" endPosition="9" />
+    <scopeInfo nodeId="8852407202145711456" fileName="IdeaPluginBundle.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1450801699802245406" fileName="IdeaPluginBundle.java" startLine="47" startPosition="9" endLine="54" endPosition="7">
       <varInfo nodeId="1450801699802245406" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="8852407202145711433" fileName="IdeaPluginBundle.java" startLine="27" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1450801699802224024" fileName="IdeaPluginBundle.java" startLine="37" startPosition="45" endLine="47" endPosition="41">
+    <scopeInfo nodeId="8852407202145711433" fileName="IdeaPluginBundle.java" startLine="29" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="6278136257390404734" fileName="IdeaPluginBundle.java" startLine="40" startPosition="30" endLine="55" endPosition="25">
       <varInfo nodeId="1450801699802245367" varName="classPath" />
       <varInfo nodeId="1450801699802245399" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="1450801699802224020" fileName="IdeaPluginBundle.java" startLine="35" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="1450801699802224024" fileName="IdeaPluginBundle.java" startLine="39" startPosition="58" endLine="57" endPosition="48" />
+    <scopeInfo nodeId="1450801699802224020" fileName="IdeaPluginBundle.java" startLine="37" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="1450801699802224022" varName="string" />
     </scopeInfo>
-    <unitInfo nodeId="8852407202145711369" fileName="IdeaPluginBundle.java" startLine="19" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.debugger.java.classloading.IdeaPluginBundle" />
-    <unitInfo nodeId="8852407202145711370" fileName="IdeaPluginBundle.java" startLine="59" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.debugger.java.classloading.IdeaPluginBundle$EmptyByteCodeLocator" />
+    <unitInfo nodeId="8852407202145711369" fileName="IdeaPluginBundle.java" startLine="20" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.debugger.java.classloading.IdeaPluginBundle" />
+    <unitInfo nodeId="6278136257390404758" fileName="IdeaPluginBundle.java" startLine="43" startPosition="37" endLine="47" endPosition="7" unitName="jetbrains.mps.debugger.java.classloading.IdeaPluginBundle$1" />
+    <unitInfo nodeId="8852407202145711370" fileName="IdeaPluginBundle.java" startLine="69" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.debugger.java.classloading.IdeaPluginBundle$EmptyByteCodeLocator" />
   </root>
   <root nodeId="8852407202145711464">
     <nodeInfo nodeId="8852407202145711490" fileName="PluginBundleInstaller.java" startLine="20" startPosition="68" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBundle" />

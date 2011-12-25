@@ -6,6 +6,7 @@ import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.BundleClassLoader;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
+import jetbrains.mps.reloading.IClassPathItem;
 import java.util.List;
 import java.io.File;
 import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
@@ -19,6 +20,7 @@ import java.net.URL;
 public class IdeaPluginBundle extends RBundle<ModuleReference> {
   private BundleClassLoader myClassLoader;
   private final IdeaPluginDescriptor myPluginDescriptor;
+  private IClassPathItem myClassPath;
 
   public IdeaPluginBundle(IdeaPluginDescriptor pluginDescriptor) {
     super(new ModuleReference("$idea.plugin" + pluginDescriptor.getPluginId().getIdString()), new IdeaPluginBundle.EmptyByteCodeLocator());
@@ -34,17 +36,25 @@ public class IdeaPluginBundle extends RBundle<ModuleReference> {
   }
 
   @Override
-  protected boolean hasClass(String string) {
-    List<File> classPath = ((IdeaPluginDescriptorImpl) myPluginDescriptor).getClassPath();
-    CompositeClassPathItem item = new CompositeClassPathItem();
-    for (File file : ListSequence.fromList(classPath)) {
-      try {
-        item.add(ClassPathFactory.getInstance().createFromPath(file.getAbsolutePath(), getId().getModuleFqName()));
-      } catch (IOException e) {
-        // ignore 
+  protected synchronized boolean hasClass(String string) {
+    if (myClassPath == null) {
+      List<File> classPath = ((IdeaPluginDescriptorImpl) myPluginDescriptor).getClassPath();
+      CompositeClassPathItem item = new CompositeClassPathItem();
+      item.addInvalidationAction(new Runnable() {
+        public void run() {
+          myClassPath = null;
+        }
+      });
+      for (File file : ListSequence.fromList(classPath)) {
+        try {
+          item.add(ClassPathFactory.getInstance().createFromPath(file.getAbsolutePath(), getId().getModuleFqName()));
+        } catch (IOException e) {
+          // ignore 
+        }
       }
+      myClassPath = item;
     }
-    return item.getClass(string) != null;
+    return myClassPath.getClass(string) != null;
   }
 
   @Override
