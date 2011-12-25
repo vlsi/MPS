@@ -45,15 +45,39 @@
     <mkdir dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib" />
     <mkdir dir="${deploy.dir}/MPS/license" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/vcs.jar.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/vcs.jar.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsmake.jar.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsmake.jar.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/migration.jar.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/migration.jar.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsjava.jar.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsjava.jar.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/modelchecker.jar.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/modelchecker.jar.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/samples.jar.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/samples.jar.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor" />
     <mkdir dir="${deploy.dir}/MPS/plugins/cvsIntegration" />
     <mkdir dir="${deploy.dir}/MPS/plugins/git4idea" />
     <mkdir dir="${deploy.dir}/MPS/plugins/svn4idea" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api.jar/lib/jetbrains.mps.debugger.java.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api.jar/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api.jar/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api.jar/solutions" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api.jar" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java.jar/lib/jetbrains.mps.debugger.java.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java.jar/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java.jar/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java.jar/solutions" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java.jar" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/META-INF" />
@@ -301,40 +325,82 @@
     <copy todir="${deploy.dir}/MPS/license">
       <fileset dir="${mps_home}/license" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS/plugins/ideaIntegration.jar" filesonly="true" duplicate="preserve" compress="true">
-      <zipfileset dir="${mps_home}/plugins/ideaIntegration/META-INF" includes="**/plugin.xml" prefix="META-INF" />
-      <zipfileset dir="${mps_home}/plugins/ideaIntegration/classes" prefix="" />
+    <copy todir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.jar.tmp">
+      <fileset dir="${mps_home}/plugins/ideaIntegration/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.jar.tmp/META-INF">
+      <fileset dir="${mps_home}/plugins/ideaIntegration/META-INF" includes="**/plugin.xml, " />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/ideaIntegration.jar.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.jar.tmp" excludes="" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/vcs.jar" filesonly="true" duplicate="preserve" compress="true">
-      <zipfileset dir="${mps_home}/plugins/vcs/META-INF" includes="**/plugin.xml" prefix="META-INF" />
-      <zipfileset dir="${mps_home}/plugins/vcs/classes" prefix="" />
+    <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/plugins/vcs.jar.jar.tmp">
+      <fileset dir="${mps_home}/plugins/vcs/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/vcs.jar.jar.tmp/META-INF">
+      <fileset dir="${mps_home}/plugins/vcs/META-INF" includes="**/plugin.xml, " />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/vcs.jar.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/vcs.jar.jar.tmp" excludes="" />
     </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/vcs.jar.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/plugins/mpsdevkit/META-INF">
       <fileset dir="${mps_home}/plugins/mpsdevkit/META-INF" excludes="**/*.zip, " includes="**/plugin.xml, " />
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.mpsdevkit" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit" />
-    <jar destfile="${deploy.dir}/MPS/plugins/mpsmake.jar" filesonly="true" duplicate="preserve" compress="true">
-      <zipfileset dir="${mps_home}/plugins/mpsmake/META-INF" includes="**/plugin.xml" prefix="META-INF" />
-      <zipfileset dir="${mps_home}/plugins/mpsmake/classes" prefix="" />
+    <copy todir="${deploy.dir}/MPS/plugins/mpsmake.jar.jar.tmp">
+      <fileset dir="${mps_home}/plugins/mpsmake/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/mpsmake.jar.jar.tmp/META-INF">
+      <fileset dir="${mps_home}/plugins/mpsmake/META-INF" includes="**/plugin.xml, " />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/mpsmake.jar.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/mpsmake.jar.jar.tmp" excludes="" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/migration.jar" filesonly="true" duplicate="preserve" compress="true">
-      <zipfileset dir="${mps_home}/plugins/migration/META-INF" includes="**/plugin.xml" prefix="META-INF" />
-      <zipfileset dir="${mps_home}/plugins/migration/classes" prefix="" />
+    <delete dir="${deploy.dir}/MPS/plugins/mpsmake.jar.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/plugins/migration.jar.jar.tmp">
+      <fileset dir="${mps_home}/plugins/migration/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/migration.jar.jar.tmp/META-INF">
+      <fileset dir="${mps_home}/plugins/migration/META-INF" includes="**/plugin.xml, " />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/migration.jar.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/migration.jar.jar.tmp" excludes="" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/mpsjava.jar" filesonly="true" duplicate="preserve" compress="true">
-      <zipfileset dir="${mps_home}/plugins/mpsjava/META-INF" includes="**/plugin.xml" prefix="META-INF" />
-      <zipfileset dir="${mps_home}/plugins/mpsjava/classes" prefix="" />
+    <delete dir="${deploy.dir}/MPS/plugins/migration.jar.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/plugins/mpsjava.jar.jar.tmp">
+      <fileset dir="${mps_home}/plugins/mpsjava/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/mpsjava.jar.jar.tmp/META-INF">
+      <fileset dir="${mps_home}/plugins/mpsjava/META-INF" includes="**/plugin.xml, " />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/mpsjava.jar.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/mpsjava.jar.jar.tmp" excludes="" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/modelchecker.jar" filesonly="true" duplicate="preserve" compress="true">
-      <zipfileset dir="${mps_home}/plugins/modelchecker/META-INF" includes="**/plugin.xml" prefix="META-INF" />
-      <zipfileset dir="${mps_home}/plugins/modelchecker/classes" prefix="" />
+    <delete dir="${deploy.dir}/MPS/plugins/mpsjava.jar.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/plugins/modelchecker.jar.jar.tmp">
+      <fileset dir="${mps_home}/plugins/modelchecker/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/modelchecker.jar.jar.tmp/META-INF">
+      <fileset dir="${mps_home}/plugins/modelchecker/META-INF" includes="**/plugin.xml, " />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/modelchecker.jar.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/modelchecker.jar.jar.tmp" excludes="" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/samples.jar" filesonly="true" duplicate="preserve" compress="true">
-      <zipfileset dir="${mps_home}/plugins/samples/META-INF" includes="**/plugin.xml" prefix="META-INF" />
-      <zipfileset dir="${mps_home}/plugins/samples/classes" prefix="" />
+    <delete dir="${deploy.dir}/MPS/plugins/modelchecker.jar.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/plugins/samples.jar.jar.tmp">
+      <fileset dir="${mps_home}/plugins/samples/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/samples.jar.jar.tmp/META-INF">
+      <fileset dir="${mps_home}/plugins/samples/META-INF" includes="**/plugin.xml, " />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/samples.jar.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/samples.jar.jar.tmp" excludes="" />
     </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/samples.jar.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/plugins/mpseditor/META-INF">
       <fileset dir="${mps_home}/plugins/mpseditor/META-INF" excludes="**/*.zip, " includes="**/plugin.xml, " />
     </copy>
@@ -350,14 +416,37 @@
     <copy todir="${deploy.dir}/MPS/plugins/svn4idea">
       <fileset dir="${mps_home}/plugins/svn4idea" excludes="**/*.zip, " />
     </copy>
-    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api.jar" filesonly="true" duplicate="preserve" compress="true">
-      <zipfileset dir="${mps_home}/plugins/debugger-api/META-INF" includes="**/plugin.xml" prefix="META-INF" />
-      <zipfileset dir="${mps_home}/plugins/debugger-api/classes" prefix="" />
+    <copy todir="${deploy.dir}/MPS/plugins/debugger-api.jar/lib/jetbrains.mps.debugger.java.tmp">
+      <fileset dir="${mps_home}/plugins/debugger-api/classes" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api.jar/lib/jetbrains.mps.debugger.java" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/debugger-api.jar/lib/jetbrains.mps.debugger.java.tmp" excludes="" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/debugger-java.jar" filesonly="true" duplicate="preserve" compress="true">
-      <zipfileset dir="${mps_home}/plugins/debugger-java/META-INF" includes="**/plugin.xml" prefix="META-INF" />
-      <zipfileset dir="${mps_home}/plugins/debugger-java/classes" prefix="" />
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-api.jar/lib/jetbrains.mps.debugger.java.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api.jar/lib" />
+    <copy todir="${deploy.dir}/MPS/plugins/debugger-api.jar/META-INF">
+      <fileset dir="${mps_home}/plugins/debugger-api/META-INF" excludes="**/*.zip, " includes="**/plugin.xml, " />
+    </copy>
+    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.api" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.traceInfo.cache" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api.jar/solutions" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api.jar" />
+    <copy todir="${deploy.dir}/MPS/plugins/debugger-java.jar/lib/jetbrains.mps.debugger.java.tmp">
+      <fileset dir="${mps_home}/plugins/debugger-java/classes" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-java.jar/lib/jetbrains.mps.debugger.java" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/debugger-java.jar/lib/jetbrains.mps.debugger.java.tmp" excludes="" />
     </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-java.jar/lib/jetbrains.mps.debugger.java.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java.jar/lib" />
+    <copy todir="${deploy.dir}/MPS/plugins/debugger-java.jar/META-INF">
+      <fileset dir="${mps_home}/plugins/debugger-java/META-INF" excludes="**/*.zip, " includes="**/plugin.xml, " />
+    </copy>
+    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.api" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.runtime" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java.jar/solutions" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java.jar" />
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp">
       <fileset dir="${base_dir}/plugins/debugger-java-customViewers/classes_gen" />
     </copy>
@@ -609,6 +698,15 @@
     <delete dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-boot.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/vcs.jar.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/mpsmake.jar.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/migration.jar.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/mpsjava.jar.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/modelchecker.jar.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/samples.jar.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-api.jar/lib/jetbrains.mps.debugger.java.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-java.jar/lib/jetbrains.mps.debugger.java.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/lib/jetbrains.mps.debugger.java.languages.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp" />
