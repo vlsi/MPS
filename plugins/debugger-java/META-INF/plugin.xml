@@ -17,6 +17,9 @@
 
     <!--runtime-->
     <component>
+      <implementation-class>jetbrains.mps.debugger.java.classloading.PluginBundleInstaller</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.debugger.java.JavaDebugger</implementation-class>
     </component>
   </application-components>
