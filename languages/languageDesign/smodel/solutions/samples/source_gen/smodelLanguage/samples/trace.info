@@ -302,8 +302,12 @@
     <scopeInfo nodeId="1174262652634" fileName="Children.java" startLine="35" startPosition="5" endLine="38" endPosition="5">
       <varInfo nodeId="1174262652638" varName="statement" />
     </scopeInfo>
-    <scopeInfo nodeId="1206054637452" fileName="Children.java" startLine="38" startPosition="5" endLine="41" endPosition="5" />
-    <scopeInfo nodeId="1227876804727" fileName="Children.java" startLine="48" startPosition="209" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1206054637452" fileName="Children.java" startLine="38" startPosition="5" endLine="41" endPosition="5">
+      <varInfo nodeId="1206054637452" varName="statement" />
+    </scopeInfo>
+    <scopeInfo nodeId="1227876804727" fileName="Children.java" startLine="48" startPosition="209" endLine="52" endPosition="0">
+      <varInfo nodeId="1227876804727" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1173117814218" fileName="Children.java" startLine="62" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="1173117814255" varName="statement" />
     </scopeInfo>
@@ -644,7 +648,9 @@
       <varInfo nodeId="1169584531902" varName="e1" />
       <varInfo nodeId="1169584559825" varName="e2" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876796836" fileName="ListOfNodes.java" startLine="20" startPosition="134" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1227876796836" fileName="ListOfNodes.java" startLine="20" startPosition="134" endLine="24" endPosition="0">
+      <varInfo nodeId="1227876796836" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1169585406423" fileName="ListOfNodes.java" startLine="18" startPosition="31" endLine="24" endPosition="7">
       <varInfo nodeId="1174262865398" varName="nodes" />
     </scopeInfo>
@@ -696,12 +702,16 @@
       <varInfo nodeId="1171315620435" varName="new_class" />
       <varInfo nodeId="1171315595157" varName="new_stmt" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876795415" fileName="Model.java" startLine="37" startPosition="171" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1227876795415" fileName="Model.java" startLine="37" startPosition="171" endLine="41" endPosition="0">
+      <varInfo nodeId="1227876795415" varName="c" />
+    </scopeInfo>
     <scopeInfo nodeId="1177021435636" fileName="Model.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1177021446368" varName="model" />
       <varInfo nodeId="1180635538871" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876795715" fileName="Model.java" startLine="51" startPosition="171" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1227876795715" fileName="Model.java" startLine="51" startPosition="171" endLine="55" endPosition="0">
+      <varInfo nodeId="1227876795715" varName="c" />
+    </scopeInfo>
     <scopeInfo nodeId="1217622640895" fileName="Model.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1217622640896" varName="model" />
     </scopeInfo>
@@ -994,7 +1004,9 @@
       <varInfo nodeId="1241018645360" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1241018421133" fileName="StructureLanguageEnums.java" startLine="10" startPosition="27" endLine="16" endPosition="5" />
-    <scopeInfo nodeId="1241018438639" fileName="StructureLanguageEnums.java" startLine="10" startPosition="27" endLine="16" endPosition="5" />
+    <scopeInfo nodeId="1241018438639" fileName="StructureLanguageEnums.java" startLine="10" startPosition="27" endLine="16" endPosition="5">
+      <varInfo nodeId="1241018438639" varName="member" />
+    </scopeInfo>
     <scopeInfo nodeId="1241018421130" fileName="StructureLanguageEnums.java" startLine="9" startPosition="37" endLine="18" endPosition="0" />
     <unitInfo nodeId="1241018402608" fileName="StructureLanguageEnums.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="smodelLanguage.samples.StructureLanguageEnums" />
   </root>

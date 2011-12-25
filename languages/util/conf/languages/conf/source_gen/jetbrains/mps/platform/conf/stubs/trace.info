@@ -11,11 +11,16 @@
     <scopeInfo nodeId="8382013213872090899" fileName="ConfStubs.java" startLine="22" startPosition="22" endLine="22" endPosition="22" />
     <scopeInfo nodeId="2906282062545455190" fileName="ConfStubs.java" startLine="28" startPosition="43" endLine="29" endPosition="46" />
     <scopeInfo nodeId="8382013213872090899" fileName="ConfStubs.java" startLine="21" startPosition="57" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="2906282062545455187" fileName="ConfStubs.java" startLine="27" startPosition="227" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="2906282062545455187" fileName="ConfStubs.java" startLine="27" startPosition="227" endLine="31" endPosition="0">
+      <varInfo nodeId="2906282062545455187" varName="path" />
+    </scopeInfo>
     <scopeInfo nodeId="8382013213872090901" fileName="ConfStubs.java" startLine="25" startPosition="85" endLine="32" endPosition="15">
       <varInfo nodeId="8382013213872090911" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="8382013213872090899" fileName="ConfStubs.java" startLine="24" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="8382013213872090899" fileName="ConfStubs.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="8382013213872090899" varName="module" />
+      <varInfo nodeId="8382013213872090899" varName="root" />
+    </scopeInfo>
     <unitInfo nodeId="8382013213872090899" fileName="ConfStubs.java" startLine="21" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     <unitInfo nodeId="2906282062545455187" fileName="ConfStubs.java" startLine="27" startPosition="177" endLine="31" endPosition="5" unitName="jetbrains.mps.platform.conf.stubs.ConfStubs$1" />
   </root>

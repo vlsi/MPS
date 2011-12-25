@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-5ixogyzbvyi9oqp7xmgrua66ftb8ga9">
+  <dep model="f:java_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.resources.ext(jetbrains.mps.gwt.client/com.google.gwt.resources.ext@java_stub)" />
   <dep model="f:java_stub#a5a5d5ab-3987-4848-9421-998f92430773#com.google.gwt.core.client(jetbrains.mps.ui.gwt#9106854556042091019/com.google.gwt.core.client@java_stub)" />
   <dep model="f:java_stub#a5a5d5ab-3987-4848-9421-998f92430773#com.google.gwt.resources.client(jetbrains.mps.ui.gwt#9106854556042091019/com.google.gwt.resources.client@java_stub)" />
+  <dep model="f:java_stub#a5a5d5ab-3987-4848-9421-998f92430773#com.google.gwt.resources.ext(jetbrains.mps.ui.gwt#9106854556042091019/com.google.gwt.resources.ext@java_stub)" />
   <dep model="f:java_stub#a5a5d5ab-3987-4848-9421-998f92430773#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt#9106854556042091019/com.google.gwt.user.client.ui@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-68sllyg7p1fd6dgkrce6zowrtm9cm0d" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d78hke4r6b9hefsdkynz6vbevip5ltn" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="4592mc0c92ee86m4hdnk27h6ntxlxqu" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-dws7etjaxfyli8wfzciicvjczkauj7a" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="biro1cjs7shx4xouyyvv0k4klcr776x" />
   <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" hash="67i7oghv65vyzyi0nktmd5fhen02az" />
   <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" hash="-5gilomj0upz2lx6vzb38bqslvfu9564" />
   <dep model="r:0096937e-0d1c-4498-b54e-f1ebceb78c48(jetbrains.mps.ui.internal.generator.template.main@generator)" hash="3hamuqiaisa177r0cuwycx4oqqo1l3o" />
@@ -27,7 +29,9 @@
     <file name="gwtdemo.css" />
   </source>
   <source id="7046856741208198647" name="MyResources" hash="-1zyn2894ez05od6dtoi1jwg5026ncc9">
+    <dep model="f:java_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.resources.ext(jetbrains.mps.gwt.client/com.google.gwt.resources.ext@java_stub)" />
     <dep model="f:java_stub#a5a5d5ab-3987-4848-9421-998f92430773#com.google.gwt.resources.client(jetbrains.mps.ui.gwt#9106854556042091019/com.google.gwt.resources.client@java_stub)" />
+    <dep model="f:java_stub#a5a5d5ab-3987-4848-9421-998f92430773#com.google.gwt.resources.ext(jetbrains.mps.ui.gwt#9106854556042091019/com.google.gwt.resources.ext@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />

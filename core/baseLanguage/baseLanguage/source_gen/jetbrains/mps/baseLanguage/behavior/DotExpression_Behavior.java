@@ -10,8 +10,13 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.lang.reflect.Method;
 import jetbrains.mps.reloading.ReflectionUtil;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class DotExpression_Behavior {
+  private static Class[] PARAMETERS_4585239809762176541 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -40,5 +45,18 @@ public class DotExpression_Behavior {
 
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return IOperation_Behavior.call_isDotExpressionLegalAsStatement_1239212437413(SLinkOperations.getTarget(thisNode, "operation", true));
+  }
+
+  public static boolean virtual_allowsNullOperand_4585239809762176541(SNode thisNode) {
+    return false;
+  }
+
+  public static boolean call_allowsNullOperand_4585239809762176541(SNode thisNode) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "virtual_allowsNullOperand_4585239809762176541", PARAMETERS_4585239809762176541);
+  }
+
+  public static boolean callSuper_allowsNullOperand_4585239809762176541(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), callerConceptFqName, "virtual_allowsNullOperand_4585239809762176541", PARAMETERS_4585239809762176541);
   }
 }

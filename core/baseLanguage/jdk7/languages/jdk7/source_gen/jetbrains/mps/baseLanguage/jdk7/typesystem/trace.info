@@ -30,15 +30,25 @@
     <scopeInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="47" startPosition="46" endLine="48" endPosition="77" />
     <scopeInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="58" startPosition="30" endLine="59" endPosition="17" />
     <scopeInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="21" startPosition="134" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="400642802550421757" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="30" startPosition="9" endLine="32" endPosition="315" />
-    <scopeInfo nodeId="3446170115498222133" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="37" startPosition="11" endLine="39" endPosition="311" />
-    <scopeInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="52" startPosition="5" endLine="54" endPosition="45" />
+    <scopeInfo nodeId="400642802550421757" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="30" startPosition="9" endLine="32" endPosition="315">
+      <varInfo nodeId="400642802550421757" varName="_reporter_2309309498" />
+      <varInfo nodeId="400642802550421757" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="3446170115498222133" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="37" startPosition="11" endLine="39" endPosition="311">
+      <varInfo nodeId="3446170115498222133" varName="_reporter_2309309498" />
+      <varInfo nodeId="3446170115498222133" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="52" startPosition="5" endLine="54" endPosition="45">
+      <varInfo nodeId="400642802550421647" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="400642802550421756" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="29" startPosition="158" endLine="33" endPosition="9" />
     <scopeInfo nodeId="3446170115498222132" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="36" startPosition="66" endLine="40" endPosition="11" />
     <scopeInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="51" startPosition="68" endLine="55" endPosition="5" />
     <scopeInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="400642802550421647" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="3446170115498222120" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="34" startPosition="14" endLine="42" endPosition="62">
       <varInfo nodeId="3446170115498222123" varName="current" />
     </scopeInfo>
@@ -49,7 +59,11 @@
     <scopeInfo nodeId="400642802550421648" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="25" startPosition="128" endLine="44" endPosition="5">
       <varInfo nodeId="364584182801826613" varName="caseElements" />
     </scopeInfo>
-    <scopeInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="400642802550421647" varName="status" />
+      <varInfo nodeId="400642802550421647" varName="switchStatement" />
+      <varInfo nodeId="400642802550421647" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.typesystem.check_StringSwitchCase_NonTypesystemRule" />
   </root>
   <root nodeId="400642802550421653">
@@ -88,18 +102,29 @@
     <scopeInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="51" startPosition="46" endLine="52" endPosition="77" />
     <scopeInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="62" startPosition="30" endLine="63" endPosition="16" />
     <scopeInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="20" startPosition="139" endLine="22" endPosition="3" />
-    <scopeInfo nodeId="400642802550421743" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="45" startPosition="5" endLine="47" endPosition="258" />
-    <scopeInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="56" startPosition="5" endLine="58" endPosition="45" />
+    <scopeInfo nodeId="400642802550421743" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="45" startPosition="5" endLine="47" endPosition="258">
+      <varInfo nodeId="400642802550421743" varName="_reporter_2309309498" />
+      <varInfo nodeId="400642802550421743" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="56" startPosition="5" endLine="58" endPosition="45">
+      <varInfo nodeId="400642802550421653" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="400642802550421678" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="33" startPosition="136" endLine="36" endPosition="7" />
     <scopeInfo nodeId="400642802550421699" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="39" startPosition="139" endLine="42" endPosition="7" />
     <scopeInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="55" startPosition="68" endLine="59" endPosition="5" />
     <scopeInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="54" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="400642802550421653" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="400642802550421654" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="24" startPosition="128" endLine="48" endPosition="5">
       <varInfo nodeId="400642802550421656" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="400642802550421653" varName="status" />
+      <varInfo nodeId="400642802550421653" varName="switchStatement" />
+      <varInfo nodeId="400642802550421653" varName="typeCheckingContext" />
+    </scopeInfo>
     <unitInfo nodeId="400642802550421653" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.typesystem.check_StringSwitchStatement_NonTypesystemRule" />
   </root>
 </debugInfo>

@@ -61,12 +61,18 @@
     <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="16" startPosition="76" endLine="20" endPosition="0" />
     <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="6587431012884472434" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="6587431012884472439" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="33" startPosition="52" endLine="40" endPosition="68" />
-    <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="32" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="32" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="6587431012884472434" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="14" startPosition="89" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="13" startPosition="85" endLine="47" endPosition="3" />
+    <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="13" startPosition="85" endLine="47" endPosition="3">
+      <varInfo nodeId="6587431012884472434" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveInequalityPriorities_MigrationScript" />
     <unitInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="16" startPosition="28" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveInequalityPriorities_MigrationScript$1" />
   </root>

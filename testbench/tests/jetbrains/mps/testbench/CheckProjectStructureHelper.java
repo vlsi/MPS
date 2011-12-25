@@ -149,6 +149,7 @@ public class CheckProjectStructureHelper {
   }
 
   public void dispose() {
+    TestMain.disposeMPS();
     myModelsExtractor.clear();
   }
 

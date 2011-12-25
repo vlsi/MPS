@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.actionSystem.DataProvider;
@@ -56,18 +57,24 @@ public class InspectorTool extends BaseProjectTool {
 
   public void initComponent() {
     super.initComponent();
-    SwingUtilities.invokeLater(new Runnable() {
+    StartupManager.getInstance(getProject()).registerStartupActivity(new Runnable() {
+      @Override
       public void run() {
-        myComponent = new MyPanel();
-        myInspectorComponent = new InspectorEditorComponent();
-        myComponent.add(myInspectorComponent.getExternalComponent(), BorderLayout.CENTER);
-        myMessagePanel.setNode(null);
-        myComponent.add(myMessagePanel, BorderLayout.NORTH);
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            myComponent = new MyPanel();
+            myInspectorComponent = new InspectorEditorComponent();
+            myComponent.add(myInspectorComponent.getExternalComponent(), BorderLayout.CENTER);
+            myMessagePanel.setNode(null);
+            myComponent.add(myMessagePanel, BorderLayout.NORTH);
+          }
+        });
       }
     });
   }
 
   public void disposeComponent() {
+    if (myInspectorComponent == null) return;
     myInspectorComponent.dispose();
   }
 

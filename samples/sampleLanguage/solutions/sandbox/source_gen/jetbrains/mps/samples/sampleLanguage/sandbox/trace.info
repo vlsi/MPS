@@ -16,7 +16,9 @@
     <scopeInfo nodeId="6451203873426933252" fileName="Foo.java" startLine="14" startPosition="42" endLine="18" endPosition="16">
       <varInfo nodeId="6451203873426933254" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="6451203873426933243" fileName="Foo.java" startLine="13" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="6451203873426933243" fileName="Foo.java" startLine="13" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="6451203873426933243" varName="args" />
+    </scopeInfo>
     <unitInfo nodeId="6451203873426933243" fileName="Foo.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.sampleLanguage.sandbox.Foo" />
   </root>
 </debugInfo>

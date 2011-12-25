@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
@@ -81,6 +82,7 @@ public class EditorCell_RefPresentation {
           node,
           node.getConceptDeclarationNode(),
           myLinkDeclaration,
+          SNodeOperations.getContainingLinkDeclaration(node),
           myContext.getOperationContext()
         );
         return presentation.getText(myNode, true, false, true);
@@ -99,6 +101,7 @@ public class EditorCell_RefPresentation {
         node,
         node.getConceptDeclarationNode(),
         refNodeCell.getLinkDeclaration(),
+        SNodeOperations.getContainingLinkDeclaration(node),
         myContextCell.getEditorContext().getOperationContext()
       );
 

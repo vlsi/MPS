@@ -65,8 +65,8 @@
     <scopeInfo nodeId="1196434175661" fileName="Complex.java" startLine="91" startPosition="32" endLine="92" endPosition="13" />
     <scopeInfo nodeId="1196259741501" fileName="Complex.java" startLine="13" startPosition="49" endLine="15" endPosition="33" />
     <scopeInfo nodeId="1196259741498" fileName="Complex.java" startLine="12" startPosition="0" endLine="16" endPosition="3">
-      <varInfo nodeId="1196259746813" varName="real" />
       <varInfo nodeId="1196259750042" varName="imaginary" />
+      <varInfo nodeId="1196259746813" varName="real" />
     </scopeInfo>
     <scopeInfo nodeId="1196259799664" fileName="Complex.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="1196259824365" fileName="Complex.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
@@ -81,9 +81,9 @@
       <varInfo nodeId="1196266569518" varName="c2" />
     </scopeInfo>
     <scopeInfo nodeId="1196429491433" fileName="Complex.java" startLine="72" startPosition="56" endLine="76" endPosition="39">
-      <varInfo nodeId="1196429523273" varName="r" />
       <varInfo nodeId="1196429542804" varName="a1" />
       <varInfo nodeId="1196429611093" varName="a2" />
+      <varInfo nodeId="1196429523273" varName="r" />
     </scopeInfo>
     <scopeInfo nodeId="1196268155581" fileName="Complex.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="1196268171726" varName="c1" />
@@ -94,8 +94,8 @@
       <varInfo nodeId="1196267049036" varName="c2" />
     </scopeInfo>
     <scopeInfo nodeId="1196421402037" fileName="Complex.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
-      <varInfo nodeId="1196421439058" varName="arg" />
       <varInfo nodeId="1196421433150" varName="abs" />
+      <varInfo nodeId="1196421439058" varName="arg" />
     </scopeInfo>
     <scopeInfo nodeId="1196434175658" fileName="Complex.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="1196421760109" fileName="Complex.java" startLine="32" startPosition="22" endLine="38" endPosition="7">

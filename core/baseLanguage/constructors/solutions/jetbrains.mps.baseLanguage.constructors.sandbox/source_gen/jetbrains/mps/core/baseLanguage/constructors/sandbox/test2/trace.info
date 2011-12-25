@@ -27,12 +27,12 @@
     <scopeInfo nodeId="4413962600136177715" fileName="Rectangle.java" startLine="12" startPosition="51" endLine="13" endPosition="36" />
     <scopeInfo nodeId="4413962600136177711" fileName="Rectangle.java" startLine="8" startPosition="24" endLine="10" endPosition="3" />
     <scopeInfo nodeId="4413962600136184956" fileName="Rectangle.java" startLine="16" startPosition="77" endLine="19" endPosition="88">
-      <varInfo nodeId="4413962600136184991" varName="y" />
       <varInfo nodeId="4413962600136184984" varName="x" />
+      <varInfo nodeId="4413962600136184991" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="4413962600136177711" fileName="Rectangle.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="4413962600136180683" varName="y" />
       <varInfo nodeId="4413962600136180681" varName="x" />
+      <varInfo nodeId="4413962600136180683" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="4413962600136177711" fileName="Rectangle.java" startLine="15" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="4413962600136184960" varName="bottomright" />

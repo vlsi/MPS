@@ -35,20 +35,20 @@ import jetbrains.mps.util.Computable;
 public class ModelConstraintsUtil {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsUtil.class);
 
-  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, SNode referenceLinkDeclaration, IOperationContext context) {
+  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, SNode referenceLinkDeclaration, SNode containingLinkDeclaration, IOperationContext context) {
     String linkRole = SModelUtil.getGenuineLinkRole(referenceLinkDeclaration);
     SNode linkTarget = SModelUtil.getLinkDeclarationTarget(referenceLinkDeclaration);
-    return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, linkTarget, context);
+    return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, linkTarget, containingLinkDeclaration, context);
   }
 
   /**
    * @param linkRole - use *genuine* link role here!!!
    */
-  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, String linkRole, IOperationContext context) {
-    return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, null, context);
+  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, String linkRole, SNode containingLinkDeclaration, IOperationContext context) {
+    return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, null, containingLinkDeclaration, context);
   }
 
-  private static SearchScopeStatus getSearchScope(SNode enclosingNode, final SNode referenceNode, final SNode referenceNodeConcept, final String linkRole, final SNode linkTarget, final IOperationContext context) {
+  private static SearchScopeStatus getSearchScope(SNode enclosingNode, final SNode referenceNode, final SNode referenceNodeConcept, final String linkRole, final SNode linkTarget, final SNode containingLinkDeclaration, final IOperationContext context) {
     final SModel model;
     if (enclosingNode != null) {
       model = enclosingNode.getModel();
@@ -71,7 +71,7 @@ public class ModelConstraintsUtil {
           @Override
           public void run() {
             try {
-              status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, context);
+              status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, containingLinkDeclaration, context);
             } catch (Exception t) {
               LOG.error(t, referenceNode != null ? referenceNode : enclosingNode_);
               status[0] = new SearchScopeStatus.ERROR("can't create search scope for role '" + linkRole + "' in '" + referenceNodeConcept.getName() + "'");
@@ -90,10 +90,11 @@ public class ModelConstraintsUtil {
     SNode referenceNodeConcept,
     String linkRole,
     SNode linkTarget,
+    SNode containingLinkDeclaration,
     IOperationContext context) {
 
     INodeReferentSearchScopeProvider scopeProvider = getSearchScopeProvider(referenceNodeConcept, linkRole);
-    ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget);
+    ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);
     DefaultReferencPresentation referencePresentation = null;
     if (scopeProvider != null) {
       referencePresentation = scopeProvider.hasPresentation() ? new DefaultReferencPresentation(context, referentConstraintContext, scopeProvider) : null;
@@ -120,9 +121,10 @@ public class ModelConstraintsUtil {
                                                     SNode enclosingNode,
                                                     SNode referenceNode,
                                                     SNode linkTarget,
+                                                    SNode containingLinkDeclaration,
                                                     final IOperationContext context) {
     if (scopeProvider == null) return new OK(createDefaultScope(model, context), null, true, null);
-    final ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget);
+    final ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);
     try {
       ISearchScope searchScope = TypeContextManager.getInstance().runResolveAction(new Computable<ISearchScope>() {
         @Override
@@ -179,7 +181,7 @@ public class ModelConstraintsUtil {
     };
   }
 
-  public static IReferencePresentation getPresentation(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, SNode referenceLinkDeclaration, IOperationContext context) {
+  public static IReferencePresentation getPresentation(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, SNode referenceLinkDeclaration, SNode containingLinkDeclaration, IOperationContext context) {
     String linkRole = SModelUtil.getGenuineLinkRole(referenceLinkDeclaration);
     SNode linkTarget = SModelUtil.getLinkDeclarationTarget(referenceLinkDeclaration);
     final SModel model;
@@ -193,7 +195,7 @@ public class ModelConstraintsUtil {
     }
 
     INodeReferentSearchScopeProvider scopeProvider = getSearchScopeProvider(referenceNodeConcept, linkRole);
-    ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget);
+    ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);
     return new DefaultReferencPresentation(context, referentConstraintContext, scopeProvider);
   }
 
@@ -220,7 +222,7 @@ public class ModelConstraintsUtil {
       if (myProvider != null) {
         return myProvider.getPresentation(myOperationContext,
           new PresentationReferentConstraintContext(myContext.getModel(), myContext.getEnclosingNode(),
-            myContext.getReferenceNode(), myContext.getLinkTarget(), node, visible, smartRef, inEditor));
+            myContext.getReferenceNode(), myContext.getLinkTarget(), node, myContext.getContainingLink(), visible, smartRef, inEditor));
       }
       return node.getPresentation();
     }

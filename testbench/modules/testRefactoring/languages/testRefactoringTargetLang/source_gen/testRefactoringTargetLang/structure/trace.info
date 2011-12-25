@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TestRefactoringTargetLang_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="testRefactoringTargetLang.structure.TestRefactoringTargetLang_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="testRefactoringTargetLang.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="TestRefactoringTargetLang_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="testRefactoringTargetLang.structure.TestRefactoringTargetLang_Language" />
   <root nodeId="1198682124373">
     <nodeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="11" startPosition="54" endLine="12" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="14" startPosition="42" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -13,9 +13,16 @@
     <scopeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="14" startPosition="42" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="18" startPosition="74" endLine="19" endPosition="187" />
     <scopeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="22" startPosition="60" endLine="23" endPosition="54" />
-    <scopeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1198682124373" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1198682124373" varName="init" />
+      <varInfo nodeId="1198682124373" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1198682124373" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="testRefactoringTargetLang.structure.AnsotherGoodConcept" />
   </root>
   <root nodeId="1199636171010">
@@ -52,16 +59,30 @@
     <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="46" startPosition="92" endLine="47" endPosition="75" />
     <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="50" startPosition="74" endLine="51" endPosition="187" />
     <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="54" startPosition="60" endLine="55" endPosition="54" />
-    <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="1199636171010" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1199636171010" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1199636171010" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1199636171010" varName="node" />
+      <varInfo nodeId="1199636171010" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1199636171010" varName="init" />
+      <varInfo nodeId="1199636171010" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="1199636171010" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="testRefactoringTargetLang.structure.AbstractGoodConcept" />
   </root>
 </debugInfo>

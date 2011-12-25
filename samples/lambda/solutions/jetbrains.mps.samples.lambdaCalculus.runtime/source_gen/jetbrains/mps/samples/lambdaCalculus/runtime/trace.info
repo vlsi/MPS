@@ -56,8 +56,8 @@
       <varInfo nodeId="1308935328408157899" varName="argValue" />
     </scopeInfo>
     <scopeInfo nodeId="7723251419685407667" fileName="Function.java" startLine="26" startPosition="28" endLine="45" endPosition="25">
-      <varInfo nodeId="7723251419685478027" varName="sb" />
       <varInfo nodeId="3083376787866928696" varName="j" />
+      <varInfo nodeId="7723251419685478027" varName="sb" />
     </scopeInfo>
     <scopeInfo nodeId="7723251419685407664" fileName="Function.java" startLine="25" startPosition="0" endLine="47" endPosition="0" />
     <unitInfo nodeId="1308935328408154909" fileName="Function.java" startLine="8" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.runtime.Function" />

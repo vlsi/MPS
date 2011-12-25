@@ -243,9 +243,7 @@
     <scopeInfo nodeId="1240470842553525975" fileName="JavaConfigOptions.java" startLine="241" startPosition="0" endLine="245" endPosition="0" />
     <scopeInfo nodeId="1240470842553525975" fileName="JavaConfigOptions.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="1240470842553525975" fileName="JavaConfigOptions.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1240470842553525975" fileName="JavaConfigOptions.java" startLine="137" startPosition="25" endLine="142" endPosition="5">
-      <varInfo nodeId="1240470842553525975" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="1240470842553525975" fileName="JavaConfigOptions.java" startLine="137" startPosition="25" endLine="142" endPosition="5" />
     <scopeInfo nodeId="1240470842553525975" fileName="JavaConfigOptions.java" startLine="245" startPosition="0" endLine="251" endPosition="0">
       <varInfo nodeId="1240470842553525975" varName="newValue" />
     </scopeInfo>

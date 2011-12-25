@@ -36,6 +36,10 @@ import java.lang.reflect.Modifier;
 import java.util.*;
 import java.util.List;
 
+/*
+ *  @Deprecated use DialogWrapper
+ */
+@Deprecated
 public abstract class BaseDialog extends JDialog {
   private static final Logger LOG = Logger.getLogger(BaseDialog.class);
 
