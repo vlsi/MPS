@@ -130,6 +130,7 @@
 
                 <!-- baseLanguage search -->
                 <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen"/>
+                <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen"/>
             </src>
         </javac>
         <jar destfile="${dist.dir}/lib/mps-core.jar">
