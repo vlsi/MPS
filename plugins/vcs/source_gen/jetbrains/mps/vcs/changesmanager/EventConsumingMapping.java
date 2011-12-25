@@ -5,28 +5,30 @@ package jetbrains.mps.vcs.changesmanager;
 import com.intellij.util.containers.BidirectionalMultiMap;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.event.SModelEvent;
+import com.intellij.util.containers.BidirectionalMap;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 
 public class EventConsumingMapping {
   private BidirectionalMultiMap<SNodeId, SModelEvent> myNodesToUnconsumedEvents = new BidirectionalMultiMap<SNodeId, SModelEvent>();
+  private BidirectionalMap<SNodeId, SModelEvent> myAddedNodesToEvents = new BidirectionalMap<SNodeId, SModelEvent>();
 
   public EventConsumingMapping() {
   }
 
   private SModelEvent findConsumerEventForNode(SNode node) {
-    Iterable<SModelEvent> eventsForParent = myNodesToUnconsumedEvents.getValues(node.getSNodeId());
-    return Sequence.fromIterable(eventsForParent).findFirst(new IWhereFilter<SModelEvent>() {
-      public boolean accept(SModelEvent e) {
-        return e instanceof SModelChildEvent && ((SModelChildEvent) e).isAdded() || e instanceof SModelRootEvent && ((SModelRootEvent) e).isAdded();
-      }
-    });
+    if (myAddedNodesToEvents.containsKey(node.getSNodeId())) {
+      return new SModelFileChangedEvent(null, null, null);
+    } else {
+      return null;
+    }
   }
 
   private void consumeAllForNode(SNode node) {
@@ -63,15 +65,18 @@ public class EventConsumingMapping {
         consumeAllForNode(root);
       }
       myNodesToUnconsumedEvents.put(root.getSNodeId(), event);
+      myAddedNodesToEvents.put(root.getSNodeId(), event);
     } else if (event instanceof SModelChildEvent) {
       SModelChildEvent childEvent = (SModelChildEvent) event;
       SNode parent = childEvent.getParent();
+      SNode child = childEvent.getChild();
       if (findConsumerEventForNode(parent) == null) {
         if (childEvent.isRemoved()) {
-          consumeAllForNode(childEvent.getChild());
+          consumeAllForNode(child);
         }
         myNodesToUnconsumedEvents.put(parent.getSNodeId(), event);
       }
+      myAddedNodesToEvents.put(child.getSNodeId(), event);
     } else if (event instanceof SModelPropertyEvent) {
       SNode node = ((SModelPropertyEvent) event).getNode();
       if (findConsumerEventForNode(node) == null) {
@@ -87,6 +92,7 @@ public class EventConsumingMapping {
 
   public synchronized boolean removeEvent(SModelEvent event) {
     // return true if this event should be processed 
+    myAddedNodesToEvents.removeValue(event);
     if (myNodesToUnconsumedEvents.containsValue(event)) {
       myNodesToUnconsumedEvents.removeValue(event);
       return true;

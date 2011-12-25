@@ -263,15 +263,13 @@ public class CommonChangesManagerTest {
     waitForChangesManager();
     assertChangeSetIsCorrect(myUiDiff.getChangeSet());
 
-    /*
-      runCommandAndWait(new Runnable() {
-        public void run() {
-          UndoManager.getInstance(myIdeaProject).undo(null);
-        }
-      });
-      // TODO should not wait 
-      waitForChangesManager();
-    */
+    runCommandAndWait(new Runnable() {
+      public void run() {
+        UndoManager.getInstance(myIdeaProject).undo(null);
+      }
+    });
+    // TODO should not wait 
+    waitForChangesManager();
   }
 
   private void runCommandAndWait(Runnable r) {
