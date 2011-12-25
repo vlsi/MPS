@@ -446,7 +446,7 @@ public class ChangesTracking {
             });
           }
         }
-      }, event.getRoot(), event);
+      }, null, event);
     }
 
     @Override
@@ -465,7 +465,7 @@ public class ChangesTracking {
             }
           });
         }
-      }, event.getRoot(), event);
+      }, null, event);
     }
 
     @Override
