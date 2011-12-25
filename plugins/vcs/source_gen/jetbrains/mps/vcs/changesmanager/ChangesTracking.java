@@ -40,6 +40,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
@@ -50,6 +51,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -67,6 +69,7 @@ public class ChangesTracking {
   private BidirectionalMap<SNodeId, ModelChange> myAddedNodesToChanges = new BidirectionalMap<SNodeId, ModelChange>();
   private Tuples._2<SNodeId, List<SNodeId>> myLastParentAndNewChildrenIds;
   private FileStatus myStatusOnLastUpdate;
+  private EventConsumingMapping myEventConsumingMapping = new EventConsumingMapping();
 
   public ChangesTracking(@NotNull Project project, @NotNull CurrentDifference difference) {
     myDifference = difference;
@@ -242,7 +245,8 @@ public class ChangesTracking {
     return check_5iuzi5_a0a0a11(myDifference.getChangeSet()).getNodeById(id);
   }
 
-  private void runUpdateTask(final _FunctionTypes._void_P0_E0 task, SNode currentNode) {
+  private void runUpdateTask(final _FunctionTypes._void_P0_E0 task, SNode currentNode, final SModelEvent event) {
+    myEventConsumingMapping.addEvent(event);
     final List<SNodeId> ancestors = ListSequence.fromList(SNodeOperations.getAncestors(currentNode, null, true)).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode a) {
         return a.getSNodeId();
@@ -260,13 +264,15 @@ public class ChangesTracking {
           })) {
             // ignore 
           } else {
-            myDifference.getBroadcaster().changeUpdateStarted();
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                task.invoke();
-              }
-            });
-            myDifference.getBroadcaster().changeUpdateFinished();
+            if (myEventConsumingMapping.removeEvent(event)) {
+              myDifference.getBroadcaster().changeUpdateStarted();
+              ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                  task.invoke();
+                }
+              });
+              myDifference.getBroadcaster().changeUpdateFinished();
+            }
           }
         }
       }
@@ -336,7 +342,7 @@ public class ChangesTracking {
             }
           });
         }
-      }, event.getNode());
+      }, event.getNode(), event);
     }
 
     private void processReferenceEvent(final SModelReferenceEvent event) {
@@ -357,7 +363,7 @@ public class ChangesTracking {
             }
           });
         }
-      }, event.getReference().getSourceNode());
+      }, event.getReference().getSourceNode(), event);
     }
 
     @Override
@@ -371,7 +377,12 @@ public class ChangesTracking {
     }
 
     private void processChildEvent(final SModelChildEvent event) {
-      final List<SNode> childrenRightAfterEvent = event.getParent().getChildren(event.getChildRole());
+      final Wrappers._T<List<SNode>> childrenRightAfterEvent = new Wrappers._T<List<SNode>>(event.getParent().getChildren(event.getChildRole()));
+      childrenRightAfterEvent.value = ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode n) {
+          return CopyUtil.copyAndPreserveId(n, false);
+        }
+      }).toListSequence();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           final SNodeId parentId = event.getParent().getSNodeId();
@@ -383,22 +394,18 @@ public class ChangesTracking {
             }
           });
           removeDescendantChanges(parentId, role);
-          if (event.getModel().getNodeById(parentId) == null) {
-            // node is already deleted, no need to build diff for it 
-            return;
-          }
-          myLastParentAndNewChildrenIds = MultiTuple.<SNodeId,List<SNodeId>>from(parentId, ListSequence.fromList(childrenRightAfterEvent).select(new ISelector<SNode, SNodeId>() {
+          myLastParentAndNewChildrenIds = MultiTuple.<SNodeId,List<SNodeId>>from(parentId, ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNodeId>() {
             public SNodeId select(SNode n) {
               return n.getSNodeId();
             }
           }).toListSequence());
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildForNodeRole(getOldNode(parentId).getChildren(role), childrenRightAfterEvent);
+              b.buildForNodeRole(getOldNode(parentId).getChildren(role), childrenRightAfterEvent.value);
             }
           });
         }
-      }, event.getParent());
+      }, event.getParent(), event);
     }
 
     @Override
@@ -431,7 +438,7 @@ public class ChangesTracking {
             });
           }
         }
-      }, event.getRoot());
+      }, event.getRoot(), event);
     }
 
     @Override
@@ -450,7 +457,7 @@ public class ChangesTracking {
             }
           });
         }
-      }, event.getRoot());
+      }, event.getRoot(), event);
     }
 
     @Override

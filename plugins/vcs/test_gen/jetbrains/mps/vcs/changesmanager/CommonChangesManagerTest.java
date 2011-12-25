@@ -19,7 +19,6 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SReference;
 import org.junit.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -37,11 +36,18 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import java.util.List;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
+import jetbrains.mps.vcs.diff.ChangeSet;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.vcs.diff.ChangeSetBuilder;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import com.intellij.openapi.command.undo.UndoManager;
 import org.junit.Test;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.vcs.diff.ChangeSet;
 
 public class CommonChangesManagerTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testConflicts");
@@ -149,7 +155,7 @@ public class CommonChangesManagerTest {
   }
 
   private void modifyModel() {
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    runCommandAndWait(new Runnable() {
       public void run() {
         SModel model = myUtilDiff.getModelDescriptor().getSModel();
         SNode root = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
@@ -164,20 +170,18 @@ public class CommonChangesManagerTest {
         }), "name", "getImageAttempts2");
         ListSequence.fromList(SLinkOperations.getTargets(root, "field", true)).clear();
       }
-    }, myProject);
-    ModelAccess.instance().flushEventQueue();
+    });
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a4a7(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a7(myUtilDiff.getChangeSet())).isNotEmpty());
   }
 
   private void saveAndCommit() {
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    runCommandAndWait(new Runnable() {
       public void run() {
         myUtilDiff.getModelDescriptor().save();
       }
-    }, myProject);
-    ModelAccess.instance().flushEventQueue();
+    });
 
     myChangeListManager.ensureUpToDate(false);
     Change change = myChangeListManager.getChange(myUtilVirtualFile);
@@ -223,6 +227,58 @@ public class CommonChangesManagerTest {
     Assert.assertNull(myUtilDiff.getChangeSet());
   }
 
+  private String getChangeSetString(ChangeSet changeSet) {
+    return StringUtils.join(ListSequence.fromList(changeSet.getModelChanges()).select(new ISelector<ModelChange, String>() {
+      public String select(ModelChange c) {
+        return c.toString();
+      }
+    }).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String s) {
+        return s;
+      }
+    }, true).toListSequence(), "|");
+  }
+
+  private void assertChangeSetIsCorrect(final ChangeSet changeSet) {
+    ChangeSet rebuiltChangeSet = ModelAccess.instance().runReadAction(new Computable<ChangeSet>() {
+      public ChangeSet compute() {
+        return ChangeSetBuilder.buildChangeSet(changeSet.getOldModel(), changeSet.getNewModel());
+      }
+    });
+    Assert.assertEquals(getChangeSetString(rebuiltChangeSet), getChangeSetString(changeSet));
+  }
+
+  private void removeModifiedRoot() {
+    runCommandAndWait(new Runnable() {
+      public void run() {
+        SModel model = myUiDiff.getModelDescriptor().getSModel();
+        SNode root = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode r) {
+            return "DocumentLayout".equals(SPropertyOperations.getString(r, "name"));
+          }
+        });
+        SNodeOperations.deleteNode(root);
+      }
+    });
+    waitForChangesManager();
+    assertChangeSetIsCorrect(myUiDiff.getChangeSet());
+
+    /*
+      runCommandAndWait(new Runnable() {
+        public void run() {
+          UndoManager.getInstance(myIdeaProject).undo(null);
+        }
+      });
+      // TODO should not wait 
+      waitForChangesManager();
+    */
+  }
+
+  private void runCommandAndWait(Runnable r) {
+    ModelAccess.instance().runCommandInEDT(r, myProject);
+    ModelAccess.instance().flushEventQueue();
+  }
+
   @Test
   public void doTest() {
     ModelChangesWatcher.setForceProcessingEnabled(true);
@@ -239,11 +295,13 @@ public class CommonChangesManagerTest {
           modifyExternally();
           rollback();
 
-          return true;
+          removeModifiedRoot();
         } catch (Throwable e) {
           e.printStackTrace();
           return false;
         }
+        waitForChangesManager();
+        return !(myRegistry.getCommandQueue().hadExceptions());
       }
     }, "jetbrains.mps.vcs", "Git4Idea", "jetbrains.mps.ide.make");
     Assert.assertTrue(result);
@@ -263,7 +321,7 @@ public class CommonChangesManagerTest {
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a4a7(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a3a7(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
