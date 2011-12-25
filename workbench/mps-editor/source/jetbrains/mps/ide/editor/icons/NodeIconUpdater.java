@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.editors;
+package jetbrains.mps.ide.editor.icons;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
@@ -32,7 +32,7 @@ import java.util.Set;
  * @author Evgeny Gerashchenko
  * @since 10/3/11
  */
-public class IconUpdater extends AbstractProjectComponent {
+public class NodeIconUpdater extends AbstractProjectComponent {
   private SModelCommandListener myCommandListener = new MyCommandListener();
   private SModelListener myModelListener = new MyModelListener();
   private final Set<SNodePointer> myUpdatedRoots = new HashSet<SNodePointer>();
@@ -50,7 +50,7 @@ public class IconUpdater extends AbstractProjectComponent {
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myCommandListener);
   }
 
-  public IconUpdater(Project project, FileEditorManagerEx fileEditorManager) {
+  public NodeIconUpdater(Project project, FileEditorManagerEx fileEditorManager) {
     super(project);
     myFileEditorManagerEx = fileEditorManager;
   }

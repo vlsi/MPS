@@ -13,26 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.editors;
+package jetbrains.mps.ide.editor.icons;
 
 import com.intellij.ide.FileIconProvider;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
+import jetbrains.mps.ide.editor.MPSEditorUtil;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 
-public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
-
+/**
+ * evgeny, 12/25/11
+ */
+public class NodeFileIconProvider implements FileIconProvider, ApplicationComponent {
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "MPS Language Icon Provider";
+    return "MPS Node File Icon Provider";
   }
 
   public void initComponent() {
@@ -43,8 +49,21 @@ public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
 
   @Nullable
   public Icon getIcon(final VirtualFile file, int flags, final Project project) {
-    if (file instanceof MPSLanguageVirtualFile) {
-      return Icons.PROJECT_LANGUAGE_ICON;
+    if (file instanceof MPSNodeVirtualFile) {
+      final MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
+      return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+        public Icon compute() {
+          SNode node = MPSEditorUtil.getCurrentEditedNode(project, nodeFile);
+          if (node != null) {
+            return IconManager.getIconWithoutAdditionalPart(node);
+          }
+          node = nodeFile.getNode();
+          if (node != null) {
+            return IconManager.getIconWithoutAdditionalPart(node);
+          }
+          return null;
+        }
+      });
     }
     return null;
   }
