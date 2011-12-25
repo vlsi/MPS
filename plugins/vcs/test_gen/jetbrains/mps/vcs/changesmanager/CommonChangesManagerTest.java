@@ -248,6 +248,10 @@ public class CommonChangesManagerTest {
     Assert.assertEquals(getChangeSetString(rebuiltChangeSet), getChangeSetString(changeSet));
   }
 
+  private void assertChangeSetIsCorrect(CurrentDifference currentDifference) {
+    assertChangeSetIsCorrect(currentDifference.getChangeSet());
+  }
+
   private void removeModifiedRoot() {
     runCommandAndWait(new Runnable() {
       public void run() {
@@ -261,13 +265,14 @@ public class CommonChangesManagerTest {
       }
     });
     waitForChangesManager();
-    assertChangeSetIsCorrect(myUiDiff.getChangeSet());
+    assertChangeSetIsCorrect(myUiDiff);
 
     runCommandAndWait(new Runnable() {
       public void run() {
         UndoManager.getInstance(myIdeaProject).undo(null);
       }
     });
+    assertChangeSetIsCorrect(myUiDiff);
   }
 
   private void runCommandAndWait(Runnable r) {

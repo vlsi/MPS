@@ -97,48 +97,50 @@
     <nodeInfo nodeId="3951871491765154119" fileName="CommonChangesManagerTest.java" startLine="236" startPosition="45" endLine="237" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6389979038222945705" fileName="CommonChangesManagerTest.java" startLine="244" startPosition="34" endLine="245" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3951871491765154129" fileName="CommonChangesManagerTest.java" startLine="247" startPosition="7" endLine="248" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3951871491765147376" fileName="CommonChangesManagerTest.java" startLine="253" startPosition="25" endLine="254" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3951871491765154154" fileName="CommonChangesManagerTest.java" startLine="256" startPosition="42" endLine="257" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3951871491765147609" fileName="CommonChangesManagerTest.java" startLine="259" startPosition="11" endLine="260" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3951871491765147618" fileName="CommonChangesManagerTest.java" startLine="262" startPosition="7" endLine="263" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3951871491765154138" fileName="CommonChangesManagerTest.java" startLine="263" startPosition="28" endLine="264" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5217921753725855533" fileName="CommonChangesManagerTest.java" startLine="264" startPosition="54" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3951871491765154427" fileName="CommonChangesManagerTest.java" startLine="267" startPosition="25" endLine="268" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2508069636829445090" fileName="CommonChangesManagerTest.java" startLine="273" startPosition="46" endLine="274" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2508069636829445120" fileName="CommonChangesManagerTest.java" startLine="274" startPosition="57" endLine="275" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3907542737155291868" fileName="CommonChangesManagerTest.java" startLine="279" startPosition="24" endLine="280" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3907542737155192650" fileName="CommonChangesManagerTest.java" startLine="283" startPosition="13" endLine="284" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3907542737155192741" fileName="CommonChangesManagerTest.java" startLine="284" startPosition="30" endLine="285" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3907542737155192629" fileName="CommonChangesManagerTest.java" startLine="285" startPosition="17" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3907542737155192631" fileName="CommonChangesManagerTest.java" startLine="286" startPosition="0" endLine="287" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3907542737155192660" fileName="CommonChangesManagerTest.java" startLine="287" startPosition="27" endLine="288" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3907542737155192858" fileName="CommonChangesManagerTest.java" startLine="288" startPosition="24" endLine="289" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3907542737155192922" fileName="CommonChangesManagerTest.java" startLine="289" startPosition="26" endLine="290" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3907542737155282460" fileName="CommonChangesManagerTest.java" startLine="290" startPosition="21" endLine="291" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3907542737155192968" fileName="CommonChangesManagerTest.java" startLine="291" startPosition="29" endLine="292" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3951871491765154441" fileName="CommonChangesManagerTest.java" startLine="292" startPosition="21" endLine="293" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3951871491765154443" fileName="CommonChangesManagerTest.java" startLine="293" startPosition="0" endLine="294" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5217921753725901084" fileName="CommonChangesManagerTest.java" startLine="294" startPosition="31" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5217921753725901086" fileName="CommonChangesManagerTest.java" startLine="295" startPosition="0" endLine="296" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3907542737155075382" fileName="CommonChangesManagerTest.java" startLine="297" startPosition="31" endLine="298" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3907542737155075386" fileName="CommonChangesManagerTest.java" startLine="298" startPosition="30" endLine="299" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3907542737155074197" fileName="CommonChangesManagerTest.java" startLine="302" startPosition="66" endLine="303" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5217921753725899879" fileName="CommonChangesManagerTest.java" startLine="303" startPosition="30" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5217921753725899881" fileName="CommonChangesManagerTest.java" startLine="304" startPosition="0" endLine="305" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="309" startPosition="36" endLine="310" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="311" startPosition="5" endLine="312" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="316" startPosition="36" endLine="317" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="318" startPosition="5" endLine="319" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="323" startPosition="36" endLine="324" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="325" startPosition="5" endLine="326" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="330" startPosition="36" endLine="331" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="332" startPosition="5" endLine="333" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3080098661456733253" fileName="CommonChangesManagerTest.java" startLine="251" startPosition="78" endLine="252" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3951871491765147376" fileName="CommonChangesManagerTest.java" startLine="257" startPosition="25" endLine="258" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3951871491765154154" fileName="CommonChangesManagerTest.java" startLine="260" startPosition="42" endLine="261" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3951871491765147609" fileName="CommonChangesManagerTest.java" startLine="263" startPosition="11" endLine="264" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3951871491765147618" fileName="CommonChangesManagerTest.java" startLine="266" startPosition="7" endLine="267" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3951871491765154138" fileName="CommonChangesManagerTest.java" startLine="267" startPosition="28" endLine="268" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5217921753725855533" fileName="CommonChangesManagerTest.java" startLine="268" startPosition="39" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3951871491765154427" fileName="CommonChangesManagerTest.java" startLine="271" startPosition="25" endLine="272" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3080098661456733219" fileName="CommonChangesManagerTest.java" startLine="274" startPosition="7" endLine="275" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2508069636829445090" fileName="CommonChangesManagerTest.java" startLine="278" startPosition="46" endLine="279" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2508069636829445120" fileName="CommonChangesManagerTest.java" startLine="279" startPosition="57" endLine="280" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3907542737155291868" fileName="CommonChangesManagerTest.java" startLine="284" startPosition="24" endLine="285" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3907542737155192650" fileName="CommonChangesManagerTest.java" startLine="288" startPosition="13" endLine="289" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3907542737155192741" fileName="CommonChangesManagerTest.java" startLine="289" startPosition="30" endLine="290" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3907542737155192629" fileName="CommonChangesManagerTest.java" startLine="290" startPosition="17" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3907542737155192631" fileName="CommonChangesManagerTest.java" startLine="291" startPosition="0" endLine="292" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3907542737155192660" fileName="CommonChangesManagerTest.java" startLine="292" startPosition="27" endLine="293" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3907542737155192858" fileName="CommonChangesManagerTest.java" startLine="293" startPosition="24" endLine="294" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3907542737155192922" fileName="CommonChangesManagerTest.java" startLine="294" startPosition="26" endLine="295" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3907542737155282460" fileName="CommonChangesManagerTest.java" startLine="295" startPosition="21" endLine="296" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3907542737155192968" fileName="CommonChangesManagerTest.java" startLine="296" startPosition="29" endLine="297" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3951871491765154441" fileName="CommonChangesManagerTest.java" startLine="297" startPosition="21" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3951871491765154443" fileName="CommonChangesManagerTest.java" startLine="298" startPosition="0" endLine="299" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5217921753725901084" fileName="CommonChangesManagerTest.java" startLine="299" startPosition="31" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5217921753725901086" fileName="CommonChangesManagerTest.java" startLine="300" startPosition="0" endLine="301" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3907542737155075382" fileName="CommonChangesManagerTest.java" startLine="302" startPosition="31" endLine="303" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3907542737155075386" fileName="CommonChangesManagerTest.java" startLine="303" startPosition="30" endLine="304" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3907542737155074197" fileName="CommonChangesManagerTest.java" startLine="307" startPosition="66" endLine="308" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5217921753725899879" fileName="CommonChangesManagerTest.java" startLine="308" startPosition="30" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5217921753725899881" fileName="CommonChangesManagerTest.java" startLine="309" startPosition="0" endLine="310" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="314" startPosition="36" endLine="315" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="316" startPosition="5" endLine="317" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="321" startPosition="36" endLine="322" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="323" startPosition="5" endLine="324" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="328" startPosition="36" endLine="329" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="330" startPosition="5" endLine="331" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="335" startPosition="36" endLine="336" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="337" startPosition="5" endLine="338" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3089989024970166389" fileName="CommonChangesManagerTest.java" startLine="68" startPosition="0" endLine="70" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CommonChangesManagerTest#()V" />
     <nodeInfo nodeId="3907542737155192950" fileName="CommonChangesManagerTest.java" startLine="220" startPosition="163" endLine="223" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="308" startPosition="85" endLine="311" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="315" startPosition="86" endLine="318" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="322" startPosition="85" endLine="325" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="329" startPosition="85" endLine="332" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="313" startPosition="85" endLine="316" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="320" startPosition="86" endLine="323" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="327" startPosition="85" endLine="330" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="334" startPosition="85" endLine="337" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3907542737155282373" fileName="CommonChangesManagerTest.java" startLine="86" startPosition="32" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="3907542737155282400" fileName="CommonChangesManagerTest.java" startLine="96" startPosition="61" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="7666889591690494787" fileName="CommonChangesManagerTest.java" startLine="118" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentDifference#(Ljava/lang/String;)Ljetbrains/mps/vcs/changesmanager/CurrentDifference;" />
@@ -148,25 +150,26 @@
     <nodeInfo nodeId="3951871491765154108" fileName="CommonChangesManagerTest.java" startLine="231" startPosition="124" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/String;" />
     <nodeInfo nodeId="3951871491765154117" fileName="CommonChangesManagerTest.java" startLine="235" startPosition="52" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
     <nodeInfo nodeId="6389979038222945703" fileName="CommonChangesManagerTest.java" startLine="243" startPosition="99" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/vcs/diff/ChangeSet;" />
-    <nodeInfo nodeId="3951871491765154152" fileName="CommonChangesManagerTest.java" startLine="255" startPosition="167" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2508069636829445134" fileName="CommonChangesManagerTest.java" startLine="266" startPosition="38" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3080098661456733224" fileName="CommonChangesManagerTest.java" startLine="250" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertChangeSetIsCorrect#(Ljetbrains/mps/vcs/changesmanager/CurrentDifference;)V" />
+    <nodeInfo nodeId="3951871491765154152" fileName="CommonChangesManagerTest.java" startLine="259" startPosition="167" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2508069636829445134" fileName="CommonChangesManagerTest.java" startLine="270" startPosition="38" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="3907542737155282353" fileName="CommonChangesManagerTest.java" startLine="76" startPosition="33" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3907542737155282394" fileName="CommonChangesManagerTest.java" startLine="95" startPosition="25" endLine="100" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3907542737155075205" fileName="CommonChangesManagerTest.java" startLine="160" startPosition="67" endLine="165" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3951871491765130785" fileName="CommonChangesManagerTest.java" startLine="165" startPosition="11" endLine="170" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3907542737155192785" fileName="CommonChangesManagerTest.java" startLine="179" startPosition="32" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3951871491765148595" fileName="CommonChangesManagerTest.java" startLine="242" startPosition="68" endLine="247" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3951871491765147423" fileName="CommonChangesManagerTest.java" startLine="254" startPosition="65" endLine="259" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2508069636829445132" fileName="CommonChangesManagerTest.java" startLine="265" startPosition="0" endLine="270" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2508069636829445086" fileName="CommonChangesManagerTest.java" startLine="272" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runCommandAndWait#(Ljava/lang/Runnable;)V" />
+    <nodeInfo nodeId="3951871491765147423" fileName="CommonChangesManagerTest.java" startLine="258" startPosition="65" endLine="263" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2508069636829445132" fileName="CommonChangesManagerTest.java" startLine="269" startPosition="0" endLine="274" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2508069636829445086" fileName="CommonChangesManagerTest.java" startLine="277" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runCommandAndWait#(Ljava/lang/Runnable;)V" />
     <nodeInfo nodeId="3907542737155282257" fileName="CommonChangesManagerTest.java" startLine="108" startPosition="62" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelReplaced#(Ljetbrains/mps/smodel/SModelDescriptor;)V" />
     <nodeInfo nodeId="3907542737155282350" fileName="CommonChangesManagerTest.java" startLine="75" startPosition="32" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="3907542737155282368" fileName="CommonChangesManagerTest.java" startLine="85" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="waitCompleted#()V" />
     <nodeInfo nodeId="3907542737155280980" fileName="CommonChangesManagerTest.java" startLine="107" startPosition="25" endLine="114" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="307" startPosition="0" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_orwzer_a0a9a6#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljava/util/List;" />
-    <nodeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="314" startPosition="0" endLine="321" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_orwzer_a0a01a6#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljava/util/List;" />
-    <nodeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="321" startPosition="0" endLine="328" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_orwzer_a0a3a7#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljava/util/List;" />
-    <nodeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="328" startPosition="0" endLine="335" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_orwzer_a0a5a9#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljava/util/List;" />
+    <nodeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="312" startPosition="0" endLine="319" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_orwzer_a0a9a6#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljava/util/List;" />
+    <nodeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="319" startPosition="0" endLine="326" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_orwzer_a0a01a6#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljava/util/List;" />
+    <nodeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="326" startPosition="0" endLine="333" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_orwzer_a0a3a7#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljava/util/List;" />
+    <nodeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="333" startPosition="0" endLine="340" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_orwzer_a0a5a9#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljava/util/List;" />
     <nodeInfo nodeId="3907542737155282392" fileName="CommonChangesManagerTest.java" startLine="94" startPosition="37" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="3907542737155282346" fileName="CommonChangesManagerTest.java" startLine="74" startPosition="25" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="3907542737155282386" fileName="CommonChangesManagerTest.java" startLine="93" startPosition="40" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -174,9 +177,9 @@
     <nodeInfo nodeId="3951871491765148686" fileName="CommonChangesManagerTest.java" startLine="230" startPosition="58" endLine="239" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3951871491765148568" fileName="CommonChangesManagerTest.java" startLine="241" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertChangeSetIsCorrect#(Ljetbrains/mps/vcs/diff/ChangeSet;)V" />
     <nodeInfo nodeId="3907542737155282421" fileName="CommonChangesManagerTest.java" startLine="106" startPosition="37" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2508069636829445129" fileName="CommonChangesManagerTest.java" startLine="252" startPosition="38" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2508069636829445129" fileName="CommonChangesManagerTest.java" startLine="256" startPosition="38" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="3907542737155282419" fileName="CommonChangesManagerTest.java" startLine="105" startPosition="85" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2508069636829445127" fileName="CommonChangesManagerTest.java" startLine="251" startPosition="37" endLine="262" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2508069636829445127" fileName="CommonChangesManagerTest.java" startLine="255" startPosition="37" endLine="266" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1187100870427681208" fileName="CommonChangesManagerTest.java" startLine="92" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="waitForChangesManager#()V" />
     <nodeInfo nodeId="3907542737155273091" fileName="CommonChangesManagerTest.java" startLine="205" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modifyExternally#()V" />
     <nodeInfo nodeId="3907542737155192925" fileName="CommonChangesManagerTest.java" startLine="217" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rollback#()V" />
@@ -187,13 +190,13 @@
     <nodeInfo nodeId="3907542737155075195" fileName="CommonChangesManagerTest.java" startLine="158" startPosition="38" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="3907542737155075191" fileName="CommonChangesManagerTest.java" startLine="157" startPosition="30" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3907542737155192780" fileName="CommonChangesManagerTest.java" startLine="178" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveAndCommit#()V" />
-    <nodeInfo nodeId="3907542737155075102" fileName="CommonChangesManagerTest.java" startLine="282" startPosition="47" endLine="300" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3907542737155075102" fileName="CommonChangesManagerTest.java" startLine="287" startPosition="47" endLine="305" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3907542737155192685" fileName="CommonChangesManagerTest.java" startLine="122" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="3907542737155075098" fileName="CommonChangesManagerTest.java" startLine="281" startPosition="136" endLine="302" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/project/Project;)Z" />
+    <nodeInfo nodeId="3907542737155075098" fileName="CommonChangesManagerTest.java" startLine="286" startPosition="136" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/project/Project;)Z" />
     <nodeInfo nodeId="3907542737155192633" fileName="CommonChangesManagerTest.java" startLine="156" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modifyModel#()V" />
-    <nodeInfo nodeId="3951871491765145931" fileName="CommonChangesManagerTest.java" startLine="250" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeModifiedRoot#()V" />
-    <nodeInfo nodeId="3907542737155075091" fileName="CommonChangesManagerTest.java" startLine="280" startPosition="56" endLine="302" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3089989024970167309" fileName="CommonChangesManagerTest.java" startLine="277" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doTest#()V" />
+    <nodeInfo nodeId="3907542737155075091" fileName="CommonChangesManagerTest.java" startLine="285" startPosition="56" endLine="307" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3951871491765145931" fileName="CommonChangesManagerTest.java" startLine="254" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeModifiedRoot#()V" />
+    <nodeInfo nodeId="3089989024970167309" fileName="CommonChangesManagerTest.java" startLine="282" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doTest#()V" />
     <scopeInfo nodeId="3089989024970166392" fileName="CommonChangesManagerTest.java" startLine="69" startPosition="37" endLine="69" endPosition="37" />
     <scopeInfo nodeId="3907542737155282354" fileName="CommonChangesManagerTest.java" startLine="77" startPosition="13" endLine="78" endPosition="28" />
     <scopeInfo nodeId="3907542737155282359" fileName="CommonChangesManagerTest.java" startLine="79" startPosition="0" endLine="80" endPosition="30">
@@ -209,20 +212,21 @@
     <scopeInfo nodeId="3951871491765154109" fileName="CommonChangesManagerTest.java" startLine="232" startPosition="43" endLine="233" endPosition="28" />
     <scopeInfo nodeId="3951871491765154118" fileName="CommonChangesManagerTest.java" startLine="236" startPosition="45" endLine="237" endPosition="17" />
     <scopeInfo nodeId="6389979038222945704" fileName="CommonChangesManagerTest.java" startLine="244" startPosition="34" endLine="245" endPosition="97" />
-    <scopeInfo nodeId="3951871491765154153" fileName="CommonChangesManagerTest.java" startLine="256" startPosition="42" endLine="257" endPosition="85" />
-    <scopeInfo nodeId="2508069636829445135" fileName="CommonChangesManagerTest.java" startLine="267" startPosition="25" endLine="268" endPosition="58" />
-    <scopeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="309" startPosition="36" endLine="310" endPosition="49" />
-    <scopeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="316" startPosition="36" endLine="317" endPosition="49" />
-    <scopeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="323" startPosition="36" endLine="324" endPosition="49" />
-    <scopeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="330" startPosition="36" endLine="331" endPosition="49" />
+    <scopeInfo nodeId="3080098661456733227" fileName="CommonChangesManagerTest.java" startLine="251" startPosition="78" endLine="252" endPosition="63" />
+    <scopeInfo nodeId="3951871491765154153" fileName="CommonChangesManagerTest.java" startLine="260" startPosition="42" endLine="261" endPosition="85" />
+    <scopeInfo nodeId="2508069636829445135" fileName="CommonChangesManagerTest.java" startLine="271" startPosition="25" endLine="272" endPosition="58" />
+    <scopeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="314" startPosition="36" endLine="315" endPosition="49" />
+    <scopeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="321" startPosition="36" endLine="322" endPosition="49" />
+    <scopeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="328" startPosition="36" endLine="329" endPosition="49" />
+    <scopeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="335" startPosition="36" endLine="336" endPosition="49" />
     <scopeInfo nodeId="3089989024970166389" fileName="CommonChangesManagerTest.java" startLine="68" startPosition="0" endLine="70" endPosition="3" />
     <scopeInfo nodeId="3907542737155282375" fileName="CommonChangesManagerTest.java" startLine="87" startPosition="31" endLine="89" endPosition="26" />
     <scopeInfo nodeId="3907542737155282262" fileName="CommonChangesManagerTest.java" startLine="110" startPosition="66" endLine="112" endPosition="28" />
-    <scopeInfo nodeId="5249764387375421833" fileName="CommonChangesManagerTest.java" startLine="273" startPosition="46" endLine="275" endPosition="45" />
-    <scopeInfo nodeId="3907542737155075378" fileName="CommonChangesManagerTest.java" startLine="297" startPosition="0" endLine="299" endPosition="23">
+    <scopeInfo nodeId="5249764387375421833" fileName="CommonChangesManagerTest.java" startLine="278" startPosition="46" endLine="280" endPosition="45" />
+    <scopeInfo nodeId="3907542737155075378" fileName="CommonChangesManagerTest.java" startLine="302" startPosition="0" endLine="304" endPosition="23">
       <varInfo nodeId="3907542737155075379" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3907542737155075381" fileName="CommonChangesManagerTest.java" startLine="297" startPosition="31" endLine="299" endPosition="23" />
+    <scopeInfo nodeId="3907542737155075381" fileName="CommonChangesManagerTest.java" startLine="302" startPosition="31" endLine="304" endPosition="23" />
     <scopeInfo nodeId="3907542737155282371" fileName="CommonChangesManagerTest.java" startLine="86" startPosition="32" endLine="90" endPosition="5" />
     <scopeInfo nodeId="3907542737155282400" fileName="CommonChangesManagerTest.java" startLine="96" startPosition="61" endLine="100" endPosition="0" />
     <scopeInfo nodeId="7666889591690494787" fileName="CommonChangesManagerTest.java" startLine="118" startPosition="0" endLine="122" endPosition="0">
@@ -242,17 +246,20 @@
       <varInfo nodeId="3951871491765154117" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="6389979038222945703" fileName="CommonChangesManagerTest.java" startLine="243" startPosition="99" endLine="247" endPosition="0" />
-    <scopeInfo nodeId="3951871491765154152" fileName="CommonChangesManagerTest.java" startLine="255" startPosition="167" endLine="259" endPosition="0">
+    <scopeInfo nodeId="3080098661456733224" fileName="CommonChangesManagerTest.java" startLine="250" startPosition="0" endLine="254" endPosition="0">
+      <varInfo nodeId="3080098661456733250" varName="currentDifference" />
+    </scopeInfo>
+    <scopeInfo nodeId="3951871491765154152" fileName="CommonChangesManagerTest.java" startLine="259" startPosition="167" endLine="263" endPosition="0">
       <varInfo nodeId="3951871491765154152" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="2508069636829445134" fileName="CommonChangesManagerTest.java" startLine="266" startPosition="38" endLine="270" endPosition="0" />
-    <scopeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="308" startPosition="85" endLine="312" endPosition="16" />
-    <scopeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="315" startPosition="86" endLine="319" endPosition="16" />
-    <scopeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="322" startPosition="85" endLine="326" endPosition="16" />
-    <scopeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="329" startPosition="85" endLine="333" endPosition="16" />
+    <scopeInfo nodeId="2508069636829445134" fileName="CommonChangesManagerTest.java" startLine="270" startPosition="38" endLine="274" endPosition="0" />
+    <scopeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="313" startPosition="85" endLine="317" endPosition="16" />
+    <scopeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="320" startPosition="86" endLine="324" endPosition="16" />
+    <scopeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="327" startPosition="85" endLine="331" endPosition="16" />
+    <scopeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="334" startPosition="85" endLine="338" endPosition="16" />
     <scopeInfo nodeId="3907542737155282352" fileName="CommonChangesManagerTest.java" startLine="76" startPosition="33" endLine="81" endPosition="9" />
     <scopeInfo nodeId="3907542737155282393" fileName="CommonChangesManagerTest.java" startLine="95" startPosition="25" endLine="100" endPosition="11" />
-    <scopeInfo nodeId="2508069636829445086" fileName="CommonChangesManagerTest.java" startLine="272" startPosition="0" endLine="277" endPosition="0">
+    <scopeInfo nodeId="2508069636829445086" fileName="CommonChangesManagerTest.java" startLine="277" startPosition="0" endLine="282" endPosition="0">
       <varInfo nodeId="5249764387375421835" varName="r" />
     </scopeInfo>
     <scopeInfo nodeId="3907542737155282257" fileName="CommonChangesManagerTest.java" startLine="108" startPosition="62" endLine="114" endPosition="0">
@@ -265,20 +272,20 @@
     <scopeInfo nodeId="3907542737155282349" fileName="CommonChangesManagerTest.java" startLine="75" startPosition="32" endLine="82" endPosition="7" />
     <scopeInfo nodeId="3907542737155282368" fileName="CommonChangesManagerTest.java" startLine="85" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="3907542737155282422" fileName="CommonChangesManagerTest.java" startLine="107" startPosition="25" endLine="114" endPosition="11" />
-    <scopeInfo nodeId="2508069636829445130" fileName="CommonChangesManagerTest.java" startLine="253" startPosition="25" endLine="260" endPosition="41">
+    <scopeInfo nodeId="2508069636829445130" fileName="CommonChangesManagerTest.java" startLine="257" startPosition="25" endLine="264" endPosition="41">
       <varInfo nodeId="3951871491765147377" varName="model" />
       <varInfo nodeId="3951871491765147424" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="307" startPosition="0" endLine="314" endPosition="0">
+    <scopeInfo nodeId="3907542737155075170" fileName="CommonChangesManagerTest.java" startLine="312" startPosition="0" endLine="319" endPosition="0">
       <varInfo nodeId="3907542737155075170" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="314" startPosition="0" endLine="321" endPosition="0">
+    <scopeInfo nodeId="3907542737155075179" fileName="CommonChangesManagerTest.java" startLine="319" startPosition="0" endLine="326" endPosition="0">
       <varInfo nodeId="3907542737155075179" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="321" startPosition="0" endLine="328" endPosition="0">
+    <scopeInfo nodeId="3907542737155075253" fileName="CommonChangesManagerTest.java" startLine="326" startPosition="0" endLine="333" endPosition="0">
       <varInfo nodeId="3907542737155075253" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="328" startPosition="0" endLine="335" endPosition="0">
+    <scopeInfo nodeId="3907542737155192915" fileName="CommonChangesManagerTest.java" startLine="333" startPosition="0" endLine="340" endPosition="0">
       <varInfo nodeId="3907542737155192915" varName="checkedDotOperand" />
     </scopeInfo>
     <scopeInfo nodeId="3907542737155282392" fileName="CommonChangesManagerTest.java" startLine="94" startPosition="37" endLine="102" endPosition="0" />
@@ -297,7 +304,7 @@
       <varInfo nodeId="3951871491765148577" varName="changeSet" />
     </scopeInfo>
     <scopeInfo nodeId="3907542737155282421" fileName="CommonChangesManagerTest.java" startLine="106" startPosition="37" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="2508069636829445129" fileName="CommonChangesManagerTest.java" startLine="252" startPosition="38" endLine="262" endPosition="0" />
+    <scopeInfo nodeId="2508069636829445129" fileName="CommonChangesManagerTest.java" startLine="256" startPosition="38" endLine="266" endPosition="0" />
     <scopeInfo nodeId="3907542737155282323" fileName="CommonChangesManagerTest.java" startLine="72" startPosition="58" endLine="83" endPosition="5" />
     <scopeInfo nodeId="3907542737155280931" fileName="CommonChangesManagerTest.java" startLine="105" startPosition="85" endLine="116" endPosition="7" />
     <scopeInfo nodeId="1187100870427681208" fileName="CommonChangesManagerTest.java" startLine="92" startPosition="0" endLine="104" endPosition="0" />
@@ -311,7 +318,7 @@
     <scopeInfo nodeId="3951871491765148614" fileName="CommonChangesManagerTest.java" startLine="229" startPosition="0" endLine="241" endPosition="0">
       <varInfo nodeId="3951871491765148620" varName="changeSet" />
     </scopeInfo>
-    <scopeInfo nodeId="3907542737155075103" fileName="CommonChangesManagerTest.java" startLine="283" startPosition="13" endLine="296" endPosition="22" />
+    <scopeInfo nodeId="3907542737155075103" fileName="CommonChangesManagerTest.java" startLine="288" startPosition="13" endLine="301" endPosition="22" />
     <scopeInfo nodeId="3907542737155282320" fileName="CommonChangesManagerTest.java" startLine="71" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="3907542737155282329" varName="waitScheduling" />
     </scopeInfo>
@@ -325,22 +332,22 @@
     </scopeInfo>
     <scopeInfo nodeId="3907542737155192688" fileName="CommonChangesManagerTest.java" startLine="123" startPosition="23" endLine="139" endPosition="32" />
     <scopeInfo nodeId="3907542737155192780" fileName="CommonChangesManagerTest.java" startLine="178" startPosition="0" endLine="196" endPosition="0" />
-    <scopeInfo nodeId="3907542737155075101" fileName="CommonChangesManagerTest.java" startLine="282" startPosition="47" endLine="300" endPosition="9" />
+    <scopeInfo nodeId="3907542737155075101" fileName="CommonChangesManagerTest.java" startLine="287" startPosition="47" endLine="305" endPosition="9" />
     <scopeInfo nodeId="3907542737155192685" fileName="CommonChangesManagerTest.java" startLine="122" startPosition="0" endLine="141" endPosition="0" />
     <scopeInfo nodeId="3907542737155192636" fileName="CommonChangesManagerTest.java" startLine="157" startPosition="30" endLine="176" endPosition="106" />
-    <scopeInfo nodeId="3951871491765145934" fileName="CommonChangesManagerTest.java" startLine="251" startPosition="37" endLine="270" endPosition="7" />
-    <scopeInfo nodeId="3907542737155075098" fileName="CommonChangesManagerTest.java" startLine="281" startPosition="136" endLine="302" endPosition="0">
+    <scopeInfo nodeId="3951871491765145934" fileName="CommonChangesManagerTest.java" startLine="255" startPosition="37" endLine="275" endPosition="39" />
+    <scopeInfo nodeId="3907542737155075098" fileName="CommonChangesManagerTest.java" startLine="286" startPosition="136" endLine="307" endPosition="0">
       <varInfo nodeId="3907542737155075098" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="3907542737155192633" fileName="CommonChangesManagerTest.java" startLine="156" startPosition="0" endLine="178" endPosition="0" />
-    <scopeInfo nodeId="3951871491765145931" fileName="CommonChangesManagerTest.java" startLine="250" startPosition="0" endLine="272" endPosition="0" />
-    <scopeInfo nodeId="3089989024970167312" fileName="CommonChangesManagerTest.java" startLine="279" startPosition="24" endLine="305" endPosition="69">
+    <scopeInfo nodeId="3951871491765145931" fileName="CommonChangesManagerTest.java" startLine="254" startPosition="0" endLine="277" endPosition="0" />
+    <scopeInfo nodeId="3089989024970167312" fileName="CommonChangesManagerTest.java" startLine="284" startPosition="24" endLine="310" endPosition="69">
       <varInfo nodeId="3907542737155075092" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3089989024970167309" fileName="CommonChangesManagerTest.java" startLine="277" startPosition="0" endLine="307" endPosition="0" />
-    <unitInfo nodeId="3089989024970166387" fileName="CommonChangesManagerTest.java" startLine="52" startPosition="0" endLine="336" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest" />
+    <scopeInfo nodeId="3089989024970167309" fileName="CommonChangesManagerTest.java" startLine="282" startPosition="0" endLine="312" endPosition="0" />
+    <unitInfo nodeId="3089989024970166387" fileName="CommonChangesManagerTest.java" startLine="52" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest" />
     <unitInfo nodeId="3907542737155282392" fileName="CommonChangesManagerTest.java" startLine="94" startPosition="25" endLine="102" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$1" />
-    <unitInfo nodeId="3907542737155075098" fileName="CommonChangesManagerTest.java" startLine="281" startPosition="108" endLine="302" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$10" />
+    <unitInfo nodeId="3907542737155075098" fileName="CommonChangesManagerTest.java" startLine="286" startPosition="108" endLine="307" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$10" />
     <unitInfo nodeId="3907542737155282400" fileName="CommonChangesManagerTest.java" startLine="96" startPosition="49" endLine="100" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$2" />
     <unitInfo nodeId="3907542737155282421" fileName="CommonChangesManagerTest.java" startLine="106" startPosition="25" endLine="116" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$2" />
     <unitInfo nodeId="3907542737155282255" fileName="CommonChangesManagerTest.java" startLine="108" startPosition="45" endLine="114" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$3" />
@@ -351,9 +358,9 @@
     <unitInfo nodeId="3951871491765154108" fileName="CommonChangesManagerTest.java" startLine="231" startPosition="90" endLine="235" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$5" />
     <unitInfo nodeId="3951871491765154117" fileName="CommonChangesManagerTest.java" startLine="235" startPosition="16" endLine="239" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$6" />
     <unitInfo nodeId="6389979038222945703" fileName="CommonChangesManagerTest.java" startLine="243" startPosition="74" endLine="247" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$7" />
-    <unitInfo nodeId="2508069636829445129" fileName="CommonChangesManagerTest.java" startLine="252" startPosition="26" endLine="262" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$8" />
-    <unitInfo nodeId="3951871491765154152" fileName="CommonChangesManagerTest.java" startLine="255" startPosition="144" endLine="259" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$9" />
-    <unitInfo nodeId="2508069636829445134" fileName="CommonChangesManagerTest.java" startLine="266" startPosition="26" endLine="270" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$9" />
+    <unitInfo nodeId="2508069636829445129" fileName="CommonChangesManagerTest.java" startLine="256" startPosition="26" endLine="266" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$8" />
+    <unitInfo nodeId="3951871491765154152" fileName="CommonChangesManagerTest.java" startLine="259" startPosition="144" endLine="263" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$9" />
+    <unitInfo nodeId="2508069636829445134" fileName="CommonChangesManagerTest.java" startLine="270" startPosition="26" endLine="274" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest$9" />
   </root>
 </debugInfo>
 
