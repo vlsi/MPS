@@ -21,7 +21,6 @@
     <orderEntry type="module" module-name="analyzers" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="distrib" />
     <orderEntry type="module" module-name="make-runtime" />

@@ -550,7 +550,6 @@
     <orderEntry type="module" module-name="ant" />
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="module" module-name="typesystemIntegration" />
-    <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="testbench" />
     <orderEntry type="module" module-name="analyzers" />
     <orderEntry type="module" module-name="baseLanguage-util" />
