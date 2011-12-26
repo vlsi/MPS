@@ -44,7 +44,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.undo.UndoManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.junit.Test;
@@ -275,25 +277,29 @@ public class CommonChangesManagerTest {
       waitAndCheck(diff);
     }
 
-    runCommandAndWait(new Runnable() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         for (int i = 0; i < tasks.length; i++) {
           UndoManager.getInstance(myIdeaProject).undo(null);
         }
       }
-    });
+    }, ModalityState.NON_MODAL);
     waitAndCheck(diff);
+  }
+
+  private SNode getDocumentLayoutRoot() {
+    SModel model = myUiDiff.getModelDescriptor().getSModel();
+    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode r) {
+        return "DocumentLayout".equals(SPropertyOperations.getString(r, "name"));
+      }
+    });
   }
 
   private void removeModifiedRoot() {
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        SModel model = myUiDiff.getModelDescriptor().getSModel();
-        SNode root = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
-          public boolean accept(SNode r) {
-            return "DocumentLayout".equals(SPropertyOperations.getString(r, "name"));
-          }
-        });
+        SNode root = getDocumentLayoutRoot();
         SNodeOperations.deleteNode(root);
       }
     });
@@ -310,6 +316,27 @@ public class CommonChangesManagerTest {
     }, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         SPropertyOperations.set(root.value, "name", "NewRootName");
+        return;
+      }
+    });
+  }
+
+  private void changeProperty() {
+    final Wrappers._T<SNode> method = new Wrappers._T<SNode>();
+    doSomethingAndUndo(myUiDiff, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        method.value = ListSequence.fromList(SLinkOperations.getTargets(getDocumentLayoutRoot(), "method", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode m) {
+            return "selectAll".equals(SPropertyOperations.getString(m, "name"));
+          }
+        });
+        Assert.assertNotNull(method.value);
+        SPropertyOperations.set(method.value, "name", "selectEverything");
+        return;
+      }
+    }, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        SPropertyOperations.set(method.value, "name", "selectEverySinglePiece");
         return;
       }
     });
@@ -333,6 +360,7 @@ public class CommonChangesManagerTest {
 
           removeModifiedRoot();
           addRoot();
+          changeProperty();
 
           return true;
         } catch (Throwable e) {
