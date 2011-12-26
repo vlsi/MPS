@@ -64,7 +64,11 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="smodel" />
     </node>
   </roots>
-  <root id="5494815557703847191" />
+  <root id="5494815557703847191">
+    <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.IdeaPluginDependency" typeId="tp4k.5864553086652219116" id="6713139039265405449">
+      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger-java" />
+    </node>
+  </root>
   <root id="2929731761237869234">
     <node role="watchable" roleId="kisg.5117350825036256318" type="kisg.CustomWatchable" typeId="kisg.5117350825036234483" id="2929731761237869235">
       <property name="name" nameId="tpck.1169194664001" value="element" />
