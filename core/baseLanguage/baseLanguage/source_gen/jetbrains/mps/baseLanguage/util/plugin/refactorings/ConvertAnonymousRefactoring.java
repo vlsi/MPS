@@ -78,15 +78,17 @@ public class ConvertAnonymousRefactoring {
 
   private void collectTypeVariables() {
     Set<SNode> usedTypeVariables = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(usedTypeVariables).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(myClassToRefactor, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "typeVariableDeclaration", false) != null);
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "typeVariableDeclaration", false);
-      }
-    }));
+    for (SNode node : Sequence.fromIterable(MapSequence.fromMap(myInnerFields).values()).concat(Sequence.fromIterable(Sequence.<SNode>singleton(myClassToRefactor)))) {
+      SetSequence.fromSet(usedTypeVariables).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (SLinkOperations.getTarget(it, "typeVariableDeclaration", false) != null);
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(it, "typeVariableDeclaration", false);
+        }
+      }));
+    }
 
     myInnerTypeVariables = MapSequence.fromMap(new LinkedHashMap<SNode, SNode>(16, (float) 0.75, false));
     for (SNode decl : ListSequence.fromList(SNodeOperations.getAncestors(myClassToRefactor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false)).translate(new ITranslator2<SNode, SNode>() {
