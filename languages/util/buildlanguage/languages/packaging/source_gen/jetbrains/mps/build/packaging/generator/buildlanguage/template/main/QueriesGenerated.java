@@ -63,7 +63,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import java.util.HashMap;
-import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -1667,37 +1667,18 @@ __switch__:
       })) {
         MapSequence.fromMap(modules).put(Module_Behavior.call_getModule_1213877515148(m), m);
       }
-      for (IModule module : SetSequence.fromSet(MapSequence.fromMap(modules).keySet())) {
-        Set<IModule> dependency = module.getDependenciesManager().getAllVisibleModules();
-        if (module instanceof DevKit) {
-          DevKit d = (DevKit) module;
-          dependency.addAll(d.getAllExportedLanguages());
-          dependency.addAll(d.getAllExportedSolutions());
-          dependency.addAll(d.getAllExtendedDevkits());
-        }
-        for (IModule dependent : SetSequence.fromSet(dependency)) {
-          if (!(dependent instanceof Generator) && !(dependent.isPackaged()) && dependent.getDescriptorFile() != null) {
-            if (!(SetSequence.fromSet(MapSequence.fromMap(modules).keySet()).contains(dependent))) {
-              String moduleFqName = module.getModuleFqName();
-              String errorText = "Required module " + dependent.getModuleFqName() + " is absent. Used by module " + moduleFqName + ".";
-              System.err.println(errorText);
-              if (moduleFqName.startsWith("jetbrains.mps")) {
-                _context.showErrorMessage(null, errorText);
-              } else {
-                _context.showWarningMessage(null, errorText);
-              }
-            } else if ((SNodeOperations.getAncestor(MapSequence.fromMap(modules).get(dependent), "jetbrains.mps.build.packaging.structure.IPlugin", false, false) != null)) {
-              if ((SNodeOperations.getAncestor(MapSequence.fromMap(modules).get(module), "jetbrains.mps.build.packaging.structure.IPlugin", false, false) == null)) {
-                String moduleFqName = module.getModuleFqName();
-                String errorText = "Required module " + dependent.getModuleFqName() + " is in IDEA plugin. Used by module from MPS " + moduleFqName + ".";
-                System.err.println(errorText);
-                if (moduleFqName.startsWith("jetbrains.mps")) {
-                  _context.showErrorMessage(null, errorText);
-                } else {
-                  _context.showWarningMessage(null, errorText);
-                }
-              }
-            }
+
+      Map<IModule, Iterable<IModule>> missing = CheckFullDependencyUtil.checkFullDependency(modules);
+
+      for (IModule module : SetSequence.fromSet(MapSequence.fromMap(missing).keySet())) {
+        String moduleFqName = module.getModuleFqName();
+        for (IModule dependent : Sequence.fromIterable(MapSequence.fromMap(missing).get(module))) {
+          String errorText = "Required module " + dependent.getModuleFqName() + " is absent. Used by module " + moduleFqName + ".";
+          System.err.println(errorText);
+          if (moduleFqName.startsWith("jetbrains.mps")) {
+            _context.showErrorMessage(null, errorText);
+          } else {
+            _context.showWarningMessage(null, errorText);
           }
         }
       }
