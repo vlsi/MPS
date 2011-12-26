@@ -46,7 +46,7 @@ public class PluginUtil {
 
     for (Solution s : MPSModuleRepository.getInstance().getAllSolutions()) {
       if (s.getModuleDescriptor().getKind() == SolutionKind.NONE) continue;
-      if (s.getModuleDescriptor().getKind() == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode()) continue;
+//      if (s.getModuleDescriptor().getKind() == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode()) continue;
       modules.add(s);
     }
 
