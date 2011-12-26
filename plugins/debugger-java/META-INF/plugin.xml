@@ -17,9 +17,6 @@
 
     <!--runtime-->
     <component>
-      <implementation-class>jetbrains.mps.debugger.java.classloading.PluginBundleInstaller</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.debugger.java.JavaDebugger</implementation-class>
     </component>
   </application-components>
@@ -39,5 +36,6 @@
     <configurationType implementation="jetbrains.mps.debugger.java.runtime.configurations.remote.Remote_Kind"/>
     <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
     <mps.LanguageLibrary dir=""/>
+    <mps.PluginBundle/>
   </extensions>
 </idea-plugin>
