@@ -164,6 +164,7 @@
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/typetest/smodelLanguage_typetest.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/structure/languageDescriptor.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/stubs/stubs.mpl" folder="core.language-design" />
+      <modulePath path="${project}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/test/test.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/textGen/textGen.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/traceable/traceable.mpl" folder="core.language-design" />
