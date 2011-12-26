@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Intentions_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.Intentions_ApplicationPlugin" />
+  <unitInfo fileName="Intentions_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.Intentions_ApplicationPlugin" />
   <unitInfo fileName="Intentions_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.Intentions_ProjectPlugin" />
   <root nodeId="3464435412756546019">
     <nodeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="19" startPosition="64" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

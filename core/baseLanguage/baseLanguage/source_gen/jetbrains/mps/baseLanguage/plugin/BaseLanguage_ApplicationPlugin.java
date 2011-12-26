@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
@@ -65,7 +64,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(BaseLanguageEditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
+    insertGroupIntoAnother(BaseLanguageEditorPopup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
     insertGroupIntoAnother(BaseLanguageModelActionsInternal_ActionGroup.ID, ModelActionsInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLanguageNodeActionsInternal_ActionGroup.ID, NodeActionsInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLanguageToolsAddition_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);

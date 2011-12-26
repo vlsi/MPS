@@ -9,7 +9,6 @@ import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.idea.LoggerFactory;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.generator.impl.CloneUtil;
 import jetbrains.mps.smodel.SModelOperations;
@@ -29,9 +28,9 @@ public abstract class BaseTransformationTest extends TestCase {
     Logger.setFactory(LoggerFactory.getInstance());
   }
 
-  public BaseTransformationTest(com.intellij.openapi.project.Project project, SModelDescriptor modelDescriptor) {
+  public BaseTransformationTest(Project project, SModelDescriptor modelDescriptor) {
     this();
-    setProject(project);
+    this.setMyProject(project);
     setModelDescriptor(modelDescriptor);
   }
 
@@ -45,10 +44,6 @@ public abstract class BaseTransformationTest extends TestCase {
 
   public void initTest(@NotNull String projectName, final String model) throws Exception {
     myRunner.initTest(this, projectName, model);
-  }
-
-  private final void setProject(com.intellij.openapi.project.Project project) {
-    this.setMyProject(project.getComponent(MPSProject.class));
   }
 
   /*package*/ final void setModelDescriptor(SModelDescriptor modelDescriptor) {

@@ -68,6 +68,9 @@ public class MpsMakeHelper {
     myEnvironment = environment;
   }
 
+  public void dispose () {
+    myEnvironment.dispose();
+  }
 
   public void make() {
     if (DIRECT_MAKE) {

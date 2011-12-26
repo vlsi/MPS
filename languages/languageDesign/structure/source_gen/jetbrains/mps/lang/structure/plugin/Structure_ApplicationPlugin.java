@@ -4,7 +4,6 @@ package jetbrains.mps.lang.structure.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup;
@@ -44,8 +43,8 @@ public class Structure_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(Structure_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_structure);
     insertGroupIntoAnother(Structure_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_structure);
+    insertGroupIntoAnother(Structure_ActionGroup.ID, "EditorPopup_ActionGroupstructure", null);
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_showHelp);
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, Structure_ActionGroup.ID, Structure_ActionGroup.LABEL_ID_showHelp);
     insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);

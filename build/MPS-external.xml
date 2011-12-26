@@ -48,9 +48,6 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor/lib" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor" />
     <mkdir dir="${deploy.dir}/MPS/plugins/cvsIntegration" />
     <mkdir dir="${deploy.dir}/MPS/plugins/git4idea" />
     <mkdir dir="${deploy.dir}/MPS/plugins/svn4idea" />
@@ -210,13 +207,13 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/core/editor-runtime/classes" />
+      <fileset dir="${mps_home}/editor/editor-runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/core/actions-runtime/classes" />
+      <fileset dir="${mps_home}/editor/actions-runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/core/intentions-runtime/classes" />
+      <fileset dir="${mps_home}/editor/intentions-runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
       <fileset dir="${mps_home}/editor/typesystemIntegration/classes" />
@@ -247,37 +244,38 @@
       <fileset dir="${mps_home}/core/plugin-runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/languages/languageDesign/test/classes_gen" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/workbench/classes" excludes="idea/IdeaApplicationInfo.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/workbench/mps-workbench/classes" excludes="idea/IdeaApplicationInfo.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/languages/util/runConfigurations/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/workbench/typesystemUi/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/languages/util/uiLanguage/runtime/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/MPSPlugin/apiclasses" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/core/debug/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/core/debug-api/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
+      <fileset dir="${mps_home}/languages/languageDesign/test/classes_gen" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
+      <fileset dir="${mps_home}/languages/util/runConfigurations/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
+      <fileset dir="${mps_home}/languages/util/uiLanguage/runtime/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
+      <fileset dir="${mps_home}/workbench/classes" excludes="idea/IdeaApplicationInfo.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
+      <fileset dir="${mps_home}/workbench/typesystemUi/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/workbench/mps-editor/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
+      <fileset dir="${mps_home}/workbench/mps-workbench/classes" excludes="idea/IdeaApplicationInfo.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
+      <fileset dir="${mps_home}/MPSPlugin/apiclasses" />
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.plugin.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.ide.editor" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.mps" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.workbench.make" />
@@ -338,12 +336,6 @@
       <zipfileset dir="${mps_home}/plugins/samples/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/samples/classes" prefix="" />
     </jar>
-    <copy todir="${deploy.dir}/MPS/plugins/mpseditor/META-INF">
-      <fileset dir="${mps_home}/plugins/mpseditor/META-INF" excludes="**/*.zip, " includes="**/plugin.xml, " />
-    </copy>
-    <antcall target="MPS-languages.pack.jetbrains.mps.ide.editor" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor/lib" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor" />
     <copy todir="${deploy.dir}/MPS/plugins/cvsIntegration">
       <fileset dir="${mps_home}/plugins/cvsIntegration" excludes="**/*.zip, " />
     </copy>

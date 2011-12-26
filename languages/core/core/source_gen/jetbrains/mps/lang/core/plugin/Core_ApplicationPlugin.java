@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
@@ -42,7 +41,7 @@ public class Core_ApplicationPlugin extends BaseApplicationPlugin {
   public void adjustRegularGroups() {
     insertGroupIntoAnother(FindModelUsages_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
     insertGroupIntoAnother(FindLanguageUsages_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_usages);
-    insertGroupIntoAnother(CoreActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
+    insertGroupIntoAnother(CoreActions_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
     insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);
   }
 

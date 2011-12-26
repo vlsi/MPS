@@ -36,28 +36,23 @@
       <sourceFolder url="file://$MODULE_DIR$/../../core/typesystemEngine/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/stubUtils/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/actions-runtime/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/actions-runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/editor-runtime/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/editor-runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/intentions-runtime/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../editor/editor-api">
+    <content url="file://$MODULE_DIR$/../../editor">
+      <sourceFolder url="file://$MODULE_DIR$/../../editor/actions-runtime/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../editor/actions-runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../editor/editor-api/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../editor/editor-runtime/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../editor/editor-runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../editor/intentions-runtime/source" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/mpseditor">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpseditor/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpseditor/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpseditor/tests/jetbrains.mps.lang.editor.tests/source_gen" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpseditor/tests/jetbrains.mps.lang.editor.tests/testSrc" isTestSource="true" />
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc" isTestSource="true" />
     </content>
-    <content url="file://$MODULE_DIR$/../../workbench/mps-actions">
-      <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-actions/source" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../workbench/mps-editor">
+    <content url="file://$MODULE_DIR$/../../workbench">
       <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-editor/source" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../workbench/mps-platform">
+      <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-editor/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-platform/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-platform/source_gen" isTestSource="false" />
     </content>

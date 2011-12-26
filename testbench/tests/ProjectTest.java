@@ -36,6 +36,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.TestClass;
 
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -158,6 +159,14 @@ public class ProjectTest {
         System.gc();
       }
     });
+    // magic
+    ModelAccess.instance().flushEventQueue();
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        IdeEventQueue.getInstance().flushQueue();
+      }
+    });
+    HELPER.dispose();
   }
 
 

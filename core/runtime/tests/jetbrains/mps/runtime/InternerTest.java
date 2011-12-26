@@ -85,7 +85,7 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors()*3;
     final int maxRepetitions = 100000;
 
-    final int k = Runtime.getRuntime().availableProcessors() > 8 ? 3 : 1;
+    final int k = Runtime.getRuntime().availableProcessors() >= 8 ? 3 : 1;
 
     long [] refTime = computeMedian(new DataProducer() {
       public long [] produce() {
@@ -125,7 +125,7 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors() * 20;
     final int maxRepetitions = 100000;
 
-    final int k = Runtime.getRuntime().availableProcessors() > 8 ? 3 : 1;
+    final int k = Runtime.getRuntime().availableProcessors() >= 8 ? 3 : 1;
 
     long[] refTime = computeMedian(new DataProducer() {
       public long[] produce() {

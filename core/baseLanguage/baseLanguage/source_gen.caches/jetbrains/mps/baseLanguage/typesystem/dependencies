@@ -1909,6 +1909,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner" />

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <components>
 
   <extensionPoints>
@@ -35,6 +36,10 @@
 
   <project-components>
     <component>
+      <implementation-class>jetbrains.mps.ide.editor.icons.NodeIconUpdater</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.nodeEditor.Highlighter</implementation-class>
     </component>
 
@@ -54,4 +59,8 @@
       <implementation-class>jetbrains.mps.ide.editor.MPSEditorOpener</implementation-class>
     </component>
   </project-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileIconProvider implementation="jetbrains.mps.ide.editor.icons.NodeFileIconProvider"/>
+  </extensions>
 </components>

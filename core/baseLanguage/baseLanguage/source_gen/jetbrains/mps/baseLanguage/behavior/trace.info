@@ -76,7 +76,7 @@
   <unitInfo fileName="DivAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DivAssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="DivExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DivExpression_BehaviorDescriptor" />
   <unitInfo fileName="DoWhileStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DoWhileStatement_BehaviorDescriptor" />
-  <unitInfo fileName="DotExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor" />
+  <unitInfo fileName="DotExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor" />
   <unitInfo fileName="DoubleType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DoubleType_BehaviorDescriptor" />
   <unitInfo fileName="ElsifClause_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ElsifClause_BehaviorDescriptor" />
   <unitInfo fileName="EnumClass_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.EnumClass_BehaviorDescriptor" />
@@ -5496,55 +5496,78 @@
     <unitInfo nodeId="1213877410069" fileName="IOperation_Behavior.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
   </root>
   <root nodeId="1213877410687">
-    <nodeInfo nodeId="1213877410690" fileName="DotExpression_Behavior.java" startLine="18" startPosition="72" endLine="19" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877410700" fileName="DotExpression_Behavior.java" startLine="22" startPosition="72" endLine="23" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877410712" fileName="DotExpression_Behavior.java" startLine="26" startPosition="86" endLine="27" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1219275221972" fileName="DotExpression_Behavior.java" startLine="31" startPosition="163" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219275308573" fileName="DotExpression_Behavior.java" startLine="32" startPosition="130" endLine="33" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219275221981" fileName="DotExpression_Behavior.java" startLine="33" startPosition="170" endLine="34" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219275221990" fileName="DotExpression_Behavior.java" startLine="34" startPosition="161" endLine="35" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219275480910" fileName="DotExpression_Behavior.java" startLine="35" startPosition="112" endLine="36" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1219275486524" fileName="DotExpression_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239212397850" fileName="DotExpression_Behavior.java" startLine="41" startPosition="82" endLine="42" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="14" startPosition="37" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLValue_1213877519786#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getClassifier_1213877410697#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVariableExpectedName_1213877519781#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1219275109143" fileName="DotExpression_Behavior.java" startLine="30" startPosition="83" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="29" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_eval_1213877519769#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/project/IModule;)Ljava/lang/Object;" />
-    <scopeInfo nodeId="1213877410720" fileName="DotExpression_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1213877410689" fileName="DotExpression_Behavior.java" startLine="18" startPosition="72" endLine="19" endPosition="115" />
-    <scopeInfo nodeId="1213877410699" fileName="DotExpression_Behavior.java" startLine="22" startPosition="72" endLine="23" endPosition="310" />
-    <scopeInfo nodeId="1213877410711" fileName="DotExpression_Behavior.java" startLine="26" startPosition="86" endLine="27" endPosition="130" />
-    <scopeInfo nodeId="1239212386762" fileName="DotExpression_Behavior.java" startLine="41" startPosition="82" endLine="42" endPosition="138" />
-    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="14" startPosition="37" endLine="17" endPosition="0">
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="17" startPosition="37" endLine="18" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4585239809762176541" />
+    <nodeInfo nodeId="1213877410690" fileName="DotExpression_Behavior.java" startLine="23" startPosition="72" endLine="24" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877410700" fileName="DotExpression_Behavior.java" startLine="27" startPosition="72" endLine="28" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877410712" fileName="DotExpression_Behavior.java" startLine="31" startPosition="86" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1219275221972" fileName="DotExpression_Behavior.java" startLine="36" startPosition="163" endLine="37" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1219275308573" fileName="DotExpression_Behavior.java" startLine="37" startPosition="130" endLine="38" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1219275221981" fileName="DotExpression_Behavior.java" startLine="38" startPosition="170" endLine="39" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1219275221990" fileName="DotExpression_Behavior.java" startLine="39" startPosition="161" endLine="40" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1219275480910" fileName="DotExpression_Behavior.java" startLine="40" startPosition="112" endLine="41" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1219275486524" fileName="DotExpression_Behavior.java" startLine="42" startPosition="5" endLine="43" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239212397850" fileName="DotExpression_Behavior.java" startLine="46" startPosition="82" endLine="47" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4585239809762176546" fileName="DotExpression_Behavior.java" startLine="50" startPosition="87" endLine="51" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="54" startPosition="84" endLine="55" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="55" startPosition="113" endLine="56" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="59" startPosition="117" endLine="60" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLValue_1213877519786#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getClassifier_1213877410697#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVariableExpectedName_1213877519781#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_allowsNullOperand_4585239809762176541#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_allowsNullOperand_4585239809762176541#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="53" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_allowsNullOperand_4585239809762176541#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1219275109143" fileName="DotExpression_Behavior.java" startLine="35" startPosition="83" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="34" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_eval_1213877519769#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/project/IModule;)Ljava/lang/Object;" />
+    <scopeInfo nodeId="1213877410720" fileName="DotExpression_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
+    <scopeInfo nodeId="1213877410689" fileName="DotExpression_Behavior.java" startLine="23" startPosition="72" endLine="24" endPosition="115" />
+    <scopeInfo nodeId="1213877410699" fileName="DotExpression_Behavior.java" startLine="27" startPosition="72" endLine="28" endPosition="310" />
+    <scopeInfo nodeId="1213877410711" fileName="DotExpression_Behavior.java" startLine="31" startPosition="86" endLine="32" endPosition="130" />
+    <scopeInfo nodeId="1239212386762" fileName="DotExpression_Behavior.java" startLine="46" startPosition="82" endLine="47" endPosition="138" />
+    <scopeInfo nodeId="4585239809762176544" fileName="DotExpression_Behavior.java" startLine="50" startPosition="87" endLine="51" endPosition="17" />
+    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="59" startPosition="117" endLine="60" endPosition="266" />
+    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="54" startPosition="84" endLine="56" endPosition="221">
+      <varInfo nodeId="1213877410687" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1213877410687" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1213877410687" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1213877410687" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="1213877410687" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1213877410687" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1219275109145" fileName="DotExpression_Behavior.java" startLine="31" startPosition="163" endLine="36" endPosition="70">
+    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1213877410687" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="1213877410687" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877410687" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1219275109145" fileName="DotExpression_Behavior.java" startLine="36" startPosition="163" endLine="41" endPosition="70">
       <varInfo nodeId="1219275221991" varName="actualArguments" />
       <varInfo nodeId="1219275221973" varName="instance" />
       <varInfo nodeId="1219275221982" varName="method" />
       <varInfo nodeId="1219275308574" varName="methodCall" />
     </scopeInfo>
-    <scopeInfo nodeId="1219275067233" fileName="DotExpression_Behavior.java" startLine="30" startPosition="83" endLine="38" endPosition="132" />
-    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="29" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="53" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1213877410687" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1219275067233" fileName="DotExpression_Behavior.java" startLine="35" startPosition="83" endLine="43" endPosition="132" />
+    <scopeInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="34" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1219275073969" varName="module" />
       <varInfo nodeId="1213877410687" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior" />
+    <unitInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior" />
   </root>
   <root nodeId="1213877415066">
     <nodeInfo nodeId="1213877415066" fileName="LocalVariableReference_Behavior.java" startLine="12" startPosition="46" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3262277503800835478" />
