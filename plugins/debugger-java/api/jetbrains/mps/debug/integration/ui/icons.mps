@@ -6,7 +6,7 @@
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="2" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3432969378036014082">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
@@ -25,7 +25,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1247371618987935933" />
       <node role="initializer" roleId="tpee.1068431790190" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="1247371618987937908">
         <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="1247371618987937909">
-          <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/debug/resources/jetbrains/mps/debug/integration/ui/icons/db_primitive.png" />
+          <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/db_primitive.png" />
         </node>
       </node>
     </node>
@@ -38,7 +38,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1247371618987935924" />
       <node role="initializer" roleId="tpee.1068431790190" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="1247371618987937911">
         <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="1247371618987937912">
-          <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/debug/resources/jetbrains/mps/debug/integration/ui/icons/db_object.png" />
+          <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/db_object.png" />
         </node>
       </node>
     </node>
@@ -51,7 +51,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1247371618987935861" />
       <node role="initializer" roleId="tpee.1068431790190" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="1247371618987937932">
         <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="1247371618987937933">
-          <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/debug/resources/jetbrains/mps/debug/integration/ui/icons/db_watch.png" />
+          <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/db_watch.png" />
         </node>
       </node>
     </node>
@@ -64,7 +64,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1247371618987935852" />
       <node role="initializer" roleId="tpee.1068431790190" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="1247371618987937935">
         <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="1247371618987937936">
-          <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/debug/resources/jetbrains/mps/debug/integration/ui/icons/db_thread_running.png" />
+          <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/db_thread_running.png" />
         </node>
       </node>
     </node>
@@ -77,7 +77,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1247371618987935843" />
       <node role="initializer" roleId="tpee.1068431790190" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="1247371618987937938">
         <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="1247371618987937939">
-          <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/debug/resources/jetbrains/mps/debug/integration/ui/icons/db_thread_suspended.png" />
+          <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/db_thread_suspended.png" />
         </node>
       </node>
     </node>
@@ -90,7 +90,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1247371618987935834" />
       <node role="initializer" roleId="tpee.1068431790190" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="1247371618987937941">
         <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="1247371618987937942">
-          <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/debug/resources/jetbrains/mps/debug/integration/ui/icons/db_thread_at_breakpoint.png" />
+          <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/db_thread_at_breakpoint.png" />
         </node>
       </node>
     </node>
