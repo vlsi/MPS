@@ -38,7 +38,6 @@
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="baseLanguage-util" />
-    <orderEntry type="library" name="Httpclient" level="project" />
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />

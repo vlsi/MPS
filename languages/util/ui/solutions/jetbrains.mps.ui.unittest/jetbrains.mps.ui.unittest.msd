@@ -15,6 +15,7 @@
   <dependencies>
     <dependency reexport="false">fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)</dependency>
     <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
+    <dependency reexport="false">83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguage>

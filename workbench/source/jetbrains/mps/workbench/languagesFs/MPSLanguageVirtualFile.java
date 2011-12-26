@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.workbench.languagesFs;
 
-import com.intellij.openapi.vfs.DeprecatedVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.smodel.Language;
@@ -29,7 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class MPSLanguageVirtualFile extends DeprecatedVirtualFile {
+public class MPSLanguageVirtualFile extends VirtualFile {
   private Language myLanguage;
   private String myPath;
   private String myName;

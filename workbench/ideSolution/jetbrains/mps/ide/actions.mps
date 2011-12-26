@@ -1038,9 +1038,9 @@
       <property name="name" nameId="tpck.1169194664001" value="IDE" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="IDE core plugin" />
       <property name="version" nameId="tp4k.5023285075122009369" value="2.0" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
-      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
+      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2010440180771532928">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions" />
@@ -1670,8 +1670,8 @@
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="1217431278099" resolveInfo="vcs" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1221752224444">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660802" resolveInfo="vcs" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1234535880027">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="401659284115173011" resolveInfo="CommonModuleActions" />
@@ -23773,7 +23773,7 @@
                           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zfwc.~LocalFileSystem" resolveInfo="LocalFileSystem" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5609063547583780332">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ymmt.~NewVirtualFileSystem%dfindFileByPath(java%dlang%dString)%ccom%dintellij%dopenapi%dvfs%dVirtualFile" resolveInfo="findFileByPath" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zfwc.~VirtualFileSystem%dfindFileByPath(java%dlang%dString)%ccom%dintellij%dopenapi%dvfs%dVirtualFile" resolveInfo="findFileByPath" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5609063547583780333">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="859814836892231119" resolveInfo="result" />
                           </node>
@@ -27264,8 +27264,8 @@
   </root>
   <root id="5980126212935065634">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="5980126212935067415">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660791" resolveInfo="folding" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="5980126212935211523">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5354546887831012890">
@@ -27928,8 +27928,8 @@
   </root>
   <root id="5384922150955313088">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="5384922150955313092">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660793" resolveInfo="goto" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="5384922150955313090">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5384922150955313091">
@@ -28029,7 +28029,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7313044524591881100">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7313044524591881101">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9rxu.~FileStructureDialog%d&lt;init&gt;(com%dintellij%dide%dstructureView%dStructureViewModel,com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dDisposable,boolean)" resolveInfo="FileStructureDialog" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9rxu.~FileStructureDialog%d&lt;init&gt;(com%dintellij%dide%dstructureView%dStructureViewModel,com%dintellij%dopenapi%deditor%dEditor,com%dintellij%dopenapi%dproject%dProject,com%dintellij%dpom%dNavigatable,com%dintellij%dopenapi%dDisposable,boolean)" resolveInfo="FileStructureDialog" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7313044524591881102">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7313044524591881103">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7313044524591881077" resolveInfo="structureView" />
@@ -28038,12 +28038,14 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tj4b.~StructureView%dgetTreeModel()%ccom%dintellij%dide%dstructureView%dStructureViewModel" resolveInfo="getTreeModel" />
                   </node>
                 </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2476363345240057995" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7313044524591881105">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7313044524591881106" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="7313044524591881107">
                     <link role="member" roleId="tp4f.1205756909548" targetNodeId="5307017976806357618" resolveInfo="project" />
                   </node>
                 </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2476363345240057998" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7313044524591881108">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7313044524591881077" resolveInfo="structureView" />
                 </node>
@@ -28133,8 +28135,8 @@
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="3464435412756462059">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660798" resolveInfo="debug" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="3464435412756462060">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991215587" resolveInfo="NodeActions" />
@@ -28822,8 +28824,8 @@
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="1237990522669" resolveInfo="find" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1587195459761470375">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660800" resolveInfo="find" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1587195459761469118">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1587195459761469120">

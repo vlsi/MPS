@@ -205,6 +205,10 @@ public class ImportHelper {
         public String getPromptText() {
           return "Import model that contains root:";
         }
+
+        public boolean willOpenEditor() {
+          return false;
+        }
       };
     } else {
       goToNodeModel = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex()) {

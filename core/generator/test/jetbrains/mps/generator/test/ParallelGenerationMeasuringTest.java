@@ -30,7 +30,7 @@ public class ParallelGenerationMeasuringTest extends GenerationTestBase {
 
   @Test
   public void testParallelEditor() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/core/baseLanguage/baseLanguage/baseLanguage.mpr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/core/baseLanguage/baseLanguage/baseLanguage.ipr"));
     final SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
 
     doMeasureParallelGeneration(p, descr, 4);
@@ -39,7 +39,7 @@ public class ParallelGenerationMeasuringTest extends GenerationTestBase {
 
   @Test
   public void testParallelIdeActions() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/workbench/workbench.mpr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/workbench/workbench.ipr"));
     final SModelDescriptor descr = findModel(p, "jetbrains.mps.ide.actions");
 
     doMeasureParallelGeneration(p, descr, 4);

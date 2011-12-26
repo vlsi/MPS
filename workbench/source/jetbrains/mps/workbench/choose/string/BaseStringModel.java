@@ -20,6 +20,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
 public abstract class BaseStringModel extends BaseMPSChooseModel<String> {
+  public boolean willOpenEditor() {
+    return false;
+  }
+
   public BaseStringModel(Project project) {
     super(project, "");
   }

@@ -481,11 +481,11 @@
           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="5628633142282726868">
             <node role="expression" roleId="tpee.1081516765348" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5628633142282726869">
               <node role="expression" roleId="tpee.1079359253376" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="5628633142282726870">
-                <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5628633142282726871">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5628633142282726858" resolveInfo="location" />
-                </node>
                 <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="189664211927954334">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hf1o.~MPSLocation" resolveInfo="MPSLocation" />
+                </node>
+                <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5628633142282726871">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5628633142282726858" resolveInfo="location" />
                 </node>
               </node>
             </node>
@@ -504,11 +504,11 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hf1o.~MPSLocation" resolveInfo="MPSLocation" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5628633142282726879">
-              <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5628633142282726880">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5628633142282726858" resolveInfo="location" />
-              </node>
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="189664211927954335">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hf1o.~MPSLocation" resolveInfo="MPSLocation" />
+              </node>
+              <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5628633142282726880">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5628633142282726858" resolveInfo="location" />
               </node>
             </node>
           </node>

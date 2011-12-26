@@ -21,11 +21,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 
 public class SModelGroupTreeNode extends NamespaceTextNode implements StereotypeProvider {
-  private ProjectLanguageTreeNode myProjectLanguageTreeNode;
-
-  public SModelGroupTreeNode(ProjectLanguageTreeNode projectLanguageTreeNode, IOperationContext context) {
+  public SModelGroupTreeNode(IOperationContext context) {
     super("util models", context);
-    myProjectLanguageTreeNode = projectLanguageTreeNode;
   }
 
   public String getNamespace() {

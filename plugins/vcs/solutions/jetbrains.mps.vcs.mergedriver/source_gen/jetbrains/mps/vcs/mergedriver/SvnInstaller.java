@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.mergedriver;
 import java.io.File;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.WorkbenchPathManager;
-import org.jetbrains.idea.svn.SvnConfiguration;
+import org.jetbrains.idea.svn17.SvnConfiguration17;
 import org.tmatesoft.svn.core.wc.SVNWCUtil;
 import com.intellij.openapi.util.SystemInfo;
 import org.jetbrains.annotations.NotNull;
@@ -31,7 +31,7 @@ import java.io.IOException;
     myUseIdeConfig = useIdeConfig;
     if (PluginUtil.isSvnPluginEnabled()) {
       if (useIdeConfig) {
-        myConfigDir = new File(SvnConfiguration.getInstance(project).getConfigurationDirectory());
+        myConfigDir = new File(SvnConfiguration17.getInstance(project).getConfigurationDirectory());
       } else {
         myConfigDir = SVNWCUtil.getDefaultConfigurationDirectory();
       }

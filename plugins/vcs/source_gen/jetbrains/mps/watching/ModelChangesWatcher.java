@@ -31,7 +31,6 @@ import java.util.Arrays;
 import jetbrains.mps.library.LibraryManager;
 import java.io.File;
 import com.intellij.openapi.util.io.FileUtil;
-import java.io.IOException;
 import jetbrains.mps.util.Computable;
 import java.util.List;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
@@ -84,8 +83,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
           if (myReloadSession != null) {
             doReload();
           }
-          myTimer.suspend();
         }
+        myTimer.suspend();
       }
     };
     myTimer.setTakeInitialDelay(true);
@@ -106,13 +105,13 @@ public class ModelChangesWatcher implements ApplicationComponent {
           return;
         }
       }
-      myTimer.resume();
     }
+    myTimer.resume();
   }
 
   public void suspendTasksProcessing() {
+    myTimer.suspend();
     synchronized (myLock) {
-      myTimer.suspend();
       myBans++;
     }
   }
@@ -182,12 +181,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
   private boolean isUnderSignificantRoots(File file) {
     for (VirtualFile f : getSignificantRoots()) {
-      try {
-        if (FileUtil.isAncestor(VirtualFileUtils.toFile(f), file, false)) {
-          return true;
-        }
-      } catch (IOException e) {
-        LOG.error(e);
+      if (FileUtil.isAncestor(VirtualFileUtils.toFile(f), file, false)) {
+        return true;
       }
     }
     return false;
@@ -275,6 +270,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
       if (application.isDisposeInProgress() || application.isDisposed()) {
         return;
       }
+      boolean resume = false;
       synchronized (myLock) {
         if (myReloadSession == null) {
           myReloadSession = new ReloadSession(getReloadListeners());
@@ -296,8 +292,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
           processAfterEvent(path, event, myReloadSession);
         }
         if (myBans == 0) {
-          myTimer.resume();
+          resume = true;
         }
+      }
+      if (resume) {
+        myTimer.resume();
       }
     }
 
