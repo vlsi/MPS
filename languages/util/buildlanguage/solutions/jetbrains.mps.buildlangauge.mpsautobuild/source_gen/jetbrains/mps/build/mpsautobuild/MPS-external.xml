@@ -292,9 +292,6 @@
       <fileset dir="${mps_home}/MPSPlugin/apiclasses" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/core/debug-api/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/workbench/mps-editor/classes" />
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.plugin.runtime" />

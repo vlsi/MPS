@@ -124,7 +124,6 @@
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -574,7 +573,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -750,7 +748,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -889,7 +886,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1030,7 +1026,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1170,7 +1165,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1309,7 +1303,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1449,7 +1442,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1602,7 +1594,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1720,7 +1711,6 @@
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1793,7 +1783,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1933,7 +1922,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2072,7 +2060,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2211,7 +2198,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2373,7 +2359,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2521,7 +2506,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2660,7 +2644,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2830,7 +2813,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2969,7 +2951,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -3110,7 +3091,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -3252,7 +3232,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -3394,7 +3373,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -3533,7 +3511,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -3672,7 +3649,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -3812,7 +3788,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -3952,7 +3927,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4092,7 +4066,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4231,7 +4204,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4370,7 +4342,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4513,7 +4484,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4654,7 +4624,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4799,7 +4768,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4939,7 +4907,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5078,7 +5045,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5218,7 +5184,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5360,7 +5325,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5500,7 +5464,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5648,7 +5611,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5787,7 +5749,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5927,7 +5888,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6067,7 +6027,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6207,7 +6166,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6347,7 +6305,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6486,7 +6443,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6626,7 +6582,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6765,7 +6720,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6905,7 +6859,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7044,7 +6997,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7184,7 +7136,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7301,7 +7252,6 @@
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7373,7 +7323,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7513,7 +7462,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7654,7 +7602,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7797,7 +7744,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7939,7 +7885,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -8079,7 +8024,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -8232,7 +8176,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -8388,7 +8331,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -8528,7 +8470,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -8670,7 +8611,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -8809,7 +8749,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -8953,7 +8892,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -9093,7 +9031,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -9233,7 +9170,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -9394,7 +9330,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -9535,7 +9470,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -9675,7 +9609,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
