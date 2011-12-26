@@ -86,7 +86,6 @@
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="tpjh" modelUID="r:00000000-0000-4000-0000-011c89590591(jetbrains.mps.xmlInternal.structure)" version="2" implicit="yes" />
   <import index="tpjo" modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" implicit="yes" />
-  <import index="9ne7" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.plugins(MPS.Classpath/jetbrains.mps.plugins@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1203086899006">
       <property name="name" nameId="tpck.1169194664001" value="GeneratedAction_Template" />
@@ -14054,14 +14053,14 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3005430634737882368">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1041290419776317660">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9103483154709741381">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9ne7.~PluginFactoriesRegistry%dregisterPluginFactory(jetbrains%dmps%dplugins%dAbstractPluginFactory)%cvoid" resolveInfo="registerPluginFactory" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9ne7.~PluginFactoriesRegistry" resolveInfo="PluginFactoriesRegistry" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t6ll.~PluginFactoriesRegistry%dregisterPluginFactory(jetbrains%dmps%dplugins%dAbstractPluginFactory)%cvoid" resolveInfo="registerPluginFactory" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t6ll.~PluginFactoriesRegistry" resolveInfo="PluginFactoriesRegistry" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9103483154709741382">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="9103483154709741383">
                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="9103483154709741384">
                   <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="9ne7.~AbstractPluginFactory" resolveInfo="AbstractPluginFactory" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9ne7.~AbstractPluginFactory%d&lt;init&gt;()" resolveInfo="AbstractPluginFactory" />
+                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="t6ll.~AbstractPluginFactory" resolveInfo="AbstractPluginFactory" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t6ll.~AbstractPluginFactory%d&lt;init&gt;()" resolveInfo="AbstractPluginFactory" />
                   <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9103483154709741385" />
                   <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7944367932918602311">
                     <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
