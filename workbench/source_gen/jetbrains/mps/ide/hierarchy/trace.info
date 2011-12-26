@@ -115,7 +115,7 @@
     <nodeInfo nodeId="5797068448049410979" fileName="AbstractHierarchyView.java" startLine="111" startPosition="36" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5797068448049411017" fileName="AbstractHierarchyView.java" startLine="126" startPosition="53" endLine="132" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5797068448049411030" fileName="AbstractHierarchyView.java" startLine="132" startPosition="6" endLine="138" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411379" fileName="AbstractHierarchyView.java" startLine="199" startPosition="9" endLine="205" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411379" fileName="AbstractHierarchyView.java" startLine="199" startPosition="9" endLine="205" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3684544815287378956" fileName="AbstractHierarchyView.java" startLine="244" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreviousOccurenceActionName#()Ljava/lang/String;" />
     <nodeInfo nodeId="3684544815287378960" fileName="AbstractHierarchyView.java" startLine="251" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNextOccurenceActionName#()Ljava/lang/String;" />
     <nodeInfo nodeId="3684544815287378964" fileName="AbstractHierarchyView.java" startLine="258" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goPreviousOccurence#()Lcom/intellij/ide/OccurenceNavigator/OccurenceInfo;" />
@@ -247,7 +247,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5797068448049411226" fileName="AbstractHierarchyView.java" startLine="215" startPosition="56" endLine="229" endPosition="0" />
     <scopeInfo nodeId="5797068448049411203" fileName="AbstractHierarchyView.java" startLine="211" startPosition="75" endLine="229" endPosition="7" />
-    <scopeInfo nodeId="5797068448049411322" fileName="AbstractHierarchyView.java" startLine="186" startPosition="78" endLine="205" endPosition="11">
+    <scopeInfo nodeId="5797068448049411322" fileName="AbstractHierarchyView.java" startLine="186" startPosition="78" endLine="205" endPosition="18">
       <varInfo nodeId="5797068448049411324" varName="nodes" />
     </scopeInfo>
     <scopeInfo nodeId="5797068448049411196" fileName="AbstractHierarchyView.java" startLine="210" startPosition="0" endLine="231" endPosition="0">
