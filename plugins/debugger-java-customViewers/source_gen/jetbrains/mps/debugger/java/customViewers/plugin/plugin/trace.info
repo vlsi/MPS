@@ -84,9 +84,9 @@
     <nodeInfo nodeId="2929731761237869244" fileName="ListViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="58" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237869249" fileName="ListViewer_WrapperFactory.java" startLine="58" startPosition="82" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2929731761237869250" fileName="ListViewer_WrapperFactory.java" startLine="59" startPosition="0" endLine="60" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2929731761237869256" fileName="ListViewer_WrapperFactory.java" startLine="60" startPosition="91" endLine="61" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2929731761237869263" fileName="ListViewer_WrapperFactory.java" startLine="61" startPosition="153" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2929731761237869268" fileName="ListViewer_WrapperFactory.java" startLine="63" startPosition="113" endLine="64" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237869256" fileName="ListViewer_WrapperFactory.java" startLine="60" startPosition="91" endLine="61" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237869263" fileName="ListViewer_WrapperFactory.java" startLine="61" startPosition="148" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2929731761237869268" fileName="ListViewer_WrapperFactory.java" startLine="63" startPosition="113" endLine="64" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2929731761237869276" fileName="ListViewer_WrapperFactory.java" startLine="65" startPosition="7" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2929731761237869277" fileName="ListViewer_WrapperFactory.java" startLine="66" startPosition="0" endLine="67" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237869240" fileName="ListViewer_WrapperFactory.java" startLine="20" startPosition="68" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListViewer_WrapperFactory#()V" />
@@ -108,7 +108,7 @@
     <scopeInfo nodeId="2929731761237869240" fileName="ListViewer_WrapperFactory.java" startLine="36" startPosition="116" endLine="37" endPosition="23" />
     <scopeInfo nodeId="2929731761237869240" fileName="ListViewer_WrapperFactory.java" startLine="45" startPosition="47" endLine="46" endPosition="19" />
     <scopeInfo nodeId="2929731761237869240" fileName="ListViewer_WrapperFactory.java" startLine="51" startPosition="78" endLine="52" endPosition="68" />
-    <scopeInfo nodeId="2929731761237869267" fileName="ListViewer_WrapperFactory.java" startLine="63" startPosition="113" endLine="64" endPosition="164" />
+    <scopeInfo nodeId="2929731761237869267" fileName="ListViewer_WrapperFactory.java" startLine="63" startPosition="113" endLine="64" endPosition="159" />
     <scopeInfo nodeId="2929731761237869240" fileName="ListViewer_WrapperFactory.java" startLine="20" startPosition="68" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2929731761237869240" fileName="ListViewer_WrapperFactory.java" startLine="44" startPosition="62" endLine="47" endPosition="5">
       <varInfo nodeId="2929731761237869240" varName="value" />
@@ -153,9 +153,9 @@
     <nodeInfo nodeId="2929731761237869283" fileName="MapEntryViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="58" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237869288" fileName="MapEntryViewer_WrapperFactory.java" startLine="58" startPosition="78" endLine="59" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237869294" fileName="MapEntryViewer_WrapperFactory.java" startLine="59" startPosition="105" endLine="60" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2929731761237869300" fileName="MapEntryViewer_WrapperFactory.java" startLine="60" startPosition="114" endLine="61" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2929731761237869307" fileName="MapEntryViewer_WrapperFactory.java" startLine="61" startPosition="146" endLine="62" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2929731761237869314" fileName="MapEntryViewer_WrapperFactory.java" startLine="62" startPosition="157" endLine="63" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2929731761237869300" fileName="MapEntryViewer_WrapperFactory.java" startLine="60" startPosition="114" endLine="61" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237869307" fileName="MapEntryViewer_WrapperFactory.java" startLine="61" startPosition="141" endLine="62" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237869314" fileName="MapEntryViewer_WrapperFactory.java" startLine="62" startPosition="152" endLine="63" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237869279" fileName="MapEntryViewer_WrapperFactory.java" startLine="68" startPosition="59" endLine="69" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237869318" fileName="MapEntryViewer_WrapperFactory.java" startLine="74" startPosition="95" endLine="75" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237869324" fileName="MapEntryViewer_WrapperFactory.java" startLine="75" startPosition="105" endLine="76" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -236,10 +236,10 @@
     <nodeInfo nodeId="2929731761237869358" fileName="MapViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="58" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237869363" fileName="MapViewer_WrapperFactory.java" startLine="58" startPosition="78" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2929731761237869364" fileName="MapViewer_WrapperFactory.java" startLine="59" startPosition="0" endLine="60" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2929731761237869370" fileName="MapViewer_WrapperFactory.java" startLine="60" startPosition="91" endLine="61" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2929731761237869377" fileName="MapViewer_WrapperFactory.java" startLine="61" startPosition="149" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2929731761237869370" fileName="MapViewer_WrapperFactory.java" startLine="60" startPosition="91" endLine="61" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237869377" fileName="MapViewer_WrapperFactory.java" startLine="61" startPosition="144" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2929731761237869378" fileName="MapViewer_WrapperFactory.java" startLine="62" startPosition="0" endLine="63" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2929731761237869389" fileName="MapViewer_WrapperFactory.java" startLine="64" startPosition="113" endLine="65" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237869389" fileName="MapViewer_WrapperFactory.java" startLine="64" startPosition="113" endLine="65" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2929731761237869397" fileName="MapViewer_WrapperFactory.java" startLine="66" startPosition="7" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2929731761237869398" fileName="MapViewer_WrapperFactory.java" startLine="67" startPosition="0" endLine="68" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237869354" fileName="MapViewer_WrapperFactory.java" startLine="20" startPosition="67" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MapViewer_WrapperFactory#()V" />
@@ -261,7 +261,7 @@
     <scopeInfo nodeId="2929731761237869354" fileName="MapViewer_WrapperFactory.java" startLine="36" startPosition="115" endLine="37" endPosition="23" />
     <scopeInfo nodeId="2929731761237869354" fileName="MapViewer_WrapperFactory.java" startLine="45" startPosition="46" endLine="46" endPosition="19" />
     <scopeInfo nodeId="2929731761237869354" fileName="MapViewer_WrapperFactory.java" startLine="51" startPosition="78" endLine="52" endPosition="68" />
-    <scopeInfo nodeId="2929731761237869388" fileName="MapViewer_WrapperFactory.java" startLine="64" startPosition="113" endLine="65" endPosition="154" />
+    <scopeInfo nodeId="2929731761237869388" fileName="MapViewer_WrapperFactory.java" startLine="64" startPosition="113" endLine="65" endPosition="149" />
     <scopeInfo nodeId="2929731761237869354" fileName="MapViewer_WrapperFactory.java" startLine="20" startPosition="67" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2929731761237869354" fileName="MapViewer_WrapperFactory.java" startLine="44" startPosition="61" endLine="47" endPosition="5">
       <varInfo nodeId="2929731761237869354" varName="value" />
@@ -308,9 +308,9 @@
     <nodeInfo nodeId="2929731761237869406" fileName="SetViewer_WrapperFactory.java" startLine="58" startPosition="35" endLine="59" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237869411" fileName="SetViewer_WrapperFactory.java" startLine="59" startPosition="82" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2929731761237869412" fileName="SetViewer_WrapperFactory.java" startLine="60" startPosition="0" endLine="61" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2929731761237869418" fileName="SetViewer_WrapperFactory.java" startLine="61" startPosition="91" endLine="62" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2929731761237869425" fileName="SetViewer_WrapperFactory.java" startLine="62" startPosition="153" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2929731761237869430" fileName="SetViewer_WrapperFactory.java" startLine="64" startPosition="113" endLine="65" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237869418" fileName="SetViewer_WrapperFactory.java" startLine="61" startPosition="91" endLine="62" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237869425" fileName="SetViewer_WrapperFactory.java" startLine="62" startPosition="148" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2929731761237869430" fileName="SetViewer_WrapperFactory.java" startLine="64" startPosition="113" endLine="65" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2929731761237869438" fileName="SetViewer_WrapperFactory.java" startLine="66" startPosition="7" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2929731761237869439" fileName="SetViewer_WrapperFactory.java" startLine="67" startPosition="0" endLine="68" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237869400" fileName="SetViewer_WrapperFactory.java" startLine="20" startPosition="67" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SetViewer_WrapperFactory#()V" />
@@ -332,7 +332,7 @@
     <scopeInfo nodeId="2929731761237869400" fileName="SetViewer_WrapperFactory.java" startLine="36" startPosition="115" endLine="37" endPosition="23" />
     <scopeInfo nodeId="2929731761237869400" fileName="SetViewer_WrapperFactory.java" startLine="45" startPosition="46" endLine="46" endPosition="19" />
     <scopeInfo nodeId="2929731761237869400" fileName="SetViewer_WrapperFactory.java" startLine="51" startPosition="78" endLine="52" endPosition="68" />
-    <scopeInfo nodeId="2929731761237869429" fileName="SetViewer_WrapperFactory.java" startLine="64" startPosition="113" endLine="65" endPosition="164" />
+    <scopeInfo nodeId="2929731761237869429" fileName="SetViewer_WrapperFactory.java" startLine="64" startPosition="113" endLine="65" endPosition="159" />
     <scopeInfo nodeId="2929731761237869400" fileName="SetViewer_WrapperFactory.java" startLine="20" startPosition="67" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2929731761237869400" fileName="SetViewer_WrapperFactory.java" startLine="44" startPosition="61" endLine="47" endPosition="5">
       <varInfo nodeId="2929731761237869400" varName="value" />
@@ -376,7 +376,7 @@
     <nodeInfo nodeId="2929731761237871799" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="51" startPosition="78" endLine="52" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237871803" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="58" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237871808" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="58" startPosition="78" endLine="59" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2929731761237871817" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="60" startPosition="73" endLine="61" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237871817" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="60" startPosition="73" endLine="61" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2929731761237871836" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="62" startPosition="7" endLine="63" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237871799" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="68" startPosition="59" endLine="69" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237871840" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="74" startPosition="95" endLine="75" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -403,7 +403,7 @@
     <scopeInfo nodeId="2929731761237871799" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="36" startPosition="154" endLine="37" endPosition="23" />
     <scopeInfo nodeId="2929731761237871799" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="45" startPosition="55" endLine="46" endPosition="19" />
     <scopeInfo nodeId="2929731761237871799" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="51" startPosition="78" endLine="52" endPosition="68" />
-    <scopeInfo nodeId="2929731761237871816" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="60" startPosition="73" endLine="61" endPosition="192" />
+    <scopeInfo nodeId="2929731761237871816" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="60" startPosition="73" endLine="61" endPosition="187" />
     <scopeInfo nodeId="2929731761237871799" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="68" startPosition="59" endLine="69" endPosition="72" />
     <scopeInfo nodeId="2929731761237871839" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="74" startPosition="95" endLine="75" endPosition="127" />
     <scopeInfo nodeId="2929731761237871799" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="20" startPosition="76" endLine="22" endPosition="3" />
@@ -475,20 +475,20 @@
     <nodeInfo nodeId="2929731761237871848" fileName="SNodeViewer_WrapperFactory.java" startLine="53" startPosition="78" endLine="54" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237871852" fileName="SNodeViewer_WrapperFactory.java" startLine="59" startPosition="110" endLine="60" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237871857" fileName="SNodeViewer_WrapperFactory.java" startLine="60" startPosition="78" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2929731761237871858" fileName="SNodeViewer_WrapperFactory.java" startLine="61" startPosition="0" endLine="62" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2929731761237871868" fileName="SNodeViewer_WrapperFactory.java" startLine="62" startPosition="215" endLine="63" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2929731761237871878" fileName="SNodeViewer_WrapperFactory.java" startLine="63" startPosition="184" endLine="64" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2929731761237871888" fileName="SNodeViewer_WrapperFactory.java" startLine="64" startPosition="193" endLine="65" endPosition="400" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2929731761237871897" fileName="SNodeViewer_WrapperFactory.java" startLine="65" startPosition="400" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2929731761237871858" fileName="SNodeViewer_WrapperFactory.java" startLine="61" startPosition="0" endLine="62" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237871868" fileName="SNodeViewer_WrapperFactory.java" startLine="62" startPosition="210" endLine="63" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237871878" fileName="SNodeViewer_WrapperFactory.java" startLine="63" startPosition="179" endLine="64" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237871888" fileName="SNodeViewer_WrapperFactory.java" startLine="64" startPosition="188" endLine="65" endPosition="395" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237871897" fileName="SNodeViewer_WrapperFactory.java" startLine="65" startPosition="395" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2929731761237871898" fileName="SNodeViewer_WrapperFactory.java" startLine="66" startPosition="0" endLine="67" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2929731761237871914" fileName="SNodeViewer_WrapperFactory.java" startLine="69" startPosition="257" endLine="70" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237871914" fileName="SNodeViewer_WrapperFactory.java" startLine="69" startPosition="257" endLine="70" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2929731761237871930" fileName="SNodeViewer_WrapperFactory.java" startLine="72" startPosition="7" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2929731761237871931" fileName="SNodeViewer_WrapperFactory.java" startLine="73" startPosition="0" endLine="74" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2929731761237871943" fileName="SNodeViewer_WrapperFactory.java" startLine="75" startPosition="65" endLine="76" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2929731761237871950" fileName="SNodeViewer_WrapperFactory.java" startLine="76" startPosition="155" endLine="77" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237871943" fileName="SNodeViewer_WrapperFactory.java" startLine="75" startPosition="65" endLine="76" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237871950" fileName="SNodeViewer_WrapperFactory.java" startLine="76" startPosition="150" endLine="77" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2929731761237871957" fileName="SNodeViewer_WrapperFactory.java" startLine="78" startPosition="7" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2929731761237871958" fileName="SNodeViewer_WrapperFactory.java" startLine="79" startPosition="0" endLine="80" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2929731761237871970" fileName="SNodeViewer_WrapperFactory.java" startLine="82" startPosition="79" endLine="83" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2929731761237871970" fileName="SNodeViewer_WrapperFactory.java" startLine="82" startPosition="79" endLine="83" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2929731761237871992" fileName="SNodeViewer_WrapperFactory.java" startLine="85" startPosition="7" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2929731761237871993" fileName="SNodeViewer_WrapperFactory.java" startLine="86" startPosition="0" endLine="87" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237871848" fileName="SNodeViewer_WrapperFactory.java" startLine="92" startPosition="59" endLine="93" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -525,8 +525,8 @@
     <scopeInfo nodeId="2929731761237871848" fileName="SNodeViewer_WrapperFactory.java" startLine="38" startPosition="128" endLine="39" endPosition="23" />
     <scopeInfo nodeId="2929731761237871848" fileName="SNodeViewer_WrapperFactory.java" startLine="47" startPosition="48" endLine="48" endPosition="19" />
     <scopeInfo nodeId="2929731761237871848" fileName="SNodeViewer_WrapperFactory.java" startLine="53" startPosition="78" endLine="54" endPosition="68" />
-    <scopeInfo nodeId="2929731761237871913" fileName="SNodeViewer_WrapperFactory.java" startLine="69" startPosition="257" endLine="70" endPosition="159" />
-    <scopeInfo nodeId="2929731761237871969" fileName="SNodeViewer_WrapperFactory.java" startLine="82" startPosition="79" endLine="83" endPosition="201" />
+    <scopeInfo nodeId="2929731761237871913" fileName="SNodeViewer_WrapperFactory.java" startLine="69" startPosition="257" endLine="70" endPosition="154" />
+    <scopeInfo nodeId="2929731761237871969" fileName="SNodeViewer_WrapperFactory.java" startLine="82" startPosition="79" endLine="83" endPosition="196" />
     <scopeInfo nodeId="2929731761237871848" fileName="SNodeViewer_WrapperFactory.java" startLine="92" startPosition="59" endLine="93" endPosition="72" />
     <scopeInfo nodeId="2929731761237872005" fileName="SNodeViewer_WrapperFactory.java" startLine="100" startPosition="64" endLine="101" endPosition="173" />
     <scopeInfo nodeId="2929731761237872016" fileName="SNodeViewer_WrapperFactory.java" startLine="102" startPosition="14" endLine="103" endPosition="120" />
