@@ -1276,7 +1276,6 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
-        <library jar="jetbrains.mps.debugger.java.runtime.jar" />
         <sources jar="jetbrains.mps.debugger.java.runtime-src.jar" descriptor="jetbrains.mps.debugger.java.runtime.msd" />
       </module>
     </echoxml>
