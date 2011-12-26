@@ -5,7 +5,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.TestMain" />
-    <classNode dependClassName="org.junit.internal.runners.model.MultipleFailureException" />
+    <classNode dependClassName="org.junit.runners.model.MultipleFailureException" />
     <classNode extendsClassName="org.junit.runners.model.Statement" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.FilepathParameterized" file="FilepathParameterized.java">
