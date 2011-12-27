@@ -13,6 +13,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.concurrent.ConcurrentHashMap" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSessionContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
