@@ -56,6 +56,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.junit.Test;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.nodeEditor.InspectorTool;
 
 public class CommonChangesManagerTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testConflicts");
@@ -389,11 +390,12 @@ public class CommonChangesManagerTest {
   }
 
   private void moveNode() {
+    final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
     final Wrappers._T<SNode> field = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode root = getDocumentLayoutRoot();
-        field.value = ListSequence.fromList(SLinkOperations.getTargets(root, "field", true)).findFirst(new IWhereFilter<SNode>() {
+        root.value = getDocumentLayoutRoot();
+        field.value = ListSequence.fromList(SLinkOperations.getTargets(root.value, "field", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode f) {
             return "textPositions".equals(SPropertyOperations.getString(f, "name"));
           }
@@ -415,9 +417,16 @@ public class CommonChangesManagerTest {
         return SNodeOperations.getContainingRoot(field.value);
       }
     };
+    _FunctionTypes._return_P0_E0<? extends SNode> moveToOtherClass = new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        SNode inner = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(root.value, "staticInnerClassifiers", true)).first(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        ListSequence.fromList(SLinkOperations.getTargets(inner, "field", true)).addElement(field.value);
+        return SNodeOperations.getContainingRoot(field.value);
+      }
+    };
 
     // move node up by two 3 times, and down for 19 times 
-    doSomethingAndUndo(myUiDiff, moveUpTwice, moveUpTwice, moveUpTwice, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown);
+    doSomethingAndUndo(myUiDiff, moveUpTwice, moveUpTwice, moveUpTwice, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveToOtherClass);
   }
 
   @Test
@@ -441,6 +450,12 @@ public class CommonChangesManagerTest {
           changeProperty();
           changeReference();
           moveNode();
+
+          SwingUtilities.invokeAndWait(new Runnable() {
+            public void run() {
+              myIdeaProject.getComponent(InspectorTool.class).getInspector().editNode(null, null);
+            }
+          });
 
           return true;
         } catch (Throwable e) {
