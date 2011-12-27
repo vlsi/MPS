@@ -18,7 +18,6 @@
   <import index="zwkq" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(MPS.Core/org.jdom@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="elgo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom.transform(MPS.Core/org.jdom.transform@java_stub)" version="-1" />
-  <import index="hie0" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#com.intellij.execution.impl(MPS.Core/com.intellij.execution.impl@java_stub)" version="-1" />
   <import index="8wsf" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.execution.impl(MPS.Workbench/com.intellij.execution.impl@java_stub)" version="-1" />
   <import index="xkfd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.util(MPS.Workbench/com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="vehe" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.project(MPS.Workbench/com.intellij.openapi.project@java_stub)" version="-1" />
@@ -52,7 +51,7 @@
       <property name="name" nameId="tpck.1169194664001" value="old.junit.configuration" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="1720689066387515336">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.ipr" />
     </node>
   </roots>
   <root id="8128243960970298563">
@@ -174,11 +173,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8128243960970298614">
             <property name="name" nameId="tpck.1169194664001" value="runManagerImpl" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8128243960970298615">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hie0.~RunManagerImpl" resolveInfo="RunManagerImpl" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8wsf.~RunManagerImpl" resolveInfo="RunManagerImpl" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8128243960970298616">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hie0.~RunManagerImpl%dgetInstanceImpl(com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dexecution%dimpl%dRunManagerImpl" resolveInfo="getInstanceImpl" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hie0.~RunManagerImpl" resolveInfo="RunManagerImpl" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8wsf.~RunManagerImpl%dgetInstanceImpl(com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dexecution%dimpl%dRunManagerImpl" resolveInfo="getInstanceImpl" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8wsf.~RunManagerImpl" resolveInfo="RunManagerImpl" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8128243960970298617">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970298606" resolveInfo="project" />
               </node>
@@ -191,7 +190,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970298614" resolveInfo="runManagerImpl" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8128243960970298621">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hie0.~RunManagerImpl%dinitializeConfigurationTypes(com%dintellij%dexecution%dconfigurations%dConfigurationType[])%cvoid" resolveInfo="initializeConfigurationTypes" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8wsf.~RunManagerImpl%dinitializeConfigurationTypes(com%dintellij%dexecution%dconfigurations%dConfigurationType[])%cvoid" resolveInfo="initializeConfigurationTypes" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8128243960970298622">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zr3i.5145867626676112949" resolveInfo="getConfigurationTypes" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zr3i.5145867626676099642" resolveInfo="RunConfigurationsStateManager" />

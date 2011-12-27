@@ -58,6 +58,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     myNode = node;
     myRole = role;
     myCondition = condition;
+    setUserObject(node.getSNodeId().toString());
 
     if (myNode == null) {
       setNodeIdentifier("null");
@@ -132,10 +133,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_NODE_ACTIONS);
-  }
-
-  public Object getUserObject() {
-    return myNode;
   }
 
   public int getToggleClickCount() {

@@ -19,6 +19,7 @@
     
     <action id="TextComponent.ClearAction" class="com.intellij.ui.ClearTextAction"/>
     <action id="Switcher" class="com.intellij.ide.actions.Switcher" text="Switcher"/>
+    <action id="QuickDocCopy" class="com.intellij.codeInsight.documentation.actions.CopyQuickDocAction" use-shortcut-of="$Copy"/>
 
     <group id="EditorActions">
       <action id="EditorPageUp" class="com.intellij.openapi.editor.actions.PageUpAction"/>
@@ -50,12 +51,16 @@
       <action id="EditorTab" class="com.intellij.openapi.editor.actions.TabAction"/>
       <action id="EditorScrollUp" class="com.intellij.openapi.editor.actions.ScrollUpAction"/>
       <action id="EditorScrollDown" class="com.intellij.openapi.editor.actions.ScrollDownAction"/>
+      <action id="EditorScrollTop" class="com.intellij.openapi.editor.actions.ScrollToTopAction"/>
+      <action id="EditorScrollBottom" class="com.intellij.openapi.editor.actions.ScrollToBottomAction"/>
       <action id="EditorMoveUpAndScroll" class="com.intellij.openapi.editor.actions.MoveUpAndScrollAction"/>
       <action id="EditorMoveDownAndScroll" class="com.intellij.openapi.editor.actions.MoveDownAndScrollAction"/>
       <action id="EditorMoveUpAndScrollWithSelection" class="com.intellij.openapi.editor.actions.MoveUpWithSelectionAndScrollAction"/>
       <action id="EditorMoveDownAndScrollWithSelection" class="com.intellij.openapi.editor.actions.MoveDownWithSelectionAndScrollAction"/>
+      <action id="EditorToggleStickySelection" class="com.intellij.openapi.editor.actions.ToggleStickySelectionModeAction"/>
       <action id="EditorLineStart" class="com.intellij.openapi.editor.actions.LineStartAction"/>
       <action id="EditorLineEnd" class="com.intellij.openapi.editor.actions.LineEndAction"/>
+      <action id="EditorCutLineBackward" class="com.intellij.openapi.editor.actions.CutLineBackwardAction"/>
       <action id="EditorCutLineEnd" class="com.intellij.openapi.editor.actions.CutLineEndAction"/>
       <action id="EditorDeleteToLineEnd" class="com.intellij.openapi.editor.actions.DeleteToLineEndAction"/>
       <action id="EditorTextStart" class="com.intellij.openapi.editor.actions.TextStartAction"/>
@@ -71,15 +76,14 @@
       <action id="EditorDeleteToWordStart" class="com.intellij.openapi.editor.actions.DeleteToWordStartAction"/>
       <action id="EditorDeleteToWordEnd" class="com.intellij.openapi.editor.actions.DeleteToWordEndAction"/>
       <action id="EditorDeleteLine" class="com.intellij.openapi.editor.actions.DeleteLineAction"/>
+      <action id="EditorKillToWordStart" class="com.intellij.openapi.editor.actions.KillToWordStartAction"/>
+      <action id="EditorKillToWordEnd" class="com.intellij.openapi.editor.actions.KillToWordEndAction"/>
+      <action id="EditorKillRegion" class="com.intellij.openapi.editor.actions.KillRegionAction"/>
+      <action id="EditorKillRingSave" class="com.intellij.openapi.editor.actions.KillRingSaveAction"/>
       <action id="EditorDuplicate" class="com.intellij.openapi.editor.actions.DuplicateAction"/>
       <action id="EditorDuplicateLines" class="com.intellij.openapi.editor.actions.DuplicateLinesAction"/>
       <action id="EditorToggleInsertState" class="com.intellij.openapi.editor.actions.ToggleInsertStateAction"/>
       <action id="EditorToggleColumnMode" class="com.intellij.openapi.editor.actions.ToggleColumnModeAction"/>
-      <action id="EditorToggleShowWhitespaces" class="com.intellij.openapi.editor.actions.ToggleShowWhitespacesAction"/>
-      <action id="EditorToggleShowLineNumbers" class="com.intellij.openapi.editor.actions.ToggleShowLineNumbersAction"/>
-      <action id="EditorToggleShowIndentLines" class="com.intellij.openapi.editor.actions.ToggleShowIndentLinesAction"/>
-      <action id="EditorToggleUseSoftWraps" class="com.intellij.openapi.editor.actions.ToggleUseSoftWrapsMenuAction"
-              icon="/actions/toggleSoftWrap.png"/>
 
       <action id="EditorScrollToCenter" class="com.intellij.openapi.editor.actions.ScrollToCenterAction"/>
       <action id="EditorToggleCase" class="com.intellij.openapi.editor.actions.ToggleCaseAction"/>
@@ -87,6 +91,7 @@
       <action id="EditorSelectLine" class="com.intellij.openapi.editor.actions.SelectLineAction"/>
       <action id="EditorSplitLine" class="com.intellij.openapi.editor.actions.SplitLineAction"/>
       <action id="EditorStartNewLine" class="com.intellij.openapi.editor.actions.StartNewLineAction"/>
+      <action id="EditorStartNewLineBefore" class="com.intellij.openapi.editor.actions.StartNewLineBeforeAction"/>
     </group>
 
     <action id="ExpandAll" class="com.intellij.ide.actions.ExpandAllAction" icon="/actions/expandall.png"/>
@@ -103,12 +108,18 @@
 
     <action id="CompareTwoFiles" class="com.intellij.openapi.diff.actions.CompareFiles"/>
     <action id="CompareFileWithEditor" class="com.intellij.openapi.diff.actions.CompareFileWithEditor"/>
+    <action id="CompareDirs" class="com.intellij.openapi.diff.actions.CompareDirectoriesAction" text="Compare Directories"/>
+    <action id="CompareJars" class="com.intellij.openapi.diff.actions.CompareJarsAction" text="Compare Jars" use-shortcut-of="CompareDirs"/>
 
     <action id="ScrollTreeToCenter" class="com.intellij.ide.actions.ScrollTreeToCenterAction" use-shortcut-of="EditorScrollToCenter"/>
 
     <action id="PinToolwindowTab" class="com.intellij.ui.content.tabs.PinToolwindowTabAction"/>
 
     <action id="CloseEditor" class="com.intellij.ide.actions.CloseEditorAction"/>
+
+<!--  strange - I can't found this class in platform though it's there as I see it from repo. Maybe a bit different version
+    <action id="WelcomeScreen.ReopenRecent" class="com.intellij.openapi.wm.impl.welcomeScreen.RecentProjectsAction" icon="/general/reopenRecentProject.png"/>
+-->
 
     <group id="MainMenu">
       <group id="FileMenu" popup="true">
@@ -121,11 +132,10 @@
         <separator/>
         <group id="FileMainSettingsGroup">
           <action id="ShowSettings" class="com.intellij.ide.actions.ShowSettingsAction" icon="/general/ideOptions.png"/>
-          <group id="FileOtherSettingsGroup" popup="true">
+          <group id="FileOtherSettingsGroup" class="com.intellij.ide.actions.SmartPopupActionGroup">
              <action id="TemplateProjectProperties" class="com.intellij.ide.actions.TemplateProjectPropertiesAction"/>
              <group id="FileSettingsGroup"/>
           </group>
-          <action id="CreateLauncherScript" class="com.intellij.ide.actions.CreateLauncherScriptAction"/>
         </group>
         <separator/>
         <action id="SaveAll" class="com.intellij.ide.actions.SaveAllAction" icon="/actions/menu-saveall.png"/>
@@ -156,53 +166,74 @@
         <action id="$Redo" class="com.intellij.ide.actions.RedoAction" icon="/actions/redo.png"/>
         <separator/>
         <group id="CutCopyPasteGroup">
-          <action id="$Cut" class="jetbrains.mps.workbench.actions.MPSCutAction" icon="/actions/menu-cut.png"/>
-          <action id="$Copy" class="jetbrains.mps.workbench.actions.MPSCopyAction" icon="/actions/menu-copy.png"/>
+          <!--MPS Patch: our classes-->
+          <action id="$Cut" class="com.intellij.ide.actions.CutAction" icon="/actions/menu-cut.png"/>
+          <action id="$Copy" class="com.intellij.ide.actions.CopyAction" icon="/actions/menu-copy.png"/>
           <action id="CopyPaths" class="com.intellij.ide.actions.CopyPathsAction"/>
-          <action id="$Paste" class="jetbrains.mps.workbench.actions.MPSPasteAction" icon="/actions/menu-paste.png"/>
+          <action id="$Paste" class="com.intellij.ide.actions.PasteAction" icon="/actions/menu-paste.png"/>
           <action id="PasteMultiple" class="com.intellij.openapi.editor.actions.MultiplePasteAction"/>
+          <!--MPS Patch end-->
           <reference ref="EditorPasteSimple"/>
-          <!-- MPS Patch Start
-          <reference ref="EditorToggleColumnMode"/>
-          -->
         </group>
         <separator/>
         <!-- MPS Patch Start-->
         <group id="EditCreateDeleteGroup">
           <action id="$Delete" class="com.intellij.ide.actions.DeleteAction"/>
         </group>
-        <!-- MPS Patch End-->
+         <!-- MPS Patch End-->
+        <!-- MPS Patch Start
+        <separator/>
+        <group id="FindMenuGroup" popup="true">
+          <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction" icon="/actions/menu-find.png"/>
+          <action id="Replace" class="com.intellij.openapi.editor.actions.ReplaceAction" icon="/actions/menu-replace.png"/>
+          <action id="FindNext" class="com.intellij.ide.actions.SearchAgainAction"/>
+          <action id="FindPrevious" class="com.intellij.ide.actions.SearchBackAction"/>
+          <action id="FindWordAtCaret" class="com.intellij.openapi.editor.actions.FindWordAtCaretAction"/>
+          <separator/>
+          <action id="FindInPath" class="com.intellij.find.actions.FindInPathAction"/>
+          <action id="ReplaceInPath" class="com.intellij.find.actions.ReplaceInPathAction"/>
+          <separator/>
+          <action id="FindUsages" class="com.intellij.find.actions.FindUsagesAction"/>
+          <action id="ShowUsages" class="com.intellij.find.actions.ShowUsagesAction"/>
+          <action id="FindUsagesInFile" class="com.intellij.find.actions.FindUsagesInFileAction"/>
+          <action id="HighlightUsagesInFile" class="com.intellij.codeInsight.highlighting.actions.HighlightUsagesAction"/>
+          <group id="ShowRecentFindUsagesGroup" class="com.intellij.find.impl.ShowRecentFindUsagesGroup" popup="true"/>
+        </group>
+        <group id="Macros" popup="true">
+          <group id="StanardMacroActions">
+            <action id="PlaybackLastMacro" class="com.intellij.ide.actionMacro.actions.PlaybackLastMacroAction"/>
+            <action id="StartStopMacroRecording" class="com.intellij.ide.actionMacro.actions.StartStopMacroRecordingAction"/>
+            <action id="EditMacros" class="com.intellij.ide.actionMacro.actions.EditMacrosAction"/>
+          </group>
+          <separator/>
+          <group id="PlaySavedMacroActions" class="com.intellij.ide.actionMacro.actions.MacrosGroup"/>
+        </group>
+        <reference ref="EditorToggleColumnMode"/>
+        -->
 
         <group id="EditSelectGroup">
           <action id="$SelectAll" class="com.intellij.ide.actions.SelectAllAction"/>
         </group>
         <separator/>
         <!-- MPS Patch Start
-        <separator/>
         <group id="EditSmartGroup">
           <reference ref="EditorJoinLines"/>
           <reference ref="EditorDuplicate"/>
           <reference ref="EditorIndentSelection"/>
           <reference ref="EditorUnindentSelection"/>
           <reference ref="EditorToggleCase"/>
-          <action id="ConvertIndentsToSpaces" class="com.intellij.openapi.editor.actions.ConvertIndentsToSpacesAction"/>
-          <action id="ConvertIndentsToTabs" class="com.intellij.openapi.editor.actions.ConvertIndentsToTabsAction"/>
+          <group id="ConvertIndentsGroup" popup="true">
+            <action id="ConvertIndentsToSpaces" class="com.intellij.openapi.editor.actions.ConvertIndentsToSpacesAction"/>
+            <action id="ConvertIndentsToTabs" class="com.intellij.openapi.editor.actions.ConvertIndentsToTabsAction"/>
+          </group>
         </group>
-          -->
+        -->
       </group>
 
       <!-- View -->
       <group id="ViewMenu" popup="true">
-        <action id="ViewToolBar" class="com.intellij.ide.actions.ViewToolbarAction"/>
-        <action id="ViewStatusBar" class="com.intellij.ide.actions.ViewStatusBarAction"/>
-        <action id="ViewToolButtons" class="com.intellij.ide.actions.ViewToolWindowButtonsAction"/>
-        <reference ref="EditorToggleShowWhitespaces"/>
-        <reference ref="EditorToggleShowLineNumbers"/>
-        <reference ref="EditorToggleShowIndentLines" />
-        <reference ref="EditorToggleUseSoftWraps" />
-        <separator/>
-        <action id="QuickChangeScheme" class="com.intellij.ide.actions.QuickChangeSchemesAction"/>
-        <separator/>
+        <group id="ToolWindowsGroup" class="com.intellij.ide.actions.ToolWindowsGroup" popup="true"/>
+
         <action id="EditSource" class="com.intellij.ide.actions.EditSourceAction"/>
         <action id="ViewSource" class="com.intellij.ide.actions.ViewSourceAction"/>
         <separator/>
@@ -222,6 +253,27 @@
           <reference ref="CompareFileWithEditor"/>
         </group>
         -->
+        <separator/>
+        <action id="QuickChangeScheme" class="com.intellij.ide.actions.QuickChangeSchemesAction"/>
+        <group id="UIToggleActions">
+          <separator/>
+          <action id="ViewToolBar" class="com.intellij.ide.actions.ViewToolbarAction"/>
+          <action id="ViewToolButtons" class="com.intellij.ide.actions.ViewToolWindowButtonsAction"/>
+          <action id="ViewStatusBar" class="com.intellij.ide.actions.ViewStatusBarAction"/>
+        </group>
+
+        <group id="EditorToggleActions" popup="true">
+          <action id="EditorToggleShowWhitespaces" class="com.intellij.openapi.editor.actions.ToggleShowWhitespacesAction"/>
+          <action id="EditorToggleShowLineNumbers" class="com.intellij.openapi.editor.actions.ToggleShowLineNumbersAction"/>
+          <action id="EditorToggleShowIndentLines" class="com.intellij.openapi.editor.actions.ToggleShowIndentLinesAction"/>
+          <action id="EditorToggleUseSoftWraps" class="com.intellij.openapi.editor.actions.ToggleUseSoftWrapsMenuAction" icon="/actions/toggleSoftWrap.png"/>
+        </group>
+
+        <!-- Mac OS Lion: In native apps toggle full screen mode is the last action in "View" menu -->
+        <group id="ToggleFullScreenGroup">
+          <separator/>
+          <action id="ToggleFullScreen" class="com.intellij.ide.actions.ToggleMacFullScreenAction"/>
+        </group>
       </group>
 
       <!-- Go to -->
@@ -239,84 +291,86 @@
 
       <!-- Tools -->
       <group id="ToolsMenu" configurable="true" popup="true">
-        <!-- MPS Patch Start
-        <group id="Macros" popup="false">
-          <group id="StanardMacroActions">
-            <action id="PlaybackLastMacro" class="com.intellij.ide.actionMacro.actions.PlaybackLastMacroAction"/>
-            <action id="StartStopMacroRecording" class="com.intellij.ide.actionMacro.actions.StartStopMacroRecordingAction"/>
-            <action id="EditMacros" class="com.intellij.ide.actionMacro.actions.EditMacrosAction"/>
-          </group>
-          <separator/>
-          <group id="PlaySavedMacroActions" class="com.intellij.ide.actionMacro.actions.MacrosGroup"/>
-        </group>
+         <!-- MPS Patch Start
         <action id="PsiViewer" class="com.intellij.internal.psiView.PsiViewerAction"/>
+        <action id="PsiViewerForContext" class="com.intellij.internal.psiView.PsiViewerForContextAction"/>
         -->
+        <separator/>
+        <action id="CreateLauncherScript" class="com.intellij.ide.actions.CreateLauncherScriptAction"/>
+        <action id="CreateDesktopEntry" class="com.intellij.ide.actions.CreateDesktopEntryAction"/>
+        <separator/>
       </group>
 
       <group id="WindowMenu" popup="true">
         <action id="MinimizeCurrentWindow" class="com.intellij.ide.actions.MinimizeCurrentWindowAction"/>
-        <group id="ToolWindowsGroup" class="com.intellij.ide.actions.ToolWindowsGroup" popup="true"/>
+        <action id="StoreDefaultLayout" class="com.intellij.ide.actions.StoreDefaultLayoutAction"/>
+        <action id="RestoreDefaultLayout" class="com.intellij.ide.actions.RestoreDefaultLayoutAction"/>
+        <separator/>
+        <group id="ActiveToolwindowGroup" popup="true">
+          <action id="HideActiveWindow" class="com.intellij.ide.actions.HideToolWindowAction"/>
+          <action id="HideSideWindows" class="com.intellij.ide.actions.HideSideWindowsAction"/>
+          <action id="HideAllWindows" class="com.intellij.ide.actions.HideAllToolWindowsAction"/>
+          <action id="JumpToLastWindow" class="com.intellij.ide.actions.JumpToLastWindowAction"/>
+          <separator/>
+          <action id="TogglePinnedMode" class="com.intellij.ide.actions.TogglePinnedModeAction"/>
+          <action id="ToggleDockMode" class="com.intellij.ide.actions.ToggleDockModeAction"/>
+          <action id="ToggleFloatingMode" class="com.intellij.ide.actions.ToggleFloatingModeAction"/>
+          <action id="ToggleSideMode" class="com.intellij.ide.actions.ToggleSideModeAction"/>
+          <action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
+          <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>
+          <group id="ResizeToolWindowGroup" popup="true">
+            <action id="ResizeToolWindowLeft" class="com.intellij.ide.actions.ResizeToolWindowAction$Left"/>
+            <action id="ResizeToolWindowRight" class="com.intellij.ide.actions.ResizeToolWindowAction$Right"/>
+            <action id="ResizeToolWindowUp" class="com.intellij.ide.actions.ResizeToolWindowAction$Up"/>
+            <action id="ResizeToolWindowDown" class="com.intellij.ide.actions.ResizeToolWindowAction$Down"/>
+          </group>
+        </group>
+
+        <group id="EditorTabsGroup" popup="true">
+          <action id="NextTab" class="com.intellij.ide.actions.NextTabAction"/>
+          <action id="PreviousTab" class="com.intellij.ide.actions.PreviousTabAction"/>
+          <action id="CloseActiveTab" class="com.intellij.ide.actions.CloseActiveTabAction"/>
+          <action id="PinActiveTab" class="com.intellij.ide.actions.PinActiveTabAction"/>
+          <separator/>
+          <group id="CloseEditorsGroup">
+            <action id="CloseContent" class="com.intellij.ide.actions.CloseAction"/>
+            <action id="CloseAllEditorsButActive" class="com.intellij.ide.actions.CloseAllEditorsButActiveAction"/>
+            <action id="CloseAllEditors" class="com.intellij.ide.actions.CloseAllEditorsAction"/>
+            <action id="CloseAllUnpinnedEditors" class="com.intellij.ide.actions.CloseAllUnpinnedEditorsAction"/>
+          </group>
+          <separator/>
+          <action id="SplitVertically" class="com.intellij.ide.actions.SplitVerticallyAction" icon="/actions/splitVertically.png"/>
+          <action id="SplitHorizontally" class="com.intellij.ide.actions.SplitHorizontallyAction" icon="/actions/splitHorizontally.png"/>
+          <action id="ChangeSplitOrientation" class="com.intellij.ide.actions.ChangeSplitterOrientationAction"/>
+          <action id="Unsplit" class="com.intellij.ide.actions.UnsplitAction"/>
+          <action id="UnsplitAll" class="com.intellij.ide.actions.UnsplitAllAction"/>
+          <action id="NextSplitter" class="com.intellij.ide.actions.NextSplitAction"/>
+          <action id="PrevSplitter" class="com.intellij.ide.actions.PrevSplitAction"/>
+        </group>
+
         <group id="BackgroundTasks" popup="true">
           <action id="ShowProcessWindow" class="com.intellij.openapi.wm.impl.status.ShowProcessWindowAction"/>
           <action id="AutoShowProcessWindow" class="com.intellij.openapi.wm.impl.status.AutoShowProcessPopupAction"/>
         </group>
+
         <separator/>
-        <action id="StoreDefaultLayout" class="com.intellij.ide.actions.StoreDefaultLayoutAction"/>
-        <action id="RestoreDefaultLayout" class="com.intellij.ide.actions.RestoreDefaultLayoutAction"/>
-        <separator/>
-        <action id="HideActiveWindow" class="com.intellij.ide.actions.HideToolWindowAction"/>
-        <action id="HideSideWindows" class="com.intellij.ide.actions.HideSideWindowsAction"/>
-        <action id="HideAllWindows" class="com.intellij.ide.actions.HideAllToolWindowsAction"/>
-        <action id="JumpToLastWindow" class="com.intellij.ide.actions.JumpToLastWindowAction"/>
-        <separator/>
-        <action id="TogglePinnedMode" class="com.intellij.ide.actions.TogglePinnedModeAction"/>
-        <action id="ToggleDockMode" class="com.intellij.ide.actions.ToggleDockModeAction"/>
-        <action id="ToggleFloatingMode" class="com.intellij.ide.actions.ToggleFloatingModeAction"/>
-        <action id="ToggleSideMode" class="com.intellij.ide.actions.ToggleSideModeAction"/>
-        <action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
-        <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>
-        <group id="ResizeToolWindowGroup" popup="true">
-          <action id="ResizeToolWindowLeft" class="com.intellij.ide.actions.ResizeToolWindowAction$Left"/>
-          <action id="ResizeToolWindowRight" class="com.intellij.ide.actions.ResizeToolWindowAction$Right"/>
-          <action id="ResizeToolWindowUp" class="com.intellij.ide.actions.ResizeToolWindowAction$Up"/>
-          <action id="ResizeToolWindowDown" class="com.intellij.ide.actions.ResizeToolWindowAction$Down"/>
+        <group id="OpenProjectWindows" class="com.intellij.openapi.wm.impl.ProjectWindowActionGroup">
+          <action id="NextProjectWindow" class="com.intellij.openapi.wm.impl.NextProjectWindow"/>
+          <action id="PreviousProjectWindow" class="com.intellij.openapi.wm.impl.PreviousProjectWindow"/>
         </group>
-        <separator/>
-        <action id="NextTab" class="com.intellij.ide.actions.NextTabAction"/>
-        <action id="PreviousTab" class="com.intellij.ide.actions.PreviousTabAction"/>
-        <action id="CloseActiveTab" class="com.intellij.ide.actions.CloseActiveTabAction"/>
-        <action id="PinActiveTab" class="com.intellij.ide.actions.PinActiveTabAction"/>
-        <separator/>
-        <group id="CloseEditorsGroup">
-          <action id="CloseContent" class="com.intellij.ide.actions.CloseAction"/>
-          <action id="CloseAllEditorsButActive" class="com.intellij.ide.actions.CloseAllEditorsButActiveAction"/>
-          <action id="CloseAllEditors" class="com.intellij.ide.actions.CloseAllEditorsAction"/>
-          <action id="CloseAllUnpinnedEditors" class="com.intellij.ide.actions.CloseAllUnpinnedEditorsAction"/>
-        </group>
-        <separator/>
-        <action id="SplitVertically" class="com.intellij.ide.actions.SplitVerticallyAction" icon="/actions/splitVertically.png"/>
-        <action id="SplitHorizontally" class="com.intellij.ide.actions.SplitHorizontallyAction" icon="/actions/splitHorizontally.png"/>
-        <action id="ChangeSplitOrientation" class="com.intellij.ide.actions.ChangeSplitterOrientationAction"/>
-        <action id="Unsplit" class="com.intellij.ide.actions.UnsplitAction"/>
-        <action id="UnsplitAll" class="com.intellij.ide.actions.UnsplitAllAction"/>
-        <action id="NextSplitter" class="com.intellij.ide.actions.NextSplitAction"/>
-        <action id="PrevSplitter" class="com.intellij.ide.actions.PrevSplitAction"/>
       </group>
 
       <!-- Help -->
       <group id="HelpMenu" popup="true">
-        <!-- MPS Patch Start
-          <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction" icon="/actions/menu-help.png"/>
+        <action id="GotoAction" class="com.intellij.ide.actions.GotoActionAction"/>
+        <separator/>
+         <!-- MPS Patch Start
+        <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction" icon="/actions/menu-help.png"/>
         -->
         <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
         <action id="ProductivityGude" class="com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsAction"/>
-        <!--MPS Patch Start-->
-        <action id="DefaultKeymap"
-                class="jetbrains.mps.workbench.actions.help.ShowDefaultKeymap"
-                text="Default Keymap Reference"/>
-
         <separator/>
-
+        <!-- MPS Patch Start-->
         <action id="ShowUserGuide"
                 class="jetbrains.mps.workbench.actions.help.ShowUserGuideAction"
                 text="User Guide"/>
@@ -344,9 +398,19 @@
         <action id="ShowTrackerAction"
                 class="jetbrains.mps.workbench.actions.help.ShowTrackerAction"
                 text="Issue Tracker"/>
-
+        <!-- MPS Patch End-->
         <separator/>
-        <!--MPS Patch End-->
+
+        <action id="TechnicalSupport" class="com.intellij.ide.actions.TechnicalSupportAction"/>
+        <action id="SendFeedback" class="com.intellij.ide.actions.SendFeedbackAction"/>
+        <action id="ShowLog" class="com.intellij.ide.actions.ShowLogAction"/>
+        <separator/>
+        <action id="OnlineDocAction" class="com.intellij.ide.actions.OnlineDocAction"/>
+        <action id="Help.KeymapReference" class="com.intellij.ide.actions.RefCardAction"
+                icon="/general/defaultKeymap.png"/>
+        <action id="Help.JetBrainsTV" class="com.intellij.openapi.wm.impl.welcomeScreen.JetBrainsTvAction"/>
+        <separator/>
+        <action id="CheckForUpdate" class="com.intellij.openapi.updateSettings.impl.CheckForUpdateAction"/>
 
         <action id="About" class="com.intellij.ide.actions.AboutAction"/>
       </group>
@@ -371,8 +435,8 @@
       <separator/>
       <reference ref="ShowSettings"/>
       <!-- MPS Patch Start
-        <separator/>
-        <reference ref="HelpTopics"/>
+      <separator/>
+      <reference ref="HelpTopics"/>
       -->
 
     </group>
@@ -415,9 +479,9 @@
     <group id="WelcomeScreen.Documentation">
       <!--MPS Patch Start
       <action id="WelcomeScreen.ReadHelp" class="com.intellij.openapi.wm.impl.welcomeScreen.ReadHelpAction"
-      icon="/general/readHelp.png"/>
+        icon="/general/readHelp.png"/>
       <action id="WelcomeScreen.ShowTips" class="com.intellij.ide.actions.ShowTipsAction"
-      icon="/general/tipsOfTheDay.png"/>
+        icon="/general/tipsOfTheDay.png"/>
       <reference ref="Help.KeymapReference"/>
       -->
     </group>
@@ -481,10 +545,12 @@
       <action id="ShowRegistry" class="com.intellij.openapi.util.registry.ShowRegistryAction"/>
     </group>
 
-    <action id="Console.Execute" class="com.intellij.openapi.actionSystem.EmptyAction" text="Execute Current Statement"/>
+    <action id="Console.Execute" class="com.intellij.openapi.actionSystem.EmptyAction"/>
     <group id="Console.HistoryActions">
-      <action id="Console.History.Previous" class="com.intellij.openapi.actionSystem.EmptyAction" text="Previous"/>
-      <action id="Console.History.Next" class="com.intellij.openapi.actionSystem.EmptyAction" text="Next"/>
+      <action id="Console.History.Previous" class="com.intellij.openapi.actionSystem.EmptyAction"/>
+      <action id="Console.History.Next" class="com.intellij.openapi.actionSystem.EmptyAction"/>
+      <action id="Console.History.Browse" class="com.intellij.openapi.actionSystem.EmptyAction" icon="/actions/consoleHistory.png"/>
+      <action id="Console.History.BrowseTW" class="com.intellij.openapi.actionSystem.EmptyAction" use-shortcut-of="RecentFiles" icon="/actions/consoleHistory.png"/>
     </group>
 
     <group id="Internal" text="Internal Actions" internal="true" popup="true">
@@ -503,12 +569,17 @@
       <action id="TestMessageBoxAction" internal="true" class="com.intellij.diagnostic.TestMessageBoxAction" text="Show Test Dialog"/>
       <separator/>
       <action id="FocusDebugger" internal="true" class="com.intellij.internal.focus.FocusDebuggerAction" text="Start Focus Debugger"/>
+      <action id="FocusTracer" internal="true" class="com.intellij.internal.focus.FocusTracesAction" text="Start Focus Trace">
+        <keyboard-shortcut first-keystroke="control shift F11" keymap="$default"/>
+      </action>
+
       <action id="UiInspector" internal="true" class="com.intellij.internal.inspector.UiInspectorAction" text="UI Inspector"/>
       <action id="ShowSplash" internal="true" class="com.intellij.ui.ShowSplashAction" text="Show Splash" />
       <action id="ValidationTest" internal="true" class="com.intellij.internal.validation.TestDialogWithValidationAction" text="Validation Dialog Test" />
       <separator/>
       <reference ref="MaintenanceGroup"/>
 
+      <action internal="true" id="SendStatistics" class="com.intellij.internal.statistic.tmp.SendStatisticsAction" text="Send statistics"/>
       <add-to-group group-id="ToolsMenu" anchor="last"/>
     </group>
 

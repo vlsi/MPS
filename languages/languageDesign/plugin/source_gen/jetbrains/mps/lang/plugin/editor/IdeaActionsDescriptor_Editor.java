@@ -107,9 +107,9 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_rofybv_e1a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new IdeaActionsDescriptor_Editor.keymapsKeymapRefListHandler_rofybv_e1a(node, "keymapsKeymapRef", editorContext);
+    AbstractCellListHandler handler = new IdeaActionsDescriptor_Editor.keymapsRefListHandler_rofybv_e1a(node, "keymapsRef", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_keymapsKeymapRef");
+    editorCell.setCellId("refNodeList_keymapsRef");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -156,8 +156,8 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class keymapsKeymapRefListHandler_rofybv_e1a extends RefNodeListHandler {
-    public keymapsKeymapRefListHandler_rofybv_e1a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class keymapsRefListHandler_rofybv_e1a extends RefNodeListHandler {
+    public keymapsRefListHandler_rofybv_e1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -7,9 +7,6 @@ import java.util.List;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.MPSProject;
 
 public class Typesystem_ProjectPlugin extends BaseProjectPlugin {
   public Typesystem_ProjectPlugin() {
@@ -19,16 +16,5 @@ public class Typesystem_ProjectPlugin extends BaseProjectPlugin {
     List<EditorTabDescriptor> result = new ArrayList();
     result.add(new Typesystem_TabDescriptor());
     return result;
-  }
-
-  public List<BaseCustomProjectPlugin> initCustomParts(Project project) {
-    List<BaseCustomProjectPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomProjectPlugin>());
-    MPSProject mpsProject = project.getComponent(MPSProject.class);
-    {
-      BaseCustomProjectPlugin plugin = new TypesystemPlugin_CustomProjectPlugin();
-      ListSequence.fromList(res).addElement(plugin);
-      plugin.init(mpsProject);
-    }
-    return res;
   }
 }

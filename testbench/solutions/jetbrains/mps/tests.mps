@@ -20,7 +20,7 @@
   <import index="tp82" modelUID="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" version="-1" />
   <import index="ijii" modelUID="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)" version="-1" />
   <import index="bwgg" modelUID="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)" version="-1" />
-  <import index="6ymf" modelUID="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)" version="-1" />
+  <import index="6ymf" modelUID="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test)" version="-1" />
   <import index="tzu1" modelUID="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)" version="-1" />
   <import index="lkuz" modelUID="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)" version="-1" />
   <import index="c1yb" modelUID="r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test)" version="-1" />

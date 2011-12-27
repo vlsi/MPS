@@ -69,10 +69,6 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     return myLanguage;
   }
 
-  public Object getUserObject() {
-    return myLanguage;
-  }
-
   public ActionGroup getQuickCreateGroup(boolean plain) {
     return ActionUtils.getGroup(ProjectPaneActionGroups.LANGUAGE_NEW_ACTIONS);
   }
@@ -133,7 +129,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     add(languageRuntime);
 
     if (myLanguage.getUtilModels().size() > 0) {
-      TextTreeNode utilModels = new SModelGroupTreeNode(this, operationContext);
+      TextTreeNode utilModels = new SModelGroupTreeNode(operationContext);
       SModelsSubtree.create(utilModels, operationContext, (List) myLanguage.getUtilModels(), false);
       this.add(utilModels);
     }

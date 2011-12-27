@@ -14,49 +14,49 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class TypesTest_BL_Test extends BaseTransformationTest {
   @Test
   public void testBinaryOp() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody", "testBinaryOp", true);
   }
 
   @Test
   public void testTernaryOp() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody", "testTernaryOp", true);
   }
 
   @Test
   public void testLeastCommonSuperType() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody", "testLeastCommonSuperType", true);
   }
 
   @Test
   public void testGenericFields() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody", "testGenericFields", true);
   }
 
   @Test
   public void testGenericInstanceMethods() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody", "testGenericInstanceMethods", true);
   }
 
   @Test
   public void testGenericMethods() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody", "testGenericMethods", true);
   }
 
   @Test
   public void testArrays() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody", "testArrays", true);
   }
 
   @Test
   public void testRules() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody", "testRules", true);
   }
 

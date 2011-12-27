@@ -38,8 +38,14 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
     return null;
   }
 
+  @Override
+  public void setUserObject(Object userObject) {
+    super.setUserObject(userObject);
+  }
+
   protected ProjectModuleTreeNode(IOperationContext operationContext) {
     super(operationContext);
+    setUserObject(operationContext.getModule().getModuleFqName());
   }
 
   protected void doUpdatePresentation() {

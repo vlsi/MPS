@@ -14,7 +14,7 @@
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="auc6jui7deer5vkr9v1h1ws94bw74n1" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="-18yaomviwcxyzajirhwp6iyh8gqntgc" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="-5qgu8kela25w1mlyb9184ir3enudpau" />
   <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-a69xxrypv1i6x68nged4es0yz1yu2za" />
   <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="-rrmw84nptlayabzaqnpqkzn4q5tqwg" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="87scvkqoc05e5zxk8jfwws63qv0mf5v" />
@@ -34,7 +34,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" hash="6dwrbbd3s8163ss70tbs4vbh32mp8l4" />
   <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="-a9ypsm8u9wt6ty8pog1q2iz729ebu1m" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="90582pvul3jpqwmlp2m8l0fz4qnawyz" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="d7ds72bg43n0g25y3od8cs1wwgfmm2a" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-5djcgvu5eoq0irfm4q4wvzb2ijpg5ze" />
   <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" hash="-8cu48di6ep5i8o2pci10okyteyfu6hg" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-b7ul16egmoylc6vpnu3pye2it1snyu0" />

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.mps.plugin.CreateAspect_Action" file="CreateAspect_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Presentation" />
+    <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopupFactory" />
+    <classNode dependClassName="com.intellij.openapi.ui.popup.ListPopup" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.mps.plugin.Default_KeymapChanges" file="Default_KeymapChanges.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.mps.plugin.EditorPopupEx_ActionGroup" file="EditorPopupEx_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.mps.plugin.Mac_KeymapChanges" file="Mac_KeymapChanges.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.mps.plugin.Mps_ApplicationPlugin" file="Mps_ApplicationPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.mps.plugin.CreateAspect_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.mps.plugin.Default_KeymapChanges" />
+    <classNode dependClassName="jetbrains.mps.ide.mps.plugin.EditorPopupEx_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.mps.plugin.Mac_KeymapChanges" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
+    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.mps.plugin.Mps_PluginInitializer" file="Mps_PluginInitializer.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="jetbrains.mps.ide.mps.plugin.Mps_ApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.AbstractPluginFactory" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginFactoriesRegistry" />
+    <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.mps.plugin.plugin" file="plugin.xml" />
+</dependenciesRoot>
+

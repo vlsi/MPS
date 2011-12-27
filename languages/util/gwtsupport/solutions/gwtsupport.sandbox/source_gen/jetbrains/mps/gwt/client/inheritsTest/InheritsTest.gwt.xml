@@ -4,8 +4,8 @@
     "http://google-web-toolkit.googlecode.com/svn/releases/2.0/distro-source/core/src/gwt-module.dtd"
 >
 <module>
-  <source path=""></source>
-  <inherits name="jetbrains.mps.internal.collections.runtime"></inherits>
-  <inherits name="jetbrains.mps.baseLanguage.closures.runtime"></inherits>
-  <inherits name="jetbrains.mps.baseLanguage.tuples.runtime"></inherits>
+  <source path=""/>
+  <inherits name="jetbrains.mps.internal.collections.runtime"/>
+  <inherits name="jetbrains.mps.baseLanguage.closures.runtime"/>
+  <inherits name="jetbrains.mps.baseLanguage.tuples.runtime"/>
 </module>

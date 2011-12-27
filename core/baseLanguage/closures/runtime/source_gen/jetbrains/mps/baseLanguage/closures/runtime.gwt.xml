@@ -4,5 +4,5 @@
     "http://google-web-toolkit.googlecode.com/svn/releases/2.0/distro-source/core/src/gwt-module.dtd"
 >
 <module rename-to="jetbrains.mps.baseLanguage.closures.runtime">
-  <source path="runtime"></source>
+  <source path="runtime"/>
 </module>

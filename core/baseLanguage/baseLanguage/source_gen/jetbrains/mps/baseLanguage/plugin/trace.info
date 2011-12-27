@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" />
+  <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" />
   <unitInfo fileName="BaseLanguage_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ProjectPlugin" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.FacetAspectDescriptor$1" />
@@ -373,9 +373,7 @@
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="56" startPosition="57" endLine="60" endPosition="11" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="3" />
-    <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="55" startPosition="26" endLine="61" endPosition="9">
-      <varInfo nodeId="1205248417575" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="55" startPosition="26" endLine="61" endPosition="9" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="79" startPosition="96" endLine="85" endPosition="5" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="36" startPosition="89" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="78" startPosition="0" endLine="87" endPosition="0">

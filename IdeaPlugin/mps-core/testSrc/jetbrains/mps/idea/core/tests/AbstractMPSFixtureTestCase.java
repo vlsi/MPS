@@ -33,11 +33,11 @@ import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
 import com.intellij.testFramework.fixtures.*;
 import com.intellij.testFramework.fixtures.impl.JavaTestFixtureFactoryImpl;
 import com.intellij.util.PathUtil;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.smodel.ModelAccess;
+import junit.framework.Assert;
 
 import javax.swing.*;
 import java.io.File;
@@ -100,7 +100,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
 
     @Override
     protected void tearDown() throws Exception {
-        if(!ModelAccess.instance().isInEDT()) ModelAccess.instance().flushEventQueue();
+        if (!ModelAccess.instance().isInEDT()) ModelAccess.instance().flushEventQueue();
         myFixture.tearDown();
         super.tearDown();
     }
@@ -134,6 +134,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     protected MPSFacet addMPSFacet(Module module) {
         FacetManager facetManager = FacetManager.getInstance(module);
         FacetType<MPSFacet, MPSFacetConfiguration> facetType = FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID);
+        Assert.assertNotNull("MPS facet type is not found", facetType);
         MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
         final MPSFacetConfiguration configuration = facet.getConfiguration();
         preConfigureFacet(configuration);

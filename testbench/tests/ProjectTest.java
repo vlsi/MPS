@@ -51,7 +51,7 @@ import java.util.List;
 @RunWith(WatchingParameterized.class)
 public class ProjectTest {
 
-  public static String PROJECT = "/MPS.mpr";
+  public static String PROJECT = "/MPS.ipr";
 
   private static ProjectTestHelper HELPER;
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);

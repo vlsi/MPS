@@ -34,6 +34,7 @@ import jetbrains.mps.workbench.action.BaseGroup;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GroupAdjuster {
@@ -66,11 +67,9 @@ public class GroupAdjuster {
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_FILE_ACTIONS, ActionPlace.PROJECT_PANE_FILE);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_FOLDER_ACTIONS, ActionPlace.PROJECT_PANE_FOLDER);
 
-    List<BaseGroup> editorGroups = new ArrayList<BaseGroup>();
-    editorGroups.add(ActionUtils.getGroup(EditorComponent.EDITOR_POPUP_MENU_ACTIONS));
-    for (BaseGroup group : editorGroups) {
-      group.addPlace(ActionPlace.EDITOR, null);
-    }
+    DefaultActionGroup editorPopupGroup = ActionUtils.getDefaultGroup(EditorComponent.EDITOR_POPUP_MENU_ACTIONS);
+    List<AnAction> actionList = Arrays.asList(editorPopupGroup.getChildren(null));
+    BaseGroup.addPlaceToActionList(actionList, ActionPlace.EDITOR, null);
 
     List<BaseGroup> mainMenuGroups = new ArrayList<BaseGroup>();
     DefaultActionGroup mainMenuGroup = ActionUtils.getDefaultGroup(IdeActions.GROUP_MAIN_MENU);

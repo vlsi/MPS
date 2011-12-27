@@ -25473,8 +25473,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5017341185733869607">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~Icons%dPACKAGE_LOCAL_ICON" resolveInfo="PACKAGE_LOCAL_ICON" />
               <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPACKAGE_LOCAL_ICON" resolveInfo="PACKAGE_LOCAL_ICON" />
             </node>
           </node>
         </node>
@@ -25496,8 +25496,8 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5017341185733869615">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5017341185733869616">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5017341185733869617">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~Icons%dPUBLIC_ICON" resolveInfo="PUBLIC_ICON" />
                 <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPUBLIC_ICON" resolveInfo="PUBLIC_ICON" />
               </node>
             </node>
           </node>
@@ -25516,8 +25516,8 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5017341185733869623">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5017341185733869624">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5017341185733869625">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~Icons%dPRIVATE_ICON" resolveInfo="PRIVATE_ICON" />
                 <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPRIVATE_ICON" resolveInfo="PRIVATE_ICON" />
               </node>
             </node>
           </node>
@@ -25536,8 +25536,8 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5017341185733869631">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5017341185733869632">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5017341185733869633">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~Icons%dPROTECTED_ICON" resolveInfo="PROTECTED_ICON" />
                 <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPROTECTED_ICON" resolveInfo="PROTECTED_ICON" />
               </node>
             </node>
           </node>

@@ -377,10 +377,22 @@ with_targets:
     public <T> T properties(ITarget.Name target, Class<T> cls) {
       if (!(MapSequence.fromMap(cache).containsKey(target))) {
         if (targetRange.hasTarget(target)) {
-          T vars = (MapSequence.fromMap(copyFrom).containsKey(target) ?
-            targetRange.getTarget(target).createParameters(cls, (T) MapSequence.fromMap(copyFrom).get(target)) :
-            targetRange.getTarget(target).createParameters(cls)
-          );
+          T vars;
+          if (!(MapSequence.fromMap(copyFrom).containsKey(target))) {
+            vars = targetRange.getTarget(target).createParameters(cls);
+          } else {
+            T orig = null;
+            Object available = MapSequence.fromMap(copyFrom).get(target);
+            try {
+              orig = cls.cast(available);
+            } catch (ClassCastException cce) {
+              // ignore, just assume the original value is null 
+              Script.LOG.debug("can't cast original parameters to required class [" + cls.getName() + "]");
+              Script.LOG.debug("requested class's classloader " + cls.getClassLoader() + "@" + System.identityHashCode(cls.getClassLoader()));
+              Script.LOG.debug("original object's classloader " + available.getClass().getClassLoader() + "@" + System.identityHashCode(available.getClass().getClassLoader()));
+            }
+            vars = targetRange.getTarget(target).createParameters(cls, orig);
+          }
           MapSequence.fromMap(cache).put(target, vars);
         } else {
           return null;

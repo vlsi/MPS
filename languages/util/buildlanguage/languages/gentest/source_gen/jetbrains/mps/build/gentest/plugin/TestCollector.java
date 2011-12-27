@@ -151,7 +151,7 @@ import jetbrains.mps.smodel.SNodeId;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#junit.framework(MPS.Workbench/junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
         result = quotedNode1_2;
       }
       return result;
@@ -169,7 +169,7 @@ import jetbrains.mps.smodel.SNodeId;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit(MPS.Workbench/org.junit@java_stub)"), SNodeId.fromString("~Test")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Test")));
         result = quotedNode1_2;
       }
       return result;
@@ -187,7 +187,7 @@ import jetbrains.mps.smodel.SNodeId;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit(MPS.Workbench/org.junit@java_stub)"), SNodeId.fromString("~Ignore")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Ignore")));
         result = quotedNode1_2;
       }
       return result;

@@ -20,22 +20,22 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import java.awt.Font;
 
-public class ProjectTreeNode extends MPSTreeNode {
+public class ProjectTreeNode extends TextTreeNode {
   private MPSProject myProject;
 
   public ProjectTreeNode(MPSProject project) {
-    super(new ProjectOperationContext(project));
+    super("Project", new ProjectOperationContext(project));
 
     myProject = project;
 
     setIcon(Icons.PROJECT_ICON);
-    setNodeIdentifier("Project");
   }
 
   protected void doUpdatePresentation() {

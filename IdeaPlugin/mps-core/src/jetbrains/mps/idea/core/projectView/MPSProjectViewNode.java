@@ -98,7 +98,7 @@ public class MPSProjectViewNode extends ProjectViewNode<String> {
                 ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
 
                 // TODO implement NavigationSupport!!!!! get rid of MPSEditorOpener
-                new MPSEditorOpener(getProject()).openNode(root, context, requestFocus, true);
+                new MPSEditorOpener(getProject()).openNode(root, context, requestFocus, false);
                 // TODO use NavigationSupport.getInstance().openNode(context, root, requestFocus, true);
             }
         });

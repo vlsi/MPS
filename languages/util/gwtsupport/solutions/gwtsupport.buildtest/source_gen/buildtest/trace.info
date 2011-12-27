@@ -14,21 +14,21 @@
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="6" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="6" startPosition="0" endLine="6" endPosition="8" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="7" startPosition="0" endLine="7" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="7" startPosition="2" endLine="7" endPosition="55" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="7" startPosition="2" endLine="7" endPosition="45" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="8" startPosition="0" endLine="8" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="8" startPosition="2" endLine="8" endPosition="55" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="8" startPosition="2" endLine="8" endPosition="45" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="9" startPosition="0" endLine="9" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="9" startPosition="2" endLine="9" endPosition="73" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="9" startPosition="2" endLine="9" endPosition="63" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="10" startPosition="0" endLine="10" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="10" startPosition="2" endLine="10" endPosition="74" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="10" startPosition="2" endLine="10" endPosition="64" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="11" startPosition="0" endLine="11" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="11" startPosition="2" endLine="11" endPosition="27" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="11" startPosition="2" endLine="11" endPosition="19" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="12" startPosition="0" endLine="12" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="12" startPosition="2" endLine="12" endPosition="60" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="12" startPosition="2" endLine="12" endPosition="47" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="13" startPosition="0" endLine="13" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="13" startPosition="2" endLine="13" endPosition="73" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="13" startPosition="2" endLine="13" endPosition="63" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="14" startPosition="0" endLine="14" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="14" startPosition="2" endLine="14" endPosition="74" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="14" startPosition="2" endLine="14" endPosition="64" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="15" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="15" startPosition="0" endLine="15" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="1" startPosition="16" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
@@ -37,14 +37,14 @@
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="4" startPosition="101" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="5" startPosition="1" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="6" startPosition="8" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="7" startPosition="55" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="8" startPosition="55" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="9" startPosition="73" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="10" startPosition="74" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="11" startPosition="27" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="12" startPosition="60" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="13" startPosition="73" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="14" startPosition="74" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="7" startPosition="45" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="8" startPosition="45" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="9" startPosition="63" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="10" startPosition="64" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="11" startPosition="19" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="12" startPosition="47" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="13" startPosition="63" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="14" startPosition="64" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="15" startPosition="9" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3789315678729139397" fileName="buildtest.gwt.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />

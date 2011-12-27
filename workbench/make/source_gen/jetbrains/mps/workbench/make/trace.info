@@ -874,295 +874,291 @@
     <unitInfo nodeId="2956674153315681136" fileName="GeneratedTextPreviewEditor.java" startLine="192" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.workbench.make.GeneratedTextPreviewEditor$Panel" />
   </root>
   <root nodeId="2956674153315665518">
-    <nodeInfo nodeId="5298169090436246661" fileName="TextPreviewFile.java" startLine="21" startPosition="54" endLine="22" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FS" />
-    <nodeInfo nodeId="3104941470048619564" fileName="TextPreviewFile.java" startLine="23" startPosition="0" endLine="24" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="forkNames" />
-    <nodeInfo nodeId="6158406915347753819" fileName="TextPreviewFile.java" startLine="24" startPosition="29" endLine="25" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="forks" />
-    <nodeInfo nodeId="7319480533486915019" fileName="TextPreviewFile.java" startLine="25" startPosition="36" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="7488918483500608919" fileName="TextPreviewFile.java" startLine="26" startPosition="22" endLine="27" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="path" />
-    <nodeInfo nodeId="7319480533486915022" fileName="TextPreviewFile.java" startLine="29" startPosition="79" endLine="30" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7488918483500608922" fileName="TextPreviewFile.java" startLine="30" startPosition="21" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6158406915347753824" fileName="TextPreviewFile.java" startLine="31" startPosition="21" endLine="32" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3104941470048619572" fileName="TextPreviewFile.java" startLine="32" startPosition="23" endLine="33" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3104941470048619583" fileName="TextPreviewFile.java" startLine="33" startPosition="70" endLine="34" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6158406915347753830" fileName="TextPreviewFile.java" startLine="37" startPosition="31" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4145682539058333021" fileName="TextPreviewFile.java" startLine="41" startPosition="41" endLine="42" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8646201780575230904" fileName="TextPreviewFile.java" startLine="50" startPosition="25" endLine="51" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3104941470048621802" fileName="TextPreviewFile.java" startLine="57" startPosition="28" endLine="58" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3104941470048621860" fileName="TextPreviewFile.java" startLine="59" startPosition="35" endLine="60" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3104941470048621841" fileName="TextPreviewFile.java" startLine="62" startPosition="5" endLine="63" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1156564534683142813" fileName="TextPreviewFile.java" startLine="67" startPosition="31" endLine="68" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319480533486915028" fileName="TextPreviewFile.java" startLine="74" startPosition="27" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8936615201653681525" fileName="TextPreviewFile.java" startLine="79" startPosition="30" endLine="80" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4711986503381146133" fileName="TextPreviewFile.java" startLine="84" startPosition="38" endLine="85" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7488918483500608928" fileName="TextPreviewFile.java" startLine="89" startPosition="27" endLine="90" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3491259949924783457" fileName="TextPreviewFile.java" startLine="95" startPosition="34" endLine="96" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7518330114425848461" fileName="TextPreviewFile.java" startLine="101" startPosition="26" endLine="102" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436255727" fileName="TextPreviewFile.java" startLine="107" startPosition="44" endLine="108" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319480533486915030" fileName="TextPreviewFile.java" startLine="112" startPosition="32" endLine="113" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319480533486915032" fileName="TextPreviewFile.java" startLine="117" startPosition="28" endLine="118" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319480533486915034" fileName="TextPreviewFile.java" startLine="122" startPosition="31" endLine="123" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7518330114425782322" fileName="TextPreviewFile.java" startLine="126" startPosition="82" endLine="127" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROTOCOL" />
-    <nodeInfo nodeId="5298169090436246649" fileName="TextPreviewFile.java" startLine="133" startPosition="61" endLine="134" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436246647" fileName="TextPreviewFile.java" startLine="138" startPosition="42" endLine="139" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436246635" fileName="TextPreviewFile.java" startLine="143" startPosition="33" endLine="144" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436246637" fileName="TextPreviewFile.java" startLine="157" startPosition="47" endLine="158" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436246639" fileName="TextPreviewFile.java" startLine="163" startPosition="73" endLine="164" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436246641" fileName="TextPreviewFile.java" startLine="169" startPosition="79" endLine="170" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436246643" fileName="TextPreviewFile.java" startLine="175" startPosition="71" endLine="176" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436246645" fileName="TextPreviewFile.java" startLine="180" startPosition="65" endLine="181" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276368" fileName="TextPreviewFile.java" startLine="193" startPosition="125" endLine="194" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276370" fileName="TextPreviewFile.java" startLine="198" startPosition="130" endLine="199" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276372" fileName="TextPreviewFile.java" startLine="202" startPosition="146" endLine="203" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276755" fileName="TextPreviewFile.java" startLine="206" startPosition="26" endLine="207" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276757" fileName="TextPreviewFile.java" startLine="210" startPosition="62" endLine="211" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276376" fileName="TextPreviewFile.java" startLine="214" startPosition="38" endLine="215" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276759" fileName="TextPreviewFile.java" startLine="218" startPosition="45" endLine="219" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276743" fileName="TextPreviewFile.java" startLine="223" startPosition="110" endLine="224" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276745" fileName="TextPreviewFile.java" startLine="228" startPosition="76" endLine="229" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276762" fileName="TextPreviewFile.java" startLine="233" startPosition="76" endLine="234" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276747" fileName="TextPreviewFile.java" startLine="240" startPosition="49" endLine="241" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276764" fileName="TextPreviewFile.java" startLine="247" startPosition="48" endLine="248" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276749" fileName="TextPreviewFile.java" startLine="251" startPosition="50" endLine="252" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276767" fileName="TextPreviewFile.java" startLine="255" startPosition="44" endLine="256" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7518330114425848459" fileName="TextPreviewFile.java" startLine="261" startPosition="33" endLine="262" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436276753" fileName="TextPreviewFile.java" startLine="265" startPosition="45" endLine="266" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436226322" fileName="TextPreviewFile.java" startLine="128" startPosition="0" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPreviewVirtualFileSystem#()V" />
-    <nodeInfo nodeId="3104941470048621851" fileName="TextPreviewFile.java" startLine="58" startPosition="59" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5298169090436276274" fileName="TextPreviewFile.java" startLine="183" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="renameFile#(Ljava/lang/Object;Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5298169090436276287" fileName="TextPreviewFile.java" startLine="186" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveFile#(Ljava/lang/Object;Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/vfs/VirtualFile;)V" />
-    <nodeInfo nodeId="5298169090436276300" fileName="TextPreviewFile.java" startLine="189" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteFile#(Ljava/lang/Object;Lcom/intellij/openapi/vfs/VirtualFile;)V" />
-    <nodeInfo nodeId="5298169090436276688" fileName="TextPreviewFile.java" startLine="236" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setWritable#(Lcom/intellij/openapi/vfs/VirtualFile;Z)V" />
-    <nodeInfo nodeId="5298169090436276703" fileName="TextPreviewFile.java" startLine="243" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTimeStamp#(Lcom/intellij/openapi/vfs/VirtualFile;J)V" />
-    <nodeInfo nodeId="6158406915347733937" fileName="TextPreviewFile.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="forkNames#()[Ljava/lang/String;" />
-    <nodeInfo nodeId="4145682539058333050" fileName="TextPreviewFile.java" startLine="42" startPosition="38" endLine="46" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5298169090436246522" fileName="TextPreviewFile.java" startLine="146" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refresh#(Z)V" />
-    <nodeInfo nodeId="5298169090436246528" fileName="TextPreviewFile.java" startLine="150" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshWithoutFileWatcher#(Z)V" />
-    <nodeInfo nodeId="5298169090436276310" fileName="TextPreviewFile.java" startLine="192" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChildFile#(Ljava/lang/Object;Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="5298169090436276337" fileName="TextPreviewFile.java" startLine="201" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="copyFile#(Ljava/lang/Object;Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="5298169090436276353" fileName="TextPreviewFile.java" startLine="205" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRank#()I" />
-    <nodeInfo nodeId="5298169090436276357" fileName="TextPreviewFile.java" startLine="209" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extractRootPath#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5298169090436276364" fileName="TextPreviewFile.java" startLine="213" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCaseSensitive#()Z" />
-    <nodeInfo nodeId="5298169090436276651" fileName="TextPreviewFile.java" startLine="217" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLength#(Lcom/intellij/openapi/vfs/VirtualFile;)J" />
-    <nodeInfo nodeId="5298169090436276697" fileName="TextPreviewFile.java" startLine="239" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWritable#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
-    <nodeInfo nodeId="5298169090436276712" fileName="TextPreviewFile.java" startLine="246" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTimeStamp#(Lcom/intellij/openapi/vfs/VirtualFile;)J" />
-    <nodeInfo nodeId="5298169090436276718" fileName="TextPreviewFile.java" startLine="250" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDirectory#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
-    <nodeInfo nodeId="5298169090436276724" fileName="TextPreviewFile.java" startLine="254" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="list#(Lcom/intellij/openapi/vfs/VirtualFile;)[Ljava/lang/String;" />
-    <nodeInfo nodeId="5298169090436276737" fileName="TextPreviewFile.java" startLine="264" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="exists#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
-    <nodeInfo nodeId="8646201780575230897" fileName="TextPreviewFile.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="3104941470048621828" fileName="TextPreviewFile.java" startLine="65" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCharset#()Ljava/nio/charset/Charset;" />
-    <nodeInfo nodeId="8936615201653662052" fileName="TextPreviewFile.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTimeStamp#()J" />
-    <nodeInfo nodeId="4711986503381126682" fileName="TextPreviewFile.java" startLine="82" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModificationStamp#()J" />
-    <nodeInfo nodeId="3513785454865299027" fileName="TextPreviewFile.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7319480533486914902" fileName="TextPreviewFile.java" startLine="110" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDirectory#()Z" />
-    <nodeInfo nodeId="7319480533486914898" fileName="TextPreviewFile.java" startLine="115" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
-    <nodeInfo nodeId="7319480533486914894" fileName="TextPreviewFile.java" startLine="120" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWritable#()Z" />
-    <nodeInfo nodeId="5298169090436246494" fileName="TextPreviewFile.java" startLine="131" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCanonicallyCasedName#(Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5298169090436246500" fileName="TextPreviewFile.java" startLine="136" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="markNewFilesAsDirty#()Z" />
-    <nodeInfo nodeId="5298169090436246518" fileName="TextPreviewFile.java" startLine="141" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReadOnly#()Z" />
-    <nodeInfo nodeId="5298169090436246619" fileName="TextPreviewFile.java" startLine="178" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extractPresentableUrl#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5298169090436276323" fileName="TextPreviewFile.java" startLine="196" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChildDirectory#(Ljava/lang/Object;Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="5298169090436276657" fileName="TextPreviewFile.java" startLine="221" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOutputStream#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/Object;JJ)Ljava/io/OutputStream;" />
-    <nodeInfo nodeId="5298169090436276671" fileName="TextPreviewFile.java" startLine="226" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInputStream#(Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/io/InputStream;" />
-    <nodeInfo nodeId="5298169090436276679" fileName="TextPreviewFile.java" startLine="231" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contentsToByteArray#(Lcom/intellij/openapi/vfs/VirtualFile;)[B" />
-    <nodeInfo nodeId="3104941470048621789" fileName="TextPreviewFile.java" startLine="56" startPosition="58" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3491259949924712444" fileName="TextPreviewFile.java" startLine="92" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParent#()Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="7518330114425777118" fileName="TextPreviewFile.java" startLine="98" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUrl#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5298169090436255719" fileName="TextPreviewFile.java" startLine="104" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFileSystem#()Lcom/intellij/openapi/vfs/VirtualFileSystem;" />
-    <nodeInfo nodeId="5298169090436246534" fileName="TextPreviewFile.java" startLine="154" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="normalize#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5298169090436246541" fileName="TextPreviewFile.java" startLine="160" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshAndFindFileByPath#(Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="5298169090436246549" fileName="TextPreviewFile.java" startLine="166" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findFileByPathIfCached#(Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="5298169090436246558" fileName="TextPreviewFile.java" startLine="172" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findFileByPath#(Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="5298169090436276731" fileName="TextPreviewFile.java" startLine="258" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProtocol#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2956674153315666088" fileName="TextPreviewFile.java" startLine="28" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPreviewFile#(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="7319480533486914936" fileName="TextPreviewFile.java" startLine="70" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6158406915347752917" fileName="TextPreviewFile.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fork#(Ljava/lang/String;)Ljava/lang/CharSequence;" />
-    <nodeInfo nodeId="3104941470048621779" fileName="TextPreviewFile.java" startLine="53" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contentsToByteArray#()[B" />
-    <scopeInfo nodeId="5298169090436226325" fileName="TextPreviewFile.java" startLine="129" startPosition="43" endLine="129" endPosition="43" />
-    <scopeInfo nodeId="5298169090436246527" fileName="TextPreviewFile.java" startLine="148" startPosition="36" endLine="148" endPosition="36" />
-    <scopeInfo nodeId="5298169090436246533" fileName="TextPreviewFile.java" startLine="152" startPosition="54" endLine="152" endPosition="54" />
-    <scopeInfo nodeId="5298169090436276286" fileName="TextPreviewFile.java" startLine="184" startPosition="113" endLine="184" endPosition="113" />
-    <scopeInfo nodeId="5298169090436276299" fileName="TextPreviewFile.java" startLine="187" startPosition="115" endLine="187" endPosition="115" />
-    <scopeInfo nodeId="5298169090436276309" fileName="TextPreviewFile.java" startLine="190" startPosition="89" endLine="190" endPosition="89" />
-    <scopeInfo nodeId="5298169090436276696" fileName="TextPreviewFile.java" startLine="237" startPosition="77" endLine="237" endPosition="77" />
-    <scopeInfo nodeId="5298169090436276711" fileName="TextPreviewFile.java" startLine="244" startPosition="75" endLine="244" endPosition="75" />
-    <scopeInfo nodeId="6158406915347733940" fileName="TextPreviewFile.java" startLine="37" startPosition="31" endLine="38" endPosition="29" />
-    <scopeInfo nodeId="8646201780575230900" fileName="TextPreviewFile.java" startLine="50" startPosition="25" endLine="51" endPosition="27" />
-    <scopeInfo nodeId="3104941470048621852" fileName="TextPreviewFile.java" startLine="59" startPosition="35" endLine="60" endPosition="54" />
-    <scopeInfo nodeId="3104941470048621831" fileName="TextPreviewFile.java" startLine="67" startPosition="31" endLine="68" endPosition="36" />
-    <scopeInfo nodeId="7319480533486914941" fileName="TextPreviewFile.java" startLine="74" startPosition="27" endLine="75" endPosition="16" />
-    <scopeInfo nodeId="8936615201653662055" fileName="TextPreviewFile.java" startLine="79" startPosition="30" endLine="80" endPosition="14" />
-    <scopeInfo nodeId="4711986503381126685" fileName="TextPreviewFile.java" startLine="84" startPosition="38" endLine="85" endPosition="14" />
-    <scopeInfo nodeId="3513785454865299030" fileName="TextPreviewFile.java" startLine="89" startPosition="27" endLine="90" endPosition="16" />
-    <scopeInfo nodeId="3491259949924712448" fileName="TextPreviewFile.java" startLine="95" startPosition="34" endLine="96" endPosition="16" />
-    <scopeInfo nodeId="7518330114425777122" fileName="TextPreviewFile.java" startLine="101" startPosition="26" endLine="102" endPosition="77" />
-    <scopeInfo nodeId="5298169090436255723" fileName="TextPreviewFile.java" startLine="107" startPosition="44" endLine="108" endPosition="14" />
-    <scopeInfo nodeId="7319480533486914905" fileName="TextPreviewFile.java" startLine="112" startPosition="32" endLine="113" endPosition="17" />
-    <scopeInfo nodeId="7319480533486914901" fileName="TextPreviewFile.java" startLine="117" startPosition="28" endLine="118" endPosition="16" />
-    <scopeInfo nodeId="7319480533486914897" fileName="TextPreviewFile.java" startLine="122" startPosition="31" endLine="123" endPosition="17" />
-    <scopeInfo nodeId="5298169090436246499" fileName="TextPreviewFile.java" startLine="133" startPosition="61" endLine="134" endPosition="28" />
-    <scopeInfo nodeId="5298169090436246503" fileName="TextPreviewFile.java" startLine="138" startPosition="42" endLine="139" endPosition="19" />
-    <scopeInfo nodeId="5298169090436246521" fileName="TextPreviewFile.java" startLine="143" startPosition="33" endLine="144" endPosition="18" />
-    <scopeInfo nodeId="5298169090436246540" fileName="TextPreviewFile.java" startLine="157" startPosition="47" endLine="158" endPosition="20" />
-    <scopeInfo nodeId="5298169090436246548" fileName="TextPreviewFile.java" startLine="163" startPosition="73" endLine="164" endPosition="18" />
-    <scopeInfo nodeId="5298169090436246557" fileName="TextPreviewFile.java" startLine="169" startPosition="79" endLine="170" endPosition="18" />
-    <scopeInfo nodeId="5298169090436246566" fileName="TextPreviewFile.java" startLine="175" startPosition="71" endLine="176" endPosition="18" />
-    <scopeInfo nodeId="5298169090436246625" fileName="TextPreviewFile.java" startLine="180" startPosition="65" endLine="181" endPosition="20" />
-    <scopeInfo nodeId="5298169090436276322" fileName="TextPreviewFile.java" startLine="193" startPosition="125" endLine="194" endPosition="18" />
-    <scopeInfo nodeId="5298169090436276336" fileName="TextPreviewFile.java" startLine="198" startPosition="130" endLine="199" endPosition="18" />
-    <scopeInfo nodeId="5298169090436276352" fileName="TextPreviewFile.java" startLine="202" startPosition="146" endLine="203" endPosition="18" />
-    <scopeInfo nodeId="5298169090436276356" fileName="TextPreviewFile.java" startLine="206" startPosition="26" endLine="207" endPosition="15" />
-    <scopeInfo nodeId="5298169090436276363" fileName="TextPreviewFile.java" startLine="210" startPosition="62" endLine="211" endPosition="17" />
-    <scopeInfo nodeId="5298169090436276367" fileName="TextPreviewFile.java" startLine="214" startPosition="38" endLine="215" endPosition="19" />
-    <scopeInfo nodeId="5298169090436276656" fileName="TextPreviewFile.java" startLine="218" startPosition="45" endLine="219" endPosition="16" />
-    <scopeInfo nodeId="5298169090436276670" fileName="TextPreviewFile.java" startLine="223" startPosition="110" endLine="224" endPosition="18" />
-    <scopeInfo nodeId="5298169090436276678" fileName="TextPreviewFile.java" startLine="228" startPosition="76" endLine="229" endPosition="18" />
-    <scopeInfo nodeId="5298169090436276687" fileName="TextPreviewFile.java" startLine="233" startPosition="76" endLine="234" endPosition="18" />
-    <scopeInfo nodeId="5298169090436276702" fileName="TextPreviewFile.java" startLine="240" startPosition="49" endLine="241" endPosition="19" />
-    <scopeInfo nodeId="5298169090436276717" fileName="TextPreviewFile.java" startLine="247" startPosition="48" endLine="248" endPosition="16" />
-    <scopeInfo nodeId="5298169090436276723" fileName="TextPreviewFile.java" startLine="251" startPosition="50" endLine="252" endPosition="19" />
-    <scopeInfo nodeId="5298169090436276730" fileName="TextPreviewFile.java" startLine="255" startPosition="44" endLine="256" endPosition="18" />
-    <scopeInfo nodeId="5298169090436276736" fileName="TextPreviewFile.java" startLine="261" startPosition="33" endLine="262" endPosition="22" />
-    <scopeInfo nodeId="5298169090436276742" fileName="TextPreviewFile.java" startLine="265" startPosition="45" endLine="266" endPosition="19" />
-    <scopeInfo nodeId="5298169090436226322" fileName="TextPreviewFile.java" startLine="128" startPosition="0" endLine="130" endPosition="5" />
-    <scopeInfo nodeId="5298169090436276274" fileName="TextPreviewFile.java" startLine="183" startPosition="0" endLine="186" endPosition="0">
+    <nodeInfo nodeId="5298169090436246661" fileName="TextPreviewFile.java" startLine="20" startPosition="54" endLine="21" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FS" />
+    <nodeInfo nodeId="3104941470048619564" fileName="TextPreviewFile.java" startLine="22" startPosition="0" endLine="23" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="forkNames" />
+    <nodeInfo nodeId="6158406915347753819" fileName="TextPreviewFile.java" startLine="23" startPosition="29" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="forks" />
+    <nodeInfo nodeId="7319480533486915019" fileName="TextPreviewFile.java" startLine="24" startPosition="36" endLine="25" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="7488918483500608919" fileName="TextPreviewFile.java" startLine="25" startPosition="22" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="path" />
+    <nodeInfo nodeId="7319480533486915022" fileName="TextPreviewFile.java" startLine="28" startPosition="79" endLine="29" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7488918483500608922" fileName="TextPreviewFile.java" startLine="29" startPosition="21" endLine="30" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6158406915347753824" fileName="TextPreviewFile.java" startLine="30" startPosition="21" endLine="31" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104941470048619572" fileName="TextPreviewFile.java" startLine="31" startPosition="23" endLine="32" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104941470048619583" fileName="TextPreviewFile.java" startLine="32" startPosition="70" endLine="33" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6158406915347753830" fileName="TextPreviewFile.java" startLine="36" startPosition="31" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4145682539058333021" fileName="TextPreviewFile.java" startLine="40" startPosition="41" endLine="41" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104941470048621802" fileName="TextPreviewFile.java" startLine="51" startPosition="28" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104941470048621860" fileName="TextPreviewFile.java" startLine="53" startPosition="35" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3104941470048621841" fileName="TextPreviewFile.java" startLine="56" startPosition="5" endLine="57" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683142813" fileName="TextPreviewFile.java" startLine="61" startPosition="31" endLine="62" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7319480533486915028" fileName="TextPreviewFile.java" startLine="68" startPosition="27" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8936615201653681525" fileName="TextPreviewFile.java" startLine="73" startPosition="30" endLine="74" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4711986503381146133" fileName="TextPreviewFile.java" startLine="78" startPosition="38" endLine="79" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7488918483500608928" fileName="TextPreviewFile.java" startLine="83" startPosition="27" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3491259949924783457" fileName="TextPreviewFile.java" startLine="89" startPosition="34" endLine="90" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7518330114425848461" fileName="TextPreviewFile.java" startLine="95" startPosition="26" endLine="96" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436255727" fileName="TextPreviewFile.java" startLine="101" startPosition="44" endLine="102" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7319480533486915030" fileName="TextPreviewFile.java" startLine="106" startPosition="32" endLine="107" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7319480533486915032" fileName="TextPreviewFile.java" startLine="111" startPosition="28" endLine="112" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7319480533486915034" fileName="TextPreviewFile.java" startLine="116" startPosition="31" endLine="117" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7518330114425782322" fileName="TextPreviewFile.java" startLine="120" startPosition="82" endLine="121" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROTOCOL" />
+    <nodeInfo nodeId="5298169090436246649" fileName="TextPreviewFile.java" startLine="127" startPosition="61" endLine="128" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436246647" fileName="TextPreviewFile.java" startLine="132" startPosition="42" endLine="133" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436246635" fileName="TextPreviewFile.java" startLine="137" startPosition="33" endLine="138" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436246637" fileName="TextPreviewFile.java" startLine="151" startPosition="47" endLine="152" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436246639" fileName="TextPreviewFile.java" startLine="157" startPosition="73" endLine="158" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436246641" fileName="TextPreviewFile.java" startLine="163" startPosition="79" endLine="164" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436246643" fileName="TextPreviewFile.java" startLine="169" startPosition="71" endLine="170" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436246645" fileName="TextPreviewFile.java" startLine="174" startPosition="65" endLine="175" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276368" fileName="TextPreviewFile.java" startLine="187" startPosition="125" endLine="188" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276370" fileName="TextPreviewFile.java" startLine="192" startPosition="130" endLine="193" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276372" fileName="TextPreviewFile.java" startLine="196" startPosition="146" endLine="197" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276755" fileName="TextPreviewFile.java" startLine="200" startPosition="26" endLine="201" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276757" fileName="TextPreviewFile.java" startLine="204" startPosition="62" endLine="205" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276376" fileName="TextPreviewFile.java" startLine="208" startPosition="38" endLine="209" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276759" fileName="TextPreviewFile.java" startLine="212" startPosition="45" endLine="213" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276743" fileName="TextPreviewFile.java" startLine="217" startPosition="110" endLine="218" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276745" fileName="TextPreviewFile.java" startLine="222" startPosition="76" endLine="223" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276762" fileName="TextPreviewFile.java" startLine="227" startPosition="76" endLine="228" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276747" fileName="TextPreviewFile.java" startLine="234" startPosition="49" endLine="235" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276764" fileName="TextPreviewFile.java" startLine="241" startPosition="48" endLine="242" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276749" fileName="TextPreviewFile.java" startLine="245" startPosition="50" endLine="246" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276767" fileName="TextPreviewFile.java" startLine="249" startPosition="44" endLine="250" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7518330114425848459" fileName="TextPreviewFile.java" startLine="255" startPosition="33" endLine="256" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436276753" fileName="TextPreviewFile.java" startLine="259" startPosition="45" endLine="260" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436226322" fileName="TextPreviewFile.java" startLine="122" startPosition="0" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPreviewVirtualFileSystem#()V" />
+    <nodeInfo nodeId="3104941470048621851" fileName="TextPreviewFile.java" startLine="52" startPosition="59" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5298169090436276274" fileName="TextPreviewFile.java" startLine="177" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="renameFile#(Ljava/lang/Object;Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5298169090436276287" fileName="TextPreviewFile.java" startLine="180" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveFile#(Ljava/lang/Object;Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/vfs/VirtualFile;)V" />
+    <nodeInfo nodeId="5298169090436276300" fileName="TextPreviewFile.java" startLine="183" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteFile#(Ljava/lang/Object;Lcom/intellij/openapi/vfs/VirtualFile;)V" />
+    <nodeInfo nodeId="5298169090436276688" fileName="TextPreviewFile.java" startLine="230" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setWritable#(Lcom/intellij/openapi/vfs/VirtualFile;Z)V" />
+    <nodeInfo nodeId="5298169090436276703" fileName="TextPreviewFile.java" startLine="237" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTimeStamp#(Lcom/intellij/openapi/vfs/VirtualFile;J)V" />
+    <nodeInfo nodeId="6158406915347733937" fileName="TextPreviewFile.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="forkNames#()[Ljava/lang/String;" />
+    <nodeInfo nodeId="4145682539058333050" fileName="TextPreviewFile.java" startLine="41" startPosition="38" endLine="45" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5298169090436246522" fileName="TextPreviewFile.java" startLine="140" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refresh#(Z)V" />
+    <nodeInfo nodeId="5298169090436246528" fileName="TextPreviewFile.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshWithoutFileWatcher#(Z)V" />
+    <nodeInfo nodeId="5298169090436276310" fileName="TextPreviewFile.java" startLine="186" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChildFile#(Ljava/lang/Object;Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="5298169090436276337" fileName="TextPreviewFile.java" startLine="195" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="copyFile#(Ljava/lang/Object;Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="5298169090436276353" fileName="TextPreviewFile.java" startLine="199" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRank#()I" />
+    <nodeInfo nodeId="5298169090436276357" fileName="TextPreviewFile.java" startLine="203" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extractRootPath#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5298169090436276364" fileName="TextPreviewFile.java" startLine="207" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCaseSensitive#()Z" />
+    <nodeInfo nodeId="5298169090436276651" fileName="TextPreviewFile.java" startLine="211" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLength#(Lcom/intellij/openapi/vfs/VirtualFile;)J" />
+    <nodeInfo nodeId="5298169090436276697" fileName="TextPreviewFile.java" startLine="233" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWritable#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
+    <nodeInfo nodeId="5298169090436276712" fileName="TextPreviewFile.java" startLine="240" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTimeStamp#(Lcom/intellij/openapi/vfs/VirtualFile;)J" />
+    <nodeInfo nodeId="5298169090436276718" fileName="TextPreviewFile.java" startLine="244" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDirectory#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
+    <nodeInfo nodeId="5298169090436276724" fileName="TextPreviewFile.java" startLine="248" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="list#(Lcom/intellij/openapi/vfs/VirtualFile;)[Ljava/lang/String;" />
+    <nodeInfo nodeId="5298169090436276737" fileName="TextPreviewFile.java" startLine="258" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="exists#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
+    <nodeInfo nodeId="3104941470048621828" fileName="TextPreviewFile.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCharset#()Ljava/nio/charset/Charset;" />
+    <nodeInfo nodeId="8936615201653662052" fileName="TextPreviewFile.java" startLine="71" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTimeStamp#()J" />
+    <nodeInfo nodeId="4711986503381126682" fileName="TextPreviewFile.java" startLine="76" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModificationStamp#()J" />
+    <nodeInfo nodeId="3513785454865299027" fileName="TextPreviewFile.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPath#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7319480533486914902" fileName="TextPreviewFile.java" startLine="104" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDirectory#()Z" />
+    <nodeInfo nodeId="7319480533486914898" fileName="TextPreviewFile.java" startLine="109" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
+    <nodeInfo nodeId="7319480533486914894" fileName="TextPreviewFile.java" startLine="114" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWritable#()Z" />
+    <nodeInfo nodeId="5298169090436246494" fileName="TextPreviewFile.java" startLine="125" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCanonicallyCasedName#(Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5298169090436246500" fileName="TextPreviewFile.java" startLine="130" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="markNewFilesAsDirty#()Z" />
+    <nodeInfo nodeId="5298169090436246518" fileName="TextPreviewFile.java" startLine="135" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReadOnly#()Z" />
+    <nodeInfo nodeId="5298169090436246619" fileName="TextPreviewFile.java" startLine="172" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extractPresentableUrl#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5298169090436276323" fileName="TextPreviewFile.java" startLine="190" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChildDirectory#(Ljava/lang/Object;Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="5298169090436276657" fileName="TextPreviewFile.java" startLine="215" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOutputStream#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/Object;JJ)Ljava/io/OutputStream;" />
+    <nodeInfo nodeId="5298169090436276671" fileName="TextPreviewFile.java" startLine="220" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInputStream#(Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/io/InputStream;" />
+    <nodeInfo nodeId="5298169090436276679" fileName="TextPreviewFile.java" startLine="225" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contentsToByteArray#(Lcom/intellij/openapi/vfs/VirtualFile;)[B" />
+    <nodeInfo nodeId="3104941470048621789" fileName="TextPreviewFile.java" startLine="50" startPosition="58" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3491259949924712444" fileName="TextPreviewFile.java" startLine="86" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParent#()Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="7518330114425777118" fileName="TextPreviewFile.java" startLine="92" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUrl#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5298169090436255719" fileName="TextPreviewFile.java" startLine="98" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFileSystem#()Lcom/intellij/openapi/vfs/VirtualFileSystem;" />
+    <nodeInfo nodeId="5298169090436246534" fileName="TextPreviewFile.java" startLine="148" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="normalize#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5298169090436246541" fileName="TextPreviewFile.java" startLine="154" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshAndFindFileByPath#(Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="5298169090436246549" fileName="TextPreviewFile.java" startLine="160" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findFileByPathIfCached#(Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="5298169090436246558" fileName="TextPreviewFile.java" startLine="166" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findFileByPath#(Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="5298169090436276731" fileName="TextPreviewFile.java" startLine="252" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProtocol#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2956674153315666088" fileName="TextPreviewFile.java" startLine="27" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPreviewFile#(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7319480533486914936" fileName="TextPreviewFile.java" startLine="64" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6158406915347752917" fileName="TextPreviewFile.java" startLine="39" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fork#(Ljava/lang/String;)Ljava/lang/CharSequence;" />
+    <nodeInfo nodeId="3104941470048621779" fileName="TextPreviewFile.java" startLine="47" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contentsToByteArray#()[B" />
+    <scopeInfo nodeId="5298169090436226325" fileName="TextPreviewFile.java" startLine="123" startPosition="43" endLine="123" endPosition="43" />
+    <scopeInfo nodeId="5298169090436246527" fileName="TextPreviewFile.java" startLine="142" startPosition="36" endLine="142" endPosition="36" />
+    <scopeInfo nodeId="5298169090436246533" fileName="TextPreviewFile.java" startLine="146" startPosition="54" endLine="146" endPosition="54" />
+    <scopeInfo nodeId="5298169090436276286" fileName="TextPreviewFile.java" startLine="178" startPosition="113" endLine="178" endPosition="113" />
+    <scopeInfo nodeId="5298169090436276299" fileName="TextPreviewFile.java" startLine="181" startPosition="115" endLine="181" endPosition="115" />
+    <scopeInfo nodeId="5298169090436276309" fileName="TextPreviewFile.java" startLine="184" startPosition="89" endLine="184" endPosition="89" />
+    <scopeInfo nodeId="5298169090436276696" fileName="TextPreviewFile.java" startLine="231" startPosition="77" endLine="231" endPosition="77" />
+    <scopeInfo nodeId="5298169090436276711" fileName="TextPreviewFile.java" startLine="238" startPosition="75" endLine="238" endPosition="75" />
+    <scopeInfo nodeId="6158406915347733940" fileName="TextPreviewFile.java" startLine="36" startPosition="31" endLine="37" endPosition="29" />
+    <scopeInfo nodeId="3104941470048621852" fileName="TextPreviewFile.java" startLine="53" startPosition="35" endLine="54" endPosition="54" />
+    <scopeInfo nodeId="3104941470048621831" fileName="TextPreviewFile.java" startLine="61" startPosition="31" endLine="62" endPosition="36" />
+    <scopeInfo nodeId="7319480533486914941" fileName="TextPreviewFile.java" startLine="68" startPosition="27" endLine="69" endPosition="16" />
+    <scopeInfo nodeId="8936615201653662055" fileName="TextPreviewFile.java" startLine="73" startPosition="30" endLine="74" endPosition="14" />
+    <scopeInfo nodeId="4711986503381126685" fileName="TextPreviewFile.java" startLine="78" startPosition="38" endLine="79" endPosition="14" />
+    <scopeInfo nodeId="3513785454865299030" fileName="TextPreviewFile.java" startLine="83" startPosition="27" endLine="84" endPosition="16" />
+    <scopeInfo nodeId="3491259949924712448" fileName="TextPreviewFile.java" startLine="89" startPosition="34" endLine="90" endPosition="16" />
+    <scopeInfo nodeId="7518330114425777122" fileName="TextPreviewFile.java" startLine="95" startPosition="26" endLine="96" endPosition="77" />
+    <scopeInfo nodeId="5298169090436255723" fileName="TextPreviewFile.java" startLine="101" startPosition="44" endLine="102" endPosition="14" />
+    <scopeInfo nodeId="7319480533486914905" fileName="TextPreviewFile.java" startLine="106" startPosition="32" endLine="107" endPosition="17" />
+    <scopeInfo nodeId="7319480533486914901" fileName="TextPreviewFile.java" startLine="111" startPosition="28" endLine="112" endPosition="16" />
+    <scopeInfo nodeId="7319480533486914897" fileName="TextPreviewFile.java" startLine="116" startPosition="31" endLine="117" endPosition="17" />
+    <scopeInfo nodeId="5298169090436246499" fileName="TextPreviewFile.java" startLine="127" startPosition="61" endLine="128" endPosition="28" />
+    <scopeInfo nodeId="5298169090436246503" fileName="TextPreviewFile.java" startLine="132" startPosition="42" endLine="133" endPosition="19" />
+    <scopeInfo nodeId="5298169090436246521" fileName="TextPreviewFile.java" startLine="137" startPosition="33" endLine="138" endPosition="18" />
+    <scopeInfo nodeId="5298169090436246540" fileName="TextPreviewFile.java" startLine="151" startPosition="47" endLine="152" endPosition="20" />
+    <scopeInfo nodeId="5298169090436246548" fileName="TextPreviewFile.java" startLine="157" startPosition="73" endLine="158" endPosition="18" />
+    <scopeInfo nodeId="5298169090436246557" fileName="TextPreviewFile.java" startLine="163" startPosition="79" endLine="164" endPosition="18" />
+    <scopeInfo nodeId="5298169090436246566" fileName="TextPreviewFile.java" startLine="169" startPosition="71" endLine="170" endPosition="18" />
+    <scopeInfo nodeId="5298169090436246625" fileName="TextPreviewFile.java" startLine="174" startPosition="65" endLine="175" endPosition="20" />
+    <scopeInfo nodeId="5298169090436276322" fileName="TextPreviewFile.java" startLine="187" startPosition="125" endLine="188" endPosition="18" />
+    <scopeInfo nodeId="5298169090436276336" fileName="TextPreviewFile.java" startLine="192" startPosition="130" endLine="193" endPosition="18" />
+    <scopeInfo nodeId="5298169090436276352" fileName="TextPreviewFile.java" startLine="196" startPosition="146" endLine="197" endPosition="18" />
+    <scopeInfo nodeId="5298169090436276356" fileName="TextPreviewFile.java" startLine="200" startPosition="26" endLine="201" endPosition="15" />
+    <scopeInfo nodeId="5298169090436276363" fileName="TextPreviewFile.java" startLine="204" startPosition="62" endLine="205" endPosition="17" />
+    <scopeInfo nodeId="5298169090436276367" fileName="TextPreviewFile.java" startLine="208" startPosition="38" endLine="209" endPosition="19" />
+    <scopeInfo nodeId="5298169090436276656" fileName="TextPreviewFile.java" startLine="212" startPosition="45" endLine="213" endPosition="16" />
+    <scopeInfo nodeId="5298169090436276670" fileName="TextPreviewFile.java" startLine="217" startPosition="110" endLine="218" endPosition="18" />
+    <scopeInfo nodeId="5298169090436276678" fileName="TextPreviewFile.java" startLine="222" startPosition="76" endLine="223" endPosition="18" />
+    <scopeInfo nodeId="5298169090436276687" fileName="TextPreviewFile.java" startLine="227" startPosition="76" endLine="228" endPosition="18" />
+    <scopeInfo nodeId="5298169090436276702" fileName="TextPreviewFile.java" startLine="234" startPosition="49" endLine="235" endPosition="19" />
+    <scopeInfo nodeId="5298169090436276717" fileName="TextPreviewFile.java" startLine="241" startPosition="48" endLine="242" endPosition="16" />
+    <scopeInfo nodeId="5298169090436276723" fileName="TextPreviewFile.java" startLine="245" startPosition="50" endLine="246" endPosition="19" />
+    <scopeInfo nodeId="5298169090436276730" fileName="TextPreviewFile.java" startLine="249" startPosition="44" endLine="250" endPosition="18" />
+    <scopeInfo nodeId="5298169090436276736" fileName="TextPreviewFile.java" startLine="255" startPosition="33" endLine="256" endPosition="22" />
+    <scopeInfo nodeId="5298169090436276742" fileName="TextPreviewFile.java" startLine="259" startPosition="45" endLine="260" endPosition="19" />
+    <scopeInfo nodeId="5298169090436226322" fileName="TextPreviewFile.java" startLine="122" startPosition="0" endLine="124" endPosition="5" />
+    <scopeInfo nodeId="5298169090436276274" fileName="TextPreviewFile.java" startLine="177" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="5298169090436276279" varName="file" />
       <varInfo nodeId="5298169090436276277" varName="object" />
       <varInfo nodeId="5298169090436276282" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276287" fileName="TextPreviewFile.java" startLine="186" startPosition="0" endLine="189" endPosition="0">
+    <scopeInfo nodeId="5298169090436276287" fileName="TextPreviewFile.java" startLine="180" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="5298169090436276292" varName="file" />
       <varInfo nodeId="5298169090436276295" varName="file1" />
       <varInfo nodeId="5298169090436276290" varName="object" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276300" fileName="TextPreviewFile.java" startLine="189" startPosition="0" endLine="192" endPosition="0">
+    <scopeInfo nodeId="5298169090436276300" fileName="TextPreviewFile.java" startLine="183" startPosition="0" endLine="186" endPosition="0">
       <varInfo nodeId="5298169090436276305" varName="file" />
       <varInfo nodeId="5298169090436276303" varName="object" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276688" fileName="TextPreviewFile.java" startLine="236" startPosition="0" endLine="239" endPosition="0">
+    <scopeInfo nodeId="5298169090436276688" fileName="TextPreviewFile.java" startLine="230" startPosition="0" endLine="233" endPosition="0">
       <varInfo nodeId="5298169090436276693" varName="b" />
       <varInfo nodeId="5298169090436276691" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276703" fileName="TextPreviewFile.java" startLine="243" startPosition="0" endLine="246" endPosition="0">
+    <scopeInfo nodeId="5298169090436276703" fileName="TextPreviewFile.java" startLine="237" startPosition="0" endLine="240" endPosition="0">
       <varInfo nodeId="5298169090436276706" varName="file" />
       <varInfo nodeId="5298169090436276708" varName="l" />
     </scopeInfo>
-    <scopeInfo nodeId="6158406915347733937" fileName="TextPreviewFile.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="3104941470048621791" fileName="TextPreviewFile.java" startLine="57" startPosition="28" endLine="61" endPosition="7">
+    <scopeInfo nodeId="6158406915347733937" fileName="TextPreviewFile.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="3104941470048621791" fileName="TextPreviewFile.java" startLine="51" startPosition="28" endLine="55" endPosition="7">
       <varInfo nodeId="3104941470048621803" varName="next" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436246522" fileName="TextPreviewFile.java" startLine="146" startPosition="0" endLine="150" endPosition="0">
+    <scopeInfo nodeId="5298169090436246522" fileName="TextPreviewFile.java" startLine="140" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="5298169090436246525" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436246528" fileName="TextPreviewFile.java" startLine="150" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="5298169090436246528" fileName="TextPreviewFile.java" startLine="144" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="5298169090436246531" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276310" fileName="TextPreviewFile.java" startLine="192" startPosition="0" endLine="196" endPosition="0">
+    <scopeInfo nodeId="5298169090436276310" fileName="TextPreviewFile.java" startLine="186" startPosition="0" endLine="190" endPosition="0">
       <varInfo nodeId="5298169090436276315" varName="file" />
       <varInfo nodeId="5298169090436276313" varName="object" />
       <varInfo nodeId="5298169090436276318" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276337" fileName="TextPreviewFile.java" startLine="201" startPosition="0" endLine="205" endPosition="0">
+    <scopeInfo nodeId="5298169090436276337" fileName="TextPreviewFile.java" startLine="195" startPosition="0" endLine="199" endPosition="0">
       <varInfo nodeId="5298169090436276342" varName="file" />
       <varInfo nodeId="5298169090436276345" varName="file1" />
       <varInfo nodeId="5298169090436276340" varName="object" />
       <varInfo nodeId="5298169090436276348" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276353" fileName="TextPreviewFile.java" startLine="205" startPosition="0" endLine="209" endPosition="0" />
-    <scopeInfo nodeId="5298169090436276357" fileName="TextPreviewFile.java" startLine="209" startPosition="0" endLine="213" endPosition="0">
+    <scopeInfo nodeId="5298169090436276353" fileName="TextPreviewFile.java" startLine="199" startPosition="0" endLine="203" endPosition="0" />
+    <scopeInfo nodeId="5298169090436276357" fileName="TextPreviewFile.java" startLine="203" startPosition="0" endLine="207" endPosition="0">
       <varInfo nodeId="5298169090436276360" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276364" fileName="TextPreviewFile.java" startLine="213" startPosition="0" endLine="217" endPosition="0" />
-    <scopeInfo nodeId="5298169090436276651" fileName="TextPreviewFile.java" startLine="217" startPosition="0" endLine="221" endPosition="0">
+    <scopeInfo nodeId="5298169090436276364" fileName="TextPreviewFile.java" startLine="207" startPosition="0" endLine="211" endPosition="0" />
+    <scopeInfo nodeId="5298169090436276651" fileName="TextPreviewFile.java" startLine="211" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="5298169090436276654" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276697" fileName="TextPreviewFile.java" startLine="239" startPosition="0" endLine="243" endPosition="0">
+    <scopeInfo nodeId="5298169090436276697" fileName="TextPreviewFile.java" startLine="233" startPosition="0" endLine="237" endPosition="0">
       <varInfo nodeId="5298169090436276700" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276712" fileName="TextPreviewFile.java" startLine="246" startPosition="0" endLine="250" endPosition="0">
+    <scopeInfo nodeId="5298169090436276712" fileName="TextPreviewFile.java" startLine="240" startPosition="0" endLine="244" endPosition="0">
       <varInfo nodeId="5298169090436276715" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276718" fileName="TextPreviewFile.java" startLine="250" startPosition="0" endLine="254" endPosition="0">
+    <scopeInfo nodeId="5298169090436276718" fileName="TextPreviewFile.java" startLine="244" startPosition="0" endLine="248" endPosition="0">
       <varInfo nodeId="5298169090436276721" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276724" fileName="TextPreviewFile.java" startLine="254" startPosition="0" endLine="258" endPosition="0">
+    <scopeInfo nodeId="5298169090436276724" fileName="TextPreviewFile.java" startLine="248" startPosition="0" endLine="252" endPosition="0">
       <varInfo nodeId="5298169090436276728" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276737" fileName="TextPreviewFile.java" startLine="264" startPosition="0" endLine="268" endPosition="0">
+    <scopeInfo nodeId="5298169090436276737" fileName="TextPreviewFile.java" startLine="258" startPosition="0" endLine="262" endPosition="0">
       <varInfo nodeId="5298169090436276740" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="2956674153315666090" fileName="TextPreviewFile.java" startLine="29" startPosition="79" endLine="34" endPosition="27" />
-    <scopeInfo nodeId="6158406915347752920" fileName="TextPreviewFile.java" startLine="41" startPosition="41" endLine="46" endPosition="6">
+    <scopeInfo nodeId="2956674153315666090" fileName="TextPreviewFile.java" startLine="28" startPosition="79" endLine="33" endPosition="27" />
+    <scopeInfo nodeId="6158406915347752920" fileName="TextPreviewFile.java" startLine="40" startPosition="41" endLine="45" endPosition="6">
       <varInfo nodeId="4145682539058333022" varName="contents" />
     </scopeInfo>
-    <scopeInfo nodeId="8646201780575230897" fileName="TextPreviewFile.java" startLine="48" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="3104941470048621828" fileName="TextPreviewFile.java" startLine="65" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="8936615201653662052" fileName="TextPreviewFile.java" startLine="77" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="4711986503381126682" fileName="TextPreviewFile.java" startLine="82" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="3513785454865299027" fileName="TextPreviewFile.java" startLine="87" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="7319480533486914902" fileName="TextPreviewFile.java" startLine="110" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="7319480533486914898" fileName="TextPreviewFile.java" startLine="115" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="7319480533486914894" fileName="TextPreviewFile.java" startLine="120" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="5298169090436246494" fileName="TextPreviewFile.java" startLine="131" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="3104941470048621828" fileName="TextPreviewFile.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="8936615201653662052" fileName="TextPreviewFile.java" startLine="71" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="4711986503381126682" fileName="TextPreviewFile.java" startLine="76" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="3513785454865299027" fileName="TextPreviewFile.java" startLine="81" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="7319480533486914902" fileName="TextPreviewFile.java" startLine="104" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="7319480533486914898" fileName="TextPreviewFile.java" startLine="109" startPosition="0" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="7319480533486914894" fileName="TextPreviewFile.java" startLine="114" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="5298169090436246494" fileName="TextPreviewFile.java" startLine="125" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="5298169090436246497" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436246500" fileName="TextPreviewFile.java" startLine="136" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="5298169090436246518" fileName="TextPreviewFile.java" startLine="141" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="5298169090436246619" fileName="TextPreviewFile.java" startLine="178" startPosition="0" endLine="183" endPosition="0">
+    <scopeInfo nodeId="5298169090436246500" fileName="TextPreviewFile.java" startLine="130" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="5298169090436246518" fileName="TextPreviewFile.java" startLine="135" startPosition="0" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="5298169090436246619" fileName="TextPreviewFile.java" startLine="172" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="5298169090436246622" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276323" fileName="TextPreviewFile.java" startLine="196" startPosition="0" endLine="201" endPosition="0">
+    <scopeInfo nodeId="5298169090436276323" fileName="TextPreviewFile.java" startLine="190" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="5298169090436276328" varName="file" />
       <varInfo nodeId="5298169090436276326" varName="object" />
       <varInfo nodeId="5298169090436276331" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276657" fileName="TextPreviewFile.java" startLine="221" startPosition="0" endLine="226" endPosition="0">
+    <scopeInfo nodeId="5298169090436276657" fileName="TextPreviewFile.java" startLine="215" startPosition="0" endLine="220" endPosition="0">
       <varInfo nodeId="5298169090436276660" varName="file" />
       <varInfo nodeId="5298169090436276664" varName="l" />
       <varInfo nodeId="5298169090436276666" varName="l1" />
       <varInfo nodeId="5298169090436276662" varName="object" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276671" fileName="TextPreviewFile.java" startLine="226" startPosition="0" endLine="231" endPosition="0">
+    <scopeInfo nodeId="5298169090436276671" fileName="TextPreviewFile.java" startLine="220" startPosition="0" endLine="225" endPosition="0">
       <varInfo nodeId="5298169090436276674" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276679" fileName="TextPreviewFile.java" startLine="231" startPosition="0" endLine="236" endPosition="0">
+    <scopeInfo nodeId="5298169090436276679" fileName="TextPreviewFile.java" startLine="225" startPosition="0" endLine="230" endPosition="0">
       <varInfo nodeId="5298169090436276683" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="3491259949924712444" fileName="TextPreviewFile.java" startLine="92" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="7518330114425777118" fileName="TextPreviewFile.java" startLine="98" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="5298169090436255719" fileName="TextPreviewFile.java" startLine="104" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="5298169090436246534" fileName="TextPreviewFile.java" startLine="154" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="3491259949924712444" fileName="TextPreviewFile.java" startLine="86" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="7518330114425777118" fileName="TextPreviewFile.java" startLine="92" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="5298169090436255719" fileName="TextPreviewFile.java" startLine="98" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="5298169090436246534" fileName="TextPreviewFile.java" startLine="148" startPosition="0" endLine="154" endPosition="0">
       <varInfo nodeId="5298169090436246537" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436246541" fileName="TextPreviewFile.java" startLine="160" startPosition="0" endLine="166" endPosition="0">
+    <scopeInfo nodeId="5298169090436246541" fileName="TextPreviewFile.java" startLine="154" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="5298169090436246544" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436246549" fileName="TextPreviewFile.java" startLine="166" startPosition="0" endLine="172" endPosition="0">
+    <scopeInfo nodeId="5298169090436246549" fileName="TextPreviewFile.java" startLine="160" startPosition="0" endLine="166" endPosition="0">
       <varInfo nodeId="5298169090436246552" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436246558" fileName="TextPreviewFile.java" startLine="172" startPosition="0" endLine="178" endPosition="0">
+    <scopeInfo nodeId="5298169090436246558" fileName="TextPreviewFile.java" startLine="166" startPosition="0" endLine="172" endPosition="0">
       <varInfo nodeId="5298169090436246561" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="5298169090436276731" fileName="TextPreviewFile.java" startLine="258" startPosition="0" endLine="264" endPosition="0" />
-    <scopeInfo nodeId="2956674153315666088" fileName="TextPreviewFile.java" startLine="28" startPosition="0" endLine="35" endPosition="3">
+    <scopeInfo nodeId="5298169090436276731" fileName="TextPreviewFile.java" startLine="252" startPosition="0" endLine="258" endPosition="0" />
+    <scopeInfo nodeId="2956674153315666088" fileName="TextPreviewFile.java" startLine="27" startPosition="0" endLine="34" endPosition="3">
       <varInfo nodeId="6158406915347753369" varName="forks" />
       <varInfo nodeId="6582938312170964413" varName="name" />
       <varInfo nodeId="7488918483500593225" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="3104941470048621785" fileName="TextPreviewFile.java" startLine="56" startPosition="58" endLine="63" endPosition="54" />
-    <scopeInfo nodeId="7319480533486914936" fileName="TextPreviewFile.java" startLine="70" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="6158406915347752917" fileName="TextPreviewFile.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="3104941470048621785" fileName="TextPreviewFile.java" startLine="50" startPosition="58" endLine="57" endPosition="54" />
+    <scopeInfo nodeId="7319480533486914936" fileName="TextPreviewFile.java" startLine="64" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="6158406915347752917" fileName="TextPreviewFile.java" startLine="39" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="6158406915347753367" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="3104941470048621779" fileName="TextPreviewFile.java" startLine="53" startPosition="0" endLine="65" endPosition="0" />
-    <unitInfo nodeId="2956674153315665518" fileName="TextPreviewFile.java" startLine="21" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.workbench.make.TextPreviewFile" />
-    <unitInfo nodeId="5298169090436226320" fileName="TextPreviewFile.java" startLine="126" startPosition="0" endLine="269" endPosition="0" unitName="jetbrains.mps.workbench.make.TextPreviewFile$TextPreviewVirtualFileSystem" />
+    <scopeInfo nodeId="3104941470048621779" fileName="TextPreviewFile.java" startLine="47" startPosition="0" endLine="59" endPosition="0" />
+    <unitInfo nodeId="2956674153315665518" fileName="TextPreviewFile.java" startLine="20" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.workbench.make.TextPreviewFile" />
+    <unitInfo nodeId="5298169090436226320" fileName="TextPreviewFile.java" startLine="120" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.workbench.make.TextPreviewFile$TextPreviewVirtualFileSystem" />
   </root>
   <root nodeId="4779623262673897694">
     <nodeInfo nodeId="792724054878921819" fileName="UIQueryRelayStrategy.java" startLine="21" startPosition="99" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="792724054878921729" fileName="UIQueryRelayStrategy.java" startLine="24" startPosition="33" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="792724054878921766" fileName="UIQueryRelayStrategy.java" startLine="27" startPosition="36" endLine="28" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="792724054878921783" fileName="UIQueryRelayStrategy.java" startLine="28" startPosition="85" endLine="29" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5428926715065512511" fileName="UIQueryRelayStrategy.java" startLine="31" startPosition="25" endLine="32" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5428926715065512511" fileName="UIQueryRelayStrategy.java" startLine="31" startPosition="25" endLine="32" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="792724054878921811" fileName="UIQueryRelayStrategy.java" startLine="35" startPosition="24" endLine="36" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="792724054878921835" fileName="UIQueryRelayStrategy.java" startLine="37" startPosition="5" endLine="38" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4779623262673908080" fileName="UIQueryRelayStrategy.java" startLine="41" startPosition="42" endLine="42" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeDialogShown#()V" />
@@ -1175,7 +1171,7 @@
     <nodeInfo nodeId="4779623262673897695" fileName="UIQueryRelayStrategy.java" startLine="20" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;Ljetbrains/mps/smodel/IOperationContext;)null" />
     <scopeInfo nodeId="4779623262673897766" fileName="UIQueryRelayStrategy.java" startLine="18" startPosition="33" endLine="18" endPosition="33" />
     <scopeInfo nodeId="792724054878921728" fileName="UIQueryRelayStrategy.java" startLine="24" startPosition="33" endLine="25" endPosition="27" />
-    <scopeInfo nodeId="5428926715065522885" fileName="UIQueryRelayStrategy.java" startLine="31" startPosition="25" endLine="32" endPosition="179" />
+    <scopeInfo nodeId="5428926715065522885" fileName="UIQueryRelayStrategy.java" startLine="31" startPosition="25" endLine="32" endPosition="171" />
     <scopeInfo nodeId="792724054878921803" fileName="UIQueryRelayStrategy.java" startLine="35" startPosition="24" endLine="36" endPosition="32" />
     <scopeInfo nodeId="4779623262673908080" fileName="UIQueryRelayStrategy.java" startLine="41" startPosition="42" endLine="42" endPosition="36" />
     <scopeInfo nodeId="4779623262673897763" fileName="UIQueryRelayStrategy.java" startLine="17" startPosition="35" endLine="19" endPosition="3" />

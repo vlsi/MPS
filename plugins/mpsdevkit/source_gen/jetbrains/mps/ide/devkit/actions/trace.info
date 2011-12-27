@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Mpsdevkit_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
+  <unitInfo fileName="Mpsdevkit_ApplicationPlugin.java" startLine="24" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
   <unitInfo fileName="Mpsdevkit_ProjectPlugin.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ProjectPlugin" />
   <root nodeId="1212767491070836940">
     <nodeInfo nodeId="1212767491070836940" fileName="RepositoryToolsGroup_ActionGroup.java" startLine="8" startPosition="76" endLine="9" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

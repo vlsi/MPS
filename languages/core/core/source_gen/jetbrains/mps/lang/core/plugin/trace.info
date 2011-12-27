@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Core_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ApplicationPlugin" />
+  <unitInfo fileName="Core_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ApplicationPlugin" />
   <unitInfo fileName="Core_ProjectPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ProjectPlugin" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.lang.core.plugin.FacetAspectDescriptor$1" />

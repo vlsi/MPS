@@ -147,7 +147,6 @@
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

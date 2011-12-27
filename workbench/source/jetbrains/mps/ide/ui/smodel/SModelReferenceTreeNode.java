@@ -39,6 +39,7 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
     if (modelDescriptor.getStereotype().length() > 0) {
       name += "@" + modelDescriptor.getStereotype();
     }
+    setUserObject(name);
     setNodeIdentifier(name);
     setAutoExpandable(true);
     Icon icon = Icons.MODEL_ICON;

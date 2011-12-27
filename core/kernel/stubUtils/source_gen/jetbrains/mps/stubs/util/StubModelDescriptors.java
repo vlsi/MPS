@@ -97,9 +97,8 @@ public class StubModelDescriptors {
       SModelRepository.getInstance().getModelDescriptor(mr).getModule().getModuleReference()
     );
 
-    String mfq = "MPS.Classpath";
-    String muid = "37a3367b-1fb2-44d8-aa6b-18075e74e003";
-
+    String mfq = "MPS.Workbench";
+    String muid = "	86441d7a-e194-42da-81a5-2161ec62a379";
 
     if (moduleRef != null) {
       mfq = moduleRef.getModuleFqName();

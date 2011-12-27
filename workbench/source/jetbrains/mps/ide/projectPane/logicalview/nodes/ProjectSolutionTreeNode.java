@@ -42,10 +42,6 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
     init();
   }
 
-  public Object getUserObject() {
-    return mySolution;
-  }
-
   public IModule getModule() {
     return mySolution;
   }
