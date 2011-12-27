@@ -342,7 +342,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -441,7 +440,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -483,7 +481,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -582,7 +579,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -721,7 +717,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -761,7 +756,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -859,7 +853,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -899,7 +892,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -997,7 +989,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -1036,7 +1027,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -1134,7 +1124,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -1293,9 +1282,9 @@
   </target>
   <target name="pack.jetbrains.mps.debugger.java.customViewers">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/debugger-java-languages/customViewers/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.customViewers.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.customViewers.jar.jtmp/module.xml">
+    <mkdir dir="${base_dir}/plugins/debugger-java/languages/customViewers/classes_gen" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.customViewers.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.customViewers.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.debugger.java.customViewers" uuid="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
@@ -1312,7 +1301,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -1411,32 +1399,31 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
         <sources jar="jetbrains.mps.debugger.java.customViewers-src.jar" descriptor="customViewers.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.customViewers-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/customViewers/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/customViewers/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/plugins/debugger-java-languages/customViewers/customViewers.mpl" prefix="module" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/customViewers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/customViewers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.customViewers-src.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/customViewers/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/customViewers/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/plugins/debugger-java/languages/customViewers/customViewers.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/customViewers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/customViewers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.customViewers.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.customViewers.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/customViewers" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/customViewers/classes_gen" />
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.customViewers.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.customViewers.jar.jtmp/module.xml" prefix="META-INF" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/customViewers" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/customViewers/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.customViewers.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.customViewers.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.debugger.java.evaluation">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.evaluation.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.evaluation.jar.jtmp/module.xml">
+    <mkdir dir="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.evaluation.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.evaluation.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.debugger.java.evaluation" uuid="7da4580f-9d75-4603-8162-51a896d78375" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
@@ -1453,7 +1440,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -1551,32 +1537,31 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
         <sources jar="jetbrains.mps.debugger.java.evaluation-src.jar" descriptor="evaluation.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.evaluation-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/evaluation/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/evaluation/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/plugins/debugger-java-languages/evaluation/evaluation.mpl" prefix="module" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/evaluation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/evaluation/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.evaluation-src.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/evaluation/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/evaluation/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/plugins/debugger-java/languages/evaluation/evaluation.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/evaluation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/evaluation/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.evaluation.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.evaluation.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/evaluation" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.evaluation.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.evaluation.jar.jtmp/module.xml" prefix="META-INF" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/evaluation" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.evaluation.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.evaluation.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.debugger.java.privateMembers">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.privateMembers.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.privateMembers.jar.jtmp/module.xml">
+    <mkdir dir="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.privateMembers.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.privateMembers.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.debugger.java.privateMembers" uuid="80208897-4572-437d-b50e-8f050cba9566" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
@@ -1593,7 +1578,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -1691,25 +1675,24 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
         <sources jar="jetbrains.mps.debugger.java.privateMembers-src.jar" descriptor="privateMembers.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.privateMembers-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/privateMembers/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/privateMembers/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/plugins/debugger-java-languages/privateMembers/privateMembers.mpl" prefix="module" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/privateMembers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.privateMembers-src.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/privateMembers/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/privateMembers/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/plugins/debugger-java/languages/privateMembers/privateMembers.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/privateMembers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.privateMembers.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.privateMembers.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/privateMembers" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.privateMembers.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.privateMembers.jar.jtmp/module.xml" prefix="META-INF" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/privateMembers" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.languages/languages/jetbrains.mps.debugger.java.privateMembers.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-java/languages/jetbrains.mps.debugger.java.privateMembers.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.debugger.api.lang">
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -1732,7 +1715,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -1831,7 +1813,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -1872,7 +1853,6 @@
           <module ref="20351dc3-a2df-46f5-b667-fc9adab1f1c9(jetbrains.mps.make)" />
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -1971,7 +1951,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -2048,7 +2027,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -2146,7 +2124,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -2187,7 +2164,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -2286,7 +2262,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -2326,7 +2301,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -2425,7 +2399,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -2466,7 +2439,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -2569,7 +2541,6 @@
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debugger.api.lang)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -2611,7 +2582,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -2716,7 +2686,6 @@
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debugger.api.lang)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -2758,7 +2727,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -2857,7 +2825,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -2925,7 +2892,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -3023,7 +2989,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -3069,7 +3034,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -3167,7 +3131,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -3209,7 +3172,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -3307,7 +3269,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -3349,7 +3310,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -3448,7 +3408,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -3490,7 +3449,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -3589,7 +3547,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -3631,7 +3588,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -3729,7 +3685,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -3772,7 +3727,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -3871,7 +3825,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
         <runtime jar="jetbrains.mps.baseLanguage.closures-runtime.jar" />
@@ -3917,7 +3870,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -4015,7 +3967,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -4064,7 +4015,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -4162,7 +4112,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -4203,7 +4152,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -4301,7 +4249,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -4345,7 +4292,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -4443,7 +4389,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -4536,7 +4481,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -4634,7 +4578,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -4676,7 +4619,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -4774,7 +4716,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -4817,7 +4758,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -4915,7 +4855,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -4957,7 +4896,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -5055,7 +4993,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -5097,7 +5034,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -5196,7 +5132,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -5236,7 +5171,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -5335,7 +5269,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -5377,7 +5310,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -5475,7 +5407,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -5517,7 +5448,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -5615,7 +5545,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -5657,7 +5586,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -5755,7 +5683,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -5797,7 +5724,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -5895,7 +5821,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -5937,7 +5862,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -6035,7 +5959,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -6077,7 +6000,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -6176,7 +6098,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -6218,7 +6139,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -6316,7 +6236,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -6358,7 +6277,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
@@ -6456,7 +6374,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -6497,7 +6414,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -6596,7 +6512,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -6643,7 +6558,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -6741,7 +6655,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -6788,7 +6701,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -6887,7 +6799,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -6929,7 +6840,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -7027,7 +6937,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -7075,7 +6984,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -7173,7 +7081,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -7219,7 +7126,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -7317,7 +7223,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -7359,7 +7264,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -7457,7 +7361,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -7499,7 +7402,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -7597,7 +7499,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -7639,7 +7540,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
@@ -7737,7 +7637,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -7779,7 +7678,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -7877,7 +7775,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -7919,7 +7816,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -8017,7 +7913,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -8058,7 +7953,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -8156,7 +8050,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -8199,7 +8092,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -8297,7 +8189,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -8338,7 +8229,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -8436,7 +8326,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -8478,7 +8367,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -8577,7 +8465,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -8618,7 +8505,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -8716,7 +8602,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -8758,7 +8643,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -8856,7 +8740,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -8897,7 +8780,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -8996,7 +8878,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -9038,7 +8919,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -9136,7 +9016,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -9243,7 +9122,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -9341,7 +9219,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -9381,7 +9258,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -9482,7 +9358,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -9523,7 +9398,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -9625,7 +9499,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -9667,7 +9540,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -9766,7 +9638,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -9807,7 +9678,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -9905,7 +9775,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -9947,7 +9816,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -10045,7 +9913,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -10093,7 +9960,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -10192,7 +10058,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -10234,7 +10099,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -10334,7 +10198,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -10377,7 +10240,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -10476,7 +10338,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -10518,7 +10379,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -10619,7 +10479,6 @@
           <module ref="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -10662,7 +10521,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -10765,7 +10623,6 @@
           <module ref="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -10812,7 +10669,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -10916,7 +10772,6 @@
           <module ref="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
           <module ref="feb13c42-6479-4631-bedd-7524f34b91c0(jetbrains.mps.ui.swing#5725024602606914374)" />
@@ -10991,7 +10846,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -11098,7 +10952,6 @@
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fc9ba4c3-4355-4a86-b84b-1c46c728f9ea(jetbrains.mps.ui.swt#1250358102411218055)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
           <module ref="feb13c42-6479-4631-bedd-7524f34b91c0(jetbrains.mps.ui.swing#5725024602606914374)" />
@@ -11171,7 +11024,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -11270,7 +11122,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -11313,7 +11164,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -11413,7 +11263,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -11456,7 +11305,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -11557,7 +11405,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -11600,7 +11447,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -11698,7 +11544,6 @@
           <module ref="f618e99a-2641-465c-bb54-31fe76f9e285(jetbrains.mps.baseLanguage.unitTest.execution)" />
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -11743,7 +11588,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -11842,7 +11686,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -11885,7 +11728,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -11984,7 +11826,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -12026,7 +11867,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -12124,7 +11964,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -12165,7 +12004,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -12263,7 +12101,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -12306,7 +12143,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -12404,7 +12240,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -12445,7 +12280,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -12546,7 +12380,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -12589,7 +12422,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -12691,7 +12523,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -12733,7 +12564,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -12834,7 +12664,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -12876,7 +12705,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -12975,7 +12803,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -13017,7 +12844,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -13115,7 +12941,6 @@
           <module ref="f618e99a-2641-465c-bb54-31fe76f9e285(jetbrains.mps.baseLanguage.unitTest.execution)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -13160,7 +12985,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -13260,7 +13084,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -13367,7 +13190,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -13465,7 +13287,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -13507,7 +13328,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -13605,7 +13425,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -13648,7 +13467,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -13747,7 +13565,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -13789,7 +13606,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -13888,7 +13704,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -13930,7 +13745,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -14029,7 +13843,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -14071,7 +13884,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -14170,7 +13982,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -14275,7 +14086,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -14374,7 +14184,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -14416,7 +14225,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
@@ -14514,7 +14322,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -14555,7 +14362,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -14654,7 +14460,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -14696,7 +14501,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -14795,7 +14599,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -14836,7 +14639,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -14934,7 +14736,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -15013,7 +14814,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -15112,7 +14912,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -15155,7 +14954,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -15254,7 +15052,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -15327,7 +15124,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -15425,7 +15221,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -15472,7 +15267,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -15570,7 +15364,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -15640,7 +15433,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -15739,7 +15531,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -15782,7 +15573,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -15881,7 +15671,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -15924,7 +15713,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -16023,7 +15811,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -16100,7 +15887,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -16199,7 +15985,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -16242,7 +16027,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -16341,7 +16125,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -16383,7 +16166,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -16481,7 +16263,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -16522,7 +16303,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -16623,7 +16403,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
@@ -16666,7 +16445,6 @@
           <module ref="20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
-          <module ref="25891414-2b70-48c7-b1cc-8dc0c127d669(jetbrains.mps.debugger.api.runtime)" />
           <module ref="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
           <module ref="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -16765,7 +16543,6 @@
           <module ref="f85adbd8-2ec2-4572-bcfc-8dd799a7f025(jetbrains.mps.xmlUnitTest)" />
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
-          <module ref="fcffe3cf-3ebc-4d3d-989b-2f30533bc904(jetbrains.mps.debugger.java.runtime)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>

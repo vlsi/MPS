@@ -402,14 +402,14 @@
     <content url="file://$MODULE_DIR$/../../plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/customViewers/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/customViewers/source_gen" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../../plugins/debugger-java/languages/customViewers/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java/languages/customViewers/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/evaluation/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/evaluation/source_gen" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../../plugins/debugger-java/languages/evaluation/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java/languages/evaluation/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/privateMembers/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/privateMembers/source_gen" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../../plugins/debugger-java/languages/privateMembers/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java/languages/privateMembers/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" isTestSource="false" />

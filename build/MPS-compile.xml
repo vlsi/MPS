@@ -42,9 +42,9 @@
   <property name="jetbrains.mps.build.property.classes" value="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
   <property name="jetbrains.mps.buildlanguage.classes" value="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
   <property name="jetbrains.mps.debugger.api.lang.classes" value="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/classes_gen" />
-  <property name="jetbrains.mps.debugger.java.customViewers.classes" value="${base_dir}/plugins/debugger-java-languages/customViewers/classes_gen" />
-  <property name="jetbrains.mps.debugger.java.evaluation.classes" value="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-  <property name="jetbrains.mps.debugger.java.privateMembers.classes" value="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
+  <property name="jetbrains.mps.debugger.java.customViewers.classes" value="${base_dir}/plugins/debugger-java/languages/customViewers/classes_gen" />
+  <property name="jetbrains.mps.debugger.java.evaluation.classes" value="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+  <property name="jetbrains.mps.debugger.java.privateMembers.classes" value="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
   <property name="jetbrains.mps.execution.commands.classes" value="${base_dir}/plugins/execution-languages/commands/classes_gen" />
   <property name="jetbrains.mps.execution.common.classes" value="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
   <property name="jetbrains.mps.execution.configurations.classes" value="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
@@ -355,16 +355,16 @@
     <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.debugger.java.customViewers_tjc.src">
-    <path path="${base_dir}/plugins/debugger-java-languages/customViewers/source_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/customViewers/test_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/customViewers/source_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/customViewers/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.debugger.java.evaluation_tjc.src">
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/source_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/test_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/source_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.debugger.java.privateMembers_tjc.src">
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/source_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/test_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/source_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.execution.commands_tjc.src">
     <path path="${base_dir}/plugins/execution-languages/commands/source_gen" />
@@ -664,9 +664,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -839,9 +839,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -978,9 +978,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -1117,9 +1117,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -1256,9 +1256,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -1395,9 +1395,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -1535,9 +1535,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -1686,9 +1686,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -1874,9 +1874,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -2013,9 +2013,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -2151,9 +2151,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -2290,9 +2290,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -2451,9 +2451,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -2597,9 +2597,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -2736,9 +2736,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -2904,9 +2904,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -3043,9 +3043,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -3185,9 +3185,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -3324,9 +3324,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -3464,9 +3464,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -3602,9 +3602,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -3741,9 +3741,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -3880,9 +3880,9 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/classes_gen" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -3896,7 +3896,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debugger.java.customViewers_tjc.classpaths">
-    <path path="${base_dir}/plugins/debugger-java-languages/customViewers/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/customViewers/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
@@ -4018,10 +4018,10 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/customViewers/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/customViewers/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -4035,7 +4035,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debugger.java.evaluation_tjc.classpaths">
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
@@ -4157,9 +4157,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -4173,7 +4173,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debugger.java.privateMembers_tjc.classpaths">
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
@@ -4295,9 +4295,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -4436,9 +4436,9 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/classes_gen" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -4577,9 +4577,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -4719,9 +4719,9 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/classes_gen" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -4859,9 +4859,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -4998,9 +4998,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -5136,9 +5136,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/migration/classes_gen" />
@@ -5278,9 +5278,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -5417,9 +5417,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -5555,9 +5555,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -5702,9 +5702,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -5840,9 +5840,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -5980,9 +5980,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -6119,9 +6119,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -6258,9 +6258,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -6396,9 +6396,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -6535,9 +6535,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -6673,9 +6673,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -6812,9 +6812,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -6950,9 +6950,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -7089,9 +7089,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -7227,9 +7227,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -7415,9 +7415,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -7555,9 +7555,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -7697,9 +7697,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -7838,9 +7838,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -7977,9 +7977,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -8120,9 +8120,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -8275,9 +8275,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -8422,9 +8422,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -8564,9 +8564,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -8702,9 +8702,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -8845,9 +8845,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -8984,9 +8984,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -9123,9 +9123,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -9261,9 +9261,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -9423,9 +9423,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -9562,9 +9562,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -9702,9 +9702,9 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/plugins/debugger-api/classes" />
-    <path path="${base_dir}/plugins/debugger-java-languages/evaluation/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
@@ -10866,21 +10866,21 @@
   <target name="compile.cycle.jetbrains.mps.debugger.java.customViewers_tjc" depends="compile.cycle.jetbrains.mps.debugger.java.privateMembers_tjc">
     <property name="classes.dump" value="${jetbrains.mps.debugger.java.customViewers.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/debugger-java-languages/customViewers/source_gen" />
-    <mkdir dir="${base_dir}/plugins/debugger-java-languages/customViewers/test_gen" />
+    <mkdir dir="${base_dir}/plugins/debugger-java/languages/customViewers/source_gen" />
+    <mkdir dir="${base_dir}/plugins/debugger-java/languages/customViewers/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.debugger.java.customViewers.classes}" />
     <javac classpathref="cycle.jetbrains.mps.debugger.java.customViewers_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.debugger.java.customViewers_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.debugger.java.customViewers.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java-languages/customViewers/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java-languages/customViewers/test_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java/languages/customViewers/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java/languages/customViewers/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.debugger.java.customViewers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debugger.java.customViewers.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/plugins/debugger-java-languages/customViewers/source_gen" />
-        <path path="${base_dir}/plugins/debugger-java-languages/customViewers/test_gen" />
+        <path path="${base_dir}/plugins/debugger-java/languages/customViewers/source_gen" />
+        <path path="${base_dir}/plugins/debugger-java/languages/customViewers/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -10888,21 +10888,21 @@
   <target name="compile.cycle.jetbrains.mps.debugger.java.evaluation_tjc" depends="compile.cycle.jetbrains.mps.debugger.java.customViewers_tjc">
     <property name="classes.dump" value="${jetbrains.mps.debugger.java.evaluation.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/debugger-java-languages/evaluation/source_gen" />
-    <mkdir dir="${base_dir}/plugins/debugger-java-languages/evaluation/test_gen" />
+    <mkdir dir="${base_dir}/plugins/debugger-java/languages/evaluation/source_gen" />
+    <mkdir dir="${base_dir}/plugins/debugger-java/languages/evaluation/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.debugger.java.evaluation.classes}" />
     <javac classpathref="cycle.jetbrains.mps.debugger.java.evaluation_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.debugger.java.evaluation_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.debugger.java.evaluation.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java-languages/evaluation/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java-languages/evaluation/test_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java/languages/evaluation/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java/languages/evaluation/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.debugger.java.evaluation_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debugger.java.evaluation.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/plugins/debugger-java-languages/evaluation/source_gen" />
-        <path path="${base_dir}/plugins/debugger-java-languages/evaluation/test_gen" />
+        <path path="${base_dir}/plugins/debugger-java/languages/evaluation/source_gen" />
+        <path path="${base_dir}/plugins/debugger-java/languages/evaluation/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -10910,21 +10910,21 @@
   <target name="compile.cycle.jetbrains.mps.debugger.java.privateMembers_tjc" depends="compile.cycle.jetbrains.mps.debugger.api.lang_tjc">
     <property name="classes.dump" value="${jetbrains.mps.debugger.java.privateMembers.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/debugger-java-languages/privateMembers/source_gen" />
-    <mkdir dir="${base_dir}/plugins/debugger-java-languages/privateMembers/test_gen" />
+    <mkdir dir="${base_dir}/plugins/debugger-java/languages/privateMembers/source_gen" />
+    <mkdir dir="${base_dir}/plugins/debugger-java/languages/privateMembers/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.debugger.java.privateMembers.classes}" />
     <javac classpathref="cycle.jetbrains.mps.debugger.java.privateMembers_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.debugger.java.privateMembers_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.debugger.java.privateMembers.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java-languages/privateMembers/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java-languages/privateMembers/test_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java/languages/privateMembers/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java/languages/privateMembers/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.debugger.java.privateMembers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debugger.java.privateMembers.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/source_gen" />
-        <path path="${base_dir}/plugins/debugger-java-languages/privateMembers/test_gen" />
+        <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/source_gen" />
+        <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />

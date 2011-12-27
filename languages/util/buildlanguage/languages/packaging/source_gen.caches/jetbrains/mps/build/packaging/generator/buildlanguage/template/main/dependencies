@@ -30,7 +30,6 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.ICompositeComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IPlugin_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IdeaInitializerReference_Behavior" />
