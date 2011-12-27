@@ -36,6 +36,7 @@ public class ThreadWatcher implements Output {
         "(AWT\\-.*)|" +
         "(Image Fetch.*)|" +
         "(Progress Cancel Checker)|" +
+        "(Flushing thread)|" +
         "(Keep\\-Alive.*)|" +
         "(Finalizer.*)|" +
         "(caret blinker.*)|" +
