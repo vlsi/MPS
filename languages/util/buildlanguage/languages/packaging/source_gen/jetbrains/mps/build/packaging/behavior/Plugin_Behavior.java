@@ -33,4 +33,8 @@ public class Plugin_Behavior {
   public static String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
     return "";
   }
+
+  public static String call_getPluginAbsolutePath_1047721517261544599(SNode thisNode) {
+    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode).getPath();
+  }
 }

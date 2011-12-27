@@ -2294,12 +2294,14 @@
     <nodeInfo nodeId="3033860308390155272" fileName="Plugin_Behavior.java" startLine="25" startPosition="74" endLine="26" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3033860308390166844" fileName="Plugin_Behavior.java" startLine="29" startPosition="88" endLine="30" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3033860308392405023" fileName="Plugin_Behavior.java" startLine="33" startPosition="83" endLine="34" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1047721517261544604" fileName="Plugin_Behavior.java" startLine="37" startPosition="87" endLine="38" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6278136257391573770" fileName="Plugin_Behavior.java" startLine="10" startPosition="30" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="6278136257391573689" fileName="Plugin_Behavior.java" startLine="15" startPosition="120" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6278136257391573715" fileName="Plugin_Behavior.java" startLine="18" startPosition="5" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6278136257391573770" fileName="Plugin_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getId_3033860308390151510#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="6278136257391573770" fileName="Plugin_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getDependency_3033860308390155295#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="6278136257391573770" fileName="Plugin_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getChildrenTargetDir_1237389224202#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6278136257391573770" fileName="Plugin_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPluginAbsolutePath_1047721517261544599#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="6278136257391573770" fileName="Plugin_Behavior.java" startLine="13" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPluginName_6278136257391573773#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="6278136257391573772" fileName="Plugin_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="6278136257391573690" fileName="Plugin_Behavior.java" startLine="16" startPosition="26" endLine="17" endPosition="119" />
@@ -2307,6 +2309,7 @@
     <scopeInfo nodeId="3033860308390155270" fileName="Plugin_Behavior.java" startLine="25" startPosition="74" endLine="26" endPosition="76" />
     <scopeInfo nodeId="3033860308390166841" fileName="Plugin_Behavior.java" startLine="29" startPosition="88" endLine="30" endPosition="58" />
     <scopeInfo nodeId="3033860308392405021" fileName="Plugin_Behavior.java" startLine="33" startPosition="83" endLine="34" endPosition="14" />
+    <scopeInfo nodeId="1047721517261544602" fileName="Plugin_Behavior.java" startLine="37" startPosition="87" endLine="38" endPosition="92" />
     <scopeInfo nodeId="6278136257391573770" fileName="Plugin_Behavior.java" startLine="10" startPosition="30" endLine="13" endPosition="0">
       <varInfo nodeId="6278136257391573770" varName="thisNode" />
     </scopeInfo>
@@ -2319,13 +2322,16 @@
     <scopeInfo nodeId="6278136257391573770" fileName="Plugin_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="6278136257391573770" varName="thisNode" />
     </scopeInfo>
+    <scopeInfo nodeId="6278136257391573770" fileName="Plugin_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="6278136257391573770" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="6278136257391573776" fileName="Plugin_Behavior.java" startLine="14" startPosition="79" endLine="22" endPosition="119">
       <varInfo nodeId="6278136257391573677" varName="lastIndexOf" />
     </scopeInfo>
     <scopeInfo nodeId="6278136257391573770" fileName="Plugin_Behavior.java" startLine="13" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="6278136257391573770" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="6278136257391573770" fileName="Plugin_Behavior.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Plugin_Behavior" />
+    <unitInfo nodeId="6278136257391573770" fileName="Plugin_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Plugin_Behavior" />
   </root>
   <root nodeId="7323513735995554361">
     <nodeInfo nodeId="7323513735995579032" fileName="Block_Behavior.java" startLine="16" startPosition="73" endLine="17" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

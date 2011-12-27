@@ -1,2 +1,3 @@
 +testbench:**/TestModule*.java
 -testbench:**/*sandbox.java
+-testbecnh:**/*mpsautobuild_test.java

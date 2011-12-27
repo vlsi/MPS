@@ -19,6 +19,10 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.packaging.behavior.IPlugin_Behavior;
+import com.intellij.ide.plugins.IdeaPluginDescriptor;
+import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.build.packaging.behavior.Plugin_Behavior;
+import com.intellij.ide.plugins.PluginManager;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Generator;
 
@@ -61,14 +65,13 @@ public class CheckFullDependencyUtil {
       }
     }
 
-
     return missingDependencyResult;
   }
 
   public static Map<SNode, Iterable<SNode>> checkFullPuginDependency(final Map<IModule, SNode> modules) {
     Map<SNode, Iterable<SNode>> result = MapSequence.fromMap(new LinkedHashMap<SNode, Iterable<SNode>>(16, (float) 0.75, false));
 
-    Set<IModule> pluginModules = SetSequence.fromSet(new HashSet<IModule>());
+    final Set<IModule> pluginModules = SetSequence.fromSet(new HashSet<IModule>());
     SetSequence.fromSet(pluginModules).addSequence(SetSequence.fromSet(MapSequence.fromMap(modules).keySet()).where(new IWhereFilter<IModule>() {
       public boolean accept(IModule it) {
         return (getContainingPlugin(MapSequence.fromMap(modules).get(it)) != null);
@@ -88,15 +91,11 @@ public class CheckFullDependencyUtil {
     for (final SNode plugin : SetSequence.fromSet(MapSequence.fromMap(plugins).keySet())) {
       Iterable<SNode> dependency = ListSequence.fromList(MapSequence.fromMap(plugins).get(plugin)).translate(new ITranslator2<IModule, IModule>() {
         public Iterable<IModule> translate(IModule it) {
-          return getDependencyToCheck(it);
+          return ListSequence.fromList(getDependencyToCheck(it)).intersect(SetSequence.fromSet(pluginModules));
         }
       }).select(new ISelector<IModule, SNode>() {
         public SNode select(IModule it) {
           return getContainingPlugin(MapSequence.fromMap(modules).get(it));
-        }
-      }).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return it != null;
         }
       }).distinct();
       Iterable<SNode> missing = Sequence.fromIterable(dependency).where(new IWhereFilter<SNode>() {
@@ -120,7 +119,46 @@ public class CheckFullDependencyUtil {
     if (eq_qp5jua_a0a0d(plugin, dependency)) {
       return true;
     }
-    return ListSequence.fromList(IPlugin_Behavior.call_getDependency_3033860308390155295(plugin)).contains(IPlugin_Behavior.call_getId_3033860308390151510(dependency));
+    return ListSequence.fromList(getDependency(plugin)).contains(getId(dependency));
+  }
+
+  private static List<String> getDependency(SNode plugin) {
+    if (!(SNodeOperations.isInstanceOf(plugin, "jetbrains.mps.build.packaging.structure.Plugin"))) {
+      return IPlugin_Behavior.call_getDependency_3033860308390155295(plugin);
+    }
+    IdeaPluginDescriptor descriptor = CheckFullDependencyUtil.findIdeaPlugin(plugin);
+    if (descriptor == null) {
+      return IPlugin_Behavior.call_getDependency_3033860308390155295(plugin);
+    }
+
+    return Sequence.fromIterable(Sequence.fromArray(descriptor.getDependentPluginIds())).select(new ISelector<PluginId, String>() {
+      public String select(PluginId it) {
+        return it.getIdString();
+      }
+    }).toListSequence();
+  }
+
+  public static String getId(SNode plugin) {
+    if (!(SNodeOperations.isInstanceOf(plugin, "jetbrains.mps.build.packaging.structure.Plugin"))) {
+      return IPlugin_Behavior.call_getId_3033860308390151510(plugin);
+    }
+    IdeaPluginDescriptor descriptor = CheckFullDependencyUtil.findIdeaPlugin(plugin);
+    if (descriptor == null) {
+      return IPlugin_Behavior.call_getId_3033860308390151510(plugin);
+    }
+
+    return descriptor.getPluginId().getIdString();
+  }
+
+  private static IdeaPluginDescriptor findIdeaPlugin(SNode plugin) {
+    SNode ideaPlugin = SNodeOperations.cast(plugin, "jetbrains.mps.build.packaging.structure.Plugin");
+    final String pluginName = Plugin_Behavior.call_getPluginName_6278136257391573773(ideaPlugin);
+
+    return Sequence.fromIterable(Sequence.fromArray(PluginManager.getPlugins())).findFirst(new IWhereFilter<IdeaPluginDescriptor>() {
+      public boolean accept(IdeaPluginDescriptor it) {
+        return it.getPath().getAbsolutePath().endsWith(pluginName);
+      }
+    });
   }
 
   private static List<IModule> getDependencyToCheck(IModule module) {
