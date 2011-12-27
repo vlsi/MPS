@@ -15,6 +15,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.packaging.behavior.IPlugin_Behavior;
@@ -85,9 +86,17 @@ public class CheckFullDependencyUtil {
     }
 
     for (final SNode plugin : SetSequence.fromSet(MapSequence.fromMap(plugins).keySet())) {
-      Iterable<SNode> dependency = ListSequence.fromList(MapSequence.fromMap(plugins).get(plugin)).select(new ISelector<IModule, SNode>() {
+      Iterable<SNode> dependency = ListSequence.fromList(MapSequence.fromMap(plugins).get(plugin)).translate(new ITranslator2<IModule, IModule>() {
+        public Iterable<IModule> translate(IModule it) {
+          return getDependencyToCheck(it);
+        }
+      }).select(new ISelector<IModule, SNode>() {
         public SNode select(IModule it) {
           return getContainingPlugin(MapSequence.fromMap(modules).get(it));
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return it != null;
         }
       }).distinct();
       Iterable<SNode> missing = Sequence.fromIterable(dependency).where(new IWhereFilter<SNode>() {
