@@ -45,6 +45,8 @@ public class MpsAutobuildTest extends TestSuite {
     ourMakeHelper.dispose();
     if (ourIdeaLoadPlugins != null) {
       System.setProperty(IDEA_LOAD_PLUGINS, ourIdeaLoadPlugins);
+    } else {
+      System.setProperty(IDEA_LOAD_PLUGINS, "false");
     }
   }
 }
