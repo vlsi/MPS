@@ -421,6 +421,9 @@
     <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/runtime/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/unitTests/runtime/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated.runtime/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated.runtime/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated/source_gen" isTestSource="false" />
     </content>
