@@ -28,7 +28,7 @@ public class MoveStaticField_Action extends BaseAction {
   public MoveStaticField_Action() {
     super("Move Static Field", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

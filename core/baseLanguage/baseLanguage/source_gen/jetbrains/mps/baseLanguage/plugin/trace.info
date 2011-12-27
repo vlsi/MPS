@@ -1530,7 +1530,7 @@
     <nodeInfo nodeId="2590211111027350964" fileName="ConvertAnonymousClass_Action.java" startLine="25" startPosition="40" endLine="26" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2590211111027350964" fileName="ConvertAnonymousClass_Action.java" startLine="28" startPosition="41" endLine="29" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2590211111027350964" fileName="ConvertAnonymousClass_Action.java" startLine="29" startPosition="47" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2590211111027350964" fileName="ConvertAnonymousClass_Action.java" startLine="30" startPosition="35" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2590211111027350964" fileName="ConvertAnonymousClass_Action.java" startLine="30" startPosition="35" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2590211111027369384" fileName="ConvertAnonymousClass_Action.java" startLine="34" startPosition="87" endLine="35" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2590211111027350964" fileName="ConvertAnonymousClass_Action.java" startLine="40" startPosition="7" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2590211111027350964" fileName="ConvertAnonymousClass_Action.java" startLine="41" startPosition="60" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1582,7 +1582,7 @@
       <varInfo nodeId="2590211111027350964" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="2590211111027350964" fileName="ConvertAnonymousClass_Action.java" startLine="44" startPosition="27" endLine="46" endPosition="44" />
-    <scopeInfo nodeId="2590211111027350964" fileName="ConvertAnonymousClass_Action.java" startLine="28" startPosition="41" endLine="31" endPosition="41" />
+    <scopeInfo nodeId="2590211111027350964" fileName="ConvertAnonymousClass_Action.java" startLine="28" startPosition="41" endLine="31" endPosition="40" />
     <scopeInfo nodeId="2590211111027350964" fileName="ConvertAnonymousClass_Action.java" startLine="56" startPosition="25" endLine="59" endPosition="9" />
     <scopeInfo nodeId="2590211111027350964" fileName="ConvertAnonymousClass_Action.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="2590211111027350964" varName="_params" />
@@ -2189,7 +2189,7 @@
     <nodeInfo nodeId="4366542054834691416" fileName="MoveStaticField_Action.java" startLine="25" startPosition="40" endLine="26" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4366542054834691416" fileName="MoveStaticField_Action.java" startLine="28" startPosition="35" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4366542054834691416" fileName="MoveStaticField_Action.java" startLine="29" startPosition="41" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834691416" fileName="MoveStaticField_Action.java" startLine="30" startPosition="35" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834691416" fileName="MoveStaticField_Action.java" startLine="30" startPosition="35" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4366542054834696649" fileName="MoveStaticField_Action.java" startLine="34" startPosition="87" endLine="35" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4366542054834691416" fileName="MoveStaticField_Action.java" startLine="40" startPosition="7" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4366542054834691416" fileName="MoveStaticField_Action.java" startLine="41" startPosition="60" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2246,7 +2246,7 @@
       <varInfo nodeId="4366542054834691416" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="4366542054834691416" fileName="MoveStaticField_Action.java" startLine="44" startPosition="27" endLine="46" endPosition="44" />
-    <scopeInfo nodeId="4366542054834691416" fileName="MoveStaticField_Action.java" startLine="28" startPosition="35" endLine="31" endPosition="41" />
+    <scopeInfo nodeId="4366542054834691416" fileName="MoveStaticField_Action.java" startLine="28" startPosition="35" endLine="31" endPosition="40" />
     <scopeInfo nodeId="4366542054834691416" fileName="MoveStaticField_Action.java" startLine="56" startPosition="25" endLine="59" endPosition="9" />
     <scopeInfo nodeId="4366542054834691416" fileName="MoveStaticField_Action.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="4366542054834691416" varName="_params" />
@@ -2495,19 +2495,13 @@
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="82" startPosition="5" endLine="83" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="84" startPosition="62" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="86" startPosition="5" endLine="87" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3795717784226462591" fileName="ChangeMethodSignature_Action.java" startLine="91" startPosition="9" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1106479162954057375" fileName="ChangeMethodSignature_Action.java" startLine="94" startPosition="27" endLine="95" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5957075241641501297" fileName="ChangeMethodSignature_Action.java" startLine="97" startPosition="9" endLine="98" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5161277940733431339" fileName="ChangeMethodSignature_Action.java" startLine="99" startPosition="60" endLine="100" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6154323256625882662" fileName="ChangeMethodSignature_Action.java" startLine="101" startPosition="7" endLine="102" endPosition="322" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9105523200710433835" fileName="ChangeMethodSignature_Action.java" startLine="102" startPosition="322" endLine="103" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8686288815841849395" fileName="ChangeMethodSignature_Action.java" startLine="103" startPosition="41" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9105523200710433845" fileName="ChangeMethodSignature_Action.java" startLine="104" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4846444759634918725" fileName="ChangeMethodSignature_Action.java" startLine="105" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="107" startPosition="27" endLine="108" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3795717784226428060" fileName="ChangeMethodSignature_Action.java" startLine="112" startPosition="123" endLine="113" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5161277940733430355" fileName="ChangeMethodSignature_Action.java" startLine="113" startPosition="136" endLine="114" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8686288815841849380" fileName="ChangeMethodSignature_Action.java" startLine="114" startPosition="24" endLine="115" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1106479162954057375" fileName="ChangeMethodSignature_Action.java" startLine="93" startPosition="27" endLine="94" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5264981455891287623" fileName="ChangeMethodSignature_Action.java" startLine="96" startPosition="9" endLine="97" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5264981455891287632" fileName="ChangeMethodSignature_Action.java" startLine="97" startPosition="196" endLine="98" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5957075241641501297" fileName="ChangeMethodSignature_Action.java" startLine="98" startPosition="26" endLine="99" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5161277940733431339" fileName="ChangeMethodSignature_Action.java" startLine="100" startPosition="60" endLine="101" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5264981455891287609" fileName="ChangeMethodSignature_Action.java" startLine="102" startPosition="7" endLine="103" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="104" startPosition="27" endLine="105" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="75" startPosition="57" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="54" startPosition="95" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="60" startPosition="25" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2515,24 +2509,23 @@
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="70" startPosition="94" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="79" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="83" startPosition="100" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5161277940733431325" fileName="ChangeMethodSignature_Action.java" startLine="98" startPosition="177" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5161277940733431325" fileName="ChangeMethodSignature_Action.java" startLine="99" startPosition="90" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="69" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="82" startPosition="5" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1106479162954057373" fileName="ChangeMethodSignature_Action.java" startLine="93" startPosition="60" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1106479162954057373" fileName="ChangeMethodSignature_Action.java" startLine="92" startPosition="60" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="31" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeMethodSignature_Action#()V" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="59" startPosition="57" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1106479162954057372" fileName="ChangeMethodSignature_Action.java" startLine="92" startPosition="0" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1106479162954057372" fileName="ChangeMethodSignature_Action.java" startLine="91" startPosition="9" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="73" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9105523200710612542" fileName="ChangeMethodSignature_Action.java" startLine="111" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/IOperationContext;Ljava/util/Map;)Ljava/util/List;" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="42" startPosition="89" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="57" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="73" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="41" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="57" startPosition="5" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="90" startPosition="96" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="89" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="90" startPosition="96" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="89" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="53" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="76" startPosition="25" endLine="76" endPosition="25" />
     <scopeInfo nodeId="3426612557875228788" fileName="ChangeMethodSignature_Action.java" startLine="38" startPosition="87" endLine="39" endPosition="212" />
@@ -2542,12 +2535,12 @@
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="71" startPosition="62" endLine="72" endPosition="19" />
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="80" startPosition="60" endLine="81" endPosition="19" />
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="84" startPosition="62" endLine="85" endPosition="19" />
-    <scopeInfo nodeId="1106479162954057374" fileName="ChangeMethodSignature_Action.java" startLine="94" startPosition="27" endLine="95" endPosition="51" />
-    <scopeInfo nodeId="5161277940733431326" fileName="ChangeMethodSignature_Action.java" startLine="99" startPosition="60" endLine="100" endPosition="15" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="107" startPosition="0" endLine="108" endPosition="93">
+    <scopeInfo nodeId="1106479162954057374" fileName="ChangeMethodSignature_Action.java" startLine="93" startPosition="27" endLine="94" endPosition="51" />
+    <scopeInfo nodeId="5161277940733431326" fileName="ChangeMethodSignature_Action.java" startLine="100" startPosition="60" endLine="101" endPosition="15" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="104" startPosition="0" endLine="105" endPosition="93">
       <varInfo nodeId="4846444759634889921" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="107" startPosition="27" endLine="108" endPosition="93" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="104" startPosition="27" endLine="105" endPosition="93" />
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="44" startPosition="7" endLine="46" endPosition="63">
       <varInfo nodeId="4846444759634889921" varName="enabled" />
     </scopeInfo>
@@ -2557,9 +2550,6 @@
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="48" startPosition="27" endLine="50" endPosition="44" />
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="32" startPosition="41" endLine="35" endPosition="40" />
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="60" startPosition="25" endLine="63" endPosition="9" />
-    <scopeInfo nodeId="9105523200710612544" fileName="ChangeMethodSignature_Action.java" startLine="112" startPosition="123" endLine="115" endPosition="39">
-      <varInfo nodeId="3795717784226428061" varName="dialog" />
-    </scopeInfo>
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="4846444759634889921" varName="_params" />
       <varInfo nodeId="4846444759634889921" varName="event" />
@@ -2570,12 +2560,8 @@
       <varInfo nodeId="4846444759634889921" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="82" startPosition="5" endLine="86" endPosition="5" />
-    <scopeInfo nodeId="1106479162954057373" fileName="ChangeMethodSignature_Action.java" startLine="93" startPosition="60" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="1106479162954057373" fileName="ChangeMethodSignature_Action.java" startLine="92" startPosition="60" endLine="96" endPosition="0" />
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="31" startPosition="0" endLine="36" endPosition="3" />
-    <scopeInfo nodeId="9105523200710612542" fileName="ChangeMethodSignature_Action.java" startLine="111" startPosition="0" endLine="117" endPosition="0">
-      <varInfo nodeId="9105523200710612542" varName="_params" />
-      <varInfo nodeId="9105523200710612551" varName="context" />
-    </scopeInfo>
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="58" startPosition="5" endLine="65" endPosition="55">
       <varInfo nodeId="4846444759634889921" varName="node" />
     </scopeInfo>
@@ -2586,12 +2572,12 @@
       <varInfo nodeId="4846444759634889921" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="57" startPosition="5" endLine="69" endPosition="5" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="91" startPosition="9" endLine="106" endPosition="0">
-      <varInfo nodeId="6154323256625882663" varName="c" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="91" startPosition="9" endLine="103" endPosition="332">
+      <varInfo nodeId="5264981455891287624" varName="dialog" />
       <varInfo nodeId="5957075241641501298" varName="myRefactorings" />
     </scopeInfo>
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="90" startPosition="96" endLine="109" endPosition="5" />
-    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="89" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="90" startPosition="96" endLine="106" endPosition="5" />
+    <scopeInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="89" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="4846444759634889921" varName="_params" />
       <varInfo nodeId="4846444759634889921" varName="event" />
     </scopeInfo>
@@ -2600,8 +2586,8 @@
       <varInfo nodeId="4846444759634889921" varName="_params" />
       <varInfo nodeId="4846444759634889921" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="28" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action" />
-    <unitInfo nodeId="1106479162954057373" fileName="ChangeMethodSignature_Action.java" startLine="93" startPosition="48" endLine="97" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action$1" />
+    <unitInfo nodeId="4846444759634889921" fileName="ChangeMethodSignature_Action.java" startLine="28" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action" />
+    <unitInfo nodeId="1106479162954057373" fileName="ChangeMethodSignature_Action.java" startLine="92" startPosition="48" endLine="96" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action$1" />
   </root>
   <root nodeId="4946201340714564775">
     <nodeInfo nodeId="4946201340714564775" fileName="RefactoringAdditions_ActionGroup.java" startLine="8" startPosition="76" endLine="9" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -3356,7 +3342,7 @@
     <nodeInfo nodeId="6418423027234933047" fileName="MoveStaticMethod_Action.java" startLine="25" startPosition="40" endLine="26" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6418423027234933047" fileName="MoveStaticMethod_Action.java" startLine="28" startPosition="36" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6418423027234933047" fileName="MoveStaticMethod_Action.java" startLine="29" startPosition="42" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6418423027234933047" fileName="MoveStaticMethod_Action.java" startLine="30" startPosition="35" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6418423027234933047" fileName="MoveStaticMethod_Action.java" startLine="30" startPosition="35" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6418423027234933058" fileName="MoveStaticMethod_Action.java" startLine="34" startPosition="87" endLine="35" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6418423027234933047" fileName="MoveStaticMethod_Action.java" startLine="40" startPosition="7" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6418423027234933047" fileName="MoveStaticMethod_Action.java" startLine="41" startPosition="60" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3411,7 +3397,7 @@
       <varInfo nodeId="6418423027234933047" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="6418423027234933047" fileName="MoveStaticMethod_Action.java" startLine="44" startPosition="27" endLine="46" endPosition="44" />
-    <scopeInfo nodeId="6418423027234933047" fileName="MoveStaticMethod_Action.java" startLine="28" startPosition="36" endLine="31" endPosition="41" />
+    <scopeInfo nodeId="6418423027234933047" fileName="MoveStaticMethod_Action.java" startLine="28" startPosition="36" endLine="31" endPosition="40" />
     <scopeInfo nodeId="6418423027234933047" fileName="MoveStaticMethod_Action.java" startLine="56" startPosition="25" endLine="59" endPosition="9" />
     <scopeInfo nodeId="6418423027234933047" fileName="MoveStaticMethod_Action.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="6418423027234933047" varName="_params" />
@@ -3455,7 +3441,7 @@
     <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="21" startPosition="40" endLine="22" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="24" startPosition="35" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="25" startPosition="41" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="26" startPosition="35" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="26" startPosition="35" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1851015849775187118" fileName="MakeFieldStatic_Action.java" startLine="30" startPosition="87" endLine="31" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="36" startPosition="7" endLine="37" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="37" startPosition="60" endLine="38" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3502,7 +3488,7 @@
       <varInfo nodeId="6446963551370383333" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="40" startPosition="27" endLine="42" endPosition="44" />
-    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="24" startPosition="35" endLine="27" endPosition="41" />
+    <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="24" startPosition="35" endLine="27" endPosition="40" />
     <scopeInfo nodeId="6446963551370383333" fileName="MakeFieldStatic_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="6446963551370383333" varName="_params" />
       <varInfo nodeId="6446963551370383333" varName="event" />
@@ -4923,7 +4909,7 @@
     <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="32" startPosition="40" endLine="33" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="35" startPosition="32" endLine="36" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="36" startPosition="37" endLine="37" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="37" startPosition="35" endLine="38" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="37" startPosition="35" endLine="38" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="759258373983274401" fileName="RenameMethod_Action.java" startLine="41" startPosition="87" endLine="42" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="47" startPosition="7" endLine="48" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="48" startPosition="60" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4993,7 +4979,7 @@
       <varInfo nodeId="759258373983203487" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="51" startPosition="27" endLine="53" endPosition="44" />
-    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="35" startPosition="32" endLine="38" endPosition="41" />
+    <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="35" startPosition="32" endLine="38" endPosition="40" />
     <scopeInfo nodeId="759258373983203487" fileName="RenameMethod_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="759258373983203487" varName="_params" />
       <varInfo nodeId="759258373983203487" varName="event" />
@@ -5036,7 +5022,7 @@
     <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="22" startPosition="40" endLine="23" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="25" startPosition="34" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="26" startPosition="40" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="27" startPosition="35" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="27" startPosition="35" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="759258373983359346" fileName="MakeFieldFinal_Action.java" startLine="31" startPosition="87" endLine="32" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="37" startPosition="7" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="38" startPosition="60" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5086,7 +5072,7 @@
       <varInfo nodeId="759258373983358795" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="41" startPosition="27" endLine="43" endPosition="44" />
-    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="25" startPosition="34" endLine="28" endPosition="41" />
+    <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="25" startPosition="34" endLine="28" endPosition="40" />
     <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="53" startPosition="25" endLine="56" endPosition="9" />
     <scopeInfo nodeId="759258373983358795" fileName="MakeFieldFinal_Action.java" startLine="71" startPosition="9" endLine="74" endPosition="295">
       <varInfo nodeId="759258373983359358" varName="c" />

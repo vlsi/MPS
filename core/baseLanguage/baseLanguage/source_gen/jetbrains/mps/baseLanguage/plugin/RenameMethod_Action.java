@@ -35,7 +35,7 @@ public class RenameMethod_Action extends BaseAction {
   public RenameMethod_Action() {
     super("Rename Method", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

@@ -28,7 +28,7 @@ public class MoveProperyUp_Action extends BaseAction {
   public MoveProperyUp_Action() {
     super("Move Property Up", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
@@ -64,6 +64,9 @@ public class MoveProperyUp_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 

@@ -24,7 +24,7 @@ public class MakeFieldStatic_Action extends BaseAction {
   public MakeFieldStatic_Action() {
     super("Make Field Static", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

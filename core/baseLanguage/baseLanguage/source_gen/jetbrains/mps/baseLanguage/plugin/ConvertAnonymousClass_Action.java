@@ -28,7 +28,7 @@ public class ConvertAnonymousClass_Action extends BaseAction {
   public ConvertAnonymousClass_Action() {
     super("Convert Anonymous Class", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

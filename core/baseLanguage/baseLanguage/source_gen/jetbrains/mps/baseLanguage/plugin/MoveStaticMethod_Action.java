@@ -28,7 +28,7 @@ public class MoveStaticMethod_Action extends BaseAction {
   public MoveStaticMethod_Action() {
     super("Move Static Method", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

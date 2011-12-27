@@ -41,6 +41,7 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2303821416583712011">
       <property name="name" nameId="tpck.1169194664001" value="SortKeymapMembers" />
       <property name="caption" nameId="tp4k.1205250923097" value="Sort Keymap Members" />
+      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2303821416583726585">
       <property name="name" nameId="tpck.1169194664001" value="RefactoringAdditions" />

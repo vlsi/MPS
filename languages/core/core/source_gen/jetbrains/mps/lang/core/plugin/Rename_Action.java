@@ -16,12 +16,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.scripts.RenameUtil;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import jetbrains.mps.ide.refactoring.RenameDialog;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.refactoring.RenameDialog;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Rename_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -30,15 +30,11 @@ public class Rename_Action extends BaseAction {
   public Rename_Action() {
     super("Rename", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings" + "." + "Rename"), ((SNode) MapSequence.fromMap(_params).get("target"))))) {
-      return false;
-    }
-    return true;
-
+    return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings" + "." + "Rename"), ((SNode) MapSequence.fromMap(_params).get("target")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -87,7 +83,7 @@ public class Rename_Action extends BaseAction {
         return;
       }
 
-      String newName = Rename_Action.this.init(_params);
+      String newName = RenameDialog.getNewName(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "name"), "node");
       if (newName == null) {
         return;
       }
@@ -95,9 +91,5 @@ public class Rename_Action extends BaseAction {
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "Rename", t);
     }
-  }
-
-  private String init(final Map<String, Object> _params) {
-    return RenameDialog.getNewName(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "name"), "node");
   }
 }

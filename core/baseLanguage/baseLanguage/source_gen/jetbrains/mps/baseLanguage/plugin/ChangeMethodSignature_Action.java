@@ -15,15 +15,15 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog;
+import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.refactoring.RefactoringFacade;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog;
 
 public class ChangeMethodSignature_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -89,29 +89,20 @@ public class ChangeMethodSignature_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           SModelRepository.getInstance().saveAll();
         }
       });
-      List<ChangeMethodSignatureRefactoring> myRefactorings = ChangeMethodSignature_Action.this.init(((IOperationContext) MapSequence.fromMap(_params).get("context")), _params);
+      ChangeMethodSignatureDialog dialog = new ChangeMethodSignatureDialog(((SNode) MapSequence.fromMap(_params).get("method")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      dialog.showDialog();
+      List<ChangeMethodSignatureRefactoring> myRefactorings = dialog.getAllRefactorings();
       if (ListSequence.fromList(myRefactorings).isEmpty()) {
         return;
       }
-      RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature", Arrays.asList("myRefactorings"), Arrays.asList(myRefactorings), ((SNode) MapSequence.fromMap(_params).get("method")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
-      new RefactoringFacade().execute(c);
-
-
-
+      new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature", Arrays.asList("myRefactorings"), Arrays.asList(myRefactorings), ((SNode) MapSequence.fromMap(_params).get("method")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ChangeMethodSignature", t);
     }
-  }
-
-  private List<ChangeMethodSignatureRefactoring> init(final IOperationContext context, final Map<String, Object> _params) {
-    ChangeMethodSignatureDialog dialog = new ChangeMethodSignatureDialog(((SNode) MapSequence.fromMap(_params).get("method")), context);
-    dialog.showDialog();
-    return dialog.getAllRefactorings();
   }
 }

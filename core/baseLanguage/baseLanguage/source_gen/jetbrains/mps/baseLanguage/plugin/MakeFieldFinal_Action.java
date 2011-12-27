@@ -25,7 +25,7 @@ public class MakeFieldFinal_Action extends BaseAction {
   public MakeFieldFinal_Action() {
     super("Make Field Final", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

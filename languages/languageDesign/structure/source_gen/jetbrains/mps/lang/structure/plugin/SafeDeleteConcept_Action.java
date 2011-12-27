@@ -48,10 +48,6 @@ public class SafeDeleteConcept_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsproject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsproject") == null) {
-      return false;
-    }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
@@ -62,6 +58,10 @@ public class SafeDeleteConcept_Action extends BaseAction {
       MapSequence.fromMap(_params).put("node", node);
     }
     if (MapSequence.fromMap(_params).get("node") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("mpsproject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsproject") == null) {
       return false;
     }
     return true;

@@ -22,9 +22,9 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
-import jetbrains.mps.ide.refactoring.RefactoringFacade;
 
 public class MoveNodes_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,7 +33,7 @@ public class MoveNodes_Action extends BaseAction {
   public MoveNodes_Action() {
     super("Move Nodes", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
@@ -93,8 +93,7 @@ public class MoveNodes_Action extends BaseAction {
       if (newNode.value == null) {
         return;
       }
-      RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(newNode.value), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
-      new RefactoringFacade().execute(c);
+      new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(newNode.value), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MoveNodes", t);
     }
