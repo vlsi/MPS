@@ -76,11 +76,15 @@ public class ChildSubstituteActionsUtil {
   }
 
   public static boolean containsRemoveDefaults(List<SNode> builders) {
-    return ListSequence.fromList(builders).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(builders).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ListSequence.fromList(SNodeOperations.getDescendants(it, "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", false, new String[]{})).isNotEmpty();
+        return ListSequence.fromList(SLinkOperations.getTargets(it, "part", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode part) {
+            return SNodeOperations.isInstanceOf(part, "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart");
+          }
+        });
       }
-    }).isNotEmpty();
+    });
   }
 
   public static List<INodeSubstituteAction> invokeActionFactory(SNode builder, SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
@@ -97,13 +101,13 @@ public class ChildSubstituteActionsUtil {
   public static List<INodeSubstituteAction> applyActionFilter(SNode builder, List<INodeSubstituteAction> actions, SNode parentNode, SNode currentChild, SNode childConcept, IOperationContext context) {
 
     // remove banned concepts 
-    Set<SNode> conceptsToRemove = SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(SNodeOperations.getDescendants(builder, "jetbrains.mps.lang.actions.structure.RemovePart", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    Set<SNode> conceptsToRemove = SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(SLinkOperations.getTargets(builder, "part", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "conceptToRemove", false) != null);
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.actions.structure.RemovePart") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.actions.structure.RemovePart"), "conceptToRemove", false) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "conceptToRemove", false);
+        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.actions.structure.RemovePart"), "conceptToRemove", false);
       }
     }));
     if (SetSequence.fromSet(conceptsToRemove).isNotEmpty()) {
@@ -116,7 +120,11 @@ public class ChildSubstituteActionsUtil {
     }
 
     // apply custom filters 
-    for (SNode removeByCondition : ListSequence.fromList(SNodeOperations.getDescendants(builder, "jetbrains.mps.lang.actions.structure.RemoveByConditionPart", false, new String[]{}))) {
+    for (SNode removeByCondition : ListSequence.fromList(SLinkOperations.getTargets(builder, "part", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.actions.structure.RemoveByConditionPart");
+      }
+    })) {
       String methodName = "removeActionsByCondition_" + removeByCondition.getSNodeId();
       try {
         QueryMethodGenerated.invoke(methodName, context, new RemoveSubstituteActionByConditionContext(ListSequence.fromList(actions).iterator(), parentNode, currentChild, childConcept), SNodeOperations.getModel(builder));
