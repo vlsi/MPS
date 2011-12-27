@@ -116,7 +116,7 @@
     </node>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6762701973176605162">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.debugger-api" />
-      <property name="name" nameId="tp4k.5023285075122009367" value="Debugger API for MPS" />
+      <property name="name" nameId="tpck.1169194664001" value="Debugger API for MPS" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="Provides Generic Debugger Support For MPS" />
       <property name="version" nameId="tp4k.5023285075122009369" value="2.0" />
@@ -386,7 +386,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091378">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/debugger-api/resources/jetbrains/mps/debugger/api/ui/actions/icons/evaluate.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/evaluate.png" />
     </node>
   </root>
   <root id="7064627997011532361">
@@ -832,7 +832,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091385">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/debugger-api/resources/jetbrains/mps/debugger/api/ui/actions/icons/export.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/export.png" />
     </node>
   </root>
   <root id="7064627997011532536">
@@ -1176,7 +1176,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091370">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/debugger-api/resources/jetbrains/mps/debugger/api/ui/actions/icons/pause.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/pause.png" />
     </node>
   </root>
   <root id="7064627997011532672">
@@ -1248,7 +1248,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091379">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/debugger-api/resources/jetbrains/mps/debugger/api/ui/actions/icons/resume.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/resume.png" />
     </node>
   </root>
   <root id="7064627997011532701">
@@ -1320,7 +1320,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091377">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/debugger-api/resources/jetbrains/mps/debugger/api/ui/actions/icons/stepInto.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/stepInto.png" />
     </node>
   </root>
   <root id="7064627997011532730">
@@ -1392,7 +1392,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091376">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/debugger-api/resources/jetbrains/mps/debugger/api/ui/actions/icons/stepOut.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/stepOut.png" />
     </node>
   </root>
   <root id="7064627997011532759">
@@ -1464,7 +1464,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091369">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/debugger-api/resources/jetbrains/mps/debugger/api/ui/actions/icons/stepOver.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/stepOver.png" />
     </node>
   </root>
   <root id="7064627997011532788">
@@ -1642,7 +1642,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091380">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/debugger-api/resources/jetbrains/mps/debugger/api/ui/actions/icons/viewBreakpoints.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/resources/viewBreakpoints.png" />
     </node>
   </root>
   <root id="7064627997011532858">
