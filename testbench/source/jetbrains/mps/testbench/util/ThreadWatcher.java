@@ -35,6 +35,7 @@ public class ThreadWatcher implements Output {
     private static Pattern IGNORED_THREAD = Pattern.compile(
         "(AWT\\-.*)|" +
         "(Image Fetch.*)|" +
+        "(Progress Cancel Checker)|" +
         "(Keep\\-Alive.*)|" +
         "(Finalizer.*)|" +
         "(caret blinker.*)|" +
