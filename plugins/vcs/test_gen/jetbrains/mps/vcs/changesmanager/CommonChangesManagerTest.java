@@ -44,9 +44,13 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.SNodePointer;
+import javax.swing.SwingUtilities;
+import com.intellij.openapi.fileEditor.FileEditor;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import com.intellij.openapi.command.undo.UndoManager;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.junit.Test;
@@ -267,24 +271,42 @@ public class CommonChangesManagerTest {
     ModelAccess.instance().flushEventQueue();
   }
 
-  private void doSomethingAndUndo(CurrentDifference diff, final _FunctionTypes._void_P0_E0... tasks) {
-    for (final _FunctionTypes._void_P0_E0 t : tasks) {
+  private void doSomethingAndUndo(CurrentDifference diff, _FunctionTypes._return_P0_E0<? extends SNode>... tasks) {
+    String stringBefore = getChangeSetString(diff.getChangeSet());
+
+    final List<SNodePointer> affectedNodePointers = ListSequence.fromList(new ArrayList<SNodePointer>());
+    for (final _FunctionTypes._return_P0_E0<? extends SNode> t : tasks) {
       runCommandAndWait(new Runnable() {
         public void run() {
-          t.invoke();
+          SNode node = t.invoke();
+          ListSequence.fromList(affectedNodePointers).addElement((node == null ?
+            null :
+            new SNodePointer(node)
+          ));
         }
       });
       waitAndCheck(diff);
     }
 
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-        for (int i = 0; i < tasks.length; i++) {
-          UndoManager.getInstance(myIdeaProject).undo(null);
-        }
+    for (final SNodePointer np : ListSequence.fromList(affectedNodePointers).reversedList()) {
+      try {
+        SwingUtilities.invokeAndWait(new Runnable() {
+          public void run() {
+            FileEditor fe = null;
+            if (np != null) {
+              MPSNodeVirtualFile vf = MPSNodesVirtualFileSystem.getInstance().getFileFor(np);
+              assert vf != null;
+              fe = new MPSFileNodeEditor(myIdeaProject, vf);
+            }
+            UndoManager.getInstance(myIdeaProject).undo(fe);
+          }
+        });
+      } catch (Throwable t) {
+        throw new AssertionError(t);
       }
-    }, ModalityState.NON_MODAL);
+    }
     waitAndCheck(diff);
+    Assert.assertEquals(stringBefore, getChangeSetString(diff.getChangeSet()));
   }
 
   private SNode getDocumentLayoutRoot() {
@@ -297,34 +319,35 @@ public class CommonChangesManagerTest {
   }
 
   private void removeModifiedRoot() {
-    doSomethingAndUndo(myUiDiff, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
+    doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
         SNode root = getDocumentLayoutRoot();
         SNodeOperations.deleteNode(root);
+        return (SNode) null;
       }
     });
   }
 
   private void addRoot() {
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
-    doSomethingAndUndo(myUiDiff, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
+    doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
         SModel model = myUiDiff.getModelDescriptor().getSModel();
         root.value = createNewRoot(model);
-        return;
+        return (SNode) null;
       }
-    }, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
+    }, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
         SPropertyOperations.set(root.value, "name", "NewRootName");
-        return;
+        return root.value;
       }
     });
   }
 
   private void changeProperty() {
     final Wrappers._T<SNode> method = new Wrappers._T<SNode>();
-    doSomethingAndUndo(myUiDiff, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
+    doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
         method.value = ListSequence.fromList(SLinkOperations.getTargets(getDocumentLayoutRoot(), "method", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode m) {
             return "selectAll".equals(SPropertyOperations.getString(m, "name"));
@@ -332,12 +355,35 @@ public class CommonChangesManagerTest {
         });
         Assert.assertNotNull(method.value);
         SPropertyOperations.set(method.value, "name", "selectEverything");
-        return;
+        return SNodeOperations.getContainingRoot(method.value);
       }
-    }, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
+    }, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
         SPropertyOperations.set(method.value, "name", "selectEverySinglePiece");
-        return;
+        return SNodeOperations.getContainingRoot(method.value);
+      }
+    });
+  }
+
+  private void changeReference() {
+    final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
+    final Wrappers._T<SNode> method = new Wrappers._T<SNode>();
+    doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        root.value = getDocumentLayoutRoot();
+        method.value = ListSequence.fromList(SLinkOperations.getTargets(root.value, "method", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode m) {
+            return "getSize".equals(SPropertyOperations.getString(m, "name"));
+          }
+        });
+        Assert.assertNotNull(method.value);
+        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(method.value, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", root.value, false);
+        return root.value;
+      }
+    }, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(method.value, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", ListSequence.fromList(SLinkOperations.getTargets(root.value, "staticInnerClassifiers", true)).first(), false);
+        return SNodeOperations.getContainingRoot(method.value);
       }
     });
   }
@@ -361,6 +407,7 @@ public class CommonChangesManagerTest {
           removeModifiedRoot();
           addRoot();
           changeProperty();
+          changeReference();
 
           return true;
         } catch (Throwable e) {
