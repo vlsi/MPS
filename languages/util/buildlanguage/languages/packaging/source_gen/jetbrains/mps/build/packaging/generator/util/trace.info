@@ -1,102 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2200305124974062948">
-    <nodeInfo nodeId="3033860308389926648" fileName="CheckFullDependencyUtil.java" startLine="26" startPosition="104" endLine="27" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3033860308389926646" fileName="CheckFullDependencyUtil.java" startLine="27" startPosition="154" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3033860308389926584" fileName="CheckFullDependencyUtil.java" startLine="28" startPosition="0" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3033860308389926557" fileName="CheckFullDependencyUtil.java" startLine="31" startPosition="41" endLine="32" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3033860308389926627" fileName="CheckFullDependencyUtil.java" startLine="34" startPosition="8" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3033860308389938169" fileName="CheckFullDependencyUtil.java" startLine="35" startPosition="0" endLine="36" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3033860308389926402" fileName="CheckFullDependencyUtil.java" startLine="37" startPosition="61" endLine="38" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3033860308389926629" fileName="CheckFullDependencyUtil.java" startLine="38" startPosition="93" endLine="39" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3033860308389938108" fileName="CheckFullDependencyUtil.java" startLine="40" startPosition="66" endLine="41" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3033860308389938124" fileName="CheckFullDependencyUtil.java" startLine="43" startPosition="5" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3033860308389926618" fileName="CheckFullDependencyUtil.java" startLine="44" startPosition="0" endLine="45" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3033860308389926609" fileName="CheckFullDependencyUtil.java" startLine="47" startPosition="41" endLine="48" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3033860308390150764" fileName="CheckFullDependencyUtil.java" startLine="50" startPosition="8" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3033860308389938172" fileName="CheckFullDependencyUtil.java" startLine="51" startPosition="0" endLine="52" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3033860308389938129" fileName="CheckFullDependencyUtil.java" startLine="53" startPosition="63" endLine="54" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3033860308389938135" fileName="CheckFullDependencyUtil.java" startLine="54" startPosition="93" endLine="55" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3033860308389938145" fileName="CheckFullDependencyUtil.java" startLine="56" startPosition="66" endLine="57" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3033860308389938125" fileName="CheckFullDependencyUtil.java" startLine="59" startPosition="5" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3033860308389938156" fileName="CheckFullDependencyUtil.java" startLine="60" startPosition="0" endLine="61" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3033860308389926453" fileName="CheckFullDependencyUtil.java" startLine="64" startPosition="55" endLine="65" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3033860308389926348" fileName="CheckFullDependencyUtil.java" startLine="68" startPosition="69" endLine="69" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3033860308389926300" fileName="CheckFullDependencyUtil.java" startLine="69" startPosition="86" endLine="70" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3033860308389926310" fileName="CheckFullDependencyUtil.java" startLine="71" startPosition="35" endLine="72" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3033860308389926320" fileName="CheckFullDependencyUtil.java" startLine="72" startPosition="69" endLine="73" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3033860308389926330" fileName="CheckFullDependencyUtil.java" startLine="73" startPosition="69" endLine="74" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3033860308389926370" fileName="CheckFullDependencyUtil.java" startLine="75" startPosition="5" endLine="76" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3033860308389926391" fileName="CheckFullDependencyUtil.java" startLine="78" startPosition="41" endLine="79" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2200305124974062950" fileName="CheckFullDependencyUtil.java" startLine="22" startPosition="38" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckFullDependencyUtil#()V" />
-    <nodeInfo nodeId="3033860308389938098" fileName="CheckFullDependencyUtil.java" startLine="39" startPosition="128" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3033860308389938143" fileName="CheckFullDependencyUtil.java" startLine="55" startPosition="154" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3033860308389926547" fileName="CheckFullDependencyUtil.java" startLine="30" startPosition="143" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
-    <nodeInfo nodeId="3033860308389926607" fileName="CheckFullDependencyUtil.java" startLine="46" startPosition="145" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
-    <nodeInfo nodeId="3033860308389926446" fileName="CheckFullDependencyUtil.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getContainingPlugin#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3033860308389926387" fileName="CheckFullDependencyUtil.java" startLine="77" startPosition="87" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
-    <nodeInfo nodeId="3033860308389926577" fileName="CheckFullDependencyUtil.java" startLine="29" startPosition="75" endLine="34" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3033860308389926598" fileName="CheckFullDependencyUtil.java" startLine="45" startPosition="77" endLine="50" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3033860308389926308" fileName="CheckFullDependencyUtil.java" startLine="70" startPosition="85" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3033860308389926367" fileName="CheckFullDependencyUtil.java" startLine="76" startPosition="90" endLine="81" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="986595758387447343" fileName="CheckFullDependencyUtil.java" startLine="36" startPosition="37" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3033860308389938126" fileName="CheckFullDependencyUtil.java" startLine="52" startPosition="39" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3033860308389926295" fileName="CheckFullDependencyUtil.java" startLine="67" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDependencyToCheck#(Ljetbrains/mps/project/IModule;)Ljava/util/List;" />
-    <nodeInfo nodeId="986595758387447332" fileName="CheckFullDependencyUtil.java" startLine="25" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkFullDependency#(Ljava/util/Map;)Ljava/util/Map;" />
-    <scopeInfo nodeId="2200305124974062953" fileName="CheckFullDependencyUtil.java" startLine="23" startPosition="36" endLine="23" endPosition="36" />
-    <scopeInfo nodeId="3033860308389926548" fileName="CheckFullDependencyUtil.java" startLine="31" startPosition="41" endLine="32" endPosition="83" />
-    <scopeInfo nodeId="3033860308389938099" fileName="CheckFullDependencyUtil.java" startLine="40" startPosition="66" endLine="41" endPosition="84" />
-    <scopeInfo nodeId="3033860308389926608" fileName="CheckFullDependencyUtil.java" startLine="47" startPosition="41" endLine="48" endPosition="83" />
-    <scopeInfo nodeId="3033860308389938144" fileName="CheckFullDependencyUtil.java" startLine="56" startPosition="66" endLine="57" endPosition="84" />
-    <scopeInfo nodeId="3033860308389926449" fileName="CheckFullDependencyUtil.java" startLine="64" startPosition="55" endLine="65" endPosition="110" />
-    <scopeInfo nodeId="3033860308389926388" fileName="CheckFullDependencyUtil.java" startLine="78" startPosition="41" endLine="79" endPosition="98" />
-    <scopeInfo nodeId="2200305124974062950" fileName="CheckFullDependencyUtil.java" startLine="22" startPosition="38" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="3033860308389926309" fileName="CheckFullDependencyUtil.java" startLine="71" startPosition="35" endLine="74" endPosition="67" />
-    <scopeInfo nodeId="3033860308389926547" fileName="CheckFullDependencyUtil.java" startLine="30" startPosition="143" endLine="34" endPosition="0">
+    <nodeInfo nodeId="3033860308389926648" fileName="CheckFullDependencyUtil.java" startLine="28" startPosition="104" endLine="29" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308389926646" fileName="CheckFullDependencyUtil.java" startLine="29" startPosition="154" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3033860308389926584" fileName="CheckFullDependencyUtil.java" startLine="30" startPosition="0" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308389926557" fileName="CheckFullDependencyUtil.java" startLine="33" startPosition="41" endLine="34" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3033860308389926627" fileName="CheckFullDependencyUtil.java" startLine="36" startPosition="8" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3033860308389938169" fileName="CheckFullDependencyUtil.java" startLine="37" startPosition="0" endLine="38" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3033860308389926402" fileName="CheckFullDependencyUtil.java" startLine="39" startPosition="61" endLine="40" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308389926629" fileName="CheckFullDependencyUtil.java" startLine="40" startPosition="93" endLine="41" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308389938108" fileName="CheckFullDependencyUtil.java" startLine="42" startPosition="66" endLine="43" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3033860308389938124" fileName="CheckFullDependencyUtil.java" startLine="45" startPosition="5" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3033860308389926618" fileName="CheckFullDependencyUtil.java" startLine="46" startPosition="0" endLine="47" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308389926609" fileName="CheckFullDependencyUtil.java" startLine="49" startPosition="41" endLine="50" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3033860308390150764" fileName="CheckFullDependencyUtil.java" startLine="52" startPosition="8" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3033860308389938172" fileName="CheckFullDependencyUtil.java" startLine="53" startPosition="0" endLine="54" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3033860308389938129" fileName="CheckFullDependencyUtil.java" startLine="55" startPosition="63" endLine="56" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308389938135" fileName="CheckFullDependencyUtil.java" startLine="56" startPosition="93" endLine="57" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308389938145" fileName="CheckFullDependencyUtil.java" startLine="58" startPosition="66" endLine="59" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3033860308390150917" fileName="CheckFullDependencyUtil.java" startLine="61" startPosition="5" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3033860308389938125" fileName="CheckFullDependencyUtil.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3033860308389938156" fileName="CheckFullDependencyUtil.java" startLine="63" startPosition="0" endLine="64" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3033860308390151448" fileName="CheckFullDependencyUtil.java" startLine="67" startPosition="105" endLine="68" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308390151446" fileName="CheckFullDependencyUtil.java" startLine="68" startPosition="129" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3033860308390151400" fileName="CheckFullDependencyUtil.java" startLine="69" startPosition="0" endLine="70" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308390151418" fileName="CheckFullDependencyUtil.java" startLine="72" startPosition="41" endLine="73" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3033860308390151398" fileName="CheckFullDependencyUtil.java" startLine="75" startPosition="8" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3033860308390151399" fileName="CheckFullDependencyUtil.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3033860308390151190" fileName="CheckFullDependencyUtil.java" startLine="77" startPosition="0" endLine="78" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308390151205" fileName="CheckFullDependencyUtil.java" startLine="79" startPosition="69" endLine="80" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308390151234" fileName="CheckFullDependencyUtil.java" startLine="81" startPosition="71" endLine="82" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3033860308390151249" fileName="CheckFullDependencyUtil.java" startLine="83" startPosition="7" endLine="84" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3033860308390536562" fileName="CheckFullDependencyUtil.java" startLine="85" startPosition="5" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3033860308390151321" fileName="CheckFullDependencyUtil.java" startLine="89" startPosition="41" endLine="90" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3033860308390151390" fileName="CheckFullDependencyUtil.java" startLine="94" startPosition="41" endLine="95" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3033860308390151485" fileName="CheckFullDependencyUtil.java" startLine="98" startPosition="56" endLine="99" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3033860308390151467" fileName="CheckFullDependencyUtil.java" startLine="101" startPosition="5" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3033860308390151469" fileName="CheckFullDependencyUtil.java" startLine="102" startPosition="0" endLine="103" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3033860308389926453" fileName="CheckFullDependencyUtil.java" startLine="106" startPosition="55" endLine="107" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3033860308390151503" fileName="CheckFullDependencyUtil.java" startLine="111" startPosition="46" endLine="112" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3033860308390189653" fileName="CheckFullDependencyUtil.java" startLine="113" startPosition="5" endLine="114" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3033860308389926348" fileName="CheckFullDependencyUtil.java" startLine="117" startPosition="69" endLine="118" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308389926300" fileName="CheckFullDependencyUtil.java" startLine="118" startPosition="86" endLine="119" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308389926310" fileName="CheckFullDependencyUtil.java" startLine="120" startPosition="35" endLine="121" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3033860308389926320" fileName="CheckFullDependencyUtil.java" startLine="121" startPosition="69" endLine="122" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3033860308389926330" fileName="CheckFullDependencyUtil.java" startLine="122" startPosition="69" endLine="123" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3033860308389926370" fileName="CheckFullDependencyUtil.java" startLine="124" startPosition="5" endLine="125" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3033860308389926391" fileName="CheckFullDependencyUtil.java" startLine="127" startPosition="41" endLine="128" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2200305124974062950" fileName="CheckFullDependencyUtil.java" startLine="24" startPosition="38" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckFullDependencyUtil#()V" />
+    <nodeInfo nodeId="3033860308389938098" fileName="CheckFullDependencyUtil.java" startLine="41" startPosition="128" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3033860308389938143" fileName="CheckFullDependencyUtil.java" startLine="57" startPosition="154" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3033860308390151214" fileName="CheckFullDependencyUtil.java" startLine="80" startPosition="99" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3033860308390151475" fileName="CheckFullDependencyUtil.java" startLine="97" startPosition="9" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3033860308390151495" fileName="CheckFullDependencyUtil.java" startLine="110" startPosition="69" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3033860308389926547" fileName="CheckFullDependencyUtil.java" startLine="32" startPosition="143" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
+    <nodeInfo nodeId="3033860308389926607" fileName="CheckFullDependencyUtil.java" startLine="48" startPosition="145" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
+    <nodeInfo nodeId="3033860308390151416" fileName="CheckFullDependencyUtil.java" startLine="71" startPosition="145" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
+    <nodeInfo nodeId="3033860308390151319" fileName="CheckFullDependencyUtil.java" startLine="88" startPosition="139" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3033860308390151386" fileName="CheckFullDependencyUtil.java" startLine="93" startPosition="99" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3033860308389926446" fileName="CheckFullDependencyUtil.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getContainingPlugin#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3033860308389926387" fileName="CheckFullDependencyUtil.java" startLine="126" startPosition="87" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
+    <nodeInfo nodeId="3033860308390151499" fileName="CheckFullDependencyUtil.java" startLine="133" startPosition="62" endLine="137" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3033860308389926577" fileName="CheckFullDependencyUtil.java" startLine="31" startPosition="75" endLine="36" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3033860308389926598" fileName="CheckFullDependencyUtil.java" startLine="47" startPosition="77" endLine="52" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3033860308390151407" fileName="CheckFullDependencyUtil.java" startLine="70" startPosition="77" endLine="75" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3033860308390151309" fileName="CheckFullDependencyUtil.java" startLine="87" startPosition="91" endLine="92" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308390151352" fileName="CheckFullDependencyUtil.java" startLine="92" startPosition="20" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3033860308389926308" fileName="CheckFullDependencyUtil.java" startLine="119" startPosition="85" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3033860308389926367" fileName="CheckFullDependencyUtil.java" startLine="125" startPosition="90" endLine="130" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="986595758387447343" fileName="CheckFullDependencyUtil.java" startLine="38" startPosition="37" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3033860308389938126" fileName="CheckFullDependencyUtil.java" startLine="54" startPosition="39" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3033860308390151177" fileName="CheckFullDependencyUtil.java" startLine="78" startPosition="126" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3033860308390151023" fileName="CheckFullDependencyUtil.java" startLine="109" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isDependent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3033860308390151499" fileName="CheckFullDependencyUtil.java" startLine="132" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_qp5jua_a0a0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="3033860308390151270" fileName="CheckFullDependencyUtil.java" startLine="86" startPosition="0" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3033860308389926295" fileName="CheckFullDependencyUtil.java" startLine="116" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDependencyToCheck#(Ljetbrains/mps/project/IModule;)Ljava/util/List;" />
+    <nodeInfo nodeId="986595758387447332" fileName="CheckFullDependencyUtil.java" startLine="27" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkFullDependency#(Ljava/util/Map;)Ljava/util/Map;" />
+    <nodeInfo nodeId="3033860308390151394" fileName="CheckFullDependencyUtil.java" startLine="66" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkFullPuginDependency#(Ljava/util/Map;)Ljava/util/Map;" />
+    <scopeInfo nodeId="2200305124974062953" fileName="CheckFullDependencyUtil.java" startLine="25" startPosition="36" endLine="25" endPosition="36" />
+    <scopeInfo nodeId="3033860308389926548" fileName="CheckFullDependencyUtil.java" startLine="33" startPosition="41" endLine="34" endPosition="83" />
+    <scopeInfo nodeId="3033860308389938099" fileName="CheckFullDependencyUtil.java" startLine="42" startPosition="66" endLine="43" endPosition="84" />
+    <scopeInfo nodeId="3033860308389926608" fileName="CheckFullDependencyUtil.java" startLine="49" startPosition="41" endLine="50" endPosition="83" />
+    <scopeInfo nodeId="3033860308389938144" fileName="CheckFullDependencyUtil.java" startLine="58" startPosition="66" endLine="59" endPosition="84" />
+    <scopeInfo nodeId="3033860308390151417" fileName="CheckFullDependencyUtil.java" startLine="72" startPosition="41" endLine="73" endPosition="83" />
+    <scopeInfo nodeId="3033860308390151215" fileName="CheckFullDependencyUtil.java" startLine="81" startPosition="71" endLine="82" endPosition="108" />
+    <scopeInfo nodeId="3033860308390151320" fileName="CheckFullDependencyUtil.java" startLine="89" startPosition="41" endLine="90" endPosition="75" />
+    <scopeInfo nodeId="3033860308390151387" fileName="CheckFullDependencyUtil.java" startLine="94" startPosition="41" endLine="95" endPosition="44" />
+    <scopeInfo nodeId="3033860308390151476" fileName="CheckFullDependencyUtil.java" startLine="98" startPosition="56" endLine="99" endPosition="57" />
+    <scopeInfo nodeId="3033860308389926449" fileName="CheckFullDependencyUtil.java" startLine="106" startPosition="55" endLine="107" endPosition="110" />
+    <scopeInfo nodeId="3033860308390151497" fileName="CheckFullDependencyUtil.java" startLine="111" startPosition="46" endLine="112" endPosition="18" />
+    <scopeInfo nodeId="3033860308389926388" fileName="CheckFullDependencyUtil.java" startLine="127" startPosition="41" endLine="128" endPosition="98" />
+    <scopeInfo nodeId="2200305124974062950" fileName="CheckFullDependencyUtil.java" startLine="24" startPosition="38" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="3033860308389926309" fileName="CheckFullDependencyUtil.java" startLine="120" startPosition="35" endLine="123" endPosition="67" />
+    <scopeInfo nodeId="3033860308389926547" fileName="CheckFullDependencyUtil.java" startLine="32" startPosition="143" endLine="36" endPosition="0">
       <varInfo nodeId="3033860308389926547" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3033860308389926607" fileName="CheckFullDependencyUtil.java" startLine="46" startPosition="145" endLine="50" endPosition="0">
+    <scopeInfo nodeId="3033860308389926607" fileName="CheckFullDependencyUtil.java" startLine="48" startPosition="145" endLine="52" endPosition="0">
       <varInfo nodeId="3033860308389926607" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3033860308389926446" fileName="CheckFullDependencyUtil.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="3033860308390151416" fileName="CheckFullDependencyUtil.java" startLine="71" startPosition="145" endLine="75" endPosition="0">
+      <varInfo nodeId="3033860308390151416" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3033860308390151319" fileName="CheckFullDependencyUtil.java" startLine="88" startPosition="139" endLine="92" endPosition="0">
+      <varInfo nodeId="3033860308390151319" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3033860308390151386" fileName="CheckFullDependencyUtil.java" startLine="93" startPosition="99" endLine="97" endPosition="0">
+      <varInfo nodeId="3033860308390151386" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3033860308389926446" fileName="CheckFullDependencyUtil.java" startLine="105" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="3033860308389926451" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3033860308389926387" fileName="CheckFullDependencyUtil.java" startLine="77" startPosition="87" endLine="81" endPosition="0">
+    <scopeInfo nodeId="3033860308390151026" fileName="CheckFullDependencyUtil.java" startLine="110" startPosition="69" endLine="114" endPosition="168" />
+    <scopeInfo nodeId="3033860308389926387" fileName="CheckFullDependencyUtil.java" startLine="126" startPosition="87" endLine="130" endPosition="0">
       <varInfo nodeId="3033860308389926387" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="986595758387447346" fileName="CheckFullDependencyUtil.java" startLine="37" startPosition="61" endLine="42" endPosition="7">
+    <scopeInfo nodeId="3033860308390151499" fileName="CheckFullDependencyUtil.java" startLine="133" startPosition="62" endLine="137" endPosition="6" />
+    <scopeInfo nodeId="986595758387447346" fileName="CheckFullDependencyUtil.java" startLine="39" startPosition="61" endLine="44" endPosition="7">
       <varInfo nodeId="3033860308389926403" varName="dependencyToCheck" />
       <varInfo nodeId="3033860308389926630" varName="missingDependency" />
     </scopeInfo>
-    <scopeInfo nodeId="3033860308389938128" fileName="CheckFullDependencyUtil.java" startLine="53" startPosition="63" endLine="58" endPosition="7">
+    <scopeInfo nodeId="3033860308389938128" fileName="CheckFullDependencyUtil.java" startLine="55" startPosition="63" endLine="60" endPosition="7">
       <varInfo nodeId="3033860308389938130" varName="dependencyToCheck" />
       <varInfo nodeId="3033860308389938136" varName="missingDependency" />
     </scopeInfo>
-    <scopeInfo nodeId="986595758387447343" fileName="CheckFullDependencyUtil.java" startLine="36" startPosition="37" endLine="43" endPosition="5">
+    <scopeInfo nodeId="3033860308390151180" fileName="CheckFullDependencyUtil.java" startLine="79" startPosition="69" endLine="84" endPosition="105">
+      <varInfo nodeId="3033860308390151206" varName="containingPlugin" />
+    </scopeInfo>
+    <scopeInfo nodeId="986595758387447343" fileName="CheckFullDependencyUtil.java" startLine="38" startPosition="37" endLine="45" endPosition="5">
       <varInfo nodeId="986595758387447343" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="3033860308389938126" fileName="CheckFullDependencyUtil.java" startLine="52" startPosition="39" endLine="59" endPosition="5">
+    <scopeInfo nodeId="3033860308389938126" fileName="CheckFullDependencyUtil.java" startLine="54" startPosition="39" endLine="61" endPosition="5">
       <varInfo nodeId="3033860308389938126" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="3033860308389926299" fileName="CheckFullDependencyUtil.java" startLine="68" startPosition="69" endLine="81" endPosition="24">
+    <scopeInfo nodeId="3033860308390151177" fileName="CheckFullDependencyUtil.java" startLine="78" startPosition="126" endLine="85" endPosition="5">
+      <varInfo nodeId="3033860308390151177" varName="pluginModule" />
+    </scopeInfo>
+    <scopeInfo nodeId="3033860308390151023" fileName="CheckFullDependencyUtil.java" startLine="109" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="3033860308390151030" varName="dependency" />
+      <varInfo nodeId="3033860308390151028" varName="plugin" />
+    </scopeInfo>
+    <scopeInfo nodeId="3033860308390151499" fileName="CheckFullDependencyUtil.java" startLine="132" startPosition="0" endLine="139" endPosition="0">
+      <varInfo nodeId="3033860308390151499" varName="a" />
+      <varInfo nodeId="3033860308390151499" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3033860308390151273" fileName="CheckFullDependencyUtil.java" startLine="87" startPosition="91" endLine="100" endPosition="7">
+      <varInfo nodeId="3033860308390151310" varName="dependency" />
+      <varInfo nodeId="3033860308390151353" varName="missing" />
+    </scopeInfo>
+    <scopeInfo nodeId="3033860308389926299" fileName="CheckFullDependencyUtil.java" startLine="117" startPosition="69" endLine="130" endPosition="24">
       <varInfo nodeId="3033860308389926293" varName="dependency" />
       <varInfo nodeId="3033860308389926349" varName="dependencyToCheck" />
     </scopeInfo>
-    <scopeInfo nodeId="3033860308389926295" fileName="CheckFullDependencyUtil.java" startLine="67" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="3033860308390151270" fileName="CheckFullDependencyUtil.java" startLine="86" startPosition="0" endLine="101" endPosition="5">
+      <varInfo nodeId="3033860308390151270" varName="plugin" />
+    </scopeInfo>
+    <scopeInfo nodeId="3033860308389926295" fileName="CheckFullDependencyUtil.java" startLine="116" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="3033860308389926294" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="986595758387447335" fileName="CheckFullDependencyUtil.java" startLine="26" startPosition="104" endLine="61" endPosition="35">
+    <scopeInfo nodeId="986595758387447335" fileName="CheckFullDependencyUtil.java" startLine="28" startPosition="104" endLine="64" endPosition="35">
       <varInfo nodeId="3033860308389926585" varName="coreModules" />
       <varInfo nodeId="3033860308389926649" varName="missingDependencyResult" />
       <varInfo nodeId="3033860308389926619" varName="pluginModules" />
     </scopeInfo>
-    <scopeInfo nodeId="986595758387447332" fileName="CheckFullDependencyUtil.java" startLine="25" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="3033860308390151397" fileName="CheckFullDependencyUtil.java" startLine="67" startPosition="105" endLine="103" endPosition="18">
+      <varInfo nodeId="3033860308390151401" varName="pluginModules" />
+      <varInfo nodeId="3033860308390151191" varName="plugins" />
+      <varInfo nodeId="3033860308390151449" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="986595758387447332" fileName="CheckFullDependencyUtil.java" startLine="27" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="986595758387447336" varName="modules" />
     </scopeInfo>
-    <unitInfo nodeId="2200305124974062948" fileName="CheckFullDependencyUtil.java" startLine="22" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil" />
-    <unitInfo nodeId="3033860308389926547" fileName="CheckFullDependencyUtil.java" startLine="30" startPosition="118" endLine="34" endPosition="5" unitName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil$1" />
-    <unitInfo nodeId="3033860308389926607" fileName="CheckFullDependencyUtil.java" startLine="46" startPosition="120" endLine="50" endPosition="5" unitName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil$2" />
-    <unitInfo nodeId="3033860308389926387" fileName="CheckFullDependencyUtil.java" startLine="77" startPosition="62" endLine="81" endPosition="5" unitName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil$3" />
+    <scopeInfo nodeId="3033860308390151394" fileName="CheckFullDependencyUtil.java" startLine="66" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="3033860308390151427" varName="modules" />
+    </scopeInfo>
+    <unitInfo nodeId="2200305124974062948" fileName="CheckFullDependencyUtil.java" startLine="24" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil" />
+    <unitInfo nodeId="3033860308389926547" fileName="CheckFullDependencyUtil.java" startLine="32" startPosition="118" endLine="36" endPosition="5" unitName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil$1" />
+    <unitInfo nodeId="3033860308389926607" fileName="CheckFullDependencyUtil.java" startLine="48" startPosition="120" endLine="52" endPosition="5" unitName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil$2" />
+    <unitInfo nodeId="3033860308390151416" fileName="CheckFullDependencyUtil.java" startLine="71" startPosition="120" endLine="75" endPosition="5" unitName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil$3" />
+    <unitInfo nodeId="3033860308390151319" fileName="CheckFullDependencyUtil.java" startLine="88" startPosition="110" endLine="92" endPosition="7" unitName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil$4" />
+    <unitInfo nodeId="3033860308390151386" fileName="CheckFullDependencyUtil.java" startLine="93" startPosition="76" endLine="97" endPosition="7" unitName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil$5" />
+    <unitInfo nodeId="3033860308389926387" fileName="CheckFullDependencyUtil.java" startLine="126" startPosition="62" endLine="130" endPosition="5" unitName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil$6" />
   </root>
 </debugInfo>
 

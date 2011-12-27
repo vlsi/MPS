@@ -14,8 +14,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.packaging.behavior.IPlugin_Behavior;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Generator;
 
@@ -58,11 +60,58 @@ public class CheckFullDependencyUtil {
       }
     }
 
+
     return missingDependencyResult;
+  }
+
+  public static Map<SNode, Iterable<SNode>> checkFullPuginDependency(final Map<IModule, SNode> modules) {
+    Map<SNode, Iterable<SNode>> result = MapSequence.fromMap(new LinkedHashMap<SNode, Iterable<SNode>>(16, (float) 0.75, false));
+
+    Set<IModule> pluginModules = SetSequence.fromSet(new HashSet<IModule>());
+    SetSequence.fromSet(pluginModules).addSequence(SetSequence.fromSet(MapSequence.fromMap(modules).keySet()).where(new IWhereFilter<IModule>() {
+      public boolean accept(IModule it) {
+        return (getContainingPlugin(MapSequence.fromMap(modules).get(it)) != null);
+      }
+    }));
+
+
+    Map<SNode, List<IModule>> plugins = MapSequence.fromMap(new LinkedHashMap<SNode, List<IModule>>(16, (float) 0.75, false));
+    for (IModule pluginModule : SetSequence.fromSet(pluginModules)) {
+      SNode containingPlugin = getContainingPlugin(MapSequence.fromMap(modules).get(pluginModule));
+      if (MapSequence.fromMap(plugins).get(containingPlugin) == null) {
+        MapSequence.fromMap(plugins).put(containingPlugin, ListSequence.fromList(new ArrayList<IModule>()));
+      }
+      ListSequence.fromList(MapSequence.fromMap(plugins).get(containingPlugin)).addElement(pluginModule);
+    }
+
+    for (final SNode plugin : SetSequence.fromSet(MapSequence.fromMap(plugins).keySet())) {
+      Iterable<SNode> dependency = ListSequence.fromList(MapSequence.fromMap(plugins).get(plugin)).select(new ISelector<IModule, SNode>() {
+        public SNode select(IModule it) {
+          return getContainingPlugin(MapSequence.fromMap(modules).get(it));
+        }
+      }).distinct();
+      Iterable<SNode> missing = Sequence.fromIterable(dependency).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isDependent(plugin, it));
+        }
+      });
+      if (Sequence.fromIterable(missing).isNotEmpty()) {
+        MapSequence.fromMap(result).put(plugin, missing);
+      }
+    }
+
+    return result;
   }
 
   public static SNode getContainingPlugin(SNode node) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.build.packaging.structure.IPlugin", false, false);
+  }
+
+  public static boolean isDependent(SNode plugin, SNode dependency) {
+    if (eq_qp5jua_a0a0d(plugin, dependency)) {
+      return true;
+    }
+    return ListSequence.fromList(IPlugin_Behavior.call_getDependency_3033860308390155295(plugin)).contains(IPlugin_Behavior.call_getId_3033860308390151510(dependency));
   }
 
   private static List<IModule> getDependencyToCheck(IModule module) {
@@ -79,5 +128,12 @@ public class CheckFullDependencyUtil {
         return !(it instanceof Generator) && !(it.isPackaged()) && it.getDescriptorFile() != null;
       }
     }).toListSequence();
+  }
+
+  private static boolean eq_qp5jua_a0a0d(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

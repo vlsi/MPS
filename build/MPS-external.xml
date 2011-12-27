@@ -503,8 +503,8 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.commands" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations.deprecated" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations.deprecated" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/languages" />
     <copy todir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp">
       <fileset dir="${base_dir}/plugins/execution-languages/plugin/classes_gen" />

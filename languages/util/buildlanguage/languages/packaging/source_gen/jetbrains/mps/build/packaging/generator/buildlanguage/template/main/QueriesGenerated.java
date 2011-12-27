@@ -64,6 +64,7 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import java.util.HashMap;
 import jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil;
+import jetbrains.mps.build.packaging.behavior.IPlugin_Behavior;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -1030,7 +1031,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2454311172623298099(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "content", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "entry", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_2454311172623298348(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1508,7 +1509,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_2454311172623298081(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "content", true);
+    return SLinkOperations.getTargets(_context.getNode(), "entry", true);
   }
 
   public static Iterable sourceNodesQuery_2454311172623490713(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1657,6 +1658,7 @@ __switch__:
 
   public static void mappingScript_CodeBlock_1238426776124(final IOperationContext operationContext, final MappingScriptContext _context) {
     // <node> 
+    System.err.println("CheckFullDep");
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.Layout");
     for (SNode layout : ListSequence.fromList(layouts)) {
       Map<IModule, SNode> modules = MapSequence.fromMap(new HashMap<IModule, SNode>());
@@ -1682,7 +1684,16 @@ __switch__:
           }
         }
       }
+
+      Map<SNode, Iterable<SNode>> missingPlugins = CheckFullDependencyUtil.checkFullPuginDependency(modules);
+      for (SNode plugin : SetSequence.fromSet(MapSequence.fromMap(missingPlugins).keySet())) {
+        String id = IPlugin_Behavior.call_getId_3033860308390151510(plugin);
+        for (SNode dependency : Sequence.fromIterable(MapSequence.fromMap(missingPlugins).get(plugin))) {
+          _context.showErrorMessage(plugin, "Plugin " + id + " should depend on plugin " + IPlugin_Behavior.call_getId_3033860308390151510(dependency) + ".");
+        }
+      }
     }
+
   }
 
   public static void mappingScript_CodeBlock_9027273598492288378(final IOperationContext operationContext, final MappingScriptContext _context) {

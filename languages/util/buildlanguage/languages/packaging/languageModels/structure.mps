@@ -1060,6 +1060,7 @@
       <property name="role" nameId="tpce.1071599776563" value="entry" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1203617897549" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4159241239519649210">
       <property name="value" nameId="tpce.1105725733873" value="plugin" />
@@ -1067,6 +1068,9 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6278136257391742971">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6278136257391742970" resolveInfo="IPlugin" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3033860308392405018">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1203617883391" resolveInfo="ICompositeComponent" />
     </node>
   </root>
   <root id="6108265972537166326">
@@ -1224,6 +1228,10 @@
       <property name="role" nameId="tpce.1071599776563" value="content" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1203617897549" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3033860308392405010">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1203617883391" resolveInfo="ICompositeComponent" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6278136257391742972">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6278136257391742970" resolveInfo="IPlugin" />

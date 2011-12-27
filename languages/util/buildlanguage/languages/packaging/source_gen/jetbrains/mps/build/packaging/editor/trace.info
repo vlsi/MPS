@@ -12191,7 +12191,7 @@
     <nodeInfo nodeId="989489456094387710" fileName="PluginModule_Editor.java" startLine="145" startPosition="72" endLine="146" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="989489456094387710" fileName="PluginModule_Editor.java" startLine="146" startPosition="78" endLine="147" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="989489456094387710" fileName="PluginModule_Editor.java" startLine="148" startPosition="10" endLine="149" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3670106543524154486" fileName="PluginModule_Editor.java" startLine="152" startPosition="111" endLine="153" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3670106543524154486" fileName="PluginModule_Editor.java" startLine="152" startPosition="111" endLine="153" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2454311172622877197" fileName="PluginModule_Editor.java" startLine="157" startPosition="100" endLine="158" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2454311172622877197" fileName="PluginModule_Editor.java" startLine="161" startPosition="66" endLine="162" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2454311172622877197" fileName="PluginModule_Editor.java" startLine="162" startPosition="41" endLine="163" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -12296,7 +12296,7 @@
     <scopeInfo nodeId="7967031338862677980" fileName="PluginModule_Editor.java" startLine="70" startPosition="84" endLine="71" endPosition="82" />
     <scopeInfo nodeId="2454311172622877197" fileName="PluginModule_Editor.java" startLine="97" startPosition="108" endLine="98" endPosition="48" />
     <scopeInfo nodeId="2454311172622877191" fileName="PluginModule_Editor.java" startLine="105" startPosition="108" endLine="106" endPosition="50" />
-    <scopeInfo nodeId="3670106543524154485" fileName="PluginModule_Editor.java" startLine="152" startPosition="111" endLine="153" endPosition="97" />
+    <scopeInfo nodeId="3670106543524154485" fileName="PluginModule_Editor.java" startLine="152" startPosition="111" endLine="153" endPosition="95" />
     <scopeInfo nodeId="2454311172622877197" fileName="PluginModule_Editor.java" startLine="157" startPosition="100" endLine="158" endPosition="50" />
     <scopeInfo nodeId="2454311172622877197" fileName="PluginModule_Editor.java" startLine="179" startPosition="89" endLine="180" endPosition="66" />
     <scopeInfo nodeId="2454311172622877197" fileName="PluginModule_Editor.java" startLine="186" startPosition="34" endLine="187" endPosition="95" />
