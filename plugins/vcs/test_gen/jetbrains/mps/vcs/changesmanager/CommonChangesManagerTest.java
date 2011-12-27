@@ -388,6 +388,38 @@ public class CommonChangesManagerTest {
     });
   }
 
+  private void moveNode() {
+    final Wrappers._T<SNode> field = new Wrappers._T<SNode>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SNode root = getDocumentLayoutRoot();
+        field.value = ListSequence.fromList(SLinkOperations.getTargets(root, "field", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode f) {
+            return "textPositions".equals(SPropertyOperations.getString(f, "name"));
+          }
+        });
+      }
+    });
+    Assert.assertNotNull(field.value);
+
+    _FunctionTypes._return_P0_E0<? extends SNode> moveUpTwice = new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        SNodeOperations.insertPrevSiblingChild(field.value, SNodeOperations.getPrevSibling(field.value));
+        SNodeOperations.insertPrevSiblingChild(field.value, SNodeOperations.getPrevSibling(field.value));
+        return SNodeOperations.getContainingRoot(field.value);
+      }
+    };
+    _FunctionTypes._return_P0_E0<? extends SNode> moveDown = new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        SNodeOperations.insertNextSiblingChild(field.value, SNodeOperations.getNextSibling(field.value));
+        return SNodeOperations.getContainingRoot(field.value);
+      }
+    };
+
+    // move node up by two 3 times, and down for 19 times 
+    doSomethingAndUndo(myUiDiff, moveUpTwice, moveUpTwice, moveUpTwice, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown);
+  }
+
   @Test
   public void doTest() {
     ModelChangesWatcher.setForceProcessingEnabled(true);
@@ -408,6 +440,7 @@ public class CommonChangesManagerTest {
           addRoot();
           changeProperty();
           changeReference();
+          moveNode();
 
           return true;
         } catch (Throwable e) {
