@@ -278,6 +278,7 @@
       <modulePath path="${project}/plugins/execution-languages/configurations/configurations.mpl" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/demo/demo.mpl" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/demo/pluginSolution/pluginSolution.msd" folder="languages.execution.demo" />
+      <modulePath path="${project}/plugins/execution-languages/deprecated.runtime/runtime.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/deprecated/runConfigurations.mpl" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/library/jetbrains.mps.execution.lib.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/plugin/languages.msd" folder="languages.execution.languages-plugin" />

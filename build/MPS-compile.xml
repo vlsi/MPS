@@ -49,6 +49,7 @@
   <property name="jetbrains.mps.execution.common.classes" value="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
   <property name="jetbrains.mps.execution.configurations.classes" value="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
   <property name="jetbrains.mps.execution.configurations.deprecated.classes" value="${base_dir}/plugins/execution-languages/deprecated/classes_gen" />
+  <property name="jetbrains.mps.execution.configurations.deprecated.runtime.classes" value="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
   <property name="jetbrains.mps.execution.lib.classes" value="${base_dir}/plugins/execution-languages/library/classes_gen" />
   <property name="jetbrains.mps.execution.migration.classes" value="${base_dir}/plugins/execution-configurations/migration/classes_gen" />
   <property name="jetbrains.mps.execution.settings.classes" value="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
@@ -275,6 +276,8 @@
   <path id="cycle.jetbrains.mps.baseLanguage.execution.util_tjc.src">
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/test_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/source_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.jdk7_tjc.src">
     <path path="${base_dir}/core/baseLanguage/jdk7/languages/jdk7/source_gen" />
@@ -670,6 +673,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -845,6 +849,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -984,6 +989,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -1123,6 +1129,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -1262,6 +1269,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -1401,6 +1409,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -1541,6 +1550,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -1692,6 +1702,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -1753,6 +1764,7 @@
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.execution.util_tjc.classpaths">
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
@@ -1880,6 +1892,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -2019,6 +2032,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -2157,6 +2171,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -2296,6 +2311,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -2457,6 +2473,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -2603,6 +2620,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -2742,6 +2760,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -2910,6 +2929,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -3049,6 +3069,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -3191,6 +3212,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -3330,6 +3352,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -3470,6 +3493,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -3608,6 +3632,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -3747,6 +3772,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -3886,6 +3912,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -4025,6 +4052,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -4163,6 +4191,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -4301,6 +4330,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -4443,6 +4473,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -4583,6 +4614,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -4727,6 +4759,7 @@
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -4865,6 +4898,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/deprecated/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5004,6 +5038,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -5143,6 +5178,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/migration/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -5284,6 +5320,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -5423,6 +5460,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -5561,6 +5599,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -5708,6 +5747,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -5846,6 +5886,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -5986,6 +6027,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -6125,6 +6167,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -6264,6 +6307,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -6402,6 +6446,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -6541,6 +6586,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -6679,6 +6725,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -6818,6 +6865,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -6956,6 +7004,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -7095,6 +7144,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -7233,6 +7283,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -7421,6 +7472,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -7561,6 +7613,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -7703,6 +7756,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -7844,6 +7898,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -7983,6 +8038,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -8126,6 +8182,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -8281,6 +8338,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -8428,6 +8486,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -8570,6 +8629,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -8708,6 +8768,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -8851,6 +8912,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -8990,6 +9052,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -9129,6 +9192,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -9267,6 +9331,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -9429,6 +9494,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -9568,6 +9634,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -9708,6 +9775,7 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -10411,8 +10479,11 @@
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" />
     <mkdir dir="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/test_gen" />
+    <mkdir dir="${base_dir}/plugins/execution-languages/deprecated.runtime/source_gen" />
+    <mkdir dir="${base_dir}/plugins/execution-languages/deprecated.runtime/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.execution.util.classes}" />
+    <mkdir dir="${jetbrains.mps.execution.configurations.deprecated.runtime.classes}" />
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.execution.util_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.baseLanguage.execution.util_tjc.src" />
     </javac>
@@ -10420,10 +10491,20 @@
       <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/test_gen" />
     </copy>
+    <copy todir="${jetbrains.mps.execution.configurations.deprecated.runtime.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-languages/deprecated.runtime/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-languages/deprecated.runtime/test_gen" />
+    </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.execution.util_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.execution.util.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
         <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" />
         <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/test_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.execution.util_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.configurations.deprecated.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/source_gen" />
+        <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -11936,6 +12017,7 @@
     <delete dir="${jetbrains.mps.baseLanguage.datesInternal.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.execution.startup.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.execution.util.classes}" />
+    <delete dir="${jetbrains.mps.execution.configurations.deprecated.runtime.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.jdk7.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.logging.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.math.classes}" />

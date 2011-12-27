@@ -21,7 +21,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.execution.api.ConfigRunParameters;
+import jetbrains.mps.execution.configurations.deprecated.runtime.ConfigRunParameters;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 
 public class JavaConfigOptions extends JPanel {

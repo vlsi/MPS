@@ -8,6 +8,7 @@
   <idea-version since-build="3000"/>
 
   <depends>jetbrains.mps.debugger-api</depends>
+  <depends optional="true">jetbrains.mps.execution.languages</depends>
 
   <application-components>
     <!--api-->

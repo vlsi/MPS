@@ -12,8 +12,8 @@
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.ConfigRunParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.deprecated.runtime.ConfigRunParameters" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.RawLineEditorComponent" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
