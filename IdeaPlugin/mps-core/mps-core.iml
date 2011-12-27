@@ -66,7 +66,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="jdk" jdkName="IDEA IC 10" jdkType="IDEA JDK" />
+    <orderEntry type="jdk" jdkName="IDEA IC 11" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" scope="TEST">
       <library name="Test-runtime">
