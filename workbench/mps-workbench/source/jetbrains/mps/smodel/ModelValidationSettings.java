@@ -16,12 +16,16 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.ModelValidationSettings.MyState;
+import jetbrains.mps.validation.IModelValidationSettings;
+import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -38,11 +42,14 @@ import java.awt.BorderLayout;
       file = "$APP_CONFIG$/mpsModelValidationSettings.xml"
     )}
 )
-public class ModelValidationSettings implements SearchableConfigurable, PersistentStateComponent<MyState> {
+public class ModelValidationSettings implements SearchableConfigurable, PersistentStateComponent<MyState>, ApplicationComponent, IModelValidationSettings {
 
   private MyPreferencesPage myPreferencesPage;
 
   private boolean myDisableCheckOpenAPI = true;
+
+  public ModelValidationSettings(MPSCoreComponents coreComponents) {
+  }
 
   @Override
   public JComponent createComponent() {
@@ -104,6 +111,22 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
 
   public void disposeUIResources() {
     myPreferencesPage = null;
+  }
+
+  @Override
+  public void initComponent() {
+    ValidationSettings.getInstance().setModelValidationSettings(this);
+  }
+
+  @Override
+  public void disposeComponent() {
+    ValidationSettings.getInstance().setModelValidationSettings(null);
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "Model Validation Settings";
   }
 
   public class MyPreferencesPage extends JPanel {

@@ -144,12 +144,6 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.plugin.TypesystemPlugin_CustomProjectPlugin" file="TypesystemPlugin_CustomProjectPlugin.java">
-    <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.typesystem.checking.TypesEditorChecker" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" file="Typesystem_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -176,11 +170,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.editorTabs.EditorTabDescriptor" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.TypesystemPlugin_CustomProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.Typesystem_TabDescriptor" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.plugin.Typesystem_TabDescriptor" file="Typesystem_TabDescriptor.java">
