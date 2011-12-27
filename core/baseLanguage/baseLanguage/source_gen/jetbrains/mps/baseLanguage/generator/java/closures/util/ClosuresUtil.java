@@ -7,10 +7,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Condition;
 import java.util.List;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.GenerationSessionContext;
-import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
+import java.util.Map;
+import jetbrains.mps.generator.GenerationSessionContext;
+import java.util.concurrent.ConcurrentHashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
@@ -18,9 +18,13 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.HashMap;
 
 public class ClosuresUtil {
   private static Object CLOSURE_CONTEXT_DATA = new Object();
+
+  public ClosuresUtil() {
+  }
 
   public static boolean isClosureContextOwner(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
@@ -69,19 +73,25 @@ public class ClosuresUtil {
       throw new RuntimeException("node can't be owner of a closure context " + node.getDebugText());
     }
     if (getClosureContextData(node, generator) == null) {
-      // init ClosureContextData 
-      GenerationSessionContext sessionContext = generator.getGeneratorSessionContext();
-      Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
-      if (closureContexts == null) {
-        closureContexts = MapSequence.fromMap(new HashMap<SNode, ClosuresUtil.ClosureContextData>());
-        sessionContext.putTransientObject(CLOSURE_CONTEXT_DATA, closureContexts);
-      }
-      MapSequence.fromMap(closureContexts).put(node, new ClosuresUtil.ClosureContextData());
+      MapSequence.fromMap(ClosuresUtil.getClosureContext(generator)).put(node, new ClosuresUtil.ClosureContextData());
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         processMethodDeclaration(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), generator);
       } else {
         processConceptFunction(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), generator);
       }
+    }
+  }
+
+  private static Map<SNode, ClosuresUtil.ClosureContextData> getClosureContext(ITemplateGenerator generator) {
+    // init ClosureContextData 
+    synchronized (CLOSURE_CONTEXT_DATA) {
+      GenerationSessionContext sessionContext = generator.getGeneratorSessionContext();
+      Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
+      if (closureContexts == null) {
+        closureContexts = new ConcurrentHashMap<SNode, ClosuresUtil.ClosureContextData>();
+        sessionContext.putTransientObject(CLOSURE_CONTEXT_DATA, closureContexts);
+      }
+      return closureContexts;
     }
   }
 
