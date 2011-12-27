@@ -409,7 +409,7 @@ public class ChangesTracking {
           }).toListSequence());
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildForNodeRole(getOldNode(parentId).getChildren(role), childrenRightAfterEvent.value);
+              b.buildForNodeRole(getOldNode(parentId).getChildren(role), childrenRightAfterEvent.value, parentId, role);
             }
           });
         }

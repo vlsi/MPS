@@ -134,10 +134,10 @@ public class ChangeSetBuilder {
   }
 
   private void buildForNodeRole(SNode oldNode, SNode newNode, String role) {
-    buildForNodeRole(oldNode.getChildren(role), newNode.getChildren(role));
+    buildForNodeRole(oldNode.getChildren(role), newNode.getChildren(role), oldNode.getSNodeId(), role);
   }
 
-  public void buildForNodeRole(final List<SNode> oldChildren, List<SNode> newChildren) {
+  public void buildForNodeRole(final List<SNode> oldChildren, List<SNode> newChildren, SNodeId parentId, String role) {
     List<SNodeId> oldIds = ListSequence.fromList(oldChildren).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getSNodeId();
@@ -148,7 +148,6 @@ public class ChangeSetBuilder {
         return n.getSNodeId();
       }
     }).toListSequence();
-    SNode anyChild = ListSequence.fromList(oldChildren).concat(ListSequence.fromList(newChildren)).first();
     LongestCommonSubsequenceFinder<SNodeId> finder = new LongestCommonSubsequenceFinder<SNodeId>(oldIds, newIds);
 
     // Finding insertings, deletings and replacings 
@@ -156,7 +155,7 @@ public class ChangeSetBuilder {
     for (Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>> indices : ListSequence.fromList(differentIndices)) {
       Tuples._2<Integer, Integer> oldIndices = indices._0();
       Tuples._2<Integer, Integer> newIndices = indices._1();
-      ListSequence.fromList(myNewChanges).addElement(new NodeGroupChange(myChangeSet, SNodeOperations.getParent(anyChild).getSNodeId(), SNodeOperations.getContainingLinkRole(anyChild), (int) oldIndices._0(), (int) oldIndices._1(), (int) newIndices._0(), (int) newIndices._1()));
+      ListSequence.fromList(myNewChanges).addElement(new NodeGroupChange(myChangeSet, parentId, role, (int) oldIndices._0(), (int) oldIndices._1(), (int) newIndices._0(), (int) newIndices._1()));
     }
 
     // Finding changes for children 
