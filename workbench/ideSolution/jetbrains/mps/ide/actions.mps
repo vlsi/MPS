@@ -25373,7 +25373,7 @@
   </root>
   <root id="4212975129344667073">
     <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4212975129344802236">
-      <property name="value" nameId="tpee.1070475926801" value="SearchMenu" />
+      <property name="value" nameId="tpee.1070475926801" value="FindMenuGroup" />
     </node>
     <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="4212975129344667075" />
   </root>
