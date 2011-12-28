@@ -303,6 +303,11 @@ public class CommonChangesManagerTest {
       waitAndCheck(diff);
     }
 
+    undoAndCheck(diff, affectedNodePointers, checkAfterEachUndo);
+    Assert.assertEquals(stringBefore, getChangeSetString(diff.getChangeSet()));
+  }
+
+  private void undoAndCheck(CurrentDifference diff, List<SNodePointer> affectedNodePointers, boolean checkAfterEachUndo) {
     for (final SNodePointer np : ListSequence.fromList(affectedNodePointers).reversedList()) {
       try {
         SwingUtilities.invokeAndWait(new Runnable() {
@@ -326,7 +331,6 @@ public class CommonChangesManagerTest {
     if (!(checkAfterEachUndo)) {
       waitAndCheck(diff);
     }
-    Assert.assertEquals(stringBefore, getChangeSetString(diff.getChangeSet()));
   }
 
   private SNode getDocumentLayoutRoot() {
