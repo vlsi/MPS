@@ -24,6 +24,8 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 
+import java.util.ArrayList;
+
 /**
  * Created by: Sergey Dmitriev
  * Date: Jan 25, 2007
@@ -103,14 +105,13 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
             if (!modelName.equals(generator.getOutputModel().getLongName())) {
               // external java_stub
               String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-              IModule module = generator.getGeneratorSessionContext().getOriginalInputModel().getModelDescriptor().getModule();
-              Iterable<SModelDescriptor> models = module == null ? generator.getScope().getModelDescriptors() : module.getScope().getModelDescriptors();
+              Iterable<SModelDescriptor> models = getVisibleModels(generator);
               SModelId id = StubMigrationHelper.convertModelUIDInScope(stereo + "#" + modelName, models);
               myExternalTargetModelReference = new SModelReference(new SModelFqName(modelName, stereo), id);
             }
           }
         }
-        if(myExternalTargetModelReference == null) {
+        if (myExternalTargetModelReference == null) {
           myExternalTargetModelReference = generator.getOutputModel().getSModelReference();
         }
       }
@@ -135,6 +136,19 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
           GeneratorUtil.describeIfExists(getMacroNode(), "reference macro"));
         generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel(), true);
       }
+    }
+  }
+
+  private Iterable<SModelDescriptor> getVisibleModels(ITemplateGenerator generator) {
+    IModule module = generator.getGeneratorSessionContext().getOriginalInputModel().getModelDescriptor().getModule();
+    if (module == null) {
+      return generator.getScope().getModelDescriptors();
+    } else {
+      ArrayList<SModelDescriptor> reqModels = new ArrayList<SModelDescriptor>();
+      for (IModule m : module.getDependenciesManager().getRequiredModules()) {
+        reqModels.addAll(m.getOwnModelDescriptors());
+      }
+      return reqModels;
     }
   }
 
