@@ -8,7 +8,6 @@
   <idea-version since-build="3000"/>
 
   <depends>jetbrains.mps.debugger-api</depends>
-  <depends optional="true">jetbrains.mps.execution.languages</depends>
 
   <application-components>
     <!--api-->
@@ -34,7 +33,6 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!--runtime-->
-    <configurationType implementation="jetbrains.mps.debugger.java.runtime.configurations.remote.Remote_Kind"/>
     <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
     <mps.LanguageLibrary dir=""/>
     <mps.PluginBundle/>

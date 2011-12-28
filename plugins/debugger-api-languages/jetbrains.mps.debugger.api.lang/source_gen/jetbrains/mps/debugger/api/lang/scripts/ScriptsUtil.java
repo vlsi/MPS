@@ -86,7 +86,6 @@ public class ScriptsUtil {
     }
 
     // <node> 
-    // <node> 
 
     for (SReference ref : ListSequence.fromList(references)) {
       SModelReference oldModelReference = ref.getTargetSModelReference();
