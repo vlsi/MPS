@@ -22,6 +22,9 @@ import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
+
 /*
  * This class consists of 2 methods
  * getModel(state) returns model loaded up to the given state or further
@@ -31,47 +34,62 @@ import org.jetbrains.annotations.Nullable;
 public abstract class UpdateableModel {
   private final SModelDescriptor myDescriptor;
 
-  private ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
+  private AtomicReference<ModelLoadingState> myState = new AtomicReference<ModelLoadingState>(ModelLoadingState.NOT_LOADED);
+  private AtomicBoolean myLoading = new AtomicBoolean(false);
+
   private SModel myModel = null;
 
   public UpdateableModel(SModelDescriptor descriptor) {
     myDescriptor = descriptor;
   }
 
-  public final synchronized ModelLoadingState getState() {
-    return myState;
+  public final ModelLoadingState getState() {
+    return myState.get();
   }
 
-  public final synchronized SModel getModel(ModelLoadingState state) {
+  public final SModel getModel(ModelLoadingState state) {
     ensureLoadedTo(state);
     return myModel;
   }
 
   private void ensureLoadedTo(final ModelLoadingState state) {
-    if (state.ordinal() <= myState.ordinal()) return;
-    myState = state;  //this is for elimination of infinite recursion
+    if (state.ordinal() <= myState.get().ordinal()) return;
 
-    ModelLoadResult res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
-      public ModelLoadResult compute() {
-        return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult>() {
-          public ModelLoadResult compute() {
-            return doLoad(state, myModel);
-          }
-        });
+    while (!myLoading.compareAndSet(false, true)) {
+      // we are expected to wait until the model is loaded
+      synchronized (this) {
+        if (state.ordinal() <= myState.get().ordinal()) return; // already loaded by another thread
       }
-    });
-    if (myModel != null) {
-      myModel.setModelDescriptor(null);
     }
-    myModel = res.getModel();
-    myModel.setModelDescriptor(myDescriptor);
-    myState = res.getState();
+
+    synchronized (this) {
+      if (state.ordinal() <= myState.get().ordinal()) return; // already loaded by another thread, prevent 2nd loading
+//      myState.set(state);  //this is for elimination of infinite recursion
+
+      ModelLoadResult res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
+        public ModelLoadResult compute() {
+          return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult>() {
+            public ModelLoadResult compute() {
+              return doLoad(state, myModel);
+            }
+          });
+        }
+      });
+      if (myModel != null) {
+        myModel.setModelDescriptor(null);
+      }
+      myModel = res.getModel();
+      myModel.setModelDescriptor(myDescriptor);
+      myState.set(res.getState());
+      myLoading.set(false);
+    }
+
   }
 
   protected abstract ModelLoadResult doLoad(ModelLoadingState state,@Nullable SModel current);
 
   public synchronized void replaceWith(SModel newModel, ModelLoadingState state) {
     myModel = newModel;
-    myState = state;
+    myState.set(state);
   }
 }
