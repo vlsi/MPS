@@ -14,9 +14,4 @@ public class Refactoring_ApplicationPlugin extends BaseApplicationPlugin {
   public PluginId getId() {
     return myId;
   }
-
-  public void createGroups() {
-    // actions w/o parameters 
-    // groups 
-  }
 }
