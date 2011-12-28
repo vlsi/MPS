@@ -1263,7 +1263,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node" />
       <property name="name" nameId="tpck.1169194664001" value="NodeRefactoring" />
       <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
-      <property name="caption" nameId="tp4k.1204991940915" value="Refactoring (*)" />
+      <property name="caption" nameId="tp4k.1204991940915" value="Refactoring" />
       <property name="mnemonic" nameId="tp4k.1205160812895" value="r" />
     </node>
   </roots>

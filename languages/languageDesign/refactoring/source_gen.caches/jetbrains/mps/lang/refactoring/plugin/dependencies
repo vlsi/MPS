@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.refactoring.plugin.Default_KeymapChanges" file="Default_KeymapChanges.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.ComplexShortcut" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.plugin.GenericRefactoringAction_Action" file="GenericRefactoringAction_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
@@ -57,44 +44,8 @@
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.plugin.ModelRefactorings_ActionGroup" file="ModelRefactorings_ActionGroup.java">
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.plugin.GenericRefactoringAction_Action" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup" file="NodeRefactoring_ActionGroup.java">
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.plugin.GenericRefactoringAction_Action" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.OldRefactoringAdapter" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.plugin.Refactoring_ApplicationPlugin" file="Refactoring_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.FindUsages_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.plugin.Default_KeymapChanges" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.plugin.ModelRefactorings_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.plugin.Refactoring_ProjectPlugin" file="Refactoring_ProjectPlugin.java">

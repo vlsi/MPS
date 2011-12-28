@@ -10,7 +10,7 @@ public class NodeRefactoring_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup";
 
   public NodeRefactoring_ActionGroup() {
-    super("Refactoring (*)", ID);
+    super("Refactoring", ID);
     this.setIsInternal(false);
     this.setMnemonic("r".charAt(0));
     this.setPopup(true);
