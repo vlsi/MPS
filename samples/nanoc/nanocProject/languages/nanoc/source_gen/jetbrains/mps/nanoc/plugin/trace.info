@@ -328,7 +328,7 @@
     <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="73" startPosition="5" endLine="74" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="75" startPosition="5" endLine="76" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="77" startPosition="33" endLine="78" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="79" startPosition="14" endLine="80" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="79" startPosition="14" endLine="80" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="85" startPosition="39" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="90" startPosition="42" endLine="91" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="92" startPosition="9" endLine="93" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -400,7 +400,7 @@
     <scopeInfo nodeId="3968096696026374686" fileName="NanoCFile_Configuration.java" startLine="55" startPosition="73" endLine="56" endPosition="40" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="71" startPosition="26" endLine="72" endPosition="81" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="77" startPosition="33" endLine="78" endPosition="42" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="79" startPosition="14" endLine="80" endPosition="95" />
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="79" startPosition="14" endLine="80" endPosition="93" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="85" startPosition="39" endLine="86" endPosition="18" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="97" startPosition="0" endLine="98" endPosition="24">
       <varInfo nodeId="3968096696026358791" varName="ex" />
