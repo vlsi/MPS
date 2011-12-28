@@ -199,17 +199,6 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/jetbrains.mps.baseLanguage.util.jar.jtmp" />
   </target>
-  <target name="pack.collections.runtime">
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/collections.runtime" />
-    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/collections.runtime">
-      <fileset file="${base_dir}/core/baseLanguage/collections/runtime/collections.runtime.msd" />
-      <fileset dir="${base_dir}/core/baseLanguage/collections/runtime" includes="icons/**, resources/**" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/collections.runtime/jetbrains">
-      <fileset dir="${base_dir}/core/baseLanguage/collections/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-  </target>
   <target name="pack.closures.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/closures.runtime" />
@@ -329,6 +318,17 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.workbench.make">
       <fileset dir="${base_dir}/workbench/make" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.collections.runtime">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp/modules/collections.runtime" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp/modules/collections.runtime">
+      <fileset file="${base_dir}/core/baseLanguage/collections/runtime/collections.runtime.msd" />
+      <fileset dir="${base_dir}/core/baseLanguage/collections/runtime" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp/modules/collections.runtime/jetbrains">
+      <fileset dir="${base_dir}/core/baseLanguage/collections/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
   <target name="pack.jetbrains.mps.ide.mpsdevkit">
