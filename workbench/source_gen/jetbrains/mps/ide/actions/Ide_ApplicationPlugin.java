@@ -58,7 +58,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindSpecificNodeUsages_Action());
     addAction(new Find_Action());
     addAction(new FoldSelection_Action());
-    addAction(new GoByCurrentReference_Action());
     addAction(new GoToNodeById_Action());
     addAction(new GoToNode_Action());
     addAction(new GoToRule_Action());
@@ -138,7 +137,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GeneratorActions_ActionGroup());
     addGroup(new GeneratorNewActions_ActionGroup());
     addGroup(new GoByReference_ActionGroup());
-    addGroup(new GoToEditorPopupAddition_ActionGroup());
     addGroup(new Goto_ActionGroup());
     addGroup(new JUnitTestCaseActions_ActionGroup());
     addGroup(new JUnitTestMethodActions_ActionGroup());
@@ -199,8 +197,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Edit_ActionGroup.ID, "IDE_Edit_ActionGrouptoplevel", null);
     insertGroupIntoAnother(Folding_ActionGroup.ID, "EditorPopup_ActionGroupfolding", null);
     insertGroupIntoAnother(Goto_ActionGroup.ID, "GoToMenu", null);
-    insertGroupIntoAnother(GoToEditorPopupAddition_ActionGroup.ID, "EditorPopup_ActionGroupgoto", null);
-    insertGroupIntoAnother(GoByReference_ActionGroup.ID, GoToEditorPopupAddition_ActionGroup.ID, GoToEditorPopupAddition_ActionGroup.LABEL_ID_refs);
+    insertGroupIntoAnother(GoByReference_ActionGroup.ID, "GoToEditorPopupAddition_ActionGrouprefs", null);
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
     insertGroupIntoAnother(ToolsInternal_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_internal);

@@ -22,12 +22,15 @@ public class Mps_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new CreateAspect_Action());
+    addAction(new GoByCurrentReferenceToIDEA_Action());
     // groups 
     addGroup(new EditorPopupEx_ActionGroup());
+    addGroup(new EditorPopupEx_Goto_ActionGroup());
   }
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(EditorPopupEx_ActionGroup.ID, "EditorPopup_ActionGroupnew", null);
+    insertGroupIntoAnother(EditorPopupEx_Goto_ActionGroup.ID, "GoToEditorPopupAddition_ActionGroupother", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

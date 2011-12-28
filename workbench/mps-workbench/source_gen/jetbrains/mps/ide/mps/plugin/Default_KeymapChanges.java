@@ -11,6 +11,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     // simple 
     addSimpleShortcut("jetbrains.mps.ide.mps.plugin.CreateAspect_Action", getShortcut("ctrl alt INSERT"));
+    addSimpleShortcut("jetbrains.mps.ide.mps.plugin.GoByCurrentReferenceToIDEA_Action", getShortcut("ctrl shift B"));
     // simple parameterized 
     // complex 
   }

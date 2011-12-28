@@ -412,7 +412,6 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.DebugActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.EditorTabActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GeneratorActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToEditorPopupAddition_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Goto_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NamespaceNewActions_ActionGroup" />

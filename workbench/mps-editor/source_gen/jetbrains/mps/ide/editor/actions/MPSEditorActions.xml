@@ -27,6 +27,9 @@
     <action id="jetbrains.mps.ide.editor.actions.ExtractComponent_Action" class="jetbrains.mps.ide.editor.actions.ExtractComponent_Action">
       <keyboard-shortcut first-keystroke="ctrl alt C" keymap="$default"/>
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action" class="jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action">
+      <keyboard-shortcut first-keystroke="ctrl B" keymap="$default"/>
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.Home_Action" class="jetbrains.mps.ide.editor.actions.Home_Action">
       <keyboard-shortcut first-keystroke=" HOME" keymap="$default"/>
       <keyboard-shortcut first-keystroke=" HOME" keymap="Mac OS X"/>
@@ -118,6 +121,8 @@
     <group id="EditorPopup_ActionGroupdebug"/>
     <group id="EditorPopup_ActionGroupfind"/>
     <group id="EditorPopup_ActionGroupvcs"/>
+    <group id="GoToEditorPopupAddition_ActionGroupother"/>
+    <group id="GoToEditorPopupAddition_ActionGrouprefs"/>
     <group id="IDE_Edit_ActionGrouptoplevel"/>
     <group id="IDE_Edit_ActionGroupcustom"/>
     <group id="jetbrains.mps.ide.editor.actions.EditMenuActions_ActionGroup">
@@ -179,6 +184,12 @@
       <separator/>
       <reference ref="EditorPopup_ActionGroupvcs"/>
       <separator/>
+    </group>
+    <group id="jetbrains.mps.ide.editor.actions.GoToEditorPopupAddition_ActionGroup" text="Go To" popup="true">
+      <reference ref="jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action"/>
+      <reference ref="GoToEditorPopupAddition_ActionGroupother"/>
+      <reference ref="GoToEditorPopupAddition_ActionGrouprefs"/>
+      <add-to-group group-id="EditorPopup_ActionGroupgoto" anchor="last"/>
     </group>
     <group id="jetbrains.mps.ide.editor.actions.IDE_Edit_ActionGroup">
       <reference ref="IDE_Edit_ActionGrouptoplevel"/>

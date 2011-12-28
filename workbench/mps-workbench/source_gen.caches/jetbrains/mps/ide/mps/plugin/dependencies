@@ -37,6 +37,49 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.mps.plugin.EditorPopupEx_Goto_ActionGroup" file="EditorPopupEx_Goto_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.mps.plugin.GoByCurrentReferenceToIDEA_Action" file="GoByCurrentReferenceToIDEA_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Thread" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.navigation.NavigationProvider" />
+    <classNode dependClassName="jetbrains.mps.ide.navigation.NavigationSupport" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.Solution" />
+    <classNode dependClassName="jetbrains.mps.smodel.Generator" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleOwner" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.mps.plugin.Mac_KeymapChanges" file="Mac_KeymapChanges.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
@@ -51,6 +94,8 @@
     <classNode dependClassName="jetbrains.mps.ide.mps.plugin.CreateAspect_Action" />
     <classNode dependClassName="jetbrains.mps.ide.mps.plugin.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.mps.plugin.EditorPopupEx_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.mps.plugin.EditorPopupEx_Goto_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.mps.plugin.GoByCurrentReferenceToIDEA_Action" />
     <classNode dependClassName="jetbrains.mps.ide.mps.plugin.Mac_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />

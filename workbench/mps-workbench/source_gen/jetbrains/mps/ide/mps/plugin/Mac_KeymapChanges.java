@@ -11,6 +11,7 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
   public Mac_KeymapChanges() {
     // simple 
     addSimpleShortcut("jetbrains.mps.ide.mps.plugin.CreateAspect_Action", getShortcut("ctrl alt N"));
+    addSimpleShortcut("jetbrains.mps.ide.mps.plugin.GoByCurrentReferenceToIDEA_Action", getShortcut("ctrl B"));
     // simple parameterized 
     // complex 
   }
