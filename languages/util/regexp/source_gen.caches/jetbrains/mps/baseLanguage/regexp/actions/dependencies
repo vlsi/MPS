@@ -35,7 +35,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.SearchScopeStatus" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-    <classNode dependClassName="jetbrains.mps.util.Calculable" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>

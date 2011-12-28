@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
-import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
@@ -198,8 +198,8 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     final ApplicableTypesInfo appTypesInfo;
     {
-      Calculable calc = new Calculable() {
-        public Object calculate() {
+      Computable calc = new Computable() {
+        public Object compute() {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
@@ -226,7 +226,7 @@ public class QueriesGenerated {
           return result;
         }
       };
-      appTypesInfo = (ApplicableTypesInfo) calc.calculate();
+      appTypesInfo = (ApplicableTypesInfo) calc.compute();
     }
     return result;
   }
@@ -237,12 +237,12 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Calculable calc = new Calculable() {
-          public Object calculate() {
+        Computable computable = new Computable() {
+          public Object compute() {
             return StaticConceptMethodCall_Behavior.getClassifiersWithStaticMethods_1213877485028(_context.getModel(), operationContext.getScope(), _context.getParentNode());
           }
         };
-        Iterable<SNode> queryResult = (Iterable) calc.calculate();
+        Iterable<SNode> queryResult = (Iterable) computable.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -274,12 +274,12 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AbstractOperationParameter_1206996889215(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      Calculable calc = new Calculable() {
-        public Object calculate() {
+      Computable computable = new Computable() {
+        public Object compute() {
           return ((List<SNode>) SLinkOperations.getConceptLinkTargets(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "applicableParameter"));
         }
       };
-      Iterable queryResult = (Iterable) calc.calculate();
+      Iterable queryResult = (Iterable) computable.compute();
       if (queryResult != null) {
         for (Object item : queryResult) {
           List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((SNode) item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
@@ -396,12 +396,12 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IAttributeAccessQualifier_1205263933103(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      Calculable calc = new Calculable() {
-        public Object calculate() {
+      Computable computable = new Computable() {
+        public Object compute() {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
       };
-      SNode node = (SNode) calc.calculate();
+      SNode node = (SNode) computable.compute();
       ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
     }
     return result;
@@ -410,12 +410,12 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_SEnumOperation_1241013269073(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      Calculable calc = new Calculable() {
-        public Object calculate() {
+      Computable computable = new Computable() {
+        public Object compute() {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
       };
-      SNode node = (SNode) calc.calculate();
+      SNode node = (SNode) computable.compute();
       ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
     }
     return result;
@@ -424,12 +424,12 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_AttributeQualifier_2788452359611995743(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      Calculable calc = new Calculable() {
-        public Object calculate() {
+      Computable computable = new Computable() {
+        public Object compute() {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
       };
-      SNode node = (SNode) calc.calculate();
+      SNode node = (SNode) computable.compute();
       ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
     }
     return result;
@@ -438,8 +438,8 @@ public class QueriesGenerated {
   public static void removeActionsByCondition_1180467401112(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     final ApplicableTypesInfo appTypesInfo;
     {
-      Calculable calc = new Calculable() {
-        public Object calculate() {
+      Computable calc = new Computable() {
+        public Object compute() {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
@@ -466,7 +466,7 @@ public class QueriesGenerated {
           return result;
         }
       };
-      appTypesInfo = (ApplicableTypesInfo) calc.calculate();
+      appTypesInfo = (ApplicableTypesInfo) calc.compute();
     }
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while (actions.hasNext()) {
@@ -531,8 +531,8 @@ public class QueriesGenerated {
   public static void removeActionsByCondition_1230335583234(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     final ApplicableTypesInfo appTypesInfo;
     {
-      Calculable calc = new Calculable() {
-        public Object calculate() {
+      Computable calc = new Computable() {
+        public Object compute() {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
@@ -559,7 +559,7 @@ public class QueriesGenerated {
           return result;
         }
       };
-      appTypesInfo = (ApplicableTypesInfo) calc.calculate();
+      appTypesInfo = (ApplicableTypesInfo) calc.compute();
     }
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while (actions.hasNext()) {
