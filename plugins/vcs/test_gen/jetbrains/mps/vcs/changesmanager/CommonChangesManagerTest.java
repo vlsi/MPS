@@ -37,9 +37,9 @@ import java.util.List;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
 import jetbrains.mps.vcs.diff.ChangeSet;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
@@ -243,7 +243,11 @@ public class CommonChangesManagerTest {
   }
 
   private String getChangeSetString(ChangeSet changeSet) {
-    return StringUtils.join(ListSequence.fromList(changeSet.getModelChanges()).select(new ISelector<ModelChange, String>() {
+    return getChangeSetString(changeSet.getModelChanges());
+  }
+
+  private String getChangeSetString(List<ModelChange> modelChanges) {
+    return StringUtils.join(ListSequence.fromList(modelChanges).select(new ISelector<ModelChange, String>() {
       public String select(ModelChange c) {
         return c.toString();
       }
@@ -278,10 +282,14 @@ public class CommonChangesManagerTest {
   }
 
   private void doSomethingAndUndo(CurrentDifference diff, boolean checkAfterEachUndo, _FunctionTypes._return_P0_E0<? extends SNode>... tasks) {
+    doSomethingAndUndo(diff, checkAfterEachUndo, Arrays.asList(tasks));
+  }
+
+  private void doSomethingAndUndo(CurrentDifference diff, boolean checkAfterEachUndo, List<_FunctionTypes._return_P0_E0<? extends SNode>> tasks) {
     String stringBefore = getChangeSetString(diff.getChangeSet());
 
     final List<SNodePointer> affectedNodePointers = ListSequence.fromList(new ArrayList<SNodePointer>());
-    for (final _FunctionTypes._return_P0_E0<? extends SNode> t : tasks) {
+    for (final _FunctionTypes._return_P0_E0<? extends SNode> t : ListSequence.fromList(tasks)) {
       runCommandAndWait(new Runnable() {
         public void run() {
           SNode node = t.invoke();
@@ -436,8 +444,15 @@ public class CommonChangesManagerTest {
       }
     };
 
-    // move node up by two 3 times, and down for 19 times 
-    doSomethingAndUndo(myUiDiff, moveUpTwice, moveUpTwice, moveUpTwice, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveToOtherClass);
+    List<_FunctionTypes._return_P0_E0<? extends SNode>> tasks = ListSequence.fromList(new ArrayList<_FunctionTypes._return_P0_E0<? extends SNode>>());
+    for (int i = 0; i < 3; i++) {
+      ListSequence.fromList(tasks).addElement(moveUpTwice);
+    }
+    for (int i = 0; i < 19; i++) {
+      ListSequence.fromList(tasks).addElement(moveDown);
+    }
+    ListSequence.fromList(tasks).addElement(moveToOtherClass);
+    doSomethingAndUndo(myUiDiff, false, tasks);
   }
 
   private void inlineVariable() {
