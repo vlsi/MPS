@@ -47,24 +47,41 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.fileEditor.FileEditor;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Random;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import org.junit.Test;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.nodeEditor.InspectorTool;
+import com.intellij.openapi.command.undo.DocumentReferenceProvider;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.annotations.NotNull;
+import javax.swing.JComponent;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.util.Key;
+import java.util.Collection;
+import com.intellij.openapi.command.undo.DocumentReference;
+import com.intellij.openapi.command.undo.DocumentReferenceManager;
+import org.jetbrains.annotations.NonNls;
+import com.intellij.openapi.fileEditor.FileEditorState;
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
+import java.beans.PropertyChangeListener;
+import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
+import com.intellij.openapi.fileEditor.FileEditorLocation;
+import com.intellij.ide.structureView.StructureViewBuilder;
 
 public class CommonChangesManagerTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testConflicts");
   private static final File PROJECT_ARCHIVE = new File("testbench/modules/fugue.zip");
   private static final String PROJECT_FILE = "fugue.mpr";
+  private static final String MODEL_PREFIX = "ru.geevee.fugue.";
 
   private CurrentDifferenceRegistry myRegistry;
   private Project myProject;
@@ -129,7 +146,7 @@ public class CommonChangesManagerTest {
   }
 
   private CurrentDifference getCurrentDifference(String shortName) {
-    return myRegistry.getCurrentDifference((EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("ru.geevee.fugue." + shortName)));
+    return myRegistry.getCurrentDifference((EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(MODEL_PREFIX + shortName)));
   }
 
   private void init() {
@@ -316,11 +333,10 @@ public class CommonChangesManagerTest {
           public void run() {
             FileEditor fe = null;
             if (np != null) {
-              MPSNodeVirtualFile vf = MPSNodesVirtualFileSystem.getInstance().getFileFor(np);
-              assert vf != null;
-              fe = new MPSFileNodeEditor(myIdeaProject, vf);
+              fe = new CommonChangesManagerTest.MyFileEditor(np);
             }
             UndoManager.getInstance(myIdeaProject).undo(fe);
+            check_orwzer_a3a0a0a0a0a12(fe);
           }
         });
       } catch (Throwable t) {
@@ -537,6 +553,38 @@ public class CommonChangesManagerTest {
     Assert.assertEquals(stringBeforeAll, getChangeSetString(myUiDiff.getChangeSet()));
   }
 
+  private void createNewModel() {
+    final Wrappers._T<CurrentDifference> newModelDiff = new Wrappers._T<CurrentDifference>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        String modelName = "newmodel";
+        IModule module = myUiDiff.getModelDescriptor().getModule();
+        module.createModel(SModelFqName.fromString(MODEL_PREFIX + modelName), module.getSModelRoots().get(0), null);
+        newModelDiff.value = getCurrentDifference(modelName);
+      }
+    });
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      public void run() {
+        newModelDiff.value.getModelDescriptor().save();
+      }
+    });
+    ModelAccess.instance().flushEventQueue();
+
+    newModelDiff.value.setEnabled(true);
+    waitForChangesManager();
+    Assert.assertNull(newModelDiff.value.getChangeSet());
+
+    runCommandAndWait(new Runnable() {
+      public void run() {
+        createNewRoot(newModelDiff.value.getModelDescriptor().getSModel());
+      }
+    });
+    waitForChangesManager();
+    List<ModelChange> changes = newModelDiff.value.getChangeSet().getModelChanges();
+    Assert.assertEquals(1, ListSequence.fromList(changes).count());
+    Assert.assertTrue(ListSequence.fromList(changes).first() instanceof AddRootChange);
+  }
+
   @Test
   public void doTest() {
     ModelChangesWatcher.setForceProcessingEnabled(true);
@@ -560,6 +608,8 @@ public class CommonChangesManagerTest {
           moveNode();
           inlineVariable();
           rollbackAll();
+
+          createNewModel();
 
           SwingUtilities.invokeAndWait(new Runnable() {
             public void run() {
@@ -605,5 +655,100 @@ public class CommonChangesManagerTest {
       return checkedDotOperand.getModelChanges();
     }
     return null;
+  }
+
+  private static void check_orwzer_a3a0a0a0a0a12(FileEditor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.dispose();
+    }
+
+  }
+
+  private class MyFileEditor implements FileEditor, DocumentReferenceProvider {
+    private MPSNodeVirtualFile myFile;
+
+    private MyFileEditor(SNodePointer nodePointer) {
+      myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(nodePointer);
+    }
+
+    @NotNull
+    public JComponent getComponent() {
+      throw new UnsupportedOperationException();
+    }
+
+    @Nullable
+    public <T> T getUserData(@NotNull Key<T> key) {
+      throw new UnsupportedOperationException();
+    }
+
+    public void dispose() {
+    }
+
+    public Collection<DocumentReference> getDocumentReferences() {
+      return Arrays.<DocumentReference>asList(DocumentReferenceManager.getInstance().create(myFile));
+    }
+
+    @Nullable
+    public JComponent getPreferredFocusedComponent() {
+      throw new UnsupportedOperationException();
+    }
+
+    public <T> void putUserData(@NotNull Key<T> key, @Nullable T T) {
+      throw new UnsupportedOperationException();
+    }
+
+    @NonNls
+    @NotNull
+    public String getName() {
+      throw new UnsupportedOperationException();
+    }
+
+    @NotNull
+    public FileEditorState getState(@NotNull FileEditorStateLevel level) {
+      throw new UnsupportedOperationException();
+    }
+
+    public void setState(@NotNull FileEditorState state) {
+      throw new UnsupportedOperationException();
+    }
+
+    public boolean isModified() {
+      return false;
+    }
+
+    public boolean isValid() {
+      return true;
+    }
+
+    public void selectNotify() {
+      throw new UnsupportedOperationException();
+    }
+
+    public void deselectNotify() {
+      throw new UnsupportedOperationException();
+    }
+
+    public void addPropertyChangeListener(@NotNull PropertyChangeListener listener) {
+      throw new UnsupportedOperationException();
+    }
+
+    public void removePropertyChangeListener(@NotNull PropertyChangeListener listener) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Nullable
+    public BackgroundEditorHighlighter getBackgroundHighlighter() {
+      throw new UnsupportedOperationException();
+    }
+
+    @Nullable
+    public FileEditorLocation getCurrentLocation() {
+      throw new UnsupportedOperationException();
+    }
+
+    @Nullable
+    public StructureViewBuilder getStructureViewBuilder() {
+      throw new UnsupportedOperationException();
+    }
   }
 }
