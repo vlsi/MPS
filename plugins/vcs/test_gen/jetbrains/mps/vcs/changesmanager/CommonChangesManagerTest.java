@@ -54,6 +54,8 @@ import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.Random;
+import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import org.junit.Test;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.TestMain;
@@ -505,6 +507,36 @@ public class CommonChangesManagerTest {
     });
   }
 
+  private void rollbackAll() {
+    Random random = new Random(239);
+    String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
+    final SModel model = myUiDiff.getModelDescriptor().getSModel();
+
+    List<SNodePointer> affectedNodePointers = ListSequence.fromList(new ArrayList<SNodePointer>());
+
+    while (true) {
+      List<ModelChange> changesBefore = ListSequence.fromListWithValues(new ArrayList<ModelChange>(), myUiDiff.getChangeSet().getModelChanges());
+      if (ListSequence.fromList(changesBefore).isEmpty()) {
+        break;
+      }
+      final ModelChange changeToPick = ListSequence.fromList(changesBefore).getElement(random.nextInt(ListSequence.fromList(changesBefore).count()));
+      runCommandAndWait(new Runnable() {
+        public void run() {
+          changeToPick.getOppositeChange().apply(model, new NodeCopier(model));
+        }
+      });
+      waitAndCheck(myUiDiff);
+
+      ListSequence.fromList(changesBefore).removeElement(changeToPick);
+      Assert.assertEquals(getChangeSetString(changesBefore), getChangeSetString(myUiDiff.getChangeSet()));
+
+      ListSequence.fromList(affectedNodePointers).addElement(new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), changeToPick.getRootId()));
+    }
+
+    undoAndCheck(myUiDiff, affectedNodePointers, false);
+    Assert.assertEquals(stringBeforeAll, getChangeSetString(myUiDiff.getChangeSet()));
+  }
+
   @Test
   public void doTest() {
     ModelChangesWatcher.setForceProcessingEnabled(true);
@@ -527,6 +559,7 @@ public class CommonChangesManagerTest {
           changeReference();
           moveNode();
           inlineVariable();
+          rollbackAll();
 
           SwingUtilities.invokeAndWait(new Runnable() {
             public void run() {
