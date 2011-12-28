@@ -53,6 +53,7 @@ import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.junit.Test;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.TestMain;
@@ -273,6 +274,10 @@ public class CommonChangesManagerTest {
   }
 
   private void doSomethingAndUndo(CurrentDifference diff, _FunctionTypes._return_P0_E0<? extends SNode>... tasks) {
+    doSomethingAndUndo(diff, false, tasks);
+  }
+
+  private void doSomethingAndUndo(CurrentDifference diff, boolean checkAfterEachUndo, _FunctionTypes._return_P0_E0<? extends SNode>... tasks) {
     String stringBefore = getChangeSetString(diff.getChangeSet());
 
     final List<SNodePointer> affectedNodePointers = ListSequence.fromList(new ArrayList<SNodePointer>());
@@ -280,6 +285,7 @@ public class CommonChangesManagerTest {
       runCommandAndWait(new Runnable() {
         public void run() {
           SNode node = t.invoke();
+          assert node.isRoot();
           ListSequence.fromList(affectedNodePointers).addElement((node == null ?
             null :
             new SNodePointer(node)
@@ -305,8 +311,13 @@ public class CommonChangesManagerTest {
       } catch (Throwable t) {
         throw new AssertionError(t);
       }
+      if (checkAfterEachUndo) {
+        waitAndCheck(diff);
+      }
     }
-    waitAndCheck(diff);
+    if (!(checkAfterEachUndo)) {
+      waitAndCheck(diff);
+    }
     Assert.assertEquals(stringBefore, getChangeSetString(diff.getChangeSet()));
   }
 
@@ -429,6 +440,52 @@ public class CommonChangesManagerTest {
     doSomethingAndUndo(myUiDiff, moveUpTwice, moveUpTwice, moveUpTwice, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveDown, moveToOtherClass);
   }
 
+  private void inlineVariable() {
+    final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
+    final Wrappers._T<SNode> method = new Wrappers._T<SNode>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        root.value = getDocumentLayoutRoot();
+        method.value = ListSequence.fromList(SLinkOperations.getTargets(root.value, "method", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode f) {
+            return "getTextPosition".equals(SPropertyOperations.getString(f, "name"));
+          }
+        });
+      }
+    });
+    doSomethingAndUndo(myUiDiff, true, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        SNode ifBefore = (SNode) new SNode(SNodeOperations.getModel(root.value), "jetbrains.mps.baseLanguage.structure.IfStatement");
+        SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).first(), ifBefore);
+        return root.value;
+      }
+    }, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        SNode foreachBody = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(1), "jetbrains.mps.baseLanguage.structure.ForeachStatement"), "body", true);
+        SNode declarationStatement = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(foreachBody, "statement", true)).getElement(0), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
+        final SNode declaration = SLinkOperations.getTarget(declarationStatement, "localVariableDeclaration", true);
+        final SNode initializer = SLinkOperations.getTarget(declaration, "initializer", true);
+        ListSequence.fromList(SNodeOperations.getDescendants(foreachBody, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode vr) {
+            return SLinkOperations.getTarget(vr, "variableDeclaration", false) == declaration;
+          }
+        }).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode vr) {
+            SNodeOperations.replaceWithAnother(vr, SNodeOperations.copyNode(initializer));
+          }
+        });
+        SNodeOperations.deleteNode(declarationStatement);
+        return root.value;
+      }
+    }, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(2));
+        SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(1));
+        return root.value;
+      }
+    });
+  }
+
   @Test
   public void doTest() {
     ModelChangesWatcher.setForceProcessingEnabled(true);
@@ -450,6 +507,7 @@ public class CommonChangesManagerTest {
           changeProperty();
           changeReference();
           moveNode();
+          inlineVariable();
 
           SwingUtilities.invokeAndWait(new Runnable() {
             public void run() {
