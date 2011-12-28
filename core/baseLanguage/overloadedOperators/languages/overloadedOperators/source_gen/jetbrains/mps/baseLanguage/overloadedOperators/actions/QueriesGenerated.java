@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_Behavior;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -23,12 +23,12 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage");
-      Calculable calculable = new Calculable() {
-        public Object calculate() {
+      Computable computable = new Computable() {
+        public Object compute() {
           return CustomOperatorUsage_Behavior.getVisibleCustomOperators_1141736782992984505(_context.getModel());
         }
       };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
+      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
