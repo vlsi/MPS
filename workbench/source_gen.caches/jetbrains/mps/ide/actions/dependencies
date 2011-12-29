@@ -2456,6 +2456,31 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.actions.BaseMethodUpdateStrategy" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.actions.OverrideImplementsMethodsDialog" file="OverrideImplementsMethodsDialog.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.ui.NonFocusableCheckBox" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Comparator" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.JCheckBox" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode extendsClassName="jetbrains.mps.ide.util.GroupedNodesChooser" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.actions.PackageActions_ActionGroup" file="PackageActions_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
