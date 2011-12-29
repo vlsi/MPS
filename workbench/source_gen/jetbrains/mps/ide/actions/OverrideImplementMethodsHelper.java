@@ -74,8 +74,8 @@ public class OverrideImplementMethodsHelper {
         removeAttributes(child);
       }
     }
-    boolean isInterfaceMethod = SNodeOperations.isInstanceOf(SNodeOperations.getParent(baseMethod), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    if (myInsertOverride && isInterfaceMethod) {
+    boolean isInterfaceMethod = SNodeOperations.isInstanceOf(SNodeOperations.getParent(baseMethod), "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(baseMethod, "isAbstract");
+    if (myInsertOverride && !(isInterfaceMethod)) {
       boolean isNeedAddAnnotation = true;
       for (SNode annotation : SLinkOperations.getTargets(method, "annotation", true)) {
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Override")) {
@@ -95,9 +95,9 @@ public class OverrideImplementMethodsHelper {
     });
     SNode defaultExpr;
     if (isInterfaceMethod) {
-      defaultExpr = new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a7a1().createNode(baseMethod, Sequence.fromIterable(paramList).toListSequence());
-    } else {
       defaultExpr = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(baseMethod, "returnType", true), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}));
+    } else {
+      defaultExpr = new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a0h0b().createNode(baseMethod, Sequence.fromIterable(paramList).toListSequence());
     }
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
@@ -195,8 +195,8 @@ public class OverrideImplementMethodsHelper {
     }
   }
 
-  public static class QuotationClass_tfz3o4_a0a0a7a1 {
-    public QuotationClass_tfz3o4_a0a0a7a1() {
+  public static class QuotationClass_tfz3o4_a0a0a0h0b {
+    public QuotationClass_tfz3o4_a0a0a0h0b() {
     }
 
     public SNode createNode(Object parameter_4, Object parameter_5) {
