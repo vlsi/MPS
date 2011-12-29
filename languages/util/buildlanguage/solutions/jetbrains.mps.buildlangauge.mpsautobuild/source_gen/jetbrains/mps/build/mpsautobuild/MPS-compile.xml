@@ -122,6 +122,7 @@
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4856,7 +4857,6 @@
     <path path="${base_dir}/core/baseLanguage/classifiers/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/closures/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
