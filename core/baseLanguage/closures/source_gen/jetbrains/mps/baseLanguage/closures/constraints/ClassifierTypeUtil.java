@@ -228,7 +228,8 @@ public class ClassifierTypeUtil {
       type
     );
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      SNode copy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+      SNode copy = SNodeOperations.cast(SNodeOperations.copyNode(type), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      ListSequence.fromList(SLinkOperations.getTargets(copy, "parameter", true)).clear();
       SLinkOperations.setTarget(copy, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), false);
       for (SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)) {
         ListSequence.fromList(SLinkOperations.getTargets(copy, "parameter", true)).addElement(copyTypeRecursively(pt));
