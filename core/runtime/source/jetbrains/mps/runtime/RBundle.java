@@ -58,8 +58,7 @@ public class RBundle<T> {
       myClassLoader.dispose();
     }
   }
-
-  boolean hasClass(String fqName) {
+  protected boolean hasClass(String fqName) {
     return myLocator.find(fqName) != null;
   }
 
@@ -92,7 +91,7 @@ public class RBundle<T> {
     reload();
   }
 
-  void reload() {
+  protected void reload() {
     if (myClassLoader != null) {
       myClassLoader.dispose();
     }

@@ -20,7 +20,7 @@
   <import index="tp82" modelUID="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" version="-1" />
   <import index="ijii" modelUID="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)" version="-1" />
   <import index="bwgg" modelUID="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)" version="-1" />
-  <import index="6ymf" modelUID="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)" version="-1" />
+  <import index="6ymf" modelUID="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test)" version="-1" />
   <import index="tzu1" modelUID="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)" version="-1" />
   <import index="lkuz" modelUID="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)" version="-1" />
   <import index="c1yb" modelUID="r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test)" version="-1" />
@@ -51,6 +51,7 @@
   <import index="mql5" modelUID="r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)" version="-1" />
   <import index="96t8" modelUID="r:ba79f114-e14c-442e-a24a-6ed5711c2453(jetbrains.mps.execution.impl.configurations.tests.configurations@tests)" version="-1" />
   <import index="7fn4" modelUID="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)" version="-1" />
+  <import index="nq5u" modelUID="r:53c4b5ce-bc17-4454-a907-f9ec447f3644(jetbrains.mps.build.mpsautobuild.test@tests)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707830840" />
@@ -80,6 +81,7 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="3034322180552461514" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="8565053360342421683" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1538369951873468539" />
+    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1047721517261600280" />
   </roots>
   <root id="2712670354707830840">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707830841">
@@ -1807,6 +1809,15 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7120092006645362352">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="7fn4.8128243960970298272" resolveInfo="JavaCommand" />
+    </node>
+  </root>
+  <root id="1047721517261600280">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="1047721517261600282">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.build.mpsautobuild.test" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="e98c5fdd-c2ef-4d5b-9ffb-fa00f9dcb754" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1047721517261602198">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="nq5u.3033860308392767423" resolveInfo="TestPluginsDependency" />
     </node>
   </root>
 </model>

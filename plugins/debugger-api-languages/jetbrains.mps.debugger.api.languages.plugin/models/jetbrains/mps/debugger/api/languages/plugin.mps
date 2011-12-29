@@ -16,6 +16,10 @@
       <property name="loadModules" nameId="tp4k.8842945788826116904" value="true" />
     </node>
   </roots>
-  <root id="2162966196215564401" />
+  <root id="2162966196215564401">
+    <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.IdeaPluginDependency" typeId="tp4k.5864553086652219116" id="6713139039265457883">
+      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger-api" />
+    </node>
+  </root>
 </model>
 

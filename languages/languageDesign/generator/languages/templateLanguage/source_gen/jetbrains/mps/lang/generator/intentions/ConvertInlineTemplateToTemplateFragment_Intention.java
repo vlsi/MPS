@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.smodel.SNodeUtil;
 
 public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseIntention implements Intention {
   public ConvertInlineTemplateToTemplateFragment_Intention() {
@@ -57,7 +57,7 @@ public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseInten
     SLinkOperations.setTarget(templateNode, "applicableConcept", SLinkOperations.getTarget(ruleNode, "applicableConcept", false), false);
     SPropertyOperations.set(templateNode, "name", "template1");
     SLinkOperations.setTarget(templateNode, "contentNode", SLinkOperations.getTarget(node, "templateNode", true), true);
-    templateNode.setProperty(SModelTreeNode.PACK, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
+    templateNode.setProperty(SNodeUtil.property_BaseConcept_virtualPackage, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
 
     SNode templateRefNode = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
     SLinkOperations.setTarget(templateRefNode, "template", templateNode, false);

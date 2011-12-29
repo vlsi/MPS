@@ -14,11 +14,22 @@ public class CppDebuggerInitializer_CustomApplicationPlugin extends BaseCustomAp
   }
 
   public void doInit() {
-    CppDebuggerInitializer_CustomApplicationPlugin.this.myDebugger = new CppDebugger(Debuggers.getInstance(), BreakpointProvidersManager.getInstance());
+    Debuggers debuggers = Debuggers.getInstance();
+    if (debuggers == null) {
+      return;
+    }
+    CppDebuggerInitializer_CustomApplicationPlugin.this.myDebugger = new CppDebugger(debuggers, BreakpointProvidersManager.getInstance());
     CppDebuggerInitializer_CustomApplicationPlugin.this.myDebugger.init();
   }
 
   public void doDispose() {
-    CppDebuggerInitializer_CustomApplicationPlugin.this.myDebugger.dispose();
+    check_fqx22n_a0a0(CppDebuggerInitializer_CustomApplicationPlugin.this.myDebugger);
+  }
+
+  private static void check_fqx22n_a0a0(CppDebugger checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.dispose();
+    }
+
   }
 }

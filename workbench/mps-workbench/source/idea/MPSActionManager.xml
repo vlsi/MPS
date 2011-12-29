@@ -145,8 +145,8 @@
     <group id="NewGroup" popup="true">
     </group>
 
-    <group id="SearchMenu" popup="true">
-      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="EditMenu"/>
+    <group id="FindMenuGroup" popup="true">
+      <add-to-group group-id="EditCreateDeleteGroup" anchor="before" relative-to-action="EditSelectGroup"/>
     </group>
 
     <group id="ConsoleView.PopupMenu">

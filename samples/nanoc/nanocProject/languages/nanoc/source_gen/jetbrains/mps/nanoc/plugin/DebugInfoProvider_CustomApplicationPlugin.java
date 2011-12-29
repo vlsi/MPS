@@ -20,6 +20,9 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
 
   public void doInit() {
     DebugInfoManager manager = DebugInfoManager.getInstance();
+    if (manager == null) {
+      return;
+    }
     {
       Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
         public ILocationBreakpoint value(SNode debuggableNode, Project project) {
@@ -38,6 +41,9 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
 
   public void doDispose() {
     DebugInfoManager manager = DebugInfoManager.getInstance();
+    if (manager == null) {
+      return;
+    }
     manager.removeConceptBreakpointCreator("jetbrains.mps.nanoc.structure.CStatement");
   }
 }

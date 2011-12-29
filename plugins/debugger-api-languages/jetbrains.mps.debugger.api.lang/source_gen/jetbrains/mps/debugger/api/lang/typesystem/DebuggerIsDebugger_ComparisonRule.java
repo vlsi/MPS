@@ -13,7 +13,7 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER_wcp5kc_a0a0a0a0b0c0a0a0a0a0a0d = new SNodePointer("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.api(MPS.Workbench/jetbrains.mps.debug.api@java_stub)", "~IDebugger");
+  private static SNodePointer SNODE_POINTER_wcp5kc_a0a0a0a0b0c0a0a0a0a0a0d = new SNodePointer("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)", "4474271214082912941");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 

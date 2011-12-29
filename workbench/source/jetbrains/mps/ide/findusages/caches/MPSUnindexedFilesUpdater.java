@@ -23,6 +23,7 @@ import com.intellij.openapi.roots.CollectingContentIterator;
 import com.intellij.openapi.roots.ContentIterator;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.util.containers.HashSet;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.IndexingStamp;
@@ -88,6 +89,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
       if (file.isDirectory()) {
         iterateRecursively(file, processor, indicator);
       } else {
+        SingleRootFileViewProvider.doNotCheckFileSizeLimit(file);
         processor.processFile(file);
       }
     }
