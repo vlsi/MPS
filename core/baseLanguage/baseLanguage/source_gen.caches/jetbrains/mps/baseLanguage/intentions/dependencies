@@ -551,15 +551,11 @@
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.ImplementMethods_Intention" file="ImplementMethods_Intention.java">
-    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.AddClassMethodStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ImplementMethodStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MethodsToImplementStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ImplementMethodAction" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -858,15 +854,11 @@
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.OverrideMethods_Intention" file="OverrideMethods_Intention.java">
-    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.AddClassMethodStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MethodsToOverrideStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.OverrideMethodAction" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
