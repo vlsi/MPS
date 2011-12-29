@@ -19,13 +19,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
-public class OverrideImplementsMethodsDialog extends GroupedNodesChooser {
+public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   private JCheckBox myRemoveAttributes;
   private JCheckBox myInsertOverride;
   private JCheckBox myAddReturn;
   private PersistentOptions_PreferencesComponent myOptions;
 
-  public OverrideImplementsMethodsDialog(SNodePointer[] methods, Project project) {
+  public OverrideImplementMethodsDialog(SNodePointer[] methods, Project project) {
     super(methods, false, true, project);
   }
 

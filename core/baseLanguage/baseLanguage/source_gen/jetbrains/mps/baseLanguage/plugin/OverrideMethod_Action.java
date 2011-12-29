@@ -15,12 +15,18 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import java.awt.Frame;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.ide.actions.OverrideImplementMethodsDialog;
+import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
+import jetbrains.mps.ide.project.ProjectHelper;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.ide.actions.OverrideImplementMethodsHelper;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
-import jetbrains.mps.ide.actions.AddClassMethodStrategy;
-import jetbrains.mps.ide.actions.MethodsToOverrideStrategy;
-import jetbrains.mps.ide.actions.OverrideClassMethodStrategy;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class OverrideMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -75,9 +81,46 @@ public class OverrideMethod_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
-      Frame frame = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getMainFrame();
-      new StratergyAddMethodDialog(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), frame, new AddClassMethodStrategy(((SNode) MapSequence.fromMap(_params).get("selectedNode"))), new MethodsToOverrideStrategy(), new OverrideClassMethodStrategy(project)).showDialog();
+      final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
+
+      final SNode contextClass = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
+      final SNode contextMethod = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
+      final SNodePointer[] methods = ModelAccess.instance().runReadAction(new Computable<SNodePointer[]>() {
+        public SNodePointer[] compute() {
+          return OverrideImplementMethodsDialog.toNodePointers(OverrideImplementMethodsDialog.sortMethods(contextClass, IMemberContainer_Behavior.call_getMethodsToOverride_5418393554803767537(contextClass)));
+        }
+      });
+
+      final OverrideImplementMethodsDialog dialog = new OverrideImplementMethodsDialog(methods, ProjectHelper.toIdeaProject(project));
+      dialog.setTitle("Override Methods");
+      dialog.show();
+
+      if (dialog.isOK()) {
+        final Iterable<SNodePointer> selectedElements = (Iterable<SNodePointer>) dialog.getSelectedElements();
+
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
+          public void run() {
+            List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodePointer, SNode>() {
+              public SNode select(SNodePointer it) {
+                return SNodeOperations.cast(it.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+              }
+            }).toListSequence();
+
+            OverrideImplementMethodsHelper helper = new OverrideImplementMethodsHelper(project, contextClass, contextMethod, dialog.isRemoveAttributes(), dialog.isInsertOverrideAnnotation(), dialog.isAddReturn());
+            List<SNode> insertedMethods = helper.insertMethods(selection);
+            if (insertedMethods.isEmpty()) {
+              return;
+            }
+            if (insertedMethods.size() == 1) {
+              ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).selectAfter(ListSequence.fromList(insertedMethods).first());
+            } else {
+              ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(ListSequence.fromList(insertedMethods).last());
+              ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).selectRange(ListSequence.fromList(insertedMethods).last(), ListSequence.fromList(insertedMethods).first());
+            }
+
+          }
+        }, project);
+      }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "OverrideMethod", t);
     }
