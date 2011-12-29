@@ -30,8 +30,13 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   private boolean myDisposed;
   private RBundle<T> myBundle;
 
-  BundleClassLoader(RBundle<T> bundle) {
+  public BundleClassLoader(RBundle<T> bundle, ClassLoader parent) {
+    super(parent);
     myBundle = bundle;
+  }
+
+  BundleClassLoader(RBundle<T> bundle) {
+    this(bundle, BaseClassLoader.class.getClassLoader());
   }
 
   public Class getClass(String fqName) {

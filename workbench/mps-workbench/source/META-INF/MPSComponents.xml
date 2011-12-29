@@ -70,7 +70,6 @@
   <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="/META-INF/MPSDebuggerComponents.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
     <component>

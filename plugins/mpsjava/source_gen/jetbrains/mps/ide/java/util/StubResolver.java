@@ -29,16 +29,16 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.actions.MissingDependenciesFixer;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Condition;
 
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
@@ -105,6 +105,34 @@ public class StubResolver {
       new MissingDependenciesFixer(null, model.getModelDescriptor()).fix(false);
     }
 
+    int cnt = StubResolver.resolveReferences(toResolve, models, context);
+
+    new OptimizeImportsHelper(context).optimizeModelImports(model.getModelDescriptor());
+    if (log.isInfoEnabled()) {
+      log.info(cnt + " stub references were re-resolved in model " + SModelOperations.getModelName(model) + ". (" + ListSequence.fromList(toResolve).count() + ")");
+    }
+  }
+
+  public void resolveInModels(List<SModelDescriptor> models, IOperationContext context) {
+    for (SModelDescriptor model : ListSequence.fromList(models)) {
+      resolveInModel(model.getSModel(), context);
+    }
+  }
+
+  public void resolveInProject(MPSProject project, IOperationContext context) {
+    for (IModule module : ListSequence.fromList(project.getModulesWithGenerators())) {
+      if (module.isPackaged()) {
+        continue;
+      }
+      for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
+        if (SModelStereotype.isUserModel(model) && model instanceof EditableSModelDescriptor) {
+          resolveInModel(model.getSModel(), context);
+        }
+      }
+    }
+  }
+
+  public static int resolveReferences(List<SReference> toResolve, Map<SModelReference, SModelReference> models, IOperationContext context) {
     int cnt = 0;
     boolean found;
     do {
@@ -142,30 +170,7 @@ public class StubResolver {
         }
       }
     } while (found);
-
-    new OptimizeImportsHelper(context).optimizeModelImports(model.getModelDescriptor());
-    if (log.isInfoEnabled()) {
-      log.info(cnt + " stub references were re-resolved in model " + SModelOperations.getModelName(model) + ". (" + ListSequence.fromList(toResolve).count() + ")");
-    }
-  }
-
-  public void resolveInModels(List<SModelDescriptor> models, IOperationContext context) {
-    for (SModelDescriptor model : ListSequence.fromList(models)) {
-      resolveInModel(model.getSModel(), context);
-    }
-  }
-
-  public void resolveInProject(MPSProject project, IOperationContext context) {
-    for (IModule module : ListSequence.fromList(project.getModulesWithGenerators())) {
-      if (module.isPackaged()) {
-        continue;
-      }
-      for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
-        if (SModelStereotype.isUserModel(model) && model instanceof EditableSModelDescriptor) {
-          resolveInModel(model.getSModel(), context);
-        }
-      }
-    }
+    return cnt;
   }
 
   private static SModelReference check_ar1im2_a0e0a0c0a(SModelDescriptor checkedDotOperand) {

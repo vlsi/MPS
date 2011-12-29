@@ -12,6 +12,8 @@
   <idea-version since-build="3000"></idea-version>
     
   <depends>jetbrains.mps.debugger.api.languages</depends>
+  <depends>jetbrains.mps.debugger-java</depends>
+  <depends>jetbrains.mps.debugger-api</depends>
     
   <application-components>
     <component>

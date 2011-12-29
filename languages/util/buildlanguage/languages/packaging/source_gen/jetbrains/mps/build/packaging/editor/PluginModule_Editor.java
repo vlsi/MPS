@@ -150,7 +150,7 @@ public class PluginModule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_97a1w6_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "content", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "entry", true)).isNotEmpty();
   }
 
   private static class contentListHandler_97a1w6_b1a extends RefNodeListHandler {

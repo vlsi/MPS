@@ -19,9 +19,7 @@ import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.execution.api.ConfigRunParameters;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 
 public class JavaConfigOptions extends JPanel {
@@ -271,30 +269,6 @@ public class JavaConfigOptions extends JPanel {
     boolean oldValue = this.myUseAlternativeJRE;
     this.myUseAlternativeJRE = newValue;
     this.firePropertyChange("useAlternativeJRE", oldValue, newValue);
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.0)
-  public void reset(@Nullable ConfigRunParameters config) {
-    if (config != null) {
-      myThis.setProgramParameters(config.getProgramParameters());
-      myThis.setVmOptions(config.getVMParameters());
-      myThis.setWorkingDirectory(config.getWorkingDirectory());
-      myThis.setJrePath(config.getAlternativeJRE());
-      myThis.setUseAlternativeJRE(config.getUseAlternativeJRE());
-    }
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.0)
-  public void apply(@Nullable ConfigRunParameters config) {
-    if (config != null) {
-      config.setVMParameters(myThis.getVmOptions());
-      config.setProgramParameters(myThis.getProgramParameters());
-      config.setWorkingDirectory(myThis.getWorkingDirectory());
-      config.setAlternativeJRE(myThis.getJrePath());
-      config.setUseAlternativeJRE(myThis.getUseAlternativeJRE());
-    }
   }
 
   public void reset(@Nullable JavaRunParameters javaOptions) {
