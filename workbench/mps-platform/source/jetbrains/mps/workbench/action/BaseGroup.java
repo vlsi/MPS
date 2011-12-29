@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.workbench.action;
 
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
@@ -26,6 +23,7 @@ import jetbrains.mps.workbench.ActionPlace;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
+import java.awt.event.KeyEvent;
 import java.util.Arrays;
 import java.util.List;
 
@@ -109,8 +107,9 @@ public class BaseGroup extends DefaultActionGroup {
 
   public static void addPlaceToActionList(List<AnAction> actions, ActionPlace place, @Nullable Condition<BaseAction> condition) {
     for (AnAction child : actions) {
-      if (child instanceof BaseGroup) {
-        ((BaseGroup) child).addPlace(place, condition);
+      if (child instanceof ActionGroup) {
+        List<AnAction> children = Arrays.asList(((ActionGroup) child).getChildren(null));
+        addPlaceToActionList(children,place,condition);
       } else if (child instanceof BaseAction) {
         BaseAction action = (BaseAction) child;
         if (condition == null || condition.met(action)) {
