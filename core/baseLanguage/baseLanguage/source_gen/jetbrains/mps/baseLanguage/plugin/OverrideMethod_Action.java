@@ -92,7 +92,7 @@ public class OverrideMethod_Action extends BaseAction {
       });
 
       final OverrideImplementMethodsDialog dialog = new OverrideImplementMethodsDialog(methods, ProjectHelper.toIdeaProject(project));
-      dialog.setTitle("Override Methods");
+      dialog.setTitle("Select Methods to Override");
       dialog.show();
 
       if (dialog.isOK()) {

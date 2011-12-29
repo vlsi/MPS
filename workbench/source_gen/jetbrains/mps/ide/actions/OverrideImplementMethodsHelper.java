@@ -74,7 +74,8 @@ public class OverrideImplementMethodsHelper {
         removeAttributes(child);
       }
     }
-    if (myInsertOverride && SNodeOperations.isInstanceOf(SNodeOperations.getParent(baseMethod), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+    boolean isInterfaceMethod = SNodeOperations.isInstanceOf(SNodeOperations.getParent(baseMethod), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    if (myInsertOverride && isInterfaceMethod) {
       boolean isNeedAddAnnotation = true;
       for (SNode annotation : SLinkOperations.getTargets(method, "annotation", true)) {
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Override")) {
@@ -83,24 +84,26 @@ public class OverrideImplementMethodsHelper {
         }
       }
       if (isNeedAddAnnotation) {
-        ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addElement(new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a0c0c0b().createNode());
+        ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addElement(new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a0c0d0b().createNode());
       }
     }
 
     Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a0a0e0b().createNode(it);
+        return new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a0a0f0b().createNode(it);
       }
     });
     SNode defaultExpr;
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(baseMethod), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      defaultExpr = new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a6a1().createNode(baseMethod, Sequence.fromIterable(paramList).toListSequence());
+    if (isInterfaceMethod) {
+      defaultExpr = new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a7a1().createNode(baseMethod, Sequence.fromIterable(paramList).toListSequence());
     } else {
       defaultExpr = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(baseMethod, "returnType", true), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}));
     }
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a0i0b().createNode(defaultExpr));
+      if (!(isInterfaceMethod)) {
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a0a0j0b().createNode(defaultExpr));
+      }
     } else {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(defaultExpr));
     }
@@ -156,8 +159,8 @@ public class OverrideImplementMethodsHelper {
     }
   }
 
-  public static class QuotationClass_tfz3o4_a0a0a0c0c0b {
-    public QuotationClass_tfz3o4_a0a0a0c0c0b() {
+  public static class QuotationClass_tfz3o4_a0a0a0c0d0b {
+    public QuotationClass_tfz3o4_a0a0a0c0d0b() {
     }
 
     public SNode createNode() {
@@ -167,15 +170,15 @@ public class OverrideImplementMethodsHelper {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("annotation", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Override")));
+        quotedNode1_2.addReference(SReference.create("annotation", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
         result = quotedNode1_2;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_tfz3o4_a0a0a0a0e0b {
-    public QuotationClass_tfz3o4_a0a0a0a0e0b() {
+  public static class QuotationClass_tfz3o4_a0a0a0a0f0b {
+    public QuotationClass_tfz3o4_a0a0a0a0f0b() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -192,8 +195,8 @@ public class OverrideImplementMethodsHelper {
     }
   }
 
-  public static class QuotationClass_tfz3o4_a0a0a6a1 {
-    public QuotationClass_tfz3o4_a0a0a6a1() {
+  public static class QuotationClass_tfz3o4_a0a0a7a1 {
+    public QuotationClass_tfz3o4_a0a0a7a1() {
     }
 
     public SNode createNode(Object parameter_4, Object parameter_5) {
@@ -217,8 +220,8 @@ public class OverrideImplementMethodsHelper {
     }
   }
 
-  public static class QuotationClass_tfz3o4_a0a0a0i0b {
-    public QuotationClass_tfz3o4_a0a0a0i0b() {
+  public static class QuotationClass_tfz3o4_a0a0a0a0j0b {
+    public QuotationClass_tfz3o4_a0a0a0a0j0b() {
     }
 
     public SNode createNode(Object parameter_5) {
