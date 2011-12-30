@@ -198,17 +198,6 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/jetbrains.mps.baseLanguage.util.jar.jtmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.tuples.runtime">
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/jetbrains.mps.baseLanguage.tuples.runtime" />
-    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/jetbrains.mps.baseLanguage.tuples.runtime">
-      <fileset file="${base_dir}/core/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" />
-      <fileset dir="${base_dir}/core/baseLanguage/tuples/runtime" includes="icons/**, resources/**" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/jetbrains.mps.baseLanguage.tuples.runtime">
-      <fileset dir="${base_dir}/core/baseLanguage/tuples/runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-  </target>
   <target name="pack.jetbrains.mps.editor.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules/jetbrains.mps.editor.runtime" />
@@ -328,6 +317,17 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-closures.jar.tmp/modules/closures.runtime">
       <fileset dir="${base_dir}/core/baseLanguage/closures/runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.tuples.runtime">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-tuples.jar.tmp/modules/jetbrains.mps.baseLanguage.tuples.runtime" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-tuples.jar.tmp/modules/jetbrains.mps.baseLanguage.tuples.runtime">
+      <fileset file="${base_dir}/core/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" />
+      <fileset dir="${base_dir}/core/baseLanguage/tuples/runtime" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-tuples.jar.tmp/modules/jetbrains.mps.baseLanguage.tuples.runtime">
+      <fileset dir="${base_dir}/core/baseLanguage/tuples/runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
   <target name="pack.jetbrains.mps.ide.mpsdevkit">

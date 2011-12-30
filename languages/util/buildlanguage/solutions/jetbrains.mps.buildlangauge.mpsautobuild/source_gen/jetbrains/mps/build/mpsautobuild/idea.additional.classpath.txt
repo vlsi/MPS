@@ -8,11 +8,11 @@ core/refactoring-runtime/classes
 core/typesystemEngine/classes
 core/generator/classes
 core/make-runtime/classes
-core/baseLanguage/tuples/runtime/classes
 core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen
 core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes
 core/baseLanguage/collections/runtime/classes
 core/baseLanguage/closures/runtime/classes
+core/baseLanguage/tuples/runtime/classes
 :editor
 editor/editor-runtime/classes
 editor/actions-runtime/classes
