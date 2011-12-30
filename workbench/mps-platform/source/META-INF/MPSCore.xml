@@ -58,7 +58,6 @@
 
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.LanguageLibrary" beanClass="jetbrains.mps.LanguageLibrary"/>
-    <extensionPoint qualifiedName="com.intellij.mps.PluginBundle" beanClass="jetbrains.mps.ideaPlugins.IdeaPluginBundleExtension"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
