@@ -1739,7 +1739,7 @@
     <nodeInfo nodeId="748086721413444221" fileName="ConstraintsUtil.java" startLine="35" startPosition="50" endLine="36" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2043122710974596219" fileName="ConstraintsUtil.java" startLine="16" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstraintsUtil#()V" />
     <nodeInfo nodeId="2043122710974596255" fileName="ConstraintsUtil.java" startLine="20" startPosition="69" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8986964027630473418" fileName="ConstraintsUtil.java" startLine="24" startPosition="166" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8986964027630473418" fileName="ConstraintsUtil.java" startLine="24" startPosition="165" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2043122710974596238" fileName="ConstraintsUtil.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInsideOfClassifier#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="748086721413435667" fileName="ConstraintsUtil.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isJavaReserved#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="8986964027630473397" fileName="ConstraintsUtil.java" startLine="23" startPosition="5" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1750,7 +1750,7 @@
     <scopeInfo nodeId="2043122710974596241" fileName="ConstraintsUtil.java" startLine="31" startPosition="58" endLine="32" endPosition="119" />
     <scopeInfo nodeId="748086721413435670" fileName="ConstraintsUtil.java" startLine="35" startPosition="50" endLine="36" endPosition="69" />
     <scopeInfo nodeId="2043122710974596219" fileName="ConstraintsUtil.java" startLine="16" startPosition="0" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="8986964027630473418" fileName="ConstraintsUtil.java" startLine="24" startPosition="166" endLine="28" endPosition="0">
+    <scopeInfo nodeId="8986964027630473418" fileName="ConstraintsUtil.java" startLine="24" startPosition="165" endLine="28" endPosition="0">
       <varInfo nodeId="8986964027630473418" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="2043122710974596238" fileName="ConstraintsUtil.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
@@ -1764,7 +1764,7 @@
       <varInfo nodeId="2043122710974596229" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="2043122710974596217" fileName="ConstraintsUtil.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ConstraintsUtil" />
-    <unitInfo nodeId="8986964027630473418" fileName="ConstraintsUtil.java" startLine="24" startPosition="143" endLine="28" endPosition="5" unitName="jetbrains.mps.baseLanguage.constraints.ConstraintsUtil$1" />
+    <unitInfo nodeId="8986964027630473418" fileName="ConstraintsUtil.java" startLine="24" startPosition="142" endLine="28" endPosition="5" unitName="jetbrains.mps.baseLanguage.constraints.ConstraintsUtil$1" />
   </root>
   <root nodeId="2580416627845354229">
     <nodeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="26" startPosition="92" endLine="27" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
