@@ -9,12 +9,12 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import com.intellij.ui.NonFocusableCheckBox;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -56,6 +56,14 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
 
   protected boolean showInsertOverride() {
     return true;
+  }
+
+  @Override
+  protected String getText(SNode node) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+    }
+    return super.getText(node);
   }
 
   @Override

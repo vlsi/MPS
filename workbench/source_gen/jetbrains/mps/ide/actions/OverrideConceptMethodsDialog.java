@@ -9,12 +9,13 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import com.intellij.ui.NonFocusableCheckBox;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -45,6 +46,17 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
 
   protected boolean showInsertOverride() {
     return true;
+  }
+
+  @Override
+  protected String getText(SNode node) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
+      SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false);
+      if ((concept != null)) {
+        return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(concept, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+      }
+    }
+    return super.getText(node);
   }
 
   @Override

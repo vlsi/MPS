@@ -14,10 +14,13 @@ import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.behavior.IStaticContainerProcessor;
 import jetbrains.mps.baseLanguage.behavior.AbstractStaticContainerProcessor;
-import jetbrains.mps.project.GlobalScope;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.project.GlobalScope;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -121,28 +124,33 @@ public class ConceptBehavior_Behavior {
   }
 
   public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
-    List<SNode> methods = new ArrayList<SNode>();
-    for (SNode method : ConceptBehavior_Behavior.call_getConceptMethods_5466054087443746043(thisNode, GlobalScope.getInstance())) {
-      if (SPropertyOperations.getBoolean(method, "isFinal")) {
-        continue;
+    List<SNode> candidates = new ArrayList<SNode>();
+    Map<SNode, SNode> concrete = MapSequence.fromMap(new HashMap<SNode, SNode>());
+
+    for (SNode allSuper : ConceptBehavior_Behavior.call_getAllSuperBehaviors_1818770337282950280(thisNode)) {
+      for (SNode meth : SLinkOperations.getTargets(allSuper, "method", true)) {
+        SNode baseMeth = ConceptMethodDeclaration_Behavior.call_getOverridenMethod_1225196403956(meth);
+        if (baseMeth != null && !(MapSequence.fromMap(concrete).containsKey(baseMeth))) {
+          MapSequence.fromMap(concrete).put(baseMeth, meth);
+          ListSequence.fromList(candidates).addElement(meth);
+        }
       }
-      if (!(SPropertyOperations.getBoolean(method, "isVirtual"))) {
+    }
+
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode method : candidates) {
+      if (SPropertyOperations.getBoolean(method, "isFinal")) {
         continue;
       }
       if (SPropertyOperations.getBoolean(method, "isAbstract")) {
         continue;
       }
-      if (SLinkOperations.getTarget(method, "overriddenMethod", false) != null) {
+      if (SNodeOperations.getParent(method) == thisNode) {
         continue;
       }
-      SNode container = SNodeOperations.getAncestor(method, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false);
-      if (container == thisNode || container == null) {
-        continue;
-      }
-
-      ListSequence.fromList(methods).addElement(method);
+      ListSequence.fromList(result).addElement(method);
     }
-    return methods;
+    return result;
   }
 
   public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {

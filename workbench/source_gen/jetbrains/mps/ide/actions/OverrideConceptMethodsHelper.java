@@ -41,7 +41,7 @@ public class OverrideConceptMethodsHelper {
       SNode method = SNodeOperations.cast(((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(baseMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "call_getMethodToImplement_69709522611978987", new Class[]{SNode.class, SNode.class}, myClassConcept)), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
       SPropertyOperations.set(method, "isAbstract", "" + false);
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-      SLinkOperations.setTarget(method, "overriddenMethod", baseMethod, false);
+      SLinkOperations.setTarget(method, "overriddenMethod", ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "call_getOverridenMethod_1225196403956", new Class[]{SNode.class})), false);
       SPropertyOperations.set(method, "isVirtual", "" + false);
 
       if (insertion) {
@@ -76,7 +76,7 @@ public class OverrideConceptMethodsHelper {
           return new OverrideConceptMethodsHelper.QuotationClass_7wts1u_a0a0a0a0c0a4a1().createNode(it);
         }
       });
-      defaultExpr = new OverrideConceptMethodsHelper.QuotationClass_7wts1u_a0a3a0e0b().createNode(sourceMethodConcept, Sequence.fromIterable(paramList).toListSequence(), baseMethod);
+      defaultExpr = new OverrideConceptMethodsHelper.QuotationClass_7wts1u_a0a3a0e0b().createNode(sourceMethodConcept, Sequence.fromIterable(paramList).toListSequence(), ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "call_getOverridenMethod_1225196403956", new Class[]{SNode.class})));
     }
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
