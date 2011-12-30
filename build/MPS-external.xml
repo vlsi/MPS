@@ -45,6 +45,8 @@
     <mkdir dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-closures.jar.tmp/modules" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-closures.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib" />
     <mkdir dir="${deploy.dir}/MPS/license" />
     <mkdir dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp/META-INF" />
@@ -190,9 +192,6 @@
       <fileset dir="${mps_home}/core/make-runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
-      <fileset dir="${mps_home}/core/baseLanguage/closures/runtime/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
       <fileset dir="${mps_home}/core/baseLanguage/tuples/runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
@@ -217,7 +216,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.smodel.resources" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.search" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.util" />
-    <antcall target="MPS-languages.pack.closures.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.runtime" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps-core.jar" duplicate="preserve" filesonly="true">
@@ -319,6 +317,15 @@
       <fileset dir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-closures.jar.tmp">
+      <fileset dir="${mps_home}/core/baseLanguage/closures/runtime/classes" />
+    </copy>
+    <antcall target="MPS-languages.pack.closures.runtime" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-closures.jar.tmp/modules" />
+    <jar destfile="${deploy.dir}/MPS/lib/mps-closures.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/lib/mps-closures.jar.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/lib/mps-closures.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib" />
     <copy todir="${deploy.dir}/MPS/license">
       <fileset dir="${mps_home}/license" />
@@ -682,6 +689,7 @@
     <delete dir="${deploy.dir}/MPS/lib/mps-boot.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-closures.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsmake.jar.tmp" />

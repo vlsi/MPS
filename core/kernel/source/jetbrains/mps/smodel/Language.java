@@ -659,10 +659,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       for (ModuleReference mr:myLanguageDescriptor.getRuntimeModules()) {
         IModule rtm = MPSModuleRepository.getInstance().getModule(mr);
-        if (rtm != null) {
-          IFile rtmbundle = rtm.getBundleHome();
-          if (rtmbundle.getName().startsWith("mps-") && rtmbundle.getPath().startsWith(PathManager.getHomePath())) {
-            dd.getRuntimeJars().add("/"+rtmbundle.getPath().substring(PathManager.getHomePath().length()));
+        if (rtm != null && rtm.getBundleHome() != null) {
+          if (rtm.getBundleHome().getName().startsWith("mps-") && rtm.getBundleHome().getPath().startsWith(PathManager.getHomePath())) {
+            dd.getRuntimeJars().add("/"+ rtm.getBundleHome().getPath().substring(PathManager.getHomePath().length()));
           }
         }
       }
