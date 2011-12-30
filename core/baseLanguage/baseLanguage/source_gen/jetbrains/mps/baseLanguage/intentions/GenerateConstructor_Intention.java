@@ -14,11 +14,11 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.awt.Frame;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -96,7 +96,6 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext, final IntentionContext intentionContext) {
-    Frame frame = editorContext.getMainFrame();
     final Wrappers._T<SNode> superclass = new Wrappers._T<SNode>(null);
     final Wrappers._T<SNodePointer[]> ctors = new Wrappers._T<SNodePointer[]>(null);
     final Wrappers._boolean needsShowConstructorsDialog = new Wrappers._boolean(false);
@@ -120,6 +119,7 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
     });
     if (needsShowConstructorsDialog.value) {
       SelectConstructorsDialog selectConstructorsDialog = new SelectConstructorsDialog(ctors.value, editorContext.getOperationContext().getProject());
+      selectConstructorsDialog.setTitle("Choose Super Class Constructor");
       selectConstructorsDialog.show();
 
       if (!(selectConstructorsDialog.isOK())) {
@@ -131,28 +131,34 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
         new SNodePointer[0]
       ));
     }
+
     final Wrappers._boolean needsShowFieldsDialog = new Wrappers._boolean(false);
+    final Wrappers._T<SNodePointer[]> fields = new Wrappers._T<SNodePointer[]>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty()) {
           needsShowFieldsDialog.value = true;
+          fields.value = ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).select(new ISelector<SNode, SNodePointer>() {
+            public SNodePointer select(SNode it) {
+              return new SNodePointer(it);
+            }
+          }).toGenericArray(SNodePointer.class);
         } else {
           intentionContext.getContextParametersMap().put("selectedFields", new SNodePointer[0]);
         }
       }
     });
     if (needsShowFieldsDialog.value) {
-      SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, frame, node);
-      selectFieldsDialog.showDialog();
-      intentionContext.getContextParametersMap().put("selectedFields", ListSequence.fromList(selectFieldsDialog.getSelectedFields()).select(new ISelector<SNode, SNodePointer>() {
-        public SNodePointer select(SNode it) {
-          return new SNodePointer(it);
-        }
-      }).toGenericArray(SNodePointer.class));
-      return selectFieldsDialog.getAnswer();
-    } else {
-      return true;
+      SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(fields.value, true, editorContext.getOperationContext().getProject());
+      selectFieldsDialog.setTitle("Choose Fields to Initialize by Constructor");
+      selectFieldsDialog.show();
+
+      if (!(selectFieldsDialog.isOK())) {
+        return false;
+      }
+      intentionContext.getContextParametersMap().put("selectedFields", Sequence.fromIterable(((Iterable<SNodePointer>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodePointer.class));
     }
+    return true;
   }
 
   public String getLocationString() {

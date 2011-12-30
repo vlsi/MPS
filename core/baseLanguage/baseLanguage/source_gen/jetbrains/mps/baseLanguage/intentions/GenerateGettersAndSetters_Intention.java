@@ -142,9 +142,10 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
 
   public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getMainFrame(), node);
-    selectFieldsDialog.showDialog();
+    selectFieldsDialog.show();
+
     intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
-    return selectFieldsDialog.getAnswer();
+    return selectFieldsDialog.isOK();
   }
 
   public String getLocationString() {
