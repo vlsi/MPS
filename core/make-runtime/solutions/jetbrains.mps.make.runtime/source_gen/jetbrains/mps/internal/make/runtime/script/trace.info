@@ -1267,7 +1267,7 @@
   </root>
   <root nodeId="7797884084018533742">
     <nodeInfo nodeId="7797884084018533809" fileName="LoggingProgressStrategy.java" startLine="7" startPosition="71" endLine="8" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="7797884084018581584" fileName="LoggingProgressStrategy.java" startLine="8" startPosition="101" endLine="9" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOTAL" />
+    <nodeInfo nodeId="7797884084018581584" fileName="LoggingProgressStrategy.java" startLine="8" startPosition="101" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOTAL" />
     <nodeInfo nodeId="4277212308181635809" fileName="LoggingProgressStrategy.java" startLine="10" startPosition="0" endLine="11" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="lastInfo" />
     <nodeInfo nodeId="7797884084018607164" fileName="LoggingProgressStrategy.java" startLine="13" startPosition="36" endLine="14" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7797884084018607159" fileName="LoggingProgressStrategy.java" startLine="17" startPosition="38" endLine="18" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

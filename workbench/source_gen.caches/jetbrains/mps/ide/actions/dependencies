@@ -1615,6 +1615,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.NewSubTestModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.OptimizeModelImports_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.OptimizeModuleImports_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.OptimizeProjectImports_Action" />
@@ -2324,6 +2325,12 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup" file="NodeRefactoring_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.OptimizeModelImports_Action" file="OptimizeModelImports_Action.java">
