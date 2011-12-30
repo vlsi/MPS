@@ -36,6 +36,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 public class TypeContextManager implements ApplicationComponent {
+  private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.getLogger(TypeContextManager.class);
   private final Object myLock = new Object();
   private Set<SModelDescriptor> myListeningForModels = new THashSet<SModelDescriptor>();
   private Map<SNodePointer, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
@@ -52,7 +53,7 @@ public class TypeContextManager implements ApplicationComponent {
     public void beforeModelDisposed(SModel sm) {
       synchronized (myLock) {
         for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
-          if (sm == nodePointer.getModel()) {
+          if (sm.getSModelReference().equals(nodePointer.getModelReference())) {
             removeContextForNode(nodePointer);
           }
         }
@@ -63,8 +64,8 @@ public class TypeContextManager implements ApplicationComponent {
       SModelReference modelRef = md.getSModelReference();
       synchronized (myLock) {
         for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
-          if (nodePointer != null && nodePointer.getNode() != null && nodePointer.getModel() != null &&
-            (nodePointer.getNode().shouldHaveBeenDisposed() || modelRef == nodePointer.getModel().getSModelReference())) {
+          if (nodePointer == null || nodePointer.getNode() == null || nodePointer.getModel() == null ||
+            nodePointer.getNode().shouldHaveBeenDisposed() || modelRef.equals(nodePointer.getModelReference())) {
             removeContextForNode(nodePointer);
           }
         }
@@ -168,6 +169,11 @@ public class TypeContextManager implements ApplicationComponent {
         }
       } else {
         TypeCheckingContext context = contextWithOwners.o1;
+        if (context.getNode().isDisposed()) {
+          removeContextForNode(new SNodePointer(node));
+          LOG.error("Type Checking Context had a disposed node inside. Node: " + node + " model: " + node.getModel());
+          return getOrCreateContext(node, owner, createIfAbsent);
+        }
         if (!contextWithOwners.o2.contains(owner)) {
           contextWithOwners.o2.add(owner);
         }
