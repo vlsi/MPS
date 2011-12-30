@@ -51,11 +51,12 @@ public class CommitUtil {
     refactoringContext.setSelectedProject(context.getProject());
 
     // set new name parameter for refactoring to skip initial dialog 
-    refactoringContext.setParameter("myNewName", newName);
+    refactoringContext.setParameter("newName", newName);
 
     new Thread() {
       public void run() {
-        new RefactoringFacade().execute(refactoring, refactoringContext);
+        refactoringContext.setRefactoring(refactoring);
+        new RefactoringFacade().executeInThread(refactoringContext);
       }
     }.start();
   }

@@ -7,7 +7,7 @@ import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
-import jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup;
+import jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup;
 import jetbrains.mps.ide.actions.Code_ActionGroup;
 import jetbrains.mps.lang.dataFlow.plugin.DFAActions_ActionGroup;
 import java.util.List;
@@ -27,8 +27,10 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new ChangeMethodSignature_Action());
     addAction(new CommentLine_Action());
     addAction(new CommentStatements_Action());
+    addAction(new ConvertAnonymousClass_Action());
     addAction(new ExtractMethod_Action());
     addAction(new GoToInheritedClassifier_Action());
     addAction(new GoToOverridenMethod_Action());
@@ -38,7 +40,12 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new IntroduceConstant_Action());
     addAction(new IntroduceField_Action());
     addAction(new IntroduceVariable_Action());
+    addAction(new MakeFieldFinal_Action());
+    addAction(new MakeFieldStatic_Action());
+    addAction(new MoveStaticField_Action());
+    addAction(new MoveStaticMethod_Action());
     addAction(new OverrideMethod_Action());
+    addAction(new RenameMethod_Action());
     addAction(new RenameVariable_Action());
     addAction(new ShowMembers_Action());
     addAction(new ShowNullDFA_Action());
@@ -53,6 +60,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new BaseLanguageToolsAddition_ActionGroup());
     addGroup(new BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup());
     addGroup(new RefactoringAddition_ActionGroup());
+    addGroup(new RefactoringAdditions_ActionGroup());
   }
 
   public void adjustRegularGroups() {
@@ -63,6 +71,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(RefactoringAddition_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
     insertGroupIntoAnother(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_comments);
+    insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
   }
 

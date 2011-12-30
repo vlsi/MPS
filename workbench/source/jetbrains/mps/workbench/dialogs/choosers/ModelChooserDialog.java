@@ -79,13 +79,13 @@ class ModelChooserDialog extends BaseDialog {
       }
 
       @Override
-      public SModelReference[] find(boolean checkboxState) {
-        if (checkboxState) {
-          return myNonProjectModels.toArray(new SModelReference[myNonProjectModels.size()]);
-        } else {
-          return myModels.toArray(new SModelReference[myModels.size()]);
+        public SModelReference[] find(boolean checkboxState) {
+          if (checkboxState) {
+            return myNonProjectModels.toArray(new SModelReference[myNonProjectModels.size()]);
+          } else {
+            return myModels.toArray(new SModelReference[myModels.size()]);
+          }
         }
-      }
 
       public SModelReference[] find(IScope scope) {
         throw new UnsupportedOperationException("must not be used");

@@ -6,6 +6,7 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
+import jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,11 +24,20 @@ public class Structure_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new MoveConcepts_Action());
+    addAction(new MoveLinkUp_Action());
+    addAction(new MoveProperyUp_Action());
+    addAction(new RenameConcept_Action());
+    addAction(new RenameLink_Action());
+    addAction(new RenameProperty_Action());
+    addAction(new SafeDeleteConcept_Action());
+    addAction(new SafeDeleteLink_Action());
     addAction(new ShowDefaultHelp_Action());
     addAction(new ShowHelpForAspect_Action());
     addAction(new ShowHelpForNode_Action());
     addAction(new ShowHelpForRoot_Action());
     // groups 
+    addGroup(new RefactoringAdditions_ActionGroup());
     addGroup(new ShowHelp_ActionGroup());
     addGroup(new Structure_ActionGroup());
   }
@@ -37,6 +47,7 @@ public class Structure_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Structure_ActionGroup.ID, "EditorPopup_ActionGroupstructure", null);
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_showHelp);
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, Structure_ActionGroup.ID, Structure_ActionGroup.LABEL_ID_showHelp);
+    insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

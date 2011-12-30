@@ -1122,6 +1122,7 @@
       <varInfo nodeId="7782234301060415237" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="7782234301060403243" fileName="VariableDuplicatesProcessor.java" startLine="16" startPosition="43" endLine="15" endPosition="0" />
+    <unitInfo nodeId="7782234301060403220" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.VariableDuplicatesProcessor" />
   </root>
   <root nodeId="8184320397304927312">
     <nodeInfo nodeId="8184320397304989933" fileName="ConvertAnonymousRefactoring.java" startLine="32" startPosition="42" endLine="33" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ROLES_NOT_TO_COPY" />
@@ -6665,27 +6666,25 @@
     <nodeInfo nodeId="1933288817608940152" fileName="ExtractMethodDialog.java" startLine="406" startPosition="9" endLine="407" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1933288817608940153" fileName="ExtractMethodDialog.java" startLine="407" startPosition="0" endLine="408" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1933288817608940172" fileName="ExtractMethodDialog.java" startLine="410" startPosition="53" endLine="411" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940181" fileName="ExtractMethodDialog.java" startLine="415" startPosition="145" endLine="416" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940192" fileName="ExtractMethodDialog.java" startLine="416" startPosition="207" endLine="417" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940206" fileName="ExtractMethodDialog.java" startLine="418" startPosition="156" endLine="419" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940217" fileName="ExtractMethodDialog.java" startLine="419" startPosition="211" endLine="420" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940231" fileName="ExtractMethodDialog.java" startLine="421" startPosition="150" endLine="422" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940248" fileName="ExtractMethodDialog.java" startLine="423" startPosition="17" endLine="424" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="536865934322827516" fileName="ExtractMethodDialog.java" startLine="425" startPosition="15" endLine="426" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940326" fileName="ExtractMethodDialog.java" startLine="430" startPosition="9" endLine="431" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1933288817608940327" fileName="ExtractMethodDialog.java" startLine="431" startPosition="0" endLine="432" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1933288817608940331" fileName="ExtractMethodDialog.java" startLine="432" startPosition="54" endLine="433" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940337" fileName="ExtractMethodDialog.java" startLine="433" startPosition="18" endLine="434" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817609108115" fileName="ExtractMethodDialog.java" startLine="434" startPosition="18" endLine="435" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940349" fileName="ExtractMethodDialog.java" startLine="435" startPosition="20" endLine="436" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940355" fileName="ExtractMethodDialog.java" startLine="436" startPosition="53" endLine="437" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940359" fileName="ExtractMethodDialog.java" startLine="437" startPosition="39" endLine="438" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1933288817608940360" fileName="ExtractMethodDialog.java" startLine="438" startPosition="0" endLine="439" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940366" fileName="ExtractMethodDialog.java" startLine="439" startPosition="18" endLine="440" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817609108127" fileName="ExtractMethodDialog.java" startLine="440" startPosition="18" endLine="441" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940372" fileName="ExtractMethodDialog.java" startLine="441" startPosition="20" endLine="442" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940378" fileName="ExtractMethodDialog.java" startLine="442" startPosition="51" endLine="443" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940382" fileName="ExtractMethodDialog.java" startLine="443" startPosition="38" endLine="444" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1933288817608940192" fileName="ExtractMethodDialog.java" startLine="415" startPosition="145" endLine="416" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940217" fileName="ExtractMethodDialog.java" startLine="417" startPosition="156" endLine="418" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940231" fileName="ExtractMethodDialog.java" startLine="420" startPosition="143" endLine="421" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940248" fileName="ExtractMethodDialog.java" startLine="422" startPosition="17" endLine="423" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="536865934322827516" fileName="ExtractMethodDialog.java" startLine="424" startPosition="15" endLine="425" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940326" fileName="ExtractMethodDialog.java" startLine="429" startPosition="9" endLine="430" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1933288817608940327" fileName="ExtractMethodDialog.java" startLine="430" startPosition="0" endLine="431" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1933288817608940331" fileName="ExtractMethodDialog.java" startLine="431" startPosition="54" endLine="432" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940337" fileName="ExtractMethodDialog.java" startLine="432" startPosition="18" endLine="433" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817609108115" fileName="ExtractMethodDialog.java" startLine="433" startPosition="18" endLine="434" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940349" fileName="ExtractMethodDialog.java" startLine="434" startPosition="20" endLine="435" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940355" fileName="ExtractMethodDialog.java" startLine="435" startPosition="53" endLine="436" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940359" fileName="ExtractMethodDialog.java" startLine="436" startPosition="39" endLine="437" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1933288817608940360" fileName="ExtractMethodDialog.java" startLine="437" startPosition="0" endLine="438" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940366" fileName="ExtractMethodDialog.java" startLine="438" startPosition="18" endLine="439" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817609108127" fileName="ExtractMethodDialog.java" startLine="439" startPosition="18" endLine="440" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940372" fileName="ExtractMethodDialog.java" startLine="440" startPosition="20" endLine="441" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940378" fileName="ExtractMethodDialog.java" startLine="441" startPosition="51" endLine="442" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940382" fileName="ExtractMethodDialog.java" startLine="442" startPosition="38" endLine="443" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8492459591399172096" fileName="ExtractMethodDialog.java" startLine="118" startPosition="12" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3633468495172224939" fileName="ExtractMethodDialog.java" startLine="309" startPosition="14" endLine="311" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8492459591399171993" fileName="ExtractMethodDialog.java" startLine="101" startPosition="81" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
@@ -6694,6 +6693,7 @@
     <nodeInfo nodeId="5159544814168902938" fileName="ExtractMethodDialog.java" startLine="324" startPosition="19" endLine="327" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1881953995223824426" fileName="ExtractMethodDialog.java" startLine="360" startPosition="109" endLine="363" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3633468495172205200" fileName="ExtractMethodDialog.java" startLine="399" startPosition="99" endLine="402" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3700868637771136264" fileName="ExtractMethodDialog.java" startLine="419" startPosition="17" endLine="422" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399172015" fileName="ExtractMethodDialog.java" startLine="104" startPosition="7" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399172044" fileName="ExtractMethodDialog.java" startLine="109" startPosition="5" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399172675" fileName="ExtractMethodDialog.java" startLine="214" startPosition="63" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tableChanged#(Ljavax/swing/event/TableModelEvent;)V" />
@@ -6716,6 +6716,7 @@
     <nodeInfo nodeId="8492459591399172977" fileName="ExtractMethodDialog.java" startLine="337" startPosition="0" endLine="342" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" />
     <nodeInfo nodeId="1642079203062869343" fileName="ExtractMethodDialog.java" startLine="346" startPosition="0" endLine="351" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="prepareDialog#()V" />
     <nodeInfo nodeId="1881953995223824395" fileName="ExtractMethodDialog.java" startLine="354" startPosition="57" endLine="359" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1933288817608940179" fileName="ExtractMethodDialog.java" startLine="414" startPosition="68" endLine="419" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399173056" fileName="ExtractMethodDialog.java" startLine="71" startPosition="100" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399171939" fileName="ExtractMethodDialog.java" startLine="83" startPosition="57" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="536865934322727536" fileName="ExtractMethodDialog.java" startLine="158" startPosition="51" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6730,28 +6731,27 @@
     <nodeInfo nodeId="1881953995223824494" fileName="ExtractMethodDialog.java" startLine="329" startPosition="0" endLine="337" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStaticContainer#()V" />
     <nodeInfo nodeId="8492459591399171983" fileName="ExtractMethodDialog.java" startLine="100" startPosition="10" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8492459591399172943" fileName="ExtractMethodDialog.java" startLine="313" startPosition="69" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1933288817608940179" fileName="ExtractMethodDialog.java" startLine="414" startPosition="68" endLine="423" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1642079203062475915" fileName="ExtractMethodDialog.java" startLine="272" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDeclareStaticCheckBox#()Ljavax/swing/JCheckBox;" />
     <nodeInfo nodeId="3633468495172215098" fileName="ExtractMethodDialog.java" startLine="302" startPosition="12" endLine="312" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399172942" fileName="ExtractMethodDialog.java" startLine="312" startPosition="7" endLine="322" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1933288817608940133" fileName="ExtractMethodDialog.java" startLine="396" startPosition="71" endLine="406" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
     <nodeInfo nodeId="8492459591399171936" fileName="ExtractMethodDialog.java" startLine="81" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#()V" />
     <nodeInfo nodeId="1933288817608940125" fileName="ExtractMethodDialog.java" startLine="395" startPosition="185" endLine="406" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1933288817608940177" fileName="ExtractMethodDialog.java" startLine="413" startPosition="31" endLine="425" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1933288817608940177" fileName="ExtractMethodDialog.java" startLine="413" startPosition="31" endLine="424" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399171982" fileName="ExtractMethodDialog.java" startLine="96" startPosition="52" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399172653" fileName="ExtractMethodDialog.java" startLine="209" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParametersPanel#()Ljavax/swing/JComponent;" />
     <nodeInfo nodeId="1881953995223824379" fileName="ExtractMethodDialog.java" startLine="351" startPosition="0" endLine="366" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="chooseStaticContainer#()V" />
+    <nodeInfo nodeId="1933288817608940175" fileName="ExtractMethodDialog.java" startLine="412" startPosition="63" endLine="427" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8492459591399173005" fileName="ExtractMethodDialog.java" startLine="64" startPosition="0" endLine="80" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractMethodDialog#(Ljava/awt/Frame;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoringParameters;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoring;)V" />
-    <nodeInfo nodeId="1933288817608940175" fileName="ExtractMethodDialog.java" startLine="412" startPosition="63" endLine="428" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1933288817608940174" fileName="ExtractMethodDialog.java" startLine="411" startPosition="34" endLine="428" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940174" fileName="ExtractMethodDialog.java" startLine="411" startPosition="34" endLine="427" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940166" fileName="ExtractMethodDialog.java" startLine="409" startPosition="70" endLine="429" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
     <nodeInfo nodeId="8492459591399172880" fileName="ExtractMethodDialog.java" startLine="302" startPosition="10" endLine="323" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1933288817608940166" fileName="ExtractMethodDialog.java" startLine="409" startPosition="70" endLine="430" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="1933288817608940158" fileName="ExtractMethodDialog.java" startLine="408" startPosition="95" endLine="430" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1933288817608940158" fileName="ExtractMethodDialog.java" startLine="408" startPosition="95" endLine="429" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399172879" fileName="ExtractMethodDialog.java" startLine="298" startPosition="67" endLine="323" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399172868" fileName="ExtractMethodDialog.java" startLine="295" startPosition="0" endLine="329" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onOk#()V" />
     <nodeInfo nodeId="8492459591399171967" fileName="ExtractMethodDialog.java" startLine="92" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessagesText#()Ljava/lang/String;" />
     <nodeInfo nodeId="8492459591399172691" fileName="ExtractMethodDialog.java" startLine="223" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1933288817608940116" fileName="ExtractMethodDialog.java" startLine="393" startPosition="0" endLine="446" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initPanel#()V" />
+    <nodeInfo nodeId="1933288817608940116" fileName="ExtractMethodDialog.java" startLine="393" startPosition="0" endLine="445" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initPanel#()V" />
     <nodeInfo nodeId="8492459591399172132" fileName="ExtractMethodDialog.java" startLine="128" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initPanel#()V" />
     <scopeInfo nodeId="8492459591399171994" fileName="ExtractMethodDialog.java" startLine="102" startPosition="53" endLine="103" endPosition="88" />
     <scopeInfo nodeId="8492459591399172079" fileName="ExtractMethodDialog.java" startLine="116" startPosition="160" endLine="117" endPosition="53" />
@@ -6770,7 +6770,9 @@
     <scopeInfo nodeId="1881953995223824427" fileName="ExtractMethodDialog.java" startLine="361" startPosition="33" endLine="362" endPosition="32" />
     <scopeInfo nodeId="5159544814168932104" fileName="ExtractMethodDialog.java" startLine="375" startPosition="51" endLine="376" endPosition="72" />
     <scopeInfo nodeId="3633468495172205201" fileName="ExtractMethodDialog.java" startLine="400" startPosition="69" endLine="401" endPosition="104" />
-    <scopeInfo nodeId="1933288817608940230" fileName="ExtractMethodDialog.java" startLine="421" startPosition="150" endLine="422" endPosition="205" />
+    <scopeInfo nodeId="1933288817608940180" fileName="ExtractMethodDialog.java" startLine="415" startPosition="145" endLine="416" endPosition="93" />
+    <scopeInfo nodeId="1933288817608940205" fileName="ExtractMethodDialog.java" startLine="417" startPosition="156" endLine="418" endPosition="94" />
+    <scopeInfo nodeId="3700868637771136271" fileName="ExtractMethodDialog.java" startLine="420" startPosition="143" endLine="421" endPosition="205" />
     <scopeInfo nodeId="8492459591399173058" fileName="ExtractMethodDialog.java" startLine="73" startPosition="25" endLine="75" endPosition="45" />
     <scopeInfo nodeId="8492459591399172029" fileName="ExtractMethodDialog.java" startLine="97" startPosition="35" endLine="99" endPosition="33" />
     <scopeInfo nodeId="8492459591399172016" fileName="ExtractMethodDialog.java" startLine="105" startPosition="26" endLine="107" endPosition="35" />
@@ -6787,8 +6789,6 @@
     <scopeInfo nodeId="5159544814168902958" fileName="ExtractMethodDialog.java" startLine="370" startPosition="77" endLine="372" endPosition="29" />
     <scopeInfo nodeId="1881953995223824250" fileName="ExtractMethodDialog.java" startLine="381" startPosition="5" endLine="383" endPosition="64" />
     <scopeInfo nodeId="1881953995223824241" fileName="ExtractMethodDialog.java" startLine="389" startPosition="35" endLine="391" endPosition="23" />
-    <scopeInfo nodeId="1933288817608940180" fileName="ExtractMethodDialog.java" startLine="415" startPosition="145" endLine="417" endPosition="93" />
-    <scopeInfo nodeId="1933288817608940205" fileName="ExtractMethodDialog.java" startLine="418" startPosition="156" endLine="420" endPosition="94" />
     <scopeInfo nodeId="8492459591399171940" fileName="ExtractMethodDialog.java" startLine="84" startPosition="25" endLine="87" endPosition="110" />
     <scopeInfo nodeId="8492459591399171993" fileName="ExtractMethodDialog.java" startLine="101" startPosition="81" endLine="104" endPosition="7">
       <varInfo nodeId="8492459591399172010" varName="i" />
@@ -6850,11 +6850,11 @@
     <scopeInfo nodeId="3633468495172215099" fileName="ExtractMethodDialog.java" startLine="303" startPosition="45" endLine="311" endPosition="9" />
     <scopeInfo nodeId="1881953995223824494" fileName="ExtractMethodDialog.java" startLine="329" startPosition="0" endLine="337" endPosition="0" />
     <scopeInfo nodeId="8492459591399172943" fileName="ExtractMethodDialog.java" startLine="313" startPosition="69" endLine="322" endPosition="0" />
+    <scopeInfo nodeId="1933288817608940178" fileName="ExtractMethodDialog.java" startLine="414" startPosition="68" endLine="423" endPosition="0" />
     <scopeInfo nodeId="1642079203062475915" fileName="ExtractMethodDialog.java" startLine="272" startPosition="0" endLine="282" endPosition="0" />
     <scopeInfo nodeId="1933288817608940133" fileName="ExtractMethodDialog.java" startLine="396" startPosition="71" endLine="406" endPosition="0">
       <varInfo nodeId="1933288817608940136" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="1933288817608940178" fileName="ExtractMethodDialog.java" startLine="414" startPosition="68" endLine="424" endPosition="0" />
     <scopeInfo nodeId="8492459591399171936" fileName="ExtractMethodDialog.java" startLine="81" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="8492459591399172654" fileName="ExtractMethodDialog.java" startLine="210" startPosition="46" endLine="221" endPosition="27">
       <varInfo nodeId="8492459591399172656" varName="parametersPanel" />
@@ -6863,20 +6863,20 @@
     <scopeInfo nodeId="1881953995223824382" fileName="ExtractMethodDialog.java" startLine="352" startPosition="39" endLine="364" endPosition="0">
       <varInfo nodeId="1881953995223824392" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="1933288817608940176" fileName="ExtractMethodDialog.java" startLine="413" startPosition="31" endLine="426" endPosition="48" />
+    <scopeInfo nodeId="1933288817608940176" fileName="ExtractMethodDialog.java" startLine="413" startPosition="31" endLine="425" endPosition="48" />
     <scopeInfo nodeId="8492459591399173012" fileName="ExtractMethodDialog.java" startLine="65" startPosition="147" endLine="79" endPosition="0" />
     <scopeInfo nodeId="8492459591399172653" fileName="ExtractMethodDialog.java" startLine="209" startPosition="0" endLine="223" endPosition="0" />
     <scopeInfo nodeId="1881953995223824379" fileName="ExtractMethodDialog.java" startLine="351" startPosition="0" endLine="366" endPosition="0" />
+    <scopeInfo nodeId="1933288817608940175" fileName="ExtractMethodDialog.java" startLine="412" startPosition="63" endLine="427" endPosition="0" />
     <scopeInfo nodeId="8492459591399173005" fileName="ExtractMethodDialog.java" startLine="64" startPosition="0" endLine="80" endPosition="3">
       <varInfo nodeId="8492459591399173006" varName="context" />
       <varInfo nodeId="1334376219849291744" varName="frame" />
       <varInfo nodeId="1334376219849291736" varName="params" />
       <varInfo nodeId="1334376219849291739" varName="refactoring" />
     </scopeInfo>
-    <scopeInfo nodeId="1933288817608940175" fileName="ExtractMethodDialog.java" startLine="412" startPosition="63" endLine="428" endPosition="0" />
-    <scopeInfo nodeId="1933288817608940171" fileName="ExtractMethodDialog.java" startLine="410" startPosition="53" endLine="428" endPosition="13" />
+    <scopeInfo nodeId="1933288817608940171" fileName="ExtractMethodDialog.java" startLine="410" startPosition="53" endLine="427" endPosition="13" />
     <scopeInfo nodeId="8492459591399172881" fileName="ExtractMethodDialog.java" startLine="302" startPosition="12" endLine="322" endPosition="9" />
-    <scopeInfo nodeId="1933288817608940166" fileName="ExtractMethodDialog.java" startLine="409" startPosition="70" endLine="430" endPosition="0">
+    <scopeInfo nodeId="1933288817608940166" fileName="ExtractMethodDialog.java" startLine="409" startPosition="70" endLine="429" endPosition="0">
       <varInfo nodeId="1933288817608940169" varName="p0" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399172878" fileName="ExtractMethodDialog.java" startLine="297" startPosition="22" endLine="327" endPosition="5">
@@ -6895,28 +6895,28 @@
       <varInfo nodeId="8492459591399172787" varName="nameField" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399172691" fileName="ExtractMethodDialog.java" startLine="223" startPosition="0" endLine="272" endPosition="0" />
-    <scopeInfo nodeId="1933288817608940119" fileName="ExtractMethodDialog.java" startLine="394" startPosition="30" endLine="444" endPosition="0">
+    <scopeInfo nodeId="1933288817608940119" fileName="ExtractMethodDialog.java" startLine="394" startPosition="30" endLine="443" endPosition="0">
       <varInfo nodeId="1933288817608940115" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="1933288817608940116" fileName="ExtractMethodDialog.java" startLine="393" startPosition="0" endLine="446" endPosition="0" />
+    <scopeInfo nodeId="1933288817608940116" fileName="ExtractMethodDialog.java" startLine="393" startPosition="0" endLine="445" endPosition="0" />
     <scopeInfo nodeId="8492459591399172133" fileName="ExtractMethodDialog.java" startLine="129" startPosition="28" endLine="193" endPosition="56">
       <varInfo nodeId="8492459591399172155" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399172132" fileName="ExtractMethodDialog.java" startLine="128" startPosition="0" endLine="195" endPosition="0" />
-    <unitInfo nodeId="8492459591399171910" fileName="ExtractMethodDialog.java" startLine="45" startPosition="0" endLine="448" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog" />
+    <unitInfo nodeId="8492459591399171910" fileName="ExtractMethodDialog.java" startLine="45" startPosition="0" endLine="447" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog" />
     <unitInfo nodeId="8492459591399171939" fileName="ExtractMethodDialog.java" startLine="83" startPosition="45" endLine="89" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$1" />
     <unitInfo nodeId="1933288817608940131" fileName="ExtractMethodDialog.java" startLine="396" startPosition="53" endLine="406" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$1" />
     <unitInfo nodeId="536865934322797365" fileName="ExtractMethodDialog.java" startLine="159" startPosition="49" endLine="164" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$2" />
-    <unitInfo nodeId="1933288817608940164" fileName="ExtractMethodDialog.java" startLine="409" startPosition="52" endLine="430" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$2" />
+    <unitInfo nodeId="1933288817608940164" fileName="ExtractMethodDialog.java" startLine="409" startPosition="52" endLine="429" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$2" />
     <unitInfo nodeId="8492459591399172674" fileName="ExtractMethodDialog.java" startLine="214" startPosition="41" endLine="218" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$3" />
-    <unitInfo nodeId="1933288817608940175" fileName="ExtractMethodDialog.java" startLine="412" startPosition="51" endLine="428" endPosition="11" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$3" />
+    <unitInfo nodeId="1933288817608940175" fileName="ExtractMethodDialog.java" startLine="412" startPosition="51" endLine="427" endPosition="11" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$3" />
     <unitInfo nodeId="8492459591399172803" fileName="ExtractMethodDialog.java" startLine="242" startPosition="52" endLine="247" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$4" />
     <unitInfo nodeId="1642079203062891568" fileName="ExtractMethodDialog.java" startLine="257" startPosition="53" endLine="263" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$5" />
     <unitInfo nodeId="8492459591399172943" fileName="ExtractMethodDialog.java" startLine="313" startPosition="57" endLine="322" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$6" />
     <unitInfo nodeId="1881953995223824499" fileName="ExtractMethodDialog.java" startLine="331" startPosition="45" endLine="335" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$7" />
     <unitInfo nodeId="1881953995223824395" fileName="ExtractMethodDialog.java" startLine="354" startPosition="45" endLine="359" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$8" />
     <unitInfo nodeId="8492459591399173057" fileName="ExtractMethodDialog.java" startLine="72" startPosition="45" endLine="77" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$9" />
-    <unitInfo nodeId="1881953995223824236" fileName="ExtractMethodDialog.java" startLine="380" startPosition="0" endLine="447" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$ChooseContainerPanel" />
+    <unitInfo nodeId="1881953995223824236" fileName="ExtractMethodDialog.java" startLine="380" startPosition="0" endLine="446" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$ChooseContainerPanel" />
     <unitInfo nodeId="5159544814168902953" fileName="ExtractMethodDialog.java" startLine="367" startPosition="0" endLine="379" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$MyMethodDuplicatesProcessor" />
   </root>
   <root nodeId="8492459591399173071">

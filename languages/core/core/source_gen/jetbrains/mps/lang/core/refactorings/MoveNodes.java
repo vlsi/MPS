@@ -49,10 +49,6 @@ public class MoveNodes extends BaseLoggableRefactoring {
   public boolean init(final RefactoringContext refactoringContext) {
     ((RefactoringContext) refactoringContext).setLocal(true);
 
-    if (!(MoveNodes.this.ask(refactoringContext, new MoveNodes_target_Chooser(refactoringContext)))) {
-      return false;
-    }
-
     final Wrappers._boolean result = new Wrappers._boolean(false);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -116,17 +112,6 @@ public class MoveNodes extends BaseLoggableRefactoring {
     }
   }
 
-  public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    List<SModel> result = (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel().getSModel());
-    if (((Object) refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
-      SModel model = ((SModelDescriptor) ((Object) refactoringContext.getParameter("target"))).getSModel();
-      if (model != null && !(ListSequence.fromList(result).contains(model))) {
-        ListSequence.fromList(result).addElement(model);
-      }
-    }
-    return result;
-  }
-
   public void doWhenDone(final RefactoringContext refactoringContext) {
     // todo: open target nodes 
   }
@@ -144,6 +129,6 @@ public class MoveNodes extends BaseLoggableRefactoring {
   }
 
   public static String getKeyStroke_static() {
-    return " F6";
+    return "";
   }
 }
