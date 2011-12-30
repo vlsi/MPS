@@ -657,6 +657,16 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       DeploymentDescriptor dd = myLanguageDescriptor.getDeploymentDescriptor();
       if (dd == null) return;
 
+      for (ModuleReference mr:myLanguageDescriptor.getRuntimeModules()) {
+        IModule rtm = MPSModuleRepository.getInstance().getModule(mr);
+        if (rtm != null) {
+          IFile rtmbundle = rtm.getBundleHome();
+          if (rtmbundle.getName().startsWith("mps-") && rtmbundle.getPath().startsWith(PathManager.getHomePath())) {
+            dd.getRuntimeJars().add("/"+rtmbundle.getPath().substring(PathManager.getHomePath().length()));
+          }
+        }
+      }
+      
       for (String jarFile : dd.getRuntimeJars()) {
         IFile jar = jarFile.startsWith("/")
           ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
@@ -672,6 +682,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         }
       }
     }
+  }
+
+  @Override
+  protected boolean addBundleAsLibrary() {
+    return false;
   }
 
   protected List<ModelRoot> getRuntimeModelsEntries() {
