@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.intentions.IntentionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.Project;
-import java.util.List;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -17,7 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.awt.Frame;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -63,7 +64,8 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode constructorDeclaration = null;
     Project project = editorContext.getOperationContext().getProject();
-    for (SNode selectedSuperConstructor : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedConstructors"))) {
+    for (SNodePointer ptr : ((SNodePointer[]) intentionContext.getContextParametersMap().get("selectedConstructors"))) {
+      SNode selectedSuperConstructor = SNodeOperations.cast(ptr.getNode(), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
       SNode constructor = SNodeFactoryOperations.addNewChild(classConcept, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
       constructorDeclaration = constructor;
       SNodeFactoryOperations.setNewChild(constructor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
@@ -78,13 +80,14 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
           SLinkOperations.setTarget(paramReference, "variableDeclaration", parameter, false);
         }
       }
-      for (SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
-        SNode parameterDeclaration = new GenerateConstructor_Intention.QuotationClass_mrvrtl_a0a0a4a3a7().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), GenerateGettersAndSettersUtil.getParameterNameForField(field, project));
+      for (SNodePointer fieldPtr : ((SNodePointer[]) intentionContext.getContextParametersMap().get("selectedFields"))) {
+        SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+        SNode parameterDeclaration = new GenerateConstructor_Intention.QuotationClass_mrvrtl_a0a1a5a3a7().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), GenerateGettersAndSettersUtil.getParameterNameForField(field, project));
         ListSequence.fromList(SLinkOperations.getTargets(constructor, "parameter", true)).addElement(parameterDeclaration);
         SNode expressionStatement = SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(constructor, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
         SNode assignmentExpression = SNodeFactoryOperations.setNewChild(expressionStatement, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
-        SLinkOperations.setTarget(assignmentExpression, "lValue", new GenerateConstructor_Intention.QuotationClass_mrvrtl_a2a4a4a3a7().createNode(field), true);
-        SLinkOperations.setTarget(assignmentExpression, "rValue", new GenerateConstructor_Intention.QuotationClass_mrvrtl_a2a5a4a3a7().createNode(parameterDeclaration), true);
+        SLinkOperations.setTarget(assignmentExpression, "lValue", new GenerateConstructor_Intention.QuotationClass_mrvrtl_a2a5a5a3a7().createNode(field), true);
+        SLinkOperations.setTarget(assignmentExpression, "rValue", new GenerateConstructor_Intention.QuotationClass_mrvrtl_a2a6a5a3a7().createNode(parameterDeclaration), true);
       }
     }
     if (constructorDeclaration != null) {
@@ -95,6 +98,7 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
   public boolean executeUI(final SNode node, final EditorContext editorContext, final IntentionContext intentionContext) {
     Frame frame = editorContext.getMainFrame();
     final Wrappers._T<SNode> superclass = new Wrappers._T<SNode>(null);
+    final Wrappers._T<SNodePointer[]> ctors = new Wrappers._T<SNodePointer[]>(null);
     final Wrappers._boolean needsShowConstructorsDialog = new Wrappers._boolean(false);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -104,19 +108,28 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
         }
         if (ListSequence.fromList(SLinkOperations.getTargets(superclass.value, "constructor", true)).count() > 1) {
           needsShowConstructorsDialog.value = true;
+          ctors.value = ListSequence.fromList(SLinkOperations.getTargets(superclass.value, "constructor", true)).select(new ISelector<SNode, SNodePointer>() {
+            public SNodePointer select(SNode it) {
+              return new SNodePointer(it);
+            }
+          }).toGenericArray(SNodePointer.class);
         } else {
-          intentionContext.getContextParametersMap().put("selectedConstructors", new ArrayList<SNode>());
-          ListSequence.fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedConstructors"))).addElement(ListSequence.fromList(SLinkOperations.getTargets(superclass.value, "constructor", true)).first());
+          intentionContext.getContextParametersMap().put("selectedConstructors", new SNodePointer[]{new SNodePointer(ListSequence.fromList(SLinkOperations.getTargets(superclass.value, "constructor", true)).first())});
         }
       }
     });
     if (needsShowConstructorsDialog.value) {
-      SelectConstructorsDialog selectConstructorsDialog = new SelectConstructorsDialog(editorContext, frame, superclass.value);
-      selectConstructorsDialog.showDialog();
-      if (!(selectConstructorsDialog.getAnswer())) {
+      SelectConstructorsDialog selectConstructorsDialog = new SelectConstructorsDialog(ctors.value, editorContext.getOperationContext().getProject());
+      selectConstructorsDialog.show();
+
+      if (!(selectConstructorsDialog.isOK())) {
         return false;
       }
-      intentionContext.getContextParametersMap().put("selectedConstructors", selectConstructorsDialog.getSelectedMembers());
+      List<SNodePointer> selectedElements = selectConstructorsDialog.getSelectedElements();
+      intentionContext.getContextParametersMap().put("selectedConstructors", (selectedElements != null ?
+        selectedElements.toArray(new SNodePointer[selectedElements.size()]) :
+        new SNodePointer[0]
+      ));
     }
     final Wrappers._boolean needsShowFieldsDialog = new Wrappers._boolean(false);
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -124,14 +137,18 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
         if (ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty()) {
           needsShowFieldsDialog.value = true;
         } else {
-          intentionContext.getContextParametersMap().put("selectedFields", new ArrayList<SNode>());
+          intentionContext.getContextParametersMap().put("selectedFields", new SNodePointer[0]);
         }
       }
     });
     if (needsShowFieldsDialog.value) {
       SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, frame, node);
       selectFieldsDialog.showDialog();
-      intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
+      intentionContext.getContextParametersMap().put("selectedFields", ListSequence.fromList(selectFieldsDialog.getSelectedFields()).select(new ISelector<SNode, SNodePointer>() {
+        public SNodePointer select(SNode it) {
+          return new SNodePointer(it);
+        }
+      }).toGenericArray(SNodePointer.class));
       return selectFieldsDialog.getAnswer();
     } else {
       return true;
@@ -142,8 +159,8 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
     return "jetbrains.mps.baseLanguage.intentions";
   }
 
-  public static class QuotationClass_mrvrtl_a0a0a4a3a7 {
-    public QuotationClass_mrvrtl_a0a0a4a3a7() {
+  public static class QuotationClass_mrvrtl_a0a1a5a3a7 {
+    public QuotationClass_mrvrtl_a0a1a5a3a7() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {
@@ -174,8 +191,8 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
     }
   }
 
-  public static class QuotationClass_mrvrtl_a2a4a4a3a7 {
-    public QuotationClass_mrvrtl_a2a4a4a3a7() {
+  public static class QuotationClass_mrvrtl_a2a5a5a3a7 {
+    public QuotationClass_mrvrtl_a2a5a5a3a7() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -192,8 +209,8 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
     }
   }
 
-  public static class QuotationClass_mrvrtl_a2a5a4a3a7 {
-    public QuotationClass_mrvrtl_a2a5a4a3a7() {
+  public static class QuotationClass_mrvrtl_a2a6a5a3a7 {
+    public QuotationClass_mrvrtl_a2a6a5a3a7() {
     }
 
     public SNode createNode(Object parameter_3) {

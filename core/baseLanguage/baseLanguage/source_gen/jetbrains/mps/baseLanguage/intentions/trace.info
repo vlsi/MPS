@@ -3826,25 +3826,23 @@
     <unitInfo nodeId="1352851301410586695" fileName="GenerateGettersAndSettersUtil.java" startLine="15" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateGettersAndSettersUtil" />
   </root>
   <root nodeId="1352851301410829911">
-    <nodeInfo nodeId="1352851301410835921" fileName="SelectConstructorsDialog.java" startLine="15" startPosition="93" endLine="16" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1352851301410835934" fileName="SelectConstructorsDialog.java" startLine="19" startPosition="38" endLine="20" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1352851301411831551" fileName="SelectConstructorsDialog.java" startLine="23" startPosition="50" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1352851301410829913" fileName="SelectConstructorsDialog.java" startLine="14" startPosition="74" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectConstructorsDialog#(Ljetbrains/mps/nodeEditor/EditorContext;Ljava/awt/Frame;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1352851301410835929" fileName="SelectConstructorsDialog.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMembers#()Ljava/util/List;" />
-    <nodeInfo nodeId="1352851301411831545" fileName="SelectConstructorsDialog.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1352851301410829916" fileName="SelectConstructorsDialog.java" startLine="15" startPosition="93" endLine="16" endPosition="58" />
-    <scopeInfo nodeId="1352851301410835933" fileName="SelectConstructorsDialog.java" startLine="19" startPosition="38" endLine="20" endPosition="153" />
-    <scopeInfo nodeId="1352851301411831550" fileName="SelectConstructorsDialog.java" startLine="23" startPosition="50" endLine="24" endPosition="75" />
-    <scopeInfo nodeId="1352851301410829913" fileName="SelectConstructorsDialog.java" startLine="14" startPosition="74" endLine="17" endPosition="3">
-      <varInfo nodeId="1352851301410835913" varName="editorContext" />
-      <varInfo nodeId="1352851301410835915" varName="mainFrame" />
-      <varInfo nodeId="1352851301410835917" varName="node" />
+    <nodeInfo nodeId="1352851301410835921" fileName="SelectConstructorsDialog.java" startLine="14" startPosition="74" endLine="15" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3094928844447631084" fileName="SelectConstructorsDialog.java" startLine="20" startPosition="96" endLine="21" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3094928844447631054" fileName="SelectConstructorsDialog.java" startLine="22" startPosition="5" endLine="23" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1352851301410829913" fileName="SelectConstructorsDialog.java" startLine="13" startPosition="67" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectConstructorsDialog#([Ljetbrains/mps/smodel/SNodePointer;Ljetbrains/mps/project/Project;)V" />
+    <nodeInfo nodeId="3094928844447631060" fileName="SelectConstructorsDialog.java" startLine="19" startPosition="40" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3094928844447631047" fileName="SelectConstructorsDialog.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1352851301410829916" fileName="SelectConstructorsDialog.java" startLine="14" startPosition="74" endLine="15" endPosition="68" />
+    <scopeInfo nodeId="3094928844447631061" fileName="SelectConstructorsDialog.java" startLine="20" startPosition="96" endLine="21" endPosition="288" />
+    <scopeInfo nodeId="1352851301410829913" fileName="SelectConstructorsDialog.java" startLine="13" startPosition="67" endLine="16" endPosition="3">
+      <varInfo nodeId="3048616714776447382" varName="ctors" />
+      <varInfo nodeId="3048616714776447386" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1352851301410835929" fileName="SelectConstructorsDialog.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1352851301411831545" fileName="SelectConstructorsDialog.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="1352851301411831548" varName="member" />
+    <scopeInfo nodeId="3094928844447631052" fileName="SelectConstructorsDialog.java" startLine="19" startPosition="40" endLine="23" endPosition="31" />
+    <scopeInfo nodeId="3094928844447631047" fileName="SelectConstructorsDialog.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="3094928844447631050" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1352851301410829911" fileName="SelectConstructorsDialog.java" startLine="14" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SelectConstructorsDialog" />
+    <unitInfo nodeId="1352851301410829911" fileName="SelectConstructorsDialog.java" startLine="13" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SelectConstructorsDialog" />
   </root>
   <root nodeId="1503864198456688932">
     <nodeInfo nodeId="1503864198456688932" fileName="GenerateMainMethod_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4962,281 +4960,304 @@
     <unitInfo nodeId="3627222673199430317" fileName="MigrateString_Intention.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MigrateString_Intention" />
   </root>
   <root nodeId="3868795809789198353">
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="31" startPosition="30" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="35" startPosition="36" endLine="36" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="39" startPosition="37" endLine="40" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="43" startPosition="44" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3868795809789297731" fileName="GenerateConstructor_Intention.java" startLine="47" startPosition="85" endLine="48" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="52" startPosition="58" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5973141109804726300" fileName="GenerateConstructor_Intention.java" startLine="58" startPosition="90" endLine="59" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5180116501958303431" fileName="GenerateConstructor_Intention.java" startLine="62" startPosition="111" endLine="63" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9075231980435933200" fileName="GenerateConstructor_Intention.java" startLine="63" startPosition="105" endLine="64" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1941346475355983512" fileName="GenerateConstructor_Intention.java" startLine="64" startPosition="40" endLine="65" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5180116501958303442" fileName="GenerateConstructor_Intention.java" startLine="66" startPosition="131" endLine="67" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9075231980435933206" fileName="GenerateConstructor_Intention.java" startLine="67" startPosition="153" endLine="68" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5180116501958303450" fileName="GenerateConstructor_Intention.java" startLine="68" startPosition="43" endLine="69" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1352851301410857952" fileName="GenerateConstructor_Intention.java" startLine="70" startPosition="120" endLine="71" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1352851301410857964" fileName="GenerateConstructor_Intention.java" startLine="71" startPosition="196" endLine="72" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1352851301410858015" fileName="GenerateConstructor_Intention.java" startLine="73" startPosition="106" endLine="74" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1352851301410858025" fileName="GenerateConstructor_Intention.java" startLine="74" startPosition="150" endLine="75" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1352851301411707394" fileName="GenerateConstructor_Intention.java" startLine="75" startPosition="104" endLine="76" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1352851301410858057" fileName="GenerateConstructor_Intention.java" startLine="76" startPosition="140" endLine="77" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1352851301410858067" fileName="GenerateConstructor_Intention.java" startLine="77" startPosition="157" endLine="78" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5180116501958303458" fileName="GenerateConstructor_Intention.java" startLine="81" startPosition="108" endLine="82" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5180116501958303484" fileName="GenerateConstructor_Intention.java" startLine="82" startPosition="263" endLine="83" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5180116501958303491" fileName="GenerateConstructor_Intention.java" startLine="83" startPosition="123" endLine="84" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5180116501958303501" fileName="GenerateConstructor_Intention.java" startLine="84" startPosition="198" endLine="85" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893262790" fileName="GenerateConstructor_Intention.java" startLine="85" startPosition="168" endLine="86" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893262818" fileName="GenerateConstructor_Intention.java" startLine="86" startPosition="160" endLine="87" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9075231980435933222" fileName="GenerateConstructor_Intention.java" startLine="90" startPosition="41" endLine="91" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1352851301410835982" fileName="GenerateConstructor_Intention.java" startLine="95" startPosition="122" endLine="96" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1352851301411034757" fileName="GenerateConstructor_Intention.java" startLine="96" startPosition="47" endLine="97" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1352851301411313149" fileName="GenerateConstructor_Intention.java" startLine="97" startPosition="71" endLine="98" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1352851301411188514" fileName="GenerateConstructor_Intention.java" startLine="100" startPosition="25" endLine="101" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1352851301411034784" fileName="GenerateConstructor_Intention.java" startLine="102" startPosition="39" endLine="103" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1352851301411313180" fileName="GenerateConstructor_Intention.java" startLine="105" startPosition="115" endLine="106" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1352851301411313187" fileName="GenerateConstructor_Intention.java" startLine="107" startPosition="16" endLine="108" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1352851301411313193" fileName="GenerateConstructor_Intention.java" startLine="108" startPosition="105" endLine="109" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1352851301410835963" fileName="GenerateConstructor_Intention.java" startLine="113" startPosition="44" endLine="114" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1352851301410835995" fileName="GenerateConstructor_Intention.java" startLine="114" startPosition="127" endLine="115" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1352851301410856756" fileName="GenerateConstructor_Intention.java" startLine="116" startPosition="52" endLine="117" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1352851301410856841" fileName="GenerateConstructor_Intention.java" startLine="118" startPosition="7" endLine="119" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9075231980435675176" fileName="GenerateConstructor_Intention.java" startLine="120" startPosition="5" endLine="121" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9075231980435675181" fileName="GenerateConstructor_Intention.java" startLine="124" startPosition="98" endLine="125" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9075231980435675189" fileName="GenerateConstructor_Intention.java" startLine="126" startPosition="16" endLine="127" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3359340002141630553" fileName="GenerateConstructor_Intention.java" startLine="131" startPosition="38" endLine="132" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3359340002141630566" fileName="GenerateConstructor_Intention.java" startLine="132" startPosition="97" endLine="133" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2506506516854231466" fileName="GenerateConstructor_Intention.java" startLine="133" startPosition="38" endLine="134" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="926291610756533797" fileName="GenerateConstructor_Intention.java" startLine="134" startPosition="111" endLine="135" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9075231980435675205" fileName="GenerateConstructor_Intention.java" startLine="136" startPosition="12" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="141" startPosition="37" endLine="142" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="149" startPosition="69" endLine="150" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="150" startPosition="26" endLine="151" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="151" startPosition="67" endLine="152" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="152" startPosition="32" endLine="153" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="154" startPosition="7" endLine="155" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="155" startPosition="169" endLine="156" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="156" startPosition="43" endLine="157" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="158" startPosition="9" endLine="159" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="159" startPosition="45" endLine="160" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="161" startPosition="66" endLine="162" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="163" startPosition="18" endLine="164" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="164" startPosition="57" endLine="165" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="167" startPosition="38" endLine="168" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="170" startPosition="9" endLine="171" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="172" startPosition="7" endLine="173" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="181" startPosition="49" endLine="182" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="182" startPosition="26" endLine="183" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="183" startPosition="67" endLine="184" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="185" startPosition="7" endLine="186" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="186" startPosition="176" endLine="187" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="187" startPosition="43" endLine="188" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="188" startPosition="78" endLine="189" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="190" startPosition="7" endLine="191" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="199" startPosition="49" endLine="200" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="200" startPosition="26" endLine="201" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="201" startPosition="67" endLine="202" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="203" startPosition="7" endLine="204" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="204" startPosition="167" endLine="205" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="205" startPosition="43" endLine="206" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="206" startPosition="78" endLine="207" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="208" startPosition="7" endLine="209" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="27" startPosition="91" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerateConstructor_Intention#()V" />
-    <nodeInfo nodeId="9075231980435675187" fileName="GenerateConstructor_Intention.java" startLine="126" startPosition="14" endLine="128" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9075231980435675203" fileName="GenerateConstructor_Intention.java" startLine="136" startPosition="10" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="145" startPosition="56" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_mrvrtl_a0a0a4a3a7#()V" />
-    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="177" startPosition="56" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_mrvrtl_a2a4a4a3a7#()V" />
-    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="195" startPosition="56" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_mrvrtl_a2a5a4a3a7#()V" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="51" startPosition="84" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9075231980435933213" fileName="GenerateConstructor_Intention.java" startLine="89" startPosition="5" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1352851301411034773" fileName="GenerateConstructor_Intention.java" startLine="101" startPosition="200" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1352851301411313177" fileName="GenerateConstructor_Intention.java" startLine="107" startPosition="14" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1352851301410835958" fileName="GenerateConstructor_Intention.java" startLine="115" startPosition="44" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="163" startPosition="16" endLine="166" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="166" startPosition="11" endLine="169" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="140" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="9075231980435675160" fileName="GenerateConstructor_Intention.java" startLine="123" startPosition="25" endLine="128" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1352851301411313155" fileName="GenerateConstructor_Intention.java" startLine="104" startPosition="9" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="160" startPosition="30" endLine="166" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="184" startPosition="32" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="184" startPosition="32" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="202" startPosition="32" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="202" startPosition="32" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1352851301410856886" fileName="GenerateConstructor_Intention.java" startLine="72" startPosition="104" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5180116501958303456" fileName="GenerateConstructor_Intention.java" startLine="80" startPosition="7" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1352851301410856764" fileName="GenerateConstructor_Intention.java" startLine="112" startPosition="7" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9075231980435802463" fileName="GenerateConstructor_Intention.java" startLine="122" startPosition="57" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="9075231980435675198" fileName="GenerateConstructor_Intention.java" startLine="130" startPosition="7" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9075231980435802462" fileName="GenerateConstructor_Intention.java" startLine="121" startPosition="81" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1352851301410857910" fileName="GenerateConstructor_Intention.java" startLine="69" startPosition="116" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1352851301411152228" fileName="GenerateConstructor_Intention.java" startLine="99" startPosition="57" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="157" startPosition="64" endLine="170" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="157" startPosition="64" endLine="170" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="180" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="198" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1352851301411152227" fileName="GenerateConstructor_Intention.java" startLine="98" startPosition="87" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="153" startPosition="32" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="153" startPosition="32" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1352851301410856858" fileName="GenerateConstructor_Intention.java" startLine="65" startPosition="71" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="148" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="61" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/intentions/IntentionContext;)V" />
-    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="94" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeUI#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/intentions/IntentionContext;)Z" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="28" startPosition="42" endLine="28" endPosition="42" />
-    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="146" startPosition="47" endLine="146" endPosition="47" />
-    <scopeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="178" startPosition="47" endLine="178" endPosition="47" />
-    <scopeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="196" startPosition="47" endLine="196" endPosition="47" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="31" startPosition="30" endLine="32" endPosition="63" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="35" startPosition="36" endLine="36" endPosition="17" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="39" startPosition="37" endLine="40" endPosition="17" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="43" startPosition="44" endLine="44" endPosition="16" />
-    <scopeInfo nodeId="3868795809789198355" fileName="GenerateConstructor_Intention.java" startLine="47" startPosition="85" endLine="48" endPosition="25" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="52" startPosition="58" endLine="53" endPosition="19" />
-    <scopeInfo nodeId="5973141109804726299" fileName="GenerateConstructor_Intention.java" startLine="58" startPosition="90" endLine="59" endPosition="16" />
-    <scopeInfo nodeId="9075231980435933214" fileName="GenerateConstructor_Intention.java" startLine="90" startPosition="41" endLine="91" endPosition="51" />
-    <scopeInfo nodeId="1352851301411034774" fileName="GenerateConstructor_Intention.java" startLine="102" startPosition="39" endLine="103" endPosition="151" />
-    <scopeInfo nodeId="1352851301411313156" fileName="GenerateConstructor_Intention.java" startLine="105" startPosition="115" endLine="106" endPosition="51" />
-    <scopeInfo nodeId="1352851301410835959" fileName="GenerateConstructor_Intention.java" startLine="116" startPosition="52" endLine="117" endPosition="21" />
-    <scopeInfo nodeId="9075231980435675161" fileName="GenerateConstructor_Intention.java" startLine="124" startPosition="98" endLine="125" endPosition="45" />
-    <scopeInfo nodeId="9075231980435675188" fileName="GenerateConstructor_Intention.java" startLine="126" startPosition="16" endLine="127" endPosition="99" />
-    <scopeInfo nodeId="9075231980435675204" fileName="GenerateConstructor_Intention.java" startLine="136" startPosition="12" endLine="137" endPosition="18" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="141" startPosition="37" endLine="142" endPosition="51" />
-    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="161" startPosition="66" endLine="162" endPosition="64" />
-    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="167" startPosition="38" endLine="168" endPosition="80" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="27" startPosition="91" endLine="29" endPosition="3" />
-    <scopeInfo nodeId="1352851301411313178" fileName="GenerateConstructor_Intention.java" startLine="107" startPosition="16" endLine="109" endPosition="229" />
-    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="145" startPosition="56" endLine="147" endPosition="5" />
-    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="163" startPosition="18" endLine="165" endPosition="41" />
-    <scopeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="177" startPosition="56" endLine="179" endPosition="5" />
-    <scopeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="195" startPosition="56" endLine="197" endPosition="5" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="32" startPosition="30" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="36" startPosition="36" endLine="37" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="44" startPosition="44" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3868795809789297731" fileName="GenerateConstructor_Intention.java" startLine="48" startPosition="85" endLine="49" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="53" startPosition="58" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5973141109804726300" fileName="GenerateConstructor_Intention.java" startLine="59" startPosition="90" endLine="60" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5180116501958303431" fileName="GenerateConstructor_Intention.java" startLine="63" startPosition="111" endLine="64" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9075231980435933200" fileName="GenerateConstructor_Intention.java" startLine="64" startPosition="105" endLine="65" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1941346475355983512" fileName="GenerateConstructor_Intention.java" startLine="65" startPosition="40" endLine="66" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3048616714776453180" fileName="GenerateConstructor_Intention.java" startLine="67" startPosition="120" endLine="68" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5180116501958303442" fileName="GenerateConstructor_Intention.java" startLine="68" startPosition="138" endLine="69" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9075231980435933206" fileName="GenerateConstructor_Intention.java" startLine="69" startPosition="153" endLine="70" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5180116501958303450" fileName="GenerateConstructor_Intention.java" startLine="70" startPosition="43" endLine="71" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1352851301410857952" fileName="GenerateConstructor_Intention.java" startLine="72" startPosition="120" endLine="73" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1352851301410857964" fileName="GenerateConstructor_Intention.java" startLine="73" startPosition="196" endLine="74" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1352851301410858015" fileName="GenerateConstructor_Intention.java" startLine="75" startPosition="106" endLine="76" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1352851301410858025" fileName="GenerateConstructor_Intention.java" startLine="76" startPosition="150" endLine="77" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1352851301411707394" fileName="GenerateConstructor_Intention.java" startLine="77" startPosition="104" endLine="78" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1352851301410858057" fileName="GenerateConstructor_Intention.java" startLine="78" startPosition="140" endLine="79" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1352851301410858067" fileName="GenerateConstructor_Intention.java" startLine="79" startPosition="157" endLine="80" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3048616714776453193" fileName="GenerateConstructor_Intention.java" startLine="83" startPosition="121" endLine="84" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5180116501958303458" fileName="GenerateConstructor_Intention.java" startLine="84" startPosition="120" endLine="85" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5180116501958303484" fileName="GenerateConstructor_Intention.java" startLine="85" startPosition="263" endLine="86" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5180116501958303491" fileName="GenerateConstructor_Intention.java" startLine="86" startPosition="123" endLine="87" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5180116501958303501" fileName="GenerateConstructor_Intention.java" startLine="87" startPosition="198" endLine="88" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893262790" fileName="GenerateConstructor_Intention.java" startLine="88" startPosition="168" endLine="89" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893262818" fileName="GenerateConstructor_Intention.java" startLine="89" startPosition="160" endLine="90" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9075231980435933222" fileName="GenerateConstructor_Intention.java" startLine="93" startPosition="41" endLine="94" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1352851301410835982" fileName="GenerateConstructor_Intention.java" startLine="98" startPosition="122" endLine="99" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1352851301411034757" fileName="GenerateConstructor_Intention.java" startLine="99" startPosition="47" endLine="100" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3048616714776452559" fileName="GenerateConstructor_Intention.java" startLine="100" startPosition="71" endLine="101" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1352851301411313149" fileName="GenerateConstructor_Intention.java" startLine="101" startPosition="84" endLine="102" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1352851301411188514" fileName="GenerateConstructor_Intention.java" startLine="104" startPosition="25" endLine="105" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1352851301411034784" fileName="GenerateConstructor_Intention.java" startLine="106" startPosition="39" endLine="107" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1352851301411313180" fileName="GenerateConstructor_Intention.java" startLine="109" startPosition="115" endLine="110" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3048616714776452579" fileName="GenerateConstructor_Intention.java" startLine="112" startPosition="50" endLine="113" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1352851301411313187" fileName="GenerateConstructor_Intention.java" startLine="116" startPosition="16" endLine="117" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1352851301410835963" fileName="GenerateConstructor_Intention.java" startLine="121" startPosition="44" endLine="122" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1352851301410835995" fileName="GenerateConstructor_Intention.java" startLine="122" startPosition="150" endLine="123" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3048616714776453160" fileName="GenerateConstructor_Intention.java" startLine="123" startPosition="38" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1352851301410856756" fileName="GenerateConstructor_Intention.java" startLine="125" startPosition="47" endLine="126" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3048616714776453251" fileName="GenerateConstructor_Intention.java" startLine="127" startPosition="7" endLine="128" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9075231980435675176" fileName="GenerateConstructor_Intention.java" startLine="133" startPosition="5" endLine="134" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9075231980435675181" fileName="GenerateConstructor_Intention.java" startLine="137" startPosition="98" endLine="138" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9075231980435675189" fileName="GenerateConstructor_Intention.java" startLine="139" startPosition="16" endLine="140" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3359340002141630553" fileName="GenerateConstructor_Intention.java" startLine="144" startPosition="38" endLine="145" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3359340002141630566" fileName="GenerateConstructor_Intention.java" startLine="145" startPosition="97" endLine="146" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3048616714776453308" fileName="GenerateConstructor_Intention.java" startLine="148" startPosition="46" endLine="149" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="926291610756533797" fileName="GenerateConstructor_Intention.java" startLine="151" startPosition="45" endLine="152" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9075231980435675205" fileName="GenerateConstructor_Intention.java" startLine="153" startPosition="12" endLine="154" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="158" startPosition="37" endLine="159" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="166" startPosition="69" endLine="167" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="167" startPosition="26" endLine="168" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="168" startPosition="67" endLine="169" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="169" startPosition="32" endLine="170" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="171" startPosition="7" endLine="172" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="172" startPosition="169" endLine="173" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="173" startPosition="43" endLine="174" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="175" startPosition="9" endLine="176" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="176" startPosition="45" endLine="177" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="178" startPosition="66" endLine="179" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="180" startPosition="18" endLine="181" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="181" startPosition="57" endLine="182" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="184" startPosition="38" endLine="185" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="187" startPosition="9" endLine="188" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="189" startPosition="7" endLine="190" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="198" startPosition="49" endLine="199" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="199" startPosition="26" endLine="200" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="200" startPosition="67" endLine="201" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="202" startPosition="7" endLine="203" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="203" startPosition="176" endLine="204" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="204" startPosition="43" endLine="205" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="205" startPosition="78" endLine="206" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="207" startPosition="7" endLine="208" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="216" startPosition="49" endLine="217" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="217" startPosition="26" endLine="218" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="218" startPosition="67" endLine="219" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="220" startPosition="7" endLine="221" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="221" startPosition="167" endLine="222" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="222" startPosition="43" endLine="223" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="223" startPosition="78" endLine="224" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="225" startPosition="7" endLine="226" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="28" startPosition="91" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerateConstructor_Intention#()V" />
+    <nodeInfo nodeId="1352851301411313177" fileName="GenerateConstructor_Intention.java" startLine="116" startPosition="14" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9075231980435675187" fileName="GenerateConstructor_Intention.java" startLine="139" startPosition="14" endLine="141" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9075231980435675203" fileName="GenerateConstructor_Intention.java" startLine="153" startPosition="10" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="162" startPosition="56" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_mrvrtl_a0a1a5a3a7#()V" />
+    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="194" startPosition="56" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_mrvrtl_a2a5a5a3a7#()V" />
+    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="212" startPosition="56" endLine="214" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_mrvrtl_a2a6a5a3a7#()V" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="52" startPosition="84" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9075231980435933213" fileName="GenerateConstructor_Intention.java" startLine="92" startPosition="5" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1352851301411034773" fileName="GenerateConstructor_Intention.java" startLine="105" startPosition="200" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1352851301410835958" fileName="GenerateConstructor_Intention.java" startLine="124" startPosition="0" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="180" startPosition="16" endLine="183" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="183" startPosition="11" endLine="186" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="3048616714776452575" fileName="GenerateConstructor_Intention.java" startLine="111" startPosition="158" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="1352851301410856841" fileName="GenerateConstructor_Intention.java" startLine="128" startPosition="91" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3048616714776453304" fileName="GenerateConstructor_Intention.java" startLine="147" startPosition="178" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="157" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3048616714776494117" fileName="GenerateConstructor_Intention.java" startLine="110" startPosition="51" endLine="115" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9075231980435675160" fileName="GenerateConstructor_Intention.java" startLine="136" startPosition="25" endLine="141" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2506506516854231466" fileName="GenerateConstructor_Intention.java" startLine="146" startPosition="38" endLine="151" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="177" startPosition="30" endLine="183" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="201" startPosition="32" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="201" startPosition="32" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="219" startPosition="32" endLine="225" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="219" startPosition="32" endLine="225" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1352851301410856886" fileName="GenerateConstructor_Intention.java" startLine="74" startPosition="104" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9075231980435802463" fileName="GenerateConstructor_Intention.java" startLine="135" startPosition="57" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5180116501958303456" fileName="GenerateConstructor_Intention.java" startLine="82" startPosition="7" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9075231980435802462" fileName="GenerateConstructor_Intention.java" startLine="134" startPosition="81" endLine="143" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1352851301411313155" fileName="GenerateConstructor_Intention.java" startLine="108" startPosition="9" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1352851301410857910" fileName="GenerateConstructor_Intention.java" startLine="71" startPosition="116" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9075231980435675198" fileName="GenerateConstructor_Intention.java" startLine="143" startPosition="7" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1352851301410856764" fileName="GenerateConstructor_Intention.java" startLine="120" startPosition="7" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="174" startPosition="64" endLine="187" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="174" startPosition="64" endLine="187" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="197" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="215" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1352851301411152228" fileName="GenerateConstructor_Intention.java" startLine="103" startPosition="57" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1352851301411152227" fileName="GenerateConstructor_Intention.java" startLine="102" startPosition="87" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="170" startPosition="32" endLine="189" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="170" startPosition="32" endLine="189" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1352851301410856858" fileName="GenerateConstructor_Intention.java" startLine="66" startPosition="71" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="165" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="62" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/intentions/IntentionContext;)V" />
+    <nodeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="97" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeUI#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/intentions/IntentionContext;)Z" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="29" startPosition="42" endLine="29" endPosition="42" />
+    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="163" startPosition="47" endLine="163" endPosition="47" />
+    <scopeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="195" startPosition="47" endLine="195" endPosition="47" />
+    <scopeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="213" startPosition="47" endLine="213" endPosition="47" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="32" startPosition="30" endLine="33" endPosition="63" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="36" startPosition="36" endLine="37" endPosition="17" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="17" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="44" startPosition="44" endLine="45" endPosition="16" />
+    <scopeInfo nodeId="3868795809789198355" fileName="GenerateConstructor_Intention.java" startLine="48" startPosition="85" endLine="49" endPosition="25" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="53" startPosition="58" endLine="54" endPosition="19" />
+    <scopeInfo nodeId="5973141109804726299" fileName="GenerateConstructor_Intention.java" startLine="59" startPosition="90" endLine="60" endPosition="16" />
+    <scopeInfo nodeId="9075231980435933214" fileName="GenerateConstructor_Intention.java" startLine="93" startPosition="41" endLine="94" endPosition="51" />
+    <scopeInfo nodeId="1352851301411034774" fileName="GenerateConstructor_Intention.java" startLine="106" startPosition="39" endLine="107" endPosition="151" />
+    <scopeInfo nodeId="3048616714776452576" fileName="GenerateConstructor_Intention.java" startLine="112" startPosition="50" endLine="113" endPosition="42" />
+    <scopeInfo nodeId="1352851301411313178" fileName="GenerateConstructor_Intention.java" startLine="116" startPosition="16" endLine="117" endPosition="217" />
+    <scopeInfo nodeId="1352851301410835959" fileName="GenerateConstructor_Intention.java" startLine="125" startPosition="47" endLine="126" endPosition="21" />
+    <scopeInfo nodeId="9075231980435675161" fileName="GenerateConstructor_Intention.java" startLine="137" startPosition="98" endLine="138" endPosition="45" />
+    <scopeInfo nodeId="9075231980435675188" fileName="GenerateConstructor_Intention.java" startLine="139" startPosition="16" endLine="140" endPosition="96" />
+    <scopeInfo nodeId="3048616714776453305" fileName="GenerateConstructor_Intention.java" startLine="148" startPosition="46" endLine="149" endPosition="38" />
+    <scopeInfo nodeId="9075231980435675204" fileName="GenerateConstructor_Intention.java" startLine="153" startPosition="12" endLine="154" endPosition="18" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="158" startPosition="37" endLine="159" endPosition="51" />
+    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="178" startPosition="66" endLine="179" endPosition="64" />
+    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="184" startPosition="38" endLine="185" endPosition="80" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="28" startPosition="91" endLine="30" endPosition="3" />
+    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="162" startPosition="56" endLine="164" endPosition="5" />
+    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="180" startPosition="18" endLine="182" endPosition="41" />
+    <scopeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="194" startPosition="56" endLine="196" endPosition="5" />
+    <scopeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="212" startPosition="56" endLine="214" endPosition="5" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="3868795809789198353" varName="editorContext" />
       <varInfo nodeId="3868795809789198353" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="51" startPosition="84" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="52" startPosition="84" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="3868795809789198353" varName="editorContext" />
       <varInfo nodeId="3868795809789198353" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9075231980435675199" fileName="GenerateConstructor_Intention.java" startLine="131" startPosition="38" endLine="135" endPosition="44">
-      <varInfo nodeId="3359340002141630554" varName="selectFieldsDialog" />
+    <scopeInfo nodeId="3048616714776452575" fileName="GenerateConstructor_Intention.java" startLine="111" startPosition="158" endLine="115" endPosition="0">
+      <varInfo nodeId="3048616714776452575" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="140" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="185" startPosition="7" endLine="189" endPosition="31">
+    <scopeInfo nodeId="3048616714776453304" fileName="GenerateConstructor_Intention.java" startLine="147" startPosition="178" endLine="151" endPosition="0">
+      <varInfo nodeId="3048616714776453304" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="157" startPosition="0" endLine="161" endPosition="0" />
+    <scopeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="202" startPosition="7" endLine="206" endPosition="31">
       <varInfo nodeId="4972886494893262808" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="203" startPosition="7" endLine="207" endPosition="31">
+    <scopeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="220" startPosition="7" endLine="224" endPosition="31">
       <varInfo nodeId="4972886494893262836" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1352851301410856887" fileName="GenerateConstructor_Intention.java" startLine="73" startPosition="106" endLine="78" endPosition="93">
+    <scopeInfo nodeId="1352851301410856887" fileName="GenerateConstructor_Intention.java" startLine="75" startPosition="106" endLine="80" endPosition="93">
       <varInfo nodeId="1352851301410858058" varName="paramReference" />
       <varInfo nodeId="1352851301410858016" varName="parameter" />
     </scopeInfo>
-    <scopeInfo nodeId="9075231980435802464" fileName="GenerateConstructor_Intention.java" startLine="123" startPosition="25" endLine="128" endPosition="9" />
-    <scopeInfo nodeId="5180116501958303457" fileName="GenerateConstructor_Intention.java" startLine="81" startPosition="108" endLine="87" endPosition="175">
-      <varInfo nodeId="5180116501958303502" varName="assignmentExpression" />
-      <varInfo nodeId="5180116501958303492" varName="expressionStatement" />
-      <varInfo nodeId="5180116501958303459" varName="parameterDeclaration" />
-    </scopeInfo>
-    <scopeInfo nodeId="1352851301410856765" fileName="GenerateConstructor_Intention.java" startLine="113" startPosition="44" endLine="119" endPosition="124">
-      <varInfo nodeId="1352851301410835964" varName="selectConstructorsDialog" />
-    </scopeInfo>
-    <scopeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="184" startPosition="32" endLine="190" endPosition="7" />
-    <scopeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="202" startPosition="32" endLine="208" endPosition="7" />
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="9075231980435802464" fileName="GenerateConstructor_Intention.java" startLine="136" startPosition="25" endLine="141" endPosition="9" />
+    <scopeInfo nodeId="1352851301411313156" fileName="GenerateConstructor_Intention.java" startLine="109" startPosition="115" endLine="115" endPosition="48" />
+    <scopeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="201" startPosition="32" endLine="207" endPosition="7" />
+    <scopeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="219" startPosition="32" endLine="225" endPosition="7" />
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="51" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="3868795809789198353" varName="editorContext" />
       <varInfo nodeId="3868795809789198353" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1352851301410856886" fileName="GenerateConstructor_Intention.java" startLine="72" startPosition="104" endLine="79" endPosition="9">
+    <scopeInfo nodeId="1352851301410856886" fileName="GenerateConstructor_Intention.java" startLine="74" startPosition="104" endLine="81" endPosition="9">
       <varInfo nodeId="1352851301410856890" varName="superParam" />
     </scopeInfo>
-    <scopeInfo nodeId="5180116501958303456" fileName="GenerateConstructor_Intention.java" startLine="80" startPosition="7" endLine="88" endPosition="7">
+    <scopeInfo nodeId="5180116501958303457" fileName="GenerateConstructor_Intention.java" startLine="83" startPosition="121" endLine="90" endPosition="175">
+      <varInfo nodeId="5180116501958303502" varName="assignmentExpression" />
+      <varInfo nodeId="5180116501958303492" varName="expressionStatement" />
       <varInfo nodeId="5180116501958303553" varName="field" />
+      <varInfo nodeId="5180116501958303459" varName="parameterDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="9075231980435802463" fileName="GenerateConstructor_Intention.java" startLine="122" startPosition="57" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="1352851301410857911" fileName="GenerateConstructor_Intention.java" startLine="70" startPosition="120" endLine="79" endPosition="9">
+    <scopeInfo nodeId="9075231980435802463" fileName="GenerateConstructor_Intention.java" startLine="135" startPosition="57" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="9075231980435675199" fileName="GenerateConstructor_Intention.java" startLine="144" startPosition="38" endLine="152" endPosition="44">
+      <varInfo nodeId="3359340002141630554" varName="selectFieldsDialog" />
+    </scopeInfo>
+    <scopeInfo nodeId="1352851301410857911" fileName="GenerateConstructor_Intention.java" startLine="72" startPosition="120" endLine="81" endPosition="9">
       <varInfo nodeId="1352851301410857953" varName="invocation" />
     </scopeInfo>
-    <scopeInfo nodeId="1352851301411152229" fileName="GenerateConstructor_Intention.java" startLine="100" startPosition="25" endLine="110" endPosition="9" />
-    <scopeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="181" startPosition="49" endLine="191" endPosition="20">
+    <scopeInfo nodeId="5180116501958303456" fileName="GenerateConstructor_Intention.java" startLine="82" startPosition="7" endLine="91" endPosition="7">
+      <varInfo nodeId="3048616714776453198" varName="fieldPtr" />
+    </scopeInfo>
+    <scopeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="198" startPosition="49" endLine="208" endPosition="20">
       <varInfo nodeId="4972886494893262808" varName="_parameterValues_129834374" />
       <varInfo nodeId="4972886494893262808" varName="quotedNode_1" />
       <varInfo nodeId="4972886494893262808" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="199" startPosition="49" endLine="209" endPosition="20">
+    <scopeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="216" startPosition="49" endLine="226" endPosition="20">
       <varInfo nodeId="4972886494893262836" varName="_parameterValues_129834374" />
       <varInfo nodeId="4972886494893262836" varName="quotedNode_1" />
       <varInfo nodeId="4972886494893262836" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="158" startPosition="9" endLine="169" endPosition="11">
+    <scopeInfo nodeId="1352851301410856765" fileName="GenerateConstructor_Intention.java" startLine="121" startPosition="44" endLine="132" endPosition="9">
+      <varInfo nodeId="1352851301410835964" varName="selectConstructorsDialog" />
+      <varInfo nodeId="3048616714776453252" varName="selectedElements" />
+    </scopeInfo>
+    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="175" startPosition="9" endLine="186" endPosition="11">
       <varInfo nodeId="4972886494893240778" varName="quotedNode1_4" />
     </scopeInfo>
-    <scopeInfo nodeId="1352851301411152228" fileName="GenerateConstructor_Intention.java" startLine="99" startPosition="57" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="157" startPosition="64" endLine="170" endPosition="9" />
-    <scopeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="180" startPosition="0" endLine="193" endPosition="0">
+    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="174" startPosition="64" endLine="187" endPosition="9" />
+    <scopeInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="197" startPosition="0" endLine="210" endPosition="0">
       <varInfo nodeId="4972886494893262808" varName="parameter_3" />
     </scopeInfo>
-    <scopeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="198" startPosition="0" endLine="211" endPosition="0">
+    <scopeInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="215" startPosition="0" endLine="228" endPosition="0">
       <varInfo nodeId="4972886494893262836" varName="parameter_3" />
     </scopeInfo>
-    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="154" startPosition="7" endLine="171" endPosition="31">
+    <scopeInfo nodeId="1352851301411152229" fileName="GenerateConstructor_Intention.java" startLine="104" startPosition="25" endLine="118" endPosition="9" />
+    <scopeInfo nodeId="1352851301411152228" fileName="GenerateConstructor_Intention.java" startLine="103" startPosition="57" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="171" startPosition="7" endLine="188" endPosition="31">
       <varInfo nodeId="4972886494893240778" varName="quotedNode1_3" />
     </scopeInfo>
-    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="153" startPosition="32" endLine="172" endPosition="7" />
-    <scopeInfo nodeId="1352851301410856859" fileName="GenerateConstructor_Intention.java" startLine="66" startPosition="131" endLine="88" endPosition="7">
+    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="170" startPosition="32" endLine="189" endPosition="7" />
+    <scopeInfo nodeId="1352851301410856859" fileName="GenerateConstructor_Intention.java" startLine="67" startPosition="120" endLine="91" endPosition="7">
       <varInfo nodeId="5180116501958303443" varName="constructor" />
-    </scopeInfo>
-    <scopeInfo nodeId="1352851301410856858" fileName="GenerateConstructor_Intention.java" startLine="65" startPosition="71" endLine="89" endPosition="5">
       <varInfo nodeId="1352851301410856862" varName="selectedSuperConstructor" />
     </scopeInfo>
-    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="149" startPosition="69" endLine="173" endPosition="20">
+    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="166" startPosition="69" endLine="190" endPosition="20">
       <varInfo nodeId="4972886494893240778" varName="_parameterValues_129834374" />
       <varInfo nodeId="4972886494893240778" varName="quotedNode_1" />
       <varInfo nodeId="4972886494893240778" varName="quotedNode_2" />
       <varInfo nodeId="4972886494893240778" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="148" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="1352851301410856858" fileName="GenerateConstructor_Intention.java" startLine="66" startPosition="71" endLine="92" endPosition="5">
+      <varInfo nodeId="3048616714776453173" varName="ptr" />
+    </scopeInfo>
+    <scopeInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="165" startPosition="0" endLine="192" endPosition="0">
       <varInfo nodeId="4972886494893240778" varName="parameter_5" />
       <varInfo nodeId="4972886494893240778" varName="parameter_6" />
     </scopeInfo>
-    <scopeInfo nodeId="3868795809789198357" fileName="GenerateConstructor_Intention.java" startLine="62" startPosition="111" endLine="92" endPosition="5">
+    <scopeInfo nodeId="3868795809789198357" fileName="GenerateConstructor_Intention.java" startLine="63" startPosition="111" endLine="95" endPosition="5">
       <varInfo nodeId="5180116501958303432" varName="classConcept" />
       <varInfo nodeId="9075231980435933201" varName="constructorDeclaration" />
       <varInfo nodeId="1941346475355983513" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="61" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="62" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="3868795809789198353" varName="editorContext" />
       <varInfo nodeId="3868795809789198353" varName="intentionContext" />
       <varInfo nodeId="3868795809789198353" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="926291610755538994" fileName="GenerateConstructor_Intention.java" startLine="95" startPosition="122" endLine="138" endPosition="5">
+    <scopeInfo nodeId="926291610755538994" fileName="GenerateConstructor_Intention.java" startLine="98" startPosition="122" endLine="155" endPosition="5">
+      <varInfo nodeId="3048616714776452560" varName="ctors" />
       <varInfo nodeId="1352851301410835983" varName="frame" />
       <varInfo nodeId="1352851301411313150" varName="needsShowConstructorsDialog" />
       <varInfo nodeId="9075231980435675177" varName="needsShowFieldsDialog" />
       <varInfo nodeId="1352851301411034758" varName="superclass" />
     </scopeInfo>
-    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="94" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="97" startPosition="0" endLine="157" endPosition="0">
       <varInfo nodeId="3868795809789198353" varName="editorContext" />
       <varInfo nodeId="3868795809789198353" varName="intentionContext" />
       <varInfo nodeId="3868795809789198353" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="27" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention" />
-    <unitInfo nodeId="1352851301411152228" fileName="GenerateConstructor_Intention.java" startLine="99" startPosition="45" endLine="112" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$1" />
-    <unitInfo nodeId="9075231980435802463" fileName="GenerateConstructor_Intention.java" startLine="122" startPosition="45" endLine="130" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$2" />
-    <unitInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="145" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$QuotationClass_mrvrtl_a0a0a4a3a7" />
-    <unitInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="177" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$QuotationClass_mrvrtl_a2a4a4a3a7" />
-    <unitInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="195" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$QuotationClass_mrvrtl_a2a5a4a3a7" />
+    <unitInfo nodeId="3868795809789198353" fileName="GenerateConstructor_Intention.java" startLine="28" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention" />
+    <unitInfo nodeId="1352851301411152228" fileName="GenerateConstructor_Intention.java" startLine="103" startPosition="45" endLine="120" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$1" />
+    <unitInfo nodeId="3048616714776452575" fileName="GenerateConstructor_Intention.java" startLine="111" startPosition="124" endLine="115" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$2" />
+    <unitInfo nodeId="9075231980435802463" fileName="GenerateConstructor_Intention.java" startLine="135" startPosition="45" endLine="143" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$2" />
+    <unitInfo nodeId="3048616714776453304" fileName="GenerateConstructor_Intention.java" startLine="147" startPosition="144" endLine="151" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$3" />
+    <unitInfo nodeId="4972886494893240778" fileName="GenerateConstructor_Intention.java" startLine="162" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$QuotationClass_mrvrtl_a0a1a5a3a7" />
+    <unitInfo nodeId="4972886494893262808" fileName="GenerateConstructor_Intention.java" startLine="194" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$QuotationClass_mrvrtl_a2a5a5a3a7" />
+    <unitInfo nodeId="4972886494893262836" fileName="GenerateConstructor_Intention.java" startLine="212" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$QuotationClass_mrvrtl_a2a6a5a3a7" />
   </root>
   <root nodeId="3898325814824766814">
     <nodeInfo nodeId="3898325814824766814" fileName="MakeParameterFinal_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

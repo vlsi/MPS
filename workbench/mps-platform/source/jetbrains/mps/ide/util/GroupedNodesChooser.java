@@ -124,6 +124,7 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   protected void initOptions() {
+    myOptionControls = new JComponent[0];
   }
 
   /**
