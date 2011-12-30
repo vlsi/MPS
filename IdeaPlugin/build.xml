@@ -134,11 +134,38 @@
             </src>
         </javac>
         <jar destfile="${dist.dir}/lib/mps-core.jar">
-            <fileset dir="${build_dir}/mpscore_jar"/>
+            <fileset dir="${build_dir}/mpscore_jar" includes="**/*">
+                <exclude name="jetbrains/mps/internal/collections/**"/>
+                <exclude name="jetbrains/mps/baseLanguage/closures/runtime/**"/>
+                <exclude name="jetbrains/mps/baseLanguage/closures/runtime.gwt.xml"/>
+            </fileset>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
                 <attribute name="Implementation-Title" value="MPS Core modeling framework"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+        <jar destfile="${dist.dir}/lib/mps-collections.jar">
+            <fileset dir="${build_dir}/mpscore_jar" includes="">
+                <include name="jetbrains/mps/internal/collections/**"/>
+            </fileset>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Collections language runtime"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+        <jar destfile="${dist.dir}/lib/mps-closures.jar">
+            <fileset dir="${build_dir}/mpscore_jar" includes="">
+                <include name="jetbrains/mps/baseLanguage/closures/runtime/**"/>
+                <include name="jetbrains/mps/baseLanguage/closures/runtime.gwt.xml"/>
+            </fileset>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Closure language runtime"/>
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
