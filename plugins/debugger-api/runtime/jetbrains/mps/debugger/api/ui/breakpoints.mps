@@ -3933,11 +3933,16 @@
           </node>
         </node>
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4474271214083121797">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2716458348594715110">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2716458348594715111">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4474271214083121351" resolveInfo="currentSessionChanged" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2716458348594715112">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214083121354" resolveInfo="newDebugSession" />
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5885822637699011145">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5885822637699011147">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="5885822637699011146">
+                <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="4474271214083121336" resolveInfo="CurrentLinePositionComponent" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5885822637699011151">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2716458348594715049" resolveInfo="currentSessionChanged" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5885822637699011152">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214083121354" resolveInfo="newDebugSession" />
+                </node>
               </node>
             </node>
           </node>

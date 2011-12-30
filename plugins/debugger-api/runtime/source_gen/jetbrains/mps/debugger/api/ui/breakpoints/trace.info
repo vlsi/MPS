@@ -2031,7 +2031,7 @@
     <nodeInfo nodeId="2716458348594714999" fileName="CurrentLinePositionComponent.java" startLine="62" startPosition="50" endLine="63" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2716458348594715009" fileName="CurrentLinePositionComponent.java" startLine="65" startPosition="5" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083121791" fileName="CurrentLinePositionComponent.java" startLine="74" startPosition="58" endLine="75" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594715110" fileName="CurrentLinePositionComponent.java" startLine="79" startPosition="77" endLine="80" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5885822637699011145" fileName="CurrentLinePositionComponent.java" startLine="79" startPosition="77" endLine="80" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083121843" fileName="CurrentLinePositionComponent.java" startLine="84" startPosition="64" endLine="85" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083121846" fileName="CurrentLinePositionComponent.java" startLine="85" startPosition="37" endLine="86" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5038589143591410104" fileName="CurrentLinePositionComponent.java" startLine="95" startPosition="60" endLine="96" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2061,7 +2061,7 @@
     <scopeInfo nodeId="4474271214083121452" fileName="CurrentLinePositionComponent.java" startLine="23" startPosition="93" endLine="24" endPosition="38" />
     <scopeInfo nodeId="4474271214083121502" fileName="CurrentLinePositionComponent.java" startLine="37" startPosition="36" endLine="38" endPosition="53" />
     <scopeInfo nodeId="4474271214083121790" fileName="CurrentLinePositionComponent.java" startLine="74" startPosition="58" endLine="75" endPosition="50" />
-    <scopeInfo nodeId="4474271214083121797" fileName="CurrentLinePositionComponent.java" startLine="79" startPosition="77" endLine="80" endPosition="45" />
+    <scopeInfo nodeId="4474271214083121797" fileName="CurrentLinePositionComponent.java" startLine="79" startPosition="77" endLine="80" endPosition="79" />
     <scopeInfo nodeId="4474271214083121866" fileName="CurrentLinePositionComponent.java" startLine="95" startPosition="60" endLine="96" endPosition="31" />
     <scopeInfo nodeId="4474271214083121874" fileName="CurrentLinePositionComponent.java" startLine="100" startPosition="59" endLine="101" endPosition="36" />
     <scopeInfo nodeId="4474271214083121882" fileName="CurrentLinePositionComponent.java" startLine="105" startPosition="60" endLine="106" endPosition="34" />
