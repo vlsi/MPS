@@ -65,7 +65,7 @@ public class OverrideImplementMethodsHelper {
     return result;
   }
 
-  public void update(SNode method, SNode baseMethod) {
+  private void update(SNode method, SNode baseMethod) {
     if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(baseMethod).getStereotype())) {
       setVariableNames(method, MapSequence.fromMap(new HashMap<String, Integer>()));
     }
