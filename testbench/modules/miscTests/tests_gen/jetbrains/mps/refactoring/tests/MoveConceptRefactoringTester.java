@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.Arrays;
@@ -29,23 +30,23 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
     final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        refactoring.value = RefactoringUtil.getRefactoringByClassName(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590291(jetbrains.mps.lang.structure.scripts)", "1198173570106"), "jetbrains.mps.lang.refactoring.structure.OldRefactoring"), "call_getGeneratedClassLongName_4598603396803851284", new Class[]{SNode.class})));
+        refactoring.value = RefactoringUtil.getRefactoringByClassName(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "3068114543317961454"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
       }
     });
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);
     refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
-    final SModelDescriptor[] targetStructureModelDescriptor = new SModelDescriptor[]{null};
+    final SModelReference[] targetStructureModelReference = new SModelReference[]{null};
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
-        targetStructureModelDescriptor[0] = testRefactoringTargetLanguage.getStructureModelDescriptor();
+        targetStructureModelReference[0] = testRefactoringTargetLanguage.getStructureModelDescriptor().getSModelReference();
         SModel model = structureModelDescriptor.getSModel();
         SNode concept = SModelOperations.getRootByName(model, conceptName);
         refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedNode(concept);
         refactoringContext.setSelectedNodes(Arrays.asList(concept));
         refactoringContext.setSelectedModel(structureModelDescriptor);
-        refactoringContext.setParameter("targetModel", targetStructureModelDescriptor[0]);
+        refactoringContext.setParameter("targetModel", targetStructureModelReference[0]);
       }
     });
     new RefactoringTestFacade().doExecuteInTest(refactoringContext);
@@ -61,7 +62,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
                 return;
               }
               SModel sModel = sandbox1.getSModel();
-              result[0] = sModel.rootsIterator().next().getConceptFqName().equals(targetStructureModelDescriptor[0].getSModelReference().getSModelFqName() + "." + conceptName);
+              result[0] = sModel.rootsIterator().next().getConceptFqName().equals(targetStructureModelReference[0].getSModelFqName() + "." + conceptName);
             } catch (Throwable t) {
               t.printStackTrace();
               result[0] = false;

@@ -8934,77 +8934,78 @@
     <nodeInfo nodeId="2754395556039700608" fileName="CommitUtil.java" startLine="50" startPosition="62" endLine="51" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2165772098013539715" fileName="CommitUtil.java" startLine="51" startPosition="64" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2165772098013717950" fileName="CommitUtil.java" startLine="52" startPosition="0" endLine="53" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2165772098013717939" fileName="CommitUtil.java" startLine="53" startPosition="69" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2165772098013717937" fileName="CommitUtil.java" startLine="54" startPosition="58" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2754395556039700639" fileName="CommitUtil.java" startLine="57" startPosition="25" endLine="58" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2165772098013617348" fileName="CommitUtil.java" startLine="63" startPosition="122" endLine="64" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2165772098013617374" fileName="CommitUtil.java" startLine="66" startPosition="38" endLine="67" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2165772098013617381" fileName="CommitUtil.java" startLine="68" startPosition="7" endLine="69" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2165772098013617413" fileName="CommitUtil.java" startLine="70" startPosition="45" endLine="71" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2165772098013617431" fileName="CommitUtil.java" startLine="72" startPosition="7" endLine="73" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2165772098013617500" fileName="CommitUtil.java" startLine="75" startPosition="19" endLine="76" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2165772098013617528" fileName="CommitUtil.java" startLine="80" startPosition="109" endLine="81" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2165772098013617550" fileName="CommitUtil.java" startLine="82" startPosition="18" endLine="83" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2165772098013617548" fileName="CommitUtil.java" startLine="82" startPosition="16" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2165772098013717939" fileName="CommitUtil.java" startLine="53" startPosition="69" endLine="54" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2165772098013717937" fileName="CommitUtil.java" startLine="54" startPosition="56" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4846444759635186144" fileName="CommitUtil.java" startLine="57" startPosition="25" endLine="58" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2754395556039700639" fileName="CommitUtil.java" startLine="58" startPosition="55" endLine="59" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2165772098013617348" fileName="CommitUtil.java" startLine="64" startPosition="122" endLine="65" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2165772098013617374" fileName="CommitUtil.java" startLine="67" startPosition="38" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2165772098013617381" fileName="CommitUtil.java" startLine="69" startPosition="7" endLine="70" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2165772098013617413" fileName="CommitUtil.java" startLine="71" startPosition="45" endLine="72" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2165772098013617431" fileName="CommitUtil.java" startLine="73" startPosition="7" endLine="74" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2165772098013617500" fileName="CommitUtil.java" startLine="76" startPosition="19" endLine="77" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2165772098013617528" fileName="CommitUtil.java" startLine="81" startPosition="109" endLine="82" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2165772098013617550" fileName="CommitUtil.java" startLine="83" startPosition="18" endLine="84" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2165772098013617548" fileName="CommitUtil.java" startLine="83" startPosition="16" endLine="85" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8292108433549555437" fileName="CommitUtil.java" startLine="37" startPosition="6" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2165772098013617363" fileName="CommitUtil.java" startLine="65" startPosition="27" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2165772098013617404" fileName="CommitUtil.java" startLine="69" startPosition="264" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2165772098013617363" fileName="CommitUtil.java" startLine="66" startPosition="27" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2165772098013617404" fileName="CommitUtil.java" startLine="70" startPosition="264" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2754395556039700561" fileName="CommitUtil.java" startLine="22" startPosition="67" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="2165772098013573682" fileName="CommitUtil.java" startLine="45" startPosition="57" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2754395556039700635" fileName="CommitUtil.java" startLine="56" startPosition="18" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="2754395556039700560" fileName="CommitUtil.java" startLine="21" startPosition="108" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2165772098013573681" fileName="CommitUtil.java" startLine="44" startPosition="45" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2754395556039700627" fileName="CommitUtil.java" startLine="55" startPosition="0" endLine="60" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2165772098013617517" fileName="CommitUtil.java" startLine="79" startPosition="27" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2165772098013617515" fileName="CommitUtil.java" startLine="78" startPosition="69" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2165772098013617514" fileName="CommitUtil.java" startLine="77" startPosition="12" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2754395556039700635" fileName="CommitUtil.java" startLine="56" startPosition="18" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2165772098013617517" fileName="CommitUtil.java" startLine="80" startPosition="27" endLine="85" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2754395556039700627" fileName="CommitUtil.java" startLine="55" startPosition="0" endLine="61" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2165772098013617515" fileName="CommitUtil.java" startLine="79" startPosition="69" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2165772098013617514" fileName="CommitUtil.java" startLine="78" startPosition="12" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8292108433549555403" fileName="CommitUtil.java" startLine="27" startPosition="0" endLine="37" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2165772098013617354" fileName="CommitUtil.java" startLine="64" startPosition="29" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2165772098013617512" fileName="CommitUtil.java" startLine="77" startPosition="10" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2165772098013617442" fileName="CommitUtil.java" startLine="74" startPosition="5" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2165772098013616020" fileName="CommitUtil.java" startLine="62" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="commitRename#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2754395556039700551" fileName="CommitUtil.java" startLine="20" startPosition="25" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="refactorRenameNode#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2165772098013617354" fileName="CommitUtil.java" startLine="65" startPosition="29" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2165772098013617512" fileName="CommitUtil.java" startLine="78" startPosition="10" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2165772098013617442" fileName="CommitUtil.java" startLine="75" startPosition="5" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2165772098013616020" fileName="CommitUtil.java" startLine="63" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="commitRename#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2754395556039700551" fileName="CommitUtil.java" startLine="20" startPosition="25" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="refactorRenameNode#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
     <scopeInfo nodeId="2754395556039700562" fileName="CommitUtil.java" startLine="23" startPosition="25" endLine="24" endPosition="49" />
     <scopeInfo nodeId="8292108433549555438" fileName="CommitUtil.java" startLine="38" startPosition="30" endLine="39" endPosition="13" />
     <scopeInfo nodeId="2165772098013573683" fileName="CommitUtil.java" startLine="46" startPosition="25" endLine="47" endPosition="97" />
-    <scopeInfo nodeId="2754395556039700638" fileName="CommitUtil.java" startLine="57" startPosition="25" endLine="58" endPosition="73" />
-    <scopeInfo nodeId="2165772098013617364" fileName="CommitUtil.java" startLine="66" startPosition="38" endLine="67" endPosition="15" />
-    <scopeInfo nodeId="2165772098013617405" fileName="CommitUtil.java" startLine="70" startPosition="45" endLine="71" endPosition="15" />
-    <scopeInfo nodeId="2165772098013617443" fileName="CommitUtil.java" startLine="75" startPosition="19" endLine="76" endPosition="78" />
-    <scopeInfo nodeId="2165772098013617519" fileName="CommitUtil.java" startLine="80" startPosition="109" endLine="81" endPosition="140" />
-    <scopeInfo nodeId="2165772098013617549" fileName="CommitUtil.java" startLine="82" startPosition="18" endLine="83" endPosition="133" />
+    <scopeInfo nodeId="2165772098013617364" fileName="CommitUtil.java" startLine="67" startPosition="38" endLine="68" endPosition="15" />
+    <scopeInfo nodeId="2165772098013617405" fileName="CommitUtil.java" startLine="71" startPosition="45" endLine="72" endPosition="15" />
+    <scopeInfo nodeId="2165772098013617443" fileName="CommitUtil.java" startLine="76" startPosition="19" endLine="77" endPosition="78" />
+    <scopeInfo nodeId="2165772098013617519" fileName="CommitUtil.java" startLine="81" startPosition="109" endLine="82" endPosition="140" />
+    <scopeInfo nodeId="2165772098013617549" fileName="CommitUtil.java" startLine="83" startPosition="18" endLine="84" endPosition="133" />
+    <scopeInfo nodeId="2754395556039700638" fileName="CommitUtil.java" startLine="57" startPosition="25" endLine="59" endPosition="68" />
     <scopeInfo nodeId="2754395556039700561" fileName="CommitUtil.java" startLine="22" startPosition="67" endLine="26" endPosition="0" />
     <scopeInfo nodeId="2165772098013573682" fileName="CommitUtil.java" startLine="45" startPosition="57" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="2754395556039700635" fileName="CommitUtil.java" startLine="56" startPosition="18" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="2165772098013617516" fileName="CommitUtil.java" startLine="79" startPosition="27" endLine="84" endPosition="11" />
-    <scopeInfo nodeId="2165772098013617355" fileName="CommitUtil.java" startLine="65" startPosition="27" endLine="73" endPosition="47">
+    <scopeInfo nodeId="2754395556039700635" fileName="CommitUtil.java" startLine="56" startPosition="18" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="2165772098013617516" fileName="CommitUtil.java" startLine="80" startPosition="27" endLine="85" endPosition="11" />
+    <scopeInfo nodeId="2165772098013617355" fileName="CommitUtil.java" startLine="66" startPosition="27" endLine="74" endPosition="47">
       <varInfo nodeId="2165772098013617382" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="2165772098013617515" fileName="CommitUtil.java" startLine="78" startPosition="69" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="2165772098013617513" fileName="CommitUtil.java" startLine="77" startPosition="12" endLine="86" endPosition="9" />
-    <scopeInfo nodeId="2165772098013616023" fileName="CommitUtil.java" startLine="63" startPosition="122" endLine="87" endPosition="5">
+    <scopeInfo nodeId="2165772098013617515" fileName="CommitUtil.java" startLine="79" startPosition="69" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="2165772098013617513" fileName="CommitUtil.java" startLine="78" startPosition="12" endLine="87" endPosition="9" />
+    <scopeInfo nodeId="2165772098013616023" fileName="CommitUtil.java" startLine="64" startPosition="122" endLine="88" endPosition="5">
       <varInfo nodeId="2165772098013617349" varName="refactor" />
     </scopeInfo>
-    <scopeInfo nodeId="2165772098013616020" fileName="CommitUtil.java" startLine="62" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="2165772098013616020" fileName="CommitUtil.java" startLine="63" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="2165772098013617335" varName="editorContext" />
       <varInfo nodeId="2165772098013617345" varName="newValue" />
       <varInfo nodeId="2165772098013617342" varName="node" />
       <varInfo nodeId="2165772098013617337" varName="oldValue" />
     </scopeInfo>
-    <scopeInfo nodeId="2754395556039700554" fileName="CommitUtil.java" startLine="21" startPosition="108" endLine="60" endPosition="14">
+    <scopeInfo nodeId="2754395556039700554" fileName="CommitUtil.java" startLine="21" startPosition="108" endLine="61" endPosition="14">
       <varInfo nodeId="8292108433549555404" varName="refactoring" />
       <varInfo nodeId="2754395556039700573" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2754395556039700551" fileName="CommitUtil.java" startLine="20" startPosition="25" endLine="62" endPosition="0">
+    <scopeInfo nodeId="2754395556039700551" fileName="CommitUtil.java" startLine="20" startPosition="25" endLine="63" endPosition="0">
       <varInfo nodeId="2754395556039700589" varName="context" />
       <varInfo nodeId="2165772098013717934" varName="newName" />
       <varInfo nodeId="2754395556039700557" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3557929875030453819" fileName="CommitUtil.java" startLine="20" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.CommitUtil" />
+    <unitInfo nodeId="3557929875030453819" fileName="CommitUtil.java" startLine="20" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.CommitUtil" />
     <unitInfo nodeId="2754395556039700561" fileName="CommitUtil.java" startLine="22" startPosition="55" endLine="26" endPosition="5" unitName="jetbrains.mps.lang.structure.editor.CommitUtil$1" />
     <unitInfo nodeId="2165772098013573682" fileName="CommitUtil.java" startLine="45" startPosition="45" endLine="49" endPosition="5" unitName="jetbrains.mps.lang.structure.editor.CommitUtil$2" />
-    <unitInfo nodeId="2754395556039700632" fileName="CommitUtil.java" startLine="56" startPosition="8" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.structure.editor.CommitUtil$3" />
-    <unitInfo nodeId="2165772098013617515" fileName="CommitUtil.java" startLine="78" startPosition="57" endLine="86" endPosition="7" unitName="jetbrains.mps.lang.structure.editor.CommitUtil$4" />
+    <unitInfo nodeId="2754395556039700632" fileName="CommitUtil.java" startLine="56" startPosition="8" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.structure.editor.CommitUtil$3" />
+    <unitInfo nodeId="2165772098013617515" fileName="CommitUtil.java" startLine="79" startPosition="57" endLine="87" endPosition="7" unitName="jetbrains.mps.lang.structure.editor.CommitUtil$4" />
   </root>
 </debugInfo>
 

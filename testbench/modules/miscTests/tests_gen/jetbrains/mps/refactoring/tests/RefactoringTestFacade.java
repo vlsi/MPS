@@ -11,6 +11,9 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 
   public void doExecuteInTest(RefactoringContext refactoringContext) {
     try {
+      if (!(refactoringContext.getRefactoring().init(refactoringContext))) {
+        RefactoringFacade.LOG.error("refactoring can't be initialized");
+      }
       // generation switched off temporary 
       refactoringContext.setDoesGenerateModels(false);
       super.doExecute(refactoringContext);
