@@ -555,7 +555,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ImplementMethodAction" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.OverrideImplementMethodAction" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -858,7 +858,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.OverrideMethodAction" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.OverrideImplementMethodAction" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.project.Project" />

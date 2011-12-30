@@ -15,7 +15,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.actions.OverrideMethodAction;
+import jetbrains.mps.ide.actions.OverrideImplementMethodAction;
 import jetbrains.mps.nodeEditor.EditorContext;
 
 public class OverrideMethod_Action extends BaseAction {
@@ -72,7 +72,7 @@ public class OverrideMethod_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
-      new OverrideMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext"))).run();
+      new OverrideImplementMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true).run();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "OverrideMethod", t);
     }

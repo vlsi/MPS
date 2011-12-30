@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.actions.OverrideMethodAction;
+import jetbrains.mps.ide.actions.OverrideImplementMethodAction;
 
 public class OverrideMethods_Intention extends BaseIntention implements Intention {
   public OverrideMethods_Intention() {
@@ -51,7 +51,7 @@ public class OverrideMethods_Intention extends BaseIntention implements Intentio
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         Project project = editorContext.getOperationContext().getProject();
-        new OverrideMethodAction(project, node, editorContext).run();
+        new OverrideImplementMethodAction(project, node, editorContext, true).run();
       }
     });
   }

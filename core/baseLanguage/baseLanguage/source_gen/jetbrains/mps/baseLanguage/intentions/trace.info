@@ -11,7 +11,7 @@
     <nodeInfo nodeId="1028039751735280089" fileName="OverrideMethods_Intention.java" startLine="42" startPosition="5" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3600721186257525212" fileName="OverrideMethods_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4393431345217255618" fileName="OverrideMethods_Intention.java" startLine="52" startPosition="25" endLine="53" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4498644629118251598" fileName="OverrideMethods_Intention.java" startLine="53" startPosition="75" endLine="54" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4498644629118251598" fileName="OverrideMethods_Intention.java" startLine="53" startPosition="75" endLine="54" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1028039751735280089" fileName="OverrideMethods_Intention.java" startLine="59" startPosition="37" endLine="60" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1028039751735280089" fileName="OverrideMethods_Intention.java" startLine="15" startPosition="83" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OverrideMethods_Intention#()V" />
     <nodeInfo nodeId="1028039751735280089" fileName="OverrideMethods_Intention.java" startLine="39" startPosition="84" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -36,7 +36,7 @@
     <scopeInfo nodeId="1028039751735280296" fileName="OverrideMethods_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="125" />
     <scopeInfo nodeId="1028039751735280089" fileName="OverrideMethods_Intention.java" startLine="59" startPosition="37" endLine="60" endPosition="51" />
     <scopeInfo nodeId="1028039751735280089" fileName="OverrideMethods_Intention.java" startLine="15" startPosition="83" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="1028039751735298562" fileName="OverrideMethods_Intention.java" startLine="52" startPosition="25" endLine="54" endPosition="69">
+    <scopeInfo nodeId="1028039751735298562" fileName="OverrideMethods_Intention.java" startLine="52" startPosition="25" endLine="54" endPosition="84">
       <varInfo nodeId="4393431345217255619" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="1028039751735280089" fileName="OverrideMethods_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
@@ -2669,7 +2669,7 @@
     <nodeInfo nodeId="1221638394062" fileName="ImplementMethods_Intention.java" startLine="42" startPosition="5" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221638412863" fileName="ImplementMethods_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4498644629118251620" fileName="ImplementMethods_Intention.java" startLine="52" startPosition="25" endLine="53" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4498644629118251615" fileName="ImplementMethods_Intention.java" startLine="53" startPosition="75" endLine="54" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4498644629118251615" fileName="ImplementMethods_Intention.java" startLine="53" startPosition="75" endLine="54" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1221638394062" fileName="ImplementMethods_Intention.java" startLine="59" startPosition="37" endLine="60" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221638394062" fileName="ImplementMethods_Intention.java" startLine="15" startPosition="84" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImplementMethods_Intention#()V" />
     <nodeInfo nodeId="1221638394062" fileName="ImplementMethods_Intention.java" startLine="39" startPosition="84" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2694,7 +2694,7 @@
     <scopeInfo nodeId="1221638410612" fileName="ImplementMethods_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="126" />
     <scopeInfo nodeId="1221638394062" fileName="ImplementMethods_Intention.java" startLine="59" startPosition="37" endLine="60" endPosition="51" />
     <scopeInfo nodeId="1221638394062" fileName="ImplementMethods_Intention.java" startLine="15" startPosition="84" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="1221638507401" fileName="ImplementMethods_Intention.java" startLine="52" startPosition="25" endLine="54" endPosition="70">
+    <scopeInfo nodeId="1221638507401" fileName="ImplementMethods_Intention.java" startLine="52" startPosition="25" endLine="54" endPosition="85">
       <varInfo nodeId="4498644629118251621" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="1221638394062" fileName="ImplementMethods_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />

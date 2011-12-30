@@ -16,15 +16,17 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
-public class OverrideMethodAction {
+public class OverrideImplementMethodAction {
   private Project myProject;
   private SNode mySelectedNode;
   private EditorContext myEditorContext;
+  private boolean myIsOverride;
 
-  public OverrideMethodAction(Project project, SNode selectedNode, EditorContext editorContext) {
+  public OverrideImplementMethodAction(Project project, SNode selectedNode, EditorContext editorContext, boolean isOverride) {
     myProject = project;
     mySelectedNode = selectedNode;
     myEditorContext = editorContext;
+    this.myIsOverride = isOverride;
   }
 
   public void run() {
@@ -32,12 +34,25 @@ public class OverrideMethodAction {
     final SNode contextMethod = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
     final SNodePointer[] methods = ModelAccess.instance().runReadAction(new Computable<SNodePointer[]>() {
       public SNodePointer[] compute() {
-        return OverrideImplementMethodsDialog.toNodePointers(OverrideImplementMethodsDialog.sortMethods(contextClass, ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(contextClass, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "virtual_getMethodsToOverride_5418393554803767537", new Class[]{SNode.class}))));
+        List<SNode> methodsToOverride = (myIsOverride ?
+          ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(contextClass, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "virtual_getMethodsToOverride_5418393554803767537", new Class[]{SNode.class})) :
+          ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(contextClass, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "virtual_getMethodsToImplement_5418393554803775106", new Class[]{SNode.class}))
+        );
+        return OverrideImplementMethodsDialog.toNodePointers(OverrideImplementMethodsDialog.sortMethods(contextClass, methodsToOverride));
       }
     });
 
-    final OverrideImplementMethodsDialog dialog = new OverrideImplementMethodsDialog(methods, ProjectHelper.toIdeaProject(myProject));
-    dialog.setTitle("Select Methods to Override");
+    final OverrideImplementMethodsDialog dialog = new OverrideImplementMethodsDialog(methods, ProjectHelper.toIdeaProject(myProject)) {
+      @Override
+      protected boolean showInsertOverride() {
+        return myIsOverride;
+      }
+    };
+
+    dialog.setTitle((myIsOverride ?
+      "Select Methods to Override" :
+      "Select Methods to Implement"
+    ));
     dialog.show();
 
     if (dialog.isOK()) {

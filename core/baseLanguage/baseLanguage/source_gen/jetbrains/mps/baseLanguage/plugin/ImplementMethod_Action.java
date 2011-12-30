@@ -16,7 +16,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.actions.ImplementMethodAction;
+import jetbrains.mps.ide.actions.OverrideImplementMethodAction;
 
 public class ImplementMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -72,7 +72,7 @@ public class ImplementMethod_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
-      new ImplementMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext"))).run();
+      new OverrideImplementMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), false).run();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ImplementMethod", t);
     }
