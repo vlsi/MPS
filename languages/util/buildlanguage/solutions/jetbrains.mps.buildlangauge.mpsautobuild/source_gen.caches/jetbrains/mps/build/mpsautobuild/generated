@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d4ssu02jd5opebwxwp3qb1mkypdf8j6">
+<dependencies version="2" modelHash="-bcv7hlb8m9fdfa227l5zo7djr86wcyz">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="auc6jui7deer5vkr9v1h1ws94bw74n1" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="90a2yqqwsbuerf4u3po1b2jxod6vyfj" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8xy0ts8pxo14x2h465hshq4se632yz6" />
@@ -77,7 +77,6 @@
     <file name="mps.vmoptions" />
   </source>
   <source id="2235195415637076848" name="help-build" hash="1etsffdbdcxli2vfnx2d4jgn2cf2p30">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
     <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
@@ -87,7 +86,7 @@
   <source id="8431776905956472400" name="MPS-src.zip" hash="-dajz850rstfd4d81gslbziqod3a1kac" />
   <source id="8431776905956472682" name="generate.ant.task.jar" hash="dg2sul20br7htu3aqmhklporl35bn0w" />
   <source id="8431776905956472694" name="idea-patch.jar" hash="d6tuy76snwxz2jhh1uqry07crwxlrdn" />
-  <source id="8431776905956472723" name="mps-core.jar" hash="er5iromv53e0711f1fw4dwxd5bcvmf5" />
+  <source id="8431776905956472723" name="mps-core.jar" hash="16c6comnu0s2pjrwvnfjbdlqv3459g8" />
   <source id="8431776905956472858" name="core" hash="-batsje4nbiz6pifehnk4c0pmkn7qs7z">
     <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
   </source>
