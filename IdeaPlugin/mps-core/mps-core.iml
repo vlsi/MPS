@@ -12,10 +12,10 @@
     </content>
     <content url="file://$MODULE_DIR$/../../core">
       <sourceFolder url="file://$MODULE_DIR$/../../core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/closures/runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/collections/runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/closures/runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/tuples/runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/findUsages-runtime/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/findUsages-runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/generator/solutions/traceInfo/util/source_gen" isTestSource="false" />
@@ -36,7 +36,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../core/typesystemEngine/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/stubUtils/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/refactoring-runtime/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../editor">

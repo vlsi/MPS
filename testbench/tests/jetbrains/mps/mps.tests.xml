@@ -60,11 +60,11 @@
     <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
                          useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
       <jvmargs refid="mps.debug.args"/>
-      <modules dir="${mps.home}/core/baseLanguage/">
+      <modules dir="${mps.home}/languages/baseLanguage/">
         <patternset refid="excluded.modules"/>
       </modules>
       <!--<model file="${mps.home}/core/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains/mps/smodel/test/smodelOperations.mps"/>-->
-      <!--<project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>-->
+      <!--<project file="${mps.home}/languages/baseLanguage/baseLanguage/baseLanguage.mpr"/>-->
     </mps.test.generation>
   </target>
 
@@ -84,7 +84,7 @@
       <jvmargs refid="mps.args"/>
       <perfomancereport file="${mps.home}/generation.baseLanguage.perfomance"/>
 
-      <modules dir="${mps.home}/core/baseLanguage/">
+      <modules dir="${mps.home}/languages/baseLanguage/">
         <patternset refid="excluded.modules"/>
       </modules>
     </mps.test.generation>
@@ -132,13 +132,13 @@
       <perfomancereport file="${mps.home}/generation.perfomance"/>
 
       <!-- Bootstrap tests -->
-      <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>
-      <project file="${mps.home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"/>
-      <project file="${mps.home}/core/baseLanguage/closures/closures.mpr"/>
-      <project file="${mps.home}/core/baseLanguage/collections/collections.mpr"/>
-      <project file="${mps.home}/core/baseLanguage/javadoc/javadoc.mpr"/>
-      <project file="${mps.home}/core/baseLanguage/logging/logging.mpr"/>
-      <project file="${mps.home}/core/baseLanguage/tuples/tuples.mpr"/>
+      <project file="${mps.home}/languages/baseLanguage/baseLanguage/baseLanguage.mpr"/>
+      <project file="${mps.home}/languages/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"/>
+      <project file="${mps.home}/languages/baseLanguage/closures/closures.mpr"/>
+      <project file="${mps.home}/languages/baseLanguage/collections/collections.mpr"/>
+      <project file="${mps.home}/languages/baseLanguage/javadoc/javadoc.mpr"/>
+      <project file="${mps.home}/languages/baseLanguage/logging/logging.mpr"/>
+      <project file="${mps.home}/languages/baseLanguage/tuples/tuples.mpr"/>
       <project file="${mps.home}/languages/languageDesign/actions/actions.mpr"/>
       <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
       <project file="${mps.home}/languages/languageDesign/behavior/behavior.mpr"/>
@@ -179,7 +179,7 @@
       <project file="${mps.home}/languages/util/uiLanguage/uiLanguage.mpr"/>
       <project file="${mps.home}/languages/util/ypath/YPath.mpr"/>
       <project file="${mps.home}/languages/util/dates/dates.mpr"/>
-      <project file="${mps.home}/core/baseLanguage/unitTest/unitTest.mpr"/>
+      <project file="${mps.home}/languages/baseLanguage/unitTest/unitTest.mpr"/>
       <project file="${mps.home}/languages/util/math/mathLanguage.mpr"/>
       <project file="${mps.home}/languages/util/money/MoneyLang.mpr"/>
 <!--

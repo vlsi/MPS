@@ -26,7 +26,7 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${mps_home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" />
+      <modulePath path="${mps_home}/languages/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" />
       <modulePath path="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
       <modulePath path="${mps_home}/languages/languageDesign/editor/languages/editorTest/editorTest.mpl" />
       <modulePath path="${project}/baseLanguage.mpl" />

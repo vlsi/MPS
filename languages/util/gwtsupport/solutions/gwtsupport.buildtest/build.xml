@@ -10,14 +10,14 @@
 
   <path id="project.class.path">
     <pathelement location="classes_gen"/>
-    <pathelement location="${mps.home}/core/baseLanguage/collections/runtime/source"/>
-    <pathelement location="${mps.home}/core/baseLanguage/collections/runtime/source_gen"/>
-    <pathelement location="${mps.home}/core/baseLanguage/collections/runtime/source_gen.gwt"/>
-    <pathelement location="${mps.home}/core/baseLanguage/collections/runtime/classes"/>
-    <pathelement location="${mps.home}/core/baseLanguage/closures/runtime/source"/>
-    <pathelement location="${mps.home}/core/baseLanguage/closures/runtime/source_gen"/>
-    <pathelement location="${mps.home}/core/baseLanguage/closures/runtime/classes"/>
-    <pathelement location="${mps.home}/core/baseLanguage/closures/runtime/classes_gen"/>
+    <pathelement location="${mps.home}/languages/baseLanguage/collections/runtime/source"/>
+    <pathelement location="${mps.home}/languages/baseLanguage/collections/runtime/source_gen"/>
+    <pathelement location="${mps.home}/languages/baseLanguage/collections/runtime/source_gen.gwt"/>
+    <pathelement location="${mps.home}/languages/baseLanguage/collections/runtime/classes"/>
+    <pathelement location="${mps.home}/languages/baseLanguage/closures/runtime/source"/>
+    <pathelement location="${mps.home}/languages/baseLanguage/closures/runtime/source_gen"/>
+    <pathelement location="${mps.home}/languages/baseLanguage/closures/runtime/classes"/>
+    <pathelement location="${mps.home}/languages/baseLanguage/closures/runtime/classes_gen"/>
 
     <pathelement location="${gwt.sdk}/gwt-user.jar"/>
     <fileset dir="${gwt.sdk}" includes="gwt-dev*.jar"/>
