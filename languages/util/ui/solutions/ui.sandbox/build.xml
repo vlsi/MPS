@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="UIDemo" default="build" basedir=".">
+
+  <dirname property="uidemo.basedir" file="${ant.file.UIDemo}"/>
+
+  <property name="mps.home" location="${uidemo.basedir}/../../../../.." />
+
   <!-- Configure path to GWT SDK -->
-  <property name="gwt.sdk" location="/opt/gwt/2.0" />
-  <property name="mps.home" location="/opt/mps/MPS.app" />
+  <property name="gwt.sdk" location="${uidemo.basedir}/../../../gwtsupport/tools/gwt21" />
 
   <path id="project.class.path">
     <pathelement location="classes_gen"/>
     <pathelement location="${gwt.sdk}/gwt-user.jar"/>
-    <pathelement location="${mps.home}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime.jar"/>
+    <pathelement location="${mps.home}/core/baseLanguage/closures/runtime/classes"/>
+    <pathelement location="${mps.home}/core/baseLanguage/closures/runtime/source_gen"/>
+    <pathelement location="${mps.home}/core/baseLanguage/closures/runtime/source"/>
 
     <fileset dir="${gwt.sdk}" includes="gwt-dev*.jar"/>
     <!-- Add any additional non-server libs (such as JUnit) -->
