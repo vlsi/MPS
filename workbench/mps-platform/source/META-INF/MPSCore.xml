@@ -29,10 +29,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ideaPlugins.PluginBundleInstaller</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ide.IdeaModelFileWatcherInitializer</implementation-class>
     </component>
 
@@ -58,7 +54,6 @@
 
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.LanguageLibrary" beanClass="jetbrains.mps.LanguageLibrary"/>
-    <extensionPoint qualifiedName="com.intellij.mps.PluginBundle" beanClass="jetbrains.mps.ideaPlugins.IdeaPluginBundleExtension"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">

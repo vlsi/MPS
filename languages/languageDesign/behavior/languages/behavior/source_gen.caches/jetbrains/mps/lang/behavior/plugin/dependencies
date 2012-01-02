@@ -71,17 +71,13 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.plugin.ImplementBehaviorMethod_Action" file="ImplementBehaviorMethod_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.AddConceptMethodStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ImplementMethodStrategy" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MethodsToImplementStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.OverrideConceptMethodsAction" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -95,17 +91,13 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.plugin.OverrideBehaviorMethod_Action" file="OverrideBehaviorMethod_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.AddConceptMethodStrategy" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MethodsToOverrideStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.OverrideConceptMethodsAction" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

@@ -4,10 +4,6 @@ package jetbrains.mps.refactoring.framework;
 
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
-import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
-import javax.swing.JOptionPane;
-import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.ArrayList;
@@ -27,27 +23,7 @@ public abstract class BaseRefactoring implements IRefactoring {
     return myTransientParameters;
   }
 
-  public boolean ask(RefactoringContext refactoringContext, IChooser... choosers) {
-    AskDialog dialog = new AskDialog(refactoringContext, choosers);
-    dialog.showDialog();
-    return !(dialog.isCancelled());
-  }
-
-  public boolean askBool(RefactoringContext refactoringContext, String text, String paramName, IChooserSettings<Boolean> settings) {
-    String[] options = {"Yes", "No", "Cancel"};
-    Boolean value = settings.getInitialValue();
-    boolean bValue = value != null && value;
-    int option = JOptionPane.showOptionDialog(ProjectHelper.toMainFrame(refactoringContext.getCurrentOperationContext().getProject()), text, settings.getTitle(), JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[(bValue ?
-      0 :
-      1
-    )]);
-    if (option == 2) {
-      return false;
-    }
-    refactoringContext.setParameter(paramName, option == 0);
-    return true;
-  }
-
+  @Deprecated
   public String getKeyStroke() {
     return "";
   }

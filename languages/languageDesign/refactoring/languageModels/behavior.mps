@@ -5,15 +5,12 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tp1h" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="tz4y" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.project(MPS.Workbench/jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="cacl" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.refactoring.framework.paramchooser.mps(MPS.Workbench/jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="13qx" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.refactoring.framework(MPS.Workbench/jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -50,34 +47,6 @@
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4205271146524200389">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="RefDecl" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp1h.6895093993902236229" resolveInfo="Refactoring" />
-    </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4413749148913760549">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp1h.4413749148913695142" resolveInfo="NodeMPSParameterType" />
-    </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4413749148913760552">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp1h.4413749148913695136" resolveInfo="MPSParameterType" />
-    </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4413749148913760574">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp1h.4413749148913695137" resolveInfo="ModelMPSParameterType" />
-    </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4413749148913760587">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp1h.4413749148913695141" resolveInfo="ModuleMPSParameterType" />
-    </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4413749148913760600">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp1h.4413749148913695143" resolveInfo="StringMPSParameterType" />
-    </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4413749148913760612">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp1h.4413749148913695243" resolveInfo="IntMPSParameterType" />
-    </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4413749148913760624">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp1h.4413749148913695144" resolveInfo="BooleanMPSParameterType" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="7012097027058652449">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Context" />
@@ -594,165 +563,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </root>
-  <root id="4413749148913760549">
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4413749148913760550">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760551" />
-    </node>
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="4413749148913760565">
-      <property name="name" nameId="tpck.1169194664001" value="getCreatorMethod" />
-      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="4413749148913760555" resolveInfo="getCreatorMethod" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4413749148913760566" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760567">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4413749148913760569">
-          <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4413749148913760571">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413749148913760572">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cacl.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cacl.~MPSChooserFactory%dcreateNodeChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createNodeChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4413749148913760568">
-        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
-      </node>
-    </node>
-  </root>
-  <root id="4413749148913760552">
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="4413749148913760555">
-      <property name="name" nameId="tpck.1169194664001" value="getCreatorMethod" />
-      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4413749148913760556" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4413749148913760559">
-        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
-      </node>
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760558" />
-    </node>
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4413749148913760553">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760554" />
-    </node>
-  </root>
-  <root id="4413749148913760574">
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="4413749148913760577">
-      <property name="name" nameId="tpck.1169194664001" value="getCreatorMethod" />
-      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="4413749148913760555" resolveInfo="getCreatorMethod" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4413749148913760578" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760579">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4413749148913760580">
-          <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4413749148913760582">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413749148913760586">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cacl.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cacl.~MPSChooserFactory%dcreateModelChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createModelChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4413749148913760585">
-        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
-      </node>
-    </node>
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4413749148913760575">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760576" />
-    </node>
-  </root>
-  <root id="4413749148913760587">
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="4413749148913760590">
-      <property name="name" nameId="tpck.1169194664001" value="getCreatorMethod" />
-      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="4413749148913760555" resolveInfo="getCreatorMethod" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4413749148913760591" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760592">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4413749148913760593">
-          <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4413749148913760595">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413749148913760599">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cacl.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cacl.~MPSChooserFactory%dcreateModuleChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createModuleChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4413749148913760598">
-        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
-      </node>
-    </node>
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4413749148913760588">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760589" />
-    </node>
-  </root>
-  <root id="4413749148913760600">
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="4413749148913760603">
-      <property name="name" nameId="tpck.1169194664001" value="getCreatorMethod" />
-      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="4413749148913760555" resolveInfo="getCreatorMethod" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4413749148913760604" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760605">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4413749148913760606">
-          <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4413749148913760608">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413749148913913950">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cacl.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cacl.~MPSChooserFactory%dcreateStringChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createStringChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4413749148913760611">
-        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
-      </node>
-    </node>
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4413749148913760601">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760602" />
-    </node>
-  </root>
-  <root id="4413749148913760612">
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="4413749148913760615">
-      <property name="name" nameId="tpck.1169194664001" value="getCreatorMethod" />
-      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="4413749148913760555" resolveInfo="getCreatorMethod" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4413749148913760616" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760617">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4413749148913760618">
-          <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4413749148913760620">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413749148913913949">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cacl.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cacl.~MPSChooserFactory%dcreateIntChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createIntChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4413749148913760623">
-        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
-      </node>
-    </node>
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4413749148913760613">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760614" />
-    </node>
-  </root>
-  <root id="4413749148913760624">
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="4413749148913760627">
-      <property name="name" nameId="tpck.1169194664001" value="getCreatorMethod" />
-      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="4413749148913760555" resolveInfo="getCreatorMethod" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4413749148913760628" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760629">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4413749148913760630">
-          <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4413749148913760632">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413749148913913948">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cacl.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cacl.~MPSChooserFactory%dcreateBooleanChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createBooleanChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4413749148913760635">
-        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
-      </node>
-    </node>
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4413749148913760625">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413749148913760626" />
     </node>
   </root>
   <root id="7012097027058652449">

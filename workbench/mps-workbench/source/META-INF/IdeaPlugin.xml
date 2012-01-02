@@ -18,6 +18,7 @@
 
     <extensionPoint name="mps.TabColorProvider" interface="jetbrains.mps.ide.editorTabs.TabColorProvider"/>
     <extensionPoint name="mps.projectPrefsPanel" interface="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" area="IDEA_PROJECT"/>
+    <extensionPoint qualifiedName="com.intellij.mps.PluginBundle" beanClass="jetbrains.mps.ideaPlugins.IdeaPluginBundleExtension"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -72,7 +73,14 @@ public class ProjectFactory {
       throw new ProjectNotCreatedException(error[0]);
     }
 
-    myCreatedProject.save();
+    boolean doNotSave = ApplicationManagerEx.getApplicationEx().isDoNotSave();
+    try {
+      ApplicationManagerEx.getApplicationEx().doNotSave(false);
+      myCreatedProject.save();
+    }
+    finally {
+      ApplicationManagerEx.getApplicationEx().doNotSave(doNotSave);
+    }
 
     //noinspection ConstantConditions
     final MPSProject mpsProject = myCreatedProject.getComponent(MPSProject.class);

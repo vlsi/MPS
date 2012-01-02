@@ -374,6 +374,8 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DebugInfoProvider_CustomApplicationPlugin" file="DebugInfoProvider_CustomApplicationPlugin.java">
+    <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugInfoManager" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebuggerNotPresentException" />

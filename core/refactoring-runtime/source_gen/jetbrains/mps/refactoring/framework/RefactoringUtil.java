@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.lang.reflect.Constructor;
 import java.util.Collection;
+import java.util.Arrays;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
@@ -171,6 +172,20 @@ public class RefactoringUtil {
     return true;
   }
 
+  public static boolean isApplicable(IRefactoring refactoring, Object target) {
+    IRefactoringTarget refTarget = refactoring.getRefactoringTarget();
+    boolean oneEntity = !(refTarget.allowMultipleTargets());
+    List targetList;
+    if (!(oneEntity)) {
+      targetList = ((List) target);
+    } else {
+      targetList = Arrays.asList(target);
+    }
+
+    boolean disabled = (targetList.isEmpty() || RefactoringUtil.getApplicability(refactoring, targetList).lessThan(RefactoringUtil.Applicability.APPLICABLE));
+    return !(disabled);
+  }
+
   public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
     Set<Language> extendingLangs = MPSModuleRepository.getInstance().getAllExtendingLanguages(language);
     Map<IModule, List<SModel>> result = new LinkedHashMap<IModule, List<SModel>>(extendingLangs.size() + 1);
@@ -183,7 +198,7 @@ public class RefactoringUtil {
     return result;
   }
 
-  private static List<SModel> getLanguageModelsList(Project project, Language l) {
+  public static List<SModel> getLanguageModelsList(Project project, Language l) {
     ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
     languageConfig.setModuleRef(l.getModuleReference());
     try {

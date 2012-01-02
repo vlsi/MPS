@@ -20,10 +20,13 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
+import java.util.HashSet;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -181,6 +184,43 @@ public class ClassConcept_Behavior {
     return fqName.substring(0, index) + "$" + fqName.substring(index + 1);
   }
 
+  public static List<SNode> call_getAllSuperClassifiers_4892662966716545618(SNode thisNode) {
+    Set<SNode> seen = SetSequence.fromSet(new HashSet<SNode>());
+    List<SNode> result = new ArrayList<SNode>();
+    Queue<SNode> q = QueueSequence.fromQueue(new LinkedList<SNode>());
+    QueueSequence.fromQueue(q).addLastElement(thisNode);
+    while (QueueSequence.fromQueue(q).isNotEmpty()) {
+      SNode qn = QueueSequence.fromQueue(q).removeFirstElement();
+      ListSequence.fromList(result).addElement(qn);
+      if (SNodeOperations.isInstanceOf(qn, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        if ((SLinkOperations.getTarget(SNodeOperations.cast(qn, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true) != null)) {
+          SNode cl = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(qn, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "classifier", false);
+          if (seen.add(cl)) {
+            QueueSequence.fromQueue(q).addLastElement(cl);
+          }
+        }
+        for (SNode i : SLinkOperations.getTargets(SNodeOperations.cast(qn, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true)) {
+          SNode cl = SLinkOperations.getTarget(i, "classifier", false);
+          if (seen.add(cl)) {
+            QueueSequence.fromQueue(q).addLastElement(cl);
+          }
+        }
+      } else if (SNodeOperations.isInstanceOf(qn, "jetbrains.mps.baseLanguage.structure.Interface")) {
+        for (SNode i : SLinkOperations.getTargets(SNodeOperations.cast(qn, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)) {
+          SNode cl = SLinkOperations.getTarget(i, "classifier", false);
+          if (seen.add(cl)) {
+            QueueSequence.fromQueue(q).addLastElement(cl);
+          }
+        }
+      }
+    }
+    SNode obj = new ClassConcept_Behavior.QuotationClass_xjj00_a0a5a31().createNode();
+    if (seen.add(SLinkOperations.getTarget(obj, "classifier", false))) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(obj, "classifier", false));
+    }
+    return result;
+  }
+
   public static boolean call_isRunnable_7941158526576616766(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isRunnable_7941158526576616752", PARAMETERS_7941158526576616766);
@@ -236,6 +276,24 @@ public class ClassConcept_Behavior {
 
   public static class QuotationClass_xjj00_a0a0a01 {
     public QuotationClass_xjj00_a0a0a01() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_xjj00_a0a5a31 {
+    public QuotationClass_xjj00_a0a5a31() {
     }
 
     public SNode createNode() {

@@ -77,7 +77,7 @@ public class CurrentLinePositionComponent extends AbstractCurrentLinePositionCom
 
     @Override
     public void currentSessionChanged(AbstractDebugSession newDebugSession) {
-      currentSessionChanged(newDebugSession);
+      CurrentLinePositionComponent.this.currentSessionChanged(newDebugSession);
     }
 
     @Override

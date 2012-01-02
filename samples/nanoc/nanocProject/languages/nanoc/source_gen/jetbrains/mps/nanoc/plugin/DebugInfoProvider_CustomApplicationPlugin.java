@@ -4,6 +4,8 @@ package jetbrains.mps.nanoc.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.logging.Logger;
+import com.intellij.openapi.extensions.PluginId;
+import com.intellij.ide.plugins.PluginManager;
 import jetbrains.mps.debug.api.DebugInfoManager;
 import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.smodel.SNode;
@@ -19,6 +21,10 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
   }
 
   public void doInit() {
+    PluginId debuggerPlugin = PluginManager.getPluginByClassName("jetbrains.mps.debug.api.DebugInfoManager");
+    if (debuggerPlugin == null) {
+      return;
+    }
     DebugInfoManager manager = DebugInfoManager.getInstance();
     if (manager == null) {
       return;
@@ -40,6 +46,10 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
   }
 
   public void doDispose() {
+    PluginId debuggerPlugin = PluginManager.getPluginByClassName("jetbrains.mps.debug.api.DebugInfoManager");
+    if (debuggerPlugin == null) {
+      return;
+    }
     DebugInfoManager manager = DebugInfoManager.getInstance();
     if (manager == null) {
       return;

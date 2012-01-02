@@ -15,12 +15,8 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import java.awt.Frame;
+import jetbrains.mps.ide.actions.OverrideImplementMethodAction;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
-import jetbrains.mps.ide.actions.AddClassMethodStrategy;
-import jetbrains.mps.ide.actions.MethodsToOverrideStrategy;
-import jetbrains.mps.ide.actions.OverrideClassMethodStrategy;
 
 public class OverrideMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -75,9 +71,8 @@ public class OverrideMethod_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
-      Frame frame = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getMainFrame();
-      new StratergyAddMethodDialog(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), frame, new AddClassMethodStrategy(((SNode) MapSequence.fromMap(_params).get("selectedNode"))), new MethodsToOverrideStrategy(), new OverrideClassMethodStrategy(project)).showDialog();
+      final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
+      new OverrideImplementMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true).run();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "OverrideMethod", t);
     }

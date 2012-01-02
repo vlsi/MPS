@@ -9,12 +9,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import javax.swing.SwingUtilities;
-import java.awt.Frame;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
-import jetbrains.mps.ide.actions.AddClassMethodStrategy;
-import jetbrains.mps.ide.actions.MethodsToImplementStrategy;
-import jetbrains.mps.ide.actions.ImplementMethodStrategy;
+import jetbrains.mps.ide.actions.OverrideImplementMethodAction;
 
 public class ImplementMethods_Intention extends BaseIntention implements Intention {
   public ImplementMethods_Intention() {
@@ -54,9 +50,8 @@ public class ImplementMethods_Intention extends BaseIntention implements Intenti
   public void execute(final SNode node, final EditorContext editorContext) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        Frame frame = editorContext.getMainFrame();
         Project project = editorContext.getOperationContext().getProject();
-        new StratergyAddMethodDialog(editorContext, frame, new AddClassMethodStrategy(node), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
+        new OverrideImplementMethodAction(project, node, editorContext, false).run();
       }
     });
   }

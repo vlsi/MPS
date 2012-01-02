@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-34ecz3flswvd1k1tu515jvkrat2u0jm">
+<dependencies version="2" modelHash="6pqtfqohssts2yckbiyu5hz0lvcfg2k">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d78hke4r6b9hefsdkynz6vbevip5ltn" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="4592mc0c92ee86m4hdnk27h6ntxlxqu" />
@@ -28,7 +28,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Money.java" />
   </source>
-  <source id="6531435794299650588" name="DoubleRangeTester" hash="2cql27d87cx3sze3siynsn7h6hzcctr">
+  <source id="6531435794299650588" name="DoubleRangeTester" hash="-alk5bp7fhplwj5bwnacbcppzoqqvqay">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -36,7 +36,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DoubleRangeTester.java" />
   </source>
-  <source id="6531435794299651063" name="MfTester" hash="l6fsmopxbjkp3r1tbo0c6u5xukw7ii">
+  <source id="6531435794299651063" name="MfTester" hash="-be8c8gxmiyadibkqavm0bzyxn00cwr9">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -44,7 +44,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MfTester.java" />
   </source>
-  <source id="6531435794299651469" name="SingleTemporalCollectionTester" hash="9quj89x6u1p4pu5l4z7eir4igu8ur5m">
+  <source id="6531435794299651469" name="SingleTemporalCollectionTester" hash="-cy7myfshgjkvdzad1mcpddnebkkwexo">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -66,7 +66,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SingleTemporalCollection.java" />
   </source>
-  <source id="6531435794299651807" name="MoneyTester" hash="7krq2269bissb7ze6772vba06bb2fk">
+  <source id="6531435794299651807" name="MoneyTester" hash="-atoka51tgky9muzh5r2qdk65v5ddoqv">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -88,7 +88,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Currency.java" />
   </source>
-  <source id="6531435794299652799" name="TemporalCollectionTester" hash="-eu5cu5pdguwfjmpxu3piiulyuc1qrl1">
+  <source id="6531435794299652799" name="TemporalCollectionTester" hash="-342gg3qfohc8zjmgxwjgmg2qnuq06aq">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -96,7 +96,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TemporalCollectionTester.java" />
   </source>
-  <source id="6531435794299653063" name="MfDateTester" hash="3coo85zhrv8hsmj89kj69pukqh9ntsd">
+  <source id="6531435794299653063" name="MfDateTester" hash="6ngxrffw4adotzum0slstqwws6yvaz5">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -116,7 +116,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DateRange.java" />
   </source>
-  <source id="6531435794299654340" name="DateRangeTester" hash="1b5s1xl5ss5h5c3uuhi85wbhde03rul">
+  <source id="6531435794299654340" name="DateRangeTester" hash="-chlb1n9pxpmv126ysw08m5lnwx24bjs">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -140,7 +140,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Quantity.java" />
   </source>
-  <source id="6531435794299655950" name="QuantityTester" hash="7p6ccvdtk65e5y43crhpfi2xsog8r6r">
+  <source id="6531435794299655950" name="QuantityTester" hash="-cyhlq6n89qxg5pvqtdo3qupw5gd21v8">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

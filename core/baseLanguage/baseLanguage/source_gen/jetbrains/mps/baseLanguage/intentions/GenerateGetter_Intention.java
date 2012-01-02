@@ -103,9 +103,10 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
 
   public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getMainFrame(), node);
-    selectFieldsDialog.showDialog();
+    selectFieldsDialog.show();
+
     intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
-    return selectFieldsDialog.getAnswer();
+    return selectFieldsDialog.isOK();
   }
 
   public String getLocationString() {

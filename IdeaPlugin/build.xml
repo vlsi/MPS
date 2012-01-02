@@ -125,6 +125,9 @@
                 <path path="${base_dir}/core/findUsages-runtime/source"/>
                 <path path="${base_dir}/core/findUsages-runtime/source_gen"/>
 
+                <!-- refactoring-runtime -->
+                <path path="${base_dir}/core/refactoring-runtime/source_gen"/>
+
                 <!-- analyzers -->
                 <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen"/>
 
