@@ -12,8 +12,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
-import java.util.List;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -65,24 +69,28 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     final SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     final SNode rightmostExpression;
-    SNode firstField = ListSequence.fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))).first();
+    SNodePointer firstField = (((SNodePointer[]) intentionContext.getContextParametersMap().get("selectedFields")) != null && ((SNodePointer[]) intentionContext.getContextParametersMap().get("selectedFields")).length > 0 ?
+      ((SNodePointer[]) intentionContext.getContextParametersMap().get("selectedFields"))[0] :
+      null
+    );
     SNode currentExpression = null;
-    for (SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
+    for (SNodePointer fieldPtr : ((SNodePointer[]) intentionContext.getContextParametersMap().get("selectedFields"))) {
+      SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
       SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
       SLinkOperations.setTarget(fieldRef, "variableDeclaration", field, false);
-      SNode item = new GenerateToString_Intention.QuotationClass_6enhg7_a0a2a4a7().createNode(((field == firstField ?
+      SNode item = new GenerateToString_Intention.QuotationClass_6enhg7_a0a3a4a7().createNode(((fieldPtr == firstField ?
         "" :
         ", "
       )) + SPropertyOperations.getString(field, "name") + "=");
-      if (field == firstField) {
-        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a3a4a7().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
-        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a1a3a4a7().createNode(fieldRef, currentExpression);
+      if (fieldPtr == firstField) {
+        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a4a4a7().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
+        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a1a4a4a7().createNode(fieldRef, currentExpression);
       } else {
-        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a0d0e0h().createNode(item, currentExpression);
-        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a1a0d0e0h().createNode(fieldRef, currentExpression);
+        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a0e0e0h().createNode(item, currentExpression);
+        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a1a0e0e0h().createNode(fieldRef, currentExpression);
       }
     }
-    if (ListSequence.fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))).isEmpty()) {
+    if (((SNodePointer[]) intentionContext.getContextParametersMap().get("selectedFields")) == null || ((SNodePointer[]) intentionContext.getContextParametersMap().get("selectedFields")).length == 0) {
       rightmostExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a5a7().createNode(SPropertyOperations.getString(classConcept, "name") + "{}");
     } else {
       rightmostExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a0f0h().createNode(currentExpression);
@@ -92,19 +100,35 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
-    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getMainFrame(), node);
+    final Wrappers._T<SNodePointer[]> fields = new Wrappers._T<SNodePointer[]>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        fields.value = ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).select(new ISelector<SNode, SNodePointer>() {
+          public SNodePointer select(SNode it) {
+            return new SNodePointer(it);
+          }
+        }).toGenericArray(SNodePointer.class);
+      }
+    });
+
+    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(fields.value, true, editorContext.getOperationContext().getProject());
+    selectFieldsDialog.setTitle("Generate toString");
     selectFieldsDialog.show();
 
-    intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
-    return selectFieldsDialog.isOK();
+    if (!(selectFieldsDialog.isOK())) {
+      return false;
+    }
+
+    intentionContext.getContextParametersMap().put("selectedFields", Sequence.fromIterable(((Iterable<SNodePointer>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodePointer.class));
+    return true;
   }
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
 
-  public static class QuotationClass_6enhg7_a0a2a4a7 {
-    public QuotationClass_6enhg7_a0a2a4a7() {
+  public static class QuotationClass_6enhg7_a0a3a4a7 {
+    public QuotationClass_6enhg7_a0a3a4a7() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -121,8 +145,8 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     }
   }
 
-  public static class QuotationClass_6enhg7_a0a0a3a4a7 {
-    public QuotationClass_6enhg7_a0a0a3a4a7() {
+  public static class QuotationClass_6enhg7_a0a0a4a4a7 {
+    public QuotationClass_6enhg7_a0a0a4a4a7() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -159,8 +183,8 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     }
   }
 
-  public static class QuotationClass_6enhg7_a0a1a3a4a7 {
-    public QuotationClass_6enhg7_a0a1a3a4a7() {
+  public static class QuotationClass_6enhg7_a0a1a4a4a7 {
+    public QuotationClass_6enhg7_a0a1a4a4a7() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -204,8 +228,8 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     }
   }
 
-  public static class QuotationClass_6enhg7_a0a0a0d0e0h {
-    public QuotationClass_6enhg7_a0a0a0d0e0h() {
+  public static class QuotationClass_6enhg7_a0a0a0e0e0h {
+    public QuotationClass_6enhg7_a0a0a0e0e0h() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -249,8 +273,8 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     }
   }
 
-  public static class QuotationClass_6enhg7_a0a1a0d0e0h {
-    public QuotationClass_6enhg7_a0a1a0d0e0h() {
+  public static class QuotationClass_6enhg7_a0a1a0e0e0h {
+    public QuotationClass_6enhg7_a0a1a0e0e0h() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {

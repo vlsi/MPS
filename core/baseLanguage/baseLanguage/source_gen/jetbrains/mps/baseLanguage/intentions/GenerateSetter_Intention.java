@@ -14,7 +14,12 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -80,7 +85,8 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode lastAdded = null;
     Project project = editorContext.getOperationContext().getProject();
-    for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
+    for (SNodePointer fieldPtr : ((SNodePointer[]) intentionContext.getContextParametersMap().get("selectedFields"))) {
+      final SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
       final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
       boolean setterIsAbsent = true;
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
@@ -97,7 +103,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
       String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, project);
       SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
       SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
-      SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateSetter_Intention.QuotationClass_hfod7k_a0a0a8a3a7().createNode(fieldReference, SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
+      SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateSetter_Intention.QuotationClass_hfod7k_a0a0a9a3a7().createNode(fieldReference, SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
       lastAdded = added;
     }
     if (lastAdded != null) {
@@ -106,19 +112,35 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
-    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getMainFrame(), node);
+    final Wrappers._T<SNodePointer[]> fields = new Wrappers._T<SNodePointer[]>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        fields.value = ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).select(new ISelector<SNode, SNodePointer>() {
+          public SNodePointer select(SNode it) {
+            return new SNodePointer(it);
+          }
+        }).toGenericArray(SNodePointer.class);
+      }
+    });
+
+    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(fields.value, false, editorContext.getOperationContext().getProject());
+    selectFieldsDialog.setTitle("Select Fields to Generate Setters");
     selectFieldsDialog.show();
 
-    intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
-    return selectFieldsDialog.isOK();
+    if (!(selectFieldsDialog.isOK())) {
+      return false;
+    }
+
+    intentionContext.getContextParametersMap().put("selectedFields", Sequence.fromIterable(((Iterable<SNodePointer>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodePointer.class));
+    return true;
   }
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
 
-  public static class QuotationClass_hfod7k_a0a0a8a3a7 {
-    public QuotationClass_hfod7k_a0a0a8a3a7() {
+  public static class QuotationClass_hfod7k_a0a0a9a3a7 {
+    public QuotationClass_hfod7k_a0a0a9a3a7() {
     }
 
     public SNode createNode(Object parameter_21, Object parameter_22, Object parameter_23, Object parameter_24) {

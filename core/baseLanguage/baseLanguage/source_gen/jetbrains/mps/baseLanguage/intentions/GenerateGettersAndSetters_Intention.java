@@ -14,9 +14,13 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -103,7 +107,8 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode lastAdded = null;
     Project project = editorContext.getOperationContext().getProject();
-    for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
+    for (SNodePointer fieldPtr : ((SNodePointer[]) intentionContext.getContextParametersMap().get("selectedFields"))) {
+      final SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
       final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, project);
       final Wrappers._boolean getterIsAbsent = new Wrappers._boolean(true);
       ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
@@ -118,7 +123,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       }
       SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
       SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
-      lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_43x4b2_a0a0a6a3a7().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
+      lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_43x4b2_a0a0a7a3a7().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
 
       final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
       final Wrappers._boolean setterIsAbsent = new Wrappers._boolean(true);
@@ -133,7 +138,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
         continue;
       }
       String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, project);
-      lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_43x4b2_a0a0a31a3a7().createNode(SNodeOperations.copyNode(fieldReference), SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
+      lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_43x4b2_a0a0a41a3a7().createNode(SNodeOperations.copyNode(fieldReference), SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
     }
     if (lastAdded != null) {
       editorContext.select(lastAdded);
@@ -141,19 +146,35 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
-    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getMainFrame(), node);
+    final Wrappers._T<SNodePointer[]> fields = new Wrappers._T<SNodePointer[]>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        fields.value = ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).select(new ISelector<SNode, SNodePointer>() {
+          public SNodePointer select(SNode it) {
+            return new SNodePointer(it);
+          }
+        }).toGenericArray(SNodePointer.class);
+      }
+    });
+
+    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(fields.value, false, editorContext.getOperationContext().getProject());
+    selectFieldsDialog.setTitle("Select Fields to Generate Getters and Setters");
     selectFieldsDialog.show();
 
-    intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
-    return selectFieldsDialog.isOK();
+    if (!(selectFieldsDialog.isOK())) {
+      return false;
+    }
+
+    intentionContext.getContextParametersMap().put("selectedFields", Sequence.fromIterable(((Iterable<SNodePointer>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodePointer.class));
+    return true;
   }
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
 
-  public static class QuotationClass_43x4b2_a0a0a6a3a7 {
-    public QuotationClass_43x4b2_a0a0a6a3a7() {
+  public static class QuotationClass_43x4b2_a0a0a7a3a7 {
+    public QuotationClass_43x4b2_a0a0a7a3a7() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14, Object parameter_15) {
@@ -216,8 +237,8 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
     }
   }
 
-  public static class QuotationClass_43x4b2_a0a0a31a3a7 {
-    public QuotationClass_43x4b2_a0a0a31a3a7() {
+  public static class QuotationClass_43x4b2_a0a0a41a3a7 {
+    public QuotationClass_43x4b2_a0a0a41a3a7() {
     }
 
     public SNode createNode(Object parameter_21, Object parameter_22, Object parameter_23, Object parameter_24) {
