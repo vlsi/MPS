@@ -130,5 +130,105 @@
     <nodeInfo nodeId="1387087080747689114" fileName="CollectionUtils.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <unitInfo nodeId="1387087080747689091" fileName="CollectionUtils.java" startLine="1" startPosition="0" endLine="33" endPosition="0" unitName="CollectionUtils.java" />
   </root>
+  <root nodeId="1387087080747689115">
+    <nodeInfo nodeId="1387087080747689116" fileName="ClassUtils.java" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689117" fileName="ClassUtils.java" startLine="1" startPosition="0" endLine="1" endPosition="51" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689118" fileName="ClassUtils.java" startLine="2" startPosition="0" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689119" fileName="ClassUtils.java" startLine="2" startPosition="0" endLine="2" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689120" fileName="ClassUtils.java" startLine="3" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689121" fileName="ClassUtils.java" startLine="3" startPosition="0" endLine="3" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689122" fileName="ClassUtils.java" startLine="4" startPosition="0" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689123" fileName="ClassUtils.java" startLine="4" startPosition="0" endLine="4" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689124" fileName="ClassUtils.java" startLine="5" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689125" fileName="ClassUtils.java" startLine="5" startPosition="0" endLine="5" endPosition="62" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689126" fileName="ClassUtils.java" startLine="6" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689127" fileName="ClassUtils.java" startLine="6" startPosition="0" endLine="6" endPosition="47" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689128" fileName="ClassUtils.java" startLine="7" startPosition="0" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689129" fileName="ClassUtils.java" startLine="7" startPosition="0" endLine="7" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689130" fileName="ClassUtils.java" startLine="8" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689131" fileName="ClassUtils.java" startLine="8" startPosition="0" endLine="8" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689174" fileName="ClassUtils.java" startLine="9" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689175" fileName="ClassUtils.java" startLine="9" startPosition="0" endLine="9" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689176" fileName="ClassUtils.java" startLine="10" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689177" fileName="ClassUtils.java" startLine="10" startPosition="0" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689178" fileName="ClassUtils.java" startLine="11" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689179" fileName="ClassUtils.java" startLine="11" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689181" fileName="ClassUtils.java" startLine="12" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689182" fileName="ClassUtils.java" startLine="12" startPosition="0" endLine="12" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689132" fileName="ClassUtils.java" startLine="13" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689133" fileName="ClassUtils.java" startLine="13" startPosition="0" endLine="13" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1387087080747689134" fileName="ClassUtils.java" startLine="14" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1387087080747689116" fileName="ClassUtils.java" startLine="1" startPosition="0" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689116" fileName="ClassUtils.java" startLine="1" startPosition="51" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689118" fileName="ClassUtils.java" startLine="2" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689118" fileName="ClassUtils.java" startLine="2" startPosition="1" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689120" fileName="ClassUtils.java" startLine="3" startPosition="0" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689120" fileName="ClassUtils.java" startLine="3" startPosition="25" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689122" fileName="ClassUtils.java" startLine="4" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689122" fileName="ClassUtils.java" startLine="4" startPosition="1" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689124" fileName="ClassUtils.java" startLine="5" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689124" fileName="ClassUtils.java" startLine="5" startPosition="62" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689126" fileName="ClassUtils.java" startLine="6" startPosition="0" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689126" fileName="ClassUtils.java" startLine="6" startPosition="47" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689128" fileName="ClassUtils.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689128" fileName="ClassUtils.java" startLine="7" startPosition="3" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689130" fileName="ClassUtils.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689130" fileName="ClassUtils.java" startLine="8" startPosition="1" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689174" fileName="ClassUtils.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689174" fileName="ClassUtils.java" startLine="9" startPosition="54" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689176" fileName="ClassUtils.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689176" fileName="ClassUtils.java" startLine="10" startPosition="47" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689178" fileName="ClassUtils.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689178" fileName="ClassUtils.java" startLine="11" startPosition="3" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689181" fileName="ClassUtils.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689181" fileName="ClassUtils.java" startLine="12" startPosition="1" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689132" fileName="ClassUtils.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689132" fileName="ClassUtils.java" startLine="13" startPosition="1" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1387087080747689134" fileName="ClassUtils.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1387087080747689134" fileName="ClassUtils.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <unitInfo nodeId="1387087080747689115" fileName="ClassUtils.java" startLine="1" startPosition="0" endLine="15" endPosition="0" unitName="ClassUtils.java" />
+  </root>
+  <root nodeId="3687926015106425029">
+    <nodeInfo nodeId="3687926015106425030" fileName="ArrayUtils.java" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="3687926015106425031" fileName="ArrayUtils.java" startLine="1" startPosition="0" endLine="1" endPosition="51" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3687926015106425032" fileName="ArrayUtils.java" startLine="2" startPosition="0" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="3687926015106425033" fileName="ArrayUtils.java" startLine="2" startPosition="0" endLine="2" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3687926015106425034" fileName="ArrayUtils.java" startLine="3" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="3687926015106425035" fileName="ArrayUtils.java" startLine="3" startPosition="0" endLine="3" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3687926015106425036" fileName="ArrayUtils.java" startLine="4" startPosition="0" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="3687926015106425037" fileName="ArrayUtils.java" startLine="4" startPosition="0" endLine="4" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3687926015106425038" fileName="ArrayUtils.java" startLine="5" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="3687926015106425039" fileName="ArrayUtils.java" startLine="5" startPosition="0" endLine="5" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3687926015106425042" fileName="ArrayUtils.java" startLine="6" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="3687926015106425043" fileName="ArrayUtils.java" startLine="6" startPosition="0" endLine="6" endPosition="47" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3687926015106425046" fileName="ArrayUtils.java" startLine="7" startPosition="0" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="3687926015106425047" fileName="ArrayUtils.java" startLine="7" startPosition="0" endLine="7" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3687926015106425048" fileName="ArrayUtils.java" startLine="8" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="3687926015106425049" fileName="ArrayUtils.java" startLine="8" startPosition="0" endLine="8" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3687926015106425050" fileName="ArrayUtils.java" startLine="9" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="3687926015106425051" fileName="ArrayUtils.java" startLine="9" startPosition="0" endLine="9" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3687926015106425052" fileName="ArrayUtils.java" startLine="10" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="3687926015106425030" fileName="ArrayUtils.java" startLine="1" startPosition="0" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3687926015106425030" fileName="ArrayUtils.java" startLine="1" startPosition="51" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3687926015106425032" fileName="ArrayUtils.java" startLine="2" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3687926015106425032" fileName="ArrayUtils.java" startLine="2" startPosition="1" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3687926015106425034" fileName="ArrayUtils.java" startLine="3" startPosition="0" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3687926015106425034" fileName="ArrayUtils.java" startLine="3" startPosition="25" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3687926015106425036" fileName="ArrayUtils.java" startLine="4" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3687926015106425036" fileName="ArrayUtils.java" startLine="4" startPosition="1" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3687926015106425038" fileName="ArrayUtils.java" startLine="5" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3687926015106425038" fileName="ArrayUtils.java" startLine="5" startPosition="78" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3687926015106425042" fileName="ArrayUtils.java" startLine="6" startPosition="0" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3687926015106425042" fileName="ArrayUtils.java" startLine="6" startPosition="47" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3687926015106425046" fileName="ArrayUtils.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3687926015106425046" fileName="ArrayUtils.java" startLine="7" startPosition="3" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3687926015106425048" fileName="ArrayUtils.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3687926015106425048" fileName="ArrayUtils.java" startLine="8" startPosition="1" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3687926015106425050" fileName="ArrayUtils.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3687926015106425050" fileName="ArrayUtils.java" startLine="9" startPosition="1" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="3687926015106425052" fileName="ArrayUtils.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3687926015106425052" fileName="ArrayUtils.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <unitInfo nodeId="3687926015106425029" fileName="ArrayUtils.java" startLine="1" startPosition="0" endLine="11" endPosition="0" unitName="ArrayUtils.java" />
+  </root>
 </debugInfo>
 
