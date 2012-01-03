@@ -58,7 +58,7 @@ public class EditorCellSelection implements SingularSelection {
 
   public EditorCellSelection(@NotNull EditorCell editorCell) {
     myEditorCell = editorCell;
-    myCaretX = editorCell.getCaretX();
+    myCaretX = getRelativeCaretX(editorCell);
   }
 
   @NotNull
@@ -78,7 +78,7 @@ public class EditorCellSelection implements SingularSelection {
   }
 
   public int getCaretX() {
-    return isActive() ? myEditorCell.getCaretX() : myCaretX;
+    return isActive() ? getRelativeCaretX(myEditorCell) : myCaretX;
   }
 
   @Override
@@ -87,7 +87,7 @@ public class EditorCellSelection implements SingularSelection {
       return;
     }
     myEditorCell.setSelected(true);
-    myEditorCell.setCaretX(getCaretX());
+    setRelativeCaretX(myEditorCell, getCaretX());
     myActive = true;
   }
 
@@ -95,7 +95,7 @@ public class EditorCellSelection implements SingularSelection {
   public void deactivate() {
     myActive = false;
     myEditorCell.setSelected(false);
-    myCaretX = myEditorCell.getCaretX();
+    myCaretX = getRelativeCaretX(myEditorCell);
   }
 
   public boolean isActive() {
@@ -173,5 +173,13 @@ public class EditorCellSelection implements SingularSelection {
   @Override
   public void paintSelection(Graphics2D g) {
     //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  private static int getRelativeCaretX(EditorCell editorCell) {
+    return editorCell.getCaretX() - editorCell.getX();
+  }
+
+  private static void setRelativeCaretX(EditorCell editorCell, int relativeCaretX) {
+    editorCell.setCaretX(editorCell.getX() + relativeCaretX);
   }
 }
