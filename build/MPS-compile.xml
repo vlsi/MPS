@@ -1426,7 +1426,6 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
-    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path refid="common.classpath" />
   </path>
@@ -1595,7 +1594,6 @@
     <path path="${base_dir}/languages/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/test/classes_gen" />
-    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/lib/annotations.jar" />
@@ -2191,7 +2189,6 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/structure/classes_gen" />
-    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/guava-r09.jar" />
@@ -2640,7 +2637,6 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/structure/classes_gen" />
-    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
@@ -9349,7 +9345,6 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/structure/classes_gen" />
-    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/guava-r09.jar" />
