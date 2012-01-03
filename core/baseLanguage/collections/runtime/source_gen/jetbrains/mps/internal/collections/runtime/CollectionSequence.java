@@ -149,7 +149,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
   }
 
   public ICollectionSequence<T> asSynchronized() {
-    final Collection<T> synchronizedCollection = Collections.synchronizedCollection(getCollection());
+    final Collection<T> synchronizedCollection = CollectionUtils.synchronizedCollection(getCollection());
     return new CollectionSequence<T>() {
       protected Collection<T> getCollection() {
         return synchronizedCollection;
