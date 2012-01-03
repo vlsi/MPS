@@ -56,6 +56,7 @@
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="4642948870877889221">
       <property name="name" nameId="tpck.1169194664001" value="ISearchScope" />
+      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4642948870877889272">
       <property name="name" nameId="tpck.1169194664001" value="IsInstanceCondition" />
@@ -1965,6 +1966,16 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SConceptType" typeId="tp25.1172420572800" id="5740522748854823286" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4642948870877889271" />
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="8401916545537285440">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="8401916545537306607">
+      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="8401916545537306608">
+        <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="8401916545537306610">
+          <property name="text" nameId="m373.8970989240999019144" value="@Deprecated" />
+        </node>
+      </node>
     </node>
   </root>
   <root id="4642948870877889272">

@@ -7,7 +7,12 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
-public interface ISearchScope {
+@Deprecated
+public 
+/**
+ * @Deprecated
+ */
+interface ISearchScope {
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition);
   public boolean isInScope(SNode node);
