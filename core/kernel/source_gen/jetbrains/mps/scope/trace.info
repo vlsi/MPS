@@ -91,6 +91,20 @@
     <unitInfo nodeId="3734116213129862372" fileName="Scope.java" startLine="13" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.scope.Scope" />
     <unitInfo nodeId="3734116213129936110" fileName="Scope.java" startLine="68" startPosition="180" endLine="72" endPosition="5" unitName="jetbrains.mps.scope.Scope$1" />
   </root>
+  <root nodeId="7712479415687661167">
+    <nodeInfo nodeId="7712479415687706032" fileName="ErrorScope.java" startLine="6" startPosition="44" endLine="7" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="message" />
+    <nodeInfo nodeId="7712479415687706035" fileName="ErrorScope.java" startLine="9" startPosition="37" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7712479415687706046" fileName="ErrorScope.java" startLine="13" startPosition="30" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7712479415687661169" fileName="ErrorScope.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ErrorScope#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7712479415687706041" fileName="ErrorScope.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#()Ljava/lang/String;" />
+    <scopeInfo nodeId="7712479415687661172" fileName="ErrorScope.java" startLine="9" startPosition="37" endLine="10" endPosition="27" />
+    <scopeInfo nodeId="7712479415687706044" fileName="ErrorScope.java" startLine="13" startPosition="30" endLine="14" endPosition="19" />
+    <scopeInfo nodeId="7712479415687661169" fileName="ErrorScope.java" startLine="8" startPosition="0" endLine="11" endPosition="3">
+      <varInfo nodeId="7712479415687706029" varName="message" />
+    </scopeInfo>
+    <scopeInfo nodeId="7712479415687706041" fileName="ErrorScope.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <unitInfo nodeId="7712479415687661167" fileName="ErrorScope.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.scope.ErrorScope" />
+  </root>
   <root nodeId="8401916545537277014">
     <nodeInfo nodeId="8401916545537277529" fileName="SimpleRoleScope.java" startLine="12" startPosition="53" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="node" />
     <nodeInfo nodeId="8401916545537277533" fileName="SimpleRoleScope.java" startLine="13" startPosition="27" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="link" />

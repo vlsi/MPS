@@ -7,11 +7,11 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.scope.Scope;
+import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.apache.commons.lang.StringUtils;
 
 @Deprecated
 public 
@@ -26,34 +26,14 @@ interface ISearchScope {
   public List<SNode> getNodes();
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept);
   public static class Adapter extends Scope {
-    private final ISearchScope searchScope;
-    private final SNode sourceNode;
-    private final String role;
-    @Nullable
-    private final SReference reference;
+    protected final ISearchScope searchScope;
 
-    public Adapter(ISearchScope searchScope, SNode sourceNode, String role, SReference reference) {
+    public Adapter(ISearchScope searchScope) {
       this.searchScope = searchScope;
-      this.sourceNode = sourceNode;
-      this.role = role;
-      this.reference = reference;
     }
 
     public SNode resolve(SNode anchor, String refText) {
-      SNode link = new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(sourceNode)).getMostSpecificLinkDeclarationByRole(role);
-      if (link == null) {
-        return null;
-      }
-
-      IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(sourceNode, SLinkOperations.getTarget(SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "target", false));
-      if (infoResolver == null) {
-        return null;
-      }
-
-      return infoResolver.resolve(refText, (reference != null ?
-        reference.getTargetSModelReference() :
-        null
-      ));
+      return null;
     }
 
     public List<SNode> getAvailableElements(final String prefix) {
@@ -81,6 +61,38 @@ interface ISearchScope {
 
     public ISearchScope getSearchScope() {
       return searchScope;
+    }
+  }
+
+  public static class RefAdapter extends ISearchScope.Adapter {
+    private final SNode sourceNode;
+    private final String role;
+    @Nullable
+    private final SReference reference;
+
+    public RefAdapter(ISearchScope searchScope, SNode sourceNode, String role, SReference reference) {
+      super(searchScope);
+      this.sourceNode = sourceNode;
+      this.role = role;
+      this.reference = reference;
+    }
+
+    @Override
+    public SNode resolve(SNode anchor, String refText) {
+      SNode link = new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(sourceNode)).getMostSpecificLinkDeclarationByRole(role);
+      if (link == null) {
+        return null;
+      }
+
+      IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(sourceNode, SLinkOperations.getTarget(SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "target", false));
+      if (infoResolver == null) {
+        return null;
+      }
+
+      return infoResolver.resolve(refText, (reference != null ?
+        reference.getTargetSModelReference() :
+        null
+      ));
     }
   }
 
