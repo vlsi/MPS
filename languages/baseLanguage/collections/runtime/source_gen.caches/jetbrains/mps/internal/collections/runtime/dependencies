@@ -28,6 +28,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.AdapterClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
+  <dependency className="jetbrains.mps.internal.collections.runtime.ClassUtils" file="ClassUtils.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+  </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.CollectionSequence" file="CollectionSequence.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
@@ -37,12 +41,22 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.AdapterClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullCollectionSequence" />
     <classNode extendsClassName="java.io.Serializable" />
     <classNode extendsClassName="java.util.Collection" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ICollectionSequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+  </dependency>
+  <dependency className="jetbrains.mps.internal.collections.runtime.CollectionUtils" file="CollectionUtils.java">
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.SortedMap" />
+    <classNode dependClassName="java.util.SortedSet" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.CompoundComparator" file="CompoundComparator.java">
     <classNode extendsClassName="java.util.Comparator" />
@@ -246,6 +260,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.AdapterClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullListSequence" />
@@ -385,6 +400,7 @@
     <classNode dependClassName="java.util.Comparator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.TreeSet" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
