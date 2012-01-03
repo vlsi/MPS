@@ -2,15 +2,7 @@
 <solution name="internalCollections.test" uuid="b5660d3a-8a0d-4815-881b-7c884f61c9c7" compileInMPS="true">
   <models>
     <modelRoot path="${solution_descriptor}/" />
-    <modelRoot path="${mps_home}/languages/baseLanguage/collections/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
   </models>
-  <stubModelEntries>
-    <stubModelEntry path="${mps_home}/languages/baseLanguage/collections/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
