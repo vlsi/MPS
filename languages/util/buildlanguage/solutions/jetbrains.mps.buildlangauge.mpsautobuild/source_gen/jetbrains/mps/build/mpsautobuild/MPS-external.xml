@@ -104,6 +104,11 @@
     <mkdir dir="${deploy.dir}/MPS/plugins" />
     <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples" />
     <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp/modules" />
+    <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime-src.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage" />
     <mkdir dir="${deploy.dir}/MPS/languages/languageDesign" />
     <mkdir dir="${deploy.dir}/MPS/languages/devkits" />
@@ -522,7 +527,6 @@
       <zipfileset dir="${deploy.dir}/MPS/samples.zip.tmp" />
     </zip>
     <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
-    <antcall target="MPS-languages.pack.collections.runtime.gwt" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguageInternal" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.blTypes" />
@@ -536,6 +540,36 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.libs" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp">
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/runtime/source_gen.gwt" />
+    </copy>
+    <antcall target="MPS-languages.pack.collections.runtime.gwt" />
+    <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp/modules" />
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar.tmp">
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/runtime/source_gen" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar.tmp">
+      <fileset dir="${mps_home}/languages/baseLanguage/closures/runtime/source_gen" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime-src.jar.tmp">
+      <fileset dir="${mps_home}/languages/baseLanguage/tuples/runtime/source_gen" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime-src.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime-src.jar.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime-src.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.actions" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.behavior" />
@@ -711,6 +745,10 @@
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime-src.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp" />
   </target>
   <target name="pack.branding_b1a">
