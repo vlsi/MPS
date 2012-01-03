@@ -307,7 +307,7 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp">
-      <fileset dir="${mps_home}/core/baseLanguage/collections/runtime/classes" />
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/runtime/classes" />
     </copy>
     <antcall target="MPS-languages.pack.collections.runtime" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp/modules" />
@@ -316,7 +316,7 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-closures.jar.tmp">
-      <fileset dir="${mps_home}/core/baseLanguage/closures/runtime/classes" />
+      <fileset dir="${mps_home}/languages/baseLanguage/closures/runtime/classes" />
     </copy>
     <antcall target="MPS-languages.pack.closures.runtime" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-closures.jar.tmp/modules" />
@@ -325,7 +325,7 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-closures.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-tuples.jar.tmp">
-      <fileset dir="${mps_home}/core/baseLanguage/tuples/runtime/classes" />
+      <fileset dir="${mps_home}/languages/baseLanguage/tuples/runtime/classes" />
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.runtime" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-tuples.jar.tmp/modules" />
