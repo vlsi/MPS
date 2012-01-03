@@ -15752,12 +15752,14 @@
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
         <library jar="gwt-dev.jar" />
+        <library jar="gwt-servlet.jar" />
         <library jar="gwt-user.jar" />
         <sources jar="jetbrains.mps.gwt.client-src.jar" descriptor="client.mpl" />
       </module>
     </echoxml>
     <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" />
     <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" file="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-dev.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" file="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" file="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client/jetbrains.mps.gwt.client-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/languages/util/gwtsupport/languages/client/source_gen" includes="**/*.java" erroronmissingdir="false" />

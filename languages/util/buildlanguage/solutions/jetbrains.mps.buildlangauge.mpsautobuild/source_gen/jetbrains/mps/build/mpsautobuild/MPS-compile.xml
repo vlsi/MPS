@@ -574,7 +574,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -629,6 +628,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -750,7 +750,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -805,6 +804,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -889,7 +889,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -945,6 +944,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1029,7 +1029,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/constructors/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
@@ -1085,6 +1084,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1169,7 +1169,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -1225,6 +1224,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1309,7 +1309,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -1366,6 +1365,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1423,7 +1423,6 @@
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -1463,7 +1462,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -1519,6 +1517,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1593,7 +1592,6 @@
     <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/languages/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/test/classes_gen" />
@@ -1652,7 +1650,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -1707,6 +1704,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1791,7 +1789,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/jdk7/languages/jdk7/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
@@ -1847,6 +1844,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1931,7 +1929,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -1986,6 +1983,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2070,7 +2068,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -2125,6 +2122,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
@@ -2182,7 +2180,6 @@
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2233,7 +2230,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -2288,6 +2284,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/classes_gen" />
@@ -2380,7 +2377,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
@@ -2436,6 +2432,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2520,7 +2517,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -2575,6 +2571,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2632,7 +2629,6 @@
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2691,7 +2687,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -2746,6 +2741,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2830,7 +2826,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -2886,6 +2881,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2971,7 +2967,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -3029,6 +3024,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -3113,7 +3109,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -3169,6 +3164,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -3255,7 +3251,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -3310,6 +3305,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -3394,7 +3390,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -3449,6 +3444,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -3533,7 +3529,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -3589,6 +3584,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -3673,7 +3669,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -3728,6 +3723,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -3813,7 +3809,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -3868,6 +3863,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -3953,7 +3949,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -4008,6 +4003,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -4092,7 +4088,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -4147,6 +4142,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -4231,7 +4227,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -4286,6 +4281,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -4374,7 +4370,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -4429,6 +4424,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -4515,7 +4511,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -4570,6 +4565,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -4660,7 +4656,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -4715,6 +4710,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -4800,7 +4796,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -4855,6 +4850,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -4939,7 +4935,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -4994,6 +4989,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -5078,7 +5074,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -5133,6 +5128,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -5218,7 +5214,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -5273,6 +5268,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -5360,7 +5356,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -5415,6 +5410,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -5500,7 +5496,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -5555,6 +5550,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -5617,6 +5613,7 @@
   <path id="cycle.jetbrains.mps.gwt.client_tjc.classpaths">
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-dev.jar" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
@@ -5648,7 +5645,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -5703,6 +5699,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -5787,7 +5784,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -5842,6 +5838,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -5927,7 +5924,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -5983,6 +5979,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -6067,7 +6064,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -6123,6 +6119,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -6207,7 +6204,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -6263,6 +6259,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -6347,7 +6344,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -6402,6 +6398,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -6486,7 +6483,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -6542,6 +6538,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -6626,7 +6623,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -6681,6 +6677,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -6765,7 +6762,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -6821,6 +6817,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -6905,7 +6902,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -6960,6 +6956,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -7044,7 +7041,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -7099,6 +7095,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -7184,7 +7181,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -7239,6 +7235,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -7370,7 +7367,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -7425,6 +7421,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -7510,7 +7507,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -7565,6 +7561,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -7651,7 +7648,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -7706,6 +7702,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -7794,7 +7791,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -7849,6 +7845,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -7936,7 +7933,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -7991,6 +7987,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -8076,7 +8073,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -8131,6 +8127,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -8229,7 +8226,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -8284,6 +8280,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -8385,7 +8382,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -8440,6 +8436,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -8525,7 +8522,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -8580,6 +8576,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -8667,7 +8664,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -8722,6 +8718,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -8806,7 +8803,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -8862,6 +8858,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -8950,7 +8947,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -9005,6 +9001,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -9090,7 +9087,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -9145,6 +9141,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -9230,7 +9227,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -9285,6 +9281,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -9341,7 +9338,6 @@
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -9392,7 +9388,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -9447,6 +9442,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -9533,7 +9529,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -9588,6 +9583,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -9673,7 +9669,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/baseLanguage/collections/runtime/testclasses" />
     <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
@@ -9728,6 +9723,7 @@
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
