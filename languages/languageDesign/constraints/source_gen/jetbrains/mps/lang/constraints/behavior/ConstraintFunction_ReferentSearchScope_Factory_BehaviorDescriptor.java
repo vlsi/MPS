@@ -4,7 +4,7 @@ package jetbrains.mps.lang.constraints.behavior;
 
 import jetbrains.mps.smodel.SNode;
 
-public class ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor extends ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor {
+public class ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor extends ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor implements NodeScopeFactory_BehaviorDescriptor {
   public ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor() {
   }
 

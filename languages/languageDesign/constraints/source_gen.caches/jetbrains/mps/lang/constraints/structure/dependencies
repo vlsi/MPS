@@ -241,7 +241,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" file="ConstraintFunction_ReferentSearchScope_Factory.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.structure.NodeScopeFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -298,11 +302,24 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.structure.NestedNodeScopeFactory" file="NestedNodeScopeFactory.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.structure.NodeScopeFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope" file="NodeDefaultSearchScope.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.structure.NodeScopeFactory" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -324,16 +341,20 @@
   <dependency className="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" file="NodeReferentConstraint.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference" />
-    <classNode dependClassName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.structure.NodeScopeFactory" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.structure.NodeScopeFactory" file="NodeScopeFactory.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />

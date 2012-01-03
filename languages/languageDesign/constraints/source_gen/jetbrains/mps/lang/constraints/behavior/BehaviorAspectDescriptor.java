@@ -7,14 +7,14 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.constraints.structure.ConceptConstraints", "jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_containingLink", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler", "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node", "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue", "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.constraints.structure.ConceptConstraints", "jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_containingLink", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler", "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node", "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue", "jetbrains.mps.lang.constraints.structure.NestedNodeScopeFactory", "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 31:
+      case 32:
         return new NodePropertyConstraint_BehaviorDescriptor();
       case 20:
         return new ConstraintFunction_PropertyGetter_BehaviorDescriptor();
@@ -22,13 +22,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConstraintsFunctionParameter_node_BehaviorDescriptor();
       case 24:
         return new ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor();
-      case 32:
+      case 33:
         return new NodeReferentConstraint_BehaviorDescriptor();
       case 1:
         return new ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor();
       case 21:
         return new ConstraintFunction_PropertySetter_BehaviorDescriptor();
-      case 30:
+      case 31:
         return new NodeDefaultSearchScope_BehaviorDescriptor();
       case 27:
         return new ConstraintFunction_ReferentSetHandler_BehaviorDescriptor();
@@ -80,6 +80,8 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor();
       case 4:
         return new ConstraintFunctionParameter_containingLink_BehaviorDescriptor();
+      case 30:
+        return new NestedNodeScopeFactory_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

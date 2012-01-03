@@ -22,6 +22,7 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
+  <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1178176661263">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ConstraintsFunctionParameter_node" />
@@ -59,6 +60,10 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5003464986508736863">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ConstraintFunctionParameter_linkTarget" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
+    </node>
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8401916545537388999">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
+      <property name="name" nameId="tpck.1169194664001" value="check_ReferentSearchScope" />
     </node>
   </roots>
   <root id="1178176661263">
@@ -1313,6 +1318,46 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5003464986508736865">
       <property name="name" nameId="tpck.1169194664001" value="node" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp1t.1205764368223" resolveInfo="ConstraintFunctionParameter_linkTarget" />
+    </node>
+  </root>
+  <root id="8401916545537388999">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="8401916545537389000">
+      <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="8401916545537389023">
+        <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="8401916545537389024">
+          <property name="name" nameId="tpck.1169194664001" value="param" />
+        </node>
+        <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="8401916545537389026">
+          <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="8401916545537389027">
+            <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8401916545537389030">
+              <property name="value" nameId="tpee.1070475926801" value="operationContext is deprecated" />
+            </node>
+            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="8401916545537389031">
+              <link role="variable" roleId="tp2q.1153944258490" targetNodeId="8401916545537389024" resolveInfo="param" />
+            </node>
+          </node>
+        </node>
+        <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8401916545537389014">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8401916545537389009">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="8401916545537389008">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8401916545537389002" resolveInfo="func" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8401916545537389013">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1137022507850" />
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetDescendantsOperation" typeId="tp25.1171305280644" id="8401916545537389018">
+            <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="8401916545537389019">
+              <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8401916545537389022">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpcw.1161622753914" resolveInfo="ConceptFunctionParameter_operationContext" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8401916545537389002">
+      <property name="name" nameId="tpck.1169194664001" value="func" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp1t.1148934493876" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
     </node>
   </root>
 </model>

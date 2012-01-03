@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Constraints_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.Constraints_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.StructureAspectDescriptor" />
   <root nodeId="1147467115080">
     <nodeInfo nodeId="1147467115080" fileName="NodePropertyConstraint.java" startLine="12" startPosition="57" endLine="13" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1147467115080" fileName="NodePropertyConstraint.java" startLine="13" startPosition="105" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="APPLICABLE_PROPERTY" />
@@ -116,27 +116,86 @@
     <unitInfo nodeId="1147468365020" fileName="ConstraintsFunctionParameter_node.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" />
   </root>
   <root nodeId="1148684180339">
-    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="10" startPosition="121" endLine="11" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="13" startPosition="69" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="17" startPosition="101" endLine="18" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="21" startPosition="87" endLine="22" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstraintFunction_ReferentSearchScope_Factory#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/constraints/structure/ConstraintFunction_ReferentSearchScope_Factory;" />
-    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/constraints/structure/ConstraintFunction_ReferentSearchScope_Factory;" />
-    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="13" startPosition="69" endLine="14" endPosition="16" />
-    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="17" startPosition="101" endLine="18" endPosition="246" />
-    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="21" startPosition="87" endLine="22" endPosition="81" />
-    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="13" startPosition="149" endLine="14" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="14" startPosition="129" endLine="15" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="15" startPosition="68" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="16" startPosition="45" endLine="17" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="17" startPosition="64" endLine="18" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="20" startPosition="69" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="24" startPosition="39" endLine="25" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="28" startPosition="49" endLine="29" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="32" startPosition="28" endLine="33" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="36" startPosition="38" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="40" startPosition="37" endLine="41" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="44" startPosition="47" endLine="45" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="48" startPosition="41" endLine="49" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="52" startPosition="49" endLine="53" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="56" startPosition="48" endLine="57" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="60" startPosition="50" endLine="61" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="64" startPosition="69" endLine="65" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="68" startPosition="101" endLine="69" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="72" startPosition="87" endLine="73" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstraintFunction_ReferentSearchScope_Factory#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/constraints/structure/ConstraintFunction_ReferentSearchScope_Factory;" />
+    <nodeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/constraints/structure/ConstraintFunction_ReferentSearchScope_Factory;" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="20" startPosition="69" endLine="21" endPosition="16" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="24" startPosition="39" endLine="25" endPosition="94" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="28" startPosition="49" endLine="29" endPosition="94" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="32" startPosition="28" endLine="33" endPosition="82" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="36" startPosition="38" endLine="37" endPosition="82" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="40" startPosition="37" endLine="41" endPosition="92" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="44" startPosition="47" endLine="45" endPosition="92" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="48" startPosition="41" endLine="49" endPosition="95" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="52" startPosition="49" endLine="53" endPosition="107" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="56" startPosition="48" endLine="57" endPosition="110" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="60" startPosition="50" endLine="61" endPosition="89" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="64" startPosition="69" endLine="65" endPosition="98" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="68" startPosition="101" endLine="69" endPosition="246" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="72" startPosition="87" endLine="73" endPosition="81" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="19" startPosition="0" endLine="22" endPosition="3">
       <varInfo nodeId="1148684180339" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1148684180339" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1148684180339" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1148684180339" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="1148684180339" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1148684180339" varName="node" />
+      <varInfo nodeId="1148684180339" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="1148684180339" varName="init" />
       <varInfo nodeId="1148684180339" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="1148684180339" varName="sm" />
     </scopeInfo>
-    <unitInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" />
+    <unitInfo nodeId="1148684180339" fileName="ConstraintFunction_ReferentSearchScope_Factory.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" />
   </root>
   <root nodeId="1148687176410">
     <nodeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="12" startPosition="57" endLine="13" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -149,8 +208,8 @@
     <nodeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="21" startPosition="45" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="25" startPosition="46" endLine="26" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="29" startPosition="55" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="33" startPosition="81" endLine="34" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="37" startPosition="90" endLine="38" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="33" startPosition="51" endLine="34" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="37" startPosition="60" endLine="38" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="41" startPosition="74" endLine="42" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="45" startPosition="83" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="49" startPosition="80" endLine="50" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -179,8 +238,8 @@
     <scopeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="21" startPosition="45" endLine="22" endPosition="16" />
     <scopeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="25" startPosition="46" endLine="26" endPosition="109" />
     <scopeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="29" startPosition="55" endLine="30" endPosition="68" />
-    <scopeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="33" startPosition="81" endLine="34" endPosition="173" />
-    <scopeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="37" startPosition="90" endLine="38" endPosition="70" />
+    <scopeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="33" startPosition="51" endLine="34" endPosition="113" />
+    <scopeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="37" startPosition="60" endLine="38" endPosition="70" />
     <scopeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="41" startPosition="74" endLine="42" endPosition="166" />
     <scopeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="45" startPosition="83" endLine="46" endPosition="59" />
     <scopeInfo nodeId="1148687176410" fileName="NodeReferentConstraint.java" startLine="49" startPosition="80" endLine="50" endPosition="175" />
@@ -328,8 +387,8 @@
     <nodeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="18" startPosition="45" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="22" startPosition="34" endLine="23" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="26" startPosition="44" endLine="27" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="30" startPosition="81" endLine="31" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="34" startPosition="90" endLine="35" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="30" startPosition="51" endLine="31" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="34" startPosition="60" endLine="35" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="38" startPosition="74" endLine="39" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="42" startPosition="83" endLine="43" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="46" startPosition="80" endLine="47" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -350,8 +409,8 @@
     <scopeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="18" startPosition="45" endLine="19" endPosition="16" />
     <scopeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="22" startPosition="34" endLine="23" endPosition="64" />
     <scopeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="26" startPosition="44" endLine="27" endPosition="64" />
-    <scopeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="30" startPosition="81" endLine="31" endPosition="173" />
-    <scopeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="34" startPosition="90" endLine="35" endPosition="70" />
+    <scopeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="30" startPosition="51" endLine="31" endPosition="113" />
+    <scopeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="34" startPosition="60" endLine="35" endPosition="70" />
     <scopeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="38" startPosition="74" endLine="39" endPosition="166" />
     <scopeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="42" startPosition="83" endLine="43" endPosition="59" />
     <scopeInfo nodeId="1159285995602" fileName="NodeDefaultSearchScope.java" startLine="46" startPosition="80" endLine="47" endPosition="175" />
@@ -1147,6 +1206,103 @@
       <varInfo nodeId="7855321458717464197" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="7855321458717464197" fileName="ConstraintFunction_CanBeAnAncestor.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor" />
+  </root>
+  <root nodeId="8401916545537438634">
+    <nodeInfo nodeId="8401916545537438634" fileName="NodeScopeFactory.java" startLine="7" startPosition="56" endLine="8" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="8401916545537438634" fileName="NodeScopeFactory.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.NodeScopeFactory" />
+  </root>
+  <root nodeId="8401916545537438642">
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="15" startPosition="85" endLine="16" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="16" startPosition="105" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="18" startPosition="45" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="19" startPosition="64" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="KIND" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="20" startPosition="43" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="23" startPosition="45" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="27" startPosition="39" endLine="28" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="31" startPosition="49" endLine="32" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="35" startPosition="28" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="39" startPosition="38" endLine="40" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="43" startPosition="37" endLine="44" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="47" startPosition="47" endLine="48" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="51" startPosition="47" endLine="52" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="55" startPosition="56" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="59" startPosition="41" endLine="60" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="63" startPosition="49" endLine="64" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="67" startPosition="48" endLine="68" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="71" startPosition="50" endLine="72" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="75" startPosition="69" endLine="76" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="79" startPosition="77" endLine="80" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="83" startPosition="63" endLine="84" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NestedNodeScopeFactory#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKind#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setKind#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/constraints/structure/NestedNodeScopeFactory;" />
+    <nodeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/constraints/structure/NestedNodeScopeFactory;" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="23" startPosition="45" endLine="24" endPosition="16" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="27" startPosition="39" endLine="28" endPosition="70" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="31" startPosition="49" endLine="32" endPosition="70" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="35" startPosition="28" endLine="36" endPosition="58" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="39" startPosition="38" endLine="40" endPosition="58" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="43" startPosition="37" endLine="44" endPosition="68" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="47" startPosition="47" endLine="48" endPosition="68" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="51" startPosition="47" endLine="52" endPosition="120" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="55" startPosition="56" endLine="56" endPosition="57" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="59" startPosition="41" endLine="60" endPosition="71" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="63" startPosition="49" endLine="64" endPosition="83" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="67" startPosition="48" endLine="68" endPosition="86" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="71" startPosition="50" endLine="72" endPosition="65" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="75" startPosition="69" endLine="76" endPosition="74" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="79" startPosition="77" endLine="80" endPosition="198" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="83" startPosition="63" endLine="84" endPosition="57" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="8401916545537438642" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="8401916545537438642" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="8401916545537438642" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="8401916545537438642" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="8401916545537438642" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="8401916545537438642" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="8401916545537438642" varName="node" />
+      <varInfo nodeId="8401916545537438642" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="8401916545537438642" varName="init" />
+      <varInfo nodeId="8401916545537438642" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="8401916545537438642" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="8401916545537438642" fileName="NestedNodeScopeFactory.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.NestedNodeScopeFactory" />
   </root>
 </debugInfo>
 

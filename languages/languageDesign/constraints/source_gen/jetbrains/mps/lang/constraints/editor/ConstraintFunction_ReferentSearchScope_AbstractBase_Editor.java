@@ -196,7 +196,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create search scope (jetbrains.mps.smodel.search.ISearchScope)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create scope (jetbrains.mps.scope.Scope)");
     editorCell.setCellId("Constant_5v10so_c0");
     {
       Style style = editorCell.getStyle();
