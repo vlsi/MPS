@@ -16,9 +16,9 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -134,8 +134,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252434639(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalCopiedInputNode((ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isValidatorGenerated_522233044824082130(((SNode) _context.getVariable("factory"))) ?
-      ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_getValidator_2990203945683058946(((SNode) _context.getVariable("factory"))) :
+    return _context.getOriginalCopiedInputNode((ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isValidatorGenerated_522233044824082130(SNodeOperations.cast(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory")) ?
+      ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_getValidator_2990203945683058946(SNodeOperations.cast(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory")) :
       ((SNode) _context.getVariable("factory"))
     )).getId();
   }
@@ -292,15 +292,15 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2185712519096063837(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (((SNode) _context.getVariable("factory")) != null);
+    return SNodeOperations.isInstanceOf(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory");
   }
 
   public static boolean ifMacro_Condition_5979740912231476080(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (((SNode) _context.getVariable("factory")) != null) && ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isValidatorGenerated_522233044824082130(((SNode) _context.getVariable("factory")));
+    return SNodeOperations.isInstanceOf(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory") && ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isValidatorGenerated_522233044824082130(SNodeOperations.cast(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory"));
   }
 
   public static boolean ifMacro_Condition_2185712519096101731(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (((SNode) _context.getVariable("factory")) != null);
+    return SNodeOperations.isInstanceOf(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory");
   }
 
   public static boolean ifMacro_Condition_7093837644838477078(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -367,11 +367,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5979740912231476010(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(((SNode) _context.getVariable("factory")), "body", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory"), "body", true);
   }
 
   public static SNode sourceNodeQuery_5979740912231476063(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_getValidator_2990203945683058946(((SNode) _context.getVariable("factory"))), "body", true);
+    return SLinkOperations.getTarget(ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_getValidator_2990203945683058946(SNodeOperations.cast(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory")), "body", true);
   }
 
   public static Object templateArgumentQuery_7423954551252433684(final IOperationContext operationContext, final TemplateQueryContext _context) {
