@@ -56,5 +56,9 @@
         <path path="${dest}/MPS ${version}/languages/generate.ant.task.jar"/>
       </classpath>
     </junit>
+
+    <ant antfile="${mps_home}/languages/util/gwtsupport/solutions/gwtsupport.buildtest/build.xml">
+      <property name="mps.home" value="${dest}/MPS ${version}"/>
+    </ant>
   </target>
 </project>
