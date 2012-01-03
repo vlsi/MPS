@@ -29,7 +29,7 @@
       <solutionPath path="${project}/solutions/jetbrains.mps.baseLanguage.math.sandbox/jetbrains.mps.baseLanguage.math.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
+      <languagePath path="${mps_home}/languages/baseLanguage/baseLanguage/baseLanguage.mpl" />
       <languagePath path="${project}/math.mpl" />
     </projectLanguages>
     <projectDevkits />

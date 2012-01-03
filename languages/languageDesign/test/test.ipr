@@ -45,7 +45,7 @@
       <solutionPath path="${project}/solutions/jetbrains.mps.transformationTest.test/jetbrains.mps.transformationTest.test.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" />
+      <languagePath path="${mps_home}/languages/baseLanguage/unitTest/unitTest.mpl" />
       <languagePath path="${project}/test.mpl" />
     </projectLanguages>
     <projectDevkits />

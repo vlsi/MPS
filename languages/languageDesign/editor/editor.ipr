@@ -144,7 +144,7 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" />
+      <modulePath path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" />
       <modulePath path="${project}/languages/table/runtime/jetbrains.mps.table.runtime.msd" />
       <modulePath path="${project}/tests/table/jetbrains.mps.lang.editor.table.tests.msd" />
       <modulePath path="${mps_home}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="" />

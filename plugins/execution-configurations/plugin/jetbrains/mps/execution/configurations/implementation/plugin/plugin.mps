@@ -1197,7 +1197,7 @@
   </root>
   <root id="6062668769034010588">
     <node role="icon" roleId="uhxm.7966814097310618131" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6062668769034010589">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/baseLanguage/unitTest/icons/junit.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/languages/baseLanguage/unitTest/icons/junit.png" />
     </node>
   </root>
   <root id="6062668769034010590">

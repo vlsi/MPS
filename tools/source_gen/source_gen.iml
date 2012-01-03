@@ -3,65 +3,65 @@
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguageInternal/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguageInternal/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/blTypes/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/blTypes/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/checkDot/languages/checkedDots/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/checkDot/languages/checkedDots/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/classifiers/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/classifiers/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/closures/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/closures/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/collections/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/collections/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/constructors/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/constructors/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/javadoc/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/javadoc/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/jdk7/languages/jdk7/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/jdk7/languages/jdk7/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/jdk7/solutions/jetbrains.mps.baseLanguage.jdk7.sandbox/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/jdk7/solutions/jetbrains.mps.baseLanguage.jdk7.sandbox/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/logging/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/logging/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/languages/tuples/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/languages/tuples/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.sandbox/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.sandbox/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.shared/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.shared/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.test/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.test/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/solutions/sandbox/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/solutions/sandbox/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/unitTest/source_gen" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../../core/dependencies/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/dependencies/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguageInternal/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguageInternal/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/blTypes/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/blTypes/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/checkDot/languages/checkedDots/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/checkDot/languages/checkedDots/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/classifiers/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/classifiers/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/closures/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/closures/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/constructors/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/constructors/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/javadoc/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/javadoc/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/jdk7/languages/jdk7/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/jdk7/languages/jdk7/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/jdk7/solutions/jetbrains.mps.baseLanguage.jdk7.sandbox/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/jdk7/solutions/jetbrains.mps.baseLanguage.jdk7.sandbox/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/logging/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/logging/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/tuples/languages/tuples/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/tuples/languages/tuples/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.sandbox/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.sandbox/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.shared/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.shared/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.test/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.test/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/unitTest/solutions/sandbox/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/unitTest/solutions/sandbox/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/unitTest/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/unitTest/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../languages/core/core/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/core/core/source_gen" isTestSource="false" />
