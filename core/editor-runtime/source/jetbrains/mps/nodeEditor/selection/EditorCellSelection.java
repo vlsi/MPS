@@ -36,10 +36,13 @@ import java.util.Map;
  */
 public class EditorCellSelection implements SingularSelection {
   private static final String CARET_X_PROPERTY_NAME = "caretX";
+  private static final String CARET_X_RELATIVE_PROPERTY_NAME = "caretXRelative";
   private static final String SIDE_SELECT_DIRECTION_PROPERTY_NAME = "sideSelectDirection";
 
   private EditorCell myEditorCell;
   private int myCaretX;
+  private int myCaretXRelative;
+  private boolean myActivateUsingRelativeCaretX = true;
   private boolean myActive = false;
   private SideSelectDirection mySideSelectDirection = SideSelectDirection.NONE;
 
@@ -52,13 +55,23 @@ public class EditorCellSelection implements SingularSelection {
     if (myEditorCell == null) {
       throw new SelectionRestoreException();
     }
+    // Using absolute coordinates to restore caret X in case different cell was found.
+    myActivateUsingRelativeCaretX = cellInfo.equals(myEditorCell.getCellInfo());
     myCaretX = SelectionInfo.Util.getIntProperty(properties, CARET_X_PROPERTY_NAME);
+    try {
+      myCaretXRelative = SelectionInfo.Util.getIntProperty(properties, CARET_X_RELATIVE_PROPERTY_NAME);
+    } catch (SelectionStoreException e) {
+      // for the compatibility
+      myCaretXRelative = 0;
+      myActivateUsingRelativeCaretX = false;
+    }
     mySideSelectDirection = (SideSelectDirection) SelectionInfo.Util.getEnumProperty(properties, SIDE_SELECT_DIRECTION_PROPERTY_NAME, SideSelectDirection.class, mySideSelectDirection);
   }
 
   public EditorCellSelection(@NotNull EditorCell editorCell) {
     myEditorCell = editorCell;
-    myCaretX = getRelativeCaretX(editorCell);
+    myCaretX = editorCell.getCaretX();
+    myCaretXRelative = getRelativeCaretX(editorCell);
   }
 
   @NotNull
@@ -78,7 +91,11 @@ public class EditorCellSelection implements SingularSelection {
   }
 
   public int getCaretX() {
-    return isActive() ? getRelativeCaretX(myEditorCell) : myCaretX;
+    return isActive() ? myEditorCell.getCaretX() : myCaretX;
+  }
+
+  public int getCaretXRelative() {
+    return isActive() ? getRelativeCaretX(myEditorCell) : myCaretXRelative;
   }
 
   @Override
@@ -87,7 +104,12 @@ public class EditorCellSelection implements SingularSelection {
       return;
     }
     myEditorCell.setSelected(true);
-    setRelativeCaretX(myEditorCell, getCaretX());
+    if (myActivateUsingRelativeCaretX) {
+      setRelativeCaretX(myEditorCell, getCaretXRelative());
+    } else {
+      myEditorCell.setCaretX(getCaretX());
+      myActivateUsingRelativeCaretX = false;
+    }
     myActive = true;
   }
 
@@ -95,7 +117,8 @@ public class EditorCellSelection implements SingularSelection {
   public void deactivate() {
     myActive = false;
     myEditorCell.setSelected(false);
-    myCaretX = getRelativeCaretX(myEditorCell);
+    myCaretX = myEditorCell.getCaretX();
+    myCaretXRelative = getRelativeCaretX(myEditorCell);
   }
 
   public boolean isActive() {
@@ -107,6 +130,7 @@ public class EditorCellSelection implements SingularSelection {
     SelectionInfo selectionInfo = new SelectionInfo(this.getClass().getName());
     selectionInfo.setCellInfo(myEditorCell.getCellInfo());
     selectionInfo.getPropertiesMap().put(CARET_X_PROPERTY_NAME, Integer.toString(getCaretX()));
+    selectionInfo.getPropertiesMap().put(CARET_X_RELATIVE_PROPERTY_NAME, Integer.toString(getCaretXRelative()));
     selectionInfo.getPropertiesMap().put(SIDE_SELECT_DIRECTION_PROPERTY_NAME, mySideSelectDirection.name());
     return selectionInfo;
   }
