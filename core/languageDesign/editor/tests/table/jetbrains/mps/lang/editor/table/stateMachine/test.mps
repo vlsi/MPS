@@ -194,7 +194,7 @@
           <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285888" resolveInfo="s_0" />
         </node>
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="6170050146384285902">
-          <link role="event" roleId="2qyu.763922957008729159" targetNodeId="6170050146384285887" resolveInfo="e_2" />
+          <link role="event" roleId="2qyu.763922957008729159" targetNodeId="6170050146384285887" resolveInfo="anotherColumn" />
         </node>
       </node>
     </node>
@@ -313,7 +313,7 @@
           </node>
         </node>
         <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="6170050146384285912">
-          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285908" resolveInfo="s_1" />
+          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285908" resolveInfo="anotherRow" />
         </node>
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="6170050146384285913">
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="6170050146384285904" resolveInfo="e_0" />
@@ -322,7 +322,7 @@
       <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="6170050146384285914">
         <property name="condition" nameId="2qyu.763922957008729153" value="true" />
         <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="6170050146384285915">
-          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285908" resolveInfo="s_1" />
+          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285908" resolveInfo="anotherRow" />
         </node>
         <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="6170050146384285916">
           <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285909" resolveInfo="s_2" />
@@ -1034,11 +1034,11 @@
       <property name="name" nameId="tpck.1169194664001" value="removeEvent" />
       <node role="events" roleId="2qyu.763922957008726947" type="2qyu.Event" typeId="2qyu.763922957008729147" id="5877647854348551157">
         <property name="name" nameId="tpck.1169194664001" value="e_1" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551176">
-          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8468920981822215023">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
-          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="3" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
           <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
         </node>
       </node>
