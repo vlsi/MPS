@@ -888,6 +888,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private class IconRendererLayoutConstraintComparator implements Comparator<IconRendererLayoutConstraint> {
     @Override
     public int compare(IconRendererLayoutConstraint constraint1, IconRendererLayoutConstraint constraint2) {
+      if (constraint1 == constraint2) {
+        return 0;
+      }
       EditorMessageIconRenderer renderer1 = constraint1.getIconRenderer();
       EditorMessageIconRenderer renderer2 = constraint2.getIconRenderer();
       if (renderer1.getType() != renderer2.getType()) {
