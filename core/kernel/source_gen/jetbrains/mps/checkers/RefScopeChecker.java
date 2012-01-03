@@ -10,10 +10,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
@@ -44,7 +45,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       }
       String linkRole = SModelUtil.getGenuineLinkRole(ld);
       final SNode linkTarget = SLinkOperations.getTarget(ld, "target", false);
-      final INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsUtil.getSearchScopeProvider(concept, linkRole);
+      final ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(concept, linkRole);
       SearchScopeStatus searchScopeStatus = component.runCheckingAction(new _FunctionTypes._return_P0_E0<SearchScopeStatus>() {
         public SearchScopeStatus invoke() {
           return ModelConstraintsUtil.createSearchScope(scopeProvider, SNodeOperations.getModel(node), SNodeOperations.getParent(node), node, linkTarget, SNodeOperations.getContainingLinkDeclaration(node), operationContext);

@@ -17,6 +17,8 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.scope.ModelPlusImportedScope;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.ERROR;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
@@ -93,17 +95,17 @@ public class ModelConstraintsUtil {
     SNode containingLinkDeclaration,
     IOperationContext context) {
 
-    INodeReferentSearchScopeProvider scopeProvider = getSearchScopeProvider(referenceNodeConcept, linkRole);
+    ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
     ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);
-    DefaultReferencPresentation referencePresentation = null;
+    DefaultReferencePresentation referencePresentation = null;
     if (scopeProvider != null) {
-      referencePresentation = scopeProvider.hasPresentation() ? new DefaultReferencPresentation(context, referentConstraintContext, scopeProvider) : null;
-      ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, referentConstraintContext);
+      referencePresentation = scopeProvider.hasPresentation() ? new DefaultReferencePresentation(context, referentConstraintContext, scopeProvider) : null;
+      ISearchScope searchScope = scopeProvider.createSearchScope(context, referentConstraintContext);
       if (!(searchScope instanceof UndefinedSearchScope)) {
         return newOK(searchScope,
           referencePresentation,
           false,
-          scopeProvider.getSearchScopeValidatorNodePointer());
+          scopeProvider.getSearchScopeValidatorNode());
       }
     }
     // global search scope
@@ -115,8 +117,12 @@ public class ModelConstraintsUtil {
     return SModelSearchUtil.createModelAndImportedModelsScope(model, false, context.getScope());
   }
 
+  public static Scope createDefaultScope(SModel model, IOperationContext context, String conceptFqName) {
+    return new ModelPlusImportedScope(model, false, context.getScope(), conceptFqName);
+  }
+
   //used in checkers
-  public static SearchScopeStatus createSearchScope(final INodeReferentSearchScopeProvider scopeProvider,
+  public static SearchScopeStatus createSearchScope(final ReferenceScopeProvider scopeProvider,
                                                     SModel model,
                                                     SNode enclosingNode,
                                                     SNode referenceNode,
@@ -129,56 +135,17 @@ public class ModelConstraintsUtil {
       ISearchScope searchScope = TypeContextManager.getInstance().runResolveAction(new Computable<ISearchScope>() {
         @Override
         public ISearchScope compute() {
-          return scopeProvider.createNodeReferentSearchScope(context, referentConstraintContext);
+          return scopeProvider.createSearchScope(context, referentConstraintContext);
         }
       });
       if (searchScope instanceof UndefinedSearchScope) {
         return new OK(createDefaultScope(model, context), null, true, null);
       } else {
-        return new OK(searchScope, null, false, scopeProvider.getSearchScopeValidatorNodePointer());
+        return new OK(searchScope, null, false, scopeProvider.getSearchScopeValidatorNode());
       }
     } catch (Throwable t) {
       return new ERROR(t.getMessage());
     }
-  }
-
-  public static INodeReferentSearchScopeProvider getSearchScopeProvider(SNode referenceNodeConcept, String linkRole) {
-    // todo: rewrite it
-    final ReferenceScopeProvider provider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
-
-    if (provider == null) {
-      return null;
-    }
-
-    return new INodeReferentSearchScopeProvider() {
-      @Override
-      public ISearchScope createNodeReferentSearchScope(IOperationContext operationContext, ReferentConstraintContext _context) {
-        return provider.createSearchScope(operationContext, _context);
-      }
-
-      @Override
-      public boolean hasPresentation() {
-        return provider.hasPresentation();
-      }
-
-      @Override
-      public String getPresentation(IOperationContext operationContext, PresentationReferentConstraintContext _context) {
-        return provider.getPresentation(operationContext, _context);
-      }
-
-      @Override
-      public SNodePointer getSearchScopeValidatorNodePointer() {
-        return provider.getSearchScopeValidatorNode();
-      }
-
-      @Override
-      public void registerSelf(ModelConstraintsManager manager) {
-      }
-
-      @Override
-      public void unRegisterSelf(ModelConstraintsManager manager) {
-      }
-    };
   }
 
   public static IReferencePresentation getPresentation(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, SNode referenceLinkDeclaration, SNode containingLinkDeclaration, IOperationContext context) {
@@ -194,9 +161,9 @@ public class ModelConstraintsUtil {
       model = null;
     }
 
-    INodeReferentSearchScopeProvider scopeProvider = getSearchScopeProvider(referenceNodeConcept, linkRole);
+    ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
     ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);
-    return new DefaultReferencPresentation(context, referentConstraintContext, scopeProvider);
+    return new DefaultReferencePresentation(context, referentConstraintContext, scopeProvider);
   }
 
 
@@ -207,12 +174,12 @@ public class ModelConstraintsUtil {
     return new OK(searchScope, presentation, isDefault, searchScopeFactory);
   }
 
-  private static class DefaultReferencPresentation implements IReferencePresentation {
+  private static class DefaultReferencePresentation implements IReferencePresentation {
     private IOperationContext myOperationContext;
     private ReferentConstraintContext myContext;
-    private INodeReferentSearchScopeProvider myProvider;
+    private ReferenceScopeProvider myProvider;
 
-    private DefaultReferencPresentation(IOperationContext operationContext, ReferentConstraintContext context, INodeReferentSearchScopeProvider provider) {
+    private DefaultReferencePresentation(IOperationContext operationContext, ReferentConstraintContext context, ReferenceScopeProvider provider) {
       myOperationContext = operationContext;
       myContext = context;
       myProvider = provider;
