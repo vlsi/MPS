@@ -63,7 +63,7 @@
     <nodeInfo nodeId="4899606958030665369" fileName="ScriptsUtil.java" startLine="81" startPosition="49" endLine="82" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4899606958030665379" fileName="ScriptsUtil.java" startLine="84" startPosition="9" endLine="85" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4899606958030665392" fileName="ScriptsUtil.java" startLine="86" startPosition="5" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4899606958030665393" fileName="ScriptsUtil.java" startLine="87" startPosition="0" endLine="88" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6770603745029735507" fileName="ScriptsUtil.java" startLine="87" startPosition="0" endLine="88" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4899606958030665407" fileName="ScriptsUtil.java" startLine="88" startPosition="14" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4899606958030665411" fileName="ScriptsUtil.java" startLine="90" startPosition="62" endLine="91" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4899606958030665417" fileName="ScriptsUtil.java" startLine="91" startPosition="73" endLine="92" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -77,10 +77,10 @@
     <nodeInfo nodeId="4899606958030665464" fileName="ScriptsUtil.java" startLine="99" startPosition="38" endLine="100" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4899606958030665469" fileName="ScriptsUtil.java" startLine="100" startPosition="48" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4899606958030665470" fileName="ScriptsUtil.java" startLine="101" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4899606958030665471" fileName="ScriptsUtil.java" startLine="102" startPosition="0" endLine="103" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4899606958030665482" fileName="ScriptsUtil.java" startLine="103" startPosition="16" endLine="104" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4899606958030665490" fileName="ScriptsUtil.java" startLine="104" startPosition="16" endLine="105" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4899606958030665526" fileName="ScriptsUtil.java" startLine="105" startPosition="16" endLine="106" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6770603745029735509" fileName="ScriptsUtil.java" startLine="102" startPosition="0" endLine="103" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6770603745029735511" fileName="ScriptsUtil.java" startLine="103" startPosition="16" endLine="104" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6770603745029735513" fileName="ScriptsUtil.java" startLine="104" startPosition="16" endLine="105" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6770603745029735515" fileName="ScriptsUtil.java" startLine="105" startPosition="16" endLine="106" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4899606958030665543" fileName="ScriptsUtil.java" startLine="106" startPosition="16" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4899606958030665544" fileName="ScriptsUtil.java" startLine="107" startPosition="0" endLine="108" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4899606958030665552" fileName="ScriptsUtil.java" startLine="109" startPosition="31" endLine="110" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

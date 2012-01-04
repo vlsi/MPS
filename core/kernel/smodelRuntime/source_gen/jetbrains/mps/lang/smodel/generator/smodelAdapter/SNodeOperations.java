@@ -17,9 +17,10 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.smodel.constraints.SearchScopeStatus;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.scope.ErrorScope;
+import jetbrains.mps.scope.ScopeAdapter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SReference;
 
@@ -613,21 +614,22 @@ public class SNodeOperations {
     return new SNodePointer(modelUID, nodeID).getNode();
   }
 
+  /**
+   * use ModelConstraintsUtil.getScope()
+   */
+  @Deprecated
   public static ISearchScope getReferentSearchScope(SNode referenceNode, String referenceRole, IOperationContext context) {
     if (referenceNode == null) {
       return null;
     }
-    SNode referenceNodeConcept = referenceNode.getConceptDeclarationNode();
-    SNode referenceLinkDecl = SNodeOperations.cast(SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, referenceRole), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-    if (referenceLinkDecl == null) {
+    Scope scope = ModelConstraintsUtil.getScope(referenceNode, referenceRole, 0, null, context);
+    if (scope instanceof ErrorScope) {
       return null;
     }
-    String genuineRole = SModelUtil.getGenuineLinkRole(referenceLinkDecl);
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, genuineRole, referenceNode.getRoleLink(), context);
-    if (status.isOk()) {
-      return status.getSearchScope();
+    if (scope instanceof ISearchScope.Adapter) {
+      return ((ISearchScope.Adapter) scope).getSearchScope();
     }
-    return null;
+    return new ScopeAdapter(scope);
   }
 
   public static SNode cast(SNode node, String castTo) {

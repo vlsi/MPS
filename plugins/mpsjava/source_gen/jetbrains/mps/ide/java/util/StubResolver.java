@@ -35,10 +35,12 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.internal.collections.runtime.IListSequence;
 
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
@@ -144,17 +146,17 @@ public class StubResolver {
         if (modelRef == null || resolveInfo == null) {
           continue;
         }
-        final ISearchScope scope = SNodeOperations.getReferentSearchScope(node, SLinkOperations.getRole(ref), context);
-        if (scope == null) {
+        final Scope refScope = ModelConstraintsUtil.getScope(ref, context);
+        if (refScope instanceof ErrorScope) {
           continue;
         }
-        List<SNode> resolved = TypeContextManager.getInstance().runResolveAction(new Computable<List<SNode>>() {
-          public List<SNode> compute() {
-            return scope.getNodes(new Condition<SNode>() {
-              public boolean met(SNode n) {
+        List<SNode> resolved = TypeContextManager.getInstance().runResolveAction(new Computable<IListSequence<SNode>>() {
+          public IListSequence<SNode> compute() {
+            return ListSequence.fromList(refScope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode n) {
                 return modelRef.equals(SNodeOperations.getModel(n).getSModelReference()) && resolveInfo.equals(n.getResolveInfo());
               }
-            });
+            }).toListSequence();
           }
         });
         if (ListSequence.fromList(resolved).count() > 1) {

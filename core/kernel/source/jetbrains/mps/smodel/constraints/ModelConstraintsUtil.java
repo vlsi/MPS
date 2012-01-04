@@ -43,6 +43,9 @@ import org.jetbrains.annotations.Nullable;
 public class ModelConstraintsUtil {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsUtil.class);
 
+  /*
+   *  returns Scope for existing reference
+   */
   @NotNull
   public static Scope getScope(@NotNull SReference reference, IOperationContext context) {
     ModelAccess.assertLegalRead();
@@ -52,7 +55,7 @@ public class ModelConstraintsUtil {
     SNode concept = node.getConceptDeclarationNode();
     SearchScopeStatus status = getSearchScope(node.getParent(), node, concept, role, null, node.getRoleLink(), context);
     if (status.isOk()) {
-      if(status.isDefault()) {
+      if (status.isDefault()) {
         SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(concept, reference.getRole());
         SNode linkTarget = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
         return createDefaultScope(reference.getSourceNode().getModel(), context, NameUtil.nodeFQName(linkTarget));
@@ -62,16 +65,36 @@ public class ModelConstraintsUtil {
     return new ErrorScope(status.getMessage());
   }
 
+  /*
+   *  getScope(node, role, index, null)            gets scope for reference being created at the location
+   *                                               role (cannot be null) should be "reference" link
+   *
+   *  getScope(node, role, index, smartConcept)    gets scope for smartReference being created in "aggregation" role
+   */
   @NotNull
-  public static Scope getScope(@NotNull SNode enclosingNode, @Nullable String role, int index, SNode smartConcept, IOperationContext context) {
+  public static Scope getScope(@NotNull SNode enclosingNode, @Nullable String role, int index, @Nullable SNode smartConcept, IOperationContext context) {
     ModelAccess.assertLegalRead();
 
-    SNode smartRef = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
-    SNode linkDeclaration = role != null ? enclosingNode.getLinkDeclaration(role) : null;
-    SearchScopeStatus status = getSearchScope(enclosingNode, null, smartConcept, SModelUtil.getGenuineLinkRole(smartRef), SModelUtil.getLinkDeclarationTarget(smartRef), linkDeclaration, context);
+    SearchScopeStatus status;
+    SNode scopeReference;
+    if (smartConcept == null) {
+      if (role == null) throw new NullPointerException("role and smartConcept cannot be null at the same time");
+      scopeReference = enclosingNode.getLinkDeclaration(role);
+      if (scopeReference == null) {
+        return new ErrorScope("can't find link for role '" + role + "' in '" + enclosingNode.getConceptFqName() + "'");
+      }
+      status = getSearchScope(enclosingNode.getParent(), enclosingNode, enclosingNode.getConceptDeclarationNode(), SModelUtil.getGenuineLinkRole(scopeReference), SModelUtil.getLinkDeclarationTarget(scopeReference), enclosingNode.getRoleLink(), context);
+    } else {
+      scopeReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
+      SNode linkDeclaration = role != null ? enclosingNode.getLinkDeclaration(role) : null;
+      if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
+        throw new IllegalArgumentException("for reference role smartConcept should be null");
+      }
+      status = getSearchScope(enclosingNode, null, smartConcept, SModelUtil.getGenuineLinkRole(scopeReference), SModelUtil.getLinkDeclarationTarget(scopeReference), linkDeclaration, context);
+    }
     if (status.isOk()) {
-      if(status.isDefault()) {
-        SNode smartTarget = SModelUtil.getLinkDeclarationTarget(smartRef);
+      if (status.isDefault()) {
+        SNode smartTarget = SModelUtil.getLinkDeclarationTarget(scopeReference);
         return createDefaultScope(enclosingNode.getModel(), context, NameUtil.nodeFQName(smartTarget));
       }
       return new Adapter(status.getSearchScope());
