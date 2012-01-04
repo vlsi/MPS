@@ -10,11 +10,12 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class VariableDeclaration extends BaseVariableDeclaration implements HasAnnotation, TypeDerivable, TypeAnnotable {
+public class VariableDeclaration extends BaseVariableDeclaration implements HasAnnotation, TypeDerivable, TypeAnnotable, IVariableDeclaration {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String IS_FINAL = "isFinal";
   public static final String INITIALIZER = "initializer";
   public static final String ANNOTATION = "annotation";
@@ -46,6 +47,14 @@ public class VariableDeclaration extends BaseVariableDeclaration implements HasA
 
   public void setVirtualPackage(String value) {
     this.setProperty(VariableDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(VariableDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(VariableDeclaration.NAME, value);
   }
 
   public boolean getIsFinal() {
