@@ -48,6 +48,10 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5452980714151229091">
       <property name="name" nameId="tpck.1169194664001" value="DelegatingScope" />
     </node>
+    <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7991563320860101130">
+      <property name="name" nameId="tpck.1169194664001" value="DefaultScope" />
+      <property name="isFinal" nameId="tpee.1221565133444" value="true" />
+    </node>
   </roots>
   <root id="3734116213129862372">
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="3734116213129862494">
@@ -3199,6 +3203,47 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5452980714151232879">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3734116213129862372" resolveInfo="Scope" />
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="7991563320860101130">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7991563320860101131" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7991563320860101136">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8401916545537551267" resolveInfo="ModelPlusImportedScope" />
+    </node>
+    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7991563320860101137">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7991563320860101138" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7991563320860101139" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7991563320860101141">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="7991563320860101142">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8401916545537551308" resolveInfo="ModelPlusImportedScope" />
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7991563320860101146">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7991563320860101143" resolveInfo="model" />
+          </node>
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7991563320860101159">
+            <property name="value" nameId="tpee.1068580123138" value="false" />
+          </node>
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7991563320860101154">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7991563320860101151" resolveInfo="moduleScope" />
+          </node>
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7991563320860101158">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7991563320860101155" resolveInfo="targetConcept" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7991563320860101143">
+        <property name="name" nameId="tpck.1169194664001" value="model" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SModelType" typeId="tp25.1143226024141" id="7991563320860101145" />
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7991563320860101151">
+        <property name="name" nameId="tpck.1169194664001" value="moduleScope" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7991563320860101153">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~IScope" resolveInfo="IScope" />
+        </node>
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7991563320860101155">
+        <property name="name" nameId="tpck.1169194664001" value="targetConcept" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="7991563320860101157" />
       </node>
     </node>
   </root>

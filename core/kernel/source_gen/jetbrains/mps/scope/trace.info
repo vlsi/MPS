@@ -135,6 +135,17 @@
     <scopeInfo nodeId="7712479415687706041" fileName="ErrorScope.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <unitInfo nodeId="7712479415687661167" fileName="ErrorScope.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.scope.ErrorScope" />
   </root>
+  <root nodeId="7991563320860101130">
+    <nodeInfo nodeId="7991563320860101142" fileName="DefaultScope.java" startLine="9" startPosition="79" endLine="10" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7991563320860101137" fileName="DefaultScope.java" startLine="8" startPosition="64" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultScope#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljava/lang/String;)V" />
+    <scopeInfo nodeId="7991563320860101141" fileName="DefaultScope.java" startLine="9" startPosition="79" endLine="10" endPosition="52" />
+    <scopeInfo nodeId="7991563320860101137" fileName="DefaultScope.java" startLine="8" startPosition="64" endLine="11" endPosition="3">
+      <varInfo nodeId="7991563320860101143" varName="model" />
+      <varInfo nodeId="7991563320860101151" varName="moduleScope" />
+      <varInfo nodeId="7991563320860101155" varName="targetConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="7991563320860101130" fileName="DefaultScope.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.scope.DefaultScope" />
+  </root>
   <root nodeId="8401916545537277014">
     <nodeInfo nodeId="8401916545537277529" fileName="SimpleRoleScope.java" startLine="12" startPosition="53" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="node" />
     <nodeInfo nodeId="8401916545537277533" fileName="SimpleRoleScope.java" startLine="13" startPosition="27" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="link" />
