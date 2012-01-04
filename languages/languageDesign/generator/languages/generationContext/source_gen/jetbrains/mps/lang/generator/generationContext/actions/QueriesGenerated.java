@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
@@ -73,8 +73,8 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_1216861714161(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      Calculable calc = new Calculable() {
-        public Object calculate() {
+      Computable computable = new Computable() {
+        public Object compute() {
           return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
@@ -82,7 +82,7 @@ public class QueriesGenerated {
           }).toListSequence();
         }
       };
-      Iterable queryResult = (Iterable) calc.calculate();
+      Iterable queryResult = (Iterable) computable.compute();
       if (queryResult != null) {
         for (Object item : queryResult) {
           List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((SNode) item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);

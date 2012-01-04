@@ -18,7 +18,7 @@ import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
-import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
@@ -161,8 +161,8 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     final List<SNode> availableObjects;
     {
-      Calculable calc = new Calculable() {
-        public Object calculate() {
+      Computable calc = new Computable() {
+        public Object compute() {
           final SNode ctx = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, true, false);
           if (SNodeOperations.isInstanceOf(ctx, "jetbrains.mps.ui.structure.UIObjectStatement")) {
             return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.ui.modeling.structure.UIObject")).where(new IWhereFilter<SNode>() {
@@ -179,18 +179,18 @@ public class QueriesGenerated {
           }
         }
       };
-      availableObjects = (List<SNode>) calc.calculate();
+      availableObjects = (List<SNode>) calc.compute();
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.CreateUIObjectStatement");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Calculable calc = new Calculable() {
-          public Object calculate() {
+        Computable computable = new Computable() {
+          public Object compute() {
             return availableObjects;
           }
         };
-        Iterable<SNode> queryResult = (Iterable) calc.calculate();
+        Iterable<SNode> queryResult = (Iterable) computable.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -216,12 +216,12 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.AppendUIObjectStatement");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Calculable calc = new Calculable() {
-          public Object calculate() {
+        Computable computable = new Computable() {
+          public Object compute() {
             return availableObjects;
           }
         };
-        Iterable<SNode> queryResult = (Iterable) calc.calculate();
+        Iterable<SNode> queryResult = (Iterable) computable.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -247,12 +247,12 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.InsertUIObjectStatement");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Calculable calc = new Calculable() {
-          public Object calculate() {
+        Computable computable = new Computable() {
+          public Object compute() {
             return availableObjects;
           }
         };
-        Iterable<SNode> queryResult = (Iterable) calc.calculate();
+        Iterable<SNode> queryResult = (Iterable) computable.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -281,8 +281,8 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.CompartmentReferenceExpression");
-      Calculable calculable = new Calculable() {
-        public Object calculate() {
+      Computable computable = new Computable() {
+        public Object compute() {
           return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.ui.structure.UIObjectType"), true), "uiObject", false))).translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode o) {
               return SLinkOperations.getTargets(o, "compartment", true);
@@ -290,7 +290,7 @@ public class QueriesGenerated {
           }).toListSequence();
         }
       };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
+      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {

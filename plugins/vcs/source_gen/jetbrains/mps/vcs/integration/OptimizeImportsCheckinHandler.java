@@ -28,6 +28,7 @@ import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.vcs.changes.CommitContext;
 
 public class OptimizeImportsCheckinHandler extends CheckinHandler {
   private static final Logger LOG = Logger.getLogger(ThreadUtils.class);
@@ -107,7 +108,7 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
 
     @NotNull
     @Override
-    public CheckinHandler createHandler(CheckinProjectPanel panel) {
+    public CheckinHandler createHandler(CheckinProjectPanel panel, CommitContext context) {
       return new OptimizeImportsCheckinHandler(panel.getProject(), panel);
     }
   }

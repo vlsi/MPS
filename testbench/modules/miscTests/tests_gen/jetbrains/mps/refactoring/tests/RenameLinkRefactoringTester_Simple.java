@@ -30,7 +30,7 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
     final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        refactoring.value = RefactoringUtil.getRefactoringByClassName(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590291(jetbrains.mps.lang.structure.scripts)", "1198587937318"), "jetbrains.mps.lang.refactoring.structure.OldRefactoring"), "call_getGeneratedClassLongName_4598603396803851284", new Class[]{SNode.class})));
+        refactoring.value = RefactoringUtil.getRefactoringByClassName(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1347577327951781638"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
       }
     });
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);

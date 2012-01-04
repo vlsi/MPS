@@ -67,7 +67,7 @@ public class ShowStructure_Action extends BaseAction {
       }
 
       StructureView structureView = structureViewBuilder.createStructureView(((FileEditor) MapSequence.fromMap(_params).get("fileEditor")), ((Project) MapSequence.fromMap(_params).get("project")));
-      DialogWrapper dialog = new FileStructureDialog(structureView.getTreeModel(), ((Project) MapSequence.fromMap(_params).get("project")), structureView, true);
+      DialogWrapper dialog = new FileStructureDialog(structureView.getTreeModel(), null, ((Project) MapSequence.fromMap(_params).get("project")), null, structureView, true);
       if (dialog != null) {
         if (((VirtualFile) MapSequence.fromMap(_params).get("file")) != null) {
           dialog.setTitle(((VirtualFile) MapSequence.fromMap(_params).get("file")).getPresentableUrl());

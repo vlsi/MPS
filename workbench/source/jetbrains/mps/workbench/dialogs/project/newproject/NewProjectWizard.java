@@ -81,9 +81,8 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
 
 
   protected void updateStep() {
-    super.updateStep();
-
     getFinishButton().setEnabled(getCurrentStep() == mySteps.size() - 1);
+    super.updateStep();
   }
 
   protected void doOKAction() {

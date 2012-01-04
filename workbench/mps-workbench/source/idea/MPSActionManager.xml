@@ -118,11 +118,11 @@
               text="Open MPS Project"
               description="You can open existing MPS project with this action"/>
 
-      <action id="OpenRecenProjectAciton"
-              class="com.intellij.openapi.wm.impl.welcomeScreen.RecentProjectsAction"
-              text="Reopen Recent Project"
-              description="You can open one of the most recent project you were working with. Click the icon or link to select a project from the list."
-              icon="/general/reopenRecentProject.png"/>
+      <!--<action id="OpenRecenProjectAciton"-->
+              <!--class="com.intellij.openapi.wm.impl.welcomeScreen.RecentProjectsAction"-->
+              <!--text="Reopen Recent Project"-->
+              <!--description="You can open one of the most recent project you were working with. Click the icon or link to select a project from the list."-->
+              <!--icon="/general/reopenRecentProject.png"/>-->
 
       <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
     </group>
@@ -145,8 +145,8 @@
     <group id="NewGroup" popup="true">
     </group>
 
-    <group id="SearchMenu" popup="true">
-      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="EditMenu"/>
+    <group id="FindMenuGroup" popup="true">
+      <add-to-group group-id="EditCreateDeleteGroup" anchor="before" relative-to-action="EditSelectGroup"/>
     </group>
 
     <group id="ConsoleView.PopupMenu">

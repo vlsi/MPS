@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.action.ActionUtils;
 
-public class GeneratorTreeNode extends jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode implements StereotypeProvider {
+public class GeneratorTreeNode extends ProjectModuleTreeNode implements StereotypeProvider {
   private boolean myInitialized;
 
   public GeneratorTreeNode(Generator generator, Project project) {

@@ -21,8 +21,6 @@
     <orderEntry type="module" module-name="analyzers" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="debug" />
-    <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="distrib" />
     <orderEntry type="module" module-name="make-runtime" />
@@ -36,7 +34,6 @@
     <orderEntry type="module" module-name="vcs" />
     <orderEntry type="module" module-name="miscTests" />
     <orderEntry type="module" module-name="migration" />
-    <orderEntry type="module" module-name="mpseditor" />
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="library" name="PicoContainer" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
@@ -56,6 +53,8 @@
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="mps-platform" />
+    <orderEntry type="module" module-name="debugger-java" scope="RUNTIME" />
+    <orderEntry type="module" module-name="debugger-api" scope="RUNTIME" />
   </component>
 </module>
 

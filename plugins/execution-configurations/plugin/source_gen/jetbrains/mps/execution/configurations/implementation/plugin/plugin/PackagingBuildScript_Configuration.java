@@ -88,8 +88,8 @@ public class PackagingBuildScript_Configuration extends BaseMpsRunConfiguration 
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        if (log.isWarnEnabled()) {
-          log.warn("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
+        if (log.isDebugEnabled()) {
+          log.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
         }
       }
     }
@@ -98,8 +98,8 @@ public class PackagingBuildScript_Configuration extends BaseMpsRunConfiguration 
       if (fieldElement != null) {
         mySettings.readExternal(fieldElement);
       } else {
-        if (log.isWarnEnabled()) {
-          log.warn("Element " + "mySettings" + " in " + this.getClass().getName() + " was null.");
+        if (log.isDebugEnabled()) {
+          log.debug("Element " + "mySettings" + " in " + this.getClass().getName() + " was null.");
         }
       }
     }

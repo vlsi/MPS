@@ -14,17 +14,24 @@ import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.behavior.IStaticContainerProcessor;
 import jetbrains.mps.baseLanguage.behavior.AbstractStaticContainerProcessor;
-import jetbrains.mps.project.GlobalScope;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.GlobalScope;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -117,28 +124,33 @@ public class ConceptBehavior_Behavior {
   }
 
   public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
-    List<SNode> methods = new ArrayList<SNode>();
-    for (SNode method : ConceptBehavior_Behavior.call_getConceptMethods_5466054087443746043(thisNode, GlobalScope.getInstance())) {
-      if (SPropertyOperations.getBoolean(method, "isFinal")) {
-        continue;
+    List<SNode> candidates = new ArrayList<SNode>();
+    Map<SNode, SNode> concrete = MapSequence.fromMap(new HashMap<SNode, SNode>());
+
+    for (SNode allSuper : ConceptBehavior_Behavior.call_getAllSuperBehaviors_1818770337282950280(thisNode)) {
+      for (SNode meth : SLinkOperations.getTargets(allSuper, "method", true)) {
+        SNode baseMeth = ConceptMethodDeclaration_Behavior.call_getOverridenMethod_1225196403956(meth);
+        if (baseMeth != null && !(MapSequence.fromMap(concrete).containsKey(baseMeth))) {
+          MapSequence.fromMap(concrete).put(baseMeth, meth);
+          ListSequence.fromList(candidates).addElement(meth);
+        }
       }
-      if (!(SPropertyOperations.getBoolean(method, "isVirtual"))) {
+    }
+
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode method : candidates) {
+      if (SPropertyOperations.getBoolean(method, "isFinal")) {
         continue;
       }
       if (SPropertyOperations.getBoolean(method, "isAbstract")) {
         continue;
       }
-      if (SLinkOperations.getTarget(method, "overriddenMethod", false) != null) {
+      if (SNodeOperations.getParent(method) == thisNode) {
         continue;
       }
-      SNode container = SNodeOperations.getAncestor(method, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false);
-      if (container == thisNode || container == null) {
-        continue;
-      }
-
-      ListSequence.fromList(methods).addElement(method);
+      ListSequence.fromList(result).addElement(method);
     }
-    return methods;
+    return result;
   }
 
   public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
@@ -149,12 +161,52 @@ public class ConceptBehavior_Behavior {
     return AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(baseNode, GlobalScope.getInstance());
   }
 
+  public static List<SNode> call_getAllSuperBehaviors_1818770337282950280(SNode thisNode) {
+    Set<SNode> seen = SetSequence.fromSet(new HashSet<SNode>());
+    List<SNode> conceptResult = new ArrayList<SNode>();
+    Queue<SNode> q = QueueSequence.fromQueue(new LinkedList<SNode>());
+    QueueSequence.fromQueue(q).addLastElement(SLinkOperations.getTarget(thisNode, "concept", false));
+    while (QueueSequence.fromQueue(q).isNotEmpty()) {
+      SNode qn = QueueSequence.fromQueue(q).removeFirstElement();
+      ListSequence.fromList(conceptResult).addElement(qn);
+      if (SNodeOperations.isInstanceOf(qn, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+        if ((SLinkOperations.getTarget(SNodeOperations.cast(qn, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "extends", false) != null)) {
+          SNode cl = SLinkOperations.getTarget(SNodeOperations.cast(qn, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "extends", false);
+          if (seen.add(cl)) {
+            QueueSequence.fromQueue(q).addLastElement(cl);
+          }
+        }
+        for (SNode i : SLinkOperations.getTargets(SNodeOperations.cast(qn, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "implements", true)) {
+          SNode cl = SLinkOperations.getTarget(i, "intfc", false);
+          if (seen.add(cl)) {
+            QueueSequence.fromQueue(q).addLastElement(cl);
+          }
+        }
+      } else if (SNodeOperations.isInstanceOf(qn, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
+        for (SNode i : SLinkOperations.getTargets(SNodeOperations.cast(qn, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), "extends", true)) {
+          SNode cl = SLinkOperations.getTarget(i, "intfc", false);
+          if (seen.add(cl)) {
+            QueueSequence.fromQueue(q).addLastElement(cl);
+          }
+        }
+      }
+    }
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode concept : conceptResult) {
+      SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+      if (behavior != null) {
+        ListSequence.fromList(result).addElement(behavior);
+      }
+    }
+    return result;
+  }
+
   public static List<SNode> call_getConceptMethods_5466054087443746043(SNode thisNode, IScope scope) {
     List<SNode> methods = new ArrayList<SNode>();
     for (SNode concept : SConceptOperations.getAllSuperConcepts(SLinkOperations.getTarget(thisNode, "concept", false), false)) {
-      SNode behaviour = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
-      if (behaviour != null) {
-        for (SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
+      SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+      if (behavior != null) {
+        for (SNode method : SLinkOperations.getTargets(behavior, "method", true)) {
           ListSequence.fromList(methods).addElement(method);
         }
       }

@@ -33,12 +33,12 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.validation.ValidationSettings;
 
 /**
  * Evgeny Gryaznov, Sep 1, 2010
@@ -97,6 +97,7 @@ public class MPSCore extends ComponentPlugin {
     init(new DataFlowManager(classLoaderManager, myModuleRepository));
 
     init(new CheckersComponent());
+    init(new ValidationSettings());
   }
 
   @Override

@@ -318,6 +318,7 @@
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ModelCheckerCheckinHandler" file="ModelCheckerCheckinHandler.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.CheckinProjectPanel" />
+    <classNode dependClassName="com.intellij.openapi.vcs.changes.CommitContext" />
     <classNode dependClassName="com.intellij.openapi.vcs.ui.RefreshableOnComponent" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.io.File" />

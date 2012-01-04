@@ -24,6 +24,7 @@ import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.pom.Navigatable;
+import com.intellij.pom.NavigatableAdapter;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.content.Content;
@@ -682,7 +683,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
           myList.setSelectedIndex(current);
           myList.ensureIndexIsVisible(current);
         }
-        return new OccurenceInfo(new Navigatable.Adapter() {
+        return new OccurenceInfo(new NavigatableAdapter(){
           @Override
           public void navigate(boolean requestFocus) {
             openCurrentMessageIfPossible();

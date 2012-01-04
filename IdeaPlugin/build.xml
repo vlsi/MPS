@@ -71,7 +71,7 @@
         <delete dir="${build.home}"/>
     </target>
 
-    <target name="compile" depends="clean">
+    <target name="compile">
         <mkdir dir="${dist.dir}"/>
         <mkdir dir="${dist.dir}/lib"/>
         <mkdir dir="${dist.dir}/languages"/>
@@ -89,9 +89,9 @@
                debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
-                <path path="${base_dir}/core/baseLanguage/collections/runtime/source_gen"/>
-                <path path="${base_dir}/core/baseLanguage/closures/runtime/source_gen"/>
-                <path path="${base_dir}/core/baseLanguage/tuples/runtime/source_gen"/>
+                <path path="${base_dir}/languages/baseLanguage/collections/runtime/source_gen"/>
+                <path path="${base_dir}/languages/baseLanguage/closures/runtime/source_gen"/>
+                <path path="${base_dir}/languages/baseLanguage/tuples/runtime/source_gen"/>
 
                 <!-- runtime -->
                 <path path="${base_dir}/core/runtime/source"/>
@@ -125,11 +125,15 @@
                 <path path="${base_dir}/core/findUsages-runtime/source"/>
                 <path path="${base_dir}/core/findUsages-runtime/source_gen"/>
 
+                <!-- refactoring-runtime -->
+                <path path="${base_dir}/core/refactoring-runtime/source_gen"/>
+
                 <!-- analyzers -->
                 <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen"/>
 
                 <!-- baseLanguage search -->
-                <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen"/>
+                <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen"/>
+                <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen"/>
             </src>
         </javac>
         <jar destfile="${dist.dir}/lib/mps-core.jar">
@@ -159,7 +163,6 @@
                 <!-- idea-workbench -->
                 <path path="${base_dir}/workbench/mps-platform/source"/>
                 <path path="${base_dir}/workbench/mps-platform/source_gen"/>
-                <path path="${base_dir}/workbench/mps-actions/source"/>
             </src>
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
@@ -168,7 +171,6 @@
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench_jar">
             <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/workbench/mps-actions/source" includes="**/*.png"/>
         </copy>
         <jar destfile="${dist.dir}/lib/mps-workbench.jar">
             <fileset dir="${build_dir}/mpsworkbench_jar"/>
@@ -190,14 +192,14 @@
             <src>
                 <!-- editor-api -->
                 <path path="${base_dir}/editor/editor-api/source"/>
-                <path path="${base_dir}/core/editor-runtime/source"/>
-                <path path="${base_dir}/core/editor-runtime/source_gen"/>
-                <path path="${base_dir}/core/actions-runtime/source"/>
-                <path path="${base_dir}/core/actions-runtime/source_gen"/>
-                <path path="${base_dir}/core/intentions-runtime/source"/>
+                <path path="${base_dir}/editor/editor-runtime/source"/>
+                <path path="${base_dir}/editor/editor-runtime/source_gen"/>
+                <path path="${base_dir}/editor/actions-runtime/source"/>
+                <path path="${base_dir}/editor/actions-runtime/source_gen"/>
+                <path path="${base_dir}/editor/intentions-runtime/source"/>
+                <path path="${base_dir}/editor/typesystemIntegration/source"/>
                 <path path="${base_dir}/workbench/mps-editor/source"/>
-                <path path="${base_dir}/plugins/mpseditor/source"/>
-                <path path="${base_dir}/plugins/mpseditor/source_gen"/>
+                <path path="${base_dir}/workbench/mps-editor/source_gen"/>
             </src>
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
@@ -206,14 +208,12 @@
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar">
             <fileset dir="${base_dir}/editor/editor-api/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/editor-runtime/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/editor-runtime/source_gen" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/actions-runtime/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/actions-runtime/source_gen" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/intentions-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/editor-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/editor-runtime/source_gen" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/actions-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/actions-runtime/source_gen" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/intentions-runtime/source" includes="**/*.png"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/plugins/mpseditor/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/plugins/mpseditor/source_gen" includes="**/*.png"/>
         </copy>
         <jar destfile="${dist.dir}/lib/mps-editor.jar">
             <fileset dir="${build_dir}/mpseditor_jar"/>
@@ -245,15 +245,15 @@
             <fileset dir="${base_dir}/IdeaPlugin/mps-core/src" includes="**/*.png, **/*.properties"/>
             <fileset dir="${base_dir}/IdeaPlugin/mps-core/resources" includes="**/*.png, **/*.properties"/>
             <fileset dir="${base_dir}/workbench/mps-platform/source" includes="META-INF/*"/>
-            <fileset dir="${base_dir}/workbench/mps-actions/source" includes="META-INF/*"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source" includes="META-INF/*"/>
-            <fileset dir="${base_dir}/plugins/mpseditor/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/workbench/mps-editor/source_gen" includes="**/*.png, **/*.xml"/>
         </copy>
         <copy file="${base_dir}/IdeaPlugin/mps-core/META-INF/plugin.xml"
               tofile="${build_dir}/mpsplugin_jar/META-INF/plugin.xml">
             <filterchain>
                 <tokenfilter>
                     <replaceregex pattern="../classes/META-INF/" replace="" flags="gi"/>
+                    <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi"/>
                 </tokenfilter>
             </filterchain>
         </copy>
@@ -278,12 +278,12 @@
             <src>
                 <!-- plugin tests -->
                 <path path="${base_dir}/IdeaPlugin/mps-core/testSrc"/>
-                <path path="${base_dir}/IdeaPlugin/mps-core/testSrc"/>
-                <path path="${base_dir}/plugins/mpseditor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
-                <path path="${base_dir}/plugins/mpseditor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
+                <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
+                <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
             </src>
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
+                <!-- TODO remove dependency on languages!!!!!! -->
                 <fileset dir="${dist.dir}/languages/languageDesign" includes="jetbrains.mps.lang.test.runtime.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>

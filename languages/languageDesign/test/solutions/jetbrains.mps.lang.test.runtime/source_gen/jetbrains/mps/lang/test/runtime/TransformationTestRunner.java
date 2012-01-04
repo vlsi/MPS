@@ -8,9 +8,8 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import org.apache.commons.lang.StringUtils;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ex.ProjectManagerEx;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectManager;
 import junit.framework.Assert;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
@@ -21,11 +20,16 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.awt.Toolkit;
-import jetbrains.mps.internal.collections.runtime.IMapping;
+import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 import com.intellij.util.PathUtil;
 import java.io.File;
-import com.intellij.openapi.application.PathMacros;
+import jetbrains.mps.project.PathMacros;
+import jetbrains.mps.project.PathMacrosProvider;
+import java.util.Set;
+import java.util.Collections;
 import java.lang.reflect.InvocationTargetException;
 
 public class TransformationTestRunner {
@@ -43,9 +47,9 @@ public class TransformationTestRunner {
     // see MPS-10568 
     readSystemMacro();
     if (StringUtils.isEmpty(projectName)) {
-      for (Project project : ProjectManagerEx.getInstanceEx().getOpenProjects()) {
-        btt.setMyProject(project.getComponent(MPSProject.class));
-        if ((btt.getMyProject()) != null) {
+      for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+        if (project != null) {
+          btt.setMyProject(project);
           break;
         }
       }
@@ -111,6 +115,7 @@ public class TransformationTestRunner {
   }
 
   private void readSystemMacro() {
+    final Map<String, String> macros = MapSequence.fromMap(new HashMap<String, String>());
     for (IMapping<Object, Object> property : MapSequence.fromMap(System.getProperties())) {
       if (property.key() instanceof String) {
         String key = (((String) property.key()));
@@ -119,12 +124,25 @@ public class TransformationTestRunner {
             String canonicalPath = PathUtil.getCanonicalPath(((String) property.value()));
             File file = new File(canonicalPath);
             if (file.exists() && file.isDirectory()) {
-              PathMacros.getInstance().setMacro(key.substring(BaseTransformationTest.PATH_MACRO_PREFIX.length()), canonicalPath);
+              MapSequence.fromMap(macros).put(key.substring(BaseTransformationTest.PATH_MACRO_PREFIX.length()), canonicalPath);
             }
           }
         }
       }
     }
+    PathMacros.getInstance().addMacrosProvider(new PathMacrosProvider() {
+      public Set<String> getNames() {
+        return Collections.unmodifiableSet(MapSequence.fromMap(macros).keySet());
+      }
+
+      public Set<String> getUserNames() {
+        return Collections.unmodifiableSet(MapSequence.fromMap(macros).keySet());
+      }
+
+      public String getValue(String p0) {
+        return MapSequence.fromMap(macros).get(p0);
+      }
+    });
   }
 
   private Throwable tryToRunTest(Class clazz, String methodName, Object obj) {

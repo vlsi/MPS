@@ -10,10 +10,10 @@ import jetbrains.mps.baseLanguage.behavior.IStaticContainerForMethods_BehaviorDe
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
-import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
 import java.util.List;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IStaticContainerProcessor;
+import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class ConceptBehavior_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, IExtractMethodAvailable_BehaviorDescriptor, IStaticContainerForMethods_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor {
   public ConceptBehavior_BehaviorDescriptor() {
@@ -23,20 +23,8 @@ public class ConceptBehavior_BehaviorDescriptor extends BaseConcept_BehaviorDesc
     return IConceptAspect_Behavior.virtual_isApplicable_7839831476331657915(thisNode, candidate);
   }
 
-  public IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
-    return ConceptBehavior_Behavior.virtual_getExtractMethodRefactoringProcessor_1221393367929(thisNode, nodesToExtract);
-  }
-
-  public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    return ConceptBehavior_Behavior.virtual_getMembers_1213877531970(thisNode);
-  }
-
   public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
     return ConceptBehavior_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
-  }
-
-  public List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
-    return IConceptAspect_Behavior.virtual_getBaseConceptCollection_5270353093116013036(thisNode);
   }
 
   public SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
@@ -47,12 +35,24 @@ public class ConceptBehavior_BehaviorDescriptor extends BaseConcept_BehaviorDesc
     ConceptBehavior_Behavior.virtual_setBaseConcept_6261424444345963020(thisNode, baseConcept);
   }
 
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
-  }
-
   public IStaticContainerProcessor virtual_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
     return ConceptBehavior_Behavior.virtual_getStaticContainerProcessor_1222174378300(thisNode, node);
+  }
+
+  public IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
+    return ConceptBehavior_Behavior.virtual_getExtractMethodRefactoringProcessor_1221393367929(thisNode, nodesToExtract);
+  }
+
+  public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
+    return ConceptBehavior_Behavior.virtual_getMembers_1213877531970(thisNode);
+  }
+
+  public List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
+    return IConceptAspect_Behavior.virtual_getBaseConceptCollection_5270353093116013036(thisNode);
+  }
+
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {

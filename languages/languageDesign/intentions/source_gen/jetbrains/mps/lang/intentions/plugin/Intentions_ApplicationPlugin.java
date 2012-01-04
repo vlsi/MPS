@@ -4,7 +4,6 @@ package jetbrains.mps.lang.intentions.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -31,7 +30,7 @@ public class Intentions_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(SpecificIntentions_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_intentions);
+    insertGroupIntoAnother(SpecificIntentions_ActionGroup.ID, "EditorPopup_ActionGroupintentions", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

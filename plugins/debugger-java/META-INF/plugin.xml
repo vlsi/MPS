@@ -10,12 +10,19 @@
   <depends>jetbrains.mps.debugger-api</depends>
 
   <application-components>
+    <!--api-->
+    <component>
+      <implementation-class>jetbrains.mps.debug.customViewers.CustomViewersManager</implementation-class>
+    </component>
+
+    <!--runtime-->
     <component>
       <implementation-class>jetbrains.mps.debugger.java.JavaDebugger</implementation-class>
     </component>
   </application-components>
 
   <project-components>
+    <!--runtime-->
     <component>
       <implementation-class>jetbrains.mps.debugger.java.runtime.VMEventsProcessorManagerComponent</implementation-class>
     </component>
@@ -25,8 +32,9 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <configurationType implementation="jetbrains.mps.debugger.java.runtime.configurations.remote.Remote_Kind"/>
+    <!--runtime-->
     <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
     <mps.LanguageLibrary dir=""/>
+    <mps.PluginBundle/>
   </extensions>
 </idea-plugin>

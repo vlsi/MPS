@@ -9,7 +9,7 @@
   </component>
   <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
     <projectSolutions>
-      <solutionPath path="${mps_home}/core/baseLanguage/internalCollections/solutions/internalCollections.test/internalCollections.test.msd" />
+      <solutionPath path="${mps_home}/languages/baseLanguage/internalCollections/solutions/internalCollections.test/internalCollections.test.msd" />
       <solutionPath path="${project}/solutions/runtime/jetbrains.mps.baseLanguage.unitTest.runtime.msd" />
     </projectSolutions>
     <projectLanguages>

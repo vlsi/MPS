@@ -20,6 +20,7 @@
   <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="ymbg" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.constraints(MPS.Core/jetbrains.mps.smodel.constraints@java_stub)" version="-1" />
   <import index="y36q" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.search(MPS.Core/jetbrains.mps.smodel.search@java_stub)" version="-1" />
+  <import index="13br" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.validation(MPS.Core/jetbrains.mps.validation@java_stub)" version="-1" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -1134,17 +1135,41 @@
   </root>
   <root id="376024488709664742">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="376024488709664743">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5239544140134882821">
+        <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5239544140134882822">
+          <property name="name" nameId="tpck.1169194664001" value="ms" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5239544140134882823">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="13br.~IModelValidationSettings" resolveInfo="IModelValidationSettings" />
+          </node>
+          <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="526633399526794608">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5239544140134882817">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="13br.~ValidationSettings" resolveInfo="ValidationSettings" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="13br.~ValidationSettings%dgetInstance()%cjetbrains%dmps%dvalidation%dValidationSettings" resolveInfo="getInstance" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="526633399526794612">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="13br.~ValidationSettings%dgetModelValidationSettings()%cjetbrains%dmps%dvalidation%dIModelValidationSettings" resolveInfo="getModelValidationSettings" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="526633399526719852">
         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="526633399526719853">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="526633399526794615" />
         </node>
-        <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="526633399526794608">
-          <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="150857605340612086">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="gy25.~ModelValidationSettings" resolveInfo="ModelValidationSettings" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gy25.~ModelValidationSettings%dgetInstance()%cjetbrains%dmps%dsmodel%dModelValidationSettings" resolveInfo="getInstance" />
+        <node role="condition" roleId="tpee.1068580123160" type="tpee.OrExpression" typeId="tpee.1080223426719" id="5239544140134882830">
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5239544140134882834">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5239544140134882833">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5239544140134882822" resolveInfo="ms" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5239544140134882838">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="13br.~IModelValidationSettings%disDisableCheckOpenAPI()%cboolean" resolveInfo="isDisableCheckOpenAPI" />
+            </node>
           </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="526633399526794612">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gy25.~ModelValidationSettings%disDisableCheckOpenAPI()%cboolean" resolveInfo="isDisableCheckOpenAPI" />
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="5239544140134882826">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5239544140134882825">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5239544140134882822" resolveInfo="ms" />
+            </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5239544140134882829" />
           </node>
         </node>
       </node>

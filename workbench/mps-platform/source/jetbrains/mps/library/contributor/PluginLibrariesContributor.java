@@ -24,6 +24,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -38,7 +39,11 @@ public class PluginLibrariesContributor implements LibraryContributor, Applicati
         PluginId pluginId = library.getPluginDescriptor().getPluginId();
         final String pluginPath = PluginManager.getPlugin(pluginId).getPath().getCanonicalPath();
         assert library.dir != null : "library dir should be non-empty: plugin=" + pluginId.getIdString();
-        result.add(pluginPath + library.dir);
+        String libraryPath = pluginPath + library.dir;
+        if (libraryPath.endsWith("/") || libraryPath.endsWith("\\")) {
+          libraryPath = libraryPath.substring(0, libraryPath.length()-1);
+        }
+        result.add(libraryPath);
       } catch (Throwable t) {
         LOG.error("Error instantiating language library", t);
       }

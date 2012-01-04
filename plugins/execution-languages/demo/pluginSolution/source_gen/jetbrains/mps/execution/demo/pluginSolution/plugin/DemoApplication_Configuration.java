@@ -82,8 +82,8 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        if (log.isWarnEnabled()) {
-          log.warn("Element " + "node" + " in " + this.getClass().getName() + " was null.");
+        if (log.isDebugEnabled()) {
+          log.debug("Element " + "node" + " in " + this.getClass().getName() + " was null.");
         }
       }
     }

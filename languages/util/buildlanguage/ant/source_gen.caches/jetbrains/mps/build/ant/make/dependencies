@@ -19,6 +19,8 @@
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
     <classNode dependClassName="org.apache.log4j.ConsoleAppender" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.build.ant.Environment" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.make.MakeTask" file="MakeTask.java">

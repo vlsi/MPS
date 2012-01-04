@@ -19,11 +19,11 @@ import com.intellij.ide.caches.CacheUpdater;
 import com.intellij.ide.caches.FileContent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.CollectingContentIterator;
 import com.intellij.openapi.roots.ContentIterator;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.util.containers.HashSet;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.IndexingStamp;
@@ -45,7 +45,8 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
     return myIndex.getNumberOfPendingInvalidations();
   }
 
-  public VirtualFile[] queryNeededFiles() {
+  @Override
+  public VirtualFile[] queryNeededFiles(ProgressIndicator indicator) {
     final CollectingContentIterator finder = myIndex.createContentIterator();
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -78,7 +79,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
 
   private void iterateRecursively(final VirtualFile root, final ContentIterator processor, ProgressIndicator indicator) {
     if (root == null) return;
-    if (!CacheUtil.checkFile(root,myManager)) return;
+    if (!CacheUtil.checkFile(root, myManager)) return;
 
     if (indicator != null) {
       indicator.setText2(root.getPresentableUrl());
@@ -88,6 +89,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
       if (file.isDirectory()) {
         iterateRecursively(file, processor, indicator);
       } else {
+        SingleRootFileViewProvider.doNotCheckFileSizeLimit(file);
         processor.processFile(file);
       }
     }

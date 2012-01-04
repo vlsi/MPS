@@ -19,14 +19,8 @@ import com.intellij.ide.FileIconProvider;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.editor.MPSEditorUtil;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -38,7 +32,7 @@ public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "MPS Icon Provider";
+    return "MPS Language Icon Provider";
   }
 
   public void initComponent() {
@@ -49,22 +43,6 @@ public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
 
   @Nullable
   public Icon getIcon(final VirtualFile file, int flags, final Project project) {
-    if (file instanceof MPSNodeVirtualFile) {
-      final MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
-      return ModelAccess.instance().runReadAction(new Computable<Icon>() {
-        public Icon compute() {
-          SNode node = MPSEditorUtil.getCurrentEditedNode(project, nodeFile);
-          if (node != null) {
-            return IconManager.getIconWithoutAdditionalPart(node);
-          }
-          node = nodeFile.getNode();
-          if (node != null) {
-            return IconManager.getIconWithoutAdditionalPart(node);
-          }
-          return null;
-        }
-      });
-    }
     if (file instanceof MPSLanguageVirtualFile) {
       return Icons.PROJECT_LANGUAGE_ICON;
     }

@@ -40,7 +40,7 @@
       <property name="name" nameId="tpck.1169194664001" value="MultipleOr" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="4545179712979945422">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.ipr" />
     </node>
   </roots>
   <root id="815823070325240409">

@@ -33,6 +33,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.Logger;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
@@ -67,13 +68,17 @@ import java.util.Set;
   "jetbrains.mps.tests.TestModule_ypath_test"})
 @RunWith(WatchingSuite.class)
 public class ModuleTestSuite extends TestSuite {
+
+  private static MpsMakeHelper ourMakeHelper = new MpsMakeHelper();
+
   @BeforeClass
   public static void make () throws Exception {
-    new MpsMakeHelper().make();
+    ourMakeHelper.make();
   }
 
   @AfterClass
   public static void shutdown() {
     TestMain.PROJECT_CONTAINER.clear();
+    ourMakeHelper.dispose();
   }
 }

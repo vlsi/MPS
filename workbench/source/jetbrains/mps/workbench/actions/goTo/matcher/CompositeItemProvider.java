@@ -15,39 +15,32 @@
  */
 package jetbrains.mps.workbench.actions.goTo.matcher;
 
-import com.intellij.ide.util.gotoByName.temp.ChooseByNameBase;
-import com.intellij.ide.util.gotoByName.temp.ItemProvider;
-import jetbrains.mps.util.Computable;
+import com.intellij.ide.util.gotoByName.ChooseByNameBase;
+import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider;
+import com.intellij.util.Processor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompositeItemProvider implements ItemProvider {
-  private ItemProvider[] myProviders;
+public class CompositeItemProvider implements ChooseByNameItemProvider {
+  private ChooseByNameItemProvider[] myProviders;
 
-  public CompositeItemProvider(ItemProvider... providers) {
+  public CompositeItemProvider(ChooseByNameItemProvider... providers) {
     myProviders = providers;
   }
 
-  public void setBase(ChooseByNameBase base) {
-    for (ItemProvider provider : myProviders) {
-      provider.setBase(base);
-    }
-  }
-
-  public List<String> getNamesByPattern(String[] names, String pattern) {
+  public List<String> filterNames(ChooseByNameBase base, String[] names, String pattern) {
     List<String> res = new ArrayList<String>();
-    for (ItemProvider matcher : myProviders) {
-      res.addAll(matcher.getNamesByPattern(names, pattern));
+    for (ChooseByNameItemProvider matcher : myProviders) {
+      res.addAll(matcher.filterNames(base, names, pattern));
     }
     return res;
   }
 
-  public List<Object> filterElements(String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra) {
+  public void filterElements(ChooseByNameBase base, String pattern, boolean everywhere, com.intellij.openapi.util.Computable<Boolean> cancelled, Processor<Object> consumer) {
     List<Object> res = new ArrayList<Object>();
-    for (ItemProvider matcher : myProviders) {
-      res.addAll(matcher.filterElements(pattern, everywhere, cancelled, maxListSize, extra));
+    for (ChooseByNameItemProvider matcher : myProviders) {
+      matcher.filterElements(base,pattern, everywhere, cancelled, consumer);
     }
-    return res;
   }
 }

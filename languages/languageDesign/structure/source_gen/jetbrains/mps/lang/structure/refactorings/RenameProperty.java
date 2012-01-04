@@ -6,7 +6,6 @@ import jetbrains.mps.refactoring.framework.BaseLoggableRefactoring;
 import jetbrains.mps.lang.core.refactorings.Rename;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -26,7 +25,6 @@ import jetbrains.mps.project.GlobalScope;
 public class RenameProperty extends BaseLoggableRefactoring {
   public RenameProperty() {
     this.addTransientParameter("newName");
-    this.addTransientParameter("myNewName");
   }
 
   public String getUserFriendlyName() {
@@ -45,21 +43,10 @@ public class RenameProperty extends BaseLoggableRefactoring {
     return new RenameProperty_Target();
   }
 
-  public boolean init(final RefactoringContext refactoringContext) {
-    // myNewName can be pre-set in context to skip chooser dialog - temporary solution 
-    if (((String) refactoringContext.getParameter("myNewName")) == null) {
-      if (!(RenameProperty.this.ask(refactoringContext, MPSChooserFactory.createStringChooser(refactoringContext, "newName", new RenameProperty_newName_Settings(refactoringContext))))) {
-        return false;
-      }
-      refactoringContext.setParameter("myNewName", ((String) refactoringContext.getParameter("newName")));
-    }
-    return true;
-  }
-
   public void refactor(final RefactoringContext refactoringContext) {
     SNode concept = SNodeOperations.getAncestor(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     String newPropName = SNodeOperations.getModel(concept).getSModelFqName() + "." + SPropertyOperations.getString(concept, "name");
-    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newPropName, ((String) refactoringContext.getParameter("myNewName")));
+    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newPropName, ((String) refactoringContext.getParameter("newName")));
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {

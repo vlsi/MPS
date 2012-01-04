@@ -4,7 +4,7 @@
     <dirname property="mpsplugin.basedir" file="${ant.file.mpsplugin.build}"/>
     <dirname property="mps.home" file="${ant.file.mpsplugin.build}/.."/>
 
-    <property name="idea_home" value="${mps.home}/../idea15"/>
+    <property name="idea_home" value="${mps.home}/../idea"/>
 
     <target name="clean">
         <delete dir="build"/>

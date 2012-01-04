@@ -154,14 +154,13 @@ public class ListPanel extends JPanel {
       ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
         public void run() {
           final List<SNode> nodesList = new ArrayList<SNode>();
-          for (final SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                // todo be smarter 
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              for (SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
                 ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findInstances(concept, GlobalScope.getInstance(), new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()), false)));
               }
-            });
-          }
+            }
+          });
           if (ListPanel.this.myIsTestMethods) {
             final List<ITestNodeWrapper> methodsList = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
             ModelAccess.instance().runReadAction(new Runnable() {

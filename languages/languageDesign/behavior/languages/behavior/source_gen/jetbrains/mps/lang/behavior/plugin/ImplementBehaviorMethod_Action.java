@@ -16,11 +16,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import java.awt.Frame;
-import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
-import jetbrains.mps.ide.actions.AddConceptMethodStrategy;
-import jetbrains.mps.ide.actions.MethodsToImplementStrategy;
-import jetbrains.mps.ide.actions.ImplementMethodStrategy;
+import jetbrains.mps.ide.actions.OverrideConceptMethodsAction;
 
 public class ImplementBehaviorMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -76,9 +72,7 @@ public class ImplementBehaviorMethod_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
-      Frame frame = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getMainFrame();
-      new StratergyAddMethodDialog(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), frame, new AddConceptMethodStrategy(((SNode) MapSequence.fromMap(_params).get("selectedNode"))), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
-
+      new OverrideConceptMethodsAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), false).run();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ImplementBehaviorMethod", t);
     }

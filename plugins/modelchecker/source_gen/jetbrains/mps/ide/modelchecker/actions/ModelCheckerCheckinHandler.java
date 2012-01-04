@@ -25,6 +25,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.vcs.changes.CommitContext;
 
 public class ModelCheckerCheckinHandler extends CheckinHandler {
   private Project myProject;
@@ -90,7 +91,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
     }
 
     @NotNull
-    public CheckinHandler createHandler(CheckinProjectPanel panel) {
+    public CheckinHandler createHandler(CheckinProjectPanel panel, CommitContext commitContext) {
       return new ModelCheckerCheckinHandler(panel.getProject(), panel);
     }
   }

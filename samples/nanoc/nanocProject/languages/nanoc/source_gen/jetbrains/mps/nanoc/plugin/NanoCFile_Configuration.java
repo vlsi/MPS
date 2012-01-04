@@ -77,7 +77,7 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        LOG.warning("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
+        LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
       }
     }
   }
