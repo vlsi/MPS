@@ -34,6 +34,7 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
@@ -42,7 +43,7 @@ import org.jetbrains.annotations.NotNull;
 public class ModelConstraintsUtil {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsUtil.class);
 
-
+  @NotNull
   public static Scope getScope(@NotNull SReference reference, IOperationContext context) {
     ModelAccess.assertLegalRead();
 
@@ -61,11 +62,12 @@ public class ModelConstraintsUtil {
     return new ErrorScope(status.getMessage());
   }
 
-  public static Scope getScope(@NotNull SNode enclosingNode, @NotNull String role, int index, SNode smartConcept, IOperationContext context) {
+  @NotNull
+  public static Scope getScope(@NotNull SNode enclosingNode, @Nullable String role, int index, SNode smartConcept, IOperationContext context) {
     ModelAccess.assertLegalRead();
 
     SNode smartRef = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
-    SNode linkDeclaration = enclosingNode.getLinkDeclaration(role);
+    SNode linkDeclaration = role != null ? enclosingNode.getLinkDeclaration(role) : null;
     SearchScopeStatus status = getSearchScope(enclosingNode, null, smartConcept, SModelUtil.getGenuineLinkRole(smartRef), SModelUtil.getLinkDeclarationTarget(smartRef), linkDeclaration, context);
     if (status.isOk()) {
       if(status.isDefault()) {
