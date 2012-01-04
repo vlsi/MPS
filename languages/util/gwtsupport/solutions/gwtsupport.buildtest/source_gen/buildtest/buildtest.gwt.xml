@@ -6,7 +6,7 @@
 <module>
   <inherits name="com.google.gwt.core.Core"/>
   <inherits name="com.google.gwt.user.User"/>
-  <inherits name="jetbrains.mps.internal.collections.runtime"/>
+  <inherits name="collections.runtime-gwt"/>
   <inherits name="jetbrains.mps.baseLanguage.closures.runtime"/>
   <source path=""/>
   <entry-point class="buildtest.SampleModule"/>
