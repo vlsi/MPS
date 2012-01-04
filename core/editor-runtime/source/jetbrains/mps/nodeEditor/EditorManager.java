@@ -151,6 +151,13 @@ public class EditorManager {
     if (cellWithRole_RefTargetsDependsOn != null) {
       newAttributeCell_RefTargetsDependsOn.addAll(cellWithRole_RefTargetsDependsOn);
     }
+    if (attributeKind != AttributeKind.Node.class) {
+      NodeReadAccessInEditorListener readAccessListener = NodeReadAccessCasterInEditor.getReadAccessListener();
+      if (readAccessListener != null) {
+        newAttributeCell_DependOn.addAll(readAccessListener.getNodesToDependOn());
+        newAttributeCell_RefTargetsDependsOn.addAll(readAccessListener.getRefTargetsToDependOn());
+      }
+    }
     editor.putCellAndNodesToDependOn(attributeCell, newAttributeCell_DependOn, newAttributeCell_RefTargetsDependsOn);
 
     return attributeCell;
