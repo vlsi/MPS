@@ -157,7 +157,7 @@ public class MPSModuleRepository implements CoreComponent {
       }
     } else {
       if (owner == module) {
-        LOG.warning("module " + module + " wants to owe itself: will be collected very quickly", module);
+        LOG.warning("module "+ module + " wants to own itself: will be collected very quickly", module);
       }
       myModuleToOwners.addLink(module, owner);
       myModules.add(module);
