@@ -49,7 +49,7 @@ public abstract class TreeNodeVisitor {
     });
   }
 
-  private boolean checkDisposed(MPSTreeNode node) {
+  protected boolean checkDisposed(MPSTreeNode node) {
     IOperationContext context = node.getOperationContext();
     return !context.getProject().isDisposed() && context.isValid();
   }
