@@ -100,7 +100,7 @@ public class IntermediateModelsCache {
   public void store(int majorStep, int minor, TransientModelWithMetainfo model) {
     long start = System.nanoTime();
     try {
-      if (majorStep == mySteps.size()) {
+      while (majorStep >= mySteps.size()) {
         mySteps.add(0);
       }
       int minorStep = mySteps.get(majorStep);
