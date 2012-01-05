@@ -20,15 +20,15 @@ import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.smodel.constraints.SearchScopeStatus;
+import jetbrains.mps.smodel.constraints.ModelConstraintsUtil.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Condition;
@@ -216,35 +216,45 @@ public class ChildSubstituteActionsHelper {
   }
 
   private static List<INodeSubstituteAction> createSmartReferenceActions(
-    final SNode referenceNodeConcept,
-    SNode smartReference,
+    final SNode smartConcept,
+    final SNode smartReference,
     final SNode parentNode,
     final SNode currentChild,
-    IChildNodeSetter childSetter,
+    final IChildNodeSetter childSetter,
     final IOperationContext context) {
+
+    if (parentNode == null) {
+      return null;
+    }
 
     // try to create referent-search-scope
     SNode linkDeclaration = null;
+    int index = 0;
     if (currentChild != null) {
       linkDeclaration = currentChild.getRoleLink();
+      index = parentNode.getIndexOfChild(currentChild);
     }
     if (linkDeclaration == null && childSetter instanceof DefaultChildNodeSetter) {
       linkDeclaration = ((DefaultChildNodeSetter) childSetter).getLinkDeclaration();
     }
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, smartReference, linkDeclaration, context);
-    if (status.isError()) return null;
+
+    if (linkDeclaration == null) {
+      return null;
+    }
+
+    ReferenceDescriptor refDescriptor = ModelConstraintsUtil.getSmartReferenceDescriptor(parentNode, SModelUtil.getLinkDeclarationRole(linkDeclaration), index, smartConcept, context);
+    if (refDescriptor == null) return null;
+
+    Scope searchScope = refDescriptor.getScope();
+    if (searchScope == null) return null;
 
     // create smart actions
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
-    final SNode referenceLink_final = smartReference;
-    ISearchScope searchScope = status.getSearchScope();
-    IReferencePresentation presentation = status.getPresentation();
-    final SNode targetConcept = SModelUtil.getLinkDeclarationTarget(smartReference);
-
-    List<SNode> referentNodes = searchScope.getNodes(new IsInstanceCondition(targetConcept));
+    IReferencePresentation presentation = refDescriptor.getReferencePresentation();
+    List<SNode> referentNodes = searchScope.getAvailableElements(null);
     for (SNode referentNode : referentNodes) {
       actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode,
-        currentChild, childSetter, context.getScope(), referenceNodeConcept, referenceLink_final, presentation));
+        currentChild, childSetter, context.getScope(), smartConcept, smartReference, presentation));
     }
 
     return actions;
@@ -264,8 +274,8 @@ public class ChildSubstituteActionsHelper {
     private final SNode myParentNode;
     private final SNode myCurrentChild;
     private final SNode myReferentNode;
-    private final SNode myReferenceNodeConcept;
-    private final SNode myReferenceLink_final;
+    private final SNode mySmartConcept;
+    private final SNode mySmartReference;
     private IReferencePresentation myPresentation;
 
     public SmartRefChildNodeSubstituteAction(
@@ -274,16 +284,16 @@ public class ChildSubstituteActionsHelper {
       SNode currentChild,
       IChildNodeSetter childSetter,
       IScope scope,
-      SNode referenceNodeConcept,
-      SNode referenceLink_final,
+      SNode smartConcept,
+      SNode smartReference,
       IReferencePresentation presentation) {
 
-      super(referenceNodeConcept, referentNode, parentNode, currentChild, childSetter, scope);
+      super(smartConcept, referentNode, parentNode, currentChild, childSetter, scope);
       myReferentNode = referentNode;
       myParentNode = parentNode;
       myCurrentChild = currentChild;
-      myReferenceNodeConcept = referenceNodeConcept;
-      myReferenceLink_final = referenceLink_final;
+      mySmartConcept = smartConcept;
+      mySmartReference = smartReference;
       myPresentation = presentation;
     }
 
@@ -292,7 +302,7 @@ public class ChildSubstituteActionsHelper {
         if (myPresentation != null) {
           myMatchingText = myPresentation.getText(myReferentNode, false, true, false);
         } else {
-          myMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode, false);
+          myMatchingText = getSmartMatchingText(mySmartConcept, myReferentNode, false);
         }
       }
       return myMatchingText;
@@ -303,7 +313,7 @@ public class ChildSubstituteActionsHelper {
         if (myPresentation != null) {
           myVisibleMatchingText = myPresentation.getText(myReferentNode, true, true, false);
         } else {
-          myVisibleMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode, true);
+          myVisibleMatchingText = getSmartMatchingText(mySmartConcept, myReferentNode, true);
         }
       }
       return myVisibleMatchingText;
@@ -328,10 +338,10 @@ public class ChildSubstituteActionsHelper {
     }
 
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-      SNode childNode = SModelUtil_new.instantiateConceptDeclaration(NameUtil.nodeFQName(myReferenceNodeConcept), model, GlobalScope.getInstance());
-      String referentRole = SModelUtil.getGenuineLinkRole(myReferenceLink_final);
+      SNode childNode = SModelUtil_new.instantiateConceptDeclaration(NameUtil.nodeFQName(mySmartConcept), model, GlobalScope.getInstance());
+      String referentRole = SModelUtil.getGenuineLinkRole(mySmartReference);
       childNode.setReferent(referentRole, myReferentNode);
-      NodeFactoryManager.setupNode(myReferenceNodeConcept, childNode, myCurrentChild, myParentNode, model, getScope());
+      NodeFactoryManager.setupNode(mySmartConcept, childNode, myCurrentChild, myParentNode, model, getScope());
       return childNode;
     }
   }

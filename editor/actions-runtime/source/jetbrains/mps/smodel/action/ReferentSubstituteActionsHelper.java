@@ -17,12 +17,15 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.scope.ErrorScope;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.smodel.constraints.SearchScopeStatus;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.smodel.constraints.ModelConstraintsUtil.ReferenceDescriptor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,26 +47,26 @@ import java.util.List;
     }
 
     // search scope
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, linkDeclaration, referenceNode.getRoleLink(), context);
-    if (status.isError()) {
-      LOG.error("Couldn't create referent search scope : " + status.getMessage());
+    ReferenceDescriptor refDescriptor = ModelConstraintsUtil.getReferenceDescriptor(referenceNode, SModelUtil.getLinkDeclarationRole(linkDeclaration), 0, context);
+    Scope searchScope = refDescriptor.getScope();
+    if (searchScope instanceof ErrorScope) {
+      LOG.error("Couldn't create referent search scope : " + ((ErrorScope) searchScope).getMessage());
       return new LinkedList<INodeSubstituteAction>();
     }
 
-    ISearchScope searchScope = status.getSearchScope();
-    IReferencePresentation presentation = status.getPresentation();
+    IReferencePresentation presentation = refDescriptor.getReferencePresentation();
     return createActions(referenceNode, currentReferent, linkDeclaration, searchScope, presentation, scope);
   }
 
   private static List<INodeSubstituteAction> createActions(
     SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
-    ISearchScope searchScope, IReferencePresentation presentation, final IScope scope) {
+    Scope searchScope, IReferencePresentation presentation, final IScope scope) {
 
     final SNode referentConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
     if (referentConcept == null) {
       return Collections.emptyList();
     }
-    List<SNode> nodes = searchScope.getNodes(new IsInstanceCondition(referentConcept));
+    List<SNode> nodes = searchScope.getAvailableElements(null);
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     for (SNode node : nodes) {
       actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration, presentation));
