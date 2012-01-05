@@ -10,7 +10,7 @@ SET MPS_VM_OPTIONS="%PROJECT_HOME%bin\mps.exe.vmoptions"
 set ACC=
 FOR /F "delims=" %%i in ('TYPE %MPS_VM_OPTIONS%') DO call :parse_vmoptions "%%i"
 set JVM_ARGS=%ACC%
-set JVM_ARGS=%JVM_ARGS% -Didea.filewatcher.executable.path=%PROJECT_HOME%bin/win/fsnotifier.exe
+if exist %PROJECT_HOME%bin\win set JVM_ARGS=%JVM_ARGS% -Didea.filewatcher.executable.path=%PROJECT_HOME%win\fsnotifier.exe
 ::set ADDITIONAL_JVM_ARGS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
 set CLASSPATH="%PROJECT_HOME%lib\branding.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\mps-boot.jar"

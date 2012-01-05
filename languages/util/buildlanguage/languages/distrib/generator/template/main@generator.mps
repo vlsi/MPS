@@ -460,9 +460,9 @@
         </node>
       </node>
     </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="8943996815357498653">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="8943996815357498656">
-        <property name="text" nameId="tpih.1164413036326" value="set JVM_ARGS=%JVM_ARGS% -Didea.filewatcher.executable.path=%PROJECT_HOME%bin/win/fsnotifier.exe" />
+    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="8943996815357687026">
+      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="8943996815357687028">
+        <property name="text" nameId="tpih.1164413036326" value="if exist %PROJECT_HOME%bin\win set JVM_ARGS=%JVM_ARGS% -Didea.filewatcher.executable.path=%PROJECT_HOME%win\fsnotifier.exe" />
       </node>
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="1240322744542">
@@ -1352,8 +1352,8 @@
             </node>
           </node>
           <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1255990192004313538">
-            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802812457" resolveInfo="tofile" />
-            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1255990192004313539">
+            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802812455" resolveInfo="todir" />
+            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7397630439408353416">
               <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859067" resolveInfo="fsnotifier.dst" />
             </node>
           </node>
@@ -5190,8 +5190,8 @@
             </node>
           </node>
           <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1255990192004313439">
-            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802812457" resolveInfo="tofile" />
-            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619318859022">
+            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802812455" resolveInfo="todir" />
+            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7397630439408353422">
               <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1255990192004313476" resolveInfo="fsnotifier.dst" />
             </node>
           </node>
@@ -9316,8 +9316,8 @@
             </node>
           </node>
           <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1255990192004313506">
-            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802812457" resolveInfo="tofile" />
-            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1255990192004313507">
+            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802812455" resolveInfo="todir" />
+            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7397630439408352810">
               <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859025" resolveInfo="fsnotifier.dst" />
             </node>
           </node>
@@ -10900,27 +10900,46 @@
           <node role="base" roleId="u9e0.8474643070102636485" type="u9e0.HeadPipeline" typeId="u9e0.8474643070110245381" id="1255990192004313342">
             <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.IfCommand" typeId="u9e0.7633559109508737477" id="1255990192004313345">
               <node role="ifTrue" roleId="u9e0.7633559109508737479" type="u9e0.InputLines" typeId="u9e0.3321051580269917239" id="1255990192004313346">
-                <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1255990192004313331">
-                  <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1255990192004313332">
-                    <node role="base" roleId="u9e0.8474643070102636485" type="u9e0.HeadPipeline" typeId="u9e0.8474643070110245381" id="1255990192004313333">
-                      <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.VariableAssingment" typeId="u9e0.3999172467441325687" id="1255990192004313336">
-                        <node role="value" roleId="u9e0.3999172467441293221" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313337">
-                          <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.DoubleQuote" typeId="u9e0.3263637656455059166" id="1255990192004313392">
-                            <node role="word" roleId="u9e0.3147078024751877535" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313394">
-                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.BasicParameterExpansion" typeId="u9e0.3999172467442053841" id="1255990192004313399">
-                                <link role="variable" roleId="u9e0.3999172467442053842" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
-                              </node>
-                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313405">
-                                <property name="word" nameId="u9e0.8353259571485353282" value=" -Didea.filewatcher.executable.path=" />
-                              </node>
-                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313408">
-                                <property name="word" nameId="u9e0.8353259571485353282" value="./linux/fsnotifier" />
+                <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="8943996815357686965">
+                  <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="8943996815357686966">
+                    <node role="base" roleId="u9e0.8474643070102636485" type="u9e0.HeadPipeline" typeId="u9e0.8474643070110245381" id="8943996815357686967">
+                      <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.IfCommand" typeId="u9e0.7633559109508737477" id="8943996815357686969">
+                        <node role="testCommand" roleId="u9e0.7633559109508737478" type="u9e0.ConditionalCommand" typeId="u9e0.3147078024747082354" id="8943996815357686976">
+                          <node role="conditionalExpression" roleId="u9e0.3147078024747082356" type="u9e0.OtherExistConditionalExpression" typeId="u9e0.9034131902191439598" id="8943996815357686978">
+                            <node role="word" roleId="u9e0.9034131902191439564" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="8943996815357686979">
+                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="8943996815357686980">
+                                <property name="word" nameId="u9e0.8353259571485353282" value="./bin/linux" />
                               </node>
                             </node>
                           </node>
                         </node>
-                        <node role="lvalue" roleId="u9e0.3999172467441293220" type="u9e0.VariableReference" typeId="u9e0.9034131902187955344" id="1255990192004313338">
-                          <link role="variable" roleId="u9e0.9034131902187955345" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
+                        <node role="ifTrue" roleId="u9e0.7633559109508737479" type="u9e0.InputLines" typeId="u9e0.3321051580269917239" id="8943996815357686971">
+                          <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1255990192004313331">
+                            <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1255990192004313332">
+                              <node role="base" roleId="u9e0.8474643070102636485" type="u9e0.HeadPipeline" typeId="u9e0.8474643070110245381" id="1255990192004313333">
+                                <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.VariableAssingment" typeId="u9e0.3999172467441325687" id="1255990192004313336">
+                                  <node role="value" roleId="u9e0.3999172467441293221" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313337">
+                                    <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.DoubleQuote" typeId="u9e0.3263637656455059166" id="1255990192004313392">
+                                      <node role="word" roleId="u9e0.3147078024751877535" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313394">
+                                        <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.BasicParameterExpansion" typeId="u9e0.3999172467442053841" id="1255990192004313399">
+                                          <link role="variable" roleId="u9e0.3999172467442053842" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
+                                        </node>
+                                        <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313405">
+                                          <property name="word" nameId="u9e0.8353259571485353282" value=" -Didea.filewatcher.executable.path=" />
+                                        </node>
+                                        <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313408">
+                                          <property name="word" nameId="u9e0.8353259571485353282" value="./linux/fsnotifier" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node role="lvalue" roleId="u9e0.3999172467441293220" type="u9e0.VariableReference" typeId="u9e0.9034131902187955344" id="1255990192004313338">
+                                    <link role="variable" roleId="u9e0.9034131902187955345" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -10950,27 +10969,46 @@
                 </node>
               </node>
               <node role="ifFalse" roleId="u9e0.7633559109508737480" type="u9e0.InputLines" typeId="u9e0.3321051580269917239" id="1255990192004313410">
-                <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1255990192004313411">
-                  <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1255990192004313412">
-                    <node role="base" roleId="u9e0.8474643070102636485" type="u9e0.HeadPipeline" typeId="u9e0.8474643070110245381" id="1255990192004313413">
-                      <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.VariableAssingment" typeId="u9e0.3999172467441325687" id="1255990192004313415">
-                        <node role="value" roleId="u9e0.3999172467441293221" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313416">
-                          <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.DoubleQuote" typeId="u9e0.3263637656455059166" id="1255990192004313417">
-                            <node role="word" roleId="u9e0.3147078024751877535" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313418">
-                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.BasicParameterExpansion" typeId="u9e0.3999172467442053841" id="1255990192004313419">
-                                <link role="variable" roleId="u9e0.3999172467442053842" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
-                              </node>
-                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313420">
-                                <property name="word" nameId="u9e0.8353259571485353282" value=" -Didea.filewatcher.executable.path=" />
-                              </node>
-                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313422">
-                                <property name="word" nameId="u9e0.8353259571485353282" value="./mac/fsnotifier" />
+                <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="8943996815357686985">
+                  <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="8943996815357686986">
+                    <node role="base" roleId="u9e0.8474643070102636485" type="u9e0.HeadPipeline" typeId="u9e0.8474643070110245381" id="8943996815357686987">
+                      <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.IfCommand" typeId="u9e0.7633559109508737477" id="8943996815357686988">
+                        <node role="testCommand" roleId="u9e0.7633559109508737478" type="u9e0.ConditionalCommand" typeId="u9e0.3147078024747082354" id="8943996815357686989">
+                          <node role="conditionalExpression" roleId="u9e0.3147078024747082356" type="u9e0.OtherExistConditionalExpression" typeId="u9e0.9034131902191439598" id="8943996815357686990">
+                            <node role="word" roleId="u9e0.9034131902191439564" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="8943996815357686991">
+                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="8943996815357686992">
+                                <property name="word" nameId="u9e0.8353259571485353282" value="./bin/mac" />
                               </node>
                             </node>
                           </node>
                         </node>
-                        <node role="lvalue" roleId="u9e0.3999172467441293220" type="u9e0.VariableReference" typeId="u9e0.9034131902187955344" id="1255990192004313423">
-                          <link role="variable" roleId="u9e0.9034131902187955345" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
+                        <node role="ifTrue" roleId="u9e0.7633559109508737479" type="u9e0.InputLines" typeId="u9e0.3321051580269917239" id="8943996815357686993">
+                          <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1255990192004313411">
+                            <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1255990192004313412">
+                              <node role="base" roleId="u9e0.8474643070102636485" type="u9e0.HeadPipeline" typeId="u9e0.8474643070110245381" id="1255990192004313413">
+                                <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.VariableAssingment" typeId="u9e0.3999172467441325687" id="1255990192004313415">
+                                  <node role="value" roleId="u9e0.3999172467441293221" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313416">
+                                    <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.DoubleQuote" typeId="u9e0.3263637656455059166" id="1255990192004313417">
+                                      <node role="word" roleId="u9e0.3147078024751877535" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313418">
+                                        <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.BasicParameterExpansion" typeId="u9e0.3999172467442053841" id="1255990192004313419">
+                                          <link role="variable" roleId="u9e0.3999172467442053842" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
+                                        </node>
+                                        <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313420">
+                                          <property name="word" nameId="u9e0.8353259571485353282" value=" -Didea.filewatcher.executable.path=" />
+                                        </node>
+                                        <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313422">
+                                          <property name="word" nameId="u9e0.8353259571485353282" value="./mac/fsnotifier" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node role="lvalue" roleId="u9e0.3999172467441293220" type="u9e0.VariableReference" typeId="u9e0.9034131902187955344" id="1255990192004313423">
+                                    <link role="variable" roleId="u9e0.9034131902187955345" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
