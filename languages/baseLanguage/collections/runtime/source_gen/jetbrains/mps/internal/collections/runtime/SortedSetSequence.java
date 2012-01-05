@@ -62,7 +62,7 @@ public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSe
 
   @Override
   public ISortedSetSequence<T> asSynchronized() {
-    return new SortedSetSequence(Collections.synchronizedSortedSet(getSet()));
+    return new SortedSetSequence(CollectionUtils.synchronizedSortedSet(getSet()));
   }
 
   @Override

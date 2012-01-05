@@ -193,7 +193,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
 
   @Override
   public IListSequence<T> asSynchronized() {
-    return new ListSequence<T>(Collections.synchronizedList(getList()));
+    return new ListSequence<T>(CollectionUtils.synchronizedList(getList()));
   }
 
   @SuppressWarnings(value = "unchecked")

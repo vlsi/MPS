@@ -3,21 +3,18 @@
 
   <dirname property="buildtest.basedir" file="${ant.file.gwtsupport.buildtest}"/>
   
-  <!-- Configure path to GWT SDK -->
-  <property name="gwt.sdk" location="${buildtest.basedir}/../../tools/gwt21" />
   <!-- Path to MPS home dir -->
-  <property name="mps.home" value="${buildtest.basedir}/../../../.."/>
+  <!-- property name="mps.home" value="/opt/mps/MPS EAP"/ -->
+  <!-- Configure path to GWT SDK -->
+  <property name="gwt.sdk" location="${mps.home}/languages/util/jetbrains.mps.gwt.client" />
 
   <path id="project.class.path">
     <pathelement location="classes_gen"/>
-    <pathelement location="${mps.home}/languages/baseLanguage/collections/runtime/source"/>
-    <pathelement location="${mps.home}/languages/baseLanguage/collections/runtime/source_gen"/>
-    <pathelement location="${mps.home}/languages/baseLanguage/collections/runtime/source_gen.gwt"/>
-    <pathelement location="${mps.home}/languages/baseLanguage/collections/runtime/classes"/>
-    <pathelement location="${mps.home}/languages/baseLanguage/closures/runtime/source"/>
-    <pathelement location="${mps.home}/languages/baseLanguage/closures/runtime/source_gen"/>
-    <pathelement location="${mps.home}/languages/baseLanguage/closures/runtime/classes"/>
-    <pathelement location="${mps.home}/languages/baseLanguage/closures/runtime/classes_gen"/>
+    <pathelement location="${mps.home}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar"/>
+    <pathelement location="${mps.home}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar"/>
+    <pathelement location="${mps.home}/lib/mps-collections.jar"/>
+    <pathelement location="${mps.home}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar"/>
+    <pathelement location="${mps.home}/lib/mps-closures.jar"/>
 
     <pathelement location="${gwt.sdk}/gwt-user.jar"/>
     <fileset dir="${gwt.sdk}" includes="gwt-dev*.jar"/>

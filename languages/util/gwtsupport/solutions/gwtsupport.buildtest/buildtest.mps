@@ -12,6 +12,7 @@
   <import index="63d2" modelUID="f:java_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.dom.client(com.google.gwt.dom.client@java_stub)" version="-1" />
   <import index="vibg" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user(com.google.gwt.user@gwt_stub)" version="-1" />
   <import index="jxw0" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.core(com.google.gwt.core@gwt_stub)" version="-1" />
+  <import index="dn91" modelUID="r:ab8aa33b-a984-44fa-94d6-fd9eb7f4fbaa(collections)" version="-1" />
   <import index="k1iy" modelUID="r:940623f0-75cf-4f64-98fc-aef3fadfaedd(jetbrains.mps.gwt.client.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -33,7 +34,7 @@
       <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="vibg.~User" resolveInfo="User" />
     </node>
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729139406">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="9vrl.6309092871163554394" resolveInfo="runtime" />
+      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="dn91.2413200550064256033" resolveInfo="runtime-gwt" />
     </node>
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729139408">
       <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="nva4.1624295421069327411" resolveInfo="runtime" />
@@ -272,7 +273,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3789315678729158631">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3789315678729158633">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3789315678729158632">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3789315678729158609" resolveInfo="ssss" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3789315678729158609" resolveInfo="widgets" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddFirstElementOperation" typeId="tp2q.1227022159410" id="3789315678729158639">
                         <node role="argument" roleId="tp2q.1227022622978" type="tp2c.CompactInvokeFunctionExpression" typeId="tp2c.1235746970280" id="3789315678729221678">
