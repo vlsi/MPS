@@ -8,6 +8,9 @@
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_checkedNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_containingLink_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_contextNode_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_contextRole_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_exists_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_inEditor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_linkTarget_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_link_BehaviorDescriptor" />
@@ -15,6 +18,7 @@
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_oldReferentNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parameterNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parentNode_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_position_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_referenceNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_smartReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_visible_BehaviorDescriptor" />
@@ -29,11 +33,12 @@
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSetHandler_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_node_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.NestedNodeScopeFactory_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.InheritedNodeScopeFactory_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_BehaviorDescriptor" />
@@ -97,6 +102,24 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_contextNode_BehaviorDescriptor" file="ConstraintFunctionParameter_contextNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_contextRole_BehaviorDescriptor" file="ConstraintFunctionParameter_contextRole_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_exists_BehaviorDescriptor" file="ConstraintFunctionParameter_exists_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_inEditor_BehaviorDescriptor" file="ConstraintFunctionParameter_inEditor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -134,6 +157,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parentNode_BehaviorDescriptor" file="ConstraintFunctionParameter_parentNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_position_BehaviorDescriptor" file="ConstraintFunctionParameter_position_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
@@ -287,6 +316,26 @@
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Scope_Behavior" file="ConstraintFunction_ReferentSearchScope_Scope_Behavior.java">
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor" file="ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Scope_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.NodeScopeFactory_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator_Behavior" file="ConstraintFunction_ReferentSearchScope_Validator_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -316,7 +365,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.behavior.NestedNodeScopeFactory_BehaviorDescriptor" file="NestedNodeScopeFactory_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.constraints.behavior.InheritedNodeScopeFactory_BehaviorDescriptor" file="InheritedNodeScopeFactory_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.NodeScopeFactory_BehaviorDescriptor" />
