@@ -460,6 +460,11 @@
         </node>
       </node>
     </node>
+    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="8943996815357498653">
+      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="8943996815357498656">
+        <property name="text" nameId="tpih.1164413036326" value="set JVM_ARGS=%JVM_ARGS% -Didea.filewatcher.executable.path=%PROJECT_HOME%bin/win/fsnotifier.exe" />
+      </node>
+    </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="1240322744542">
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="1240323542155">
         <property name="text" nameId="tpih.1164413036326" value="::" />
@@ -1335,6 +1340,24 @@
             </node>
           </node>
         </node>
+        <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1255990192004313534">
+          <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802812427" resolveInfo="copy" />
+          <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1255990192004313535">
+            <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802813175" resolveInfo="fileset" />
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1255990192004313536">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811531" resolveInfo="dir" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1255990192004313537">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859096" resolveInfo="fsnotifier.src" />
+              </node>
+            </node>
+          </node>
+          <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1255990192004313538">
+            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802812457" resolveInfo="tofile" />
+            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1255990192004313539">
+              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859067" resolveInfo="fsnotifier.dst" />
+            </node>
+          </node>
+        </node>
         <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1234795432372">
           <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802812427" resolveInfo="copy" />
           <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1234795436072">
@@ -1855,8 +1878,8 @@
                                 </node>
                               </node>
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1580548376419850381">
-                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~MPSModuleRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dMPSModuleRepository" resolveInfo="getInstance" />
+                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
                               </node>
                             </node>
                           </node>
@@ -3039,6 +3062,73 @@
             </node>
           </node>
         </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="7119880619318859067">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.dst" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="7119880619318859068">
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318859069">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318859070">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859071">
+                  <property name="value" nameId="tpsk.1196861024475" value="/bin" />
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859072">
+                  <property name="value" nameId="tpsk.1196861024475" value="MPS" />
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="7119880619318859073">
+                    <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
+                    <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="7119880619318859074">
+                      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7119880619318859075">
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7119880619318859076">
+                          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318859077">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318859078">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318859079">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318859080">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7119880619318859081" />
+                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="7119880619318859082">
+                                    <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="7119880619318859083">
+                                      <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7119880619318859084">
+                                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="60oz.1230056066379" resolveInfo="DistribConfiguration" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7119880619318859085">
+                                  <link role="link" roleId="tp25.1138056516764" targetNodeId="60oz.1230293684459" />
+                                </node>
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7119880619318859086">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1213877333777" resolveInfo="getPath" />
+                              </node>
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7119880619318859087">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859088">
+                <property name="value" nameId="tpsk.1196861024475" value="${deploy.dir}/" />
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="7119880619318859089" />
+        </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="7119880619318859096">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.src" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="7119880619318859097">
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318859098">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859099">
+                <property name="value" nameId="tpsk.1196861024475" value="/win" />
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619318859100">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859067" resolveInfo="fsnotifier.dst" />
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="7119880619318859101" />
+        </node>
         <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1230570261456">
           <property name="name" nameId="tpck.1169194664001" value="nsis.script.name" />
           <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230570268858">
@@ -3880,6 +3970,101 @@
             </node>
           </node>
         </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="7119880619318859111">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.src" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="7119880619318859112">
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318859113">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318859114">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859115">
+                  <property name="value" nameId="tpsk.1196861024475" value="/bin" />
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859116">
+                  <property name="value" nameId="tpsk.1196861024475" value="MPS" />
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="7119880619318859117">
+                    <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
+                    <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="7119880619318859118">
+                      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7119880619318859119">
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7119880619318859120">
+                          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318859121">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318859122">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318859123">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318859124">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7119880619318859125" />
+                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="7119880619318859126">
+                                    <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="7119880619318859127">
+                                      <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7119880619318859128">
+                                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="60oz.1230056066379" resolveInfo="DistribConfiguration" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7119880619318859129">
+                                  <link role="link" roleId="tp25.1138056516764" targetNodeId="60oz.1230293684459" />
+                                </node>
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7119880619318859130">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1213877333777" resolveInfo="getPath" />
+                              </node>
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7119880619318859131">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859132">
+                <property name="value" nameId="tpsk.1196861024475" value="${deploy.dir}/" />
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="7119880619318859133" />
+        </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="7119880619318859140">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.mac.suffix" />
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="7119880619319055466" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859143">
+            <property name="value" nameId="tpsk.1196861024475" value="/mac/fsnotifier" />
+          </node>
+        </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="7119880619319055456">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.src.mac" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="7119880619319055457">
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619319055458">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619319055465">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859140" resolveInfo="fsnotifier.mac.suffix" />
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619319055460">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859111" resolveInfo="fsnotifier.src" />
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="7119880619319055461" />
+        </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="7119880619318859147">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.linux.suffix" />
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="7119880619319055474" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859150">
+            <property name="value" nameId="tpsk.1196861024475" value="/linux/fsnotifier" />
+          </node>
+        </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="7119880619319055467">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.src.linux" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="7119880619319055468">
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619319055469">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619319055476">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859147" resolveInfo="fsnotifier.linux.suffix" />
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619319055471">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859111" resolveInfo="fsnotifier.src" />
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="7119880619319055472" />
+        </node>
         <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1230565042858">
           <property name="name" nameId="tpck.1169194664001" value="zip.file" />
           <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="1230565052360" />
@@ -4471,6 +4656,58 @@
               </node>
             </node>
           </node>
+          <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="7119880619319055424">
+            <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802815941" resolveInfo="zipfileset" />
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="7119880619319055425">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811537" resolveInfo="file" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619319055481">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619319055456" resolveInfo="fsnotifier.src.mac" />
+              </node>
+            </node>
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="7119880619319055427">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811860" resolveInfo="prefix" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619319055447">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619319055450">
+                  <property name="value" nameId="tpsk.1196861024475" value="/bin/mac" />
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619319055428">
+                  <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="2833246249519008471" resolveInfo="dist.folder.name" />
+                </node>
+              </node>
+            </node>
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="7119880619319055429">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811866" resolveInfo="filemode" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619319055430">
+                <property name="value" nameId="tpsk.1196861024475" value="755" />
+              </node>
+            </node>
+          </node>
+          <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="7119880619319055431">
+            <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802815941" resolveInfo="zipfileset" />
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="7119880619319055432">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811537" resolveInfo="file" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619319055482">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619319055467" resolveInfo="fsnotifier.src.linux" />
+              </node>
+            </node>
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="7119880619319055434">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811860" resolveInfo="prefix" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619319055483">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619319055486">
+                  <property name="value" nameId="tpsk.1196861024475" value="/bin/linux" />
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619319055487">
+                  <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="2833246249519008471" resolveInfo="dist.folder.name" />
+                </node>
+              </node>
+            </node>
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="7119880619319055436">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811866" resolveInfo="filemode" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619319055437">
+                <property name="value" nameId="tpsk.1196861024475" value="755" />
+              </node>
+            </node>
+          </node>
           <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1238509116669">
             <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802815941" resolveInfo="zipfileset" />
             <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1238509203862">
@@ -4941,6 +5178,24 @@
             </node>
           </node>
         </node>
+        <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1255990192004313436">
+          <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802812427" resolveInfo="copy" />
+          <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1255990192004313457">
+            <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802813175" resolveInfo="fileset" />
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1255990192004313458">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811531" resolveInfo="dir" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1255990192004313485">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1255990192004313466" resolveInfo="fsnotifier.src" />
+              </node>
+            </node>
+          </node>
+          <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1255990192004313439">
+            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802812457" resolveInfo="tofile" />
+            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619318859022">
+              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1255990192004313476" resolveInfo="fsnotifier.dst" />
+            </node>
+          </node>
+        </node>
         <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1234518224589">
           <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802814916" resolveInfo="replace" />
           <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1234518262687">
@@ -5185,6 +5440,32 @@
                 <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1234519580708">
                   <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1234519528999" resolveInfo="root.folder.dest" />
                 </node>
+              </node>
+            </node>
+          </node>
+          <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="7119880619319055495">
+            <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802815941" resolveInfo="zipfileset" />
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="7119880619319055496">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811537" resolveInfo="file" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619319060613">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="5026159709621393686" resolveInfo="fsnotifier.dst.mainFile" />
+              </node>
+            </node>
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="7119880619319055498">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811860" resolveInfo="prefix" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619319055499">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619319055500">
+                  <property name="value" nameId="tpsk.1196861024475" value="/bin" />
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619319055501">
+                  <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1234519528999" resolveInfo="root.folder.dest" />
+                </node>
+              </node>
+            </node>
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="7119880619319055505">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811866" resolveInfo="filemode" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619319055520">
+                <property name="value" nameId="tpsk.1196861024475" value="755" />
               </node>
             </node>
           </node>
@@ -5628,6 +5909,87 @@
             </node>
           </node>
           <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="1234518167962" />
+        </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1255990192004313476">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.dst" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1255990192004313477">
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318858977">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318858978">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318858979">
+                  <property name="value" nameId="tpsk.1196861024475" value="/bin" />
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318858980">
+                  <property name="value" nameId="tpsk.1196861024475" value="MPS" />
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="7119880619318858981">
+                    <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
+                    <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="7119880619318858982">
+                      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7119880619318858983">
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7119880619318858984">
+                          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318858985">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318858986">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318858987">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318858988">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7119880619318858989" />
+                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="7119880619318858990">
+                                    <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="7119880619318858991">
+                                      <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7119880619318858992">
+                                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="60oz.1230056066379" resolveInfo="DistribConfiguration" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7119880619318858993">
+                                  <link role="link" roleId="tp25.1138056516764" targetNodeId="60oz.1230293684459" />
+                                </node>
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7119880619318858994">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1213877333777" resolveInfo="getPath" />
+                              </node>
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7119880619318858995">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318858996">
+                <property name="value" nameId="tpsk.1196861024475" value="${deploy.dir}/" />
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="1255990192004313479" />
+        </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="5026159709621393686">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.dst.mainFile" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="5026159709621393687">
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318859010">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859013">
+                <property name="value" nameId="tpsk.1196861024475" value="/fsnotifier" />
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619318859009">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1255990192004313476" resolveInfo="fsnotifier.dst" />
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="5026159709621393689" />
+        </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1255990192004313466">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.src" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1255990192004313474">
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318858940">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318858976">
+                <property name="value" nameId="tpsk.1196861024475" value="/mac" />
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619318859007">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1255990192004313476" resolveInfo="fsnotifier.dst" />
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="1255990192004313473" />
         </node>
         <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1234533738989">
           <property name="name" nameId="tpck.1169194664001" value="icon.file" />
@@ -8942,6 +9304,24 @@
       <property name="name" nameId="tpck.1169194664001" value="tmp" />
       <node role="target" roleId="tpsk.1196851079482" type="tpsk.TargetDeclaration" typeId="tpsk.1196851099544" id="1241440614552">
         <property name="name" nameId="tpck.1169194664001" value="default" />
+        <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1255990192004313502">
+          <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802812427" resolveInfo="copy" />
+          <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1255990192004313503">
+            <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802813175" resolveInfo="fileset" />
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1255990192004313504">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811531" resolveInfo="dir" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1255990192004313505">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859054" resolveInfo="fsnotifier.src" />
+              </node>
+            </node>
+          </node>
+          <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1255990192004313506">
+            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802812457" resolveInfo="tofile" />
+            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1255990192004313507">
+              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859025" resolveInfo="fsnotifier.dst" />
+            </node>
+          </node>
+        </node>
         <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.ExternalPropertyDeclaration" typeId="tpsk.1219147669362" id="1241440614553">
           <property name="name" nameId="tpck.1169194664001" value="variable" />
           <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="1241440614555" />
@@ -9093,6 +9473,87 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="7119880619318859025">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.dst" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="7119880619318859026">
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318859027">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318859028">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859029">
+                  <property name="value" nameId="tpsk.1196861024475" value="/bin" />
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859030">
+                  <property name="value" nameId="tpsk.1196861024475" value="MPS" />
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="7119880619318859031">
+                    <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
+                    <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="7119880619318859032">
+                      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7119880619318859033">
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7119880619318859034">
+                          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318859035">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318859036">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318859037">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7119880619318859038">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7119880619318859039" />
+                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="7119880619318859040">
+                                    <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="7119880619318859041">
+                                      <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7119880619318859042">
+                                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="60oz.1230056066379" resolveInfo="DistribConfiguration" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7119880619318859043">
+                                  <link role="link" roleId="tp25.1138056516764" targetNodeId="60oz.1230293684459" />
+                                </node>
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7119880619318859044">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1213877333777" resolveInfo="getPath" />
+                              </node>
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7119880619318859045">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859046">
+                <property name="value" nameId="tpsk.1196861024475" value="${deploy.dir}/" />
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="7119880619318859047" />
+        </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="7119880619318859048">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.dst.mainFile" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="7119880619318859049">
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318859050">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859051">
+                <property name="value" nameId="tpsk.1196861024475" value="/fsnotifier" />
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619318859052">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859025" resolveInfo="fsnotifier.dst" />
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="7119880619318859053" />
+        </node>
+        <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="7119880619318859054">
+          <property name="name" nameId="tpck.1169194664001" value="fsnotifier.src" />
+          <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="7119880619318859055">
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619318859056">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619318859057">
+                <property name="value" nameId="tpsk.1196861024475" value="/linux" />
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619318859058">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859025" resolveInfo="fsnotifier.dst" />
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="7119880619318859059" />
         </node>
         <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1241440614582">
           <property name="name" nameId="tpck.1169194664001" value="tar.gz.file" />
@@ -9525,6 +9986,32 @@
             <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1241440997182">
               <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811866" resolveInfo="filemode" />
               <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1241441001948">
+                <property name="value" nameId="tpsk.1196861024475" value="755" />
+              </node>
+            </node>
+          </node>
+          <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="7119880619319055522">
+            <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802815533" resolveInfo="tarfileset" />
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="7119880619319055523">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811537" resolveInfo="file" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619319055529">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="7119880619318859048" resolveInfo="fsnotifier.dst.mainFile" />
+              </node>
+            </node>
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="7119880619319055525">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811860" resolveInfo="prefix" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="7119880619319055530">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619319055533">
+                  <property name="value" nameId="tpsk.1196861024475" value="/bin" />
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="7119880619319055526">
+                  <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="8301938783869594422" resolveInfo="dist.folder.name" />
+                </node>
+              </node>
+            </node>
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="7119880619319055527">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811866" resolveInfo="filemode" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="7119880619319055528">
                 <property name="value" nameId="tpsk.1196861024475" value="755" />
               </node>
             </node>
@@ -10400,6 +10887,92 @@
                     </node>
                     <node role="lvalue" roleId="u9e0.3999172467441293220" type="u9e0.VariableReference" typeId="u9e0.9034131902187955344" id="7955687276642236528">
                       <link role="variable" roleId="u9e0.9034131902187955345" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1255990192004313340">
+        <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1255990192004313341">
+          <node role="base" roleId="u9e0.8474643070102636485" type="u9e0.HeadPipeline" typeId="u9e0.8474643070110245381" id="1255990192004313342">
+            <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.IfCommand" typeId="u9e0.7633559109508737477" id="1255990192004313345">
+              <node role="ifTrue" roleId="u9e0.7633559109508737479" type="u9e0.InputLines" typeId="u9e0.3321051580269917239" id="1255990192004313346">
+                <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1255990192004313331">
+                  <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1255990192004313332">
+                    <node role="base" roleId="u9e0.8474643070102636485" type="u9e0.HeadPipeline" typeId="u9e0.8474643070110245381" id="1255990192004313333">
+                      <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.VariableAssingment" typeId="u9e0.3999172467441325687" id="1255990192004313336">
+                        <node role="value" roleId="u9e0.3999172467441293221" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313337">
+                          <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.DoubleQuote" typeId="u9e0.3263637656455059166" id="1255990192004313392">
+                            <node role="word" roleId="u9e0.3147078024751877535" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313394">
+                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.BasicParameterExpansion" typeId="u9e0.3999172467442053841" id="1255990192004313399">
+                                <link role="variable" roleId="u9e0.3999172467442053842" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
+                              </node>
+                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313405">
+                                <property name="word" nameId="u9e0.8353259571485353282" value=" -Didea.filewatcher.executable.path=" />
+                              </node>
+                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313408">
+                                <property name="word" nameId="u9e0.8353259571485353282" value="./linux/fsnotifier" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="lvalue" roleId="u9e0.3999172467441293220" type="u9e0.VariableReference" typeId="u9e0.9034131902187955344" id="1255990192004313338">
+                          <link role="variable" roleId="u9e0.9034131902187955345" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="testCommand" roleId="u9e0.7633559109508737478" type="u9e0.ConditionalCommand" typeId="u9e0.3147078024747082354" id="1255990192004313369">
+                <node role="conditionalExpression" roleId="u9e0.3147078024747082356" type="u9e0.EqualityStrings2" typeId="u9e0.898011086340135411" id="1255990192004313370">
+                  <node role="left" roleId="u9e0.9034131902191635404" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313371">
+                    <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.DoubleQuote" typeId="u9e0.3263637656455059166" id="1255990192004313372">
+                      <node role="word" roleId="u9e0.3147078024751877535" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313373">
+                        <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.BasicParameterExpansion" typeId="u9e0.3999172467442053841" id="1255990192004313374">
+                          <link role="variable" roleId="u9e0.3999172467442053842" targetNodeId="6027654792138150264" resolveInfo="UNAME" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="right" roleId="u9e0.9034131902191635405" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313375">
+                    <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.DoubleQuote" typeId="u9e0.3263637656455059166" id="1255990192004313376">
+                      <node role="word" roleId="u9e0.3147078024751877535" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313377">
+                        <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313378">
+                          <property name="word" nameId="u9e0.8353259571485353282" value="Linux" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="ifFalse" roleId="u9e0.7633559109508737480" type="u9e0.InputLines" typeId="u9e0.3321051580269917239" id="1255990192004313410">
+                <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1255990192004313411">
+                  <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1255990192004313412">
+                    <node role="base" roleId="u9e0.8474643070102636485" type="u9e0.HeadPipeline" typeId="u9e0.8474643070110245381" id="1255990192004313413">
+                      <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.VariableAssingment" typeId="u9e0.3999172467441325687" id="1255990192004313415">
+                        <node role="value" roleId="u9e0.3999172467441293221" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313416">
+                          <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.DoubleQuote" typeId="u9e0.3263637656455059166" id="1255990192004313417">
+                            <node role="word" roleId="u9e0.3147078024751877535" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1255990192004313418">
+                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.BasicParameterExpansion" typeId="u9e0.3999172467442053841" id="1255990192004313419">
+                                <link role="variable" roleId="u9e0.3999172467442053842" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
+                              </node>
+                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313420">
+                                <property name="word" nameId="u9e0.8353259571485353282" value=" -Didea.filewatcher.executable.path=" />
+                              </node>
+                              <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.SimpleWord" typeId="u9e0.8353259571485353280" id="1255990192004313422">
+                                <property name="word" nameId="u9e0.8353259571485353282" value="./mac/fsnotifier" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="lvalue" roleId="u9e0.3999172467441293220" type="u9e0.VariableReference" typeId="u9e0.9034131902187955344" id="1255990192004313423">
+                          <link role="variable" roleId="u9e0.9034131902187955345" targetNodeId="1635896182103904836" resolveInfo="JVM_ARGS" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

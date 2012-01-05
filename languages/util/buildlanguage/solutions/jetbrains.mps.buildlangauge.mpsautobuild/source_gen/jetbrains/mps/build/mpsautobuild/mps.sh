@@ -24,6 +24,11 @@ else
   echo "$0 info: Using vmoptions defined in ${MPS_VM_OPTIONS}."
 fi
 JVM_ARGS=`cat "${MPS_VM_OPTIONS}" | tr '\n' ' ' | tr '\r' ' '`
+if [ "${UNAME}" = "Linux" ]; then
+  JVM_ARGS="${JVM_ARGS} -Didea.filewatcher.executable.path=./linux/fsnotifier"
+else
+  JVM_ARGS="${JVM_ARGS} -Didea.filewatcher.executable.path=./mac/fsnotifier"
+fi
 # ADDITIONAL_JVM_ARGS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
 
 CLASSPATH=""

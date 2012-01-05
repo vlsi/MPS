@@ -40,6 +40,11 @@
     <fail unless="build.number" message="Property build.number unspecified." />
     <property name="dist.folder.name" value="MPS ${version}" />
     <property name="root.folder" value="MPS" />
+    <property name="fsnotifier.src" value="${deploy.dir}/MPS/bin" />
+    <property name="fsnotifier.mac.suffix" value="/mac/fsnotifier" />
+    <property name="fsnotifier.src.mac" value="${fsnotifier.src}${fsnotifier.mac.suffix}" />
+    <property name="fsnotifier.linux.suffix" value="/linux/fsnotifier" />
+    <property name="fsnotifier.src.linux" value="${fsnotifier.src}${fsnotifier.linux.suffix}" />
     <property name="zip.file" value="${build.number}.zip" />
     <property name="unix.startup.file" value="${scripts.dir}/mps.sh" />
     <property name="windows.startup.file" value="${scripts.dir}/mps.bat" />
@@ -51,6 +56,8 @@
     <zip destfile="${deploy.dir}/${zip.file}">
       <zipfileset dir="${deploy.dir}/${root.folder}" prefix="${dist.folder.name}" />
       <zipfileset file="${unix.startup.file}" prefix="${dist.folder.name}" filemode="755" />
+      <zipfileset file="${fsnotifier.src.mac}" prefix="${dist.folder.name}/bin/mac" filemode="755" />
+      <zipfileset file="${fsnotifier.src.linux}" prefix="${dist.folder.name}/bin/linux" filemode="755" />
       <zipfileset file="${windows.startup.file}" prefix="${dist.folder.name}" />
       <zipfileset file="${vmoptions.file}" prefix="${dist.folder.name}/bin" />
       <zipfileset file="${vmoptions.file}" fullpath="${dist.folder.name}/bin/mps.exe.vmoptions" />
@@ -62,15 +69,22 @@
     <fail unless="build.number" message="Property build.number unspecified." />
     <property name="dist.folder.name" value="MPS ${version}" />
     <property name="root.folder" value="MPS" />
+    <property name="fsnotifier.dst" value="${deploy.dir}/MPS/bin" />
+    <property name="fsnotifier.dst.mainFile" value="${fsnotifier.dst}/fsnotifier" />
+    <property name="fsnotifier.src" value="${fsnotifier.dst}/linux" />
     <property name="tar.gz.file" value="${build.number}-linux.tar.gz" />
     <property name="unix.startup.file" value="${scripts.dir}/mps.sh" />
     <property name="vmoptions.file" value="${scripts.dir}/mps.vmoptions" />
     <property name="help.file" value="${mps_home}/help/mpshelp.jar" />
+    <copy tofile="${fsnotifier.dst}">
+      <fileset dir="${fsnotifier.src}" />
+    </copy>
     <fixcrlf file="${unix.startup.file}" eof="remove" eol="unix" />
     <fixcrlf file="${vmoptions.file}" eof="remove" eol="unix" />
     <tar destfile="${deploy.dir}/${tar.gz.file}" compression="gzip">
       <tarfileset dir="${deploy.dir}/${root.folder}" prefix="${dist.folder.name}" excludes="**/*.dll, **/*.exe" />
       <tarfileset file="${unix.startup.file}" prefix="${dist.folder.name}" filemode="755" />
+      <tarfileset file="${fsnotifier.dst.mainFile}" prefix="${dist.folder.name}/bin" filemode="755" />
       <tarfileset file="${vmoptions.file}" prefix="${dist.folder.name}/bin" />
       <tarfileset file="${help.file}" prefix="${dist.folder.name}/help" />
     </tar>
@@ -82,6 +96,9 @@
     <property name="info.plist.name" value="Info.plist" />
     <property name="info.plist" value="${scripts.folder}/${info.plist.name}" />
     <property name="info.plist.tmp" value="${deploy.dir}/Info.plist" />
+    <property name="fsnotifier.dst" value="${deploy.dir}/MPS/bin" />
+    <property name="fsnotifier.dst.mainFile" value="${fsnotifier.dst}/fsnotifier" />
+    <property name="fsnotifier.src" value="${fsnotifier.dst}/mac" />
     <property name="icon.file" value="${scripts.dir}/resources/mps.icns" />
     <property name="java.application.stub" value="${scripts.dir}/resources/mps" />
     <property name="unix.startup.script" value="${scripts.folder}/mps.sh" />
@@ -90,6 +107,9 @@
     <property name="root.folder.dest" value="MPS ${version}.app" />
     <property name="help.file" value="${mps_home}/help/mpshelp_mac.jar" />
     <copy file="${info.plist}" tofile="${info.plist.tmp}" />
+    <copy tofile="${fsnotifier.dst}">
+      <fileset dir="${fsnotifier.src}" />
+    </copy>
     <replace file="${info.plist.tmp}" token="$version$" value="${version}" />
     <replace file="${info.plist.tmp}" token="$build$" value="${build.number}" />
     <fixcrlf file="${info.plist.tmp}" eol="unix" eof="remove" />
@@ -98,6 +118,7 @@
     <zip destfile="${deploy.dir}/${zip.file}" duplicate="preserve">
       <zipfileset dir="${deploy.dir}/${root.folder}" prefix="${root.folder.dest}" excludes="**/*.dll, **/*.exe" />
       <zipfileset file="${info.plist.tmp}" prefix="${root.folder.dest}/Contents" />
+      <zipfileset file="${fsnotifier.dst.mainFile}" prefix="${root.folder.dest}/bin" filemode="755" />
       <zipfileset file="${icon.file}" prefix="${root.folder.dest}/Contents/Resources" />
       <zipfileset file="${scripts.dir}/resources/mps.icns" prefix="${root.folder.dest}/Contents/Resources" />
       <zipfileset file="${java.application.stub}" prefix="${root.folder.dest}/Contents/MacOS" filemode="755" />
@@ -118,6 +139,8 @@
     <property name="vmoptions.file" value="${scripts.folder}/${vmoptions.file.name}" />
     <property name="root.folder.name" value="MPS" />
     <property name="root.folder" value="${deploy.dir}/${root.folder.name}" />
+    <property name="fsnotifier.dst" value="${deploy.dir}/MPS/bin" />
+    <property name="fsnotifier.src" value="${fsnotifier.dst}/win" />
     <property name="nsis.script.name" value="installer.nsi" />
     <property name="nsis.script.path" value="${scripts.folder}/${nsis.script.name}" />
     <property name="nsis.script.path.tmp" value="${deploy.dir}/installation.script${DSTAMP}.nsi" />
@@ -137,6 +160,9 @@
     <fixcrlf file="${startup.bat}" eol="dos" eof="asis" />
     <fixcrlf file="${vmoptions.file}" eol="dos" eof="asis" />
     <copy file="${nsis.script.path}" tofile="${nsis.script.path.tmp}" />
+    <copy tofile="${fsnotifier.dst}">
+      <fileset dir="${fsnotifier.src}" />
+    </copy>
     <copy file="${scripts.dir}/resources/mps.ico" tofile="${application.icon}" />
     <copy file="${scripts.dir}/resources/homepage.ico" tofile="${homepage.icon}" />
     <copy file="${scripts.dir}/resources/mps.inst.ico" tofile="${installer.icon}" />
