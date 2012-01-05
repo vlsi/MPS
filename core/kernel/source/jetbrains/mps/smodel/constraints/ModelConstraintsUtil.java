@@ -53,7 +53,7 @@ public class ModelConstraintsUtil {
     SNode node = reference.getSourceNode();
     String role = reference.getRole();
     SNode concept = node.getConceptDeclarationNode();
-    SearchScopeStatus status = getSearchScope(node.getParent(), node, concept, role, null, node.getRoleLink(), context);
+    SearchScopeStatus status = getSearchScope(createReferentConstraintContext(node.getParent(), node, null, node.getRoleLink()), concept, role, context);
     if (status.isOk()) {
       if (status.isDefault()) {
         SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(concept, reference.getRole());
@@ -83,14 +83,14 @@ public class ModelConstraintsUtil {
       if (scopeReference == null) {
         return new ErrorScope("can't find link for role '" + role + "' in '" + enclosingNode.getConceptFqName() + "'");
       }
-      status = getSearchScope(enclosingNode.getParent(), enclosingNode, enclosingNode.getConceptDeclarationNode(), SModelUtil.getGenuineLinkRole(scopeReference), SModelUtil.getLinkDeclarationTarget(scopeReference), enclosingNode.getRoleLink(), context);
+      status = getSearchScope(createReferentConstraintContext(enclosingNode.getParent(), enclosingNode, SModelUtil.getLinkDeclarationTarget(scopeReference), enclosingNode.getRoleLink()), enclosingNode.getConceptDeclarationNode(), SModelUtil.getGenuineLinkRole(scopeReference), context);
     } else {
       scopeReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
       SNode linkDeclaration = role != null ? enclosingNode.getLinkDeclaration(role) : null;
       if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
         throw new IllegalArgumentException("for reference role smartConcept should be null");
       }
-      status = getSearchScope(enclosingNode, null, smartConcept, SModelUtil.getGenuineLinkRole(scopeReference), SModelUtil.getLinkDeclarationTarget(scopeReference), linkDeclaration, context);
+      status = getSearchScope(createReferentConstraintContext(enclosingNode, null, SModelUtil.getLinkDeclarationTarget(scopeReference), linkDeclaration), smartConcept, SModelUtil.getGenuineLinkRole(scopeReference), context);
     }
     if (status.isOk()) {
       if (status.isDefault()) {
@@ -105,19 +105,17 @@ public class ModelConstraintsUtil {
   public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, SNode referenceLinkDeclaration, SNode containingLinkDeclaration, IOperationContext context) {
     String linkRole = SModelUtil.getGenuineLinkRole(referenceLinkDeclaration);
     SNode linkTarget = SModelUtil.getLinkDeclarationTarget(referenceLinkDeclaration);
-    return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, linkTarget, containingLinkDeclaration, context);
+    return getSearchScope(createReferentConstraintContext(enclosingNode, referenceNode, linkTarget, containingLinkDeclaration), referenceNodeConcept, linkRole, context);
   }
 
   /**
    * @param linkRole - use *genuine* link role here!!!
    */
   public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, String linkRole, SNode containingLinkDeclaration, IOperationContext context) {
-    return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, null, containingLinkDeclaration, context);
+    return getSearchScope(createReferentConstraintContext(enclosingNode, referenceNode, null, containingLinkDeclaration), referenceNodeConcept, linkRole, context);
   }
-
-  private static SearchScopeStatus getSearchScope(SNode enclosingNode, final SNode referenceNode, final SNode referenceNodeConcept, final String linkRole, SNode linkTarget, SNode containingLinkDeclaration, final IOperationContext context) {
-    ModelAccess.assertLegalRead();
-
+  
+  private static ReferentConstraintContext createReferentConstraintContext(SNode enclosingNode, final SNode referenceNode, SNode linkTarget, SNode containingLinkDeclaration) {
     final SModel model;
     if (enclosingNode != null) {
       model = enclosingNode.getModel();
@@ -128,8 +126,12 @@ public class ModelConstraintsUtil {
       model = null;
     }
 
+    return new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);
+  }
+
+  private static SearchScopeStatus getSearchScope(final ReferentConstraintContext referentConstraintContext, final SNode referenceNodeConcept, final String linkRole, final IOperationContext context) {
+    ModelAccess.assertLegalRead();
     final ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
-    final ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);
 
     return TypeContextManager.getInstance().runResolveAction(new Computable<SearchScopeStatus>() {
       @Override
@@ -137,7 +139,7 @@ public class ModelConstraintsUtil {
         try {
           return getSearchScope_intern(scopeProvider, referentConstraintContext, context);
         } catch (Exception t) {
-          LOG.error(t, referenceNode != null ? referenceNode : referentConstraintContext.getEnclosingNode());
+          LOG.error(t, referentConstraintContext.getReferenceNode() != null ? referentConstraintContext.getReferenceNode() : referentConstraintContext.getEnclosingNode());
           return new SearchScopeStatus.ERROR("can't create search scope for role '" + linkRole + "' in '" + referenceNodeConcept.getName() + "'");
         }
       }
