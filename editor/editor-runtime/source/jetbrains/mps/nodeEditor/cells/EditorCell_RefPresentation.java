@@ -78,6 +78,10 @@ public class EditorCell_RefPresentation {
     public String getText() {
       if (myRefNode != null) {
         SReference ref = myRefNode.getReference(SModelUtil.getLinkDeclarationRole(myLinkDeclaration));
+        if(ref == null) {
+          // FIXME throw exception if reference is null
+          return myNode.getPresentation();
+        }
         IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref, myContext.getOperationContext()).getReferencePresentation();
         return presentation.getText(myNode, true, false, true);
       }
@@ -89,6 +93,10 @@ public class EditorCell_RefPresentation {
 
       SNode node = refNodeCell.getSNode();
       SReference ref = node.getReference(SModelUtil.getGenuineLinkRole(refNodeCell.getLinkDeclaration()));
+      if(ref == null) {
+        // FIXME throw exception if reference is null
+        return referenceTarget.getPresentation();
+      }
       IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref, myContext.getOperationContext()).getReferencePresentation();
       return presentation.getText(referenceTarget, true, false, true);
     }
