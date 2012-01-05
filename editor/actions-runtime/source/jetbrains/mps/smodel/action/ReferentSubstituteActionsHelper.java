@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil.ReferenceDescriptor;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -66,9 +67,11 @@ import java.util.List;
     if (referentConcept == null) {
       return Collections.emptyList();
     }
+    String referentConceptFqName = NameUtil.nodeFQName(referentConcept);
     List<SNode> nodes = searchScope.getAvailableElements(null);
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     for (SNode node : nodes) {
+      if (node == null || !node.isInstanceOfConcept(referentConceptFqName)) continue;
       actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration, presentation));
     }
     return actions;
