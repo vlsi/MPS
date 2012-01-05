@@ -21,11 +21,23 @@ import jetbrains.mps.smodel.SNode;
 public interface ReferenceConstraintsContext {
   SModel getModel();
 
+  boolean isExists();
+
+  SNode getContextNode();
+
+  String getContextRole();
+
+  int getPosition();
+
+  @Deprecated
   SNode getEnclosingNode();
 
+  @Deprecated
   SNode getReferenceNode();
 
+  @Deprecated
   SNode getLinkTarget();
 
+  @Deprecated
   SNode getContainingLink();
 }
