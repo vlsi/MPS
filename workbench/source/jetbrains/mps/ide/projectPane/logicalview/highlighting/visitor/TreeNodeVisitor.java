@@ -19,6 +19,7 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.smodel.IOperationContext;
 
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -33,6 +34,8 @@ public abstract class TreeNodeVisitor {
     }
     myExecutor.execute(new Runnable() {
       public void run() {
+        if (!checkDisposed(node)) return;
+
         if (node instanceof SModelTreeNode) {
           visitModelNode(((SModelTreeNode) node));
         }
@@ -44,6 +47,11 @@ public abstract class TreeNodeVisitor {
         }
       }
     });
+  }
+
+  private boolean checkDisposed(MPSTreeNode node) {
+    IOperationContext context = node.getOperationContext();
+    return !context.getProject().isDisposed() && context.isValid();
   }
 
   protected abstract void visitModelNode(SModelTreeNode node);
