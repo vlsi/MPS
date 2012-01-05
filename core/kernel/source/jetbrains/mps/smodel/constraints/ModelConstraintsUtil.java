@@ -222,7 +222,7 @@ public class ModelConstraintsUtil {
     }
 
     public IReferencePresentation getReferencePresentation() {
-      return new DefaultReferencePresentation(myOperationContext, myReferentConstraintContext, myScopeProvider);
+      return myScopeProvider != null && myScopeProvider.hasPresentation() ? new DefaultReferencePresentation(myOperationContext, myReferentConstraintContext, myScopeProvider) : null;
     }
   }
 
