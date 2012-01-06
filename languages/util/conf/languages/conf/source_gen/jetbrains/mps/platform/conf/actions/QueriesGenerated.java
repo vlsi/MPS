@@ -115,7 +115,7 @@ public class QueriesGenerated {
           public Object compute() {
             return ListSequence.fromList((new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.CLASS, operationContext.getScope()).getClassifiers())).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode cls) {
-                return SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+                return SNodeOperations.as(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept");
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode node) {
@@ -159,7 +159,11 @@ public class QueriesGenerated {
           public Object compute() {
             return ListSequence.fromList((new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getClassifiers())).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode cls) {
-                return SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface");
+                return SNodeOperations.as(cls, "jetbrains.mps.baseLanguage.structure.Interface");
+              }
+            }).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return it != null;
               }
             }).toListSequence();
           }
@@ -279,11 +283,11 @@ public class QueriesGenerated {
             for (final SNode iep : SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint")) {
               for (SNode cc : ListSequence.fromList(classifiers).select(new ISelector<SNode, SNode>() {
                 public SNode select(SNode cls) {
-                  return SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+                  return SNodeOperations.as(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept");
                 }
               }).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cls) {
-                  return SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept") && Classifier_Behavior.call_isDescendant_7165541881557222913(cls, SLinkOperations.getTarget(iep, "iface", false));
+                  return Classifier_Behavior.call_isDescendant_7165541881557222913(cls, SLinkOperations.getTarget(iep, "iface", false));
                 }
               })) {
                 ListSequence.fromList(result).addElement(MultiTuple.<SNode,SNode>from(iep, cc));
