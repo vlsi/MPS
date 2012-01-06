@@ -10,6 +10,9 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import junit.framework.Assert;
 
 public class Sequence_iteration2 extends TestCase {
+  public Sequence_iteration2() {
+  }
+
   public void test_1() {
     // inner iteration 
     Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure<String>() {
