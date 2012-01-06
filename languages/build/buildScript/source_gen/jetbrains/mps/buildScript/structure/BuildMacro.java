@@ -14,7 +14,6 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BuildMacro extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildMacro";
-  public static final String DEFAULT_VALUE = "defaultValue";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -23,14 +22,6 @@ public class BuildMacro extends BaseConcept implements INamedConcept {
 
   public BuildMacro(SNode node) {
     super(node);
-  }
-
-  public String getDefaultValue() {
-    return this.getProperty(BuildMacro.DEFAULT_VALUE);
-  }
-
-  public void setDefaultValue(String value) {
-    this.setProperty(BuildMacro.DEFAULT_VALUE, value);
   }
 
   public String getName() {
