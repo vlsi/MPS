@@ -2247,7 +2247,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     LOG.debug("substitute info : " + substituteInfo);
     NodeSubstitutePatternEditor patternEditor = editorCell.createSubstitutePatternEditor();
     if (resetPattern) {
-      patternEditor.setCaretPosition(0);
+      patternEditor.toggleReplaceMode();
     }
     String pattern = patternEditor.getPattern();
     boolean trySubstituteNow =
