@@ -15,12 +15,17 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
 
 public interface ReferenceScopeProvider {
+
+  @Deprecated
   ISearchScope createSearchScope(IOperationContext operationContext, ReferenceConstraintsContext _context);
+
+  Scope createScope(IOperationContext operationContext, ReferenceConstraintsContext _context);
 
   boolean hasPresentation();
 

@@ -112,7 +112,7 @@ public class ModelConstraintsUtil {
     }
   }
 
-  private static ReferentConstraintContext createReferentConstraintContext(boolean exists, SNode enclosingNode, final SNode referenceNode, String role, int index,  SNode linkTarget, SNode containingLinkDeclaration) {
+  private static ReferentConstraintContext createReferentConstraintContext(boolean exists, SNode enclosingNode, final SNode referenceNode, String role, int index, SNode linkTarget, SNode containingLinkDeclaration) {
     final SModel model;
     if (enclosingNode != null) {
       model = enclosingNode.getModel();
@@ -123,7 +123,7 @@ public class ModelConstraintsUtil {
       model = null;
     }
 
-    return new ReferentConstraintContext(model, exists, referenceNode != null ? referenceNode : enclosingNode, role, index,  enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);
+    return new ReferentConstraintContext(model, exists, referenceNode != null ? referenceNode : enclosingNode, role, index, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);
   }
 
   private static class DefaultReferencePresentation implements IReferencePresentation {
@@ -206,9 +206,12 @@ public class ModelConstraintsUtil {
         public Scope compute() {
           try {
             if (myScopeProvider != null) {
-              ISearchScope searchScope = myScopeProvider.createSearchScope(myOperationContext, myReferentConstraintContext);
-              if (!(searchScope instanceof UndefinedSearchScope)) {
-                return myReference != null ? new RefAdapter(searchScope, myReference) : new Adapter(searchScope);
+              Scope searchScope = myScopeProvider.createScope(myOperationContext, myReferentConstraintContext);
+              if (searchScope != null) {
+                if (myReference != null && searchScope instanceof Adapter) {
+                  return new RefAdapter(((Adapter) searchScope).getSearchScope(), myReference);
+                }
+                return searchScope;
               }
             }
             // global search scope
@@ -227,7 +230,9 @@ public class ModelConstraintsUtil {
   }
 
 
-  /**** DEPRECATED API, to be removed in MPS 3.0 ****/
+  /*
+   * DEPRECATED API, to be removed in MPS 3.0 ***
+   */
 
   @Deprecated
   public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, SNode referenceLinkDeclaration, SNode containingLinkDeclaration, IOperationContext context) {
