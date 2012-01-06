@@ -1343,10 +1343,18 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void setLeftGap(int gap) {
+    // TODO: remove this line and modify getEffectiveWidth() method in order to return
+    // getWidth() + myGapRight + myGapLeft
+    // most of getWidth() usages must be replaced with getEffectiveWidth() then.
+    myWidth = myWidth - myGapLeft + gap;
     myGapLeft = gap;
   }
 
   public void setRightGap(int gap) {
+    // TODO: remove this line and modify getEffectiveWidth() method in order to return
+    // getWidth() + myGapRight + myGapLeft
+    // most of getWidth() usages must be replaced with getEffectiveWidth() then.
+    myWidth = myWidth - myGapRight + gap;
     myGapRight = gap;
   }
 

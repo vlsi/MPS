@@ -1034,11 +1034,11 @@
       <property name="name" nameId="tpck.1169194664001" value="removeEvent" />
       <node role="events" roleId="2qyu.763922957008726947" type="2qyu.Event" typeId="2qyu.763922957008729147" id="5877647854348551157">
         <property name="name" nameId="tpck.1169194664001" value="e_1" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551176">
-          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8468920981822215023">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
-          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="3" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
           <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
         </node>
       </node>
