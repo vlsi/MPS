@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
@@ -61,6 +62,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       SubtypingRule_Runtime subtypingRule = new namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      ComparisonRule_Runtime comparisonRule = new comparable_IndexedTupleType_Object_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
+    }
+    {
+      ComparisonRule_Runtime comparisonRule = new comparable_NamedTupleType_Object_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
     }
     {
       InequationReplacementRule_Runtime eliminationRule = new indexedTuple_assignableTo_indexedTuple_InequationReplacementRule();
