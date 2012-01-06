@@ -234,15 +234,20 @@ public class ChildSubstituteActionsHelper {
       linkDeclaration = currentChild.getRoleLink();
       index = parentNode.getIndexOfChild(currentChild);
     }
+//    TODO generate wrapping setter to have access to original link
+//    if(childSetter instanceof WrappingSetter) {
+//      childSetter = ((WrappingSetter)childSetter).unwrap();
+//    }
     if (linkDeclaration == null && childSetter instanceof DefaultChildNodeSetter) {
       linkDeclaration = ((DefaultChildNodeSetter) childSetter).getLinkDeclaration();
     }
 
-    if (linkDeclaration == null) {
-      return null;
-    }
+//    TODO restore (when wrapping setter is created)
+//    if (linkDeclaration == null) {
+//      return null;
+//    }
 
-    ReferenceDescriptor refDescriptor = ModelConstraintsUtil.getSmartReferenceDescriptor(parentNode, SModelUtil.getLinkDeclarationRole(linkDeclaration), index, smartConcept, context);
+    ReferenceDescriptor refDescriptor = ModelConstraintsUtil.getSmartReferenceDescriptor(parentNode, linkDeclaration == null ? null : SModelUtil.getLinkDeclarationRole(linkDeclaration), index, smartConcept, context);
     if (refDescriptor == null) return null;
 
     Scope searchScope = refDescriptor.getScope();
