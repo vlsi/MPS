@@ -32,9 +32,15 @@
         <property name="name" nameId="tpck.1169194664001" value="lib" />
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="7389400916848057599">
           <property name="name" nameId="tpck.1169194664001" value="mps-core.jar" />
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="5966744135495992596">
+            <link role="module" roleId="3ior.5966744135495979932" targetNodeId="7389400916848087650" resolveInfo="mps-core" />
+          </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="7389400916848057603">
           <property name="name" nameId="tpck.1169194664001" value="mps-editor.jar" />
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="5966744135495992597">
+            <link role="module" roleId="3ior.5966744135495979932" targetNodeId="7389400916848121495" resolveInfo="mps-editor" />
+          </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Zip" typeId="3ior.7389400916848050071" id="7389400916848057594">
           <property name="name" nameId="tpck.1169194664001" value="mps-source.zip" />

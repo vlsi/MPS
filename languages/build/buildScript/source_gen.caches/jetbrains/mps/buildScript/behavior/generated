@@ -16,7 +16,7 @@
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-1e9yqo6te2kdkgxtnysaj1kp10r43rp" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
   <dep model="r:d64ba0fe-173d-44e2-ab7b-bde40d7e9b7e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.pre@generator)" hash="-9sws78inyzhrpf8g59jzetiydwjvsgq" />
-  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.buildScript.structure)" hash="-ga1a6ihicwosm8au6eg8z5ay2xd9n8" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.buildScript.structure)" hash="-brdww63mx0eobaphtdt73fjijwtm3dz" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
   <common hash="-2wg3b08azzyih3s9cra9fhn4oljwtox" dependsOnNodes="true">
     <dep root="7389400916848004877" />
@@ -44,6 +44,7 @@
     <file name="BuildLayout_BehaviorDescriptor.java" />
     <file name="BuildLayout_Folder_BehaviorDescriptor.java" />
     <file name="BuildLayout_Jar_BehaviorDescriptor.java" />
+    <file name="BuildLayout_JavaOutput_BehaviorDescriptor.java" />
     <file name="BuildLayout_NamedContainer_BehaviorDescriptor.java" />
     <file name="BuildLayout_Node_BehaviorDescriptor.java" />
     <file name="BuildLayout_Zip_BehaviorDescriptor.java" />

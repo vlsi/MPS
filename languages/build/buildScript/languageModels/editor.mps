@@ -46,7 +46,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.7389400916848073736" resolveInfo="BuildSourceModule" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7389400916848073785">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Sources" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Sources.Java" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.7389400916848073784" resolveInfo="BuildSource_JavaModule" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7389400916848073796">
@@ -58,7 +58,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.7389400916848073793" resolveInfo="BuildSourcePathBase" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7389400916848073813">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Sources" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Sources.Java" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.7389400916848073810" resolveInfo="BuildSource_JavaContentRoot" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7389400916848098447">
@@ -76,6 +76,10 @@
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7389400916848153119">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.7389400916848153117" resolveInfo="BuildSourceMacroRelativePath" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5966744135495979935">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Sources.Java" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.5966744135495979931" resolveInfo="BuildLayout_JavaOutput" />
     </node>
   </roots>
   <root id="5617550519002745365">
@@ -361,8 +365,17 @@
   </root>
   <root id="7389400916848036998">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="7389400916848043132">
+      <property name="separatorText" nameId="tpc2.1140524450557" value=" " />
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.7389400916848037006" />
-      <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="7389400916848043133" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineChildrenStyleClassItem" typeId="tpc2.1237375020029" id="5966744135495998505">
+        <property name="flag" nameId="tpc2.1186414551515" value="true" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5966744135495998502" />
+      <node role="separatorStyle" roleId="tpc2.1233141163694" type="tpc2.InlineStyleDeclaration" typeId="tpc2.1233148810477" id="5966744135495998503">
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5966744135495998504">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
     </node>
   </root>
   <root id="7389400916848043095">
@@ -941,6 +954,24 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.7389400916848073791" resolveInfo="relativePath" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7389400916848153127" />
+    </node>
+  </root>
+  <root id="5966744135495979935">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5966744135495979937">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5966744135495979940">
+        <property name="text" nameId="tpc2.1073389577007" value="output of" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598953979" resolveInfo="outputLayout" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="5966744135495979942">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.5966744135495979932" />
+        <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="5966744135495979943">
+          <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5966744135495979945">
+            <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+            <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5966744135495979939" />
     </node>
   </root>
 </model>
