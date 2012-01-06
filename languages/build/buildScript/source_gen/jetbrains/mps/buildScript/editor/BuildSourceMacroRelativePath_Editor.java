@@ -45,7 +45,7 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new BuildSourceMacroRelativePath_Editor.ReplaceWith_BuildSourcePath_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new BuildSourceMacroRelativePath_Editor.ReplaceWith_BuildSourcePath_cellMenu_a0a0_0()}));
     return editorCell;
   }
 
@@ -98,8 +98,8 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class ReplaceWith_BuildSourcePath_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildSourcePath_cellMenu_a0a0() {
+  public static class ReplaceWith_BuildSourcePath_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildSourcePath_cellMenu_a0a0_0() {
     }
 
     public String getReplacementConceptName() {
