@@ -30,11 +30,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"useInTest"}, new String[]{});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.RefTestClass", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"extends"});
+        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.RefTestClass", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{"extends"});
       case 8:
         return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{});
       case 10:
         return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.RefTestMethodCall", "jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression", false, new String[]{"jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression"}, new String[]{}, new String[]{"method"});
       case 11:

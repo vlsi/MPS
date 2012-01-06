@@ -8,10 +8,10 @@
   <unitInfo fileName="InputNode_C_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.InputNode_C_BehaviorDescriptor" />
   <unitInfo fileName="InputRootWithStatementList_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.InputRootWithStatementList_BehaviorDescriptor" />
   <unitInfo fileName="InputRoot_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.InputRoot_BehaviorDescriptor" />
-  <unitInfo fileName="RefTestClass_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.RefTestClass_BehaviorDescriptor" />
+  <unitInfo fileName="RefTestClass_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.RefTestClass_BehaviorDescriptor" />
   <unitInfo fileName="RefTestExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.RefTestExpression_BehaviorDescriptor" />
   <unitInfo fileName="RefTestMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.RefTestMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="RefTestMethod_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.RefTestMethod_BehaviorDescriptor" />
+  <unitInfo fileName="RefTestMethod_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.RefTestMethod_BehaviorDescriptor" />
   <unitInfo fileName="RefTestParamRef_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.RefTestParamRef_BehaviorDescriptor" />
   <unitInfo fileName="RefTestParam_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.RefTestParam_BehaviorDescriptor" />
   <root nodeId="2511103526757027807">
@@ -21,6 +21,58 @@
       <varInfo nodeId="2511103526757027807" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="2511103526757027807" fileName="InputNode_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.InputNode_Behavior" />
+  </root>
+  <root nodeId="3315811491560194603">
+    <nodeInfo nodeId="3315811491560235340" fileName="RefTestClass_Behavior.java" startLine="22" startPosition="44" endLine="23" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3315811491560235354" fileName="RefTestClass_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3315811491560194603" fileName="RefTestClass_Behavior.java" startLine="15" startPosition="36" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3315811491560235330" fileName="RefTestClass_Behavior.java" startLine="21" startPosition="193" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3315811491560226668" fileName="RefTestClass_Behavior.java" startLine="20" startPosition="131" endLine="28" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3315811491560226657" fileName="RefTestClass_Behavior.java" startLine="19" startPosition="101" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3315811491560194603" fileName="RefTestClass_Behavior.java" startLine="18" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="3315811491560194605" fileName="RefTestClass_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="3315811491560235335" fileName="RefTestClass_Behavior.java" startLine="22" startPosition="44" endLine="23" endPosition="155" />
+    <scopeInfo nodeId="3315811491560194603" fileName="RefTestClass_Behavior.java" startLine="15" startPosition="36" endLine="18" endPosition="0">
+      <varInfo nodeId="3315811491560194603" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3315811491560235330" fileName="RefTestClass_Behavior.java" startLine="21" startPosition="193" endLine="25" endPosition="0">
+      <varInfo nodeId="3315811491560235333" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="3315811491560226659" fileName="RefTestClass_Behavior.java" startLine="20" startPosition="131" endLine="28" endPosition="9" />
+    <scopeInfo nodeId="3315811491560226616" fileName="RefTestClass_Behavior.java" startLine="19" startPosition="101" endLine="30" endPosition="16" />
+    <scopeInfo nodeId="3315811491560194603" fileName="RefTestClass_Behavior.java" startLine="18" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="3315811491560226619" varName="child" />
+      <varInfo nodeId="3315811491560226617" varName="kind" />
+      <varInfo nodeId="3315811491560194603" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3315811491560194603" fileName="RefTestClass_Behavior.java" startLine="15" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.RefTestClass_Behavior" />
+    <unitInfo nodeId="3315811491560235328" fileName="RefTestClass_Behavior.java" startLine="21" startPosition="48" endLine="25" endPosition="7" unitName="jetbrains.mps.transformation.test.inputLang.behavior.RefTestClass_Behavior$1" />
+  </root>
+  <root nodeId="3315811491560235390">
+    <nodeInfo nodeId="3315811491560235435" fileName="RefTestMethod_Behavior.java" startLine="20" startPosition="44" endLine="21" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3315811491560235410" fileName="RefTestMethod_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3315811491560235390" fileName="RefTestMethod_Behavior.java" startLine="13" startPosition="37" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3315811491560235429" fileName="RefTestMethod_Behavior.java" startLine="19" startPosition="162" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3315811491560235442" fileName="RefTestMethod_Behavior.java" startLine="18" startPosition="130" endLine="23" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3315811491560235415" fileName="RefTestMethod_Behavior.java" startLine="17" startPosition="101" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3315811491560235390" fileName="RefTestMethod_Behavior.java" startLine="16" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="3315811491560235392" fileName="RefTestMethod_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="3315811491560235434" fileName="RefTestMethod_Behavior.java" startLine="20" startPosition="44" endLine="21" endPosition="154" />
+    <scopeInfo nodeId="3315811491560235390" fileName="RefTestMethod_Behavior.java" startLine="13" startPosition="37" endLine="16" endPosition="0">
+      <varInfo nodeId="3315811491560235390" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3315811491560235429" fileName="RefTestMethod_Behavior.java" startLine="19" startPosition="162" endLine="23" endPosition="0">
+      <varInfo nodeId="3315811491560235432" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="3315811491560235416" fileName="RefTestMethod_Behavior.java" startLine="18" startPosition="130" endLine="23" endPosition="8" />
+    <scopeInfo nodeId="3315811491560235395" fileName="RefTestMethod_Behavior.java" startLine="17" startPosition="101" endLine="25" endPosition="16" />
+    <scopeInfo nodeId="3315811491560235390" fileName="RefTestMethod_Behavior.java" startLine="16" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="3315811491560235398" varName="child" />
+      <varInfo nodeId="3315811491560235396" varName="kind" />
+      <varInfo nodeId="3315811491560235390" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3315811491560235390" fileName="RefTestMethod_Behavior.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.RefTestMethod_Behavior" />
+    <unitInfo nodeId="3315811491560235427" fileName="RefTestMethod_Behavior.java" startLine="19" startPosition="17" endLine="23" endPosition="7" unitName="jetbrains.mps.transformation.test.inputLang.behavior.RefTestMethod_Behavior$1" />
   </root>
 </debugInfo>
 
