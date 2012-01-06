@@ -11692,6 +11692,9 @@
                       </node>
                     </node>
                   </node>
+                  <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="8551210740797801742">
+                    <property name="name" nameId="tps4.1220976068141" value="base_dir" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -11816,6 +11819,9 @@
                           </node>
                         </node>
                       </node>
+                    </node>
+                    <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="8551210740797801743">
+                      <property name="name" nameId="tps4.1220976068141" value="base_dir" />
                     </node>
                   </node>
                 </node>
@@ -12168,6 +12174,9 @@
                               </node>
                             </node>
                           </node>
+                        </node>
+                        <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="8551210740797801745">
+                          <property name="name" nameId="tps4.1220976068141" value="base_dir" />
                         </node>
                       </node>
                     </node>
