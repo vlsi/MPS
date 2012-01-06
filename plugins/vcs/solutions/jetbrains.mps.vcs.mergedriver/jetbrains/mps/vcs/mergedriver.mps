@@ -7507,12 +7507,6 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1256248142479773220">
                 <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.typesystem.inference.TypeChecker" />
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1256248142479773989">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.debug.customViewers.CustomViewersManager" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5775107831782266498">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager" />
-              </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7566850531967175744">
                 <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager" />
               </node>
