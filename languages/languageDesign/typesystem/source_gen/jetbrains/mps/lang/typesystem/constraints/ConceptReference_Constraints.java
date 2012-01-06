@@ -14,7 +14,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 
 public class ConceptReference_Constraints extends BaseConstraintsDescriptor {
   public ConceptReference_Constraints() {
@@ -48,7 +48,7 @@ public class ConceptReference_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider();
+        return new BaseScopeProvider();
       }
     });
     return references;

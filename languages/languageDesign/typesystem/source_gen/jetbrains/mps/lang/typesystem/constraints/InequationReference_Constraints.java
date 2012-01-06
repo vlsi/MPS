@@ -9,7 +9,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import org.apache.commons.lang.StringUtils;
@@ -28,7 +28,7 @@ public class InequationReference_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
           public boolean hasPresentation() {
             return true;
