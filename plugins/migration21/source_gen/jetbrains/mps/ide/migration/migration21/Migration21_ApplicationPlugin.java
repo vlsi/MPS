@@ -20,6 +20,7 @@ public class Migration21_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new AddSourcesToModelRoots_Action());
     addAction(new AddStubsToModelRoots_Action());
+    addAction(new MovePluginsOutOfLanguages_Action());
     // groups 
     addGroup(new Migrations21_ActionGroup());
   }
