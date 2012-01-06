@@ -27,11 +27,11 @@ public class NodeDefaultSearchScope extends BaseConcept {
     this.setProperty(NodeDefaultSearchScope.DESCRIPTION, value);
   }
 
-  public ConstraintFunction_ReferentSearchScope_Factory getSearchScopeFactory() {
-    return (ConstraintFunction_ReferentSearchScope_Factory) this.getChild(ConstraintFunction_ReferentSearchScope_Factory.class, NodeDefaultSearchScope.SEARCH_SCOPE_FACTORY);
+  public NodeScopeFactory getSearchScopeFactory() {
+    return (NodeScopeFactory) this.getChild(NodeScopeFactory.class, NodeDefaultSearchScope.SEARCH_SCOPE_FACTORY);
   }
 
-  public void setSearchScopeFactory(ConstraintFunction_ReferentSearchScope_Factory node) {
+  public void setSearchScopeFactory(NodeScopeFactory node) {
     super.setChild(NodeDefaultSearchScope.SEARCH_SCOPE_FACTORY, node);
   }
 

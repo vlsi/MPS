@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import org.apache.commons.lang.ObjectUtils;
@@ -76,35 +77,27 @@ public class EditorCell_RefPresentation {
 
     public String getText() {
       if (myRefNode != null) {
-        SNode node = myRefNode;
-        IReferencePresentation presentation = ModelConstraintsUtil.getPresentation(
-          node.getParent(),
-          node,
-          node.getConceptDeclarationNode(),
-          myLinkDeclaration,
-          SNodeOperations.getContainingLinkDeclaration(node),
-          myContext.getOperationContext()
-        );
+        SReference ref = myRefNode.getReference(SModelUtil.getLinkDeclarationRole(myLinkDeclaration));
+        if(ref == null) {
+          // FIXME throw exception if reference is null
+          return myNode.getPresentation();
+        }
+        IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref, myContext.getOperationContext()).getReferencePresentation();
         return presentation.getText(myNode, true, false, true);
       }
       if (myContextCell == null || myContextCell.getParent() == null) return null;
-
-      findCellWithLinkDeclaration();
 
       EditorCell refNodeCell = findCellWithLinkDeclaration();
       SNode referenceTarget = refNodeCell.getSNodeWRTReference();
 
 
       SNode node = refNodeCell.getSNode();
-      IReferencePresentation presentation = ModelConstraintsUtil.getPresentation(
-        node.getParent(),
-        node,
-        node.getConceptDeclarationNode(),
-        refNodeCell.getLinkDeclaration(),
-        SNodeOperations.getContainingLinkDeclaration(node),
-        myContextCell.getEditorContext().getOperationContext()
-      );
-
+      SReference ref = node.getReference(SModelUtil.getGenuineLinkRole(refNodeCell.getLinkDeclaration()));
+      if(ref == null) {
+        // FIXME throw exception if reference is null
+        return referenceTarget.getPresentation();
+      }
+      IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref, myContext.getOperationContext()).getReferencePresentation();
       return presentation.getText(referenceTarget, true, false, true);
     }
 

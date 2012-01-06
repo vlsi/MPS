@@ -50,6 +50,46 @@
     <scopeInfo nodeId="1543650586506860265" fileName="MPS11114.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="1543650586506860264" fileName="MPS11114.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.util.MPS11114" />
   </root>
+  <root nodeId="1654804677203278474">
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="9" startPosition="16" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="13" startPosition="35" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="17" startPosition="33" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="21" startPosition="35" endLine="22" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="25" startPosition="21" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="29" startPosition="22" endLine="30" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="34" startPosition="58" endLine="35" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="8" startPosition="57" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Tpl#()V" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Tpl#(Ljava/lang/String;Ljava/lang/Integer;)V" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="s#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="i#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="s#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="i#()Ljava/lang/Integer;" />
+    <nodeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/util/Tpl;" />
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="9" startPosition="16" endLine="10" endPosition="12" />
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="13" startPosition="35" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="17" startPosition="33" endLine="18" endPosition="27" />
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="21" startPosition="35" endLine="22" endPosition="27" />
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="25" startPosition="21" endLine="26" endPosition="22" />
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="29" startPosition="22" endLine="30" endPosition="22" />
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="34" startPosition="58" endLine="35" endPosition="36" />
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="8" startPosition="57" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1654804677203278474" varName="i" />
+      <varInfo nodeId="1654804677203278474" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1654804677203278474" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1654804677203278474" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1654804677203278474" varName="from" />
+    </scopeInfo>
+    <unitInfo nodeId="1654804677203278474" fileName="Tpl.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.util.Tpl" />
+  </root>
   <root nodeId="2682363017137668870">
     <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="9" startPosition="26" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="13" startPosition="57" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -20,18 +20,61 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 
 public class ReferentConstraintContext implements ReferenceConstraintsContext {
-  private SModel myModel;
-  private SNode myEnclosingNode;
-  private SNode myReferenceNode;
-  private SNode myLinkTarget;
-  private SNode myContainingLink;
 
+  private final SModel myModel;
+  private final boolean exists;
+  private final SNode contextNode;
+  private final String contextRole;
+  private final int position;
+
+  @Deprecated
+  private final SNode myEnclosingNode;
+  @Deprecated
+  private final SNode myReferenceNode;
+  @Deprecated
+  private final SNode myLinkTarget;
+  @Deprecated
+  private final SNode myContainingLink;
+
+  @Deprecated
   public ReferentConstraintContext(SModel model, SNode enclosingNode, SNode referenceNode, SNode linkTarget, SNode containingLink) {
     myModel = model;
     myEnclosingNode = enclosingNode;
     myReferenceNode = referenceNode;
     myLinkTarget = linkTarget;
     myContainingLink = containingLink;
+    exists = referenceNode != null;
+    contextNode = referenceNode != null ? referenceNode : enclosingNode;
+    contextRole = null;
+    position = 0;
+  }
+
+  public ReferentConstraintContext(SModel model, boolean exists, SNode contextNode, String contextRole, int position, SNode enclosingNode, SNode referenceNode, SNode linkTarget, SNode containingLink) {
+    myModel = model;
+    this.exists = exists;
+    this.contextNode = contextNode;
+    this.contextRole = contextRole;
+    this.position = position;
+    myEnclosingNode = enclosingNode;
+    myReferenceNode = referenceNode;
+    myLinkTarget = linkTarget;
+    myContainingLink = containingLink;
+  }
+
+  public boolean isExists() {
+    return exists;
+  }
+
+  public SNode getContextNode() {
+    return contextNode;
+  }
+
+  public String getContextRole() {
+    return contextRole;
+  }
+
+  public int getPosition() {
+    return position;
   }
 
   public SModel getModel() {

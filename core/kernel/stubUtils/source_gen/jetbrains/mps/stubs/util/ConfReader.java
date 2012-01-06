@@ -37,6 +37,7 @@ public class ConfReader {
   private static final String PROJECT_COMPONENTS = "project-components";
   private static final String EXTENSION_POINT = "extensionPoint";
   private static final String NAME = "name";
+  private static final String QNAME = "qualifiedName";
   private static final String BEAN_CLASS = "beanClass";
   private static final String INTERFACE = "interface";
   private static final String INTERFACE_CLASS = "interface-class";
@@ -285,19 +286,24 @@ public class ConfReader {
   private void readExtensionPoints(SNode node, Element eps) {
     for (Element ep : elements(eps, EXTENSION_POINT)) {
       if (Namespace.NO_NAMESPACE.equals(ep.getNamespace())) {
+
         String bc = ep.getAttributeValue(BEAN_CLASS);
         String ifc = ep.getAttributeValue(INTERFACE);
+        String name = ep.getAttributeValue(NAME);
+        if (name == null) {
+          name = ep.getAttributeValue(QNAME);
+        }
         if (bc != null) {
           SNode bep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", null);
-          bep.setId(createForeignId(resolveInfo(EXTENSION_POINT, ep.getAttributeValue(NAME))));
+          bep.setId(createForeignId(resolveInfo(EXTENSION_POINT, name)));
           ListSequence.fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(bep);
-          setProperty("name", bep, ep.getAttributeValue(NAME));
+          setProperty("name", bep, name);
           addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", "beanClass"), bep, bc);
         } else if (ifc != null) {
           SNode iep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", null);
-          iep.setId(createForeignId(resolveInfo(EXTENSION_POINT, ep.getAttributeValue(NAME))));
+          iep.setId(createForeignId(resolveInfo(EXTENSION_POINT, name)));
           ListSequence.fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(iep);
-          setProperty("name", iep, ep.getAttributeValue(NAME));
+          setProperty("name", iep, name);
           addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", "iface"), iep, ifc);
         } else {
           throw new IllegalStateException();

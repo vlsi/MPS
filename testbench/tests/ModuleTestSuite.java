@@ -13,32 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import jetbrains.mps.MPSCore;
+
 import jetbrains.mps.TestMain;
-import jetbrains.mps.build.ant.MpsPlatform;
-import jetbrains.mps.build.ant.MpsWorker;
-import jetbrains.mps.build.ant.util.PathManager;
-import jetbrains.mps.build.ant.util.SetLibraryContributor;
-import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
-import jetbrains.mps.generator.GenerationSettingsProvider;
-import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
 import jetbrains.mps.testbench.junit.runners.WatchingSuite;
 import junit.framework.TestSuite;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.Logger;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-
-import java.util.HashSet;
-import java.util.Set;
 
 
 @SuiteClassSymbols({"jetbrains.mps.tests.TestModule_closures_test",
@@ -63,6 +46,7 @@ import java.util.Set;
   "jetbrains.mps.tests.TestModule_jetbrains_mps_smodel_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_testWeaving",
+  "jetbrains.mps.tests.TestModule_jetbrains_mps_transformation_test_inputModels",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_ui_unittest",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_xml_tests",
   "jetbrains.mps.tests.TestModule_ypath_test"})
@@ -72,7 +56,7 @@ public class ModuleTestSuite extends TestSuite {
   private static MpsMakeHelper ourMakeHelper = new MpsMakeHelper();
 
   @BeforeClass
-  public static void make () throws Exception {
+  public static void make() throws Exception {
     ourMakeHelper.make();
   }
 

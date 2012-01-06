@@ -52,6 +52,7 @@
   <import index="96t8" modelUID="r:ba79f114-e14c-442e-a24a-6ed5711c2453(jetbrains.mps.execution.impl.configurations.tests.configurations@tests)" version="-1" />
   <import index="7fn4" modelUID="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)" version="-1" />
   <import index="nq5u" modelUID="r:53c4b5ce-bc17-4454-a907-f9ec447f3644(jetbrains.mps.build.mpsautobuild.test@tests)" version="-1" />
+  <import index="saz5" modelUID="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707830840" />
@@ -82,6 +83,7 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="8565053360342421683" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1538369951873468539" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1047721517261600280" />
+    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="5934496548013521234" />
   </roots>
   <root id="2712670354707830840">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707830841">
@@ -1818,6 +1820,15 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1047721517261602198">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="nq5u.3033860308392767423" resolveInfo="TestPluginsDependency" />
+    </node>
+  </root>
+  <root id="5934496548013521234">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="5934496548013521236">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.transformation.test.inputModels" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="cdd4e8a8-17c1-4f16-b054-27e94948bd47" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5934496548013527348">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="saz5.5934496548013480005" resolveInfo="refScopesInInputLang" />
     </node>
   </root>
 </model>
