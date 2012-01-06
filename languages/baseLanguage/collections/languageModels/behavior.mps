@@ -4368,7 +4368,7 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1023687332192534919">
-        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.5432666129547687712" resolveInfo="IVariableDeclaration" />
       </node>
     </node>
   </root>

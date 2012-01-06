@@ -7,7 +7,7 @@ import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.project.Project;
 
-public class VariableDeclaration_BehaviorDescriptor extends BaseVariableDeclaration_BehaviorDescriptor implements HasAnnotation_BehaviorDescriptor, TypeDerivable_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor {
+public class VariableDeclaration_BehaviorDescriptor extends BaseVariableDeclaration_BehaviorDescriptor implements HasAnnotation_BehaviorDescriptor, TypeDerivable_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor, IVariableDeclaration_BehaviorDescriptor {
   public VariableDeclaration_BehaviorDescriptor() {
   }
 
