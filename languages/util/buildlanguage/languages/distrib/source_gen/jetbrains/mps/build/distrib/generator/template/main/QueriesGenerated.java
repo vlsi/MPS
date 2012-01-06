@@ -337,7 +337,7 @@ public class QueriesGenerated {
     return MacConfig_Behavior.call_getStartupFileName_1234518093971(_context.getNode()) + "." + MacConfig_Behavior.call_getStartupFileExtension_1234518093983(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_7119880619318858982(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4053804147820304213(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return AbstractProjectComponent_Behavior.call_getPath_1213877333777(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.distrib.structure.DistribConfiguration", false, false), "projectFolder", false)).getName();
   }
 

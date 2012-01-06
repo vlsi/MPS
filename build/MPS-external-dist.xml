@@ -69,22 +69,18 @@
     <fail unless="build.number" message="Property build.number unspecified." />
     <property name="dist.folder.name" value="MPS ${version}" />
     <property name="root.folder" value="MPS" />
-    <property name="fsnotifier.dst" value="${deploy.dir}/MPS/bin" />
-    <property name="fsnotifier.dst.mainFile" value="${fsnotifier.dst}/fsnotifier" />
-    <property name="fsnotifier.src" value="${fsnotifier.dst}/linux" />
+    <property name="fsnotifier.dir" value="${deploy.dir}/MPS/bin/linux" />
     <property name="tar.gz.file" value="${build.number}-linux.tar.gz" />
     <property name="unix.startup.file" value="${scripts.dir}/mps.sh" />
     <property name="vmoptions.file" value="${scripts.dir}/mps.vmoptions" />
     <property name="help.file" value="${mps_home}/help/mpshelp.jar" />
-    <copy todir="${fsnotifier.dst}">
-      <fileset dir="${fsnotifier.src}" />
-    </copy>
     <fixcrlf file="${unix.startup.file}" eof="remove" eol="unix" />
     <fixcrlf file="${vmoptions.file}" eof="remove" eol="unix" />
     <tar destfile="${deploy.dir}/${tar.gz.file}" compression="gzip">
-      <tarfileset dir="${deploy.dir}/${root.folder}" prefix="${dist.folder.name}" excludes="**/*.dll, **/*.exe" />
+      <tarfileset dir="${deploy.dir}/${root.folder}" prefix="${dist.folder.name}" excludes="**/*.dll, **/*.exe, **/bin/linux/, **/bin/mac/, **/bin/nix/, **/bin/win/" />
       <tarfileset file="${unix.startup.file}" prefix="${dist.folder.name}" filemode="755" />
-      <tarfileset file="${fsnotifier.dst.mainFile}" prefix="${dist.folder.name}/bin" filemode="755" />
+      <tarfileset dir="${fsnotifier.dir}" prefix="${dist.folder.name}/bin" excludes="**/fsnotifier" />
+      <tarfileset file="${fsnotifier.dir}/fsnotifier" prefix="${dist.folder.name}/bin" filemode="755" />
       <tarfileset file="${vmoptions.file}" prefix="${dist.folder.name}/bin" />
       <tarfileset file="${help.file}" prefix="${dist.folder.name}/help" />
     </tar>
@@ -96,9 +92,7 @@
     <property name="info.plist.name" value="Info.plist" />
     <property name="info.plist" value="${scripts.folder}/${info.plist.name}" />
     <property name="info.plist.tmp" value="${deploy.dir}/Info.plist" />
-    <property name="fsnotifier.dst" value="${deploy.dir}/MPS/bin" />
-    <property name="fsnotifier.dst.mainFile" value="${fsnotifier.dst}/fsnotifier" />
-    <property name="fsnotifier.src" value="${fsnotifier.dst}/mac" />
+    <property name="fsnotifier.dir" value="${deploy.dir}/MPS/bin/mac" />
     <property name="icon.file" value="${scripts.dir}/resources/mps.icns" />
     <property name="java.application.stub" value="${scripts.dir}/resources/mps" />
     <property name="unix.startup.script" value="${scripts.folder}/mps.sh" />
@@ -107,18 +101,16 @@
     <property name="root.folder.dest" value="MPS ${version}.app" />
     <property name="help.file" value="${mps_home}/help/mpshelp_mac.jar" />
     <copy file="${info.plist}" tofile="${info.plist.tmp}" />
-    <copy todir="${fsnotifier.dst}">
-      <fileset dir="${fsnotifier.src}" />
-    </copy>
     <replace file="${info.plist.tmp}" token="$version$" value="${version}" />
     <replace file="${info.plist.tmp}" token="$build$" value="${build.number}" />
     <fixcrlf file="${info.plist.tmp}" eol="unix" eof="remove" />
     <fixcrlf file="${unix.startup.script}" eol="unix" eof="remove" />
     <fixcrlf file="${scripts.folder}/mps.vmoptions" eol="unix" eof="remove" />
     <zip destfile="${deploy.dir}/${zip.file}" duplicate="preserve">
-      <zipfileset dir="${deploy.dir}/${root.folder}" prefix="${root.folder.dest}" excludes="**/*.dll, **/*.exe" />
+      <zipfileset dir="${deploy.dir}/${root.folder}" prefix="${root.folder.dest}" excludes="**/*.dll, **/*.exe, **/bin/linux/, **/bin/mac/, **/bin/nix/, **/bin/win/" />
+      <zipfileset dir="${fsnotifier.dir}" prefix="${root.folder.dest}/bin" excludes="**/fsnotifier" />
+      <zipfileset file="${fsnotifier.dir}/fsnotifier" prefix="${root.folder.dest}/bin" filemode="755" />
       <zipfileset file="${info.plist.tmp}" prefix="${root.folder.dest}/Contents" />
-      <zipfileset file="${fsnotifier.dst.mainFile}" prefix="${root.folder.dest}/bin" filemode="755" />
       <zipfileset file="${icon.file}" prefix="${root.folder.dest}/Contents/Resources" />
       <zipfileset file="${scripts.dir}/resources/mps.icns" prefix="${root.folder.dest}/Contents/Resources" />
       <zipfileset file="${java.application.stub}" prefix="${root.folder.dest}/Contents/MacOS" filemode="755" />
