@@ -339,12 +339,20 @@ public class QueriesGenerated {
     return (((SNode) _context.getVariable("presentation")) != null);
   }
 
+  public static boolean ifMacro_Condition_2547162710961896342(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (((SNode) _context.getVariable("factory")) != null);
+  }
+
   public static boolean ifMacro_Condition_5934496548013471969(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope");
   }
 
   public static boolean ifMacro_Condition_5934496548013456358(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory");
+  }
+
+  public static boolean ifMacro_Condition_2547162710961862306(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (((SNode) _context.getVariable("factory")) != null);
   }
 
   public static SNode sourceNodeQuery_1213106765261(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -382,7 +390,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_3749568622064121436(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "keepsReference", true), "body", true) != null) ?
       SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "keepsReference", true), "body", true) :
-      new QueriesGenerated.QuotationClass_x583g4_a0a0a87().createNode()
+      new QueriesGenerated.QuotationClass_x583g4_a0a0a08().createNode()
     );
   }
 
@@ -523,8 +531,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a87 {
-    public QuotationClass_x583g4_a0a0a87() {
+  public static class QuotationClass_x583g4_a0a0a08 {
+    public QuotationClass_x583g4_a0a0a08() {
     }
 
     public SNode createNode() {

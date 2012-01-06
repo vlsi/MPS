@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.search.UndefinedSearchScope;
 /**
  * evgeny, 1/6/12
  */
-public abstract class BaseScopeProvider implements ReferenceScopeProvider {
+public class BaseScopeProvider implements ReferenceScopeProvider {
   @Override
   public ISearchScope createSearchScope(IOperationContext operationContext, ReferenceConstraintsContext _context) {
     Scope scope = createScope(operationContext, _context);
@@ -39,7 +39,9 @@ public abstract class BaseScopeProvider implements ReferenceScopeProvider {
   }
 
   @Override
-  public abstract Scope createScope(IOperationContext operationContext, ReferenceConstraintsContext _context);
+  public Scope createScope(IOperationContext operationContext, ReferenceConstraintsContext _context) {
+    return null;
+  }
 
   @Override
   public boolean hasPresentation() {
