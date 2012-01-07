@@ -17,14 +17,12 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.ide.refactoring.RefactoringFacade;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.util.Arrays;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
 
 public class PluginMoveHelper {
@@ -81,21 +79,27 @@ public class PluginMoveHelper {
 
     final String modelName = s.getModuleFqName() + ".plugin";
     List<SModelDescriptor> solModels = s.getOwnModelDescriptors();
-    SModelDescriptor pluginModel = ListSequence.fromList(solModels).where(new IWhereFilter<SModelDescriptor>() {
+    final Wrappers._T<SModelDescriptor> pluginModel = new Wrappers._T<SModelDescriptor>(ListSequence.fromList(solModels).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
         return it.getLongName().equals(modelName);
       }
-    }).first();
-    if (pluginModel == null) {
-      pluginModel = s.createModel(new SModelFqName(modelName, ""), s.getSModelRoots().get(0), null);
+    }).first());
+    if (pluginModel.value == null) {
+      pluginModel.value = s.createModel(new SModelFqName(modelName, ""), s.getSModelRoots().get(0), null);
     }
 
     List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().nodes());
-    new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(pluginModel), ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
+
+    ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return isFromPluginLang(it);
       }
-    }).toListSequence(), myProject));
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        SNodeOperations.detachNode(it);
+        pluginModel.value.getSModel().addRoot(it);
+      }
+    });
   }
 
   private boolean isFromPluginLang(SNode node) {
