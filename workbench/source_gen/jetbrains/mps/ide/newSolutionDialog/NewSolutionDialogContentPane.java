@@ -189,7 +189,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     myThis.getDialog().dispose();
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new ModelCommandExecutor.RunnableWithProgress() {
       public void run(ProgressMonitor monitor) {
-        myThis.setResult(NewModuleUtil.createSolution(myThis.getSolutionName(), myThis.getSolutionPath(), myThis.getProject()));
+        myThis.setResult(NewModuleUtil.createSolution(myThis.getSolutionName(), myThis.getSolutionPath(), myThis.getProject(), true));
       }
     }, "Creating", false, myThis.getProject());
   }

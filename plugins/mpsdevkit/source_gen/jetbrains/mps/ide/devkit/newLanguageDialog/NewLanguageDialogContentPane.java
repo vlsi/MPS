@@ -281,14 +281,14 @@ public class NewLanguageDialogContentPane extends JPanel {
   /*package*/ Solution createRuntimeSolution() {
     String basePath = myThis.getLanguagePath() + File.separator + "runtime";
     String namespace = myThis.getLanguageNamespace() + ".runtime";
-    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject());
+    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject(), true);
     return solution;
   }
 
   /*package*/ Solution createSandboxSolution() {
     String basePath = myThis.getLanguagePath() + File.separator + "sandbox";
     String namespace = myThis.getLanguageNamespace() + ".sandbox";
-    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject());
+    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject(), true);
     return solution;
   }
 

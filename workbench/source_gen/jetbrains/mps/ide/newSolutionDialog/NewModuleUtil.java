@@ -65,7 +65,7 @@ public class NewModuleUtil {
     return ((T) module);
   }
 
-  public static Solution createSolution(String namespace, final String rootPath, MPSProject p) {
+  public static Solution createSolution(String namespace, final String rootPath, MPSProject p, boolean reload) {
     return NewModuleUtil.createModule(MPSExtentions.DOT_SOLUTION, namespace, rootPath, p, new _FunctionTypes._return_P3_E0<Solution, String, IFile, MPSProject>() {
       public Solution invoke(String s, IFile f, MPSProject p) {
         return Solution.createSolution(s, f, p);

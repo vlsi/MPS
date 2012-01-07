@@ -11,25 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.ide.refactoring.RefactoringFacade;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.util.Arrays;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
 
 public class MovePluginsOutOfLanguages_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -62,37 +44,11 @@ public class MovePluginsOutOfLanguages_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (Language lang : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(Language.class))) {
-        if (lang.isPackaged()) {
-          continue;
-        }
-        if (LanguageAspect.PLUGIN.get(lang) == null) {
-          continue;
-        }
-        MovePluginsOutOfLanguages_Action.this.movePluginOut(lang, _params);
-      }
+      new PluginMoveHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).move();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MovePluginsOutOfLanguages", t);
       }
     }
-  }
-
-  /*package*/ void movePluginOut(Language l, final Map<String, Object> _params) {
-    Solution s = NewModuleUtil.createSolution(l.getModuleFqName() + ".plugin", l.getBundleHome().getDescendant("solutions").getDescendant("pluginSolution").getPath(), ((MPSProject) MapSequence.fromMap(_params).get("project")));
-    EditableSModelDescriptor pluginModel = s.createModel(new SModelFqName(s.getModuleFqName() + ".plugin", ""), s.getSModelRoots().get(0), null);
-    List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().nodes());
-    new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(pluginModel), ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return MovePluginsOutOfLanguages_Action.this.isFromPluginLang(it, _params);
-      }
-    }).toListSequence(), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
-
-  }
-
-  private boolean isFromPluginLang(SNode node, final Map<String, Object> _params) {
-    ModuleReference ref = SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(node)).getModelDescriptor().getModule().getModuleReference();
-    ModuleReference plugin = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("28f9e497-3b42-4291-aeba-0a1039153ab1")).getModuleReference();
-    return ref.equals(plugin);
   }
 }
