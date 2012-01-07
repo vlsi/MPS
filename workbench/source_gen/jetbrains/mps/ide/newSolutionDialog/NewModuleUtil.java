@@ -47,14 +47,14 @@ public class NewModuleUtil {
     return null;
   }
 
-  public static <T extends IModule> T createModule(String extension, String namespace, String rootPath, MPSProject project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super MPSProject> creator, _FunctionTypes._void_P1_E0<? super ModuleDescriptor> adjuster) {
+  public static <T extends IModule> T createModule(String extension, String namespace, String rootPath, MPSProject project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super MPSProject> creator, _FunctionTypes._void_P1_E0<? super ModuleDescriptor> adjuster, boolean reload) {
     String shortName = NameUtil.shortNameFromLongName(namespace);
     String path = rootPath + File.separator + shortName + extension;
     IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
     final IModule module = creator.invoke(namespace, descriptorFile, project);
     ModuleDescriptor d = module.getModuleDescriptor();
     adjuster.invoke(d);
-    module.setModuleDescriptor(d, true);
+    module.setModuleDescriptor(d, reload);
     ModelAccess.instance().writeFilesInEDT(new Runnable() {
       public void run() {
         module.save();
@@ -78,6 +78,6 @@ public class NewModuleUtil {
 
         d.setCompileInMPS(true);
       }
-    });
+    }, reload);
   }
 }

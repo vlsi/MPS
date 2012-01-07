@@ -12,6 +12,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -66,6 +68,8 @@ public class PluginMoveHelper {
     for (Language lang : Sequence.fromIterable(refLangs)) {
       movePluginOut(lang);
     }
+
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 
   private void movePluginOut(Language l) {

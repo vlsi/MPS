@@ -231,9 +231,7 @@
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="101" startPosition="25" endLine="106" endPosition="5">
-      <varInfo nodeId="1204026592280" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="101" startPosition="25" endLine="106" endPosition="5" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="115" startPosition="0" endLine="121" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="128" startPosition="0" endLine="134" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="161" startPosition="0" endLine="167" endPosition="0">
@@ -302,7 +300,7 @@
     <nodeInfo nodeId="4015801747712977601" fileName="NewDevKitDialogContentPane.java" startLine="188" startPosition="116" endLine="192" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4543209876460447823" fileName="NewDevKitDialogContentPane.java" startLine="198" startPosition="217" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/MPSProject;)Ljetbrains/mps/project/DevKit;" />
     <nodeInfo nodeId="1204027087626" fileName="NewDevKitDialogContentPane.java" startLine="209" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" />
-    <nodeInfo nodeId="4543209876460447813" fileName="NewDevKitDialogContentPane.java" startLine="197" startPosition="50" endLine="205" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4543209876460447813" fileName="NewDevKitDialogContentPane.java" startLine="197" startPosition="50" endLine="205" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8115509433044634446" fileName="NewDevKitDialogContentPane.java" startLine="196" startPosition="116" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Ljetbrains/mps/progress/ProgressMonitor;)V" />
     <nodeInfo nodeId="1204027179199" fileName="NewDevKitDialogContentPane.java" startLine="213" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateSolutionPath#()V" />
     <nodeInfo nodeId="8115509433044634442" fileName="NewDevKitDialogContentPane.java" startLine="195" startPosition="59" endLine="207" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -323,7 +321,7 @@
       <varInfo nodeId="4543209876460447823" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1204027087626" fileName="NewDevKitDialogContentPane.java" startLine="209" startPosition="0" endLine="213" endPosition="0" />
-    <scopeInfo nodeId="8115509433044634447" fileName="NewDevKitDialogContentPane.java" startLine="197" startPosition="50" endLine="205" endPosition="12" />
+    <scopeInfo nodeId="8115509433044634447" fileName="NewDevKitDialogContentPane.java" startLine="197" startPosition="50" endLine="205" endPosition="18" />
     <scopeInfo nodeId="1204027179201" fileName="NewDevKitDialogContentPane.java" startLine="214" startPosition="41" endLine="222" endPosition="5">
       <varInfo nodeId="1204027187689" varName="path" />
       <varInfo nodeId="1204027260588" varName="prefix" />

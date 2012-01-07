@@ -274,7 +274,7 @@ public class NewLanguageDialogContentPane extends JPanel {
         ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
         d.getUsedDevkits().add(devkitRef);
       }
-    }));
+    }, true));
     return myThis.getResult();
   }
 
