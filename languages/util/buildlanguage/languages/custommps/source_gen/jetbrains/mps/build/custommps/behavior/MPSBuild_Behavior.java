@@ -30,6 +30,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.StubPath;
+import java.util.Properties;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import com.intellij.openapi.util.BuildNumber;
+import java.io.IOException;
 
 public class MPSBuild_Behavior {
   public static void init(SNode thisNode) {
@@ -109,6 +114,21 @@ public class MPSBuild_Behavior {
   }
 
   public static boolean isInMPSBuild_1239995424995() {
-    return new File(PathManager.getHomePath() + File.separator + "lib" + File.separator + "mps.jar").exists();
+    // we return true in case of doubt to minimize the risk of mistakes 
+
+    String buildNumberProperty = "build.number";
+    File buildNumberFile = new File(PathManager.getHomePath(), buildNumberProperty);
+    if (!(buildNumberFile.exists())) {
+      return true;
+    }
+    Properties properties = new Properties();
+    try {
+      properties.load(new BufferedInputStream(new FileInputStream(buildNumberFile)));
+
+      BuildNumber runningBuild = BuildNumber.fromString(properties.getProperty(buildNumberProperty));
+      return !(runningBuild.isSnapshot());
+    } catch (IOException e) {
+      return true;
+    }
   }
 }

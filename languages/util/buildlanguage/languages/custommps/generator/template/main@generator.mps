@@ -2140,7 +2140,7 @@
         <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="8716889635481488838">
           <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="8716889635481488839">
             <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="8716889635481488840">
-              <property name="value" nameId="tpsk.1196861024475" value="/mps.jar" />
+              <property name="value" nameId="tpsk.1196861024475" value="/mps-core.jar" />
             </node>
             <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="8716889635481488841">
               <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="8716889635481488581" resolveInfo="input.dir" />
