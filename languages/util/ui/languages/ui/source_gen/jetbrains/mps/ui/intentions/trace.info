@@ -305,7 +305,9 @@
     <scopeInfo nodeId="2441084687258555760" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="202" startPosition="7" endLine="206" endPosition="31">
       <varInfo nodeId="2441084687258555760" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="117" startPosition="28" endLine="122" endPosition="7" />
+    <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="117" startPosition="28" endLine="122" endPosition="7">
+      <varInfo nodeId="8905126934806239993" varName="param" />
+    </scopeInfo>
     <scopeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="180" startPosition="222" endLine="185" endPosition="11" />
     <scopeInfo nodeId="8717063129899256929" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="71" startPosition="85" endLine="77" endPosition="5">
       <varInfo nodeId="8717063129899256931" varName="depOn" />

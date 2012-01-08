@@ -26363,7 +26363,7 @@
           </node>
           <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1596333951698899860">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1596333951698899861">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.5487985028841876506" resolveInfo="OverridingMethodEditorMessage" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.5487985028841877332" resolveInfo="OverridingMethodsFinder" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1596333951698899862">
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1596333951698899851" resolveInfo="classifier" />
               </node>

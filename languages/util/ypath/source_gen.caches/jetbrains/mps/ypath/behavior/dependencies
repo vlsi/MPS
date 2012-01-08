@@ -162,7 +162,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.design.IGenericFeatureDesign" />
     <classNode dependClassName="jetbrains.mps.ypath.design.IGenericParameterizedFeatureDesign" />
     <classNode dependClassName="jetbrains.mps.ypath.design.IParameterizedFeatureDesign" />
-    <classNode dependClassName="jetbrains.mps.ypath.plugin.DesignPartLoader" />
+    <classNode dependClassName="jetbrains.mps.ypath.pluginSolution.plugin.DesignPartLoader" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.behavior.FromOperation_BehaviorDescriptor" file="FromOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
