@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
@@ -67,7 +68,6 @@ public class PluginMoveHelper {
     for (Language lang : Sequence.fromIterable(refLangs)) {
       movePluginOut(lang);
     }
-
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 
@@ -101,6 +101,9 @@ public class PluginMoveHelper {
         pluginModel.value.getSModel().addRoot(it);
       }
     });
+
+    SModelOperations.validateLanguagesAndImports(pluginModel.value.getSModel(), false, true);
+
     SModelRepository.getInstance().saveAll();
   }
 
