@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
 
@@ -88,7 +89,7 @@ public class PluginMoveHelper {
       pluginModel.value = s.createModel(new SModelFqName(modelName, ""), s.getSModelRoots().get(0), null);
     }
 
-    List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().nodes());
+    List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().roots());
 
     ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -100,6 +101,7 @@ public class PluginMoveHelper {
         pluginModel.value.getSModel().addRoot(it);
       }
     });
+    SModelRepository.getInstance().saveAll();
   }
 
   private boolean isFromPluginLang(SNode node) {
