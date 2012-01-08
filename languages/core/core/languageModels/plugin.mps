@@ -56,6 +56,8 @@
   <import index="2yc6" modelUID="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)" version="-1" />
   <import index="tpcr" modelUID="r:00000000-0000-4000-0000-011c89590287(jetbrains.mps.lang.core.scripts)" version="-1" />
   <import index="o2jy" modelUID="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)" version="-1" />
+  <import index="crsq" modelUID="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)" version="-1" />
+  <import index="dq2u" modelUID="r:941f59fa-b29b-41b6-a576-62b2dc0039b8(jetbrains.mps.make.facet.pluginSolution.plugin)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -253,8 +255,8 @@
                       </node>
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7713872743340736451">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7713872743340736303" resolveInfo="retainedFilesDelta" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3110513929263083458" resolveInfo="RetainedUtil" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="crsq.5487985028841888815" resolveInfo="RetainedUtil" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="crsq.5487985028841889248" resolveInfo="retainedFilesDelta" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7713872743340736452">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7713872743340736453">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7713872743340736454">
@@ -312,8 +314,8 @@
                       </node>
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7713872743340736472">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7713872743340736334" resolveInfo="retainedCachesDelta" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3110513929263083458" resolveInfo="RetainedUtil" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="crsq.5487985028841888815" resolveInfo="RetainedUtil" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="crsq.5487985028841889270" resolveInfo="retainedCachesDelta" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7713872743340736473">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7713872743340736474">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7713872743340736475">
@@ -1571,7 +1573,7 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~GenerationOptions$OptionsBuilder%dincremental(jetbrains%dmps%dgenerator%dIncrementalGenerationStrategy)%cjetbrains%dmps%dgenerator%dGenerationOptions$OptionsBuilder" resolveInfo="incremental" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6648795410103939645">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6648795410103939646">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1u06.2340850238541857251" resolveInfo="MakeGenerationStrategy" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dq2u.5487985028841901523" resolveInfo="MakeGenerationStrategy" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="6648795410103939647">
                         <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6648795410103939648" />
                         <node role="condition" roleId="tpee.1163668914799" type="tpee.AndExpression" typeId="tpee.1080120340718" id="6648795410103939649">
@@ -2195,10 +2197,10 @@
                     </node>
                   </node>
                 </node>
-                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3110513929263083758">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3110513929263083464" resolveInfo="collectModelsToRetain" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3110513929263083458" resolveInfo="RetainedUtil" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="q9ra.InputResourcesParameter" typeId="q9ra.2360002718792625580" id="3110513929263083759" />
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="766349968122927363">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="crsq.5487985028841888980" resolveInfo="collectModelsToRetain" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="crsq.5487985028841888815" resolveInfo="RetainedUtil" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="q9ra.InputResourcesParameter" typeId="q9ra.2360002718792625580" id="766349968122927364" />
                 </node>
               </node>
             </node>
@@ -2211,7 +2213,7 @@
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6648795410103940102">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6648795410103940103">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1u06.2383991756720270097" resolveInfo="MakeGenerationHandler" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dq2u.5487985028841901652" resolveInfo="MakeGenerationHandler" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="6648795410103940104">
                       <node role="parameter" roleId="tp2c.1199569906740" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6648795410103940105">
                         <property name="name" nameId="tpck.1169194664001" value="data" />

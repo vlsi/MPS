@@ -21,6 +21,7 @@
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="kqhl" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
+  <import index="n9xg" modelUID="r:7c3ddb9d-2636-40d4-bfd7-ff3fc5bad172(jetbrains.mps.ui.pluginSolution.plugin)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp3j" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
@@ -383,8 +384,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~Language" resolveInfo="Language" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8717063129899257760">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h2jp.8117382572454923191" resolveInfo="languageToGenerate" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="h2jp.8117382572454923102" resolveInfo="Variants" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n9xg.5487985028841950172" resolveInfo="Variants" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n9xg.5487985028841950261" resolveInfo="languageToGenerate" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp3j.IntentionParameter" typeId="tp3j.1240322627579" id="8717063129899257761" />
             </node>
           </node>
@@ -719,8 +720,8 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2441084687258535926">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2441084687258535919">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2441084687258498817">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h2jp.8117382572454923172" resolveInfo="availableVariants" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="h2jp.8117382572454923102" resolveInfo="Variants" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n9xg.5487985028841950172" resolveInfo="Variants" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n9xg.5487985028841950242" resolveInfo="availableVariants" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp2q.ExcludeOperation" typeId="tp2q.1176923520476" id="2441084687258535923">
                 <node role="rightExpression" roleId="tp2q.1176906787974" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2441084687258535925">

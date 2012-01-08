@@ -10,6 +10,7 @@
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="297i" modelUID="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)" version="-1" />
+  <import index="vtgy" modelUID="r:cda2d9eb-3c48-4dc0-9572-5e9ceb5bce45(jetbrains.mps.baseLanguage.collections.pluginSolution.plugin)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
@@ -128,13 +129,13 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5487985028841887770">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5487985028841887771">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="297i.8536718853245006659" resolveInfo="CollectionsLanguage" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="297i.8536718853245025330" resolveInfo="runOnInit" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="vtgy.5487985028841887221" resolveInfo="CollectionsLanguage" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vtgy.5487985028841887310" resolveInfo="runOnInit" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="5487985028841887772">
               <node role="parameter" roleId="tp2c.1199569906740" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5487985028841887773">
                 <property name="name" nameId="tpck.1169194664001" value="cl" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5487985028841887774">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="297i.8536718853245006659" resolveInfo="CollectionsLanguage" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vtgy.5487985028841887221" resolveInfo="CollectionsLanguage" />
                 </node>
               </node>
               <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="5487985028841887775">
@@ -145,11 +146,11 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841887773" resolveInfo="cl" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841887780">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="297i.8536718853245025323" resolveInfo="getCustomContainersRegistry" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vtgy.5487985028841887222" resolveInfo="getCustomContainersRegistry" />
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841887781">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="297i.8536718853245008440" resolveInfo="registerProvider" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vtgy.5487985028841887526" resolveInfo="registerProvider" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5487985028841887782">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841887730" resolveInfo="provider" />
                       </node>
@@ -162,13 +163,13 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5487985028841887783">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5487985028841887784">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="297i.8536718853245025681" resolveInfo="runOnDispose" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="297i.8536718853245006659" resolveInfo="CollectionsLanguage" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="vtgy.5487985028841887221" resolveInfo="CollectionsLanguage" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vtgy.5487985028841887337" resolveInfo="runOnDispose" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="5487985028841887785">
               <node role="parameter" roleId="tp2c.1199569906740" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5487985028841887786">
                 <property name="name" nameId="tpck.1169194664001" value="cl" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5487985028841887787">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="297i.8536718853245006659" resolveInfo="CollectionsLanguage" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vtgy.5487985028841887221" resolveInfo="CollectionsLanguage" />
                 </node>
               </node>
               <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="5487985028841887788">
@@ -179,11 +180,11 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841887786" resolveInfo="cl" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841887793">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="297i.8536718853245025323" resolveInfo="getCustomContainersRegistry" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vtgy.5487985028841887222" resolveInfo="getCustomContainersRegistry" />
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841887794">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="297i.8536718853245008452" resolveInfo="unRegisterProvider" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vtgy.5487985028841887543" resolveInfo="unRegisterProvider" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5487985028841887795">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841887730" resolveInfo="provider" />
                       </node>

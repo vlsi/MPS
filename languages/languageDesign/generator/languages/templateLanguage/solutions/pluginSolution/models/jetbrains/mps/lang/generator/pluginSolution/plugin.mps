@@ -32,6 +32,16 @@
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="-1" />
   <import index="tpfh" modelUID="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)" version="-1" />
+  <import index="5yex" modelUID="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)" version="-1" />
+  <import index="lmtf" modelUID="r:48ba4f80-56ec-44d9-aea9-1978c31b19e2(jetbrains.mps.lang.editor.pluginSolution.plugin)" version="-1" />
+  <import index="6iuv" modelUID="r:8ebe19b3-83f3-4f88-be87-5272af13c0be(jetbrains.mps.lang.constraints.pluginSolution.plugin)" version="-1" />
+  <import index="mcq9" modelUID="r:a86c2c0c-f969-45f2-a7bf-8eaa2e8d7ca5(jetbrains.mps.lang.behavior.pluginSolution.plugin)" version="-1" />
+  <import index="490z" modelUID="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)" version="-1" />
+  <import index="k08j" modelUID="r:b3d745a2-e666-4dd1-92af-d70099b75040(jetbrains.mps.lang.actions.pluginSolution.plugin)" version="-1" />
+  <import index="nsiz" modelUID="r:74113155-7606-4e01-8c30-fdbf3a09b8c0(jetbrains.mps.lang.refactoring.pluginSolution.plugin)" version="-1" />
+  <import index="rd2p" modelUID="r:9c87066c-dace-4ff8-ac2b-7b0c95b3c469(jetbrains.mps.lang.intentions.pluginSolution.plugin)" version="-1" />
+  <import index="55qv" modelUID="r:3f4c1c5a-991a-4133-ba28-bbe1a42b86df(jetbrains.mps.lang.findUsages.pluginSolution.plugin)" version="-1" />
+  <import index="lzd0" modelUID="r:97aec248-a91c-439e-a7f1-5184e2da6816(jetbrains.mps.lang.dataFlow.pluginSolution.plugin)" version="-1" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" implicit="yes" />
@@ -51,8 +61,8 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5487985028841898677">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5487985028841898678">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5487985028841898679">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcc.3552608880959246967" resolveInfo="getBaseNode" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpcc.3552608880959246745" resolveInfo="ConceptEditorOpenHelper" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5yex.5487985028841903378" resolveInfo="ConceptEditorOpenHelper" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5yex.5487985028841903380" resolveInfo="getBaseNode" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_node" typeId="tp4k.1203853034639" id="5487985028841898680" />
           </node>
         </node>
@@ -116,35 +126,35 @@
       </node>
     </node>
     <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.Order" typeId="tp4k.2450897840534683975" id="5487985028841898710">
-      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="5487985028841898711">
-        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="tpcc.2542706524531725660" resolveInfo="Structure" />
+      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="766349968122922415">
+        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="5yex.5487985028841903691" resolveInfo="Structure" />
       </node>
-      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="5487985028841898712">
-        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="tpc0.7157723551789028023" resolveInfo="Editor" />
+      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="766349968122922416">
+        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="lmtf.5487985028841896800" resolveInfo="Editor" />
       </node>
-      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="5487985028841898713">
-        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="tp1z.7157723551789065859" resolveInfo="Constraints" />
+      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="766349968122922417">
+        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="6iuv.5487985028841895929" resolveInfo="Constraints" />
       </node>
-      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="5487985028841898714">
-        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="7d1q.7157723551789059564" resolveInfo="Behavior" />
+      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="766349968122922418">
+        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="mcq9.5487985028841895875" resolveInfo="Behavior" />
       </node>
-      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="5487985028841898715">
-        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="tpdb.7157723551789225032" resolveInfo="Typesystem" />
+      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="766349968122922419">
+        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="490z.5487985028841909068" resolveInfo="Typesystem" />
       </node>
-      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="5487985028841898716">
-        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="c9j3.7157723551789228701" resolveInfo="Actions" />
+      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="766349968122922420">
+        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="k08j.5487985028841895716" resolveInfo="Actions" />
       </node>
-      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="5487985028841898717">
-        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="tp1n.3911341278723465020" resolveInfo="Refactorings" />
+      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="766349968122922421">
+        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="nsiz.5487985028841901797" resolveInfo="Refactorings" />
       </node>
-      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="5487985028841898718">
-        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="a2y9.3911341278723469245" resolveInfo="Intentions" />
+      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="766349968122922422">
+        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="rd2p.5487985028841900779" resolveInfo="Intentions" />
       </node>
-      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="5487985028841898719">
-        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="y098.7157723551789065908" resolveInfo="Find Usages" />
+      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="766349968122922423">
+        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="55qv.5487985028841896861" resolveInfo="Find Usages" />
       </node>
-      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="5487985028841898720">
-        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="tp40.3911341278723469305" resolveInfo="Data Flow" />
+      <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="766349968122922424">
+        <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="lzd0.5487985028841896668" resolveInfo="Data Flow" />
       </node>
       <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="5487985028841898721">
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="5487985028841898675" resolveInfo="Generator" />
@@ -163,16 +173,16 @@
               <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="5487985028841898728">
                 <node role="elementType" roleId="tp2q.1151688676805" type="tp25.SConceptType" typeId="tp25.1172420572800" id="5487985028841898729" />
               </node>
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5487985028841898730">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpcc.6388164970935848749" resolveInfo="ConceptEditorHelper" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcc.6388164970935848764" resolveInfo="getAvailableConceptAspects" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5487985028841898731">
-                  <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="5487985028841898732">
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="766349968122922468">
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5yex.5487985028841903711" resolveInfo="ConceptEditorHelper" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5yex.5487985028841903807" resolveInfo="getAvailableConceptAspects" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="766349968122922469">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="766349968122922470">
                     <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpf8.1112730859144" resolveInfo="TemplateSwitch" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetModelOperation" typeId="tp25.1143234257716" id="5487985028841898733" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetModelOperation" typeId="tp25.1143234257716" id="766349968122922471" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_node" typeId="tp4k.1203853034639" id="5487985028841898734" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_node" typeId="tp4k.1203853034639" id="766349968122922472" />
               </node>
             </node>
           </node>
@@ -1001,12 +1011,12 @@
                         <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5487985028841899096">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841899071" resolveInfo="result" />
                         </node>
-                        <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5487985028841899097">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcc.6388164970935848862" resolveInfo="createNewConceptAspectInstance" />
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpcc.6388164970935848749" resolveInfo="ConceptEditorHelper" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_node" typeId="tp4k.1203853034639" id="5487985028841899098" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_Concept" typeId="tp4k.7692832593197710975" id="5487985028841899099" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5487985028841899100">
+                        <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="766349968122922511">
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5yex.5487985028841903711" resolveInfo="ConceptEditorHelper" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5yex.5487985028841903905" resolveInfo="createNewConceptAspectInstance" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_node" typeId="tp4k.1203853034639" id="766349968122922512" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_Concept" typeId="tp4k.7692832593197710975" id="766349968122922513" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="766349968122922514">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841899077" resolveInfo="model" />
                           </node>
                         </node>

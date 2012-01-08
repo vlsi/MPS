@@ -5,6 +5,7 @@
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <import index="xb28" modelUID="r:9515a1bb-7c0a-41f9-bbe5-1afbeffea2f9(jetbrains.mps.ui.modeling.plugin)" version="-1" />
+  <import index="ypew" modelUID="r:0a9deb81-2d1f-49f8-8be8-9229fe099b78(jetbrains.mps.ui.modeling.pluginSolution.plugin)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
@@ -19,8 +20,8 @@
     <node role="fieldDeclaration" roleId="tp4k.1215279937191" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="5487985028841950115">
       <property name="name" nameId="tpck.1169194664001" value="helper" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5487985028841950116" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5487985028841950117">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xb28.6661832029303857606" resolveInfo="EditorExtensionHelper" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="766349968122927355">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ypew.5487985028841949378" resolveInfo="EditorExtensionHelper" />
       </node>
     </node>
     <node role="initBlock" roleId="tp4k.1215279937189" type="tp4k.ApplicationPluginInitBlock" typeId="tp4k.1215278261851" id="5487985028841950118">
@@ -31,8 +32,8 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="5487985028841950123">
                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="5487985028841950124">
                   <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="xb28.6661832029303857606" resolveInfo="EditorExtensionHelper" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xb28.6661832029303857608" resolveInfo="EditorExtensionHelper" />
+                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="ypew.5487985028841949378" resolveInfo="EditorExtensionHelper" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ypew.5487985028841949658" resolveInfo="EditorExtensionHelper" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5487985028841950125">
                     <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ui.internal.testdata" />
                   </node>
@@ -105,7 +106,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841950157">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xb28.6661832029303857612" resolveInfo="init" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ypew.5487985028841949399" resolveInfo="init" />
             </node>
           </node>
         </node>
@@ -122,7 +123,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841950165">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xb28.6661832029303857616" resolveInfo="dispose" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ypew.5487985028841949621" resolveInfo="dispose" />
             </node>
           </node>
         </node>

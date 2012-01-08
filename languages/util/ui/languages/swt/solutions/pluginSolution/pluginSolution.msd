@@ -10,6 +10,8 @@
     <dependency reexport="false">fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)</dependency>
     <dependency reexport="false">28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</dependency>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
+    <dependency reexport="false">3bc6467d-109e-4e60-8783-f50a59bb85ef(jetbrains.mps.ui.pluginSolution)</dependency>
+    <dependency reexport="false">4e6f538e-8539-43c7-b0f9-0ba45c4949a0(jetbrains.mps.ui.modeling.pluginSolution)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguage>

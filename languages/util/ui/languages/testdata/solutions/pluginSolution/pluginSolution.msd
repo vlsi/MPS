@@ -7,6 +7,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)</dependency>
+    <dependency reexport="false">4e6f538e-8539-43c7-b0f9-0ba45c4949a0(jetbrains.mps.ui.modeling.pluginSolution)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguage>

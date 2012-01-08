@@ -10,6 +10,7 @@
   <import index="tpg3" modelUID="r:00000000-0000-4000-0000-011c8959050f(jetbrains.mps.quickQueryLanguage.plugin)" version="-1" />
   <import index="r172" modelUID="r:95d22feb-0fb2-45bb-8dc4-fee131cf897f(jetbrains.mps.quickQueryLanguage.runtime)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="yoaz" modelUID="r:3a778ef5-24fe-4aa0-8558-f81e64e33ac0(jetbrains.mps.quickQueryLanguage.pluginSolution.plugin)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -267,8 +268,8 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1220257961589">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1220258391049">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1220258391050">
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="tpg3.1219056224639" resolveInfo="QueryExecutor" />
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="tpg3.1220257798123" resolveInfo="GENERATED_QUERY_NAME" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="yoaz.5487985028841942616" resolveInfo="QueryExecutor" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="yoaz.5487985028841942622" resolveInfo="GENERATED_QUERY_NAME" />
             </node>
           </node>
         </node>
