@@ -55,7 +55,7 @@ public class PluginMoveHelper {
         }
       });
       if (sb.length() > 0) {
-        sb.delete(sb.length() - 2, sb.length());
+        sb.delete(sb.length() - 2, sb.length() - 1);
       }
       int result = Messages.showYesNoDialog("Solutions\n" + sb.toString() + " already exist. Nodes will be moved to existing solutions", "Solution Exists", "Continue", "Cancel", null);
       if (result == 1) {
