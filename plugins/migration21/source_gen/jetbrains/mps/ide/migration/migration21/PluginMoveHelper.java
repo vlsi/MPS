@@ -22,10 +22,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.refactoring.RefactoringFacade;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import java.util.Arrays;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.ModuleId;
 
 public class PluginMoveHelper {
@@ -97,16 +100,14 @@ public class PluginMoveHelper {
 
     List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().roots());
 
-    ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> nodes2Refactor = ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(isFromFacetLang(it));
       }
-    }).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        SNodeOperations.detachNode(it);
-        pluginModel.value.getSModel().addRoot(it);
-      }
     });
+    new RefactoringFacade().executeSimple(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(pluginModel.value), Sequence.fromIterable(nodes2Refactor).toListSequence(), myProject));
+
+    // <node> 
 
     SModelOperations.validateLanguagesAndImports(pluginModel.value.getSModel(), false, true);
 
