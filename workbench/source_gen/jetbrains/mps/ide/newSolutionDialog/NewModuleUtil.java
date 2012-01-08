@@ -61,7 +61,9 @@ public class NewModuleUtil {
       }
     });
     project.addModule(module.getModuleReference());
-    ((StandaloneMPSProject) project).update();
+    if (reload) {
+      ((StandaloneMPSProject) project).update();
+    }
     return ((T) module);
   }
 
