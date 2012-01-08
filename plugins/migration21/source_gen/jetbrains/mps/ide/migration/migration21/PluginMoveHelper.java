@@ -16,6 +16,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelFqName;
@@ -68,6 +69,8 @@ public class PluginMoveHelper {
     for (Language lang : Sequence.fromIterable(refLangs)) {
       movePluginOut(lang);
     }
+
+    myProject.getProject().save();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 
@@ -76,6 +79,9 @@ public class PluginMoveHelper {
     Solution s = MPSModuleRepository.getInstance().getSolution(solutionName);
     if (s == null) {
       s = NewModuleUtil.createSolution(solutionName, l.getBundleHome().getDescendant("solutions").getDescendant(SOLUTION_NAME).getPath(), myProject, false);
+
+      StandaloneMPSProject project = (StandaloneMPSProject) myProject;
+      project.setFolderFor(s, project.getFolderFor(l));
     }
 
     final String modelName = s.getModuleFqName() + ".plugin";
