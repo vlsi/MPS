@@ -17,6 +17,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelFqName;
@@ -86,6 +87,8 @@ public class PluginMoveHelper {
       StandaloneMPSProject project = (StandaloneMPSProject) myProject;
       project.setFolderFor(s, project.getFolderFor(l));
     }
+    s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_OTHER);
+    s.save();
 
     final String modelName = s.getModuleFqName() + ".plugin";
     List<SModelDescriptor> solModels = s.getOwnModelDescriptors();
