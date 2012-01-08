@@ -99,7 +99,7 @@ public class PluginMoveHelper {
 
     ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return isFromPluginLang(it);
+        return !(isFromFacetLang(it));
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
@@ -113,9 +113,9 @@ public class PluginMoveHelper {
     SModelRepository.getInstance().saveAll();
   }
 
-  private boolean isFromPluginLang(SNode node) {
+  private boolean isFromFacetLang(SNode node) {
     ModuleReference ref = SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(node)).getModelDescriptor().getModule().getModuleReference();
-    ModuleReference plugin = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("28f9e497-3b42-4291-aeba-0a1039153ab1")).getModuleReference();
+    ModuleReference plugin = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("696c1165-4a59-463b-bc5d-902caab85dd0")).getModuleReference();
     return ref.equals(plugin);
   }
 

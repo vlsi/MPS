@@ -1283,10 +1283,12 @@
                 <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1855937925843953164">
                   <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1855937925843953165">
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1855937925843953308">
-                      <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8004978336433012746">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8004978336432944895" resolveInfo="isFromPluginLang" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8004978336433012748">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1855937925843953166" resolveInfo="it" />
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.NotExpression" typeId="tpee.1081516740877" id="2364465024517286568">
+                        <node role="expression" roleId="tpee.1081516765348" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2364465024517286569">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8004978336432944895" resolveInfo="isFromFacetLang" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2364465024517286570">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1855937925843953166" resolveInfo="it" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -1378,7 +1380,7 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8004978336432944895">
-      <property name="name" nameId="tpck.1169194664001" value="isFromPluginLang" />
+      <property name="name" nameId="tpck.1169194664001" value="isFromFacetLang" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="8004978336433012687" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8004978336433012688" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8004978336432944898">
@@ -1424,7 +1426,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8004978336433012709">
               <node role="operand" roleId="tpee.1197027771414" type="tp25.ModuleReferenceExpression" typeId="tp25.4040588429969021681" id="8004978336433012710">
-                <property name="moduleId" nameId="tp25.4040588429969021683" value="28f9e497-3b42-4291-aeba-0a1039153ab1" />
+                <property name="moduleId" nameId="tp25.4040588429969021683" value="696c1165-4a59-463b-bc5d-902caab85dd0" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8004978336433012711">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dgetModuleReference()%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference" resolveInfo="getModuleReference" />
