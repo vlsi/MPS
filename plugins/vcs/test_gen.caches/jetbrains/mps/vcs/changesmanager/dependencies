@@ -27,6 +27,7 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.AssertionError" />
     <classNode dependClassName="java.lang.Comparable" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -82,6 +83,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
     <classNode dependClassName="jetbrains.mps.watching.ModelChangesWatcher" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.model.DeleteModelHelper" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />

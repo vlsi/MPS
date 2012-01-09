@@ -61,6 +61,7 @@ import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import jetbrains.mps.project.IModule;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.junit.Test;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.TestMain;
@@ -620,6 +621,35 @@ public class CommonChangesManagerTest {
     checkOneAddedRoot(newModelDiff.value);
   }
 
+  private void deleteModelAndRollback() {
+    final EditableSModelDescriptor md = myUiDiff.getModelDescriptor();
+    String changeSetStringBefore = getChangeSetString(myUiDiff.getChangeSet());
+    runCommandAndWait(new Runnable() {
+      public void run() {
+        DeleteModelHelper.deleteModel(myIdeaProject, md.getModule(), md, false, true);
+      }
+    });
+    waitForChangesManager();
+
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        public void run() {
+          UndoManager.getInstance(myIdeaProject).undo(null);
+        }
+      });
+    } catch (Exception e) {
+      e.printStackTrace();
+      Assert.fail();
+    }
+    waitForChangesManager();
+    myUiDiff = getCurrentDifference("ui");
+    myUiDiff.setEnabled(true);
+    waitForChangesManager();
+    myChangeListManager.ensureUpToDate(false);
+    waitForChangesManager();
+    Assert.assertEquals(changeSetStringBefore, getChangeSetString(myUiDiff.getChangeSet()));
+  }
+
   @Test
   public void doTest() {
     ModelChangesWatcher.setForceProcessingEnabled(true);
@@ -645,6 +675,7 @@ public class CommonChangesManagerTest {
           rollbackAll();
 
           createNewModel();
+          deleteModelAndRollback();
 
           SwingUtilities.invokeAndWait(new Runnable() {
             public void run() {
