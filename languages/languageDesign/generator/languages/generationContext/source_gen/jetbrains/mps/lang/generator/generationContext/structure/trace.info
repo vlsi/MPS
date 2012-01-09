@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="GenerationContext_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.StructureAspectDescriptor" />
   <root nodeId="1216860049619">
     <nodeInfo nodeId="1216860049619" fileName="GenerationContextOp_Base.java" startLine="15" startPosition="81" endLine="16" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1216860049619" fileName="GenerationContextOp_Base.java" startLine="16" startPosition="123" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -738,6 +738,40 @@
     <scopeInfo nodeId="2507865635201615235" fileName="GenerationContextOp_GenParameterRef.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="2507865635201615235" fileName="GenerationContextOp_GenParameterRef.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <unitInfo nodeId="2507865635201615235" fileName="GenerationContextOp_GenParameterRef.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef" />
+  </root>
+  <root nodeId="2721957369897614808">
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="11" startPosition="74" endLine="12" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="12" startPosition="125" endLine="13" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME_INTERN" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="13" startPosition="57" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARMACRO" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="16" startPosition="49" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="20" startPosition="34" endLine="21" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="24" startPosition="44" endLine="25" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="28" startPosition="33" endLine="29" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="32" startPosition="42" endLine="33" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="36" startPosition="81" endLine="37" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="40" startPosition="67" endLine="41" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerationContextOp_VarRef#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName_intern#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName_intern#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVarmacro#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVarmacro#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/generator/generationContext/structure/GenerationContextOp_VarRef;" />
+    <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/generator/generationContext/structure/GenerationContextOp_VarRef;" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="16" startPosition="49" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="20" startPosition="34" endLine="21" endPosition="68" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="24" startPosition="44" endLine="25" endPosition="68" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="28" startPosition="33" endLine="29" endPosition="92" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="32" startPosition="42" endLine="33" endPosition="65" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="36" startPosition="81" endLine="37" endPosition="222" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="40" startPosition="67" endLine="41" endPosition="61" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <unitInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef" />
   </root>
   <root nodeId="4589968773278056990">
     <nodeInfo nodeId="4589968773278056990" fileName="GenerationContextOp_NodePatternRef.java" startLine="11" startPosition="88" endLine="12" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

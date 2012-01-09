@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-alz5ftrfnc2obimi2otga52nbdti6hc">
+<dependencies version="2" modelHash="-earjc5y27vjnls7iplsx2c3fneeqz1j">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6jeeuoa32c4fcnlyzfgxurlptmclvzn" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="e1dzavd6sz9dhj9ewkmb93dqgqtfsw" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="au2skoa65xmz3o6rx22bdmjvphuxjf0" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="erl516lk5v8q2sbqd9vc2iwwjpd7zkc" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="90a2yqqwsbuerf4u3po1b2jxod6vyfj" />
-  <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="-6fzkhrcoscfl1ws0vtpldzcky9h993v" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="5hbnchul01jsteney9q96wu2k2tos" />
+  <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="ar1rb59tuifj60g17p4cbzvi9giy89b" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="d0seeh6f9kfyi7vuy0wm5p8ytgj3266" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-7vcmpavwf9ea155yro6is5d3t2ttmm" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="dxpmcmw8ohkpqxzxdrioybecb4ufy6g" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-1445wu1q1ns7clnl5gzmpm7i94318f1" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="chorrw76u6o4syk4njppm6kbegernwa" />
   <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="-6umoebnsvi1s89z9k5pvcbiwhu0a6ce" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-8h3fz2txuftple5no6tuuqf8wtsf12" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
@@ -47,6 +47,7 @@
     <dep root="1758784108619220824" />
     <dep root="1758784108619328022" />
     <dep root="2507865635201615235" />
+    <dep root="2721957369897614808" />
     <dep root="4589968773278056990" />
     <dep root="5190093307972723402" />
     <dep root="5403673535105109113" />
@@ -79,7 +80,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_Base.java" />
   </source>
-  <source id="1216860049622" name="GenerationContextOp_GetOutputByLabel" hash="exmvf5lwikryqmnw94ohrtmtwq03uew">
+  <source id="1216860049622" name="GenerationContextOp_GetOutputByLabel" hash="9btup99lk4pw7dpkpdvx7f3ub9bqp0b">
     <dep root="1216860049619" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -97,7 +98,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GetOutputByLabel.java" />
   </source>
-  <source id="1216860049627" name="GenerationContextOp_GetOutputByLabelAndInput" hash="2qybvj7zys3lws9ilfzac5px36d19s1">
+  <source id="1216860049627" name="GenerationContextOp_GetOutputByLabelAndInput" hash="9i606igjz9aa1xh8uhxgqo0jflxihx9">
     <dep root="1216860049619" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -115,7 +116,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GetOutputByLabelAndInput.java" />
   </source>
-  <source id="1216860049633" name="GenerationContextType" hash="-1m98oo8u60dm004rqywojn6xfja1pt3">
+  <source id="1216860049633" name="GenerationContextType" hash="-85mx0baxucy30y18uwy6ffxyo85bmap">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -127,7 +128,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextType.java" />
   </source>
-  <source id="1216860049635" name="TemplateFunctionParameter_generationContext" hash="dsi5hhfdodlz6p99ulz2viptu60ijju">
+  <source id="1216860049635" name="TemplateFunctionParameter_generationContext" hash="-egyu6zqnu9uakgqo7sil69hj6iktlt6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -140,7 +141,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TemplateFunctionParameter_generationContext.java" />
   </source>
-  <source id="1216945228272" name="GenerationContextOp_GetScope" hash="bm82w33mfx86b3wgmlwny6wbzi9jjbh">
+  <source id="1216945228272" name="GenerationContextOp_GetScope" hash="-adh5ejvzdstzohc7c2k10zfes92mkbx">
     <dep root="1216860049619" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -153,7 +154,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GetScope.java" />
   </source>
-  <source id="1217004708011" name="GenerationContextOp_GetInputModel" hash="-4b7c9hq4b81hrz3qbtu8fdbc7uztw3t">
+  <source id="1217004708011" name="GenerationContextOp_GetInputModel" hash="-9kvv8hj3wh6awq2iahj995ionpo6257">
     <dep root="1216860049619" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -166,7 +167,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GetInputModel.java" />
   </source>
-  <source id="1217026863835" name="GenerationContextOp_GetOriginalInputModel" hash="9bhknmsdwmf9i4yraq48pwp37t6pmav">
+  <source id="1217026863835" name="GenerationContextOp_GetOriginalInputModel" hash="-2use1x3jfuvfe8mnddzrevt7bqggw4s">
     <dep root="1216860049619" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -179,7 +180,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GetOriginalInputModel.java" />
   </source>
-  <source id="1217282130234" name="GenerationContextOp_GetOutputModel" hash="10lobk6477h2jlhydc6dkwu1wcqqliq">
+  <source id="1217282130234" name="GenerationContextOp_GetOutputModel" hash="dtairfep7tnrxtin47t7ib0aeho6nt8">
     <dep root="1216860049619" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -192,7 +193,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GetOutputModel.java" />
   </source>
-  <source id="1217369610610" name="GenerationContextOp_GetTemplateNode" hash="-1w8yunh5l6je1bc5602lnna8csw4lnf">
+  <source id="1217369610610" name="GenerationContextOp_GetTemplateNode" hash="a9p8aj7knmdmiktmufzvfivyxgiepgi">
     <dep root="1216860049619" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -205,7 +206,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GetTemplateNode.java" />
   </source>
-  <source id="1217881979074" name="GenerationContextOp_GetPrevInputByLabel" hash="es48675eydb4agry76b340vs3bh242y">
+  <source id="1217881979074" name="GenerationContextOp_GetPrevInputByLabel" hash="a3sqcwa4d6tsq788s1ph3jlm674r7xj">
     <dep root="1216860049619" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -223,7 +224,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GetPrevInputByLabel.java" />
   </source>
-  <source id="1217884725453" name="GenerationContextOp_GetCopiedOutputByInput" hash="-8whd430fcilu4cbjzq46et65shixj9f">
+  <source id="1217884725453" name="GenerationContextOp_GetCopiedOutputByInput" hash="-4s2k9mt7lv7zq6hzqpotnzycqkre01s">
     <dep root="1216860049619" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -239,7 +240,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GetCopiedOutputByInput.java" />
   </source>
-  <source id="1217889725928" name="GenerationContextOp_SessionObjectAccess" hash="-48ymnhpq6adauhx7h57m1fv30jr5fxa">
+  <source id="1217889725928" name="GenerationContextOp_SessionObjectAccess" hash="186y6rce8tw1oqoqrfe72u3nmv9dbn2">
     <dep root="1217889960776" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -268,7 +269,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_UserObjectAccessBase.java" />
   </source>
-  <source id="1217894011536" name="GenerationContextOp_StepObjectAccess" hash="-53cxxkas6sznddf7kmcpiqwziy12mly">
+  <source id="1217894011536" name="GenerationContextOp_StepObjectAccess" hash="-d5xuy9wicn5va9uddxb091hx57dt39f">
     <dep root="1217889960776" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -281,7 +282,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_StepObjectAccess.java" />
   </source>
-  <source id="1217894033795" name="GenerationContextOp_TransientObjectAccess" hash="-68yrdkb4karh211d1hd9pfgd6mvveun">
+  <source id="1217894033795" name="GenerationContextOp_TransientObjectAccess" hash="5ettn3phs0o83dvhwwlw9klcidfhn4n">
     <dep root="1217889960776" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -294,7 +295,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_TransientObjectAccess.java" />
   </source>
-  <source id="1217960179967" name="GenerationContextOp_ShowErrorMessage" hash="7xj6ys1903x8f0mbeju3w9s23vjrllx">
+  <source id="1217960179967" name="GenerationContextOp_ShowErrorMessage" hash="1l7gmpeehibynkj54564plmxlz84uih">
     <dep root="1217960314443" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -323,7 +324,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_ShowMessageBase.java" />
   </source>
-  <source id="1217969995796" name="GenerationContextOp_ShowWarningMessage" hash="-7xjborn6oveovxfjx4axf8l7ahidh2a">
+  <source id="1217969995796" name="GenerationContextOp_ShowWarningMessage" hash="-exylkn5sjzznisrfcxapqak4obrin2s">
     <dep root="1217960314443" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -336,7 +337,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_ShowWarningMessage.java" />
   </source>
-  <source id="1217970068025" name="GenerationContextOp_ShowInfoMessage" hash="82khuzc39w9gmj9hdyno0bduy07xipm">
+  <source id="1217970068025" name="GenerationContextOp_ShowInfoMessage" hash="egkncozauw4x6i12e0rnpiotnxadk1l">
     <dep root="1217960314443" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -349,7 +350,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_ShowInfoMessage.java" />
   </source>
-  <source id="1218047638031" name="GenerationContextOp_CreateUniqueName" hash="-dx4cderbxnrevpk9dr0cxpru240f5xh">
+  <source id="1218047638031" name="GenerationContextOp_CreateUniqueName" hash="-a1jsehytskld9ed3e1s4ly7p7791rq3">
     <dep root="1216860049619" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -365,7 +366,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_CreateUniqueName.java" />
   </source>
-  <source id="1221156564099" name="GenerationContextOp_GetOutputListByLabelAndInput" hash="1ps741m8ld62t1izg89lt77wgbmfmjt">
+  <source id="1221156564099" name="GenerationContextOp_GetOutputListByLabelAndInput" hash="-cheui5jswdp3s8zfrkauq3f5p7d0bhg">
     <dep root="1216860049619" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -383,7 +384,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GetOutputListByLabelAndInput.java" />
   </source>
-  <source id="1221218985173" name="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" hash="4gitv8ga6yxegqnaezkb7fc65aylij5">
+  <source id="1221218985173" name="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" hash="20a7rdznctgj4guvsh5jvwmyo96po8z">
     <dep root="1216860049619" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -401,7 +402,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope.java" />
   </source>
-  <source id="1224102704684" name="GenerationContextOp_GetInvocationContext" hash="-3kztrrakr13d0gq0sv7xgrn8irxjg5y">
+  <source id="1224102704684" name="GenerationContextOp_GetInvocationContext" hash="7aqw3yf1ixcz9o47fvig2je6m0zb8v4">
     <dep root="1216860049619" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -430,7 +431,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GetOriginalCopiedInputByOutput.java" />
   </source>
-  <source id="4589968773278056990" name="GenerationContextOp_NodePatternRef" hash="1o19vtgjk9inorsop2vd9qvnqu34vgb">
+  <source id="4589968773278056990" name="GenerationContextOp_NodePatternRef" hash="-azu4tt00x5unoywfladt2to4bo4w8m4">
     <dep root="1758784108619328022" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -465,7 +466,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_ParameterRef.java" />
   </source>
-  <source id="1758784108619220823" name="GenerationContextOp_LinkPatternRef" hash="-8b74hylcfm4aekinklw7ljejueqmwez">
+  <source id="1758784108619220823" name="GenerationContextOp_LinkPatternRef" hash="-5a4l9g184ejwvt61ybxk6dwkiwv6mms">
     <dep root="1758784108619328022" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -482,7 +483,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_LinkPatternRef.java" />
   </source>
-  <source id="1758784108619220824" name="GenerationContextOp_PropertyPatternRef" hash="-908m32m0il3wry3ht0f5h2bqzmsn1g5">
+  <source id="1758784108619220824" name="GenerationContextOp_PropertyPatternRef" hash="-3kmvjg28ja51rs99p7qrxvtatcoe2ft">
     <dep root="1758784108619328022" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -546,6 +547,24 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenerationContextOp_GenParameterRef.java" />
+  </source>
+  <source id="2721957369897614808" name="GenerationContextOp_VarRef" hash="-8b4cj3hvnchmmlvukfxa20xbux44v8z">
+    <dep root="1216860049619" />
+    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="GenerationContextOp_VarRef.java" />
   </source>
 </dependencies>
 
