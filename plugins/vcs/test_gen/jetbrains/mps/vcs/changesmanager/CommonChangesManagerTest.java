@@ -15,6 +15,9 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.VcsConfiguration;
+import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SReference;
 import org.junit.Assert;
@@ -54,6 +57,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Random;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.project.IModule;
+import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import org.junit.Test;
 import jetbrains.mps.watching.ModelChangesWatcher;
@@ -162,6 +166,9 @@ public class CommonChangesManagerTest {
     myUtilDiff = getCurrentDifference("util");
 
     myChangeListManager = ChangeListManager.getInstance(myIdeaProject);
+
+    ProjectLevelVcsManager vcsManager = ProjectLevelVcsManager.getInstance(myIdeaProject);
+    vcsManager.getStandardConfirmation(VcsConfiguration.StandardConfirmation.ADD, myGitVcs).setValue(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
 
     myUtilVirtualFile = VirtualFileUtils.getVirtualFile(myUtilDiff.getModelDescriptor().getModelFile());
 
@@ -563,20 +570,27 @@ public class CommonChangesManagerTest {
         newModelDiff.value = getCurrentDifference(modelName);
       }
     });
+    final EditableSModelDescriptor md = newModelDiff.value.getModelDescriptor();
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
-        newModelDiff.value.getModelDescriptor().save();
+        md.getSModel();
+        md.save();
       }
     });
     ModelAccess.instance().flushEventQueue();
 
+    VirtualFile vf = VirtualFileUtils.getVirtualFile(md.getModelFile());
+    VcsDirtyScopeManager.getInstance(myIdeaProject).fileDirty(vf);
+    myChangeListManager.ensureUpToDate(false);
+    FileStatusManager.getInstance(myIdeaProject).fileStatusChanged(vf);
+
     newModelDiff.value.setEnabled(true);
     waitForChangesManager();
-    Assert.assertNull(newModelDiff.value.getChangeSet());
+    Assert.assertTrue((int) ListSequence.fromList(newModelDiff.value.getChangeSet().getModelChanges()).count() == 0);
 
     runCommandAndWait(new Runnable() {
       public void run() {
-        createNewRoot(newModelDiff.value.getModelDescriptor().getSModel());
+        createNewRoot(md.getSModel());
       }
     });
     waitForChangesManager();

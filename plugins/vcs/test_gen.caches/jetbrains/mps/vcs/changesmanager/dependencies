@@ -11,7 +11,11 @@
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorStateLevel" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
+    <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
+    <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
+    <classNode dependClassName="com.intellij.openapi.vcs.VcsConfiguration" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
+    <classNode dependClassName="com.intellij.openapi.vcs.VcsShowConfirmationOption" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.Change" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.VcsDirtyScopeManager" />
