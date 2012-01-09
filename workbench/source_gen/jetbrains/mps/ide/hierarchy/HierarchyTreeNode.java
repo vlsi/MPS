@@ -92,14 +92,21 @@ public class HierarchyTreeNode extends MPSTreeNode {
     return node;
   }
 
+  @NotNull
   public String calculateNodeIdentifier() {
     if (getNode() == null) {
       return "null";
     }
+    String name;
     if (myHierarchyTree.overridesNodeIdentifierCalculation()) {
-      return myHierarchyTree.calculateNodeIdentifier(this);
+      name = myHierarchyTree.calculateNodeIdentifier(this);
+    } else {
+      name = getNode().getName();
     }
-    return getNode().getName();
+    return (name == null ?
+      "no name" :
+      name
+    );
   }
 
   public ActionGroup getActionGroup() {
