@@ -17,7 +17,7 @@
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsShowConfirmationOption" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.Change" />
-    <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListManager" />
+    <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListManagerImpl" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.VcsDirtyScopeManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.impl.projectlevelman.AllVcses" />
     <classNode dependClassName="com.intellij.openapi.vcs.rollback.RollbackProgressListener" />
@@ -57,6 +57,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.InspectorTool" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelAdapter" />
@@ -78,6 +79,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSetBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.AddRootChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
     <classNode dependClassName="jetbrains.mps.watching.ModelChangesWatcher" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" />

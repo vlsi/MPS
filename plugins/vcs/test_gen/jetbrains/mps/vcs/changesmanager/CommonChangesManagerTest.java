@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.changesmanager;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.project.Project;
-import com.intellij.openapi.vcs.changes.ChangeListManager;
+import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -56,9 +56,11 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Random;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import jetbrains.mps.project.IModule;
 import com.intellij.openapi.vcs.FileStatusManager;
-import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.junit.Test;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.TestMain;
@@ -91,7 +93,7 @@ public class CommonChangesManagerTest {
   private Project myProject;
   private boolean myWaitCompleted;
   private final Object myWaitLock = new Object();
-  private ChangeListManager myChangeListManager;
+  private ChangeListManagerImpl myChangeListManager;
   private CurrentDifference myHtmlDiff;
   private CurrentDifference myUiDiff;
   private CurrentDifference myUtilDiff;
@@ -165,7 +167,7 @@ public class CommonChangesManagerTest {
     myUiDiff = getCurrentDifference("ui");
     myUtilDiff = getCurrentDifference("util");
 
-    myChangeListManager = ChangeListManager.getInstance(myIdeaProject);
+    myChangeListManager = ChangeListManagerImpl.getInstanceImpl(myIdeaProject);
 
     ProjectLevelVcsManager vcsManager = ProjectLevelVcsManager.getInstance(myIdeaProject);
     vcsManager.getStandardConfirmation(VcsConfiguration.StandardConfirmation.ADD, myGitVcs).setValue(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
@@ -560,6 +562,22 @@ public class CommonChangesManagerTest {
     Assert.assertEquals(stringBeforeAll, getChangeSetString(myUiDiff.getChangeSet()));
   }
 
+  private void checkOneAddedRoot(CurrentDifference newModelDiff) {
+    waitForChangesManager();
+    List<ModelChange> changes = newModelDiff.getChangeSet().getModelChanges();
+    Assert.assertEquals(2, ListSequence.fromList(changes).count());
+    Assert.assertTrue(ListSequence.fromList(changes).any(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange it) {
+        return it instanceof AddRootChange;
+      }
+    }));
+    Assert.assertTrue(ListSequence.fromList(changes).any(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange it) {
+        return it instanceof ModuleDependencyChange;
+      }
+    }));
+  }
+
   private void createNewModel() {
     final Wrappers._T<CurrentDifference> newModelDiff = new Wrappers._T<CurrentDifference>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -590,13 +608,16 @@ public class CommonChangesManagerTest {
 
     runCommandAndWait(new Runnable() {
       public void run() {
-        createNewRoot(md.getSModel());
+        SModel m = md.getSModel();
+        m.addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+        createNewRoot(m);
       }
     });
-    waitForChangesManager();
-    List<ModelChange> changes = newModelDiff.value.getChangeSet().getModelChanges();
-    Assert.assertEquals(1, ListSequence.fromList(changes).count());
-    Assert.assertTrue(ListSequence.fromList(changes).first() instanceof AddRootChange);
+    checkOneAddedRoot(newModelDiff.value);
+
+    myChangeListManager.addUnversionedFiles(myChangeListManager.getDefaultChangeList(), Arrays.asList(vf));
+    myChangeListManager.ensureUpToDate(false);
+    checkOneAddedRoot(newModelDiff.value);
   }
 
   @Test
