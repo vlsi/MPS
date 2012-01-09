@@ -351,32 +351,30 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="334613783244104875">
                 <node role="expression" roleId="tpee.1068581517676" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="334613783244104876">
                   <node role="ifTrue" roleId="tpee.1163668922816" type="tp3b.ExecuteFindersGetSearchResults" typeId="tp3b.2005690715325995353" id="334613783244104877">
-                    <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="334613783244104878">
-                      <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1227527031007" resolveInfo="ExactMethodUsages" />
+                    <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="7253581374905274199">
+                      <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1216385454403" resolveInfo="BaseMethodUsages" />
                     </node>
                     <node role="queryNode" roleId="tp3b.6366407517031970110" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="334613783244104879">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4955044055727112113" resolveInfo="method" />
                     </node>
                   </node>
                   <node role="ifFalse" roleId="tpee.1163668934364" type="tp3b.ExecuteFindersGetSearchResults" typeId="tp3b.2005690715325995353" id="334613783244104880">
-                    <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="334613783244104881">
-                      <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1216385454403" resolveInfo="BaseMethodUsages" />
+                    <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="7253581374905274200">
+                      <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1227527031007" resolveInfo="ExactMethodUsages" />
                     </node>
                     <node role="queryNode" roleId="tp3b.6366407517031970110" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="334613783244104882">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4955044055727112113" resolveInfo="method" />
                     </node>
                   </node>
-                  <node role="condition" roleId="tpee.1163668914799" type="tpee.OrExpression" typeId="tpee.1080223426719" id="334613783244104883">
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="334613783244104884">
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="334613783244104885">
+                  <node role="condition" roleId="tpee.1163668914799" type="tpee.AndExpression" typeId="tpee.1080120340718" id="7253581374905273686">
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="7253581374905273687">
+                      <node role="leftExpression" roleId="tpee.1081773367580" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="7253581374905273688">
                         <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="7874812549549919722" resolveInfo="refactorOverriding" />
                       </node>
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="334613783244104886" />
+                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7253581374905273689" />
                     </node>
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="334613783244104887">
-                      <node role="expression" roleId="tpee.1081516765348" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="334613783244104888">
-                        <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="7874812549549919722" resolveInfo="refactorOverriding" />
-                      </node>
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="7253581374905273691">
+                      <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="7874812549549919722" resolveInfo="refactorOverriding" />
                     </node>
                   </node>
                 </node>
