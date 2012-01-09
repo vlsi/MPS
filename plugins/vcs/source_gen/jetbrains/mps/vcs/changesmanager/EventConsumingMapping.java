@@ -56,6 +56,7 @@ public class EventConsumingMapping {
       affectedNode = ((SModelReferenceEvent) event).getReference().getSourceNode();
     }
     if (affectedNode == null) {
+      myNodesToUnconsumedEvents.put(null, event);
       return;
     }
 

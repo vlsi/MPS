@@ -9,11 +9,15 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.util.containers.BidirectionalMultiMap;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import com.intellij.util.containers.BidirectionalMap;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.List;
 import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.vcs.diff.changes.MetadataChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
@@ -33,8 +37,6 @@ import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SNode;
@@ -55,6 +57,13 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
+import jetbrains.mps.smodel.event.SModelLanguageEvent;
+import jetbrains.mps.smodel.event.SModelDevKitEvent;
+import jetbrains.mps.smodel.event.SModelImportEvent;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 
 public class ChangesTracking {
   protected static Log log = LogFactory.getLog(ChangesTracking.class);
@@ -66,6 +75,7 @@ public class ChangesTracking {
   private ChangesTracking.MyModelListener myModelListener = new ChangesTracking.MyModelListener();
   private boolean myDisposed = false;
   private BidirectionalMultiMap<SNodeId, ModelChange> myNodesToChanges = new BidirectionalMultiMap<SNodeId, ModelChange>();
+  private Set<ModelChange> myMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private BidirectionalMap<SNodeId, ModelChange> myAddedNodesToChanges = new BidirectionalMap<SNodeId, ModelChange>();
   private Tuples._2<SNodeId, List<SNodeId>> myLastParentAndNewChildrenIds;
   private FileStatus myStatusOnLastUpdate;
@@ -94,6 +104,8 @@ public class ChangesTracking {
     SNodeId id = getNodeIdForChange(change);
     if (id != null) {
       myNodesToChanges.put(id, change);
+    } else {
+      SetSequence.fromSet(myMetadataChanges).addElement((MetadataChange) change);
     }
     if (change instanceof AddRootChange) {
       MapSequence.fromMap(myAddedNodesToChanges).put(change.getRootId(), change);
@@ -106,6 +118,7 @@ public class ChangesTracking {
 
   private void buildCaches() {
     myNodesToChanges.clear();
+    SetSequence.fromSet(myMetadataChanges).clear();
     myAddedNodesToChanges.clear();
     myLastParentAndNewChildrenIds = null;
     for (ModelChange ch : ListSequence.fromList(myDifference.getChangeSet().getModelChanges())) {
@@ -190,13 +203,20 @@ public class ChangesTracking {
   }
 
   private void removeChange(@NotNull ModelChange change) {
-    myNodesToChanges.removeValue(change);
+    if (change instanceof MetadataChange) {
+      SetSequence.fromSet(myMetadataChanges).removeElement((MetadataChange) change);
+    } else {
+      myNodesToChanges.removeValue(change);
+    }
     myAddedNodesToChanges.removeValue(change);
     myDifference.removeChange(change);
   }
 
   private <C extends ModelChange> int removeChanges(SNodeId nodeId, final Class<C> changeClass, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super C> condition) {
-    Set<ModelChange> changes = myNodesToChanges.getValues(nodeId);
+    Set<ModelChange> changes = (nodeId == null ?
+      myMetadataChanges :
+      myNodesToChanges.getValues(nodeId)
+    );
     List<ModelChange> toRemove = SetSequence.fromSet(changes).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return changeClass.isInstance(ch) && condition.invoke((C) ch);
@@ -353,7 +373,7 @@ public class ChangesTracking {
       }, event.getNode(), event);
     }
 
-    private void processReferenceEvent(final SModelReferenceEvent event) {
+    private void referenceEvent(final SModelReferenceEvent event) {
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           final SReference ref = event.getReference();
@@ -376,15 +396,15 @@ public class ChangesTracking {
 
     @Override
     public void referenceAdded(SModelReferenceEvent event) {
-      processReferenceEvent(event);
+      referenceEvent(event);
     }
 
     @Override
     public void referenceRemoved(SModelReferenceEvent event) {
-      processReferenceEvent(event);
+      referenceEvent(event);
     }
 
-    private void processChildEvent(final SModelChildEvent event) {
+    private void childEvent(final SModelChildEvent event) {
       final Wrappers._T<List<SNode>> childrenRightAfterEvent = new Wrappers._T<List<SNode>>(event.getParent().getChildren(event.getChildRole()));
       childrenRightAfterEvent.value = ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode n) {
@@ -418,12 +438,12 @@ public class ChangesTracking {
 
     @Override
     public void childAdded(SModelChildEvent event) {
-      processChildEvent(event);
+      childEvent(event);
     }
 
     @Override
     public void childRemoved(SModelChildEvent event) {
-      processChildEvent(event);
+      childEvent(event);
     }
 
     @Override
@@ -471,6 +491,65 @@ public class ChangesTracking {
     @Override
     public void modelReplaced(SModelDescriptor descriptor) {
       scheduleFullUpdate();
+    }
+
+    private void moduleDependencyEvent(SModelEvent event, final ModuleReference moduleRef, final ModuleDependencyChange.DependencyType type, final boolean added) {
+      runUpdateTask(new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          if (removeChanges(null, ModuleDependencyChange.class, new _FunctionTypes._return_P1_E0<Boolean, ModuleDependencyChange>() {
+            public Boolean invoke(ModuleDependencyChange mdc) {
+              return type == mdc.getDependencyType() && moduleRef.equals(mdc.getModuleReference());
+            }
+          }) == 0) {
+            addChange(new ModuleDependencyChange(myDifference.getChangeSet(), moduleRef, type, !(added)));
+          }
+        }
+      }, null, event);
+    }
+
+    @Override
+    public void languageAdded(SModelLanguageEvent event) {
+      moduleDependencyEvent(event, event.getLanguageNamespace(), ModuleDependencyChange.DependencyType.USED_LANG, true);
+    }
+
+    @Override
+    public void languageRemoved(SModelLanguageEvent event) {
+      moduleDependencyEvent(event, event.getLanguageNamespace(), ModuleDependencyChange.DependencyType.USED_LANG, false);
+    }
+
+    @Override
+    public void devkitAdded(SModelDevKitEvent event) {
+      moduleDependencyEvent(event, event.getDevkitNamespace(), ModuleDependencyChange.DependencyType.USED_DEVKIT, true);
+    }
+
+    @Override
+    public void devkitRemoved(SModelDevKitEvent event) {
+      moduleDependencyEvent(event, event.getDevkitNamespace(), ModuleDependencyChange.DependencyType.USED_DEVKIT, false);
+    }
+
+    private void importEvent(SModelImportEvent event, final boolean added) {
+      final SModelReference modelRef = event.getModelUID();
+      runUpdateTask(new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          if (removeChanges(null, ImportedModelChange.class, new _FunctionTypes._return_P1_E0<Boolean, ImportedModelChange>() {
+            public Boolean invoke(ImportedModelChange imc) {
+              return modelRef.equals(imc.getModelReference());
+            }
+          }) == 0) {
+            addChange(new ImportedModelChange(myDifference.getChangeSet(), modelRef, !(added)));
+          }
+        }
+      }, null, event);
+    }
+
+    @Override
+    public void importAdded(SModelImportEvent event) {
+      importEvent(event, true);
+    }
+
+    @Override
+    public void importRemoved(SModelImportEvent event) {
+      importEvent(event, false);
     }
   }
 }
