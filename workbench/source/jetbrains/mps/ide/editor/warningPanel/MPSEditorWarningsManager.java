@@ -147,7 +147,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
     for (FileEditor editor : myFileEditorManager.getAllEditors()) {
-      if (editor instanceof MPSFileNodeEditor) {
+      if (editor instanceof MPSFileNodeEditor && !((MPSFileNodeEditor) editor).isDisposed()) {
         updateWarnings((MPSFileNodeEditor) editor);
       }
     }
