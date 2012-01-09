@@ -56,6 +56,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Random;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
+import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import jetbrains.mps.project.IModule;
@@ -533,7 +534,7 @@ public class CommonChangesManagerTest {
     });
   }
 
-  private void rollbackAll() {
+  private void rollbackAllSerially() {
     Random random = new Random(239);
     String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
     final SModel model = myUiDiff.getModelDescriptor().getSModel();
@@ -560,6 +561,47 @@ public class CommonChangesManagerTest {
     }
 
     undoAndCheck(myUiDiff, affectedNodePointers, false);
+    Assert.assertEquals(stringBeforeAll, getChangeSetString(myUiDiff.getChangeSet()));
+  }
+
+  private void rollbackAllAtomically() {
+    String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
+    final SModel model = myUiDiff.getModelDescriptor().getSModel();
+
+    List<SNodePointer> affectedRootPointers = ListSequence.fromList(myUiDiff.getChangeSet().getModelChanges()).select(new ISelector<ModelChange, SNodePointer>() {
+      public SNodePointer select(ModelChange ch) {
+        return new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), ch.getRootId());
+      }
+    }).distinct().toListSequence();
+    final List<ModelChange> oppositeChanges = ListSequence.fromList(myUiDiff.getChangeSet().getModelChanges()).select(new ISelector<ModelChange, ModelChange>() {
+      public ModelChange select(ModelChange ch) {
+        return ch.getOppositeChange();
+      }
+    }).toListSequence();
+    runCommandAndWait(new Runnable() {
+      public void run() {
+        final NodeCopier nc = new NodeCopier(model);
+        ListSequence.fromList(oppositeChanges).where(new IWhereFilter<ModelChange>() {
+          public boolean accept(ModelChange ch) {
+            return ch instanceof NodeGroupChange;
+          }
+        }).visitAll(new IVisitor<ModelChange>() {
+          public void visit(ModelChange ch) {
+            ((NodeGroupChange) ch).prepare();
+          }
+        });
+        ListSequence.fromList(oppositeChanges).visitAll(new IVisitor<ModelChange>() {
+          public void visit(ModelChange ch) {
+            ch.apply(model, nc);
+          }
+        });
+        nc.restoreIds(true);
+      }
+    });
+    waitAndCheck(myUiDiff);
+    Assert.assertTrue(ListSequence.fromList(myUiDiff.getChangeSet().getModelChanges()).isEmpty());
+
+    undoAndCheck(myUiDiff, affectedRootPointers, false);
     Assert.assertEquals(stringBeforeAll, getChangeSetString(myUiDiff.getChangeSet()));
   }
 
@@ -672,7 +714,8 @@ public class CommonChangesManagerTest {
           changeReference();
           moveNode();
           inlineVariable();
-          rollbackAll();
+          rollbackAllSerially();
+          rollbackAllAtomically();
 
           createNewModel();
           deleteModelAndRollback();

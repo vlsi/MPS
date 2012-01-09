@@ -82,6 +82,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
     <classNode dependClassName="jetbrains.mps.watching.ModelChangesWatcher" />
     <classNode dependClassName="jetbrains.mps.workbench.actions.model.DeleteModelHelper" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" />
