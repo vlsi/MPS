@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Sandbox_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.make.sandbox.icons.Sandbox_ApplicationPlugin" />
+  <unitInfo fileName="Sandbox_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.sandbox.icons.Sandbox_ProjectPlugin" />
   <root nodeId="3564595993453230683">
     <nodeInfo nodeId="3564595993453230685" fileName="Foo.java" startLine="6" startPosition="18" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Foo#()V" />
     <nodeInfo nodeId="3489438476157002972" fileName="Foo.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="bar#()V" />

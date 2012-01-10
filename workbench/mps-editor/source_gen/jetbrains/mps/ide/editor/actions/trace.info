@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Editor_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Editor_ApplicationPlugin" />
+  <unitInfo fileName="Editor_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Editor_ProjectPlugin" />
   <root nodeId="2768238731211617618">
     <nodeInfo nodeId="2768238731211617618" fileName="MoveElementsUp_Action.java" startLine="16" startPosition="55" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="2768238731211617618" fileName="MoveElementsUp_Action.java" startLine="17" startPosition="40" endLine="18" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />

@@ -742,6 +742,66 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.AnalyzersActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLangaugeCodeCommentsMenuGroup_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageEditorPopup_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageModelActionsInternal_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageNodeActionsInternal_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageToolsAddition_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ChangeMethodSignature_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.CommentLine_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.CommentStatements_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ConvertAnonymousClass_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.Default_KeymapChanges" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ExtractMethod_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.GoToInheritedClassifier_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.GoToOverridenMethod_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ImplementMethod_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineLocalVariable_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethod_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceConstant_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceField_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceVariable_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.MakeFieldFinal_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.MakeFieldStatic_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.MoveStaticField_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.MoveStaticMethod_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.OverrideMethod_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.RefactoringAddition_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.RefactoringAdditions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameMethod_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameVariable_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowMembers_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowNullDFA_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowTodoViewer_Action" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.UncommentStatements_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Code_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Tools_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
+    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ProjectPlugin" file="PluginSolution_ProjectPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.TodoViewer_Tool" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.RefactoringAddition_ActionGroup" file="RefactoringAddition_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />

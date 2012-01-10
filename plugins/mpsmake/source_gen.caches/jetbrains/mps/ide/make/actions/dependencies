@@ -382,6 +382,9 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.make.actions.Make_ProjectPlugin" file="Make_ProjectPlugin.java">
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.NamespaceMake_ActionGroup" file="NamespaceMake_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />

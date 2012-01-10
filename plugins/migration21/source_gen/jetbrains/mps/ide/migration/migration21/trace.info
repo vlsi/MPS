@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Migration21_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.migration.migration21.Migration21_ApplicationPlugin" />
+  <unitInfo fileName="Migration21_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.migration.migration21.Migration21_ProjectPlugin" />
   <root nodeId="1855937925843851060">
     <nodeInfo nodeId="1855937925843851060" fileName="MovePluginsOutOfLanguages_Action.java" startLine="16" startPosition="66" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1855937925843851060" fileName="MovePluginsOutOfLanguages_Action.java" startLine="17" startPosition="40" endLine="18" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />

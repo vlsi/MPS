@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+  <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
   <root nodeId="5487985028841873794">
     <nodeInfo nodeId="5487985028841873794" fileName="BaseLanguageModelActionsInternal_ActionGroup.java" startLine="8" startPosition="88" endLine="9" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841873794" fileName="BaseLanguageModelActionsInternal_ActionGroup.java" startLine="9" startPosition="99" endLine="10" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />

@@ -45,5 +45,17 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
+  <dependency className="jetbrains.mps.build.packaging.mps.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.mps.pluginSolution.plugin.CheckCoreRuntimeDeps_Action" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.mps.pluginSolution.plugin.CheckIncludedLanguages_Action" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.mps.pluginSolution.plugin.CheckSamples_Action" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.mps.pluginSolution.plugin.InternalChecks_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Build_ActionGroup" />
+    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.packaging.mps.pluginSolution.plugin.PluginSolution_ProjectPlugin" file="PluginSolution_ProjectPlugin.java">
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
 </dependenciesRoot>
 

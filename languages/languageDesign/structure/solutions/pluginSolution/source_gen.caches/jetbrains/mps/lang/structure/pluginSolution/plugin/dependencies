@@ -150,6 +150,41 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.Default_KeymapChanges" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveLinkUp_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveProperyUp_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.RefactoringAdditions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.RenameConcept_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.RenameLink_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.RenameProperty_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.SafeDeleteConcept_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.SafeDeleteLink_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowDefaultHelp_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForAspect_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForNode_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForRoot_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelp_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.Structure_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
+    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.PluginSolution_ProjectPlugin" file="PluginSolution_ProjectPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.editorTabs.EditorTabDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.Structure_TabDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.RefactoringAdditions_ActionGroup" file="RefactoringAdditions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Test_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.refactoringTest.Test_ApplicationPlugin" />
+  <unitInfo fileName="Test_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.refactoringTest.Test_ProjectPlugin" />
   <root nodeId="1230052406553">
     <nodeInfo nodeId="1230052406553" fileName="ChangeMethodParametersForStatement_Test.java" startLine="25" startPosition="74" endLine="26" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052406553" fileName="ChangeMethodParametersForStatement_Test.java" startLine="26" startPosition="114" endLine="27" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

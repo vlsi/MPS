@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Java_ApplicationPlugin.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.java.actions.Java_ApplicationPlugin" />
+  <unitInfo fileName="Java_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.java.actions.Java_ProjectPlugin" />
   <root nodeId="1366781238034254686">
     <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="27" startPosition="67" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="28" startPosition="40" endLine="29" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
