@@ -68,7 +68,7 @@ public class ModelNodeData extends BaseNodeData {
   }
 
   public Object getIdObject() {
-    return isResultNode() ? getPlainText() : getModel();
+    return isResultNode() ? (getModelReference().toString() + "/" + getPlainText()) : getModel();
   }
 
   public SModel getModel() {

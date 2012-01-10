@@ -83,10 +83,7 @@ public class ModuleNodeData extends BaseNodeData {
   }
 
   public Object getIdObject() {
-    if (isResultNode()) {
-      return getPlainText();
-    }
-    return getModule();
+    return isResultNode() ? (getModuleReference().toString() + "/" + getPlainText()) : getModule();
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {
