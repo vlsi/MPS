@@ -2053,7 +2053,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5487985028841903710">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/structure.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/structure.png" />
     </node>
   </root>
   <root id="5487985028841903711">
