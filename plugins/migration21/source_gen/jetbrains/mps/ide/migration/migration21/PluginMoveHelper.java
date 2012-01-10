@@ -15,21 +15,30 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.MacrosUtil;
+import javax.swing.ImageIcon;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.ModuleId;
 
 public class PluginMoveHelper {
@@ -78,6 +87,63 @@ public class PluginMoveHelper {
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 
+  public void moveIconsInAction() {
+    for (final Solution solution : ListSequence.fromList(myProject.getProjectModules(Solution.class))) {
+      if (solution.getModuleFqName().endsWith(SOLUTION_NAME)) {
+        List<SModelDescriptor> models = solution.getOwnModelDescriptors();
+        SModel m = ListSequence.fromList(models).first().getSModel();
+        ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.plugin.structure.IconResource")).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (it != null) && !(isValid(it));
+          }
+        }).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            String langName = NameUtil.namespaceFromLongName(solution.getModuleFqName());
+            Language lang = MPSModuleRepository.getInstance().getLanguage(langName);
+            if (lang == null) {
+              return;
+            }
+
+            String iconPath = MacrosFactory.moduleDescriptor(lang).expandPath(SPropertyOperations.getString(it, "path"), lang.getDescriptorFile());
+
+            String newIconMacro = SPropertyOperations.getString(it, "path").replace(MacrosFactory.LANGUAGE_DESCRIPTOR, MacrosFactory.SOLUTION_DESCRIPTOR);
+            String newIconPath = MacrosFactory.moduleDescriptor(solution).expandPath(newIconMacro, solution.getDescriptorFile());
+
+            IFile file = FileSystem.getInstance().getFile(iconPath);
+            if (!(file.exists())) {
+              return;
+            }
+
+            file.getParent().move(FileSystem.getInstance().getFile(newIconPath).getParent().getParent());
+
+            SPropertyOperations.set(it, "path", newIconMacro);
+          }
+        });
+      }
+    }
+  }
+
+  private boolean isValid(SNode icon) {
+    IModule module = SNodeOperations.getModel(icon).getModelDescriptor().getModule();
+    if (module == null) {
+      return false;
+    }
+    String path = MacrosUtil.expandPath(SPropertyOperations.getString(icon, "path"), module.getModuleFqName());
+    if (path == null) {
+      return false;
+    }
+    IFile file = FileSystem.getInstance().getFileByPath(path);
+    if (!(file.exists())) {
+      return false;
+    }
+    try {
+      new ImageIcon(path);
+      return true;
+    } catch (Throwable t) {
+      return false;
+    }
+  }
+
   private void movePluginOut(Language l) {
     String solutionName = makePluginSolutionName(l, SOLUTION_NAME);
     Solution s = MPSModuleRepository.getInstance().getSolution(solutionName);
@@ -117,7 +183,7 @@ public class PluginMoveHelper {
 
     // <node> 
 
-    SModelOperations.validateLanguagesAndImports(pluginModel.value.getSModel(), false, true);
+    jetbrains.mps.smodel.SModelOperations.validateLanguagesAndImports(pluginModel.value.getSModel(), false, true);
 
     SModelRepository.getInstance().saveAll();
   }

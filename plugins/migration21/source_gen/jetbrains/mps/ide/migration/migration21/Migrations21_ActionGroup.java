@@ -17,6 +17,7 @@ public class Migrations21_ActionGroup extends GeneratedActionGroup {
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.AddStubsToModelRoots_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.AddSourcesToModelRoots_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MovePluginsOutOfLanguages_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.CorrectIconsAfterPluhinMove_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

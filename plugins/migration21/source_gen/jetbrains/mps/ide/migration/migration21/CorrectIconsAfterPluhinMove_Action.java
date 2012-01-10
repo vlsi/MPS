@@ -13,12 +13,12 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 
-public class MovePluginsOutOfLanguages_Action extends BaseAction {
+public class CorrectIconsAfterPluhinMove_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(MovePluginsOutOfLanguages_Action.class);
+  protected static Log log = LogFactory.getLog(CorrectIconsAfterPluhinMove_Action.class);
 
-  public MovePluginsOutOfLanguages_Action() {
-    super("Move Plugins Out of Languages", "", ICON);
+  public CorrectIconsAfterPluhinMove_Action() {
+    super("Correct Icons after Plugin Move", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -28,7 +28,7 @@ public class MovePluginsOutOfLanguages_Action extends BaseAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "MovePluginsOutOfLanguages", t);
+        log.error("User's action doUpdate method failed. Action:" + "CorrectIconsAfterPluhinMove", t);
       }
       this.disable(event.getPresentation());
     }
@@ -47,10 +47,10 @@ public class MovePluginsOutOfLanguages_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new PluginMoveHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).move();
+      new PluginMoveHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).moveIconsInAction();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "MovePluginsOutOfLanguages", t);
+        log.error("User's action execute method failed. Action:" + "CorrectIconsAfterPluhinMove", t);
       }
     }
   }
