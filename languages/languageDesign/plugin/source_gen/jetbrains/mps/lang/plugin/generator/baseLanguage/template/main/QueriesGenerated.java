@@ -1751,7 +1751,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4042687513231504054(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SPropertyOperations.getBoolean(it, "isPluginXmlKeymap"));
+      }
+    }).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return KeymapChangesDeclaration_Behavior.call_getGeneratedClassFQName_6277721878946468954(it);
       }
