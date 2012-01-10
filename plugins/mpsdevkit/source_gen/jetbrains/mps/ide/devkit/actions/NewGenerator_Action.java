@@ -31,7 +31,7 @@ public class NewGenerator_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((IModule) MapSequence.fromMap(_params).get("module")) != null && ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
+    return ((IModule) MapSequence.fromMap(_params).get("module")) != null && ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language && ((Language) ((IModule) MapSequence.fromMap(_params).get("module"))).getGenerators().isEmpty();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
