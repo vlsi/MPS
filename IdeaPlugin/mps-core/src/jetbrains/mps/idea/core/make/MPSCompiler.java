@@ -129,6 +129,15 @@ public class MPSCompiler implements TranslatingCompiler {
 
     // TODO replace with external make process
     private void fakeGenerator(Map<String, VirtualFile> vfile, Map<MPSFacet, List<File>> moduleWithModels, Map<String, Collection<OutputItem>> outputs, List<File> filesToRefresh) {
+        System.out.println("*** KUKU!");
+        MPSGenerationLauncher gl = new MPSGenerationLauncher();
+        gl.validate();
+        if (gl.isValid()) {
+            System.out.println("*** command line: "+gl.getCommandLine());
+        } else {
+            System.out.println("*** invalid :(");
+        }
+
         for (Map.Entry<MPSFacet, List<File>> chunk : moduleWithModels.entrySet()) {
             String outputFolder = chunk.getKey().getSolution().getGeneratorOutputPath();
             MessagesViewTool.log(myProject, MessageKind.INFORMATION, "Generating into " + outputFolder);
