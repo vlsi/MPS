@@ -386,7 +386,7 @@
   </root>
   <root id="5487985028841967424">
     <node role="icon" roleId="uhxm.7966814097310618131" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5487985028841967425">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/executable.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/executable.png" />
     </node>
   </root>
   <root id="5487985028841967426">

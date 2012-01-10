@@ -81,7 +81,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5487985028841896883">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/usagesFinder.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/usagesFinder.png" />
     </node>
     <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.Order" typeId="tp4k.2450897840534683975" id="5487985028841896884">
       <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="766349968122922392">

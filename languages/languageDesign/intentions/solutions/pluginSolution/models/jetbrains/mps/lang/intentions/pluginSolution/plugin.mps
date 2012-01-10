@@ -165,7 +165,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5487985028841900810">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/intention.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/intention.png" />
     </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="5487985028841900811">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
