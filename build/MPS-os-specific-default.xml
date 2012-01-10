@@ -1,6 +1,6 @@
 <project name="MPS-os-specific-default" default="main">
-  <property file="${ant.file}/../MPS-os-specific.properties" />
-  <import file="${ant.file}/../MPS-os-specific.xml" />
+  <property file="${ant.file.MPS-os-specific-default}/../MPS-os-specific.properties" />
+  <import file="${ant.file.MPS-os-specific-default}/../MPS-os-specific.xml" />
   <target name="main" depends="compile,clean.before,folders.create,do.the.job,clean.after" />
   <target name="compile" />
   <target name="clean">
