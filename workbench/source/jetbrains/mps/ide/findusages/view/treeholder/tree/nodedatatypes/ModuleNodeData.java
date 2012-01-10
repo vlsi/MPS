@@ -83,6 +83,9 @@ public class ModuleNodeData extends BaseNodeData {
   }
 
   public Object getIdObject() {
+    if (isResultNode()) {
+      return getPlainText();
+    }
     return getModule();
   }
 

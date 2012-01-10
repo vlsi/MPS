@@ -85,7 +85,7 @@ public class DataNode implements IExternalizeable {
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     if (myData instanceof ModelNodeData) {
       if (!myData.isInvalid() && !myData.isExcluded()) {
-        models.add(((SModel) myData.getIdObject()).getModelDescriptor());
+        models.add(((ModelNodeData) myData).getModelDescriptor());
       }
     }
     for (DataNode child : myChildren) {
@@ -103,7 +103,7 @@ public class DataNode implements IExternalizeable {
 
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (DataNode node : modelNodes) {
-      SModel model = (SModel) ((ModelNodeData) node.getData()).getIdObject();
+      SModel model = ((ModelNodeData) node.getData()).getModel();
       if (model != null) result.add(model.getModelDescriptor());
     }
     return result;
@@ -113,7 +113,7 @@ public class DataNode implements IExternalizeable {
     List<SNodePointer> nodes = new ArrayList<SNodePointer>();
     if (myData instanceof NodeNodeData) {
       if (!myData.isInvalid() && !myData.isExcluded() && myData.isResultNode()) {
-        nodes.add(new SNodePointer((SNode) myData.getIdObject()));
+        nodes.add(((NodeNodeData) myData).getNodePointer());
       }
     }
     for (DataNode child : myChildren) {
@@ -130,7 +130,7 @@ public class DataNode implements IExternalizeable {
     });
     List<SNodePointer> result = new ArrayList<SNodePointer>();
     for (DataNode node : nodeNodes) {
-      SNode n = (SNode) ((NodeNodeData) node.getData()).getIdObject();
+      SNode n = ((NodeNodeData) node.getData()).getNode();
       if (n != null) result.add(new SNodePointer(n));
     }
     return result;
