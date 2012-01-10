@@ -7,7 +7,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.IModule;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -18,7 +18,7 @@ public class Variants {
   private static Variants INSTANCE = null;
   private static boolean DISPOSED = false;
 
-  private List<Tuples._2<String, Language>> variantLanguages = ListSequence.fromList(new ArrayList<Tuples._2<String, Language>>());
+  private List<Tuples._2<String, IModule>> variantLanguages = ListSequence.fromList(new ArrayList<Tuples._2<String, IModule>>());
 
   /*package*/ Variants() {
     synchronized (Variants.class) {
@@ -26,8 +26,8 @@ public class Variants {
     }
   }
 
-  public void addVariant(String var, Language lang) {
-    ListSequence.fromList(variantLanguages).addElement(MultiTuple.<String,Language>from(var, lang));
+  public void addVariant(String var, IModule lang) {
+    ListSequence.fromList(variantLanguages).addElement(MultiTuple.<String,IModule>from(var, lang));
   }
 
   private void runRegistrations(List<_FunctionTypes._void_P1_E0<? super Variants>> regs) {
@@ -50,16 +50,16 @@ public class Variants {
   }
 
   public static Iterable<String> availableVariants() {
-    return ListSequence.fromList(getInstance().variantLanguages).select(new ISelector<Tuples._2<String, Language>, String>() {
-      public String select(Tuples._2<String, Language> t) {
+    return ListSequence.fromList(getInstance().variantLanguages).select(new ISelector<Tuples._2<String, IModule>, String>() {
+      public String select(Tuples._2<String, IModule> t) {
         return t._0();
       }
     });
   }
 
-  public static Language languageToGenerate(final String variant) {
-    return ListSequence.fromList(getInstance().variantLanguages).findFirst(new IWhereFilter<Tuples._2<String, Language>>() {
-      public boolean accept(Tuples._2<String, Language> t) {
+  public static IModule moduleToGenerate(final String variant) {
+    return ListSequence.fromList(getInstance().variantLanguages).findFirst(new IWhereFilter<Tuples._2<String, IModule>>() {
+      public boolean accept(Tuples._2<String, IModule> t) {
         return t._0().equals(variant);
       }
     })._1();

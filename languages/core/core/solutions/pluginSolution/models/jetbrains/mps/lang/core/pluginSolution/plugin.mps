@@ -1075,7 +1075,7 @@
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="5487985028841888731" />
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5487985028841888732">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/find.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/find.png" />
     </node>
   </root>
   <root id="5487985028841888733">
