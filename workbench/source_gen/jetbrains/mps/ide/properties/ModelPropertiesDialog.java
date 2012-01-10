@@ -131,7 +131,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     JButton bShowModelUsages = new JButton(new AbstractAction("Show Model Usages") {
       public void actionPerformed(ActionEvent e) {
         ModelPropertiesDialog.this.dispose();
-        performActionInContext(new ModelPropertiesDialog.MyDataContext(), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.lang.core.pluginSolution.plugin.FindModelUsages_Action")));
+        performActionInContext(new ModelPropertiesDialog.MyDataContext(), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.lang.core.plugin.FindModelUsages_Action")));
       }
     });
     JPanel result = new JPanel(new GridBagLayout());

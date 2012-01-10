@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.io.File;
-import jetbrains.mps.build.packaging.pluginSolution.plugin.GenerateBuildUtil;
+import jetbrains.mps.build.packaging.plugin.GenerateBuildUtil;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ui.ConsoleView;

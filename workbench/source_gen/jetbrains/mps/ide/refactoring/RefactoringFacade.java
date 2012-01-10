@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.util.Computable;
 import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -181,57 +181,52 @@ public class RefactoringFacade {
   }
 
   protected void doExecute(@NotNull final RefactoringContext refactoringContext) {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        executeSimple(refactoringContext);
-      }
-    });
-  }
-
-  public void executeSimple(final RefactoringContext refactoringContext) {
-    ThreadUtils.assertEDT();
     final IRefactoring refactoring = refactoringContext.getRefactoring();
-    List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    Runnable runnable = new Runnable() {
       public void run() {
-        try {
-          refactoring.refactor(refactoringContext);
-          if (refactoring instanceof ILoggableRefactoring) {
-            if (!(refactoringContext.isLocal())) {
-              writeIntoLog(refactoringContext);
+        List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            try {
+              refactoring.refactor(refactoringContext);
+              if (refactoring instanceof ILoggableRefactoring) {
+                if (!(refactoringContext.isLocal())) {
+                  writeIntoLog(refactoringContext);
+                }
+                RefactoringFacade.updateModels(refactoringContext);
+              }
+            } catch (Throwable t) {
+              RefactoringFacade.LOG.error("An exception occured while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);
             }
-            RefactoringFacade.updateModels(refactoringContext);
           }
+        });
+        if (refactoringContext.getDoesGenerateModels()) {
+          generateModels(modelsToGenerate, refactoringContext);
+        } else {
+          //  mark "generation required" 
+        }
+        try {
+          refactoring.doWhenDone(refactoringContext);
         } catch (Throwable t) {
-          LOG.error("An exception occured while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);
+          RefactoringFacade.LOG.error("An error occurred in doWhenDone(), refactoring: " + refactoring.getUserFriendlyName(), t);
         }
       }
-    });
-    if (refactoringContext.getDoesGenerateModels()) {
-      generateModels(modelsToGenerate, refactoringContext);
-    } else {
-      //  mark "generation required" 
-    }
-    try {
-      refactoring.doWhenDone(refactoringContext);
-    } catch (Throwable t) {
-      LOG.error("An error occurred in doWhenDone(), refactoring: " + refactoring.getUserFriendlyName(), t);
-    }
+    };
+    ThreadUtils.runInUIThreadNoWait(runnable);
   }
 
   @NotNull
   private List<SModel> getModelsToGenerate(final IRefactoring refactoring, final RefactoringContext refactoringContext) {
-    final Wrappers._T<List<SModel>> result = new Wrappers._T<List<SModel>>(new ArrayList<SModel>());
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
+    return ModelAccess.instance().runReadAction(new Computable<List<SModel>>() {
+      public List<SModel> compute() {
         try {
-          result.value = refactoring.getModelsToGenerate(refactoringContext);
+          return refactoring.getModelsToGenerate(refactoringContext);
         } catch (Throwable t) {
-          LOG.error("An error occured while trying to collect models to generate from refactoring " + refactoring.getUserFriendlyName() + ". No models will be generated", t);
+          RefactoringFacade.LOG.error("An error occured while trying to collect models to generate from refactoring " + refactoring.getUserFriendlyName() + ". No models will be generated", t);
+          return new ArrayList<SModel>();
         }
       }
     });
-    return result.value;
   }
 
   private void generateModels(@NotNull final List<SModel> sourceModels, @NotNull final RefactoringContext refactoringContext) {

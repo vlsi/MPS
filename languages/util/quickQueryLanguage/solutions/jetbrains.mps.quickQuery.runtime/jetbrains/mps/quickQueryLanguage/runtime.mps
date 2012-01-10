@@ -10,9 +10,6 @@
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="3882421039144497491">
       <property name="name" nameId="tpck.1169194664001" value="Query" />
     </node>
-    <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8605904462131236214">
-      <property name="name" nameId="tpck.1169194664001" value="QueryExecutor" />
-    </node>
   </roots>
   <root id="3882421039144497491">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3882421039144497492" />
@@ -50,23 +47,6 @@
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3882421039144497508" />
-    </node>
-  </root>
-  <root id="8605904462131236214">
-    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5487985028841942622">
-      <property name="name" nameId="tpck.1169194664001" value="GENERATED_QUERY_NAME" />
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5487985028841942623" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5487985028841942624" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5487985028841942625">
-        <property name="value" nameId="tpee.1070475926801" value="QueryImpl" />
-      </node>
-    </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8605904462131236215" />
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="8605904462131236216">
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8605904462131236217" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8605904462131236218" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8605904462131236219" />
     </node>
   </root>
 </model>

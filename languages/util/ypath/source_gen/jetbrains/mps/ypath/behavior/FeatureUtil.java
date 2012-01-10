@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ypath.design.IFeatureDesign;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.ypath.pluginSolution.plugin.DesignPartLoader;
+import jetbrains.mps.ypath.plugin.DesignPartLoader;
 
 public class FeatureUtil {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.ypath");

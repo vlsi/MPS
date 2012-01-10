@@ -22,7 +22,7 @@ import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.reloading.CommonPaths;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.build.packaging.pluginSolution.plugin.GenerateBuildUtil;
+import jetbrains.mps.build.packaging.plugin.GenerateBuildUtil;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;

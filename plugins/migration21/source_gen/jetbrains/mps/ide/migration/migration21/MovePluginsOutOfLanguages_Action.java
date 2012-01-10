@@ -39,9 +39,6 @@ public class MovePluginsOutOfLanguages_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
     return true;
   }
 
