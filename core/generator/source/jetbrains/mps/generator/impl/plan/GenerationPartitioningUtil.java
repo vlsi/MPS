@@ -65,6 +65,10 @@ public class GenerationPartitioningUtil {
       }
 
       for (TemplateModule generator : generators) {
+        if (generator == null) {
+          continue;
+        }
+
         result.add(generator);
 
         // handle Used languages
