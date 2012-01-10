@@ -19,9 +19,10 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.IModule;
@@ -94,7 +95,7 @@ public class PluginMoveHelper {
         SModel m = ListSequence.fromList(models).first().getSModel();
         ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.plugin.structure.IconResource")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (it != null) && !(isValid(it));
+            return (it != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(it, "path")) && !(isValid(it));
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
