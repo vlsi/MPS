@@ -41,6 +41,7 @@ public class ThreadWatcher implements Output {
         "(Image Fetch.*)|" +
         "(Keep\\-Alive.*)|" +
         "(Finalizer.*)|" +
+        "(MPS interrupting thread)|" +
         "(caret blinker.*)|" +
         "(ApplicationImpl.*)|" +
         "(Executor)|" +
