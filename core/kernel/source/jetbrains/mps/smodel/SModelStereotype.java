@@ -58,11 +58,11 @@ public class SModelStereotype {
       || TESTS.equals(stereotype) || DESCRIPTOR.equals(stereotype);
   }
 
-  public static boolean isGeneratorModel(SModel model) {
+  public static boolean isGeneratorModel(@NotNull SModel model) {
     return isGeneratorModelStereotype(model.getStereotype());
   }
 
-  public static boolean isGeneratorModel(SModelDescriptor model) {
+  public static boolean isGeneratorModel(@NotNull SModelDescriptor model) {
     return isGeneratorModelStereotype(model.getStereotype());
   }
 
