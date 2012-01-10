@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.DisposableCommand;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.commons.lang.StringUtils;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -59,12 +58,14 @@ public class HierarchyTreeNode extends MPSTreeNode {
     if (getNode() == null) {
       return "null";
     }
+    String name;
     if (myHierarchyTree.overridesNodeIdentifierCalculation()) {
-      return myHierarchyTree.calculateNodeIdentifier(this);
+      name = myHierarchyTree.calculateNodeIdentifier(this);
+    } else {
+      name = getNode().getName();
     }
-    String name = getNode().getName();
-    return (StringUtils.isEmpty(name) ?
-      "no concept" :
+    return (name == null ?
+      "no name" :
       name
     );
   }

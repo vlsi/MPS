@@ -14,6 +14,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class SimpleOperations1 extends TestCase {
+  public SimpleOperations1() {
+  }
+
   public void test_S1() {
     Iterable<Object> S = Sequence.fromIterable(Collections.<Object>emptyList());
     Assert.assertEquals(null, Sequence.fromIterable(S).first());

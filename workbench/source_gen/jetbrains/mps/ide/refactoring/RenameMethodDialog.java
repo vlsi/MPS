@@ -11,11 +11,10 @@ import java.awt.Insets;
 public class RenameMethodDialog extends RenameDialog {
   private JCheckBox myOverridingCheckBox;
   private boolean myIsOverriding;
-  private boolean myOverridingEnabled;
 
   public RenameMethodDialog(Project project, String oldName, boolean myOverridingEnabled) {
     super(project, oldName, "method");
-    this.myOverridingEnabled = myOverridingEnabled;
+    myOverridingCheckBox.setEnabled(myOverridingEnabled);
   }
 
   public boolean getOverriding() {
@@ -25,7 +24,6 @@ public class RenameMethodDialog extends RenameDialog {
   protected JComponent createNorthPanel() {
     super.createNorthPanel();
     myOverridingCheckBox = new JCheckBox("Overriding methods");
-    myOverridingCheckBox.setEnabled(myOverridingEnabled);
     GridBagConstraints c = new GridBagConstraints();
     c.gridx = 0;
     c.gridy = 2;
