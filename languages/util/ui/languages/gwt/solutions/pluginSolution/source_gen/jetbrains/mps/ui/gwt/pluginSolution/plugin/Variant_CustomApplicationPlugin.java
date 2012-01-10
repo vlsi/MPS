@@ -5,7 +5,6 @@ package jetbrains.mps.ui.gwt.pluginSolution.plugin;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.ui.pluginSolution.plugin.Variants;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
@@ -24,13 +23,13 @@ public class Variant_CustomApplicationPlugin extends BaseCustomApplicationPlugin
   public void doInit() {
     Variants.register(new _FunctionTypes._void_P1_E0<Variants>() {
       public void invoke(Variants vars) {
-        vars.addVariant("GWT", ((Language) SNodeOperations.getModel(SLinkOperations.getTarget(new Variant_CustomApplicationPlugin.QuotationClass_ks96zg_a0a0a0a0b0a0a0a0a0().createNode(), "plugin", false)).getModelDescriptor().getModule()));
+        vars.addVariant("GWT", SNodeOperations.getModel(SLinkOperations.getTarget(new Variant_CustomApplicationPlugin.QuotationClass_ks96zg_a0a0a0b0a0a0a0a0().createNode(), "plugin", false)).getModelDescriptor().getModule());
       }
     });
   }
 
-  public static class QuotationClass_ks96zg_a0a0a0a0b0a0a0a0a0 {
-    public QuotationClass_ks96zg_a0a0a0a0b0a0a0a0a0() {
+  public static class QuotationClass_ks96zg_a0a0a0b0a0a0a0a0 {
+    public QuotationClass_ks96zg_a0a0a0b0a0a0a0a0() {
     }
 
     public SNode createNode() {
