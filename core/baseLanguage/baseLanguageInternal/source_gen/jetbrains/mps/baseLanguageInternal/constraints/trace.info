@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1585405235656310170">
     <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="27" startPosition="74" endLine="28" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_r7ripe_a0a2a0a0a1a0b0a1a1" />
     <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="30" startPosition="38" endLine="31" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -66,6 +66,33 @@
     <scopeInfo nodeId="3421461530438560155" fileName="InternalAnonymousClass_Constraints.java" startLine="8" startPosition="47" endLine="9" endPosition="81" />
     <scopeInfo nodeId="3421461530438560155" fileName="InternalAnonymousClass_Constraints.java" startLine="7" startPosition="83" endLine="10" endPosition="3" />
     <unitInfo nodeId="3421461530438560155" fileName="InternalAnonymousClass_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.InternalAnonymousClass_Constraints" />
+  </root>
+  <root nodeId="3731567766880819183">
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="13" startPosition="93" endLine="14" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="16" startPosition="57" endLine="17" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="21" startPosition="43" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="26" startPosition="166" endLine="27" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="27" startPosition="102" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="29" startPosition="51" endLine="30" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="32" startPosition="0" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3731567766880819186" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="36" startPosition="121" endLine="37" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3731567766880819188" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="37" startPosition="38" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InternalSuperMethodCallOperation_Constraints#()V" />
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="28" startPosition="0" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/constraints/CanBeAChildContext;)Z" />
+    <nodeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="24" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <scopeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="16" startPosition="57" endLine="17" endPosition="91" />
+    <scopeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="21" startPosition="43" endLine="22" endPosition="16" />
+    <scopeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="29" startPosition="51" endLine="30" endPosition="67" />
+    <scopeInfo nodeId="3731567766880819185" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="36" startPosition="121" endLine="38" endPosition="16" />
+    <scopeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="35" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="26" startPosition="166" endLine="33" endPosition="18" />
+    <scopeInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="24" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="3731567766880819183" fileName="InternalSuperMethodCallOperation_Constraints.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.InternalSuperMethodCallOperation_Constraints" />
   </root>
   <root nodeId="3928209435773827186">
     <nodeInfo nodeId="3928209435773827186" fileName="WeakClassReference_Constraints.java" startLine="18" startPosition="79" endLine="19" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_z4yh41_a0a1a0a0a1a0b0a1a0" />

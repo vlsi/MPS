@@ -47,6 +47,9 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="weak" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tp68.1585405235656310154" resolveInfo="ConstantValue" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3731567766880819183">
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tp68.3731567766880819155" resolveInfo="InternalSuperMethodCallOperation" />
+    </node>
   </roots>
   <root id="5857910569715972120">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="5857910569715972159">
@@ -399,6 +402,22 @@
                 <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="3731567766880819183">
+    <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="3731567766880819184">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3731567766880819185">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3731567766880819186">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="3731567766880819187">
+            <property name="text" nameId="tpee.6329021646629104958" value="override IOperation.canBeChild" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3731567766880819188">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3731567766880819189">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
           </node>
         </node>
       </node>

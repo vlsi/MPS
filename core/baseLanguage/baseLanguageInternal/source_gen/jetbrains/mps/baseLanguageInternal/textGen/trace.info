@@ -334,5 +334,25 @@
     <scopeInfo nodeId="3421461530438560565" fileName="InternalAnonymousClass_TextGen.java" startLine="16" startPosition="66" endLine="57" endPosition="0" />
     <unitInfo nodeId="3421461530438560565" fileName="InternalAnonymousClass_TextGen.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalAnonymousClass_TextGen" />
   </root>
+  <root nodeId="3731567766880819202">
+    <nodeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="14" startPosition="26" endLine="15" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="15" startPosition="67" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="18" startPosition="83" endLine="19" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="20" startPosition="109" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="24" startPosition="5" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="19" startPosition="109" endLine="22" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="17" startPosition="103" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="16" startPosition="21" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="13" startPosition="42" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3731567766880819202" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="12" startPosition="76" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="20" startPosition="109" endLine="21" endPosition="28" />
+    <scopeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="18" startPosition="83" endLine="22" endPosition="9" />
+    <scopeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="17" startPosition="103" endLine="23" endPosition="7" />
+    <scopeInfo nodeId="3731567766880819202" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="13" startPosition="42" endLine="25" endPosition="21" />
+    <scopeInfo nodeId="3731567766880819228" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="13" startPosition="42" endLine="25" endPosition="21" />
+    <scopeInfo nodeId="3731567766880819202" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="12" startPosition="76" endLine="27" endPosition="0" />
+    <unitInfo nodeId="3731567766880819202" fileName="InternalSuperMethodCallOperation_TextGen.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalSuperMethodCallOperation_TextGen" />
+  </root>
 </debugInfo>
 
