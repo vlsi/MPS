@@ -642,6 +642,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.editors.MPSEditorOpener" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.plugin.BaseTestTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestNameMap" file="TestNameMap.java">
