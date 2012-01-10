@@ -43,8 +43,5 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.LanguageInternalAddition_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.pluginSolution.plugin.PluginSolution_ProjectPlugin" file="PluginSolution_ProjectPlugin.java">
-    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
-  </dependency>
 </dependenciesRoot>
 

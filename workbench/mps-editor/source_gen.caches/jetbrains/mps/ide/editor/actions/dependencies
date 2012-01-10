@@ -128,47 +128,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.actions.Editor_ApplicationPlugin" file="Editor_ApplicationPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.Backspace_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.CopyThisDown_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.DeleteLine_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.Delete_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.End_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.Escape_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.ExtractComponent_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.Home_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.InsertBefore_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.Insert_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.LocalEnd_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.LocalHome_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.MoveDown_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.MoveElementsDown_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.MoveElementsUp_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.MoveLeft_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.MoveRight_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.MoveUp_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.RootEnd_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.RootHome_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.SelectDown_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.SelectLeft_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.SelectLocalEnd_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.SelectLocalHome_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.SelectNext_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.SelectPrevious_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.SelectRight_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.SelectUp_Action" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
-    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.editor.actions.Editor_ProjectPlugin" file="Editor_ProjectPlugin.java">
-    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.End_Action" file="End_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />

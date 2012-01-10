@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.constraints.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+  <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.constraints.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
   <root nodeId="5487985028841895929">
     <nodeInfo nodeId="5487985028841895963" fileName="Constraints_Order.java" startLine="9" startPosition="30" endLine="10" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841895929" fileName="Constraints_TabDescriptor.java" startLine="20" startPosition="68" endLine="21" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

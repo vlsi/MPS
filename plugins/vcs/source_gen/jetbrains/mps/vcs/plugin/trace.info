@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Vcs_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" />
-  <unitInfo fileName="Vcs_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_ProjectPlugin" />
   <root nodeId="1088330852272719379">
     <nodeInfo nodeId="1088330852272719379" fileName="ReportModelMergeProblem_Action.java" startLine="37" startPosition="64" endLine="38" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1088330852272719379" fileName="ReportModelMergeProblem_Action.java" startLine="38" startPosition="40" endLine="39" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />

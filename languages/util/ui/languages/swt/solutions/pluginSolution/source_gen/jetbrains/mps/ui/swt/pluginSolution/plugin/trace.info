@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.swt.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   <root nodeId="5487985028841950052">
     <nodeInfo nodeId="5487985028841950053" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="8" startPosition="90" endLine="9" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="helper" />
     <nodeInfo nodeId="5487985028841950058" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="14" startPosition="24" endLine="15" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.packaging.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
-  <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.packaging.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
   <root nodeId="5487985028841936062">
     <nodeInfo nodeId="5487985028841936062" fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="8" startPosition="80" endLine="9" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841936062" fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="9" startPosition="91" endLine="10" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   <root nodeId="5487985028841887221">
     <nodeInfo nodeId="5487985028841887353" fileName="CollectionsLanguage.java" startLine="12" startPosition="34" endLine="13" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="5487985028841887356" fileName="CollectionsLanguage.java" startLine="13" startPosition="46" endLine="14" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ONINIT_DELAYED_RUNMES" />

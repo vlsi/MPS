@@ -208,6 +208,29 @@
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
   </dependency>
+  <dependency className="jetbrains.mps.nanoc.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.nanoc.pluginSolution.plugin.CppDebuggerInitializer_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.nanoc.pluginSolution.plugin.DebugInfoProvider_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.nanoc.pluginSolution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
+    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.nanoc.pluginSolution.plugin.PluginSolution_ProjectPlugin" file="PluginSolution_ProjectPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.nanoc.pluginSolution.plugin.BeforeTasksInitializer_CustomProjectPlugin" />
+    <classNode dependClassName="jetbrains.mps.nanoc.pluginSolution.plugin.ProgramsLocationComponent_PreferencesComponent" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
   <dependency className="jetbrains.mps.nanoc.pluginSolution.plugin.ProgramsLocationComponent_GDBLocation_PreferencesPage" file="ProgramsLocationComponent_GDBLocation_PreferencesPage.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />

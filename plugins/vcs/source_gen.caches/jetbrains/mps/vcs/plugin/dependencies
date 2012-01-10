@@ -435,9 +435,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.Vcs_ProjectPlugin" file="Vcs_ProjectPlugin.java">
-    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
-  </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.plugin" file="plugin.xml" />
 </dependenciesRoot>
 

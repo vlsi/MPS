@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.findUsages.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+  <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.findUsages.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
   <root nodeId="5487985028841896861">
     <nodeInfo nodeId="5487985028841896884" fileName="FindUsages_Order.java" startLine="9" startPosition="29" endLine="10" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841896861" fileName="Find_Usages_TabDescriptor.java" startLine="17" startPosition="68" endLine="18" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

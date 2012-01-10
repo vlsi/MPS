@@ -2,7 +2,6 @@
 <debugInfo>
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.IconContainer" />
   <unitInfo fileName="Runtime_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.Runtime_ApplicationPlugin" />
-  <unitInfo fileName="Runtime_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.Runtime_ProjectPlugin" />
   <root nodeId="2392684134639444998">
     <nodeInfo nodeId="2392684134639445001" fileName="MuteBreakpoints.java" startLine="11" startPosition="51" endLine="12" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="2392684134639445014" fileName="MuteBreakpoints.java" startLine="14" startPosition="28" endLine="15" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

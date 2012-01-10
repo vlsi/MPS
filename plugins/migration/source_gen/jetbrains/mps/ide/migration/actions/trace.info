@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Migration_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_ApplicationPlugin" />
-  <unitInfo fileName="Migration_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_ProjectPlugin" />
   <root nodeId="1504158228282973317">
     <nodeInfo nodeId="1504158228282973317" fileName="RebuildRequiredModels_Action.java" startLine="26" startPosition="62" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1504158228282973317" fileName="RebuildRequiredModels_Action.java" startLine="27" startPosition="40" endLine="28" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
