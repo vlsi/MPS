@@ -67,30 +67,13 @@
       <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-platform/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-platform/source_gen" isTestSource="false" />
     </content>
-    <orderEntry type="module-library">
-      <library name="MPS-core">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/diffutils-1.2.1.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/asm.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" scope="TEST">
-      <library name="Test-runtime">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/languages/languageDesign/jetbrains.mps.lang.test.runtime-src.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="IDEA" level="project" />
+    <orderEntry type="library" name="MPS-core" level="project" />
+    <orderEntry type="library" name="antsupport" level="project" />
+    <orderEntry type="library" scope="TEST" name="Test-runtime" level="project" />
+    <orderEntry type="library" name="ant" level="project" />
   </component>
 </module>
 

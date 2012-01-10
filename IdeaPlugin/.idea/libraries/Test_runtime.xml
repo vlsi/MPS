@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Test-runtime">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps-core/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/mps-core/languages/languageDesign/jetbrains.mps.lang.test.runtime-src.jar!/" />
+    </SOURCES>
+  </library>
+</component>

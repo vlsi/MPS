@@ -10,10 +10,8 @@
       <root url="jar://$APPLICATION_HOME_DIR$/lib/util.jar!/" />
       <root url="jar://$APPLICATION_HOME_DIR$/lib/jdom.jar!/" />
       <root url="jar://$APPLICATION_HOME_DIR$/lib/bootstrap.jar!/" />
-      <root url="file://$APPLICATION_HOME_DIR$/lib/ant/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
-    <jarDirectory url="file://$APPLICATION_HOME_DIR$/lib/ant/lib" recursive="false" />
   </library>
 </component>
