@@ -7,32 +7,32 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguageInternal.structure.ConstantValue", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguageInternal.structure.ConstantValue", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 18:
-        return new InternalStaticMethodCall_BehaviorDescriptor();
-      case 17:
-        return new InternalStaticFieldReference_BehaviorDescriptor();
-      case 14:
-        return new InternalNewExpression_BehaviorDescriptor();
-      case 16:
-        return new InternalPartialInstanceMethodCall_BehaviorDescriptor();
-      case 12:
-        return new InternalClassExpression_BehaviorDescriptor();
-      case 13:
-        return new InternalClassifierType_BehaviorDescriptor();
-      case 20:
-        return new InternalVariableReference_BehaviorDescriptor();
-      case 15:
-        return new InternalPartialFieldReference_BehaviorDescriptor();
-      case 21:
-        return new TypeHintExpression_BehaviorDescriptor();
       case 19:
+        return new InternalStaticMethodCall_BehaviorDescriptor();
+      case 18:
+        return new InternalStaticFieldReference_BehaviorDescriptor();
+      case 15:
+        return new InternalNewExpression_BehaviorDescriptor();
+      case 17:
+        return new InternalPartialInstanceMethodCall_BehaviorDescriptor();
+      case 13:
+        return new InternalClassExpression_BehaviorDescriptor();
+      case 14:
+        return new InternalClassifierType_BehaviorDescriptor();
+      case 22:
+        return new InternalVariableReference_BehaviorDescriptor();
+      case 16:
+        return new InternalPartialFieldReference_BehaviorDescriptor();
+      case 23:
+        return new TypeHintExpression_BehaviorDescriptor();
+      case 21:
         return new InternalThisExpression_BehaviorDescriptor();
       case 8:
         return new ExtractToConstantExpression_BehaviorDescriptor();
@@ -52,7 +52,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ExtractStaticInnerClassConcept_BehaviorDescriptor();
       case 9:
         return new ExtractToConstantRefExpression_BehaviorDescriptor();
-      case 22:
+      case 24:
         return new WeakClassReference_BehaviorDescriptor();
       case 11:
         return new InternalAnonymousClassCreator_BehaviorDescriptor();
@@ -60,6 +60,10 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new InternalAnonymousClass_BehaviorDescriptor();
       case 0:
         return new ConstantValue_BehaviorDescriptor();
+      case 20:
+        return new InternalSuperMethodCallOperation_BehaviorDescriptor();
+      case 12:
+        return new InternalClassCreator_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
