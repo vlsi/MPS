@@ -114,7 +114,7 @@ public class PluginMoveHelper {
               return;
             }
 
-            file.getParent().move(FileSystem.getInstance().getFile(newIconPath).getParent().getParent());
+            file.move(FileSystem.getInstance().getFile(newIconPath).getParent());
 
             SPropertyOperations.set(it, "path", newIconMacro);
           }
