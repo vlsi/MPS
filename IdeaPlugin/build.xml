@@ -55,15 +55,20 @@
     </path>
 
     <target name="prepare">
+        <condition property="lang.dir.exists">
+            <available file="${base_dir}/IdeaPlugin/mps-core/languages" type="dir"/>
+        </condition>
+        <fail unless="${lang.dir.exists}"
+              message="Please copy all languages from the latest MPS build"/>
         <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
         <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
         <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
             <resources>
                 <file file="${base_dir}/lib/asm.jar"/>
                 <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
+                <file file="${base_dir}/IdeaPlugin/mps-core/languages/generate.ant.task.jar"/>
             </resources>
         </copy>
-        <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
         <!-- TODO build languages -->
     </target>
 
