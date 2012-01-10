@@ -90,6 +90,7 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="IDEA" level="project" />
   </component>
 </module>
 
