@@ -51,17 +51,12 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new NamespaceMake_ActionGroup());
     addGroup(new ProjectCompileActions_ActionGroup());
     addGroup(new ProjectMake_ActionGroup());
-    addGroup(new SaveTransientModelsSettings_ActionGroup());
     addGroup(new SaveTransientModels_ActionGroup());
     addGroup(new TextPreviewGroup_ActionGroup());
     addGroup(new ToolbarMake_ActionGroup());
   }
 
-  public void adjustInterfaceGroups() {
-  }
-
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(SaveTransientModelsSettings_ActionGroup.ID, "SaveTransientModelsSettings", null);
     insertGroupIntoAnother(ProjectCompileActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_compileJava);
     insertGroupIntoAnother(JavaModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_compileJava);
     insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);
