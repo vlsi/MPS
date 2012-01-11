@@ -12,10 +12,13 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.refactoring.structure.AskExpression", new AskExpression_DataFlow());
     manager.register("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", new ChangeFeatureNameExpression_DataFlow());
     manager.register("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", new ChangeFeatureNameOperation_DataFlow());
+    manager.register("jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext", new CreateRefactoringContext_DataFlow());
     manager.register("jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", new CustomParameterChooser_DataFlow());
     manager.register("jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", new DeleteFeatureExpression_DataFlow());
     manager.register("jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", new DeleteFeatureOperation_DataFlow());
     manager.register("jetbrains.mps.lang.refactoring.structure.ErrorStatement", new ErrorStatement_DataFlow());
+    manager.register("jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement", new ExecuteRefactoringStatement_DataFlow());
+    manager.register("jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable", new IsRefactoringApplicable_DataFlow());
     manager.register("jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", new MoveNodeToNodeExpression_DataFlow());
     manager.register("jetbrains.mps.lang.refactoring.structure.SetValueStatement", new SetValueStatement_DataFlow());
   }
