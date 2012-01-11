@@ -333,7 +333,7 @@
     <nodeInfo nodeId="321200956998476248" fileName="TransientModelsWidget.java" startLine="48" startPosition="75" endLine="49" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="321200956998476254" fileName="TransientModelsWidget.java" startLine="49" startPosition="97" endLine="50" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8490543477130633235" fileName="TransientModelsWidget.java" startLine="50" startPosition="90" endLine="51" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="821918482060593359" fileName="TransientModelsWidget.java" startLine="52" startPosition="40" endLine="53" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="821918482060593359" fileName="TransientModelsWidget.java" startLine="52" startPosition="79" endLine="53" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="821918482060638593" fileName="TransientModelsWidget.java" startLine="53" startPosition="64" endLine="54" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="821918482060638616" fileName="TransientModelsWidget.java" startLine="54" startPosition="57" endLine="55" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="821918482060638599" fileName="TransientModelsWidget.java" startLine="55" startPosition="40" endLine="56" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -387,7 +387,7 @@
     <scopeInfo nodeId="321200956998476290" fileName="TransientModelsWidget.java" startLine="77" startPosition="25" endLine="81" endPosition="90" />
     <scopeInfo nodeId="8401918447150650272" fileName="TransientModelsWidget.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="1819416201368223017" fileName="TransientModelsWidget.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="821918482060593350" fileName="TransientModelsWidget.java" startLine="52" startPosition="40" endLine="57" endPosition="74">
+    <scopeInfo nodeId="821918482060593350" fileName="TransientModelsWidget.java" startLine="52" startPosition="79" endLine="57" endPosition="74">
       <varInfo nodeId="821918482060638594" varName="dimension" />
       <varInfo nodeId="821918482060593360" varName="panel" />
       <varInfo nodeId="821918482060638617" varName="point" />

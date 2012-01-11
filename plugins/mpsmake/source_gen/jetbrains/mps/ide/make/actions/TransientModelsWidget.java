@@ -49,7 +49,7 @@ import javax.swing.JComponent;
           boolean saveTransientModels = GenerationSettings.getInstance().isSaveTransientModels();
           GenerationSettings.getInstance().setSaveTransientModels(!(saveTransientModels));
           TransientModelsWidgetInstaller.updateWidgets();
-        } else if (e.isPopupTrigger()) {
+        } else if (e.isPopupTrigger() || MouseEvent.BUTTON2 == e.getButton()) {
           WidgetSettingsPanel panel = new WidgetSettingsPanel();
           Dimension dimension = panel.getPreferredSize();
           Point point = new Point(0, 0);
