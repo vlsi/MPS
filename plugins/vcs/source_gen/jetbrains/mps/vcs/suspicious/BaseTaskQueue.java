@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.suspicious;
 import java.util.List;
 import java.util.LinkedList;
 import com.intellij.util.ui.Timer;
+import javax.swing.SwingUtilities;
 
 import javax.swing.SwingUtilities;
 
@@ -33,11 +34,15 @@ public abstract class BaseTaskQueue<T> {
     if (isProcessingAllowed()) {
       process();
     } else {
-      myTimer.resume();
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          myTimer.resume();
+        }
+      });
     }
   }
 
-  protected void process() {
+  private void process() {
     myTimer.suspend();
     if (myTasks.isEmpty()) {
       return;

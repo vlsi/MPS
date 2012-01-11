@@ -11523,6 +11523,9 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8964117437905192155">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="8964117437905192162">
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.AndExpression" typeId="tpee.1080120340718" id="6560219382404208736">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4966159812066759635">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4966159812066759545" resolveInfo="searchPanelInactive" />
+              </node>
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="8964117437905192156">
                 <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8964117437905192157">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rhwp.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
@@ -11533,9 +11536,6 @@
                     <link role="member" roleId="tp4f.1205756909548" targetNodeId="5533671870987188885" resolveInfo="contextModel" />
                   </node>
                 </node>
-              </node>
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4966159812066759635">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4966159812066759545" resolveInfo="searchPanelInactive" />
               </node>
             </node>
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8964117437905192167">

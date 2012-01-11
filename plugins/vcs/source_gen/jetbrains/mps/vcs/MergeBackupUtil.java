@@ -38,19 +38,19 @@ public class MergeBackupUtil {
     // Used in MergeProviderDecorator 
   }
 
-  public static void writeContentsToFile(DiffContent contents, VirtualFile file, File tmpDir, String suffix) throws IOException {
+  private static void writeContentsToFile(DiffContent contents, VirtualFile file, File tmpDir, String suffix) throws IOException {
     writeContentsToFile(new String(contents.getBytes(), FileUtil.DEFAULT_CHARSET), file.getName(), tmpDir, suffix);
   }
 
   public static File zipModel(DiffContent[] contents, VirtualFile file) throws IOException {
-    File tmp = FileUtil.createTmpDir();
-    writeContentsToFile(contents[ModelMergeTool.ORIGINAL], file, tmp, MergeVersion.BASE.getSuffix());
-    writeContentsToFile(contents[ModelMergeTool.CURRENT], file, tmp, MergeVersion.MINE.getSuffix());
-    writeContentsToFile(contents[ModelMergeTool.LAST_REVISION], file, tmp, MergeVersion.REPOSITORY.getSuffix());
+    File tmpDir = FileUtil.createTmpDir();
+    writeContentsToFile(contents[ModelMergeTool.ORIGINAL].getDocument().getText(), file.getName(), tmpDir, MergeVersion.BASE.getSuffix());
+    writeContentsToFile(contents[ModelMergeTool.CURRENT], file, tmpDir, MergeVersion.MINE.getSuffix());
+    writeContentsToFile(contents[ModelMergeTool.LAST_REVISION], file, tmpDir, MergeVersion.REPOSITORY.getSuffix());
     File zipfile = chooseZipFileForModelFile(VirtualFileUtils.toIFile(file));
     zipfile.getParentFile().mkdirs();
-    FileUtil.zip(tmp, zipfile);
-    FileUtil.delete(tmp);
+    FileUtil.zip(tmpDir, zipfile);
+    FileUtil.delete(tmpDir);
     return zipfile;
   }
 

@@ -280,27 +280,7 @@ public class Generate_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
-              if (pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient() != null) {
-                return true;
-              }
-              if (settings.isSaveTransientModels()) {
-                switch (cmonitor.<SaveTransient_Option>relayQuery(new SaveTransientModels_Query())) {
-                  case SAVE_fi61u2_a0a0b:
-                    pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(true);
-                    break;
-                  case DONT_SAVE_fi61u2_b0a0b:
-                    pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
-                    break;
-                  case BUGGER_OFF_fi61u2_c0a0b:
-                    pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
-                    settings.setSaveTransientModels(false);
-                    break;
-                  default:
-                    return false;
-                }
-              } else {
-                pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
-              }
+              pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(settings.isSaveTransientModels());
             default:
               return true;
           }
