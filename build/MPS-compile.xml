@@ -139,6 +139,7 @@
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/languages/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/distrib/classes" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/lib/annotations.jar" />

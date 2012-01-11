@@ -132,7 +132,7 @@
     <copy todir="${deploy.dir}/MPS/lib">
       <fileset dir="${mps_home}/lib" excludes="src/, **/*.zip, " />
     </copy>
-    <antcall target="pack.branding_b1a" />
+    <antcall target="MPS-external.pack.branding_b1a" />
     <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/MPSPlugin">
       <fileset dir="${mps_home}/MPSPlugin" excludes="**/sandbox/**, " includes="**/*.java, **/*.java" />
     </copy>
