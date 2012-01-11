@@ -66,12 +66,11 @@ public class ResolveUtil {
     SNode result = SNodeOperations.copyNode(typeWithVars);
     List<SNode> varRefs = SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
     List<SNode> params = ListSequence.fromList(SLinkOperations.getTargets(classifierSubtype, "parameter", true)).toListSequence();
-    if ((int) ListSequence.fromList(params).count() == (int) ListSequence.fromList(varRefs).count()) {
-      for (SNode varRef : varRefs) {
-        SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(varRef, "typeVariableDeclaration", false)))));
-      }
-    } else {
-      for (SNode varRef : varRefs) {
+    for (SNode varRef : varRefs) {
+      int index = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(varRef, "typeVariableDeclaration", false));
+      if (index < ListSequence.fromList(params).count()) {
+        SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(index)));
+      } else {
         SNodeOperations.replaceWithAnother(varRef, TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(SLinkOperations.getTarget(varRef, "typeVariableDeclaration", false)));
       }
     }
