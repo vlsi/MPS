@@ -6,6 +6,9 @@
   <property name="mps.exe.vmoptions" value="mps.exe.vmoptions" />
   <property name="MPS" value="MPS" />
   <property name="mpshelp.jar" value="help/mpshelp.jar" />
+  <condition property="windows">
+    <os family="windows" />
+  </condition>
   <target name="empty" />
   <target name="tar">
     <fail unless="input.dir" message="Property input.dir unspecified." />
@@ -63,5 +66,42 @@
       <zipfileset file="${input.dir}/${mps.vmoptions}" prefix="${dist.folder.name}/bin" />
       <zipfileset file="${input.dir}/${mpshelp.jar}" fullpath="${dist.folder.name}/${mpshelp.jar}" />
     </zip>
+  </target>
+  <target name="exe" if="windows">
+    <property name="installer.nsi" value="installer.nsi" />
+    <property name="mps.ico" value="mps.ico" />
+    <property name="homepage.ico" value="homepage.ico" />
+    <property name="mps.inst.ico" value="mps.inst.ico" />
+    <property name="mps.uninst.ico" value="mps.uninst.ico" />
+    <fail unless="input.dir" message="Property input.dir unspecified." />
+    <fail unless="version" message="Property version unspecified." />
+    <fail unless="build.number" message="Property build.number unspecified." />
+    <fail unless="output.dir" message="Property output.dir unspecified." />
+    <fixcrlf file="${input.dir}/${mps.bat}" eol="dos" eof="asis" />
+    <fixcrlf file="${input.dir}/${installer.nsi}" eol="dos" eof="asis" />
+    <unzip src="${input.dir}/jre.zip" dest="${input.dir}" />
+    <java classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${input.dir}" failonerror="true">
+      <arg file="${input.dir}install.nsh" />
+      <arg file="${input.dir}uninstall.nsh" />
+      <arg file="${input.dir}/${MPS}" />
+      <arg file="${input.dir}/${mps.bat}" />
+      <arg file="${input.dir}/${mps.ico}" />
+      <arg file="${input.dir}/${homepage.ico}" />
+      <arg file="${input.dir}/jre" />
+      <arg file="${input.dir}/help" />
+      <classpath>
+        <pathelement path="${input.dir}/${MPS}/lib/mps-workbench.jar" />
+        <pathelement path="${input.dir}/${MPS}/lib/mps-core.jar" />
+      </classpath>
+    </java>
+    <replace file="${input.dir}/${installer.nsi}" token="$version$" value="${version}" />
+    <replace file="${input.dir}/${installer.nsi}" token="$build$" value="${build.number}" />
+    <unzip src="${input.dir}/nsis.zip" dest="${input.dir}" />
+    <exec executable="${input.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true">
+      <arg file="${input.dir}/${installer.nsi}" />
+    </exec>
+    <exec executable="${input.dir}/signtool.exe" osfamily="windows" failonerror="true" dir="${scripts.folder}">
+      <arg line="sign /f ${mps_home}/build/sign/cs_cert2011.pfx /p 123 ${output.dir}/${build.number}-windows.exe" />
+    </exec>
   </target>
 </project>

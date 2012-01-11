@@ -24,6 +24,7 @@ core/plugin-runtime/classes
 languages/languageDesign/test/classes_gen
 languages/util/runConfigurations/classes
 languages/util/uiLanguage/runtime/classes
+languages/util/buildlanguage/languages/distrib/classes
 workbench/classes
 workbench/typesystemUi/classes
 workbench/mps-editor/classes

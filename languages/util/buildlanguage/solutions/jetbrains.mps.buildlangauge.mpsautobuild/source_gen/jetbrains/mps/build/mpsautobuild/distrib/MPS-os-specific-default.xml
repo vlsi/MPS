@@ -25,6 +25,10 @@
     <mkdir dir="${deploy.dir}/MPS-os-specific.mac/bin" />
     <mkdir dir="${deploy.dir}/MPS-os-specific.mac/help" />
     <mkdir dir="${deploy.dir}/MPS-os-specific.mac" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.exe/MPS" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.exe/bin" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.exe/help" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.exe" />
   </target>
   <target name="do.the.job" depends="folders.create">
     <copy todir="${deploy.dir}/MPS-os-specific.tar/MPS">
@@ -86,6 +90,32 @@
       <param name="base_dir" value="${base_dir}" />
     </antcall>
     <delete dir="${deploy.dir}/MPS-os-specific.mac" />
+    <copy todir="${deploy.dir}/MPS-os-specific.exe/MPS">
+      <fileset dir="${base_dir}/../MPS.artifacts/MPS" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-os-specific.exe/bin">
+      <fileset dir="${base_dir}/bin" />
+    </copy>
+    <copy file="${base_dir}/build/mps.vmoptions" tofile="${deploy.dir}/MPS-os-specific.exe/mps.vmoptions" />
+    <copy file="${base_dir}/build/mps.vmoptions" tofile="${deploy.dir}/MPS-os-specific.exe/mps.exe.vmoptions" />
+    <copy file="${base_dir}/build/mps.bat" tofile="${deploy.dir}/MPS-os-specific.exe/mps.bat" />
+    <copy todir="${deploy.dir}/MPS-os-specific.exe/help">
+      <fileset dir="${base_dir}/help" />
+    </copy>
+    <copy file="${base_dir}/build/resources/mps.ico" tofile="${deploy.dir}/MPS-os-specific.exe/mps.ico" />
+    <copy file="${base_dir}/build/resources/mps.inst.ico" tofile="${deploy.dir}/MPS-os-specific.exe/mps.inst.ico" />
+    <copy file="${base_dir}/build/resources/mps.uninst.ico" tofile="${deploy.dir}/MPS-os-specific.exe/mps.uninst.ico" />
+    <copy file="${base_dir}/build/resources/homepage.ico" tofile="${deploy.dir}/MPS-os-specific.exe/homepage.ico" />
+    <copy file="${base_dir}/build/tools/jre.zip" tofile="${deploy.dir}/MPS-os-specific.exe/jre.zip" />
+    <copy file="${base_dir}/build/tools/nsis.zip" tofile="${deploy.dir}/MPS-os-specific.exe/nsis.zip" />
+    <copy file="${base_dir}/build/sign/signtool.exe" tofile="${deploy.dir}/MPS-os-specific.exe/signtool.exe" />
+    <antcall target="MPS-os-specific.exe" inheritall="true">
+      <param name="deploy.dir" value="${deploy.dir}" />
+      <param name="input.dir" value="${deploy.dir}/MPS-os-specific.exe" />
+      <param name="output.dir" value="${deploy.dir}/" />
+      <param name="base_dir" value="${base_dir}" />
+    </antcall>
+    <delete dir="${deploy.dir}/MPS-os-specific.exe" />
   </target>
   <target name="clean.after" depends="do.the.job" />
 </project>
