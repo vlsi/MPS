@@ -129,15 +129,8 @@ public class MPSCompiler implements TranslatingCompiler {
 
     // TODO replace with external make process
     private void fakeGenerator(Map<String, VirtualFile> vfile, Map<MPSFacet, List<File>> moduleWithModels, Map<String, Collection<OutputItem>> outputs, List<File> filesToRefresh) {
-        System.out.println("*** KUKU!");
-        MPSGenerationLauncher gl = new MPSGenerationLauncher();
-        gl.validate();
-        if (gl.isValid()) {
-            System.out.println("*** command line: "+gl.getCommandLine());
-        } else {
-            System.out.println("*** invalid :(");
-        }
 
+        final Set<File> modelsToMake = new HashSet<File>();
         for (Map.Entry<MPSFacet, List<File>> chunk : moduleWithModels.entrySet()) {
             String outputFolder = chunk.getKey().getSolution().getGeneratorOutputPath();
             MessagesViewTool.log(myProject, MessageKind.INFORMATION, "Generating into " + outputFolder);
@@ -153,6 +146,7 @@ public class MPSCompiler implements TranslatingCompiler {
                     public Collection<String> compute() {
                         IFile file = FileSystem.getInstance().getFileByPath(f.getAbsolutePath());
                         EditableSModelDescriptor model = SModelRepository.getInstance().findModel(file);
+                        modelsToMake.add(new File(model.getModelFile().getPath()));
                         List<String> result = new ArrayList<String>();
                         for (SNode root : model.getSModel().roots()) {
                             result.add(root.getName());
@@ -163,11 +157,11 @@ public class MPSCompiler implements TranslatingCompiler {
                 for (String root : rootNames) {
                     File genFile = new File(output, root + ".java");
                     String content = "package " + packageName + ";\npublic class " + root + " {}";
-                    try {
-                        FileUtil.writeFile(genFile, content);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        FileUtil.writeFile(genFile, content);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
                     filesToRefresh.add(genFile);
                     VirtualFile source = vfile.get(com.intellij.openapi.util.io.FileUtil.toSystemIndependentName(f.getPath()));
                     outitems.add(new OutputItemImpl(com.intellij.openapi.util.io.FileUtil.toSystemIndependentName(genFile.getPath()), source));
@@ -175,6 +169,19 @@ public class MPSCompiler implements TranslatingCompiler {
             }
             outputs.put(outputFolder, outitems);
         }
+
+        MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
+        makeConfiguration.addConfiguredModels(modelsToMake);
+        makeConfiguration.addConfiguredLibrary(myProject.getName(), new File(myProject.getBaseDir().getPath()),false);
+        MPSMakeLauncher gl = new MPSMakeLauncher(makeConfiguration, myProject);
+        gl.validate();
+        if (gl.isValid()) {
+            System.out.println("*** command line: "+gl.getCommandLine());
+            gl.launch();
+        } else {
+            System.out.println("*** invalid :(");
+        }
+
     }
 
     public boolean validateConfiguration(CompileScope compileScope) {
