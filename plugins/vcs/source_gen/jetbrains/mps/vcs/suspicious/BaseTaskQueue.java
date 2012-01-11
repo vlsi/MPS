@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.suspicious;
 import java.util.List;
 import java.util.LinkedList;
 import com.intellij.util.ui.Timer;
+import javax.swing.SwingUtilities;
 
 public abstract class BaseTaskQueue<T> {
   private final Object LOCK = new Object();
@@ -26,7 +27,11 @@ public abstract class BaseTaskQueue<T> {
     if (isProcessingAllowed()) {
       process();
     } else {
-      myTimer.resume();
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          myTimer.resume();
+        }
+      });
     }
   }
 
