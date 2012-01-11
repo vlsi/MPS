@@ -1328,115 +1328,117 @@
     <nodeInfo nodeId="1223655839242" fileName="LanguagesStep.java" startLine="79" startPosition="5" endLine="80" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1223657337347" fileName="LanguagesStep.java" startLine="80" startPosition="64" endLine="81" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1224164766439" fileName="LanguagesStep.java" startLine="81" startPosition="37" endLine="82" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223488112620" fileName="LanguagesStep.java" startLine="82" startPosition="38" endLine="83" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224165840865" fileName="LanguagesStep.java" startLine="86" startPosition="71" endLine="87" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224165940661" fileName="LanguagesStep.java" startLine="88" startPosition="42" endLine="89" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224165995601" fileName="LanguagesStep.java" startLine="89" startPosition="30" endLine="90" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224168582535" fileName="LanguagesStep.java" startLine="90" startPosition="67" endLine="91" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224165867329" fileName="LanguagesStep.java" startLine="91" startPosition="43" endLine="92" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224168590562" fileName="LanguagesStep.java" startLine="92" startPosition="34" endLine="93" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224166006436" fileName="LanguagesStep.java" startLine="93" startPosition="32" endLine="94" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223050119638" fileName="LanguagesStep.java" startLine="98" startPosition="34" endLine="99" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223492384483" fileName="LanguagesStep.java" startLine="102" startPosition="39" endLine="103" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223492808909" fileName="LanguagesStep.java" startLine="103" startPosition="70" endLine="104" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224169394117" fileName="LanguagesStep.java" startLine="105" startPosition="62" endLine="106" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224171037384" fileName="LanguagesStep.java" startLine="107" startPosition="5" endLine="108" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240240924950" fileName="LanguagesStep.java" startLine="111" startPosition="72" endLine="112" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240240924963" fileName="LanguagesStep.java" startLine="113" startPosition="79" endLine="114" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240240924974" fileName="LanguagesStep.java" startLine="115" startPosition="9" endLine="116" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223492880568" fileName="LanguagesStep.java" startLine="118" startPosition="13" endLine="119" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224169318466" fileName="LanguagesStep.java" startLine="122" startPosition="72" endLine="123" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224169341738" fileName="LanguagesStep.java" startLine="124" startPosition="35" endLine="125" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224847897173" fileName="LanguagesStep.java" startLine="130" startPosition="35" endLine="131" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224847897182" fileName="LanguagesStep.java" startLine="131" startPosition="57" endLine="132" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224847897198" fileName="LanguagesStep.java" startLine="132" startPosition="91" endLine="133" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224847897204" fileName="LanguagesStep.java" startLine="133" startPosition="60" endLine="134" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224847947929" fileName="LanguagesStep.java" startLine="134" startPosition="50" endLine="135" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224847952997" fileName="LanguagesStep.java" startLine="135" startPosition="67" endLine="136" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224847897210" fileName="LanguagesStep.java" startLine="136" startPosition="49" endLine="137" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224847897235" fileName="LanguagesStep.java" startLine="138" startPosition="5" endLine="139" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223662160259" fileName="LanguagesStep.java" startLine="142" startPosition="103" endLine="143" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMpsProject" />
-    <nodeInfo nodeId="1223656981389" fileName="LanguagesStep.java" startLine="147" startPosition="98" endLine="148" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227210147356" fileName="LanguagesStep.java" startLine="151" startPosition="57" endLine="152" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227210197513" fileName="LanguagesStep.java" startLine="155" startPosition="56" endLine="156" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227210173176" fileName="LanguagesStep.java" startLine="159" startPosition="66" endLine="160" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223662180045" fileName="LanguagesStep.java" startLine="162" startPosition="9" endLine="163" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223656849131" fileName="LanguagesStep.java" startLine="166" startPosition="54" endLine="167" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223661563884" fileName="LanguagesStep.java" startLine="167" startPosition="37" endLine="168" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223660353174" fileName="LanguagesStep.java" startLine="169" startPosition="39" endLine="170" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223661071687" fileName="LanguagesStep.java" startLine="170" startPosition="50" endLine="171" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223661591711" fileName="LanguagesStep.java" startLine="173" startPosition="30" endLine="174" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223656885288" fileName="LanguagesStep.java" startLine="175" startPosition="7" endLine="176" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5044579612262639750" fileName="LanguagesStep.java" startLine="82" startPosition="38" endLine="83" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5044579612262639758" fileName="LanguagesStep.java" startLine="83" startPosition="57" endLine="84" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223488112620" fileName="LanguagesStep.java" startLine="84" startPosition="52" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224165840865" fileName="LanguagesStep.java" startLine="88" startPosition="71" endLine="89" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224165940661" fileName="LanguagesStep.java" startLine="90" startPosition="42" endLine="91" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224165995601" fileName="LanguagesStep.java" startLine="91" startPosition="30" endLine="92" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224168582535" fileName="LanguagesStep.java" startLine="92" startPosition="67" endLine="93" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224165867329" fileName="LanguagesStep.java" startLine="93" startPosition="43" endLine="94" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224168590562" fileName="LanguagesStep.java" startLine="94" startPosition="34" endLine="95" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224166006436" fileName="LanguagesStep.java" startLine="95" startPosition="32" endLine="96" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223050119638" fileName="LanguagesStep.java" startLine="100" startPosition="34" endLine="101" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1223492384483" fileName="LanguagesStep.java" startLine="104" startPosition="39" endLine="105" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223492808909" fileName="LanguagesStep.java" startLine="105" startPosition="70" endLine="106" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224169394117" fileName="LanguagesStep.java" startLine="107" startPosition="62" endLine="108" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224171037384" fileName="LanguagesStep.java" startLine="109" startPosition="5" endLine="110" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240240924950" fileName="LanguagesStep.java" startLine="113" startPosition="72" endLine="114" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240240924963" fileName="LanguagesStep.java" startLine="115" startPosition="79" endLine="116" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240240924974" fileName="LanguagesStep.java" startLine="117" startPosition="9" endLine="118" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1223492880568" fileName="LanguagesStep.java" startLine="120" startPosition="13" endLine="121" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224169318466" fileName="LanguagesStep.java" startLine="124" startPosition="72" endLine="125" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224169341738" fileName="LanguagesStep.java" startLine="126" startPosition="35" endLine="127" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224847897173" fileName="LanguagesStep.java" startLine="132" startPosition="35" endLine="133" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224847897182" fileName="LanguagesStep.java" startLine="133" startPosition="57" endLine="134" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224847897198" fileName="LanguagesStep.java" startLine="134" startPosition="91" endLine="135" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224847897204" fileName="LanguagesStep.java" startLine="135" startPosition="60" endLine="136" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224847947929" fileName="LanguagesStep.java" startLine="136" startPosition="50" endLine="137" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224847952997" fileName="LanguagesStep.java" startLine="137" startPosition="67" endLine="138" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224847897210" fileName="LanguagesStep.java" startLine="138" startPosition="49" endLine="139" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224847897235" fileName="LanguagesStep.java" startLine="140" startPosition="5" endLine="141" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223662160259" fileName="LanguagesStep.java" startLine="144" startPosition="103" endLine="145" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMpsProject" />
+    <nodeInfo nodeId="1223656981389" fileName="LanguagesStep.java" startLine="149" startPosition="98" endLine="150" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227210147356" fileName="LanguagesStep.java" startLine="153" startPosition="57" endLine="154" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227210197513" fileName="LanguagesStep.java" startLine="157" startPosition="56" endLine="158" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227210173176" fileName="LanguagesStep.java" startLine="161" startPosition="66" endLine="162" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223662180045" fileName="LanguagesStep.java" startLine="164" startPosition="9" endLine="165" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223656849131" fileName="LanguagesStep.java" startLine="168" startPosition="54" endLine="169" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223661563884" fileName="LanguagesStep.java" startLine="169" startPosition="37" endLine="170" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223660353174" fileName="LanguagesStep.java" startLine="171" startPosition="39" endLine="172" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223661071687" fileName="LanguagesStep.java" startLine="172" startPosition="50" endLine="173" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223661591711" fileName="LanguagesStep.java" startLine="175" startPosition="30" endLine="176" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1223656885288" fileName="LanguagesStep.java" startLine="177" startPosition="7" endLine="178" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224849290049" fileName="LanguagesStep.java" startLine="44" startPosition="28" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1223657251115" fileName="LanguagesStep.java" startLine="76" startPosition="86" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1224169221248" fileName="LanguagesStep.java" startLine="104" startPosition="79" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1224169327062" fileName="LanguagesStep.java" startLine="123" startPosition="53" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1223661585636" fileName="LanguagesStep.java" startLine="172" startPosition="7" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1223050119635" fileName="LanguagesStep.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1223656932313" fileName="LanguagesStep.java" startLine="146" startPosition="84" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNamespaceNode#(Ljava/lang/String;Ljetbrains/mps/smodel/IOperationContext;)Ljetbrains/mps/build/packaging/plugin/CheckBoxNamespaceNode;" />
-    <nodeInfo nodeId="1227210131726" fileName="LanguagesStep.java" startLine="150" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNamespaceNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1227210131733" fileName="LanguagesStep.java" startLine="154" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNamespaceNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Z" />
-    <nodeInfo nodeId="1227210131739" fileName="LanguagesStep.java" startLine="158" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNamespaceNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1223656795983" fileName="LanguagesStep.java" startLine="168" startPosition="28" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224169221248" fileName="LanguagesStep.java" startLine="106" startPosition="79" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1224169327062" fileName="LanguagesStep.java" startLine="125" startPosition="53" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1223661585636" fileName="LanguagesStep.java" startLine="174" startPosition="7" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1223050119635" fileName="LanguagesStep.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1223656932313" fileName="LanguagesStep.java" startLine="148" startPosition="84" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNamespaceNode#(Ljava/lang/String;Ljetbrains/mps/smodel/IOperationContext;)Ljetbrains/mps/build/packaging/plugin/CheckBoxNamespaceNode;" />
+    <nodeInfo nodeId="1227210131726" fileName="LanguagesStep.java" startLine="152" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNamespaceNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1227210131733" fileName="LanguagesStep.java" startLine="156" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNamespaceNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Z" />
+    <nodeInfo nodeId="1227210131739" fileName="LanguagesStep.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNamespaceNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1223656795983" fileName="LanguagesStep.java" startLine="170" startPosition="28" endLine="174" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1223050119528" fileName="LanguagesStep.java" startLine="50" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1240240924948" fileName="LanguagesStep.java" startLine="110" startPosition="50" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240240924948" fileName="LanguagesStep.java" startLine="112" startPosition="50" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1223050119660" fileName="LanguagesStep.java" startLine="34" startPosition="0" endLine="40" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguagesStep#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/build/packaging/plugin/AbstractBuildGenerator;Ljetbrains/mps/build/packaging/plugin/IErrorHandler;)V" />
-    <nodeInfo nodeId="1224169237606" fileName="LanguagesStep.java" startLine="121" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillWithParents#(Ljetbrains/mps/build/packaging/plugin/NodeData;Ljava/util/Set;)V" />
-    <nodeInfo nodeId="1224165847596" fileName="LanguagesStep.java" startLine="87" startPosition="42" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1224169237606" fileName="LanguagesStep.java" startLine="123" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillWithParents#(Ljetbrains/mps/build/packaging/plugin/NodeData;Ljava/util/Set;)V" />
+    <nodeInfo nodeId="1224165847596" fileName="LanguagesStep.java" startLine="89" startPosition="42" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1223050119524" fileName="LanguagesStep.java" startLine="41" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_init#()V" />
     <nodeInfo nodeId="1240241063552" fileName="LanguagesStep.java" startLine="63" startPosition="44" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240240904785" fileName="LanguagesStep.java" startLine="109" startPosition="67" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/build/packaging/plugin/NodeData;Ljetbrains/mps/build/packaging/plugin/NodeData;)I" />
-    <nodeInfo nodeId="1224847897166" fileName="LanguagesStep.java" startLine="129" startPosition="36" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240240900150" fileName="LanguagesStep.java" startLine="108" startPosition="97" endLine="118" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224164745961" fileName="LanguagesStep.java" startLine="85" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillChildren#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;)V" />
-    <nodeInfo nodeId="1224847897162" fileName="LanguagesStep.java" startLine="128" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent#()V" />
-    <nodeInfo nodeId="1223656740069" fileName="LanguagesStep.java" startLine="165" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNamespace#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1240240904785" fileName="LanguagesStep.java" startLine="111" startPosition="67" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/build/packaging/plugin/NodeData;Ljetbrains/mps/build/packaging/plugin/NodeData;)I" />
+    <nodeInfo nodeId="1224847897166" fileName="LanguagesStep.java" startLine="131" startPosition="36" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240240900150" fileName="LanguagesStep.java" startLine="110" startPosition="97" endLine="120" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224164745961" fileName="LanguagesStep.java" startLine="87" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillChildren#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;)V" />
+    <nodeInfo nodeId="1224847897162" fileName="LanguagesStep.java" startLine="130" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent#()V" />
+    <nodeInfo nodeId="1223656740069" fileName="LanguagesStep.java" startLine="167" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNamespace#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1240241042006" fileName="LanguagesStep.java" startLine="60" startPosition="71" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/build/packaging/plugin/ModuleData;Ljetbrains/mps/build/packaging/plugin/ModuleData;)I" />
     <nodeInfo nodeId="1240241034632" fileName="LanguagesStep.java" startLine="59" startPosition="50" endLine="75" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223656919442" fileName="LanguagesStep.java" startLine="145" startPosition="49" endLine="162" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1223050119641" fileName="LanguagesStep.java" startLine="101" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_commit#(Z)V" />
-    <nodeInfo nodeId="1223656664189" fileName="LanguagesStep.java" startLine="144" startPosition="0" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreeBuilder#(Ljetbrains/mps/project/MPSProject;)V" />
-    <nodeInfo nodeId="1223050119536" fileName="LanguagesStep.java" startLine="55" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCheckTree#()Ljetbrains/mps/build/packaging/plugin/CheckBoxTree;" />
+    <nodeInfo nodeId="1223656919442" fileName="LanguagesStep.java" startLine="147" startPosition="49" endLine="164" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1223050119641" fileName="LanguagesStep.java" startLine="103" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_commit#(Z)V" />
+    <nodeInfo nodeId="1223656664189" fileName="LanguagesStep.java" startLine="146" startPosition="0" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreeBuilder#(Ljetbrains/mps/project/MPSProject;)V" />
+    <nodeInfo nodeId="1223050119536" fileName="LanguagesStep.java" startLine="55" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCheckTree#()Ljetbrains/mps/build/packaging/plugin/CheckBoxTree;" />
     <scopeInfo nodeId="1224849290050" fileName="LanguagesStep.java" startLine="45" startPosition="40" endLine="46" endPosition="53" />
     <scopeInfo nodeId="1240241063553" fileName="LanguagesStep.java" startLine="64" startPosition="80" endLine="65" endPosition="70" />
     <scopeInfo nodeId="1240241063579" fileName="LanguagesStep.java" startLine="66" startPosition="49" endLine="67" endPosition="20" />
     <scopeInfo nodeId="1240241063586" fileName="LanguagesStep.java" startLine="68" startPosition="49" endLine="69" endPosition="19" />
     <scopeInfo nodeId="1240241063593" fileName="LanguagesStep.java" startLine="70" startPosition="49" endLine="71" endPosition="20" />
     <scopeInfo nodeId="1223657251118" fileName="LanguagesStep.java" startLine="77" startPosition="67" endLine="78" endPosition="59" />
-    <scopeInfo nodeId="1223050119637" fileName="LanguagesStep.java" startLine="98" startPosition="34" endLine="99" endPosition="56" />
-    <scopeInfo nodeId="1224169221251" fileName="LanguagesStep.java" startLine="105" startPosition="62" endLine="106" endPosition="42" />
-    <scopeInfo nodeId="1240240924949" fileName="LanguagesStep.java" startLine="111" startPosition="72" endLine="112" endPosition="20" />
-    <scopeInfo nodeId="1240240924962" fileName="LanguagesStep.java" startLine="113" startPosition="79" endLine="114" endPosition="19" />
-    <scopeInfo nodeId="1224169327063" fileName="LanguagesStep.java" startLine="124" startPosition="35" endLine="125" endPosition="57" />
-    <scopeInfo nodeId="1223656932320" fileName="LanguagesStep.java" startLine="147" startPosition="98" endLine="148" endPosition="68" />
-    <scopeInfo nodeId="1227210131731" fileName="LanguagesStep.java" startLine="151" startPosition="57" endLine="152" endPosition="30" />
-    <scopeInfo nodeId="1227210131738" fileName="LanguagesStep.java" startLine="155" startPosition="56" endLine="156" endPosition="53" />
-    <scopeInfo nodeId="1227210131746" fileName="LanguagesStep.java" startLine="159" startPosition="66" endLine="160" endPosition="25" />
-    <scopeInfo nodeId="1223661585637" fileName="LanguagesStep.java" startLine="173" startPosition="30" endLine="174" endPosition="18" />
+    <scopeInfo nodeId="1223050119637" fileName="LanguagesStep.java" startLine="100" startPosition="34" endLine="101" endPosition="56" />
+    <scopeInfo nodeId="1224169221251" fileName="LanguagesStep.java" startLine="107" startPosition="62" endLine="108" endPosition="42" />
+    <scopeInfo nodeId="1240240924949" fileName="LanguagesStep.java" startLine="113" startPosition="72" endLine="114" endPosition="20" />
+    <scopeInfo nodeId="1240240924962" fileName="LanguagesStep.java" startLine="115" startPosition="79" endLine="116" endPosition="19" />
+    <scopeInfo nodeId="1224169327063" fileName="LanguagesStep.java" startLine="126" startPosition="35" endLine="127" endPosition="57" />
+    <scopeInfo nodeId="1223656932320" fileName="LanguagesStep.java" startLine="149" startPosition="98" endLine="150" endPosition="68" />
+    <scopeInfo nodeId="1227210131731" fileName="LanguagesStep.java" startLine="153" startPosition="57" endLine="154" endPosition="30" />
+    <scopeInfo nodeId="1227210131738" fileName="LanguagesStep.java" startLine="157" startPosition="56" endLine="158" endPosition="53" />
+    <scopeInfo nodeId="1227210131746" fileName="LanguagesStep.java" startLine="161" startPosition="66" endLine="162" endPosition="25" />
+    <scopeInfo nodeId="1223661585637" fileName="LanguagesStep.java" startLine="175" startPosition="30" endLine="176" endPosition="18" />
     <scopeInfo nodeId="1223050119530" fileName="LanguagesStep.java" startLine="51" startPosition="43" endLine="53" endPosition="28" />
-    <scopeInfo nodeId="1223656795985" fileName="LanguagesStep.java" startLine="169" startPosition="39" endLine="171" endPosition="100">
+    <scopeInfo nodeId="1223656795985" fileName="LanguagesStep.java" startLine="171" startPosition="39" endLine="173" endPosition="100">
       <varInfo nodeId="1223660353175" varName="moduleData" />
     </scopeInfo>
     <scopeInfo nodeId="1223657251115" fileName="LanguagesStep.java" startLine="76" startPosition="86" endLine="79" endPosition="5">
       <varInfo nodeId="1223657251115" varName="moduleData" />
     </scopeInfo>
-    <scopeInfo nodeId="1224169221248" fileName="LanguagesStep.java" startLine="104" startPosition="79" endLine="107" endPosition="5">
+    <scopeInfo nodeId="1224169221248" fileName="LanguagesStep.java" startLine="106" startPosition="79" endLine="109" endPosition="5">
       <varInfo nodeId="1224169221248" varName="item" />
     </scopeInfo>
     <scopeInfo nodeId="1223050119667" fileName="LanguagesStep.java" startLine="35" startPosition="98" endLine="39" endPosition="29" />
-    <scopeInfo nodeId="1223050119635" fileName="LanguagesStep.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1224169237609" fileName="LanguagesStep.java" startLine="122" startPosition="72" endLine="126" endPosition="5" />
-    <scopeInfo nodeId="1223656932313" fileName="LanguagesStep.java" startLine="146" startPosition="84" endLine="150" endPosition="0">
+    <scopeInfo nodeId="1223050119635" fileName="LanguagesStep.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="1224169237609" fileName="LanguagesStep.java" startLine="124" startPosition="72" endLine="128" endPosition="5" />
+    <scopeInfo nodeId="1223656932313" fileName="LanguagesStep.java" startLine="148" startPosition="84" endLine="152" endPosition="0">
       <varInfo nodeId="1223656932318" varName="context" />
       <varInfo nodeId="1223656932316" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="1227210131726" fileName="LanguagesStep.java" startLine="150" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="1227210131726" fileName="LanguagesStep.java" startLine="152" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="1227210131729" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="1227210131733" fileName="LanguagesStep.java" startLine="154" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="1227210131733" fileName="LanguagesStep.java" startLine="156" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="1227210131736" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="1227210131739" fileName="LanguagesStep.java" startLine="158" startPosition="0" endLine="162" endPosition="0">
+    <scopeInfo nodeId="1227210131739" fileName="LanguagesStep.java" startLine="160" startPosition="0" endLine="164" endPosition="0">
       <varInfo nodeId="1227210131742" varName="p0" />
       <varInfo nodeId="1227210131744" varName="p1" />
     </scopeInfo>
@@ -1449,33 +1451,33 @@
     <scopeInfo nodeId="1223050119527" fileName="LanguagesStep.java" startLine="42" startPosition="23" endLine="48" endPosition="43">
       <varInfo nodeId="1224849314761" varName="errorText" />
     </scopeInfo>
-    <scopeInfo nodeId="1224165847597" fileName="LanguagesStep.java" startLine="88" startPosition="42" endLine="94" endPosition="31">
+    <scopeInfo nodeId="1224165847597" fileName="LanguagesStep.java" startLine="90" startPosition="42" endLine="96" endPosition="31">
       <varInfo nodeId="1224165995602" varName="child" />
       <varInfo nodeId="1224168582536" varName="childData" />
       <varInfo nodeId="1224165940662" varName="data" />
     </scopeInfo>
-    <scopeInfo nodeId="1240240904786" fileName="LanguagesStep.java" startLine="110" startPosition="50" endLine="116" endPosition="60" />
-    <scopeInfo nodeId="1224169237606" fileName="LanguagesStep.java" startLine="121" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="1240240904786" fileName="LanguagesStep.java" startLine="112" startPosition="50" endLine="118" endPosition="60" />
+    <scopeInfo nodeId="1224169237606" fileName="LanguagesStep.java" startLine="123" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="1224169305560" varName="collection" />
       <varInfo nodeId="1224169256675" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="1224847897172" fileName="LanguagesStep.java" startLine="130" startPosition="35" endLine="137" endPosition="55">
+    <scopeInfo nodeId="1224847897172" fileName="LanguagesStep.java" startLine="132" startPosition="35" endLine="139" endPosition="55">
       <varInfo nodeId="1224847947930" varName="constraints" />
       <varInfo nodeId="1224847897199" varName="mainComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="1224165847596" fileName="LanguagesStep.java" startLine="87" startPosition="42" endLine="95" endPosition="5">
+    <scopeInfo nodeId="1224165847596" fileName="LanguagesStep.java" startLine="89" startPosition="42" endLine="97" endPosition="5">
       <varInfo nodeId="1224165847599" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1223050119524" fileName="LanguagesStep.java" startLine="41" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1224164745964" fileName="LanguagesStep.java" startLine="86" startPosition="71" endLine="95" endPosition="5">
+    <scopeInfo nodeId="1224164745964" fileName="LanguagesStep.java" startLine="88" startPosition="71" endLine="97" endPosition="5">
       <varInfo nodeId="1224165840866" varName="childCount" />
     </scopeInfo>
-    <scopeInfo nodeId="1240240904785" fileName="LanguagesStep.java" startLine="109" startPosition="67" endLine="118" endPosition="0">
+    <scopeInfo nodeId="1240240904785" fileName="LanguagesStep.java" startLine="111" startPosition="67" endLine="120" endPosition="0">
       <varInfo nodeId="1240240904785" varName="a" />
       <varInfo nodeId="1240240904785" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1224847897165" fileName="LanguagesStep.java" startLine="129" startPosition="36" endLine="139" endPosition="32" />
-    <scopeInfo nodeId="1223656740074" fileName="LanguagesStep.java" startLine="166" startPosition="54" endLine="176" endPosition="23">
+    <scopeInfo nodeId="1224847897165" fileName="LanguagesStep.java" startLine="131" startPosition="36" endLine="141" endPosition="32" />
+    <scopeInfo nodeId="1223656740074" fileName="LanguagesStep.java" startLine="168" startPosition="54" endLine="178" endPosition="23">
       <varInfo nodeId="1223656849132" varName="data" />
       <varInfo nodeId="1223661563885" varName="namespace" />
     </scopeInfo>
@@ -1483,42 +1485,43 @@
       <varInfo nodeId="1240241063541" varName="module1" />
       <varInfo nodeId="1240241063547" varName="module2" />
     </scopeInfo>
-    <scopeInfo nodeId="1224164745961" fileName="LanguagesStep.java" startLine="85" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="1224164745961" fileName="LanguagesStep.java" startLine="87" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="1224164757493" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1224847897162" fileName="LanguagesStep.java" startLine="128" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="1223656740069" fileName="LanguagesStep.java" startLine="165" startPosition="0" endLine="178" endPosition="0">
+    <scopeInfo nodeId="1224847897162" fileName="LanguagesStep.java" startLine="130" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="1223656740069" fileName="LanguagesStep.java" startLine="167" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="1223656740072" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1240241042006" fileName="LanguagesStep.java" startLine="60" startPosition="71" endLine="75" endPosition="0">
       <varInfo nodeId="1240241042006" varName="data1" />
       <varInfo nodeId="1240241042006" varName="data2" />
     </scopeInfo>
-    <scopeInfo nodeId="1223050119646" fileName="LanguagesStep.java" startLine="102" startPosition="39" endLine="119" endPosition="40">
+    <scopeInfo nodeId="1223050119646" fileName="LanguagesStep.java" startLine="104" startPosition="39" endLine="121" endPosition="40">
       <varInfo nodeId="1223492808910" varName="modules" />
       <varInfo nodeId="1223492384484" varName="selectedItems" />
       <varInfo nodeId="1224171037385" varName="toSort" />
     </scopeInfo>
-    <scopeInfo nodeId="1223656664192" fileName="LanguagesStep.java" startLine="145" startPosition="49" endLine="163" endPosition="37" />
-    <scopeInfo nodeId="1223050119641" fileName="LanguagesStep.java" startLine="101" startPosition="0" endLine="121" endPosition="0">
+    <scopeInfo nodeId="1223656664192" fileName="LanguagesStep.java" startLine="147" startPosition="49" endLine="165" endPosition="37" />
+    <scopeInfo nodeId="1223050119641" fileName="LanguagesStep.java" startLine="103" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="1223050119642" varName="finish" />
     </scopeInfo>
-    <scopeInfo nodeId="1223656664189" fileName="LanguagesStep.java" startLine="144" startPosition="0" endLine="164" endPosition="5">
+    <scopeInfo nodeId="1223656664189" fileName="LanguagesStep.java" startLine="146" startPosition="0" endLine="166" endPosition="5">
       <varInfo nodeId="1223662142814" varName="mpsProject" />
     </scopeInfo>
-    <scopeInfo nodeId="1223050119538" fileName="LanguagesStep.java" startLine="56" startPosition="41" endLine="83" endPosition="44">
+    <scopeInfo nodeId="1223050119538" fileName="LanguagesStep.java" startLine="56" startPosition="41" endLine="85" endPosition="16">
       <varInfo nodeId="1223655850810" varName="allModules" />
       <varInfo nodeId="1223655839243" varName="allModulesNode" />
       <varInfo nodeId="1223657149117" varName="builder" />
       <varInfo nodeId="1223656393273" varName="children" />
       <varInfo nodeId="1223656364728" varName="data" />
+      <varInfo nodeId="5044579612262639751" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="1223050119536" fileName="LanguagesStep.java" startLine="55" startPosition="0" endLine="85" endPosition="0" />
-    <unitInfo nodeId="1223050119523" fileName="LanguagesStep.java" startLine="28" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.LanguagesStep" />
+    <scopeInfo nodeId="1223050119536" fileName="LanguagesStep.java" startLine="55" startPosition="0" endLine="87" endPosition="0" />
+    <unitInfo nodeId="1223050119523" fileName="LanguagesStep.java" startLine="28" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.LanguagesStep" />
     <unitInfo nodeId="1240241042006" fileName="LanguagesStep.java" startLine="60" startPosition="45" endLine="75" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.LanguagesStep$1" />
-    <unitInfo nodeId="1223656932311" fileName="LanguagesStep.java" startLine="146" startPosition="16" endLine="162" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.LanguagesStep$1" />
-    <unitInfo nodeId="1240240904785" fileName="LanguagesStep.java" startLine="109" startPosition="43" endLine="118" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.LanguagesStep$2" />
-    <unitInfo nodeId="1223656664187" fileName="LanguagesStep.java" startLine="142" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.LanguagesStep$MyTreeBuilder" />
+    <unitInfo nodeId="1223656932311" fileName="LanguagesStep.java" startLine="148" startPosition="16" endLine="164" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.LanguagesStep$1" />
+    <unitInfo nodeId="1240240904785" fileName="LanguagesStep.java" startLine="111" startPosition="43" endLine="120" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.LanguagesStep$2" />
+    <unitInfo nodeId="1223656664187" fileName="LanguagesStep.java" startLine="144" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.LanguagesStep$MyTreeBuilder" />
   </root>
   <root nodeId="1223050119955">
     <nodeInfo nodeId="1223050119956" fileName="ModuleData.java" startLine="16" startPosition="45" endLine="17" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />

@@ -127,7 +127,6 @@
     <mkdir dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
   </target>
   <target name="do.the.job" depends="folders.create">
-    <fail unless="base_dir" message="Property base_dir unspecified." />
     <copy todir="${deploy.dir}/MPS/bin">
       <fileset dir="${mps_home}/bin" excludes="**/*.hprof, " />
     </copy>

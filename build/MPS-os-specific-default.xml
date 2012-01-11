@@ -1,0 +1,91 @@
+<project name="MPS-os-specific-default" default="main">
+  <property file="${ant.file}/../MPS-os-specific.properties" />
+  <import file="${ant.file}/../MPS-os-specific.xml" />
+  <target name="main" depends="compile,clean.before,folders.create,do.the.job,clean.after" />
+  <target name="compile" />
+  <target name="clean">
+    <property name="to.clean" value="${deploy.dir}" />
+    <echo>Removing directory ${to.clean}</echo>
+    <delete dir="${to.clean}" />
+  </target>
+  <target name="clean.before" depends="compile">
+    <tstamp />
+  </target>
+  <target name="folders.create" depends="clean.before">
+    <mkdir dir="${deploy.dir}" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.tar/MPS" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.tar/bin" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.tar/help" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.tar" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.zip/MPS" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.zip/bin" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.zip/help" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.zip" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.mac/MPS" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.mac/bin" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.mac/help" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.mac" />
+  </target>
+  <target name="do.the.job" depends="folders.create">
+    <copy todir="${deploy.dir}/MPS-os-specific.tar/MPS">
+      <fileset dir="${base_dir}/../MPS.artifacts/MPS" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-os-specific.tar/bin">
+      <fileset dir="${base_dir}/bin" />
+    </copy>
+    <copy file="${base_dir}/build/mps.vmoptions" tofile="${deploy.dir}/MPS-os-specific.tar/mps.vmoptions" />
+    <copy file="${base_dir}/build/mps.sh" tofile="${deploy.dir}/MPS-os-specific.tar/mps.sh" />
+    <copy todir="${deploy.dir}/MPS-os-specific.tar/help">
+      <fileset dir="${base_dir}/help" />
+    </copy>
+    <antcall target="MPS-os-specific.tar" inheritall="true">
+      <param name="deploy.dir" value="${deploy.dir}" />
+      <param name="input.dir" value="${deploy.dir}/MPS-os-specific.tar" />
+      <param name="output.dir" value="${deploy.dir}/" />
+      <param name="base_dir" value="${base_dir}" />
+    </antcall>
+    <delete dir="${deploy.dir}/MPS-os-specific.tar" />
+    <copy todir="${deploy.dir}/MPS-os-specific.zip/MPS">
+      <fileset dir="${base_dir}/../MPS.artifacts/MPS" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-os-specific.zip/bin">
+      <fileset dir="${base_dir}/bin" />
+    </copy>
+    <copy file="${base_dir}/build/mps.vmoptions" tofile="${deploy.dir}/MPS-os-specific.zip/mps.vmoptions" />
+    <copy file="${base_dir}/build/mps.vmoptions" tofile="${deploy.dir}/MPS-os-specific.zip/mps.exe.vmoptions" />
+    <copy file="${base_dir}/build/mps.sh" tofile="${deploy.dir}/MPS-os-specific.zip/mps.sh" />
+    <copy file="${base_dir}/build/mps.bat" tofile="${deploy.dir}/MPS-os-specific.zip/mps.bat" />
+    <copy todir="${deploy.dir}/MPS-os-specific.zip/help">
+      <fileset dir="${base_dir}/help" />
+    </copy>
+    <antcall target="MPS-os-specific.zip" inheritall="true">
+      <param name="deploy.dir" value="${deploy.dir}" />
+      <param name="input.dir" value="${deploy.dir}/MPS-os-specific.zip" />
+      <param name="output.dir" value="${deploy.dir}/" />
+      <param name="base_dir" value="${base_dir}" />
+    </antcall>
+    <delete dir="${deploy.dir}/MPS-os-specific.zip" />
+    <copy todir="${deploy.dir}/MPS-os-specific.mac/MPS">
+      <fileset dir="${base_dir}/../MPS.artifacts/MPS" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-os-specific.mac/bin">
+      <fileset dir="${base_dir}/bin" />
+    </copy>
+    <copy file="${base_dir}/build/mps.vmoptions" tofile="${deploy.dir}/MPS-os-specific.mac/mps.vmoptions" />
+    <copy file="${base_dir}/build/mps.sh" tofile="${deploy.dir}/MPS-os-specific.mac/mps.sh" />
+    <copy todir="${deploy.dir}/MPS-os-specific.mac/help">
+      <fileset dir="${base_dir}/help" />
+    </copy>
+    <copy file="${base_dir}/build/Info.plist" tofile="${deploy.dir}/MPS-os-specific.mac/Info.plist" />
+    <copy file="${base_dir}/build/resources/mps.icns" tofile="${deploy.dir}/MPS-os-specific.mac/mps.icns" />
+    <copy file="${base_dir}/build/resources/mps" tofile="${deploy.dir}/MPS-os-specific.mac/mps" />
+    <antcall target="MPS-os-specific.mac" inheritall="true">
+      <param name="deploy.dir" value="${deploy.dir}" />
+      <param name="input.dir" value="${deploy.dir}/MPS-os-specific.mac" />
+      <param name="output.dir" value="${deploy.dir}/" />
+      <param name="base_dir" value="${base_dir}" />
+    </antcall>
+    <delete dir="${deploy.dir}/MPS-os-specific.mac" />
+  </target>
+  <target name="clean.after" depends="do.the.job" />
+</project>

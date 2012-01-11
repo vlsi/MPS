@@ -7537,14 +7537,41 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1224164766442" />
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1223488112620">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1223490762845">
-            <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1223490775784">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1223050118792" resolveInfo="CheckBoxTree" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1223655839255">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1223655839243" resolveInfo="allModulesNode" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5044579612262639750">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5044579612262639751">
+            <property name="name" nameId="tpck.1169194664001" value="tree" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5044579612262639752">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1223050118770" resolveInfo="CheckBoxTree" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5044579612262639753">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5044579612262639754">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1223050118792" resolveInfo="CheckBoxTree" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5044579612262639755">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1223655839243" resolveInfo="allModulesNode" />
+                </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5044579612262639758">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5044579612262639760">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5044579612262639759">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5044579612262639751" resolveInfo="tree" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5044579612262639764">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1229432099429" resolveInfo="checkNodeRecursively" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5044579612262639765">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1223655839243" resolveInfo="allModulesNode" />
+              </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5044579612262639767">
+                <property name="value" nameId="tpee.1068580123138" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1223488112620">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5044579612262639756">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5044579612262639751" resolveInfo="tree" />
           </node>
         </node>
       </node>
