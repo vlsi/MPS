@@ -16,7 +16,6 @@ public class TransientModelsWidgetInstaller {
 
   private StatusBar myStatusBar;
   private TransientModelsWidget myWidget;
-  private boolean myInstalled = false;
   private final MPSProject myProject;
 
   public TransientModelsWidgetInstaller(MPSProject project) {
@@ -27,35 +26,13 @@ public class TransientModelsWidgetInstaller {
   public void init(StatusBar bar) {
     myStatusBar = bar;
     myWidget = new TransientModelsWidget(bar);
-    reloadWidget();
-  }
-
-  public void dispose() {
-    uninstallWidget();
-    MapSequence.fromMap(ourInstances).removeKey(myProject);
-  }
-
-  private void installWidget() {
     myStatusBar.addWidget(myWidget);
-    myInstalled = true;
-  }
-
-  private void uninstallWidget() {
-    myStatusBar.removeWidget(myWidget.ID());
-    myInstalled = false;
-  }
-
-  private void updateWidget() {
     myWidget.update();
   }
 
-  private void reloadWidget() {
-    if (myInstalled && !(SaveTransientModelsPreferences.isShowStatusBarIcon())) {
-      uninstallWidget();
-    } else if (!(myInstalled) && SaveTransientModelsPreferences.isShowStatusBarIcon()) {
-      installWidget();
-    }
-    updateWidget();
+  public void dispose() {
+    myStatusBar.removeWidget(myWidget.ID());
+    MapSequence.fromMap(ourInstances).removeKey(myProject);
   }
 
   public TransientModelsWidget getWidget() {
@@ -64,27 +41,14 @@ public class TransientModelsWidgetInstaller {
 
   public static void updateWidgets() {
     for (Project project : ProjectManager.getInstance().getOpenProjects()) {
-      check_ma0d6w_a0a0a0(MapSequence.fromMap(ourInstances).get(ProjectHelper.toMPSProject(project)));
+      check_ma0d6w_a0a0a0a(MapSequence.fromMap(ourInstances).get(ProjectHelper.toMPSProject(project))).update();
     }
   }
 
-  public static void reloadWidgets() {
-    for (Project project : ProjectManager.getInstance().getOpenProjects()) {
-      check_ma0d6w_a0a0a1(MapSequence.fromMap(ourInstances).get(ProjectHelper.toMPSProject(project)));
-    }
-  }
-
-  private static void check_ma0d6w_a0a0a0(TransientModelsWidgetInstaller checkedDotOperand) {
+  private static TransientModelsWidget check_ma0d6w_a0a0a0a(TransientModelsWidgetInstaller checkedDotOperand) {
     if (null != checkedDotOperand) {
-      checkedDotOperand.updateWidget();
+      return checkedDotOperand.myWidget;
     }
-
-  }
-
-  private static void check_ma0d6w_a0a0a1(TransientModelsWidgetInstaller checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.reloadWidget();
-    }
-
+    return null;
   }
 }

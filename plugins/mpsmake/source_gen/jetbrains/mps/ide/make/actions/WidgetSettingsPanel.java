@@ -14,18 +14,13 @@ import com.intellij.openapi.util.Computable;
 
 /*package*/ class WidgetSettingsPanel extends JPanel {
   private final JCheckBox myShowPopupBox;
-  private final JCheckBox myShowStatusBarIcon;
 
   public WidgetSettingsPanel() {
     super(new GridBagLayout());
     myShowPopupBox = new JCheckBox("Display popup on generation", SaveTransientModelsPreferences.isShowPopup());
-    myShowStatusBarIcon = new JCheckBox("Show status bar icon", SaveTransientModelsPreferences.isShowStatusBarIcon());
-
     myShowPopupBox.setBorder(new EmptyBorder(2, 3, 0, 4));
-    myShowStatusBarIcon.setBorder(new EmptyBorder(0, 2, 0, 4));
 
     add(myShowPopupBox, LayoutUtil.createFieldConstraints(1));
-    add(myShowStatusBarIcon, LayoutUtil.createFieldConstraints(2));
   }
 
   public void showComponent(RelativePoint point) {
@@ -40,7 +35,6 @@ import com.intellij.openapi.util.Computable;
 
   private void onClose() {
     SaveTransientModelsPreferences.setShowPopup(myShowPopupBox.isSelected());
-    SaveTransientModelsPreferences.setShowStatusBar(myShowStatusBarIcon.isSelected());
-    TransientModelsWidgetInstaller.reloadWidgets();
+    TransientModelsWidgetInstaller.updateWidgets();
   }
 }

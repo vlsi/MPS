@@ -702,7 +702,6 @@
     <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.ide.make.actions.SaveTransientModelsPreferences" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsWidget" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
