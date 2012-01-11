@@ -24,22 +24,16 @@ import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-class JarFileData {
+class JarFileData extends AbstractJarFileData {
   private static Logger LOG = Logger.getLogger(JarFileData.class);
-
-  private File myFile;
 
   private Map<String, Set<String>> myFiles = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> mySubDirectories = new HashMap<String, Set<String>>();
   private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
 
   JarFileData(File file) throws IOException {
-    myFile = file;
+    super(file);
     buildCaches();
-  }
-
-  public File getFile() {
-    return myFile;
   }
 
   Set<String> getFiles(String dir) {
@@ -62,12 +56,37 @@ class JarFileData {
     return myFiles.get(path) != null || mySubDirectories.get(path) != null;
   }
 
+  @Override
+  String getParentDirectory(String dir) {
+    int lastSlash = dir.lastIndexOf("/");
+    if (lastSlash == -1) return "";
+    return dir.substring(0, lastSlash);
+  }
+
+  @Override
+  protected Set<String> getDirectoriesFor(String dir) {
+    if (mySubDirectories.get(dir) == null) {
+      mySubDirectories.put(dir, new HashSet<String>());
+    }
+    return mySubDirectories.get(dir);
+  }
+
+  @Override
+  protected Set<String> getFilesFor(String dir) {
+    if (myFiles.get(dir) == null) {
+      myFiles.put(dir, new HashSet<String>());
+    }
+    return myFiles.get(dir);
+  }
+
+  @Override
   InputStream openStream(String path) throws IOException {
     ZipFile zipFile = new ZipFile(myFile);
     ZipEntry entry = myEntries.get(path);
     return new MyInputStream(zipFile, entry);
   }
 
+  @Override
   long getLength(String path) {
     return myEntries.get(path).getSize();
   }
@@ -125,26 +144,6 @@ class JarFileData {
     if (parent.equals(dir)) return;
     getDirectoriesFor(parent).add(dir);
     buildDirectoryCaches(parent);
-  }
-
-  String getParentDirectory(String dir) {
-    int lastSlash = dir.lastIndexOf("/");
-    if (lastSlash == -1) return "";
-    return dir.substring(0, lastSlash);
-  }
-
-  private Set<String> getDirectoriesFor(String dir) {
-    if (mySubDirectories.get(dir) == null) {
-      mySubDirectories.put(dir, new HashSet<String>());
-    }
-    return mySubDirectories.get(dir);
-  }
-
-  private Set<String> getFilesFor(String dir) {
-    if (myFiles.get(dir) == null) {
-      myFiles.put(dir, new HashSet<String>());
-    }
-    return myFiles.get(dir);
   }
 
   private class MyInputStream extends InputStream {

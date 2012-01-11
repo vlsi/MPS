@@ -79,6 +79,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypesManager" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />

@@ -18,6 +18,7 @@ import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.make.IMakeService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import javax.swing.SwingUtilities;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.MPSCore;
@@ -106,7 +107,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
       }
     }
-    myTimer.resume();
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        myTimer.resume();
+      }
+    });
   }
 
   public void suspendTasksProcessing() {
@@ -296,7 +301,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
       }
       if (resume) {
-        myTimer.resume();
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            myTimer.resume();
+          }
+        });
       }
     }
 
