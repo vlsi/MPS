@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.JCheckBox;
 import java.awt.GridBagLayout;
 import javax.swing.border.EmptyBorder;
+import com.intellij.notification.impl.NotificationsConfigurationImpl;
 import jetbrains.mps.ide.common.LayoutUtil;
 import com.intellij.ui.awt.RelativePoint;
 import com.intellij.openapi.ui.popup.JBPopup;
@@ -17,8 +18,9 @@ import com.intellij.openapi.util.Computable;
 
   public WidgetSettingsPanel() {
     super(new GridBagLayout());
-    myShowPopupBox = new JCheckBox("Display popup on generation", SaveTransientModelsPreferences.isShowPopup());
+    myShowPopupBox = new JCheckBox("Display balloon on generation", TransientModelBallonDisplayer.isPopupShown());
     myShowPopupBox.setBorder(new EmptyBorder(2, 3, 0, 4));
+    myShowPopupBox.setEnabled(NotificationsConfigurationImpl.getNotificationsConfigurationImpl().SHOW_BALLOONS);
 
     add(myShowPopupBox, LayoutUtil.createFieldConstraints(1));
   }
@@ -34,7 +36,7 @@ import com.intellij.openapi.util.Computable;
   }
 
   private void onClose() {
-    SaveTransientModelsPreferences.setShowPopup(myShowPopupBox.isSelected());
+    TransientModelBallonDisplayer.setShowPopup(myShowPopupBox.isSelected());
     TransientModelsWidgetInstaller.updateWidgets();
   }
 }
