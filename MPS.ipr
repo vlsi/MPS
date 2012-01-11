@@ -236,6 +236,7 @@
       <modulePath path="${project}/languages/util/gwtsupport/languages/client/client.mpl" folder="languages.gwt" />
       <modulePath path="${project}/languages/util/gwtsupport/solutions/gwtsupport.buildtest/gwtsupport.buildtest.msd" folder="languages.gwt" />
       <modulePath path="${project}/languages/util/gwtsupport/solutions/gwtsupport.sandbox/gwtsupport.sandbox.msd" folder="languages.gwt" />
+      <modulePath path="${project}/languages/util/ideUiLanguage/uiLanguage.mpl" />
       <modulePath path="${project}/languages/util/math/math.mpl" folder="baseLanguage.math" />
       <modulePath path="${project}/languages/util/math/runtimeSolution/jetbrains.mps.baseLanguage.math.runtime.msd" folder="baseLanguage.math" />
       <modulePath path="${project}/languages/util/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/jetbrains.mps.baseLanguage.math.sandbox.msd" folder="baseLanguage.math" />
@@ -393,7 +394,6 @@
       <modulePath path="${project}/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="testbench" />
       <modulePath path="${project}/workbench/baseLanguageIndex/jetbrains.mps.baseLanguage.index.msd" folder="baseLanguage" />
       <modulePath path="${project}/workbench/ideSolution/jetbrains.mps.ide.msd" folder="workbench" />
-      <modulePath path="${project}/workbench/ideUiLanguage/uiLanguage.mpl" folder="languages.uiLanguage" />
       <modulePath path="${project}/workbench/make/jetbrains.mps.workbench.make.msd" folder="workbench" />
       <modulePath path="${project}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench" />
       <modulePath path="${project}/workbench/mps-platform/base.msd" folder="workbench" />
