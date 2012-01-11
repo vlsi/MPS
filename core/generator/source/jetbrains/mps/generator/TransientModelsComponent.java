@@ -162,7 +162,20 @@ public class TransientModelsComponent implements ProjectComponent {
     if(myModelsToKeepMax <= 0) {
       return true;
     }
-    return myKeptModels++ < myModelsToKeepMax;
+    synchronized (this) {
+      return myKeptModels++ < myModelsToKeepMax;
+    }
+  }
+
+  public void decreaseKeptModels() {
+    if(myModelsToKeepMax <= 0) {
+      return;
+    }
+    synchronized (this) {
+      if(myKeptModels > 0) {
+        myKeptModels--;
+      }
+    }
   }
 
   public TransientSwapOwner getTransientSwapOwner() {
