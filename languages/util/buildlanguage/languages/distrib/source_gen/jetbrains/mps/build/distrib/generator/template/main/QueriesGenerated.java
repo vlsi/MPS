@@ -13,9 +13,9 @@ import jetbrains.mps.build.distrib.behavior.AbstractPath_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
+import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
@@ -102,6 +102,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1230208124305(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5198087850870256035(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "${ant.file." + Configuration_Behavior.call_getBuildFileName_1230217425313(SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false)) + DistribConfiguration_Behavior.getSuffix_1240229578757() + "}/../";
   }
 
   public static Object propertyMacro_GetPropertyValue_4738159245302510147(final IOperationContext operationContext, final PropertyMacroContext _context) {
