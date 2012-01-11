@@ -59,9 +59,10 @@ public class ExcludedSourceFoldersGenerator {
     for (Object content:rootManager.getChildren(CONTENT)){
       Element contentXML = (Element) content;
       String exclDir = contentXML.getAttributeValue(URL);
-      Element exclXML = new Element("directory");
+      Element exclXML = new Element(DIRECTORY);
       exclXML.setAttribute(URL,exclDir.replace(PATH_START_MODULE,PATH_START_PROJECT));
-      rootElement.addContent(exclXML);
+      exclXML.setAttribute("includeSubdirectories","true");
+      excludeXML.addContent(exclXML);
     }
   }
 
@@ -114,7 +115,7 @@ public class ExcludedSourceFoldersGenerator {
     String[] dirs = {"languages", "obsolete", "plugins", "samples", "core/dependencies"};
     ExcludedSourceFoldersGenerator generator = new ExcludedSourceFoldersGenerator(dirs);
 
-    generator.generateModuleFile();
+    //generator.generateModuleFile();
     generator.generateCompilerFile();
   }
 }
