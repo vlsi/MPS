@@ -46,9 +46,9 @@ public class ExcludedSourceFoldersGenerator {
 
   public void generateCompilerFile() throws JDOMException, IOException {
     Document doc = JDOMUtil.loadDocument(myModuleFile);
-    Document compiler  = JDOMUtil.loadDocument(myCompilerFile);
+    Document compiler = JDOMUtil.loadDocument(myCompilerFile);
 
-    addExcluded(getComponentWithNameXML(compiler, COMPILER_CONFIGURATION), getComponentWithNameXML(doc,MODULE_ROOT_MANAGER));
+    addExcluded(getComponentWithNameXML(compiler, COMPILER_CONFIGURATION), getComponentWithNameXML(doc, MODULE_ROOT_MANAGER));
 
     JDOMUtil.writeDocument(compiler, myCompilerFile);
   }
@@ -56,13 +56,15 @@ public class ExcludedSourceFoldersGenerator {
   private void addExcluded(Element rootElement, Element rootManager) {
     Element excludeXML = rootElement.getChild("excludeFromCompile");
     excludeXML.removeChildren(DIRECTORY);
-    for (Object content:rootManager.getChildren(CONTENT)){
-      Element contentXML = (Element) content;
-      String exclDir = contentXML.getAttributeValue(URL);
-      Element exclXML = new Element(DIRECTORY);
-      exclXML.setAttribute(URL,exclDir.replace(PATH_START_MODULE,PATH_START_PROJECT));
-      exclXML.setAttribute("includeSubdirectories","true");
-      excludeXML.addContent(exclXML);
+    for (Object content : rootManager.getChildren(CONTENT)) {
+      for (Object source : ((Element) content).getChildren(SOURCE_FOLDER)) {
+        Element sourceXML = (Element) source;
+        String exclDir = sourceXML.getAttributeValue(URL);
+        Element exclXML = new Element(DIRECTORY);
+        exclXML.setAttribute(URL, exclDir.replace(PATH_START_MODULE, PATH_START_PROJECT));
+        exclXML.setAttribute("includeSubdirectories", "true");
+        excludeXML.addContent(exclXML);
+      }
     }
   }
 
@@ -79,9 +81,9 @@ public class ExcludedSourceFoldersGenerator {
     JDOMUtil.writeDocument(doc, myModuleFile);
   }
 
-  private Element getComponentWithNameXML(Document doc,String name) {
-    for (Object component:doc.getRootElement().getChildren(COMPONENT)){
-      Element compXML  = (Element) component;
+  private Element getComponentWithNameXML(Document doc, String name) {
+    for (Object component : doc.getRootElement().getChildren(COMPONENT)) {
+      Element compXML = (Element) component;
       if (compXML.getAttributeValue(NAME).equals(name)) return compXML;
     }
     throw new IllegalStateException();
