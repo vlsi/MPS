@@ -62,8 +62,9 @@ public class MPSMakeLauncher {
             return;
         }
         try {
-            myCommandLine = buildCommandLine(collectClassPath());
+            myCommandLine = buildCommandLine(collectClassPath());            
         } catch (Exception e) {
+            LOG.error(e);
             return;
         }
         this.myValid = true;
@@ -152,7 +153,6 @@ public class MPSMakeLauncher {
         }
 
         File [] pathsToLook = new File[]{
-                new File(mpsPluginHome, "classes"),
                 new File(mpsPluginHome, "lib"),
                 new File(ideaHome, "lib")
                 };
@@ -167,6 +167,7 @@ public class MPSMakeLauncher {
                 gatherAllClassesAndJarsUnder(path, classPaths);
             }
         }
+        // support running from sources
         File classes = new File(mpsPluginHome, "classes");
         if (classes.exists()) {
             classPaths.add(classes);
