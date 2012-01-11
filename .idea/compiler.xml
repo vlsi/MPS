@@ -178,6 +178,9 @@
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/unitTest/solutions/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/unitTest/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages" includeSubdirectories="false" />
+      <directory url="file://$PROJECT_DIR$/plugins" includeSubdirectories="false" />
+      <directory url="file://$PROJECT_DIR$/samples" includeSubdirectories="false" />
     </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
