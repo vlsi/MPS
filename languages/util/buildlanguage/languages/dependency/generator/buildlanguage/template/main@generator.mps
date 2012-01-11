@@ -91,7 +91,7 @@
       <node role="propertyFile" roleId="tpsk.1240398738487" type="tpsk.FileName" typeId="tpsk.1199031681512" id="4738159245302261851">
         <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4738159245302261862">
           <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4738159245302261865">
-            <property name="value" nameId="tpsk.1196861024475" value="${ant.file.antfilename}/../" />
+            <property name="value" nameId="tpsk.1196861024475" value="${ant.file}/../" />
           </node>
           <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4738159245302261852">
             <property name="value" nameId="tpsk.1196861024475" value="properties.file" />
