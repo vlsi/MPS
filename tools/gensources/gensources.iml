@@ -230,9 +230,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../workbench/ideUiLanguage/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../workbench/ideUiLanguage/source_gen" isTestSource="false" />
-    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="kernel" />
