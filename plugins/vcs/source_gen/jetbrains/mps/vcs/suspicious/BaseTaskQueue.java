@@ -35,7 +35,7 @@ public abstract class BaseTaskQueue<T> {
     }
   }
 
-  protected void process() {
+  private void process() {
     myTimer.suspend();
     if (myTasks.isEmpty()) {
       return;
