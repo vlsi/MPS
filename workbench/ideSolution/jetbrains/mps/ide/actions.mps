@@ -137,8 +137,8 @@
   <import index="rfkh" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.bookmark(MPS.Workbench/jetbrains.mps.ide.bookmark@java_stub)" version="-1" />
   <import index="srng" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" version="-1" />
   <import index="3jr0" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.execution.filters(MPS.Workbench/com.intellij.execution.filters@java_stub)" version="-1" />
-  <import index="ekwn" modelUID="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" version="-1" />
   <import index="vowt" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.util(MPS.Workbench/jetbrains.mps.ide.util@java_stub)" version="-1" />
+  <import index="ekwn" modelUID="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -986,9 +986,9 @@
       <property name="name" nameId="tpck.1169194664001" value="IDE" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="IDE core plugin" />
       <property name="version" nameId="tp4k.5023285075122009369" value="2.0" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
-      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
+      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2010440180771532928">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions" />
@@ -1197,10 +1197,6 @@
       <property name="name" nameId="tpck.1169194664001" value="JavaStackTraceFilter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="analyzeTrace" />
     </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1755502566255660776">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup" />
-      <property name="name" nameId="tpck.1169194664001" value="EditorPopup_Show" />
-    </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8201768447882591963">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="BaseLanguage.Actions" />
       <property name="name" nameId="tpck.1169194664001" value="OverrideImplementMethodAction" />
@@ -1213,12 +1209,9 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="BaseLanguage.Actions" />
       <property name="name" nameId="tpck.1169194664001" value="OverrideImplementMethodsHelper" />
     </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2704531651333004425">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node" />
-      <property name="name" nameId="tpck.1169194664001" value="NodeRefactoring" />
-      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
-      <property name="caption" nameId="tp4k.1204991940915" value="Refactoring" />
-      <property name="mnemonic" nameId="tp4k.1205160812895" value="r" />
+    <node type="tp4k.PreferencesComponentDeclaration" typeId="tp4k.1210179134063" id="1818770337282919795">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior.Actions" />
+      <property name="name" nameId="tpck.1169194664001" value="BehaviorDialogsPersistentOptions" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1818770337282866379">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior.Actions" />
@@ -1228,13 +1221,20 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior.Actions" />
       <property name="name" nameId="tpck.1169194664001" value="OverrideConceptMethodsDialog" />
     </node>
-    <node type="tp4k.PreferencesComponentDeclaration" typeId="tp4k.1210179134063" id="1818770337282919795">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior.Actions" />
-      <property name="name" nameId="tpck.1169194664001" value="BehaviorDialogsPersistentOptions" />
-    </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1818770337282928852">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior.Actions" />
       <property name="name" nameId="tpck.1169194664001" value="OverrideConceptMethodsHelper" />
+    </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1755502566255660776">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup" />
+      <property name="name" nameId="tpck.1169194664001" value="EditorPopup_Show" />
+    </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2704531651333004425">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node" />
+      <property name="name" nameId="tpck.1169194664001" value="NodeRefactoring" />
+      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
+      <property name="caption" nameId="tp4k.1204991940915" value="Refactoring" />
+      <property name="mnemonic" nameId="tp4k.1205160812895" value="r" />
     </node>
   </roots>
   <root id="1204991218714">
@@ -1479,8 +1479,8 @@
   </root>
   <root id="1204991235731">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1205007875051">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.5495648829643707068" resolveInfo="IDE_Edit" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.5495648829643707070" resolveInfo="toplevel" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.5495648829643707068" resolveInfo="IDE_Edit" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148341327">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="7918601149636494325" />
@@ -1647,8 +1647,8 @@
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="1217431278099" resolveInfo="vcs" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1221752224444">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660802" resolveInfo="vcs" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1234535880027">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="401659284115173011" resolveInfo="CommonModuleActions" />
@@ -19930,8 +19930,8 @@
   </root>
   <root id="5980126212935065634">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="5980126212935067415">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660791" resolveInfo="folding" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="5980126212935211523">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5354546887831012890">
@@ -20784,8 +20784,8 @@
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="3464435412756462059">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660798" resolveInfo="debug" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="3464435412756462060">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991215587" resolveInfo="NodeActions" />
@@ -21473,8 +21473,8 @@
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="1237990522669" resolveInfo="find" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1587195459761470375">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660800" resolveInfo="find" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1587195459761469118">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1587195459761469120">
@@ -25598,29 +25598,6 @@
       </node>
     </node>
   </root>
-  <root id="1755502566255660776">
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1755502566255660778">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6925945455225236218">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216124527478" resolveInfo="ShowInLogicalView" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5535460359399605860">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216125431295" resolveInfo="ShowNodeInInspector" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5535460359399672327">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216119398364" resolveInfo="ShowClassInHierarchy" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5535460359399672328">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216120033386" resolveInfo="ShowConceptInHierarchy" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1755502566255660781">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7397015581138491059" resolveInfo="ShowImplementations" />
-      </node>
-    </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1755502566255660779">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660786" resolveInfo="showIn" />
-    </node>
-  </root>
   <root id="8201768447882591963">
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="6718491559699995864">
       <property name="name" nameId="tpck.1169194664001" value="myProject" />
@@ -28347,12 +28324,28 @@
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1420447232772685745" />
     </node>
   </root>
-  <root id="2704531651333004425">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2704531651333004427">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1587195459761469116" resolveInfo="FindUsages" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="1587195459761469122" resolveInfo="refactoring" />
+  <root id="1818770337282919795">
+    <node role="persistenPropertyDeclaration" roleId="tp4k.1210179829398" type="tp4k.PersistentPropertyDeclaration" typeId="tp4k.1210179190070" id="1818770337282919796">
+      <property name="name" nameId="tpck.1169194664001" value="addReturnsOnImplement" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1818770337282919797" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1818770337282919798">
+        <property name="value" nameId="tpee.1068580123138" value="false" />
+      </node>
     </node>
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2704531651333004437" />
+    <node role="persistenPropertyDeclaration" roleId="tp4k.1210179829398" type="tp4k.PersistentPropertyDeclaration" typeId="tp4k.1210179190070" id="1818770337282919799">
+      <property name="name" nameId="tpck.1169194664001" value="sortAlphabetically" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1818770337282919800" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1818770337282919801">
+        <property name="value" nameId="tpee.1068580123138" value="false" />
+      </node>
+    </node>
+    <node role="persistenPropertyDeclaration" roleId="tp4k.1210179829398" type="tp4k.PersistentPropertyDeclaration" typeId="tp4k.1210179190070" id="1818770337282919805">
+      <property name="name" nameId="tpck.1169194664001" value="removeAttributes" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1818770337282919806" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1818770337282919807">
+        <property name="value" nameId="tpee.1068580123138" value="true" />
+      </node>
+    </node>
   </root>
   <root id="1818770337282866379">
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1818770337282874389">
@@ -29712,29 +29705,6 @@
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vowt.~GroupedNodesChooser" resolveInfo="GroupedNodesChooser" />
     </node>
   </root>
-  <root id="1818770337282919795">
-    <node role="persistenPropertyDeclaration" roleId="tp4k.1210179829398" type="tp4k.PersistentPropertyDeclaration" typeId="tp4k.1210179190070" id="1818770337282919796">
-      <property name="name" nameId="tpck.1169194664001" value="addReturnsOnImplement" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1818770337282919797" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1818770337282919798">
-        <property name="value" nameId="tpee.1068580123138" value="false" />
-      </node>
-    </node>
-    <node role="persistenPropertyDeclaration" roleId="tp4k.1210179829398" type="tp4k.PersistentPropertyDeclaration" typeId="tp4k.1210179190070" id="1818770337282919799">
-      <property name="name" nameId="tpck.1169194664001" value="sortAlphabetically" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1818770337282919800" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1818770337282919801">
-        <property name="value" nameId="tpee.1068580123138" value="false" />
-      </node>
-    </node>
-    <node role="persistenPropertyDeclaration" roleId="tp4k.1210179829398" type="tp4k.PersistentPropertyDeclaration" typeId="tp4k.1210179190070" id="1818770337282919805">
-      <property name="name" nameId="tpck.1169194664001" value="removeAttributes" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1818770337282919806" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1818770337282919807">
-        <property name="value" nameId="tpee.1068580123138" value="true" />
-      </node>
-    </node>
-  </root>
   <root id="1818770337282928852">
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1818770337282928927">
       <property name="name" nameId="tpck.1169194664001" value="insertMethods" />
@@ -30566,6 +30536,36 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1818770337282928918" />
       </node>
     </node>
+  </root>
+  <root id="1755502566255660776">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1755502566255660778">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6925945455225236218">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216124527478" resolveInfo="ShowInLogicalView" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5535460359399605860">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216125431295" resolveInfo="ShowNodeInInspector" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5535460359399672327">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216119398364" resolveInfo="ShowClassInHierarchy" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5535460359399672328">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216120033386" resolveInfo="ShowConceptInHierarchy" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1755502566255660781">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7397015581138491059" resolveInfo="ShowImplementations" />
+      </node>
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1755502566255660779">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660786" resolveInfo="showIn" />
+    </node>
+  </root>
+  <root id="2704531651333004425">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2704531651333004427">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1587195459761469116" resolveInfo="FindUsages" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="1587195459761469122" resolveInfo="refactoring" />
+    </node>
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2704531651333004437" />
   </root>
 </model>
 
