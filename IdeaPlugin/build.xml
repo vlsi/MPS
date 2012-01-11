@@ -69,6 +69,8 @@
                 <file file="${base_dir}/IdeaPlugin/mps-core/languages/generate.ant.task.jar"/>
             </resources>
         </copy>
+        <rename src="${base_dir}/IdeaPlugin/mps-core/lib/generate.ant.task.jar"
+                dest="${base_dir}/IdeaPlugin/mps-core/lib/mps-ant.jar"/>
         <!-- TODO build languages -->
     </target>
 
@@ -77,6 +79,12 @@
     </target>
 
     <target name="compile">
+        <condition property="lang.dir.exists">
+            <available file="${base_dir}/IdeaPlugin/mps-core/languages" type="dir"/>
+        </condition>
+        <fail unless="${lang.dir.exists}"
+              message="Please copy all languages from the latest MPS build"/>
+
         <mkdir dir="${dist.dir}"/>
         <mkdir dir="${dist.dir}/lib"/>
         <mkdir dir="${dist.dir}/languages"/>
@@ -85,6 +93,15 @@
         <copy includeemptydirs="false" todir="${dist.dir}/languages">
             <fileset dir="${base_dir}/IdeaPlugin/mps-core/languages" erroronmissingdir="false"/>
         </copy>
+        <copy todir="${dist.dir}/lib" flatten="true">
+            <resources>
+                <file file="${base_dir}/lib/asm.jar"/>
+                <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
+                <file file="${base_dir}/IdeaPlugin/mps-core/languages/generate.ant.task.jar"/>
+            </resources>
+        </copy>
+        <rename src="${dist.dir}/lib/generate.ant.task.jar"
+                dest="${dist.dir}/lib/mps-ant.jar"/>
 
         <!-- MPS Core -->
         <mkdir dir="${build_dir}/mpscore_jar"/>
@@ -191,12 +208,6 @@
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
-        <copy todir="${dist.dir}/lib" flatten="true">
-            <resources>
-                <file file="${base_dir}/lib/asm.jar"/>
-                <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
-            </resources>
-        </copy>
 
         <!-- IDEA workbench -->
         <mkdir dir="${build_dir}/mpsworkbench_jar"/>
@@ -285,6 +296,7 @@
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+                <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
             </classpath>
         </javac2>
         <copy includeemptydirs="false" todir="${build_dir}/mpsplugin_jar">

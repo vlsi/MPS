@@ -3,7 +3,7 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/mps-core/lib/diffutils-1.2.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/asm.jar!/" />
-      <root url="jar://$PROJECT_DIR$/mps-core/lib/generate.ant.task.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-ant.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

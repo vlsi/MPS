@@ -94,7 +94,6 @@ public class MPSGenerationLauncher {
         File [] pathsToLook = new File[]{
                 new File(mpsPluginHome, "classes"),
                 new File(mpsPluginHome, "lib"),
-                new File(new File(mpsPluginHome, "languages"), "generate.ant.task.jar"),
                 };
 
         Set<File> classPaths = new LinkedHashSet<File>();
@@ -120,7 +119,7 @@ public class MPSGenerationLauncher {
         //  files go first
         for (File f : children) {
             if (!(f.isDirectory())) {
-                if (f.getName().endsWith(".jar") && !(f.getName().contains("ant.jar"))) {
+                if (f.getName().endsWith(".jar")) {
                     result.add(f);
                 }
             }
