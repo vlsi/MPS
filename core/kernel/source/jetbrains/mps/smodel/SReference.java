@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
@@ -137,14 +139,33 @@ public abstract class SReference {
       ourErrorReportedRefs.add(this);
 
       Logger log = Logger.getLogger(this.getClass());
-      log.error("\ncouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
+      log.error("\ncouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), validNode(getSourceNode()));
       if (message != null) log.error(" -- " + message);
-      if(problems != null) {
-        for(ProblemDescription pd : problems) {
-          log.error(pd.getMessage(), pd.getNode());
+      if (problems != null) {
+        for (ProblemDescription pd : problems) {
+          log.error(pd.getMessage(), validNode(pd.getNode().getNode()));
         }
       }
     }
+  }
+
+  protected static SNodePointer validNode(SNode node) {
+    if (node == null) {
+      return null;
+    }
+
+    SModel model = node.getModel();
+    if (!model.isTransient()) {
+      return new SNodePointer(node);
+    }
+
+    IModule module = model.getModelDescriptor().getModule();
+    if (module instanceof TransientModelsModule) {
+      if (((TransientModelsModule) module).addModelToKeep(model, false)) {
+        return new SNodePointer(node);
+      }
+    }
+    return null;
   }
 
   public static class ProblemDescription {
@@ -152,11 +173,12 @@ public abstract class SReference {
     private SNodePointer myNode;
     private String myMessage;
 
-    public ProblemDescription(SNodePointer node, String message) {
+    public ProblemDescription(@NotNull SNodePointer node, String message) {
       myNode = node;
       myMessage = message;
     }
 
+    @NotNull
     public SNodePointer getNode() {
       return myNode;
     }
