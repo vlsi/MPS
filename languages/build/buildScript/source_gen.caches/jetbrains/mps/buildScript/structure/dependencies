@@ -180,7 +180,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.buildScript.structure.BuildSourcePathBase" file="BuildSourcePathBase.java">
+  <dependency className="jetbrains.mps.buildScript.structure.BuildSource_JavaContentFolder" file="BuildSource_JavaContentFolder.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -190,7 +190,18 @@
   </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.BuildSource_JavaContentRoot" file="BuildSource_JavaContentRoot.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSourcePath" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSource_JavaContentFolder" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.buildScript.structure.BuildSource_JavaDependency" file="BuildSource_JavaDependency.java">
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -203,8 +214,19 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSourceModule" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSource_JavaContentRoot" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSource_JavaDependency" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.buildScript.structure.BuildSource_JavaModuleDependency" file="BuildSource_JavaModuleDependency.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSource_JavaDependency" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSource_JavaModule" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

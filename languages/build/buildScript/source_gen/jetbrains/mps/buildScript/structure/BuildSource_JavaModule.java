@@ -18,6 +18,7 @@ public class BuildSource_JavaModule extends BuildSourceModule implements INamedC
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONTENT_ROOTS = "contentRoots";
+  public static final String DEPENDENCIES = "dependencies";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BuildSource_JavaModule(SNode node) {
@@ -74,6 +75,26 @@ public class BuildSource_JavaModule extends BuildSourceModule implements INamedC
 
   public void insertContentRoots(BuildSource_JavaContentRoot prev, BuildSource_JavaContentRoot node) {
     this.insertChild(prev, BuildSource_JavaModule.CONTENT_ROOTS, node);
+  }
+
+  public int getDependenciesesCount() {
+    return this.getChildCount(BuildSource_JavaModule.DEPENDENCIES);
+  }
+
+  public Iterator<BuildSource_JavaDependency> dependencieses() {
+    return this.children(BuildSource_JavaDependency.class, BuildSource_JavaModule.DEPENDENCIES);
+  }
+
+  public List<BuildSource_JavaDependency> getDependencieses() {
+    return this.getChildren(BuildSource_JavaDependency.class, BuildSource_JavaModule.DEPENDENCIES);
+  }
+
+  public void addDependencies(BuildSource_JavaDependency node) {
+    this.addChild(BuildSource_JavaModule.DEPENDENCIES, node);
+  }
+
+  public void insertDependencies(BuildSource_JavaDependency prev, BuildSource_JavaDependency node) {
+    this.insertChild(prev, BuildSource_JavaModule.DEPENDENCIES, node);
   }
 
   public int getSmodelAttributesCount() {

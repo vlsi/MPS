@@ -4,6 +4,8 @@ package jetbrains.mps.buildScript.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -11,6 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 public class BuildSource_JavaContentRoot extends BaseConcept {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildSource_JavaContentRoot";
   public static final String BASE_PATH = "basePath";
+  public static final String FOLDERS = "folders";
 
   public BuildSource_JavaContentRoot(SNode node) {
     super(node);
@@ -22,6 +25,26 @@ public class BuildSource_JavaContentRoot extends BaseConcept {
 
   public void setBasePath(BuildSourcePath node) {
     super.setChild(BuildSource_JavaContentRoot.BASE_PATH, node);
+  }
+
+  public int getFoldersesCount() {
+    return this.getChildCount(BuildSource_JavaContentRoot.FOLDERS);
+  }
+
+  public Iterator<BuildSource_JavaContentFolder> folderses() {
+    return this.children(BuildSource_JavaContentFolder.class, BuildSource_JavaContentRoot.FOLDERS);
+  }
+
+  public List<BuildSource_JavaContentFolder> getFolderses() {
+    return this.getChildren(BuildSource_JavaContentFolder.class, BuildSource_JavaContentRoot.FOLDERS);
+  }
+
+  public void addFolders(BuildSource_JavaContentFolder node) {
+    this.addChild(BuildSource_JavaContentRoot.FOLDERS, node);
+  }
+
+  public void insertFolders(BuildSource_JavaContentFolder prev, BuildSource_JavaContentFolder node) {
+    this.insertChild(prev, BuildSource_JavaContentRoot.FOLDERS, node);
   }
 
   public static BuildSource_JavaContentRoot newInstance(SModel sm, boolean init) {

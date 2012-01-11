@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 
 public class BuildScript_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -47,11 +46,10 @@ public class BuildScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1z9uy1_k0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1z9uy1_l0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1z9uy1_m0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1z9uy1_n0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1z9uy1_o0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1z9uy1_n0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1z9uy1_o0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1z9uy1_p0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1z9uy1_q0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_1z9uy1_r0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_1z9uy1_q0(editorContext, node));
     return editorCell;
   }
 
@@ -146,19 +144,8 @@ public class BuildScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1z9uy1_m0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_1z9uy1_m0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_1z9uy1_n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "layout:");
-    editorCell.setCellId("Constant_1z9uy1_n0");
+    editorCell.setCellId("Constant_1z9uy1_m0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -168,9 +155,9 @@ public class BuildScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1z9uy1_p0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1z9uy1_o0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_1z9uy1_p0");
+    editorCell.setCellId("Constant_1z9uy1_o0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -179,9 +166,9 @@ public class BuildScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1z9uy1_q0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1z9uy1_p0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "artifacts:");
-    editorCell.setCellId("Constant_1z9uy1_q0");
+    editorCell.setCellId("Constant_1z9uy1_p0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -233,8 +220,8 @@ public class BuildScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_1z9uy1_r0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildScript_Editor.artifactsListHandler_1z9uy1_r0(node, "artifacts", editorContext);
+  private EditorCell createRefNodeList_1z9uy1_q0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildScript_Editor.artifactsListHandler_1z9uy1_q0(node, "artifacts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_artifacts");
     {
@@ -247,7 +234,7 @@ public class BuildScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1z9uy1_o0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1z9uy1_n0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("layout");
     provider.setNoTargetText("<no layout>");
@@ -387,30 +374,16 @@ public class BuildScript_Editor extends DefaultNodeEditor {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
-          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, " "));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
     }
-
-    @Override
-    public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
-      editorCell.setSelectable(false);
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-      }
-      editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
-      editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
-      return editorCell;
-    }
   }
 
-  private static class artifactsListHandler_1z9uy1_r0 extends RefNodeListHandler {
-    public artifactsListHandler_1z9uy1_r0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class artifactsListHandler_1z9uy1_q0 extends RefNodeListHandler {
+    public artifactsListHandler_1z9uy1_q0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
