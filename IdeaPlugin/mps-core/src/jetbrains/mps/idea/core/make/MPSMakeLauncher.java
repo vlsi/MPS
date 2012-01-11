@@ -121,7 +121,7 @@ public class MPSMakeLauncher {
     }
 
     private Class getWorkerClass() {
-        return TestGenerationWorker.class;
+        return GeneratorWorker.class;
     }
 
     private String getResource(Class<?> cls) {
