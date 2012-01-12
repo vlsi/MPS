@@ -22,10 +22,13 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
+import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -121,5 +124,20 @@ public class GenerationFacade {
                                        GenerationOptions options) {
     return p.getComponent(GeneratorManager.class).
       generateModels(inputModels, invocationContext, generationHandler, progress, messages, options);
+  }
+
+  public static ModelGenerationPlan getGenerationPlan(@NotNull SModelDescriptor inputModel, @Nullable Collection<String> additionalLanguages) {
+    GenerationPlan generationPlan = new GenerationPlan(inputModel.getSModel(), additionalLanguages);
+    final List<List<TemplateMappingConfiguration>> result = new ArrayList<List<TemplateMappingConfiguration>>(generationPlan.getStepCount());
+    for(int i = 0; i < generationPlan.getStepCount(); i++) {
+      List<TemplateMappingConfiguration> oneStep = new ArrayList<TemplateMappingConfiguration>(generationPlan.getMappingConfigurations(i));
+      result.add(oneStep);
+    }
+    return new ModelGenerationPlan() {
+      @Override
+      public List<List<TemplateMappingConfiguration>> getSteps() {
+        return result;
+      }
+    };
   }
 }

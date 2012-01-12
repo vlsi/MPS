@@ -29,7 +29,6 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
 import jetbrains.mps.messages.NodeWithContext;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
@@ -95,9 +94,12 @@ public class GenerationSession {
     ttrace.push("analyzing dependencies", false);
     Collection<String> additionalLanguages =
       parametersProvider instanceof GenerationParametersProviderEx
-        ? ((GenerationParametersProviderEx)parametersProvider).getAdditionalLanguages(myOriginalInputModel)
+        ? ((GenerationParametersProviderEx) parametersProvider).getAdditionalLanguages(myOriginalInputModel)
         : null;
-    myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel(), additionalLanguages);
+    ModelGenerationPlan customPlan = myGenerationOptions.getCustomPlan(myOriginalInputModel);
+    myGenerationPlan = customPlan != null
+      ? new GenerationPlan(myOriginalInputModel.getSModel(), customPlan)
+      : new GenerationPlan(myOriginalInputModel.getSModel(), additionalLanguages);
     if (!checkGenerationPlan(myGenerationPlan)) {
       if (myGenerationOptions.isStrictMode()) {
         throw new GenerationCanceledException();

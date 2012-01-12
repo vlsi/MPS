@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.impl.TemplateSwitchGraph;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
@@ -22,7 +23,6 @@ import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.Pair;
@@ -37,14 +37,18 @@ public class GenerationPlan {
 
   private static final Logger LOG = Logger.getLogger(GenerationPlan.class);
 
-  private Collection<TemplateModule> myGenerators;
+  private final Collection<TemplateModule> myGenerators;
   private Collection<TemplateModel> myTemplateModels;
 
   //  private Set<Language> myLanguages = new HashSet<Language>();
-  private List<List<TemplateMappingConfiguration>> myPlan;
-  private Set<TemplateMappingPriorityRule> myConflictingPriorityRules;
+  private final List<List<TemplateMappingConfiguration>> myPlan;
+  private final Set<TemplateMappingPriorityRule> myConflictingPriorityRules;
   private final String myInputName;
   private TemplateSwitchGraph myTemplateSwitchGraph;
+
+  public GenerationPlan(@NotNull SModel inputModel) {
+    this(inputModel, (Collection<String>) null);
+  }
 
   public GenerationPlan(@NotNull SModel inputModel, Collection<String> additionalLanguages) {
     myInputName = inputModel.getLongName();
@@ -66,6 +70,22 @@ public class GenerationPlan {
       LOG.error(t);
       throw new RuntimeException("Couldn't compute generation steps for model '" + inputModel.getLongName() + "'", t);
     }
+  }
+
+  public GenerationPlan(@NotNull SModel inputModel, @NotNull ModelGenerationPlan plan) {
+    myInputName = inputModel.getLongName();
+    myGenerators = new HashSet<TemplateModule>();
+    myPlan = plan.getSteps();
+    for (List<TemplateMappingConfiguration> step : myPlan) {
+      for (TemplateMappingConfiguration templateMappingConfiguration : step) {
+        myGenerators.add(templateMappingConfiguration.getModel().getModule());
+      }
+    }
+    initTemplateModels();
+    if (myPlan.isEmpty()) {
+      myPlan.add(new ArrayList<TemplateMappingConfiguration>());
+    }
+    myConflictingPriorityRules = Collections.emptySet();
   }
 
   public Collection<TemplateModule> getGenerators() {
