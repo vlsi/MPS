@@ -32,8 +32,8 @@
       <link role="layout" roleId="tps4.7323449223785753314" targetNodeId="2235195415637073459" resolveInfo="MPS" />
     </node>
     <node type="tps4.Block" typeId="tps4.701559220729212645" id="8431776905956472682">
-      <property name="name" nameId="tpck.1169194664001" value="generate.ant.task.jar" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="stuff" />
+      <property name="name" nameId="tpck.1169194664001" value="mps-backend.jar" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="components" />
       <link role="layout" roleId="tps4.7323449223785753314" targetNodeId="2235195415637073459" resolveInfo="MPS" />
     </node>
     <node type="tps4.Block" typeId="tps4.701559220729212645" id="8431776905956472694">
@@ -254,6 +254,9 @@
           </node>
           <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="87733685690769458">
             <link role="block" roleId="tps4.701559220729212648" targetNodeId="87733685690765614" resolveInfo="mps-tuples.jar" />
+          </node>
+          <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="2235195415637077029">
+            <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472682" resolveInfo="mps-backend.jar" />
           </node>
         </node>
         <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="2235195415637076992">
@@ -500,9 +503,6 @@
           </node>
           <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="2235195415637077028">
             <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472948" resolveInfo="util" />
-          </node>
-          <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="2235195415637077029">
-            <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472682" resolveInfo="generate.ant.task.jar" />
           </node>
         </node>
         <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="2235195415637077031">
@@ -1246,7 +1246,7 @@
       <property name="excludes" nameId="tps4.1204107522064" value="" />
       <node role="delete" roleId="tps4.1239622410040" type="tps4.Delete" typeId="tps4.1204122781510" id="8431776905956472684" />
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8431776905956472685">
-        <property name="name" nameId="tps4.1223641503366" value="generate.ant.task.jar" />
+        <property name="name" nameId="tps4.1223641503366" value="mps-backend.jar" />
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Copy" typeId="tps4.1204015075559" id="8431776905956472686">
         <property name="name" nameId="tpck.1169194664001" value="" />
