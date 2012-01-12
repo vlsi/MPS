@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -41,6 +42,7 @@ public class GenerationOptions {
 
   private final IncrementalGenerationStrategy myIncrementalStrategy;
   private final GenerationParametersProvider myParametersProvider;
+  private final Map<SModelDescriptor, ModelGenerationPlan> myCustomPlans;
   private boolean myKeepOutputModel;
 
   private final boolean myGenerateInParallel;
@@ -59,7 +61,8 @@ public class GenerationOptions {
                             boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
                             boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
                             @NotNull IGenerationTracer generationTracer, IncrementalGenerationStrategy incrementalStrategy,
-                            GenerationParametersProvider parametersProvider, boolean keepOutputModel, boolean showBadChildWarning) {
+                            GenerationParametersProvider parametersProvider, boolean keepOutputModel, boolean showBadChildWarning,
+                            Map<SModelDescriptor, ModelGenerationPlan> customPlans) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
@@ -75,6 +78,7 @@ public class GenerationOptions {
     myParametersProvider = parametersProvider;
     myKeepOutputModel = keepOutputModel;
     myShowBadChildWarning = showBadChildWarning;
+    myCustomPlans = customPlans;
   }
 
   public boolean isSaveTransientModels() {
@@ -140,6 +144,10 @@ public class GenerationOptions {
     return myParametersProvider;
   }
 
+  public ModelGenerationPlan getCustomPlan(@NotNull SModelDescriptor model) {
+    return myCustomPlans.get(model);
+  }
+
   public static OptionsBuilder getDefaults() {
     return new OptionsBuilder();
   }
@@ -188,6 +196,7 @@ public class GenerationOptions {
         return false;
       }
     };
+    private Map<SModelDescriptor, ModelGenerationPlan> myCustomPlans = new HashMap<SModelDescriptor, ModelGenerationPlan>();
     private boolean myGenerateInParallel = false;
     private int myNumberOfThreads = 4;
     private int myTracingMode = TRACE_OFF;
@@ -215,7 +224,7 @@ public class GenerationOptions {
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
         myKeepModelsWithWarnings, myNumberOfModelsToKeep,
         myGenerationTracer == null ? NullGenerationTracer.INSTANCE : myGenerationTracer,
-        myIncrementalStrategy, myParametersProvider, myKeepOutputModel, myShowBadChildWarning);
+        myIncrementalStrategy, myParametersProvider, myKeepOutputModel, myShowBadChildWarning, myCustomPlans);
     }
 
     public OptionsBuilder saveTransientModels(boolean saveTransientModels) {
@@ -270,6 +279,11 @@ public class GenerationOptions {
 
     public OptionsBuilder keepOutputModel(boolean keepOutputModel) {
       myKeepOutputModel = keepOutputModel;
+      return this;
+    }
+
+    public OptionsBuilder customPlan(@NotNull SModelDescriptor model, @NotNull ModelGenerationPlan modelGenerationPlan) {
+      myCustomPlans.put(model, modelGenerationPlan);
       return this;
     }
   }
