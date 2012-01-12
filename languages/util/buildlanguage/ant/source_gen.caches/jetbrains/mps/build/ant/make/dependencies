@@ -2,8 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.ant.make.MakeEnvironment" file="MakeEnvironment.java">
     <classNode dependClassName="com.intellij.idea.IdeaTestApplication" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
@@ -14,9 +12,7 @@
     <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
-    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
     <classNode dependClassName="org.apache.log4j.ConsoleAppender" />
     <classNode dependClassName="org.apache.log4j.Level" />
@@ -50,7 +46,6 @@
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />
   </dependency>
 </dependenciesRoot>

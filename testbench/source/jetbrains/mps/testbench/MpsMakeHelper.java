@@ -15,14 +15,19 @@
  */
 package jetbrains.mps.testbench;
 
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.build.ant.Environment;
 import jetbrains.mps.build.ant.MpsWorker.LogLogger;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.make.MakeEnvironment;
 import jetbrains.mps.build.ant.make.MakeWorker;
+import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.testbench.util.FilesCollector;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern.Type;
+import jetbrains.mps.util.FileUtil;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.util.JavaEnvUtils;
 
@@ -61,7 +66,17 @@ public class MpsMakeHelper {
   private final Environment myEnvironment;
 
   public MpsMakeHelper () {
-    this.myEnvironment = new MakeEnvironment();
+    this.myEnvironment = new MakeEnvironment() {
+      @Override
+      public StandaloneMPSProject createDummyProject() {
+        Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+        File projectFile = FileUtil.createTmpFile();
+        final StandaloneMPSProject project = new StandaloneMPSProject(ideaProject);
+        project.init(new ProjectDescriptor());
+        projectFile.deleteOnExit();
+        return project;
+      }
+    };
   }
 
   public MpsMakeHelper (Environment environment) {
