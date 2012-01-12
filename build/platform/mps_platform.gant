@@ -131,7 +131,7 @@ def layoutFull(String home, String targetDirectory) {
           fileset(dir: "$home/plugins/git4idea/lib", excludes: "**/trilead-ssh2-src.zip")
         }
 
-        layoutPlugin("svn4idea") {
+        layoutPlugin("svn4ideaOld") {
           fileset(dir: "$home/plugins/svn4idea/lib", excludes: "**/svnkitsrc.zip")
         }
 

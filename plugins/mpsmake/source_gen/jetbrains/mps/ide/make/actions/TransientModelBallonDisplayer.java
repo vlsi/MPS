@@ -8,21 +8,28 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.make.IMakeService;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.ui.popup.Balloon;
+import com.intellij.notification.impl.NotificationsConfigurationImpl;
+import com.intellij.notification.NotificationsConfiguration;
+import com.intellij.notification.NotificationDisplayType;
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationType;
+import com.intellij.openapi.ui.popup.BalloonBuilder;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.LightColors;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.ui.popup.Balloon;
+import com.intellij.openapi.util.Disposer;
 import java.awt.Component;
 import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
 import java.awt.Container;
 import java.awt.Rectangle;
 import java.awt.Point;
 import com.intellij.util.ui.UIUtil;
 import java.awt.Dimension;
 import com.intellij.ui.awt.RelativePoint;
-import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.notification.impl.NotificationSettings;
 import javax.swing.JComponent;
 import com.intellij.openapi.wm.StatusBar;
 import jetbrains.mps.make.MakeNotification;
@@ -30,6 +37,8 @@ import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.project.Project;
 
 public class TransientModelBallonDisplayer implements Disposable {
+  private static final String ID = "Saving Transient Models Is On";
+
   private final IMakeNotificationListener myMakeNotificationListener = new TransientModelBallonDisplayer.MyMakeNotificationListener();
   private final MPSProject myProject;
   private final TransientModelBallonDisplayer.MyProjectManagerAdapter myProjectManagerAdapter = new TransientModelBallonDisplayer.MyProjectManagerAdapter();
@@ -43,6 +52,7 @@ public class TransientModelBallonDisplayer implements Disposable {
   public void init() {
     IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
     ProjectManager.getInstance().addProjectManagerListener(ProjectHelper.toIdeaProject(myProject), this.myProjectManagerAdapter);
+    ensureRegistered();
   }
 
   public void dispose() {
@@ -50,35 +60,46 @@ public class TransientModelBallonDisplayer implements Disposable {
     ProjectManager.getInstance().removeProjectManagerListener(ProjectHelper.toIdeaProject(myProject), myProjectManagerAdapter);
   }
 
+  private void ensureRegistered() {
+    if (!(NotificationsConfigurationImpl.getNotificationsConfigurationImpl().isRegistered(ID))) {
+      NotificationsConfiguration.getNotificationsConfiguration().register(ID, NotificationDisplayType.BALLOON, false);
+    }
+  }
+
   private void showBaloonInternal() {
-    final Balloon balloon = JBPopupFactory.getInstance().createHtmlTextBalloonBuilder("Saving transient models is on", null, LightColors.YELLOW, null).setHideOnAction(true).setHideOnClickOutside(true).setHideOnKeyOutside(true).createBalloon();
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        Component component = check_45eojt_a0a0a0a0a1a2(check_45eojt_a0a0a0a0a0b0c(myInstaller));
-        if (component != null && component.isShowing()) {
-          showForComponent(component, balloon);
-        } else {
-          component = check_45eojt_a0a0a1a0a0a0b0c(StatusBarHelper.getStatusBar(myProject));
-          if (component != null && component.isShowing()) {
-            showForComponent(component, balloon);
-          } else {
-            final JRootPane rootPane = SwingUtilities.getRootPane(component);
-            if (rootPane != null && rootPane.isShowing()) {
-              final Container contentPane = rootPane.getContentPane();
-              final Rectangle bounds = contentPane.getBounds();
-              final Point target = UIUtil.getCenterPoint(bounds, new Dimension(1, 1));
-              target.y = bounds.height - 3;
-              balloon.show(new RelativePoint(contentPane, target), Balloon.Position.above);
-            }
-          }
+    Notification notification = new Notification(ID, "Saving transient models", "Saving transient models is on", NotificationType.WARNING);
+    boolean sticky = NotificationsConfigurationImpl.getSettings(ID).getDisplayType() == NotificationDisplayType.STICKY_BALLOON;
+    BalloonBuilder builder = JBPopupFactory.getInstance().createHtmlTextBalloonBuilder("Saving transient models is on", null, LightColors.YELLOW, null).setHideOnAction(!(sticky)).setHideOnClickOutside(!(sticky)).setHideOnKeyOutside(!(sticky));
+    if (!(sticky)) {
+      builder.setFadeoutTime(3000);
+    }
+    final Balloon balloon = builder.createBalloon();
+    notification.setBalloon(balloon);
+
+    Disposer.register(this, balloon);
+
+    Component component = check_45eojt_a0j0d(check_45eojt_a0a9a3(myInstaller));
+    if (component != null && component.isShowing()) {
+      showForComponent(component, balloon);
+    } else {
+      component = check_45eojt_a0a0a01a3(StatusBarHelper.getStatusBar(myProject));
+      if (component != null && component.isShowing()) {
+        showForComponent(component, balloon);
+      } else {
+        final JRootPane rootPane = SwingUtilities.getRootPane(component);
+        if (rootPane != null && rootPane.isShowing()) {
+          final Container contentPane = rootPane.getContentPane();
+          final Rectangle bounds = contentPane.getBounds();
+          final Point target = UIUtil.getCenterPoint(bounds, new Dimension(1, 1));
+          target.y = bounds.height - 3;
+          balloon.show(new RelativePoint(contentPane, target), Balloon.Position.above);
         }
       }
-    });
-    Disposer.register(this, balloon);
+    }
   }
 
   private void showBallon() {
-    if (!(GenerationSettings.getInstance().isSaveTransientModels()) || !(SaveTransientModelsPreferences.isShowPopup())) {
+    if (!(GenerationSettings.getInstance().isSaveTransientModels()) || !(isPopupShown())) {
       return;
     }
     ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -94,21 +115,37 @@ public class TransientModelBallonDisplayer implements Disposable {
     ballon.show(new RelativePoint(component, point), Balloon.Position.above);
   }
 
-  private static JComponent check_45eojt_a0a0a0a0a1a2(TransientModelsWidget checkedDotOperand) {
+  public static boolean isPopupShown() {
+    if (!(NotificationsConfigurationImpl.getNotificationsConfigurationImpl().SHOW_BALLOONS)) {
+      return false;
+    }
+    NotificationDisplayType displayType = NotificationsConfigurationImpl.getSettings(ID).getDisplayType();
+    return displayType == NotificationDisplayType.BALLOON || displayType == NotificationDisplayType.STICKY_BALLOON;
+  }
+
+  public static void setShowPopup(boolean show) {
+    NotificationSettings settings = NotificationsConfigurationImpl.getSettings(ID);
+    settings.setDisplayType((show ?
+      NotificationDisplayType.BALLOON :
+      NotificationDisplayType.NONE
+    ));
+  }
+
+  private static JComponent check_45eojt_a0j0d(TransientModelsWidget checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();
     }
     return null;
   }
 
-  private static TransientModelsWidget check_45eojt_a0a0a0a0a0b0c(TransientModelsWidgetInstaller checkedDotOperand) {
+  private static TransientModelsWidget check_45eojt_a0a9a3(TransientModelsWidgetInstaller checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getWidget();
     }
     return null;
   }
 
-  private static JComponent check_45eojt_a0a0a1a0a0a0b0c(StatusBar checkedDotOperand) {
+  private static JComponent check_45eojt_a0a0a01a3(StatusBar checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();
     }

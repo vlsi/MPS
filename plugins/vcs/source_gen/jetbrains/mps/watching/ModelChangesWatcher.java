@@ -115,7 +115,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
   }
 
   public void suspendTasksProcessing() {
-    myTimer.suspend();
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        myTimer.suspend();
+      }
+    });
     synchronized (myLock) {
       myBans++;
     }
