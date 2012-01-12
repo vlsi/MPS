@@ -708,7 +708,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (cell == null) {
           return null;
         }
-        return getMessageTextFor(cell);
+        return getMessagesTextFor(cell);
       }
     });
   }
@@ -725,7 +725,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (cell == null) {
           return null;
         }
-        if (getMessageTextFor(cell) != null) {
+        if (getMessagesTextFor(cell) != null) {
           return new Point(event.getX(), event.getY());
         } else {
           return null;
@@ -744,9 +744,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         EditorCell selection = getSelectedCell();
         String info = "";
         if (selection != null) {
-          String message = getMessageTextFor(selection);
-          if (message != null) {
-            info = message;
+          List<HighlighterMessage> messages = getHighlighterMessagesFor(selection);
+          if (!messages.isEmpty()) {
+            info = messages.get(0).getMessage();
           }
         }
 
@@ -765,14 +765,38 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
-  private String getMessageTextFor(EditorCell cell) {
-    EditorMessage message = getHighlighterMessageFor(cell);
-    if (message != null) {
-      return message.getMessage();
+  private String getMessagesTextFor(EditorCell cell) {
+    List<HighlighterMessage> messages = getHighlighterMessagesFor(cell);
+    if (messages.isEmpty()) {
+      return null;
     }
-    return null;
+    StringBuilder result = new StringBuilder();
+    for (HighlighterMessage message : messages) {
+      if (result.length() != 0) {
+        result.append("\n");
+      }
+      result.append(message.getMessage());
+    }
+    return result.toString();
   }
 
+  private List<HighlighterMessage> getHighlighterMessagesFor(EditorCell cell) {
+    EditorCell parent = cell;
+    while (parent != null) {
+      if (cell.getBounds().getMaxY() < parent.getBounds().getMaxY() && parent.getSNode() != cell.getSNode()) {
+        return Collections.emptyList();
+      }
+      List<HighlighterMessage> messages = parent.getMessages(HighlighterMessage.class);
+      if (!messages.isEmpty()) {
+        return messages;
+      }
+      parent = parent.getParent();
+    }
+
+    return Collections.emptyList();
+  }
+
+  // TODO: remove this method and use getHighlighterMessagesFor(EditorCell cell) instead
   private HighlighterMessage getHighlighterMessageFor(EditorCell cell) {
     EditorCell parent = cell;
     while (parent != null) {
@@ -800,7 +824,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (cell == null) {
       return;
     }
-    String text = getMessageTextFor(cell);
+    String text = getMessagesTextFor(cell);
     Point point = new Point(cell.getX(), cell.getY() + cell.getHeight());
     MPSToolTipManager.getInstance().showToolTip(text, this, point);
   }

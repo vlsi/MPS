@@ -132,11 +132,21 @@ public class TransientModelsModule extends AbstractModule {
 
   public boolean addModelToKeep(SModel model, boolean force) {
     assert model instanceof TransientSModel;
-    if (!myComponent.canKeepOneMore() && !force) {
-      // maximum number of models reached
-      return myModelsToKeep.contains(model.getSModelReference().toString());
+    String modelRef = model.getSModelReference().toString();
+    if (force) {
+      myModelsToKeep.add(modelRef);
+      return true;
     }
-    myModelsToKeep.add(model.getSModelReference().toString());
+    if (myModelsToKeep.contains(modelRef)) {
+      return true;
+    }
+    if (!myComponent.canKeepOneMore()) {
+      // maximum number of models reached
+      return myModelsToKeep.contains(modelRef);
+    }
+    if (!myModelsToKeep.add(modelRef)) {
+      myComponent.decreaseKeptModels();
+    }
     return true;
   }
 
@@ -251,7 +261,7 @@ public class TransientModelsModule extends AbstractModule {
 
         TransientSwapSpace swap = myComponent.getTransientSwapSpace();
         if (swap == null) throw new IllegalStateException("no swap space");
-
+        
         SModel m = swap.restoreFromSwap(getSModelReference());
         if (m != null) return m;
 

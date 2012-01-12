@@ -1,7 +1,7 @@
 <project name="MPS-external-dist" default="default">
-  <property file="${ant.file}/../MPS.properties" />
-  <import file="${ant.file}/../MPS-external-dist.xml" />
-  <import file="${ant.file}/../MPS-external.xml" />
+  <property file="${ant.file.MPS-external-dist}/../MPS.properties" />
+  <import file="${ant.file.MPS-external-dist}/../MPS-external-dist.xml" />
+  <import file="${ant.file.MPS-external-dist}/../MPS-external.xml" />
   <condition property="windows">
     <os family="windows" />
   </condition>
