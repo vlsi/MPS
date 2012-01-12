@@ -244,6 +244,8 @@ class TypeSystemComponent extends CheckingComponent {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
+    long start = System.currentTimeMillis();
+
     while (node != null) {
       List<SNode> additionalNodes = new ArrayList<SNode>(givenAdditionalNodes);
       if (prevNode != null) {
@@ -255,6 +257,9 @@ class TypeSystemComponent extends CheckingComponent {
         if (node.isRoot()) {
           computeTypes(node, true, true, new ArrayList<SNode>(0), true, initialNode);
           type = getType(initialNode);
+          if(type == null && node != initialNode) {
+            LOG.error("No typesystem rule for " + initialNode.getDebugText() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms" , new SNodePointer(initialNode));
+          }
           return type;
         }
         prevNode = node;
