@@ -96,7 +96,7 @@ public class PathManager {
           assert parent != null : "No parent found for " + root + "; " + BIN_FOLDER + " folder with " + "idea.properties" + " file not found";
           root = new File(parent).getAbsoluteFile();
           //  one step back to get folder 
-        } while (root != null && !(PathManager.isIdeaHome(root)));
+        } while (root != null && !(PathManager.isMpsDir(root)));
         ourHomePath = (root != null ?
           root.getAbsolutePath() :
           null
@@ -118,6 +118,10 @@ public class PathManager {
 
   private static boolean isIdeaHome(final File root) {
     return new File(root, FileUtil.toSystemDependentName("bin/idea.properties")).exists() || new File(root, FileUtil.toSystemDependentName("community/bin/idea.properties")).exists();
+  }
+
+  private static boolean isMpsDir(File file) {
+    return new File(file, "build.number").exists();
   }
 
   public static String getLibPath() {
