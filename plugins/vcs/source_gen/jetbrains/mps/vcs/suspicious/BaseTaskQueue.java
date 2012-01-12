@@ -7,8 +7,6 @@ import java.util.LinkedList;
 import com.intellij.util.ui.Timer;
 import javax.swing.SwingUtilities;
 
-import javax.swing.SwingUtilities;
-
 public abstract class BaseTaskQueue<T> {
   private final Object LOCK = new Object();
   private List<T> myTasks = new LinkedList<T>();
@@ -17,12 +15,7 @@ public abstract class BaseTaskQueue<T> {
   public BaseTaskQueue() {
     myTimer = new Timer("Task Queue", 500) {
       protected void onTimer() throws InterruptedException {
-        SwingUtilities.invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            process();
-          }
-        });
+        process();
       }
     };
   }
