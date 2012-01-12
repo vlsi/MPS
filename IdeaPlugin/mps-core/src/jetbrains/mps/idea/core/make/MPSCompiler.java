@@ -176,12 +176,10 @@ public class MPSCompiler implements TranslatingCompiler {
         MPSMakeLauncher gl = new MPSMakeLauncher(makeConfiguration, myProject);
         gl.validate();
         if (gl.isValid()) {
-            System.out.println("*** command line: "+gl.getCommandLine());
             gl.launch();
         } else {
-            System.out.println("*** invalid :(");
+            MessagesViewTool.log(myProject, MessageKind.ERROR, "Invalid MPS make configuration, unable to make models");
         }
-
     }
 
     public boolean validateConfiguration(CompileScope compileScope) {
