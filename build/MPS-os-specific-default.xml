@@ -103,8 +103,8 @@
       <fileset dir="${base_dir}/help" />
     </copy>
     <copy file="${base_dir}/build/resources/mps.ico" tofile="${deploy.dir}/MPS-os-specific.exe/mps.ico" />
-    <copy file="${base_dir}/build/resources/mps.inst.ico" tofile="${deploy.dir}/MPS-os-specific.exe/mps.inst.ico" />
-    <copy file="${base_dir}/build/resources/mps.uninst.ico" tofile="${deploy.dir}/MPS-os-specific.exe/mps.uninst.ico" />
+    <copy file="${base_dir}/build/resources/mps.inst.ico" tofile="${deploy.dir}/MPS-os-specific.exe/installer.ico" />
+    <copy file="${base_dir}/build/resources/mps.uninst.ico" tofile="${deploy.dir}/MPS-os-specific.exe/uninstaller.ico" />
     <copy file="${base_dir}/build/resources/homepage.ico" tofile="${deploy.dir}/MPS-os-specific.exe/homepage.ico" />
     <copy file="${base_dir}/build/tools/jre.zip" tofile="${deploy.dir}/MPS-os-specific.exe/jre.zip" />
     <copy file="${base_dir}/build/tools/nsis.zip" tofile="${deploy.dir}/MPS-os-specific.exe/nsis.zip" />

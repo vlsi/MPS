@@ -536,6 +536,9 @@
             </node>
           </node>
         </node>
+        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2495440301906772169">
+          <property name="name" nameId="tps4.1223641503366" value="installer.ico" />
+        </node>
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.File" typeId="tps4.1203598322527" id="2113577360859166180">
         <node role="sourcePath" roleId="tps4.1220981955937" type="tps4.Path" typeId="tps4.1220973916698" id="2113577360859166181">
@@ -553,6 +556,9 @@
               <property name="path" nameId="tps4.1220974398640" value="mps.uninst.ico" />
             </node>
           </node>
+        </node>
+        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2495440301906772170">
+          <property name="name" nameId="tps4.1223641503366" value="uninstaller.ico" />
         </node>
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.File" typeId="tps4.1203598322527" id="2113577360859166187">
@@ -1922,20 +1928,6 @@
           <property name="value" nameId="tpsk.1196861024475" value="homepage.ico" />
         </node>
         <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="2113577360859165879" />
-      </node>
-      <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="2113577360859165882">
-        <property name="name" nameId="tpck.1169194664001" value="mps.inst.ico" />
-        <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="2113577360859165883">
-          <property name="value" nameId="tpsk.1196861024475" value="mps.inst.ico" />
-        </node>
-        <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="2113577360859165884" />
-      </node>
-      <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="2113577360859165887">
-        <property name="name" nameId="tpck.1169194664001" value="mps.uninst.ico" />
-        <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="2113577360859165888">
-          <property name="value" nameId="tpsk.1196861024475" value="mps.uninst.ico" />
-        </node>
-        <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="2113577360859165889" />
       </node>
       <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1239643257930">
         <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802813303" resolveInfo="fixcrlf" />

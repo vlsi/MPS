@@ -71,8 +71,6 @@
     <property name="installer.nsi" value="installer.nsi" />
     <property name="mps.ico" value="mps.ico" />
     <property name="homepage.ico" value="homepage.ico" />
-    <property name="mps.inst.ico" value="mps.inst.ico" />
-    <property name="mps.uninst.ico" value="mps.uninst.ico" />
     <fail unless="input.dir" message="Property input.dir unspecified." />
     <fail unless="version" message="Property version unspecified." />
     <fail unless="build.number" message="Property build.number unspecified." />
