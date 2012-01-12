@@ -1,0 +1,19 @@
+<project name="MPS-distribution" default="default">
+  <property file="${ant.file.MPS-distribution}/../MPS.properties" />
+  <include file="${ant.file.MPS-distribution}/../MPS-external.xml" />
+  <include file="${ant.file.MPS-distribution}/../MPS-os-specific-default.xml" />
+  <condition property="windows">
+    <os family="windows" />
+  </condition>
+  <target name="base">
+    <tstamp />
+    <antcall target="MPS-external.main" />
+  </target>
+  <target name="default" depends="base">
+    <antcall target="MPS-os-specific-default.main" />
+    <antcall target="MPS-distribution.clean" />
+  </target>
+  <target name="clean">
+    <delete dir="${deploy.dir}/MPS" />
+  </target>
+</project>

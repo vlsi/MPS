@@ -1,7 +1,7 @@
-<project name="MPS-external-dist-new" default="default">
-  <property file="${ant.file.MPS-external-dist-new}/../MPS.properties" />
-  <include file="${ant.file.MPS-external-dist-new}/../MPS-external.xml" />
-  <include file="${ant.file.MPS-external-dist-new}/../MPS-os-specific-default.xml" />
+<project name="MPS-distribution" default="default">
+  <property file="${ant.file.MPS-distribution}/../MPS.properties" />
+  <include file="${ant.file.MPS-distribution}/../MPS-external.xml" />
+  <include file="${ant.file.MPS-distribution}/../MPS-os-specific-default.xml" />
   <condition property="windows">
     <os family="windows" />
   </condition>
@@ -11,7 +11,7 @@
   </target>
   <target name="default" depends="base">
     <antcall target="MPS-os-specific-default.main" />
-    <antcall target="clean" />
+    <antcall target="MPS-distribution.clean" />
   </target>
   <target name="clean">
     <delete dir="${deploy.dir}/MPS" />

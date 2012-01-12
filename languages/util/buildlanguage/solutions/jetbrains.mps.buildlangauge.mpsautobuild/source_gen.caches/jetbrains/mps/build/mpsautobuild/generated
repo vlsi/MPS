@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="96mb3hn5zz317ch6pztzvmoiivjnswj">
+<dependencies version="2" modelHash="-6a3fhu4m0eu1h1g4wilf880f31u3lfo">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-escrx96rk1sqv3d69p0qxosy2e1bgry" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="90a2yqqwsbuerf4u3po1b2jxod6vyfj" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8xy0ts8pxo14x2h465hshq4se632yz6" />
@@ -104,5 +104,19 @@
   <source id="1541469606659920114" name="jetbrains.mps.baseLanguage.closures.runtime-src" hash="-69exwm88o9c1ojdn6lt2tevikii6xju" />
   <source id="1541469606659920142" name="jetbrains.mps.baseLanguage.collections.runtime-src" hash="a8dg9s340d6vjbjful0iiv4a6i0g878" />
   <source id="1541469606659920166" name="jetbrains.mps.baseLanguage.tuples.runtime-src" hash="-391ws6gjfr4yphvobr92n2sk6f8yhny" />
+  <source id="2495440301906773652" name="MPS-buildserver" hash="-73qjdlbmzskjxmcnd2vbdkgu7fynz9m">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
+    <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
+    <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
+    <file name="MPS-buildserver.xml" />
+  </source>
+  <source id="2495440301906978406" name="MPS-distribution" hash="-8ocgozkdsht322p90mbkdej607p4fvw">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
+    <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
+    <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
+    <file name="MPS-distribution.xml" />
+  </source>
 </dependencies>
 
