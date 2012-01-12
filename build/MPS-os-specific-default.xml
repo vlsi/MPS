@@ -109,6 +109,7 @@
     <copy file="${base_dir}/build/tools/jre.zip" tofile="${deploy.dir}/MPS-os-specific.exe/jre.zip" />
     <copy file="${base_dir}/build/tools/nsis.zip" tofile="${deploy.dir}/MPS-os-specific.exe/nsis.zip" />
     <copy file="${base_dir}/build/sign/signtool.exe" tofile="${deploy.dir}/MPS-os-specific.exe/signtool.exe" />
+    <copy file="${base_dir}/build/installer.nsi" tofile="${deploy.dir}/MPS-os-specific.exe/installer.nsi" />
     <antcall target="MPS-os-specific.exe" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/MPS-os-specific.exe" />
