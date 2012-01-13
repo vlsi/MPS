@@ -10,17 +10,24 @@
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="d5033cee-f632-44b6-b308-89d4fbde34ff(jetbrains.mps.build.startup)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tps4" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="8" implicit="yes" />
   <import index="tpsk" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" implicit="yes" />
   <import index="adh8" modelUID="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" version="-1" implicit="yes" />
   <import index="ddum" modelUID="r:1e7ada09-c25e-41ea-a9b5-398e142ef533(jetbrains.mps.build.generictasks.structure)" version="22" implicit="yes" />
+  <import index="s7om" modelUID="r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tps4.Layout" typeId="tps4.1202916958754" id="3765863190879880890">
       <property name="name" nameId="tpck.1169194664001" value="MPS-os-specific" />
     </node>
     <node type="tpsk.Project" typeId="tpsk.1196851066733" id="3765863190879880927">
       <property name="name" nameId="tpck.1169194664001" value="MPS-os-specific" />
+    </node>
+    <node type="s7om.MpsStartupScript" typeId="s7om.3885435385580582152" id="3885435385580582779">
+      <property name="name" nameId="tpck.1169194664001" value="mps" />
+      <property name="startupFolder" nameId="s7om.3885435385580582155" value="bin" />
+      <property name="startupClass" nameId="s7om.3885435385580631186" value="jetbrains.mps.Launcher" />
     </node>
   </roots>
   <root id="3765863190879880890">
@@ -2503,6 +2510,42 @@
     </node>
     <node role="default" roleId="tpsk.1196859969927" type="tpsk.TargetReference" typeId="tpsk.1196852921336" id="5165676431252346091">
       <link role="targetDeclaration" roleId="tpsk.1196852953065" targetNodeId="5165676431252346090" resolveInfo="empty" />
+    </node>
+  </root>
+  <root id="3885435385580582779">
+    <node role="bootClasspath" roleId="s7om.3885435385580582696" type="s7om.ClassPathItem" typeId="s7om.3885435385580582153" id="3885435385580627433">
+      <property name="path" nameId="s7om.3885435385580582154" value="lib/branding.jar" />
+    </node>
+    <node role="bootClasspath" roleId="s7om.3885435385580582696" type="s7om.ClassPathItem" typeId="s7om.3885435385580582153" id="3885435385580627546">
+      <property name="path" nameId="s7om.3885435385580582154" value="lib/mps-boot.jar" />
+    </node>
+    <node role="bootClasspath" roleId="s7om.3885435385580582696" type="s7om.ClassPathItem" typeId="s7om.3885435385580582153" id="3885435385580627547">
+      <property name="path" nameId="s7om.3885435385580582154" value="lib/boot.jar" />
+    </node>
+    <node role="bootClasspath" roleId="s7om.3885435385580582696" type="s7om.ClassPathItem" typeId="s7om.3885435385580582153" id="3885435385580627548">
+      <property name="path" nameId="s7om.3885435385580582154" value="lib/bootstrap.jar" />
+    </node>
+    <node role="bootClasspath" roleId="s7om.3885435385580582696" type="s7om.ClassPathItem" typeId="s7om.3885435385580582153" id="3885435385580627549">
+      <property name="path" nameId="s7om.3885435385580582154" value="lib/util.jar" />
+    </node>
+    <node role="bootClasspath" roleId="s7om.3885435385580582696" type="s7om.ClassPathItem" typeId="s7om.3885435385580582153" id="3885435385580627550">
+      <property name="path" nameId="s7om.3885435385580582154" value="lib/jdom.jar" />
+    </node>
+    <node role="bootClasspath" roleId="s7om.3885435385580582696" type="s7om.ClassPathItem" typeId="s7om.3885435385580582153" id="3885435385580627551">
+      <property name="path" nameId="s7om.3885435385580582154" value="lib/log4j.jar" />
+    </node>
+    <node role="bootClasspath" roleId="s7om.3885435385580582696" type="s7om.ClassPathItem" typeId="s7om.3885435385580582153" id="3885435385580627552">
+      <property name="path" nameId="s7om.3885435385580582154" value="lib/extensions.jar" />
+    </node>
+    <node role="bootClasspath" roleId="s7om.3885435385580582696" type="s7om.ClassPathItem" typeId="s7om.3885435385580582153" id="3885435385580627553">
+      <property name="path" nameId="s7om.3885435385580582154" value="lib/trove4j.jar" />
+    </node>
+    <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="3885435385580627554">
+      <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" />
+    </node>
+    <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="5842819808956906665">
+      <property name="options" nameId="s7om.3885435385580582733" value="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" />
+      <property name="commented" nameId="s7om.5842819808956906658" value="true" />
     </node>
   </root>
 </model>

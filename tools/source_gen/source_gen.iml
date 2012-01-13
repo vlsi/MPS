@@ -246,6 +246,9 @@
     <content url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/property/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/property/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/startup/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/startup/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../languages/util/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/source_gen" isTestSource="false" />
     </content>

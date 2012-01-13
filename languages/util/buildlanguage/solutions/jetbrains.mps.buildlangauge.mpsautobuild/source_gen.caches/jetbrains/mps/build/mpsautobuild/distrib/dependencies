@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.build.mpsautobuild.distrib.Info" file="Info.plist" />
   <dependency className="jetbrains.mps.build.mpsautobuild.distrib.MPS-os-specific-default" file="MPS-os-specific-default.xml" />
   <dependency className="jetbrains.mps.build.mpsautobuild.distrib.MPS-os-specific" file="MPS-os-specific.properties" />
   <dependency className="jetbrains.mps.build.mpsautobuild.distrib.MPS-os-specific" file="MPS-os-specific.xml" />
+  <dependency className="jetbrains.mps.build.mpsautobuild.distrib.mps" file="mps.bat" />
+  <dependency className="jetbrains.mps.build.mpsautobuild.distrib.mps" file="mps.sh" />
+  <dependency className="jetbrains.mps.build.mpsautobuild.distrib.mps" file="mps.vmoptions" />
 </dependenciesRoot>
 
