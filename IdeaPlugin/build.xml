@@ -364,8 +364,16 @@
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac2>
-        <copy todir="${build_dir}/mpsplugintests_jar/jetbrains/mps/idea/core/tests"
-              file="${base_dir}/IdeaPlugin/tests/editorTests/models/test.mps"/>
+        <!-- Test data copied here -->
+        <copy todir="${build_dir}/mpsplugintests_jar/jetbrains/mps/idea/core/tests" flatten="true">
+            <fileset dir="${base_dir}/IdeaPlugin/tests/editorTests">
+                <include name="/models/test.mps"/>
+            </fileset>
+            <fileset dir="${base_dir}/IdeaPlugin/tests/blProject">
+                <include name="blProject.msd"/>
+                <include name="models/main.mps"/>
+            </fileset>
+        </copy>
         <jar destfile="${dist.dir}/lib/mps-plugin-tests.jar">
             <fileset dir="${build_dir}/mpsplugintests_jar"/>
             <manifest>
@@ -377,12 +385,13 @@
         </jar>
     </target>
 
-    <target name="runTests">
+    <target name="runTests" depends="compile, compileTests">
         <delete dir="${plugins.sandbox.dir}"/>
         <mkdir dir="${plugins.sandbox.dir}/plugins"/>
         <copy todir="${plugins.sandbox.dir}/plugins/mps-core">
             <fileset dir="${dist.dir}"/>
         </copy>
+        <mkdir dir="${plugins.sandbox.dir}/test/community/java/mockJDK-1.7"/>
 
         <junit fork="true"
                dir="."
