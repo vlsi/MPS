@@ -142,6 +142,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myIsEditable = true;
 
   private boolean myDisposed = false;
+  // additional debugging field
   private StackTraceElement[] myModelDisposedStackTrace = null;
   private Throwable myDisposedTrace = null;
 
@@ -847,6 +848,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       public void run() {
         IOperationContext operationContext = getOperationContext();
         disposeTypeCheckingContext();
+        clearModelDisposedTrace();
         myNode = node;
         //todo this is because of type system nodes, which are not registered in models. This code should be removed ASAP
         if (myNode != null && myNode.isRegistered()) {
@@ -1214,7 +1216,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private String getModelDisposedMessage() {
     StringBuilder sb = new StringBuilder("Model was disposed through:");
     for (int i = 0; i < myModelDisposedStackTrace.length; i++) {
-      sb.append("\n");
+      sb.append("\nat ");
       sb.append(myModelDisposedStackTrace[i]);
     }
     sb.append("\n");
@@ -1222,6 +1224,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     sb.append(myDisposed);
     sb.append("\n");
     return sb.toString();
+  }
+
+  // This method should be called each time we set new node for and editor
+  protected void clearModelDisposedTrace() {
+    myModelDisposedStackTrace = null;
   }
 
   /*
@@ -2952,6 +2959,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
       if (myNode != null) {
         if (myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
+          clearModelDisposedTrace();
           SNodeId oldId = myNode.getSNodeId();
           myNode = sm.getSModel().getNodeById(oldId);
         }
