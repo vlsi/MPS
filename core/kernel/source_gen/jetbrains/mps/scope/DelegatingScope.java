@@ -4,6 +4,7 @@ package jetbrains.mps.scope;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import org.jetbrains.annotations.Nullable;
 
 public class DelegatingScope extends Scope {
   protected Scope wrapped;
@@ -12,15 +13,20 @@ public class DelegatingScope extends Scope {
     this.wrapped = wrapped;
   }
 
-  public SNode resolve(SNode anchor, String refText) {
-    return wrapped.resolve(anchor, refText);
+  public SNode resolve(SNode contextNode, String refText) {
+    return wrapped.resolve(contextNode, refText);
   }
 
-  public List<SNode> getAvailableElements(String prefix) {
+  public List<SNode> getAvailableElements(@Nullable String prefix) {
     return wrapped.getAvailableElements(prefix);
   }
 
-  public String getReferenceText(SNode anchor, SNode target) {
-    return wrapped.getReferenceText(anchor, target);
+  public String getReferenceText(SNode contextNode, SNode node) {
+    return wrapped.getReferenceText(contextNode, node);
+  }
+
+  @Override
+  public boolean contains(SNode node) {
+    return wrapped.contains(node);
   }
 }
