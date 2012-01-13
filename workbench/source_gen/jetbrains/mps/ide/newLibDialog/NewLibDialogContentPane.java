@@ -51,10 +51,10 @@ public class NewLibDialogContentPane extends JPanel {
     this.myThis = this;
     NewLibDialogContentPane component = this;
     component.setLayout(new GridLayout(4, 1));
-    component.add(this.createComponent_b0());
-    component.add(this.createComponent_c0());
-    component.add(this.createComponent_d0());
-    component.add(this.createComponent_e0());
+    component.add(this.createComponent_zd23x6_b0());
+    component.add(this.createComponent_zd23x6_c0());
+    component.add(this.createComponent_zd23x6_d0());
+    component.add(this.createComponent_zd23x6_e0());
     this.myEvents.initialize();
     myThis.setLibraryPath("");
     myThis.setLibraryName("NewLibrary");
@@ -105,27 +105,27 @@ public class NewLibDialogContentPane extends JPanel {
     }
   }
 
-  private JLabel createComponent_b0() {
+  private JLabel createComponent_zd23x6_b0() {
     JLabel component = new JLabel();
     this.myComponent_b0 = component;
     component.setText("Name:");
     return component;
   }
 
-  private JTextField createComponent_c0() {
+  private JTextField createComponent_zd23x6_c0() {
     JTextField component = new JTextField();
     this.myName_c0 = component;
     return component;
   }
 
-  private JLabel createComponent_d0() {
+  private JLabel createComponent_zd23x6_d0() {
     JLabel component = new JLabel();
     this.myComponent_d0 = component;
     component.setText("Library Path:");
     return component;
   }
 
-  private PathField createComponent_e0() {
+  private PathField createComponent_zd23x6_e0() {
     PathField component = new PathField();
     this.myPath_e0 = component;
     return component;

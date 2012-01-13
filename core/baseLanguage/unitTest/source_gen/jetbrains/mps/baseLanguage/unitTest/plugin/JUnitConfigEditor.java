@@ -97,10 +97,10 @@ public class JUnitConfigEditor extends JPanel {
       }
     });
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent_b0(), LayoutUtil.createFieldConstraints(0));
-    component.add(this.createComponent_c0(), LayoutUtil.createPanelConstraints(1));
-    component.add(this.createComponent_d0(), LayoutUtil.createPanelConstraints(1));
-    component.add(this.createComponent_e0(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_iqjve6_b0(), LayoutUtil.createFieldConstraints(0));
+    component.add(this.createComponent_iqjve6_c0(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_iqjve6_d0(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_iqjve6_e0(), LayoutUtil.createPanelConstraints(1));
     this.myEvents.initialize();
     if (myThis.getProject() != null) {
       myThis.myTestCases_d0.setProject(myThis.getProject().getProject());
@@ -141,27 +141,27 @@ public class JUnitConfigEditor extends JPanel {
     }
   }
 
-  private JPanel createComponent_b0() {
+  private JPanel createComponent_iqjve6_b0() {
     JPanel component = new JPanel();
     this.myComponent_b0 = component;
     component.setLayout(new FlowLayout(FlowLayout.LEFT));
-    component.add(this.createComponent_c1a());
-    component.add(this.createComponent_d1a());
-    component.add(this.createComponent_e1a());
-    component.add(this.createComponent_f1a());
-    component.add(this.createComponent_g1a());
-    component.add(this.createComponent_h1a());
+    component.add(this.createComponent_iqjve6_c1a());
+    component.add(this.createComponent_iqjve6_d1a());
+    component.add(this.createComponent_iqjve6_e1a());
+    component.add(this.createComponent_iqjve6_f1a());
+    component.add(this.createComponent_iqjve6_g1a());
+    component.add(this.createComponent_iqjve6_h1a());
     return component;
   }
 
-  private JLabel createComponent_c1a() {
+  private JLabel createComponent_iqjve6_c1a() {
     JLabel component = new JLabel();
     this.myComponent_c1a = component;
     component.setText("Test:");
     return component;
   }
 
-  private JbRadioButton createComponent_d1a() {
+  private JbRadioButton createComponent_iqjve6_d1a() {
     JbRadioButton component = new JbRadioButton();
     this.myIsProject_d1a = component;
     component.setText("All in Project");
@@ -174,7 +174,7 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JbRadioButton createComponent_e1a() {
+  private JbRadioButton createComponent_iqjve6_e1a() {
     JbRadioButton component = new JbRadioButton();
     this.myIsModule_e1a = component;
     component.setText("All in Module");
@@ -187,7 +187,7 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JbRadioButton createComponent_f1a() {
+  private JbRadioButton createComponent_iqjve6_f1a() {
     JbRadioButton component = new JbRadioButton();
     this.myIsModel_f1a = component;
     component.setText("All in Model");
@@ -200,7 +200,7 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JbRadioButton createComponent_g1a() {
+  private JbRadioButton createComponent_iqjve6_g1a() {
     JbRadioButton component = new JbRadioButton();
     this.myIsClass_g1a = component;
     component.setText("Class");
@@ -213,7 +213,7 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JbRadioButton createComponent_h1a() {
+  private JbRadioButton createComponent_iqjve6_h1a() {
     JbRadioButton component = new JbRadioButton();
     this.myIsMethod_h1a = component;
     component.setText("Method");
@@ -226,34 +226,34 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JPanel createComponent_c0() {
+  private JPanel createComponent_iqjve6_c0() {
     JPanel component = new JPanel();
     this.myMainPanel_c0 = component;
     component.setBorder(new TitledBorder("Test"));
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent_d2a(), LayoutUtil.createPanelConstraints(0));
-    component.add(this.createComponent_e2a(), LayoutUtil.createPanelConstraints(0));
-    component.add(this.createComponent_f2a(), LayoutUtil.createPanelConstraints(0));
+    component.add(this.createComponent_iqjve6_d2a(), LayoutUtil.createPanelConstraints(0));
+    component.add(this.createComponent_iqjve6_e2a(), LayoutUtil.createPanelConstraints(0));
+    component.add(this.createComponent_iqjve6_f2a(), LayoutUtil.createPanelConstraints(0));
     return component;
   }
 
-  private JPanel createComponent_d2a() {
+  private JPanel createComponent_iqjve6_d2a() {
     JPanel component = new JPanel();
     this.myProjectPanel_d2a = component;
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent_c3c0(), LayoutUtil.createLabelConstraints(0));
-    component.add(this.createComponent_d3c0(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_iqjve6_c3c0(), LayoutUtil.createLabelConstraints(0));
+    component.add(this.createComponent_iqjve6_d3c0(), LayoutUtil.createPanelConstraints(1));
     return component;
   }
 
-  private JLabel createComponent_c3c0() {
+  private JLabel createComponent_iqjve6_c3c0() {
     JLabel component = new JLabel();
     this.myComponent_c3c0 = component;
     component.setText("Project:");
     return component;
   }
 
-  private JTextField createComponent_d3c0() {
+  private JTextField createComponent_iqjve6_d3c0() {
     JTextField component = new JTextField();
     this.myProjectName_d3c0 = component;
     component.setText(myThis.getProjectName());
@@ -261,23 +261,23 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JPanel createComponent_e2a() {
+  private JPanel createComponent_iqjve6_e2a() {
     JPanel component = new JPanel();
     this.myModulePanel_e2a = component;
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent_c4c0(), LayoutUtil.createLabelConstraints(0));
-    component.add(this.createComponent_d4c0(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_iqjve6_c4c0(), LayoutUtil.createLabelConstraints(0));
+    component.add(this.createComponent_iqjve6_d4c0(), LayoutUtil.createPanelConstraints(1));
     return component;
   }
 
-  private JLabel createComponent_c4c0() {
+  private JLabel createComponent_iqjve6_c4c0() {
     JLabel component = new JLabel();
     this.myComponent_c4c0 = component;
     component.setText("Module:");
     return component;
   }
 
-  private ModuleChooserComponent createComponent_d4c0() {
+  private ModuleChooserComponent createComponent_iqjve6_d4c0() {
     ModuleChooserComponent component = new ModuleChooserComponent();
     this.myModuleName_d4c0 = component;
     component.addActionListener(new ActionListener() {
@@ -288,23 +288,23 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JPanel createComponent_f2a() {
+  private JPanel createComponent_iqjve6_f2a() {
     JPanel component = new JPanel();
     this.myModelPanel_f2a = component;
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent_c5c0(), LayoutUtil.createLabelConstraints(0));
-    component.add(this.createComponent_d5c0(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_iqjve6_c5c0(), LayoutUtil.createLabelConstraints(0));
+    component.add(this.createComponent_iqjve6_d5c0(), LayoutUtil.createPanelConstraints(1));
     return component;
   }
 
-  private JLabel createComponent_c5c0() {
+  private JLabel createComponent_iqjve6_c5c0() {
     JLabel component = new JLabel();
     this.myComponent_c5c0 = component;
     component.setText("Model:");
     return component;
   }
 
-  private ModelChooserComponent createComponent_d5c0() {
+  private ModelChooserComponent createComponent_iqjve6_d5c0() {
     ModelChooserComponent component = new ModelChooserComponent();
     this.myModelName_d5c0 = component;
     component.addActionListener(new ActionListener() {
@@ -315,7 +315,7 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private ListPanel createComponent_d0() {
+  private ListPanel createComponent_iqjve6_d0() {
     ListPanel component = new ListPanel();
     this.myTestCases_d0 = component;
     component.setLayout(new GridBagLayout());
@@ -327,7 +327,7 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private ListPanel createComponent_e0() {
+  private ListPanel createComponent_iqjve6_e0() {
     ListPanel component = new ListPanel();
     this.myTestMethods_e0 = component;
     component.setLayout(new GridBagLayout());
