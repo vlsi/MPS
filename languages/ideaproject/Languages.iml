@@ -18,16 +18,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../baseLanguage/tuples/languages/tuples/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../baseLanguage/baseLanguageInternal/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/refactorings" />
-      <excludeFolder url="file://$MODULE_DIR$/../baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/util/plugin/refactorings" />
-      <excludeFolder url="file://$MODULE_DIR$/../baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/plugin" />
     </content>
     <content url="file://$MODULE_DIR$/../core">
       <sourceFolder url="file://$MODULE_DIR$/../core/core/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../core/core/source_gen/jetbrains/mps/lang/core/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../core/core/source_gen/jetbrains/mps/lang/core/refactorings" />
-      <excludeFolder url="file://$MODULE_DIR$/../core/core/source_gen/jetbrains/mps/lang/core/scripts" />
     </content>
     <content url="file://$MODULE_DIR$/../languageDesign">
       <sourceFolder url="file://$MODULE_DIR$/../languageDesign/generator/languages/generationContext/source_gen" isTestSource="false" />
@@ -62,27 +55,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../languageDesign/dataFlow/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../languageDesign/actions/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../languageDesign/sharedConcepts/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/actions/source_gen/jetbrains/mps/lang/actions/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/behavior/languages/behavior/source_gen/jetbrains/mps/lang/behavior/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/constraints/source_gen/jetbrains/mps/lang/constraints/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/dataFlow/source_gen/jetbrains/mps/lang/dataFlow/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/editor/source_gen/jetbrains/mps/lang/editor/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/findUsages/source_gen/jetbrains/mps/lang/findUsages/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/generator/languages/templateLanguage/source_gen/jetbrains/mps/lang/generator/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/intentions/source_gen/jetbrains/mps/lang/intentions/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/make/languages/facet/source_gen/jetbrains/mps/make/facet/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/script/source_gen/jetbrains/mps/lang/script/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/structure/source_gen/jetbrains/mps/lang/structure/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/structure/source_gen/jetbrains/mps/lang/structure/refactorings" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/structure/source_gen/jetbrains/mps/lang/structure/scripts" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/test/source_gen/jetbrains/mps/lang/test/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/traceable/source_gen/jetbrains/mps/lang/traceable/plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/../languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/plugin" />
     </content>
     <orderEntry type="jdk" jdkName="1.6" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
