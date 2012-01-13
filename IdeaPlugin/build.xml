@@ -21,7 +21,7 @@
     <property name="artifacts" value="${build.home}/artifacts"/>
     <property name="dist.dir" value="${build.home}/dist"/>
     <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
-    <property file="build.properties"/>
+    <property file="build.properties-default"/>
     <property name="ideaPath" value="${home.idea_ce}"/>
     <property name="javac.debug" value="true"/>
 
