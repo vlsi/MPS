@@ -4,6 +4,7 @@ package jetbrains.mps.debugger.api.ui.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -13,13 +14,9 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class Resume_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("resume.png");
   protected static Log log = LogFactory.getLog(Resume_Action.class);
 
   public Resume_Action() {
@@ -60,17 +57,6 @@ public class Resume_Action extends BaseAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Resume", t);
       }
-    }
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(Resume_Action.class.getResource("resume.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for Resume", e);
-      }
-      return null;
     }
   }
 }

@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -15,13 +16,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class GoToNextChange_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("nextOccurence.png");
   protected static Log log = LogFactory.getLog(GoToNextChange_Action.class);
 
   public GoToNextChange_Action() {
@@ -64,17 +61,6 @@ public class GoToNextChange_Action extends BaseAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToNextChange", t);
       }
-    }
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(GoToNextChange_Action.class.getResource("nextOccurence.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for GoToNextChange", e);
-      }
-      return null;
     }
   }
 }

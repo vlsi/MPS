@@ -4,8 +4,7 @@ package jetbrains.mps.lang.generator.pluginSolution.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorOpenHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -43,14 +42,9 @@ import jetbrains.mps.ide.actions.MappingDialog;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class Generator_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = loadIcon();
-  protected static Log log = LogFactory.getLog(Generator_TabDescriptor.class);
+  private static final Icon ICON = IconUtil.getIcon("reduction.png");
 
   public Generator_TabDescriptor() {
   }
@@ -220,16 +214,5 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
       }
     });
     return result.value;
-  }
-
-  private static Icon loadIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(Generator_TabDescriptor.class.getResource("reduction.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for Generator", e);
-      }
-      return null;
-    }
   }
 }

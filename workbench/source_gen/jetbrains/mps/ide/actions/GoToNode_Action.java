@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -14,13 +15,9 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class GoToNode_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("node.png");
   protected static Log log = LogFactory.getLog(GoToNode_Action.class);
 
   public GoToNode_Action() {
@@ -62,17 +59,6 @@ public class GoToNode_Action extends BaseAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToNode", t);
       }
-    }
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(GoToNode_Action.class.getResource("node.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for GoToNode", e);
-      }
-      return null;
     }
   }
 }

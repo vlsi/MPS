@@ -4,8 +4,7 @@ package jetbrains.mps.lang.findUsages.pluginSolution.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorOpenHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -14,14 +13,9 @@ import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class Find_Usages_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = loadIcon();
-  protected static Log log = LogFactory.getLog(Find_Usages_TabDescriptor.class);
+  private static final Icon ICON = IconUtil.getIcon("usagesFinder.png");
 
   public Find_Usages_TabDescriptor() {
   }
@@ -68,16 +62,5 @@ public class Find_Usages_TabDescriptor extends EditorTabDescriptor {
 
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.FIND_USAGES, node, concept);
-  }
-
-  private static Icon loadIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(Find_Usages_TabDescriptor.class.getResource("usagesFinder.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for Find Usages", e);
-      }
-      return null;
-    }
   }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IconContainer.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.IconContainer" />
+  <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.IconContainer" />
   <root nodeId="5797068448049410622">
     <nodeInfo nodeId="5797068448049410889" fileName="AbstractHierarchyView.java" startLine="52" startPosition="69" endLine="53" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHierarchyTree" />
     <nodeInfo nodeId="5797068448049410893" fileName="AbstractHierarchyView.java" startLine="53" startPosition="50" endLine="54" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeNode" />

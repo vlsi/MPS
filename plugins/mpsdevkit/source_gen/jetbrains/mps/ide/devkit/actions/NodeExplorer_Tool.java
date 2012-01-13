@@ -4,8 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.ide.devkit.components.NodeExplorerComponent;
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
@@ -18,14 +17,9 @@ import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import java.awt.Container;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class NodeExplorer_Tool extends GeneratedTool {
-  private static final Icon ICON = loadIcon();
-  protected static Log log = LogFactory.getLog(NodeExplorer_Tool.class);
+  private static final Icon ICON = IconUtil.getIcon("default.png");
 
   private NodeExplorerComponent myNodeExplorer;
   private JPanel myPanel;
@@ -68,16 +62,5 @@ public class NodeExplorer_Tool extends GeneratedTool {
 
   public JComponent getComponent() {
     return NodeExplorer_Tool.this.myPanel;
-  }
-
-  private static Icon loadIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(NodeExplorer_Tool.class.getResource("default.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for NodeExplorer", e);
-      }
-      return null;
-    }
   }
 }

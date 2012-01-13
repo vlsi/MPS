@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -18,13 +19,9 @@ import com.intellij.openapi.ui.Messages;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import java.util.List;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class RenameFavoritesList_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("menu-replace.png");
   protected static Log log = LogFactory.getLog(RenameFavoritesList_Action.class);
 
   public RenameFavoritesList_Action() {
@@ -82,17 +79,6 @@ public class RenameFavoritesList_Action extends BaseAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameFavoritesList", t);
       }
-    }
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(RenameFavoritesList_Action.class.getResource("menu-replace.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for RenameFavoritesList", e);
-      }
-      return null;
     }
   }
 }

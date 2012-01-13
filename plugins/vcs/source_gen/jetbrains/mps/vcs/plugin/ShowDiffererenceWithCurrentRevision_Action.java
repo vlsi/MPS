@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -23,13 +24,9 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("diff.png");
   protected static Log log = LogFactory.getLog(ShowDiffererenceWithCurrentRevision_Action.class);
 
   public ShowDiffererenceWithCurrentRevision_Action() {
@@ -98,17 +95,6 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);
       }
-    }
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ShowDiffererenceWithCurrentRevision_Action.class.getResource("diff.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for ShowDiffererenceWithCurrentRevision", e);
-      }
-      return null;
     }
   }
 }

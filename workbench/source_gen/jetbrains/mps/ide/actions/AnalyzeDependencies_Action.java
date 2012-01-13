@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -22,14 +23,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class AnalyzeDependencies_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("inspector.png");
   protected static Log log = LogFactory.getLog(AnalyzeDependencies_Action.class);
 
   public AnalyzeDependencies_Action() {
@@ -91,17 +88,6 @@ public class AnalyzeDependencies_Action extends BaseAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AnalyzeDependencies", t);
       }
-    }
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(AnalyzeDependencies_Action.class.getResource("inspector.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for AnalyzeDependencies", e);
-      }
-      return null;
     }
   }
 

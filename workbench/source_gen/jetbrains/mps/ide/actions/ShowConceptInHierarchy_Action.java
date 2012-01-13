@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -18,13 +19,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class ShowConceptInHierarchy_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("hierarchyView.png");
   protected static Log log = LogFactory.getLog(ShowConceptInHierarchy_Action.class);
 
   public ShowConceptInHierarchy_Action() {
@@ -116,16 +113,5 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
       return null;
     }
     return SNodeOperations.cast(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ShowConceptInHierarchy_Action.class.getResource("hierarchyView.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for ShowConceptInHierarchy", e);
-      }
-      return null;
-    }
   }
 }

@@ -4,8 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -14,14 +13,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import javax.swing.JComponent;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class TraceTool_Tool extends GeneratedTool {
-  private static final Icon ICON = loadIcon();
-  protected static Log log = LogFactory.getLog(TraceTool_Tool.class);
+  private static final Icon ICON = IconUtil.getIcon("types.png");
 
   private TypeSystemTracePanel myPanel;
 
@@ -40,16 +34,5 @@ public class TraceTool_Tool extends GeneratedTool {
 
   public JComponent getComponent() {
     return TraceTool_Tool.this.myPanel;
-  }
-
-  private static Icon loadIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(TraceTool_Tool.class.getResource("types.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for TraceTool", e);
-      }
-      return null;
-    }
   }
 }

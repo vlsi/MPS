@@ -5,7 +5,7 @@ package jetbrains.mps.execution.demo.pluginSolution.plugin;
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -38,7 +38,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  private static final Icon ICON = new ImageIcon(DemoApplication_Configuration.class.getResource("run.png"));
+  private static final Icon ICON = IconUtil.getIcon("run.png");
   protected static Log log = LogFactory.getLog(DemoApplication_Configuration.class);
 
   @NotNull

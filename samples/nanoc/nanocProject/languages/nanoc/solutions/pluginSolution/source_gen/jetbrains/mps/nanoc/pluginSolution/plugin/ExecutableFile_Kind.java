@@ -4,7 +4,7 @@ package jetbrains.mps.nanoc.pluginSolution.plugin;
 
 import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.util.IconUtil;
 import java.util.List;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,7 +15,7 @@ import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 
 public class ExecutableFile_Kind implements ConfigurationType {
-  private static final Icon ICON = new ImageIcon(ExecutableFile_Kind.class.getResource("executable.png"));
+  private static final Icon ICON = IconUtil.getIcon("executable.png");
 
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 

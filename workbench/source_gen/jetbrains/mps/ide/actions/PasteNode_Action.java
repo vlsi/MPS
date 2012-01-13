@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -31,13 +32,9 @@ import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class PasteNode_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("menu-paste.png");
   protected static Log log = LogFactory.getLog(PasteNode_Action.class);
 
   public PasteNode_Action() {
@@ -147,16 +144,5 @@ public class PasteNode_Action extends BaseAction {
 
   private boolean canPasteNodes(final Map<String, Object> _params) {
     return PasteNode_Action.this.getPasteData(_params) != null;
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(PasteNode_Action.class.getResource("menu-paste.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for PasteNode", e);
-      }
-      return null;
-    }
   }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IconContainer.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.debug.integration.ui.icons.IconContainer" />
+  <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debug.integration.ui.icons.IconContainer" />
   <root nodeId="3432969378036014082">
     <nodeInfo nodeId="1247371618987935931" fileName="Icons.java" startLine="7" startPosition="20" endLine="8" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLE_PRIMITIVE" />
     <nodeInfo nodeId="1247371618987935922" fileName="Icons.java" startLine="8" startPosition="70" endLine="9" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLE_OBJECT" />

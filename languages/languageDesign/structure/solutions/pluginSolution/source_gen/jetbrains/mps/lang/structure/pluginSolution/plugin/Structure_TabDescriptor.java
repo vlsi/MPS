@@ -4,22 +4,16 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class Structure_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = loadIcon();
-  protected static Log log = LogFactory.getLog(Structure_TabDescriptor.class);
+  private static final Icon ICON = IconUtil.getIcon("structure.png");
 
   public Structure_TabDescriptor() {
   }
@@ -64,16 +58,5 @@ public class Structure_TabDescriptor extends EditorTabDescriptor {
 
   public SNode getNode(SNode node) {
     return node;
-  }
-
-  private static Icon loadIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(Structure_TabDescriptor.class.getResource("structure.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for Structure", e);
-      }
-      return null;
-    }
   }
 }

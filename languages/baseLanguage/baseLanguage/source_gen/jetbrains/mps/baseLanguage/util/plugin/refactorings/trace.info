@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IconContainer.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IconContainer" />
+  <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IconContainer" />
   <root nodeId="1143458983612836301">
     <nodeInfo nodeId="1143458983612836302" fileName="AskDialog.java" startLine="12" startPosition="43" endLine="13" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
     <nodeInfo nodeId="1143458983612857543" fileName="AskDialog.java" startLine="13" startPosition="25" endLine="14" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
@@ -1121,7 +1121,6 @@
       <varInfo nodeId="7782234301060415237" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="7782234301060403243" fileName="VariableDuplicatesProcessor.java" startLine="16" startPosition="43" endLine="15" endPosition="0" />
-    <unitInfo nodeId="7782234301060403220" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.VariableDuplicatesProcessor" />
   </root>
   <root nodeId="8184320397304927312">
     <nodeInfo nodeId="8184320397304989933" fileName="ConvertAnonymousRefactoring.java" startLine="32" startPosition="42" endLine="33" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ROLES_NOT_TO_COPY" />

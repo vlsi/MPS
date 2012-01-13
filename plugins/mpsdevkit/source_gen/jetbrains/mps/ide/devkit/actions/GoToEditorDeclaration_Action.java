@@ -4,6 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -28,13 +29,9 @@ import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import com.intellij.util.io.URLUtil;
-import java.io.IOException;
 
 public class GoToEditorDeclaration_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("editor.png");
   protected static Log log = LogFactory.getLog(GoToEditorDeclaration_Action.class);
 
   public GoToEditorDeclaration_Action() {
@@ -139,17 +136,6 @@ public class GoToEditorDeclaration_Action extends BaseAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToEditorDeclaration", t);
       }
-    }
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(GoToEditorDeclaration_Action.class.getResource("editor.png"))));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for GoToEditorDeclaration", e);
-      }
-      return null;
     }
   }
 }

@@ -2130,13 +2130,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IconContainer" file="IconContainer.java">
-    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
-    <classNode dependClassName="com.intellij.util.io.URLUtil" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior" file="IfStatement_Behavior.java">
     <classNode dependClassName="java.util.Set" />
