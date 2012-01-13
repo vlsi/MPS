@@ -7906,6 +7906,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5015072279636585813">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="5015072279636585814">
           <node role="query" roleId="tpc2.1186403803051" type="tpc2.RGBColor" typeId="tpc2.1225456267680" id="5015072279636585815">
             <property name="value" nameId="tpc2.1225456424731" value="006600" />
