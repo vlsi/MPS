@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="mps-core">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../IdeaPlugin/build/dist/lib" />
+      <root url="file://$PROJECT_DIR$/../../IdeaPlugin/build/dist/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../IdeaPlugin/build/dist/lib" recursive="false" />
+  </library>
+</component>
