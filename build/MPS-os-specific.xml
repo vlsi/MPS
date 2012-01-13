@@ -79,8 +79,8 @@
     <fixcrlf file="${input.dir}/${installer.nsi}" eol="dos" eof="asis" />
     <unzip src="${input.dir}/jre.zip" dest="${input.dir}" />
     <java classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${input.dir}" failonerror="true">
-      <arg file="${input.dir}install.nsh" />
-      <arg file="${input.dir}uninstall.nsh" />
+      <arg file="${input.dir}/install.nsh" />
+      <arg file="${input.dir}/uninstall.nsh" />
       <arg file="${input.dir}/${MPS}" />
       <arg file="${input.dir}/${mps.bat}" />
       <arg file="${input.dir}/${mps.ico}" />

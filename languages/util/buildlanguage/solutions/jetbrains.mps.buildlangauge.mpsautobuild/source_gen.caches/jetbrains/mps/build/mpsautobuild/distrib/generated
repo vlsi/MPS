@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5nxnv38ry8dr6fzg1r50jsv5fgwnz9">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-escrx96rk1sqv3d69p0qxosy2e1bgry" />
+<dependencies version="2" modelHash="ax5mfpzixguqj3z8p4jsj8syw3yoyji">
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="90a2yqqwsbuerf4u3po1b2jxod6vyfj" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8xy0ts8pxo14x2h465hshq4se632yz6" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="946gyglgkhkp4ph8x4lerm1z7wu4krv" />
@@ -25,7 +24,6 @@
   </common>
   <source id="3765863190879880890" name="MPS-os-specific" hash="5mqmxrz90cw3m5rndwqfcerk83f67vl">
     <dep root="3765863190879880927" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
@@ -41,7 +39,7 @@
     <file name="MPS-os-specific-default.xml" />
     <file name="MPS-os-specific.properties" />
   </source>
-  <source id="3765863190879880927" name="MPS-os-specific" hash="3h09q5xmowupfd0x9wtq8m9lfz8v7e5">
+  <source id="3765863190879880927" name="MPS-os-specific" hash="b6p6kf3rqnz0bdap1qqbuxpsi1p5iym">
     <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
     <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />

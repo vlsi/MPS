@@ -2058,8 +2058,13 @@
             <node role="value" roleId="ddum.353793545802643468" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1230642823450">
               <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1230642826019">
                 <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1230642826021">
-                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230642826023">
-                    <property name="value" nameId="tpsk.1196861024475" value="install" />
+                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="8328119674129335368">
+                    <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="8328119674129335371">
+                      <property name="value" nameId="tpsk.1196861024475" value="/" />
+                    </node>
+                    <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230642826023">
+                      <property name="value" nameId="tpsk.1196861024475" value="install" />
+                    </node>
                   </node>
                   <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230642826022">
                     <property name="value" nameId="tpsk.1196861024475" value=".nsh" />
@@ -2079,8 +2084,13 @@
             <node role="value" roleId="ddum.353793545802643468" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1230642833629">
               <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1230642833630">
                 <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1230642833632">
-                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230642833634">
-                    <property name="value" nameId="tpsk.1196861024475" value="uninstall" />
+                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="8328119674129335372">
+                    <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="8328119674129335375">
+                      <property name="value" nameId="tpsk.1196861024475" value="/" />
+                    </node>
+                    <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230642833634">
+                      <property name="value" nameId="tpsk.1196861024475" value="uninstall" />
+                    </node>
                   </node>
                   <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230642833633">
                     <property name="value" nameId="tpsk.1196861024475" value=".nsh" />
