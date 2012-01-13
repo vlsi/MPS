@@ -329,10 +329,10 @@
     <nodeInfo nodeId="4707157387247635674" fileName="BaseTaskQueue.java" startLine="23" startPosition="31" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="4707157387247635701" fileName="BaseTaskQueue.java" startLine="39" startPosition="22" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4707157387247635663" fileName="BaseTaskQueue.java" startLine="16" startPosition="44" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTimer#()V" />
-    <nodeInfo nodeId="1380097818535642313" fileName="BaseTaskQueue.java" startLine="30" startPosition="49" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1043229829680244599" fileName="BaseTaskQueue.java" startLine="30" startPosition="80" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4707157387247635711" fileName="BaseTaskQueue.java" startLine="43" startPosition="18" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="4707157387247635657" fileName="BaseTaskQueue.java" startLine="15" startPosition="26" endLine="20" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1380097818535586247" fileName="BaseTaskQueue.java" startLine="29" startPosition="12" endLine="34" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1043229829680241505" fileName="BaseTaskQueue.java" startLine="29" startPosition="12" endLine="34" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247635684" fileName="BaseTaskQueue.java" startLine="29" startPosition="10" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4707157387247635653" fileName="BaseTaskQueue.java" startLine="14" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseTaskQueue#()V" />
     <nodeInfo nodeId="4707157387247635682" fileName="BaseTaskQueue.java" startLine="26" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -341,7 +341,7 @@
     <scopeInfo nodeId="4707157387247635738" fileName="BaseTaskQueue.java" startLine="17" startPosition="60" endLine="18" endPosition="18" />
     <scopeInfo nodeId="4707157387247635676" fileName="BaseTaskQueue.java" startLine="24" startPosition="25" endLine="25" endPosition="24" />
     <scopeInfo nodeId="4707157387247635690" fileName="BaseTaskQueue.java" startLine="27" startPosition="32" endLine="28" endPosition="16" />
-    <scopeInfo nodeId="1380097818535642314" fileName="BaseTaskQueue.java" startLine="31" startPosition="27" endLine="32" endPosition="27" />
+    <scopeInfo nodeId="1043229829680244600" fileName="BaseTaskQueue.java" startLine="31" startPosition="27" endLine="32" endPosition="27" />
     <scopeInfo nodeId="4707157387247635705" fileName="BaseTaskQueue.java" startLine="40" startPosition="28" endLine="41" endPosition="13" />
     <scopeInfo nodeId="4707157387247635713" fileName="BaseTaskQueue.java" startLine="44" startPosition="25" endLine="46" endPosition="36" />
     <scopeInfo nodeId="4707157387247635727" fileName="BaseTaskQueue.java" startLine="50" startPosition="0" endLine="52" endPosition="0" />
@@ -349,7 +349,7 @@
       <varInfo nodeId="4707157387247635734" varName="tasks" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247635663" fileName="BaseTaskQueue.java" startLine="16" startPosition="44" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1380097818535642313" fileName="BaseTaskQueue.java" startLine="30" startPosition="49" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1043229829680244599" fileName="BaseTaskQueue.java" startLine="30" startPosition="80" endLine="34" endPosition="0" />
     <scopeInfo nodeId="4707157387247635656" fileName="BaseTaskQueue.java" startLine="15" startPosition="26" endLine="20" endPosition="6" />
     <scopeInfo nodeId="4707157387247635685" fileName="BaseTaskQueue.java" startLine="29" startPosition="12" endLine="34" endPosition="9" />
     <scopeInfo nodeId="4707157387247635653" fileName="BaseTaskQueue.java" startLine="14" startPosition="0" endLine="21" endPosition="3" />
@@ -363,7 +363,7 @@
     </scopeInfo>
     <unitInfo nodeId="4707157387247635635" fileName="BaseTaskQueue.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.BaseTaskQueue" />
     <unitInfo nodeId="4707157387247635662" fileName="BaseTaskQueue.java" startLine="16" startPosition="18" endLine="20" endPosition="5" unitName="jetbrains.mps.vcs.suspicious.BaseTaskQueue$1" />
-    <unitInfo nodeId="1380097818535642313" fileName="BaseTaskQueue.java" startLine="30" startPosition="37" endLine="34" endPosition="7" unitName="jetbrains.mps.vcs.suspicious.BaseTaskQueue$2" />
+    <unitInfo nodeId="1043229829680244599" fileName="BaseTaskQueue.java" startLine="30" startPosition="68" endLine="34" endPosition="7" unitName="jetbrains.mps.vcs.suspicious.BaseTaskQueue$2" />
   </root>
   <root nodeId="4707157387247635742">
     <nodeInfo nodeId="4707157387247635787" fileName="TaskQueue.java" startLine="12" startPosition="61" endLine="13" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManagerListener" />
