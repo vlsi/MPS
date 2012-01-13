@@ -31,6 +31,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class PasteNode_Action extends GeneratedAction {
@@ -145,7 +146,7 @@ public class PasteNode_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(PasteNode_Action.class.getResourceAsStream("menu-paste.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(PasteNode_Action.class.getResource("menu-paste.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for PasteNode", e);

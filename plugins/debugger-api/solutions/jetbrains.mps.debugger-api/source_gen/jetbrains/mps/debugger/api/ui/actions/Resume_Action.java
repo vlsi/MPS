@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class Resume_Action extends GeneratedAction {
@@ -64,7 +65,7 @@ public class Resume_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(Resume_Action.class.getResourceAsStream("resume.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(Resume_Action.class.getResource("resume.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for Resume", e);

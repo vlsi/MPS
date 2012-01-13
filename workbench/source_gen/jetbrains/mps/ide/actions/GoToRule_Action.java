@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class GoToRule_Action extends GeneratedAction {
@@ -66,7 +67,7 @@ public class GoToRule_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(GoToRule_Action.class.getResourceAsStream("rule.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(GoToRule_Action.class.getResource("rule.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for GoToRule", e);

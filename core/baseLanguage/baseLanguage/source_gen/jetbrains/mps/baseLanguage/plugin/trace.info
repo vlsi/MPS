@@ -512,34 +512,45 @@
     <unitInfo nodeId="1208787586603" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   </root>
   <root nodeId="1209126436954">
-    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="13" startPosition="52" endLine="14" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="1216657110747" fileName="TodoViewer_Tool.java" startLine="15" startPosition="0" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
-    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="18" startPosition="43" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="22" startPosition="37" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217598419950" fileName="TodoViewer_Tool.java" startLine="23" startPosition="24" endLine="24" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6205303070091374901" fileName="TodoViewer_Tool.java" startLine="27" startPosition="25" endLine="28" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6205303070091374920" fileName="TodoViewer_Tool.java" startLine="29" startPosition="28" endLine="30" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3344292066845077736" fileName="TodoViewer_Tool.java" startLine="31" startPosition="5" endLine="32" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6982149494251360426" fileName="TodoViewer_Tool.java" startLine="32" startPosition="47" endLine="33" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="33" startPosition="44" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216657147577" fileName="TodoViewer_Tool.java" startLine="37" startPosition="36" endLine="38" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TodoViewer_Tool#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="6205303070091374911" fileName="TodoViewer_Tool.java" startLine="28" startPosition="71" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="18" startPosition="43" endLine="19" endPosition="69" />
-    <scopeInfo nodeId="6205303070091374912" fileName="TodoViewer_Tool.java" startLine="29" startPosition="28" endLine="30" endPosition="57" />
-    <scopeInfo nodeId="1214308524983" fileName="TodoViewer_Tool.java" startLine="37" startPosition="36" endLine="38" endPosition="44" />
-    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="22" startPosition="37" endLine="24" endPosition="85" />
-    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="27" startPosition="25" endLine="34" endPosition="20">
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="17" startPosition="52" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="18" startPosition="46" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1216657110747" fileName="TodoViewer_Tool.java" startLine="20" startPosition="0" endLine="21" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="23" startPosition="43" endLine="24" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="27" startPosition="37" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217598419950" fileName="TodoViewer_Tool.java" startLine="28" startPosition="24" endLine="29" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6205303070091374901" fileName="TodoViewer_Tool.java" startLine="32" startPosition="25" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6205303070091374920" fileName="TodoViewer_Tool.java" startLine="34" startPosition="28" endLine="35" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3344292066845077736" fileName="TodoViewer_Tool.java" startLine="36" startPosition="5" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6982149494251360426" fileName="TodoViewer_Tool.java" startLine="37" startPosition="47" endLine="38" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="38" startPosition="44" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216657147577" fileName="TodoViewer_Tool.java" startLine="42" startPosition="36" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="47" startPosition="9" endLine="48" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="49" startPosition="29" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="50" startPosition="58" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TodoViewer_Tool#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="6205303070091374911" fileName="TodoViewer_Tool.java" startLine="33" startPosition="71" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="46" startPosition="34" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="45" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="31" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="23" startPosition="43" endLine="24" endPosition="69" />
+    <scopeInfo nodeId="6205303070091374912" fileName="TodoViewer_Tool.java" startLine="34" startPosition="28" endLine="35" endPosition="57" />
+    <scopeInfo nodeId="1214308524983" fileName="TodoViewer_Tool.java" startLine="42" startPosition="36" endLine="43" endPosition="44" />
+    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="47" startPosition="9" endLine="48" endPosition="121" />
+    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="27" startPosition="37" endLine="29" endPosition="85" />
+    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="49" startPosition="0" endLine="51" endPosition="18" />
+    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="49" startPosition="29" endLine="51" endPosition="18" />
+    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="46" startPosition="34" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="32" startPosition="25" endLine="39" endPosition="20">
       <varInfo nodeId="6205303070091374902" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="26" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" />
+    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="45" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="31" startPosition="0" endLine="41" endPosition="0" />
+    <unitInfo nodeId="1209126436954" fileName="TodoViewer_Tool.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" />
   </root>
   <root nodeId="1217597602946">
     <nodeInfo nodeId="1217597602946" fileName="ShowTodoViewer_Action.java" startLine="16" startPosition="60" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

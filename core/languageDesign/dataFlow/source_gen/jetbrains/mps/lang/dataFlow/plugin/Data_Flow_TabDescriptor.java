@@ -4,7 +4,7 @@ package jetbrains.mps.lang.dataFlow.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.plugin.ConceptEditorOpenHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -16,9 +16,14 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.structure.plugin.ConceptEditorHelper;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
+import java.io.IOException;
 
 public class Data_Flow_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = new ImageIcon(Data_Flow_TabDescriptor.class.getResource("goRound.png"));
+  private static final Icon ICON = loadIcon();
+  private static Logger LOG = Logger.getLogger(Data_Flow_TabDescriptor.class);
 
   public Data_Flow_TabDescriptor() {
   }
@@ -79,5 +84,14 @@ public class Data_Flow_TabDescriptor extends EditorTabDescriptor {
 
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.DATA_FLOW, node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"));
+  }
+
+  private static Icon loadIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(Data_Flow_TabDescriptor.class.getResource("goRound.png"))));
+    } catch (IOException e) {
+      LOG.warning("Couldn't load icon for Data Flow", e);
+      return null;
+    }
   }
 }

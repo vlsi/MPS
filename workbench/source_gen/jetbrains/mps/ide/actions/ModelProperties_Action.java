@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class ModelProperties_Action extends GeneratedAction {
@@ -81,7 +82,7 @@ public class ModelProperties_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(ModelProperties_Action.class.getResourceAsStream("modelProperties.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ModelProperties_Action.class.getResource("modelProperties.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for ModelProperties", e);

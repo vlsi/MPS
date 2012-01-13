@@ -24,6 +24,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Generator;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class ModuleProperties_Action extends GeneratedAction {
@@ -92,7 +93,7 @@ public class ModuleProperties_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(ModuleProperties_Action.class.getResourceAsStream("solutionProperties.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ModuleProperties_Action.class.getResource("solutionProperties.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for ModuleProperties", e);

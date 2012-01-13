@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
@@ -21,7 +20,7 @@ import com.intellij.execution.ui.ConsoleViewContentType;
 import javax.swing.JComponent;
 
 public class AnalyzeStacktrace_Tool extends GeneratedTool {
-  private static final Icon ICON = IconManager.EMPTY_ICON;
+  private static final Icon ICON = null;
 
   private String myStackTrace;
   private ConsoleViewImpl myConsoleView;

@@ -136,7 +136,6 @@
   <unitInfo fileName="AbstractCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractCreator_BehaviorDescriptor" />
   <unitInfo fileName="ExpressionStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ExpressionStatement_BehaviorDescriptor" />
   <unitInfo fileName="PropertyImplementation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PropertyImplementation_BehaviorDescriptor" />
-  <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IconContainer" />
   <unitInfo fileName="TextCommentPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TextCommentPart_BehaviorDescriptor" />
   <unitInfo fileName="AbstractUnaryNumberOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractUnaryNumberOperation_BehaviorDescriptor" />
   <unitInfo fileName="VarVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VarVariableReference_BehaviorDescriptor" />
@@ -207,6 +206,7 @@
   <unitInfo fileName="TypeVariableReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TypeVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="CommentedStatementsBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CommentedStatementsBlock_BehaviorDescriptor" />
   <unitInfo fileName="Property_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Property_BehaviorDescriptor" />
+  <unitInfo fileName="IconContainer.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IconContainer" />
   <unitInfo fileName="UpperBoundType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UpperBoundType_BehaviorDescriptor" />
   <unitInfo fileName="LowerBoundType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LowerBoundType_BehaviorDescriptor" />
   <unitInfo fileName="WildCardType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.WildCardType_BehaviorDescriptor" />

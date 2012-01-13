@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.IconContainer" />
+  <unitInfo fileName="IconContainer.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.IconContainer" />
   <root nodeId="5797068448049410622">
     <nodeInfo nodeId="5797068448049410889" fileName="AbstractHierarchyView.java" startLine="42" startPosition="69" endLine="43" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHierarchyTree" />
     <nodeInfo nodeId="5797068448049410893" fileName="AbstractHierarchyView.java" startLine="43" startPosition="50" endLine="44" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeNode" />
@@ -1659,8 +1659,8 @@
       <varInfo nodeId="5797068448049413808" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5797068448049413863" fileName="LanguageHierarchiesComponent.java" startLine="454" startPosition="33" endLine="463" endPosition="12">
-      <varInfo nodeId="5797068448049413865" varName="conceptDeclaration" />
       <varInfo nodeId="5797068448049413876" varName="name" />
+      <varInfo nodeId="5797068448049413865" varName="conceptDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="5797068448049411925" fileName="LanguageHierarchiesComponent.java" startLine="517" startPosition="0" endLine="526" endPosition="0">
       <varInfo nodeId="5797068448049411928" varName="sizes" />
@@ -1786,17 +1786,17 @@
     <scopeInfo nodeId="5797068448049412322" fileName="LanguageHierarchiesComponent.java" startLine="212" startPosition="0" endLine="241" endPosition="0" />
     <scopeInfo nodeId="5797068448049412895" fileName="LanguageHierarchiesComponent.java" startLine="418" startPosition="42" endLine="448" endPosition="29">
       <varInfo nodeId="5797068448049412897" varName="g" />
-      <varInfo nodeId="5797068448049412975" varName="text" />
       <varInfo nodeId="5797068448049412997" varName="padding2" />
+      <varInfo nodeId="5797068448049412975" varName="text" />
       <varInfo nodeId="5797068448049412979" varName="padding1" />
-      <varInfo nodeId="5797068448049412903" varName="color" />
       <varInfo nodeId="5797068448049412968" varName="metrics" />
+      <varInfo nodeId="5797068448049412903" varName="color" />
       <varInfo nodeId="5797068448049412949" varName="font" />
       <varInfo nodeId="5797068448049412925" varName="oldStroke" />
       <varInfo nodeId="5797068448049413024" varName="x2" />
       <varInfo nodeId="5797068448049413033" varName="y" />
-      <varInfo nodeId="5797068448049413015" varName="x1" />
       <varInfo nodeId="5797068448049413049" varName="oldfont" />
+      <varInfo nodeId="5797068448049413015" varName="x1" />
     </scopeInfo>
     <scopeInfo nodeId="5797068448049413484" fileName="LanguageHierarchiesComponent.java" startLine="590" startPosition="39" endLine="620" endPosition="7">
       <varInfo nodeId="5797068448049413501" varName="outY" />

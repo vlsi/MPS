@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.cellExplorer.CellExplorerView;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class ShowCellInExplorer_Action extends GeneratedAction {
@@ -66,7 +67,7 @@ public class ShowCellInExplorer_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(ShowCellInExplorer_Action.class.getResourceAsStream("cellExplorer.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ShowCellInExplorer_Action.class.getResource("cellExplorer.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for ShowCellInExplorer", e);

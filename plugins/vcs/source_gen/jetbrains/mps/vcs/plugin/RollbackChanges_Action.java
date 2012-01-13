@@ -16,6 +16,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class RollbackChanges_Action extends GeneratedAction {
@@ -68,7 +69,7 @@ public class RollbackChanges_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(RollbackChanges_Action.class.getResourceAsStream("reset.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(RollbackChanges_Action.class.getResource("reset.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for RollbackChanges", e);

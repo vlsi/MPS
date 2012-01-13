@@ -18,6 +18,9 @@
     <classNode extendsClassName="jetbrains.mps.ide.editorTabs.TabsComparator" />
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.plugin.Textgen_TabDescriptor" file="Textgen_TabDescriptor.java">
+    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -30,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ConceptEditorHelper" />
     <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ConceptEditorOpenHelper" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.plugin.Textgen_Order" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

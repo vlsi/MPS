@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class StepInto_Action extends GeneratedAction {
@@ -64,7 +65,7 @@ public class StepInto_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(StepInto_Action.class.getResourceAsStream("stepInto.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(StepInto_Action.class.getResource("stepInto.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for StepInto", e);

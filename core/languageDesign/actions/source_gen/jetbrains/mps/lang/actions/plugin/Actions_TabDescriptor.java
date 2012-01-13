@@ -4,7 +4,7 @@ package jetbrains.mps.lang.actions.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.plugin.ConceptEditorOpenHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -13,9 +13,14 @@ import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.structure.plugin.ConceptEditorHelper;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
+import java.io.IOException;
 
 public class Actions_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = new ImageIcon(Actions_TabDescriptor.class.getResource("actions.png"));
+  private static final Icon ICON = loadIcon();
+  private static Logger LOG = Logger.getLogger(Actions_TabDescriptor.class);
 
   public Actions_TabDescriptor() {
   }
@@ -62,5 +67,14 @@ public class Actions_TabDescriptor extends EditorTabDescriptor {
 
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.ACTIONS, node, concept);
+  }
+
+  private static Icon loadIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(Actions_TabDescriptor.class.getResource("actions.png"))));
+    } catch (IOException e) {
+      LOG.warning("Couldn't load icon for Actions", e);
+      return null;
+    }
   }
 }

@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class FindLanguageConceptsUsages_Action extends GeneratedAction {
@@ -101,7 +102,7 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(FindLanguageConceptsUsages_Action.class.getResourceAsStream("find.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(FindLanguageConceptsUsages_Action.class.getResource("find.png"))));
     } catch (IOException e) {
       LOG.warning("Couldn't load icon for FindLanguageConceptsUsages", e);
       return null;

@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class GoToConceptDeclaration_Action extends GeneratedAction {
@@ -75,7 +76,7 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(GoToConceptDeclaration_Action.class.getResourceAsStream("structure.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(GoToConceptDeclaration_Action.class.getResource("structure.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for GoToConceptDeclaration", e);

@@ -22,6 +22,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class ShowNodeType_Action extends GeneratedAction {
@@ -96,7 +97,7 @@ public class ShowNodeType_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(ShowNodeType_Action.class.getResourceAsStream("types.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ShowNodeType_Action.class.getResource("types.png"))));
     } catch (IOException e) {
       LOG.warning("Couldn't load icon for ShowNodeType", e);
       return null;

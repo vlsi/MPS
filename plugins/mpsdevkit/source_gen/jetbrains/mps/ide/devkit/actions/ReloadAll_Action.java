@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class ReloadAll_Action extends GeneratedAction {
@@ -74,7 +75,7 @@ public class ReloadAll_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(ReloadAll_Action.class.getResourceAsStream("reload.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ReloadAll_Action.class.getResource("reload.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for ReloadAll", e);

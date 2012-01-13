@@ -1144,12 +1144,16 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" file="TodoViewer_Tool.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.awt.Container" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.TodoViewer" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action" file="UncommentStatements_Action.java">

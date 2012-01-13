@@ -21,6 +21,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class CutNode_Action extends GeneratedAction {
@@ -112,7 +113,7 @@ public class CutNode_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(CutNode_Action.class.getResourceAsStream("menu-cut.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(CutNode_Action.class.getResource("menu-cut.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for CutNode", e);

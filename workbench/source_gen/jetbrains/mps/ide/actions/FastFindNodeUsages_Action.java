@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class FastFindNodeUsages_Action extends GeneratedAction {
@@ -94,7 +95,7 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(FastFindNodeUsages_Action.class.getResourceAsStream("find.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(FastFindNodeUsages_Action.class.getResource("find.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for FastFindNodeUsages", e);

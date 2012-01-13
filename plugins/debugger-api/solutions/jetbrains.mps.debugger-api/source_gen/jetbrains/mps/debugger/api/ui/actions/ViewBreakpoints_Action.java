@@ -17,6 +17,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class ViewBreakpoints_Action extends GeneratedAction {
@@ -68,7 +69,7 @@ public class ViewBreakpoints_Action extends GeneratedAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(ViewBreakpoints_Action.class.getResourceAsStream("viewBreakpoints.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ViewBreakpoints_Action.class.getResource("viewBreakpoints.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for ViewBreakpoints", e);
