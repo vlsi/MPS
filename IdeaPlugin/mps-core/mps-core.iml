@@ -32,7 +32,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../core/typesystemEngine/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/stubUtils/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/refactoring-runtime/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../editor">
@@ -44,17 +43,11 @@
       <sourceFolder url="file://$MODULE_DIR$/../../editor/intentions-runtime/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../editor/typesystemIntegration/source" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search">
+    <content url="file://$MODULE_DIR$/../../languages/baseLanguage">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/closures/runtime">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/closures/runtime/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/runtime">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/runtime/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/runtime/source_gen.gwt/collections/gwt" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../languages/baseLanguage/tuples/runtime">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/tuples/runtime/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests">
