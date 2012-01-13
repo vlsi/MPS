@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class FindLanguageUsages_Action extends BaseAction {
@@ -95,7 +96,7 @@ public class FindLanguageUsages_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(FindLanguageUsages_Action.class.getResourceAsStream("find.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(FindLanguageUsages_Action.class.getResource("find.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for FindLanguageUsages", e);

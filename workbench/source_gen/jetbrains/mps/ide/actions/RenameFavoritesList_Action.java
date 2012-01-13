@@ -20,6 +20,7 @@ import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import java.util.List;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class RenameFavoritesList_Action extends BaseAction {
@@ -86,7 +87,7 @@ public class RenameFavoritesList_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(RenameFavoritesList_Action.class.getResourceAsStream("menu-replace.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(RenameFavoritesList_Action.class.getResource("menu-replace.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for RenameFavoritesList", e);

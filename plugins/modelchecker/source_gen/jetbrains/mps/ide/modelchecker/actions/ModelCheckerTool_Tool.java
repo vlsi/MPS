@@ -4,7 +4,8 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTabbedTool;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -26,9 +27,14 @@ import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.pluginparts.tool.IComponentDisposer;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
+import java.io.IOException;
 
 public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
-  private static final Icon ICON = new ImageIcon(ModelCheckerTool_Tool.class.getResource("modelChecker.png"));
+  private static final Icon ICON = loadIcon();
+  protected static Log log = LogFactory.getLog(ModelCheckerTool_Tool.class);
 
   private Project myProject;
 
@@ -184,5 +190,16 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
         component.dispose();
       }
     });
+  }
+
+  private static Icon loadIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ModelCheckerTool_Tool.class.getResource("modelChecker.png"))));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for ModelCheckerTool", e);
+      }
+      return null;
+    }
   }
 }

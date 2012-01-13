@@ -4,7 +4,8 @@ package jetbrains.mps.lang.behavior.pluginSolution.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorOpenHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -16,9 +17,14 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
+import java.io.IOException;
 
 public class Behavior_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = new ImageIcon(Behavior_TabDescriptor.class.getResource("behavior.png"));
+  private static final Icon ICON = loadIcon();
+  protected static Log log = LogFactory.getLog(Behavior_TabDescriptor.class);
 
   public Behavior_TabDescriptor() {
   }
@@ -79,5 +85,16 @@ public class Behavior_TabDescriptor extends EditorTabDescriptor {
 
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.BEHAVIOR, node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
+  }
+
+  private static Icon loadIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(Behavior_TabDescriptor.class.getResource("behavior.png"))));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for Behavior", e);
+      }
+      return null;
+    }
   }
 }

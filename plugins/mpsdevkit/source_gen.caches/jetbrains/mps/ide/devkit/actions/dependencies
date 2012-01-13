@@ -123,6 +123,7 @@
     <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -145,6 +146,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Class" />
@@ -376,8 +378,11 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
@@ -385,6 +390,8 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.ide.modelRepositoryViewer.ModelRepositoryComponent" />
     <classNode dependClassName="jetbrains.mps.ide.tools.CloseAction" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.ModuleRepository_Tool" file="ModuleRepository_Tool.java">
@@ -392,8 +399,11 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
@@ -401,6 +411,8 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.ide.moduleRepositoryViewer.ModuleRepositoryComponent" />
     <classNode dependClassName="jetbrains.mps.ide.tools.CloseAction" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" file="Mpsdevkit_ApplicationPlugin.java">
@@ -558,6 +570,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
@@ -608,6 +621,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
@@ -635,9 +649,12 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Container" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
@@ -645,6 +662,8 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.components.NodeExplorerComponent" />
     <classNode dependClassName="jetbrains.mps.ide.tools.CloseAction" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.PrintNodeID_Action" file="PrintNodeID_Action.java">
@@ -677,6 +696,7 @@
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -724,6 +744,7 @@
   <dependency className="jetbrains.mps.ide.devkit.actions.ShowCellInExplorer_Action" file="ShowCellInExplorer_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -923,7 +944,10 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.TraceTool_Tool" file="TraceTool_Tool.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="javax.swing.JComponent" />
@@ -932,6 +956,8 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Trace_KeymapChanges" file="Trace_KeymapChanges.java">

@@ -4,7 +4,8 @@ package jetbrains.mps.lang.textGen.pluginSolution.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorOpenHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -16,9 +17,14 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
+import java.io.IOException;
 
 public class Textgen_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = new ImageIcon(Textgen_TabDescriptor.class.getResource("textGen.png"));
+  private static final Icon ICON = loadIcon();
+  protected static Log log = LogFactory.getLog(Textgen_TabDescriptor.class);
 
   public Textgen_TabDescriptor() {
   }
@@ -75,5 +81,16 @@ public class Textgen_TabDescriptor extends EditorTabDescriptor {
 
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.TEXT_GEN, node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"));
+  }
+
+  private static Icon loadIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(Textgen_TabDescriptor.class.getResource("textGen.png"))));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for Textgen", e);
+      }
+      return null;
+    }
   }
 }

@@ -11,6 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class DummyAction_Action extends BaseAction {
@@ -52,7 +53,7 @@ public class DummyAction_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(DummyAction_Action.class.getResourceAsStream("mpsHome.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(DummyAction_Action.class.getResource("mpsHome.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for DummyAction", e);

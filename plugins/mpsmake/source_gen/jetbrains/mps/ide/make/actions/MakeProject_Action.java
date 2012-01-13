@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class MakeProject_Action extends BaseAction {
@@ -73,7 +74,7 @@ public class MakeProject_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(MakeProject_Action.class.getResourceAsStream("make.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(MakeProject_Action.class.getResource("make.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for MakeProject", e);

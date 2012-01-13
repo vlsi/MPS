@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class StepOut_Action extends BaseAction {
@@ -64,7 +65,7 @@ public class StepOut_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(StepOut_Action.class.getResourceAsStream("stepOut.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(StepOut_Action.class.getResource("stepOut.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for StepOut", e);

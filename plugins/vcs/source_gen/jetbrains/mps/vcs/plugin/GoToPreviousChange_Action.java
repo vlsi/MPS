@@ -17,6 +17,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class GoToPreviousChange_Action extends BaseAction {
@@ -68,7 +69,7 @@ public class GoToPreviousChange_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(GoToPreviousChange_Action.class.getResourceAsStream("previousOccurence.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(GoToPreviousChange_Action.class.getResource("previousOccurence.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for GoToPreviousChange", e);

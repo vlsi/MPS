@@ -22,6 +22,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class NewLanguage_Action extends BaseAction {
@@ -90,7 +91,7 @@ public class NewLanguage_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(NewLanguage_Action.class.getResourceAsStream("projectLanguage.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(NewLanguage_Action.class.getResource("projectLanguage.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for NewLanguage", e);

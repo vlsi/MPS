@@ -18,6 +18,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class AnalyzeModuleDependencies_Action extends BaseAction {
@@ -77,7 +78,7 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(AnalyzeModuleDependencies_Action.class.getResourceAsStream("dependencies.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(AnalyzeModuleDependencies_Action.class.getResource("dependencies.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for AnalyzeModuleDependencies", e);

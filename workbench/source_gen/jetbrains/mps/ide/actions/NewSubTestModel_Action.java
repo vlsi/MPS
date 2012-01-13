@@ -28,6 +28,7 @@ import java.util.List;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class NewSubTestModel_Action extends BaseAction {
@@ -139,7 +140,7 @@ public class NewSubTestModel_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(NewSubTestModel_Action.class.getResourceAsStream("testModel.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(NewSubTestModel_Action.class.getResource("testModel.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for NewSubTestModel", e);

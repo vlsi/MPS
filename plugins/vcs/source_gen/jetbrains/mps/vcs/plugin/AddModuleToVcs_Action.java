@@ -21,6 +21,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class AddModuleToVcs_Action extends BaseAction {
@@ -82,7 +83,7 @@ public class AddModuleToVcs_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(AddModuleToVcs_Action.class.getResourceAsStream("addToVcs.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(AddModuleToVcs_Action.class.getResource("addToVcs.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for AddModuleToVcs", e);

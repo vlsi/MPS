@@ -4,7 +4,8 @@ package jetbrains.mps.lang.editor.pluginSolution.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorOpenHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -16,9 +17,14 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
+import java.io.IOException;
 
 public class Editor_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = new ImageIcon(Editor_TabDescriptor.class.getResource("editor.png"));
+  private static final Icon ICON = loadIcon();
+  protected static Log log = LogFactory.getLog(Editor_TabDescriptor.class);
 
   public Editor_TabDescriptor() {
   }
@@ -67,5 +73,16 @@ public class Editor_TabDescriptor extends EditorTabDescriptor {
 
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.EDITOR, node, concept);
+  }
+
+  private static Icon loadIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(Editor_TabDescriptor.class.getResource("editor.png"))));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for Editor", e);
+      }
+      return null;
+    }
   }
 }

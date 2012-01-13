@@ -4,7 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.ide.depanalyzer.ModuleDependenciesView;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -12,9 +13,14 @@ import java.util.List;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.depanalyzer.ModuleDependencyNode;
 import javax.swing.JComponent;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
+import java.io.IOException;
 
 public class ModuleDependenies_Tool extends GeneratedTool {
-  private static final Icon ICON = new ImageIcon(ModuleDependenies_Tool.class.getResource("dependencies.png"));
+  private static final Icon ICON = loadIcon();
+  protected static Log log = LogFactory.getLog(ModuleDependenies_Tool.class);
 
   private ModuleDependenciesView myComponent;
 
@@ -41,5 +47,16 @@ public class ModuleDependenies_Tool extends GeneratedTool {
 
   public JComponent getComponent() {
     return ModuleDependenies_Tool.this.myComponent;
+  }
+
+  private static Icon loadIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ModuleDependenies_Tool.class.getResource("dependencies.png"))));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for ModuleDependenies", e);
+      }
+      return null;
+    }
   }
 }

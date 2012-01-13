@@ -439,8 +439,13 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IconContainer" file="IconContainer.java">
+    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodDialog" file="InlineMethodDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

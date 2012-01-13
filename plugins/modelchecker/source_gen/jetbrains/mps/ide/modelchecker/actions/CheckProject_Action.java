@@ -17,6 +17,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class CheckProject_Action extends BaseAction {
@@ -67,7 +68,7 @@ public class CheckProject_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(CheckProject_Action.class.getResourceAsStream("modelChecker.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(CheckProject_Action.class.getResource("modelChecker.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for CheckProject", e);

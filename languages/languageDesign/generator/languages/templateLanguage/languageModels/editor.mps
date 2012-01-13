@@ -536,8 +536,8 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="8696125237882288503">
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="8696125237882251414" resolveInfo="macroDescriptionText" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpf8.3265704088513289864" resolveInfo="comment" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="8696125237882251414" resolveInfo="macroDescriptionText" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="8696125237882288504">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8696125237882288505">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8696125237882288506">
@@ -1564,8 +1564,8 @@
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1113324878585">
               <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
-              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1194566785068" resolveInfo="reference" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1194566785068" resolveInfo="reference" />
             </node>
           </node>
         </node>
@@ -3784,8 +3784,8 @@
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1168559420281">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1168559425423">
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
-            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1194566785068" resolveInfo="reference" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1194566785068" resolveInfo="reference" />
           </node>
         </node>
       </node>
@@ -4310,8 +4310,8 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="3265704088513291258">
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="8696125237882251414" resolveInfo="macroDescriptionText" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpf8.3265704088513289864" resolveInfo="comment" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="8696125237882251414" resolveInfo="macroDescriptionText" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="3265704088513291259">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3265704088513291260">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3265704088513291261">
@@ -7906,6 +7906,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5015072279636585813">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="5015072279636585814">
           <node role="query" roleId="tpc2.1186403803051" type="tpc2.RGBColor" typeId="tpc2.1225456267680" id="5015072279636585815">
             <property name="value" nameId="tpc2.1225456424731" value="006600" />

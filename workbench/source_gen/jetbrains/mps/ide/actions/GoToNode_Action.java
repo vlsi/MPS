@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class GoToNode_Action extends BaseAction {
@@ -66,7 +67,7 @@ public class GoToNode_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(GoToNode_Action.class.getResourceAsStream("node.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(GoToNode_Action.class.getResource("node.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for GoToNode", e);

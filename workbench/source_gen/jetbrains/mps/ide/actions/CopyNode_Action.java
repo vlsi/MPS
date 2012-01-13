@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class CopyNode_Action extends BaseAction {
@@ -87,7 +88,7 @@ public class CopyNode_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(CopyNode_Action.class.getResourceAsStream("menu-copy.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(CopyNode_Action.class.getResource("menu-copy.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for CopyNode", e);

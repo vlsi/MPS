@@ -197,6 +197,7 @@
     <classNode dependClassName="com.intellij.openapi.ui.InputValidator" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -239,6 +240,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -267,13 +269,18 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.AnalyzeDependencies_Tool" file="AnalyzeDependencies_Tool.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.Scope" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.AnalyzeModuleDependencies_Action" file="AnalyzeModuleDependencies_Action.java">
@@ -281,6 +288,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -559,6 +567,7 @@
   <dependency className="jetbrains.mps.ide.actions.CopyNode_Action" file="CopyNode_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -591,6 +600,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -927,6 +937,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
@@ -1050,6 +1061,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
@@ -1307,6 +1319,7 @@
   <dependency className="jetbrains.mps.ide.actions.GoToNode_Action" file="GoToNode_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -1342,6 +1355,7 @@
   <dependency className="jetbrains.mps.ide.actions.GoToRule_Action" file="GoToRule_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -1800,6 +1814,7 @@
   <dependency className="jetbrains.mps.ide.actions.ModelProperties_Action" file="ModelProperties_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -1836,7 +1851,10 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ModuleDependenies_Tool" file="ModuleDependenies_Tool.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
@@ -1844,11 +1862,14 @@
     <classNode dependClassName="jetbrains.mps.ide.depanalyzer.ModuleDependenciesView" />
     <classNode dependClassName="jetbrains.mps.ide.depanalyzer.ModuleDependencyNode" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ModuleProperties_Action" file="ModuleProperties_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Object" />
@@ -2094,6 +2115,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
@@ -2122,6 +2144,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -2150,6 +2173,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -2454,6 +2478,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -2674,6 +2699,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -3051,6 +3077,7 @@
   <dependency className="jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action" file="ShowConceptInHierarchy_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -3152,6 +3179,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
+    <classNode dependClassName="com.intellij.util.io.URLUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />

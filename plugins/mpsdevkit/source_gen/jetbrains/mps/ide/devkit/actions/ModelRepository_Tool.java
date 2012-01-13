@@ -4,7 +4,8 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.ide.modelRepositoryViewer.ModelRepositoryComponent;
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
@@ -15,9 +16,14 @@ import jetbrains.mps.ide.tools.CloseAction;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
+import java.io.IOException;
 
 public class ModelRepository_Tool extends GeneratedTool {
-  private static final Icon ICON = new ImageIcon(ModelRepository_Tool.class.getResource("model.png"));
+  private static final Icon ICON = loadIcon();
+  protected static Log log = LogFactory.getLog(ModelRepository_Tool.class);
 
   private ModelRepositoryComponent myComponent;
   private JPanel myPanel;
@@ -50,5 +56,16 @@ public class ModelRepository_Tool extends GeneratedTool {
 
   public JComponent getComponent() {
     return ModelRepository_Tool.this.myPanel;
+  }
+
+  private static Icon loadIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ModelRepository_Tool.class.getResource("model.png"))));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for ModelRepository", e);
+      }
+      return null;
+    }
   }
 }

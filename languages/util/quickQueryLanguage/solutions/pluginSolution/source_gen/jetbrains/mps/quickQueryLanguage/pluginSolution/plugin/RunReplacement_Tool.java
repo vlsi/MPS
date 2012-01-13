@@ -4,7 +4,8 @@ package jetbrains.mps.quickQueryLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTabbedTool;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -14,9 +15,14 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import jetbrains.mps.plugins.pluginparts.tool.IComponentDisposer;
 import javax.swing.JComponent;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
+import java.io.IOException;
 
 public class RunReplacement_Tool extends GeneratedTabbedTool {
-  private static final Icon ICON = new ImageIcon(RunReplacement_Tool.class.getResource("find.png"));
+  private static final Icon ICON = loadIcon();
+  protected static Log log = LogFactory.getLog(RunReplacement_Tool.class);
 
   private Project myProject;
 
@@ -44,5 +50,16 @@ public class RunReplacement_Tool extends GeneratedTabbedTool {
         });
       }
     });
+  }
+
+  private static Icon loadIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(RunReplacement_Tool.class.getResource("find.png"))));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for RunReplacement", e);
+      }
+      return null;
+    }
   }
 }

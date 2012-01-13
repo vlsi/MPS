@@ -306,6 +306,7 @@ public class VarMacro_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, new Color(26112));
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     }
+    MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -30,6 +30,7 @@ import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class GoToEditorDeclaration_Action extends BaseAction {
@@ -143,7 +144,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(GoToEditorDeclaration_Action.class.getResourceAsStream("editor.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(GoToEditorDeclaration_Action.class.getResource("editor.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for GoToEditorDeclaration", e);

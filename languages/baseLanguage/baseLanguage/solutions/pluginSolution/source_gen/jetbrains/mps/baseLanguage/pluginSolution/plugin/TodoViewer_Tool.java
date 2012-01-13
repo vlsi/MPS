@@ -4,15 +4,21 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.project.MPSProject;
 import java.awt.Container;
 import javax.swing.JComponent;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
+import java.io.IOException;
 
 public class TodoViewer_Tool extends GeneratedTool {
-  private static final Icon ICON = new ImageIcon(TodoViewer_Tool.class.getResource("todo.png"));
+  private static final Icon ICON = loadIcon();
+  protected static Log log = LogFactory.getLog(TodoViewer_Tool.class);
 
   private TodoViewer myComponent;
 
@@ -37,5 +43,16 @@ public class TodoViewer_Tool extends GeneratedTool {
 
   public JComponent getComponent() {
     return TodoViewer_Tool.this.myComponent;
+  }
+
+  private static Icon loadIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(TodoViewer_Tool.class.getResource("todo.png"))));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for TodoViewer", e);
+      }
+      return null;
+    }
   }
 }

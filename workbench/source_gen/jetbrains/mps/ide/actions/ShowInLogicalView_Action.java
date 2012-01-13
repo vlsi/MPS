@@ -16,6 +16,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class ShowInLogicalView_Action extends BaseAction {
@@ -71,7 +72,7 @@ public class ShowInLogicalView_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(ShowInLogicalView_Action.class.getResourceAsStream("logical_view.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ShowInLogicalView_Action.class.getResource("logical_view.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for ShowInLogicalView", e);

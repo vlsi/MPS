@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
@@ -95,7 +96,7 @@ public class AnalyzeDependencies_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(AnalyzeDependencies_Action.class.getResourceAsStream("inspector.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(AnalyzeDependencies_Action.class.getResource("inspector.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for AnalyzeDependencies", e);

@@ -20,6 +20,7 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.util.io.URLUtil;
 import java.io.IOException;
 
 public class ShowConceptInHierarchy_Action extends BaseAction {
@@ -119,7 +120,7 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(ShowConceptInHierarchy_Action.class.getResourceAsStream("hierarchyView.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(URLUtil.openStream(ShowConceptInHierarchy_Action.class.getResource("hierarchyView.png"))));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
         log.warn("Couldn't load icon for ShowConceptInHierarchy", e);
