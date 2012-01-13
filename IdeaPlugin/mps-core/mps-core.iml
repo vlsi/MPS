@@ -76,7 +76,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="IDEA" level="project" />
     <orderEntry type="library" name="MPS-core" level="project" />
-    <orderEntry type="library" name="antsupport" level="project" />
     <orderEntry type="library" scope="TEST" name="Test-runtime" level="project" />
     <orderEntry type="library" name="ant" level="project" />
   </component>
