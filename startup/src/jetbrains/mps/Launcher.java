@@ -19,7 +19,6 @@ import com.intellij.ide.Bootstrap;
 import com.intellij.ide.ClassloaderUtil;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.util.SystemInfo;
-import com.sun.istack.internal.Nullable;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -50,7 +49,6 @@ public class Launcher {
     Bootstrap.main(args, "jetbrains.mps.MPSMainImpl", "start", getAdditionalMPSClasspath());
   }
 
-  @Nullable
   private static String getFsNotifierDir() {
     if (SystemInfo.isWindows) {
       return "win";
@@ -63,7 +61,6 @@ public class Launcher {
     return null;
   }
 
-  @Nullable
   private static String getFsNotifierName() {
     if (SystemInfo.isWindows) {
       return "fsnotifier.exe";
@@ -75,7 +72,6 @@ public class Launcher {
 
     return null;
   }
-
 
   private static List<URL> getAdditionalMPSClasspath() {
     List<URL> result = new ArrayList<URL>();
