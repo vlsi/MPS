@@ -99,7 +99,7 @@ public class CommonChangesManagerTest {
   private static boolean ourEnabled;
 
   private CurrentDifferenceRegistry myRegistry;
-  private Project myProject;
+  private Project myPrroject;
   private boolean myWaitCompleted;
   private final Object myWaitLock = new Object();
   private ChangeListManagerImpl myChangeListManager;
@@ -115,8 +115,8 @@ public class CommonChangesManagerTest {
 
   @Before
   public void init() {
-    myProject = ourProject;
-    myIdeaProject = ProjectHelper.toIdeaProject(myProject);
+    myPrroject = ourProject;
+    myIdeaProject = ProjectHelper.toIdeaProject(myPrroject);
     myRegistry = CurrentDifferenceRegistry.getInstance(myIdeaProject);
     waitForChangesManager();
 
@@ -325,7 +325,7 @@ public class CommonChangesManagerTest {
   }
 
   private void runCommandAndWait(Runnable r) {
-    ModelAccess.instance().runCommandInEDT(r, myProject);
+    ModelAccess.instance().runCommandInEDT(r, myPrroject);
     ModelAccess.instance().flushEventQueue();
   }
 
@@ -644,7 +644,7 @@ public class CommonChangesManagerTest {
     waitAndCheck(myUiDiff);
     Assert.assertTrue(ListSequence.fromList(myUiDiff.getChangeSet().getModelChanges()).isEmpty());
 
-    undoAndCheck(myUiDiff, affectedRootPointers, false);
+    undoAndCheck(myUiDiff, Arrays.asList(ListSequence.fromList(affectedRootPointers).first()), false);
     Assert.assertEquals(stringBeforeAll, getChangeSetString(myUiDiff.getChangeSet()));
   }
 
