@@ -15,8 +15,10 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsConfiguration;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.SReference;
 import org.junit.After;
+import java.lang.reflect.InvocationTargetException;
+import javax.swing.SwingUtilities;
+import jetbrains.mps.nodeEditor.InspectorTool;
 import org.junit.Assert;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelAdapter;
@@ -50,9 +52,9 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNodePointer;
-import javax.swing.SwingUtilities;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.command.undo.UndoManager;
+import org.junit.Test;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -65,11 +67,9 @@ import jetbrains.mps.project.IModule;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
-import org.junit.Test;
-import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.watching.ModelChangesWatcher;
-import jetbrains.mps.nodeEditor.InspectorTool;
 import org.junit.BeforeClass;
+import jetbrains.mps.watching.ModelChangesWatcher;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.TestMain;
 import org.junit.AfterClass;
 import com.intellij.openapi.command.undo.DocumentReferenceProvider;
@@ -96,6 +96,7 @@ public class CommonChangesManagerTest {
   private static final String PROJECT_FILE = "fugue.mpr";
   private static final String MODEL_PREFIX = "ru.geevee.fugue.";
   private static Project ourProject;
+  private static boolean ourEnabled;
 
   private CurrentDifferenceRegistry myRegistry;
   private Project myProject;
@@ -133,11 +134,19 @@ public class CommonChangesManagerTest {
 
     myUtilVirtualFile = VirtualFileUtils.getVirtualFile(myUtilDiff.getModelDescriptor().getModelFile());
 
-    SReference.disableLogging();
+    if (!(ourEnabled)) {
+      checkAndEnable();
+      ourEnabled = true;
+    }
   }
 
   @After
-  public void dispose() {
+  public void dispose() throws InvocationTargetException, InterruptedException {
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        myIdeaProject.getComponent(InspectorTool.class).getInspector().editNode(null, null);
+      }
+    });
     Assert.assertFalse(myRegistry.getCommandQueue().hadExceptions());
   }
 
@@ -384,7 +393,21 @@ public class CommonChangesManagerTest {
     });
   }
 
-  private void removeModifiedRoot() {
+  @Test
+  public void modifySaveCommit() throws VcsException {
+    modifyModel();
+    saveAndCommit();
+    uncommit();
+  }
+
+  @Test
+  public void modifyExternallyRollback() throws ModelReadException, IOException, VcsException {
+    modifyExternally();
+    rollback();
+  }
+
+  @Test
+  public void removeModifiedRoot() {
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         SNode root = getDocumentLayoutRoot();
@@ -394,7 +417,8 @@ public class CommonChangesManagerTest {
     });
   }
 
-  private void addRoot() {
+  @Test
+  public void addRoot() {
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
@@ -410,7 +434,8 @@ public class CommonChangesManagerTest {
     });
   }
 
-  private void changeProperty() {
+  @Test
+  public void changeProperty() {
     final Wrappers._T<SNode> method = new Wrappers._T<SNode>();
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
@@ -431,7 +456,8 @@ public class CommonChangesManagerTest {
     });
   }
 
-  private void changeReference() {
+  @Test
+  public void changeReference() {
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
     final Wrappers._T<SNode> method = new Wrappers._T<SNode>();
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
@@ -454,7 +480,8 @@ public class CommonChangesManagerTest {
     });
   }
 
-  private void moveNode() {
+  @Test
+  public void moveNode() {
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
     final Wrappers._T<SNode> field = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -501,7 +528,8 @@ public class CommonChangesManagerTest {
     doSomethingAndUndo(myUiDiff, false, tasks);
   }
 
-  private void inlineVariable() {
+  @Test
+  public void inlineVariable() {
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
     final Wrappers._T<SNode> method = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -547,7 +575,8 @@ public class CommonChangesManagerTest {
     });
   }
 
-  private void rollbackAllSerially() {
+  @Test
+  public void rollbackAllSerially() {
     Random random = new Random(239);
     String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
     final SModel model = myUiDiff.getModelDescriptor().getSModel();
@@ -577,7 +606,8 @@ public class CommonChangesManagerTest {
     Assert.assertEquals(stringBeforeAll, getChangeSetString(myUiDiff.getChangeSet()));
   }
 
-  private void rollbackAllAtomically() {
+  @Test
+  public void rollbackAllAtomically() {
     String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
     final SModel model = myUiDiff.getModelDescriptor().getSModel();
 
@@ -634,7 +664,8 @@ public class CommonChangesManagerTest {
     }));
   }
 
-  private void createNewModel() {
+  @Test
+  public void createNewModel() {
     final Wrappers._T<CurrentDifference> newModelDiff = new Wrappers._T<CurrentDifference>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -676,7 +707,8 @@ public class CommonChangesManagerTest {
     checkOneAddedRoot(newModelDiff.value);
   }
 
-  private void deleteModelAndRollback() {
+  @Test
+  public void deleteModelAndRollback() {
     final EditableSModelDescriptor md = myUiDiff.getModelDescriptor();
     String changeSetStringBefore = getChangeSetString(myUiDiff.getChangeSet());
     runCommandAndWait(new Runnable() {
@@ -705,35 +737,6 @@ public class CommonChangesManagerTest {
     Assert.assertEquals(changeSetStringBefore, getChangeSetString(myUiDiff.getChangeSet()));
   }
 
-  @Test
-  public void doTest() throws VcsException, IOException, InvocationTargetException, ModelReadException, InterruptedException {
-    ModelChangesWatcher.setForceProcessingEnabled(true);
-    checkAndEnable();
-    modifyModel();
-    saveAndCommit();
-    uncommit();
-    modifyExternally();
-    rollback();
-
-    removeModifiedRoot();
-    addRoot();
-    changeProperty();
-    changeReference();
-    moveNode();
-    inlineVariable();
-    rollbackAllSerially();
-    rollbackAllAtomically();
-
-    createNewModel();
-    deleteModelAndRollback();
-
-    SwingUtilities.invokeAndWait(new Runnable() {
-      public void run() {
-        myIdeaProject.getComponent(InspectorTool.class).getInspector().editNode(null, null);
-      }
-    });
-  }
-
   @BeforeClass
   public static void setUp() {
     ModelChangesWatcher.setForceProcessingEnabled(true);
@@ -744,6 +747,7 @@ public class CommonChangesManagerTest {
 
   @AfterClass
   public static void tearDown() {
+
     TestMain.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
   }
 
