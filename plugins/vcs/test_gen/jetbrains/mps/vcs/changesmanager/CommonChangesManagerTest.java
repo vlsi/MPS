@@ -8,11 +8,7 @@ import jetbrains.mps.project.Project;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelFqName;
+import org.junit.Before;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -20,7 +16,13 @@ import com.intellij.openapi.vcs.VcsConfiguration;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SReference;
+import org.junit.After;
 import org.junit.Assert;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -64,9 +66,12 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.junit.Test;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.watching.ModelChangesWatcher;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.nodeEditor.InspectorTool;
+import org.junit.BeforeClass;
+import jetbrains.mps.TestMain;
+import org.junit.AfterClass;
 import com.intellij.openapi.command.undo.DocumentReferenceProvider;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -90,6 +95,7 @@ public class CommonChangesManagerTest {
   private static final File PROJECT_ARCHIVE = new File("testbench/modules/fugue.zip");
   private static final String PROJECT_FILE = "fugue.mpr";
   private static final String MODEL_PREFIX = "ru.geevee.fugue.";
+  private static Project ourProject;
 
   private CurrentDifferenceRegistry myRegistry;
   private Project myProject;
@@ -104,6 +110,35 @@ public class CommonChangesManagerTest {
   private VirtualFile myUtilVirtualFile;
 
   public CommonChangesManagerTest() {
+  }
+
+  @Before
+  public void init() {
+    myProject = ourProject;
+    myIdeaProject = ProjectHelper.toIdeaProject(myProject);
+    myRegistry = CurrentDifferenceRegistry.getInstance(myIdeaProject);
+    waitForChangesManager();
+
+    myGitVcs = AllVcses.getInstance(myIdeaProject).getByName("Git");
+    assert myGitVcs != null;
+
+    myHtmlDiff = getCurrentDifference("html");
+    myUiDiff = getCurrentDifference("ui");
+    myUtilDiff = getCurrentDifference("util");
+
+    myChangeListManager = ChangeListManagerImpl.getInstanceImpl(myIdeaProject);
+
+    ProjectLevelVcsManager vcsManager = ProjectLevelVcsManager.getInstance(myIdeaProject);
+    vcsManager.getStandardConfirmation(VcsConfiguration.StandardConfirmation.ADD, myGitVcs).setValue(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
+
+    myUtilVirtualFile = VirtualFileUtils.getVirtualFile(myUtilDiff.getModelDescriptor().getModelFile());
+
+    SReference.disableLogging();
+  }
+
+  @After
+  public void dispose() {
+    Assert.assertFalse(myRegistry.getCommandQueue().hadExceptions());
   }
 
   private void waitForSomething(Runnable waitScheduling) {
@@ -157,28 +192,6 @@ public class CommonChangesManagerTest {
     return myRegistry.getCurrentDifference((EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(MODEL_PREFIX + shortName)));
   }
 
-  private void init() {
-    myIdeaProject = ProjectHelper.toIdeaProject(myProject);
-    myRegistry = CurrentDifferenceRegistry.getInstance(myIdeaProject);
-    waitForChangesManager();
-
-    myGitVcs = AllVcses.getInstance(myIdeaProject).getByName("Git");
-    assert myGitVcs != null;
-
-    myHtmlDiff = getCurrentDifference("html");
-    myUiDiff = getCurrentDifference("ui");
-    myUtilDiff = getCurrentDifference("util");
-
-    myChangeListManager = ChangeListManagerImpl.getInstanceImpl(myIdeaProject);
-
-    ProjectLevelVcsManager vcsManager = ProjectLevelVcsManager.getInstance(myIdeaProject);
-    vcsManager.getStandardConfirmation(VcsConfiguration.StandardConfirmation.ADD, myGitVcs).setValue(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
-
-    myUtilVirtualFile = VirtualFileUtils.getVirtualFile(myUtilDiff.getModelDescriptor().getModelFile());
-
-    SReference.disableLogging();
-  }
-
   private void checkAndEnable() {
     Assert.assertNull(myHtmlDiff.getChangeSet());
     Assert.assertNull(myUiDiff.getChangeSet());
@@ -189,8 +202,8 @@ public class CommonChangesManagerTest {
     myUtilDiff.setEnabled(true);
     waitForChangesManager();
 
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a9a6(myHtmlDiff.getChangeSet())).isNotEmpty());
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a01a6(myUiDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a9a7(myHtmlDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a01a7(myUiDiff.getChangeSet())).isNotEmpty());
     Assert.assertNull(myUtilDiff.getChangeSet());
   }
 
@@ -213,7 +226,7 @@ public class CommonChangesManagerTest {
     });
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a7(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a8(myUtilDiff.getChangeSet())).isNotEmpty());
   }
 
   private void saveAndCommit() {
@@ -240,7 +253,7 @@ public class CommonChangesManagerTest {
     myChangeListManager.ensureUpToDate(false);
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a9(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a01(myUtilDiff.getChangeSet())).isNotEmpty());
   }
 
   private SNode createNewRoot(SModel modelContent) {
@@ -347,7 +360,7 @@ public class CommonChangesManagerTest {
               fe = new CommonChangesManagerTest.MyFileEditor(np);
             }
             UndoManager.getInstance(myIdeaProject).undo(fe);
-            check_orwzer_a3a0a0a0a0a12(fe);
+            check_orwzer_a3a0a0a0a0a22(fe);
           }
         });
       } catch (Throwable t) {
@@ -693,80 +706,76 @@ public class CommonChangesManagerTest {
   }
 
   @Test
-  public void doTest() {
+  public void doTest() throws VcsException, IOException, InvocationTargetException, ModelReadException, InterruptedException {
     ModelChangesWatcher.setForceProcessingEnabled(true);
-    boolean result = TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, new TestMain.ProjectRunnable() {
-      public boolean execute(Project project) {
-        try {
-          myProject = project;
-          init();
+    checkAndEnable();
+    modifyModel();
+    saveAndCommit();
+    uncommit();
+    modifyExternally();
+    rollback();
 
-          checkAndEnable();
-          modifyModel();
-          saveAndCommit();
-          uncommit();
-          modifyExternally();
-          rollback();
+    removeModifiedRoot();
+    addRoot();
+    changeProperty();
+    changeReference();
+    moveNode();
+    inlineVariable();
+    rollbackAllSerially();
+    rollbackAllAtomically();
 
-          removeModifiedRoot();
-          addRoot();
-          changeProperty();
-          changeReference();
-          moveNode();
-          inlineVariable();
-          rollbackAllSerially();
-          rollbackAllAtomically();
+    createNewModel();
+    deleteModelAndRollback();
 
-          createNewModel();
-          deleteModelAndRollback();
-
-          SwingUtilities.invokeAndWait(new Runnable() {
-            public void run() {
-              myIdeaProject.getComponent(InspectorTool.class).getInspector().editNode(null, null);
-            }
-          });
-
-          return true;
-        } catch (Throwable e) {
-          e.printStackTrace();
-          return false;
-        }
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        myIdeaProject.getComponent(InspectorTool.class).getInspector().editNode(null, null);
       }
-    }, "jetbrains.mps.vcs", "Git4Idea", "jetbrains.mps.ide.make");
-    Assert.assertTrue(result);
-
-    Assert.assertFalse(myRegistry.getCommandQueue().hadExceptions());
+    });
   }
 
-  private static List<ModelChange> check_orwzer_a0a9a6(ChangeSet checkedDotOperand) {
+  @BeforeClass
+  public static void setUp() {
+    ModelChangesWatcher.setForceProcessingEnabled(true);
+    SReference.disableLogging();
+
+    ourProject = TestMain.startTestOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, "jetbrains.mps.vcs", "Git4Idea", "jetbrains.mps.ide.make");
+  }
+
+  @AfterClass
+  public static void tearDown() {
+    TestMain.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
+  }
+
+  private static List<ModelChange> check_orwzer_a0a9a7(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a01a6(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a01a7(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a3a7(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a3a8(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a5a9(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a5a01(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static void check_orwzer_a3a0a0a0a0a12(FileEditor checkedDotOperand) {
+  private static void check_orwzer_a3a0a0a0a0a22(FileEditor checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();
     }

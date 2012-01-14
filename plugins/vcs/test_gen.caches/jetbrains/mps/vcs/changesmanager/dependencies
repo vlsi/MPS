@@ -35,6 +35,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -91,7 +92,11 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.junit.After" />
+    <classNode dependClassName="org.junit.AfterClass" />
     <classNode dependClassName="org.junit.Assert" />
+    <classNode dependClassName="org.junit.Before" />
+    <classNode dependClassName="org.junit.BeforeClass" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="com.intellij.openapi.command.undo.DocumentReferenceProvider" />
     <classNode extendsClassName="com.intellij.openapi.fileEditor.FileEditor" />
