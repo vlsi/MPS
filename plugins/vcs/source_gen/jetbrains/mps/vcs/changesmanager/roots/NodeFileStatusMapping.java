@@ -83,13 +83,14 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   private void updateNodeStatus(@NotNull final SNodePointer nodePointer) {
     myRegistry.getCommandQueue().runTask(new Runnable() {
       public void run() {
-        calcStatus(nodePointer);
-        statusChanged(nodePointer);
+        if (calcStatus(nodePointer)) {
+          statusChanged(nodePointer);
+        }
       }
     });
   }
 
-  private void calcStatus(@NotNull final SNodePointer root) {
+  private boolean calcStatus(@NotNull final SNodePointer root) {
     final Wrappers._T<FileStatus> status = new Wrappers._T<FileStatus>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -124,7 +125,12 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       }
     });
     synchronized (myFileStatusMap) {
-      MapSequence.fromMap(myFileStatusMap).put(root, status.value);
+      if (MapSequence.fromMap(myFileStatusMap).get(root) != status.value) {
+        MapSequence.fromMap(myFileStatusMap).put(root, status.value);
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 
