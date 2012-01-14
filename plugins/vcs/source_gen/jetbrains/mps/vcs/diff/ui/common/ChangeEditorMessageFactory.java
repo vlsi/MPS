@@ -86,7 +86,9 @@ public class ChangeEditorMessageFactory {
         SNodeOperations.getIndexInParent(((SNode) editedModel.getNodeById(endId)))
       );
 
-      assert 0 <= beginIndex && beginIndex <= endIndex && endIndex <= currentChildrenSize;
+      if (!(0 <= beginIndex && beginIndex <= endIndex && endIndex <= currentChildrenSize)) {
+        return null;
+      }
       if (beginIndex == endIndex) {
         // delete nodes 
         id = parentId;
