@@ -11,10 +11,11 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.junit.Before;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.VcsConfiguration;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.watching.ModelChangesWatcher;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.VcsConfiguration;
 import org.junit.After;
 import java.lang.reflect.InvocationTargetException;
 import javax.swing.SwingUtilities;
@@ -68,7 +69,6 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.junit.BeforeClass;
-import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.TestMain;
 import org.junit.AfterClass;
@@ -109,6 +109,7 @@ public class CommonChangesManagerTest {
   private AbstractVcs myGitVcs;
   private com.intellij.openapi.project.Project myIdeaProject;
   private VirtualFile myUtilVirtualFile;
+  private Runnable myAfterReloadTask;
 
   public CommonChangesManagerTest() {
   }
@@ -129,15 +130,21 @@ public class CommonChangesManagerTest {
 
     myChangeListManager = ChangeListManagerImpl.getInstanceImpl(myIdeaProject);
 
-    ProjectLevelVcsManager vcsManager = ProjectLevelVcsManager.getInstance(myIdeaProject);
-    vcsManager.getStandardConfirmation(VcsConfiguration.StandardConfirmation.ADD, myGitVcs).setValue(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
+    setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
 
     myUtilVirtualFile = VirtualFileUtils.getVirtualFile(myUtilDiff.getModelDescriptor().getModelFile());
+
+    ModelChangesWatcher.instance().addReloadListener(new CommonChangesManagerTest.MyReloadListener());
 
     if (!(ourEnabled)) {
       checkAndEnable();
       ourEnabled = true;
     }
+  }
+
+  private void setAutoaddPolicy(VcsShowConfirmationOption.Value value) {
+    ProjectLevelVcsManager vcsManager = ProjectLevelVcsManager.getInstance(myIdeaProject);
+    vcsManager.getStandardConfirmation(VcsConfiguration.StandardConfirmation.ADD, myGitVcs).setValue(value);
   }
 
   @After
@@ -211,8 +218,8 @@ public class CommonChangesManagerTest {
     myUtilDiff.setEnabled(true);
     waitForChangesManager();
 
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a9a7(myHtmlDiff.getChangeSet())).isNotEmpty());
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a01a7(myUiDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a9a8(myHtmlDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a01a8(myUiDiff.getChangeSet())).isNotEmpty());
     Assert.assertNull(myUtilDiff.getChangeSet());
   }
 
@@ -235,7 +242,7 @@ public class CommonChangesManagerTest {
     });
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a8(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a9(myUtilDiff.getChangeSet())).isNotEmpty());
   }
 
   private void saveAndCommit() {
@@ -262,7 +269,7 @@ public class CommonChangesManagerTest {
     myChangeListManager.ensureUpToDate(false);
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a01(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a11(myUtilDiff.getChangeSet())).isNotEmpty());
   }
 
   private SNode createNewRoot(SModel modelContent) {
@@ -369,7 +376,7 @@ public class CommonChangesManagerTest {
               fe = new CommonChangesManagerTest.MyFileEditor(np);
             }
             UndoManager.getInstance(myIdeaProject).undo(fe);
-            check_orwzer_a3a0a0a0a0a22(fe);
+            check_orwzer_a3a0a0a0a0a32(fe);
           }
         });
       } catch (Throwable t) {
@@ -707,8 +714,27 @@ public class CommonChangesManagerTest {
     checkOneAddedRoot(newModelDiff.value);
   }
 
+  private void waitForReloadFinished() {
+    waitForSomething(new Runnable() {
+      public void run() {
+        synchronized (CommonChangesManagerTest.this) {
+          myAfterReloadTask = new Runnable() {
+            public void run() {
+              synchronized (CommonChangesManagerTest.this) {
+                myAfterReloadTask = null;
+              }
+              waitCompleted();
+            }
+          };
+        }
+      }
+    });
+  }
+
   @Test
   public void deleteModelAndRollback() {
+    setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_ACTION_SILENTLY);
+
     final EditableSModelDescriptor md = myUiDiff.getModelDescriptor();
     String changeSetStringBefore = getChangeSetString(myUiDiff.getChangeSet());
     runCommandAndWait(new Runnable() {
@@ -728,6 +754,8 @@ public class CommonChangesManagerTest {
       e.printStackTrace();
       Assert.fail();
     }
+    waitForReloadFinished();
+    ModelAccess.instance().flushEventQueue();
     waitForChangesManager();
     myUiDiff = getCurrentDifference("ui");
     myUiDiff.setEnabled(true);
@@ -735,6 +763,8 @@ public class CommonChangesManagerTest {
     myChangeListManager.ensureUpToDate(false);
     waitForChangesManager();
     Assert.assertEquals(changeSetStringBefore, getChangeSetString(myUiDiff.getChangeSet()));
+
+    setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
   }
 
   @BeforeClass
@@ -747,41 +777,47 @@ public class CommonChangesManagerTest {
 
   @AfterClass
   public static void tearDown() {
-
     TestMain.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
   }
 
-  private static List<ModelChange> check_orwzer_a0a9a7(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a9a8(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a01a7(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a01a8(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a3a8(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a3a9(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a5a01(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a5a11(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static void check_orwzer_a3a0a0a0a0a22(FileEditor checkedDotOperand) {
+  private static void check_orwzer_a3a0a0a0a0a32(FileEditor checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();
+    }
+
+  }
+
+  private static void check_orwzer_a0a0a1b(Runnable checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.run();
     }
 
   }
@@ -871,6 +907,20 @@ public class CommonChangesManagerTest {
     @Nullable
     public StructureViewBuilder getStructureViewBuilder() {
       throw new UnsupportedOperationException();
+    }
+  }
+
+  private class MyReloadListener implements ModelChangesWatcher.IReloadListener {
+    public MyReloadListener() {
+    }
+
+    public void reloadStarted() {
+    }
+
+    public void reloadFinished() {
+      synchronized (this) {
+        check_orwzer_a0a0a1b(myAfterReloadTask);
+      }
     }
   }
 }

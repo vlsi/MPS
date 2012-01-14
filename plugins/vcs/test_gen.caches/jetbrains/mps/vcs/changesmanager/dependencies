@@ -100,6 +100,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="com.intellij.openapi.command.undo.DocumentReferenceProvider" />
     <classNode extendsClassName="com.intellij.openapi.fileEditor.FileEditor" />
+    <classNode extendsClassName="jetbrains.mps.watching.IReloadListener" />
   </dependency>
 </dependenciesRoot>
 
