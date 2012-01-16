@@ -26,6 +26,8 @@ import jetbrains.mps.util.Pair;
 import java.util.List;
 
 public class TreeNodeUpdater {
+  private static final Object LOCK = new Object();
+
   private final Timer myTimer;
   private List<Pair<MPSTreeNode, NodeUpdate>> myUpdates = new LinkedList<Pair<MPSTreeNode, NodeUpdate>>();
 
@@ -37,14 +39,18 @@ public class TreeNodeUpdater {
             process();
           }
         });
-        myTimer.suspend();
       }
     };
-    myTimer.setTakeInitialDelay(true);
   }
 
-  private synchronized void process() {
-    for (Pair<MPSTreeNode, NodeUpdate> update : myUpdates) {
+  private void process() {
+    List<Pair<MPSTreeNode, NodeUpdate>> updates;
+    synchronized (LOCK) {
+      updates = myUpdates;
+      myUpdates = new LinkedList<Pair<MPSTreeNode, NodeUpdate>>();
+      myTimer.suspend();
+    }
+    for (Pair<MPSTreeNode, NodeUpdate> update : updates) {
       MPSTreeNode node = update.o1;
       if (!checkDisposed(node)) return;
       update.o2.update(node);
@@ -52,13 +58,15 @@ public class TreeNodeUpdater {
     }
   }
 
-  public synchronized void addUpdate(MPSTreeNode node, NodeUpdate r) {
+  public void addUpdate(MPSTreeNode node, NodeUpdate r) {
     if (!r.needed(node)) return;
-    myUpdates.add(new Pair<MPSTreeNode, NodeUpdate>(node, r));
-    myTimer.resume();
+    synchronized (LOCK) {
+      myUpdates.add(new Pair<MPSTreeNode, NodeUpdate>(node, r));
+      myTimer.resume();
+    }
   }
 
-  public boolean checkDisposed(MPSTreeNode node) {
+  public static boolean checkDisposed(MPSTreeNode node) {
     IOperationContext context = node.getOperationContext();
     return !context.getProject().isDisposed() && context.isValid();
   }

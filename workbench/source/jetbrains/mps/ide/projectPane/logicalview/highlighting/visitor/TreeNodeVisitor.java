@@ -35,7 +35,7 @@ public abstract class TreeNodeVisitor {
     }
     myExecutor.execute(new Runnable() {
       public void run() {
-        if (!ourUpdater.checkDisposed(node)) return;
+        if (!TreeNodeUpdater.checkDisposed(node)) return;
 
         if (node instanceof SModelTreeNode) {
           visitModelNode(((SModelTreeNode) node));
