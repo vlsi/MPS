@@ -11,7 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.vcs.changesmanager.OldEditorChangesHighlighter;
+import jetbrains.mps.vcs.changesmanager.deprecated.OldEditorChangesHighlighter;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.ImageIcon;

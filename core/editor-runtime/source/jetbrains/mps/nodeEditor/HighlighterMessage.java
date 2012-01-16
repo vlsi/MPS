@@ -57,6 +57,11 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     return isWarning();
   }
 
+  @Override
+  public boolean showInGutter() {
+    return getStatus() != MessageStatus.OK;
+  }
+
   private boolean isWarning() {
     return getStatus() == MessageStatus.WARNING;
   }

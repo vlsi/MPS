@@ -217,7 +217,7 @@
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.OldEditorChangesHighlighter" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.OldEditorChangesHighlighter" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
@@ -237,7 +237,7 @@
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.OldEditorChangesHighlighter" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.OldEditorChangesHighlighter" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
@@ -257,7 +257,7 @@
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.OldEditorChangesHighlighter" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.OldEditorChangesHighlighter" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
