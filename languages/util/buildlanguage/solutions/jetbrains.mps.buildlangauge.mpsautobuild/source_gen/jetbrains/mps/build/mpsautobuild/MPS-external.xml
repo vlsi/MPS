@@ -643,6 +643,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.build.property" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.antsupport" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.gentest" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.build.reduced" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlQuery" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlInternal" />

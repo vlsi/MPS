@@ -169,6 +169,7 @@
       <modulePath path="${project}/languages/languageDesign/typesystem/languages/test/test.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/jetbrains.mps.bootstrap.helgins.sandbox/jetbrains.mps.bootstrap.helgins.sandbox.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/typesystem.mpl" folder="core.language-design" />
+      <modulePath path="${project}/languages/reduced/reduced.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/bash/languages/bash/bash.mpl" folder="languages.bash" />
       <modulePath path="${project}/languages/util/bash/solutions/jetbrains.mps.bash.sandbox/jetbrains.mps.bash.sandbox.msd" folder="languages.bash" />
       <modulePath path="${project}/languages/util/builders/builders.mpl" folder="baseLanguage.builders" />

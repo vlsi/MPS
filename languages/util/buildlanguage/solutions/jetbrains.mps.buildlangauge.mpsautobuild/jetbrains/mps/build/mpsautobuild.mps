@@ -2056,6 +2056,10 @@
       <property name="id" nameId="tps4.1222447189012" value="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7" />
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.gentest" />
     </node>
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="8795824097439408604">
+      <property name="id" nameId="tps4.1222447189012" value="b608bb31-cbf1-4d56-a8e8-8fa2f751be68" />
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.reduced" />
+    </node>
   </root>
   <root id="8431776905956472981">
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472982">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4ur55eg480xn29e7g16jmrdvji6pkoz">
+<dependencies version="2" modelHash="x9oqqei6c5vngmil2vrfakognfzzpx">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-escrx96rk1sqv3d69p0qxosy2e1bgry" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="90a2yqqwsbuerf4u3po1b2jxod6vyfj" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8xy0ts8pxo14x2h465hshq4se632yz6" />
@@ -102,7 +102,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
   </source>
   <source id="8431776905956472964" name="platform.baseLanguage" hash="2m5vt7bzjljygv9p67cii0tbh5f50pe" />
-  <source id="8431776905956472972" name="platform.build" hash="94r14qtgbbgn4fpw8mkyvxjrvdzhb6b" />
+  <source id="8431776905956472972" name="platform.build" hash="-5qho52p92q4tfip48xz7ld3upanvl6a" />
   <source id="8431776905956472981" name="platform.deprecated" hash="-b9rejv44cd8wrkxq1qdmef56wx83r33" />
   <source id="8431776905956472985" name="platform.ui" hash="erpyatt3vhojks0iwqfzyb83ok0m785" />
   <source id="8431776905956472996" name="platform.xml" hash="-cz5wam5za49qzuvzx3lovhppywvk5y9" />
