@@ -72,23 +72,6 @@ import org.junit.BeforeClass;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.TestMain;
 import org.junit.AfterClass;
-import com.intellij.openapi.command.undo.DocumentReferenceProvider;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import org.jetbrains.annotations.NotNull;
-import javax.swing.JComponent;
-import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.util.Key;
-import java.util.Collection;
-import com.intellij.openapi.command.undo.DocumentReference;
-import com.intellij.openapi.command.undo.DocumentReferenceManager;
-import org.jetbrains.annotations.NonNls;
-import com.intellij.openapi.fileEditor.FileEditorState;
-import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import java.beans.PropertyChangeListener;
-import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
-import com.intellij.openapi.fileEditor.FileEditorLocation;
-import com.intellij.ide.structureView.StructureViewBuilder;
 
 public class CommonChangesManagerTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testConflicts");
@@ -375,7 +358,7 @@ public class CommonChangesManagerTest {
           public void run() {
             FileEditor fe = null;
             if (np != null) {
-              fe = new CommonChangesManagerTest.MyFileEditor(np);
+              fe = new DummyFileEditor(np);
             }
             UndoManager.getInstance(myIdeaProject).undo(fe);
             check_orwzer_a3a0a0a0a0a32(fe);
@@ -817,99 +800,11 @@ public class CommonChangesManagerTest {
 
   }
 
-  private static void check_orwzer_a0a0a1b(Runnable checkedDotOperand) {
+  private static void check_orwzer_a0a0a1a(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
 
-  }
-
-  private class MyFileEditor implements FileEditor, DocumentReferenceProvider {
-    private MPSNodeVirtualFile myFile;
-
-    private MyFileEditor(SNodePointer nodePointer) {
-      myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(nodePointer);
-    }
-
-    @NotNull
-    public JComponent getComponent() {
-      throw new UnsupportedOperationException();
-    }
-
-    @Nullable
-    public <T> T getUserData(@NotNull Key<T> key) {
-      throw new UnsupportedOperationException();
-    }
-
-    public void dispose() {
-    }
-
-    public Collection<DocumentReference> getDocumentReferences() {
-      return Arrays.<DocumentReference>asList(DocumentReferenceManager.getInstance().create(myFile));
-    }
-
-    @Nullable
-    public JComponent getPreferredFocusedComponent() {
-      throw new UnsupportedOperationException();
-    }
-
-    public <T> void putUserData(@NotNull Key<T> key, @Nullable T T) {
-      throw new UnsupportedOperationException();
-    }
-
-    @NonNls
-    @NotNull
-    public String getName() {
-      throw new UnsupportedOperationException();
-    }
-
-    @NotNull
-    public FileEditorState getState(@NotNull FileEditorStateLevel level) {
-      throw new UnsupportedOperationException();
-    }
-
-    public void setState(@NotNull FileEditorState state) {
-      throw new UnsupportedOperationException();
-    }
-
-    public boolean isModified() {
-      return false;
-    }
-
-    public boolean isValid() {
-      return true;
-    }
-
-    public void selectNotify() {
-      throw new UnsupportedOperationException();
-    }
-
-    public void deselectNotify() {
-      throw new UnsupportedOperationException();
-    }
-
-    public void addPropertyChangeListener(@NotNull PropertyChangeListener listener) {
-      throw new UnsupportedOperationException();
-    }
-
-    public void removePropertyChangeListener(@NotNull PropertyChangeListener listener) {
-      throw new UnsupportedOperationException();
-    }
-
-    @Nullable
-    public BackgroundEditorHighlighter getBackgroundHighlighter() {
-      throw new UnsupportedOperationException();
-    }
-
-    @Nullable
-    public FileEditorLocation getCurrentLocation() {
-      throw new UnsupportedOperationException();
-    }
-
-    @Nullable
-    public StructureViewBuilder getStructureViewBuilder() {
-      throw new UnsupportedOperationException();
-    }
   }
 
   private class MyReloadListener implements ModelChangesWatcher.IReloadListener {
@@ -921,7 +816,7 @@ public class CommonChangesManagerTest {
 
     public void reloadFinished() {
       synchronized (this) {
-        check_orwzer_a0a0a1b(myAfterReloadTask);
+        check_orwzer_a0a0a1a(myAfterReloadTask);
       }
     }
   }
