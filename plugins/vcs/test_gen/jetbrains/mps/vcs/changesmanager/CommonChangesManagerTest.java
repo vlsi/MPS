@@ -791,6 +791,8 @@ public class CommonChangesManagerTest {
     waitForChangesManager();
     Assert.assertTrue((int) ListSequence.fromList(newModelDiff.value.getChangeSet().getModelChanges()).count() == 0);
 
+    checkRootStatuses();
+
     runCommandAndWait(new Runnable() {
       public void run() {
         SModel m = md.getSModel();
@@ -800,9 +802,15 @@ public class CommonChangesManagerTest {
     });
     checkOneAddedRoot(newModelDiff.value);
 
+    MapSequence.fromMap(myExpectedFileStatuses).put("newmodel.NewRoot", FileStatus.UNKNOWN);
+    checkRootStatuses();
+
     myChangeListManager.addUnversionedFiles(myChangeListManager.getDefaultChangeList(), Arrays.asList(vf));
     myChangeListManager.ensureUpToDate(false);
     checkOneAddedRoot(newModelDiff.value);
+
+    MapSequence.fromMap(myExpectedFileStatuses).put("newmodel.NewRoot", FileStatus.ADDED);
+    checkRootStatuses();
   }
 
   private void waitForReloadFinished() {
@@ -825,6 +833,8 @@ public class CommonChangesManagerTest {
   @Test
   public void deleteModelAndRollback() {
     setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_ACTION_SILENTLY);
+
+    checkRootStatuses();
 
     final EditableSModelDescriptor md = myUiDiff.getModelDescriptor();
     String changeSetStringBefore = getChangeSetString(myUiDiff.getChangeSet());
@@ -854,6 +864,8 @@ public class CommonChangesManagerTest {
     myChangeListManager.ensureUpToDate(false);
     waitForChangesManager();
     Assert.assertEquals(changeSetStringBefore, getChangeSetString(myUiDiff.getChangeSet()));
+
+    checkRootStatuses();
 
     setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
   }
