@@ -152,6 +152,9 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private void doReload() {
     final ReloadSession session = myReloadSession;
     myReloadSession = null;
+    if (!(session.hasAnythingToDo())) {
+      return;
+    }
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         session.doReload();
