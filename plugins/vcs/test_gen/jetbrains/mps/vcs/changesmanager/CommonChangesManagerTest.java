@@ -53,6 +53,7 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import org.apache.commons.lang.StringUtils;
@@ -279,6 +280,9 @@ public class CommonChangesManagerTest {
 
     waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a01(myUtilDiff.getChangeSet())).isNotEmpty());
+
+    MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
+    checkRootStatuses();
   }
 
   private void saveAndCommit() {
@@ -297,6 +301,9 @@ public class CommonChangesManagerTest {
 
     waitForChangesManager();
     Assert.assertNull(myUtilDiff.getChangeSet());
+
+    MapSequence.fromMap(myExpectedFileStatuses).removeKey("util.ImageLoader");
+    checkRootStatuses();
   }
 
   private void uncommit() throws VcsException {
@@ -306,6 +313,9 @@ public class CommonChangesManagerTest {
 
     waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a21(myUtilDiff.getChangeSet())).isNotEmpty());
+
+    MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
+    checkRootStatuses();
   }
 
   private SNode createNewRoot(SModel modelContent) {
@@ -323,6 +333,9 @@ public class CommonChangesManagerTest {
     waitForModelReplaced(myUtilDiff.getModelDescriptor());
     waitForChangesManager();
     Assert.assertEquals(changesBefore + 1, ListSequence.fromList(myUtilDiff.getChangeSet().getModelChanges()).count());
+
+    MapSequence.fromMap(myExpectedFileStatuses).put("util.NewRoot", FileStatus.ADDED);
+    checkRootStatuses();
   }
 
   private void rollback() throws VcsException {
@@ -335,6 +348,17 @@ public class CommonChangesManagerTest {
 
     waitForChangesManager();
     Assert.assertNull(myUtilDiff.getChangeSet());
+
+    SetSequence.fromSet(MapSequence.fromMap(myExpectedFileStatuses).keySet()).where(new IWhereFilter<String>() {
+      public boolean accept(String k) {
+        return k.startsWith("util.");
+      }
+    }).toListSequence().visitAll(new IVisitor<String>() {
+      public void visit(String k) {
+        MapSequence.fromMap(myExpectedFileStatuses).removeKey(k);
+      }
+    });
+    checkRootStatuses();
   }
 
   private String getChangeSetString(ChangeSet changeSet) {
@@ -446,6 +470,7 @@ public class CommonChangesManagerTest {
 
   @Test
   public void modifyExternallyRollback() throws ModelReadException, IOException, VcsException {
+    modifyModel();
     modifyExternally();
     rollback();
   }
