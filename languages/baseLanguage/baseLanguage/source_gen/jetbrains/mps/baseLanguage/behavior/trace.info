@@ -4648,7 +4648,7 @@
     <nodeInfo nodeId="8957285799233233547" fileName="ClassConcept_Behavior.java" startLine="263" startPosition="102" endLine="264" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8957285799233233555" fileName="ClassConcept_Behavior.java" startLine="264" startPosition="48" endLine="265" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8957285799233233582" fileName="ClassConcept_Behavior.java" startLine="265" startPosition="201" endLine="266" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8008512149545173434" fileName="ClassConcept_Behavior.java" startLine="268" startPosition="128" endLine="269" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8008512149545173434" fileName="ClassConcept_Behavior.java" startLine="268" startPosition="118" endLine="269" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8008512149545173438" fileName="ClassConcept_Behavior.java" startLine="269" startPosition="31" endLine="270" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="8008512149545173470" fileName="ClassConcept_Behavior.java" startLine="273" startPosition="5" endLine="274" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8352171283185503388" fileName="ClassConcept_Behavior.java" startLine="281" startPosition="31" endLine="282" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4777,7 +4777,7 @@
     <scopeInfo nodeId="1213877355772" fileName="ClassConcept_Behavior.java" startLine="239" startPosition="77" endLine="241" endPosition="212">
       <varInfo nodeId="1213877355772" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="8008512149545173433" fileName="ClassConcept_Behavior.java" startLine="268" startPosition="128" endLine="270" endPosition="16" />
+    <scopeInfo nodeId="8008512149545173433" fileName="ClassConcept_Behavior.java" startLine="268" startPosition="118" endLine="270" endPosition="16" />
     <scopeInfo nodeId="8352171283185503388" fileName="ClassConcept_Behavior.java" startLine="277" startPosition="52" endLine="279" endPosition="5" />
     <scopeInfo nodeId="7780110179940660223" fileName="ClassConcept_Behavior.java" startLine="295" startPosition="52" endLine="297" endPosition="5" />
     <scopeInfo nodeId="1213877355772" fileName="ClassConcept_Behavior.java" startLine="42" startPosition="0" endLine="45" endPosition="0">

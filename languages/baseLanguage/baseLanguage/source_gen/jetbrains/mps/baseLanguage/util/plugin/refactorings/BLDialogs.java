@@ -15,7 +15,7 @@ public class BLDialogs {
   public static SNode showStaticContainerChooser(IOperationContext context, SModelDescriptor contextModel) {
     BaseChooseNodeDialog dialog = new BaseChooseNodeDialog(ProjectHelper.toMainFrame(context.getProject()), context, contextModel, "Choose class") {
       protected boolean isAcceptable(SNode node) {
-        return SNodeOperations.isInstanceOf(((SNode) node), "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(((SNode) node), "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods");
+        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods");
       }
     };
     dialog.showDialog();
@@ -25,7 +25,7 @@ public class BLDialogs {
   public static SNode showClassChooser(IOperationContext context, SModelDescriptor contextModel) {
     BaseChooseNodeDialog dialog = new BaseChooseNodeDialog(ProjectHelper.toMainFrame(context.getProject()), context, contextModel, "Choose class") {
       protected boolean isAcceptable(SNode node) {
-        return SNodeOperations.isInstanceOf(((SNode) node), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       }
     };
     dialog.showDialog();

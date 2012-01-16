@@ -11420,15 +11420,8 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp2q.ContainsOperation" typeId="tp2q.1172254888721" id="8008512149545173444">
-                      <node role="argument" roleId="tp2q.1172256416782" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="434283027168231283">
-                        <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="434283027168231284">
-                          <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="434283027168231285">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8008512149545173412" resolveInfo="expr" />
-                          </node>
-                          <node role="type" roleId="tpee.1070534934091" type="tp25.SNodeType" typeId="tp25.1138055754698" id="434283027168231287">
-                            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-                          </node>
-                        </node>
+                      <node role="argument" roleId="tp2q.1172256416782" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="434283027168231285">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8008512149545173412" resolveInfo="expr" />
                       </node>
                     </node>
                   </node>

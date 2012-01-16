@@ -13,12 +13,13 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -33,7 +34,7 @@ public class MethodRefactoringUtils {
       public void run(@NotNull final ProgressIndicator indicator) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            results.value = MethodRefactoringUtils.findOverridingMethods(method, indicator);
+            results.value = MethodRefactoringUtils.findOverridingMethods(method, new ProgressMonitorAdapter(indicator));
           }
         });
       }
@@ -41,7 +42,7 @@ public class MethodRefactoringUtils {
     return results.value;
   }
 
-  public static List<SNode> findOverridingMethods(SNode method, ProgressIndicator progressIndicator) {
+  public static List<SNode> findOverridingMethods(SNode method, ProgressMonitor progressMonitor) {
     List<SNode> results = new ArrayList<SNode>();
     if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
       if (SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
@@ -49,9 +50,9 @@ public class MethodRefactoringUtils {
       }
       SearchResults<SNode> searchResults;
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.Interface")) {
-        searchResults = FindUtils.getSearchResults(new ProgressMonitorAdapter(progressIndicator), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
+        searchResults = FindUtils.getSearchResults(progressMonitor, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
       } else {
-        searchResults = FindUtils.getSearchResults(new ProgressMonitorAdapter(progressIndicator), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder");
+        searchResults = FindUtils.getSearchResults(progressMonitor, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder");
       }
 
       for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
@@ -59,7 +60,7 @@ public class MethodRefactoringUtils {
       }
     }
     if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
-      SearchResults<SNode> searchResults = FindUtils.getSearchResults(new ProgressMonitorAdapter(progressIndicator), method, GlobalScope.getInstance(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
+      SearchResults<SNode> searchResults = FindUtils.getSearchResults(progressMonitor, method, GlobalScope.getInstance(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
       for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
         ListSequence.fromList(results).addElement(SNodeOperations.cast(result.getObject(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       }
