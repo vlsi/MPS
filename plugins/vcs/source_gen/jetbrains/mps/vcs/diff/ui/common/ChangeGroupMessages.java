@@ -11,7 +11,9 @@ import jetbrains.mps.nodeEditor.SimpleEditorMessage;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
-public class ChangeGroupMessages implements EditorMessageOwner {
+public class ChangeGroupMessages {
+  public static final EditorMessageOwner ourOwner = new EditorMessageOwner() {};
+
   private ChangeGroupLayout myLayout;
   private boolean myLeft;
   private MessagesGutter myGutter;
@@ -38,11 +40,11 @@ public class ChangeGroupMessages implements EditorMessageOwner {
   }
 
   public void dispose() {
-    myGutter.removeMessages(this);
+    myGutter.removeMessages(ourOwner);
   }
 
-  public void rebuildGutterMessages() {
-    myGutter.removeMessages(this);
+  private void rebuildGutterMessages() {
+    myGutter.removeMessages(ourOwner);
     ListSequence.fromList(myLayout.getChangeGroups()).visitAll(new IVisitor<ChangeGroup>() {
       public void visit(ChangeGroup cg) {
         myGutter.add(new ChangeGroupMessages.MyChangeGroupMessage(cg));
@@ -63,7 +65,7 @@ public class ChangeGroupMessages implements EditorMessageOwner {
     }
 
     public EditorMessageOwner getOwner() {
-      return ChangeGroupMessages.this;
+      return ChangeGroupMessages.ourOwner;
     }
 
     public Color getColor() {

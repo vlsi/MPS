@@ -15054,6 +15054,24 @@
     </node>
   </root>
   <root id="739457190729175664">
+    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3477558405266089730">
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="ourOwner" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3477558405266231716" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3477558405266117754">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageOwner" resolveInfo="EditorMessageOwner" />
+      </node>
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3477558405266117756">
+        <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="3477558405266190214">
+          <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="3477558405266190215">
+            <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="9a8.~EditorMessageOwner" resolveInfo="EditorMessageOwner" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+            <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3477558405266190216" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1995253788898151248">
       <property name="name" nameId="tpck.1169194664001" value="startMaintaining" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1995253788898151249" />
@@ -15127,9 +15145,10 @@
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageOwner" resolveInfo="EditorMessageOwner" />
         </node>
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="739457190729183523">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="739457190729183569">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="739457190729183570">
-              <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="739457190729175664" resolveInfo="ChangeGroupMessages" />
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3477558405266190225">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3477558405266190226">
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="739457190729175664" resolveInfo="ChangeGroupMessages" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3477558405266089730" resolveInfo="ourOwner" />
             </node>
           </node>
         </node>
@@ -15317,7 +15336,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8183734928029126193">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~MessagesGutter%dremoveMessages(jetbrains%dmps%dnodeEditor%dEditorMessageOwner)%cboolean" resolveInfo="removeMessages" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="8183734928029126194" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="3477558405266190217">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3477558405266089730" resolveInfo="ourOwner" />
+              </node>
             </node>
           </node>
         </node>
@@ -15326,7 +15347,7 @@
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="739457190729177668">
       <property name="name" nameId="tpck.1169194664001" value="rebuildGutterMessages" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="739457190729177669" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="739457190729177670" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3477558405266089729" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="739457190729177671">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="739457190729177712">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="739457190729183494">
@@ -15335,7 +15356,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="739457190729183498">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~MessagesGutter%dremoveMessages(jetbrains%dmps%dnodeEditor%dEditorMessageOwner)%cboolean" resolveInfo="removeMessages" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="739457190729183499" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="3477558405266190218">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3477558405266089730" resolveInfo="ourOwner" />
+              </node>
             </node>
           </node>
         </node>
@@ -15464,9 +15487,6 @@
         <property name="name" nameId="tpck.1169194664001" value="left" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="739457190729177660" />
       </node>
-    </node>
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="739457190729177676">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageOwner" resolveInfo="EditorMessageOwner" />
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="739457190729183631">
       <property name="name" nameId="tpck.1169194664001" value="myGutter" />
